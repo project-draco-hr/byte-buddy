@@ -1,0 +1,3 @@
+{
+  return value.indexOf(SEPARATOR_TYPE,index + 1) + 1;
+}

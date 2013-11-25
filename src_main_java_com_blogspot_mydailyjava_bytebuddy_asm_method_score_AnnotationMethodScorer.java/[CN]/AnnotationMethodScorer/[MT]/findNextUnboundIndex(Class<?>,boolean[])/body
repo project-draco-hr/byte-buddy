@@ -1,0 +1,9 @@
+{
+  for (int index=0; index < sourceMethodArgumentIsBound.length; index++) {
+    if (!sourceMethodArgumentIsBound[index]) {
+      if (matches(targetMethodArgumentType,sourceMethodArgumentTypeNames.get(index)))       sourceMethodArgumentIsBound[index]=true;
+      return index;
+    }
+  }
+  return -1;
+}

@@ -1,0 +1,5 @@
+{
+  Class<?> clazz=makeSimpleProxy(P2_Object_Array.class);
+  assertEquals(1,clazz.getDeclaredConstructors().length);
+  clazz.getDeclaredConstructors()[0].newInstance(OBJECT,ARRAY);
+}

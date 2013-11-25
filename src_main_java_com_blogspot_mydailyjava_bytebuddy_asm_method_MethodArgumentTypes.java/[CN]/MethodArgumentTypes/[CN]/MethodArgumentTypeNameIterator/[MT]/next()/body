@@ -1,0 +1,9 @@
+{
+  int nextIndex=findNextIndex();
+  try {
+    return desc.substring(descIndex,nextIndex);
+  }
+  finally {
+    descIndex=nextIndex;
+  }
+}

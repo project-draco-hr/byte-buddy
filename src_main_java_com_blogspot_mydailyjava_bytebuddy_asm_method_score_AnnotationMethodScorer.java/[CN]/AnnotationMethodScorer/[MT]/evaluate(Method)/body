@@ -1,0 +1,15 @@
+{
+  Annotation[][] targetMethodArgumentAnnotations=targetMethod.getParameterAnnotations();
+  Class<?>[] targetMethodArgumentType=targetMethod.getParameterTypes();
+  List<MethodCallStackValue> targetMethodCallStack=new ArrayList<MethodCallStackValue>(targetMethodArgumentType.length);
+  for (  String sourceMethodException : sourceMethodExceptions) {
+    evaluateExceptionTypeCompatibility(sourceMethodException,targetMethod.getExceptionTypes());
+  }
+  evaluateReturnTypeCompatibility(targetMethod.getReturnType());
+  int score=0;
+  boolean[] sourceMethodArgumentIsBound=new boolean[sourceMethodArgumentTypeNames.size()];
+  for (int i=0; i < targetMethodArgumentType.length; i++) {
+    score+=scoreParameter(targetMethodArgumentType[i],targetMethodArgumentAnnotations[i],sourceMethodArgumentIsBound,targetMethodCallStack);
+  }
+  return new ScoredMethodDelegation(score,targetMethodCallStack);
+}

@@ -1,0 +1,11 @@
+{
+  if (targetMethodArgumentType.isArray()) {
+    targetMethodArgumentType=targetMethodArgumentType.getComponentType();
+    for (    String sourceMethodArgumentTypeName : sourceMethodArgumentTypeNames) {
+      if (!matches(targetMethodArgumentType,sourceMethodArgumentTypeName)) {
+        throw new NoScoreException();
+      }
+    }
+  }
+  throw new NoScoreException();
+}

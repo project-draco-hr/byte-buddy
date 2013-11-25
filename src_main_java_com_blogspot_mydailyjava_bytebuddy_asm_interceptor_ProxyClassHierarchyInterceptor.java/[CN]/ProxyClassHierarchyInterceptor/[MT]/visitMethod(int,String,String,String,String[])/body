@@ -1,0 +1,11 @@
+{
+  if (MethodUtility.CONSTRUCTOR_METHOD_NAME.equals(name)) {
+    if (MethodUtility.isOverridable(access)) {
+      callSuperConstructor(cv.visitMethod(access,MethodUtility.CONSTRUCTOR_METHOD_NAME,desc,signature,exceptions),desc);
+    }
+    return null;
+  }
+ else {
+    return cv.visitMethod(access,name,desc,signature,exceptions);
+  }
+}

@@ -1,0 +1,9 @@
+{
+  Class<?> clazz=makeSimpleProxy(Exception0.class);
+  assertEquals(1,clazz.getDeclaredConstructors().length);
+  Class<?>[] exceptionClass=clazz.getDeclaredConstructors()[0].getExceptionTypes();
+  assertEquals(2,exceptionClass.length);
+  assertEquals(Exception.class,exceptionClass[0]);
+  assertEquals(RuntimeException.class,exceptionClass[1]);
+  clazz.getDeclaredConstructors()[0].newInstance();
+}

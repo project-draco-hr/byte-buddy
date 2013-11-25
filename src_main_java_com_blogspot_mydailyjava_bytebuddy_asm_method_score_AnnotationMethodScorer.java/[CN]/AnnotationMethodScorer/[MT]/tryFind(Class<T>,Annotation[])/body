@@ -1,0 +1,8 @@
+{
+  for (  Annotation a : annotation) {
+    if (a.getClass() == annotationType) {
+      return (T)a;
+    }
+  }
+  return null;
+}

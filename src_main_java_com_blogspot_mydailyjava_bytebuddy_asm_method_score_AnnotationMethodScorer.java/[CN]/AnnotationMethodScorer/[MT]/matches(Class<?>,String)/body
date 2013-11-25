@@ -1,0 +1,8 @@
+{
+  try {
+    return superType.isAssignableFrom(Class.forName(Type.getType(subTypeName).getClassName()));
+  }
+ catch (  ClassNotFoundException e) {
+    throw new IllegalStateException(e);
+  }
+}

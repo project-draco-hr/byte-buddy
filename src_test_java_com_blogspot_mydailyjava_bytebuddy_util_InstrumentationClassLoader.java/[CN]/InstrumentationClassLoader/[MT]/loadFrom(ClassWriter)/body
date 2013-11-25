@@ -1,0 +1,4 @@
+{
+  byte[] bytes=classWriter.toByteArray();
+  return defineClass(null,bytes,0,bytes.length);
+}

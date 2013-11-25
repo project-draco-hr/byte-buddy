@@ -1,0 +1,5 @@
+{
+  if (!matches(sourceExceptionType,targetExceptionType)) {
+    throw new NoScoreException();
+  }
+}

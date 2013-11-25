@@ -1,0 +1,7 @@
+{
+  if (tryFind(AllArguments.class,targetMethodArgumentAnnotation) != null && isAssignableArray(targetMethodArgumentType)) {
+    targetMethodCallStack.add(new AllArgumentsReference());
+    return true;
+  }
+  return false;
+}

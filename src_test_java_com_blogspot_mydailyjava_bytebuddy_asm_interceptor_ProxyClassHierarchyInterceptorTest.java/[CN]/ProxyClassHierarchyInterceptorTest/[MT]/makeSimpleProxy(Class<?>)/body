@@ -1,0 +1,8 @@
+{
+  ClassReader classReader=new ClassReader(clazz.getName());
+  ClassWriter classWriter=new ClassWriter(FLAGS);
+  classReader.accept(new ProxyClassHierarchyInterceptor(classWriter),FLAGS);
+  Class<?> proxyClass=classLoader.loadFrom(classWriter);
+  assertTrue(clazz.isAssignableFrom(proxyClass));
+  return proxyClass;
+}

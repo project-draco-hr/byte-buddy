@@ -1,0 +1,8 @@
+{
+  Class<?> clazz=makeSimpleProxy(PackagePrivate0.class);
+  assertEquals(1,clazz.getDeclaredConstructors().length);
+  assertFalse(Modifier.isPublic(clazz.getDeclaredConstructors()[0].getModifiers()));
+  assertFalse(Modifier.isProtected(clazz.getDeclaredConstructors()[0].getModifiers()));
+  assertFalse(Modifier.isPrivate(clazz.getDeclaredConstructors()[0].getModifiers()));
+  OBJENESIS.getInstantiatorOf(clazz).newInstance();
+}

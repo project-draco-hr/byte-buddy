@@ -1,0 +1,21 @@
+{
+  if (tryLoadIndexedArgument(targetMethodArgumentType,targetMethodArgumentAnnotation,targetMethodCallStack)) {
+    return 1;
+  }
+ else   if (tryLoadThis(targetMethodArgumentType,targetMethodArgumentAnnotation,targetMethodCallStack)) {
+    return 1;
+  }
+ else   if (tryLoadAllArguments(targetMethodArgumentType,targetMethodArgumentAnnotation,targetMethodCallStack)) {
+    return 1;
+  }
+ else   if (tryLoadClassId(targetMethodArgumentType,targetMethodArgumentAnnotation,targetMethodCallStack)) {
+    return 1;
+  }
+ else   if (tryLoadObjectId(targetMethodArgumentType,targetMethodArgumentAnnotation,targetMethodCallStack)) {
+    return 1;
+  }
+ else   if (tryLoadPlainArgument(targetMethodArgumentType,sourceMethodArgumentIsBound,targetMethodCallStack)) {
+    return 1;
+  }
+  throw new NoScoreException();
+}
