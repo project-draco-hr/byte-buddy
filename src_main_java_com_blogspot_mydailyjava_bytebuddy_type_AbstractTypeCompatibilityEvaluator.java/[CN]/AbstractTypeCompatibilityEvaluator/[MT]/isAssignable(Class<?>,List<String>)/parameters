@@ -1,0 +1,2 @@
+Class<?> superType
+List<String> subTypeNames

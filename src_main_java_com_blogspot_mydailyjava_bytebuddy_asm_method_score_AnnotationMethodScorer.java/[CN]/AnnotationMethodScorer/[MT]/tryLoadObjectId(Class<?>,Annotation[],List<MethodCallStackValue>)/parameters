@@ -1,3 +1,0 @@
-Class<?> targetMethodArgumentType
-Annotation[] targetMethodArgumentAnnotation
-List<MethodCallStackValue> targetMethodCallStack

@@ -1,6 +1,0 @@
-{
-  this.sourceTypeName=sourceTypeName;
-  sourceMethodArgumentTypeNames=MethodArgumentTypes.listNAmes(sourceMethodDesc);
-  this.sourceMethodReturnType=new MethodReturnType(sourceMethodDesc);
-  this.sourceMethodExceptions=sourceMethodExceptions;
-}

@@ -1,0 +1,7 @@
+{
+  if (targetMethodArgumentAnnotations.get(ClassId.class) != null && isUuidType(targetMethodArgumentType)) {
+    targetMethodCallStack.add(new ClassIdReference());
+    return true;
+  }
+  return false;
+}

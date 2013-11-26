@@ -1,0 +1,4 @@
+{
+  String superTypeDescriptor=Type.getDescriptor(superType);
+  return (superType == Object.class && isNotPrimitive(subTypeName,superType)) || superTypeDescriptor.equals(subTypeName);
+}

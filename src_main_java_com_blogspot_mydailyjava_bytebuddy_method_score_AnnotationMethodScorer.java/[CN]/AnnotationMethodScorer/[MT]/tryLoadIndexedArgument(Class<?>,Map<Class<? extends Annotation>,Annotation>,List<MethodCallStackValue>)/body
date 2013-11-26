@@ -1,0 +1,8 @@
+{
+  Argument argument=(Argument)targetMethodArgumentAnnotations.get(Argument.class);
+  if (argument != null && typeCompatibilityEvaluator.isAssignable(targetMethodArgumentType,sourceMethodArgumentTypeNames.get(argument.value()))) {
+    targetMethodCallStack.add(new ArgumentReference(argument.value()));
+    return true;
+  }
+  return false;
+}

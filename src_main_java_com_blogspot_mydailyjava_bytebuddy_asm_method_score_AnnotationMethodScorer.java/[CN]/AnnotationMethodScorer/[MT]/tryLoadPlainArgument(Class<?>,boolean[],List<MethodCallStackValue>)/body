@@ -1,8 +1,0 @@
-{
-  int nextUnboundIndex=findNextUnboundIndex(targetMethodArgumentType,sourceMethodArgumentIsBound);
-  if (nextUnboundIndex >= 0 && matches(targetMethodArgumentType,sourceMethodArgumentTypeNames.get(nextUnboundIndex))) {
-    targetMethodCallStack.add(new ArgumentReference(nextUnboundIndex));
-    return true;
-  }
-  return false;
-}

@@ -1,0 +1,3 @@
+{
+  return classTypeName.equals(this.classTypeName) && methodName.equals(this.methodName) && methodDesc.equals(this.methodDesc);
+}

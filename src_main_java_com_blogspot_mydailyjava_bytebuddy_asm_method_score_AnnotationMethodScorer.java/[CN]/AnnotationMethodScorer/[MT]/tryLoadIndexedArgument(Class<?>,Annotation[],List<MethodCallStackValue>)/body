@@ -1,8 +1,0 @@
-{
-  Argument argument=tryFind(Argument.class,targetMethodArgumentAnnotation);
-  if (argument != null && matches(targetMethodArgumentType,sourceMethodArgumentTypeNames.get(argument.value()))) {
-    targetMethodCallStack.add(new ArgumentReference(argument.value()));
-    return true;
-  }
-  return false;
-}

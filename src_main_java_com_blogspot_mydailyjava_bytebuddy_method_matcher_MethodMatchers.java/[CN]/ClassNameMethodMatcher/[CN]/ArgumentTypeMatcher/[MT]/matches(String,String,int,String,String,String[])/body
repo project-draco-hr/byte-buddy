@@ -1,0 +1,3 @@
+{
+  return methodDesc.substring(1).startsWith(argumentTypeNames) && methodDesc.charAt(argumentTypeNames.length() + 2) == ARGUMENT_TYPES_SUFFIX;
+}

@@ -1,0 +1,3 @@
+{
+  return type.isPrimitive() || typeDescriptor.length() > 1;
+}

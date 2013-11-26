@@ -1,0 +1,8 @@
+{
+  for (  String e : methodException) {
+    if (exceptionNames.contains(methodException)) {
+      return true;
+    }
+  }
+  return false;
+}

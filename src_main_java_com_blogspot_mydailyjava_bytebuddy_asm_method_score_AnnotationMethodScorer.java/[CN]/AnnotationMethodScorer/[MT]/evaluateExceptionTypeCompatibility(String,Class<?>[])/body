@@ -1,5 +1,0 @@
-{
-  for (  Class<?> targetExceptionType : targetExceptionTypes) {
-    evaluateExceptionTypeCompatibility(sourceExceptionType,targetExceptionType);
-  }
-}

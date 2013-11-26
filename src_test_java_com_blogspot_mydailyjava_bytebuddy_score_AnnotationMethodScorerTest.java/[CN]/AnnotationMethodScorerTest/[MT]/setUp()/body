@@ -1,0 +1,6 @@
+{
+  typeCompatibilityEvaluator=new ClassLoadingCompatibilityEvaluator(getClass().getClassLoader());
+  String sourceType=Type.getDescriptor(Object.class);
+  String sourceMethodDesc=Type.getMethodDescriptor(Type.VOID_TYPE);
+  methodScorer=new AnnotationMethodScorer(sourceType,METHOD_NAME,sourceMethodDesc,new String[0],typeCompatibilityEvaluator);
+}

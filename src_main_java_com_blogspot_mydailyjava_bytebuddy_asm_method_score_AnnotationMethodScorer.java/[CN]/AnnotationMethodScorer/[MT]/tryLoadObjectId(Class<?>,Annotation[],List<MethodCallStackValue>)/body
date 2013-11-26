@@ -1,7 +1,0 @@
-{
-  if (tryFind(ObjectId.class,targetMethodArgumentAnnotation) != null && isUuid(targetMethodArgumentType)) {
-    targetMethodCallStack.add(new ObjectIdReference());
-    return true;
-  }
-  return false;
-}

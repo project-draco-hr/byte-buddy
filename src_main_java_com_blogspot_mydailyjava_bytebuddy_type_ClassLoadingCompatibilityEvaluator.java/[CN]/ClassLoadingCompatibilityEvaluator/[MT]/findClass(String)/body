@@ -1,0 +1,9 @@
+{
+  String className=Type.getObjectType(internalName).getClassName();
+  try {
+    return Class.forName(className,false,classLoader);
+  }
+ catch (  ClassNotFoundException e) {
+    throw new IllegalStateException(String.format("Instrumentation target type %s could not be loaded",className),e);
+  }
+}

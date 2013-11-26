@@ -1,5 +1,0 @@
-{
-  if (!matches(targetMethodReturnType,sourceMethodReturnType.getReturnTypeName())) {
-    throw new NoScoreException();
-  }
-}

@@ -1,0 +1,3 @@
+{
+  return sourceMethodName.equals(targetMethod.getName()) ? SINGLE_SCORE : NO_SCORE;
+}

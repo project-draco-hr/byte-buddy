@@ -1,0 +1,8 @@
+{
+  for (  String subTypeName : subTypeNames) {
+    if (!isAssignable(superType,subTypeName)) {
+      return false;
+    }
+  }
+  return true;
+}

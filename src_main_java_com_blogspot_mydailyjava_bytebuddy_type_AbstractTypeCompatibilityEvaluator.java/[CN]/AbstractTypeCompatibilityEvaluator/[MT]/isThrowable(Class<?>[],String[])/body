@@ -1,0 +1,11 @@
+{
+  List<String> sourceExceptionTypeNames=Arrays.asList(sourceExceptionTypeName);
+  for (  Class<?> exceptionType : targetExceptionType) {
+    if (!exceptionType.isAssignableFrom(RuntimeException.class)) {
+      if (!isAssignable(exceptionType,sourceExceptionTypeNames)) {
+        return false;
+      }
+    }
+  }
+  return true;
+}

@@ -1,0 +1,8 @@
+{
+  int nextUnboundIndex=findNextUnboundIndex(targetMethodArgumentType,sourceMethodArgumentIsBound);
+  if (nextUnboundIndex >= 0 && typeCompatibilityEvaluator.isAssignable(targetMethodArgumentType,sourceMethodArgumentTypeNames.get(nextUnboundIndex))) {
+    targetMethodCallStack.add(new ArgumentReference(nextUnboundIndex));
+    return true;
+  }
+  return false;
+}

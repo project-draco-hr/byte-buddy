@@ -1,3 +1,0 @@
-{
-  return new AnnotationMethodScorer(targetClassName,desc,exceptions);
-}

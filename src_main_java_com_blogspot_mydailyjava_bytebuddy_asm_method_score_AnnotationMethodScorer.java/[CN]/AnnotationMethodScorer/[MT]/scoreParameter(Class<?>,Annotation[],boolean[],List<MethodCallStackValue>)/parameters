@@ -1,4 +1,0 @@
-Class<?> targetMethodArgumentType
-Annotation[] targetMethodArgumentAnnotation
-boolean[] sourceMethodArgumentIsBound
-List<MethodCallStackValue> targetMethodCallStack
