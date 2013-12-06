@@ -1,0 +1,7 @@
+{
+  if (targetMethodArgumentAnnotations.get(InstanceId.class) != null && assertUuidType(targetMethodArgumentType)) {
+    targetMethodCallStack.add(new InstanceIdReference());
+    return true;
+  }
+  return false;
+}

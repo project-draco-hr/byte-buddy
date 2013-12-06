@@ -1,0 +1,5 @@
+{
+  if (!typeCompatibilityEvaluator.isAssignable(targetMethodReturnType,sourceMethodReturnType.getReturnTypeName())) {
+    throw new NoMatchException();
+  }
+}

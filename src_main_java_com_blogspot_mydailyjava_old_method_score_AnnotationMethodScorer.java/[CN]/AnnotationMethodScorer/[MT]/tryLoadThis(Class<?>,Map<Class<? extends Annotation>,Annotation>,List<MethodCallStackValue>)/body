@@ -1,0 +1,7 @@
+{
+  if (targetMethodArgumentAnnotations.get(This.class) != null && assertClassAssignable(targetMethodArgumentType)) {
+    targetMethodCallStack.add(new ThisReference());
+    return true;
+  }
+  return false;
+}

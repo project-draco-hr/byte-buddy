@@ -1,7 +1,0 @@
-{
-  Method targetMethod=P0_void_AllArguments.class.getDeclaredMethod(METHOD_NAME,Object[].class);
-  MethodScorer.MatchedMethod matchedMethod=methodScorer.evaluate(targetMethod);
-  assertEquals(3d,matchedMethod.getScore(),DELTA);
-  assertEquals(1,matchedMethod.getValues().size());
-  assertEquals(AllArgumentsReference.class,matchedMethod.getValues().get(0).getClass());
-}

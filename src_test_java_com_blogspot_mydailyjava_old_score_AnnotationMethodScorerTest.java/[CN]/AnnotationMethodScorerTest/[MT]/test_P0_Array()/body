@@ -1,0 +1,4 @@
+{
+  Method targetMethod=P0_Array.class.getDeclaredMethod(METHOD_NAME);
+  methodScorer.match(targetMethod);
+}

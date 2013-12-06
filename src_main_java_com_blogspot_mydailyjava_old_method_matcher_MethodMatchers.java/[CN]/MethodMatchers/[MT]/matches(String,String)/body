@@ -1,0 +1,24 @@
+{
+switch (this) {
+case EQUALS_FULLY:
+    return left.equals(right);
+case EQUALS_FULLY_IGNORE_CASE:
+  return left.equalsIgnoreCase(right);
+case STARTS_WITH:
+return left.startsWith(right);
+case STARTS_WITH_IGNORE_CASE:
+return left.toLowerCase().startsWith(right.toLowerCase());
+case ENDS_WITH:
+return left.endsWith(right);
+case ENDS_WITH_IGNORE_CASE:
+return left.toLowerCase().endsWith(right.toLowerCase());
+case CONTAINS:
+return left.contains(right);
+case CONTAINS_IGNORE_CASE:
+return left.toLowerCase().contains(right.toLowerCase());
+case MATCHES:
+return left.matches(right);
+default :
+throw new AssertionError();
+}
+}

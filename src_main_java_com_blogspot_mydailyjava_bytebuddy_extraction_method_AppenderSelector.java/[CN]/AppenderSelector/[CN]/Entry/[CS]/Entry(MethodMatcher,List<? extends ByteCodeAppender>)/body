@@ -1,0 +1,4 @@
+{
+  this.methodMatcher=methodMatcher;
+  this.methodCodeAppenders=methodCodeAppenders;
+}

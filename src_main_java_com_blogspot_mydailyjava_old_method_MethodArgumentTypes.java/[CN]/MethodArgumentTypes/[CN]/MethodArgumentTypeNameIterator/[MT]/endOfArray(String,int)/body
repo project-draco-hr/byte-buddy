@@ -1,0 +1,10 @@
+{
+switch (value.charAt(index + 1)) {
+case OBJECT:
+    return endOfObject(value,index + 1);
+case ARRAY:
+  return endOfArray(value,index + 1);
+default :
+return index + 1;
+}
+}

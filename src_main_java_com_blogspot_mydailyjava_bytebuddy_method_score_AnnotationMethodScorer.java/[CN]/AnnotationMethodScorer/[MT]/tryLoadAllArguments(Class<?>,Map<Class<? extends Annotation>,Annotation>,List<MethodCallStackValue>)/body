@@ -1,7 +1,0 @@
-{
-  if (targetMethodArgumentAnnotations.get(AllArguments.class) != null && typeCompatibilityEvaluator.isAssignable(targetMethodArgumentType,sourceMethodArgumentTypeNames)) {
-    targetMethodCallStack.add(new AllArgumentsReference());
-    return true;
-  }
-  return false;
-}

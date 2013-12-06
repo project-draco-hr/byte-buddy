@@ -1,0 +1,5 @@
+{
+  if (!typeCompatibilityEvaluator.isThrowable(targetMethod.getExceptionTypes(),sourceMethodExceptions)) {
+    throw new NoMatchException();
+  }
+}

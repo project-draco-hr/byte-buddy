@@ -1,0 +1,12 @@
+{
+  Type[] argumentType=methodContext.getType().getArgumentTypes();
+  if (this.argumentType.length != argumentType.length) {
+    return false;
+  }
+  for (int i=0; i < argumentType.length; i++) {
+    if (!this.argumentType[i].getName().equals(argumentType[i].getClassName())) {
+      return false;
+    }
+  }
+  return true;
+}

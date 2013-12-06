@@ -1,0 +1,8 @@
+{
+  for (  Entry entry : entries) {
+    if (entry.getMethodMatcher().matches(classContext,methodContext)) {
+      return entry.getMethodCodeAppenders();
+    }
+  }
+  return Collections.emptyList();
+}

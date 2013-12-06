@@ -1,0 +1,8 @@
+{
+  for (  String exceptionName : methodContext.getExceptions()) {
+    if (exceptionName.equals(Type.getInternalName(exceptionType))) {
+      return true;
+    }
+  }
+  return false;
+}

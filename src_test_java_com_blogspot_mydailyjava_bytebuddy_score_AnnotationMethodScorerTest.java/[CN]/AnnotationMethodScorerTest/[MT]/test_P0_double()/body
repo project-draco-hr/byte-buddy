@@ -1,4 +1,0 @@
-{
-  Method targetMethod=P0_double.class.getDeclaredMethod(METHOD_NAME);
-  methodScorer.evaluate(targetMethod);
-}

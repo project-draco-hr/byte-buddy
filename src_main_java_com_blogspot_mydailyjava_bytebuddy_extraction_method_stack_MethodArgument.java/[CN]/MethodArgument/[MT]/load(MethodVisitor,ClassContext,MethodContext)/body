@@ -1,0 +1,6 @@
+{
+  Type argumentType=methodContext.getType().getArgumentTypes()[argumentIndex];
+  methodVisitor.visitVarInsn(argumentType.getOpcode(Opcodes.ALOAD),argumentIndex);
+  int argumentTypeSize=argumentType.getSize();
+  return new Size(argumentTypeSize,argumentTypeSize);
+}

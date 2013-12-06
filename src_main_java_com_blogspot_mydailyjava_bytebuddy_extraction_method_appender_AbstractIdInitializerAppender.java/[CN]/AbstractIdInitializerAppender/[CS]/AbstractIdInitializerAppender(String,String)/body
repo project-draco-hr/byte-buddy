@@ -1,0 +1,4 @@
+{
+  this.targetClassName=idClassName;
+  this.targetFieldName=idFieldName;
+}

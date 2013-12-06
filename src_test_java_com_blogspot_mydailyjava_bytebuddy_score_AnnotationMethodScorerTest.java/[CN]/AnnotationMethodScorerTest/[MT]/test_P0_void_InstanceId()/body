@@ -1,7 +1,0 @@
-{
-  Method targetMethod=P0_void_InstanceId.class.getDeclaredMethod(METHOD_NAME,UUID.class);
-  MethodScorer.MatchedMethod matchedMethod=methodScorer.evaluate(targetMethod);
-  assertEquals(3d,matchedMethod.getScore(),DELTA);
-  assertEquals(1,matchedMethod.getValues().size());
-  assertEquals(InstanceIdReference.class,matchedMethod.getValues().get(0).getClass());
-}

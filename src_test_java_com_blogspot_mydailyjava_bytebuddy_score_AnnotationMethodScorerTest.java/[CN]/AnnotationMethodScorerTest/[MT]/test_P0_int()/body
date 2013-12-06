@@ -1,4 +1,0 @@
-{
-  Method targetMethod=P0_int.class.getDeclaredMethod(METHOD_NAME);
-  methodScorer.evaluate(targetMethod);
-}

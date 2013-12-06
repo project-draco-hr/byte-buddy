@@ -1,0 +1,3 @@
+{
+  return (methodContext.getAccess() & access) != 0;
+}

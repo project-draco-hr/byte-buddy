@@ -1,0 +1,6 @@
+{
+  if (!typeCompatibilityEvaluator.isAssignable(targetMethodArgumentType,classTypeName)) {
+    throw new NoMatchException();
+  }
+  return true;
+}
