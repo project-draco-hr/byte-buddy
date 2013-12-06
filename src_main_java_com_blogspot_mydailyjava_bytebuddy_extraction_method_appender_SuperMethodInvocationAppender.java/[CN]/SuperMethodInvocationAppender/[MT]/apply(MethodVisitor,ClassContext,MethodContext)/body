@@ -1,5 +1,6 @@
 {
-  int size=MethodUtility.loadThisAndArgumentsOnStack(methodVisitor,methodContext.getDescriptor());
+  methodVisitor.visitIntInsn(Opcodes.ALOAD,0);
+  new MethodDescriptorIterator(methodContext.getDescriptor()).apply(new ArgumentOnOperandStackLoader(methodVisitor));
   methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL,classContext.getSuperName(),methodContext.getName(),methodContext.getDescriptor());
   methodVisitor.visitInsn(methodContext.getType().getReturnType().getOpcode(Opcodes.ARETURN));
   return new Size(methodContext.getType().getArgumentsAndReturnSizes(),0);

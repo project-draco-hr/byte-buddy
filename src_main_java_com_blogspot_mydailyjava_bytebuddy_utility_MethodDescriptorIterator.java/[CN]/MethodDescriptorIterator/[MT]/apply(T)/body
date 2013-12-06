@@ -1,0 +1,56 @@
+{
+  int argumentIndex=0, cursor=0;
+  while (cursor != argumentTypesInternalForm.length()) {
+switch (argumentTypesInternalForm.charAt(cursor)) {
+case OBJECT:
+{
+        int nextCursor=endOfObject(argumentTypesInternalForm,argumentIndex);
+        visitor.visitObject(argumentTypesInternalForm.substring(cursor,nextCursor),argumentIndex++);
+        cursor=nextCursor;
+        break;
+      }
+case ARRAY:
+{
+      int nextCursor=endOfArray(argumentTypesInternalForm,argumentIndex);
+      visitor.visitArray(argumentTypesInternalForm.substring(cursor,nextCursor),argumentIndex++);
+      cursor=nextCursor;
+      break;
+    }
+case DOUBLE:
+  visitor.visitDouble(argumentIndex+=2);
+cursor++;
+break;
+case LONG:
+visitor.visitLong(argumentIndex+=2);
+cursor++;
+break;
+case FLOAT:
+visitor.visitFloat(argumentIndex++);
+cursor++;
+break;
+case INT:
+visitor.visitInt(argumentIndex++);
+cursor++;
+break;
+case BOOLEAN:
+visitor.visitBoolean(argumentIndex++);
+cursor++;
+break;
+case BYTE:
+visitor.visitByte(argumentIndex++);
+cursor++;
+break;
+case CHAR:
+visitor.visitChar(argumentIndex++);
+cursor++;
+break;
+case SHORT:
+visitor.visitShort(argumentIndex++);
+cursor++;
+break;
+default :
+throw new AssertionError();
+}
+}
+return visitor;
+}

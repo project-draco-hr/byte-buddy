@@ -1,0 +1,6 @@
+{
+  methodVisitor.visitInsn(Opcodes.DUP);
+  methodVisitor.visitIntInsn(Opcodes.BIPUSH,currentIndex++);
+  methodVisitor.visitIntInsn(Opcodes.ALOAD,localVariableIndex + 1);
+  methodVisitor.visitInsn(Opcodes.AASTORE);
+}

@@ -1,0 +1,7 @@
+{
+  methodVisitor.visitInsn(Opcodes.DUP);
+  methodVisitor.visitIntInsn(Opcodes.BIPUSH,currentIndex++);
+  methodVisitor.visitIntInsn(Opcodes.ILOAD,localVariableIndex + 1);
+  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,BYTE_WRAPPER_NAME,VALUE_OF_METHOD_NAME,BYTE_WRAPPER_DESCRIPTOR);
+  methodVisitor.visitInsn(Opcodes.AASTORE);
+}

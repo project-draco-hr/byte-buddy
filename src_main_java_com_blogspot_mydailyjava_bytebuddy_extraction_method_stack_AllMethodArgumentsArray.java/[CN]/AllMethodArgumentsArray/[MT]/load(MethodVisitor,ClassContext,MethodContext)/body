@@ -1,0 +1,7 @@
+{
+  int numberOfArguments=methodContext.getType().getArgumentTypes().length;
+  methodVisitor.visitIntInsn(Opcodes.BIPUSH,numberOfArguments);
+  methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,arrayTypeName);
+  new MethodDescriptorIterator(methodContext.getDescriptor()).apply(new AutoBoxingArrayFiller(methodVisitor));
+  return new Size(1,numberOfArguments == 0 ? 2 : 4);
+}
