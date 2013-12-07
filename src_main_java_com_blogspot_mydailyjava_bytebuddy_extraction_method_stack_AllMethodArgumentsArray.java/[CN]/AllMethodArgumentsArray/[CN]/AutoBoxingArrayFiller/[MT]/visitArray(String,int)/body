@@ -3,4 +3,5 @@
   methodVisitor.visitIntInsn(Opcodes.BIPUSH,currentIndex++);
   methodVisitor.visitIntInsn(Opcodes.AALOAD,localVariableIndex + 1);
   methodVisitor.visitInsn(Opcodes.AASTORE);
+  currentSize=currentSize.merge(0,3);
 }

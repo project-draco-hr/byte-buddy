@@ -1,4 +1,5 @@
 {
   this.methodVisitor=methodVisitor;
+  this.currentSize=initialSize;
   this.currentIndex=0;
 }

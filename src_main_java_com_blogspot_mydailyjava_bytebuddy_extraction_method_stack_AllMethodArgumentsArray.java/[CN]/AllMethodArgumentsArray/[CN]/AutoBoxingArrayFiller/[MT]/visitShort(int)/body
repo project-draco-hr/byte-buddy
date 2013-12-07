@@ -4,4 +4,5 @@
   methodVisitor.visitIntInsn(Opcodes.ILOAD,localVariableIndex + 1);
   methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,SHORT_WRAPPER_NAME,VALUE_OF_METHOD_NAME,SHORT_WRAPPER_DESCRIPTOR);
   methodVisitor.visitInsn(Opcodes.AASTORE);
+  currentSize=currentSize.merge(0,3);
 }
