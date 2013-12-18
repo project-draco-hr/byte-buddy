@@ -1,0 +1,4 @@
+{
+  methodVisitor.visitMethodInsn(Opcodes.INVOKEDYNAMIC,wrapperTypeName,unboxingMethodName,unboxingMethodDescriptor);
+  return assignment.load(methodVisitor,classContext,methodContext).consume(operandStackSize - 1,operandStackSize - 1);
+}

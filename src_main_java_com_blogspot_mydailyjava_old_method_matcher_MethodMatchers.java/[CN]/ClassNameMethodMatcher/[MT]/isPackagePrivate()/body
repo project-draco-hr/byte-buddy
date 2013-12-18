@@ -1,3 +1,0 @@
-{
-  return not(isPublic().or(isProtected()).or(isPrivate()));
-}

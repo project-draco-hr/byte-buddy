@@ -1,9 +1,0 @@
-{
-  CallStackArgument.Size size=new CallStackArgument.Size(0,0);
-  for (  CallStackArgument callStackArgument : callStackArguments) {
-    size.merge(callStackArgument.load(methodVisitor,classContext,methodContext));
-  }
-  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,targetClassContext.getName(),targetMethodContext.getName(),targetMethodContext.getDescriptor());
-  methodVisitor.visitInsn(targetMethodContext.getType().getReturnType().getOpcode(Opcodes.ARETURN));
-  return new Size(size.getMaximalSize(),0);
-}

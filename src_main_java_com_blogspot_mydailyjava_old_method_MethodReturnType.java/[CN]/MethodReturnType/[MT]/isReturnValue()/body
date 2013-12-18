@@ -1,3 +1,0 @@
-{
-  return returnTypeName.length() == 1 && returnTypeName.charAt(0) == VOID_TYPE;
-}

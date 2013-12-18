@@ -1,3 +1,0 @@
-{
-  return new AnnotationMethodScorer(classTypeName,methodName,methodDesc,methodException,typeCompatibilityEvaluator);
-}

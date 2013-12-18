@@ -1,3 +1,0 @@
-{
-  this.declaringClass=Type.getInternalName(declaringClass);
-}

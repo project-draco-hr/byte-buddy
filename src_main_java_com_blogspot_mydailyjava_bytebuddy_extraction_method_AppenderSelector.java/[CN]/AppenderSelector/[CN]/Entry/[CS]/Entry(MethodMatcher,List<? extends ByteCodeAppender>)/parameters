@@ -1,2 +1,0 @@
-MethodMatcher methodMatcher
-List<? extends ByteCodeAppender> methodCodeAppenders

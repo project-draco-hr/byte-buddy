@@ -1,7 +1,0 @@
-{
-  List<String> names=new ArrayList<String>();
-  for (  String typeName : new MethodArgumentTypes(desc)) {
-    names.add(typeName);
-  }
-  return names;
-}

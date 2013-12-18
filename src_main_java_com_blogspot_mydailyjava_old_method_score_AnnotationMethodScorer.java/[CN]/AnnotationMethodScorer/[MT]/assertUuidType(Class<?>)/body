@@ -1,6 +1,0 @@
-{
-  if (!(type == UUID.class)) {
-    throw new IllegalStateException();
-  }
-  return true;
-}

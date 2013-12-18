@@ -1,3 +1,0 @@
-{
-  return new MethodNameMethodMatcher(suffix,MatchMode.ENDS_WITH_IGNORE_CASE);
-}

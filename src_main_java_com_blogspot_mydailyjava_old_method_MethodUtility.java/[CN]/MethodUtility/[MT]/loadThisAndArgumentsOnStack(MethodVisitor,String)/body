@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitVarInsn(Opcodes.ALOAD,0);
-  return loadArgumentsOnStack(methodVisitor,desc) + 1;
-}

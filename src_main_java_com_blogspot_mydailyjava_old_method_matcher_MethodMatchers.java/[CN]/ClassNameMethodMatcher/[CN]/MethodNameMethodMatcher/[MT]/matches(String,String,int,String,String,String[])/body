@@ -1,3 +1,0 @@
-{
-  return matchMode.matches(this.methodName,methodName);
-}

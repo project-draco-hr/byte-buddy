@@ -1,4 +1,0 @@
-{
-  this.superClassName=name;
-  cv.visit(version,access,makeSubclassName(name),signature,name,interfaces);
-}

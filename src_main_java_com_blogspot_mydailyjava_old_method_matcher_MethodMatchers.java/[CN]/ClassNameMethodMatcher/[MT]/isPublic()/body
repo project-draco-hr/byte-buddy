@@ -1,3 +1,0 @@
-{
-  return new AccessMethodMatcher(Opcodes.ACC_PUBLIC);
-}

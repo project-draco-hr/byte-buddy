@@ -1,7 +1,0 @@
-{
-  StringBuilder stringBuilder=new StringBuilder();
-  for (  Class<?> t : type) {
-    stringBuilder.append(Type.getDescriptor(t));
-  }
-  argumentTypeNames=stringBuilder.toString();
-}

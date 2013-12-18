@@ -1,4 +1,0 @@
-{
-  classContext=new ClassContext(version,access,name,signature,superName,interfaces);
-  super.visit(version,access,name,signature,superName,interfaces);
-}

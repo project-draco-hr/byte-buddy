@@ -1,0 +1,5 @@
+{
+  this.conversionInstruction=conversionInstruction;
+  this.finalOperandStackSize=finalOperandStackSize;
+  this.maximalOperandStackSize=maximalOperandStackSize;
+}

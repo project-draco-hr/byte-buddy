@@ -1,0 +1,8 @@
+{
+  if (!isPrimitive(superTypeName) && findClass(superTypeName).isAssignableFrom(subType)) {
+    return LegalTrivialAssignment.INSTANCE;
+  }
+ else {
+    return IllegalAssignment.INSTANCE;
+  }
+}

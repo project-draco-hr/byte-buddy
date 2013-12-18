@@ -1,0 +1,3 @@
+int conversionInstruction
+int finalOperandStackSize
+int maximalOperandStackSize

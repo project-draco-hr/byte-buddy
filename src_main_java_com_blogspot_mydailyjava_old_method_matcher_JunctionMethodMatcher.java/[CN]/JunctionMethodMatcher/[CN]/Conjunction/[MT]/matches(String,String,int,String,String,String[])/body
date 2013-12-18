@@ -1,3 +1,0 @@
-{
-  return left.matches(classTypeName,methodName,methodAccess,methodDesc,methodSignature,methodException) && right.matches(classTypeName,methodName,methodAccess,methodDesc,methodSignature,methodException);
-}

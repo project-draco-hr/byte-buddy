@@ -1,3 +1,0 @@
-{
-  return (methodAccess & access) != 0;
-}

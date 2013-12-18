@@ -1,5 +1,0 @@
-{
-  if (!(tryLoadIndexedArgument(targetMethodArgumentType,targetMethodArgumentAnnotation,targetMethodCallStack) || tryLoadThis(targetMethodArgumentType,targetMethodArgumentAnnotation,targetMethodCallStack) || tryLoadAllArguments(targetMethodArgumentType,targetMethodArgumentAnnotation,targetMethodCallStack)|| tryLoadClassId(targetMethodArgumentType,targetMethodArgumentAnnotation,targetMethodCallStack)|| tryLoadInstanceId(targetMethodArgumentType,targetMethodArgumentAnnotation,targetMethodCallStack)|| tryLoadPlainArgument(targetMethodArgumentType,sourceMethodArgumentIsBound,targetMethodCallStack))) {
-    throw new NoMatchException();
-  }
-}

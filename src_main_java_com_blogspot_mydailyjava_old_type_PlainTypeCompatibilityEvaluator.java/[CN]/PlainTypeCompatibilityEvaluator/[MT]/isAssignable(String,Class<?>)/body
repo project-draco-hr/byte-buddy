@@ -1,4 +1,0 @@
-{
-  String subTypeDescriptor=Type.getDescriptor(subType);
-  return (OBJECT_NAME_INTERNAL.equals(superTypeName) && isNotPrimitive(subTypeDescriptor,subType)) || superTypeName.equals(Type.getDescriptor(subType));
-}

@@ -1,3 +1,0 @@
-{
-  cv.visitField(SYNTHETIC_PRIVATE_STATIC_FINAL,FIELD_NAME,FIXED_VALUE_TYPE_NAME,null,null).visitEnd();
-}

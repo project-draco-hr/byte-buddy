@@ -1,0 +1,22 @@
+{
+switch (typeName.charAt(0)) {
+case BOOLEAN_TYPE:
+    return BOOLEAN;
+case BYTE_TYPE:
+  return BYTE;
+case SHORT_TYPE:
+return SHORT;
+case CHARACTER_TYPE:
+return CHARACTER;
+case INTEGER_TYPE:
+return INTEGER;
+case LONG_TYPE:
+return LONG;
+case FLOAT_TYPE:
+return FLOAT;
+case DOUBLE_TYPE:
+return DOUBLE;
+default :
+throw new IllegalStateException("Not a primitive type: " + typeName);
+}
+}

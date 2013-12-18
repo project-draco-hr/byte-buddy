@@ -1,8 +1,0 @@
-{
-  exceptionNames=new HashSet<String>();
-  exceptionNames.add(Type.getInternalName(RuntimeException.class));
-  do {
-    exceptionNames.add(Type.getInternalName(exceptionType));
-  }
- while ((exceptionType=exceptionType.getSuperclass()) != Object.class);
-}

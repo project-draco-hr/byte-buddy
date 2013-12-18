@@ -1,3 +1,0 @@
-{
-  return String.format("%s$bytebuddy$%d",name,UNIQUE_NAME_GENERATOR.getAndIncrement());
-}

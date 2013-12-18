@@ -1,6 +1,0 @@
-{
-  methodVisitor.visitLdcInsn(UUID.randomUUID().toString());
-  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,UUID_TYPE_NAME,UUID_METHOD_NAME,UUID_METHOD_DESCRIPTION);
-  methodVisitor.visitFieldInsn(Opcodes.PUTSTATIC,getTargetClassName(),getTargetFieldName(),UUID_TYPE_NAME_INTERNAL_FORM);
-  return new Size(1,0);
-}

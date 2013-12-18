@@ -1,3 +1,0 @@
-{
-  returnTypeName=Type.getDescriptor(type);
-}

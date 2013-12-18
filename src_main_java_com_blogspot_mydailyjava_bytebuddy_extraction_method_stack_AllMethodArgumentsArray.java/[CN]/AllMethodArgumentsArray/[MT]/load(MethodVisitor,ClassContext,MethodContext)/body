@@ -1,5 +1,0 @@
-{
-  methodVisitor.visitIntInsn(Opcodes.BIPUSH,methodContext.getType().getArgumentTypes().length);
-  methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,arrayTypeName);
-  return new MethodDescriptorIterator(methodContext.getDescriptor()).apply(new AutoBoxingArrayFiller(methodVisitor,new Size(1,1))).getCurrentSize();
-}

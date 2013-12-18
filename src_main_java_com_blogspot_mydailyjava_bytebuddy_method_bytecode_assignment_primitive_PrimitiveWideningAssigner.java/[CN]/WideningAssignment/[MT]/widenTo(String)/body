@@ -1,0 +1,22 @@
+{
+switch (typeName.charAt(0)) {
+case BOOLEAN_TYPE:
+    return toBooleanAssignment;
+case BYTE_TYPE:
+  return toByteAssignment;
+case SHORT_TYPE:
+return toShortAssignment;
+case CHARACTER_TYPE:
+return toCharacterAssignment;
+case INTEGER_TYPE:
+return toIntegerAssignment;
+case LONG_TYPE:
+return toLongAssignment;
+case FLOAT_TYPE:
+return toFloatAssignment;
+case DOUBLE_TYPE:
+return toDoubleAssignment;
+default :
+throw new IllegalStateException("Not a primitive type: " + typeName);
+}
+}

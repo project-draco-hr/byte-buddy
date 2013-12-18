@@ -1,5 +1,0 @@
-{
-  classTypeName=Type.getInternalName(method.getDeclaringClass());
-  methodName=method.getName();
-  methodDesc=Type.getMethodDescriptor(method);
-}

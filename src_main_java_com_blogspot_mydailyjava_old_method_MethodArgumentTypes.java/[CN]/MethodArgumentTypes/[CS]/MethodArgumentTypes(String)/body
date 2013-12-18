@@ -1,3 +1,0 @@
-{
-  this.desc=desc.substring(1,desc.lastIndexOf(ARGUMENTS_DELIMITER));
-}

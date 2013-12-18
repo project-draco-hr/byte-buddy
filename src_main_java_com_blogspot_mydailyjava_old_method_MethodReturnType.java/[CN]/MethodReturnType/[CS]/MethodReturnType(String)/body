@@ -1,3 +1,0 @@
-{
-  this.returnTypeName=desc.substring(desc.lastIndexOf(ARGUMENTS_DELIMITER) + 1);
-}

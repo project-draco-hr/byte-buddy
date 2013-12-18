@@ -1,0 +1,15 @@
+{
+  boolean superTypeIsPrimitive=isPrimitive(superTypeName), subTypeIsPrimitive=subType.isPrimitive();
+  if (superTypeIsPrimitive && subTypeIsPrimitive) {
+    return PrimitiveWideningAssigner.of(superTypeName).widenTo(subType);
+  }
+ else   if (superTypeIsPrimitive) {
+    return PrimitiveTypeBoxer.of(superTypeName).boxingAssignmentBefore(referenceTypeDelegate,subType);
+  }
+ else   if (subTypeIsPrimitive) {
+    return PrimitiveTypeBoxer.of(superTypeName).unboxingAssignmentTo(subType);
+  }
+ else {
+    return referenceTypeDelegate.assign(superTypeName,subType);
+  }
+}

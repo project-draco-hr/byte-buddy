@@ -1,3 +1,0 @@
-{
-  methodVisitor.visitVarInsn(Opcodes.ALOAD,localVariableIndex + 1);
-}

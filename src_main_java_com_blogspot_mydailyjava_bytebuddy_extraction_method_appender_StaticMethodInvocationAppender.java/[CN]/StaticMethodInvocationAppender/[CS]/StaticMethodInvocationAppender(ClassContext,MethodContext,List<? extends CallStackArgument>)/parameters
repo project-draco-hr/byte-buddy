@@ -1,3 +1,0 @@
-ClassContext targetClassContext
-MethodContext targetMethodContext
-List<? extends CallStackArgument> callStackArguments

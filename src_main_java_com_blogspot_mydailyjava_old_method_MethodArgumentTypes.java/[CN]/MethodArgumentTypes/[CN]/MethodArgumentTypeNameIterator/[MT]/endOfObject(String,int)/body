@@ -1,3 +1,0 @@
-{
-  return value.indexOf(OBJECT_TYPE_DELIMITER,index + 1) + 1;
-}

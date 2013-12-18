@@ -1,5 +1,0 @@
-String classTypeName
-String sourceMethodName
-String sourceMethodDesc
-String[] sourceMethodExceptions
-TypeCompatibilityEvaluator typeCompatibilityEvaluator

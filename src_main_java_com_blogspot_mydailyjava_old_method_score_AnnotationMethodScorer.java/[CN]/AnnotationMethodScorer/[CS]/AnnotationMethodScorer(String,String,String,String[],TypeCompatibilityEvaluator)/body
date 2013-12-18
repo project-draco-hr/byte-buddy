@@ -1,8 +1,0 @@
-{
-  sourceMethodArgumentTypeNames=MethodArgumentTypes.listNAmes(sourceMethodDesc);
-  sourceMethodReturnType=new MethodReturnType(sourceMethodDesc);
-  this.classTypeName=classTypeName;
-  this.sourceMethodName=sourceMethodName;
-  this.sourceMethodExceptions=sourceMethodExceptions;
-  this.typeCompatibilityEvaluator=typeCompatibilityEvaluator;
-}

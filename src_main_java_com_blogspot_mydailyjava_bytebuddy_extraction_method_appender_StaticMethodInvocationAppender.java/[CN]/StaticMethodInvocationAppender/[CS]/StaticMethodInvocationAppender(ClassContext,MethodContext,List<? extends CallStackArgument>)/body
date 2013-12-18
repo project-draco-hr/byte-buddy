@@ -1,5 +1,0 @@
-{
-  this.targetClassContext=targetClassContext;
-  this.targetMethodContext=targetMethodContext;
-  this.callStackArguments=callStackArguments;
-}
