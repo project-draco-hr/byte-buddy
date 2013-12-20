@@ -1,4 +1,4 @@
 {
   this.variableIndex=variableIndex;
-  this.assignment=assignment;
+  this.chainedAssignment=chainedAssignment;
 }

@@ -1,6 +1,6 @@
 {
-  if (!isPrimitive(subTypeName) && superType.isAssignableFrom(findClass(subTypeName))) {
-    return LegalTrivialAssignment.INSTANCE;
+  if (!superType.isPrimitive() && !isPrimitive(subTypeName) && superType.isAssignableFrom(findClass(subTypeName))) {
+    return new LegalTrivialAssignment(1);
   }
  else {
     return IllegalAssignment.INSTANCE;

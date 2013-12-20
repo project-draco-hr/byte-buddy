@@ -1,4 +1,4 @@
 {
   methodVisitor.visitVarInsn(loadOpcode,variableIndex);
-  return assignment.apply(methodVisitor).withMaximum(operandStackSize);
+  return chainedAssignment.apply(methodVisitor).withMaximum(operandStackSize);
 }

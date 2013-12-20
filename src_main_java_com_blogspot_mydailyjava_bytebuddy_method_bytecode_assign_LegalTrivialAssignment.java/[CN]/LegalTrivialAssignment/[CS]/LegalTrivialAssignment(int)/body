@@ -1,0 +1,3 @@
+{
+  this.size=new Size(size,size);
+}
