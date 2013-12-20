@@ -1,0 +1,4 @@
+{
+  this.classContext=classContext;
+  this.methodContext=methodContext;
+}

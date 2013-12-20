@@ -1,3 +1,3 @@
 {
-  return methodContext.getType().getReturnType().getClassName().equals(returnType.getName());
+  return methodContext.getReturnType().equals(returnType);
 }

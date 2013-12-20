@@ -1,0 +1,8 @@
+{
+  Class<?>[] argumentType=target.getParameterTypes();
+  Annotation[][] argumentAnnotations=target.getParameterAnnotations();
+  for (int i=0; i < argumentType.length; i++) {
+    tryBind(argumentType[i],toMap(argumentAnnotations[i]));
+  }
+  return null;
+}

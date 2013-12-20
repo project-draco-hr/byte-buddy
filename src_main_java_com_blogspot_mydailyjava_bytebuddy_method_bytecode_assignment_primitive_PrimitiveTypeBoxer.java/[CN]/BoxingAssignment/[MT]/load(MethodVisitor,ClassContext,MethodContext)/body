@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,wrapperTypeName,boxingMethodName,boxingMethodDescriptor);
-  return assignment.load(methodVisitor,classContext,methodContext).consume(1,1);
-}

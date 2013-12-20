@@ -1,0 +1,22 @@
+{
+switch (typeName.charAt(0)) {
+case TypeSymbol.BOOLEAN:
+    return BOOLEAN;
+case TypeSymbol.BYTE:
+  return BYTE;
+case TypeSymbol.SHORT:
+return SHORT;
+case TypeSymbol.CHAR:
+return CHARACTER;
+case TypeSymbol.INT:
+return INTEGER;
+case TypeSymbol.LONG:
+return LONG;
+case TypeSymbol.FLOAT:
+return FLOAT;
+case TypeSymbol.DOUBLE:
+return DOUBLE;
+default :
+throw new IllegalStateException("Not a primitive type: " + typeName);
+}
+}

@@ -1,8 +1,8 @@
 {
 switch (value.charAt(index + 1)) {
-case OBJECT:
+case TypeSymbol.REFERENCE:
     return endOfObject(value,index + 1);
-case ARRAY:
+case TypeSymbol.ARRAY:
   return endOfArray(value,index + 1);
 default :
 return index + 1;

@@ -2,7 +2,8 @@
   this.access=access;
   this.name=name;
   this.descriptor=desc;
-  this.type=Type.getMethodType(desc);
-  this.signature=signature;
-  this.exceptions=exceptions == null ? new String[0] : exceptions;
+  this.argumentType=asInternalNameList(Type.getArgumentTypes(descriptor));
+  this.returnType=Type.getReturnType(descriptor).getInternalName();
+  this.signature=signature == null ? "" : signature;
+  this.exceptions=exception == null ? Collections.<String>emptyList() : Arrays.asList(exception);
 }
