@@ -1,3 +1,0 @@
-{
-  return new ExplicitlyTypedUnboxingAssignment(PrimitiveWideningDelegate.forPrimitive(primitiveType).widenTo(superTypeName));
-}
