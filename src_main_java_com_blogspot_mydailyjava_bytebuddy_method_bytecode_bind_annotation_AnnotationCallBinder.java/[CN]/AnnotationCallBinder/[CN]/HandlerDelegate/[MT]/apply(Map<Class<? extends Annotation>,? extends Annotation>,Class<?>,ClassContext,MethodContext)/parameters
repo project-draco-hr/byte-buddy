@@ -1,0 +1,4 @@
+Map<Class<? extends Annotation>,? extends Annotation> annotations
+Class<?> type
+ClassContext classContext
+MethodContext methodContext

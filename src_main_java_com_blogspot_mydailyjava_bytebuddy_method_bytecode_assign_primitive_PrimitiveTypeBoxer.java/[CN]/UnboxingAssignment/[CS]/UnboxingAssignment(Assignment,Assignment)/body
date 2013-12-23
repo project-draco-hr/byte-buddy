@@ -1,4 +1,0 @@
-{
-  this.referenceAssignment=referenceAssignment;
-  this.wideningAssignment=wideningAssignment;
-}

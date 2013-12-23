@@ -1,4 +1,4 @@
 {
   methodArguments.add(String.valueOf(MethodDescriptor.BYTE_SYMBOL));
-  aggregateStackSize.add(currentSize++);
+  aggregateStackSize.add(localVariableIndex);
 }

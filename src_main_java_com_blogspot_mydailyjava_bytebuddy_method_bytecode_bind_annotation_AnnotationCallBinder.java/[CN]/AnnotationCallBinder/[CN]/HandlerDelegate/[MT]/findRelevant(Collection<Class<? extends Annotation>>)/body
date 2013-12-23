@@ -1,0 +1,5 @@
+{
+  Set<Class<? extends Annotation>> relevantHandlers=new HashSet<Class<? extends Annotation>>(handlerMap.keySet());
+  relevantHandlers.retainAll(annotations);
+  return relevantHandlers;
+}

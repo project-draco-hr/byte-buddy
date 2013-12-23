@@ -1,0 +1,3 @@
+String superTypeName
+Assigner assigner
+boolean considerRuntimeType

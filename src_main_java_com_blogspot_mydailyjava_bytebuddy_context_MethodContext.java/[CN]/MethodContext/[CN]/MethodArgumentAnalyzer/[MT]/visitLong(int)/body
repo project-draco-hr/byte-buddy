@@ -1,5 +1,4 @@
 {
   methodArguments.add(String.valueOf(MethodDescriptor.LONG_SYMBOL));
-  aggregateStackSize.add(currentSize);
-  currentSize+=2;
+  aggregateStackSize.add(localVariableIndex);
 }

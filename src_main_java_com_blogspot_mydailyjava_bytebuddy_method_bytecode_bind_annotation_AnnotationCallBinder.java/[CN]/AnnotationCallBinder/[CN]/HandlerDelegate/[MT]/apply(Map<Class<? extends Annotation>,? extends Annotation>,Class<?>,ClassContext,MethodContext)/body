@@ -1,0 +1,4 @@
+{
+  Annotation annotation=pick(findRelevant(annotations.keySet()),annotations);
+  return applyHandler(annotation,handlerMap.get(annotation.annotationType()),type,classContext,methodContext);
+}

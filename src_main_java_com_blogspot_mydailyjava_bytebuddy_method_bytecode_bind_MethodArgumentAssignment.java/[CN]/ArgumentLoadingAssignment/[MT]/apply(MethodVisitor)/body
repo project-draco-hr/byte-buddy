@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitVarInsn(loadOpcode,variableIndex);
-  return chainedAssignment.apply(methodVisitor).aggregateLeftFirst(operandStackSize);
-}
