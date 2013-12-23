@@ -1,0 +1,4 @@
+{
+  methodArguments.add(String.valueOf(MethodDescriptor.CHAR_SYMBOL));
+  aggregateStackSize.add(currentSize++);
+}

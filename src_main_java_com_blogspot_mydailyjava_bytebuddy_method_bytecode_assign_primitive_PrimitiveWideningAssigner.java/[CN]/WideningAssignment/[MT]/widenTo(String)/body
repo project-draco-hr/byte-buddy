@@ -1,22 +1,22 @@
 {
 switch (typeName.charAt(0)) {
-case TypeSymbol.BOOLEAN:
+case MethodDescriptor.BOOLEAN_SYMBOL:
     return toBooleanAssignment;
-case TypeSymbol.BYTE:
+case MethodDescriptor.BYTE_SYMBOL:
   return toByteAssignment;
-case TypeSymbol.SHORT:
+case MethodDescriptor.SHORT_SYMBOL:
 return toShortAssignment;
-case TypeSymbol.CHAR:
+case MethodDescriptor.CHAR_SYMBOL:
 return toCharacterAssignment;
-case TypeSymbol.INT:
+case MethodDescriptor.INT_SYMBOL:
 return toIntegerAssignment;
-case TypeSymbol.LONG:
+case MethodDescriptor.LONG_SYMBOL:
 return toLongAssignment;
-case TypeSymbol.FLOAT:
+case MethodDescriptor.FLOAT_SYMBOL:
 return toFloatAssignment;
-case TypeSymbol.DOUBLE:
+case MethodDescriptor.DOUBLE_SYMBOL:
 return toDoubleAssignment;
 default :
-throw new IllegalStateException("Not a primitive type: " + typeName);
+throw new IllegalArgumentException("Not a primitive type: " + typeName);
 }
 }

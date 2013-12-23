@@ -24,6 +24,6 @@
     return DOUBLE;
   }
  else {
-    throw new IllegalStateException("Not a primitive type: " + type);
+    throw new IllegalArgumentException("Not a primitive type: " + type);
   }
 }

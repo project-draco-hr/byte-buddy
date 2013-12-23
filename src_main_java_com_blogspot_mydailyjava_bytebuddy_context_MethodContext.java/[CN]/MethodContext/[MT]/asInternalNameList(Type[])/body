@@ -1,7 +1,0 @@
-{
-  List<String> internalNames=new ArrayList<String>(type.length);
-  for (  Type aType : type) {
-    internalNames.add(aType.getInternalName());
-  }
-  return internalNames;
-}

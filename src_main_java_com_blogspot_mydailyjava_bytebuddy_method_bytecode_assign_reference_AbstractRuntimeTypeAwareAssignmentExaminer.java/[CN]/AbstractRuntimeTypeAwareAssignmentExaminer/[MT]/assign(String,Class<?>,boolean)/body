@@ -1,0 +1,11 @@
+{
+  if (isAssignable(superTypeName,subType)) {
+    return LegalTrivialAssignment.INSTANCE;
+  }
+ else   if (considerRuntimeType && isAssignable(subType,superTypeName)) {
+    return new DownCastAssignment(subType);
+  }
+ else {
+    return IllegalAssignment.INSTANCE;
+  }
+}

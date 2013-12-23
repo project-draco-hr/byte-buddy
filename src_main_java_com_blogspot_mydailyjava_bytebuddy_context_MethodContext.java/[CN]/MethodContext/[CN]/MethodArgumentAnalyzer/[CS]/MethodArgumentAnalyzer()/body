@@ -1,0 +1,4 @@
+{
+  this.methodArguments=new ArrayList<String>();
+  this.aggregateStackSize=new ArrayList<Integer>();
+}

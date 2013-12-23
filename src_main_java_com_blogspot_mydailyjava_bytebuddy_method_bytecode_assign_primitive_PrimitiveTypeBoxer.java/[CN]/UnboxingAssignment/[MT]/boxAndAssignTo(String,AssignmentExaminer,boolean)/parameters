@@ -1,0 +1,3 @@
+String subTypeName
+AssignmentExaminer assignmentExaminer
+boolean considerRuntimeType

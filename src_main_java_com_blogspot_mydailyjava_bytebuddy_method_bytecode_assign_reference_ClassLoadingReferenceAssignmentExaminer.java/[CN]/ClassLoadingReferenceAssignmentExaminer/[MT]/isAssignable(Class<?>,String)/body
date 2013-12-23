@@ -1,0 +1,3 @@
+{
+  return !superType.isPrimitive() && !isPrimitive(subTypeName) && superType.isAssignableFrom(findClass(subTypeName));
+}

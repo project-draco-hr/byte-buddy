@@ -1,0 +1,5 @@
+Class<?> assignmentTarget
+T argument
+ClassContext classContext
+MethodContext methodContext
+boolean considerRuntimeType

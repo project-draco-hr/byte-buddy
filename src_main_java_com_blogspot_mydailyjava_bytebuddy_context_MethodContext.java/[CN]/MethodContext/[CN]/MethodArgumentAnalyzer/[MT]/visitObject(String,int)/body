@@ -1,0 +1,4 @@
+{
+  methodArguments.add(descriptor);
+  aggregateStackSize.add(currentSize++);
+}

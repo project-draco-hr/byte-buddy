@@ -1,0 +1,3 @@
+{
+  return new UnboxingAssignment(null,PrimitiveWideningAssigner.of(primitiveType).widenTo(superType));
+}

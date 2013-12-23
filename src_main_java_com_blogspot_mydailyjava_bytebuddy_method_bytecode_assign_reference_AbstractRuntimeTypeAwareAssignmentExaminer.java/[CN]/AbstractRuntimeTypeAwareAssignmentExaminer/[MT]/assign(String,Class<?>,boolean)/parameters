@@ -1,0 +1,3 @@
+String superTypeName
+Class<?> subType
+boolean considerRuntimeType

@@ -1,0 +1,3 @@
+{
+  return typeName.length() == 1 && typeName.charAt(0) == MethodDescriptor.VOID_SYMBOL;
+}

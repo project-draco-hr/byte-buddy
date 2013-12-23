@@ -1,0 +1,15 @@
+{
+  boolean superTypeIsVoid=superType == void.class, subTypeIsVoid=isVoid(subTypeName);
+  if (superTypeIsVoid && subTypeIsVoid) {
+    return LegalTrivialAssignment.INSTANCE;
+  }
+ else   if (superTypeIsVoid) {
+    return IllegalAssignment.INSTANCE;
+  }
+ else   if (subTypeIsVoid) {
+    return ValueRemovingAssignment.of(superType);
+  }
+ else {
+    return assignmentExaminer.assign(superType,subTypeName,considerRuntimeType);
+  }
+}

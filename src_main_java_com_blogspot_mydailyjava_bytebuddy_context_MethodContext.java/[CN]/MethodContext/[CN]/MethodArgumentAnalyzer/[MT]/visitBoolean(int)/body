@@ -1,0 +1,4 @@
+{
+  methodArguments.add(String.valueOf(MethodDescriptor.BOOLEAN_SYMBOL));
+  aggregateStackSize.add(currentSize++);
+}

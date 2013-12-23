@@ -1,0 +1,18 @@
+{
+switch (typeName.charAt(0)) {
+case MethodDescriptor.LONG_SYMBOL:
+case MethodDescriptor.DOUBLE_SYMBOL:
+    return POP_TWO_VALUES;
+case MethodDescriptor.OBJECT_REFERENCE_SYMBOL:
+case MethodDescriptor.ARRAY_REFERENCE_SYMBOL:
+case MethodDescriptor.INT_SYMBOL:
+case MethodDescriptor.BOOLEAN_SYMBOL:
+case MethodDescriptor.BYTE_SYMBOL:
+case MethodDescriptor.CHAR_SYMBOL:
+case MethodDescriptor.FLOAT_SYMBOL:
+case MethodDescriptor.SHORT_SYMBOL:
+  return POP_ONE_VALUE;
+default :
+throw new IllegalArgumentException("Cannot pop type from stack: " + typeName);
+}
+}

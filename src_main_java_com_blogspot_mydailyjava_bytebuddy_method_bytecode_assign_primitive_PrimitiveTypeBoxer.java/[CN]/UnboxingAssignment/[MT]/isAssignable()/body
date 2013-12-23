@@ -1,3 +1,3 @@
 {
-  return assignment.isAssignable();
+  return wideningAssignment.isAssignable() && referenceAssignment.isAssignable();
 }

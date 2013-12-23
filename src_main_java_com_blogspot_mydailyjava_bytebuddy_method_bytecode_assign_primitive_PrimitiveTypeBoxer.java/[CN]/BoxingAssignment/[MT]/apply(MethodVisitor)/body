@@ -1,4 +1,4 @@
 {
   methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,wrapperTypeName,boxingMethodName,boxingMethodDescriptor);
-  return assignment.apply(methodVisitor).withMaximum(REFERENCE_SIZE);
+  return assignment.apply(methodVisitor).aggregateLeftFirst(operandStackSize - 1);
 }

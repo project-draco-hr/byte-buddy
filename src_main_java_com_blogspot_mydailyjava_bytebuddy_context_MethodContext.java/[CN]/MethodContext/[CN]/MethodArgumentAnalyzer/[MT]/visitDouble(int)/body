@@ -1,0 +1,5 @@
+{
+  methodArguments.add(String.valueOf(MethodDescriptor.DOUBLE_SYMBOL));
+  aggregateStackSize.add(currentSize);
+  currentSize+=2;
+}
