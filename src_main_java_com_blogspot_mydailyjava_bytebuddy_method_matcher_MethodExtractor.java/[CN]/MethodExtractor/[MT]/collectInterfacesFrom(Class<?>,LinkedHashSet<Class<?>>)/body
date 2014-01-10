@@ -1,0 +1,6 @@
+{
+  for (  Class<?> anInterface : type.getInterfaces()) {
+    interfaces.add(anInterface);
+    collectInterfacesFrom(anInterface,interfaces);
+  }
+}

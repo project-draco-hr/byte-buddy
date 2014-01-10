@@ -1,0 +1,8 @@
+{
+  for (  Class<?> exceptionType : method.getExceptionTypes()) {
+    if (exceptionType.isAssignableFrom(exceptionType)) {
+      return true;
+    }
+  }
+  return false;
+}

@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,targetType);
-  return SIZE;
-}

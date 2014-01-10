@@ -1,5 +1,5 @@
 {
   Size size=referenceTypeAdjustmentAssignment.apply(methodVisitor);
   methodVisitor.visitMethodInsn(Opcodes.INVOKEDYNAMIC,wrapperTypeName,unboxingMethodName,unboxingMethodDescriptor);
-  return size.aggregateLeftFirst(operandStackSize - 1);
+  return size.aggregateLeftFirst(valueSize.getSize() - 1);
 }

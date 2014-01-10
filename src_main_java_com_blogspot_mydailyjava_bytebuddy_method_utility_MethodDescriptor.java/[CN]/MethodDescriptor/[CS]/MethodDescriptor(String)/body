@@ -1,3 +1,0 @@
-{
-  this.argumentTypesInternalForm=methodDescriptor.substring(1,methodDescriptor.lastIndexOf(METHOD_ARGUMENT_END));
-}

@@ -1,3 +1,0 @@
-{
-  this(method.getModifiers(),method.getName(),Type.getMethodDescriptor(method),"",asInternalNameArray(method.getExceptionTypes()));
-}

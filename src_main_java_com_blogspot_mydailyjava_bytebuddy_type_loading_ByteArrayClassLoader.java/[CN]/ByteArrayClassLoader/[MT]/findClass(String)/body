@@ -1,0 +1,7 @@
+{
+  byte[] javaType=typeDefinitions.get(name);
+  if (javaType != null) {
+    return defineClass(name,javaType,0,javaType.length);
+  }
+  return super.findClass(name);
+}

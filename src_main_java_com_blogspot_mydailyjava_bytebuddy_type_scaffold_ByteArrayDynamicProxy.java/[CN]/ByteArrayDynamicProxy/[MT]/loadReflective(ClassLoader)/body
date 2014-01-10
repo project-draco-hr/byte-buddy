@@ -1,0 +1,3 @@
+{
+  return new ClassLoaderByteArrayInjector(classLoader).load(typeName,javaType);
+}

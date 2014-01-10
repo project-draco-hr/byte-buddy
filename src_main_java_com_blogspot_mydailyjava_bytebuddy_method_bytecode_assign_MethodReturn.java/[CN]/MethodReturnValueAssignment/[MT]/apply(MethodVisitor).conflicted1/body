@@ -1,0 +1,3 @@
+{
+  return new MethodReturnValueAssignment(LegalTrivialAssignment.INSTANCE).apply(methodVisitor);
+}

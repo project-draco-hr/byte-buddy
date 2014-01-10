@@ -1,0 +1,3 @@
+{
+  return visibility.getMask() + manifestation.getMask() + finalState.getMask()+ syntheticState.getMask()+ Opcodes.ACC_SUPER;
+}

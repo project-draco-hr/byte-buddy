@@ -1,7 +1,0 @@
-{
-  String[] internalNames=new String[type.length];
-  for (int i=0; i < type.length; i++) {
-    internalNames[i]=Type.getInternalName(type[i]);
-  }
-  return internalNames;
-}

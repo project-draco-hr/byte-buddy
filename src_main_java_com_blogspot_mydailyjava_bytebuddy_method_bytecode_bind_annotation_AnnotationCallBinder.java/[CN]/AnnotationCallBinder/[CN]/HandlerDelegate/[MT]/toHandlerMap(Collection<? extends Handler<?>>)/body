@@ -1,7 +1,0 @@
-{
-  Map<Class<Annotation>,Handler<Annotation>> handlerMap=new HashMap<Class<Annotation>,Handler<Annotation>>(handlers.size());
-  for (  Handler<? extends Annotation> handler : handlers) {
-    handlerMap.put((Class<Annotation>)handler.getHandledType(),(Handler<Annotation>)handler);
-  }
-  return handlerMap;
-}

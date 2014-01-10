@@ -1,0 +1,5 @@
+MethodVisitor methodVisitor
+Class<?>[] parameterTypes
+Class<?> returnType
+String methodName
+String methodDescriptor

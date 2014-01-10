@@ -1,0 +1,4 @@
+{
+  super(parent);
+  this.typeDefinitions=Collections.singletonMap(typeName,javaType);
+}

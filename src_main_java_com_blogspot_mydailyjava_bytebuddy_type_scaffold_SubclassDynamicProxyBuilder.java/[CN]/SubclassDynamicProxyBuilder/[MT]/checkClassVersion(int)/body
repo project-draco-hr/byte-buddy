@@ -1,0 +1,6 @@
+{
+  if (!(classVersion > 0)) {
+    throw new IllegalArgumentException("Class version " + classVersion + " is not valid");
+  }
+  return classVersion;
+}

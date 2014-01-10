@@ -1,2 +1,0 @@
-Set<Class<? extends Annotation>> relevantAnnotations
-Map<Class<? extends Annotation>,? extends Annotation> annotationMap

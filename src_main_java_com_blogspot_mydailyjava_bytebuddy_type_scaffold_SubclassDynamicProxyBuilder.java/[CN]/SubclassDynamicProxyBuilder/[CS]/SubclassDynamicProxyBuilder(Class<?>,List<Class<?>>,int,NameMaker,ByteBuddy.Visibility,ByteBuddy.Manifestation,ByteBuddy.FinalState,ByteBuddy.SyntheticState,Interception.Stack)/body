@@ -1,0 +1,11 @@
+{
+  this.superClass=type;
+  this.interfaces=interfaces;
+  this.classVersion=classVersion;
+  this.nameMaker=nameMaker;
+  this.visibility=visibility;
+  this.manifestation=manifestation;
+  this.finalState=finalState;
+  this.syntheticState=syntheticState;
+  this.interceptions=interceptions;
+}

@@ -1,5 +1,0 @@
-T annotation
-Handler<T> handler
-Class<?> type
-ClassContext classContext
-MethodContext methodContext

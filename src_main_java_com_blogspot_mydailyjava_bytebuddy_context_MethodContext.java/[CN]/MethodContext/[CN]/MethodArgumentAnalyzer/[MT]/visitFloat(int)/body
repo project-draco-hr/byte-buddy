@@ -1,4 +1,0 @@
-{
-  methodArguments.add(String.valueOf(MethodDescriptor.FLOAT_SYMBOL));
-  aggregateStackSize.add(localVariableIndex);
-}

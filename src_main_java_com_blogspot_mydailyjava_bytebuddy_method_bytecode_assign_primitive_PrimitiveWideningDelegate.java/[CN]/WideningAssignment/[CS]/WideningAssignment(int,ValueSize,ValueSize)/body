@@ -1,0 +1,5 @@
+{
+  this.conversionInstruction=conversionInstruction;
+  this.finalSize=finalSize;
+  this.maximalSize=maximalSize;
+}

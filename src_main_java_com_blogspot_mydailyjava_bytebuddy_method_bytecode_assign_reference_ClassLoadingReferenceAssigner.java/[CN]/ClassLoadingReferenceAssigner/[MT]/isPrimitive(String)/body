@@ -1,3 +1,0 @@
-{
-  return typeName.length() == PRIMITIVE_TYPE_NAME_SIZE;
-}

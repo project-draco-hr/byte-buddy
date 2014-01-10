@@ -1,0 +1,14 @@
+{
+  if (superType.isPrimitive() && subType.isPrimitive()) {
+    return PrimitiveWideningDelegate.forPrimitive(superType).widenTo(subType);
+  }
+ else   if (superType.isPrimitive()) {
+    return PrimitiveUnboxingDelegate.forPrimitive(superType).boxAndAssignTo(subType,chainedDelegate,considerRuntimeType);
+  }
+ else   if (subType.isPrimitive()) {
+    return PrimitiveUnboxingDelegate.forNonPrimitive(superType).unboxAndAssignTo(subType,chainedDelegate,considerRuntimeType);
+  }
+ else {
+    return chainedDelegate.assign(superType,subType,considerRuntimeType);
+  }
+}

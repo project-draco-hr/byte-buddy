@@ -1,0 +1,14 @@
+{
+  if (superType == void.class && subType == void.class) {
+    return LegalTrivialAssignment.INSTANCE;
+  }
+ else   if (superType == void.class) {
+    return returnDefaultValue ? DefaultValue.defaulting(subType) : IllegalAssignment.INSTANCE;
+  }
+ else   if (subType == void.class) {
+    return ValueRemovingAssignment.of(superType);
+  }
+ else {
+    return chainedDelegate.assign(superType,subType,considerRuntimeType);
+  }
+}

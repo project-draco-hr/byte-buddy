@@ -1,0 +1,8 @@
+String wrapperTypeName
+ValueSize valueSize
+Class<?> wrapperType
+Class<?> primitiveType
+String boxingMethodName
+String boxingMethodDescriptor
+String unboxingMethodName
+String unboxingMethodDescriptor

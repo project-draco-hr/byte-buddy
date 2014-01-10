@@ -1,0 +1,10 @@
+{
+  methodVisitor.visitVarInsn(Opcodes.ALOAD,0);
+  Assignment.Size size=new Assignment.Size(1,1);
+  for (  Class<?> parameterType : parameterTypes) {
+    size=size.aggregateLeftFirst(MethodArgument.loading(parameterType).apply(size.getSize(),methodVisitor));
+  }
+  methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL,superClass,methodName,methodDescriptor);
+  size=size.aggregateLeftFirst(MethodReturn.returning(returnType).apply(methodVisitor));
+  return new Size(size.getMaximalSize(),ValueSize.sizeOf(Arrays.asList(parameterTypes)) + 1);
+}

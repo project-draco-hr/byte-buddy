@@ -1,5 +1,0 @@
-{
-  this.classContext=classContext;
-  this.methodContext=methodContext;
-  this.handlerDelegate=new HandlerDelegate(handlers);
-}

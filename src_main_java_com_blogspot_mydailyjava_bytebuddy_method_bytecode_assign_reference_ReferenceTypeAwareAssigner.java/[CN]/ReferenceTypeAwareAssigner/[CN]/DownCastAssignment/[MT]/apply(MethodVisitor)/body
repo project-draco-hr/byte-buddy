@@ -1,0 +1,4 @@
+{
+  methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,targetTypeInternalName);
+  return NULL_SIZE;
+}

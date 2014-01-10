@@ -1,3 +1,0 @@
-{
-  return handler.assign(type,annotation,classContext,methodContext);
-}

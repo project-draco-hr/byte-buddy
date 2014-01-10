@@ -24,6 +24,6 @@
     return toDoubleAssignment;
   }
  else {
-    throw new IllegalArgumentException("Not a primitive type: " + type);
+    throw new IllegalArgumentException("Not a primitive non-void type: " + type);
   }
 }

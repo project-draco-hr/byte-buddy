@@ -1,3 +1,0 @@
-{
-  this.targetType=targetType.substring(1,targetType.length() - 1);
-}

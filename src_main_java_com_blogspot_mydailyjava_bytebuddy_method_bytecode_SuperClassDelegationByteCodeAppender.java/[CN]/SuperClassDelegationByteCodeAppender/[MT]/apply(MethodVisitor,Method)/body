@@ -1,0 +1,3 @@
+{
+  return apply(methodVisitor,method.getParameterTypes(),method.getReturnType(),method.getName(),Type.getMethodDescriptor(method));
+}

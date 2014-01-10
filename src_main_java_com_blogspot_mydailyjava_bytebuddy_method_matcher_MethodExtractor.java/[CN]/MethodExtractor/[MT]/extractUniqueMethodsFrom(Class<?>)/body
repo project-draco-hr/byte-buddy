@@ -1,0 +1,15 @@
+{
+  List<Method> extracted=new LinkedList<Method>();
+  Set<String> usedDescriptors=new HashSet<String>();
+  LinkedHashSet<Class<?>> interfaces=new LinkedHashSet<Class<?>>();
+  do {
+    extractMethodsDeclaredIn(type,usedDescriptors,extracted);
+    collectInterfacesFrom(type,interfaces);
+    type=type.getSuperclass();
+  }
+ while (type != null);
+  for (  Class<?> anInterface : interfaces) {
+    extractMethodsDeclaredIn(anInterface,usedDescriptors,extracted);
+  }
+  return extracted;
+}

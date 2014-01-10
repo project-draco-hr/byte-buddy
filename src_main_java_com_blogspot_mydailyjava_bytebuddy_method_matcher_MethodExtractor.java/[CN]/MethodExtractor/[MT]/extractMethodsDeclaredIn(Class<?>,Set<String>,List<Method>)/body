@@ -1,0 +1,7 @@
+{
+  for (  Method method : type.getDeclaredMethods()) {
+    if (methodMatcher.matches(method) && !usedDescriptors.add(Type.getMethodDescriptor(method))) {
+      extracted.add(method);
+    }
+  }
+}

@@ -1,3 +1,3 @@
 {
-  this.referenceTypeDelegate=referenceTypeDelegate;
+  this.chainedDelegate=chainedDelegate;
 }

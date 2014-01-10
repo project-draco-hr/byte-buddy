@@ -1,3 +1,0 @@
-{
-  return left.matches(classContext,methodContext) || right.matches(classContext,methodContext);
-}

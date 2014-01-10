@@ -1,4 +1,0 @@
-{
-  methodArguments.add(descriptor);
-  aggregateStackSize.add(localVariableIndex);
-}

@@ -1,3 +1,0 @@
-{
-  return methodContext.getReturnType().equals(returnType);
-}

@@ -1,0 +1,4 @@
+{
+  this.chainedDelegate=chainedDelegate;
+  this.returnDefaultValue=returnDefaultValue;
+}

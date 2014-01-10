@@ -1,3 +1,0 @@
-ClassContext classContext
-MethodContext methodContext
-Collection<? extends Handler<?>> handlers
