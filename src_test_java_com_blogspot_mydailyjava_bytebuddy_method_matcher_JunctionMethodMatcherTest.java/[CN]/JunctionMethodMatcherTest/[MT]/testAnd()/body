@@ -1,0 +1,4 @@
+{
+  assertThat(new JunctionMethodMatcher.Conjunction(MethodMatchers.named(FOO_METHOD_NAME),MethodMatchers.returns(void.class)).matches(testClass$foo),is(true));
+  assertThat(new JunctionMethodMatcher.Conjunction(MethodMatchers.named(FOO_METHOD_NAME),MethodMatchers.none()).matches(testClass$foo),is(false));
+}

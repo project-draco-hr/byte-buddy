@@ -1,0 +1,10 @@
+{
+  assertThat(MethodMatchers.isPrivate().matches(testClassBase$foo),is(false));
+  assertThat(MethodMatchers.isPrivate().matches(testClassBase$bar),is(true));
+  assertThat(MethodMatchers.isPrivate().matches(testClassBase$baz),is(false));
+  assertThat(MethodMatchers.isPrivate().matches(testClassBase$qux),is(false));
+  assertThat(MethodMatchers.isPrivate().matches(testClassExtension$foo),is(false));
+  assertThat(MethodMatchers.isPrivate().matches(testClassExtension$bar),is(true));
+  assertThat(MethodMatchers.isPrivate().matches(testClassExtension$baz),is(false));
+  assertThat(MethodMatchers.isPrivate().matches(testClassExtension$qux),is(false));
+}

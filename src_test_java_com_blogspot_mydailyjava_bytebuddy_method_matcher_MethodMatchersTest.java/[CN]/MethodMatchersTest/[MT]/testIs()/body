@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.is(testClassBase$foo).matches(testClassBase$foo),is(true));
+  assertThat(MethodMatchers.is(testClassBase$foo).matches(testClassExtension$foo),is(false));
+  assertThat(MethodMatchers.is(testClassExtension$foo).matches(testClassExtension$foo),is(true));
+  assertThat(MethodMatchers.is(testClassExtension$foo).matches(testClassBase$foo),is(false));
+}

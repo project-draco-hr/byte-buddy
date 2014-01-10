@@ -1,0 +1,10 @@
+{
+  assertThat(MethodMatchers.isProtected().matches(testClassBase$foo),is(false));
+  assertThat(MethodMatchers.isProtected().matches(testClassBase$bar),is(false));
+  assertThat(MethodMatchers.isProtected().matches(testClassBase$baz),is(true));
+  assertThat(MethodMatchers.isProtected().matches(testClassBase$qux),is(false));
+  assertThat(MethodMatchers.isProtected().matches(testClassExtension$foo),is(false));
+  assertThat(MethodMatchers.isProtected().matches(testClassExtension$bar),is(false));
+  assertThat(MethodMatchers.isProtected().matches(testClassExtension$baz),is(true));
+  assertThat(MethodMatchers.isProtected().matches(testClassExtension$qux),is(false));
+}

@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.matches(FOO_METHOD_NAME_REGEX).matches(testClassBase$foo),is(true));
+  assertThat(MethodMatchers.matches(FOO_METHOD_NAME_REGEX).matches(testClassExtension$foo),is(true));
+  assertThat(MethodMatchers.matches(BAR_METHOD_NAME_REGEX).matches(testClassBase$foo),is(false));
+  assertThat(MethodMatchers.matches(BAR_METHOD_NAME_REGEX).matches(testClassExtension$foo),is(false));
+}

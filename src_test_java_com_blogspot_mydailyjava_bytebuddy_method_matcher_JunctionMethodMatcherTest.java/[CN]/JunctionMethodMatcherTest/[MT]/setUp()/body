@@ -1,0 +1,3 @@
+{
+  testClass$foo=TestClass.class.getDeclaredMethod(FOO_METHOD_NAME);
+}

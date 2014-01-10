@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.named(FOO_METHOD_NAME).matches(testClassBase$foo),is(true));
+  assertThat(MethodMatchers.named(FOO_METHOD_NAME).matches(testClassExtension$foo),is(true));
+  assertThat(MethodMatchers.named(BAR_METHOD_NAME).matches(testClassBase$foo),is(false));
+  assertThat(MethodMatchers.named(BAR_METHOD_NAME).matches(testClassExtension$foo),is(false));
+}

@@ -1,0 +1,10 @@
+{
+  assertThat(MethodMatchers.isPackagePrivate().matches(testClassBase$foo),is(false));
+  assertThat(MethodMatchers.isPackagePrivate().matches(testClassBase$bar),is(false));
+  assertThat(MethodMatchers.isPackagePrivate().matches(testClassBase$baz),is(false));
+  assertThat(MethodMatchers.isPackagePrivate().matches(testClassBase$qux),is(true));
+  assertThat(MethodMatchers.isPackagePrivate().matches(testClassExtension$foo),is(false));
+  assertThat(MethodMatchers.isPackagePrivate().matches(testClassExtension$bar),is(false));
+  assertThat(MethodMatchers.isPackagePrivate().matches(testClassExtension$baz),is(false));
+  assertThat(MethodMatchers.isPackagePrivate().matches(testClassExtension$qux),is(true));
+}

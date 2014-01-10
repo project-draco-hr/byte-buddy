@@ -1,0 +1,8 @@
+{
+  assertThat(MethodMatchers.isFinal().matches(testClassBase$foo),is(false));
+  assertThat(MethodMatchers.isFinal().matches(testClassBase$bar),is(false));
+  assertThat(MethodMatchers.isFinal().matches(testClassBase$fin),is(true));
+  assertThat(MethodMatchers.isFinal().matches(testClassExtension$foo),is(false));
+  assertThat(MethodMatchers.isFinal().matches(testClassExtension$bar),is(false));
+  assertThat(MethodMatchers.isFinal().matches(testClassExtension$fin),is(true));
+}

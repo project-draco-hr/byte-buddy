@@ -1,0 +1,16 @@
+{
+  testClassBase$foo=TestClassBase.class.getDeclaredMethod(FOO_METHOD_NAME);
+  testClassBase$bar=TestClassBase.class.getDeclaredMethod(BAR_METHOD_NAME,Object.class);
+  testClassBase$baz=TestClassBase.class.getDeclaredMethod(BAZ_METHOD_NAME);
+  testClassBase$qux=TestClassBase.class.getDeclaredMethod(QUX_METHOD_NAME);
+  testClassBase$fin=TestClassBase.class.getDeclaredMethod(FIN_METHOD_NAME + "1");
+  testClassBase$stat=TestClassBase.class.getDeclaredMethod(STAT_METHOD_NAME);
+  testClassBase$compareTo$synth=TestClassBase.class.getDeclaredMethod(COMPARE_TO_METHOD_NAME,Object.class);
+  testClassBase$compareTo=TestClassBase.class.getDeclaredMethod(COMPARE_TO_METHOD_NAME,String.class);
+  testClassExtension$foo=TestClassExtension.class.getDeclaredMethod(FOO_METHOD_NAME);
+  testClassExtension$bar=TestClassExtension.class.getDeclaredMethod(BAR_METHOD_NAME,Object.class);
+  testClassExtension$baz=TestClassExtension.class.getDeclaredMethod(BAZ_METHOD_NAME);
+  testClassExtension$qux=TestClassExtension.class.getDeclaredMethod(QUX_METHOD_NAME);
+  testClassExtension$fin=TestClassExtension.class.getDeclaredMethod(FIN_METHOD_NAME + "2");
+  testClassExtension$stat=TestClassExtension.class.getDeclaredMethod(STAT_METHOD_NAME);
+}

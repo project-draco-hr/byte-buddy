@@ -1,0 +1,4 @@
+{
+  assertThat(MethodMatchers.isSynthetic().matches(testClassBase$compareTo$synth),is(true));
+  assertThat(MethodMatchers.isSynthetic().matches(testClassBase$compareTo),is(false));
+}

@@ -1,0 +1,8 @@
+{
+  assertThat(MethodMatchers.isStatic().matches(testClassBase$foo),is(false));
+  assertThat(MethodMatchers.isStatic().matches(testClassBase$bar),is(false));
+  assertThat(MethodMatchers.isStatic().matches(testClassBase$stat),is(true));
+  assertThat(MethodMatchers.isStatic().matches(testClassExtension$foo),is(false));
+  assertThat(MethodMatchers.isStatic().matches(testClassExtension$bar),is(false));
+  assertThat(MethodMatchers.isStatic().matches(testClassExtension$stat),is(true));
+}
