@@ -1,0 +1,5 @@
+int classVersion
+Visibility visibility
+TypeManifestation typeManifestation
+SyntheticState syntheticState
+NameMaker nameMaker

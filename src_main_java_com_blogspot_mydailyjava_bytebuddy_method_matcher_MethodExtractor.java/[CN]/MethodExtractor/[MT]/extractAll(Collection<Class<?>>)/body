@@ -1,0 +1,7 @@
+{
+  Extraction extraction=new Extraction(methodMatcher);
+  for (  Class<?> type : types) {
+    extractClass(type,extraction);
+  }
+  return extraction.asList();
+}

@@ -1,3 +1,0 @@
-{
-  return new SubclassDynamicProxyBuilder(superClass,interfaces,classVersion,nameMaker,visibility,manifestation,ByteBuddy.FinalState.is(isFinal),syntheticState,interceptions);
-}

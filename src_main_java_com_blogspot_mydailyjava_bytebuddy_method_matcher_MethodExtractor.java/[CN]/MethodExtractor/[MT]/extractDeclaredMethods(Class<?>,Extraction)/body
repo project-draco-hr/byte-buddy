@@ -1,0 +1,5 @@
+{
+  for (  Method method : type.getDeclaredMethods()) {
+    extraction.consider(method);
+  }
+}

@@ -1,0 +1,11 @@
+{
+  if (types.size() == 0) {
+    return null;
+  }
+  String[] internalName=new String[types.size()];
+  int i=0;
+  for (  Class<?> type : types) {
+    internalName[i]=Type.getInternalName(type);
+  }
+  return internalName;
+}

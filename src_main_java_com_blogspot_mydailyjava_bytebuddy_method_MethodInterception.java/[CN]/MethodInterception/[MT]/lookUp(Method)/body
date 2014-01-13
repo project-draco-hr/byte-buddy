@@ -1,0 +1,8 @@
+{
+  for (  MethodInterception methodInterception : methodInterceptions) {
+    if (methodInterception.getMethodMatcher().matches(method)) {
+      return new Handler.ByteCodeWriter(methodInterception.getByteCodeAppender(),method);
+    }
+  }
+  return Handler.NoOp.INSTANCE;
+}

@@ -1,4 +1,4 @@
 {
-  String text=new ByteBuddy().subclass(Object.class).name("my.Test").intercept(MethodMatchers.returns(String.class),StubMethodByteCodeAppender.INSTANCE).make().load(getClass().getClassLoader()).newInstance().toString();
+  String text=ByteBuddy.make().subclass(Object.class).name("my.Test").intercept(MethodMatchers.returns(String.class),StubMethodByteCodeAppender.INSTANCE).make().load(getClass().getClassLoader()).newInstance().toString();
   System.out.println(text);
 }

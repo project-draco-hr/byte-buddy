@@ -1,0 +1,6 @@
+{
+  MethodExtractor methodExtractor=new MethodExtractor(MethodMatchers.declaredIn(Foo.class));
+  List<Method> methods=methodExtractor.extractAll(Arrays.<Class<?>>asList(Object.class,Bar.class));
+  assertThat(methods.size(),is(Foo.class.getDeclaredMethods().length));
+  assertThat(methods,hasItems(Foo.class.getDeclaredMethods()));
+}

@@ -1,12 +1,5 @@
 {
-  for (  Method method : MethodExtractor.matching(OVERRIDABLE).extractUniqueMethodsFrom(superClass)) {
-    ByteCodeAppender byteCodeAppender=interceptions.findInterceptorFor(method);
-    if (byteCodeAppender != null) {
-      MethodVisitor methodVisitor=classWriter.visitMethod(method.getModifiers(),method.getName(),Type.getMethodDescriptor(method),null,makeInternalNameArray(Arrays.asList(method.getExceptionTypes())));
-      methodVisitor.visitCode();
-      ByteCodeAppender.Size size=byteCodeAppender.apply(methodVisitor,method);
-      methodVisitor.visitMaxs(size.getOperandStackSize(),size.getLocalVariableSize());
-      methodVisitor.visitEnd();
-    }
+  for (  Method method : MethodExtractor.matching(OVERRIDABLE).extractAll(merge(superClass,interfaces))) {
+    methodInterceptions.lookUp(method).applyTo(classWriter);
   }
 }

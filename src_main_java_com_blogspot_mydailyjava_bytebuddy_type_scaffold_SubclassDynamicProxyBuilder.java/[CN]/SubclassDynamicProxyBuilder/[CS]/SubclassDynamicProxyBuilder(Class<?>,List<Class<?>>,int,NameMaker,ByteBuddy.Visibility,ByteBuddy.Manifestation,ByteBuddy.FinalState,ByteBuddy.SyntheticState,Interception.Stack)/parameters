@@ -1,9 +1,0 @@
-Class<?> type
-List<Class<?>> interfaces
-int classVersion
-NameMaker nameMaker
-ByteBuddy.Visibility visibility
-ByteBuddy.Manifestation manifestation
-ByteBuddy.FinalState finalState
-ByteBuddy.SyntheticState syntheticState
-Interception.Stack interceptions

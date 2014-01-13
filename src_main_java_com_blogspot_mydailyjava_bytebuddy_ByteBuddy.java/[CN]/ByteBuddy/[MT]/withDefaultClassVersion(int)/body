@@ -1,0 +1,3 @@
+{
+  return new ByteBuddy(checkClassVersion(classVersion),visibility,typeManifestation,syntheticState,nameMaker);
+}

@@ -1,8 +1,0 @@
-{
-  for (  Interception interception : interceptions) {
-    if (interception.getMethodMatcher().matches(method)) {
-      return interception.getByteCodeAppender();
-    }
-  }
-  return null;
-}

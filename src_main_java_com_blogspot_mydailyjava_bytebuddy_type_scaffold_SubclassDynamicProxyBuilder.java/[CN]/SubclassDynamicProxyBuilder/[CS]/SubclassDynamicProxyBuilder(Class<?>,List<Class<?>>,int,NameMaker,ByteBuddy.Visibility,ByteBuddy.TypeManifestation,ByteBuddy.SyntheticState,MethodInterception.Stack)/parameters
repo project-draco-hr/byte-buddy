@@ -1,0 +1,8 @@
+Class<?> type
+List<Class<?>> interfaces
+int classVersion
+NameMaker nameMaker
+ByteBuddy.Visibility visibility
+ByteBuddy.TypeManifestation typeManifestation
+ByteBuddy.SyntheticState syntheticState
+MethodInterception.Stack methodInterceptions
