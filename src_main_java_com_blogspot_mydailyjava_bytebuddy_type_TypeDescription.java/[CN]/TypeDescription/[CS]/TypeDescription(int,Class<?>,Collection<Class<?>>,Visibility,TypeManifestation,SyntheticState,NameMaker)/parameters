@@ -1,0 +1,7 @@
+int classVersion
+Class<?> superClass
+Collection<Class<?>> interfaces
+Visibility visibility
+TypeManifestation typeManifestation
+SyntheticState syntheticState
+NameMaker nameMaker

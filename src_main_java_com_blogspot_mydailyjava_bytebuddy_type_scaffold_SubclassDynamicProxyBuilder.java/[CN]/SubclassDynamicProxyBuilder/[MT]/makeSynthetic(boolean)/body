@@ -1,3 +1,3 @@
 {
-  return new SubclassDynamicProxyBuilder(superClass,interfaces,classVersion,nameMaker,visibility,typeManifestation,ByteBuddy.SyntheticState.is(synthetic),methodInterceptions);
+  return new SubclassDynamicProxyBuilder(superClass,interfaces,classVersion,nameMaker,visibility,typeManifestation,SyntheticState.is(synthetic),classVisitorWrapperChain,methodInterceptions);
 }

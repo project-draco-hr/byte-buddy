@@ -1,0 +1,6 @@
+{
+  List<ClassVisitorWrapper> appendedList=new ArrayList<ClassVisitorWrapper>(classVisitorWrappers.size() + 1);
+  appendedList.add(classVisitorWrapper);
+  appendedList.addAll(classVisitorWrappers);
+  return new ClassVisitorWrapperChain(appendedList);
+}

@@ -1,6 +1,0 @@
-{
-  List<Class<?>> types=new ArrayList<Class<?>>(interfaces.size() + 1);
-  types.add(superClass);
-  types.addAll(interfaces);
-  return types;
-}

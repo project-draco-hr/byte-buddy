@@ -1,0 +1,9 @@
+{
+  this.classVersion=classVersion;
+  this.superClass=superClass;
+  this.interfaces=interfaces;
+  this.visibility=visibility;
+  this.typeManifestation=typeManifestation;
+  this.syntheticState=syntheticState;
+  this.name=nameMaker.getName(this);
+}

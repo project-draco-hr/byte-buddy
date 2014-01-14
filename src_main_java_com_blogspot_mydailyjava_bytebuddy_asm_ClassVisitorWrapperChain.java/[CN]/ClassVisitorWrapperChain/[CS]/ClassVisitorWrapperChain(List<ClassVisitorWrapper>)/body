@@ -1,0 +1,3 @@
+{
+  this.classVisitorWrappers=Collections.unmodifiableList(classVisitorWrappers);
+}
