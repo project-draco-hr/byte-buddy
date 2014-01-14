@@ -1,4 +1,0 @@
-{
-  this.byteCodeAppender=byteCodeAppender;
-  this.method=method;
-}

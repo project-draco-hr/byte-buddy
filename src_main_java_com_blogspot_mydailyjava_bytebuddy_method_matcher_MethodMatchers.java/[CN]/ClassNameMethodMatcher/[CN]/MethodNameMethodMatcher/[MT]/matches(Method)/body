@@ -1,3 +1,0 @@
-{
-  return matchMode.matches(methodName,method.getName());
-}

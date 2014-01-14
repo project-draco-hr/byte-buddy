@@ -1,0 +1,3 @@
+{
+  return (javaMethod.getModifiers() & modifierMask) != 0;
+}

@@ -1,6 +1,0 @@
-{
-  String methodSignature=method.getName() + Type.getMethodDescriptor(method);
-  if (extractedMethodSignatures.add(methodSignature) && methodMatcher.matches(method)) {
-    extractedMethods.add(method);
-  }
-}

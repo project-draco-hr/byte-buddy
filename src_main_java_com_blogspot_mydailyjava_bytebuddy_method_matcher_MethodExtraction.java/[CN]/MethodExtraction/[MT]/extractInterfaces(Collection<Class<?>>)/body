@@ -1,0 +1,11 @@
+{
+  if (interfaces.size() == 0) {
+    return;
+  }
+  List<Class<?>> nestedInterfaces=new LinkedList<Class<?>>();
+  for (  Class<?> anInterface : interfaces) {
+    extractDeclaredMethods(anInterface);
+    nestedInterfaces.addAll(Arrays.asList(anInterface.getInterfaces()));
+  }
+  extractInterfaces(nestedInterfaces);
+}

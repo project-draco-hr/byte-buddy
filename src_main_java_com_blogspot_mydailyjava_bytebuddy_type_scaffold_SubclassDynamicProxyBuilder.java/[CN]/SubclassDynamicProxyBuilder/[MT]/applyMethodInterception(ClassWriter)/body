@@ -1,5 +1,0 @@
-{
-  for (  Method method : MethodExtractor.matching(OVERRIDABLE).extractAll(merge(superClass,interfaces))) {
-    methodInterceptions.lookUp(method).applyTo(classWriter);
-  }
-}

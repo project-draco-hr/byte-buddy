@@ -1,0 +1,4 @@
+{
+  extractInterfaces(interfaces);
+  return this;
+}

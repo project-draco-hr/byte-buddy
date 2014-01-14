@@ -1,5 +1,5 @@
 {
   Size size=returnValuePreparationAssignment.apply(methodVisitor);
   methodVisitor.visitInsn(returnOpcode);
-  return size.aggregateLeftFirst(-1 * valueSize.getSize());
+  return size.aggregateLeftFirst(-1 * typeSize.getSize());
 }

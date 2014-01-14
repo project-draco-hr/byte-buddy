@@ -1,0 +1,8 @@
+{
+  JavaMethod[] javaMethods=new JavaMethod[type.getDeclaredMethods().length];
+  int i=0;
+  for (  Method method : type.getDeclaredMethods()) {
+    javaMethods[i++]=new JavaMethod.ForMethod(method);
+  }
+  return javaMethods;
+}

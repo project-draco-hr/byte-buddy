@@ -1,4 +1,4 @@
 {
-  assertThat(new JunctionMethodMatcher.Disjunction(MethodMatchers.named(FOO_METHOD_NAME),MethodMatchers.returns(void.class)).matches(testClass$foo),is(true));
-  assertThat(new JunctionMethodMatcher.Disjunction(MethodMatchers.not(MethodMatchers.named(FOO_METHOD_NAME)),MethodMatchers.none()).matches(testClass$foo),is(false));
+  assertThat(new JunctionMethodMatcher.Disjunction(MethodMatchers.named(FOO_METHOD_NAME),MethodMatchers.returns(void.class)).matches(new JavaMethod.ForMethod(testClass$foo)),is(true));
+  assertThat(new JunctionMethodMatcher.Disjunction(MethodMatchers.not(MethodMatchers.named(FOO_METHOD_NAME)),MethodMatchers.none()).matches(new JavaMethod.ForMethod(testClass$foo)),is(false));
 }

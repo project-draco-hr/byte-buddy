@@ -3,7 +3,7 @@
     return LegalTrivialAssignment.INSTANCE;
   }
  else   if (superType == void.class) {
-    return returnDefaultValue ? DefaultValue.defaulting(subType) : IllegalAssignment.INSTANCE;
+    return returnDefaultValue ? DefaultValue.load(subType) : IllegalAssignment.INSTANCE;
   }
  else   if (subType == void.class) {
     return ValueRemovingAssignment.of(superType);

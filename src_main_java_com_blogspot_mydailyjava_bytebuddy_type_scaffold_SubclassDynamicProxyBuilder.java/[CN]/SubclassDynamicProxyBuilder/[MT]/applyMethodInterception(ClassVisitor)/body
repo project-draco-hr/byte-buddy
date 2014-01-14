@@ -1,0 +1,5 @@
+{
+  for (  JavaMethod method : MethodExtraction.matching(OVERRIDABLE).extract(superClass).appendInterfaces(interfaces).asList()) {
+    methodInterceptions.lookUp(method).applyTo(classVisitor);
+  }
+}

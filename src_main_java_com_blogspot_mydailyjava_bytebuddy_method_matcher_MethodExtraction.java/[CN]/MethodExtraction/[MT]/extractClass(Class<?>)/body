@@ -1,0 +1,9 @@
+{
+  List<Class<?>> interfaces=new LinkedList<Class<?>>();
+  do {
+    extractDeclaredMethods(type);
+    interfaces.addAll(Arrays.asList(type.getInterfaces()));
+  }
+ while ((type=type.getSuperclass()) != null);
+  extractInterfaces(interfaces);
+}

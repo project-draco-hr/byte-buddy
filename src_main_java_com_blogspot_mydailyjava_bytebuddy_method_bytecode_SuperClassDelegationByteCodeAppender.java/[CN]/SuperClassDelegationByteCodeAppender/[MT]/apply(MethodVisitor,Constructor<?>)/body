@@ -1,3 +1,0 @@
-{
-  return apply(methodVisitor,constructor.getParameterTypes(),void.class,CONSTRUCTOR_METHOD_NAME,Type.getConstructorDescriptor(constructor));
-}

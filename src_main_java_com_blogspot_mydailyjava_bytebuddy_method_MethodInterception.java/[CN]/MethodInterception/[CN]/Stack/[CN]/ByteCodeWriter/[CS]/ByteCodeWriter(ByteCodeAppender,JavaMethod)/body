@@ -1,0 +1,4 @@
+{
+  this.javaMethod=javaMethod;
+  this.byteCodeAppender=byteCodeAppender;
+}

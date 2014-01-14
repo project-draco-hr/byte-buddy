@@ -1,0 +1,11 @@
+{
+  if (javaMethod.isConstructor()) {
+    return new Handler.ByteCodeWriter(SuperClassDelegation.INSTANCE,javaMethod);
+  }
+  for (  MethodInterception methodInterception : methodInterceptions) {
+    if (methodInterception.getMethodMatcher().matches(javaMethod)) {
+      return new Handler.ByteCodeWriter(methodInterception.getByteCodeAppender(),javaMethod);
+    }
+  }
+  return Handler.NoOp.INSTANCE;
+}

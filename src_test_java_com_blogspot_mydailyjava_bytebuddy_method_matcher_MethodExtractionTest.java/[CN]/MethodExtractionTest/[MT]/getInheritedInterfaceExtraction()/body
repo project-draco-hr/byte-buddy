@@ -1,0 +1,8 @@
+{
+  MethodExtraction methodExtraction=new MethodExtraction(MethodMatchers.any());
+  List<JavaMethod> methods=methodExtraction.extract(Object.class).appendInterface(Bar.class).asList();
+  assertThat(methods.size(),is(Object.class.getDeclaredMethods().length + Foo.class.getDeclaredMethods().length + Bar.class.getDeclaredMethods().length));
+  assertThat(methods,hasItems(getDeclaredJavaMethods(Object.class)));
+  assertThat(methods,hasItems(getDeclaredJavaMethods(Foo.class)));
+  assertThat(methods,hasItems(getDeclaredJavaMethods(Bar.class)));
+}

@@ -2,7 +2,6 @@
   ClassWriter classWriter=new ClassWriter(ASM_MANUAL_WRITING_OPTIONS);
   String typeName=nameMaker.getName(superClass);
   classWriter.visit(classVersion,makeTypeModifier(),toInternalForm(typeName),null,Type.getInternalName(superClass),makeInternalNameArray(interfaces));
-  applyConstructorDelegation(classWriter);
   applyMethodInterception(classWriter);
   classWriter.visitEnd();
   return new ByteArrayDynamicProxy(typeName,classWriter.toByteArray());

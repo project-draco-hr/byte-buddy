@@ -1,4 +1,7 @@
 {
-  String text=ByteBuddy.make().subclass(Object.class).name("my.Test").intercept(MethodMatchers.returns(String.class),StubMethodByteCodeAppender.INSTANCE).make().load(getClass().getClassLoader()).newInstance().toString();
-  System.out.println(text);
+  Object object=ByteBuddy.make().subclass(Bar.class).name("my.Test").intercept(MethodMatchers.returns(String.class),SuperClassDelegation.INSTANCE).make().load(getClass().getClassLoader()).newInstance();
+  System.out.println(Arrays.asList(object.getClass().getDeclaredMethods()));
+  System.out.println(object.getClass());
+  System.out.println(object.getClass().getSuperclass());
+  System.out.println(object.toString());
 }

@@ -1,3 +1,0 @@
-{
-  this.superClass=Type.getInternalName(type);
-}
