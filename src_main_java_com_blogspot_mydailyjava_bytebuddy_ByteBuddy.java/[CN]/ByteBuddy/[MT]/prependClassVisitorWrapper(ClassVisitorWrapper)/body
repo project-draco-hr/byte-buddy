@@ -1,3 +1,0 @@
-{
-  return new ByteBuddy(classVersion,visibility,typeManifestation,syntheticState,checkNotNull(nameMaker),classVisitorWrapperChain.prepend(checkNotNull(classVisitorWrapper)));
-}

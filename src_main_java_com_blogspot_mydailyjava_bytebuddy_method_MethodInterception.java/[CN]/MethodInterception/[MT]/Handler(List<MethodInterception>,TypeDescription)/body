@@ -1,0 +1,8 @@
+{
+  List<Entry> entries=new ArrayList<Entry>(methodInterceptions.size());
+  for (  MethodInterception methodInterception : methodInterceptions) {
+    entries.add(new Entry(methodInterception.getMethodMatcher(),methodInterception.getByteCodeAppenderFactory().make(typeDescription)));
+  }
+  this.entries=Collections.unmodifiableList(entries);
+  constructorAppender=SuperClassDelegation.INSTANCE.make(typeDescription);
+}

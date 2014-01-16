@@ -1,6 +1,0 @@
-{
-  List<MethodInterception> methodInterceptions=new ArrayList<MethodInterception>(this.methodInterceptions.size() + 1);
-  methodInterceptions.addAll(this.methodInterceptions);
-  methodInterceptions.add(methodInterception);
-  return new Stack(Collections.unmodifiableList(methodInterceptions));
-}

@@ -1,5 +1,5 @@
 {
   for (  Method method : type.getDeclaredMethods()) {
-    consider(new JavaMethod.ForMethod(method));
+    consider(new MethodDescription.ForMethod(method));
   }
 }

@@ -1,0 +1,3 @@
+{
+  return new ByteBuddy(classVersion,visibility,typeManifestation,syntheticState,namingStrategy,checkNotNull(ignoredMethods),classVisitorWrapperChain);
+}

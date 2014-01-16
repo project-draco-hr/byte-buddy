@@ -1,0 +1,9 @@
+{
+  this.classVersion=classVersion;
+  this.visibility=visibility;
+  this.typeManifestation=typeManifestation;
+  this.syntheticState=syntheticState;
+  this.namingStrategy=namingStrategy;
+  this.ignoredMethods=ignoredMethods;
+  this.classVisitorWrapperChain=classVisitorWrapperChain;
+}

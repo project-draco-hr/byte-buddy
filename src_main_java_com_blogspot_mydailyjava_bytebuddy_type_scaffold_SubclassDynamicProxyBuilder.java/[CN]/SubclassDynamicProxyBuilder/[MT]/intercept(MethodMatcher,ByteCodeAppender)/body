@@ -1,3 +1,0 @@
-{
-  return new SubclassDynamicProxyBuilder(superClass,interfaces,classVersion,nameMaker,visibility,typeManifestation,syntheticState,classVisitorWrapperChain,methodInterceptions.append(new MethodInterception(checkNotNull(methodMatcher),checkNotNull(byteCodeAppender))));
-}

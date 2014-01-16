@@ -1,6 +1,6 @@
 {
   MethodExtraction methodExtraction=new MethodExtraction(MethodMatchers.any());
-  List<JavaMethod> methods=methodExtraction.extract(Foo.class).asList();
+  List<MethodDescription> methods=methodExtraction.extractFrom(Foo.class).asList();
   assertThat(methods.size(),is(Foo.class.getDeclaredMethods().length));
   assertThat(methods,hasItems(getDeclaredJavaMethods(Foo.class)));
 }

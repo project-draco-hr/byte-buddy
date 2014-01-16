@@ -1,0 +1,3 @@
+{
+  return methodDescription.getDeclaringClass() == Object.class && methodDescription.getName().equals(FINALIZE_METHOD_NAME) && methodDescription.getParameterTypes().length == 0;
+}

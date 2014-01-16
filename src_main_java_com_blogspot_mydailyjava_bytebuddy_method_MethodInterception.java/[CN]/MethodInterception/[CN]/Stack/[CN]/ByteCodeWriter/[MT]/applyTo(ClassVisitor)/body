@@ -1,8 +1,0 @@
-{
-  MethodVisitor methodVisitor=classVisitor.visitMethod(javaMethod.getModifiers(),javaMethod.getName(),javaMethod.getDescriptor(),null,javaMethod.getExceptionTypesInternalNames());
-  methodVisitor.visitCode();
-  ByteCodeAppender.Size size=byteCodeAppender.apply(methodVisitor,javaMethod);
-  methodVisitor.visitMaxs(size.getOperandStackSize(),size.getLocalVariableSize());
-  methodVisitor.visitEnd();
-  return true;
-}

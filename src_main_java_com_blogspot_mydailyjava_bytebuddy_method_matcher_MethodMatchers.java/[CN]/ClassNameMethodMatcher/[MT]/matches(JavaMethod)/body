@@ -1,8 +1,0 @@
-{
-  try {
-    return javaMethod.getDeclaringClass() == type || type.getDeclaredMethod(javaMethod.getName(),javaMethod.getParameterTypes()) != null;
-  }
- catch (  NoSuchMethodException e) {
-    return false;
-  }
-}

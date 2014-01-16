@@ -1,6 +1,6 @@
 {
   if (FIND_LOADED_CLASS_METHOD == null || LOAD_BYTE_ARRAY_METHOD == null) {
-    throw new IllegalStateException("Could not find methods for class loader injection",EXCEPTION);
+    throw new IllegalStateException("Could not initialize class loader injector",EXCEPTION);
   }
   try {
 synchronized (classLoader) {

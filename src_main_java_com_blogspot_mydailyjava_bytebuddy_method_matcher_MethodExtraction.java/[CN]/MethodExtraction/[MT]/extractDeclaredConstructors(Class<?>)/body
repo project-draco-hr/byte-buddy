@@ -1,5 +1,5 @@
 {
   for (  Constructor<?> constructor : type.getDeclaredConstructors()) {
-    consider(new JavaMethod.ForConstructor(constructor));
+    consider(new MethodDescription.ForConstructor(constructor));
   }
 }

@@ -1,0 +1,11 @@
+{
+  if (methodDescription.isConstructor()) {
+    return new MethodWritingDelegate(methodDescription,constructorAppender);
+  }
+  for (  Entry entry : entries) {
+    if (entry.matches(methodDescription)) {
+      return new MethodWritingDelegate(methodDescription,entry.getByteCodeAppender());
+    }
+  }
+  return NoOpDelegate.INSTANCE;
+}

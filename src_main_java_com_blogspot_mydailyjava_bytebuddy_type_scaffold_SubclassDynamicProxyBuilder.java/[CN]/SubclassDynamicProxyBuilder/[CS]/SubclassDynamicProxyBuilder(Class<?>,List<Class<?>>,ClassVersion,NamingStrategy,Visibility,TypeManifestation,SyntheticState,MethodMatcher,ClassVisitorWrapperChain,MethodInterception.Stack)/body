@@ -1,0 +1,12 @@
+{
+  this.superClass=superClass;
+  this.interfaces=interfaces;
+  this.classVersion=classVersion;
+  this.namingStrategy=namingStrategy;
+  this.visibility=visibility;
+  this.typeManifestation=typeManifestation;
+  this.syntheticState=syntheticState;
+  this.ignoredMethods=ignoredMethods;
+  this.classVisitorWrapperChain=classVisitorWrapperChain;
+  this.methodInterceptions=methodInterceptions;
+}

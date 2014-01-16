@@ -1,0 +1,7 @@
+ClassVersion classVersion
+Visibility visibility
+TypeManifestation typeManifestation
+SyntheticState syntheticState
+NamingStrategy namingStrategy
+MethodMatcher ignoredMethods
+ClassVisitorWrapperChain classVisitorWrapperChain

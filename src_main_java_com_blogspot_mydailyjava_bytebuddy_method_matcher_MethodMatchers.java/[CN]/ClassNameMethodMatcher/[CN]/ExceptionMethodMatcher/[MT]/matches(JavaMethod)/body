@@ -1,8 +1,0 @@
-{
-  for (  Class<?> exceptionType : javaMethod.getExceptionTypes()) {
-    if (exceptionType.isAssignableFrom(this.exceptionType)) {
-      return true;
-    }
-  }
-  return false;
-}

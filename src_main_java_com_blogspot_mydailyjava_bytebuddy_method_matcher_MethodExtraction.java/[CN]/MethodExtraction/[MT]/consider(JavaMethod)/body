@@ -1,5 +1,0 @@
-{
-  if (extractedMethodSignatures.add(javaMethod.getUniqueSignature()) && methodMatcher.matches(javaMethod)) {
-    extractedMethods.add(javaMethod);
-  }
-}

@@ -1,8 +1,0 @@
-{
-  this.classVersion=classVersion;
-  this.visibility=visibility;
-  this.typeManifestation=typeManifestation;
-  this.syntheticState=syntheticState;
-  this.nameMaker=nameMaker;
-  this.classVisitorWrapperChain=classVisitorWrapperChain;
-}

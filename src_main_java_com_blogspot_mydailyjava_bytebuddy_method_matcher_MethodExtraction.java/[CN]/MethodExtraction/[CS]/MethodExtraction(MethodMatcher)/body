@@ -1,5 +1,5 @@
 {
   this.methodMatcher=methodMatcher;
   extractedMethodSignatures=new HashSet<String>();
-  extractedMethods=new LinkedList<JavaMethod>();
+  extractedMethods=new LinkedList<MethodDescription>();
 }

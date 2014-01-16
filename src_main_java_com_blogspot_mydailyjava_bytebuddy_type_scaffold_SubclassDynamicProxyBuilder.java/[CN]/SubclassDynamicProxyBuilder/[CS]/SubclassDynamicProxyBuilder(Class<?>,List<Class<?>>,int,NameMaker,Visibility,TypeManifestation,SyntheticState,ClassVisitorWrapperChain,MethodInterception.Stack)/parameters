@@ -1,9 +1,0 @@
-Class<?> type
-List<Class<?>> interfaces
-int classVersion
-NameMaker nameMaker
-Visibility visibility
-TypeManifestation typeManifestation
-SyntheticState syntheticState
-ClassVisitorWrapperChain classVisitorWrapperChain
-MethodInterception.Stack methodInterceptions

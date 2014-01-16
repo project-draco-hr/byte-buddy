@@ -1,10 +1,11 @@
 {
   ClassWriter classWriter=new ClassWriter(ASM_MANUAL_WRITING_OPTIONS);
   ClassVisitor classVisitor=classVisitorWrapperChain.wrap(classWriter);
-  TypeDescription typeDescription=new TypeDescription(classVersion,superClass,interfaces,visibility,typeManifestation,syntheticState,nameMaker);
-  classVisitor.visit(typeDescription.getClassVersion(),typeDescription.getTypeModifier(),typeDescription.getSuperClassInternalName(),null,typeDescription.getSuperClassInternalName(),typeDescription.getInterfacesInternalNames());
-  for (  JavaMethod method : MethodExtraction.matching(OVERRIDABLE).extract(superClass).appendInterfaces(interfaces).asList()) {
-    methodInterceptions.lookUp(method).applyTo(classVisitor);
+  TypeDescription typeDescription=new TypeDescription(classVersion,superClass,interfaces,visibility,typeManifestation,syntheticState,namingStrategy);
+  classVisitor.visit(typeDescription.getClassVersion(),typeDescription.getTypeModifier(),typeDescription.getInternalName(),null,typeDescription.getSuperClassInternalName(),typeDescription.getInterfacesInternalNames());
+  MethodInterception.Handler handler=methodInterceptions.handler(typeDescription);
+  for (  MethodDescription method : MethodExtraction.matching(OVERRIDABLE.and(not(ignoredMethods))).extractFrom(superClass).appendInterfaceMethods(interfaces).asList()) {
+    handler.find(method).handle(classVisitor);
   }
   classVisitor.visitEnd();
   return new ByteArrayDynamicProxy(typeDescription.getName(),classWriter.toByteArray());
