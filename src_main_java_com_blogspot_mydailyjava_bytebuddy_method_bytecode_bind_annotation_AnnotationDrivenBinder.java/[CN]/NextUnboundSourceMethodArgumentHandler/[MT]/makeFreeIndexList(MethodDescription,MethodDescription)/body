@@ -1,0 +1,14 @@
+{
+  LinkedHashSet<Integer> results=new LinkedHashSet<Integer>(source.getParameterTypes().length);
+  for (int sourceIndex=0; sourceIndex < source.getParameterTypes().length; sourceIndex++) {
+    results.add(sourceIndex);
+  }
+  for (  Annotation[] parameterAnnotation : target.getParameterAnnotations()) {
+    for (    Annotation aParameterAnnotation : parameterAnnotation) {
+      if (aParameterAnnotation.annotationType() == Argument.class) {
+        results.remove(((Argument)aParameterAnnotation).value());
+      }
+    }
+  }
+  return results.iterator();
+}

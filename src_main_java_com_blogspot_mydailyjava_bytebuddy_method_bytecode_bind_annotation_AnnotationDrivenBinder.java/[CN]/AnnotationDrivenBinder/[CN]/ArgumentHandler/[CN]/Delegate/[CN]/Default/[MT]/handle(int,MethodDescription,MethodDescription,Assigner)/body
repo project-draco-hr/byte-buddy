@@ -1,3 +1,0 @@
-{
-  return new Argument.Binder().bind(new DefaultAnnotation(sourceParameterIndex),targetParameterIndex,source,target,assigner);
-}

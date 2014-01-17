@@ -1,0 +1,28 @@
+{
+  Handler handler=null;
+  for (  Annotation anAnnotation : annotation) {
+    ArgumentBinder<?> argumentBinder=argumentBinders.get(anAnnotation.annotationType());
+    if (argumentBinder != null && handler != null) {
+      throw new IllegalArgumentException("Ambiguous binding for parameter annotated with two handled annotation types");
+    }
+ else     if (argumentBinder != null) {
+      handler=makeDelegate(argumentBinder,anAnnotation);
+    }
+  }
+  if (handler == null) {
+    if (defaults.hasNext()) {
+      Annotation defaultAnnotation=defaults.next();
+      ArgumentBinder<?> argumentBinder=argumentBinders.get(defaultAnnotation.annotationType());
+      if (argumentBinder == null) {
+        return Handler.Unbound.INSTANCE;
+      }
+ else {
+        handler=makeDelegate(argumentBinder,defaultAnnotation);
+      }
+    }
+ else {
+      return Handler.Unbound.INSTANCE;
+    }
+  }
+  return handler;
+}
