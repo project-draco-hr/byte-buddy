@@ -1,2 +1,2 @@
-Assigner chainedDelegate
+Assigner nonVoidAwareAssigner
 boolean returnDefaultValue

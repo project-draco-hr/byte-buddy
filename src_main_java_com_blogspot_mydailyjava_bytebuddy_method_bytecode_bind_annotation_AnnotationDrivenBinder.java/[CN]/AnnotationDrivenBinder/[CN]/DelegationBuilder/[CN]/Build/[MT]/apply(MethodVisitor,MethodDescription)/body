@@ -1,0 +1,9 @@
+{
+  Assignment.Size argumentSize=new Assignment.Size(0,0);
+  for (  Assignment assignment : assignments) {
+    argumentSize.aggregate(assignment.apply(methodVisitor));
+  }
+  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,targetMethodDescription.getDeclaringClassInternalName(),targetMethodDescription.getInternalName(),targetMethodDescription.getDescriptor());
+  Assignment.Size returnSize=returningAssignment.apply(methodVisitor);
+  return new Size(Math.max(argumentSize.getMaximalSize(),returnSize.getMaximalSize()),TypeSize.sizeOf(methodDescription));
+}

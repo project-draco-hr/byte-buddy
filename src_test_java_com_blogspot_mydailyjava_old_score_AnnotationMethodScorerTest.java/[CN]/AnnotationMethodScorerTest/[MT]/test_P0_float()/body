@@ -1,4 +1,0 @@
-{
-  Method targetMethod=P0_float.class.getDeclaredMethod(METHOD_NAME);
-  methodScorer.match(targetMethod);
-}

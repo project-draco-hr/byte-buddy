@@ -1,3 +1,0 @@
-{
-  return name.concat(String.valueOf(RANDOM.nextInt()));
-}

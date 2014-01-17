@@ -1,5 +1,0 @@
-{
-  Class<?> clazz=makeSimpleProxy(Private0.class);
-  assertEquals(0,clazz.getDeclaredConstructors().length);
-  OBJENESIS.getInstantiatorOf(clazz).newInstance();
-}

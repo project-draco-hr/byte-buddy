@@ -1,6 +1,0 @@
-{
-  Method targetMethod=P0_void_ClassId.class.getDeclaredMethod(METHOD_NAME,UUID.class);
-  MethodScorer.MatchedMethod matchedMethod=methodScorer.match(targetMethod);
-  assertEquals(1,matchedMethod.getValues().size());
-  assertEquals(ClassIdReference.class,matchedMethod.getValues().get(0).getClass());
-}

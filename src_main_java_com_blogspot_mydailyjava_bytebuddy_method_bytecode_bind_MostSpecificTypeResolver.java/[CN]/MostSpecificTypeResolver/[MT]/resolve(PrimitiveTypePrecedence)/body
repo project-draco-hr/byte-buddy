@@ -1,0 +1,11 @@
+{
+  if (score - right.score == 0) {
+    return Resolution.NONE;
+  }
+ else   if (score - right.score > 0) {
+    return Resolution.LEFT;
+  }
+ else {
+    return Resolution.RIGHT;
+  }
+}

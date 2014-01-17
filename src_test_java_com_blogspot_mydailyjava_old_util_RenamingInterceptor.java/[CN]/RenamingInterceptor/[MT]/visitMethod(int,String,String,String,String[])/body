@@ -1,8 +1,0 @@
-{
-  if (!CONSTRUCTOR_METHOD_NAME.equals(name)) {
-    return cv.visitMethod(access,name,desc,signature,exceptions);
-  }
- else {
-    return null;
-  }
-}

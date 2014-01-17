@@ -1,0 +1,4 @@
+MethodDescription targetMethodDescription
+Assignment returningAssignment
+List<Assignment> assignments
+Map<Object,Integer> registeredTargetIndices

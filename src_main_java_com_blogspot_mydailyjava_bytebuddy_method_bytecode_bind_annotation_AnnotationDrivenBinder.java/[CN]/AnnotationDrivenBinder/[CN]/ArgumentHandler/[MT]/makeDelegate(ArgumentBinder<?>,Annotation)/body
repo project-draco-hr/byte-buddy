@@ -1,0 +1,3 @@
+{
+  return new Delegate.Explicit<Annotation>((ArgumentBinder<Annotation>)argumentBinder,annotation);
+}

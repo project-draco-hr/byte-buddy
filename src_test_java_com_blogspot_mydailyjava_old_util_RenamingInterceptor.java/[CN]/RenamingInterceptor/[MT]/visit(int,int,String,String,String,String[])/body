@@ -1,3 +1,0 @@
-{
-  super.visit(version,access,makeName(name),signature,name,interfaces);
-}

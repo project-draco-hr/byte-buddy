@@ -1,0 +1,6 @@
+{
+  this.target=target;
+  this.returningAssignment=returningAssignment;
+  this.assignments=new ArrayList<Assignment>(target.getParameterTypes().length);
+  this.registeredTargetIndices=new LinkedHashMap<Object,Integer>(target.getParameterTypes().length);
+}

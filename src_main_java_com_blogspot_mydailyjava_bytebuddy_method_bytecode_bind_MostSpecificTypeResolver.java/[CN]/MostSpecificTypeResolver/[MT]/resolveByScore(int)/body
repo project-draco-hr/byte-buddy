@@ -1,0 +1,11 @@
+{
+  if (boundParameterScore == 0) {
+    return Resolution.AMBIGUOUS;
+  }
+ else   if (boundParameterScore > 0) {
+    return Resolution.LEFT;
+  }
+ else {
+    return Resolution.RIGHT;
+  }
+}

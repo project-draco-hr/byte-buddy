@@ -1,5 +1,0 @@
-{
-  Method targetMethod=P0_void.class.getDeclaredMethod(METHOD_NAME);
-  MethodScorer.MatchedMethod matchedMethod=methodScorer.match(targetMethod);
-  assertEquals(0,matchedMethod.getValues().size());
-}

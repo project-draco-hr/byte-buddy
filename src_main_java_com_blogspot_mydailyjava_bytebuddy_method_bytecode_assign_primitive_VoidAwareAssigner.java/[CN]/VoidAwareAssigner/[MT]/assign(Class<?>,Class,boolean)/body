@@ -9,6 +9,6 @@
     return ValueRemovingAssignment.of(superType);
   }
  else {
-    return chainedDelegate.assign(superType,subType,considerRuntimeType);
+    return nonVoidAwareAssigner.assign(superType,subType,considerRuntimeType);
   }
 }
