@@ -1,5 +1,5 @@
 {
-  Object object=ByteBuddy.make().withAppendedClassVisitorWrapper(new DebuggingWrapper(System.out)).subclass(Bar.class).method(MethodMatchers.returns(String.class)).intercept(StubMethod.INSTANCE).make().load(getClass().getClassLoader()).newInstance();
+  Object object=ByteBuddy.make().withAppendedClassVisitorWrapper(new DebuggingWrapper(System.out)).subclass(Bar.class).method(MethodMatchers.returns(String.class)).intercept(SuperClassDelegation.INSTANCE).make().load(getClass().getClassLoader()).newInstance();
   System.out.println(Arrays.asList(object.getClass().getDeclaredMethods()));
   System.out.println(object.getClass());
   System.out.println(object.getClass().getSuperclass());

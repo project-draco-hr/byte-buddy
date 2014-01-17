@@ -1,3 +1,0 @@
-{
-  return new ArgumentLoadingAssignment(variableIndex,LegalTrivialAssignment.INSTANCE).apply(methodVisitor);
-}
