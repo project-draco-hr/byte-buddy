@@ -1,0 +1,3 @@
+{
+  return "Interception + test: " + x + y+ " "+ bar.toString();
+}

@@ -1,0 +1,10 @@
+{
+  List<BoundMethodDelegation> delegations=new LinkedList<BoundMethodDelegation>();
+  for (  MethodDescription target : targets) {
+    BoundMethodDelegation boundMethodDelegation=methodDelegationBinder.bind(typeDescription,source,target);
+    if (boundMethodDelegation.isBound()) {
+      delegations.add(boundMethodDelegation);
+    }
+  }
+  return delegations;
+}

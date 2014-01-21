@@ -1,0 +1,7 @@
+{
+  List<BoundMethodDelegation> boundMethodDelegations=bind(typeDescription,source,targets);
+  if (boundMethodDelegations.size() == 0) {
+    throw new IllegalArgumentException("No method can be bound to " + source);
+  }
+  return resolve(source,boundMethodDelegations);
+}

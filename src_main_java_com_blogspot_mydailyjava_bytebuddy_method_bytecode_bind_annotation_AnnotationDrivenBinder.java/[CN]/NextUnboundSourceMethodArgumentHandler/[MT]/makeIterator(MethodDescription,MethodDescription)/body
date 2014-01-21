@@ -1,3 +1,0 @@
-{
-  return new NextArgumentIterator(makeFreeIndexList(source,target));
-}

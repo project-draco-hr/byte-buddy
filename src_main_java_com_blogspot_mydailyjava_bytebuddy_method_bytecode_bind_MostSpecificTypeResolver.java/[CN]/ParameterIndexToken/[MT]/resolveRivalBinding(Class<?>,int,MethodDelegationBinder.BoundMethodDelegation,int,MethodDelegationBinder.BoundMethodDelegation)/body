@@ -1,0 +1,29 @@
+{
+  Class<?> leftParameterType=left.getBindingTarget().getParameterTypes()[leftParameterIndex];
+  Class<?> rightParameterType=right.getBindingTarget().getParameterTypes()[rightParameterIndex];
+  if (leftParameterType != rightParameterType) {
+    if (leftParameterType.isPrimitive() && rightParameterType.isPrimitive()) {
+      return PrimitiveTypePrecedence.forPrimitive(leftParameterType).resolve(PrimitiveTypePrecedence.forPrimitive(rightParameterType));
+    }
+ else     if (leftParameterType.isPrimitive()) {
+      return sourceParameterType.isPrimitive() ? Resolution.LEFT : Resolution.RIGHT;
+    }
+ else     if (rightParameterType.isPrimitive()) {
+      return sourceParameterType.isPrimitive() ? Resolution.RIGHT : Resolution.LEFT;
+    }
+ else {
+      if (leftParameterType.isAssignableFrom(rightParameterType)) {
+        return Resolution.RIGHT;
+      }
+ else       if (rightParameterType.isAssignableFrom(leftParameterType)) {
+        return Resolution.LEFT;
+      }
+ else {
+        return Resolution.AMBIGUOUS;
+      }
+    }
+  }
+ else {
+    return Resolution.UNKNOWN;
+  }
+}

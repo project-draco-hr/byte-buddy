@@ -1,0 +1,4 @@
+{
+  processor=new MethodDelegationBinder.Processor(methodDelegationBinder,ambiguityResolver);
+  this.methods=methods;
+}

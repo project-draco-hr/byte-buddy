@@ -1,0 +1,10 @@
+Class<? extends T> superClass
+List<Class<?>> interfaces
+ClassVersion classVersion
+NamingStrategy namingStrategy
+Visibility visibility
+TypeManifestation typeManifestation
+SyntheticState syntheticState
+MethodMatcher ignoredMethods
+ClassVisitorWrapperChain classVisitorWrapperChain
+MethodInterception.Stack methodInterceptions

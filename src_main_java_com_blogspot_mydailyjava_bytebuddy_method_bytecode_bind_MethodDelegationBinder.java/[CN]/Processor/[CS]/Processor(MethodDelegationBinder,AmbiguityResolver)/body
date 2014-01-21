@@ -1,0 +1,4 @@
+{
+  this.methodDelegationBinder=methodDelegationBinder;
+  this.ambiguityResolver=ambiguityResolver;
+}

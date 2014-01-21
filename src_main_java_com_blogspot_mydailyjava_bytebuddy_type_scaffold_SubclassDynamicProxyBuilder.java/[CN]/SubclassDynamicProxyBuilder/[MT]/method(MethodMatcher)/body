@@ -1,3 +1,3 @@
 {
-  return new SubclassLocatedMethodInterception(this,checkNotNull(methodMatcher));
+  return new SubclassLocatedMethodInterception<T>(this,checkNotNull(methodMatcher));
 }

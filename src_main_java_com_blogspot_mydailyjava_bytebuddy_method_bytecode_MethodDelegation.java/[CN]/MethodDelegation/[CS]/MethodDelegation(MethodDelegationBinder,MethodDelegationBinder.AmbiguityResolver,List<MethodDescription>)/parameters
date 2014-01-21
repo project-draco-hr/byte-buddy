@@ -1,0 +1,3 @@
+MethodDelegationBinder methodDelegationBinder
+MethodDelegationBinder.AmbiguityResolver ambiguityResolver
+List<MethodDescription> methods

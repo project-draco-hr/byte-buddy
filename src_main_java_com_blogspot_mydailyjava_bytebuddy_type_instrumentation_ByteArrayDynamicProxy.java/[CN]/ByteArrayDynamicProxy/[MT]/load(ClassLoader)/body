@@ -1,6 +1,6 @@
 {
   try {
-    return Class.forName(typeName,false,new ByteArrayClassLoader(classLoader,typeName,javaType));
+    return (Class<? extends T>)Class.forName(typeName,false,new ByteArrayClassLoader(classLoader,typeName,javaType));
   }
  catch (  ClassNotFoundException e) {
     throw new IllegalStateException("Could not load class",e);
