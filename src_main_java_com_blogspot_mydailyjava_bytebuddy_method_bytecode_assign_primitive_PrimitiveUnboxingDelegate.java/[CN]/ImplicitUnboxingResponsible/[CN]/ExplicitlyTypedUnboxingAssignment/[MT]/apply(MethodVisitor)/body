@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitMethodInsn(Opcodes.INVOKEDYNAMIC,wrapperTypeName,unboxingMethodName,unboxingMethodDescriptor);
-  return wideningAssignment.apply(methodVisitor).aggregate(typeSize.getSize() - 1,typeSize.getSize() - 1);
-}

@@ -1,4 +1,0 @@
-{
-  PrimitiveUnboxingDelegate delegate=PrimitiveUnboxingDelegate.forPrimitive(subType);
-  return delegate.new ImplicitlyTypedUnboxingAssignment(assigner.assign(type,delegate.wrapperType,considerRuntimeType));
-}

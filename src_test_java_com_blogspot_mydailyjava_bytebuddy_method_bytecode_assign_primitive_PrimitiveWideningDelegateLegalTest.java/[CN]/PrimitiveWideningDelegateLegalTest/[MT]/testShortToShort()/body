@@ -1,0 +1,8 @@
+{
+  Assignment assignment=PrimitiveWideningDelegate.forPrimitive(short.class).widenTo(short.class);
+  assertThat(assignment.isAssignable(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+  verifyZeroInteractions(methodVisitor);
+}

@@ -2,7 +2,7 @@
   Assignment assignment=ReferenceTypeAwareAssigner.INSTANCE.assign(int.class,int.class,false);
   assertThat(assignment.isAssignable(),is(true));
   Assignment.Size size=assignment.apply(methodVisitor);
-  assertThat(size.getSize(),is(0));
+  assertThat(size.getSizeImpact(),is(0));
   assertThat(size.getMaximalSize(),is(0));
   verifyZeroInteractions(methodVisitor);
 }

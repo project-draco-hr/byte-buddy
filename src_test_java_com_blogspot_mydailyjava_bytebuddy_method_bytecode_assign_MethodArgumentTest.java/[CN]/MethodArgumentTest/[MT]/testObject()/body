@@ -2,7 +2,7 @@
   Assignment assignment=MethodArgument.forType(type).loadFromIndex(4);
   assertThat(assignment.isAssignable(),is(true));
   Assignment.Size size=assignment.apply(methodVisitor);
-  assertThat(size.getSize(),is(this.size));
+  assertThat(size.getSizeImpact(),is(this.size));
   assertThat(size.getMaximalSize(),is(this.size));
   verify(methodVisitor).visitVarInsn(opcode,4);
   verifyNoMoreInteractions(methodVisitor);

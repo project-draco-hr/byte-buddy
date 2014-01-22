@@ -3,7 +3,7 @@
   Assignment assignment=voidAware.assign(Object.class,void.class,false);
   assertThat(assignment.isAssignable(),is(true));
   Assignment.Size size=assignment.apply(methodVisitor);
-  assertThat(size.getSize(),is(-1));
+  assertThat(size.getSizeImpact(),is(-1));
   assertThat(size.getMaximalSize(),is(0));
   verifyZeroInteractions(assigner);
   verify(methodVisitor).visitInsn(Opcodes.POP);

@@ -1,0 +1,4 @@
+{
+  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,wrapperTypeName,boxingMethodName,boxingMethodDescriptor);
+  return size.aggregate(assignment.apply(methodVisitor));
+}

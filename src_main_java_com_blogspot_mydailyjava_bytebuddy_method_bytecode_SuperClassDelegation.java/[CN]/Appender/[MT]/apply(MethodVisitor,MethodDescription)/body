@@ -2,7 +2,7 @@
   methodVisitor.visitVarInsn(Opcodes.ALOAD,0);
   Assignment.Size size=new Assignment.Size(1,1);
   for (  Class<?> parameterType : methodDescription.getParameterTypes()) {
-    size=size.aggregate(MethodArgument.forType(parameterType).loadFromIndex(size.getSize()).apply(methodVisitor));
+    size=size.aggregate(MethodArgument.forType(parameterType).loadFromIndex(size.getSizeImpact()).apply(methodVisitor));
   }
   methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL,superClassInternalName,methodDescription.getInternalName(),methodDescription.getDescriptor());
   size=size.aggregate(MethodReturn.returning(methodDescription.getReturnType()).apply(methodVisitor));

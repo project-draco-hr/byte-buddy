@@ -1,0 +1,4 @@
+{
+  this.conversionInstruction=conversionInstruction;
+  this.size=size;
+}
