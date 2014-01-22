@@ -1,0 +1,11 @@
+{
+  Assignment assignment=PrimitiveBoxingDelegate.forPrimitive(boolean.class).assignBoxedTo(Void.class,chainedAssigner,false);
+  assertThat(assignment.isAssignable(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+  verify(chainedAssigner).assign(Boolean.class,Void.class,false);
+  verifyNoMoreInteractions(chainedAssigner);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESTATIC,Type.getInternalName(Boolean.class),VALUE_OF,"(Z)Ljava/lang/Boolean;");
+  verifyNoMoreInteractions(methodVisitor);
+}
