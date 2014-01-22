@@ -1,0 +1,9 @@
+{
+  Assignment assignment=ReferenceTypeAwareAssigner.INSTANCE.assign(Integer.class,Object.class,true);
+  assertThat(assignment.isAssignable(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSize(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+  verify(methodVisitor).visitTypeInsn(Opcodes.CHECKCAST,Type.getInternalName(Integer.class));
+  verifyNoMoreInteractions(methodVisitor);
+}

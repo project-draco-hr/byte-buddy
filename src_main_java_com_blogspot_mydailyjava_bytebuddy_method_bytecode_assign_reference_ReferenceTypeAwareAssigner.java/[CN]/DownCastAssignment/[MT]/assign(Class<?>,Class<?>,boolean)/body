@@ -1,0 +1,19 @@
+{
+  if (superType.isPrimitive() || subType.isPrimitive()) {
+    if (superType == subType) {
+      return LegalTrivialAssignment.INSTANCE;
+    }
+ else {
+      return IllegalAssignment.INSTANCE;
+    }
+  }
+ else   if (superType.isAssignableFrom(subType)) {
+    return LegalTrivialAssignment.INSTANCE;
+  }
+ else   if (considerRuntimeType) {
+    return new DownCastAssignment(superType);
+  }
+ else {
+    return IllegalAssignment.INSTANCE;
+  }
+}
