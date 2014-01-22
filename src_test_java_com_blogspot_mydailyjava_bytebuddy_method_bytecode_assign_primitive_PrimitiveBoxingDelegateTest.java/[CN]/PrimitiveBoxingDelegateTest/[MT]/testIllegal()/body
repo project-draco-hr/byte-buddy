@@ -1,3 +1,0 @@
-{
-  PrimitiveBoxingDelegate.forPrimitive(Object.class);
-}

@@ -1,0 +1,8 @@
+{
+  this.primitiveType=primitiveType;
+  this.referenceType=referenceType;
+  this.unboxingMethodName=unboxingMethodName;
+  this.unboxingMethodDescriptor=unboxingMethodDescriptor;
+  this.wideningOpcode=wideningOpcode;
+  this.sizeChange=sizeChange;
+}

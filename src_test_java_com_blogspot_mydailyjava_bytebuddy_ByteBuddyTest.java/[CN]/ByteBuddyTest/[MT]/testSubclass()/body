@@ -1,7 +1,2 @@
 {
-  Bar object=ByteBuddy.make().subclass(Bar.class).method(named("hashCode")).intercept(StubMethod.INSTANCE).make().load(getClass().getClassLoader()).newInstance();
-  System.out.println(Arrays.asList(object.getClass().getDeclaredMethods()));
-  System.out.println(object.getClass());
-  System.out.println(object.getClass().getSuperclass());
-  System.out.println(object.test("a",10));
 }

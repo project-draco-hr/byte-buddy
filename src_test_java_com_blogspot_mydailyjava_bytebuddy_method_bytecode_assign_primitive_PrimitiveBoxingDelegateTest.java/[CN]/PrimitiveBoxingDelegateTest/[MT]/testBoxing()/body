@@ -1,0 +1,11 @@
+{
+  Assignment assignment=PrimitiveBoxingDelegate.forPrimitive(primitiveType).assignBoxedTo(Void.class,chainedAssigner,false);
+  assertThat(assignment.isAssignable(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSizeImpact(),is(sizeChange));
+  assertThat(size.getMaximalSize(),is(0));
+  verify(chainedAssigner).assign(referenceType,Void.class,false);
+  verifyNoMoreInteractions(chainedAssigner);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESTATIC,Type.getInternalName(referenceType),VALUE_OF,boxingMethodDescriptor);
+  verifyNoMoreInteractions(methodVisitor);
+}
