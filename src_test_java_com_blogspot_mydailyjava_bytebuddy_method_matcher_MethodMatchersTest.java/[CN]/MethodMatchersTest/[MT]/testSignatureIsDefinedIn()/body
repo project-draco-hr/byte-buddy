@@ -1,0 +1,9 @@
+{
+  assertThat(MethodMatchers.signatureIsDefinedIn(Object.class).matches(testClassBase$foo),is(false));
+  assertThat(MethodMatchers.signatureIsDefinedIn(TestClassBase.class).matches(testClassBase$foo),is(true));
+  assertThat(MethodMatchers.signatureIsDefinedIn(TestClassExtension.class).matches(testClassBase$foo),is(true));
+  assertThat(MethodMatchers.signatureIsDefinedIn(Object.class).matches(testClassExtension$foo),is(false));
+  assertThat(MethodMatchers.signatureIsDefinedIn(TestClassBase.class).matches(testClassExtension$foo),is(true));
+  assertThat(MethodMatchers.signatureIsDefinedIn(TestClassExtension.class).matches(testClassExtension$foo),is(true));
+  assertThat(MethodMatchers.signatureIsDefinedIn(TestClassExtension.class).matches(testClassExtension$stat),is(true));
+}

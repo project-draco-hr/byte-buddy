@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.isConstructor().matches(testModifier$constructor),is(true));
+  assertThat(MethodMatchers.isConstructor().matches(testClassBase$constructor),is(true));
+  assertThat(MethodMatchers.isConstructor().matches(testClassBase$foo),is(false));
+  assertThat(MethodMatchers.isConstructor().matches(testClassBase$bar),is(false));
+}

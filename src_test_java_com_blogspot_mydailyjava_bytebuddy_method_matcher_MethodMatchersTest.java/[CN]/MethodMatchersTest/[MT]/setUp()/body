@@ -13,4 +13,12 @@
   testClassExtension$qux=new MethodDescription.ForMethod(TestClassExtension.class.getDeclaredMethod(QUX_METHOD_NAME));
   testClassExtension$fin=new MethodDescription.ForMethod(TestClassExtension.class.getDeclaredMethod(FIN_METHOD_NAME + "2"));
   testClassExtension$stat=new MethodDescription.ForMethod(TestClassExtension.class.getDeclaredMethod(STAT_METHOD_NAME));
+  object$hashCode=new MethodDescription.ForMethod(Object.class.getDeclaredMethod(HASH_CODE_METHOD_NAME));
+  object$finalize=new MethodDescription.ForMethod(Object.class.getDeclaredMethod(FINALIZE_METHOD_NAME));
+  testModifier$finalize=new MethodDescription.ForMethod(TestModifier.class.getDeclaredMethod(FINALIZE_METHOD_NAME));
+  testModifier$sync=new MethodDescription.ForMethod(TestModifier.class.getDeclaredMethod(SYNC_METHOD_NAME));
+  testModifier$varargs=new MethodDescription.ForMethod(TestModifier.class.getDeclaredMethod(VARARGS_METHOD_NAME,Object[].class));
+  testModifier$strict=new MethodDescription.ForMethod(TestModifier.class.getDeclaredMethod(STRICT_METHOD_NAME));
+  testModifier$constructor=new MethodDescription.ForConstructor(TestModifier.class.getDeclaredConstructor());
+  testClassBase$constructor=new MethodDescription.ForConstructor(TestClassBase.class.getDeclaredConstructor());
 }
