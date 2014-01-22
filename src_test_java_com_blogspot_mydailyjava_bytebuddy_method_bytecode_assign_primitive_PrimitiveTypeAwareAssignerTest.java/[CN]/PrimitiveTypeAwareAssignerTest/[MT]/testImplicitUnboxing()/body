@@ -1,0 +1,26 @@
+{
+  assertThat(primitiveAssigner.assign(Object.class,boolean.class,true).isAssignable(),is(true));
+  verify(chainedAssigner).assign(Object.class,Boolean.class,true);
+  verifyNoMoreInteractions(chainedAssigner);
+  assertThat(primitiveAssigner.assign(Object.class,byte.class,true).isAssignable(),is(true));
+  verify(chainedAssigner).assign(Object.class,Byte.class,true);
+  verifyNoMoreInteractions(chainedAssigner);
+  assertThat(primitiveAssigner.assign(Object.class,short.class,true).isAssignable(),is(true));
+  verify(chainedAssigner).assign(Object.class,Short.class,true);
+  verifyNoMoreInteractions(chainedAssigner);
+  assertThat(primitiveAssigner.assign(Object.class,char.class,true).isAssignable(),is(true));
+  verify(chainedAssigner).assign(Object.class,Character.class,true);
+  verifyNoMoreInteractions(chainedAssigner);
+  assertThat(primitiveAssigner.assign(Object.class,int.class,true).isAssignable(),is(true));
+  verify(chainedAssigner).assign(Object.class,Integer.class,true);
+  verifyNoMoreInteractions(chainedAssigner);
+  assertThat(primitiveAssigner.assign(Object.class,long.class,true).isAssignable(),is(true));
+  verify(chainedAssigner).assign(Object.class,Long.class,true);
+  verifyNoMoreInteractions(chainedAssigner);
+  assertThat(primitiveAssigner.assign(Object.class,float.class,true).isAssignable(),is(true));
+  verify(chainedAssigner).assign(Object.class,Float.class,true);
+  verifyNoMoreInteractions(chainedAssigner);
+  assertThat(primitiveAssigner.assign(Object.class,double.class,true).isAssignable(),is(true));
+  verify(chainedAssigner).assign(Object.class,Double.class,true);
+  verifyNoMoreInteractions(chainedAssigner);
+}
