@@ -1,0 +1,4 @@
+Class<?> type
+int index
+int opcode
+int size

@@ -1,0 +1,4 @@
+{
+  assigner=mock(Assigner.class);
+  methodVisitor=mock(MethodVisitor.class);
+}
