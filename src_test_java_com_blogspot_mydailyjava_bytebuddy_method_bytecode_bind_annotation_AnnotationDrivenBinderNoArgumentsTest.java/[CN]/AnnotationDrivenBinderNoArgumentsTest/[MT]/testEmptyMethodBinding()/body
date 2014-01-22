@@ -1,0 +1,13 @@
+{
+  MethodDelegationBinder.BoundMethodDelegation boundMethodDelegation=methodDelegationBinder.bind(typeDescription,source,target);
+  assertThat(boundMethodDelegation.isBound(),is(true));
+  assertThat(boundMethodDelegation.getBindingTarget(),is(target));
+  verify(assigner).assign(any(Class.class),any(Class.class),eq(false));
+  verifyNoMoreInteractions(assigner);
+  verify(annotationDefaultHandler).makeIterator(typeDescription,source,target);
+  verifyNoMoreInteractions(annotationDefaultHandler);
+  verify(source,atLeast(1)).getReturnType();
+  verify(target,atLeast(1)).getReturnType();
+  verify(target,atLeast(1)).isAnnotationPresent(RuntimeType.class);
+  verify(target,atLeast(1)).getParameterTypes();
+}

@@ -1,0 +1,9 @@
+{
+  annotationDefaultHandler=mock(AnnotationDrivenBinder.AnnotationDefaultHandler.class);
+  assigner=mock(Assigner.class);
+  when(assigner.assign(any(Class.class),any(Class.class),anyBoolean())).thenReturn(LegalTrivialAssignment.INSTANCE);
+  methodDelegationBinder=new AnnotationDrivenBinder(Collections.<AnnotationDrivenBinder.ArgumentBinder<?>>emptyList(),annotationDefaultHandler,assigner);
+  typeDescription=mock(TypeDescription.class);
+  source=mock(MethodDescription.class,RETURNS_MOCKS);
+  target=mock(MethodDescription.class,RETURNS_MOCKS);
+}
