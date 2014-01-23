@@ -1,0 +1,7 @@
+{
+  Object token=new Object();
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding.makeIdentified(assignment,token);
+  assertThat(identifiedBinding.getAssignment(),is(assignment));
+  assertThat(identifiedBinding.getIdentificationToken(),is(token));
+  assertThat(identifiedBinding.isValid(),is(true));
+}

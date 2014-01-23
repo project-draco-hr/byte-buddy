@@ -1,0 +1,6 @@
+{
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding.makeIllegal();
+  assertThat(identifiedBinding.getIdentificationToken(),notNullValue());
+  assertThat(identifiedBinding.isValid(),is(false));
+  assertThat(identifiedBinding.getAssignment().isAssignable(),is(false));
+}

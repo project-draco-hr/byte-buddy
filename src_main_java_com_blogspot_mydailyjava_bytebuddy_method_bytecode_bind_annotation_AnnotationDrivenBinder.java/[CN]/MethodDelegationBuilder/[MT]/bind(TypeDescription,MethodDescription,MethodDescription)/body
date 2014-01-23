@@ -1,5 +1,5 @@
 {
-  Assignment returningAssignment=assigner.assign(target.getReturnType(),source.getReturnType(),target.isAnnotationPresent(RuntimeType.class));
+  Assignment returningAssignment=assigner.assign(target.getReturnType(),source.getReturnType(),RuntimeType.Verifier.check(target));
   if (!returningAssignment.isAssignable()) {
     return IllegalMethodDelegation.INSTANCE;
   }

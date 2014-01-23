@@ -1,0 +1,4 @@
+{
+  assignment=mock(Assignment.class);
+  when(assignment.isAssignable()).thenReturn(true);
+}
