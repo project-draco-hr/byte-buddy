@@ -1,0 +1,5 @@
+{
+  typeDescription=mock(TypeDescription.class);
+  source=mock(MethodDescription.class);
+  target=mock(MethodDescription.class);
+}

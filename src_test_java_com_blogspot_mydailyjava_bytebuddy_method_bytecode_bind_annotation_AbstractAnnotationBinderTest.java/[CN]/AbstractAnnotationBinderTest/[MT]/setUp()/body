@@ -1,0 +1,7 @@
+{
+  annotation=mock(annotationType);
+  source=mock(MethodDescription.class);
+  target=mock(MethodDescription.class);
+  typeDescription=mock(TypeDescription.class);
+  assigner=mock(Assigner.class);
+}

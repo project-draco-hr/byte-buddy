@@ -1,2 +1,5 @@
 {
+  Bar object=ByteBuddy.make().subclass(Bar.class).method(named("test")).intercept(SuperClassDelegation.INSTANCE).make().load(getClass().getClassLoader()).newInstance();
+  System.out.println(Arrays.asList(object.getClass().getDeclaredMethods()));
+  System.out.println(object.test("a",10));
 }

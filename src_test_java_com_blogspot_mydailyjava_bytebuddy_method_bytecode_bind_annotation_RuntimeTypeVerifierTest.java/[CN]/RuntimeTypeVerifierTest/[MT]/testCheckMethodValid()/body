@@ -1,0 +1,6 @@
+{
+  when(methodDescription.getAnnotations()).thenReturn(new Annotation[]{runtimeType});
+  assertThat(RuntimeType.Verifier.check(methodDescription),is(true));
+  verify(methodDescription).getAnnotations();
+  verifyNoMoreInteractions(methodDescription);
+}
