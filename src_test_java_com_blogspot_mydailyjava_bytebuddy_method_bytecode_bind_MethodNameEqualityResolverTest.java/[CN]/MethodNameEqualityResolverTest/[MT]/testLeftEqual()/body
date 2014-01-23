@@ -1,0 +1,3 @@
+{
+  test(FOO,BAR,FOO,MethodDelegationBinder.AmbiguityResolver.Resolution.LEFT);
+}

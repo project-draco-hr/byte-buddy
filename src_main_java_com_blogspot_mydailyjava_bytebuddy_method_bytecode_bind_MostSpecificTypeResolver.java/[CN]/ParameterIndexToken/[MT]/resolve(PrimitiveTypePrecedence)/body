@@ -3,9 +3,9 @@
     return Resolution.UNKNOWN;
   }
  else   if (score - right.score > 0) {
-    return Resolution.LEFT;
+    return Resolution.RIGHT;
   }
  else {
-    return Resolution.RIGHT;
+    return Resolution.LEFT;
   }
 }

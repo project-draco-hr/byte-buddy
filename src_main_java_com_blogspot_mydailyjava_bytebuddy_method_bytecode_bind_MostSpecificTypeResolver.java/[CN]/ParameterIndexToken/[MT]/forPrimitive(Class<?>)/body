@@ -14,16 +14,16 @@
  else   if (type == char.class) {
     return CHARACTER;
   }
- else   if (type == float.class) {
-    return FLOAT;
-  }
  else   if (type == long.class) {
     return LONG;
+  }
+ else   if (type == float.class) {
+    return FLOAT;
   }
  else   if (type == double.class) {
     return DOUBLE;
   }
  else {
-    throw new IllegalArgumentException("Not a primitive type " + type);
+    throw new IllegalArgumentException("Not a non-void, primitive type " + type);
   }
 }

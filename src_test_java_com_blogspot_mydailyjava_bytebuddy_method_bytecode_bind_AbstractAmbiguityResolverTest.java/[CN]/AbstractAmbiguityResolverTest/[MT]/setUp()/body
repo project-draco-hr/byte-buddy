@@ -1,0 +1,9 @@
+{
+  source=mock(MethodDescription.class);
+  leftMethod=mock(MethodDescription.class);
+  left=mock(MethodDelegationBinder.BoundMethodDelegation.class);
+  when(left.getBindingTarget()).thenReturn(leftMethod);
+  right=mock(MethodDelegationBinder.BoundMethodDelegation.class);
+  rightMethod=mock(MethodDescription.class);
+  when(right.getBindingTarget()).thenReturn(rightMethod);
+}

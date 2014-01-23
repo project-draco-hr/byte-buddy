@@ -1,0 +1,4 @@
+String leftName
+String rightName
+String resultName
+MethodDelegationBinder.AmbiguityResolver.Resolution expected

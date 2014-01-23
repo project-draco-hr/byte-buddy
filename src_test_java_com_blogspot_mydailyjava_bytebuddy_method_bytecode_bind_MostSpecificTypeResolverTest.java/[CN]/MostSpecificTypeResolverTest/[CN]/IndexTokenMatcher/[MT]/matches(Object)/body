@@ -1,0 +1,3 @@
+{
+  return new MostSpecificTypeResolver.ParameterIndexToken(index).equals(item);
+}
