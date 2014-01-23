@@ -1,0 +1,4 @@
+{
+  assertThat(annotationType.isAnnotationPresent(Retention.class),is(true));
+  assertThat(annotationType.getAnnotation(Retention.class).value(),is(RetentionPolicy.RUNTIME));
+}

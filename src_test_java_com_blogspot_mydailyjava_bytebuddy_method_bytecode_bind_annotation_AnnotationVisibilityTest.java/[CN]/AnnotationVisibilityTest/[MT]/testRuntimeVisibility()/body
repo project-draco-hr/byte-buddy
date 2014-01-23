@@ -1,0 +1,5 @@
+{
+  testRuntimeVisibilityOf(RuntimeType.class);
+  testRuntimeVisibilityOf(Argument.class);
+  testRuntimeVisibilityOf(This.class);
+}
