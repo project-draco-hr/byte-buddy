@@ -1,0 +1,9 @@
+{
+  firstArgumentBinder=mock(AnnotationDrivenBinder.ArgumentBinder.class);
+  secondArgumentBinder=mock(AnnotationDrivenBinder.ArgumentBinder.class);
+  defaultProvider=mock(AnnotationDrivenBinder.DefaultProvider.class);
+  assigner=mock(Assigner.class);
+  typeDescription=mock(TypeDescription.class);
+  source=mock(MethodDescription.class);
+  target=mock(MethodDescription.class);
+}

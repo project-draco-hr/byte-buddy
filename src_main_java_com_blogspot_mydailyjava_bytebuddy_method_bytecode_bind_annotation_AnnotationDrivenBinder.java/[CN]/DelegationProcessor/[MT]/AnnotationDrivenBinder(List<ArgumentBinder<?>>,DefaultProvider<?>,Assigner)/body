@@ -1,5 +1,5 @@
 {
   this.delegationProcessor=new DelegationProcessor(argumentBinders);
-  this.annotationDefaultHandler=annotationDefaultHandler;
+  this.defaultProvider=defaultProvider;
   this.assigner=assigner;
 }

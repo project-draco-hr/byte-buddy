@@ -1,0 +1,5 @@
+{
+  doReturn(FirstMockAnnotation.class).when(firstArgumentBinder).getHandledType();
+  doReturn(FirstMockAnnotation.class).when(secondArgumentBinder).getHandledType();
+  new AnnotationDrivenBinder(Arrays.<AnnotationDrivenBinder.ArgumentBinder<?>>asList(firstArgumentBinder,secondArgumentBinder),defaultProvider,assigner);
+}
