@@ -1,6 +1,0 @@
-{
-  this.targetMethodDescription=targetMethodDescription;
-  this.returningAssignment=returningAssignment;
-  this.assignments=assignments;
-  this.registeredTargetIndices=registeredTargetIndices;
-}

@@ -1,9 +1,9 @@
 {
-  List<BoundMethodDelegation> possibleDelegations=new LinkedList<BoundMethodDelegation>();
+  List<Binding> possibleDelegations=new LinkedList<Binding>();
   for (  MethodDescription target : targets) {
-    BoundMethodDelegation boundMethodDelegation=methodDelegationBinder.bind(typeDescription,source,target);
-    if (boundMethodDelegation.isBound()) {
-      possibleDelegations.add(boundMethodDelegation);
+    Binding binding=methodDelegationBinder.bind(typeDescription,source,target);
+    if (binding.isValid()) {
+      possibleDelegations.add(binding);
     }
   }
   return possibleDelegations;

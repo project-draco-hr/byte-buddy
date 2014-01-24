@@ -1,4 +1,0 @@
-{
-  assignments.add(identifiedBinding.getAssignment());
-  return registeredTargetIndices.put(identifiedBinding.getIdentificationToken(),targetParameterIndex) == null;
-}

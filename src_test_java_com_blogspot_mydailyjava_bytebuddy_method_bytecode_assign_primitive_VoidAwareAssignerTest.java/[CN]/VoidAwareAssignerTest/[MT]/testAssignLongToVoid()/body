@@ -1,7 +1,7 @@
 {
   Assigner voidAware=new VoidAwareAssigner(assigner,true);
   Assignment assignment=voidAware.assign(long.class,void.class,false);
-  assertThat(assignment.isAssignable(),is(true));
+  assertThat(assignment.isValid(),is(true));
   Assignment.Size size=assignment.apply(methodVisitor);
   assertThat(size.getSizeImpact(),is(-2));
   assertThat(size.getMaximalSize(),is(0));

@@ -1,6 +1,6 @@
 {
   Assigner voidAware=new VoidAwareAssigner(assigner,false);
   Assignment assignment=voidAware.assign(void.class,String.class,false);
-  assertThat(assignment.isAssignable(),is(false));
+  assertThat(assignment.isValid(),is(false));
   assignment.apply(methodVisitor);
 }

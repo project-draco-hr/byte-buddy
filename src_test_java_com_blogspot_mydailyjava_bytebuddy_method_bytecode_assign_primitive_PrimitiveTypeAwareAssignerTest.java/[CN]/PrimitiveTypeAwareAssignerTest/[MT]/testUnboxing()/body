@@ -1,11 +1,11 @@
 {
-  assertThat(primitiveAssigner.assign(Boolean.class,boolean.class,false).isAssignable(),is(true));
-  assertThat(primitiveAssigner.assign(Byte.class,byte.class,false).isAssignable(),is(true));
-  assertThat(primitiveAssigner.assign(Short.class,short.class,false).isAssignable(),is(true));
-  assertThat(primitiveAssigner.assign(Character.class,char.class,false).isAssignable(),is(true));
-  assertThat(primitiveAssigner.assign(Integer.class,int.class,false).isAssignable(),is(true));
-  assertThat(primitiveAssigner.assign(Long.class,long.class,false).isAssignable(),is(true));
-  assertThat(primitiveAssigner.assign(Float.class,float.class,false).isAssignable(),is(true));
-  assertThat(primitiveAssigner.assign(Double.class,double.class,false).isAssignable(),is(true));
+  assertThat(primitiveAssigner.assign(Boolean.class,boolean.class,false).isValid(),is(true));
+  assertThat(primitiveAssigner.assign(Byte.class,byte.class,false).isValid(),is(true));
+  assertThat(primitiveAssigner.assign(Short.class,short.class,false).isValid(),is(true));
+  assertThat(primitiveAssigner.assign(Character.class,char.class,false).isValid(),is(true));
+  assertThat(primitiveAssigner.assign(Integer.class,int.class,false).isValid(),is(true));
+  assertThat(primitiveAssigner.assign(Long.class,long.class,false).isValid(),is(true));
+  assertThat(primitiveAssigner.assign(Float.class,float.class,false).isValid(),is(true));
+  assertThat(primitiveAssigner.assign(Double.class,double.class,false).isValid(),is(true));
   verifyZeroInteractions(chainedAssigner);
 }

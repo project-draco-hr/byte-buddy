@@ -1,6 +1,6 @@
 {
   Assignment assignment=PrimitiveWideningDelegate.forPrimitive(byte.class).widenTo(byte.class);
-  assertThat(assignment.isAssignable(),is(true));
+  assertThat(assignment.isValid(),is(true));
   Assignment.Size size=assignment.apply(methodVisitor);
   assertThat(size.getSizeImpact(),is(0));
   assertThat(size.getMaximalSize(),is(0));

@@ -1,5 +1,0 @@
-Class<?> sourceParameterType
-int leftParameterIndex
-MethodDelegationBinder.BoundMethodDelegation left
-int rightParameterIndex
-MethodDelegationBinder.BoundMethodDelegation right

@@ -1,0 +1,6 @@
+{
+  this.methodDescription=methodDescription;
+  int parameterSize=TypeSize.sizeOf(methodDescription);
+  int returnValueSize=TypeSize.of(methodDescription.getReturnType()).getSize();
+  this.size=new Size(returnValueSize - parameterSize,Math.max(0,returnValueSize - parameterSize));
+}

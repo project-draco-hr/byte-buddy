@@ -1,0 +1,11 @@
+{
+  if (methodDescription.isStatic()) {
+    return STATIC.new Invocation(methodDescription);
+  }
+ else   if (methodDescription.isInterfaceMethod()) {
+    return INTERFACE.new Invocation(methodDescription);
+  }
+ else {
+    return CONCRETE.new Invocation(methodDescription);
+  }
+}
