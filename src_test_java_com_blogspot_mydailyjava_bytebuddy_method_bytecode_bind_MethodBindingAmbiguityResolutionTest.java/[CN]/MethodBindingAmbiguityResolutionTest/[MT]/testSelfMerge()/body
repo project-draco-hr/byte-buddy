@@ -1,0 +1,4 @@
+{
+  testSelfMerge(LEFT);
+  testSelfMerge(RIGHT);
+}

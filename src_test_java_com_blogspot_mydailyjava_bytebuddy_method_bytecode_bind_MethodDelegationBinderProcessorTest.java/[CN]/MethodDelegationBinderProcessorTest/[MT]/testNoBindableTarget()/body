@@ -1,0 +1,5 @@
+{
+  List<MethodDescription> methodDescriptions=Arrays.asList(unbindableTarget,unbindableTarget,unbindableTarget);
+  MethodDelegationBinder.Processor processor=new MethodDelegationBinder.Processor(methodDelegationBinder,ambiguityResolver);
+  processor.process(typeDescription,source,methodDescriptions);
+}

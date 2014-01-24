@@ -31,8 +31,8 @@ targets.remove(LEFT);
 return resolve(source,targets);
 case AMBIGUOUS:
 case UNKNOWN:
-targets.remove(LEFT);
 targets.remove(RIGHT);
+targets.remove(LEFT);
 BoundMethodDelegation subResult=resolve(source,targets);
 switch (ambiguityResolver.resolve(source,left,subResult).merge(ambiguityResolver.resolve(source,right,subResult))) {
 case RIGHT:
@@ -40,7 +40,7 @@ return subResult;
 case LEFT:
 case AMBIGUOUS:
 case UNKNOWN:
-throw new IllegalArgumentException("Could not resolve ambiguous delegation to " + left + " or "+ right);
+throw new IllegalArgumentException("Could not resolve ambiguous delegation to either " + left + " or "+ right);
 default :
 throw new AssertionError();
 }

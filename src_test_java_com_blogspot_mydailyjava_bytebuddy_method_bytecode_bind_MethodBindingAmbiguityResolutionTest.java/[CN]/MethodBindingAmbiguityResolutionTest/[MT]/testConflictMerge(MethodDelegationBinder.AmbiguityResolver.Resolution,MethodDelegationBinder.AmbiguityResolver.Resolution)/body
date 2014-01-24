@@ -1,0 +1,3 @@
+{
+  assertThat(first.merge(second),is(MethodDelegationBinder.AmbiguityResolver.Resolution.AMBIGUOUS));
+}

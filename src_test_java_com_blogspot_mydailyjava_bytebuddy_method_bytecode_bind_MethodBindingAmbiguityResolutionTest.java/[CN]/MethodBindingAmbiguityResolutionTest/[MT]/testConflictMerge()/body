@@ -1,0 +1,4 @@
+{
+  testConflictMerge(LEFT,RIGHT);
+  testConflictMerge(RIGHT,LEFT);
+}

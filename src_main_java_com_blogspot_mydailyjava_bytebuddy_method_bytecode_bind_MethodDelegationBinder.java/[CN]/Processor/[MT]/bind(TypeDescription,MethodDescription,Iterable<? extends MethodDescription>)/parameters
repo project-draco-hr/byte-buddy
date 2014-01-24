@@ -1,3 +1,3 @@
 TypeDescription typeDescription
 MethodDescription source
-Iterable<MethodDescription> targets
+Iterable<? extends MethodDescription> targets

@@ -1,0 +1,3 @@
+{
+  assertThat(resolution.merge(resolution),is(resolution));
+}
