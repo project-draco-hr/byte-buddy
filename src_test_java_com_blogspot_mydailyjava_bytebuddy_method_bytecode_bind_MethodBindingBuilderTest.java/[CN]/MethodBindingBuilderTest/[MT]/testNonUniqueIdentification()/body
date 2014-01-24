@@ -1,0 +1,5 @@
+{
+  MethodDelegationBinder.Binding.Builder builder=new MethodDelegationBinder.Binding.Builder(methodDescription);
+  assertThat(builder.append(legalAssignment,42,new Key(FOO)),is(true));
+  assertThat(builder.append(legalAssignment,12,new Key(FOO)),is(false));
+}

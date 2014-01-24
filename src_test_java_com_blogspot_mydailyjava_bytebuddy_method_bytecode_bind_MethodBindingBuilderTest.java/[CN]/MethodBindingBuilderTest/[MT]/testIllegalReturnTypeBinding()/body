@@ -1,0 +1,6 @@
+{
+  MethodDelegationBinder.Binding.Builder builder=new MethodDelegationBinder.Binding.Builder(methodDescription);
+  MethodDelegationBinder.Binding binding=builder.build(illegalAssignment);
+  assertThat(binding.isValid(),is(false));
+  assertThat(binding.getTarget(),is(methodDescription));
+}
