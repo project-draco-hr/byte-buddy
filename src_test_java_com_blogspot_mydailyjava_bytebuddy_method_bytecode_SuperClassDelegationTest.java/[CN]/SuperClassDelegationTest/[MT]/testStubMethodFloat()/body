@@ -1,0 +1,3 @@
+{
+  testDelegation(FloatDelegation.class,is((float)NON_DEFAULT_VALUE));
+}

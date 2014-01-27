@@ -1,0 +1,3 @@
+{
+  testDelegation(IntDelegation.class,is(NON_DEFAULT_VALUE));
+}

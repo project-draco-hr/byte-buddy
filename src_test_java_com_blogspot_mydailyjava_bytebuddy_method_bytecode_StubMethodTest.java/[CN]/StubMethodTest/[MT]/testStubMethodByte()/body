@@ -1,0 +1,3 @@
+{
+  testStubbing(StubbedByte.class,is((byte)DEFAULT_VALUE));
+}

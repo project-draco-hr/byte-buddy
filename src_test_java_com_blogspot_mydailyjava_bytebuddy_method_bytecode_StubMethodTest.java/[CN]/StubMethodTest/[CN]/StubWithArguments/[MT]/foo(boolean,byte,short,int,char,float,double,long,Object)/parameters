@@ -1,0 +1,9 @@
+boolean a
+byte b
+short c
+int d
+char e
+float f
+double g
+long h
+Object i

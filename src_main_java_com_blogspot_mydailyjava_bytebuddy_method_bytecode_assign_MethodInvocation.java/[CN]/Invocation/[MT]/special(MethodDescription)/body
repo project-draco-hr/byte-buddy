@@ -1,0 +1,8 @@
+{
+  if (methodDescription.isStatic()) {
+    throw new IllegalArgumentException("Cannot invoke static method via INVOKESPECIAL");
+  }
+ else {
+    return SPECIAL.new Invocation(methodDescription);
+  }
+}

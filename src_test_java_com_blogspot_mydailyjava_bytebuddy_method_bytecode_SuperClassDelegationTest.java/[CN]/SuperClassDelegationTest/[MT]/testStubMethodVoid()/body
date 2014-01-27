@@ -1,0 +1,3 @@
+{
+  testDelegation(VoidDelegation.class,nullValue(Void.class));
+}

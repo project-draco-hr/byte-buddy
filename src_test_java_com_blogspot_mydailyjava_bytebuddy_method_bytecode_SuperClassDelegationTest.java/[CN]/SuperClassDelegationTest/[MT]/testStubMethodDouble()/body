@@ -1,0 +1,3 @@
+{
+  testDelegation(DoubleDelegation.class,is((double)NON_DEFAULT_VALUE));
+}

@@ -1,0 +1,19 @@
+{
+  ClassWriter classWriter=new ClassWriter(ASM_MANUAL);
+  String typeName=String.format("%s.Test%d",TEST_PACKAGE,Math.abs(random.nextInt()));
+  classWriter.visit(Opcodes.V1_6,Opcodes.ACC_PUBLIC,toInternalName(typeName),null,Type.getInternalName(superClass),null);
+  MethodVisitor defaultConstructor=classWriter.visitMethod(Opcodes.ACC_PUBLIC,CONSTRUCTOR_INTERNAL_NAME,DEFAULT_CONSTRUCTOR_DESCRIPTOR,null,null);
+  defaultConstructor.visitCode();
+  defaultConstructor.visitVarInsn(Opcodes.ALOAD,0);
+  defaultConstructor.visitMethodInsn(Opcodes.INVOKESPECIAL,Type.getInternalName(superClass),CONSTRUCTOR_INTERNAL_NAME,DEFAULT_CONSTRUCTOR_DESCRIPTOR);
+  defaultConstructor.visitInsn(Opcodes.RETURN);
+  defaultConstructor.visitMaxs(1,1);
+  defaultConstructor.visitEnd();
+  MethodVisitor methodVisitor=classWriter.visitMethod(signatureDescription.getModifiers(),signatureDescription.getInternalName(),signatureDescription.getDescriptor(),null,null);
+  methodVisitor.visitCode();
+  ByteCodeAppender.Size size=appender.apply(methodVisitor,appenderArgument);
+  methodVisitor.visitMaxs(size.getOperandStackSize(),size.getLocalVariableSize());
+  methodVisitor.visitEnd();
+  classWriter.visitEnd();
+  return new ByteArrayClassLoader(getClass().getClassLoader(),typeName,classWriter.toByteArray()).loadClass(typeName);
+}

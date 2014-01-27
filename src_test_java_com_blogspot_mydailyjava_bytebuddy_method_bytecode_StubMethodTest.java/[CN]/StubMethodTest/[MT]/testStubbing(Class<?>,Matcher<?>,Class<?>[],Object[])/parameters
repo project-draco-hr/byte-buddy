@@ -1,0 +1,4 @@
+Class<?> type
+Matcher<?> matcher
+Class<?>[] parameterType
+Object[] parameter

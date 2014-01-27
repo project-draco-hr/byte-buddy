@@ -1,0 +1,3 @@
+{
+  testStubbing(StubbedBoolean.class,is(false));
+}

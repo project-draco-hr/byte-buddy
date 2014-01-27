@@ -1,0 +1,4 @@
+{
+  markCalled();
+  return FOO;
+}

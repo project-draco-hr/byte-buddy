@@ -1,0 +1,3 @@
+{
+  testStubbing(StubbedShort.class,is((short)DEFAULT_VALUE));
+}

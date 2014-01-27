@@ -1,0 +1,3 @@
+{
+  testStubbing(StubbedFloat.class,is((float)DEFAULT_VALUE));
+}
