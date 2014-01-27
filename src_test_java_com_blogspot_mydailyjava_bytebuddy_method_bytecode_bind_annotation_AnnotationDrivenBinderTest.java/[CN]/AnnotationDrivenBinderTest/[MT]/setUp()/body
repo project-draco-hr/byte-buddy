@@ -6,4 +6,14 @@
   typeDescription=mock(TypeDescription.class);
   source=mock(MethodDescription.class);
   target=mock(MethodDescription.class);
+  when(target.getDeclaringClassInternalName()).thenReturn(FOO);
+  when(target.getInternalName()).thenReturn(BAR);
+  when(target.getDescriptor()).thenReturn(BAZ);
+  when(target.isStatic()).thenReturn(true);
+  when(target.isInterfaceMethod()).thenReturn(false);
+  firstPseudoAnnotation=mock(FirstPseudoAnnotation.class);
+  doReturn(FirstPseudoAnnotation.class).when(firstPseudoAnnotation).annotationType();
+  secondPseudoAnnotation=mock(SecondPseudoAnnotation.class);
+  doReturn(SecondPseudoAnnotation.class).when(secondPseudoAnnotation).annotationType();
+  methodVisitor=mock(MethodVisitor.class);
 }

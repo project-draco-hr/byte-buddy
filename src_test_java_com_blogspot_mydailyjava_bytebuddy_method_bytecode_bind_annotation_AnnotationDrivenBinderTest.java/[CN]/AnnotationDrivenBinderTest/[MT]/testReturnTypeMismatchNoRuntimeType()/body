@@ -1,0 +1,13 @@
+{
+  when(assigner.assign(any(Class.class),any(Class.class),anyBoolean())).thenReturn(IllegalAssignment.INSTANCE);
+  doReturn(Object.class).when(source).getReturnType();
+  doReturn(Void.class).when(target).getReturnType();
+  when(target.getAnnotations()).thenReturn(new Annotation[0]);
+  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Collections.<AnnotationDrivenBinder.ArgumentBinder<?>>emptyList(),defaultProvider,assigner);
+  assertThat(methodDelegationBinder.bind(typeDescription,source,target).isValid(),is(false));
+  verify(assigner).assign(Void.class,Object.class,false);
+  verifyNoMoreInteractions(assigner);
+  verify(source,atLeast(1)).getReturnType();
+  verify(target,atLeast(1)).getReturnType();
+  verifyZeroInteractions(defaultProvider);
+}
