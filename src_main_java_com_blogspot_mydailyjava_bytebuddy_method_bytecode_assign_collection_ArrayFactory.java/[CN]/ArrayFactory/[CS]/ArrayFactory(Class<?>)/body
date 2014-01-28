@@ -1,3 +1,0 @@
-{
-  this.arrayTypeInternalName=Type.getInternalName(type);
-}

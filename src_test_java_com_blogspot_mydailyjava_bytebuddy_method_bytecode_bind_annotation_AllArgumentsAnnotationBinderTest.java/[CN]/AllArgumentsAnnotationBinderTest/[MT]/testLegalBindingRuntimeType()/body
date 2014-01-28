@@ -1,0 +1,19 @@
+{
+  final int targetIndex=1;
+  when(assigner.assign(any(Class.class),any(Class.class),anyBoolean())).thenReturn(LegalTrivialAssignment.INSTANCE);
+  when(source.getParameterTypes()).thenReturn(new Class<?>[]{int.class,Object.class});
+  when(source.isStatic()).thenReturn(false);
+  when(target.getParameterTypes()).thenReturn(new Class<?>[]{null,Void[].class});
+  RuntimeType runtimeType=mock(RuntimeType.class);
+  doReturn(RuntimeType.class).when(runtimeType).annotationType();
+  when(target.getParameterAnnotations()).thenReturn(new Annotation[][]{{},{runtimeType}});
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=AllArguments.Binder.INSTANCE.bind(annotation,targetIndex,source,target,typeDescription,assigner);
+  assertThat(identifiedBinding.isValid(),is(true));
+  verify(source,atLeast(1)).getParameterTypes();
+  verify(source,atLeast(1)).isStatic();
+  verify(target,atLeast(1)).getParameterTypes();
+  verify(target,atLeast(1)).getParameterAnnotations();
+  verify(assigner).assign(int.class,Void.class,true);
+  verify(assigner).assign(Object.class,Void.class,true);
+  verifyNoMoreInteractions(assigner);
+}

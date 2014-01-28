@@ -1,4 +1,4 @@
 {
   methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,targetTypeInternalName);
-  return TypeSize.NONE.toIncreasingSize();
+  return TypeSize.ZERO.toIncreasingSize();
 }

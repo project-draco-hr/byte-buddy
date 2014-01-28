@@ -1,0 +1,3 @@
+{
+  assertEquals(AllArguments.class,AllArguments.Binder.INSTANCE.getHandledType());
+}

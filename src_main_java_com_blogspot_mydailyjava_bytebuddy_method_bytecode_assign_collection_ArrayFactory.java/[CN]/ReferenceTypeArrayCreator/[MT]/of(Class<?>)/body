@@ -1,0 +1,6 @@
+{
+  if (!type.isArray()) {
+    throw new IllegalArgumentException("Expected array type instead of " + type);
+  }
+  return new ArrayFactory(type.getComponentType(),makeCreatorFor(type.getComponentType()));
+}

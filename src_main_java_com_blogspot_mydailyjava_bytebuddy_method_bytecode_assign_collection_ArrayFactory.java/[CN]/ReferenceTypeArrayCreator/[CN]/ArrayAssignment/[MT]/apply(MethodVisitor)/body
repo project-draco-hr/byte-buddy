@@ -1,0 +1,14 @@
+{
+  Size size=IntegerConstant.forValue(assignments.size()).apply(methodVisitor);
+  size=size.aggregate(arrayCreator.apply(methodVisitor));
+  int index=0;
+  for (  Assignment assignment : assignments) {
+    methodVisitor.visitInsn(Opcodes.DUP);
+    size=size.aggregate(TypeSize.SINGLE.toIncreasingSize());
+    size=size.aggregate(IntegerConstant.forValue(index++).apply(methodVisitor));
+    size=size.aggregate(assignment.apply(methodVisitor));
+    methodVisitor.visitInsn(arrayCreator.getStorageOpcode());
+    size=size.aggregate(sizeDecrease);
+  }
+  return size;
+}

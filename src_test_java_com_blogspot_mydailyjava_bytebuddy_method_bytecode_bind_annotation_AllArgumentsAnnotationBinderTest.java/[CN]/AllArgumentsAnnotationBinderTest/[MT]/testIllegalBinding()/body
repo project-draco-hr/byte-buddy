@@ -1,0 +1,13 @@
+{
+  final int targetIndex=0;
+  when(source.getParameterTypes()).thenReturn(new Class<?>[]{Object.class});
+  when(target.getParameterTypes()).thenReturn(new Class<?>[]{Void[].class});
+  when(target.getParameterAnnotations()).thenReturn(new Annotation[2][0]);
+  when(assigner.assign(any(Class.class),any(Class.class),anyBoolean())).thenReturn(IllegalAssignment.INSTANCE);
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=AllArguments.Binder.INSTANCE.bind(annotation,targetIndex,source,target,typeDescription,assigner);
+  assertThat(identifiedBinding.isValid(),is(false));
+  verify(source,atLeast(1)).getParameterTypes();
+  verify(target,atLeast(1)).getParameterTypes();
+  verify(assigner).assign(Object.class,Void.class,false);
+  verifyNoMoreInteractions(assigner);
+}
