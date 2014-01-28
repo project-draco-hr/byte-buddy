@@ -1,0 +1,3 @@
+{
+  testDirectDelegation(DoubleDelegationSource.class,SimpleDelegationTarget.class,is((double)RESULT),new Class<?>[]{double.class},new Object[]{(double)ARGUMENT_VALUE});
+}

@@ -1,0 +1,3 @@
+{
+  testDirectDelegation(ByteDelegationSource.class,SimpleDelegationTarget.class,is((byte)RESULT),new Class<?>[]{byte.class},new Object[]{(byte)ARGUMENT_VALUE});
+}

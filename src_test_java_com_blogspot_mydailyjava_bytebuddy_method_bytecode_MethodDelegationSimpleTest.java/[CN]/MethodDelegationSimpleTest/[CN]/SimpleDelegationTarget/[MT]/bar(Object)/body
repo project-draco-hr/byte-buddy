@@ -1,0 +1,4 @@
+{
+  recordStackTrace(Object.class);
+  return FOO + a;
+}

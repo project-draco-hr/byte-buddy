@@ -1,0 +1,4 @@
+{
+  recordStackTrace(float.class);
+  return a * MULTIPLICATOR;
+}

@@ -1,0 +1,4 @@
+{
+  recordStackTrace(boolean.class);
+  return true;
+}

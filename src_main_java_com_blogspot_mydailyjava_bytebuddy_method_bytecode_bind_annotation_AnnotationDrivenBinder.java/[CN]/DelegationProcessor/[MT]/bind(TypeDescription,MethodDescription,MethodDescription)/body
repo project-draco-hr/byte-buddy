@@ -1,4 +1,7 @@
 {
+  if (IgnoreForBinding.Verifier.check(target)) {
+    return IllegalMethodDelegation.INSTANCE;
+  }
   Assignment returningAssignment=assigner.assign(target.getReturnType(),source.getReturnType(),RuntimeType.Verifier.check(target));
   if (!returningAssignment.isValid()) {
     return IllegalMethodDelegation.INSTANCE;

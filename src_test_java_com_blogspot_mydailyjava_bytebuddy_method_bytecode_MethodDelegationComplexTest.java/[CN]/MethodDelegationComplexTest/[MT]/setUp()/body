@@ -1,0 +1,4 @@
+{
+  typeDescription=mock(TypeDescription.class);
+  doReturn(Source.class).when(typeDescription).getSuperClass();
+}

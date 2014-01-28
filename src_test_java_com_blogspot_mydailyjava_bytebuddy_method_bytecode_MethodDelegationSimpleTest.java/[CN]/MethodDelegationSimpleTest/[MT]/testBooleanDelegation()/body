@@ -1,0 +1,3 @@
+{
+  testDirectDelegation(BooleanDelegationSource.class,SimpleDelegationTarget.class,is(true),new Class<?>[]{boolean.class},new Object[]{true});
+}

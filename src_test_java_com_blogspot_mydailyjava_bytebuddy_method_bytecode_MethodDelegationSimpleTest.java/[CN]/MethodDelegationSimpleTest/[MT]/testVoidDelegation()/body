@@ -1,0 +1,3 @@
+{
+  testDirectDelegation(VoidDelegationSource.class,SimpleDelegationTarget.class,nullValue(Void.class),new Class<?>[0],new Object[0]);
+}

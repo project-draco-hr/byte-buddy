@@ -1,0 +1,6 @@
+{
+  this.methodName=methodName;
+  this.methodDescriptor=methodDescriptor;
+  this.methodExceptionInternalName=methodExceptionInternalName;
+  this.returnOpcode=returnOpcode;
+}

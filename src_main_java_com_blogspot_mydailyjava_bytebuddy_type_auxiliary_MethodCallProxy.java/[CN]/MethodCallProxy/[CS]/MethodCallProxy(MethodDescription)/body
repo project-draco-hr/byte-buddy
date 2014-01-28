@@ -1,0 +1,5 @@
+{
+  internalMethodName=methodDescription.getInternalName();
+  descriptor=methodDescription.getDescriptor();
+  parameterType=methodDescription.getParameterTypes();
+}

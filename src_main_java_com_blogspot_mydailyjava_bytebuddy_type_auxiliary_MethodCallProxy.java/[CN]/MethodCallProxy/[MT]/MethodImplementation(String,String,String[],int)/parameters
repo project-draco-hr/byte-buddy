@@ -1,0 +1,4 @@
+String methodName
+String methodDescriptor
+String[] methodExceptionInternalName
+int returnOpcode

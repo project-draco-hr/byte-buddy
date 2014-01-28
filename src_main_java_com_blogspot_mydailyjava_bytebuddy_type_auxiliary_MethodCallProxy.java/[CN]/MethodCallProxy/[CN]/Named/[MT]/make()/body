@@ -1,0 +1,11 @@
+{
+  ClassWriter classWriter=new ClassWriter(ASM_MANUAL);
+  classWriter.visit(classVersion.getVersionNumber(),CLASS_MODIFIER,proxyInternalName,null,OBJECT_INTERNAL_NAME,new String[]{RUNNABLE_INTERNAL_NAME,CALLABLE_INTERNAL_NAME});
+  for (  Class<?> type : parameterType) {
+  }
+  for (  MethodImplementation methodImplementation : MethodImplementation.values()) {
+    methodImplementation.implement(classWriter);
+  }
+  classWriter.visitEnd();
+  return classWriter.toByteArray();
+}

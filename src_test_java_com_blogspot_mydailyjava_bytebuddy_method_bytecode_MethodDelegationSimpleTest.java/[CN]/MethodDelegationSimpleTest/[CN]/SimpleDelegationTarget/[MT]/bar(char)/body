@@ -1,0 +1,4 @@
+{
+  recordStackTrace(char.class);
+  return (char)(a * MULTIPLICATOR);
+}

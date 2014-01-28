@@ -1,0 +1,9 @@
+{
+  ByteCodeAppenderFactoryTester tester=new ByteCodeAppenderFactoryTester(MethodDelegation.to(targetType),typeDescription,sourceType);
+  MethodDescription methodDescription=new MethodDescription.ForMethod(sourceType.getDeclaredMethod(FOO,parameterType));
+  MethodDescription spied=spy(methodDescription);
+  Class<?> instrumented=tester.applyTo(spied,methodDescription);
+  assertEquals(sourceType,instrumented.getSuperclass());
+  assertThat(instrumented.getDeclaredMethods().length,is(1));
+  return (T)instrumented.getDeclaredConstructor().newInstance();
+}

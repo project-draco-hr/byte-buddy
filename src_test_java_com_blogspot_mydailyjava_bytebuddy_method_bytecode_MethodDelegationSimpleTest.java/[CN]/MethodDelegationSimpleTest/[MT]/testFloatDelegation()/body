@@ -1,0 +1,3 @@
+{
+  testDirectDelegation(FloatDelegationSource.class,SimpleDelegationTarget.class,is((float)RESULT),new Class<?>[]{float.class},new Object[]{(float)ARGUMENT_VALUE});
+}

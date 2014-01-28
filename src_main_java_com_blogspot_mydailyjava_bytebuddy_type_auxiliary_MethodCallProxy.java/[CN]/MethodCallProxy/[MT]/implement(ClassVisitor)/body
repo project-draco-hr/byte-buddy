@@ -1,0 +1,6 @@
+{
+  MethodVisitor methodVisitor=classVisitor.visitMethod(METHOD_MODIFIER,methodName,methodDescriptor,null,methodExceptionInternalName);
+  methodVisitor.visitCode();
+  methodVisitor.visitInsn(returnOpcode);
+  methodVisitor.visitEnd();
+}

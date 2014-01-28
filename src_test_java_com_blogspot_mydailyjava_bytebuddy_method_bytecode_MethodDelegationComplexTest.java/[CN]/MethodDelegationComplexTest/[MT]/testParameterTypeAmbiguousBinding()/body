@@ -1,0 +1,3 @@
+{
+  makeDelegation(Source.class,AmbiguousTarget.class,new Class<?>[]{Void.class,String.class,int.class});
+}
