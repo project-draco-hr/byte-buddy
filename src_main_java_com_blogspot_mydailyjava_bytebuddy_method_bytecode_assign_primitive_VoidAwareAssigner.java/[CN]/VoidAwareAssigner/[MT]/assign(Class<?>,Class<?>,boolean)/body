@@ -1,14 +1,14 @@
 {
-  if (superType == void.class && subType == void.class) {
+  if (sourceType == void.class && targetType == void.class) {
     return LegalTrivialAssignment.INSTANCE;
   }
- else   if (superType == void.class) {
-    return returnDefaultValue ? DefaultValue.load(subType) : IllegalAssignment.INSTANCE;
+ else   if (sourceType == void.class) {
+    return returnDefaultValue ? DefaultValue.load(targetType) : IllegalAssignment.INSTANCE;
   }
- else   if (subType == void.class) {
-    return ValueRemovingAssignment.of(superType);
+ else   if (targetType == void.class) {
+    return ValueRemovingAssignment.of(sourceType);
   }
  else {
-    return nonVoidAwareAssigner.assign(superType,subType,considerRuntimeType);
+    return nonVoidAwareAssigner.assign(sourceType,targetType,considerRuntimeType);
   }
 }

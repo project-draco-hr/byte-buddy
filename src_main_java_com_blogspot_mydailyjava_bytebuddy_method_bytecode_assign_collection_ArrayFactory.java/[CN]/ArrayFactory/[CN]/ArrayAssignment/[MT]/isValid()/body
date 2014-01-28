@@ -1,0 +1,8 @@
+{
+  for (  Assignment assignment : assignments) {
+    if (!assignment.isValid()) {
+      return false;
+    }
+  }
+  return true;
+}

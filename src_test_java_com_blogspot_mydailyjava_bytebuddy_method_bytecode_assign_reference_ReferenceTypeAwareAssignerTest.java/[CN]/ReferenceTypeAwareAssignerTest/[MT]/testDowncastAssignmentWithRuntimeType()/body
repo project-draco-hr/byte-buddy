@@ -1,5 +1,5 @@
 {
-  Assignment assignment=ReferenceTypeAwareAssigner.INSTANCE.assign(Integer.class,Object.class,true);
+  Assignment assignment=ReferenceTypeAwareAssigner.INSTANCE.assign(Object.class,Integer.class,true);
   assertThat(assignment.isValid(),is(true));
   Assignment.Size size=assignment.apply(methodVisitor);
   assertThat(size.getSizeImpact(),is(0));

@@ -1,0 +1,8 @@
+{
+  testConstant(0,Opcodes.ICONST_0);
+  testConstant(1,Opcodes.ICONST_1);
+  testConstant(2,Opcodes.ICONST_2);
+  testConstant(3,Opcodes.ICONST_3);
+  testConstant(4,Opcodes.ICONST_4);
+  testConstant(5,Opcodes.ICONST_5);
+}

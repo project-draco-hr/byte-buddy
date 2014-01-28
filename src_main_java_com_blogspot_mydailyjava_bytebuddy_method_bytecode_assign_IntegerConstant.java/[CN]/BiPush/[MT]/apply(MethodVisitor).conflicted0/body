@@ -1,0 +1,4 @@
+{
+  methodVisitor.visitIntInsn(Opcodes.BIPUSH,value);
+  return SIZE;
+}

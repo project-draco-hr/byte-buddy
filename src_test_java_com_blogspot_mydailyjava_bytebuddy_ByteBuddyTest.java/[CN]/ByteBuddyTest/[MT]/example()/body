@@ -1,0 +1,5 @@
+{
+  Bar object=ByteBuddy.make().withAppendedClassVisitorWrapper(new DebuggingWrapper(System.out)).subclass(Bar.class).method(named("test")).intercept(MethodDelegation.to(Delegate.class)).method(named("foo")).intercept(MethodDelegation.to(Delegate.class)).make().load(getClass().getClassLoader()).newInstance();
+  System.out.println(object.test("a",10));
+  System.out.println(object.foo(10));
+}
