@@ -1,0 +1,3 @@
+{
+  testPrimitiveCreation(byte[].class,Opcodes.T_BYTE,Opcodes.BASTORE);
+}

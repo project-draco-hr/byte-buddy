@@ -1,0 +1,5 @@
+{
+  methodVisitor=mock(org.objectweb.asm.MethodVisitor.class);
+  assignment=mock(Assignment.class);
+  when(assignment.isValid()).thenReturn(true);
+}

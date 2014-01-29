@@ -1,0 +1,3 @@
+{
+  testPrimitiveCreation(int[].class,Opcodes.T_INT,Opcodes.IASTORE);
+}

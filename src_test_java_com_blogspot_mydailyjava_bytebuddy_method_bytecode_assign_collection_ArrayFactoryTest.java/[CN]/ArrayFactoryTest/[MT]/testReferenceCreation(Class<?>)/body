@@ -1,0 +1,3 @@
+{
+  testCreation(type,new Reference(Type.getInternalName(type.getComponentType())),Opcodes.AASTORE);
+}

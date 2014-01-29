@@ -1,0 +1,3 @@
+{
+  testReferenceCreation(Object[].class);
+}

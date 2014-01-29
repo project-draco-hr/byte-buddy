@@ -1,0 +1,3 @@
+{
+  testCreation(type,new Primitive(creationOpcode),storageOpcode);
+}

@@ -1,0 +1,3 @@
+{
+  ArrayFactory.of(Object.class);
+}
