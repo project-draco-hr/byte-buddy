@@ -1,0 +1,10 @@
+{
+  List<MethodDescription> extractedMethods=new ArrayList<MethodDescription>(this.extractedMethods.size());
+  Set<String> extractedMethodSignatures=new HashSet<String>(this.extractedMethodSignatures);
+  for (  MethodDescription methodDescription : this.extractedMethods) {
+    if (methodMatcher.matches(methodDescription)) {
+      extractedMethods.add(methodDescription);
+    }
+  }
+  return new MethodExtraction(extractedMethods,extractedMethodSignatures,new JunctionMethodMatcher.Conjunction(methodMatcher,this.methodMatcher));
+}

@@ -1,5 +1,4 @@
 {
-  this.proxyInternalName=proxyInternalName;
-  constructorDescriptor=descriptor.substring(0,descriptor.lastIndexOf(')')) + VOID_TYPE_TOKEN;
+  this.proxyTypeInternalName=proxyTypeInternalName;
   this.classVersion=classVersion;
 }

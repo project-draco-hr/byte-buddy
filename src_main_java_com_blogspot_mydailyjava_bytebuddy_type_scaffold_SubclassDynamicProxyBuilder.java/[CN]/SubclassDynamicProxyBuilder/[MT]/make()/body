@@ -4,7 +4,7 @@
   TypeDescription typeDescription=new TypeDescription(classVersion,superClass,interfaces,visibility,typeManifestation,syntheticState,namingStrategy);
   classVisitor.visit(typeDescription.getClassVersion(),typeDescription.getTypeModifier(),typeDescription.getInternalName(),null,typeDescription.getSuperClassInternalName(),typeDescription.getInterfacesInternalNames());
   MethodInterception.Handler handler=methodInterceptions.handler(typeDescription);
-  for (  MethodDescription method : MethodExtraction.matching(OVERRIDABLE.and(not(ignoredMethods))).extractFrom(superClass).appendInterfaceMethods(interfaces).asList()) {
+  for (  MethodDescription method : MethodExtraction.matching(OVERRIDABLE.and(not(ignoredMethods))).appendUniqueDescriptorsFrom(superClass).extractUniqueDescriptorsFrom(interfaces).asList()) {
     handler.find(method).handle(classVisitor);
   }
   classVisitor.visitEnd();

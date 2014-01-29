@@ -1,0 +1,3 @@
+List<MethodDescription> extractedMethods
+Set<String> extractedMethodSignatures
+MethodMatcher methodMatcher

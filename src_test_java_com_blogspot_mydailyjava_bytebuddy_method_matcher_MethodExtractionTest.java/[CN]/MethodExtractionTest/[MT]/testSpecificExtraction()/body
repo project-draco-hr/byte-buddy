@@ -1,0 +1,5 @@
+{
+  List<MethodDescription> methodDescriptions=MethodExtraction.matching(named(TO_STRING_METHOD_NAME)).appendUniqueDescriptorsFrom(Object.class).asList();
+  assertThat(methodDescriptions.size(),is(1));
+  assertThat(methodDescriptions.get(0),equalTo((MethodDescription)new MethodDescription.ForMethod(Object.class.getDeclaredMethod(TO_STRING_METHOD_NAME))));
+}

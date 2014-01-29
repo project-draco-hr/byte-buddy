@@ -1,0 +1,8 @@
+{
+  List<MethodDescription> methodDescriptions=MethodExtraction.matching(not(named(TO_STRING_METHOD_NAME))).appendUniqueDescriptorsFrom(Foo.class).appendUniqueDescriptorsFrom(Bar.class).asList();
+  MethodDescription[] expectedMethods=getDeclaredJavaMethods(not(named(TO_STRING_METHOD_NAME)),Foo.class,Bar.class,Object.class);
+  MethodDescription[] expectedConstructors=getDeclaredJavaConstructors(Foo.class,Bar.class);
+  assertThat(methodDescriptions.size(),is(expectedMethods.length + expectedConstructors.length));
+  assertThat(methodDescriptions,hasItems(expectedMethods));
+  assertThat(methodDescriptions,hasItems(expectedConstructors));
+}

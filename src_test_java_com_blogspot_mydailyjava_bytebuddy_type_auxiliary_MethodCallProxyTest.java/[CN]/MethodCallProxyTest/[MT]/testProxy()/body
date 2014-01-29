@@ -1,0 +1,8 @@
+{
+  AuxiliaryClass methodCallProxy=new MethodCallProxy(new MethodDescription.ForMethod(Proxied.class.getDeclaredMethod("test")));
+  AuxiliaryClass.Named named=methodCallProxy.name("com.Test",new ClassVersion(Opcodes.V1_6));
+  ClassLoader classLoader=new ByteArrayClassLoader(getClass().getClassLoader(),"com.Test",named.make());
+  Class<?> test=classLoader.loadClass("com.Test");
+  Proxied proxied=new Proxied();
+  test.getConstructor(Object.class).newInstance(proxied);
+}

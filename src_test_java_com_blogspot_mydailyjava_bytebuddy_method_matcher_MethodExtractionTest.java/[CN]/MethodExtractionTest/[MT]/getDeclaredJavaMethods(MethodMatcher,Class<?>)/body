@@ -1,0 +1,12 @@
+{
+  List<MethodDescription> methodDescriptions=new LinkedList<MethodDescription>();
+  for (  Class<?> type : types) {
+    for (    Method method : type.getDeclaredMethods()) {
+      MethodDescription methodDescription=new MethodDescription.ForMethod(method);
+      if (methodMatcher.matches(methodDescription)) {
+        methodDescriptions.add(methodDescription);
+      }
+    }
+  }
+  return methodDescriptions.toArray(new MethodDescription[methodDescriptions.size()]);
+}

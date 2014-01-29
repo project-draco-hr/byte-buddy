@@ -1,8 +1,3 @@
 {
-  MethodDescription[] methodDescriptions=new MethodDescription[type.getDeclaredMethods().length];
-  int i=0;
-  for (  Method method : type.getDeclaredMethods()) {
-    methodDescriptions[i++]=new MethodDescription.ForMethod(method);
-  }
-  return methodDescriptions;
+  return getDeclaredJavaMethods(any(),types);
 }

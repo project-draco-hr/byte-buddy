@@ -1,0 +1,5 @@
+{
+  List<MethodDescription> methodDescriptions=MethodExtraction.matching(isMethod()).appendUniqueDescriptorsFrom(Object.class).asList();
+  assertThat(methodDescriptions.size(),is(getDeclaredJavaMethods(Object.class).length));
+  assertThat(methodDescriptions,hasItems(getDeclaredJavaMethods(Object.class)));
+}

@@ -1,5 +1,0 @@
-{
-  extractDeclaredConstructors(clazz);
-  extractClass(clazz);
-  return this;
-}

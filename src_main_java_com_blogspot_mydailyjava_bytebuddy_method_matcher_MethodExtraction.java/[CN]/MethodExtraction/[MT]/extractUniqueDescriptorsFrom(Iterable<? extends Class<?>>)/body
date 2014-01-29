@@ -1,0 +1,7 @@
+{
+  ExtractionHelper extractionHelper=new ExtractionHelper();
+  for (  Class<?> type : types) {
+    extractionHelper.extractType(type);
+  }
+  return extractionHelper.toMethodExtraction();
+}

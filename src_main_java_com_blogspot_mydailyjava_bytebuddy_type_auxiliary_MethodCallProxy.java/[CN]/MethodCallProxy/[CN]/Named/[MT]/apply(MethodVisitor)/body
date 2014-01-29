@@ -1,6 +1,3 @@
 {
-  methodVisitor.visitTypeInsn(Opcodes.NEW,proxyInternalName);
-  methodVisitor.visitInsn(Opcodes.DUP);
-  methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL,proxyInternalName,CONSTRUCTOR_INTERNAL_NAME,constructorDescriptor);
-  return new Size(1,-1);
+  return null;
 }

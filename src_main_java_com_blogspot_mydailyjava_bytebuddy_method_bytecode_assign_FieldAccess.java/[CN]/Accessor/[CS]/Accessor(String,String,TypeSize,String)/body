@@ -1,0 +1,6 @@
+{
+  this.fieldName=fieldName;
+  this.fieldTypeDescriptor=fieldTypeDescriptor;
+  this.typeSize=typeSize;
+  this.ownerTypeInternalName=ownerTypeInternalName;
+}

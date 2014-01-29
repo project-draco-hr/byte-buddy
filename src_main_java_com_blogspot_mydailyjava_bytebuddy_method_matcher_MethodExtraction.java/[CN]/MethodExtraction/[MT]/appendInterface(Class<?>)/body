@@ -1,4 +1,0 @@
-{
-  extractInterfaces(Arrays.<Class<?>>asList(anInterface));
-  return this;
-}

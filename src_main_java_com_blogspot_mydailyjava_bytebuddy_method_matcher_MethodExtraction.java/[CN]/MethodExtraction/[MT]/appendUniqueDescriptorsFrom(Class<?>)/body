@@ -1,0 +1,3 @@
+{
+  return new ExtractionHelper().extractType(type).toMethodExtraction();
+}

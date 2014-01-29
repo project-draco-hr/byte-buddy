@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && descriptor.equals(((MethodCallProxy)other).descriptor) && internalMethodName.equals(((MethodCallProxy)other).internalMethodName);
-}

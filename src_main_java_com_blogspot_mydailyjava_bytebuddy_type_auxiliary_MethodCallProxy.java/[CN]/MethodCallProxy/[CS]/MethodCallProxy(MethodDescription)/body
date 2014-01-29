@@ -1,5 +1,28 @@
 {
-  internalMethodName=methodDescription.getInternalName();
-  descriptor=methodDescription.getDescriptor();
-  parameterType=methodDescription.getParameterTypes();
+  Map<String,String> fieldTypes=new HashMap<String,String>(1 + methodDescription.getParameterTypes().length);
+  int i=0;
+  TypeSize maximalSize=TypeSize.ZERO;
+  Assignment.Size stackedSize=TypeSize.ZERO.toIncreasingSize();
+  StringBuilder proxyConstructorDescriptor=new StringBuilder("(");
+  if (!methodDescription.isStatic()) {
+    fieldTypes.put(FIELD_NAME_PREFIX + i,Type.getDescriptor(Object.class));
+    proxyConstructorDescriptor.append(Type.getDescriptor(Object.class));
+    TypeSize argumentSize=TypeSize.SINGLE;
+    stackedSize=stackedSize.aggregate(argumentSize.toIncreasingSize());
+    maximalSize=maximalSize.maximum(argumentSize);
+  }
+  for (  Class<?> parameterType : methodDescription.getParameterTypes()) {
+    fieldTypes.put(FIELD_NAME_PREFIX + i,Type.getDescriptor(parameterType));
+    proxyConstructorDescriptor.append(Type.getDescriptor(parameterType));
+    TypeSize argumentSize=TypeSize.of(parameterType);
+    stackedSize=stackedSize.aggregate(argumentSize.toIncreasingSize());
+    maximalSize=maximalSize.maximum(argumentSize);
+  }
+  this.methodArgumentFields=Collections.unmodifiableMap(fieldTypes);
+  this.proxyConstructorDescriptor=proxyConstructorDescriptor.append(")V").toString();
+  this.stackedSize=stackedSize;
+  this.maximalSize=maximalSize;
+  proxiedMethodInternalName=methodDescription.getInternalName();
+  proxiedMethodDescriptor=methodDescription.getDescriptor();
+  proxiedTypeInternalName=methodDescription.getDeclaringClassInternalName();
 }

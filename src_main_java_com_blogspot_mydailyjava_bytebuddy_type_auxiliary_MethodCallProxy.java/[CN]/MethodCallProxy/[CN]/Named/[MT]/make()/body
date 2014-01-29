@@ -1,11 +1,30 @@
 {
-  ClassWriter classWriter=new ClassWriter(ASM_MANUAL);
-  classWriter.visit(classVersion.getVersionNumber(),CLASS_MODIFIER,proxyInternalName,null,OBJECT_INTERNAL_NAME,new String[]{RUNNABLE_INTERNAL_NAME,CALLABLE_INTERNAL_NAME});
-  for (  Class<?> type : parameterType) {
+  ClassWriter classWriter=new ClassWriter(0);
+  classWriter.visit(classVersion.getVersionNumber(),PROXY_TYPE_ACCESS,proxyTypeInternalName,null,Type.getInternalName(Object.class),new String[]{RUNNABLE_TYPE_NAME,CALLABLE_TYPE_NAME});
+  for (  Map.Entry<String,String> entry : methodArgumentFields.entrySet()) {
+    classWriter.visitField(PROXY_FIELD_ACCESS,entry.getKey(),entry.getValue(),null,null).visitEnd();
   }
-  for (  MethodImplementation methodImplementation : MethodImplementation.values()) {
-    methodImplementation.implement(classWriter);
+  MethodVisitor constructor=classWriter.visitMethod(PROXY_METHOD_ACCESS,CONSTRUCTOR_NAME,proxyConstructorDescriptor,null,null);
+  constructor.visitCode();
+  constructor.visitVarInsn(Opcodes.ALOAD,0);
+  constructor.visitMethodInsn(Opcodes.INVOKESPECIAL,Type.getInternalName(Object.class),CONSTRUCTOR_NAME,DEFAULT_CONSTRUCTOR_DESCRIPTOR);
+  for (  Map.Entry<String,String> entry : methodArgumentFields.entrySet()) {
+    constructor.visitVarInsn(Opcodes.ALOAD,0);
+    constructor.visitFieldInsn(Opcodes.PUTFIELD,proxyTypeInternalName,entry.getKey(),entry.getValue());
   }
+  constructor.visitInsn(Opcodes.RETURN);
+  constructor.visitMaxs(1 + maximalSize.getSize(),1 + stackedSize.getMaximalSize());
+  constructor.visitEnd();
+  MethodVisitor method=classWriter.visitMethod(PROXY_METHOD_ACCESS,"run","()V",null,null);
+  method.visitCode();
+  for (  Map.Entry<String,String> entry : methodArgumentFields.entrySet()) {
+    method.visitVarInsn(Opcodes.ALOAD,0);
+    method.visitFieldInsn(Opcodes.GETFIELD,proxyTypeInternalName,entry.getKey(),entry.getValue());
+  }
+  method.visitMethodInsn(Opcodes.INVOKEVIRTUAL,proxiedTypeInternalName,proxiedMethodInternalName,proxiedMethodDescriptor);
+  method.visitInsn(Opcodes.RETURN);
+  method.visitMaxs(stackedSize.getMaximalSize(),1);
+  method.visitEnd();
   classWriter.visitEnd();
   return classWriter.toByteArray();
 }
