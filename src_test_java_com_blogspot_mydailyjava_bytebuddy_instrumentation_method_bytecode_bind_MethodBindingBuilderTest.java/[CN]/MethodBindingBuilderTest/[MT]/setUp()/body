@@ -1,0 +1,20 @@
+{
+  methodDescription=mock(MethodDescription.class);
+  when(methodDescription.getParameterTypes()).thenReturn(new TypeList.ForLoadedType(new Class<?>[0]));
+  when(methodDescription.isStatic()).thenReturn(false);
+  when(methodDescription.isDeclaredInInterface()).thenReturn(false);
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
+  when(typeDescription.getInternalName()).thenReturn(FOO);
+  when(methodDescription.getInternalName()).thenReturn(BAR);
+  when(methodDescription.getDescriptor()).thenReturn(BAZ);
+  when(methodDescription.getParameterSize()).thenReturn(0);
+  TypeDescription returnTpeDescription=mock(TypeDescription.class);
+  when(methodDescription.getReturnType()).thenReturn(returnTpeDescription);
+  when(returnTpeDescription.getStackSize()).thenReturn(TypeSize.ZERO);
+  methodVisitor=mock(MethodVisitor.class);
+  legalAssignment=mock(Assignment.class,RETURNS_MOCKS);
+  when(legalAssignment.isValid()).thenReturn(true);
+  illegalAssignment=mock(Assignment.class,RETURNS_MOCKS);
+  when(illegalAssignment.isValid()).thenReturn(false);
+}

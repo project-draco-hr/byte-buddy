@@ -1,0 +1,9 @@
+{
+  Assignment assignment=MethodReturn.returning(new TypeDescription.ForLoadedType(long.class));
+  assertThat(assignment.isValid(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSizeImpact(),is(-2));
+  assertThat(size.getMaximalSize(),is(0));
+  verify(methodVisitor).visitInsn(Opcodes.LRETURN);
+  verifyNoMoreInteractions(methodVisitor);
+}

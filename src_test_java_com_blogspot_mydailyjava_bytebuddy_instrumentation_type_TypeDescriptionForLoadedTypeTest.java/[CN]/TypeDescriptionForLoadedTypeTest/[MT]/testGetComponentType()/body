@@ -1,0 +1,8 @@
+{
+  assertThat(objectType.getComponentType(),nullValue(TypeDescription.class));
+  assertThat(intType.getComponentType(),nullValue(TypeDescription.class));
+  assertThat(longType.getComponentType(),nullValue(TypeDescription.class));
+  assertThat(integerType.getComponentType(),nullValue(TypeDescription.class));
+  assertThat(runnableType.getComponentType(),nullValue(TypeDescription.class));
+  assertThat(objectArrayType.getComponentType(),equalTo(objectType));
+}

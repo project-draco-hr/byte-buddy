@@ -1,0 +1,8 @@
+{
+  assertThat(objectType.isInterface(),is(false));
+  assertThat(intType.isInterface(),is(false));
+  assertThat(longType.isInterface(),is(false));
+  assertThat(integerType.isInterface(),is(false));
+  assertThat(runnableType.isInterface(),is(true));
+  assertThat(objectArrayType.isInterface(),is(false));
+}

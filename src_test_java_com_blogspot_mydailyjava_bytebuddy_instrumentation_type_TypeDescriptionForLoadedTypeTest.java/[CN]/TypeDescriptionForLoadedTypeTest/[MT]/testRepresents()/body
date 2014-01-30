@@ -1,0 +1,32 @@
+{
+  assertThat(objectType.represents(Object.class),is(true));
+  assertThat(objectType.represents(int.class),is(false));
+  assertThat(objectType.represents(long.class),is(false));
+  assertThat(objectType.represents(Integer.class),is(false));
+  assertThat(objectType.represents(Runnable.class),is(false));
+  assertThat(objectType.represents(Object[].class),is(false));
+  assertThat(intType.represents(Object.class),is(false));
+  assertThat(intType.represents(int.class),is(true));
+  assertThat(intType.represents(long.class),is(false));
+  assertThat(intType.represents(Integer.class),is(false));
+  assertThat(intType.represents(Runnable.class),is(false));
+  assertThat(intType.represents(Object[].class),is(false));
+  assertThat(longType.represents(Object.class),is(false));
+  assertThat(longType.represents(int.class),is(false));
+  assertThat(longType.represents(long.class),is(true));
+  assertThat(longType.represents(Integer.class),is(false));
+  assertThat(longType.represents(Runnable.class),is(false));
+  assertThat(longType.represents(Object[].class),is(false));
+  assertThat(integerType.represents(Object.class),is(false));
+  assertThat(integerType.represents(int.class),is(false));
+  assertThat(integerType.represents(long.class),is(false));
+  assertThat(integerType.represents(Integer.class),is(true));
+  assertThat(integerType.represents(Runnable.class),is(false));
+  assertThat(integerType.represents(Object[].class),is(false));
+  assertThat(runnableType.represents(Object.class),is(false));
+  assertThat(runnableType.represents(int.class),is(false));
+  assertThat(runnableType.represents(long.class),is(false));
+  assertThat(runnableType.represents(Integer.class),is(false));
+  assertThat(runnableType.represents(Runnable.class),is(true));
+  assertThat(runnableType.represents(Object[].class),is(false));
+}

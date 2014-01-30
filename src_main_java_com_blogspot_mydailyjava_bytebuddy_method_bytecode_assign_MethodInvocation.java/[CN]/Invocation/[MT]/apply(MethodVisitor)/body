@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitMethodInsn(invocationOpcode,methodDescription.getDeclaringClassInternalName(),methodDescription.getInternalName(),methodDescription.getDescriptor());
-  return size;
-}

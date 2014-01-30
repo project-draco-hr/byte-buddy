@@ -1,0 +1,8 @@
+{
+  assertThat(objectType.getStackSize(),is(TypeSize.SINGLE));
+  assertThat(intType.getStackSize(),is(TypeSize.SINGLE));
+  assertThat(longType.getStackSize(),is(TypeSize.DOUBLE));
+  assertThat(integerType.getStackSize(),is(TypeSize.SINGLE));
+  assertThat(runnableType.getStackSize(),is(TypeSize.SINGLE));
+  assertThat(objectArrayType.getStackSize(),is(TypeSize.SINGLE));
+}

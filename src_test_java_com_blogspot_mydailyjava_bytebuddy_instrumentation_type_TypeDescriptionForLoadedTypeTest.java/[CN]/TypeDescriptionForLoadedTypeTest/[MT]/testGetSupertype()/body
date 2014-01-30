@@ -1,0 +1,8 @@
+{
+  assertThat(objectType.getSupertype(),nullValue(TypeDescription.class));
+  assertThat(intType.getSupertype(),nullValue(TypeDescription.class));
+  assertThat(longType.getSupertype(),nullValue(TypeDescription.class));
+  assertThat(integerType.getSupertype(),equalTo((TypeDescription)new TypeDescription.ForLoadedType(Number.class)));
+  assertThat(runnableType.getSupertype(),nullValue(TypeDescription.class));
+  assertThat(objectArrayType.getSupertype(),equalTo(objectType));
+}

@@ -1,0 +1,29 @@
+{
+  if (typeDescription.represents(boolean.class)) {
+    return BOOLEAN;
+  }
+ else   if (typeDescription.represents(byte.class)) {
+    return BYTE;
+  }
+ else   if (typeDescription.represents(short.class)) {
+    return SHORT;
+  }
+ else   if (typeDescription.represents(int.class)) {
+    return INTEGER;
+  }
+ else   if (typeDescription.represents(char.class)) {
+    return CHARACTER;
+  }
+ else   if (typeDescription.represents(long.class)) {
+    return LONG;
+  }
+ else   if (typeDescription.represents(float.class)) {
+    return FLOAT;
+  }
+ else   if (typeDescription.represents(double.class)) {
+    return DOUBLE;
+  }
+ else {
+    throw new IllegalArgumentException("Not a non-void, primitive type " + typeDescription);
+  }
+}

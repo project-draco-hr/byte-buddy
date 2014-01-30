@@ -1,0 +1,21 @@
+{
+  firstArgumentBinder=mock(AnnotationDrivenBinder.ArgumentBinder.class);
+  secondArgumentBinder=mock(AnnotationDrivenBinder.ArgumentBinder.class);
+  defaultProvider=mock(AnnotationDrivenBinder.DefaultProvider.class);
+  assigner=mock(Assigner.class);
+  typeDescription=mock(InstrumentedType.class);
+  source=mock(MethodDescription.class);
+  target=mock(MethodDescription.class);
+  TypeDescription declaringType=mock(TypeDescription.class);
+  when(declaringType.getInternalName()).thenReturn(FOO);
+  when(target.getDeclaringType()).thenReturn(declaringType);
+  when(target.getInternalName()).thenReturn(BAR);
+  when(target.getDescriptor()).thenReturn(BAZ);
+  when(target.isStatic()).thenReturn(true);
+  when(target.isDeclaredInInterface()).thenReturn(false);
+  firstPseudoAnnotation=mock(FirstPseudoAnnotation.class);
+  doReturn(FirstPseudoAnnotation.class).when(firstPseudoAnnotation).annotationType();
+  secondPseudoAnnotation=mock(SecondPseudoAnnotation.class);
+  doReturn(SecondPseudoAnnotation.class).when(secondPseudoAnnotation).annotationType();
+  methodVisitor=mock(MethodVisitor.class);
+}

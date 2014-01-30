@@ -1,0 +1,3 @@
+{
+  assertWideningConversion(long.class,double.class,0,Opcodes.L2D);
+}

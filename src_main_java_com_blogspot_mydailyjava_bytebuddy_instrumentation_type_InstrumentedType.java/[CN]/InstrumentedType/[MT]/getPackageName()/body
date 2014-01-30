@@ -1,0 +1,9 @@
+{
+  int packageIndex=getName().lastIndexOf('.');
+  if (packageIndex == -1) {
+    return "";
+  }
+ else {
+    return getName().substring(0,packageIndex);
+  }
+}

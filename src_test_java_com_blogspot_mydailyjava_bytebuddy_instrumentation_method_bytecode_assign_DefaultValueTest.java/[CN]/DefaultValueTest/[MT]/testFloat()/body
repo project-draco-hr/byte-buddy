@@ -1,0 +1,9 @@
+{
+  Assignment assignment=DefaultValue.load(new TypeDescription.ForLoadedType(float.class));
+  assertThat(assignment.isValid(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(1));
+  verify(methodVisitor).visitInsn(Opcodes.FCONST_0);
+  verifyNoMoreInteractions(methodVisitor);
+}

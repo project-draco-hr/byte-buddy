@@ -1,0 +1,5 @@
+{
+  this.componentType=componentType;
+  this.arrayCreator=arrayCreator;
+  sizeDecrease=TypeSize.DOUBLE.toDecreasingSize().aggregate(componentType.getStackSize().toDecreasingSize());
+}

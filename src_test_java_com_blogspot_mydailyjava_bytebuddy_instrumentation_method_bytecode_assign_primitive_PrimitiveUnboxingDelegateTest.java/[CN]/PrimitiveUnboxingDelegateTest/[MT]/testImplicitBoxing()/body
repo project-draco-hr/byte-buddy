@@ -1,0 +1,12 @@
+{
+  TypeDescription objectTypeDescription=new TypeDescription.ForLoadedType(Object.class);
+  Assignment assignment=PrimitiveUnboxingDelegate.forReferenceType(objectTypeDescription).assignUnboxedTo(primitiveTypeDescription,chainedAssigner,true);
+  assertThat(assignment.isValid(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSizeImpact(),is(sizeChange));
+  assertThat(size.getMaximalSize(),is(sizeChange));
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,referenceTypeDescription.getInternalName(),unboxingMethodName,unboxingMethodDescriptor);
+  verifyNoMoreInteractions(methodVisitor);
+  verify(chainedAssigner).assign(objectTypeDescription,referenceTypeDescription,true);
+  verifyNoMoreInteractions(chainedAssigner);
+}

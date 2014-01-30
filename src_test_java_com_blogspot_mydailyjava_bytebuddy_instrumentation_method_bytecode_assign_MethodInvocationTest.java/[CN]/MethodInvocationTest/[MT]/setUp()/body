@@ -1,0 +1,5 @@
+{
+  methodDescription=mock(MethodDescription.class);
+  typeDescription=mock(TypeDescription.class);
+  methodVisitor=mock(MethodVisitor.class);
+}

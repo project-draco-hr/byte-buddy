@@ -1,6 +1,0 @@
-{
-  this.primitiveType=primitiveType;
-  this.referenceType=referenceType;
-  this.boxingMethodDescriptor=boxingMethodDescriptor;
-  this.sizeChange=sizeChange;
-}

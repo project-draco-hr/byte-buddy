@@ -1,0 +1,8 @@
+{
+  assertThat(objectType.getName(),is(Object.class.getName()));
+  assertThat(intType.getName(),is(int.class.getName()));
+  assertThat(longType.getName(),is(long.class.getName()));
+  assertThat(integerType.getName(),is(Integer.class.getName()));
+  assertThat(runnableType.getName(),is(Runnable.class.getName()));
+  assertThat(objectArrayType.getName(),is(Object[].class.getName()));
+}

@@ -1,0 +1,3 @@
+TypeDescription subType
+Assigner chainedAssigner
+boolean considerRuntimeType

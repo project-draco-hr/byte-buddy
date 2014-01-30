@@ -1,0 +1,3 @@
+{
+  return typeManifestation.getMask() | syntheticState.getMask() | visibility.getMask();
+}

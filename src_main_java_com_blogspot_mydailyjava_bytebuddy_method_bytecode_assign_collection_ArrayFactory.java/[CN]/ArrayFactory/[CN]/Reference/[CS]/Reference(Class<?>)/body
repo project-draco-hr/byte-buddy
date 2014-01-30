@@ -1,3 +1,0 @@
-{
-  this.internalTypeName=Type.getInternalName(referenceType);
-}

@@ -1,0 +1,8 @@
+{
+  assertThat(objectType.isPrimitive(),is(false));
+  assertThat(intType.isPrimitive(),is(true));
+  assertThat(longType.isPrimitive(),is(true));
+  assertThat(integerType.isPrimitive(),is(false));
+  assertThat(runnableType.isPrimitive(),is(false));
+  assertThat(objectArrayType.isPrimitive(),is(false));
+}

@@ -1,0 +1,32 @@
+{
+  assertThat(objectType.isAssignableFrom(objectType),is(true));
+  assertThat(objectType.isAssignableFrom(intType),is(false));
+  assertThat(objectType.isAssignableFrom(longType),is(false));
+  assertThat(objectType.isAssignableFrom(integerType),is(true));
+  assertThat(objectType.isAssignableFrom(runnableType),is(true));
+  assertThat(objectType.isAssignableFrom(objectArrayType),is(true));
+  assertThat(intType.isAssignableFrom(objectType),is(false));
+  assertThat(intType.isAssignableFrom(intType),is(true));
+  assertThat(intType.isAssignableFrom(longType),is(false));
+  assertThat(intType.isAssignableFrom(integerType),is(false));
+  assertThat(intType.isAssignableFrom(runnableType),is(false));
+  assertThat(intType.isAssignableFrom(objectArrayType),is(false));
+  assertThat(longType.isAssignableFrom(objectType),is(false));
+  assertThat(longType.isAssignableFrom(intType),is(false));
+  assertThat(longType.isAssignableFrom(longType),is(true));
+  assertThat(longType.isAssignableFrom(integerType),is(false));
+  assertThat(longType.isAssignableFrom(runnableType),is(false));
+  assertThat(longType.isAssignableFrom(objectArrayType),is(false));
+  assertThat(integerType.isAssignableFrom(objectType),is(false));
+  assertThat(integerType.isAssignableFrom(intType),is(false));
+  assertThat(integerType.isAssignableFrom(longType),is(false));
+  assertThat(integerType.isAssignableFrom(integerType),is(true));
+  assertThat(integerType.isAssignableFrom(runnableType),is(false));
+  assertThat(integerType.isAssignableFrom(objectArrayType),is(false));
+  assertThat(runnableType.isAssignableFrom(objectType),is(false));
+  assertThat(runnableType.isAssignableFrom(intType),is(false));
+  assertThat(runnableType.isAssignableFrom(longType),is(false));
+  assertThat(runnableType.isAssignableFrom(integerType),is(false));
+  assertThat(runnableType.isAssignableFrom(runnableType),is(true));
+  assertThat(runnableType.isAssignableFrom(objectArrayType),is(false));
+}

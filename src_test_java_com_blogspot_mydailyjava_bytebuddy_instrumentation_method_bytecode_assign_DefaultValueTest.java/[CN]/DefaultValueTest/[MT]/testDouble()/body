@@ -1,0 +1,9 @@
+{
+  Assignment assignment=DefaultValue.load(new TypeDescription.ForLoadedType(double.class));
+  assertThat(assignment.isValid(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSizeImpact(),is(2));
+  assertThat(size.getMaximalSize(),is(2));
+  verify(methodVisitor).visitInsn(Opcodes.DCONST_0);
+  verifyNoMoreInteractions(methodVisitor);
+}

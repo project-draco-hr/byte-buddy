@@ -1,9 +1,0 @@
-{
-  Assignment assignment=MethodReturn.returning(Object.class);
-  assertThat(assignment.isValid(),is(true));
-  Assignment.Size size=assignment.apply(methodVisitor);
-  assertThat(size.getSizeImpact(),is(-1));
-  assertThat(size.getMaximalSize(),is(0));
-  verify(methodVisitor).visitInsn(Opcodes.ARETURN);
-  verifyNoMoreInteractions(methodVisitor);
-}

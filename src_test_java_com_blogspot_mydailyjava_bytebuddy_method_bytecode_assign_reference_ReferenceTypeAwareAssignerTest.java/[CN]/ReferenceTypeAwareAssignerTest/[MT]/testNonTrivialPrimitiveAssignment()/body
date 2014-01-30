@@ -1,5 +1,0 @@
-{
-  Assignment assignment=ReferenceTypeAwareAssigner.INSTANCE.assign(int.class,long.class,false);
-  assertThat(assignment.isValid(),is(false));
-  assignment.apply(methodVisitor);
-}

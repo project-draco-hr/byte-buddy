@@ -1,0 +1,9 @@
+{
+  doReturn(annotationType).when(argumentBinder).getHandledType();
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=mock(AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding.class);
+  when(identifiedBinding.isValid()).thenReturn(bindingResult);
+  when(identifiedBinding.getIdentificationToken()).thenReturn(identificationToken);
+  when(identifiedBinding.getAssignment()).thenReturn(bindingResult ? LegalTrivialAssignment.INSTANCE : IllegalAssignment.INSTANCE);
+  when(((AnnotationDrivenBinder.ArgumentBinder)argumentBinder).bind(any(Annotation.class),anyInt(),any(MethodDescription.class),any(MethodDescription.class),any(InstrumentedType.class),any(Assigner.class))).thenReturn(identifiedBinding);
+  return identifiedBinding;
+}

@@ -1,0 +1,8 @@
+{
+  objectType=new TypeDescription.ForLoadedType(Object.class);
+  intType=new TypeDescription.ForLoadedType(int.class);
+  longType=new TypeDescription.ForLoadedType(long.class);
+  integerType=new TypeDescription.ForLoadedType(Integer.class);
+  runnableType=new TypeDescription.ForLoadedType(Runnable.class);
+  objectArrayType=new TypeDescription.ForLoadedType(Object[].class);
+}

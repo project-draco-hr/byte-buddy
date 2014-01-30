@@ -1,0 +1,7 @@
+{
+  this.primitiveTypeDescription=new TypeDescription.ForLoadedType(primitiveType);
+  this.referenceTypeDescription=new TypeDescription.ForLoadedType(referenceType);
+  this.unboxingMethodName=unboxingMethodName;
+  this.unboxingMethodDescriptor=unboxingMethodDescriptor;
+  this.sizeChange=sizeChange;
+}

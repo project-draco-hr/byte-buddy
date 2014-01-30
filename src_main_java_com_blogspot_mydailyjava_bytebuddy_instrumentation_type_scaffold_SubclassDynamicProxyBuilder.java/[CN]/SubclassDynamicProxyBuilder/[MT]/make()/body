@@ -1,0 +1,12 @@
+{
+  ClassWriter classWriter=new ClassWriter(ASM_MANUAL_WRITING_OPTIONS);
+  ClassVisitor classVisitor=classVisitorWrapperChain.wrap(classWriter);
+  InstrumentedType typeDescription=new InstrumentedType(classVersion,superClass,interfaces,visibility,typeManifestation,syntheticState,namingStrategy);
+  classVisitor.visit(typeDescription.getClassVersion(),typeDescription.getModifiers(),typeDescription.getInternalName(),null,typeDescription.getSupertype().getInternalName(),typeDescription.getInterfaces().toInternalNames());
+  MethodInterception.Handler handler=methodInterceptions.handler(typeDescription);
+  for (  MethodDescription method : MethodExtraction.matching(OVERRIDABLE.and(not(ignoredMethods))).appendUniqueDescriptorsFrom(superClass).extractUniqueDescriptorsFrom(interfaces).asList()) {
+    handler.find(method).handle(classVisitor);
+  }
+  classVisitor.visitEnd();
+  return new ByteArrayDynamicProxy<T>(typeDescription.getName(),classWriter.toByteArray());
+}

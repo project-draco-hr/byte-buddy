@@ -1,0 +1,3 @@
+{
+  assertNoOpConversion(boolean.class,boolean.class);
+}

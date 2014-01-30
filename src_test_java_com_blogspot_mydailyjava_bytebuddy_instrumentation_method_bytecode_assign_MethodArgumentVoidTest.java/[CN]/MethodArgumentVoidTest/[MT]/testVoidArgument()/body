@@ -1,0 +1,3 @@
+{
+  MethodArgument.forType(new TypeDescription.ForLoadedType(void.class));
+}

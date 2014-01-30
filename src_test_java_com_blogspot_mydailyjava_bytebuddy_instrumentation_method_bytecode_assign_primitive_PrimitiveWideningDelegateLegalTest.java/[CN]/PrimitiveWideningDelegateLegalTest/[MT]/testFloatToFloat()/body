@@ -1,0 +1,3 @@
+{
+  assertNoOpConversion(float.class,float.class);
+}

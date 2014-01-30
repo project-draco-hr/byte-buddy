@@ -1,0 +1,4 @@
+Class<?> sourceType
+Class<?> targetType
+boolean considerRuntimeType
+Matcher<Boolean> matcher

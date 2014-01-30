@@ -1,3 +1,0 @@
-{
-  return visibility.getMask() + typeManifestation.getMask() + syntheticState.getMask()+ Opcodes.ACC_SUPER;
-}

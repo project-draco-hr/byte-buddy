@@ -1,0 +1,5 @@
+{
+  assertAssignment(Object.class,Object.class,false,is(true));
+  verifyChainedAssignment(Object.class,Object.class,false);
+  verifyNoMoreInteractions(chainedAssigner);
+}

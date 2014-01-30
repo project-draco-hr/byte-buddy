@@ -1,0 +1,3 @@
+{
+  assertNoOpConversion(byte.class,byte.class);
+}

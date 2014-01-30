@@ -1,0 +1,3 @@
+ByteCodeAppender.Factory factory
+InstrumentedType typeDescription
+Class<?> superClass

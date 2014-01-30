@@ -1,0 +1,3 @@
+{
+  assertNoOpConversion(long.class,long.class);
+}

@@ -1,0 +1,11 @@
+{
+  assertAssignment(Boolean.class,boolean.class,false,is(true));
+  assertAssignment(Byte.class,byte.class,false,is(true));
+  assertAssignment(Short.class,short.class,false,is(true));
+  assertAssignment(Character.class,char.class,false,is(true));
+  assertAssignment(Integer.class,int.class,false,is(true));
+  assertAssignment(Long.class,long.class,false,is(true));
+  assertAssignment(Float.class,float.class,false,is(true));
+  assertAssignment(Double.class,double.class,false,is(true));
+  verifyZeroInteractions(chainedAssigner);
+}

@@ -1,0 +1,6 @@
+{
+  this.typeDescription=new TypeDescription.ForLoadedType(type);
+  this.index=index;
+  this.opcode=opcode;
+  this.size=size;
+}

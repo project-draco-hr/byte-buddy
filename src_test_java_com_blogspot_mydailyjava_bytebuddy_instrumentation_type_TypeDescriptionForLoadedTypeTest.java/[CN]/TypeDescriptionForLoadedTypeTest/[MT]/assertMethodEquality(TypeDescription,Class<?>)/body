@@ -1,0 +1,10 @@
+{
+  assertThat(typeDescription.getDeclaredMethods(MethodMatchers.isMethod()).size(),is(type.getDeclaredMethods().length));
+  for (  Method method : type.getDeclaredMethods()) {
+    assertThat(typeDescription.getDeclaredMethods(MethodMatchers.isMethod()),hasItems((MethodDescription)new MethodDescription.ForMethod(method)));
+  }
+  assertThat(typeDescription.getDeclaredMethods(MethodMatchers.isConstructor()).size(),is(type.getDeclaredConstructors().length));
+  for (  Constructor<?> constructor : type.getDeclaredConstructors()) {
+    assertThat(typeDescription.getDeclaredMethods(MethodMatchers.isConstructor()),hasItems((MethodDescription)new MethodDescription.ForConstructor(constructor)));
+  }
+}

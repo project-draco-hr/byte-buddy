@@ -1,0 +1,4 @@
+Class<?> sourceType
+Class<?> targetType
+int sizeImpact
+int opcode

@@ -1,3 +1,0 @@
-{
-  return methodDescription.getDeclaringClass().getPackage().getName().equals(packageName);
-}

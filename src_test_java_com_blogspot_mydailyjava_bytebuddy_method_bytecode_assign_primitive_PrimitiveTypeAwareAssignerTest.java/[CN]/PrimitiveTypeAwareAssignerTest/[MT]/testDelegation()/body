@@ -1,5 +1,0 @@
-{
-  assertThat(primitiveAssigner.assign(Object.class,Object.class,false).isValid(),is(true));
-  verify(chainedAssigner).assign(Object.class,Object.class,false);
-  verifyNoMoreInteractions(chainedAssigner);
-}

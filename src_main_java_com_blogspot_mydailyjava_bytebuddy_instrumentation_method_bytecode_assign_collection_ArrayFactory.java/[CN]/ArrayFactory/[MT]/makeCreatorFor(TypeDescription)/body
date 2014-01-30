@@ -1,0 +1,34 @@
+{
+  if (componentType.isPrimitive()) {
+    if (componentType.represents(boolean.class)) {
+      return ArrayCreator.Primitive.BOOLEAN;
+    }
+ else     if (componentType.represents(byte.class)) {
+      return ArrayCreator.Primitive.BYTE;
+    }
+ else     if (componentType.represents(short.class)) {
+      return ArrayCreator.Primitive.SHORT;
+    }
+ else     if (componentType.represents(char.class)) {
+      return ArrayCreator.Primitive.CHARACTER;
+    }
+ else     if (componentType.represents(int.class)) {
+      return ArrayCreator.Primitive.INTEGER;
+    }
+ else     if (componentType.represents(long.class)) {
+      return ArrayCreator.Primitive.LONG;
+    }
+ else     if (componentType.represents(float.class)) {
+      return ArrayCreator.Primitive.FLOAT;
+    }
+ else     if (componentType.represents(double.class)) {
+      return ArrayCreator.Primitive.DOUBLE;
+    }
+ else {
+      throw new IllegalArgumentException("Cannot create array of type " + componentType);
+    }
+  }
+ else {
+    return new ArrayCreator.Reference(componentType);
+  }
+}

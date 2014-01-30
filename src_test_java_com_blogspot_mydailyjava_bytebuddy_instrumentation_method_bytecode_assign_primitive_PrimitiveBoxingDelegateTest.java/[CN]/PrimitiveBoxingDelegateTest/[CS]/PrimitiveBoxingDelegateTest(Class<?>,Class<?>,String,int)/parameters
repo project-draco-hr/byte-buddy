@@ -1,0 +1,4 @@
+Class<?> primitiveTypeDescription
+Class<?> referenceType
+String boxingMethodDescriptor
+int sizeChange

@@ -1,0 +1,13 @@
+{
+  List<TypeDescription> parameterTypes=methodDescription.getParameterTypes();
+  if (parameterTypes.size() != parameterType.length) {
+    return false;
+  }
+  int i=0;
+  for (  TypeDescription typeDescription : parameterTypes) {
+    if (!typeDescription.represents(parameterType[i])) {
+      return false;
+    }
+  }
+  return true;
+}

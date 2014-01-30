@@ -1,0 +1,8 @@
+{
+  assertTypeEquality(objectType,Object.class);
+  assertTypeEquality(intType,int.class);
+  assertTypeEquality(longType,long.class);
+  assertTypeEquality(integerType,Integer.class);
+  assertTypeEquality(runnableType,Runnable.class);
+  assertTypeEquality(objectArrayType,Object[].class);
+}

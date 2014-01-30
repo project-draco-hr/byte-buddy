@@ -1,0 +1,15 @@
+{
+  assertThat("Arguments cannot produce valid result",parameterType.length,is(parameter.length));
+  when(typeDescription.getSupertype()).thenReturn(new TypeDescription.ForLoadedType(type));
+  ByteCodeAppenderFactoryTester tester=new ByteCodeAppenderFactoryTester(SuperClassDelegation.INSTANCE,typeDescription,type);
+  MethodDescription methodDescription=new MethodDescription.ForMethod(type.getDeclaredMethod(FOO,parameterType));
+  MethodDescription spied=spy(methodDescription);
+  Class<?> instrumented=tester.applyTo(spied,methodDescription);
+  assertEquals(type,instrumented.getSuperclass());
+  assertThat(instrumented.getDeclaredMethods().length,is(1));
+  Object instance=instrumented.getDeclaredConstructor().newInstance();
+  assertThat(instrumented.getDeclaredMethod(FOO,parameterType).invoke(instance,parameter),(Matcher)matcher);
+  assertThat((Integer)instrumented.getMethod(AbstractCallHistoryTraceable.METHOD_NAME).invoke(instance),is(1));
+  verify(typeDescription,atLeast(1)).getSupertype();
+  verifyNoMoreInteractions(typeDescription);
+}

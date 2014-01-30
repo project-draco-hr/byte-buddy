@@ -1,0 +1,3 @@
+{
+  return getName().substring(getPackageName().length(),getName().length());
+}

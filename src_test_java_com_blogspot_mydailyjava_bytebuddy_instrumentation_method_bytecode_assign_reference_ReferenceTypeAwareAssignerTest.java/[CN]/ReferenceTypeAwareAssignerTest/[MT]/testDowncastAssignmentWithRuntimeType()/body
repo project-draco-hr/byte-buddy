@@ -1,0 +1,9 @@
+{
+  Assignment assignment=applyAssignTo(Object.class,Integer.class,true);
+  assertThat(assignment.isValid(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+  verify(methodVisitor).visitTypeInsn(Opcodes.CHECKCAST,Type.getInternalName(Integer.class));
+  verifyNoMoreInteractions(methodVisitor);
+}

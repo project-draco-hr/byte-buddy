@@ -1,0 +1,15 @@
+{
+  when(assigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(IllegalAssignment.INSTANCE);
+  when(source.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(Object.class));
+  when(target.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(Void.class));
+  RuntimeType runtimeType=mock(RuntimeType.class);
+  doReturn(RuntimeType.class).when(runtimeType).annotationType();
+  when(target.getAnnotations()).thenReturn(new Annotation[]{runtimeType});
+  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Collections.<AnnotationDrivenBinder.ArgumentBinder<?>>emptyList(),defaultProvider,assigner);
+  assertThat(methodDelegationBinder.bind(typeDescription,source,target).isValid(),is(false));
+  verify(assigner).assign(new TypeDescription.ForLoadedType(Void.class),new TypeDescription.ForLoadedType(Object.class),true);
+  verifyNoMoreInteractions(assigner);
+  verify(source,atLeast(1)).getReturnType();
+  verify(target,atLeast(1)).getReturnType();
+  verifyZeroInteractions(defaultProvider);
+}

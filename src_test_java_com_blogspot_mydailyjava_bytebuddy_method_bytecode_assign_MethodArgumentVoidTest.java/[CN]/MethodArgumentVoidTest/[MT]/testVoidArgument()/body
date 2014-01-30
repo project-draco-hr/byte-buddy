@@ -1,3 +1,0 @@
-{
-  MethodArgument.forType(void.class);
-}

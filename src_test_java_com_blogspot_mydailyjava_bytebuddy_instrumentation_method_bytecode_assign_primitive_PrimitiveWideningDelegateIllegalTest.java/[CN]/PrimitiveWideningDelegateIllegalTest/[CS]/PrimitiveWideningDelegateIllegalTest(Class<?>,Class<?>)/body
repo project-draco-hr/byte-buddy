@@ -1,0 +1,4 @@
+{
+  this.source=new TypeDescription.ForLoadedType(source);
+  this.target=new TypeDescription.ForLoadedType(target);
+}

@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(typeDescription.isArray()).thenReturn(false);
+  ArrayFactory.of(typeDescription);
+}

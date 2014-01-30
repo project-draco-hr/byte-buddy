@@ -1,9 +1,0 @@
-{
-  assertThat(MethodMatchers.isOverridableMethodIn(Object.class).matches(testClassBase$foo),is(false));
-  assertThat(MethodMatchers.isOverridableMethodIn(TestClassBase.class).matches(testClassBase$foo),is(true));
-  assertThat(MethodMatchers.isOverridableMethodIn(TestClassExtension.class).matches(testClassBase$foo),is(false));
-  assertThat(MethodMatchers.isOverridableMethodIn(Object.class).matches(testClassExtension$foo),is(false));
-  assertThat(MethodMatchers.isOverridableMethodIn(TestClassBase.class).matches(testClassExtension$foo),is(false));
-  assertThat(MethodMatchers.isOverridableMethodIn(TestClassExtension.class).matches(testClassExtension$foo),is(true));
-  assertThat(MethodMatchers.isOverridableMethodIn(TestClassExtension.class).matches(testClassExtension$stat),is(false));
-}

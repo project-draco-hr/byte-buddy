@@ -1,9 +1,0 @@
-{
-  Assignment assignment=PrimitiveWideningDelegate.forPrimitive(char.class).widenTo(float.class);
-  assertThat(assignment.isValid(),is(true));
-  Assignment.Size size=assignment.apply(methodVisitor);
-  assertThat(size.getSizeImpact(),is(0));
-  assertThat(size.getMaximalSize(),is(0));
-  verify(methodVisitor).visitInsn(Opcodes.I2F);
-  verifyNoMoreInteractions(methodVisitor);
-}

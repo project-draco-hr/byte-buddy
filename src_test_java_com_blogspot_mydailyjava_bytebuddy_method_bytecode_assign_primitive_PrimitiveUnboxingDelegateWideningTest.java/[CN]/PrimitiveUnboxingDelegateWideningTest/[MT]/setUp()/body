@@ -1,5 +1,0 @@
-{
-  chainedAssigner=mock(Assigner.class);
-  when(chainedAssigner.assign(any(Class.class),any(Class.class),anyBoolean())).thenReturn(LegalTrivialAssignment.INSTANCE);
-  methodVisitor=mock(MethodVisitor.class);
-}

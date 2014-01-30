@@ -1,6 +1,0 @@
-{
-  this.type=type;
-  this.index=index;
-  this.opcode=opcode;
-  this.size=size;
-}

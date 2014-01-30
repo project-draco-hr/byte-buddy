@@ -1,0 +1,29 @@
+{
+  when(assigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(LegalTrivialAssignment.INSTANCE);
+  when(source.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(Object.class));
+  when(target.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(Void.class));
+  when(target.getParameterTypes()).thenReturn(makeTypeList(int.class,long.class));
+  when(target.getParameterSize()).thenReturn(3);
+  when(target.getParameterAnnotations()).thenReturn(new Annotation[2][0]);
+  when(target.getAnnotations()).thenReturn(new Annotation[0]);
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> firstBinding=prepareArgumentBinder(firstArgumentBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> secondBinding=prepareArgumentBinder(secondArgumentBinder,SecondPseudoAnnotation.class,new Key(BAR),true);
+  Iterator<Annotation> defaultsIterator=prepareDefaultProvider(defaultProvider,Arrays.asList(secondPseudoAnnotation));
+  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Arrays.<AnnotationDrivenBinder.ArgumentBinder<?>>asList(firstArgumentBinder,secondArgumentBinder),defaultProvider,assigner);
+  assertThat(methodDelegationBinder.bind(typeDescription,source,target).isValid(),is(false));
+  verify(firstArgumentBinder,atLeast(1)).getHandledType();
+  verifyNoMoreInteractions(firstArgumentBinder);
+  verify(secondArgumentBinder,atLeast(1)).getHandledType();
+  verify((AnnotationDrivenBinder.ArgumentBinder)secondArgumentBinder).bind(secondPseudoAnnotation,0,source,target,typeDescription,assigner);
+  verifyNoMoreInteractions(secondArgumentBinder);
+  verify(defaultsIterator,times(2)).hasNext();
+  verify(defaultsIterator,times(1)).next();
+  verifyNoMoreInteractions(defaultsIterator);
+  verify(assigner).assign(new TypeDescription.ForLoadedType(Void.class),new TypeDescription.ForLoadedType(Object.class),false);
+  verifyNoMoreInteractions(assigner);
+  verifyZeroInteractions(firstBinding);
+  verify(secondBinding,atLeast(1)).isValid();
+  verify(secondBinding).getIdentificationToken();
+  verify(secondBinding).getAssignment();
+  verifyNoMoreInteractions(secondBinding);
+}

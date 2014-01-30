@@ -1,0 +1,11 @@
+{
+  Assigner voidAware=new VoidAwareAssigner(assigner,true);
+  Assignment assignment=applyAssignTo(voidAware,void.class,Object.class,false);
+  assertThat(assignment.isValid(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(1));
+  verifyZeroInteractions(assigner);
+  verify(methodVisitor).visitInsn(Opcodes.ACONST_NULL);
+  verifyNoMoreInteractions(methodVisitor);
+}

@@ -1,0 +1,3 @@
+{
+  assertWideningConversion(int.class,float.class,0,Opcodes.I2F);
+}

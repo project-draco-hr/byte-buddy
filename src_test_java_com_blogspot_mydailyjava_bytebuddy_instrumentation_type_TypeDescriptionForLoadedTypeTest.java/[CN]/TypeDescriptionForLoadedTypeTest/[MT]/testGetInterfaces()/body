@@ -1,0 +1,5 @@
+{
+  assertThat(objectType.getInterfaces().size(),is(0));
+  assertThat(new TypeDescription.ForLoadedType(Bar.class).getInterfaces().size(),is(1));
+  assertThat(new TypeDescription.ForLoadedType(Bar.class).getInterfaces().get(0),equalTo((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
+}
