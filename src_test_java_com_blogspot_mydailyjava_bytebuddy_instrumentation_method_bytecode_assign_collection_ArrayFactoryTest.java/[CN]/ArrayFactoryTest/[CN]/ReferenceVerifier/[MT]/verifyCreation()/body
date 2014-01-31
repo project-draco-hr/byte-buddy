@@ -1,3 +1,0 @@
-{
-  verify(methodVisitor).visitTypeInsn(Opcodes.ANEWARRAY,typeName);
-}

@@ -1,0 +1,3 @@
+{
+  verify(methodVisitor).visitIntInsn(Opcodes.NEWARRAY,createOpcode);
+}

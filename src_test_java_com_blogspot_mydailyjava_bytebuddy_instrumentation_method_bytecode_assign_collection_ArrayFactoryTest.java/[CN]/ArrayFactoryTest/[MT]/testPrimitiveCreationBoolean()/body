@@ -1,3 +1,0 @@
-{
-  testPrimitiveCreation(boolean.class,Opcodes.T_BOOLEAN,Opcodes.BASTORE);
-}

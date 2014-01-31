@@ -1,0 +1,3 @@
+{
+  testCreation(type,Opcodes.AASTORE);
+}

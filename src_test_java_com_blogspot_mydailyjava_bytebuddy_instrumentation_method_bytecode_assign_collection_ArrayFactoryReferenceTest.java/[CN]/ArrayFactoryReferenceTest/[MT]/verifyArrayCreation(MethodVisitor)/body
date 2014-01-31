@@ -1,0 +1,3 @@
+{
+  verify(methodVisitor).visitTypeInsn(Opcodes.ANEWARRAY,internalTypeName);
+}

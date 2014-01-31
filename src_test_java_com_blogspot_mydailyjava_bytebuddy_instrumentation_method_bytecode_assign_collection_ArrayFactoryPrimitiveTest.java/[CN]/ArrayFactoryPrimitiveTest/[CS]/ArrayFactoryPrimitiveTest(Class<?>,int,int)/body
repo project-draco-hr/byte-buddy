@@ -1,0 +1,5 @@
+{
+  this.primitiveType=primitiveType;
+  this.createOpcode=createOpcode;
+  this.storeOpcode=storeOpcode;
+}
