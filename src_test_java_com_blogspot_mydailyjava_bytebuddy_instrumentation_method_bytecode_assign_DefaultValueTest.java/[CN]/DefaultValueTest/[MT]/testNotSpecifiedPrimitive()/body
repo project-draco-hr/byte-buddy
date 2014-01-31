@@ -1,0 +1,10 @@
+{
+  when(typeDescription.isPrimitive()).thenReturn(true);
+  Assignment assignment=DefaultValue.load(typeDescription);
+  assertThat(assignment.isValid(),is(true));
+  Assignment.Size size=assignment.apply(methodVisitor);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(1));
+  verify(methodVisitor).visitInsn(Opcodes.ICONST_0);
+  verifyNoMoreInteractions(methodVisitor);
+}

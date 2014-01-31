@@ -1,0 +1,5 @@
+{
+  this.parameterSize=parameterSize;
+  this.returnTypeSize=returnTypeSize;
+  this.methodType=methodType;
+}

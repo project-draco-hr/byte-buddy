@@ -1,6 +1,6 @@
 {
-  if (methodDescription.isStatic()) {
-    throw new IllegalArgumentException("Cannot invoke static method via INVOKESPECIAL");
+  if (methodDescription.isStatic() || methodDescription.isDeclaredInInterface()) {
+    throw new IllegalArgumentException("Cannot invoke " + methodDescription + " via INVOKESPECIAL");
   }
  else {
     return SPECIAL.new Invocation(methodDescription);

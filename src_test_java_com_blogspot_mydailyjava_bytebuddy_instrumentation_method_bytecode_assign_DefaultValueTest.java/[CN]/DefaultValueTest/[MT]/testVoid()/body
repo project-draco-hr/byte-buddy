@@ -1,5 +1,7 @@
 {
-  Assignment assignment=DefaultValue.load(new TypeDescription.ForLoadedType(void.class));
+  when(typeDescription.isPrimitive()).thenReturn(true);
+  when(typeDescription.represents(void.class)).thenReturn(true);
+  Assignment assignment=DefaultValue.load(typeDescription);
   assertThat(assignment.isValid(),is(true));
   Assignment.Size size=assignment.apply(methodVisitor);
   assertThat(size.getSizeImpact(),is(0));

@@ -1,0 +1,14 @@
+{
+  methodDescription=mock(MethodDescription.class);
+  returnTypeDescription=mock(TypeDescription.class);
+  typeDescription=mock(TypeDescription.class);
+  methodVisitor=mock(MethodVisitor.class);
+  methodStackSize=PARAMETER_SIZE + 1;
+  when(methodDescription.getReturnType()).thenReturn(returnTypeDescription);
+  when(returnTypeDescription.getStackSize()).thenReturn(RETURN_TYPE_SIZE);
+  when(methodDescription.getStackSize()).thenReturn(methodStackSize);
+  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
+  when(typeDescription.getInternalName()).thenReturn(FOO);
+  when(methodDescription.getInternalName()).thenReturn(BAR);
+  when(methodDescription.getDescriptor()).thenReturn(BAZ);
+}

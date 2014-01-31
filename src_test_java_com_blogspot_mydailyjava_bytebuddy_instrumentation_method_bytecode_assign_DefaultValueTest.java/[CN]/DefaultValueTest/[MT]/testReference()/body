@@ -1,5 +1,5 @@
 {
-  Assignment assignment=DefaultValue.load(new TypeDescription.ForLoadedType(Object.class));
+  Assignment assignment=DefaultValue.load(typeDescription);
   assertThat(assignment.isValid(),is(true));
   Assignment.Size size=assignment.apply(methodVisitor);
   assertThat(size.getSizeImpact(),is(1));

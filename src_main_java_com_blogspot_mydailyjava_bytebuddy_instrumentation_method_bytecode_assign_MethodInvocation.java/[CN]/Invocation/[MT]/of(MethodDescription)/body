@@ -6,6 +6,6 @@
     return INTERFACE.new Invocation(methodDescription);
   }
  else {
-    return CONCRETE.new Invocation(methodDescription);
+    return VIRTUAL.new Invocation(methodDescription);
   }
 }

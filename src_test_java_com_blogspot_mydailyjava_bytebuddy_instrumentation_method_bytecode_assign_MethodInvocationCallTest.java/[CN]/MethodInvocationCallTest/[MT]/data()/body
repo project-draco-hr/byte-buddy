@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{3,TypeSize.SINGLE,MethodType.VIRTUAL},{10,TypeSize.SINGLE,MethodType.VIRTUAL},{0,TypeSize.DOUBLE,MethodType.VIRTUAL},{3,TypeSize.SINGLE,MethodType.INTERFACE},{3,TypeSize.SINGLE,MethodType.STATIC}});
+}

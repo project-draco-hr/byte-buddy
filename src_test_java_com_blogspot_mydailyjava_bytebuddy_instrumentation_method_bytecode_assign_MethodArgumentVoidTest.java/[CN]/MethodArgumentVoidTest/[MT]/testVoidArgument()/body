@@ -1,3 +1,6 @@
 {
-  MethodArgument.forType(new TypeDescription.ForLoadedType(void.class));
+  TypeDescription voidTypeDescription=mock(TypeDescription.class);
+  when(voidTypeDescription.isPrimitive()).thenReturn(true);
+  when(voidTypeDescription.represents(void.class)).thenReturn(true);
+  MethodArgument.forType(voidTypeDescription);
 }

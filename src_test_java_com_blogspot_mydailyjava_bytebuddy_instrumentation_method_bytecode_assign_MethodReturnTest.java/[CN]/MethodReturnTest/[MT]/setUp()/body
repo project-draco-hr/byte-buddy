@@ -1,3 +1,6 @@
 {
   methodVisitor=mock(MethodVisitor.class);
+  typeDescription=mock(TypeDescription.class);
+  when(typeDescription.isPrimitive()).thenReturn(type.isPrimitive());
+  when(typeDescription.represents(type)).thenReturn(true);
 }

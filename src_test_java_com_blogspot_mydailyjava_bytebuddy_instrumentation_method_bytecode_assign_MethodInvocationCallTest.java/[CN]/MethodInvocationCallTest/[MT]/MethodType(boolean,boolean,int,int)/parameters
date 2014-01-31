@@ -1,0 +1,4 @@
+boolean isStatic
+boolean isInterface
+int size
+int opcode

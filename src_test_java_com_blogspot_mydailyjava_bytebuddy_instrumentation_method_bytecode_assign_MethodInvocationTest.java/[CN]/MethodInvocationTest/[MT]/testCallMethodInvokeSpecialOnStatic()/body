@@ -1,4 +1,0 @@
-{
-  when(methodDescription.isStatic()).thenReturn(true);
-  MethodInvocation.special(methodDescription);
-}

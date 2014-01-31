@@ -1,5 +1,7 @@
 {
-  this.typeDescription=new TypeDescription.ForLoadedType(type);
+  this.typeDescription=mock(TypeDescription.class);
+  when(typeDescription.isPrimitive()).thenReturn(type.isPrimitive());
+  when(typeDescription.represents(type)).thenReturn(true);
   this.index=index;
   this.opcode=opcode;
   this.size=size;
