@@ -1,0 +1,5 @@
+{
+  assertThat(objectDefaultConstructor.isOverridable(),is(false));
+  assertThat(stringDefaultConstructor.isOverridable(),is(false));
+  assertThat(stringSingleArgConstructor.isOverridable(),is(false));
+}

@@ -1,0 +1,5 @@
+{
+  assertConstructorEquality(objectDefaultConstructor,Object.class.getDeclaredConstructor());
+  assertConstructorEquality(stringDefaultConstructor,String.class.getDeclaredConstructor());
+  assertConstructorEquality(stringSingleArgConstructor,String.class.getDeclaredConstructor(String.class));
+}

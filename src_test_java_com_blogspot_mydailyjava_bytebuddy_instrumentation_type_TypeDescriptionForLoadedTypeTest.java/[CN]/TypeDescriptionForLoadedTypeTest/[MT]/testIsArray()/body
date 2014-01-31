@@ -1,8 +1,0 @@
-{
-  assertThat(objectType.isArray(),is(false));
-  assertThat(intType.isArray(),is(false));
-  assertThat(longType.isArray(),is(false));
-  assertThat(integerType.isArray(),is(false));
-  assertThat(runnableType.isArray(),is(false));
-  assertThat(objectArrayType.isArray(),is(true));
-}

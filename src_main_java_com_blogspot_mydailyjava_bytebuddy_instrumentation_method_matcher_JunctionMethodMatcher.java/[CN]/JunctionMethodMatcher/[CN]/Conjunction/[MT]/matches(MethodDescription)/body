@@ -1,3 +1,0 @@
-{
-  return left.matches(methodDescription) && right.matches(methodDescription);
-}

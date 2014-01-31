@@ -1,6 +1,0 @@
-{
-  assertMethodEquality(objectType,Object.class);
-  assertMethodEquality(integerType,Integer.class);
-  assertMethodEquality(runnableType,Runnable.class);
-  assertMethodEquality(objectArrayType,Object[].class);
-}

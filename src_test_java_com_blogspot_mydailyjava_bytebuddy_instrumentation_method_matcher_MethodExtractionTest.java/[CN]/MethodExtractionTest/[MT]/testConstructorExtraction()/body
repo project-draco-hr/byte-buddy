@@ -1,5 +1,0 @@
-{
-  List<MethodDescription> methodDescriptions=MethodExtraction.matching(isConstructor()).appendUniqueDescriptorsFrom(Object.class).asList();
-  assertThat(methodDescriptions.size(),is(getDeclaredJavaConstructors(Object.class).length));
-  assertThat(methodDescriptions,hasItems(getDeclaredJavaConstructors(Object.class)));
-}

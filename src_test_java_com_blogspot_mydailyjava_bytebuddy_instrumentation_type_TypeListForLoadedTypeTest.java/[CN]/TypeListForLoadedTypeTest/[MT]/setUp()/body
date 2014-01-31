@@ -1,0 +1,3 @@
+{
+  typeList=new TypeList.ForLoadedType(new Class<?>[]{Object.class,Integer.class,long.class});
+}

@@ -1,0 +1,5 @@
+{
+  assertThat(objectDefaultConstructor.hashCode(),is(hashCode(Object.class.getDeclaredConstructor())));
+  assertThat(stringDefaultConstructor.hashCode(),is(hashCode(String.class.getDeclaredConstructor())));
+  assertThat(stringSingleArgConstructor.hashCode(),is(hashCode(String.class.getDeclaredConstructor(String.class))));
+}

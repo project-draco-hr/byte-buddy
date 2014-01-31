@@ -1,0 +1,5 @@
+{
+  assertThat(objectHashCode.isOverridable(),is(true));
+  assertThat(integerIntValue.isOverridable(),is(false));
+  assertThat(doubleDoubleValue.isOverridable(),is(false));
+}

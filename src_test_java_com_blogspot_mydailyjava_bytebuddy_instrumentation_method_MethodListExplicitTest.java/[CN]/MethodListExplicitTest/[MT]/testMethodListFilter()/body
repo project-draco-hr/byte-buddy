@@ -1,0 +1,7 @@
+{
+  MethodMatcher methodMatcher=mock(MethodMatcher.class);
+  when(methodMatcher.matches(firstMethodDescription)).thenReturn(true);
+  methodList=methodList.filter(methodMatcher);
+  assertThat(methodList.size(),is(1));
+  assertThat(methodList.get(0),is(firstMethodDescription));
+}

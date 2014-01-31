@@ -1,9 +1,0 @@
-{
-  assertThat(objectType.isAnnotation(),is(false));
-  assertThat(intType.isAnnotation(),is(false));
-  assertThat(longType.isAnnotation(),is(false));
-  assertThat(integerType.isAnnotation(),is(false));
-  assertThat(runnableType.isAnnotation(),is(false));
-  assertThat(objectArrayType.isAnnotation(),is(false));
-  assertThat(new TypeDescription.ForLoadedType(SuppressWarnings.class).isAnnotation(),is(true));
-}

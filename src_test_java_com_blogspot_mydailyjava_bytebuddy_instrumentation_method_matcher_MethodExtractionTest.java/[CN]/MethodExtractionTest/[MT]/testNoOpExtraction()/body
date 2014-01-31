@@ -1,3 +1,0 @@
-{
-  assertThat(MethodExtraction.matching(any()).asList().size(),is(0));
-}

@@ -1,0 +1,5 @@
+{
+  TypeList typeList=new TypeList.ForLoadedType(new Class<?>[0]);
+  assertThat(typeList.isEmpty(),is(true));
+  assertThat(typeList.toInternalNames(),nullValue(String[].class));
+}

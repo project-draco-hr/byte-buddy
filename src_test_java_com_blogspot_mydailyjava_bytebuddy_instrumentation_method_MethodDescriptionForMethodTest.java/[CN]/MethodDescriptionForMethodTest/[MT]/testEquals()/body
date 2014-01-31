@@ -1,0 +1,5 @@
+{
+  assertMethodEquality(objectHashCode,Object.class.getMethod(HASH_CODE));
+  assertMethodEquality(integerIntValue,Integer.class.getMethod(INT_VALUE));
+  assertMethodEquality(doubleDoubleValue,Double.class.getMethod(DOUBLE_VALUE));
+}

@@ -1,0 +1,5 @@
+{
+  assertThat(objectDefaultConstructor.getDescriptor(),is(Type.getConstructorDescriptor(Object.class.getDeclaredConstructor())));
+  assertThat(stringDefaultConstructor.getDescriptor(),is(Type.getConstructorDescriptor(String.class.getDeclaredConstructor())));
+  assertThat(stringSingleArgConstructor.getDescriptor(),is(Type.getConstructorDescriptor(String.class.getDeclaredConstructor(String.class))));
+}

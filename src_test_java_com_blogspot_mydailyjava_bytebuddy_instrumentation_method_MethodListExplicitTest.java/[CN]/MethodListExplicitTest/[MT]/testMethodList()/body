@@ -1,0 +1,5 @@
+{
+  assertThat(methodList.size(),is(2));
+  assertThat(methodList.get(0),is(firstMethodDescription));
+  assertThat(methodList.get(1),is(secondMethodDescription));
+}

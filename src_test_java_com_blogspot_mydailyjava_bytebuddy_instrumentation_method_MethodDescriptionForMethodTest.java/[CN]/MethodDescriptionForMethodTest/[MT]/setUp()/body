@@ -1,0 +1,5 @@
+{
+  objectHashCode=new MethodDescription.ForMethod(Object.class.getDeclaredMethod(HASH_CODE));
+  integerIntValue=new MethodDescription.ForMethod(Integer.class.getDeclaredMethod(INT_VALUE));
+  doubleDoubleValue=new MethodDescription.ForMethod(Double.class.getDeclaredMethod(DOUBLE_VALUE));
+}

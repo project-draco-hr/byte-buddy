@@ -2,7 +2,8 @@
   assertThat(objectType.getDescriptor(),is(Type.getDescriptor(Object.class)));
   assertThat(intType.getDescriptor(),is(Type.getDescriptor(int.class)));
   assertThat(longType.getDescriptor(),is(Type.getDescriptor(long.class)));
+  assertThat(numberType.getDescriptor(),is(Type.getDescriptor(Number.class)));
   assertThat(integerType.getDescriptor(),is(Type.getDescriptor(Integer.class)));
-  assertThat(runnableType.getDescriptor(),is(Type.getDescriptor(Runnable.class)));
+  assertThat(serializableType.getDescriptor(),is(Type.getDescriptor(Serializable.class)));
   assertThat(objectArrayType.getDescriptor(),is(Type.getDescriptor(Object[].class)));
 }

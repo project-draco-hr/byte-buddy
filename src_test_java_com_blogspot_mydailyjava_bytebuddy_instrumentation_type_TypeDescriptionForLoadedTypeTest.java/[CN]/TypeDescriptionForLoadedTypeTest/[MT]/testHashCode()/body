@@ -2,7 +2,8 @@
   assertThat(objectType.hashCode(),is(Object.class.getName().hashCode()));
   assertThat(intType.hashCode(),is(int.class.getName().hashCode()));
   assertThat(longType.hashCode(),is(long.class.getName().hashCode()));
+  assertThat(numberType.hashCode(),is(Number.class.getName().hashCode()));
   assertThat(integerType.hashCode(),is(Integer.class.getName().hashCode()));
-  assertThat(runnableType.hashCode(),is(Runnable.class.getName().hashCode()));
+  assertThat(serializableType.hashCode(),is(Serializable.class.getName().hashCode()));
   assertThat(objectArrayType.hashCode(),is(Object[].class.getName().hashCode()));
 }

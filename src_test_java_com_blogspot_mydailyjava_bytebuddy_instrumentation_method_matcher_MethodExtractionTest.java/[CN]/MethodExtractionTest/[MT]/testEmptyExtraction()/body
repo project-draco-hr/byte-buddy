@@ -1,4 +1,0 @@
-{
-  List<MethodDescription> methodDescriptions=MethodExtraction.matching(none()).appendUniqueDescriptorsFrom(Object.class).asList();
-  assertThat(methodDescriptions.size(),is(0));
-}

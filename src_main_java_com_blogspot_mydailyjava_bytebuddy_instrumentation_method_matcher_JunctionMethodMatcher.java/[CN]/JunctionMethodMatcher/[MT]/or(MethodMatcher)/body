@@ -1,3 +1,0 @@
-{
-  return new Disjunction(this,other);
-}

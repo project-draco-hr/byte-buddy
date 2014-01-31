@@ -2,7 +2,8 @@
   objectType=new TypeDescription.ForLoadedType(Object.class);
   intType=new TypeDescription.ForLoadedType(int.class);
   longType=new TypeDescription.ForLoadedType(long.class);
+  numberType=new TypeDescription.ForLoadedType(Number.class);
   integerType=new TypeDescription.ForLoadedType(Integer.class);
-  runnableType=new TypeDescription.ForLoadedType(Runnable.class);
+  serializableType=new TypeDescription.ForLoadedType(Serializable.class);
   objectArrayType=new TypeDescription.ForLoadedType(Object[].class);
 }
