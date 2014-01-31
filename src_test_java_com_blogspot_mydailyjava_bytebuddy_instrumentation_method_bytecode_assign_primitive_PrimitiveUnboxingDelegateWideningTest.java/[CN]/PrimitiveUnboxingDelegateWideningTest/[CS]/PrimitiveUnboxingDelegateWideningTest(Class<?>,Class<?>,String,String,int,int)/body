@@ -1,8 +1,0 @@
-{
-  this.primitiveType=new TypeDescription.ForLoadedType(primitiveType);
-  this.referenceType=new TypeDescription.ForLoadedType(referenceType);
-  this.unboxingMethodName=unboxingMethodName;
-  this.unboxingMethodDescriptor=unboxingMethodDescriptor;
-  this.wideningOpcode=wideningOpcode;
-  this.sizeChange=sizeChange;
-}

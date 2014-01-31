@@ -1,3 +1,0 @@
-{
-  assertWideningConversion(float.class,double.class,1,Opcodes.F2D);
-}

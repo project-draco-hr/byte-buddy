@@ -1,0 +1,7 @@
+Class<?> referenceType
+Class<?> primitiveType
+String unboxingMethodName
+String unboxingMethodDescriptor
+int wideningOpcode
+int sizeChange
+int interimMaximum

@@ -1,0 +1,10 @@
+{
+  if (sourceToTarget) {
+    when(sourceTypeDescription.isAssignableTo(targetTypeDescription)).thenReturn(true);
+    when(targetTypeDescription.isAssignableFrom(sourceTypeDescription)).thenReturn(true);
+  }
+  if (targetToSource) {
+    when(targetTypeDescription.isAssignableTo(sourceTypeDescription)).thenReturn(true);
+    when(sourceTypeDescription.isAssignableFrom(targetTypeDescription)).thenReturn(true);
+  }
+}

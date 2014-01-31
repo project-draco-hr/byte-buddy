@@ -1,0 +1,10 @@
+{
+  when(typeDescription.isArray()).thenReturn(true);
+  TypeDescription componentTypeDescription=mock(TypeDescription.class);
+  when(typeDescription.getComponentType()).thenReturn(componentTypeDescription);
+  when(componentTypeDescription.isPrimitive()).thenReturn(componentType.isPrimitive());
+  when(componentTypeDescription.represents(componentType)).thenReturn(true);
+  when(componentTypeDescription.getInternalName()).thenReturn(Type.getInternalName(componentType));
+  when(componentTypeDescription.getStackSize()).thenReturn(TypeSize.of(componentType));
+  when(assignment.apply(any(MethodVisitor.class))).thenReturn(TypeSize.of(componentType).toIncreasingSize());
+}

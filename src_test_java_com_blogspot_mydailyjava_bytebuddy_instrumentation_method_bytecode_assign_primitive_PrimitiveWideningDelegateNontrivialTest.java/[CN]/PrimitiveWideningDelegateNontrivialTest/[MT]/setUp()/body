@@ -1,0 +1,7 @@
+{
+  sourceTypeDescription=mock(TypeDescription.class);
+  when(sourceTypeDescription.represents(sourceType)).thenReturn(true);
+  targetTypeDescription=mock(TypeDescription.class);
+  when(targetTypeDescription.represents(targetType)).thenReturn(true);
+  methodVisitor=mock(MethodVisitor.class);
+}

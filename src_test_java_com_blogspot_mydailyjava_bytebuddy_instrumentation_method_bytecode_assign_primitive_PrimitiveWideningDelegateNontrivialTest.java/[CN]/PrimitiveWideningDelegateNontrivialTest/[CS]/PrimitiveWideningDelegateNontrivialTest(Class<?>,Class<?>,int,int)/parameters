@@ -1,0 +1,4 @@
+Class<?> sourceType
+Class<?> targetType
+int sizeChange
+int opcode

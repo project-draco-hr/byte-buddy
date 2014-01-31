@@ -1,0 +1,6 @@
+{
+  this.sourceType=sourceType;
+  this.targetType=targetType;
+  this.sizeChange=sizeChange;
+  this.opcode=opcode;
+}

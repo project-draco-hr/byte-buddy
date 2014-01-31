@@ -1,4 +1,4 @@
-Class<?> primitiveTypeDescription
+Class<?> primitiveType
 Class<?> referenceType
 String boxingMethodDescriptor
 int sizeChange

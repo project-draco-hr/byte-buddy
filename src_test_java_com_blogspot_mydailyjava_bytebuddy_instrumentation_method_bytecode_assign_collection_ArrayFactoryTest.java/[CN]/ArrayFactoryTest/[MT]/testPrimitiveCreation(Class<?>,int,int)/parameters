@@ -1,3 +1,3 @@
-Class<?> type
+Class<?> componentType
 int creationOpcode
 int storageOpcode

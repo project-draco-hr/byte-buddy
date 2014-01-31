@@ -1,6 +1,0 @@
-Class<?> primitiveType
-Class<?> referenceType
-String unboxingMethodName
-String unboxingMethodDescriptor
-int wideningOpcode
-int sizeChange

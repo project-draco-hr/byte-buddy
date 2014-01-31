@@ -1,0 +1,7 @@
+{
+  TypeDescription primitiveType=new TypeDescription.ForLoadedType(int.class);
+  TypeDescription otherPrimitiveType=new TypeDescription.ForLoadedType(long.class);
+  Assignment assignment=ReferenceTypeAwareAssigner.INSTANCE.assign(primitiveType,otherPrimitiveType,true);
+  assertThat(assignment.isValid(),is(false));
+  assignment.apply(methodVisitor);
+}

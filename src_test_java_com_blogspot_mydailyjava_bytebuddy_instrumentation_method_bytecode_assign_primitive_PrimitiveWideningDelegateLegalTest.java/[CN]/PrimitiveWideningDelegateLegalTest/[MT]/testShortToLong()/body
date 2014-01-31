@@ -1,3 +1,0 @@
-{
-  assertWideningConversion(short.class,long.class,1,Opcodes.I2L);
-}

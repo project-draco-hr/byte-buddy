@@ -1,6 +1,7 @@
 {
   Assigner voidAware=new VoidAwareAssigner(assigner,true);
-  Assignment assignment=applyAssignTo(voidAware,void.class,Object.class,false);
+  when(sourceTypeDescription.represents(void.class)).thenReturn(true);
+  Assignment assignment=voidAware.assign(sourceTypeDescription,targetTypeDescription,false);
   assertThat(assignment.isValid(),is(true));
   Assignment.Size size=assignment.apply(methodVisitor);
   assertThat(size.getSizeImpact(),is(1));

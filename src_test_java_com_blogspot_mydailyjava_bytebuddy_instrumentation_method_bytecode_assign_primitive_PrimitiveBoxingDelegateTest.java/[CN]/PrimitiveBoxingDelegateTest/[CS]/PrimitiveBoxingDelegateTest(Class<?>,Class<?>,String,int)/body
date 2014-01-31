@@ -1,6 +1,8 @@
 {
-  this.primitiveTypeDescription=new TypeDescription.ForLoadedType(primitiveTypeDescription);
-  this.referenceTypeDescription=new TypeDescription.ForLoadedType(referenceType);
+  this.primitiveType=primitiveType;
+  primitiveTypeDescription=mock(TypeDescription.class);
+  when(primitiveTypeDescription.represents(primitiveType)).thenReturn(true);
+  referenceTypeDescription=new TypeDescription.ForLoadedType(referenceType);
   this.boxingMethodDescriptor=boxingMethodDescriptor;
   this.sizeChange=sizeChange;
 }

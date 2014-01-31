@@ -1,3 +1,0 @@
-{
-  assertNoOpConversion(int.class,int.class);
-}

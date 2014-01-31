@@ -1,13 +1,12 @@
 {
-  Assignment.Size elementSize=TypeSize.of(type.getComponentType()).toIncreasingSize();
-  when(assignment.apply(any(MethodVisitor.class))).thenReturn(elementSize);
-  ArrayFactory arrayFactory=ArrayFactory.of(new TypeDescription.ForLoadedType(type));
-  Assignment arrayAssignment=arrayFactory.withValues(Arrays.<Assignment>asList(assignment));
+  prepareMocksFor(componentType);
+  ArrayFactory arrayFactory=ArrayFactory.of(typeDescription);
+  Assignment arrayAssignment=arrayFactory.withValues(Arrays.asList(assignment));
   assertThat(arrayAssignment.isValid(),is(true));
   verify(assignment,atLeast(1)).isValid();
   Assignment.Size size=arrayAssignment.apply(methodVisitor);
   assertThat(size.getSizeImpact(),is(1));
-  assertThat(size.getMaximalSize(),is(3 + elementSize.getSizeImpact()));
+  assertThat(size.getMaximalSize(),is(3 + TypeSize.of(componentType).toIncreasingSize().getSizeImpact()));
   verify(methodVisitor).visitInsn(Opcodes.ICONST_1);
   arrayCreationVerifier.verifyCreation();
   verify(methodVisitor).visitInsn(Opcodes.DUP);

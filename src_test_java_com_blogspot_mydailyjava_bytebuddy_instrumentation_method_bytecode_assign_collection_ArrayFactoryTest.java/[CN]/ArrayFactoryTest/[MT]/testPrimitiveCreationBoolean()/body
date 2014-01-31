@@ -1,3 +1,3 @@
 {
-  testPrimitiveCreation(boolean[].class,Opcodes.T_BOOLEAN,Opcodes.BASTORE);
+  testPrimitiveCreation(boolean.class,Opcodes.T_BOOLEAN,Opcodes.BASTORE);
 }

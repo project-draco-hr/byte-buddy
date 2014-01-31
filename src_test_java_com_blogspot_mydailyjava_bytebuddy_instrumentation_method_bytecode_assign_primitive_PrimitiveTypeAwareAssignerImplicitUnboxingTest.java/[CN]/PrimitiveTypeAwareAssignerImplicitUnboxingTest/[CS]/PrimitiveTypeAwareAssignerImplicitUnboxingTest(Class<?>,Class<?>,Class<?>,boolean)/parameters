@@ -1,0 +1,4 @@
+Class<?> sourceType
+Class<?> wrapperType
+Class<?> targetType
+boolean assignable

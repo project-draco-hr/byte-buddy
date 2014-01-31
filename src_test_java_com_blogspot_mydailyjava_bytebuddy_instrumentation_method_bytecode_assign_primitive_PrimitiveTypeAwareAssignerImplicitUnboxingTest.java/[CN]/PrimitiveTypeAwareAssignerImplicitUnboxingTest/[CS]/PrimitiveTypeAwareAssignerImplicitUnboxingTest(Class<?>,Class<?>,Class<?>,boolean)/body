@@ -1,0 +1,6 @@
+{
+  this.sourceType=sourceType;
+  this.wrapperType=wrapperType;
+  this.targetType=targetType;
+  this.assignable=assignable;
+}

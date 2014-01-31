@@ -1,3 +1,0 @@
-{
-  assertWideningConversion(byte.class,float.class,0,Opcodes.I2F);
-}

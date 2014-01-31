@@ -1,4 +1,8 @@
 {
-  this.source=new TypeDescription.ForLoadedType(source);
-  this.target=new TypeDescription.ForLoadedType(target);
+  sourceTypeDescription=mock(TypeDescription.class);
+  when(sourceTypeDescription.isPrimitive()).thenReturn(true);
+  when(sourceTypeDescription.represents(sourceType)).thenReturn(true);
+  targetTypeDescription=mock(TypeDescription.class);
+  when(targetTypeDescription.isPrimitive()).thenReturn(true);
+  when(targetTypeDescription.represents(targetType)).thenReturn(true);
 }

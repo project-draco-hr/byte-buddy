@@ -1,3 +1,0 @@
-{
-  return Arrays.asList(new Object[][]{{long.class,Integer.class,"intValue","()I",Opcodes.I2L,1},{double.class,Integer.class,"intValue","()I",Opcodes.I2D,1},{float.class,Integer.class,"intValue","()I",Opcodes.I2F,0},{long.class,Short.class,"shortValue","()S",Opcodes.I2L,1},{double.class,Short.class,"shortValue","()S",Opcodes.I2D,1},{float.class,Short.class,"shortValue","()S",Opcodes.I2F,0}});
-}

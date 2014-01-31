@@ -1,8 +1,0 @@
-{
-  Assignment assignment=applyAssignTo(Integer.class,Object.class,false);
-  assertThat(assignment.isValid(),is(true));
-  Assignment.Size size=assignment.apply(methodVisitor);
-  assertThat(size.getSizeImpact(),is(0));
-  assertThat(size.getMaximalSize(),is(0));
-  verifyZeroInteractions(methodVisitor);
-}

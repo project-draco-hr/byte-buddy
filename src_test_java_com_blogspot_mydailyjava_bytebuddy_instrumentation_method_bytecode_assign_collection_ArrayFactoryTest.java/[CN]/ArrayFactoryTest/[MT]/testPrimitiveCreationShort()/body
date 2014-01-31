@@ -1,3 +1,3 @@
 {
-  testPrimitiveCreation(short[].class,Opcodes.T_SHORT,Opcodes.SASTORE);
+  testPrimitiveCreation(short.class,Opcodes.T_SHORT,Opcodes.SASTORE);
 }

@@ -1,3 +1,3 @@
 {
-  testCreation(type,new Reference(Type.getInternalName(type.getComponentType())),Opcodes.AASTORE);
+  testCreation(componentType,new ReferenceVerifier(Type.getInternalName(componentType)),Opcodes.AASTORE);
 }

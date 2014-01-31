@@ -1,9 +1,0 @@
-{
-  Assignment assignment=PrimitiveWideningDelegate.forPrimitive(new TypeDescription.ForLoadedType(sourceType)).widenTo(new TypeDescription.ForLoadedType(targetType));
-  assertThat(assignment.isValid(),is(true));
-  Assignment.Size size=assignment.apply(methodVisitor);
-  assertThat(size.getSizeImpact(),is(sizeImpact));
-  assertThat(size.getMaximalSize(),is(Math.max(0,sizeImpact)));
-  verify(methodVisitor).visitInsn(opcode);
-  verifyNoMoreInteractions(methodVisitor);
-}

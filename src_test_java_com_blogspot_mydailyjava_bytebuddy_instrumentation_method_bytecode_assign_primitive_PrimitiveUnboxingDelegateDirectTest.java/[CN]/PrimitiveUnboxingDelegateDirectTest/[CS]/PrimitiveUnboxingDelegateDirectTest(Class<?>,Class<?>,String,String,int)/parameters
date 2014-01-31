@@ -1,0 +1,5 @@
+Class<?> primitiveType
+Class<?> wrapperType
+String unboxingMethodName
+String unboxingMethodDescriptor
+int sizeChange

@@ -1,5 +1,9 @@
 {
+  targetType=mock(TypeDescription.class);
   chainedAssigner=mock(Assigner.class);
-  when(chainedAssigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(LegalTrivialAssignment.INSTANCE);
+  assignment=mock(Assignment.class);
+  when(chainedAssigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(assignment);
+  when(assignment.isValid()).thenReturn(true);
+  when(assignment.apply(any(MethodVisitor.class))).thenReturn(TypeSize.ZERO.toIncreasingSize());
   methodVisitor=mock(MethodVisitor.class);
 }

@@ -1,5 +1,0 @@
-{
-  chainedAssigner=mock(Assigner.class);
-  when(chainedAssigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(LegalTrivialAssignment.INSTANCE);
-  primitiveAssigner=new PrimitiveTypeAwareAssigner(chainedAssigner);
-}

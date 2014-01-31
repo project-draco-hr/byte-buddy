@@ -1,3 +1,0 @@
-{
-  assertWideningConversion(byte.class,double.class,1,Opcodes.I2L);
-}

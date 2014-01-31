@@ -1,0 +1,13 @@
+{
+  sourceTypeDescription=mock(TypeDescription.class);
+  when(sourceTypeDescription.represents(sourceType)).thenReturn(true);
+  when(sourceTypeDescription.isPrimitive()).thenReturn(true);
+  targetTypeDescription=mock(TypeDescription.class);
+  when(targetTypeDescription.represents(targetType)).thenReturn(true);
+  when(targetTypeDescription.isPrimitive()).thenReturn(false);
+  chainedAssigner=mock(Assigner.class);
+  chainedAssignment=mock(Assignment.class);
+  when(chainedAssignment.isValid()).thenReturn(true);
+  when(chainedAssigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(chainedAssignment);
+  primitiveAssigner=new PrimitiveTypeAwareAssigner(chainedAssigner);
+}

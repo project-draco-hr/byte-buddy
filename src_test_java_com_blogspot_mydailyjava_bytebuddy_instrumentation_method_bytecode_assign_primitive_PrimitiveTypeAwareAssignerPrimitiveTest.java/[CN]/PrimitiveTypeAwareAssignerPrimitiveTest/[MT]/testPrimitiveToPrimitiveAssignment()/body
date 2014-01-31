@@ -1,0 +1,13 @@
+{
+  Assignment assignment=primitiveAssigner.assign(sourceTypeDescription,targetTypeDescription,false);
+  assertThat(assignment.isValid(),is(assignable));
+  verify(sourceTypeDescription,atLeast(0)).represents(any(Class.class));
+  verify(sourceTypeDescription).represents(sourceType);
+  verify(sourceTypeDescription,atLeast(1)).isPrimitive();
+  verifyNoMoreInteractions(sourceTypeDescription);
+  verify(targetTypeDescription,atLeast(0)).represents(any(Class.class));
+  verify(targetTypeDescription).represents(targetType);
+  verify(targetTypeDescription,atLeast(1)).isPrimitive();
+  verifyNoMoreInteractions(targetTypeDescription);
+  verifyZeroInteractions(chainedAssigner);
+}
