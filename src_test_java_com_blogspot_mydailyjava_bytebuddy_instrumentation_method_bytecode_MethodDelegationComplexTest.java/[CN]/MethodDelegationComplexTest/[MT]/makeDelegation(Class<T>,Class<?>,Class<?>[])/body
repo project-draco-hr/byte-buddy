@@ -1,5 +1,5 @@
 {
-  ByteCodeAppenderFactoryTester tester=new ByteCodeAppenderFactoryTester(MethodDelegation.to(targetType),typeDescription,sourceType);
+  ByteCodeAppenderFactoryTester tester=new ByteCodeAppenderFactoryTester(MethodDelegation.to(targetType),instrumentedType,sourceType);
   MethodDescription methodDescription=new MethodDescription.ForMethod(sourceType.getDeclaredMethod(FOO,parameterType));
   MethodDescription spied=spy(methodDescription);
   Class<?> instrumented=tester.applyTo(spied,methodDescription);

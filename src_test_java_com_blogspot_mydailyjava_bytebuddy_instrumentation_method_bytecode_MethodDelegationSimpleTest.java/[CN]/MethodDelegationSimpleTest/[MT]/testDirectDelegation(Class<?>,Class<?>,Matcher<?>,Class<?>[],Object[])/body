@@ -1,5 +1,5 @@
 {
-  ByteCodeAppenderFactoryTester tester=new ByteCodeAppenderFactoryTester(MethodDelegation.to(targetType),typeDescription,sourceType);
+  ByteCodeAppenderFactoryTester tester=new ByteCodeAppenderFactoryTester(MethodDelegation.to(targetType),instrumentedType,sourceType);
   MethodDescription methodDescription=new MethodDescription.ForMethod(sourceType.getDeclaredMethod(FOO,parameterType));
   MethodDescription spied=spy(methodDescription);
   Class<?> instrumented=tester.applyTo(spied,methodDescription);
@@ -8,5 +8,5 @@
   Object instance=instrumented.getDeclaredConstructor().newInstance();
   assertThat(instrumented.getDeclaredMethod(FOO,parameterType).invoke(instance,parameter),(Matcher)matcher);
   SimpleDelegationTarget.assertCallRecord(BAR,parameterType);
-  verifyZeroInteractions(typeDescription);
+  verifyZeroInteractions(instrumentedType);
 }
