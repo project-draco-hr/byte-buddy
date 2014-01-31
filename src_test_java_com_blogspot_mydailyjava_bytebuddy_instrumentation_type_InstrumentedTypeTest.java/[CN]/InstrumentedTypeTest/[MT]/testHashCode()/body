@@ -1,0 +1,3 @@
+{
+  assertThat(instrumentedType.hashCode(),is(FOO.hashCode()));
+}

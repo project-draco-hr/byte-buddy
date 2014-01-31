@@ -1,0 +1,7 @@
+{
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(typeDescription.getName()).thenReturn(FOO);
+  assertThat(instrumentedType,equalTo(typeDescription));
+  verify(typeDescription).getName();
+  verifyNoMoreInteractions(typeDescription);
+}

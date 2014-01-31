@@ -1,0 +1,22 @@
+{
+  TypeDescription nameEqualType=mock(TypeDescription.class);
+  when(nameEqualType.getName()).thenReturn(FOO);
+  assertThat(instrumentedType.isAssignableFrom(nameEqualType),is(true));
+  verify(nameEqualType).getName();
+  verifyNoMoreInteractions(nameEqualType);
+  TypeDescription serializableAcceptingType=mock(TypeDescription.class);
+  when(serializableAcceptingType.getName()).thenReturn(BAR);
+  when(serializableAcceptingType.isAssignableTo(Serializable.class)).thenReturn(true);
+  assertThat(instrumentedType.isAssignableFrom(serializableAcceptingType),is(true));
+  verify(serializableAcceptingType).getName();
+  verify(serializableAcceptingType).isAssignableTo(Serializable.class);
+  verifyNoMoreInteractions(serializableAcceptingType);
+  TypeDescription objectAcceptingType=mock(TypeDescription.class);
+  when(objectAcceptingType.getName()).thenReturn(BAR);
+  when(objectAcceptingType.isAssignableTo(Object.class)).thenReturn(true);
+  assertThat(instrumentedType.isAssignableFrom(objectAcceptingType),is(true));
+  verify(objectAcceptingType).getName();
+  verify(objectAcceptingType).isAssignableTo(Serializable.class);
+  verify(objectAcceptingType).isAssignableTo(Object.class);
+  verifyNoMoreInteractions(objectAcceptingType);
+}

@@ -1,14 +1,14 @@
 {
   assertThat(objectHashCode.represents(Object.class.getDeclaredMethod(HASH_CODE)),is(true));
   assertThat(objectHashCode.represents(Integer.class.getDeclaredMethod(INT_VALUE)),is(false));
-  assertThat(objectHashCode.represents(Double.class.getDeclaredMethod(DOUBLE_VALUE)),is(false));
+  assertThat(objectHashCode.represents(Double.class.getDeclaredMethod(LONG_BITS_TO_DOUBLE,long.class)),is(false));
   assertThat(objectHashCode.represents(Object.class.getDeclaredConstructor()),is(false));
   assertThat(integerIntValue.represents(Object.class.getDeclaredMethod(HASH_CODE)),is(false));
   assertThat(integerIntValue.represents(Integer.class.getDeclaredMethod(INT_VALUE)),is(true));
-  assertThat(integerIntValue.represents(Double.class.getDeclaredMethod(DOUBLE_VALUE)),is(false));
+  assertThat(integerIntValue.represents(Double.class.getDeclaredMethod(LONG_BITS_TO_DOUBLE,long.class)),is(false));
   assertThat(integerIntValue.represents(Object.class.getDeclaredConstructor()),is(false));
   assertThat(doubleDoubleValue.represents(Object.class.getDeclaredMethod(HASH_CODE)),is(false));
   assertThat(doubleDoubleValue.represents(Integer.class.getDeclaredMethod(INT_VALUE)),is(false));
-  assertThat(doubleDoubleValue.represents(Double.class.getDeclaredMethod(DOUBLE_VALUE)),is(true));
+  assertThat(doubleDoubleValue.represents(Double.class.getDeclaredMethod(LONG_BITS_TO_DOUBLE,long.class)),is(true));
   assertThat(doubleDoubleValue.represents(Object.class.getDeclaredConstructor()),is(false));
 }

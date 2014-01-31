@@ -1,0 +1,4 @@
+{
+  assertThat(instrumentedType.represents(Object.class),is(false));
+  assertThat(instrumentedType.represents(Serializable.class),is(false));
+}

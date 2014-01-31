@@ -1,0 +1,7 @@
+{
+  doReturn(MethodVisitor.class).when(unnamedType).getSuperClass();
+  NamingStrategy namingStrategy=new NamingStrategy.PrefixingRandom(FOO);
+  assertThat(namingStrategy.getName(unnamedType),startsWith(MethodVisitor.class.getName() + "$$" + FOO+ "$$"));
+  verify(unnamedType,atLeast(1)).getSuperClass();
+  verifyNoMoreInteractions(unnamedType);
+}
