@@ -4,4 +4,4 @@ TypeManifestation typeManifestation
 SyntheticState syntheticState
 NamingStrategy namingStrategy
 MethodMatcher ignoredMethods
-ClassVisitorWrapperChain classVisitorWrapperChain
+ClassVisitorWrapper.Chain classVisitorWrapperChain

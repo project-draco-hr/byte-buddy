@@ -6,5 +6,5 @@ Visibility visibility
 TypeManifestation typeManifestation
 SyntheticState syntheticState
 MethodMatcher ignoredMethods
-ClassVisitorWrapperChain classVisitorWrapperChain
+ClassVisitorWrapper.Chain classVisitorWrapperChain
 MethodInterception.Stack methodInterceptions

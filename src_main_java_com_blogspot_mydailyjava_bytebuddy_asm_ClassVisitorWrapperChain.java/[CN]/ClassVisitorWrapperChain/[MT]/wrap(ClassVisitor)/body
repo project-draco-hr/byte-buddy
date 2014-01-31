@@ -1,6 +1,0 @@
-{
-  for (  ClassVisitorWrapper classVisitorWrapper : classVisitorWrappers) {
-    classVisitor=classVisitorWrapper.wrap(classVisitor);
-  }
-  return classVisitor;
-}
