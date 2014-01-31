@@ -1,0 +1,3 @@
+{
+  testDominance(firstPrimitive,firstPrimitive,MethodDelegationBinder.AmbiguityResolver.Resolution.AMBIGUOUS);
+}

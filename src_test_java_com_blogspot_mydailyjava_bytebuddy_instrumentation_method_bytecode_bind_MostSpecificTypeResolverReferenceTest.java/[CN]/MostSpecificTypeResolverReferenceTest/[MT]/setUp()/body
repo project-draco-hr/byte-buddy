@@ -1,0 +1,9 @@
+{
+  super.setUp();
+  weakTargetType=mock(TypeDescription.class);
+  dominantTargetType=mock(TypeDescription.class);
+  when(weakTargetType.isAssignableFrom(dominantTargetType)).thenReturn(true);
+  when(weakTargetType.isAssignableFrom(weakTargetType)).thenReturn(true);
+  when(weakTargetType.isAssignableTo(weakTargetType)).thenReturn(true);
+  when(dominantTargetType.isAssignableTo(weakTargetType)).thenReturn(true);
+}

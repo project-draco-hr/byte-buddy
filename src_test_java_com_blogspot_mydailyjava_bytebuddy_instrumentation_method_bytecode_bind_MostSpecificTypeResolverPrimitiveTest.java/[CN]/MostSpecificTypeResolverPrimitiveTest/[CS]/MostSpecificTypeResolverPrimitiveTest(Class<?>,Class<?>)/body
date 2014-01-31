@@ -1,0 +1,4 @@
+{
+  this.firstType=firstType;
+  this.secondType=secondType;
+}
