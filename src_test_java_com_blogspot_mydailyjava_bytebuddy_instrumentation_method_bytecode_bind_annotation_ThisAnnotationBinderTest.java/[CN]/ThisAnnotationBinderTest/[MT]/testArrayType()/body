@@ -1,4 +1,5 @@
 {
-  when(target.getParameterTypes()).thenReturn(new TypeList.ForLoadedType(new Class<?>[]{Object[].class}));
+  when(parameterType.isArray()).thenReturn(true);
+  when(target.getParameterTypes()).thenReturn(typeList);
   This.Binder.INSTANCE.bind(annotation,0,source,target,typeDescription,assigner);
 }

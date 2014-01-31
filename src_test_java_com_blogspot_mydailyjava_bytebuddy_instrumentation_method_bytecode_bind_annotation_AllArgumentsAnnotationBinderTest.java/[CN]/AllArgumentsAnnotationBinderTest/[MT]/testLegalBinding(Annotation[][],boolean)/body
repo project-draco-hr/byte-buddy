@@ -1,5 +1,5 @@
 {
-  when(assignment.isValid()).thenReturn(false);
+  when(assignment.isValid()).thenReturn(true);
   TypeDescription firstSourceType=mock(TypeDescription.class);
   TypeDescription secondSourceType=mock(TypeDescription.class);
   when(sourceTypeList.iterator()).thenReturn(Arrays.asList(firstSourceType,secondSourceType).iterator());
@@ -11,13 +11,14 @@
   when(componentType.getStackSize()).thenReturn(TypeSize.SINGLE);
   when(targetTypeList.get(1)).thenReturn(targetType);
   when(targetTypeList.size()).thenReturn(2);
-  when(target.getParameterAnnotations()).thenReturn(new Annotation[2][0]);
+  when(target.getParameterAnnotations()).thenReturn(targetAnnotations);
   AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=AllArguments.Binder.INSTANCE.bind(annotation,1,source,target,typeDescription,assigner);
-  assertThat(identifiedBinding.isValid(),is(false));
+  assertThat(identifiedBinding.isValid(),is(true));
   verify(source,atLeast(1)).getParameterTypes();
   verify(source,atLeast(1)).isStatic();
   verify(target,atLeast(1)).getParameterTypes();
   verify(target,atLeast(1)).getParameterAnnotations();
-  verify(assigner).assign(firstSourceType,componentType,false);
+  verify(assigner).assign(firstSourceType,componentType,considerRuntimeType);
+  verify(assigner).assign(secondSourceType,componentType,considerRuntimeType);
   verifyNoMoreInteractions(assigner);
 }

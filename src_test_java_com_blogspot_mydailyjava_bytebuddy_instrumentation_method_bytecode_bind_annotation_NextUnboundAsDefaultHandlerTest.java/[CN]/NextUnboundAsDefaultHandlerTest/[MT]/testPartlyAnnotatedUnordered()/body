@@ -2,7 +2,6 @@
   Argument indexOneArgument=mock(Argument.class);
   when(indexOneArgument.value()).thenReturn(1);
   doReturn(Argument.class).when(indexOneArgument).annotationType();
-  when(source.getParameterTypes()).thenReturn(makeTypeList(Void.class,Void.class));
   when(target.getParameterAnnotations()).thenReturn(new Annotation[][]{{indexOneArgument},{}});
   Iterator<Argument> iterator=Argument.NextUnboundAsDefaultProvider.INSTANCE.makeIterator(typeDescription,source,target);
   assertThat(iterator.hasNext(),is(true));

@@ -2,4 +2,8 @@
   typeDescription=mock(InstrumentedType.class);
   source=mock(MethodDescription.class);
   target=mock(MethodDescription.class);
+  typeList=mock(TypeList.class);
+  when(typeList.size()).thenReturn(2);
+  when(typeList.iterator()).thenReturn(Arrays.asList(mock(TypeDescription.class),mock(TypeDescription.class)).iterator());
+  when(source.getParameterTypes()).thenReturn(typeList);
 }

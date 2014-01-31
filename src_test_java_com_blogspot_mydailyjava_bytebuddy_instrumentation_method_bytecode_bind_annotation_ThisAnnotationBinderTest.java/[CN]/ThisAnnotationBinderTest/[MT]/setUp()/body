@@ -1,0 +1,7 @@
+{
+  super.setUp();
+  when(assignment.isValid()).thenReturn(true);
+  typeList=mock(TypeList.class);
+  parameterType=mock(TypeDescription.class);
+  when(typeList.get(0)).thenReturn(parameterType);
+}

@@ -1,7 +1,9 @@
 {
   final int sourceIndex=0, targetIndex=0;
   when(annotation.value()).thenReturn(sourceIndex);
-  when(source.getParameterTypes()).thenReturn(makeTypeList());
+  TypeList typeList=mock(TypeList.class);
+  when(typeList.size()).thenReturn(0);
+  when(source.getParameterTypes()).thenReturn(typeList);
   AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=Argument.Binder.INSTANCE.bind(annotation,targetIndex,source,target,typeDescription,assigner);
   assertThat(identifiedBinding.isValid(),is(false));
   verify(annotation,atLeast(1)).value();

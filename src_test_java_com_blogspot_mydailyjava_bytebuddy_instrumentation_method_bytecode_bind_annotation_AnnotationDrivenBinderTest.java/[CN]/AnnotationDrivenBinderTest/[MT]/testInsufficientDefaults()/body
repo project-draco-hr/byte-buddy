@@ -1,8 +1,8 @@
 {
-  when(assigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(LegalTrivialAssignment.INSTANCE);
-  when(source.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(Object.class));
-  when(target.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(Void.class));
-  when(target.getParameterTypes()).thenReturn(makeTypeList(int.class,long.class));
+  when(assignment.isValid()).thenReturn(true);
+  TypeList typeList=mock(TypeList.class);
+  when(typeList.size()).thenReturn(2);
+  when(target.getParameterTypes()).thenReturn(typeList);
   when(target.getStackSize()).thenReturn(3);
   when(target.getParameterAnnotations()).thenReturn(new Annotation[2][0]);
   when(target.getAnnotations()).thenReturn(new Annotation[0]);
@@ -19,7 +19,7 @@
   verify(defaultsIterator,times(2)).hasNext();
   verify(defaultsIterator,times(1)).next();
   verifyNoMoreInteractions(defaultsIterator);
-  verify(assigner).assign(new TypeDescription.ForLoadedType(Void.class),new TypeDescription.ForLoadedType(Object.class),false);
+  verify(assigner).assign(targetTypeDescription,sourceTypeDescription,false);
   verifyNoMoreInteractions(assigner);
   verifyZeroInteractions(firstBinding);
   verify(secondBinding,atLeast(1)).isValid();
