@@ -1,4 +1,0 @@
-{
-  this.extractedMethods=new LinkedList<MethodDescription>(MethodExtraction.this.extractedMethods);
-  this.extractedMethodSignatures=new HashSet<String>(MethodExtraction.this.extractedMethodSignatures);
-}

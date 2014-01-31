@@ -1,0 +1,3 @@
+{
+  return methodDescription.isOverridable() || typeDescription.equals(methodDescription.getDeclaringType());
+}

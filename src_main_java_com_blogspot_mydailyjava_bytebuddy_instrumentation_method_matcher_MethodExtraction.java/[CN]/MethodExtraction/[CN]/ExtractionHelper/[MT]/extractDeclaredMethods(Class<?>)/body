@@ -1,5 +1,0 @@
-{
-  for (  Method method : type.getDeclaredMethods()) {
-    consider(new MethodDescription.ForMethod(method));
-  }
-}

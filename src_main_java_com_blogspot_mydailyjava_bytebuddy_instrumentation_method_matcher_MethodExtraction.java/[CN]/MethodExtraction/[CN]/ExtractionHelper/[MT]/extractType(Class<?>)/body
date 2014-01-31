@@ -1,5 +1,0 @@
-{
-  extractAllMethods(type);
-  extractDeclaredConstructors(type);
-  return this;
-}

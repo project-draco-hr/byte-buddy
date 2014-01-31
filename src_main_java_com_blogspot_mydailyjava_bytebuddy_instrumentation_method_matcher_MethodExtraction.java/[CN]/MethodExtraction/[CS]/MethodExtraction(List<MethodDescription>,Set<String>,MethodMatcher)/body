@@ -1,5 +1,0 @@
-{
-  this.extractedMethods=Collections.unmodifiableList(extractedMethods);
-  this.extractedMethodSignatures=Collections.unmodifiableSet(extractedMethodSignatures);
-  this.methodMatcher=methodMatcher;
-}
