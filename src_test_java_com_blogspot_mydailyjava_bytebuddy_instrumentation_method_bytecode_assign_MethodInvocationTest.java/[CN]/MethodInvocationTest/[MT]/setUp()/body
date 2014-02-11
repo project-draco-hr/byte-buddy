@@ -1,0 +1,13 @@
+{
+  methodDescription=mock(MethodDescription.class);
+  methodVisitor=mock(MethodVisitor.class);
+  TypeDescription returnType=mock(TypeDescription.class);
+  when(methodDescription.getReturnType()).thenReturn(returnType);
+  when(returnType.getStackSize()).thenReturn(TypeSize.SINGLE);
+  when(methodDescription.getStackSize()).thenReturn(SIZE_CHANGE + 1);
+  typeDescription=mock(TypeDescription.class);
+  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
+  when(typeDescription.getInternalName()).thenReturn(FOO);
+  when(methodDescription.getInternalName()).thenReturn(BAR);
+  when(methodDescription.getDescriptor()).thenReturn(QUX);
+}

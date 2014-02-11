@@ -1,5 +1,6 @@
 {
   when(assignment.isValid()).thenReturn(true);
+  when(methodInvocation.isValid()).thenReturn(true);
   TypeList typeList=mock(TypeList.class);
   when(typeList.size()).thenReturn(2);
   when(target.getParameterTypes()).thenReturn(typeList);
@@ -9,7 +10,7 @@
   AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> firstBinding=prepareArgumentBinder(firstArgumentBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
   AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> secondBinding=prepareArgumentBinder(secondArgumentBinder,SecondPseudoAnnotation.class,new Key(BAR),true);
   Iterator<Annotation> defaultsIterator=prepareDefaultProvider(defaultProvider,Arrays.asList(secondPseudoAnnotation));
-  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Arrays.<AnnotationDrivenBinder.ArgumentBinder<?>>asList(firstArgumentBinder,secondArgumentBinder),defaultProvider,assigner);
+  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Arrays.<AnnotationDrivenBinder.ArgumentBinder<?>>asList(firstArgumentBinder,secondArgumentBinder),defaultProvider,assigner,methodInvoker);
   assertThat(methodDelegationBinder.bind(typeDescription,source,target).isValid(),is(false));
   verify(firstArgumentBinder,atLeast(1)).getHandledType();
   verifyNoMoreInteractions(firstArgumentBinder);
@@ -21,6 +22,7 @@
   verifyNoMoreInteractions(defaultsIterator);
   verify(assigner).assign(targetTypeDescription,sourceTypeDescription,false);
   verifyNoMoreInteractions(assigner);
+  verifyZeroInteractions(methodInvoker);
   verifyZeroInteractions(firstBinding);
   verify(secondBinding,atLeast(1)).isValid();
   verify(secondBinding).getIdentificationToken();

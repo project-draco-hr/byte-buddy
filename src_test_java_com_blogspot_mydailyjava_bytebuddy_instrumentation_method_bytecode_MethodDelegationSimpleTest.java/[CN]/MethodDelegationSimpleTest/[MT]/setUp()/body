@@ -1,4 +1,4 @@
 {
-  instrumentedType=mock(InstrumentedType.class);
+  instrumentedType=mock(InstrumentedType0.class);
   SimpleDelegationTarget.clearStackTraceRecord();
 }

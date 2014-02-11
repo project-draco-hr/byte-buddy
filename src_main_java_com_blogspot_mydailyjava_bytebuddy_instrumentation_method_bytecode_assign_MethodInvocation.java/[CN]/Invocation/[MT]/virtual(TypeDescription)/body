@@ -1,0 +1,12 @@
+{
+  validateNonStaticAndTypeCompatibleCall(typeDescription);
+  if (methodDescription.isPrivate() || methodDescription.isConstructor()) {
+    throw new IllegalArgumentException("Cannot invoke " + typeDescription + " virtually");
+  }
+  if (typeDescription.isInterface()) {
+    return INTERFACE.new Invocation(methodDescription,typeDescription);
+  }
+ else {
+    return VIRTUAL.new Invocation(methodDescription,typeDescription);
+  }
+}

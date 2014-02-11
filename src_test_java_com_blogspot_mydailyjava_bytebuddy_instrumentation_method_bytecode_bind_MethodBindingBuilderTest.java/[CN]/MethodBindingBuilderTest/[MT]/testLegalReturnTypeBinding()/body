@@ -1,10 +1,10 @@
 {
-  MethodDelegationBinder.Binding.Builder builder=new MethodDelegationBinder.Binding.Builder(methodDescription);
+  when(methodInvoker.invoke(any(MethodDescription.class))).thenReturn(legalAssignment);
+  MethodDelegationBinder.Binding.Builder builder=new MethodDelegationBinder.Binding.Builder(methodInvoker,methodDescription);
   MethodDelegationBinder.Binding binding=builder.build(legalAssignment);
   assertThat(binding.isValid(),is(true));
   assertThat(binding.getTarget(),is(methodDescription));
   binding.apply(methodVisitor);
-  verify(legalAssignment).apply(methodVisitor);
-  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,FOO,BAR,BAZ);
-  verifyNoMoreInteractions(methodVisitor);
+  verify(legalAssignment,times(2)).apply(methodVisitor);
+  verifyZeroInteractions(methodVisitor);
 }

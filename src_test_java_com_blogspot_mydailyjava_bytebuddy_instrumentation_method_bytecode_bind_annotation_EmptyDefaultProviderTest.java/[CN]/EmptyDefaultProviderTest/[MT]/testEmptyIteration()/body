@@ -1,5 +1,5 @@
 {
-  InstrumentedType typeDescription=mock(InstrumentedType.class);
+  InstrumentedType0 typeDescription=mock(InstrumentedType0.class);
   MethodDescription left=mock(MethodDescription.class);
   MethodDescription right=mock(MethodDescription.class);
   Iterator<?> iterator=AnnotationDrivenBinder.DefaultProvider.Empty.INSTANCE.makeIterator(typeDescription,left,right);

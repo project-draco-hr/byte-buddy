@@ -1,6 +1,0 @@
-{
-  this.isStatic=isStatic;
-  this.isInterface=isInterface;
-  this.size=size;
-  this.opcode=opcode;
-}

@@ -1,5 +1,5 @@
 {
-  typeDescription=mock(InstrumentedType.class);
+  typeDescription=mock(InstrumentedType0.class);
   source=mock(MethodDescription.class);
   bindableTarget=mock(MethodDescription.class);
   unbindableTarget=mock(MethodDescription.class);

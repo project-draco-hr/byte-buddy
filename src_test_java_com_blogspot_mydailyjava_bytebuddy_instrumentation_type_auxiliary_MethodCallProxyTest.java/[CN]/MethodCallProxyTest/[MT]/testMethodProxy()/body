@@ -1,0 +1,19 @@
+{
+  MethodDescription proxiedMethod=new MethodDescription.ForMethod(proxiedType.getDeclaredMethod(FOO,proxiedMethodParameters));
+  MethodCallProxy methodCallProxy=new MethodCallProxy(proxiedMethod);
+  AuxiliaryClass.Named namedAuxiliaryClass=methodCallProxy.name(proxyName(proxiedType),CLASS_VERSION);
+  ClassLoader proxyClassLoader=new ByteArrayClassLoader(getClass().getClassLoader(),proxyName(proxiedType),namedAuxiliaryClass.make());
+  Class<?> proxyType=Class.forName(proxyName(proxiedType),false,proxyClassLoader);
+  Constructor<?> proxyConstructor=assertProxyType(proxyType,proxiedMethod);
+  InvocationCountable invocationCountable=proxiedType.newInstance();
+  Object[] methodArgument=new Object[this.methodArgument.length + (proxiedMethod.isStatic() ? 0 : 1)];
+  int index=0;
+  if (!proxiedMethod.isStatic()) {
+    methodArgument[index++]=invocationCountable;
+  }
+  for (  Object argument : methodArgument) {
+    methodArgument[index++]=argument;
+  }
+  Object methodCallProxyInstance=proxyConstructor.newInstance(methodArgument);
+  assertProxyInvocations(invocationCountable,methodCallProxyInstance);
+}

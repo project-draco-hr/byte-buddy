@@ -1,0 +1,27 @@
+{
+  Class<?> proxiedType=Class.forName(methodDescription.getDeclaringType().getName());
+  assertThat(proxyType.getName(),is(proxyName(proxiedType)));
+  assertEquals(Object.class,proxyType.getSuperclass());
+  assertThat(proxyType.getInterfaces().length,is(2));
+  assertThat(proxyType.getDeclaredMethods().length,is(2));
+  assertThat(proxyType.getDeclaredMethod(RUN_METHOD),notNullValue());
+  assertThat(proxyType.getDeclaredMethod(CALL_METHOD),notNullValue());
+  assertThat(proxyType.getDeclaredConstructors().length,is(1));
+  int expectedMethodFields=(methodDescription.isStatic() ? 0 : 1) + methodDescription.getParameterTypes().size();
+  assertThat(proxyType.getDeclaredFields().length,is(expectedMethodFields));
+  Class<?>[] expectedConstructorArguments=new Class<?>[expectedMethodFields];
+  int index=0;
+  if (!methodDescription.isStatic()) {
+    assertEquals(proxiedType,proxyType.getDeclaredField(FIELD_NAME_PREFIX + index).getType());
+    expectedConstructorArguments[index]=proxiedType;
+    index++;
+  }
+  for (  TypeDescription parameterTypeDescription : methodDescription.getParameterTypes()) {
+    Class<?> parameterType=Class.forName(parameterTypeDescription.getName());
+    assertEquals(parameterType,proxyType.getDeclaredField(FIELD_NAME_PREFIX + index).getType());
+    expectedConstructorArguments[index]=parameterType;
+    index++;
+  }
+  assertThat(proxyType.getDeclaredConstructor(expectedConstructorArguments),notNullValue());
+  return proxyType.getDeclaredConstructor(expectedConstructorArguments);
+}

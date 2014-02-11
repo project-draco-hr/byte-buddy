@@ -1,0 +1,14 @@
+{
+  if (methodDescription.isStatic()) {
+    return STATIC.new Invocation(methodDescription);
+  }
+ else   if (methodDescription.isPrivate() || methodDescription.isConstructor()) {
+    return SPECIAL.new Invocation(methodDescription);
+  }
+ else   if (methodDescription.getDeclaringType().isInterface()) {
+    return INTERFACE.new Invocation(methodDescription);
+  }
+ else {
+    return VIRTUAL.new Invocation(methodDescription);
+  }
+}

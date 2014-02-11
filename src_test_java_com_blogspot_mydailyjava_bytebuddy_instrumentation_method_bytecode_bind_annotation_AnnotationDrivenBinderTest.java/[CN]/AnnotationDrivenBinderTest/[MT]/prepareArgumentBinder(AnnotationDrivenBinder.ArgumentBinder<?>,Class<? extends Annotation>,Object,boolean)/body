@@ -4,6 +4,6 @@
   when(identifiedBinding.isValid()).thenReturn(bindingResult);
   when(identifiedBinding.getIdentificationToken()).thenReturn(identificationToken);
   when(identifiedBinding.getAssignment()).thenReturn(bindingResult ? LegalTrivialAssignment.INSTANCE : IllegalAssignment.INSTANCE);
-  when(((AnnotationDrivenBinder.ArgumentBinder)argumentBinder).bind(any(Annotation.class),anyInt(),any(MethodDescription.class),any(MethodDescription.class),any(InstrumentedType.class),any(Assigner.class))).thenReturn(identifiedBinding);
+  when(((AnnotationDrivenBinder.ArgumentBinder)argumentBinder).bind(any(Annotation.class),anyInt(),any(MethodDescription.class),any(MethodDescription.class),any(InstrumentedType0.class),any(Assigner.class))).thenReturn(identifiedBinding);
   return identifiedBinding;
 }

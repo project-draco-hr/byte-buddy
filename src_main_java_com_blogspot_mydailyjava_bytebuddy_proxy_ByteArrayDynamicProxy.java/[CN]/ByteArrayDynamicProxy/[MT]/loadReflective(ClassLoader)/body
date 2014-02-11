@@ -1,0 +1,4 @@
+{
+  Class<? extends T> type=(Class<? extends T>)new ClassLoaderByteArrayInjector(classLoader).load(typeName,javaType);
+  return new LoadedTypeDynamicProxy<T>(type);
+}

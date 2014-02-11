@@ -1,0 +1,8 @@
+{
+  Resolution resolution=Resolution.UNKNOWN;
+  Iterator<AmbiguityResolver> iterator=ambiguityResolvers.iterator();
+  while (resolution.isUnresolved() && iterator.hasNext()) {
+    resolution=iterator.next().resolve(source,left,right);
+  }
+  return resolution;
+}

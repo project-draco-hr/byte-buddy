@@ -4,7 +4,7 @@
   for (  TypeDescription parameterType : methodDescription.getParameterTypes()) {
     parameterSize=parameterSize.aggregate(MethodArgument.forType(parameterType).loadFromIndex(parameterSize.getSizeImpact()).apply(methodVisitor));
   }
-  Assignment.Size size=parameterSize.aggregate(MethodInvocation.special(methodDescription).apply(methodVisitor));
+  Assignment.Size size=parameterSize.aggregate(MethodInvocation.invoke(methodDescription).special(proxyType.getSupertype()).apply(methodVisitor));
   size=size.aggregate(MethodReturn.returning(methodDescription.getReturnType()).apply(methodVisitor));
   return new Size(size.getMaximalSize(),parameterSize.getMaximalSize());
 }

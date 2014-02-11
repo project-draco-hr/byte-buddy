@@ -2,7 +2,7 @@
   annotation=mock(annotationType);
   source=mock(MethodDescription.class);
   target=mock(MethodDescription.class);
-  typeDescription=mock(InstrumentedType.class);
+  typeDescription=mock(InstrumentedType0.class);
   assigner=mock(Assigner.class);
   assignment=mock(Assignment.class);
   sourceTypeList=mock(TypeList.class);

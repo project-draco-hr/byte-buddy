@@ -1,0 +1,18 @@
+{
+  this.proxyTypeInternalName=proxyTypeInternalName;
+  this.classVersion=classVersion;
+  int i=0;
+  Map<String,TypeDescription> fields=new LinkedHashMap<String,TypeDescription>(1 + proxiedMethod.getParameterTypes().size());
+  StringBuilder constructorDescriptor=new StringBuilder("(");
+  if (!proxiedMethod.isStatic()) {
+    fields.put(FIELD_NAME_PREFIX + i,proxiedMethod.getDeclaringType());
+    constructorDescriptor.append(proxiedMethod.getDeclaringType().getDescriptor());
+  }
+  for (  TypeDescription parameterType : proxiedMethod.getParameterTypes()) {
+    fields.put(FIELD_NAME_PREFIX + i,parameterType);
+    constructorDescriptor.append(parameterType.getDescriptor());
+  }
+  this.constructorDescriptor=constructorDescriptor.append(")V").toString();
+  this.fields=Collections.unmodifiableMap(fields);
+  assigner=new VoidAwareAssigner(new PrimitiveTypeAwareAssigner(ReferenceTypeAwareAssigner.INSTANCE),true);
+}

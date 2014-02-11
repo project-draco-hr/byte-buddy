@@ -1,0 +1,11 @@
+{
+  if (typeDescription.getName().equals(getName())) {
+    return true;
+  }
+  for (  Class<?> anInterface : interfaces) {
+    if (typeDescription.isAssignableFrom(anInterface)) {
+      return true;
+    }
+  }
+  return typeDescription.isAssignableFrom(superClass);
+}

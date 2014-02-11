@@ -1,0 +1,6 @@
+{
+  if (this == o)   return true;
+  if (o == null || getClass() != o.getClass())   return false;
+  ArrayFactory that=(ArrayFactory)o;
+  return arrayCreator.equals(that.arrayCreator) && componentType.equals(that.componentType) && sizeDecrease.equals(that.sizeDecrease);
+}

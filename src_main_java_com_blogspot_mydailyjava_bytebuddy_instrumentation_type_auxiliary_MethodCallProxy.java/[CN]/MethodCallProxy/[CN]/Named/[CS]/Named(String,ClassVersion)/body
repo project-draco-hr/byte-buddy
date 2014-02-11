@@ -1,4 +1,0 @@
-{
-  this.proxyTypeInternalName=proxyTypeInternalName;
-  this.classVersion=classVersion;
-}

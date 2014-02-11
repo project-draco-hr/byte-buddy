@@ -1,5 +1,0 @@
-{
-  when(methodDescription.isStatic()).thenReturn(false);
-  when(methodDescription.isDeclaredInInterface()).thenReturn(true);
-  MethodInvocation.special(methodDescription);
-}

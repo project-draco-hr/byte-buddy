@@ -2,7 +2,7 @@
   IgnoreForBinding ignoreForBinding=mock(IgnoreForBinding.class);
   doReturn(IgnoreForBinding.class).when(ignoreForBinding).annotationType();
   when(target.getAnnotations()).thenReturn(new Annotation[]{ignoreForBinding});
-  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Collections.<AnnotationDrivenBinder.ArgumentBinder<?>>emptyList(),defaultProvider,assigner);
+  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Collections.<AnnotationDrivenBinder.ArgumentBinder<?>>emptyList(),defaultProvider,assigner,methodInvoker);
   assertThat(methodDelegationBinder.bind(typeDescription,source,target).isValid(),is(false));
   verifyZeroInteractions(assigner);
   verifyZeroInteractions(typeDescription);

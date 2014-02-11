@@ -1,0 +1,3 @@
+{
+  return 31 * nonVoidAwareAssigner.hashCode() + (returnDefaultValue ? 1 : 0);
+}

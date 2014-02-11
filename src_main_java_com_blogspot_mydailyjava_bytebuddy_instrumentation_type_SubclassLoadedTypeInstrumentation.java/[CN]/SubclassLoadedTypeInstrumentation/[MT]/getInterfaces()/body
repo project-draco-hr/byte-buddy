@@ -1,0 +1,3 @@
+{
+  return new TypeList.ForLoadedType(interfaces.toArray(new Class<?>[interfaces.size()]));
+}

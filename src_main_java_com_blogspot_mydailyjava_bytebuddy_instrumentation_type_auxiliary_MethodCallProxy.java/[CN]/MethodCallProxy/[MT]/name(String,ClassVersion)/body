@@ -1,3 +1,0 @@
-{
-  return new Named(toInternalName(proxyTypeName),classVersion);
-}

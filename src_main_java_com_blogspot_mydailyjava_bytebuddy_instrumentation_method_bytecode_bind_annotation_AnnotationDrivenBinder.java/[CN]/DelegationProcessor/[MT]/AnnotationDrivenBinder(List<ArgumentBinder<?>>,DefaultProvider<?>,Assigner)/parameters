@@ -1,3 +1,0 @@
-List<ArgumentBinder<?>> argumentBinders
-DefaultProvider<?> defaultProvider
-Assigner assigner

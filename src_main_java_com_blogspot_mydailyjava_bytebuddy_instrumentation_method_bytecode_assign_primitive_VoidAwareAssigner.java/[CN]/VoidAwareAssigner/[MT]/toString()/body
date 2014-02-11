@@ -1,0 +1,3 @@
+{
+  return "VoidAwareAssigner{chained=" + nonVoidAwareAssigner + ", returnDefaultValue="+ returnDefaultValue+ '}';
+}
