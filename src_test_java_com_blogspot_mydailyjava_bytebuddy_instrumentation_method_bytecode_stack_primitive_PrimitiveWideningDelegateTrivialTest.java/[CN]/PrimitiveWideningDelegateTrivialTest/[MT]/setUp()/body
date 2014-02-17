@@ -1,0 +1,4 @@
+{
+  when(sourceTypeDescription.represents(sourceType)).thenReturn(true);
+  when(targetTypeDescription.represents(targetType)).thenReturn(true);
+}

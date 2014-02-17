@@ -1,6 +1,6 @@
 {
-  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding.makeAnonymous(assignment);
-  assertThat(identifiedBinding.getAssignment(),is(assignment));
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding.makeAnonymous(stackManipulation);
+  assertThat(identifiedBinding.getStackManipulation(),is(stackManipulation));
   assertThat(identifiedBinding.getIdentificationToken(),notNullValue());
   assertThat(identifiedBinding.isValid(),is(true));
 }

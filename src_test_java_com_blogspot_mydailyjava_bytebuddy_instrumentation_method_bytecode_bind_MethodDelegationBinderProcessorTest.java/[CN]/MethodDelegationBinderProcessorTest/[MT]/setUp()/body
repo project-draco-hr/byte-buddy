@@ -1,16 +1,7 @@
 {
-  typeDescription=mock(InstrumentedType0.class);
-  source=mock(MethodDescription.class);
-  bindableTarget=mock(MethodDescription.class);
-  unbindableTarget=mock(MethodDescription.class);
-  dominantBindableTarget=mock(MethodDescription.class);
-  boundDelegation=mock(MethodDelegationBinder.Binding.class);
   when(boundDelegation.isValid()).thenReturn(true);
-  unboundDelegation=mock(MethodDelegationBinder.Binding.class);
   when(unboundDelegation.isValid()).thenReturn(false);
-  dominantBoundDelegation=mock(MethodDelegationBinder.Binding.class);
   when(dominantBoundDelegation.isValid()).thenReturn(true);
-  methodDelegationBinder=mock(MethodDelegationBinder.class);
   when(methodDelegationBinder.bind(typeDescription,source,bindableTarget)).thenReturn(boundDelegation);
   when(methodDelegationBinder.bind(typeDescription,source,unbindableTarget)).thenReturn(unboundDelegation);
   when(methodDelegationBinder.bind(typeDescription,source,dominantBindableTarget)).thenReturn(dominantBoundDelegation);

@@ -1,4 +1,0 @@
-{
-  methodVisitor=mock(MethodVisitor.class);
-  typeDescription=mock(TypeDescription.class);
-}

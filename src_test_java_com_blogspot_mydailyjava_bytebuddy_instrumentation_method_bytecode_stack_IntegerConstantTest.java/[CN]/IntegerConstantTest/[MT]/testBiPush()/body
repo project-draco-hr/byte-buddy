@@ -1,0 +1,8 @@
+{
+  MethodVisitor methodVisitor=mock(MethodVisitor.class);
+  StackManipulation.Size size=IntegerConstant.forValue(6).apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(1));
+  verify(methodVisitor).visitIntInsn(Opcodes.BIPUSH,6);
+  verifyNoMoreInteractions(methodVisitor);
+}

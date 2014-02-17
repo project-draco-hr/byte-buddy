@@ -1,3 +1,0 @@
-{
-  return new Accessor(fieldName,Type.getDescriptor(fieldType),TypeSize.of(fieldType),ownerTypeInternalName);
-}

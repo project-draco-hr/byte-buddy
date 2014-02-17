@@ -1,5 +1,3 @@
 {
-  firstMethodDescription=mock(MethodDescription.class);
-  secondMethodDescription=mock(MethodDescription.class);
   methodList=new MethodList.Explicit(Arrays.asList(firstMethodDescription,secondMethodDescription));
 }

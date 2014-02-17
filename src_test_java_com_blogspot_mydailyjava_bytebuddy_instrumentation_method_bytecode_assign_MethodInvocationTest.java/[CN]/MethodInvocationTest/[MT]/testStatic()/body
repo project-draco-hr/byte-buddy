@@ -1,9 +1,0 @@
-{
-  when(methodDescription.isStatic()).thenReturn(true);
-  Assignment assignment=MethodInvocation.invoke(methodDescription);
-  assertThat(assignment.isValid(),is(true));
-  Assignment.Size size=assignment.apply(methodVisitor);
-  assertThat(size.getSizeImpact(),is(-1 * SIZE_CHANGE));
-  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESTATIC,FOO,BAR,QUX);
-  verify(methodDescription,atLeast(1)).isStatic();
-}

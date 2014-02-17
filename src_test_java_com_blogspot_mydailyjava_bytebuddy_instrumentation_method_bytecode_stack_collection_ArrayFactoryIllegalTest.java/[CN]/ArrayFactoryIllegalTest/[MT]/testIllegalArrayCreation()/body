@@ -1,0 +1,4 @@
+{
+  when(typeDescription.isArray()).thenReturn(false);
+  ArrayFactory.of(typeDescription);
+}

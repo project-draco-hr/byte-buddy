@@ -1,0 +1,9 @@
+{
+  StackManipulation.Size size=StackSize.ZERO.toIncreasingSize();
+  for (  TypeDescription typeDescription : fields.values()) {
+    size=size.aggregate(MethodArgument.forType(typeDescription).loadFromIndex(size.getSizeImpact()).apply(methodVisitor,instrumentationContext));
+  }
+  methodVisitor.visitTypeInsn(Opcodes.NEW,proxyTypeInternalName);
+  methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL,proxyTypeInternalName,CONSTRUCTOR_INTERNAL_NAME,constructorDescriptor);
+  return new Size(1,Math.max(1,size.getMaximalSize()));
+}

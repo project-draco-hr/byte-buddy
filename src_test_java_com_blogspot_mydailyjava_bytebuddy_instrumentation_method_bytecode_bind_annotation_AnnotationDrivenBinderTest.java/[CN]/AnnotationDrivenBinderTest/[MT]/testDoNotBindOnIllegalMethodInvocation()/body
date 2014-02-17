@@ -1,0 +1,16 @@
+{
+  when(stackManipulation.isValid()).thenReturn(true);
+  when(methodInvocation.isValid()).thenReturn(false);
+  TypeList typeList=mock(TypeList.class);
+  when(typeList.size()).thenReturn(0);
+  when(target.getParameterTypes()).thenReturn(typeList);
+  when(target.getStackSize()).thenReturn(0);
+  when(target.getParameterAnnotations()).thenReturn(new Annotation[2][0]);
+  when(target.getAnnotations()).thenReturn(new Annotation[0]);
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> firstBinding=prepareArgumentBinder(firstArgumentBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
+  Iterator<Annotation> defaultsIterator=prepareDefaultProvider(defaultProvider,Collections.<Annotation>emptyList());
+  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Arrays.<AnnotationDrivenBinder.ArgumentBinder<?>>asList(firstArgumentBinder),defaultProvider,assigner,methodInvoker);
+  MethodDelegationBinder.Binding binding=methodDelegationBinder.bind(typeDescription,source,target);
+  assertThat(binding.isValid(),is(false));
+  assertThat(binding.getTarget(),is(target));
+}

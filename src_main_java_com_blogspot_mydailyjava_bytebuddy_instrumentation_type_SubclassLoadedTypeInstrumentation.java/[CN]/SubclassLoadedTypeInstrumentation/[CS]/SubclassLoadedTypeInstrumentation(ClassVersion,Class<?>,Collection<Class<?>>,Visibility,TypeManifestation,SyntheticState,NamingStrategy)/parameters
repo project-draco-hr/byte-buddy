@@ -1,7 +1,0 @@
-ClassVersion classVersion
-Class<?> superClass
-Collection<Class<?>> interfaces
-Visibility visibility
-TypeManifestation typeManifestation
-SyntheticState syntheticState
-NamingStrategy namingStrategy

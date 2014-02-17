@@ -1,5 +1,5 @@
 {
-  when(assignment.isValid()).thenReturn(true);
+  when(stackManipulation.isValid()).thenReturn(true);
   when(methodInvocation.isValid()).thenReturn(true);
   TypeList typeList=mock(TypeList.class);
   when(typeList.size()).thenReturn(2);
@@ -16,7 +16,7 @@
   assertThat(binding.getTarget(),is(target));
   assertThat(binding.getTargetParameterIndex(new Key(FOO)),is(1));
   assertThat(binding.getTargetParameterIndex(new Key(BAR)),is(0));
-  Assignment.Size size=binding.apply(methodVisitor);
+  StackManipulation.Size size=binding.apply(methodVisitor,instrumentationContext);
   assertThat(size.getSizeImpact(),is(0));
   assertThat(size.getMaximalSize(),is(0));
   verifyZeroInteractions(methodVisitor);
@@ -39,9 +39,9 @@
   verify(defaultsIterator,times(2)).next();
   verifyNoMoreInteractions(defaultsIterator);
   verify(firstBinding,atLeast(1)).isValid();
-  verify(firstBinding).getAssignment();
+  verify(firstBinding).getStackManipulation();
   verify(firstBinding).getIdentificationToken();
   verify(secondBinding,atLeast(1)).isValid();
-  verify(secondBinding).getAssignment();
+  verify(secondBinding).getStackManipulation();
   verify(secondBinding).getIdentificationToken();
 }

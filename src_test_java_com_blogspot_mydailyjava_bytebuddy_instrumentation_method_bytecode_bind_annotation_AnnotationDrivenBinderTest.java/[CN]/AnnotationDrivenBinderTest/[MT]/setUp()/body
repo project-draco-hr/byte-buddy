@@ -1,18 +1,8 @@
 {
-  firstArgumentBinder=mock(AnnotationDrivenBinder.ArgumentBinder.class);
-  secondArgumentBinder=mock(AnnotationDrivenBinder.ArgumentBinder.class);
-  defaultProvider=mock(AnnotationDrivenBinder.DefaultProvider.class);
-  assigner=mock(Assigner.class);
-  assignment=mock(Assignment.class);
-  when(assignment.apply(any(MethodVisitor.class))).thenReturn(new Assignment.Size(0,0));
-  when(assigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(assignment);
-  methodInvoker=mock(AnnotationDrivenBinder.MethodInvoker.class);
-  methodInvocation=mock(Assignment.class);
+  when(stackManipulation.apply(any(MethodVisitor.class),any(Instrumentation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
+  when(assigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(stackManipulation);
   when(methodInvoker.invoke(any(MethodDescription.class))).thenReturn(methodInvocation);
-  when(methodInvocation.apply(any(MethodVisitor.class))).thenReturn(new Assignment.Size(0,0));
-  typeDescription=mock(InstrumentedType0.class);
-  source=mock(MethodDescription.class);
-  target=mock(MethodDescription.class);
+  when(methodInvocation.apply(any(MethodVisitor.class),any(Instrumentation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
   TypeDescription declaringType=mock(TypeDescription.class);
   when(declaringType.getInternalName()).thenReturn(FOO);
   when(declaringType.isInterface()).thenReturn(false);
@@ -20,15 +10,10 @@
   when(target.getInternalName()).thenReturn(BAR);
   when(target.getDescriptor()).thenReturn(BAZ);
   when(target.isStatic()).thenReturn(true);
-  firstPseudoAnnotation=mock(FirstPseudoAnnotation.class);
   doReturn(FirstPseudoAnnotation.class).when(firstPseudoAnnotation).annotationType();
-  secondPseudoAnnotation=mock(SecondPseudoAnnotation.class);
   doReturn(SecondPseudoAnnotation.class).when(secondPseudoAnnotation).annotationType();
-  methodVisitor=mock(MethodVisitor.class);
-  sourceTypeDescription=mock(TypeDescription.class);
-  when(sourceTypeDescription.getStackSize()).thenReturn(TypeSize.ZERO);
-  targetTypeDescription=mock(TypeDescription.class);
-  when(targetTypeDescription.getStackSize()).thenReturn(TypeSize.ZERO);
+  when(sourceTypeDescription.getStackSize()).thenReturn(StackSize.ZERO);
+  when(targetTypeDescription.getStackSize()).thenReturn(StackSize.ZERO);
   when(source.getReturnType()).thenReturn(sourceTypeDescription);
   when(target.getReturnType()).thenReturn(targetTypeDescription);
 }

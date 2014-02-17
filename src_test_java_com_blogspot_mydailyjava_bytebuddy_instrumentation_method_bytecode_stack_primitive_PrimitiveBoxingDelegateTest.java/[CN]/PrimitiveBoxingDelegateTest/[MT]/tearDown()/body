@@ -1,0 +1,4 @@
+{
+  verifyZeroInteractions(targetType);
+  verifyZeroInteractions(instrumentationContext);
+}

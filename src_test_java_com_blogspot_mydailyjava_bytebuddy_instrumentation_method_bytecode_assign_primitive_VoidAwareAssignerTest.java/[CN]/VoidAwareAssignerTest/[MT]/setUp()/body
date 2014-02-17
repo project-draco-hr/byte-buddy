@@ -1,6 +1,0 @@
-{
-  assigner=mock(Assigner.class);
-  sourceTypeDescription=mock(TypeDescription.class);
-  targetTypeDescription=mock(TypeDescription.class);
-  methodVisitor=mock(MethodVisitor.class);
-}

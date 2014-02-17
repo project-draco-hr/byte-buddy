@@ -1,0 +1,5 @@
+{
+  appender=factory.make(instrumentedType);
+  this.superClass=superClass;
+  random=new Random();
+}

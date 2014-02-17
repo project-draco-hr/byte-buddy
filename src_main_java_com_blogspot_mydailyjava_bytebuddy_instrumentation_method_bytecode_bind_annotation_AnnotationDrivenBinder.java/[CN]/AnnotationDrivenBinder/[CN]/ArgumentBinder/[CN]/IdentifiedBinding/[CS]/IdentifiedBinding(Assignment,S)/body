@@ -1,4 +1,0 @@
-{
-  this.assignment=assignment;
-  this.identificationToken=identificationToken;
-}

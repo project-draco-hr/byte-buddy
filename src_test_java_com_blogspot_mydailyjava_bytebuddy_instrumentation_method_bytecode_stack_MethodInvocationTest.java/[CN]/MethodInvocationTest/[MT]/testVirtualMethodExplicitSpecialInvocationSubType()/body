@@ -1,0 +1,3 @@
+{
+  evaluateInvocation(Opcodes.INVOKESPECIAL,BAZ,MethodInvocation.invoke(methodDescription).special(declaringTypeSubType));
+}

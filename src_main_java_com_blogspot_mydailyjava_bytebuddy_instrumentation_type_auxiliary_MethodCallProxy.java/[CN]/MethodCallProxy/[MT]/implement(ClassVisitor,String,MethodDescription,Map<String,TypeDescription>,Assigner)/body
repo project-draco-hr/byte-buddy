@@ -1,15 +1,15 @@
 {
   MethodVisitor methodVisitor=classVisitor.visitMethod(METHOD_ACCESS,methodName,methodDescriptor,null,null);
   methodVisitor.visitCode();
-  Assignment.Size size=TypeSize.ZERO.toIncreasingSize();
+  StackManipulation.Size size=StackSize.ZERO.toIncreasingSize();
   for (  Map.Entry<String,TypeDescription> field : fields.entrySet()) {
     methodVisitor.visitIntInsn(Opcodes.ALOAD,0);
     methodVisitor.visitFieldInsn(Opcodes.GETFIELD,proxyTypeInternalName,field.getKey(),field.getValue().getDescriptor());
     size=size.aggregate(field.getValue().getStackSize().toIncreasingSize());
   }
-  size.aggregate(MethodInvocation.invoke(proxiedMethod).apply(methodVisitor));
-  size=size.aggregate(assigner.assign(proxiedMethod.getReturnType(),returnTypeDescription,false).apply(methodVisitor));
+  size.aggregate(MethodInvocation.invoke(proxiedMethod).apply(methodVisitor,null));
+  size=size.aggregate(assigner.assign(proxiedMethod.getReturnType(),returnTypeDescription,false).apply(methodVisitor,null));
   methodVisitor.visitInsn(returnOpcode);
-  methodVisitor.visitMaxs(size.getMaximalSize(),TypeSize.SINGLE.getSize());
+  methodVisitor.visitMaxs(size.getMaximalSize(),StackSize.SINGLE.getSize());
   methodVisitor.visitEnd();
 }

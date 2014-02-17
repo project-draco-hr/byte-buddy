@@ -1,3 +1,3 @@
 {
-  instrumentedType=new InstrumentedType0(new ClassVersion(Opcodes.V1_6),Source.class,Collections.<Class<?>>emptySet(),Visibility.PUBLIC,TypeManifestation.CONCRETE,SyntheticState.NON_SYNTHETIC,new NamingStrategy.PrefixingRandom("test"));
+  instrumentedType=new SubclassLoadedTypeInstrumentation(new ClassVersion(Opcodes.V1_6),Source.class,Collections.<Class<?>>emptySet(),Visibility.PUBLIC,TypeManifestation.CONCRETE,SyntheticState.NON_SYNTHETIC,new NamingStrategy.PrefixingRandom("test"));
 }

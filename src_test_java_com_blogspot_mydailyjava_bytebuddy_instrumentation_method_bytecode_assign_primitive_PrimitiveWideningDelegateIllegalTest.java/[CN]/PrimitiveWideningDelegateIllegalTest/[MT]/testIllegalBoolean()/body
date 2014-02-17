@@ -1,5 +1,0 @@
-{
-  Assignment assignment=PrimitiveWideningDelegate.forPrimitive(sourceTypeDescription).widenTo(targetTypeDescription);
-  assertThat(assignment.isValid(),is(false));
-  assignment.apply(methodVisitor);
-}

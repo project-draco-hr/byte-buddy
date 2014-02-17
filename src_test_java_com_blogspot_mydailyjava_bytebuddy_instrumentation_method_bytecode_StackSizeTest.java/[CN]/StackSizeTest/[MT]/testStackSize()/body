@@ -1,0 +1,3 @@
+{
+  assertThat(StackSize.of(type),is(stackSize));
+}

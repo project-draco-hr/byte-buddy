@@ -1,0 +1,8 @@
+{
+  assertThat(invocation.isValid(),is(true));
+  StackManipulation.Size size=invocation.apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(expectedSizeChange));
+  assertThat(size.getMaximalSize(),is(Math.max(0,expectedSizeChange)));
+  verify(methodVisitor).visitMethodInsn(opcode,internalTypeName,BAR,QUX);
+  verifyNoMoreInteractions(methodVisitor);
+}

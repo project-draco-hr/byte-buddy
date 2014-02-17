@@ -1,0 +1,5 @@
+{
+  when(methodDescription.isPrivate()).thenReturn(true);
+  TypeDescription explicitType=mock(TypeDescription.class);
+  MethodInvocation.invoke(methodDescription).virtual(explicitType);
+}

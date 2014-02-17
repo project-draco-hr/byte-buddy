@@ -1,4 +1,3 @@
 {
-  assignment=mock(Assignment.class);
-  when(assignment.isValid()).thenReturn(true);
+  when(stackManipulation.isValid()).thenReturn(true);
 }

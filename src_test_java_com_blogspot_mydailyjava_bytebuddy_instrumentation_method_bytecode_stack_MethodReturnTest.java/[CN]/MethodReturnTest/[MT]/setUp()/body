@@ -1,0 +1,4 @@
+{
+  when(typeDescription.isPrimitive()).thenReturn(type.isPrimitive());
+  when(typeDescription.represents(type)).thenReturn(true);
+}

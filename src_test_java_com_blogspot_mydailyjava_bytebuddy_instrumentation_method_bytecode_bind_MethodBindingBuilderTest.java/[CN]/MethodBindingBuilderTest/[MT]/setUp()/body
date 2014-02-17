@@ -1,23 +1,17 @@
 {
-  methodDescription=mock(MethodDescription.class);
-  typeDescription=mock(TypeDescription.class);
-  TypeList typeList=mock(TypeList.class);
-  when(methodDescription.getParameterTypes()).thenReturn(typeList);
+  TypeList methodParameterList=mock(TypeList.class);
+  when(methodDescription.getParameterTypes()).thenReturn(methodParameterList);
   when(methodDescription.isStatic()).thenReturn(false);
-  TypeDescription typeDescription=mock(TypeDescription.class);
-  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
-  when(typeDescription.getInternalName()).thenReturn(FOO);
-  when(typeDescription.isInterface()).thenReturn(false);
+  TypeDescription declaringType=mock(TypeDescription.class);
+  when(methodDescription.getDeclaringType()).thenReturn(declaringType);
+  when(declaringType.getInternalName()).thenReturn(FOO);
+  when(declaringType.isInterface()).thenReturn(false);
   when(methodDescription.getInternalName()).thenReturn(BAR);
   when(methodDescription.getDescriptor()).thenReturn(BAZ);
   when(methodDescription.getStackSize()).thenReturn(0);
   TypeDescription returnTpeDescription=mock(TypeDescription.class);
   when(methodDescription.getReturnType()).thenReturn(returnTpeDescription);
-  when(returnTpeDescription.getStackSize()).thenReturn(TypeSize.ZERO);
-  methodInvoker=mock(AnnotationDrivenBinder.MethodInvoker.class);
-  methodVisitor=mock(MethodVisitor.class);
-  legalAssignment=mock(Assignment.class,RETURNS_MOCKS);
-  when(legalAssignment.isValid()).thenReturn(true);
-  illegalAssignment=mock(Assignment.class,RETURNS_MOCKS);
-  when(illegalAssignment.isValid()).thenReturn(false);
+  when(returnTpeDescription.getStackSize()).thenReturn(StackSize.ZERO);
+  when(legalStackManipulation.isValid()).thenReturn(true);
+  when(illegalStackManipulation.isValid()).thenReturn(false);
 }

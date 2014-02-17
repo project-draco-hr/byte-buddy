@@ -1,9 +1,0 @@
-{
-  configureAssignability(true,false);
-  Assignment assignment=ReferenceTypeAwareAssigner.INSTANCE.assign(sourceTypeDescription,targetTypeDescription,false);
-  assertThat(assignment.isValid(),is(true));
-  Assignment.Size size=assignment.apply(methodVisitor);
-  assertThat(size.getSizeImpact(),is(0));
-  assertThat(size.getMaximalSize(),is(0));
-  verifyZeroInteractions(methodVisitor);
-}

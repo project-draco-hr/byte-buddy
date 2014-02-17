@@ -1,7 +1,0 @@
-{
-  Assigner voidAware=new VoidAwareAssigner(assigner,false);
-  when(sourceTypeDescription.represents(void.class)).thenReturn(true);
-  Assignment assignment=voidAware.assign(sourceTypeDescription,targetTypeDescription,false);
-  assertThat(assignment.isValid(),is(false));
-  assignment.apply(methodVisitor);
-}

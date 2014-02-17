@@ -1,0 +1,5 @@
+{
+  when(methodDescription.isStatic()).thenReturn(true);
+  evaluateImplicitlyTypedInvocation(Opcodes.INVOKESTATIC);
+  verify(methodDescription,atLeast(1)).isStatic();
+}

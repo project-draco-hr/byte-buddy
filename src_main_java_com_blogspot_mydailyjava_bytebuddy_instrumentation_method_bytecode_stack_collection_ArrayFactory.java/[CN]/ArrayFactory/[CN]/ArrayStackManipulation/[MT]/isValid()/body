@@ -1,0 +1,8 @@
+{
+  for (  StackManipulation stackManipulation : stackManipulations) {
+    if (!stackManipulation.isValid()) {
+      return false;
+    }
+  }
+  return arrayCreator.isValid();
+}

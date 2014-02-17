@@ -1,0 +1,8 @@
+{
+  when(sourceTypeDescription.represents(sourceType)).thenReturn(true);
+  if (sourceType.isPrimitive()) {
+    when(sourceTypeDescription.isPrimitive()).thenReturn(true);
+  }
+  when(targetTypeDescription.represents(void.class)).thenReturn(true);
+  when(targetTypeDescription.isPrimitive()).thenReturn(true);
+}

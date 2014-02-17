@@ -1,5 +1,5 @@
 {
-  when(assignment.isValid()).thenReturn(false);
+  when(stackManipulation.isValid()).thenReturn(false);
   when(methodInvocation.isValid()).thenReturn(true);
   when(target.getAnnotations()).thenReturn(new Annotation[0]);
   MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Collections.<AnnotationDrivenBinder.ArgumentBinder<?>>emptyList(),defaultProvider,assigner,methodInvoker);

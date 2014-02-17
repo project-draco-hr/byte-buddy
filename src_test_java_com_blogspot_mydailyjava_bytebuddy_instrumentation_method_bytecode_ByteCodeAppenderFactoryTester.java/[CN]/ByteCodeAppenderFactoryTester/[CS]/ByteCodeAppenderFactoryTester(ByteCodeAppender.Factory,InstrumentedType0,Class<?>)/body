@@ -1,5 +1,0 @@
-{
-  appender=factory.make(typeDescription);
-  this.superClass=superClass;
-  random=new Random();
-}

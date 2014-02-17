@@ -11,7 +11,7 @@
   defaultConstructor.visitEnd();
   MethodVisitor methodVisitor=classWriter.visitMethod(signatureDescription.getModifiers(),signatureDescription.getInternalName(),signatureDescription.getDescriptor(),null,null);
   methodVisitor.visitCode();
-  ByteCodeAppender.Size size=appender.apply(methodVisitor,appenderArgument);
+  ByteCodeAppender.Size size=appender.apply(methodVisitor,null,appenderArgument);
   methodVisitor.visitMaxs(size.getOperandStackSize(),size.getLocalVariableSize());
   methodVisitor.visitEnd();
   classWriter.visitEnd();

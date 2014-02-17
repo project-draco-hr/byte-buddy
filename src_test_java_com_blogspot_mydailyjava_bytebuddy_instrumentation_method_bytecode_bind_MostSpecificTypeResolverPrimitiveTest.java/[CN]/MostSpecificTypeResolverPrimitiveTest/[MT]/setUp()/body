@@ -1,10 +1,8 @@
 {
   super.setUp();
   when(sourceType.isPrimitive()).thenReturn(true);
-  firstPrimitive=mock(TypeDescription.class);
   when(firstPrimitive.isPrimitive()).thenReturn(true);
   when(firstPrimitive.represents(int.class)).thenReturn(true);
-  secondPrimitive=mock(TypeDescription.class);
   when(secondPrimitive.isPrimitive()).thenReturn(true);
   when(secondPrimitive.represents(long.class)).thenReturn(true);
 }

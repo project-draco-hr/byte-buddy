@@ -1,0 +1,5 @@
+{
+  when(methodDescription.getStackSize()).thenReturn(methodStackSize);
+  when(returnType.getStackSize()).thenReturn(returnTypeSize);
+  return returnTypeSize.getSize() - methodStackSize;
+}

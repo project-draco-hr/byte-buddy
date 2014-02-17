@@ -1,9 +1,0 @@
-{
-  TypeDescription primitiveType=new TypeDescription.ForLoadedType(int.class);
-  Assignment assignment=ReferenceTypeAwareAssigner.INSTANCE.assign(primitiveType,primitiveType,true);
-  assertThat(assignment.isValid(),is(true));
-  Assignment.Size size=assignment.apply(methodVisitor);
-  assertThat(size.getSizeImpact(),is(0));
-  assertThat(size.getMaximalSize(),is(0));
-  verifyZeroInteractions(methodVisitor);
-}

@@ -1,0 +1,5 @@
+{
+  when(typeDescription.isArray()).thenReturn(true);
+  when(typeDescription.getComponentType()).thenReturn(componentTypeDescription);
+  when(stackManipulation.isValid()).thenReturn(true);
+}

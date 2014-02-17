@@ -1,4 +1,0 @@
-{
-  super.setUp();
-  internalTypeName=Type.getInternalName(type);
-}

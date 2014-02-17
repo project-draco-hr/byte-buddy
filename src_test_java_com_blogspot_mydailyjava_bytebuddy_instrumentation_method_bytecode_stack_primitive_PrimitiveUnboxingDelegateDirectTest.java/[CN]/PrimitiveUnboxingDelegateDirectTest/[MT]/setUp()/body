@@ -1,0 +1,11 @@
+{
+  when(primitiveTypeDescription.isPrimitive()).thenReturn(true);
+  when(primitiveTypeDescription.represents(primitiveType)).thenReturn(true);
+  when(primitiveTypeDescription.getInternalName()).thenReturn(Type.getInternalName(primitiveType));
+  when(wrapperTypeDescription.isPrimitive()).thenReturn(false);
+  when(wrapperTypeDescription.represents(wrapperType)).thenReturn(true);
+  when(wrapperTypeDescription.getInternalName()).thenReturn(Type.getInternalName(wrapperType));
+  when(chainedAssigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(stackManipulation);
+  when(stackManipulation.isValid()).thenReturn(true);
+  when(stackManipulation.apply(any(MethodVisitor.class),any(Instrumentation.Context.class))).thenReturn(StackSize.ZERO.toIncreasingSize());
+}

@@ -1,5 +1,0 @@
-{
-  methodVisitor=mock(MethodVisitor.class);
-  sourceTypeDescription=mock(TypeDescription.class);
-  targetTypeDescription=mock(TypeDescription.class);
-}

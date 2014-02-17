@@ -1,5 +1,5 @@
 {
-  when(assignment.isValid()).thenReturn(false);
+  when(stackManipulation.isValid()).thenReturn(false);
   when(methodInvocation.isValid()).thenReturn(true);
   RuntimeType runtimeType=mock(RuntimeType.class);
   doReturn(RuntimeType.class).when(runtimeType).annotationType();

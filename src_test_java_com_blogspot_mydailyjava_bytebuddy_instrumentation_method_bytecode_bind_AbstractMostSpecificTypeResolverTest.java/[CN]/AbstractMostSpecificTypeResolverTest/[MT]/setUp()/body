@@ -1,11 +1,7 @@
 {
   super.setUp();
-  sourceTypeList=mock(TypeList.class);
   when(source.getParameterTypes()).thenReturn(sourceTypeList);
-  sourceType=mock(TypeDescription.class);
   when(sourceTypeList.get(anyInt())).thenReturn(sourceType);
-  leftTypeList=mock(TypeList.class);
   when(leftMethod.getParameterTypes()).thenReturn(leftTypeList);
-  rightTypeList=mock(TypeList.class);
   when(rightMethod.getParameterTypes()).thenReturn(rightTypeList);
 }

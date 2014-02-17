@@ -1,0 +1,14 @@
+{
+  if (sourceType.represents(void.class) && targetType.represents(void.class)) {
+    return LegalTrivialStackManipulation.INSTANCE;
+  }
+ else   if (sourceType.represents(void.class)) {
+    return returnDefaultValue ? DefaultValue.load(targetType) : IllegalStackManipulation.INSTANCE;
+  }
+ else   if (targetType.represents(void.class)) {
+    return ValueRemovingStackManipulation.of(sourceType);
+  }
+ else {
+    return nonVoidAwareAssigner.assign(sourceType,targetType,considerRuntimeType);
+  }
+}

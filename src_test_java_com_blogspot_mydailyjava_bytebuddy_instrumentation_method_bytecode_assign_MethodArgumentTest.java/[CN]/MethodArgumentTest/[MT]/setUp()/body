@@ -1,3 +1,0 @@
-{
-  methodVisitor=mock(MethodVisitor.class);
-}

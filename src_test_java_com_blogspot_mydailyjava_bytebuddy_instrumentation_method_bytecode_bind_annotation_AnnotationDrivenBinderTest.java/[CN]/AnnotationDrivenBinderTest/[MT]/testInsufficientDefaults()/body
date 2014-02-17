@@ -1,5 +1,5 @@
 {
-  when(assignment.isValid()).thenReturn(true);
+  when(stackManipulation.isValid()).thenReturn(true);
   when(methodInvocation.isValid()).thenReturn(true);
   TypeList typeList=mock(TypeList.class);
   when(typeList.size()).thenReturn(2);
@@ -26,6 +26,6 @@
   verifyZeroInteractions(firstBinding);
   verify(secondBinding,atLeast(1)).isValid();
   verify(secondBinding).getIdentificationToken();
-  verify(secondBinding).getAssignment();
+  verify(secondBinding).getStackManipulation();
   verifyNoMoreInteractions(secondBinding);
 }

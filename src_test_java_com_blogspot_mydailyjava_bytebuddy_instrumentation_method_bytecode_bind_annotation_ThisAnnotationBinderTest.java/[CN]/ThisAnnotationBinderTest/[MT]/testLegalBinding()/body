@@ -1,10 +1,10 @@
 {
-  when(assignment.isValid()).thenReturn(true);
+  when(stackManipulation.isValid()).thenReturn(true);
   when(target.getParameterTypes()).thenReturn(typeList);
   when(target.getParameterAnnotations()).thenReturn(new Annotation[1][0]);
-  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=This.Binder.INSTANCE.bind(annotation,0,source,target,typeDescription,assigner);
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=This.Binder.INSTANCE.bind(annotation,0,source,target,instrumentedType,assigner);
   assertThat(identifiedBinding.isValid(),is(true));
-  verify(assigner).assign(typeDescription,parameterType,false);
+  verify(assigner).assign(instrumentedType,parameterType,false);
   verifyNoMoreInteractions(assigner);
   verify(target,atLeast(1)).getParameterTypes();
   verify(target,atLeast(1)).getParameterAnnotations();

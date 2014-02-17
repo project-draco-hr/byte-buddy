@@ -1,0 +1,5 @@
+{
+  when(methodDescription.isConstructor()).thenReturn(true);
+  evaluateImplicitlyTypedInvocation(Opcodes.INVOKESPECIAL);
+  verify(methodDescription,atLeast(1)).isConstructor();
+}

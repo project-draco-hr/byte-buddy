@@ -1,3 +1,0 @@
-{
-  return new IdentifiedBinding<Object>(assignment,new Object());
-}

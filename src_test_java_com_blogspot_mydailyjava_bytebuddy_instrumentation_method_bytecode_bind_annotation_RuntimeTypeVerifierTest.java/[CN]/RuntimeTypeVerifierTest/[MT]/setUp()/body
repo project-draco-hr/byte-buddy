@@ -1,5 +1,3 @@
 {
-  methodDescription=mock(MethodDescription.class);
-  runtimeType=mock(RuntimeType.class);
   doReturn(RuntimeType.class).when(runtimeType).annotationType();
 }

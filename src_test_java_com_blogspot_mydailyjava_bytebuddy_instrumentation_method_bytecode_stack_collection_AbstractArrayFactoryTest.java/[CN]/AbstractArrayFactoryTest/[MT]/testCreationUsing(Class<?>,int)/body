@@ -1,0 +1,18 @@
+{
+  defineComponentType(componentType);
+  ArrayFactory arrayFactory=ArrayFactory.of(typeDescription);
+  StackManipulation arrayStackManipulation=arrayFactory.withValues(Arrays.asList(stackManipulation));
+  assertThat(arrayStackManipulation.isValid(),is(true));
+  verify(stackManipulation,atLeast(1)).isValid();
+  StackManipulation.Size size=arrayStackManipulation.apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(3 + StackSize.of(componentType).toIncreasingSize().getSizeImpact()));
+  verify(methodVisitor).visitInsn(Opcodes.ICONST_1);
+  verifyArrayCreation(methodVisitor);
+  verify(methodVisitor).visitInsn(Opcodes.DUP);
+  verify(methodVisitor).visitInsn(Opcodes.ICONST_0);
+  verify(stackManipulation).apply(methodVisitor,instrumentationContext);
+  verify(methodVisitor).visitInsn(storageOpcode);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyNoMoreInteractions(stackManipulation);
+}

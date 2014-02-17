@@ -1,0 +1,10 @@
+{
+  Assigner voidAwareAssigner=new VoidAwareAssigner(chainedAssigner,true);
+  StackManipulation stackManipulation=voidAwareAssigner.assign(sourceTypeDescription,targetTypeDescription,false);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(StackSize.of(targetType).getSize()));
+  assertThat(size.getMaximalSize(),is(StackSize.of(targetType).getSize()));
+  verify(methodVisitor).visitInsn(opcode);
+  verifyNoMoreInteractions(methodVisitor);
+}

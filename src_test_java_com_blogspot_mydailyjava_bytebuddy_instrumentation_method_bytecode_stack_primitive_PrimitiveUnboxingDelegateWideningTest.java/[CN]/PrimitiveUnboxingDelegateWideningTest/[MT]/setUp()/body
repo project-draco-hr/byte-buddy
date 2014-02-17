@@ -1,0 +1,5 @@
+{
+  when(referenceTypeDescription.represents(referenceType)).thenReturn(true);
+  when(primitiveTypeDescription.isPrimitive()).thenReturn(true);
+  when(primitiveTypeDescription.represents(primitiveType)).thenReturn(true);
+}

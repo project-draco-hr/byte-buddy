@@ -1,0 +1,3 @@
+{
+  evaluateInvocation(opcode,FOO,MethodInvocation.invoke(methodDescription));
+}

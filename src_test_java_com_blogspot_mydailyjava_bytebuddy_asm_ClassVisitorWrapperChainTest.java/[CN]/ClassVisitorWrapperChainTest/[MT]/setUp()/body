@@ -1,0 +1,5 @@
+{
+  when(first.wrap(any(ClassVisitor.class))).thenReturn(classVisitor);
+  when(prepend.wrap(any(ClassVisitor.class))).thenReturn(classVisitor);
+  when(append.wrap(any(ClassVisitor.class))).thenReturn(classVisitor);
+}

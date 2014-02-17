@@ -2,5 +2,5 @@
   TypeDescription targetType=mock(TypeDescription.class);
   when(targetType.isArray()).thenReturn(false);
   when(targetTypeList.get(0)).thenReturn(targetType);
-  AllArguments.Binder.INSTANCE.bind(annotation,0,source,target,typeDescription,assigner);
+  AllArguments.Binder.INSTANCE.bind(annotation,0,source,target,instrumentedType,assigner);
 }

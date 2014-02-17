@@ -1,8 +1,8 @@
 {
   ClassWriter classWriter=new ClassWriter(ASM_MANUAL_WRITING_OPTIONS);
   ClassVisitor classVisitor=classVisitorWrapperChain.wrap(classWriter);
-  InstrumentedType0 instrumentedType=new InstrumentedType0(classVersion,superClass,interfaces,visibility,typeManifestation,syntheticState,namingStrategy);
-  classVisitor.visit(instrumentedType.getClassVersion(),instrumentedType.getModifiers(),instrumentedType.getInternalName(),null,instrumentedType.getSupertype().getInternalName(),instrumentedType.getInterfaces().toInternalNames());
+  InstrumentedType instrumentedType=new SubclassLoadedTypeInstrumentation(classVersion,superClass,interfaces,visibility,typeManifestation,syntheticState,namingStrategy);
+  classVisitor.visit(classVersion.getVersionNumber(),instrumentedType.getModifiers(),instrumentedType.getInternalName(),null,instrumentedType.getSupertype().getInternalName(),instrumentedType.getInterfaces().toInternalNames());
   MethodInterception.Handler handler=methodInterceptions.handler(instrumentedType);
   for (  MethodDescription method : instrumentedType.getReachableMethods().filter(not(ignoredMethods).and(new WritableMethodFilter(instrumentedType)))) {
     handler.find(method).handle(classVisitor);

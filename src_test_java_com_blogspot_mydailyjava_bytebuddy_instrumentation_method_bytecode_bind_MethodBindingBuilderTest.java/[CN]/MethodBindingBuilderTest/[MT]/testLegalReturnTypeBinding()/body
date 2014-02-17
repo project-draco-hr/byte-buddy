@@ -1,10 +1,10 @@
 {
-  when(methodInvoker.invoke(any(MethodDescription.class))).thenReturn(legalAssignment);
+  when(methodInvoker.invoke(any(MethodDescription.class))).thenReturn(legalStackManipulation);
   MethodDelegationBinder.Binding.Builder builder=new MethodDelegationBinder.Binding.Builder(methodInvoker,methodDescription);
-  MethodDelegationBinder.Binding binding=builder.build(legalAssignment);
+  MethodDelegationBinder.Binding binding=builder.build(legalStackManipulation);
   assertThat(binding.isValid(),is(true));
   assertThat(binding.getTarget(),is(methodDescription));
-  binding.apply(methodVisitor);
-  verify(legalAssignment,times(2)).apply(methodVisitor);
+  binding.apply(methodVisitor,instrumentationContext);
+  verify(legalStackManipulation,times(2)).apply(methodVisitor,instrumentationContext);
   verifyZeroInteractions(methodVisitor);
 }

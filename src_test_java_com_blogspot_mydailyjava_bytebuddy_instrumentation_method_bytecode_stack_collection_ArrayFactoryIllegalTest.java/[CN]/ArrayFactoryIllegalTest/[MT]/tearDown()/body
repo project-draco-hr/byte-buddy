@@ -1,0 +1,4 @@
+{
+  verify(typeDescription).isArray();
+  verifyNoMoreInteractions(typeDescription);
+}

@@ -1,6 +1,6 @@
 {
   final int sourceIndex=2, targetIndex=1;
-  when(assignment.isValid()).thenReturn(true);
+  when(stackManipulation.isValid()).thenReturn(true);
   when(annotation.value()).thenReturn(sourceIndex);
   TypeList sourceParameters=mock(TypeList.class);
   when(sourceParameters.size()).thenReturn(sourceIndex + 1);
@@ -14,7 +14,7 @@
   when(targetParameters.get(targetIndex)).thenReturn(targetType);
   when(target.getParameterTypes()).thenReturn(targetParameters);
   when(target.getParameterAnnotations()).thenReturn(annotations);
-  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=Argument.Binder.INSTANCE.bind(annotation,targetIndex,source,target,typeDescription,assigner);
+  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=Argument.Binder.INSTANCE.bind(annotation,targetIndex,source,target,instrumentedType,assigner);
   assertThat(identifiedBinding.isValid(),is(true));
   Object expectedToken=new MostSpecificTypeResolver.ParameterIndexToken(sourceIndex);
   assertThat(identifiedBinding.getIdentificationToken(),equalTo(expectedToken));

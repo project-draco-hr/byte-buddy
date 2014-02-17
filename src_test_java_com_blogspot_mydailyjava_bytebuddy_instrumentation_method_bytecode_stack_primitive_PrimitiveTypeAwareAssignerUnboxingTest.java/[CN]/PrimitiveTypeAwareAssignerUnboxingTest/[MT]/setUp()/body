@@ -1,0 +1,7 @@
+{
+  when(sourceTypeDescription.represents(sourceType)).thenReturn(true);
+  when(sourceTypeDescription.isPrimitive()).thenReturn(false);
+  when(targetTypeDescription.represents(targetType)).thenReturn(true);
+  when(targetTypeDescription.isPrimitive()).thenReturn(true);
+  primitiveAssigner=new PrimitiveTypeAwareAssigner(chainedAssigner);
+}

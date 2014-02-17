@@ -1,0 +1,19 @@
+{
+  if (sourceType.isPrimitive() || targetType.isPrimitive()) {
+    if (sourceType.equals(targetType)) {
+      return LegalTrivialStackManipulation.INSTANCE;
+    }
+ else {
+      return IllegalStackManipulation.INSTANCE;
+    }
+  }
+ else   if (targetType.isAssignableFrom(sourceType)) {
+    return LegalTrivialStackManipulation.INSTANCE;
+  }
+ else   if (considerRuntimeType) {
+    return new DownCastStackManipulation(targetType);
+  }
+ else {
+    return IllegalStackManipulation.INSTANCE;
+  }
+}

@@ -9,5 +9,4 @@
   assertThat(iterator.hasNext(),is(false));
   verify(source,atLeast(1)).getParameterTypes();
   verify(target,atLeast(1)).getParameterAnnotations();
-  verifyZeroInteractions(typeDescription);
 }

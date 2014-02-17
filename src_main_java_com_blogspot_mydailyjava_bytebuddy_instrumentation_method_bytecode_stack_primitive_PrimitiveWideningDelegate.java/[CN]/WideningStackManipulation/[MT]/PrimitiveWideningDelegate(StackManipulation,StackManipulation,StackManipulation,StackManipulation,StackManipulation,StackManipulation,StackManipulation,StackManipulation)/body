@@ -1,0 +1,10 @@
+{
+  this.toBooleanStackManipulation=toBooleanStackManipulation;
+  this.toByteStackManipulation=toByteStackManipulation;
+  this.toShortStackManipulation=toShortStackManipulation;
+  this.toCharacterStackManipulation=toCharacterStackManipulation;
+  this.toIntegerStackManipulation=toIntegerStackManipulation;
+  this.toLongStackManipulation=toLongStackManipulation;
+  this.toFloatStackManipulation=toFloatStackManipulation;
+  this.toDoubleStackManipulation=toDoubleStackManipulation;
+}

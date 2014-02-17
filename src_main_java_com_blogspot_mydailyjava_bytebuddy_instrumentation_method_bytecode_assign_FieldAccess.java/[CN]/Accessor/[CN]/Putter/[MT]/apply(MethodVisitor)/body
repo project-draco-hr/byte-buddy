@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitFieldInsn(put,ownerTypeInternalName,fieldName,fieldTypeDescriptor);
-  return typeSize.toDecreasingSize();
-}
