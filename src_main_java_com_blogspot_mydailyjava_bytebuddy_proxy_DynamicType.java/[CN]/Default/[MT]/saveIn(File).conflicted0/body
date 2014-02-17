@@ -1,0 +1,14 @@
+{
+  File target=new File(folder,getMainTypeName().replace('.',File.separatorChar) + CLASS_FILE_EXTENSION);
+  FileOutputStream fileOutputStream=new FileOutputStream(target);
+  try {
+    fileOutputStream.write(getMainTypeByte());
+  }
+  finally {
+    fileOutputStream.close();
+  }
+  for (  DynamicType<?> helperType : helperTypes) {
+    helperType.saveIn(folder);
+  }
+  return target;
+}

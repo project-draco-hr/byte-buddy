@@ -1,0 +1,6 @@
+{
+  for (  Map.Entry<String,Instrumentation.ClassLoadingCallback> entry : getTypeInitializers().entrySet()) {
+    entry.getValue().onLoad(types.get(entry.getKey()));
+  }
+  return types;
+}

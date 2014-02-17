@@ -1,0 +1,8 @@
+{
+  Map<String,byte[]> helperTypeByte=new HashMap<String,byte[]>(helperTypes.size());
+  for (  DynamicType<?> helperType : helperTypes) {
+    helperTypeByte.put(helperType.getMainTypeName(),helperType.getMainTypeByte());
+    helperTypeByte.putAll(helperType.getHelperTypesRaw());
+  }
+  return helperTypeByte;
+}

@@ -1,9 +1,0 @@
-{
-  try {
-    Class<? extends T> type=(Class<? extends T>)Class.forName(typeName,false,new ByteArrayClassLoader(classLoader,typeName,javaType));
-    return new LoadedTypeDynamicProxy<T>(type);
-  }
- catch (  ClassNotFoundException e) {
-    throw new IllegalStateException("Could not load class",e);
-  }
-}

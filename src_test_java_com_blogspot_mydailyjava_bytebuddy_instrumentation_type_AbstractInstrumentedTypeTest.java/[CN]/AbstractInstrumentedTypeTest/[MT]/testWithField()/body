@@ -1,0 +1,10 @@
+{
+  TypeDescription fieldType=mock(TypeDescription.class);
+  instrumentedType=instrumentedType.withField(QUX,fieldType,Modifier.PUBLIC,false);
+  assertThat(instrumentedType.getDeclaredFields().size(),is(1));
+  FieldDescription fieldDescription=instrumentedType.getDeclaredFields().get(0);
+  assertThat(fieldDescription.getFieldType(),is(fieldType));
+  assertThat(fieldDescription.getModifiers(),is(Modifier.PUBLIC));
+  assertThat(fieldDescription.isSynthetic(),is(false));
+  assertThat(fieldDescription.getName(),is(QUX));
+}

@@ -1,0 +1,13 @@
+{
+  TypeDescription parameterType=mock(TypeDescription.class);
+  TypeDescription returnType=mock(TypeDescription.class);
+  instrumentedType=instrumentedType.withMethod(QUX,returnType,Arrays.asList(parameterType),Modifier.PUBLIC,false);
+  assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
+  MethodDescription methodDescription=instrumentedType.getDeclaredMethods().get(0);
+  assertThat(methodDescription.getParameterTypes().size(),is(1));
+  assertThat(methodDescription.getParameterTypes().get(0),is(parameterType));
+  assertThat(methodDescription.getReturnType(),is(returnType));
+  assertThat(methodDescription.getModifiers(),is(Modifier.PUBLIC));
+  assertThat(methodDescription.isSynthetic(),is(false));
+  assertThat(methodDescription.getName(),is(QUX));
+}

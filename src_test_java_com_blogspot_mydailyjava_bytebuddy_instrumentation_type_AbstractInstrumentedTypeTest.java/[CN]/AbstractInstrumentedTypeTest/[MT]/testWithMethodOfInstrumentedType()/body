@@ -1,0 +1,11 @@
+{
+  instrumentedType=instrumentedType.withMethod(QUX,instrumentedType,Arrays.asList(instrumentedType),Modifier.PUBLIC,false);
+  assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
+  MethodDescription methodDescription=instrumentedType.getDeclaredMethods().get(0);
+  assertThat(methodDescription.getParameterTypes().size(),is(1));
+  assertThat(methodDescription.getParameterTypes().get(0),sameInstance((TypeDescription)instrumentedType));
+  assertThat(methodDescription.getReturnType(),sameInstance((TypeDescription)instrumentedType));
+  assertThat(methodDescription.getModifiers(),is(Modifier.PUBLIC));
+  assertThat(methodDescription.isSynthetic(),is(false));
+  assertThat(methodDescription.getName(),is(QUX));
+}

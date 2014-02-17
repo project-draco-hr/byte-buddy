@@ -1,5 +1,5 @@
 {
-  this.proxyTypeInternalName=proxyTypeInternalName;
+  this.proxyTypeName=proxyTypeName;
   this.classVersion=classVersion;
   int i=0;
   Map<String,TypeDescription> fields=new LinkedHashMap<String,TypeDescription>(1 + proxiedMethod.getParameterTypes().size());

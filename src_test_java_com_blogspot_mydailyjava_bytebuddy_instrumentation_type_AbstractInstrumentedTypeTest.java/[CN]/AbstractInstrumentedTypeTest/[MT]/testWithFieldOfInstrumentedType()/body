@@ -1,0 +1,9 @@
+{
+  instrumentedType=instrumentedType.withField(QUX,instrumentedType,Modifier.PUBLIC,false);
+  assertThat(instrumentedType.getDeclaredFields().size(),is(1));
+  FieldDescription fieldDescription=instrumentedType.getDeclaredFields().get(0);
+  assertThat(fieldDescription.getFieldType(),sameInstance((TypeDescription)instrumentedType));
+  assertThat(fieldDescription.getModifiers(),is(Modifier.PUBLIC));
+  assertThat(fieldDescription.isSynthetic(),is(false));
+  assertThat(fieldDescription.getName(),is(QUX));
+}

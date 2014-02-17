@@ -1,8 +1,0 @@
-{
-  NamingStrategy namingStrategy=mock(NamingStrategy.class);
-  when(namingStrategy.getName(any(NamingStrategy.UnnamedType.class))).thenReturn(FOO);
-  SubclassLoadedTypeInstrumentation instrumentedType=new SubclassLoadedTypeInstrumentation(new ClassVersion(Opcodes.V1_6),Object.class,Arrays.<Class<?>>asList(Serializable.class),Visibility.PUBLIC,TypeManifestation.CONCRETE,SyntheticState.NON_SYNTHETIC,namingStrategy);
-  verify(namingStrategy).getName(instrumentedType);
-  verifyNoMoreInteractions(namingStrategy);
-  this.instrumentedType=instrumentedType;
-}

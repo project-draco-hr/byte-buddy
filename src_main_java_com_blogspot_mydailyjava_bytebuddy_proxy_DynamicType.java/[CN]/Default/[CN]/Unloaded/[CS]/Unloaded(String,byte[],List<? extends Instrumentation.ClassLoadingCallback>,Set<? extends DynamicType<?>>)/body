@@ -1,0 +1,3 @@
+{
+  super(mainTypeName,mainTypeByte,classLoadingCallbacks,helperTypes);
+}
