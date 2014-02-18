@@ -1,0 +1,4 @@
+{
+  this.target=target;
+  visible=visibility.isVisible();
+}

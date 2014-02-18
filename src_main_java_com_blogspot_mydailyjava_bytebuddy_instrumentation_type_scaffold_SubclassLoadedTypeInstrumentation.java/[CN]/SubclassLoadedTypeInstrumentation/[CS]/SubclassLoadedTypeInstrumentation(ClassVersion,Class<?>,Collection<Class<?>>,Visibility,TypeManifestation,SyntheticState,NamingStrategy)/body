@@ -1,5 +1,4 @@
 {
-  super(Collections.<FieldDescription>emptyList(),Collections.<MethodDescription>emptyList());
   this.classVersion=classVersion;
   this.superClass=superClass;
   this.interfaces=interfaces;

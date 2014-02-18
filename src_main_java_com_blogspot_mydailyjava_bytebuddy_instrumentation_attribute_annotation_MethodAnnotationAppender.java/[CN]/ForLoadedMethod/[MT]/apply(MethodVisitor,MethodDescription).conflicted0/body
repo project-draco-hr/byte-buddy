@@ -1,0 +1,3 @@
+{
+  ForInstrumentedMethod.INSTANCE.apply(methodVisitor,this.methodDescription);
+}

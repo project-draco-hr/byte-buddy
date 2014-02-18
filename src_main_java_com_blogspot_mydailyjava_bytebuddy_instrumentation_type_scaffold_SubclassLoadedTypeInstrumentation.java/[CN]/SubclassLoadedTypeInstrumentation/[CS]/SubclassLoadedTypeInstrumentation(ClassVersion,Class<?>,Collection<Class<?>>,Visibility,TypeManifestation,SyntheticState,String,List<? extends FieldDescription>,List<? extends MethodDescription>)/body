@@ -1,5 +1,5 @@
 {
-  super(fieldDescriptions,methodDescriptions);
+  super(name,fieldDescriptions,methodDescriptions);
   this.classVersion=classVersion;
   this.superClass=superClass;
   this.interfaces=interfaces;

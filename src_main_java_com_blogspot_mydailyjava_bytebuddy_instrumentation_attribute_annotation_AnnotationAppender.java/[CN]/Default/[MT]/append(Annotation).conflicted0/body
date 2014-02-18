@@ -1,0 +1,12 @@
+{
+  try {
+    tryAppend(annotation);
+    return this;
+  }
+ catch (  InvocationTargetException e) {
+    throw new IllegalStateException("Could not invoke method of " + annotation + " reflectively",e);
+  }
+catch (  IllegalAccessException e) {
+    throw new IllegalStateException("Could not access method of " + annotation,e);
+  }
+}

@@ -1,6 +1,8 @@
 {
   TypeDescription parameterType=mock(TypeDescription.class);
+  when(parameterType.getInternalName()).thenReturn(BAR);
   TypeDescription returnType=mock(TypeDescription.class);
+  when(returnType.getInternalName()).thenReturn(BAR);
   instrumentedType=instrumentedType.withMethod(QUX,returnType,Arrays.asList(parameterType),Modifier.PUBLIC,false);
   assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
   MethodDescription methodDescription=instrumentedType.getDeclaredMethods().get(0);
