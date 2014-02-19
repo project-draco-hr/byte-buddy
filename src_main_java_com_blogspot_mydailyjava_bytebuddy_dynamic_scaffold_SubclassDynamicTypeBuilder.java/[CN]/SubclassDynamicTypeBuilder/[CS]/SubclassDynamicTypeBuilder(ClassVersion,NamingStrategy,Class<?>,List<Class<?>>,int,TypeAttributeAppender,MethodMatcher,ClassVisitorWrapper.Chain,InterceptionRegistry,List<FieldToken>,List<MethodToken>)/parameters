@@ -1,0 +1,11 @@
+ClassVersion classVersion
+NamingStrategy namingStrategy
+Class<?> superType
+List<Class<?>> interfaceTypes
+int modifiers
+TypeAttributeAppender attributeAppender
+MethodMatcher ignoredMethods
+ClassVisitorWrapper.Chain classVisitorWrapperChain
+InterceptionRegistry instrumentationRegistry
+List<FieldToken> fieldTokens
+List<MethodToken> methodTokens

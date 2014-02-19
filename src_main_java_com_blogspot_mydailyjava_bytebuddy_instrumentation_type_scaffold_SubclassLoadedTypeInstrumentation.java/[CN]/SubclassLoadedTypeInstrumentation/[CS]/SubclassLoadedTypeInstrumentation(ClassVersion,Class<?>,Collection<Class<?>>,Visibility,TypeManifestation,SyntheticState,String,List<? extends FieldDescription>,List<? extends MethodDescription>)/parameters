@@ -1,9 +1,0 @@
-ClassVersion classVersion
-Class<?> superClass
-Collection<Class<?>> interfaces
-Visibility visibility
-TypeManifestation typeManifestation
-SyntheticState syntheticState
-String name
-List<? extends FieldDescription> fieldDescriptions
-List<? extends MethodDescription> methodDescriptions

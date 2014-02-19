@@ -1,0 +1,4 @@
+{
+  this.annotation=annotation;
+  target=new Target.OnMethodParameter(parameterIndex);
+}

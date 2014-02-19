@@ -1,0 +1,8 @@
+{
+  super(name,fieldDescriptions,methodDescriptions);
+  this.classVersion=classVersion;
+  this.superClass=superClass;
+  this.interfaces=interfaces;
+  this.modifiers=modifiers;
+  this.name=name;
+}

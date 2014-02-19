@@ -1,0 +1,4 @@
+{
+  this.latentDecision=latentDecision;
+  this.methodTokens=methodTokens;
+}

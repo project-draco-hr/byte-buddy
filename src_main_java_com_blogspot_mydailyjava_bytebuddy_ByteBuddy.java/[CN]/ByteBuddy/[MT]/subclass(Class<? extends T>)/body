@@ -1,3 +1,3 @@
 {
-  return SubclassDynamicProxyBuilder.of(type,this);
+  throw new RuntimeException();
 }

@@ -1,9 +1,0 @@
-{
-  MethodDescription additionalMethod=new MethodToken(internalName,returnType,parameterTypes,modifiers,synthetic);
-  if (methodDescriptions.contains(additionalMethod)) {
-    throw new IllegalArgumentException("Method " + additionalMethod + " is alread defined on "+ this);
-  }
-  List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(this.methodDescriptions);
-  methodDescriptions.add(additionalMethod);
-  return new SubclassLoadedTypeInstrumentation(classVersion,superClass,interfaces,visibility,typeManifestation,syntheticState,name,fieldDescriptions,methodDescriptions);
-}

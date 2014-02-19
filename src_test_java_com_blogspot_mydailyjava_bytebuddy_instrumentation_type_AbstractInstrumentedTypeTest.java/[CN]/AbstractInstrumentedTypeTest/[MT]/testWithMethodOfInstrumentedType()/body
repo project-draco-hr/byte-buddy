@@ -1,5 +1,5 @@
 {
-  instrumentedType=instrumentedType.withMethod(QUX,instrumentedType,Arrays.asList(instrumentedType),Modifier.PUBLIC,false);
+  instrumentedType=instrumentedType.withMethod(QUX,instrumentedType,Arrays.asList(instrumentedType),Modifier.PUBLIC);
   assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
   MethodDescription methodDescription=instrumentedType.getDeclaredMethods().get(0);
   assertThat(methodDescription.getParameterTypes().size(),is(1));

@@ -1,0 +1,6 @@
+{
+  if (parameterIndex >= methodDescription.getParameterTypes().size()) {
+    throw new IllegalArgumentException("Method " + methodDescription + " has less then "+ parameterIndex+ " parameters");
+  }
+  return new AnnotationAppender.Target.OnMethodParameter(methodVisitor,parameterIndex);
+}

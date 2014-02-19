@@ -1,3 +1,0 @@
-{
-  return new SubclassDynamicProxyBuilder<T>(superClass,interfaces,classVersion,new NamingStrategy.Fixed(checkNotNull(name)),visibility,typeManifestation,syntheticState,ignoredMethods,classVisitorWrapperChain,methodInterceptions);
-}

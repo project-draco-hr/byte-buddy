@@ -1,0 +1,11 @@
+{
+  when(methodDescription.isStatic()).thenReturn(true);
+  StackManipulation stackManipulation=MethodArgument.loadParameters(methodDescription);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(PARAMETER_STACK_SIZE));
+  assertThat(size.getMaximalSize(),is(PARAMETER_STACK_SIZE));
+  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_0);
+  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_1);
+  verifyNoMoreInteractions(methodVisitor);
+}

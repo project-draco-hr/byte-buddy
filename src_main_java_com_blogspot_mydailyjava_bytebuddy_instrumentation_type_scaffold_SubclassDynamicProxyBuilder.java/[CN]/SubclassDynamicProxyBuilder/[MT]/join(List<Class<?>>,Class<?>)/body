@@ -1,6 +1,0 @@
-{
-  List<Class<?>> result=new ArrayList<Class<?>>(interfaces.size() + 1);
-  result.addAll(interfaces);
-  result.add(anInterface);
-  return Collections.unmodifiableList(result);
-}

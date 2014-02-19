@@ -1,6 +1,0 @@
-{
-  List<MethodInterception> joined=new ArrayList<MethodInterception>(methodInterceptions.size() + 1);
-  joined.add(methodInterception);
-  joined.addAll(methodInterceptions);
-  this.methodInterceptions=Collections.unmodifiableList(joined);
-}

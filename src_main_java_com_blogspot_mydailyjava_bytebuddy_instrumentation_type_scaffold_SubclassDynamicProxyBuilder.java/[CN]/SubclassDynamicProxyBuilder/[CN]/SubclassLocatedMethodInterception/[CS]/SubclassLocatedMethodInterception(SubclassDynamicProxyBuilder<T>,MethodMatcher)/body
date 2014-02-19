@@ -1,4 +1,0 @@
-{
-  this.subclassDynamicProxyBuilder=subclassDynamicProxyBuilder;
-  this.methodMatcher=methodMatcher;
-}

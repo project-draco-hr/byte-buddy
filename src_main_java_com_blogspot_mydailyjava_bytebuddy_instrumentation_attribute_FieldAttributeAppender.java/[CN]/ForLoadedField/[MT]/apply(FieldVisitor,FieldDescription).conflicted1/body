@@ -1,0 +1,6 @@
+{
+  AnnotationAppender annotationAppender=new AnnotationAppender.Default(new AnnotationAppender.Target.OnField(fieldVisitor),AnnotationAppender.Visibility.VISIBLE);
+  for (  Annotation annotation : fieldDescription.getAnnotations()) {
+    annotationAppender.append(annotation);
+  }
+}

@@ -1,0 +1,14 @@
+{
+  if ((modifiers & Modifier.FINAL) != 0) {
+    return TypeManifestation.FINAL;
+  }
+ else   if ((modifiers & Opcodes.ACC_INTERFACE) != 0) {
+    return TypeManifestation.INTERFACE;
+  }
+ else   if ((modifiers & Opcodes.ACC_ABSTRACT) != 0) {
+    return TypeManifestation.ABSTRACT;
+  }
+ else {
+    return TypeManifestation.PLAIN;
+  }
+}

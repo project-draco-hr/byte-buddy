@@ -1,0 +1,3 @@
+{
+  return new SubclassDynamicTypeBuilder<T>(classVersion,namingStrategy,superType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,classVisitorWrapperChain.append(nonNull(classVisitorWrapper)),instrumentationRegistry,fieldTokens,methodTokens);
+}

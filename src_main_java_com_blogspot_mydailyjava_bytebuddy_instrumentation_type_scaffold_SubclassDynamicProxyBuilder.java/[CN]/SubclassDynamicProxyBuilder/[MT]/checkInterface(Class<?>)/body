@@ -1,6 +1,0 @@
-{
-  if (!type.isInterface()) {
-    throw new IllegalArgumentException(type + " is not an interface type");
-  }
-  return type;
-}

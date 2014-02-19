@@ -1,3 +1,0 @@
-{
-  return new SubclassDynamicProxyBuilder<T>(superClass,interfaces,new ClassVersion(versionNumber),namingStrategy,visibility,typeManifestation,syntheticState,ignoredMethods,classVisitorWrapperChain,methodInterceptions);
-}

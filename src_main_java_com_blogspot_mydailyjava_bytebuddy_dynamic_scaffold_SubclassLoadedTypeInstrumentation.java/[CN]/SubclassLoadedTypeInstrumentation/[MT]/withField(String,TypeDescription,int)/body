@@ -1,0 +1,9 @@
+{
+  FieldDescription additionalField=new FieldToken(name,fieldType,access);
+  if (fieldDescriptions.contains(additionalField)) {
+    throw new IllegalArgumentException("Field " + additionalField + " is already defined on "+ this);
+  }
+  List<FieldDescription> fieldDescriptions=new ArrayList<FieldDescription>(this.fieldDescriptions);
+  fieldDescriptions.add(additionalField);
+  return new SubclassLoadedTypeInstrumentation(classVersion,superClass,interfaces,access,this.name,fieldDescriptions,methodDescriptions);
+}
