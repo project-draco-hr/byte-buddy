@@ -1,4 +1,0 @@
-{
-  super(mainTypeName,mainTypeByte,classLoadingCallbacks,helperTypes);
-  this.types=types;
-}

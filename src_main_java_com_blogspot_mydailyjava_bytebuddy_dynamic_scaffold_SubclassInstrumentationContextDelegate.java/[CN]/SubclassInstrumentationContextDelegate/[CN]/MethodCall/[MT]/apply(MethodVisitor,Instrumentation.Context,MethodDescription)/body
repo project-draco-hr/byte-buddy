@@ -1,0 +1,6 @@
+{
+  StackManipulation.Size size=MethodArgument.loadParameters(instrumentedMethod).apply(methodVisitor,instrumentationContext);
+  size=size.aggregate(MethodInvocation.invoke(targetDescription).special(instrumentedType.getSupertype()).apply(methodVisitor,instrumentationContext));
+  MethodReturn.returning(instrumentedMethod.getReturnType()).apply(methodVisitor,instrumentationContext);
+  return new Size(size.getMaximalSize(),instrumentedMethod.getStackSize());
+}

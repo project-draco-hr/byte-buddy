@@ -1,8 +1,6 @@
 {
-  ClassWriter classWriter=new ClassWriter(ASM_MANUAL);
-  InstrumentedType instrumentedType=applyRecoredMembersTo(new SubclassLoadedTypeInstrumentation(classVersion,superType,interfaceTypes,modifiers,namingStrategy));
-  ClassVisitor classVisitor=classVisitorWrapperChain.wrap(classWriter);
-  classVisitor.visit(classVersion.getVersionNumber(),instrumentedType.getModifiers(),instrumentedType.getInternalName(),null,instrumentedType.getSupertype().getInternalName(),instrumentedType.getInterfaces().toInternalNames());
-  classVisitor.visitEnd();
-  return new DynamicType.Default.Unloaded<T>(instrumentedType.getName(),classWriter.toByteArray(),join(Collections.<TypeInitializer>emptyList(),instrumentedType.getInitializer()),Collections.<DynamicType<?>>emptySet());
+  InstrumentedType instrumentedType=applyRecoredMembersTo(new SubclassLoadedTypeInstrumentation(classFormatVersion,superType,interfaceTypes,modifiers,namingStrategy));
+  SubclassInstrumentationContextDelegate contextDelegate=new SubclassInstrumentationContextDelegate(instrumentedType);
+  Instrumentation.Context instrumentationContext=new Instrumentation.Context.Default(contextDelegate,contextDelegate);
+  return new TypeWriter.Builder<T>(instrumentedType,instrumentationContext,classFormatVersion).build(classVisitorWrapperChain).attributeType(attributeAppender).fields().write(instrumentedType.getDeclaredFields(),fieldRegistry.compile(instrumentedType)).methods().write(instrumentedType.getDeclaredMethods().filter(not(ignoredMethods).and(isOverridable())),methodRegistry.compile(instrumentedType)).write(contextDelegate.getProxiedMethods(),contextDelegate).make();
 }

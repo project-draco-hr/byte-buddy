@@ -1,9 +1,8 @@
 {
-  TypeInitializer classLoadingCallback=new TypeInitializer.Compound(typeInitializers);
   Map<String,TypeInitializer> classLoadingCallbacks=new HashMap<String,TypeInitializer>();
-  for (  DynamicType<?> helperType : helperTypes) {
-    classLoadingCallbacks.putAll(helperType.getTypeInitializers());
+  for (  DynamicType<?> auxiliaryType : auxiliaryTypes) {
+    classLoadingCallbacks.putAll(auxiliaryType.getTypeInitializers());
   }
-  classLoadingCallbacks.put(getMainTypeName(),classLoadingCallback);
+  classLoadingCallbacks.put(getMainTypeName(),typeInitializer);
   return classLoadingCallbacks;
 }

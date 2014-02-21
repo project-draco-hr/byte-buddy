@@ -7,8 +7,8 @@
   finally {
     fileOutputStream.close();
   }
-  for (  DynamicType<?> helperType : helperTypes) {
-    helperType.saveIn(folder);
+  for (  DynamicType<?> auxiliaryType : auxiliaryTypes) {
+    auxiliaryType.saveIn(folder);
   }
   return target;
 }

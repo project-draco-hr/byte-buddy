@@ -1,3 +1,3 @@
 {
-  return new SubclassLoadedTypeInstrumentation(classVersion,superClass,interfaces,modifiers,name,fieldDescriptions,methodDescriptions,new TypeInitializer.Compound(this.typeInitializer,typeInitializer));
+  return new SubclassLoadedTypeInstrumentation(classFormatVersion,superClass,interfaces,modifiers,name,fieldDescriptions,methodDescriptions,new TypeInitializer.Compound(this.typeInitializer,typeInitializer));
 }

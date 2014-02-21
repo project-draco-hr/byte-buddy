@@ -1,0 +1,5 @@
+ClassFormatVersion classFormatVersion
+Class<?> superClass
+Collection<Class<?>> interfaces
+int modifiers
+NamingStrategy namingStrategy

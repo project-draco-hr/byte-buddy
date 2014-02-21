@@ -1,0 +1,8 @@
+{
+  Map<String,byte[]> auxiliaryTypes=new HashMap<String,byte[]>(this.auxiliaryTypes.size());
+  for (  DynamicType<?> auxiliaryType : this.auxiliaryTypes) {
+    auxiliaryTypes.put(auxiliaryType.getMainTypeName(),auxiliaryType.getMainTypeByte());
+    auxiliaryTypes.putAll(auxiliaryType.getRawAuxiliaryTypes());
+  }
+  return auxiliaryTypes;
+}

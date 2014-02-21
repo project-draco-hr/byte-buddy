@@ -1,0 +1,5 @@
+{
+  Map<String,Class<?>> auxiliaryTypes=new HashMap<String,Class<?>>(types);
+  types.remove(getMainTypeName());
+  return auxiliaryTypes;
+}

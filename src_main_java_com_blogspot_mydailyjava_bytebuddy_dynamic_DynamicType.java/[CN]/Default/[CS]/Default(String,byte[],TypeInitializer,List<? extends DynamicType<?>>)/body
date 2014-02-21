@@ -1,0 +1,6 @@
+{
+  this.mainTypeName=mainTypeName;
+  this.mainTypeByte=mainTypeByte;
+  this.typeInitializer=typeInitializer;
+  this.auxiliaryTypes=auxiliaryTypes;
+}

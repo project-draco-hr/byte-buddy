@@ -1,0 +1,5 @@
+{
+  this.latentMethodMatcher=latentMethodMatcher;
+  this.instrumentation=instrumentation;
+  this.attributeAppenderFactory=attributeAppenderFactory;
+}

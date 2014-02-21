@@ -1,0 +1,8 @@
+{
+  for (  Entry entry : entries) {
+    if (entry.matches(methodDescription)) {
+      return entry;
+    }
+  }
+  return fallback;
+}

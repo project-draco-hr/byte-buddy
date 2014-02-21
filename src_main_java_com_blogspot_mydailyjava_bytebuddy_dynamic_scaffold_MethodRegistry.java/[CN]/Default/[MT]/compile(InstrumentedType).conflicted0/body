@@ -1,0 +1,17 @@
+{
+  Map<Instrumentation,Entry> prepared=new HashMap<Instrumentation,Entry>(entries.size());
+  for (  Entry entry : entries) {
+    if (!prepared.containsKey(entry.instrumentation)) {
+      instrumentedType=entry.instrumentation.prepare(instrumentedType);
+      prepared.put(entry.instrumentation,entry);
+    }
+  }
+  List<MethodRegistry.Default.Compiled.Entry> compiledEntries=new ArrayList<MethodRegistry.Default.Compiled.Entry>(prepared.size());
+  for (  Entry entry : entries) {
+    MethodMatcher methodMatcher=entry.latentMethodMatcher.manifest(instrumentedType);
+    ByteCodeAppender byteCodeAppender=prepared.get(entry.instrumentation).instrumentation.appender(instrumentedType);
+    MethodAttributeAppender attributeAppender=entry.attributeAppenderFactory.make(instrumentedType);
+    compiledEntries.add(new Compiled.Entry(methodMatcher,byteCodeAppender,attributeAppender));
+  }
+  return new Compiled(compiledEntries);
+}

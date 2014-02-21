@@ -1,3 +1,3 @@
 {
-  return new SubclassDynamicTypeBuilder<T>(classVersion,namingStrategy,superType,join(interfaceTypes,isInterface(nonNull(interfaceType))),modifiers,attributeAppender,ignoredMethods,classVisitorWrapperChain,fieldRegistry,methodRegistry,fieldTokens,methodTokens);
+  return new SubclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,superType,join(interfaceTypes,isInterface(nonNull(interfaceType))),modifiers,attributeAppender,ignoredMethods,classVisitorWrapperChain,fieldRegistry,methodRegistry,fieldTokens,methodTokens);
 }

@@ -1,5 +1,5 @@
 {
-  Map<String,byte[]> types=getHelperTypesRaw();
+  Map<String,byte[]> types=getRawAuxiliaryTypes();
   types.put(getMainTypeName(),getMainTypeByte());
-  return new Default.Loaded<T>(mainTypeName,mainTypeByte,typeInitializers,helperTypes,initialize(classLoadingStrategy.load(classLoader,types)));
+  return new Default.Loaded<T>(mainTypeName,mainTypeByte,typeInitializer,auxiliaryTypes,initialize(classLoadingStrategy.load(classLoader,types)));
 }

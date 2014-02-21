@@ -1,0 +1,5 @@
+String mainTypeName
+byte[] mainTypeByte
+TypeInitializer typeInitializer
+List<? extends DynamicType<?>> auxiliaryTypes
+Map<String,Class<?>> types

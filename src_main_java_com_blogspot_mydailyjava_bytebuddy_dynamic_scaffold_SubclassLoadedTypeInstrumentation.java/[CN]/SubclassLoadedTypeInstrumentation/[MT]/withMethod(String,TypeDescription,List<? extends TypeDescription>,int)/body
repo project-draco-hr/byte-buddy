@@ -5,5 +5,5 @@
   }
   List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(this.methodDescriptions);
   methodDescriptions.add(additionalMethod);
-  return new SubclassLoadedTypeInstrumentation(classVersion,superClass,interfaces,modifiers,name,fieldDescriptions,methodDescriptions,typeInitializer);
+  return new SubclassLoadedTypeInstrumentation(classFormatVersion,superClass,interfaces,modifiers,name,fieldDescriptions,methodDescriptions,typeInitializer);
 }

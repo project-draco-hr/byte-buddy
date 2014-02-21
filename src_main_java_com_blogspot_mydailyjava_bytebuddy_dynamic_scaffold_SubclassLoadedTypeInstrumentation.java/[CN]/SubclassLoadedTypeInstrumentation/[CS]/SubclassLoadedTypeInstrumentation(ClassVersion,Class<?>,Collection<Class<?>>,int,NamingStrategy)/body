@@ -1,7 +1,0 @@
-{
-  this.classVersion=classVersion;
-  this.superClass=superClass;
-  this.interfaces=interfaces;
-  this.modifiers=modifiers;
-  this.name=namingStrategy.getName(this);
-}
