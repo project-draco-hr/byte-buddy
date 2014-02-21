@@ -13,5 +13,5 @@
     MethodAttributeAppender attributeAppender=entry.attributeAppenderFactory.make(instrumentedType);
     compiledEntries.add(new Compiled.Entry(methodMatcher,byteCodeAppender,attributeAppender));
   }
-  return new Compiled(compiledEntries);
+  return new Compiled(compiledEntries,fallback);
 }
