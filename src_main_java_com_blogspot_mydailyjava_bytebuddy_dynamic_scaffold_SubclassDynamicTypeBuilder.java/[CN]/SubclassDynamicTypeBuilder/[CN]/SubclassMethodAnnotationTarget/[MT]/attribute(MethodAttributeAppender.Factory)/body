@@ -1,3 +1,3 @@
 {
-  return new SubclassMethodAnnotationTarget<T>(methodTokens,latentDecision,instrumentation,new MethodAttributeAppender.Factory.Compound(this.attributeAppenderFactory,attributeAppenderFactory));
+  return new SubclassMethodAnnotationTarget<T>(methodTokens,latentMethodMatcher,instrumentation,new MethodAttributeAppender.Factory.Compound(this.attributeAppenderFactory,attributeAppenderFactory));
 }

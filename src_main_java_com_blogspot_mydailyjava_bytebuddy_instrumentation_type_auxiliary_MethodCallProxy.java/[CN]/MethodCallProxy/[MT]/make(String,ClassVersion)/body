@@ -39,5 +39,5 @@
     anInterface.implement(classVisitor,proxyTypeInternalName,proxiedMethod,fields,assigner);
   }
   classVisitor.visitEnd();
-  return new DynamicType.Default.Unloaded<Object>(proxyTypeName,classWriter.toByteArray(),Collections.<Instrumentation.ClassLoadingCallback>emptyList(),Collections.<DynamicType<?>>emptySet());
+  return new DynamicType.Default.Unloaded<Object>(proxyTypeName,classWriter.toByteArray(),Collections.<TypeInitializer>emptyList(),Collections.<DynamicType<?>>emptySet());
 }

@@ -1,4 +1,0 @@
-List<MethodToken> methodTokens
-InterceptionRegistry.LatentDecision latentDecision
-Instrumentation instrumentation
-MethodAttributeAppender.Factory attributeAppenderFactory

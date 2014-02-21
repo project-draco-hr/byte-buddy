@@ -1,8 +1,8 @@
 {
   ClassWriter classWriter=new ClassWriter(ASM_MANUAL);
+  InstrumentedType instrumentedType=applyRecoredMembersTo(new SubclassLoadedTypeInstrumentation(classVersion,superType,interfaceTypes,modifiers,namingStrategy));
   ClassVisitor classVisitor=classVisitorWrapperChain.wrap(classWriter);
-  InstrumentedType instrumentedType=new SubclassLoadedTypeInstrumentation(classVersion,superType,interfaceTypes,modifiers,namingStrategy);
   classVisitor.visit(classVersion.getVersionNumber(),instrumentedType.getModifiers(),instrumentedType.getInternalName(),null,instrumentedType.getSupertype().getInternalName(),instrumentedType.getInterfaces().toInternalNames());
   classVisitor.visitEnd();
-  return new DynamicType.Default.Unloaded<T>(instrumentedType.getName(),classWriter.toByteArray(),Collections.<Instrumentation.ClassLoadingCallback>emptyList(),Collections.<DynamicType<?>>emptySet());
+  return new DynamicType.Default.Unloaded<T>(instrumentedType.getName(),classWriter.toByteArray(),join(Collections.<TypeInitializer>emptyList(),instrumentedType.getInitializer()),Collections.<DynamicType<?>>emptySet());
 }

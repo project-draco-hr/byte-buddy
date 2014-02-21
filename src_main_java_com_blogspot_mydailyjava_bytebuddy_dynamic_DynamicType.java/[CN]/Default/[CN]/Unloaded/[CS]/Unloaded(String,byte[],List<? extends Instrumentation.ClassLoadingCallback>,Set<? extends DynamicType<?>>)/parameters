@@ -1,4 +1,0 @@
-String mainTypeName
-byte[] mainTypeByte
-List<? extends Instrumentation.ClassLoadingCallback> classLoadingCallbacks
-Set<? extends DynamicType<?>> helperTypes

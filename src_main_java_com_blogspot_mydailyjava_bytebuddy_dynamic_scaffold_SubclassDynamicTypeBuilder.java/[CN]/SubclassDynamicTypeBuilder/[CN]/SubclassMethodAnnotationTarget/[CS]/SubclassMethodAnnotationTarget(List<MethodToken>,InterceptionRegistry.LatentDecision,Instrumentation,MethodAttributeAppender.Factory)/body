@@ -1,6 +1,0 @@
-{
-  this.latentDecision=latentDecision;
-  this.methodTokens=methodTokens;
-  this.instrumentation=instrumentation;
-  this.attributeAppenderFactory=attributeAppenderFactory;
-}

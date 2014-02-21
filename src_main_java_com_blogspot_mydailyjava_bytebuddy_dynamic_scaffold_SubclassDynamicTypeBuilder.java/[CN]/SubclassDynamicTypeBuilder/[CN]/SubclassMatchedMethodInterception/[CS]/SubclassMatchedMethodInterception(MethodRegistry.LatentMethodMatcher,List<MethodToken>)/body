@@ -1,0 +1,4 @@
+{
+  this.latentMethodMatcher=latentMethodMatcher;
+  this.methodTokens=methodTokens;
+}

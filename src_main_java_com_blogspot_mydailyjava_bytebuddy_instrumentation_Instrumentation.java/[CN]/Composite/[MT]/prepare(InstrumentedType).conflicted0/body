@@ -1,0 +1,6 @@
+{
+  for (  Instrumentation instrumentation : this.instrumentation) {
+    instrumentedType=instrumentation.prepare(instrumentedType);
+  }
+  return instrumentedType;
+}

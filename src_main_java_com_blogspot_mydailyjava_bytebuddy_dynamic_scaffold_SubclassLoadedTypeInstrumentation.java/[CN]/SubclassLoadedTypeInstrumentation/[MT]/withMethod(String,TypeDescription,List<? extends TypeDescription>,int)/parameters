@@ -1,4 +1,4 @@
 String internalName
 TypeDescription returnType
 List<? extends TypeDescription> parameterTypes
-int access
+int modifiers

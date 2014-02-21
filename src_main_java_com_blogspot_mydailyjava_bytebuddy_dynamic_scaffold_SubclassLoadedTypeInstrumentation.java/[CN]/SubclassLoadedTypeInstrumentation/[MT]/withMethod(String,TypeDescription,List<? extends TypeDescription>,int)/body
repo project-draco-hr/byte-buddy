@@ -1,9 +1,9 @@
 {
-  MethodDescription additionalMethod=new MethodToken(internalName,returnType,parameterTypes,access);
+  MethodDescription additionalMethod=new MethodToken(internalName,returnType,parameterTypes,modifiers);
   if (methodDescriptions.contains(additionalMethod)) {
     throw new IllegalArgumentException("Method " + additionalMethod + " is already defined on "+ this);
   }
   List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(this.methodDescriptions);
   methodDescriptions.add(additionalMethod);
-  return new SubclassLoadedTypeInstrumentation(classVersion,superClass,interfaces,access,name,fieldDescriptions,methodDescriptions);
+  return new SubclassLoadedTypeInstrumentation(classVersion,superClass,interfaces,modifiers,name,fieldDescriptions,methodDescriptions,typeInitializer);
 }

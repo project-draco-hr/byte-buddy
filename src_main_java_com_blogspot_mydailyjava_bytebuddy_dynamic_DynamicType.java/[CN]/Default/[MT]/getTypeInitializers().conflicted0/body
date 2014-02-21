@@ -1,6 +1,6 @@
 {
-  Instrumentation.ClassLoadingCallback classLoadingCallback=Instrumentation.ClassLoadingCallback.Compound.of(classLoadingCallbacks);
-  Map<String,Instrumentation.ClassLoadingCallback> classLoadingCallbacks=new HashMap<String,Instrumentation.ClassLoadingCallback>();
+  TypeInitializer classLoadingCallback=new TypeInitializer.Compound(typeInitializers);
+  Map<String,TypeInitializer> classLoadingCallbacks=new HashMap<String,TypeInitializer>();
   for (  DynamicType<?> helperType : helperTypes) {
     classLoadingCallbacks.putAll(helperType.getTypeInitializers());
   }

@@ -1,6 +1,0 @@
-{
-  this.mainTypeName=mainTypeName;
-  this.mainTypeByte=mainTypeByte;
-  this.classLoadingCallbacks=classLoadingCallbacks;
-  this.helperTypes=helperTypes;
-}
