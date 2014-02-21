@@ -2,7 +2,9 @@
   String name=String.format("%s$%s$%d",targetMethod.getInternalName(),PREFIX,Math.abs(random.nextInt()));
   instrumentedType=instrumentedType.withMethod(name,targetMethod.getReturnType(),targetMethod.getParameterTypes(),(targetMethod.isStatic() ? Opcodes.ACC_STATIC : 0) | Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL);
   MethodDescription proxyMethod=instrumentedType.getDeclaredMethods().filter(named(name)).getOnly();
-  proxiedMethods.put(targetMethod,proxyMethod);
-  proxiedMethodsBidirection.put(proxyMethod,targetMethod);
+  if (targetMethodToProxyMethod.put(targetMethod,proxyMethod) != null) {
+    proxyMethodToTargetMethod.put(proxyMethod,targetMethod);
+    proxyMethods.add(proxyMethod);
+  }
   return proxyMethod;
 }
