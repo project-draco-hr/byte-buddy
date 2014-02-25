@@ -1,3 +1,0 @@
-{
-  return new MethodDelegation(methodDelegationBinder,processor.getAmbiguityResolver(),methods);
-}

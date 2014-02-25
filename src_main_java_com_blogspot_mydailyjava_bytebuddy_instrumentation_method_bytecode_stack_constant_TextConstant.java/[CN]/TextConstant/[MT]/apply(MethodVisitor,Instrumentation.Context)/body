@@ -1,0 +1,4 @@
+{
+  methodVisitor.visitLdcInsn(text);
+  return SIZE;
+}

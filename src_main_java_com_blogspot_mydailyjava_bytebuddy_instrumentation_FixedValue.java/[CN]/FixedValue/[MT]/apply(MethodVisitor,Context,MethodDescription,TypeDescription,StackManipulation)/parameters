@@ -1,0 +1,5 @@
+MethodVisitor methodVisitor
+Context instrumentationContext
+MethodDescription instrumentedMethod
+TypeDescription loadedValueType
+StackManipulation valueLoadingInstruction

@@ -1,3 +1,0 @@
-{
-  testDirectDelegation(ReferenceDelegationSource.class,SimpleDelegationTarget.class,is(FOO + BAR),new Class<?>[]{Object.class},new Object[]{BAR});
-}

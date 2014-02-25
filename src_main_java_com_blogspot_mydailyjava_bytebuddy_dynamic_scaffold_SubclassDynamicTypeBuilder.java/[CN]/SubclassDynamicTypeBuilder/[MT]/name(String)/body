@@ -1,3 +1,0 @@
-{
-  return new SubclassDynamicTypeBuilder<T>(classFormatVersion,new NamingStrategy.Fixed(nonNull(name)),superType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,classVisitorWrapperChain,fieldRegistry,methodRegistry,fieldTokens,methodTokens);
-}

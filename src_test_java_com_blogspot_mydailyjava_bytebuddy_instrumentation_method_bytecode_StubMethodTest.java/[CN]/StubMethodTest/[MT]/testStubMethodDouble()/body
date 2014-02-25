@@ -1,3 +1,0 @@
-{
-  testStubbing(StubbedDouble.class,is((double)DEFAULT_VALUE));
-}

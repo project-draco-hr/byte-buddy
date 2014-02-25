@@ -1,0 +1,4 @@
+{
+  this.assigner=assigner;
+  this.considerRuntimeType=considerRuntimeType;
+}

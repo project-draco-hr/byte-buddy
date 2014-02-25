@@ -1,3 +1,0 @@
-{
-  return new SubclassMethodAnnotationTarget<T>(methodTokens,latentMethodMatcher,instrumentation,MethodAttributeAppender.NoOp.INSTANCE);
-}

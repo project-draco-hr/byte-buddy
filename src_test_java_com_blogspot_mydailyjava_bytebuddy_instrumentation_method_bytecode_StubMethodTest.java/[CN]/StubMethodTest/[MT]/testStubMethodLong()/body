@@ -1,3 +1,0 @@
-{
-  testStubbing(StubbedLong.class,is((long)DEFAULT_VALUE));
-}

@@ -1,4 +1,0 @@
-{
-  recordStackTrace(byte.class);
-  return (byte)(a * MULTIPLICATOR);
-}

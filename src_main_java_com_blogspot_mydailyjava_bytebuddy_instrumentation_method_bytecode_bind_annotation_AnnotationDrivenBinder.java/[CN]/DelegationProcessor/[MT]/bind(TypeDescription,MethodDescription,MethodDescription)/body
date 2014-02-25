@@ -7,9 +7,9 @@
     return IllegalMethodDelegation.INSTANCE;
   }
   Binding.Builder methodDelegationBindingBuilder=new Binding.Builder(methodInvoker,target);
-  Iterator<? extends Annotation> defaults=defaultProvider.makeIterator(proxyType,source,target);
+  Iterator<? extends Annotation> defaults=defaultsProvider.makeIterator(instrumentedType,source,target);
   for (int targetParameterIndex=0; targetParameterIndex < target.getParameterTypes().size(); targetParameterIndex++) {
-    ArgumentBinder.IdentifiedBinding<?> identifiedBinding=delegationProcessor.handler(target.getParameterAnnotations()[targetParameterIndex],defaults).handle(targetParameterIndex,source,target,proxyType,assigner);
+    ArgumentBinder.IdentifiedBinding<?> identifiedBinding=delegationProcessor.handler(target.getParameterAnnotations()[targetParameterIndex],defaults).handle(targetParameterIndex,source,target,instrumentedType,assigner);
     if (!identifiedBinding.isValid() || !methodDelegationBindingBuilder.append(identifiedBinding.getStackManipulation(),targetParameterIndex,identifiedBinding.getIdentificationToken())) {
       return IllegalMethodDelegation.INSTANCE;
     }

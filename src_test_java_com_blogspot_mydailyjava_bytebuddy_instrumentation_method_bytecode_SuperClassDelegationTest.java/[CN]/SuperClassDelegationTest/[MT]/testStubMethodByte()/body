@@ -1,3 +1,0 @@
-{
-  testDelegation(ByteDelegation.class,is((byte)NON_DEFAULT_VALUE));
-}

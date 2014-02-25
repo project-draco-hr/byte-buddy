@@ -1,5 +1,5 @@
 {
-  List<Binding> possibleDelegations=bind(typeDescription,source,targets);
+  List<Binding> possibleDelegations=bind(instrumentedType,source,targets);
   if (possibleDelegations.size() == 0) {
     throw new IllegalArgumentException("No method can be bound to " + source);
   }

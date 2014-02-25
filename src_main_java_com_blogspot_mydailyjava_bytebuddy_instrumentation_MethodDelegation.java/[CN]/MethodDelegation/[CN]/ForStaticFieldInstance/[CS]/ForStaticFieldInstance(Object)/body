@@ -1,0 +1,4 @@
+{
+  this.delegate=delegate;
+  fieldName=String.format("%s$%d",PREFIX,Math.abs(new Random().nextInt()));
+}

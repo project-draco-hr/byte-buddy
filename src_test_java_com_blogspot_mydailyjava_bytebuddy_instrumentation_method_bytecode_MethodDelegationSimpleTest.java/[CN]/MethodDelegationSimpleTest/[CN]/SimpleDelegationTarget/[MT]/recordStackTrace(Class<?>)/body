@@ -1,3 +1,0 @@
-{
-  STACK_TRACE_RECORD.add(new ParameterizedStackTraceElement(Thread.currentThread().getStackTrace()[2],parameterType));
-}

@@ -1,0 +1,6 @@
+{
+  if (nonNull(type).isInterface()) {
+    throw new IllegalArgumentException(type + " is not an interface");
+  }
+  return type;
+}

@@ -1,3 +1,0 @@
-{
-  return (double)ARGUMENT_VALUE;
-}

@@ -1,0 +1,17 @@
+{
+  if (JAVA_KEYWORDS.contains(nonNull(methodName))) {
+    throw new IllegalArgumentException("Keyword cannot be used as identifier: " + methodName);
+  }
+  if (methodName.isEmpty()) {
+    throw new IllegalArgumentException("An empty string is not a valid identifier");
+  }
+  if (!Character.isJavaIdentifierStart(methodName.charAt(0))) {
+    throw new IllegalArgumentException("Not a valid identifier: " + methodName);
+  }
+  for (  char character : methodName.toCharArray()) {
+    if (!Character.isJavaIdentifierPart(character)) {
+      throw new IllegalArgumentException("Not a valid identifier: " + methodName);
+    }
+  }
+  return methodName;
+}

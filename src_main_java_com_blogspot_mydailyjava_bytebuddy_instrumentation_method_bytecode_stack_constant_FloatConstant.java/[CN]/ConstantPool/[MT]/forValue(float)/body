@@ -1,0 +1,14 @@
+{
+  if (value == 0f) {
+    return ZERO;
+  }
+ else   if (value == 1f) {
+    return ONE;
+  }
+ else   if (value == 2f) {
+    return TWO;
+  }
+ else {
+    return new ConstantPool(value);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return defineAmbiguityResolver(new MethodDelegationBinder.AmbiguityResolver.Chain(this.ambiguityResolver,nonNull(ambiguityResolver)));
+}

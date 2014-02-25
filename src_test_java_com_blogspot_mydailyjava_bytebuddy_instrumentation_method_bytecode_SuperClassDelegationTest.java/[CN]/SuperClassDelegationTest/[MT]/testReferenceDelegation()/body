@@ -1,3 +1,0 @@
-{
-  testDelegation(ReferenceDelegation.class,is(FOO));
-}

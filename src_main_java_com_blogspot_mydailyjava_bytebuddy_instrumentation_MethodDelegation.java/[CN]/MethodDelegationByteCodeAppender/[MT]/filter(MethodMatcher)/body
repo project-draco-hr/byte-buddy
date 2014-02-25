@@ -1,0 +1,3 @@
+{
+  return new MethodDelegation(instrumentationDelegate,argumentBinders,defaultsProvider,ambiguityResolver,assigner,containsElements(methodList.filter(nonNull(methodMatcher)),NO_METHODS_ERROR_MESSAGE));
+}

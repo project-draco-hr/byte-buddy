@@ -1,3 +1,0 @@
-{
-  testDirectDelegation(ShortDelegationSource.class,SimpleDelegationTarget.class,is((short)RESULT),new Class<?>[]{short.class},new Object[]{(short)ARGUMENT_VALUE});
-}

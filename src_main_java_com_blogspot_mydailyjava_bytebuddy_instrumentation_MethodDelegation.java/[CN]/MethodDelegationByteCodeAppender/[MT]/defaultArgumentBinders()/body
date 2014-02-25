@@ -1,0 +1,3 @@
+{
+  return Arrays.<AnnotationDrivenBinder.ArgumentBinder<?>>asList(Argument.Binder.INSTANCE,This.Binder.INSTANCE,AllArguments.Binder.INSTANCE,SuperCall.Binder.INSTANCE);
+}

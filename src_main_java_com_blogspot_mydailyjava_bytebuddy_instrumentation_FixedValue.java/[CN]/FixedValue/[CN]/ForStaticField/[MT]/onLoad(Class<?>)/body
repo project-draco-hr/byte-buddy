@@ -1,0 +1,10 @@
+{
+  try {
+    Field field=type.getDeclaredField(fieldName);
+    field.setAccessible(true);
+    field.set(STATIC_FIELD,fixedValue);
+  }
+ catch (  Exception e) {
+    throw new IllegalStateException("Cannot set static field " + fieldName + " on "+ type,e);
+  }
+}

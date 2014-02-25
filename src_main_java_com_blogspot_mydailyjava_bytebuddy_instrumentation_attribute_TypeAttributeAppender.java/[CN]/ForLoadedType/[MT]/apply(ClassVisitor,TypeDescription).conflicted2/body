@@ -1,0 +1,6 @@
+{
+  AnnotationAppender annotationAppender=new AnnotationAppender.Default(new AnnotationAppender.Target.OnType(classVisitor),AnnotationAppender.Visibility.VISIBLE);
+  for (  Annotation annotation : typeDescription.getAnnotations()) {
+    annotationAppender.append(annotation);
+  }
+}

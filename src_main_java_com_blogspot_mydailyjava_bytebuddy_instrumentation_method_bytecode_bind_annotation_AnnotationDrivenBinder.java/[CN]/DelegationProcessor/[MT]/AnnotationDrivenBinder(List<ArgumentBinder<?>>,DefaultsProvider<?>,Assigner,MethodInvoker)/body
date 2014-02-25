@@ -1,0 +1,6 @@
+{
+  this.delegationProcessor=new DelegationProcessor(argumentBinders);
+  this.defaultsProvider=defaultsProvider;
+  this.assigner=assigner;
+  this.methodInvoker=methodInvoker;
+}

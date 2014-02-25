@@ -1,7 +1,0 @@
-ClassFormatVersion classFormatVersion
-Visibility visibility
-TypeManifestation typeManifestation
-SyntheticState syntheticState
-NamingStrategy namingStrategy
-MethodMatcher ignoredMethods
-ClassVisitorWrapper.Chain classVisitorWrapperChain

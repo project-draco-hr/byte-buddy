@@ -1,4 +1,0 @@
-{
-  MethodToken methodToken=new MethodToken(name,returnType,parameterTypes,resolveModifiers(InstrumentedType.METHOD_MODIFIER_MASK,modifier));
-  return new SubclassMatchedMethodInterception<T>(methodToken,join(methodTokens,methodToken));
-}

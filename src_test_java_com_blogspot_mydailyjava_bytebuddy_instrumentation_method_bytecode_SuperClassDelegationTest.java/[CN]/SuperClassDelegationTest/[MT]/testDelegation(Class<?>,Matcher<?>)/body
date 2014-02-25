@@ -1,3 +1,0 @@
-{
-  testDelegation(type,matcher,new Class<?>[0],new Object[0]);
-}

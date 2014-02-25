@@ -1,4 +1,0 @@
-{
-  recordStackTrace(int.class);
-  return a * MULTIPLICATOR;
-}

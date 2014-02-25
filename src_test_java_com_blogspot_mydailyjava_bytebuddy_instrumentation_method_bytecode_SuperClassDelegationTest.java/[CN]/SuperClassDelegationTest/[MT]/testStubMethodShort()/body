@@ -1,3 +1,0 @@
-{
-  testDelegation(ShortDelegation.class,is((short)NON_DEFAULT_VALUE));
-}

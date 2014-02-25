@@ -1,7 +1,7 @@
 {
   List<Binding> possibleDelegations=new LinkedList<Binding>();
   for (  MethodDescription target : targets) {
-    Binding binding=methodDelegationBinder.bind(typeDescription,source,target);
+    Binding binding=methodDelegationBinder.bind(instrumentedType,source,target);
     if (binding.isValid()) {
       possibleDelegations.add(binding);
     }

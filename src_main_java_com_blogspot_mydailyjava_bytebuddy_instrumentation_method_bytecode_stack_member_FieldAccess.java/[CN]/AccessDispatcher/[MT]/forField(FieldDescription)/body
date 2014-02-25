@@ -1,0 +1,8 @@
+{
+  if (fieldDescription.isStatic()) {
+    return STATIC.new AccessDispatcher(fieldDescription);
+  }
+ else {
+    return INSTANCE.new AccessDispatcher(fieldDescription);
+  }
+}

@@ -1,0 +1,36 @@
+{
+  if (fixedValue == null) {
+    return new ForPoolValue(NullConstant.INSTANCE,Object.class,defaultAssigner(),defaultConsiderRuntimeType());
+  }
+  Class<?> type=fixedValue.getClass();
+  if (type == String.class) {
+    return new ForPoolValue(new TextConstant((String)fixedValue),String.class,defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else   if (type == Boolean.class) {
+    return new ForPoolValue(IntegerConstant.forValue((Boolean)fixedValue),boolean.class,defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else   if (type == Byte.class) {
+    return new ForPoolValue(IntegerConstant.forValue((Byte)fixedValue),byte.class,defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else   if (type == Short.class) {
+    return new ForPoolValue(IntegerConstant.forValue((Short)fixedValue),short.class,defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else   if (type == Character.class) {
+    return new ForPoolValue(IntegerConstant.forValue((Character)fixedValue),char.class,defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else   if (type == Integer.class) {
+    return new ForPoolValue(IntegerConstant.forValue((Integer)fixedValue),int.class,defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else   if (type == Long.class) {
+    return new ForPoolValue(LongConstant.forValue((Long)fixedValue),long.class,defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else   if (type == Float.class) {
+    return new ForPoolValue(FloatConstant.forValue((Float)fixedValue),float.class,defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else   if (type == Double.class) {
+    return new ForPoolValue(DoubleConstant.forValue((Double)fixedValue),double.class,defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else {
+    return reference(fixedValue);
+  }
+}

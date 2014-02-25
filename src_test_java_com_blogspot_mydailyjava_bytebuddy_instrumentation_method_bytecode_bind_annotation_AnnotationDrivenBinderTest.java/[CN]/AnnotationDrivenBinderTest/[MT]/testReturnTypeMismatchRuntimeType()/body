@@ -4,12 +4,12 @@
   RuntimeType runtimeType=mock(RuntimeType.class);
   doReturn(RuntimeType.class).when(runtimeType).annotationType();
   when(target.getAnnotations()).thenReturn(new Annotation[]{runtimeType});
-  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Collections.<AnnotationDrivenBinder.ArgumentBinder<?>>emptyList(),defaultProvider,assigner,methodInvoker);
+  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Collections.<AnnotationDrivenBinder.ArgumentBinder<?>>emptyList(),defaultsProvider,assigner,methodInvoker);
   assertThat(methodDelegationBinder.bind(typeDescription,source,target).isValid(),is(false));
   verify(assigner).assign(targetTypeDescription,sourceTypeDescription,true);
   verifyNoMoreInteractions(assigner);
   verifyZeroInteractions(methodInvoker);
   verify(source,atLeast(1)).getReturnType();
   verify(target,atLeast(1)).getReturnType();
-  verifyZeroInteractions(defaultProvider);
+  verifyZeroInteractions(defaultsProvider);
 }

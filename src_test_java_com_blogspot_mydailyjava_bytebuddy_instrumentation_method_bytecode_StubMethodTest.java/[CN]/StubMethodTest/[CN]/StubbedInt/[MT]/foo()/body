@@ -1,4 +1,0 @@
-{
-  markCalled();
-  return NON_DEFAULT_VALUE;
-}

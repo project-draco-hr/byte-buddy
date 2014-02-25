@@ -1,4 +1,0 @@
-{
-  Object[] argument=new Object[]{true,(byte)NON_DEFAULT_VALUE,(short)NON_DEFAULT_VALUE,NON_DEFAULT_VALUE,(char)NON_DEFAULT_VALUE,(float)NON_DEFAULT_VALUE,(double)NON_DEFAULT_VALUE,(long)NON_DEFAULT_VALUE,FOO};
-  testStubbing(StubWithArguments.class,nullValue(Object[].class),new Class<?>[]{boolean.class,byte.class,short.class,int.class,char.class,float.class,double.class,long.class,Object.class},argument);
-}

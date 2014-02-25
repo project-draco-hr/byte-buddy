@@ -9,8 +9,8 @@
   when(target.getAnnotations()).thenReturn(new Annotation[0]);
   AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> firstBinding=prepareArgumentBinder(firstArgumentBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
   AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> secondBinding=prepareArgumentBinder(secondArgumentBinder,SecondPseudoAnnotation.class,new Key(BAR),true);
-  Iterator<Annotation> defaultsIterator=prepareDefaultProvider(defaultProvider,Collections.singletonList(secondPseudoAnnotation));
-  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Arrays.<AnnotationDrivenBinder.ArgumentBinder<?>>asList(firstArgumentBinder,secondArgumentBinder),defaultProvider,assigner,methodInvoker);
+  Iterator<Annotation> defaultsIterator=prepareDefaultProvider(defaultsProvider,Collections.singletonList(secondPseudoAnnotation));
+  MethodDelegationBinder methodDelegationBinder=new AnnotationDrivenBinder(Arrays.<AnnotationDrivenBinder.ArgumentBinder<?>>asList(firstArgumentBinder,secondArgumentBinder),defaultsProvider,assigner,methodInvoker);
   MethodDelegationBinder.Binding binding=methodDelegationBinder.bind(typeDescription,source,target);
   assertThat(binding.isValid(),is(true));
   assertThat(binding.getTarget(),is(target));

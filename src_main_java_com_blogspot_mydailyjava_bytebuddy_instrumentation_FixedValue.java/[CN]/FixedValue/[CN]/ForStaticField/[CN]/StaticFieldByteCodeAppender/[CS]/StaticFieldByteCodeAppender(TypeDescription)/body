@@ -1,0 +1,3 @@
+{
+  fieldGetAccess=FieldAccess.forField(instrumentedType.getDeclaredFields().named(fieldName)).getter();
+}

@@ -1,3 +1,0 @@
-{
-  testStubbing(StubbedChar.class,is((char)DEFAULT_VALUE));
-}

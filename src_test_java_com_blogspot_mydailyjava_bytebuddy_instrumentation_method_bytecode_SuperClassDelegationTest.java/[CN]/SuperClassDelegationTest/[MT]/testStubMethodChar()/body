@@ -1,3 +1,0 @@
-{
-  testDelegation(CharDelegation.class,is((char)NON_DEFAULT_VALUE));
-}

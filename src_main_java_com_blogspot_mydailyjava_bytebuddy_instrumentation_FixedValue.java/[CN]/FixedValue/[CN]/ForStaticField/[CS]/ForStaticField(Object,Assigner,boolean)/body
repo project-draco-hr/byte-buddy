@@ -1,0 +1,3 @@
+{
+  this(String.format("%s$%d",PREFIX,Math.abs(new Random().nextInt())),fixedValue,assigner,considerRuntimeType);
+}

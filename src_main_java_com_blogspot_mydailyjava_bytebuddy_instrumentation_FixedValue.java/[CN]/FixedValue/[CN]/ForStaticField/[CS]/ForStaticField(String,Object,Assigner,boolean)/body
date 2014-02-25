@@ -1,0 +1,6 @@
+{
+  super(assigner,considerRuntimeType);
+  this.fieldName=fieldName;
+  this.fixedValue=fixedValue;
+  fieldType=new TypeDescription.ForLoadedType(fixedValue == null ? Object.class : fixedValue.getClass());
+}

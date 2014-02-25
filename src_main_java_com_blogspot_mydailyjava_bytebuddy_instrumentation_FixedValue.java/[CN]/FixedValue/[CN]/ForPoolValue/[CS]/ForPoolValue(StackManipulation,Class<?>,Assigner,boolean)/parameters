@@ -1,0 +1,4 @@
+StackManipulation valueLoadInstruction
+Class<?> loadedType
+Assigner assigner
+boolean considerRuntimeType

@@ -1,0 +1,3 @@
+{
+  ForInstrumentedType.INSTANCE.apply(classVisitor,typeDescription.getSupertype());
+}

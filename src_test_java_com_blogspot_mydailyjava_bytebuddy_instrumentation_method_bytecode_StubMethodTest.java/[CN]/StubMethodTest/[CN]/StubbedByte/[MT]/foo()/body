@@ -1,4 +1,0 @@
-{
-  markCalled();
-  return (byte)NON_DEFAULT_VALUE;
-}

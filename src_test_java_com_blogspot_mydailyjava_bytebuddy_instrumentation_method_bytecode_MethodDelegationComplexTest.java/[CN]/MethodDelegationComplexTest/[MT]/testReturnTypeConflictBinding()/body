@@ -1,3 +1,0 @@
-{
-  assertThat(makeDelegation(Source.class,TypeDominantTarget.class,new Class<?>[]{Void.class,String.class,int.class}).foo(null,BAR,0),is(FOO + BAR));
-}

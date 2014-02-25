@@ -1,0 +1,3 @@
+{
+  return new MethodDelegation(instrumentationDelegate,argumentBinders,nonNull(defaultsProvider),ambiguityResolver,assigner,methodList);
+}

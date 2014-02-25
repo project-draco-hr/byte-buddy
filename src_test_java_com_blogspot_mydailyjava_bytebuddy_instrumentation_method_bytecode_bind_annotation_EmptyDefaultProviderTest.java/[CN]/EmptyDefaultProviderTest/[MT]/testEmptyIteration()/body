@@ -1,8 +1,0 @@
-{
-  Iterator<?> iterator=AnnotationDrivenBinder.DefaultProvider.Empty.INSTANCE.makeIterator(typeDescription,left,right);
-  assertThat(iterator.hasNext(),is(false));
-  verifyZeroInteractions(typeDescription);
-  verifyZeroInteractions(left);
-  verifyZeroInteractions(right);
-  iterator.next();
-}

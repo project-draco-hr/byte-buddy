@@ -1,7 +1,7 @@
 {
   when(source.getParameterTypes()).thenReturn(typeList);
   when(target.getParameterAnnotations()).thenReturn(new Annotation[0][0]);
-  Iterator<Argument> iterator=Argument.NextUnboundAsDefaultProvider.INSTANCE.makeIterator(typeDescription,source,target);
+  Iterator<Argument> iterator=Argument.NextUnboundAsDefaultsProvider.INSTANCE.makeIterator(typeDescription,source,target);
   assertThat(iterator.hasNext(),is(true));
   assertThat(iterator.next().value(),is(0));
   assertThat(iterator.hasNext(),is(true));

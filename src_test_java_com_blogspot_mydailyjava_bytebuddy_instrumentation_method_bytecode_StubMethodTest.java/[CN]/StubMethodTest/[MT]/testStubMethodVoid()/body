@@ -1,3 +1,0 @@
-{
-  testStubbing(StubbedVoid.class,nullValue(Void.class));
-}

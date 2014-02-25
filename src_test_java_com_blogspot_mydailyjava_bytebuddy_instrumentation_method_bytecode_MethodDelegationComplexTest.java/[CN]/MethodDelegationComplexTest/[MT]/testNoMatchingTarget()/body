@@ -1,3 +1,0 @@
-{
-  makeDelegation(Source.class,NoMatchingTarget.class,new Class<?>[]{Void.class,String.class,int.class});
-}

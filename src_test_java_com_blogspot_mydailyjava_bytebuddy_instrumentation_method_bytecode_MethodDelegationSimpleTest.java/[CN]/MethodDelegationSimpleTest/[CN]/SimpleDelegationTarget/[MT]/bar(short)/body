@@ -1,4 +1,0 @@
-{
-  recordStackTrace(short.class);
-  return (short)(a * MULTIPLICATOR);
-}

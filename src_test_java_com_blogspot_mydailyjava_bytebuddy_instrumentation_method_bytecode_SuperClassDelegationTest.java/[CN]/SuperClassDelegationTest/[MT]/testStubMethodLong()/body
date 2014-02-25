@@ -1,3 +1,0 @@
-{
-  testDelegation(DelegationDelegation.class,is((long)NON_DEFAULT_VALUE));
-}

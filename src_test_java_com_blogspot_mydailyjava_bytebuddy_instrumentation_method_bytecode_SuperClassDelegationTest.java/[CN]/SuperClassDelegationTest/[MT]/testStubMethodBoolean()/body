@@ -1,3 +1,0 @@
-{
-  testDelegation(BooleanDelegation.class,is(true));
-}

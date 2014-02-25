@@ -1,0 +1,5 @@
+{
+  super(assigner,considerRuntimeType);
+  this.valueLoadInstruction=valueLoadInstruction;
+  this.loadedType=loadedType;
+}

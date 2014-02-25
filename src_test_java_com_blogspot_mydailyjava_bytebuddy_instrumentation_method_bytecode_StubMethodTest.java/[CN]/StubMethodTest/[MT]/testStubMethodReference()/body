@@ -1,3 +1,0 @@
-{
-  testStubbing(StubbedReference.class,nullValue(Object.class));
-}

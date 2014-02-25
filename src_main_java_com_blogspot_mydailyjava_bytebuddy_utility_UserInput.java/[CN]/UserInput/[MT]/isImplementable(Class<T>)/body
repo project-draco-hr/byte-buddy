@@ -1,0 +1,6 @@
+{
+  if (nonNull(type).isArray() || type.isPrimitive()) {
+    throw new IllegalArgumentException(type + " cannot be implemented");
+  }
+  return type;
+}

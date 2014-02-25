@@ -1,5 +1,0 @@
-{
-  assertThat(STACK_TRACE_RECORD.size(),is(1));
-  assertThat(STACK_TRACE_RECORD.get(0).getStackTraceElement().getMethodName(),is(name));
-  assertThat(STACK_TRACE_RECORD.get(0).getParameterTypes(),equalTo(parameterType));
-}

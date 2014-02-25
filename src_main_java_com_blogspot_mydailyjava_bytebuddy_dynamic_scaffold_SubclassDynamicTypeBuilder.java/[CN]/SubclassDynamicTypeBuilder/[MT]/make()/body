@@ -1,6 +1,0 @@
-{
-  InstrumentedType instrumentedType=applyRecoredMembersTo(new SubclassLoadedTypeInstrumentation(classFormatVersion,superType,interfaceTypes,modifiers,namingStrategy));
-  SubclassInstrumentationContextDelegate contextDelegate=new SubclassInstrumentationContextDelegate(instrumentedType);
-  Instrumentation.Context instrumentationContext=new Instrumentation.Context.Default(contextDelegate,contextDelegate);
-  return new TypeWriter.Builder<T>(instrumentedType,instrumentationContext,classFormatVersion).build(classVisitorWrapperChain).attributeType(attributeAppender).fields().write(instrumentedType.getDeclaredFields(),fieldRegistry.compile(instrumentedType,FieldAttributeAppender.NoOp.INSTANCE)).methods().write(instrumentedType.getDeclaredMethods().filter(not(ignoredMethods).and(isOverridable())),methodRegistry.compile(instrumentedType,MethodRegistry.Compiled.Entry.Skip.INSTANCE)).write(contextDelegate.getProxiedMethods(),contextDelegate).make();
-}

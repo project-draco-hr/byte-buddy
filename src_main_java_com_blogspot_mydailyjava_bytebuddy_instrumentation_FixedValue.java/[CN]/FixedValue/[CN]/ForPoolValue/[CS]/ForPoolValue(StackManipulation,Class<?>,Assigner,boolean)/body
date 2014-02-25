@@ -1,0 +1,3 @@
+{
+  this(valueLoadInstruction,new TypeDescription.ForLoadedType(loadedType),assigner,considerRuntimeType);
+}

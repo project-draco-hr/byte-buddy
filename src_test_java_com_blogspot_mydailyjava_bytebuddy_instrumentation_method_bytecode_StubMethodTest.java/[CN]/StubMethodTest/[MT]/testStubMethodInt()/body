@@ -1,3 +1,0 @@
-{
-  testStubbing(StubbedInt.class,is(DEFAULT_VALUE));
-}

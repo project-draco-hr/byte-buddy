@@ -1,0 +1,3 @@
+{
+  return ForStaticField.this.apply(methodVisitor,instrumentationContext,instrumentedMethod,fieldType,fieldGetAccess);
+}

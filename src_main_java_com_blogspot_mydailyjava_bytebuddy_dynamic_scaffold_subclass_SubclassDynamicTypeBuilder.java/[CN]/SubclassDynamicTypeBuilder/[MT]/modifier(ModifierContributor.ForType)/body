@@ -1,0 +1,3 @@
+{
+  return new SubclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,superType,interfaceTypes,resolveModifiers(InstrumentedType.TYPE_MODIFIER_MASK,modifier),attributeAppender,ignoredMethods,classVisitorWrapperChain,fieldRegistry,methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
+}
