@@ -1,0 +1,11 @@
+ClassFormatVersion classFormatVersion
+NamingStrategy namingStrategy
+List<Class<?>> interfaceTypes
+MethodMatcher ignoredMethods
+ClassVisitorWrapper.Chain classVisitorWrapperChain
+MethodRegistry methodRegistry
+FieldAttributeAppender.Factory defaultFieldAttributeAppenderFactory
+MethodAttributeAppender.Factory defaultMethodAttributeAppenderFactory
+MethodMatcher methodMatcher
+Instrumentation instrumentation
+MethodAttributeAppender.Factory attributeAppenderFactory

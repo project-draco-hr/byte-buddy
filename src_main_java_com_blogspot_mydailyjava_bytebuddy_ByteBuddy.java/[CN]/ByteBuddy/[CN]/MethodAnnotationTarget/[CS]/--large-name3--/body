@@ -1,0 +1,6 @@
+{
+  super(classFormatVersion,namingStrategy,interfaceTypes,ignoredMethods,classVisitorWrapperChain,methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory);
+  this.methodMatcher=methodMatcher;
+  this.instrumentation=instrumentation;
+  this.attributeAppenderFactory=attributeAppenderFactory;
+}
