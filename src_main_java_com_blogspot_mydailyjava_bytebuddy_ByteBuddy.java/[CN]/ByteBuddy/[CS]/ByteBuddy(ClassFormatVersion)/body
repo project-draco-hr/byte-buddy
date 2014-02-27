@@ -1,0 +1,10 @@
+{
+  this.classFormatVersion=classFormatVersion;
+  namingStrategy=new NamingStrategy.SuffixingRandom(BYTE_BUDDY_DEFAULT_PREFIX);
+  interfaceTypes=Collections.emptyList();
+  ignoredMethods=isDefaultFinalize();
+  classVisitorWrapperChain=new ClassVisitorWrapper.Chain();
+  methodRegistry=new MethodRegistry.Default();
+  defaultFieldAttributeAppenderFactory=FieldAttributeAppender.NoOp.INSTANCE;
+  defaultMethodAttributeAppenderFactory=MethodAttributeAppender.NoOp.INSTANCE;
+}

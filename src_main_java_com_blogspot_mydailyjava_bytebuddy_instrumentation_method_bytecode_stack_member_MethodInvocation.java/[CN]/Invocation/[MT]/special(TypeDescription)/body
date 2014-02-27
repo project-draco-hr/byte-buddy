@@ -1,17 +1,17 @@
 {
-  validateNonStaticAndTypeCompatibleCall(typeDescription);
+  validateNonStaticAndTypeCompatibleCall(invocationTarget);
   if ((methodDescription.isPrivate() || methodDescription.isConstructor())) {
-    if (this.typeDescription.equals(typeDescription)) {
+    if (this.typeDescription.equals(invocationTarget)) {
       return this;
     }
  else {
       throw new IllegalArgumentException("Cannot invoke " + methodDescription + " on any other type");
     }
   }
-  if (typeDescription.isInterface()) {
+  if (invocationTarget.isInterface()) {
     throw new IllegalArgumentException("Cannot call INVOKESPECIAL on interface type");
   }
  else {
-    return SPECIAL.new Invocation(methodDescription,typeDescription);
+    return SPECIAL.new Invocation(methodDescription,invocationTarget);
   }
 }

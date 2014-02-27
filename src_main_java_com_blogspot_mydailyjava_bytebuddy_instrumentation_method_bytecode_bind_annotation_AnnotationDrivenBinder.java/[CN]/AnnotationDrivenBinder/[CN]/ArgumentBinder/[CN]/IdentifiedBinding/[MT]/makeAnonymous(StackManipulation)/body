@@ -1,3 +1,0 @@
-{
-  return new IdentifiedBinding<Object>(stackManipulation,new Object());
-}

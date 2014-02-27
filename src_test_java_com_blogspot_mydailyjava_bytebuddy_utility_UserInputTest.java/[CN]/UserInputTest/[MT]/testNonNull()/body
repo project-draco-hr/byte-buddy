@@ -1,0 +1,4 @@
+{
+  Object object=new Object();
+  assertThat(nonNull(object),sameInstance(object));
+}

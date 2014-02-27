@@ -1,0 +1,3 @@
+int putterOpcode
+int getterOpcode
+StackSize targetSizeChange

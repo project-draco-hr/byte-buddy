@@ -1,0 +1,3 @@
+{
+  return "AmbiguityResolver.Chain{" + Arrays.toString(ambiguityResolver) + '}';
+}

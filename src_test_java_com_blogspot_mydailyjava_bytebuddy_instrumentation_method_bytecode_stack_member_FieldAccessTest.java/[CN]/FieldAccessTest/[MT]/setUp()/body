@@ -1,0 +1,9 @@
+{
+  when(fieldDescription.getDeclaringType()).thenReturn(declaringType);
+  when(fieldDescription.getFieldType()).thenReturn(fieldType);
+  when(declaringType.getInternalName()).thenReturn(FOO);
+  when(fieldDescription.getInternalName()).thenReturn(BAR);
+  when(fieldDescription.getDescriptor()).thenReturn(QUX);
+  when(fieldType.getStackSize()).thenReturn(fieldSize);
+  when(fieldDescription.isStatic()).thenReturn(isStatic);
+}

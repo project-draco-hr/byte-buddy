@@ -1,0 +1,18 @@
+{
+  if (IgnoreForBinding.Verifier.check(target)) {
+    return IllegalMethodDelegation.INSTANCE;
+  }
+  StackManipulation returningStackManipulation=assigner.assign(target.getReturnType(),source.getReturnType(),RuntimeType.Verifier.check(target));
+  if (!returningStackManipulation.isValid()) {
+    return IllegalMethodDelegation.INSTANCE;
+  }
+  Binding.Builder methodDelegationBindingBuilder=new Binding.Builder(methodInvoker,target);
+  Iterator<? extends Annotation> defaults=defaultsProvider.makeIterator(instrumentedType,source,target);
+  for (int targetParameterIndex=0; targetParameterIndex < target.getParameterTypes().size(); targetParameterIndex++) {
+    ArgumentBinder.ParameterBinding<?> parameterBinding=delegationProcessor.handler(target.getParameterAnnotations()[targetParameterIndex],defaults).handle(targetParameterIndex,source,target,instrumentedType,assigner);
+    if (!parameterBinding.isValid() || !methodDelegationBindingBuilder.append(parameterBinding.getStackManipulation(),parameterBinding.getIdentificationToken())) {
+      return IllegalMethodDelegation.INSTANCE;
+    }
+  }
+  return methodDelegationBindingBuilder.build(returningStackManipulation);
+}

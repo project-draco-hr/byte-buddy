@@ -28,7 +28,7 @@
   int currentMaximum=1;
   for (  Map.Entry<String,TypeDescription> field : fields.entrySet()) {
     constructor.visitIntInsn(Opcodes.ALOAD,0);
-    MethodArgument.forType(field.getValue()).loadFromIndex(argumentIndex).apply(constructor,null);
+    MethodVariableAccess.forType(field.getValue()).loadFromIndex(argumentIndex).apply(constructor,null);
     constructor.visitFieldInsn(Opcodes.PUTFIELD,proxyTypeInternalName,field.getKey(),field.getValue().getDescriptor());
     currentMaximum=Math.max(currentMaximum,field.getValue().getStackSize().getSize() + 1);
     argumentIndex+=field.getValue().getStackSize().getSize();

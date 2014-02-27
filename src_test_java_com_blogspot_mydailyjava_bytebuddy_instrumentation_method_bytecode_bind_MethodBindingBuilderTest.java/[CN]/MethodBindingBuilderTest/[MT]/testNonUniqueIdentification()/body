@@ -1,6 +1,6 @@
 {
   when(methodInvoker.invoke(any(MethodDescription.class))).thenReturn(legalStackManipulation);
   MethodDelegationBinder.Binding.Builder builder=new MethodDelegationBinder.Binding.Builder(methodInvoker,methodDescription);
-  assertThat(builder.append(legalStackManipulation,42,new Key(FOO)),is(true));
-  assertThat(builder.append(legalStackManipulation,12,new Key(FOO)),is(false));
+  assertThat(builder.append(legalStackManipulation,new Key(FOO)),is(true));
+  assertThat(builder.append(legalStackManipulation,new Key(FOO)),is(false));
 }

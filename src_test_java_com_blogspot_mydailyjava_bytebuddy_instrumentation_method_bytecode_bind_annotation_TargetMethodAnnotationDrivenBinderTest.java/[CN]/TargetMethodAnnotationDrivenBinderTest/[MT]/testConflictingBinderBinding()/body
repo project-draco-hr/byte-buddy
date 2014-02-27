@@ -1,0 +1,5 @@
+{
+  doReturn(FirstPseudoAnnotation.class).when(firstArgumentBinder).getHandledType();
+  doReturn(FirstPseudoAnnotation.class).when(secondArgumentBinder).getHandledType();
+  new TargetMethodAnnotationDrivenBinder(Arrays.<TargetMethodAnnotationDrivenBinder.ArgumentBinder<?>>asList(firstArgumentBinder,secondArgumentBinder),defaultsProvider,assigner,methodInvoker);
+}

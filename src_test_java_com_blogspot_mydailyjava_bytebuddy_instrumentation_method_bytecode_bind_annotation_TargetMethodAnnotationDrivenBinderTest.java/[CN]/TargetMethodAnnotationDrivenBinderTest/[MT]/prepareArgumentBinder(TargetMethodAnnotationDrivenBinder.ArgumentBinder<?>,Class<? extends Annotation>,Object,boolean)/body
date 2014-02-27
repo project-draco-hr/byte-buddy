@@ -1,0 +1,9 @@
+{
+  doReturn(annotationType).when(argumentBinder).getHandledType();
+  TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding<?> parameterBinding=mock(TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding.class);
+  when(parameterBinding.isValid()).thenReturn(bindingResult);
+  when(parameterBinding.getIdentificationToken()).thenReturn(identificationToken);
+  when(parameterBinding.getStackManipulation()).thenReturn(bindingResult ? LegalTrivialStackManipulation.INSTANCE : IllegalStackManipulation.INSTANCE);
+  when(((TargetMethodAnnotationDrivenBinder.ArgumentBinder)argumentBinder).bind(any(Annotation.class),anyInt(),any(MethodDescription.class),any(MethodDescription.class),any(TypeDescription.class),any(Assigner.class))).thenReturn(parameterBinding);
+  return parameterBinding;
+}

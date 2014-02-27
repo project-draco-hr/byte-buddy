@@ -1,11 +1,11 @@
 {
   when(methodInvoker.invoke(any(MethodDescription.class))).thenReturn(legalStackManipulation);
   MethodDelegationBinder.Binding.Builder builder=new MethodDelegationBinder.Binding.Builder(methodInvoker,methodDescription);
-  assertThat(builder.append(legalStackManipulation,42,new Key(FOO)),is(true));
-  assertThat(builder.append(legalStackManipulation,12,new Key(BAR)),is(true));
+  assertThat(builder.append(legalStackManipulation,new Key(FOO)),is(true));
+  assertThat(builder.append(legalStackManipulation,new Key(BAR)),is(true));
   MethodDelegationBinder.Binding binding=builder.build(legalStackManipulation);
-  assertThat(binding.getTargetParameterIndex(new Key(FOO)),is(42));
-  assertThat(binding.getTargetParameterIndex(new Key(BAR)),is(12));
+  assertThat(binding.getTargetParameterIndex(new Key(FOO)),is(0));
+  assertThat(binding.getTargetParameterIndex(new Key(BAR)),is(1));
   assertThat(binding.isValid(),is(true));
   assertThat(binding.getTarget(),is(methodDescription));
 }

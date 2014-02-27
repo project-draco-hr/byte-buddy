@@ -1,0 +1,6 @@
+{
+  TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding<?> parameterBinding=TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding.makeAnonymous(stackManipulation);
+  assertThat(parameterBinding.getStackManipulation(),is(stackManipulation));
+  assertThat(parameterBinding.getIdentificationToken(),notNullValue());
+  assertThat(parameterBinding.isValid(),is(true));
+}

@@ -1,0 +1,7 @@
+{
+  StackManipulation.Size first=new StackManipulation.Size(-3,0);
+  StackManipulation.Size second=new StackManipulation.Size(-2,0);
+  StackManipulation.Size merged=first.aggregate(second);
+  assertThat(merged.getSizeImpact(),is(-5));
+  assertThat(merged.getMaximalSize(),is(0));
+}

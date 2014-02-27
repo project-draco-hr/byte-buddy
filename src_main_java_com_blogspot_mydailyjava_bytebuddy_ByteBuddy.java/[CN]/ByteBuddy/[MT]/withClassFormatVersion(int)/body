@@ -1,3 +1,0 @@
-{
-  return new ByteBuddy(new ClassFormatVersion(classFormatVersion),namingStrategy,interfaceTypes,ignoredMethods,classVisitorWrapperChain,methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory);
-}

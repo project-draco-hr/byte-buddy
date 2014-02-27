@@ -1,0 +1,3 @@
+{
+  assertThat(Modifier.isFinal(TargetType.class.getModifiers()),is(true));
+}

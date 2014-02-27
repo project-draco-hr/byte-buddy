@@ -1,0 +1,5 @@
+{
+  assertThat(TargetType.class.getDeclaredMethods().length,is(0));
+  assertThat(TargetType.class.getDeclaredConstructors().length,is(1));
+  assertThat(Modifier.isPrivate(TargetType.class.getDeclaredConstructor().getModifiers()),is(true));
+}

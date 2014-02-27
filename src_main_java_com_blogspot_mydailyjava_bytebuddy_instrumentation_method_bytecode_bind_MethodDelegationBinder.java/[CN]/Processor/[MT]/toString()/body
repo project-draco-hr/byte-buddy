@@ -1,0 +1,3 @@
+{
+  return "MethodDelegationBinder.Processor{" + "methodDelegationBinder=" + methodDelegationBinder + ", ambiguityResolver="+ ambiguityResolver+ '}';
+}

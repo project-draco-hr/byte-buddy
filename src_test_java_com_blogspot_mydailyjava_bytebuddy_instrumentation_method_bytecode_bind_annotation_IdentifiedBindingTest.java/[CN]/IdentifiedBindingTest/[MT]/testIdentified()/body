@@ -1,7 +1,0 @@
-{
-  Object token=new Object();
-  AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding<?> identifiedBinding=AnnotationDrivenBinder.ArgumentBinder.IdentifiedBinding.makeIdentified(stackManipulation,token);
-  assertThat(identifiedBinding.getStackManipulation(),is(stackManipulation));
-  assertThat(identifiedBinding.getIdentificationToken(),is(token));
-  assertThat(identifiedBinding.isValid(),is(true));
-}

@@ -1,0 +1,3 @@
+{
+  return new ParameterBinding<Object>(stackManipulation,new Object());
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(isValidIdentifier(FOO),is(FOO));
+}

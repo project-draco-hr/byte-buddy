@@ -1,10 +1,3 @@
 {
-  classFormatVersion=ClassFormatVersion.forJavaVersion(Integer.parseInt(System.getProperty(JAVA_VERSION)));
-  namingStrategy=new NamingStrategy.PrefixingRandom(BYTE_BUDDY_DEFAULT_PREFIX);
-  interfaceTypes=Collections.emptyList();
-  ignoredMethods=isDefaultFinalize();
-  classVisitorWrapperChain=new ClassVisitorWrapper.Chain();
-  methodRegistry=new MethodRegistry.Default();
-  defaultFieldAttributeAppenderFactory=FieldAttributeAppender.NoOp.INSTANCE;
-  defaultMethodAttributeAppenderFactory=MethodAttributeAppender.NoOp.INSTANCE;
+  this(ClassFormatVersion.forCurrentJavaVersion());
 }

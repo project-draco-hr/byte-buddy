@@ -1,0 +1,8 @@
+boolean isStatic
+StackSize fieldSize
+int getterChange
+int getterMaximum
+int getterOpcode
+int putterChange
+int putterMaximum
+int putterOpcode

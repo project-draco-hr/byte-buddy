@@ -1,8 +1,8 @@
 {
   when(methodInvoker.invoke(any(MethodDescription.class))).thenReturn(legalStackManipulation);
   MethodDelegationBinder.Binding.Builder builder=new MethodDelegationBinder.Binding.Builder(methodInvoker,methodDescription);
-  assertThat(builder.append(legalStackManipulation,0,new Object()),is(true));
-  assertThat(builder.append(illegalStackManipulation,1,new Object()),is(true));
+  assertThat(builder.append(legalStackManipulation,new Object()),is(true));
+  assertThat(builder.append(illegalStackManipulation,new Object()),is(true));
   MethodDelegationBinder.Binding binding=builder.build(legalStackManipulation);
   assertThat(binding.isValid(),is(false));
   assertThat(binding.getTarget(),is(methodDescription));

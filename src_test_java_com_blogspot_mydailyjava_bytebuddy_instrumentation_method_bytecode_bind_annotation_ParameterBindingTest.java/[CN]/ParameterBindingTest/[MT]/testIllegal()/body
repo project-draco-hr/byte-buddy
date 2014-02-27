@@ -1,0 +1,6 @@
+{
+  TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding<?> parameterBinding=TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding.makeIllegal();
+  assertThat(parameterBinding.getIdentificationToken(),notNullValue());
+  assertThat(parameterBinding.isValid(),is(false));
+  assertThat(parameterBinding.getStackManipulation().isValid(),is(false));
+}

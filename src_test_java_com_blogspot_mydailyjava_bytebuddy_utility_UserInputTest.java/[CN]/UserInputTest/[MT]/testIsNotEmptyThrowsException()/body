@@ -1,0 +1,3 @@
+{
+  isNotEmpty(Arrays.asList(),FOO);
+}

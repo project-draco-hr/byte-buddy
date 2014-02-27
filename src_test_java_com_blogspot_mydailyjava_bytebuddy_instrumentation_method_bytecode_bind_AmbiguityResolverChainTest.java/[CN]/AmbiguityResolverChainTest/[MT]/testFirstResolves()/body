@@ -1,0 +1,7 @@
+{
+  when(first.resolve(source,left,right)).thenReturn(MethodDelegationBinder.AmbiguityResolver.Resolution.LEFT);
+  assertThat(chain.resolve(source,left,right),is(MethodDelegationBinder.AmbiguityResolver.Resolution.LEFT));
+  verify(first).resolve(source,left,right);
+  verifyNoMoreInteractions(first);
+  verifyZeroInteractions(second);
+}

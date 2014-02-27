@@ -1,4 +1,4 @@
 {
-  methodVisitor.visitFieldInsn(getOpcode(),fieldDescription.getDeclaringType().getInternalName(),fieldDescription.getInternalName(),fieldDescription.getFieldType().getDescriptor());
+  methodVisitor.visitFieldInsn(getOpcode(),fieldDescription.getDeclaringType().getInternalName(),fieldDescription.getInternalName(),fieldDescription.getDescriptor());
   return resolveSize(fieldDescription.getFieldType().getStackSize());
 }

@@ -1,0 +1,3 @@
+{
+  assertThat(new ClassFormatVersion(Opcodes.V1_6 + 2).getVersionNumber(),is(Opcodes.V1_6 + 2));
+}

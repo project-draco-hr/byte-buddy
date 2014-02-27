@@ -1,6 +1,6 @@
 {
   defineComponentType(componentType);
-  ArrayFactory arrayFactory=ArrayFactory.of(typeDescription);
+  CollectionFactory arrayFactory=ArrayFactory.targeting(componentTypeDescription);
   StackManipulation arrayStackManipulation=arrayFactory.withValues(Arrays.asList(stackManipulation));
   assertThat(arrayStackManipulation.isValid(),is(true));
   verify(stackManipulation,atLeast(1)).isValid();

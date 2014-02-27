@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{0d,Opcodes.DCONST_0},{1d,Opcodes.DCONST_1}});
+}

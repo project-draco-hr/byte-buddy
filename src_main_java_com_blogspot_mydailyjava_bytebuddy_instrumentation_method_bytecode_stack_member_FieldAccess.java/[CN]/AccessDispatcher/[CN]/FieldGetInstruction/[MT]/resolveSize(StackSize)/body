@@ -1,3 +1,4 @@
 {
-  return stackSize.toIncreasingSize();
+  int sizeChange=fieldSize.getSize() - targetSizeChange;
+  return new Size(sizeChange,sizeChange);
 }

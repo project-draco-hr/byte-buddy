@@ -1,0 +1,9 @@
+{
+  StackManipulation getter=FieldAccess.forField(fieldDescription).putter();
+  assertThat(getter.isValid(),is(true));
+  StackManipulation.Size size=getter.apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(putterChange));
+  assertThat(size.getMaximalSize(),is(putterMaximum));
+  verify(methodVisitor).visitFieldInsn(putterOpcode,FOO,BAR,QUX);
+  verifyNoMoreInteractions(methodVisitor);
+}

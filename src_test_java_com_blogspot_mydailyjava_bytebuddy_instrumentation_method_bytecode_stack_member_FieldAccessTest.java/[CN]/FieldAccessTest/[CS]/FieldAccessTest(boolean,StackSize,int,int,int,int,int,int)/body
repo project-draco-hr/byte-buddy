@@ -1,0 +1,10 @@
+{
+  this.isStatic=isStatic;
+  this.fieldSize=fieldSize;
+  this.getterChange=getterChange;
+  this.getterMaximum=getterMaximum;
+  this.getterOpcode=getterOpcode;
+  this.putterChange=putterChange;
+  this.putterMaximum=putterMaximum;
+  this.putterOpcode=putterOpcode;
+}

@@ -1,4 +1,0 @@
-{
-  this.putterOpcode=putterOpcode;
-  this.getterOpcode=getterOpcode;
-}

@@ -1,0 +1,3 @@
+{
+  assertEquals(Runnable.class,isInterface(Runnable.class));
+}

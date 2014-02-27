@@ -1,3 +1,0 @@
-{
-  return ArgumentBinder.IdentifiedBinding.makeIllegal();
-}
