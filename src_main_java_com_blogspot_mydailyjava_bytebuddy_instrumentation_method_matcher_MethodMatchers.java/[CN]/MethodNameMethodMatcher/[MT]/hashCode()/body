@@ -1,0 +1,3 @@
+{
+  return 31 * methodName.hashCode() + matchMode.hashCode();
+}
