@@ -1,0 +1,5 @@
+{
+  assertThat(doubleDoubleValue.getParameterOffset(0),is(0));
+  assertThat(objectWait.getParameterOffset(0),is(1));
+  assertThat(objectWait.getParameterOffset(1),is(3));
+}

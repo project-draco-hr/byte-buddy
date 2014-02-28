@@ -1,0 +1,3 @@
+{
+  assertThat(fieldDescription.getFieldType().represents(Object.class),is(true));
+}

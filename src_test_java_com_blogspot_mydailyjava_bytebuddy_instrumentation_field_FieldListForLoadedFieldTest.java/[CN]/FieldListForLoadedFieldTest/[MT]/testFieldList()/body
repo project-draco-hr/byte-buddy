@@ -1,0 +1,5 @@
+{
+  assertThat(fieldList.size(),is(2));
+  assertThat(fieldList.get(0).getInternalName(),is(FOO));
+  assertThat(fieldList.get(1).getInternalName(),is(BAR));
+}

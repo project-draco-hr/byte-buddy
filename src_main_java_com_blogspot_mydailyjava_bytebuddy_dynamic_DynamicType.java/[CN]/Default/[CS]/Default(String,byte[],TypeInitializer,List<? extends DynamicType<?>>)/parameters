@@ -1,4 +1,0 @@
-String mainTypeName
-byte[] mainTypeByte
-TypeInitializer typeInitializer
-List<? extends DynamicType<?>> auxiliaryTypes

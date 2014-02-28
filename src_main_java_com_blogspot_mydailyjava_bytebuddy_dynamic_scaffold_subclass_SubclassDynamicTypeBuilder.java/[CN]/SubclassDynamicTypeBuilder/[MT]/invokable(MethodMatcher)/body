@@ -1,0 +1,3 @@
+{
+  return new SubclassMatchedMethodInterception<T>(new MethodRegistry.LatentMethodMatcher.Simple(methodMatcher),methodTokens);
+}

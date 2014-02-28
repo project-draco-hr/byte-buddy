@@ -1,0 +1,15 @@
+{
+  assertThat(file.isFile(),is(true));
+  FileInputStream fileInputStream=new FileInputStream(file);
+  try {
+    byte[] buffer=new byte[binaryRepresentation.length + 1];
+    assertThat(fileInputStream.read(buffer),is(binaryRepresentation.length));
+    for (int index=0; index < binaryRepresentation.length; index++) {
+      assertThat(buffer[index],equalTo(binaryRepresentation[index]));
+    }
+  }
+  finally {
+    fileInputStream.close();
+  }
+  assertThat(file.delete(),is(true));
+}

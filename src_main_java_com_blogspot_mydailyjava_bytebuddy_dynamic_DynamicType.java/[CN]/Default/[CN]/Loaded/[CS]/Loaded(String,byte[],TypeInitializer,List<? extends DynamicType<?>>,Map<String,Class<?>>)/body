@@ -1,4 +1,0 @@
-{
-  super(mainTypeName,mainTypeByte,typeInitializer,auxiliaryTypes);
-  this.types=types;
-}

@@ -1,0 +1,3 @@
+{
+  assertThat(fieldList.size(),is(0));
+}

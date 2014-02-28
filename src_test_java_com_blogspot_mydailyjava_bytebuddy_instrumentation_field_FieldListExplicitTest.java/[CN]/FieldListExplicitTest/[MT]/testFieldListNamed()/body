@@ -1,0 +1,6 @@
+{
+  when(firstFieldDescription.getInternalName()).thenReturn(FOO);
+  when(secondFieldDescription.getInternalName()).thenReturn(BAR);
+  FieldDescription fieldDescription=fieldList.named(FOO);
+  assertThat(fieldDescription,is(firstFieldDescription));
+}

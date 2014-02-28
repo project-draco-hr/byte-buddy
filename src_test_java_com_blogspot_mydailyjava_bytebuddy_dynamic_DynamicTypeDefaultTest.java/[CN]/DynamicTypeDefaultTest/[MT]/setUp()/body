@@ -1,0 +1,9 @@
+{
+  typeByte=new byte[]{0,1,2};
+  auxiliaryTypeByte=new byte[]{4,5,6};
+  dynamicType=new DynamicType.Default<Object>(FOO,typeByte,mainTypeInitializer,Collections.<DynamicType<?>>singletonList(auxiliaryType));
+  when(auxiliaryType.getName()).thenReturn(BAR);
+  when(auxiliaryType.getBytes()).thenReturn(auxiliaryTypeByte);
+  when(auxiliaryType.getTypeInitializers()).thenReturn(Collections.singletonMap(BAR,auxiliaryTypeInitializer));
+  when(auxiliaryType.getRawAuxiliaryTypes()).thenReturn(Collections.<String,byte[]>emptyMap());
+}

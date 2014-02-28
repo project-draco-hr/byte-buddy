@@ -1,0 +1,3 @@
+{
+  fieldList=new FieldList.ForLoadedField(Foo.class.getDeclaredFields());
+}

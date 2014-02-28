@@ -1,0 +1,3 @@
+{
+  assertThat(stringSingleArgConstructor.getParameterOffset(0),is(1));
+}

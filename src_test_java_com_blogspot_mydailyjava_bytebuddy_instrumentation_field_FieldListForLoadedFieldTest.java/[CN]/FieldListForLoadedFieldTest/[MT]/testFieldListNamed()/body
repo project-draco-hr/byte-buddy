@@ -1,0 +1,3 @@
+{
+  assertThat(fieldList.named(FOO).getInternalName(),is(FOO));
+}

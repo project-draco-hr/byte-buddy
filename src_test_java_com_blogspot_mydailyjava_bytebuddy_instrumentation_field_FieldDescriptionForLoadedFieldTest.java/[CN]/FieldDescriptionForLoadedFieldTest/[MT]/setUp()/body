@@ -1,0 +1,3 @@
+{
+  fieldDescription=new FieldDescription.ForLoadedField(Foo.class.getDeclaredField(FOO));
+}

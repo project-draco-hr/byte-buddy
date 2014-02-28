@@ -1,6 +1,0 @@
-{
-  for (  Map.Entry<String,TypeInitializer> entry : getTypeInitializers().entrySet()) {
-    entry.getValue().onLoad(types.get(entry.getKey()));
-  }
-  return types;
-}

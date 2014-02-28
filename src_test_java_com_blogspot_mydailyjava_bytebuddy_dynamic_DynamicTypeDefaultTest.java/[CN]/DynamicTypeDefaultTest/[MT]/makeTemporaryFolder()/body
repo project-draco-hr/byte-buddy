@@ -1,0 +1,11 @@
+{
+  File file=File.createTempFile(TEMP,TEMP);
+  try {
+    File folder=new File(file.getParentFile(),TEMP + Math.abs(new Random().nextInt()));
+    assertThat(folder.mkdir(),is(true));
+    return folder;
+  }
+  finally {
+    assertThat(file.delete(),is(true));
+  }
+}
