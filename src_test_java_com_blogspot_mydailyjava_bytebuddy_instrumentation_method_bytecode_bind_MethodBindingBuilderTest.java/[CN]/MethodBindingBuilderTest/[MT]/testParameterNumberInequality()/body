@@ -1,0 +1,4 @@
+{
+  when(methodParameterList.size()).thenReturn(1);
+  new MethodDelegationBinder.MethodBinding.Builder(methodInvoker,methodDescription).build(legalStackManipulation);
+}

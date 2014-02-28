@@ -1,5 +1,5 @@
 {
-  when(stackManipulation.isValid()).thenReturn(true);
+  when(assignmentBinding.isValid()).thenReturn(true);
   when(methodInvocation.isValid()).thenReturn(true);
   TypeList typeList=mock(TypeList.class);
   when(typeList.size()).thenReturn(2);
@@ -7,16 +7,16 @@
   when(target.getStackSize()).thenReturn(3);
   when(target.getParameterAnnotations()).thenReturn(new Annotation[2][0]);
   when(target.getAnnotations()).thenReturn(new Annotation[0]);
-  TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding<?> firstBinding=prepareArgumentBinder(firstArgumentBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
-  TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding<?> secondBinding=prepareArgumentBinder(secondArgumentBinder,SecondPseudoAnnotation.class,new Key(BAR),true);
+  MethodDelegationBinder.ParameterBinding<?> firstBinding=prepareArgumentBinder(firstParameterBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
+  MethodDelegationBinder.ParameterBinding<?> secondBinding=prepareArgumentBinder(secondParameterBinder,SecondPseudoAnnotation.class,new Key(BAR),true);
   Iterator<Annotation> defaultsIterator=prepareDefaultProvider(defaultsProvider,Arrays.asList(secondPseudoAnnotation));
-  MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Arrays.<TargetMethodAnnotationDrivenBinder.ArgumentBinder<?>>asList(firstArgumentBinder,secondArgumentBinder),defaultsProvider,assigner,methodInvoker);
+  MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Arrays.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>asList(firstParameterBinder,secondParameterBinder),defaultsProvider,assigner,methodInvoker);
   assertThat(methodDelegationBinder.bind(typeDescription,source,target).isValid(),is(false));
-  verify(firstArgumentBinder,atLeast(1)).getHandledType();
-  verifyNoMoreInteractions(firstArgumentBinder);
-  verify(secondArgumentBinder,atLeast(1)).getHandledType();
-  verify((TargetMethodAnnotationDrivenBinder.ArgumentBinder)secondArgumentBinder).bind(secondPseudoAnnotation,0,source,target,typeDescription,assigner);
-  verifyNoMoreInteractions(secondArgumentBinder);
+  verify(firstParameterBinder,atLeast(1)).getHandledType();
+  verifyNoMoreInteractions(firstParameterBinder);
+  verify(secondParameterBinder,atLeast(1)).getHandledType();
+  verify((TargetMethodAnnotationDrivenBinder.ParameterBinder)secondParameterBinder).bind(secondPseudoAnnotation,0,source,target,typeDescription,assigner);
+  verifyNoMoreInteractions(secondParameterBinder);
   verify(defaultsIterator,times(2)).hasNext();
   verify(defaultsIterator,times(1)).next();
   verifyNoMoreInteractions(defaultsIterator);
@@ -26,6 +26,5 @@
   verifyZeroInteractions(firstBinding);
   verify(secondBinding,atLeast(1)).isValid();
   verify(secondBinding).getIdentificationToken();
-  verify(secondBinding).getStackManipulation();
   verifyNoMoreInteractions(secondBinding);
 }

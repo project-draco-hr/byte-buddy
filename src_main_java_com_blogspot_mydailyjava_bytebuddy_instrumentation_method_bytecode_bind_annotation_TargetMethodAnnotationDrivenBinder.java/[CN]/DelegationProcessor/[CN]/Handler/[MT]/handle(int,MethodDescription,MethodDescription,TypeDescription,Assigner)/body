@@ -1,3 +1,3 @@
 {
-  return ArgumentBinder.ParameterBinding.makeIllegal();
+  return ParameterBinding.Illegal.INSTANCE;
 }

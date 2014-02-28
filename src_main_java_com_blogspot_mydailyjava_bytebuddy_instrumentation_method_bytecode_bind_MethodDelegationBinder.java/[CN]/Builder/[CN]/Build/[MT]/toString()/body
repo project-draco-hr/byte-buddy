@@ -1,0 +1,3 @@
+{
+  return "MethodBinding to " + target + " ("+ (isValid() ? "valid" : "invalid")+ ')';
+}

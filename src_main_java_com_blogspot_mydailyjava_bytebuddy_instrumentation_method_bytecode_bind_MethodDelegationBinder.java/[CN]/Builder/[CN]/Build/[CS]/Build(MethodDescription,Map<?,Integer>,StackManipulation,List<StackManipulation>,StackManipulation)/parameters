@@ -1,0 +1,5 @@
+MethodDescription target
+Map<?,Integer> registeredTargetIndices
+StackManipulation methodInvocation
+List<StackManipulation> parameterStackManipulations
+StackManipulation returnValueStackManipulation

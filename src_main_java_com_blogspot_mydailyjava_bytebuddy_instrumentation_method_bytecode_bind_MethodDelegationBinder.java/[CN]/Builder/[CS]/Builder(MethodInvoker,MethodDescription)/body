@@ -1,0 +1,7 @@
+{
+  this.methodInvoker=methodInvoker;
+  this.target=target;
+  parameterStackManipulations=new ArrayList<StackManipulation>(target.getParameterTypes().size());
+  registeredTargetIndices=new LinkedHashMap<Object,Integer>(target.getParameterTypes().size());
+  currentParameterIndex=0;
+}

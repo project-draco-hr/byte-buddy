@@ -1,0 +1,5 @@
+{
+  RuntimeType runtimeType=mock(RuntimeType.class);
+  doReturn(RuntimeType.class).when(runtimeType).annotationType();
+  assertBinding(new Annotation[][]{{},{runtimeType}},true,Argument.BindingMechanic.UNIQUE);
+}

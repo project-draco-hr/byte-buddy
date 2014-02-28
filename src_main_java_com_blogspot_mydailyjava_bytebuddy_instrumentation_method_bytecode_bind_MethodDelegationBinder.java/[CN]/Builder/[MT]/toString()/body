@@ -1,0 +1,3 @@
+{
+  return "MethodDelegationBinder.MethodBinding.Builder{" + "methodInvoker=" + methodInvoker + ", target="+ target+ ", parameterStackManipulations="+ parameterStackManipulations+ ", registeredTargetIndices="+ registeredTargetIndices+ '}';
+}

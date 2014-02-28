@@ -1,7 +1,0 @@
-{
-  Object token=new Object();
-  TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding<?> parameterBinding=TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding.makeIdentified(stackManipulation,token);
-  assertThat(parameterBinding.getStackManipulation(),is(stackManipulation));
-  assertThat(parameterBinding.getIdentificationToken(),is(token));
-  assertThat(parameterBinding.isValid(),is(true));
-}

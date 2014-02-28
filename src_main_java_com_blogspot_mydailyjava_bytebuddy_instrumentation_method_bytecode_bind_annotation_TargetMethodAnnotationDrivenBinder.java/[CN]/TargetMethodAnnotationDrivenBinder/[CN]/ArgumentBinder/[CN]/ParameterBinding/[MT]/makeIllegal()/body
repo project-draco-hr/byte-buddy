@@ -1,3 +1,0 @@
-{
-  return new ParameterBinding<Object>(IllegalStackManipulation.INSTANCE,new Object());
-}

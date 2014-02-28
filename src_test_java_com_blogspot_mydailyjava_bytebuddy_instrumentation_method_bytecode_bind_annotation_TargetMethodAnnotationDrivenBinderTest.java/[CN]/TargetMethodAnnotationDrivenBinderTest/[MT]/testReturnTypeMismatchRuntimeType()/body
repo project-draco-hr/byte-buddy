@@ -1,10 +1,10 @@
 {
-  when(stackManipulation.isValid()).thenReturn(false);
+  when(assignmentBinding.isValid()).thenReturn(false);
   when(methodInvocation.isValid()).thenReturn(true);
   RuntimeType runtimeType=mock(RuntimeType.class);
   doReturn(RuntimeType.class).when(runtimeType).annotationType();
   when(target.getAnnotations()).thenReturn(new Annotation[]{runtimeType});
-  MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Collections.<TargetMethodAnnotationDrivenBinder.ArgumentBinder<?>>emptyList(),defaultsProvider,assigner,methodInvoker);
+  MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Collections.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>emptyList(),defaultsProvider,assigner,methodInvoker);
   assertThat(methodDelegationBinder.bind(typeDescription,source,target).isValid(),is(false));
   verify(assigner).assign(targetTypeDescription,sourceTypeDescription,true);
   verifyNoMoreInteractions(assigner);

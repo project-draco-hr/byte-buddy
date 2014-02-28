@@ -1,0 +1,3 @@
+{
+  assertThat(MethodDelegationBinder.ParameterBinding.Illegal.INSTANCE.isValid(),is(false));
+}

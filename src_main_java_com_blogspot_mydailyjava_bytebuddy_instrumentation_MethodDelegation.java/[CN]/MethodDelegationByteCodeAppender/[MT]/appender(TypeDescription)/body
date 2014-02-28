@@ -1,3 +1,3 @@
 {
-  return new MethodDelegationByteCodeAppender(instrumentationDelegate.getPreparingStackAssignment(instrumentedType),instrumentedType,methodList,new MethodDelegationBinder.Processor(new TargetMethodAnnotationDrivenBinder(argumentBinders,defaultsProvider,assigner,instrumentationDelegate.getMethodInvoker(instrumentedType)),ambiguityResolver));
+  return new MethodDelegationByteCodeAppender(instrumentationDelegate.getPreparingStackAssignment(instrumentedType),instrumentedType,methodList,new MethodDelegationBinder.Processor(new TargetMethodAnnotationDrivenBinder(parameterBinders,defaultsProvider,assigner,instrumentationDelegate.getMethodInvoker(instrumentedType)),ambiguityResolver));
 }

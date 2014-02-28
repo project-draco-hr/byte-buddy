@@ -1,5 +1,5 @@
 {
-  when(stackManipulation.isValid()).thenReturn(true);
+  when(assignmentBinding.isValid()).thenReturn(true);
   when(methodInvocation.isValid()).thenReturn(true);
   TypeList typeList=mock(TypeList.class);
   when(typeList.size()).thenReturn(2);
@@ -7,16 +7,16 @@
   when(target.getStackSize()).thenReturn(3);
   when(target.getParameterAnnotations()).thenReturn(new Annotation[2][0]);
   when(target.getAnnotations()).thenReturn(new Annotation[0]);
-  TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding<?> firstBinding=prepareArgumentBinder(firstArgumentBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
-  TargetMethodAnnotationDrivenBinder.ArgumentBinder.ParameterBinding<?> secondBinding=prepareArgumentBinder(secondArgumentBinder,SecondPseudoAnnotation.class,new Key(BAR),true);
+  MethodDelegationBinder.ParameterBinding<?> firstBinding=prepareArgumentBinder(firstParameterBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
+  MethodDelegationBinder.ParameterBinding<?> secondBinding=prepareArgumentBinder(secondParameterBinder,SecondPseudoAnnotation.class,new Key(BAR),true);
   Iterator<Annotation> defaultsIterator=prepareDefaultProvider(defaultsProvider,Arrays.asList(secondPseudoAnnotation,firstPseudoAnnotation));
-  MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Arrays.<TargetMethodAnnotationDrivenBinder.ArgumentBinder<?>>asList(firstArgumentBinder,secondArgumentBinder),defaultsProvider,assigner,methodInvoker);
-  MethodDelegationBinder.Binding binding=methodDelegationBinder.bind(typeDescription,source,target);
-  assertThat(binding.isValid(),is(true));
-  assertThat(binding.getTarget(),is(target));
-  assertThat(binding.getTargetParameterIndex(new Key(FOO)),is(1));
-  assertThat(binding.getTargetParameterIndex(new Key(BAR)),is(0));
-  StackManipulation.Size size=binding.apply(methodVisitor,instrumentationContext);
+  MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Arrays.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>asList(firstParameterBinder,secondParameterBinder),defaultsProvider,assigner,methodInvoker);
+  MethodDelegationBinder.MethodBinding methodBinding=methodDelegationBinder.bind(typeDescription,source,target);
+  assertThat(methodBinding.isValid(),is(true));
+  assertThat(methodBinding.getTarget(),is(target));
+  assertThat(methodBinding.getTargetParameterIndex(new Key(FOO)),is(1));
+  assertThat(methodBinding.getTargetParameterIndex(new Key(BAR)),is(0));
+  StackManipulation.Size size=methodBinding.apply(methodVisitor,instrumentationContext);
   assertThat(size.getSizeImpact(),is(0));
   assertThat(size.getMaximalSize(),is(0));
   verifyZeroInteractions(methodVisitor);
@@ -29,19 +29,17 @@
   verifyNoMoreInteractions(assigner);
   verify(methodInvoker).invoke(target);
   verifyNoMoreInteractions(methodInvoker);
-  verify(firstArgumentBinder,atLeast(1)).getHandledType();
-  verify((TargetMethodAnnotationDrivenBinder.ArgumentBinder)firstArgumentBinder).bind(firstPseudoAnnotation,1,source,target,typeDescription,assigner);
-  verifyNoMoreInteractions(firstArgumentBinder);
-  verify(secondArgumentBinder,atLeast(1)).getHandledType();
-  verify((TargetMethodAnnotationDrivenBinder.ArgumentBinder)secondArgumentBinder).bind(secondPseudoAnnotation,0,source,target,typeDescription,assigner);
-  verifyNoMoreInteractions(secondArgumentBinder);
+  verify(firstParameterBinder,atLeast(1)).getHandledType();
+  verify((TargetMethodAnnotationDrivenBinder.ParameterBinder)firstParameterBinder).bind(firstPseudoAnnotation,1,source,target,typeDescription,assigner);
+  verifyNoMoreInteractions(firstParameterBinder);
+  verify(secondParameterBinder,atLeast(1)).getHandledType();
+  verify((TargetMethodAnnotationDrivenBinder.ParameterBinder)secondParameterBinder).bind(secondPseudoAnnotation,0,source,target,typeDescription,assigner);
+  verifyNoMoreInteractions(secondParameterBinder);
   verify(defaultsIterator,times(2)).hasNext();
   verify(defaultsIterator,times(2)).next();
   verifyNoMoreInteractions(defaultsIterator);
   verify(firstBinding,atLeast(1)).isValid();
-  verify(firstBinding).getStackManipulation();
   verify(firstBinding).getIdentificationToken();
   verify(secondBinding,atLeast(1)).isValid();
-  verify(secondBinding).getStackManipulation();
   verify(secondBinding).getIdentificationToken();
 }

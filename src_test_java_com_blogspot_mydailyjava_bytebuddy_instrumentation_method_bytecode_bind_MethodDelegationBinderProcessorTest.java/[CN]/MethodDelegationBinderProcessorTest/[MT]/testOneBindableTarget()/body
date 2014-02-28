@@ -1,7 +1,7 @@
 {
   List<MethodDescription> methodDescriptions=Arrays.asList(unbindableTarget,bindableTarget,unbindableTarget);
   MethodDelegationBinder.Processor processor=new MethodDelegationBinder.Processor(methodDelegationBinder,ambiguityResolver);
-  MethodDelegationBinder.Binding result=processor.process(typeDescription,source,methodDescriptions);
+  MethodDelegationBinder.MethodBinding result=processor.process(typeDescription,source,methodDescriptions);
   assertThat(result,is(boundDelegation));
   verify(methodDelegationBinder,times(1)).bind(typeDescription,source,bindableTarget);
   verify(boundDelegation,atLeast(1)).isValid();

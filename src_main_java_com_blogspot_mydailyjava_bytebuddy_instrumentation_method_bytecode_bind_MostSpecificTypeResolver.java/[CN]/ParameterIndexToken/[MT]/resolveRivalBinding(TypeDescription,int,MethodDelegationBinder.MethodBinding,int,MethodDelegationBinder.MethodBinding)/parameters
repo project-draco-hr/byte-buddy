@@ -1,0 +1,5 @@
+TypeDescription sourceParameterType
+int leftParameterIndex
+MethodDelegationBinder.MethodBinding left
+int rightParameterIndex
+MethodDelegationBinder.MethodBinding right

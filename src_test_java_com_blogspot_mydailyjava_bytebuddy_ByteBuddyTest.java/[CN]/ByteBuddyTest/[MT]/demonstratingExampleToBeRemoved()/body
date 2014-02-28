@@ -1,6 +1,0 @@
-{
-  Bar object=new ByteBuddy().subclass(Bar.class).make().load(getClass().getClassLoader(),DynamicType.ClassLoadingStrategy.WRAPPER).getMainType().newInstance();
-  System.out.println(object.test("a",10));
-  System.out.println(object.foo(10,3));
-  object.test("");
-}

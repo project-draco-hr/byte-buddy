@@ -1,4 +1,0 @@
-{
-  this.stackManipulation=stackManipulation;
-  this.identificationToken=identificationToken;
-}

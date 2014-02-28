@@ -1,0 +1,6 @@
+{
+  if (target.getParameterTypes().size() != currentParameterIndex) {
+    throw new IllegalStateException("The number of parameters bound does not equal the target's number of parameters");
+  }
+  return new Build(target,registeredTargetIndices,methodInvoker.invoke(target),parameterStackManipulations,returnValueStackManipulation);
+}

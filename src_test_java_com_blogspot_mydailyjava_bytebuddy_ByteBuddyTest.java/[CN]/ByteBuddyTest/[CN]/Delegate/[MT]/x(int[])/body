@@ -1,6 +1,0 @@
-{
-  for (  int in : i) {
-    System.out.println(in);
-  }
-  return i.length;
-}

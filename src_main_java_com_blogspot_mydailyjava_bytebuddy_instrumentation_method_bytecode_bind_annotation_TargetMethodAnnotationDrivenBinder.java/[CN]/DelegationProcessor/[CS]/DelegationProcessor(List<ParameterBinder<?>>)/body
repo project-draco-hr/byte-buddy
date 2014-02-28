@@ -1,0 +1,9 @@
+{
+  Map<Class<? extends Annotation>,ParameterBinder<?>> argumentBinderMap=new HashMap<Class<? extends Annotation>,ParameterBinder<?>>();
+  for (  ParameterBinder<?> parameterBinder : parameterBinders) {
+    if (argumentBinderMap.put(parameterBinder.getHandledType(),parameterBinder) != null) {
+      throw new IllegalArgumentException("Attempt to bind two handlers to " + parameterBinder.getHandledType());
+    }
+  }
+  this.argumentBinders=Collections.unmodifiableMap(argumentBinderMap);
+}
