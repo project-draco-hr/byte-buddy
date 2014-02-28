@@ -1,0 +1,3 @@
+{
+  return "ReturnTypeMatcher{returnType=" + returnType + '}';
+}

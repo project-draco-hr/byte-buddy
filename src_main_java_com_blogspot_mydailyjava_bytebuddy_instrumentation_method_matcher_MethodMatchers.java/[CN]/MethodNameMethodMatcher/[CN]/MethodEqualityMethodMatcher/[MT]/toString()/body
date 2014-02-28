@@ -1,0 +1,3 @@
+{
+  return "MethodEqualityMethodMatcher{method=" + method + '}';
+}
