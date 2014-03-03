@@ -1,0 +1,8 @@
+{
+  byte[] binaryFoo=extract(Foo.class);
+  assertThat(binaryFoo.length > 4,is(true));
+  assertThat(binaryFoo[0],is(new Integer(CA).byteValue()));
+  assertThat(binaryFoo[1],is(new Integer(FE).byteValue()));
+  assertThat(binaryFoo[2],is(new Integer(BA).byteValue()));
+  assertThat(binaryFoo[3],is(new Integer(BE).byteValue()));
+}

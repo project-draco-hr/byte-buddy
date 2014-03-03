@@ -1,7 +1,4 @@
 {
-  ClassReader classReader=new ClassReader(Foo.class.getName());
-  ClassWriter classWriter=new ClassWriter(classReader,0);
-  classReader.accept(classWriter,0);
-  when(values.get(Foo.class.getName())).thenReturn(classWriter.toByteArray());
+  when(values.get(Foo.class.getName())).thenReturn(ClassFileExtraction.extract(Foo.class));
   classLoader=new ByteArrayClassLoader(null,values);
 }

@@ -1,0 +1,5 @@
+{
+  when(leftMethod.getAnnotation(BindingPriority.class)).thenReturn(highPriority);
+  when(rightMethod.getAnnotation(BindingPriority.class)).thenReturn(lowPriority);
+  assertThat(BindingPriority.Resolver.INSTANCE.resolve(source,left,right),is(MethodDelegationBinder.AmbiguityResolver.Resolution.LEFT));
+}

@@ -1,0 +1,6 @@
+{
+  when(left.getTarget()).thenReturn(leftMethod);
+  when(right.getTarget()).thenReturn(rightMethod);
+  when(highPriority.value()).thenReturn(BindingPriority.DEFAULT * 2d);
+  when(lowPriority.value()).thenReturn(BindingPriority.DEFAULT / 2d);
+}

@@ -1,7 +1,4 @@
 {
-  ClassReader classReader=new ClassReader(Foo.class.getName());
-  ClassWriter classWriter=new ClassWriter(classReader,0);
-  classReader.accept(classWriter,0);
-  classLoaderByteArrayInjector.inject(Foo.class.getName(),classWriter.toByteArray());
+  classLoaderByteArrayInjector.inject(Foo.class.getName(),ClassFileExtraction.extract(Foo.class));
   assertThat(classLoader.loadClass(Foo.class.getName()).getClassLoader(),is(classLoader));
 }
