@@ -1,0 +1,5 @@
+{
+  assertThat(ConstructorStrategy.Default.NO_CONSTRUCTORS.extractConstructors(Object.class),is(new Constructor<?>[0]));
+  assertThat(ConstructorStrategy.Default.NO_CONSTRUCTORS.inject(methodRegistry,methodAttributeAppenderFactory),is(methodRegistry));
+  verifyZeroInteractions(methodRegistry);
+}

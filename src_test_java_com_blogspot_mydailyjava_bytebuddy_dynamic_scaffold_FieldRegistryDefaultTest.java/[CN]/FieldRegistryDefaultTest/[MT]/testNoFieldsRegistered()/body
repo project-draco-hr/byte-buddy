@@ -1,0 +1,4 @@
+{
+  assertThat(new FieldRegistry.Default().compile(instrumentedType,fallback).target(knownField),is(fallback));
+  assertThat(new FieldRegistry.Default().compile(instrumentedType,fallback).target(unknownField),is(fallback));
+}

@@ -1,0 +1,3 @@
+InstrumentedType instrumentedType
+List<Entry> entries
+MethodRegistry.Compiled.Entry fallback

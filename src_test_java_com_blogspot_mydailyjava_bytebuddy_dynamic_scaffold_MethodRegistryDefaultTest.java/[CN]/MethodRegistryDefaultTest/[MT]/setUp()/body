@@ -1,0 +1,27 @@
+{
+  when(latentMatchesKnownMethod.manifest(any(TypeDescription.class))).thenReturn(matchesKnownMethod);
+  when(matchesKnownMethod.matches(knownMethod)).thenReturn(true);
+  when(basicInstrumentedType.getDeclaredMethods()).thenReturn(basicMethodList);
+  when(basicMethodList.size()).thenReturn(BASIC_SIZE);
+  when(extendedInstrumentedType.getDeclaredMethods()).thenReturn(extendedMethodList);
+  when(extendedMethodList.size()).thenReturn(EXTENDED_SIZE);
+  when(extendedMethodList.subList(anyInt(),anyInt())).thenReturn(croppedMethodList);
+  when(zeroSize.size()).thenReturn(0);
+  when(singleSize.size()).thenReturn(1);
+  when(croppedMethodList.filter(any(MethodMatcher.class))).thenAnswer(new Answer<MethodList>(){
+    @Override public MethodList answer(    InvocationOnMock invocation) throws Throwable {
+      Field field=invocation.getArguments()[0].getClass().getDeclaredField("methodDescription");
+      field.setAccessible(true);
+      return field.get(invocation.getArguments()[0]) == instrumentationAppendedMethod ? singleSize : zeroSize;
+    }
+  }
+);
+  when(simpleInstrumentation.prepare(any(InstrumentedType.class))).thenReturn(basicInstrumentedType);
+  when(simpleInstrumentation.appender(any(InstrumentedType.class))).thenReturn(simpleByteCodeAppender);
+  when(simpleAttributeAppenderFactory.make(any(InstrumentedType.class))).thenReturn(simpleAttributeAppender);
+  when(otherInstrumentation.prepare(any(InstrumentedType.class))).thenReturn(basicInstrumentedType);
+  when(otherInstrumentation.appender(any(InstrumentedType.class))).thenReturn(otherByteCodeAppender);
+  when(otherAttributeAppenderFactory.make(any(InstrumentedType.class))).thenReturn(otherAttributeAppender);
+  when(extendingInstrumentation.prepare(any(InstrumentedType.class))).thenReturn(extendedInstrumentedType);
+  when(extendingInstrumentation.appender(any(InstrumentedType.class))).thenReturn(simpleByteCodeAppender);
+}

@@ -1,0 +1,3 @@
+{
+  return "MethodAttributeAppender.Compound{" + Arrays.toString(methodAttributeAppender) + '}';
+}

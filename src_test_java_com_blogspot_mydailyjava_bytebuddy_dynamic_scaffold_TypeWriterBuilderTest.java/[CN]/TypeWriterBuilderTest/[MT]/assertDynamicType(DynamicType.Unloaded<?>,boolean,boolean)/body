@@ -1,0 +1,29 @@
+{
+  assertThat(unloaded.getName(),is(FOO));
+  Class<?> loaded=unloaded.load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(loaded.getName(),is(FOO));
+  assertEquals(Object.class,loaded.getSuperclass());
+  assertThat(Modifier.isPublic(loaded.getModifiers()),is(true));
+  if (fields) {
+    assertThat(loaded.getDeclaredFields().length,is(2));
+    assertEquals(Object.class,loaded.getDeclaredField(BAR).getType());
+    assertThat(Modifier.isPublic(loaded.getDeclaredField(BAR).getModifiers()),is(true));
+    assertEquals(long.class,loaded.getDeclaredField(QUX).getType());
+    assertThat(Modifier.isPublic(loaded.getDeclaredField(QUX).getModifiers()),is(true));
+  }
+  if (methods) {
+    assertThat(loaded.getDeclaredMethods().length,is(3));
+    assertEquals(void.class,loaded.getDeclaredMethod(BAR).getReturnType());
+    assertThat(Modifier.isPublic(loaded.getDeclaredMethod(BAR).getModifiers()),is(true));
+    assertThat(loaded.getDeclaredMethod(BAR).getParameterTypes().length,is(0));
+    assertThat(Modifier.isAbstract(loaded.getDeclaredMethod(BAR).getModifiers()),is(false));
+    assertEquals(void.class,loaded.getDeclaredMethod(QUX).getReturnType());
+    assertThat(loaded.getDeclaredMethod(QUX).getParameterTypes().length,is(0));
+    assertThat(Modifier.isPublic(loaded.getDeclaredMethod(QUX).getModifiers()),is(true));
+    assertThat(Modifier.isAbstract(loaded.getDeclaredMethod(QUX).getModifiers()),is(true));
+    assertEquals(void.class,loaded.getDeclaredMethod(BAZ).getReturnType());
+    assertThat(Modifier.isPublic(loaded.getDeclaredMethod(BAZ).getModifiers()),is(true));
+    assertThat(loaded.getDeclaredMethod(BAZ).getParameterTypes().length,is(0));
+    assertThat(Modifier.isAbstract(loaded.getDeclaredMethod(BAZ).getModifiers()),is(false));
+  }
+}

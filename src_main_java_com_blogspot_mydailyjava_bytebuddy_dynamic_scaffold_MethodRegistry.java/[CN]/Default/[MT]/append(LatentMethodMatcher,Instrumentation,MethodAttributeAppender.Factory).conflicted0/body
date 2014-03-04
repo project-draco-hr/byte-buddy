@@ -1,6 +1,3 @@
 {
-  List<Entry> entries=new ArrayList<Entry>(this.entries.size() + 1);
-  entries.addAll(this.entries);
-  entries.add(new Entry(latentMethodMatcher,instrumentation,attributeAppenderFactory));
-  return new Default(entries);
+  return new Default(join(entries,new Entry(latentMethodMatcher,instrumentation,attributeAppenderFactory)));
 }

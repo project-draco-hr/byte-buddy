@@ -1,0 +1,17 @@
+{
+  List<String> list=new ArrayList<String>();
+  list.addAll(Arrays.asList(FOO,BAR));
+  Iterable<String> iterable=new TypeWriter.SameThreadCoModifiableIterable<String>(list);
+  Iterator<String> iterator=iterable.iterator();
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is(FOO));
+  list.add(QUX);
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is(BAR));
+  list.add(BAZ);
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is(QUX));
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is(BAZ));
+  assertThat(iterator.hasNext(),is(false));
+}

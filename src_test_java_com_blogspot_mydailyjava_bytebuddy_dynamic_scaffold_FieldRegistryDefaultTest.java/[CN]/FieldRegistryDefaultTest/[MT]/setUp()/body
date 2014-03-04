@@ -1,0 +1,4 @@
+{
+  when(latentFieldMatcher.getFieldName()).thenReturn(FOO);
+  when(knownField.getInternalName()).thenReturn(FOO);
+}

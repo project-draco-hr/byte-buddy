@@ -1,0 +1,3 @@
+{
+  assertThat(new MethodRegistry.Default().compile(basicInstrumentedType,fallback).target(unknownMethod),is(fallback));
+}

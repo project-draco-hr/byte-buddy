@@ -1,5 +1,0 @@
-{
-  Map<String,FieldAttributeAppender.Factory> entries=new HashMap<String,FieldAttributeAppender.Factory>(this.entries);
-  entries.put(latentFieldMatcher.getFieldName(),attributeAppenderFactory);
-  return new Default(entries);
-}
