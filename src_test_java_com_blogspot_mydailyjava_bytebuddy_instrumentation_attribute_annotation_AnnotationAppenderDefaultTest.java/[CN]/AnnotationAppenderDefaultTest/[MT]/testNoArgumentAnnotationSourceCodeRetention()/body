@@ -1,0 +1,4 @@
+{
+  Class<?> bar=makeTypeWithAnnotation(new FooSourceCodeRetention.Instance());
+  assertThat(bar.getAnnotations().length,is(0));
+}

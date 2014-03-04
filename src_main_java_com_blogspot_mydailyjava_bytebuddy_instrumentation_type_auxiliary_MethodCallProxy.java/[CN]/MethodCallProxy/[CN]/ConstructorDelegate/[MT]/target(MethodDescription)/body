@@ -1,0 +1,3 @@
+{
+  return new Entry.Default(this,MethodAttributeAppender.NoOp.INSTANCE);
+}

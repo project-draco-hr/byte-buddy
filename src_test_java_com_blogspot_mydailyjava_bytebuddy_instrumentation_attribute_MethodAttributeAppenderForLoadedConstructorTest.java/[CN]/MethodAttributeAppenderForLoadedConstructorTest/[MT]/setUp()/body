@@ -1,0 +1,6 @@
+{
+  constructor=Foo.class.getDeclaredConstructor(Object.class);
+  TypeList typeList=mock(TypeList.class);
+  when(methodDescription.getParameterTypes()).thenReturn(typeList);
+  when(typeList.size()).thenReturn(PARAMETER_INDEX + 1);
+}

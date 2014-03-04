@@ -1,0 +1,5 @@
+{
+  new TypeAttributeAppender.ForAnnotation(new Qux.Instance()).apply(classVisitor,typeDescription);
+  verifyZeroInteractions(classVisitor);
+  verifyZeroInteractions(typeDescription);
+}

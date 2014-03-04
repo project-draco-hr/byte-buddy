@@ -1,0 +1,14 @@
+{
+  StackManipulation.Size size=new StackManipulation.Size(0,0);
+  int offset=1, index=0;
+  for (  TypeDescription parameterType : instrumentedMethod.getParameterTypes()) {
+    MethodVariableAccess.forType(instrumentedMethod.getDeclaringType()).loadFromIndex(0);
+    MethodVariableAccess.forType(parameterType).loadFromIndex(offset);
+    int parameterSize=parameterType.getStackSize().getSize() + 1;
+    size=size.aggregate(new StackManipulation.Size(parameterSize,parameterSize));
+    size=size.aggregate(fieldAccess.get(index++).putter().apply(methodVisitor,instrumentationContext));
+    offset+=parameterType.getStackSize().getSize();
+  }
+  size=size.aggregate(MethodReturn.VOID.apply(methodVisitor,instrumentationContext));
+  return new Size(size.getMaximalSize(),instrumentedMethod.getStackSize());
+}

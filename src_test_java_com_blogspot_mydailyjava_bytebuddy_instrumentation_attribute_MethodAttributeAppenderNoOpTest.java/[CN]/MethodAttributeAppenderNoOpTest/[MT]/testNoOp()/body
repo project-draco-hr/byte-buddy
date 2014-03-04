@@ -1,0 +1,5 @@
+{
+  MethodAttributeAppender.NoOp.INSTANCE.apply(methodVisitor,methodDescription);
+  verifyZeroInteractions(methodVisitor);
+  verifyZeroInteractions(methodDescription);
+}

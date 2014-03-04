@@ -1,0 +1,6 @@
+{
+  AnnotationAppender annotationAppender=new AnnotationAppender.Default(new AnnotationAppender.Target.OnField(fieldVisitor));
+  for (  Annotation annotation : field.getAnnotations()) {
+    annotationAppender.append(annotation,AnnotationAppender.AnnotationVisibility.RUNTIME);
+  }
+}

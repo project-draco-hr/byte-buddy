@@ -1,0 +1,17 @@
+{
+  String typeName=instrumentationContext.register(new MethodCallProxy(proxiedMethod,assigner));
+  methodVisitor.visitTypeInsn(Opcodes.NEW,typeName);
+  methodVisitor.visitInsn(Opcodes.DUP);
+  Size size=new Size(2,2);
+  size=size.aggregate(MethodVariableAccess.loadAll(proxiedMethod).apply(methodVisitor,instrumentationContext));
+  StringBuilder stringBuilder=new StringBuilder("(");
+  if (!proxiedMethod.isStatic()) {
+    stringBuilder.append(proxiedMethod.getDeclaringType().getDescriptor());
+  }
+  for (  TypeDescription parameterType : proxiedMethod.getParameterTypes()) {
+    stringBuilder.append(parameterType.getDescriptor());
+  }
+  stringBuilder.append(")V");
+  methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL,typeName,MethodDescription.CONSTRUCTOR_INTERNAL_NAME,stringBuilder.toString());
+  return new Size(1,size.getMaximalSize());
+}

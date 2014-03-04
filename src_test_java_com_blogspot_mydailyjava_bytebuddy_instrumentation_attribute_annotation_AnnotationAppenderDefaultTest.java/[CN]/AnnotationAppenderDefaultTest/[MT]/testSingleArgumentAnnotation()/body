@@ -1,0 +1,6 @@
+{
+  Class<?> bar=makeTypeWithAnnotation(new Qux.Instance(FOOBAR));
+  assertThat(bar.getAnnotations().length,is(1));
+  assertThat(bar.isAnnotationPresent(Qux.class),is(true));
+  assertThat(bar.getAnnotation(Qux.class).value(),is(FOOBAR));
+}

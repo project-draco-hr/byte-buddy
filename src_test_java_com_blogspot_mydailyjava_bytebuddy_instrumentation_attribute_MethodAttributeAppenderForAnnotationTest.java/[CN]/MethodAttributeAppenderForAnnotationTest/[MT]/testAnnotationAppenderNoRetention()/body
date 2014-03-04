@@ -1,0 +1,5 @@
+{
+  new MethodAttributeAppender.ForAnnotation(new Qux.Instance()).apply(methodVisitor,methodDescription);
+  verifyZeroInteractions(methodVisitor);
+  verifyZeroInteractions(methodDescription);
+}

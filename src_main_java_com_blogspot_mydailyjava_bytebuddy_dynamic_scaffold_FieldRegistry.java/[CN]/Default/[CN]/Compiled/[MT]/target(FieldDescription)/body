@@ -1,0 +1,9 @@
+{
+  FieldAttributeAppender.Factory attributeAppenderFactory=entries.get(fieldDescription.getName());
+  if (attributeAppenderFactory == null) {
+    return fallback;
+  }
+ else {
+    return attributeAppenderFactory;
+  }
+}

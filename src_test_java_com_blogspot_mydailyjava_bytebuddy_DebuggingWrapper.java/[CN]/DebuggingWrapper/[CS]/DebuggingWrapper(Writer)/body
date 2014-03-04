@@ -1,3 +1,0 @@
-{
-  this.printWriter=new PrintWriter(writer);
-}

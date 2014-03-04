@@ -1,0 +1,3 @@
+{
+  return methodDescription.getParameterTypes().size() == 0 && (methodDescription.getName().equals(CALL_METHOD_NAME) && methodDescription.getDeclaringType().getName().equals(Callable.class.getName())) || (methodDescription.getName().equals(RUN_METHOD_NAME) && methodDescription.getDeclaringType().getName().equals(Runnable.class.getName()));
+}

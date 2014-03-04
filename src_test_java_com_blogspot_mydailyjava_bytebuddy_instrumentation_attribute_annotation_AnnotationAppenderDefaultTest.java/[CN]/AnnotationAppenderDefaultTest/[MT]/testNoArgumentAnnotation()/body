@@ -1,0 +1,5 @@
+{
+  Class<?> bar=makeTypeWithAnnotation(new Foo.Instance());
+  assertThat(bar.getAnnotations().length,is(1));
+  assertThat(bar.isAnnotationPresent(Foo.class),is(true));
+}

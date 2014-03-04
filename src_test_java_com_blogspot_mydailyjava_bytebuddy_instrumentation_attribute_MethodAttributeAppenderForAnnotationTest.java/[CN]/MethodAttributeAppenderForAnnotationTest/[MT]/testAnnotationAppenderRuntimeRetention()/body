@@ -1,0 +1,6 @@
+{
+  new MethodAttributeAppender.ForAnnotation(new Baz.Instance()).apply(methodVisitor,methodDescription);
+  verify(methodVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(methodDescription);
+}
