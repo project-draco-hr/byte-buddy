@@ -1,3 +1,3 @@
 {
-  return new SubclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,superType,interfaceTypes,Opcodes.ACC_PUBLIC | Opcodes.ACC_SUPER,TypeAttributeAppender.NoOp.INSTANCE,ignoredMethods,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,constructorStrategy);
+  return new LoadedSuperclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,superType,interfaceTypes,Opcodes.ACC_PUBLIC | Opcodes.ACC_SUPER,TypeAttributeAppender.NoOp.INSTANCE,ignoredMethods,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,constructorStrategy);
 }

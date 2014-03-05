@@ -1,9 +1,10 @@
 {
-  instrumentedType=instrumentedType.withField(QUX,instrumentedType,Modifier.PUBLIC);
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getDeclaredFields().size(),is(0));
+  instrumentedType=instrumentedType.withField(BAR,instrumentedType,Opcodes.ACC_PUBLIC);
   assertThat(instrumentedType.getDeclaredFields().size(),is(1));
   FieldDescription fieldDescription=instrumentedType.getDeclaredFields().get(0);
-  assertThat(fieldDescription.getFieldType(),sameInstance((TypeDescription)instrumentedType));
-  assertThat(fieldDescription.getModifiers(),is(Modifier.PUBLIC));
-  assertThat(fieldDescription.isSynthetic(),is(false));
-  assertThat(fieldDescription.getName(),is(QUX));
+  assertThat(fieldDescription.getFieldType(),is((TypeDescription)instrumentedType));
+  assertThat(fieldDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
+  assertThat(fieldDescription.getName(),is(BAR));
 }

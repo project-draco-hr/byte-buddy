@@ -1,0 +1,9 @@
+{
+  assertThat(defaultContext.requireProxyMethodFor(firstMethod),is(firstProxyMethod));
+  assertThat(defaultContext.requireProxyMethodFor(secondMethod),is(secondProxyMethod));
+  assertThat(defaultContext.requireProxyMethodFor(firstMethod),is(firstProxyMethod));
+  verify(methodProxyFactory).requireProxyMethodFor(firstMethod);
+  verify(methodProxyFactory).requireProxyMethodFor(secondMethod);
+  verifyNoMoreInteractions(methodProxyFactory);
+  verifyZeroInteractions(auxiliaryTypeNamingStrategy);
+}

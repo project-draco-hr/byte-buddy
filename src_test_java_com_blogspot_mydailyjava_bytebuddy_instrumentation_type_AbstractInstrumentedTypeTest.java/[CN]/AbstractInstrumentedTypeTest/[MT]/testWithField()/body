@@ -1,11 +1,12 @@
 {
   TypeDescription fieldType=mock(TypeDescription.class);
-  when(fieldType.getInternalName()).thenReturn(BAR);
-  instrumentedType=instrumentedType.withField(QUX,fieldType,Modifier.PUBLIC);
+  when(fieldType.getInternalName()).thenReturn(FOO);
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getDeclaredFields().size(),is(0));
+  instrumentedType=instrumentedType.withField(BAR,fieldType,Opcodes.ACC_PUBLIC);
   assertThat(instrumentedType.getDeclaredFields().size(),is(1));
   FieldDescription fieldDescription=instrumentedType.getDeclaredFields().get(0);
   assertThat(fieldDescription.getFieldType(),is(fieldType));
-  assertThat(fieldDescription.getModifiers(),is(Modifier.PUBLIC));
-  assertThat(fieldDescription.isSynthetic(),is(false));
-  assertThat(fieldDescription.getName(),is(QUX));
+  assertThat(fieldDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
+  assertThat(fieldDescription.getName(),is(BAR));
 }

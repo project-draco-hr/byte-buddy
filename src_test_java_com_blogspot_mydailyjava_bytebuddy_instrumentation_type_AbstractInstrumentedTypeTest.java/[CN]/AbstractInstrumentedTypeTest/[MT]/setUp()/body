@@ -1,3 +1,0 @@
-{
-  instrumentedType=makeInstrumentedType(FOO,Object.class,new Class<?>[]{Serializable.class},Visibility.PUBLIC,TypeManifestation.PLAIN,SyntheticState.NON_SYNTHETIC);
-}

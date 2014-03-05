@@ -1,0 +1,14 @@
+{
+  assertThat(defaultContext.register(firstAuxiliary),is(FOO));
+  assertThat(defaultContext.register(secondAuxiliary),is(BAR));
+  assertThat(defaultContext.getRegisteredAuxiliaryTypes().size(),is(2));
+  assertThat(defaultContext.getRegisteredAuxiliaryTypes(),hasItems(firstDynamic,secondDynamic));
+  verify(firstAuxiliary).make(QUX,defaultContext);
+  verify(secondAuxiliary).make(BAZ,defaultContext);
+  verifyNoMoreInteractions(firstAuxiliary);
+  verifyNoMoreInteractions(secondAuxiliary);
+  verify(auxiliaryTypeNamingStrategy).name(firstAuxiliary);
+  verify(auxiliaryTypeNamingStrategy).name(secondAuxiliary);
+  verifyNoMoreInteractions(auxiliaryTypeNamingStrategy);
+  verifyZeroInteractions(methodProxyFactory);
+}

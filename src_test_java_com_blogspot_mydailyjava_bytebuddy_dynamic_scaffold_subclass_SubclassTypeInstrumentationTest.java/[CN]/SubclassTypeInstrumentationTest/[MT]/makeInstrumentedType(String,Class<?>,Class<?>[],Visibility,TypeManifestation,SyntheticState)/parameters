@@ -1,6 +1,0 @@
-String name
-Class<?> superType
-Class<?>[] interfaces
-Visibility visibility
-TypeManifestation typeManifestation
-SyntheticState syntheticState

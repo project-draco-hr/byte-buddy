@@ -1,0 +1,11 @@
+{
+  assertThat(defaultContext.register(firstAuxiliary),is(FOO));
+  assertThat(defaultContext.register(firstAuxiliary),is(FOO));
+  assertThat(defaultContext.getRegisteredAuxiliaryTypes().size(),is(1));
+  assertThat(defaultContext.getRegisteredAuxiliaryTypes(),hasItem(firstDynamic));
+  verify(firstAuxiliary).make(QUX,defaultContext);
+  verifyNoMoreInteractions(firstAuxiliary);
+  verify(auxiliaryTypeNamingStrategy).name(firstAuxiliary);
+  verifyNoMoreInteractions(auxiliaryTypeNamingStrategy);
+  verifyZeroInteractions(methodProxyFactory);
+}

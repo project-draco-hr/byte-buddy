@@ -1,4 +1,0 @@
-{
-  assertThat(instrumentedType.getInterfaces().size(),is(1));
-  assertThat(instrumentedType.getInterfaces().get(0).getName(),is(Serializable.class.getName()));
-}

@@ -1,15 +1,16 @@
 {
-  TypeDescription parameterType=mock(TypeDescription.class);
-  when(parameterType.getInternalName()).thenReturn(BAR);
   TypeDescription returnType=mock(TypeDescription.class);
-  when(returnType.getInternalName()).thenReturn(BAR);
-  instrumentedType=instrumentedType.withMethod(QUX,returnType,Arrays.asList(parameterType),Modifier.PUBLIC);
+  TypeDescription parameterType=mock(TypeDescription.class);
+  when(returnType.getInternalName()).thenReturn(FOO);
+  when(parameterType.getInternalName()).thenReturn(QUX);
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getDeclaredFields().size(),is(0));
+  instrumentedType=instrumentedType.withMethod(BAR,returnType,Arrays.asList(parameterType),Opcodes.ACC_PUBLIC);
   assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
   MethodDescription methodDescription=instrumentedType.getDeclaredMethods().get(0);
-  assertThat(methodDescription.getParameterTypes().size(),is(1));
-  assertThat(methodDescription.getParameterTypes().get(0),is(parameterType));
   assertThat(methodDescription.getReturnType(),is(returnType));
-  assertThat(methodDescription.getModifiers(),is(Modifier.PUBLIC));
-  assertThat(methodDescription.isSynthetic(),is(false));
-  assertThat(methodDescription.getName(),is(QUX));
+  assertThat(methodDescription.getParameterTypes().size(),is(1));
+  assertThat(methodDescription.getParameterTypes(),is(Arrays.asList(parameterType)));
+  assertThat(methodDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
+  assertThat(methodDescription.getName(),is(BAR));
 }

@@ -1,10 +1,13 @@
 {
-  String name=String.format("%s$%s$%d",targetMethod.getInternalName(),PREFIX,Math.abs(random.nextInt()));
-  instrumentedType=instrumentedType.withMethod(name,targetMethod.getReturnType(),targetMethod.getParameterTypes(),(targetMethod.isStatic() ? Opcodes.ACC_STATIC : 0) | Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL);
-  MethodDescription proxyMethod=instrumentedType.getDeclaredMethods().filter(named(name)).getOnly();
-  if (targetMethodToProxyMethod.put(targetMethod,proxyMethod) != null) {
-    proxyMethodToTargetMethod.put(proxyMethod,targetMethod);
-    proxyMethods.add(proxyMethod);
+  MethodDescription proxyMethod=knownTargetMethodsToProxyMethod.get(targetMethod);
+  if (proxyMethod != null) {
+    return proxyMethod;
   }
+  String name=String.format("%s$%s$%d",targetMethod.getInternalName(),prefix,Math.abs(random.nextInt()));
+  instrumentedType=instrumentedType.withMethod(name,targetMethod.getReturnType(),targetMethod.getParameterTypes(),(targetMethod.isStatic() ? Opcodes.ACC_STATIC : 0) | Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL);
+  proxyMethod=instrumentedType.getDeclaredMethods().filter(named(name)).getOnly();
+  knownTargetMethodsToProxyMethod.put(targetMethod,proxyMethod);
+  registeredProxyMethodToTargetMethod.put(proxyMethod,targetMethod);
+  orderedProxyMethods.add(proxyMethod);
   return proxyMethod;
 }

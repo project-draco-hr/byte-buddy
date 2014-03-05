@@ -1,3 +1,0 @@
-{
-  assertThat(instrumentedType.getSupertype().getName(),is(Object.class.getName()));
-}

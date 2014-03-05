@@ -1,0 +1,3 @@
+{
+  return "SubclassInstrumentationContextDelegate{" + "instrumentedType=" + instrumentedType + ", prefix='"+ prefix+ '\''+ ", random="+ random+ ", knownTargetMethodsToProxyMethod="+ knownTargetMethodsToProxyMethod+ '}';
+}

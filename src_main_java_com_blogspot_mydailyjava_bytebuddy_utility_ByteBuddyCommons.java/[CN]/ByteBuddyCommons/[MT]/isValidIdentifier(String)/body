@@ -1,17 +1,17 @@
 {
-  if (JAVA_KEYWORDS.contains(nonNull(methodName))) {
-    throw new IllegalArgumentException("Keyword cannot be used as identifier: " + methodName);
+  if (JAVA_KEYWORDS.contains(nonNull(identifier))) {
+    throw new IllegalArgumentException("Keyword cannot be used as Java identifier: " + identifier);
   }
-  if (methodName.isEmpty()) {
-    throw new IllegalArgumentException("An empty string is not a valid identifier");
+  if (identifier.isEmpty()) {
+    throw new IllegalArgumentException("An empty string is not a valid Java identifier");
   }
-  if (!Character.isJavaIdentifierStart(methodName.charAt(0))) {
-    throw new IllegalArgumentException("Not a valid identifier: " + methodName);
+  if (!Character.isJavaIdentifierStart(identifier.charAt(0))) {
+    throw new IllegalArgumentException("Not a valid Java identifier: " + identifier);
   }
-  for (  char character : methodName.toCharArray()) {
+  for (  char character : identifier.toCharArray()) {
     if (!Character.isJavaIdentifierPart(character)) {
-      throw new IllegalArgumentException("Not a valid identifier: " + methodName);
+      throw new IllegalArgumentException("Not a valid Java identifier: " + identifier);
     }
   }
-  return methodName;
+  return identifier;
 }

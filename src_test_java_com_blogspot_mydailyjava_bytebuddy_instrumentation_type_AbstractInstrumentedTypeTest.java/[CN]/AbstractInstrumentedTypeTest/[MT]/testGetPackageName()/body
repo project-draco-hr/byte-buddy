@@ -1,3 +1,0 @@
-{
-  assertThat(instrumentedType.getPackageName().length(),is(0));
-}

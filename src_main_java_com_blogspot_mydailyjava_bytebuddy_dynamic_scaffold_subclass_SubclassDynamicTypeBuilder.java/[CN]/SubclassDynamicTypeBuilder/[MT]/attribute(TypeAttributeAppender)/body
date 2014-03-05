@@ -1,3 +1,0 @@
-{
-  return new SubclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,superType,interfaceTypes,modifiers,new TypeAttributeAppender.Compound(this.attributeAppender,nonNull(attributeAppender)),ignoredMethods,classVisitorWrapperChain,fieldRegistry,methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
-}

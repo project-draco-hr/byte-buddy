@@ -1,7 +1,3 @@
 {
-  this.instrumentedType=instrumentedType;
-  this.random=new Random();
-  proxyMethods=new ArrayList<MethodDescription>();
-  targetMethodToProxyMethod=new HashMap<MethodDescription,MethodDescription>();
-  proxyMethodToTargetMethod=new HashMap<MethodDescription,MethodDescription>();
+  this(instrumentedType,DEFAULT_PREFIX);
 }
