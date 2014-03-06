@@ -1,5 +1,0 @@
-{
-  this.instrumentedType=instrumentedType;
-  this.entries=entries;
-  this.fallback=fallback;
-}

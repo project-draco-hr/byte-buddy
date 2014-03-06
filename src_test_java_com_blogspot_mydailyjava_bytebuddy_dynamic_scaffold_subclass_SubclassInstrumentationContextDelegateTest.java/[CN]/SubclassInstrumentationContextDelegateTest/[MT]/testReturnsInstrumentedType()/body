@@ -1,3 +1,0 @@
-{
-  assertThat(delegate.getInstrumentedType(),is(instrumentedType));
-}

@@ -1,5 +1,0 @@
-{
-  List<Entry> additionalEntries=new LinkedList<Entry>();
-  instrumentedType=prepareInstrumentedType(instrumentedType,additionalEntries);
-  return new Compiled(instrumentedType,compileEntries(additionalEntries,instrumentedType),fallback);
-}

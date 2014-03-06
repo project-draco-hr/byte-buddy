@@ -1,0 +1,11 @@
+{
+  if (appendsCode && (methodDescription.isAbstract() || methodDescription.isNative())) {
+    return methodDescription.getModifiers() & ~MethodManifestation.ABSTRACTION_MASK;
+  }
+ else   if (!appendsCode && !methodDescription.isAbstract() && !methodDescription.isNative()) {
+    return methodDescription.getModifiers() | Opcodes.ACC_ABSTRACT;
+  }
+ else {
+    return methodDescription.getModifiers();
+  }
+}

@@ -1,5 +1,0 @@
-{
-  this.methodMatcher=methodMatcher;
-  this.byteCodeAppender=byteCodeAppender;
-  this.attributeAppender=attributeAppender;
-}

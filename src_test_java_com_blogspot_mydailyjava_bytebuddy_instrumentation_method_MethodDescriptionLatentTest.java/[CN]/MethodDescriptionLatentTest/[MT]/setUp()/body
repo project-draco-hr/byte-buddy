@@ -1,0 +1,9 @@
+{
+  when(declaringType.getName()).thenReturn(BAR);
+  when(declaringType.getInternalName()).thenReturn(BARS);
+  when(returnType.getDescriptor()).thenReturn(QUX);
+  when(parameterType.getDescriptor()).thenReturn(BAZ);
+  when(parameterType.getStackSize()).thenReturn(StackSize.DOUBLE);
+  latentMethod=new MethodDescription.Latent(FOO,declaringType,returnType,Arrays.asList(parameterType),Opcodes.ACC_PUBLIC);
+  latentConstructor=new MethodDescription.Latent(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,declaringType,returnType,Arrays.asList(parameterType),Opcodes.ACC_PUBLIC);
+}

@@ -1,0 +1,3 @@
+InstrumentedType instrumentedType
+Instrumentation.Context instrumentationContext
+ClassFormatVersion classFormatVersion

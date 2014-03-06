@@ -1,0 +1,5 @@
+{
+  assertThat(latentMethod.equals(latentConstructor),is(false));
+  assertThat(latentMethod.equals(latentMethod),is(true));
+  assertThat(latentConstructor.equals(latentConstructor),is(true));
+}

@@ -1,3 +1,0 @@
-{
-  return matchedMethods.filter(describedBy(methodDescription)).size() == 1;
-}

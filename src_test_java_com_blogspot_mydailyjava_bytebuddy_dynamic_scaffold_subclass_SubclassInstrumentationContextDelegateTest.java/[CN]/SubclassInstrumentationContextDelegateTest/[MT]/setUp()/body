@@ -1,13 +1,5 @@
 {
   delegate=new SubclassInstrumentationContextDelegate(instrumentedType,FOO);
-  when(instrumentedType.withMethod(any(String.class),any(TypeDescription.class),any(List.class),anyInt())).thenReturn(firstAlteration);
-  when(firstAlteration.getDeclaredMethods()).thenReturn(firstAlterationList);
-  when(firstAlterationList.filter(any(MethodMatcher.class))).thenReturn(firstAlterationListFiltered);
-  when(firstAlterationListFiltered.getOnly()).thenReturn(firstMethodProxy);
-  when(firstAlteration.withMethod(any(String.class),any(TypeDescription.class),any(List.class),anyInt())).thenReturn(secondAlteration);
-  when(secondAlteration.getDeclaredMethods()).thenReturn(secondAlterationList);
-  when(secondAlterationList.filter(any(MethodMatcher.class))).thenReturn(secondAlterationListFiltered);
-  when(secondAlterationListFiltered.getOnly()).thenReturn(secondMethodProxy);
   when(firstMethod.getReturnType()).thenReturn(firstMethodReturnType);
   when(firstMethod.getParameterTypes()).thenReturn(firstMethodParameters);
   when(secondMethod.getReturnType()).thenReturn(secondMethodReturnType);

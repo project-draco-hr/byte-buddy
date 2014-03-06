@@ -1,0 +1,4 @@
+{
+  assertThat(latentMethod.isOverridable(),is(true));
+  assertThat(latentConstructor.isOverridable(),is(false));
+}

@@ -1,3 +1,0 @@
-{
-  matchedMethods=afterMethods.subList(beforeMethods.size(),afterMethods.size());
-}
