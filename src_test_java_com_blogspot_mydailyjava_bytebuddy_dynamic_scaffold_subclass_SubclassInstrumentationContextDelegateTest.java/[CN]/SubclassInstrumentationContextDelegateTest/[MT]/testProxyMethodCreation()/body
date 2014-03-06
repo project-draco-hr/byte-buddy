@@ -1,0 +1,29 @@
+{
+  TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
+  when(instrumentedType.getModifiers()).thenReturn(Opcodes.ACC_PUBLIC);
+  TypeInitializer typeInitializer=mock(TypeInitializer.class);
+  when(instrumentedType.getTypeInitializer()).thenReturn(typeInitializer);
+  when(instrumentedType.getName()).thenReturn(BAR);
+  when(instrumentedType.getInternalName()).thenReturn(BAR);
+  when(instrumentedType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(instrumentedType.getSupertype()).thenReturn(objectType);
+  TypeList interfaceTypes=mock(TypeList.class);
+  when(instrumentedType.getInterfaces()).thenReturn(interfaceTypes);
+  Instrumentation.Context instrumentationContext=mock(Instrumentation.Context.class);
+  MethodDescription proxyMethod=delegate.requireProxyMethodFor(objectType.getDeclaredMethods().filter(named(TO_STRING)).getOnly());
+  TypeWriter.InGeneralPhase<?> typeWriter=new TypeWriter.Builder<Object>(instrumentedType,instrumentationContext,ClassFormatVersion.forCurrentJavaVersion()).build(new ClassVisitorWrapper.Chain());
+  Class<?> loaded=typeWriter.methods().write(delegate.getProxiedMethods(),delegate).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(loaded.getName(),is(BAR));
+  assertThat(loaded.getDeclaredFields().length,is(0));
+  assertThat(loaded.getDeclaredMethods().length,is(1));
+  assertThat(loaded.getDeclaredConstructors().length,is(0));
+  Constructor<?> constructor=ReflectionFactory.getReflectionFactory().newConstructorForSerialization(loaded,Object.class.getDeclaredConstructor());
+  Object instance=constructor.newInstance();
+  Method loadedProxyMethod=loaded.getDeclaredMethods()[0];
+  loadedProxyMethod.setAccessible(true);
+  assertThat((String)loadedProxyMethod.invoke(instance),is(instance.toString()));
+  assertThat(loadedProxyMethod.getName(),is(proxyMethod.getName()));
+  assertThat(loadedProxyMethod.getModifiers(),is(proxyMethod.getModifiers()));
+  verify(instrumentationContext).getRegisteredAuxiliaryTypes();
+  verifyNoMoreInteractions(instrumentationContext);
+}
