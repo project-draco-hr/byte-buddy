@@ -4,5 +4,5 @@
   Instrumentation.Context instrumentationContext=new Instrumentation.Context.Default(contextDelegate,contextDelegate);
   MethodRegistry.Compiled compiledMethodRegistry=methodRegistry.compile(instrumentedType,MethodRegistry.Compiled.Entry.Skip.INSTANCE);
   instrumentedType=compiledMethodRegistry.getInstrumentedType();
-  return new TypeWriter.Builder<T>(instrumentedType,instrumentationContext,classFormatVersion).build(classVisitorWrapperChain).attributeType(attributeAppender).fields().write(instrumentedType.getDeclaredFields(),fieldRegistry.compile(instrumentedType,TypeWriter.FieldPool.Entry.NoOp.INSTANCE)).methods().write(instrumentedType.getDeclaredMethods().filter(not(ignoredMethods).and(isOverridable())),compiledMethodRegistry).write(contextDelegate.getProxiedMethods(),contextDelegate).make();
+  return new TypeWriter.Builder<T>(instrumentedType,instrumentationContext,classFormatVersion).build(classVisitorWrapperChain).attributeType(attributeAppender).fields().write(instrumentedType.getDeclaredFields(),fieldRegistry.compile(instrumentedType,TypeWriter.FieldPool.Entry.NoOp.INSTANCE)).methods().write(instrumentedType.getDeclaredMethods().filter(not(ignoredMethods).and(isOverridable().or(isDeclaredBy(instrumentedType)))),compiledMethodRegistry).write(contextDelegate.getProxiedMethods(),contextDelegate).make();
 }

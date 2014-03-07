@@ -5,7 +5,7 @@
       return this;
     }
  else {
-      throw new IllegalArgumentException("Cannot invoke " + methodDescription + " on any other type");
+      throw new IllegalArgumentException("Cannot apply special invocation for " + methodDescription + " on "+ invocationTarget);
     }
   }
   if (invocationTarget.isInterface()) {

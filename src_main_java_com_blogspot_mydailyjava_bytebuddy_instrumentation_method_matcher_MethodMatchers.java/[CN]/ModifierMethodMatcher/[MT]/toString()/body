@@ -1,0 +1,3 @@
+{
+  return "ModifierMethodMatcher{modifiers=" + modifiers + '}';
+}

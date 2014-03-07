@@ -1,0 +1,3 @@
+{
+  return "DeclaringTypeMethodMatcher{declaringType=" + declaringType + '}';
+}

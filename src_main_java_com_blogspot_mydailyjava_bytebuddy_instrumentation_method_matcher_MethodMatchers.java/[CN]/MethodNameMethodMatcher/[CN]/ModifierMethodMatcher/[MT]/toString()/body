@@ -1,3 +1,0 @@
-{
-  return "ModifierMethodMatcher{modifierMask=" + modifierMask + '}';
-}

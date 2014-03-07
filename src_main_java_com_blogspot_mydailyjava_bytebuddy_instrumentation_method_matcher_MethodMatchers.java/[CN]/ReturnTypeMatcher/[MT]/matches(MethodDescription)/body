@@ -1,0 +1,3 @@
+{
+  return methodDescription.getReturnType().equals(returnType);
+}

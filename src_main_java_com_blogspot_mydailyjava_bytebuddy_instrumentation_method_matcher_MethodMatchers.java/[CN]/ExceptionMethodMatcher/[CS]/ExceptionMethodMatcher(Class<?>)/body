@@ -1,0 +1,3 @@
+{
+  this.exceptionType=new TypeDescription.ForLoadedType(exceptionType);
+}

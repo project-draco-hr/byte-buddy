@@ -1,0 +1,3 @@
+{
+  return methodDescription.getInternalName().equals(this.methodDescription.getInternalName()) && methodDescription.getReturnType().equals(this.methodDescription.getReturnType()) && methodDescription.getParameterTypes().equals(this.methodDescription.getParameterTypes());
+}
