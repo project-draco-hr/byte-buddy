@@ -1,7 +1,7 @@
 {
   MethodDescription proxiedMethod=methodProxyFactory.requireProxyMethodFor(this.proxiedMethod);
   int fieldIndex=0;
-  InstrumentedType proxy=new LoadedSuperclassTypeInstrumentation(ClassFormatVersion.forCurrentJavaVersion(),Object.class,Arrays.<Class<?>>asList(Runnable.class,Callable.class),Opcodes.ACC_PUBLIC,new NamingStrategy.Fixed(auxiliaryTypeName));
+  InstrumentedType proxy=new LoadedSuperclassInstumentedType(ClassFormatVersion.forCurrentJavaVersion(),Object.class,Arrays.<Class<?>>asList(Runnable.class,Callable.class),Opcodes.ACC_PUBLIC,new NamingStrategy.Fixed(auxiliaryTypeName));
   List<FieldAccess.Defined> fieldAccess=new LinkedList<FieldAccess.Defined>();
   List<TypeDescription> fieldTypes=new ArrayList<TypeDescription>();
   if (!proxiedMethod.isStatic()) {

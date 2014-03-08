@@ -1,0 +1,20 @@
+{
+  when(instrumentation.prepare(any(InstrumentedType.class))).thenAnswer(new Answer<InstrumentedType>(){
+    @Override public InstrumentedType answer(    InvocationOnMock invocation) throws Throwable {
+      return (InstrumentedType)invocation.getArguments()[0];
+    }
+  }
+);
+  when(instrumentation.appender(any(TypeDescription.class))).thenReturn(byteCodeAppender);
+  when(byteCodeAppender.appendsCode()).thenReturn(true);
+  when(byteCodeAppender.apply(any(MethodVisitor.class),any(Instrumentation.Context.class),any(MethodDescription.class))).thenAnswer(new Answer<ByteCodeAppender.Size>(){
+    @Override public ByteCodeAppender.Size answer(    InvocationOnMock invocation) throws Throwable {
+      MethodVisitor methodVisitor=(MethodVisitor)invocation.getArguments()[0];
+      MethodDescription methodDescription=(MethodDescription)invocation.getArguments()[2];
+      methodVisitor.visitInsn(Opcodes.ICONST_0);
+      methodVisitor.visitInsn(Opcodes.IRETURN);
+      return new ByteCodeAppender.Size(1,methodDescription.getStackSize());
+    }
+  }
+);
+}

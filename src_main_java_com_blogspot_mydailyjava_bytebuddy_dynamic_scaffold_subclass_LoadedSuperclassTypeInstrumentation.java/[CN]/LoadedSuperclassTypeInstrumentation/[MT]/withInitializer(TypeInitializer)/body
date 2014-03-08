@@ -1,3 +1,0 @@
-{
-  return new LoadedSuperclassTypeInstrumentation(classFormatVersion,superClass,interfaces,modifiers,name,fieldDescriptions,methodDescriptions,new TypeInitializer.Compound(this.typeInitializer,typeInitializer));
-}

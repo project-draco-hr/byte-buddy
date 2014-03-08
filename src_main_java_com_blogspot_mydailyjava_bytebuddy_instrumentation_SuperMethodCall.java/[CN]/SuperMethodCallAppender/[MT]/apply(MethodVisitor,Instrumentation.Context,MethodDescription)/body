@@ -1,4 +1,15 @@
 {
-  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadAll(instrumentedMethod),MethodInvocation.invoke(instrumentedMethod).special(targetType),MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  MethodDescription targetMethod;
+  if (instrumentedMethod.isConstructor()) {
+    MethodList methodList=targetType.getDeclaredMethods().filter(hasSameSignatureAs(instrumentedMethod));
+    if (methodList.size() == 0) {
+      throw new IllegalArgumentException("There is no super constructor resembling " + instrumentedMethod);
+    }
+    targetMethod=methodList.getOnly();
+  }
+ else {
+    targetMethod=instrumentedMethod;
+  }
+  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadAll(instrumentedMethod),MethodInvocation.invoke(targetMethod).special(targetType),MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }

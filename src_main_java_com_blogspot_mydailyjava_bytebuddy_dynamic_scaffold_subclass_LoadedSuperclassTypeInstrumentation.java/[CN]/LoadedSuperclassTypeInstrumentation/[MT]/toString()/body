@@ -1,3 +1,0 @@
-{
-  return "LoadedSuperclassTypeInstrumentation{" + "classFormatVersion=" + classFormatVersion + ", superClass="+ superClass+ ", interfaces="+ interfaces+ ", modifiers="+ modifiers+ ", name='"+ name+ '\''+ '}';
-}
