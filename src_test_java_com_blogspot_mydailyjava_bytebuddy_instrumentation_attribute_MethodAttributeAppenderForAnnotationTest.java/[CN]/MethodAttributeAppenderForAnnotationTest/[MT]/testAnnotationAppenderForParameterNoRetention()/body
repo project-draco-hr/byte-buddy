@@ -1,5 +1,5 @@
 {
-  new MethodAttributeAppender.ForAnnotation(new Qux.Instance(),PARAMETER_INDEX).apply(methodVisitor,methodDescription);
+  new MethodAttributeAppender.ForAnnotation(PARAMETER_INDEX,new Qux.Instance()).apply(methodVisitor,methodDescription);
   verifyZeroInteractions(methodVisitor);
   verify(methodDescription).getParameterTypes();
   verifyNoMoreInteractions(methodDescription);

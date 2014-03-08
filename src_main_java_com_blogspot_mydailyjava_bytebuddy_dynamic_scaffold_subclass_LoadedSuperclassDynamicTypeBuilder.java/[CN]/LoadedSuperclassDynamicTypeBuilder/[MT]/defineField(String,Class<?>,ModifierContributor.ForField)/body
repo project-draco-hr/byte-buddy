@@ -1,4 +1,4 @@
 {
-  FieldToken fieldToken=new FieldToken(isValidIdentifier(name),nonNull(fieldType),resolveModifiers(InstrumentedType.FIELD_MODIFIER_MASK,nonNull(modifier)));
+  FieldToken fieldToken=new FieldToken(isValidIdentifier(name),nonNull(fieldType),resolveModifierContributors(FIELD_MODIFIER_MASK,nonNull(modifier)));
   return new SubclassFieldAnnotationTarget<T>(fieldToken,defaultFieldAttributeAppenderFactory);
 }
