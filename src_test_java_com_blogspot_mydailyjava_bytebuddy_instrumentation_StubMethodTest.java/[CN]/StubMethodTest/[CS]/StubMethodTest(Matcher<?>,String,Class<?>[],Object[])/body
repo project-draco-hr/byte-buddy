@@ -1,0 +1,6 @@
+{
+  this.matcher=matcher;
+  this.methodName=methodName;
+  this.methodParameterTypes=methodParameterTypes;
+  this.methodArguments=methodArguments;
+}

@@ -1,0 +1,4 @@
+{
+  register(LONG_METHOD);
+  return LONG_VALUE;
+}

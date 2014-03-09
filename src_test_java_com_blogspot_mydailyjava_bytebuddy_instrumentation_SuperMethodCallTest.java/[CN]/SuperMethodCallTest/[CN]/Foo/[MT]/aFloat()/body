@@ -1,0 +1,4 @@
+{
+  register(FLOAT_METHOD);
+  return FLOAT_VALUE;
+}

@@ -1,0 +1,4 @@
+{
+  register(DOUBLE_METHOD);
+  return DOUBLE_VALUE;
+}

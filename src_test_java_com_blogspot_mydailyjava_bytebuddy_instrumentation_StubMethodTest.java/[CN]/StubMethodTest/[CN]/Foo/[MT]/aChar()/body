@@ -1,0 +1,4 @@
+{
+  register(CHAR_METHOD);
+  return CHAR_VALUE;
+}

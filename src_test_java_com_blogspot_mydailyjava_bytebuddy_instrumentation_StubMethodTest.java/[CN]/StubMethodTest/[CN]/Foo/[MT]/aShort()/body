@@ -1,0 +1,4 @@
+{
+  register(SHORT_METHOD);
+  return SHORT_VALUE;
+}

@@ -1,0 +1,4 @@
+{
+  register(INT_METHOD);
+  return INT_VALUE;
+}

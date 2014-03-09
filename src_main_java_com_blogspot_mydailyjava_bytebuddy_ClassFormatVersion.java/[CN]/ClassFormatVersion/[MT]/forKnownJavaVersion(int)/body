@@ -1,0 +1,22 @@
+{
+switch (javaVersion) {
+case 1:
+    return JAVA_V1;
+case 2:
+  return JAVA_V2;
+case 3:
+return JAVA_V3;
+case 4:
+return JAVA_V4;
+case 5:
+return JAVA_V5;
+case 6:
+return JAVA_V6;
+case 7:
+return JAVA_V7;
+case 8:
+return JAVA_V8;
+default :
+throw new IllegalArgumentException("Unknown Java version: " + javaVersion);
+}
+}

@@ -1,0 +1,4 @@
+{
+  register(OBJECT_METHOD);
+  return STRING_VALUE;
+}

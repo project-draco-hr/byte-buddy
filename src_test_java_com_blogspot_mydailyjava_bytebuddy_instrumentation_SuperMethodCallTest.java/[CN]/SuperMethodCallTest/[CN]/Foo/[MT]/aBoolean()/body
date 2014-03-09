@@ -1,0 +1,4 @@
+{
+  register(BOOLEAN_METHOD);
+  return BOOLEAN_VALUE;
+}

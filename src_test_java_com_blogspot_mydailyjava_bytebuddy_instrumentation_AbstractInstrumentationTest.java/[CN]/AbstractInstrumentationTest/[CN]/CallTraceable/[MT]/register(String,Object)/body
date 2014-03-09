@@ -1,0 +1,3 @@
+{
+  methodCalls.add(new MethodCall(name,arguments));
+}

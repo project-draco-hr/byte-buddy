@@ -1,0 +1,4 @@
+{
+  assertThat(SuperMethodCall.INSTANCE.prepare(instrumentedType),is(instrumentedType));
+  verifyZeroInteractions(instrumentedType);
+}

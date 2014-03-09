@@ -1,0 +1,4 @@
+{
+  register(BYTE_METHOD);
+  return BYTE_VALUE;
+}

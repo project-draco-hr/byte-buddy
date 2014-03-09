@@ -1,0 +1,4 @@
+{
+  assertThat(StubMethod.INSTANCE.prepare(instrumentedType),is(instrumentedType));
+  verifyZeroInteractions(instrumentedType);
+}

@@ -1,0 +1,5 @@
+{
+  assertThat(methodCalls.size(),is(1));
+  assertThat(methodCalls.get(0).name,is(name));
+  assertThat(methodCalls.get(0).arguments,equalTo(arguments));
+}
