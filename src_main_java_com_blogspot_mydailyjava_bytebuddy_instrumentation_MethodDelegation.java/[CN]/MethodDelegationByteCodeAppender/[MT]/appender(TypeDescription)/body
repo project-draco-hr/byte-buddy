@@ -1,3 +1,7 @@
 {
+  MethodList methodList=this.methodList.filter(isVisibleFromPackage(instrumentedType.getPackageName()));
+  if (methodList.size() == 0) {
+    throw new IllegalStateException("No bindable method is visible to " + instrumentedType);
+  }
   return new MethodDelegationByteCodeAppender(instrumentationDelegate.getPreparingStackAssignment(instrumentedType),instrumentedType,methodList,new MethodDelegationBinder.Processor(new TargetMethodAnnotationDrivenBinder(parameterBinders,defaultsProvider,assigner,instrumentationDelegate.getMethodInvoker(instrumentedType)),ambiguityResolver));
 }

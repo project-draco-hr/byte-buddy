@@ -1,0 +1,3 @@
+{
+  return (byte)(b * BYTE_MULTIPLICATOR);
+}

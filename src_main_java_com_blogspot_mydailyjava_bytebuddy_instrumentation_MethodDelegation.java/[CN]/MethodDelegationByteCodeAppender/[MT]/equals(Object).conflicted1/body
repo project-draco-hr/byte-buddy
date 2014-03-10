@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  MethodDelegation that=(MethodDelegation)other;
+  return ambiguityResolver.equals(that.ambiguityResolver) && assigner.equals(that.assigner) && defaultsProvider.equals(that.defaultsProvider)&& instrumentationDelegate.equals(that.instrumentationDelegate)&& methodList.equals(that.methodList)&& parameterBinders.equals(that.parameterBinders);
+}

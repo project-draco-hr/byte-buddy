@@ -1,0 +1,3 @@
+{
+  return "MethodDelegationByteCodeAppender{" + "preparingStackAssignment=" + preparingStackAssignment + ", instrumentedType="+ instrumentedType+ ", targetMethods="+ targetMethods+ ", processor="+ processor+ '}';
+}

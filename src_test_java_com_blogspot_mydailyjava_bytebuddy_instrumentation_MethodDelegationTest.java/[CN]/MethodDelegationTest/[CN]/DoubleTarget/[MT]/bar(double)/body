@@ -1,0 +1,3 @@
+{
+  return d * DOUBLE_MULTIPLICATOR;
+}

@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  when(leftMethod.getParameterTypes()).thenReturn(leftList);
+  when(rightMethod.getParameterTypes()).thenReturn(rightList);
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(ParameterLengthResolver.INSTANCE.resolve(source,left,right),is(MethodDelegationBinder.AmbiguityResolver.Resolution.AMBIGUOUS));
+}

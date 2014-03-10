@@ -1,0 +1,4 @@
+{
+  when(leftList.size()).thenReturn(1);
+  assertThat(ParameterLengthResolver.INSTANCE.resolve(source,left,right),is(MethodDelegationBinder.AmbiguityResolver.Resolution.LEFT));
+}
