@@ -1,0 +1,4 @@
+{
+  register(BAR);
+  return BYTE_DEFAULT_VALUE;
+}

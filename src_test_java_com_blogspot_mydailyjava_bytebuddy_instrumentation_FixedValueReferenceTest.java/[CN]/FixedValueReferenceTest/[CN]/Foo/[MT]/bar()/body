@@ -1,0 +1,4 @@
+{
+  register(BAR);
+  return new Bar();
+}

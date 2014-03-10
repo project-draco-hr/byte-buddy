@@ -1,0 +1,4 @@
+{
+  this.fixedValue=fixedValue;
+  this.helperClass=helperClass;
+}

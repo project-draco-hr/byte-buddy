@@ -1,0 +1,4 @@
+{
+  register(BAR);
+  return mock(Runnable.class);
+}

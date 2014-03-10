@@ -1,0 +1,4 @@
+{
+  register(BAR);
+  return STRING_DEFAULT_VALUE;
+}

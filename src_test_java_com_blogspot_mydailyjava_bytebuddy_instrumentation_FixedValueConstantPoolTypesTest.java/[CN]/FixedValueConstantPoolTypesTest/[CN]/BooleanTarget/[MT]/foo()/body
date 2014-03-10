@@ -1,0 +1,4 @@
+{
+  register(FOO);
+  return BOOLEAN_DEFAULT_VALUE;
+}

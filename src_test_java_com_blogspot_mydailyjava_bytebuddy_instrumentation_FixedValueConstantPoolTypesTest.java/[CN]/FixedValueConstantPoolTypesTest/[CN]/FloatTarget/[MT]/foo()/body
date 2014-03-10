@@ -1,0 +1,4 @@
+{
+  register(FOO);
+  return FLOAT_DEFAULT_VALUE;
+}

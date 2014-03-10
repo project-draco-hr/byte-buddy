@@ -1,0 +1,3 @@
+{
+  return "FixedValue.ForStaticField{" + "fieldName='" + fieldName + '\''+ ", fixedValue="+ fixedValue+ ", fieldType="+ fieldType+ '}';
+}

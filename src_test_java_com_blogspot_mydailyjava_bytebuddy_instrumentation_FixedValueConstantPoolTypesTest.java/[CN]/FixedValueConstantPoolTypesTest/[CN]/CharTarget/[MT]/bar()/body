@@ -1,0 +1,4 @@
+{
+  register(BAR);
+  return CHAR_DEFAULT_VALUE;
+}

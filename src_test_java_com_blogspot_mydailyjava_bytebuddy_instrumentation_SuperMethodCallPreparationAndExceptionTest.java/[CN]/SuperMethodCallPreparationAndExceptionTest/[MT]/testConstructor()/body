@@ -1,0 +1,7 @@
+{
+  when(typeDescription.getSupertype()).thenReturn(superType);
+  when(methodDescription.isConstructor()).thenReturn(true);
+  when(superType.getDeclaredMethods()).thenReturn(superTypeMethods);
+  when(superTypeMethods.filter(any(MethodMatcher.class))).thenReturn(superTypeMethods);
+  SuperMethodCall.INSTANCE.appender(typeDescription).apply(methodVisitor,instrumentationContext,methodDescription);
+}

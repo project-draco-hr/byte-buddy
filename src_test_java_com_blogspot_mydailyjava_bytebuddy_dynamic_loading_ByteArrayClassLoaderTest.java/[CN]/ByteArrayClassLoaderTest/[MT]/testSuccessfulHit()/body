@@ -1,4 +1,3 @@
 {
   assertThat(classLoader.loadClass(Foo.class.getName()).getClassLoader(),is(classLoader));
-  verify(values).get(Foo.class.getName());
 }

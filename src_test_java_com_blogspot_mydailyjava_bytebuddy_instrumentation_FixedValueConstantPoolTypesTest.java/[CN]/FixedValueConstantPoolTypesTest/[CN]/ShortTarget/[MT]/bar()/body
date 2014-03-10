@@ -1,0 +1,4 @@
+{
+  register(BAR);
+  return SHORT_DEFAULT_VALUE;
+}

@@ -1,0 +1,12 @@
+{
+  when(typeDescription.getSupertype()).thenReturn(superType);
+  when(methodDescription.getParameterTypes()).thenReturn(methodParameters);
+  when(methodParameters.iterator()).thenReturn(Arrays.<TypeDescription>asList().iterator());
+  when(methodDescription.getReturnType()).thenReturn(returnType);
+  when(methodDescription.getDeclaringType()).thenReturn(declaringType);
+  when(declaringType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(returnType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(superType.getDeclaredMethods()).thenReturn(superTypeMethods);
+  when(superTypeMethods.filter(any(MethodMatcher.class))).thenReturn(superTypeMethods);
+  SuperMethodCall.INSTANCE.appender(typeDescription).apply(methodVisitor,instrumentationContext,methodDescription);
+}

@@ -1,0 +1,4 @@
+{
+  register(BAR);
+  return LONG_DEFAULT_VALUE;
+}

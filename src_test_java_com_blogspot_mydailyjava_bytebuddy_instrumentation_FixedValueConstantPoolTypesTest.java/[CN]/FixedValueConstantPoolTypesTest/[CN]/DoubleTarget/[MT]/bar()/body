@@ -1,0 +1,4 @@
+{
+  register(BAR);
+  return DOUBLE_DEFAULT_VALUE;
+}

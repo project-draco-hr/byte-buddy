@@ -1,6 +1,6 @@
 {
   if (fixedValue == null) {
-    return new ForPoolValue(NullConstant.INSTANCE,Object.class,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(NullConstant.INSTANCE,Object.class,defaultAssigner(),true);
   }
   Class<?> type=fixedValue.getClass();
   if (type == String.class) {
