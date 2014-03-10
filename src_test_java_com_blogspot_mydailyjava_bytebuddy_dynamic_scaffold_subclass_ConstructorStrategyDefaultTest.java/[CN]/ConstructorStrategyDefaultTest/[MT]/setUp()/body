@@ -1,3 +1,4 @@
 {
   when(methodRegistry.append(any(MethodRegistry.LatentMethodMatcher.class),any(Instrumentation.class),any(MethodAttributeAppender.Factory.class))).thenReturn(methodRegistry);
+  objectType=new TypeDescription.ForLoadedType(Object.class);
 }

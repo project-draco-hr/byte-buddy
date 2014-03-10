@@ -1,5 +1,5 @@
 {
-  doReturn(Object.class).when(unnamedType).getSuperClass();
+  when(unnamedType.getSuperClass()).thenReturn(new TypeDescription.ForLoadedType(Object.class));
   NamingStrategy namingStrategy=new NamingStrategy.SuffixingRandom(FOO,BAR);
   assertThat(namingStrategy.getName(unnamedType),startsWith(BAR + "." + Object.class.getName()+ "$$"+ FOO+ "$$"));
   verify(unnamedType,atLeast(1)).getSuperClass();

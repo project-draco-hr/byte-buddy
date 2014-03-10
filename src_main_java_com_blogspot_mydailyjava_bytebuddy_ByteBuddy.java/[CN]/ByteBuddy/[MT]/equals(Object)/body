@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ByteBuddy byteBuddy=(ByteBuddy)other;
+  return classFormatVersion.equals(byteBuddy.classFormatVersion) && classVisitorWrapperChain.equals(byteBuddy.classVisitorWrapperChain) && defaultFieldAttributeAppenderFactory.equals(byteBuddy.defaultFieldAttributeAppenderFactory)&& defaultMethodAttributeAppenderFactory.equals(byteBuddy.defaultMethodAttributeAppenderFactory)&& ignoredMethods.equals(byteBuddy.ignoredMethods)&& interfaceTypes.equals(byteBuddy.interfaceTypes)&& methodRegistry.equals(byteBuddy.methodRegistry)&& modifiers.equals(byteBuddy.modifiers)&& namingStrategy.equals(byteBuddy.namingStrategy)&& typeAttributeAppender.equals(byteBuddy.typeAttributeAppender);
+}

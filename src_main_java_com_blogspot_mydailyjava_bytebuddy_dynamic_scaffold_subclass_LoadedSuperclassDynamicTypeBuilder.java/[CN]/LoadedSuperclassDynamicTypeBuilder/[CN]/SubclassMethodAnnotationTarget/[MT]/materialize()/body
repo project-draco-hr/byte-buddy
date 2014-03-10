@@ -1,3 +1,0 @@
-{
-  return new LoadedSuperclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,superType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,classVisitorWrapperChain,fieldRegistry,methodRegistry.prepend(latentMethodMatcher,instrumentation,attributeAppenderFactory),defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
-}

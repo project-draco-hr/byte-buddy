@@ -1,3 +1,4 @@
 {
-  assertEquals(Object.class,isImplementable(Object.class));
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(Object.class);
+  assertThat(isImplementable(typeDescription),is(typeDescription));
 }

@@ -1,0 +1,9 @@
+{
+  TypeDescription actualSuperType=isImplementable(superType);
+  List<TypeDescription> interfaceTypes=this.interfaceTypes;
+  if (nonNull(superType).isInterface()) {
+    actualSuperType=new TypeDescription.ForLoadedType(Object.class);
+    interfaceTypes=join(superType,interfaceTypes);
+  }
+  return new SubclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,actualSuperType,interfaceTypes,modifiers.resolve(superType.getModifiers()),typeAttributeAppender.resolve(TypeAttributeAppender.NoOp.INSTANCE),ignoredMethods,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(constructorStrategy));
+}

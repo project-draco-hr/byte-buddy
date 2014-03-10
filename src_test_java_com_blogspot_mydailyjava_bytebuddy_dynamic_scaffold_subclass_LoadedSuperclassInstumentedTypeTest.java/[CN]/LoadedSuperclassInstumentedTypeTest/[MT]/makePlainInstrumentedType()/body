@@ -1,3 +1,0 @@
-{
-  return new LoadedSuperclassInstumentedType(ClassFormatVersion.forCurrentJavaVersion(),Object.class,Collections.<Class<?>>singletonList(Serializable.class),Opcodes.ACC_PUBLIC,new NamingStrategy.Fixed(FOOBAR));
-}

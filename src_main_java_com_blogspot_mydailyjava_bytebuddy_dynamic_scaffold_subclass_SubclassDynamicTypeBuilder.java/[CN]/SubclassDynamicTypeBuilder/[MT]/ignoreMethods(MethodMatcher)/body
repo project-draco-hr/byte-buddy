@@ -1,0 +1,3 @@
+{
+  return new SubclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,superType,interfaceTypes,modifiers,attributeAppender,new JunctionMethodMatcher.Conjunction(this.ignoredMethods,nonNull(ignoredMethods)),classVisitorWrapperChain,fieldRegistry,methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
+}

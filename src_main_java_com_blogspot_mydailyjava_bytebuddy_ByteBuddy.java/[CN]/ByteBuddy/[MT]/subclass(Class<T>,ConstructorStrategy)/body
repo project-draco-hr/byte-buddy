@@ -1,9 +1,3 @@
 {
-  Class<?> actualSuperType=superType;
-  List<Class<?>> interfaceTypes=this.interfaceTypes;
-  if (nonNull(superType).isInterface()) {
-    actualSuperType=Object.class;
-    interfaceTypes=join(superType,interfaceTypes);
-  }
-  return new LoadedSuperclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,actualSuperType,interfaceTypes,modifiers.resolve(superType.getModifiers()),typeAttributeAppender.resolve(TypeAttributeAppender.NoOp.INSTANCE),ignoredMethods,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(constructorStrategy));
+  return subclass(new TypeDescription.ForLoadedType(superType),constructorStrategy);
 }

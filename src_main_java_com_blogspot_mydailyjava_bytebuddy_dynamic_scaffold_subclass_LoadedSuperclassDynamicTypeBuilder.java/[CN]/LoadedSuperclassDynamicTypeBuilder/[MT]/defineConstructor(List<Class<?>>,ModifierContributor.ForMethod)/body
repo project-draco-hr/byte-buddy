@@ -1,4 +1,0 @@
-{
-  MethodToken methodToken=new MethodToken(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,void.class,nonNull(parameterTypes),resolveModifierContributors(METHOD_MODIFIER_MASK,nonNull(modifier)));
-  return new SubclassMatchedMethodInterception<T>(methodToken,join(methodTokens,methodToken));
-}

@@ -1,3 +1,0 @@
-{
-  return new MethodToken(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,void.class,Arrays.asList(constructor[index].getParameterTypes()),constructor[index].getModifiers());
-}

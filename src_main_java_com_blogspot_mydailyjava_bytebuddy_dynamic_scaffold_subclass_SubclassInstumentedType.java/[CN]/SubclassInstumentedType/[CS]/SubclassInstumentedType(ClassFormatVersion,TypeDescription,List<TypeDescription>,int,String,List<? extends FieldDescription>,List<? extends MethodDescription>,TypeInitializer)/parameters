@@ -1,0 +1,8 @@
+ClassFormatVersion classFormatVersion
+TypeDescription superClass
+List<TypeDescription> interfaces
+int modifiers
+String name
+List<? extends FieldDescription> fieldDescriptions
+List<? extends MethodDescription> methodDescriptions
+TypeInitializer typeInitializer

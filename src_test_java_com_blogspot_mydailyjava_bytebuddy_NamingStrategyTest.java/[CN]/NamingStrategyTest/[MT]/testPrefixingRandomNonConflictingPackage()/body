@@ -1,5 +1,5 @@
 {
-  doReturn(MethodVisitor.class).when(unnamedType).getSuperClass();
+  when(unnamedType.getSuperClass()).thenReturn(new TypeDescription.ForLoadedType(MethodVisitor.class));
   NamingStrategy namingStrategy=new NamingStrategy.SuffixingRandom(FOO);
   assertThat(namingStrategy.getName(unnamedType),startsWith(MethodVisitor.class.getName() + "$$" + FOO+ "$$"));
   verify(unnamedType,atLeast(1)).getSuperClass();

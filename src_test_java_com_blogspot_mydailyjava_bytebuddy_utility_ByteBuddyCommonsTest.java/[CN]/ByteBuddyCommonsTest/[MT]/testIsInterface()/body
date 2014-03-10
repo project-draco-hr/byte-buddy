@@ -1,3 +1,4 @@
 {
-  assertEquals(Runnable.class,isInterface(Runnable.class));
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(Runnable.class);
+  assertThat(isInterface(typeDescription),is(typeDescription));
 }

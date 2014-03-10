@@ -1,0 +1,3 @@
+{
+  return "ByteBuddy{" + "classFormatVersion=" + classFormatVersion + ", namingStrategy="+ namingStrategy+ ", interfaceTypes="+ interfaceTypes+ ", ignoredMethods="+ ignoredMethods+ ", classVisitorWrapperChain="+ classVisitorWrapperChain+ ", methodRegistry="+ methodRegistry+ ", modifiers="+ modifiers+ ", typeAttributeAppender="+ typeAttributeAppender+ ", defaultFieldAttributeAppenderFactory="+ defaultFieldAttributeAppenderFactory+ ", defaultMethodAttributeAppenderFactory="+ defaultMethodAttributeAppenderFactory+ '}';
+}

@@ -1,0 +1,7 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  if (!super.equals(other))   return false;
+  MethodAnnotationTarget that=(MethodAnnotationTarget)other;
+  return attributeAppenderFactory.equals(that.attributeAppenderFactory) && instrumentation.equals(that.instrumentation) && methodMatcher.equals(that.methodMatcher);
+}
