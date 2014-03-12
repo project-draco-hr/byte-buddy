@@ -1,0 +1,3 @@
+{
+  return this == o || !(o == null || getClass() != o.getClass()) && getByteBuddy().equals(((MatchedMethodInterception)o).getByteBuddy()) && methodMatcher.equals(((MatchedMethodInterception)o).methodMatcher);
+}

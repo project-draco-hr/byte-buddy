@@ -10,7 +10,7 @@
   TypeList interfaceTypes=mock(TypeList.class);
   when(instrumentedType.getInterfaces()).thenReturn(interfaceTypes);
   Instrumentation.Context instrumentationContext=mock(Instrumentation.Context.class);
-  MethodDescription proxyMethod=delegate.requireProxyMethodFor(objectType.getDeclaredMethods().filter(named(TO_STRING)).getOnly());
+  MethodDescription proxyMethod=delegate.requireAccessorMethodFor(objectType.getDeclaredMethods().filter(named(TO_STRING)).getOnly());
   TypeWriter.InGeneralPhase<?> typeWriter=new TypeWriter.Builder<Object>(instrumentedType,instrumentationContext,ClassFormatVersion.forCurrentJavaVersion()).build(new ClassVisitorWrapper.Chain());
   Class<?> loaded=typeWriter.methods().write(delegate.getProxiedMethods(),delegate).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(loaded.getName(),is(BAR));

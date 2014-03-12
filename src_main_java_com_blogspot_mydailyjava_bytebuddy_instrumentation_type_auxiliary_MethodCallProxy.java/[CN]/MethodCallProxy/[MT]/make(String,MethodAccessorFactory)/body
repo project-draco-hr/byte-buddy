@@ -1,5 +1,5 @@
 {
-  MethodDescription proxiedMethod=methodProxyFactory.requireProxyMethodFor(this.proxiedMethod);
+  MethodDescription proxiedMethod=methodAccessorFactory.requireAccessorMethodFor(this.proxiedMethod);
   int fieldIndex=0;
   InstrumentedType proxy=new SubclassInstumentedType(ClassFormatVersion.forCurrentJavaVersion(),new TypeDescription.ForLoadedType(Object.class),new TypeList.ForLoadedType(Arrays.<Class<?>>asList(Runnable.class,Callable.class)),Opcodes.ACC_PUBLIC,new NamingStrategy.Fixed(auxiliaryTypeName));
   List<FieldAccess.Defined> fieldAccess=new LinkedList<FieldAccess.Defined>();

@@ -1,5 +1,5 @@
 {
-  assertThat(ConstructorStrategy.Default.IMITATE_SUPER_TYPE.extractConstructors(objectType),is(objectType.getDeclaredMethods().filter(isConstructor())));
+  assertThat(ConstructorStrategy.Default.IMITATE_SUPER_TYPE.extractConstructors(stringType),is(stringType.getDeclaredMethods().filter(isConstructor().and(isProtected().or(isPublic())))));
   assertThat(ConstructorStrategy.Default.IMITATE_SUPER_TYPE.inject(methodRegistry,methodAttributeAppenderFactory),is(methodRegistry));
   verify(methodRegistry).append(any(MethodRegistry.LatentMethodMatcher.class),any(Instrumentation.class),eq(methodAttributeAppenderFactory));
   verifyNoMoreInteractions(methodRegistry);

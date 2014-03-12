@@ -2,7 +2,7 @@
   this.prefix=prefix;
   this.instrumentedType=instrumentedType;
   this.random=new Random();
-  orderedProxyMethods=new ArrayList<MethodDescription>();
-  knownTargetMethodsToProxyMethod=new HashMap<MethodDescription,MethodDescription>();
-  registeredProxyMethodToTargetMethod=new HashMap<MethodDescription,MethodDescription>();
+  orderedAccessorMethods=new ArrayList<MethodDescription>();
+  knownTargetMethodsToAccessorMethod=new HashMap<MethodDescription,MethodDescription>();
+  registeredAccessorMethodToTargetMethod=new HashMap<MethodDescription,MethodDescription>();
 }

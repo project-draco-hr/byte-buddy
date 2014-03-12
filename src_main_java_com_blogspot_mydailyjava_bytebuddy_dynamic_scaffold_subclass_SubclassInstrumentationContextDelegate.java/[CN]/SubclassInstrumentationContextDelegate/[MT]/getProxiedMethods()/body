@@ -1,3 +1,3 @@
 {
-  return new TypeWriter.SameThreadCoModifiableIterable<MethodDescription>(orderedProxyMethods);
+  return new TypeWriter.SameThreadCoModifiableIterable<MethodDescription>(orderedAccessorMethods);
 }

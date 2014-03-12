@@ -7,5 +7,5 @@
   verifyNoMoreInteractions(firstAuxiliary);
   verify(auxiliaryTypeNamingStrategy).name(firstAuxiliary);
   verifyNoMoreInteractions(auxiliaryTypeNamingStrategy);
-  verifyZeroInteractions(methodProxyFactory);
+  verifyZeroInteractions(methodAccessorFactory);
 }
