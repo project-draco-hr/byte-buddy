@@ -1,7 +1,7 @@
 {
-  defaultContext=new Instrumentation.Context.Default(auxiliaryTypeNamingStrategy,methodAccessorFactory);
-  when(firstAuxiliary.make(any(String.class),any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn((DynamicType)firstDynamic);
-  when(secondAuxiliary.make(any(String.class),any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn((DynamicType)secondDynamic);
+  defaultContext=new Instrumentation.Context.Default(classFormatVersion,auxiliaryTypeNamingStrategy,methodAccessorFactory);
+  when(firstAuxiliary.make(any(String.class),any(ClassFormatVersion.class),any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn((DynamicType)firstDynamic);
+  when(secondAuxiliary.make(any(String.class),any(ClassFormatVersion.class),any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn((DynamicType)secondDynamic);
   when(firstDynamic.getName()).thenReturn(FOO);
   when(secondDynamic.getName()).thenReturn(BAR);
   when(auxiliaryTypeNamingStrategy.name(any(AuxiliaryType.class))).thenReturn(QUX,BAZ);

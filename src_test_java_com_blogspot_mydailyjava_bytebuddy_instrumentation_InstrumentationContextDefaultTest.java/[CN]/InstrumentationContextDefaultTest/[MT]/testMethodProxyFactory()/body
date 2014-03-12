@@ -6,4 +6,5 @@
   verify(methodAccessorFactory).requireAccessorMethodFor(secondMethod);
   verifyNoMoreInteractions(methodAccessorFactory);
   verifyZeroInteractions(auxiliaryTypeNamingStrategy);
+  verifyZeroInteractions(classFormatVersion);
 }
