@@ -1,5 +1,5 @@
 {
   assertThat(dynamicType.getTypeInitializers().size(),is(2));
-  assertThat(dynamicType.getTypeInitializers().get(FOO),is(mainTypeInitializer));
-  assertThat(dynamicType.getTypeInitializers().get(BAR),is(auxiliaryTypeInitializer));
+  assertThat(dynamicType.getTypeInitializers().get(typeDescription),is(mainTypeInitializer));
+  assertThat(dynamicType.getTypeInitializers().get(auxiliaryTypeDescription),is(auxiliaryTypeInitializer));
 }

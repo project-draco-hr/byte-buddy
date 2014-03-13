@@ -1,0 +1,13 @@
+{
+  binaryRepresentation=new byte[]{0,1,2};
+  auxiliaryTypeByte=new byte[]{4,5,6};
+  unloaded=new DynamicType.Default.Unloaded<Object>(typeDescription,binaryRepresentation,mainTypeInitializer,Collections.singletonList(auxiliaryType));
+  Map<TypeDescription,Class<?>> loadedTypes=new HashMap<TypeDescription,Class<?>>();
+  loadedTypes.put(typeDescription,Void.class);
+  loadedTypes.put(auxiliaryTypeDescription,Object.class);
+  when(classLoadingStrategy.load(any(ClassLoader.class),any(LinkedHashMap.class))).thenReturn(loadedTypes);
+  when(auxiliaryType.getDescription()).thenReturn(auxiliaryTypeDescription);
+  when(auxiliaryType.getBytes()).thenReturn(auxiliaryTypeByte);
+  when(auxiliaryType.getTypeInitializers()).thenReturn(Collections.singletonMap(auxiliaryTypeDescription,auxiliaryTypeInitializer));
+  when(auxiliaryType.getRawAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>emptyMap());
+}

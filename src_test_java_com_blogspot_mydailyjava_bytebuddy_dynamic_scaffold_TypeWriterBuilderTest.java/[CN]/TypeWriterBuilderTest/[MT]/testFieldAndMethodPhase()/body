@@ -1,0 +1,3 @@
+{
+  assertDynamicType(typeWriter.fields().write(Arrays.asList(firstField,secondField),compiledFieldRegistry).methods().write(Arrays.asList(simpleMethod,fromAbstractMethod,toAbstractMethod,skippedMethod),compiledMethodRegistry).make(),true,true);
+}

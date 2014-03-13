@@ -1,12 +1,13 @@
 {
-  assertThat(file.isFile(),is(true));
   FileInputStream fileInputStream=new FileInputStream(file);
   try {
     byte[] buffer=new byte[binaryRepresentation.length + 1];
     assertThat(fileInputStream.read(buffer),is(binaryRepresentation.length));
-    for (int index=0; index < binaryRepresentation.length; index++) {
-      assertThat(buffer[index],equalTo(binaryRepresentation[index]));
+    int index=0;
+    for (    byte b : binaryRepresentation) {
+      assertThat(buffer[index++],is(b));
     }
+    assertThat(buffer[index],is((byte)0));
   }
   finally {
     fileInputStream.close();

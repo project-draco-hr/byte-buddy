@@ -1,0 +1,12 @@
+{
+  File folder=makeTemporaryFolder();
+  try {
+    Map<TypeDescription,File> files=dynamicType.saveIn(folder);
+    assertThat(files.size(),is(1));
+    assertFile(files.get(typeDescription),binaryRepresentation);
+  }
+  finally {
+    assertThat(folder.delete(),is(true));
+  }
+  verify(auxiliaryType).saveIn(folder);
+}

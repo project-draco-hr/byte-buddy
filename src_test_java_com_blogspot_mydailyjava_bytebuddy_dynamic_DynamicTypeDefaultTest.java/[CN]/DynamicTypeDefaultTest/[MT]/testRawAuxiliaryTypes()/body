@@ -1,4 +1,4 @@
 {
   assertThat(dynamicType.getRawAuxiliaryTypes().size(),is(1));
-  assertThat(dynamicType.getRawAuxiliaryTypes().get(BAR),is(auxiliaryTypeByte));
+  assertThat(dynamicType.getRawAuxiliaryTypes().get(auxiliaryTypeDescription),is(auxiliaryTypeBinaryRepresentation));
 }

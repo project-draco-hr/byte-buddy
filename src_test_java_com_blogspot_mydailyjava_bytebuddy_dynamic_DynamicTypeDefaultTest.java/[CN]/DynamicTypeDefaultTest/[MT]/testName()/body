@@ -1,0 +1,3 @@
+{
+  assertThat(dynamicType.getDescription(),is(typeDescription));
+}
