@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<T> loaded=instrument(sourceType,MethodDelegation.to(targetType));
-  assertThat(loaded.getAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
   T instance=loaded.getLoaded().newInstance();

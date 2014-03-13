@@ -1,7 +1,0 @@
-{
-  String fieldName=FIELD_NAME_PREFIX + fieldIndex;
-  proxy=proxy.withField(fieldName,fieldType,Opcodes.ACC_PRIVATE | Opcodes.ACC_FINAL);
-  fieldAccess.add(FieldAccess.forField(proxy.getDeclaredFields().named(fieldName)));
-  fieldTypes.add(fieldType);
-  return proxy;
-}

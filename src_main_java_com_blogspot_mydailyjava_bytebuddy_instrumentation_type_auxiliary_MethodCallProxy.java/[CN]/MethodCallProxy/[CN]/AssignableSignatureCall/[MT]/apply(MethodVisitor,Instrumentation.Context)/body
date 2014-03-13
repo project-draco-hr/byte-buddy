@@ -1,0 +1,4 @@
+{
+  TypeDescription auxiliaryType=instrumentationContext.register(new MethodCallProxy(targetMethod));
+  return null;
+}

@@ -1,7 +1,0 @@
-{
-  interfaceInternalName=Type.getInternalName(type);
-  this.methodName=methodName;
-  this.methodDescriptor=methodDescriptor;
-  this.returnTypeDescription=new TypeDescription.ForLoadedType(returnType);
-  this.returnOpcode=returnOpcode;
-}

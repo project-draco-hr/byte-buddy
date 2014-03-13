@@ -1,0 +1,4 @@
+{
+  this.accessorMethod=accessorMethod;
+  this.assigner=assigner;
+}

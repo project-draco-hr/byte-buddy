@@ -1,7 +1,0 @@
-{
-  Map<String,Class<?>> loaded=ClassLoadingStrategy.Default.INJECTION.load(classLoader,binaryRepresentations);
-  Class<?> type=loaded.get(Foo.class.getName());
-  assertThat(loaded.size(),is(1));
-  assertThat(type.getClassLoader(),is(classLoader));
-  assertThat(type.getName(),is(Foo.class.getName()));
-}

@@ -1,5 +1,0 @@
-ClassVisitor classVisitor
-String proxyTypeInternalName
-MethodDescription proxiedMethod
-Map<String,TypeDescription> fields
-Assigner assigner

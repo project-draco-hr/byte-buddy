@@ -1,0 +1,11 @@
+{
+  Class<?> auxiliaryType=proxyOnlyDeclaredMethodOf(StaticMethod.class);
+  Constructor<?> constructor=auxiliaryType.getDeclaredConstructor();
+  constructor.setAccessible(true);
+  ((Runnable)constructor.newInstance()).run();
+  StaticMethod.CALL_TRACEABLE.assertOnlyCall(FOO);
+  StaticMethod.CALL_TRACEABLE.reset();
+  assertThat(((Callable<?>)constructor.newInstance()).call(),nullValue());
+  StaticMethod.CALL_TRACEABLE.assertOnlyCall(FOO);
+  StaticMethod.CALL_TRACEABLE.reset();
+}

@@ -1,5 +1,0 @@
-{
-  this.fieldAccess=fieldAccess;
-  this.proxiedMethod=proxiedMethod;
-  this.assigner=assigner;
-}

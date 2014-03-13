@@ -1,6 +1,0 @@
-{
-  TypeAttributeAppender typeAttributeAppender=mock(TypeAttributeAppender.class);
-  assertDynamicType(typeWriter.attributeType(typeAttributeAppender).make(),false,false);
-  verify(typeAttributeAppender).apply(any(ClassVisitor.class),eq(instrumentedType));
-  verifyNoMoreInteractions(typeAttributeAppender);
-}

@@ -1,3 +1,0 @@
-{
-  assertThat(dynamicType.getBytes(),is(typeByte));
-}

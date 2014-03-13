@@ -1,3 +1,0 @@
-{
-  return Arrays.asList(new Object[][]{{Bar.class,new Class<?>[0],new Object[0]}});
-}

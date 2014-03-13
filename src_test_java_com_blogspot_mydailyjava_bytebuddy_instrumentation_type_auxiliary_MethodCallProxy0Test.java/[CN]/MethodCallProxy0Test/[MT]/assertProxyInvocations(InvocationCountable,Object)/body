@@ -1,9 +1,0 @@
-{
-  assertThat(invocationCountable.getNumberOfInvocations(),is(0));
-  assertThat(proxy instanceof Runnable,is(true));
-  ((Runnable)proxy).run();
-  assertThat(invocationCountable.getNumberOfInvocations(),is(1));
-  assertThat(proxy instanceof Callable,is(true));
-  ((Callable<?>)proxy).call();
-  assertThat(invocationCountable.getNumberOfInvocations(),is(2));
-}

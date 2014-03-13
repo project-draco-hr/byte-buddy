@@ -1,0 +1,11 @@
+{
+  Class<?> auxiliaryType=proxyOnlyDeclaredMethodOf(NoParameterMethod.class);
+  Constructor<?> constructor=auxiliaryType.getDeclaredConstructor(NoParameterMethod.class);
+  constructor.setAccessible(true);
+  NoParameterMethod runnableProxied=new NoParameterMethod();
+  ((Runnable)constructor.newInstance(runnableProxied)).run();
+  runnableProxied.assertOnlyCall(FOO,runnableProxied);
+  NoParameterMethod callableProxied=new NoParameterMethod();
+  assertThat(((Callable<?>)constructor.newInstance(callableProxied)).call(),nullValue());
+  callableProxied.assertOnlyCall(FOO,callableProxied);
+}

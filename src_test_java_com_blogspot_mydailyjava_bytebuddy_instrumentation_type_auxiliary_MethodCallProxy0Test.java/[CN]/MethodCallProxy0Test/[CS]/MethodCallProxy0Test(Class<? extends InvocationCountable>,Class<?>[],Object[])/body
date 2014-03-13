@@ -1,5 +1,0 @@
-{
-  this.proxiedType=proxiedType;
-  this.proxiedMethodParameters=proxiedMethodParameters;
-  this.methodArgument=methodArgument;
-}

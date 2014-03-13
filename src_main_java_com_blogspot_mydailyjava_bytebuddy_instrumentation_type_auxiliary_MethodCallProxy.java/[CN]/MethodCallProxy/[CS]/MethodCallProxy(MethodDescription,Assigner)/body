@@ -1,4 +1,4 @@
 {
-  this.proxiedMethod=proxiedMethod;
+  this.targetMethod=targetMethod;
   this.assigner=assigner;
 }

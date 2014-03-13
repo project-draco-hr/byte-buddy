@@ -1,0 +1,7 @@
+{
+  super(parent);
+  this.typeDefinitions=new HashMap<String,byte[]>(typeDefinitions.size());
+  for (  Map.Entry<TypeDescription,byte[]> entry : typeDefinitions.entrySet()) {
+    this.typeDefinitions.put(entry.getKey().getName(),entry.getValue());
+  }
+}

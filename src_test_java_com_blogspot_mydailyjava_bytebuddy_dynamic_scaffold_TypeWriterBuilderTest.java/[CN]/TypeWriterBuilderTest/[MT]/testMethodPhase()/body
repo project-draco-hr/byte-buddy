@@ -1,8 +1,0 @@
-{
-  assertDynamicType(typeWriter.methods().write(Arrays.asList(simpleMethod,fromAbstractMethod,toAbstractMethod,skippedMethod),compiledMethodRegistry).make(),false,true);
-  verify(compiledMethodRegistry).target(simpleMethod);
-  verify(compiledMethodRegistry).target(fromAbstractMethod);
-  verify(compiledMethodRegistry).target(toAbstractMethod);
-  verify(compiledMethodRegistry).target(skippedMethod);
-  verifyNoMoreInteractions(compiledMethodRegistry);
-}

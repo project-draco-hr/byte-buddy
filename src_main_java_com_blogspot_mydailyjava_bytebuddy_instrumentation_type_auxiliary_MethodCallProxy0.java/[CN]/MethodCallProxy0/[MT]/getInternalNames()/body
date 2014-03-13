@@ -1,8 +1,0 @@
-{
-  String[] internalNames=new String[Interface.values().length];
-  int i=0;
-  for (  Interface anInterface : Interface.values()) {
-    internalNames[i++]=anInterface.interfaceInternalName;
-  }
-  return internalNames;
-}

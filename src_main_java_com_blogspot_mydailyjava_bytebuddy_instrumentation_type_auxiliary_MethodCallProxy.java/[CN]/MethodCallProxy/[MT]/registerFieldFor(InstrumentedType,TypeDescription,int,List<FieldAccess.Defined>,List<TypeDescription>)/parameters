@@ -1,5 +1,0 @@
-InstrumentedType proxy
-TypeDescription fieldType
-int fieldIndex
-List<FieldAccess.Defined> fieldAccess
-List<TypeDescription> fieldTypes

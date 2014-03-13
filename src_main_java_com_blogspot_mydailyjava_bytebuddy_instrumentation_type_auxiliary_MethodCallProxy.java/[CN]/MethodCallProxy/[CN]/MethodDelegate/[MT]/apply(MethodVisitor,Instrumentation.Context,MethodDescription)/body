@@ -1,9 +1,0 @@
-{
-  StackManipulation.Size size=new StackManipulation.Size(0,0);
-  for (  FieldAccess.Defined fieldAccess : this.fieldAccess) {
-    size=size.aggregate(fieldAccess.getter().apply(methodVisitor,instrumentationContext));
-  }
-  size=size.aggregate(MethodInvocation.invoke(proxiedMethod).apply(methodVisitor,instrumentationContext));
-  size=size.aggregate(assigner.assign(proxiedMethod.getReturnType(),instrumentedMethod.getReturnType(),false).apply(methodVisitor,instrumentationContext));
-  return new Size(size.getMaximalSize(),instrumentedMethod.getStackSize());
-}

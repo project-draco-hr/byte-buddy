@@ -1,0 +1,4 @@
+{
+  register(FOO,b);
+  return b;
+}

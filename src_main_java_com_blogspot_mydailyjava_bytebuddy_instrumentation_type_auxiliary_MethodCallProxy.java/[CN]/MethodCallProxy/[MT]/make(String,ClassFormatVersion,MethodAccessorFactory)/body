@@ -1,19 +1,9 @@
 {
-  MethodDescription proxiedMethod=methodAccessorFactory.requireAccessorMethodFor(this.proxiedMethod);
-  int fieldIndex=0;
-  InstrumentedType proxy=new SubclassInstumentedType(ClassFormatVersion.forCurrentJavaVersion(),new TypeDescription.ForLoadedType(Object.class),new TypeList.ForLoadedType(Arrays.<Class<?>>asList(Runnable.class,Callable.class)),Opcodes.ACC_PUBLIC,new NamingStrategy.Fixed(auxiliaryTypeName));
-  List<FieldAccess.Defined> fieldAccess=new LinkedList<FieldAccess.Defined>();
-  List<TypeDescription> fieldTypes=new ArrayList<TypeDescription>();
-  if (!proxiedMethod.isStatic()) {
-    proxy=registerFieldFor(proxy,proxiedMethod.getDeclaringType(),fieldIndex++,fieldAccess,fieldTypes);
+  MethodDescription accessorMethod=methodAccessorFactory.requireAccessorMethodFor(targetMethod);
+  LinkedHashMap<String,TypeDescription> parameterFields=extractFields(accessorMethod);
+  DynamicType.Builder<?> builder=new ByteBuddy(classFormatVersion).subclass(Object.class,ConstructorStrategy.Default.NO_CONSTRUCTORS).name(auxiliaryTypeName).modifiers(DEFAULT_TYPE_MODIFIER.toArray(new ModifierContributor.ForType[DEFAULT_TYPE_MODIFIER.size()])).modifiers(Visibility.PACKAGE_PRIVATE,SyntheticState.SYNTHETIC).implement(Runnable.class).intercept(new MethodCall(accessorMethod,assigner)).implement(Callable.class).intercept(new MethodCall(accessorMethod,assigner)).defineConstructorDescriptive(new ArrayList<TypeDescription>(parameterFields.values())).intercept(new ConstructorCall());
+  for (  Map.Entry<String,TypeDescription> field : parameterFields.entrySet()) {
+    builder=builder.defineField(field.getKey(),field.getValue(),Visibility.PRIVATE);
   }
-  for (  TypeDescription parameterType : proxiedMethod.getParameterTypes()) {
-    proxy=registerFieldFor(proxy,parameterType,fieldIndex++,fieldAccess,fieldTypes);
-  }
-  proxy=proxy.withMethod(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,new TypeDescription.ForLoadedType(void.class),fieldTypes,ModifierContributor.EMPTY_MASK);
-  SubclassInstrumentationContextDelegate contextDelegate=new SubclassInstrumentationContextDelegate(proxy);
-  Instrumentation.Context instrumentationContext=new Instrumentation.Context.Default(classFormatVersion,contextDelegate,contextDelegate);
-  MethodDelegate methodDelegate=new MethodDelegate(fieldAccess,proxiedMethod,assigner);
-  ConstructorDelegate constructorDelegate=new ConstructorDelegate(fieldAccess);
-  return new TypeWriter.Builder<Object>(proxy,instrumentationContext,ClassFormatVersion.forCurrentJavaVersion()).build(new ClassVisitorWrapper.Chain()).fields().write(proxy.getDeclaredFields(),FieldRegistry.Compiled.NoOp.INSTANCE).methods().write(proxy.getDeclaredMethods().filter(methodDelegate),methodDelegate).write(proxy.getDeclaredMethods().filter(constructorDelegate),constructorDelegate).write(contextDelegate.getProxiedMethods(),contextDelegate).make();
+  return builder.make();
 }
