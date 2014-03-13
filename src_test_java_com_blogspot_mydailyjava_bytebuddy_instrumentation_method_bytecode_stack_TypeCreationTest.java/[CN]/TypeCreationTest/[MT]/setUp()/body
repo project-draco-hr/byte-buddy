@@ -1,0 +1,3 @@
+{
+  when(typeDescription.getInternalName()).thenReturn(FOO);
+}

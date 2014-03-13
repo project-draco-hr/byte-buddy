@@ -1,0 +1,4 @@
+{
+  when(typeDescription.isArray()).thenReturn(true);
+  TypeCreation.forType(typeDescription);
+}

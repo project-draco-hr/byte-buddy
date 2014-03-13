@@ -1,0 +1,6 @@
+{
+  TypeCreation.forType(typeDescription).apply(methodVisitor,instrumentationContext);
+  verify(methodVisitor).visitTypeInsn(Opcodes.NEW,FOO);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(instrumentationContext);
+}

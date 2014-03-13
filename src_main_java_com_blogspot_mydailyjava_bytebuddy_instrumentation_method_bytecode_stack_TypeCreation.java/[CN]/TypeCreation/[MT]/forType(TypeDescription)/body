@@ -1,0 +1,6 @@
+{
+  if (typeDescription.isArray() || typeDescription.isPrimitive() || typeDescription.isAbstract()) {
+    throw new IllegalArgumentException(typeDescription + " is not instantiable");
+  }
+  return new TypeCreation(typeDescription);
+}

@@ -1,0 +1,4 @@
+{
+  when(typeDescription.isAbstract()).thenReturn(true);
+  TypeCreation.forType(typeDescription);
+}

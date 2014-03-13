@@ -1,0 +1,4 @@
+{
+  methodVisitor.visitTypeInsn(Opcodes.NEW,typeDescription.getInternalName());
+  return new Size(1,1);
+}
