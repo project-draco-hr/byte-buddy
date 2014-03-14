@@ -1,0 +1,4 @@
+{
+  methodVisitor.visitLdcInsn(Type.getType(typeDescription.getDescriptor()));
+  return StackSize.SINGLE.toIncreasingSize();
+}
