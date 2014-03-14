@@ -1,0 +1,3 @@
+{
+  this(invocationHandler,String.format("%s$%d",PREFIX,Math.abs(invocationHandler.hashCode())));
+}

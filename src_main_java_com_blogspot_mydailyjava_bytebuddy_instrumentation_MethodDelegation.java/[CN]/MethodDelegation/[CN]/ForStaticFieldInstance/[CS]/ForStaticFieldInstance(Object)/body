@@ -1,4 +1,3 @@
 {
-  this.delegate=delegate;
-  fieldName=String.format("%s$%d",PREFIX,Math.abs(new Random().nextInt()));
+  this(delegate,String.format("%s$%d",PREFIX,delegate.hashCode()));
 }

@@ -1,6 +1,3 @@
 {
-  int result=fieldName.hashCode();
-  result=31 * result + (fixedValue != null ? fixedValue.hashCode() : 0);
-  result=31 * result + fieldType.hashCode();
-  return result;
+  return 31 * fieldName.hashCode() + fixedValue.hashCode();
 }

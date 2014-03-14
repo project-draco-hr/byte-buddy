@@ -1,0 +1,6 @@
+{
+  TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
+  TypeDescription invocationHandlerType=new TypeDescription.ForLoadedType(InvocationHandler.class);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(FieldAccess.forField(instrumentedType.getDeclaredFields().named(fieldName)).getter(),MethodVariableAccess.forType(objectType).loadFromIndex(0),new MethodConstant(instrumentedMethod),ArrayFactory.targeting(objectType).withValues(argumentValuesOf(instrumentedMethod)),MethodInvocation.invoke(invocationHandlerType.getDeclaredMethods().getOnly()),assigner.assign(objectType,instrumentedMethod.getReturnType(),true),MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
+}

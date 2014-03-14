@@ -1,0 +1,10 @@
+{
+  TypeList parameterTypes=instrumentedMethod.getParameterTypes();
+  List<StackManipulation> instruction=new ArrayList<StackManipulation>(parameterTypes.size());
+  int currentIndex=1;
+  for (  TypeDescription parameterType : parameterTypes) {
+    instruction.add(MethodVariableAccess.forType(parameterType).loadFromIndex(currentIndex));
+    currentIndex+=parameterType.getStackSize().getSize();
+  }
+  return instruction;
+}

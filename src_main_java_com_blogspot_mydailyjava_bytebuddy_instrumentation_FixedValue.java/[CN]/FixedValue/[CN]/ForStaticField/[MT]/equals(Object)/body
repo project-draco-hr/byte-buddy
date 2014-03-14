@@ -1,6 +1,3 @@
 {
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  ForStaticField that=(ForStaticField)other;
-  return fieldName.equals(that.fieldName) && fieldType.equals(that.fieldType) && !(fixedValue != null ? !fixedValue.equals(that.fixedValue) : that.fixedValue != null);
+  return this == other || !(other == null || getClass() != other.getClass()) && fieldName.equals(((ForStaticField)other).fieldName) && fixedValue.equals(((ForStaticField)other).fixedValue);
 }

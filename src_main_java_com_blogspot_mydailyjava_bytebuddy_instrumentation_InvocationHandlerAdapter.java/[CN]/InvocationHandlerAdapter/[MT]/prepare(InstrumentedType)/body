@@ -1,0 +1,3 @@
+{
+  return instrumentedType.withField(fieldName,new TypeDescription.ForLoadedType(InvocationHandler.class),Opcodes.ACC_STATIC).withInitializer(this);
+}

@@ -1,0 +1,3 @@
+{
+  return "InvocationHandlerAdapter.Appender{" + "javaProxyAdapter=" + InvocationHandlerAdapter.this + "instrumentedType="+ instrumentedType+ '}';
+}
