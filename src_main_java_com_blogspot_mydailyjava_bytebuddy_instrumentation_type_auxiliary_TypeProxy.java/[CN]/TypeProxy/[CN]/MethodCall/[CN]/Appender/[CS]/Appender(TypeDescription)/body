@@ -1,0 +1,3 @@
+{
+  fieldLoadingInstruction=FieldAccess.forField(instrumentedType.getDeclaredFields().named(INSTANCE_FIELD)).getter();
+}

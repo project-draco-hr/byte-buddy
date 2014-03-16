@@ -1,0 +1,3 @@
+TypeDescription proxiedType
+TypeDescription instrumentedType
+boolean ignoreFinalizer

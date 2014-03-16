@@ -1,0 +1,15 @@
+{
+  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,"sun/reflect/ReflectionFactory","getReflectionFactory","()Lsun/reflect/ReflectionFactory;");
+  methodVisitor.visitLdcInsn(Type.getType(instrumentedType.getDescriptor()));
+  methodVisitor.visitLdcInsn(Type.getType("Ljava/lang/Object;"));
+  methodVisitor.visitInsn(Opcodes.ICONST_0);
+  methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,"java/lang/Class");
+  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/Class","getDeclaredConstructor","([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;");
+  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"sun/reflect/ReflectionFactory","newConstructorForSerialization","(Ljava/lang/Class;Ljava/lang/reflect/Constructor;)Ljava/lang/reflect/Constructor;");
+  methodVisitor.visitInsn(Opcodes.ICONST_0);
+  methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,"java/lang/Object");
+  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/reflect/Constructor","newInstance","([Ljava/lang/Object;)Ljava/lang/Object;");
+  methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,instrumentedType.getInternalName());
+  methodVisitor.visitInsn(Opcodes.ARETURN);
+  return new Size(4,0);
+}
