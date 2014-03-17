@@ -1,0 +1,3 @@
+{
+  return MethodDelegationBinder.MethodInvoker.Simple.INSTANCE;
+}

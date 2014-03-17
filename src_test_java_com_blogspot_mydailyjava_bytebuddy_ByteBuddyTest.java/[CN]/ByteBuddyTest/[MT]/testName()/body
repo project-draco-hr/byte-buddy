@@ -1,3 +1,4 @@
 {
-  new ByteBuddy().subclass(Foo.class).method(isDeclaredBy(Foo.class)).intercept(MethodDelegation.to(Bar.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getDeclaredConstructor(String.class).newInstance("hello").fooBase();
+  Foo foo=new ByteBuddy().subclass(Xyz.class,ConstructorStrategy.Default.IMITATE_SUPER_TYPE).method(isDeclaredBy(Xyz.class)).intercept(MethodDelegation.to(Qux.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance();
+  System.out.println(foo.bar());
 }

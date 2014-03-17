@@ -1,0 +1,3 @@
+{
+  return new MethodDelegation(new InstrumentationDelegate.ForConstruction(new TypeDescription.ForLoadedType(type)),defaultArgumentBinders(),defaultDefaultsProvider(),defaultAmbiguityResolver(),defaultAssigner(),new TypeDescription.ForLoadedType(type).getDeclaredMethods().filter(isConstructor()));
+}

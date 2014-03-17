@@ -1,0 +1,3 @@
+{
+  return new StackManipulation.Compound(TypeCreation.forType(typeDescription),Duplication.SINGLE);
+}

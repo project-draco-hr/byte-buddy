@@ -1,0 +1,3 @@
+{
+  return new StackManipulation.Compound(MethodVariableAccess.forType(instrumentedType).loadFromIndex(0),FieldAccess.forField(instrumentedType.getDeclaredFields().named(fieldName)).getter());
+}
