@@ -1,6 +1,0 @@
-{
-  if (targetDescription == null) {
-    throw new IllegalArgumentException("Unknown method: " + targetDescription);
-  }
-  this.targetDescription=targetDescription;
-}
