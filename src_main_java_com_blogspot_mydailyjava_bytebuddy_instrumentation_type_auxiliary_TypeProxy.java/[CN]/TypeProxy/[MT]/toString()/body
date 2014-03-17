@@ -1,0 +1,3 @@
+{
+  return "TypeProxy{" + "proxiedType=" + proxiedType + ", instrumentedType="+ instrumentedType+ ", ignoreFinalizer="+ ignoreFinalizer+ '}';
+}

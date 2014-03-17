@@ -1,0 +1,3 @@
+{
+  return "TypeProxy.ByConstructor{" + "proxiedType=" + proxiedType + ", instrumentedType="+ instrumentedType+ ", constructorParameters="+ constructorParameters+ ", ignoreFinalizer="+ ignoreFinalizer+ '}';
+}

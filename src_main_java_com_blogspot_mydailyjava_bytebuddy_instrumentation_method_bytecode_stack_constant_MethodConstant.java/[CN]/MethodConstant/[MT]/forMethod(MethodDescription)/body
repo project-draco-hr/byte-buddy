@@ -1,0 +1,8 @@
+{
+  if (methodDescription.isConstructor()) {
+    return new ForConstructor(methodDescription);
+  }
+ else {
+    return new ForMethod(methodDescription);
+  }
+}

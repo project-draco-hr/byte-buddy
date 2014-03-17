@@ -1,2 +1,2 @@
 String name
-byte[] definition
+byte[] binaryRepresentation

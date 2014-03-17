@@ -1,8 +1,5 @@
 {
-  methodVisitor.visitLdcInsn(Type.getType(methodDescription.getDeclaringType().getDescriptor()));
-  methodVisitor.visitLdcInsn(methodDescription.getInternalName());
-  Size argumentSize=new Size(2,2);
-  argumentSize=argumentSize.aggregate(ArrayFactory.targeting(new TypeDescription.ForLoadedType(Class.class)).withValues(typeConstantsFor(methodDescription.getParameterTypes())).apply(methodVisitor,instrumentationContext));
-  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,CLASS_TYPE_INTERNAL_NAME,GET_DECLARED_METHOD_NAME,GET_DECLARED_METHOD_DESCRIPTOR);
+  Size argumentSize=prepare(methodVisitor).aggregate(ArrayFactory.targeting(new TypeDescription.ForLoadedType(Class.class)).withValues(typeConstantsFor(methodDescription.getParameterTypes())).apply(methodVisitor,instrumentationContext));
+  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,CLASS_TYPE_INTERNAL_NAME,getMethodName(),getDescriptor());
   return new Size(1,argumentSize.getMaximalSize());
 }

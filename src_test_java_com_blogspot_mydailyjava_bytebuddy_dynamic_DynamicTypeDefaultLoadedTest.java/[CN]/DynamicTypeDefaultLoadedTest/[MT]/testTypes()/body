@@ -1,5 +1,0 @@
-{
-  assertEquals(Void.class,dynamicType.getLoaded());
-  assertThat(dynamicType.getLoadedAuxiliaryTypes().size(),is(1));
-  assertEquals(Object.class,dynamicType.getLoadedAuxiliaryTypes().get(auxiliaryTypeDescription));
-}

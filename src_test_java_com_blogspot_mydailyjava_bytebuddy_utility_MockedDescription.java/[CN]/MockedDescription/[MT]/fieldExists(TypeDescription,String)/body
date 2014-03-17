@@ -1,0 +1,6 @@
+{
+  if (typeDescription == null) {
+    throw new IllegalStateException("There is no mocked type defined for a field named " + fieldName);
+  }
+  return typeDescription;
+}

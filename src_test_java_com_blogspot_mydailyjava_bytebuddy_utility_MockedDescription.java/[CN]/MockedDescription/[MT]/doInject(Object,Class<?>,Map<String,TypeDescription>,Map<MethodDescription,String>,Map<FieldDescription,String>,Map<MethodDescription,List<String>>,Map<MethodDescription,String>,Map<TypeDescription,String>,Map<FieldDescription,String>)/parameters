@@ -1,0 +1,9 @@
+Object instance
+Class<?> type
+Map<String,TypeDescription> fieldNameToTypeMock
+Map<MethodDescription,String> methodDeclaredBy
+Map<FieldDescription,String> fieldDeclaredBy
+Map<MethodDescription,List<String>> parameterDeclaredBy
+Map<MethodDescription,String> returnTypeDeclaredBy
+Map<TypeDescription,String> typeExtends
+Map<FieldDescription,String> fieldType

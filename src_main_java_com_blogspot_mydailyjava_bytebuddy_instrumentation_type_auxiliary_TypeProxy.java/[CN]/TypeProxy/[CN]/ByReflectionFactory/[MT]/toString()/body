@@ -1,0 +1,3 @@
+{
+  return "TypeProxy.ByReflectionFactory{" + "proxiedType=" + proxiedType + ", instrumentedType="+ instrumentedType+ ", ignoreFinalizer="+ ignoreFinalizer+ '}';
+}

@@ -1,9 +1,17 @@
 {
-  delegate=new SubclassInstrumentationContextDelegate(instrumentedType,FOO);
   when(firstMethod.getReturnType()).thenReturn(firstMethodReturnType);
   when(firstMethod.getParameterTypes()).thenReturn(firstMethodParameters);
+  when(firstMethod.getDeclaringType()).thenReturn(superType);
+  when(firstMethodReturnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(secondMethod.getReturnType()).thenReturn(secondMethodReturnType);
   when(secondMethod.getParameterTypes()).thenReturn(secondMethodParameters);
-  when(secondMethod.isStatic()).thenReturn(true);
+  when(secondMethod.getDeclaringType()).thenReturn(superType);
+  when(superType.isAssignableFrom(superType)).thenReturn(true);
+  when(secondMethodReturnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(instrumentedType.detach()).thenReturn(instrumentedType);
+  when(instrumentedType.getReachableMethods()).thenReturn(methodList);
+  when(instrumentedType.getSupertype()).thenReturn(superType);
+  when(methodList.filter(any(MethodMatcher.class))).thenReturn(methodList);
+  when(methodList.iterator()).thenReturn(Arrays.<MethodDescription>asList().iterator());
+  delegate=new SubclassInstrumentationContextDelegate(instrumentedType,FOO);
 }

@@ -1,0 +1,3 @@
+{
+  assertThat(TargetType.DESCRIPTION.represents(TargetType.class),is(true));
+}

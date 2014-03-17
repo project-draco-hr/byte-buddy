@@ -1,12 +1,8 @@
 {
-  byte[] binaryRepresentation=new byte[]{0,1,2};
-  byte[] auxiliaryTypeByte=new byte[]{4,5,6};
   Map<TypeDescription,Class<?>> loadedTypes=new HashMap<TypeDescription,Class<?>>();
-  loadedTypes.put(typeDescription,Void.class);
-  loadedTypes.put(auxiliaryTypeDescription,Object.class);
-  dynamicType=new DynamicType.Default.Loaded<Object>(typeDescription,binaryRepresentation,mainTypeInitializer,Collections.singletonList(auxiliaryType),loadedTypes);
-  when(auxiliaryType.getDescription()).thenReturn(typeDescription);
-  when(auxiliaryType.getBytes()).thenReturn(auxiliaryTypeByte);
-  when(auxiliaryType.getTypeInitializers()).thenReturn(Collections.singletonMap(auxiliaryTypeDescription,auxiliaryTypeInitializer));
-  when(auxiliaryType.getRawAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>emptyMap());
+  loadedTypes.put(mainTypeDescription,MAIN_TYPE);
+  loadedTypes.put(auxiliaryTypeDescription,AUXILIARY_TYPE);
+  DynamicType auxiliaryType=mock(DynamicType.class);
+  dynamicType=new DynamicType.Default.Loaded<Object>(mainTypeDescription,new byte[0],mainTypeInitializer,Collections.singletonList(auxiliaryType),loadedTypes);
+  when(auxiliaryType.getDescription()).thenReturn(mainTypeDescription);
 }

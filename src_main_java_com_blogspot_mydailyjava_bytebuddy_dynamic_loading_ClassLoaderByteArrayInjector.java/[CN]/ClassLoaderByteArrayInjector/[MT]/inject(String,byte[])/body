@@ -9,7 +9,7 @@ synchronized (classLoader) {
         return type;
       }
  else {
-        return (Class<?>)LOAD_BYTE_ARRAY_METHOD.invoke(classLoader,name,definition,0,definition.length);
+        return (Class<?>)LOAD_BYTE_ARRAY_METHOD.invoke(classLoader,name,binaryRepresentation,0,binaryRepresentation.length);
       }
     }
   }

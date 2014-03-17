@@ -1,0 +1,3 @@
+{
+  assertEquals(Super.class,Super.Binder.INSTANCE.getHandledType());
+}
