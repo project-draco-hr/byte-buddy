@@ -1,0 +1,8 @@
+{
+  MethodDelegationBinder.AmbiguityResolver firstChain=MethodDelegationBinder.AmbiguityResolver.Chain.of(MethodDelegationBinder.AmbiguityResolver.Chain.of(first,second),third);
+  MethodDelegationBinder.AmbiguityResolver secondChain=MethodDelegationBinder.AmbiguityResolver.Chain.of(first,second,third);
+  assertThat(firstChain.hashCode(),is(secondChain.hashCode()));
+  assertThat(firstChain,is(secondChain));
+  assertThat(firstChain.hashCode(),not(is(chain.hashCode())));
+  assertThat(firstChain,not(is(chain)));
+}

@@ -1,0 +1,11 @@
+{
+  when(typeDescription.getDescriptor()).thenReturn(FOO);
+  StackManipulation.Size size=new ClassConstant(typeDescription).apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(1));
+  verify(typeDescription).getDescriptor();
+  verifyNoMoreInteractions(typeDescription);
+  verify(methodVisitor).visitLdcInsn(Type.getType(FOO));
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(instrumentationContext);
+}

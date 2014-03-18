@@ -1,0 +1,8 @@
+{
+  assertThat(MethodDelegation.instanceField(Foo.class,FOO).hashCode(),is(MethodDelegation.instanceField(Foo.class,FOO).hashCode()));
+  assertThat(MethodDelegation.instanceField(Foo.class,FOO),is(MethodDelegation.instanceField(Foo.class,FOO)));
+  assertThat(MethodDelegation.instanceField(Foo.class,FOO).hashCode(),not(is(MethodDelegation.instanceField(Bar.class,FOO).hashCode())));
+  assertThat(MethodDelegation.instanceField(Foo.class,FOO),not(is(MethodDelegation.instanceField(Bar.class,FOO))));
+  assertThat(MethodDelegation.instanceField(Foo.class,FOO).hashCode(),not(is(MethodDelegation.instanceField(Foo.class,BAR).hashCode())));
+  assertThat(MethodDelegation.instanceField(Foo.class,FOO),not(is(MethodDelegation.instanceField(Foo.class,BAR))));
+}

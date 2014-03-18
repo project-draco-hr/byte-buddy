@@ -1,6 +1,6 @@
 {
   Resolution resolution=Resolution.UNKNOWN;
-  Iterator<AmbiguityResolver> iterator=Arrays.asList(ambiguityResolver).iterator();
+  Iterator<AmbiguityResolver> iterator=ambiguityResolvers.iterator();
   while (resolution.isUnresolved() && iterator.hasNext()) {
     resolution=iterator.next().resolve(source,left,right);
   }

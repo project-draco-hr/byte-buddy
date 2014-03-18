@@ -1,0 +1,8 @@
+{
+  if (ambiguityResolver.length == 1) {
+    return ambiguityResolver[0];
+  }
+ else {
+    return new Chain(ambiguityResolver);
+  }
+}

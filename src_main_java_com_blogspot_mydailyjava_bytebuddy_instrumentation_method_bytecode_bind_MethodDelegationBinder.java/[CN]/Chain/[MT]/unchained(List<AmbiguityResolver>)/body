@@ -1,0 +1,12 @@
+{
+  List<AmbiguityResolver> ambiguityResolvers=new ArrayList<AmbiguityResolver>();
+  for (  AmbiguityResolver ambiguityResolver : chained) {
+    if (ambiguityResolver instanceof Chain) {
+      ambiguityResolvers.addAll(unchained(((Chain)ambiguityResolver).ambiguityResolvers));
+    }
+ else {
+      ambiguityResolvers.add(ambiguityResolver);
+    }
+  }
+  return ambiguityResolvers;
+}
