@@ -1,3 +1,3 @@
 {
-  return "FixedValue.ForPoolValue{" + "valueLoadInstruction=" + valueLoadInstruction + ", loadedType="+ loadedType+ '}';
+  return "FixedValue.ForPoolValue{" + "valueLoadInstruction=" + valueLoadInstruction + ", loadedType="+ loadedType+ ", assigner="+ assigner+ ", considerRuntimeType="+ considerRuntimeType+ '}';
 }

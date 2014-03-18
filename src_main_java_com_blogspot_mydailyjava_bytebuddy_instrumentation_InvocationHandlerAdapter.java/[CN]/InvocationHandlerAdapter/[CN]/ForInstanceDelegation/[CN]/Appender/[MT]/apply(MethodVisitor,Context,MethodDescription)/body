@@ -1,0 +1,3 @@
+{
+  return ForInstanceDelegation.this.apply(methodVisitor,instrumentationContext,instrumentedMethod,instrumentedType,MethodVariableAccess.forType(instrumentedType).loadFromIndex(0));
+}

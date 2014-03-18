@@ -1,0 +1,3 @@
+{
+  return 31 * assigner.hashCode() + (considerRuntimeType ? 1 : 0);
+}

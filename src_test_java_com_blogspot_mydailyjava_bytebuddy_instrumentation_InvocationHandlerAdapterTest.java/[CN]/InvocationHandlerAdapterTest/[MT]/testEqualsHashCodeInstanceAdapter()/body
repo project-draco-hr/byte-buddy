@@ -1,0 +1,8 @@
+{
+  assertThat(InvocationHandlerAdapter.of(QUX).hashCode(),is(InvocationHandlerAdapter.of(QUX).hashCode()));
+  assertThat(InvocationHandlerAdapter.of(QUX),is(InvocationHandlerAdapter.of(QUX)));
+  assertThat(InvocationHandlerAdapter.of(QUX).hashCode(),not(is(InvocationHandlerAdapter.of(FOO).hashCode())));
+  assertThat(InvocationHandlerAdapter.of(QUX),not(is(InvocationHandlerAdapter.of(FOO))));
+  assertThat(InvocationHandlerAdapter.of(QUX).hashCode(),not(is(InvocationHandlerAdapter.of(new Foo(BAR),QUX).hashCode())));
+  assertThat(InvocationHandlerAdapter.of(QUX),not(is(InvocationHandlerAdapter.of(new Foo(BAR),QUX))));
+}

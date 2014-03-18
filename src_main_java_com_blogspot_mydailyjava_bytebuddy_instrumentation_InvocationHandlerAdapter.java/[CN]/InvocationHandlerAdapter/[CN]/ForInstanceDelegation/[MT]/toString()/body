@@ -1,0 +1,3 @@
+{
+  return "InvocationHandlerAdapter.ForInstanceDelegation{" + "fieldName=" + fieldName + '}';
+}

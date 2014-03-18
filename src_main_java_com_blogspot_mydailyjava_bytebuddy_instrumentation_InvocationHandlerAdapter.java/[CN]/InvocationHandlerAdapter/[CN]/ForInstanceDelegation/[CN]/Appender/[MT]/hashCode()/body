@@ -1,0 +1,3 @@
+{
+  return 31 * ForInstanceDelegation.this.hashCode() + instrumentedType.hashCode();
+}

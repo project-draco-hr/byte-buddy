@@ -1,0 +1,9 @@
+{
+  DynamicType.Loaded<Bar> loaded=instrument(Bar.class,InvocationHandlerAdapter.of(new Foo()));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(1));
+  Bar instance=loaded.getLoaded().newInstance();
+  assertThat(instance.bar(FOO),is((Object)instance));
+  instance.assertZeroCalls();
+}

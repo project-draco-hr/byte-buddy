@@ -1,0 +1,3 @@
+{
+  return ForStaticDelegation.this.apply(methodVisitor,instrumentationContext,instrumentedMethod,instrumentedType,LegalTrivialStackManipulation.INSTANCE);
+}

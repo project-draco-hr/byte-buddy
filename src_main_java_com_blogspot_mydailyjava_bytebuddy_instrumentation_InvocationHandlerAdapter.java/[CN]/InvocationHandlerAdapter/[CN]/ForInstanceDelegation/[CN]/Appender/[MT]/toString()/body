@@ -1,0 +1,3 @@
+{
+  return "InvocationHandlerAdapter.Appender{" + "invocationHandlerAdapter=" + ForInstanceDelegation.this + "instrumentedType="+ instrumentedType+ '}';
+}

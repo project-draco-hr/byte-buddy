@@ -1,0 +1,3 @@
+{
+  return "InvocationHandlerAdapter.ForStaticDelegation{" + "fieldName=" + fieldName + "invocationHandler="+ invocationHandler+ '}';
+}

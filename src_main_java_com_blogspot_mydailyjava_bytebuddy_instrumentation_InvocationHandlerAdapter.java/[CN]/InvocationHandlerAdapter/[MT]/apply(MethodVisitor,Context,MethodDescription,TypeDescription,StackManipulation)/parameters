@@ -1,0 +1,5 @@
+MethodVisitor methodVisitor
+Context instrumentationContext
+MethodDescription instrumentedMethod
+TypeDescription instrumentedType
+StackManipulation preparingManipulation
