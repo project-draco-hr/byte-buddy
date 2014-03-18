@@ -1,6 +1,6 @@
 {
   if (type == null) {
-    throw new NullPointerException();
+    throw new NullPointerException("Type must not be null");
   }
  else   if (type.isInterface()) {
     throw new IllegalArgumentException("Cannot delegate to interface " + type);

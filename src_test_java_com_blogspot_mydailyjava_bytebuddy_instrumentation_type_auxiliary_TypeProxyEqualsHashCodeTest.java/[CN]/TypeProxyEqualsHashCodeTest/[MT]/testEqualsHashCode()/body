@@ -1,0 +1,8 @@
+{
+  assertThat(new TypeProxy(first,second,true).hashCode(),is(new TypeProxy(first,second,true).hashCode()));
+  assertThat(new TypeProxy(first,second,true),is(new TypeProxy(first,second,true)));
+  assertThat(new TypeProxy(first,second,true).hashCode(),not(is(new TypeProxy(first,second,false).hashCode())));
+  assertThat(new TypeProxy(first,second,true),not(is(new TypeProxy(first,second,false))));
+  assertThat(new TypeProxy(first,second,true).hashCode(),not(is(new TypeProxy(second,first,true).hashCode())));
+  assertThat(new TypeProxy(first,second,true),not(is(new TypeProxy(second,first,true))));
+}

@@ -1,0 +1,3 @@
+{
+  instrument(Foo.class,MethodDelegation.to(OriginIllegal.class));
+}

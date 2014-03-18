@@ -1,6 +1,3 @@
 {
-  if (delegate == null) {
-    throw new NullPointerException();
-  }
-  return new MethodDelegation(new InstrumentationDelegate.ForStaticFieldInstance(delegate,fieldName),defaultArgumentBinders(),defaultDefaultsProvider(),defaultAmbiguityResolver(),defaultAssigner(),new TypeDescription.ForLoadedType(delegate.getClass()).getReachableMethods().filter(not(isStatic().or(isPrivate()).or(isConstructor()))));
+  return new MethodDelegation(new InstrumentationDelegate.ForStaticFieldInstance(nonNull(delegate),isValidIdentifier(fieldName)),defaultArgumentBinders(),defaultDefaultsProvider(),defaultAmbiguityResolver(),defaultAssigner(),new TypeDescription.ForLoadedType(delegate.getClass()).getReachableMethods().filter(not(isStatic().or(isPrivate()).or(isConstructor()))));
 }

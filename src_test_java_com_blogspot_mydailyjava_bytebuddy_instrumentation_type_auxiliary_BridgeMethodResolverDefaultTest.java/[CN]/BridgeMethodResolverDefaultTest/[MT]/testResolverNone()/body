@@ -1,0 +1,4 @@
+{
+  MethodDescription resolved=bridgeMethodResolver.resolveCallTo(new TypeDescription.ForLoadedType(Foo.class).getReachableMethods().filter(named(BAR).and(takesArguments(0))).getOnly());
+  assertThat(resolved.getReturnType().represents(Object.class),is(true));
+}

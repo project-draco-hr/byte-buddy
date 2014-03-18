@@ -1,5 +1,0 @@
-{
-  if (!annotationType.isAssignableFrom(field.getType())) {
-    throw new IllegalStateException(field + " cannot be assigned a value for " + annotationType);
-  }
-}

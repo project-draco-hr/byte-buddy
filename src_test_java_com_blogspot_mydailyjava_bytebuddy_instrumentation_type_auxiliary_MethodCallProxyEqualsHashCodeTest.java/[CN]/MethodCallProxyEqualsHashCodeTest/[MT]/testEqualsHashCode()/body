@@ -1,0 +1,6 @@
+{
+  assertThat(new MethodCallProxy(first).hashCode(),is(new MethodCallProxy(first).hashCode()));
+  assertThat(new MethodCallProxy(first),is(new MethodCallProxy(first)));
+  assertThat(new MethodCallProxy(first).hashCode(),not(is(new MethodCallProxy(second).hashCode())));
+  assertThat(new MethodCallProxy(first),not(is(new MethodCallProxy(second))));
+}

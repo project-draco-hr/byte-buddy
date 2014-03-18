@@ -2,7 +2,6 @@
   return new Statement(){
     @Override public void evaluate() throws Throwable {
       MockitoAnnotations.initMocks(target);
-      MockedDescription.inject(target);
       base.evaluate();
     }
   }

@@ -1,0 +1,5 @@
+{
+  DynamicType.Loaded<Bar> loaded=instrument(Bar.class,MethodDelegation.to(Baz.class));
+  Bar instance=loaded.getLoaded().newInstance();
+  assertThat(instance.qux(),is(BAR + QUX));
+}
