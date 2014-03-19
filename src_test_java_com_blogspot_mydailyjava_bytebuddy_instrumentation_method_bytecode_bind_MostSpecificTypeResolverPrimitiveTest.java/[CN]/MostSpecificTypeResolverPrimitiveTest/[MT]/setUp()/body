@@ -2,7 +2,7 @@
   super.setUp();
   when(sourceType.isPrimitive()).thenReturn(true);
   when(firstPrimitive.isPrimitive()).thenReturn(true);
-  when(firstPrimitive.represents(int.class)).thenReturn(true);
+  when(firstPrimitive.represents(firstType)).thenReturn(true);
   when(secondPrimitive.isPrimitive()).thenReturn(true);
-  when(secondPrimitive.represents(long.class)).thenReturn(true);
+  when(secondPrimitive.represents(secondType)).thenReturn(true);
 }
