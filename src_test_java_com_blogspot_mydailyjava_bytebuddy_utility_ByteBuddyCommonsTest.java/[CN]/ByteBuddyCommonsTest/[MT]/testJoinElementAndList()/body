@@ -1,0 +1,3 @@
+{
+  assertThat(join(FOO,Arrays.asList(BAR,QUX)),is(Arrays.asList(FOO,BAR,QUX)));
+}

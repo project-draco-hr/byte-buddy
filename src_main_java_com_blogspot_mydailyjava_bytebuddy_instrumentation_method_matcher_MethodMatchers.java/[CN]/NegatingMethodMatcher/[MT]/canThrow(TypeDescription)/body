@@ -1,0 +1,11 @@
+{
+  if (exceptionType.isAssignableTo(Throwable.class)) {
+    if (exceptionType.isAssignableTo(RuntimeType.class) || exceptionType.isAssignableTo(Error.class)) {
+      return new BooleanMethodMatcher(true);
+    }
+    return new ExceptionMethodMatcher(exceptionType);
+  }
+ else {
+    throw new IllegalArgumentException(exceptionType + " is not an exception type");
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return isSetter().and(takesArguments(type));
+}

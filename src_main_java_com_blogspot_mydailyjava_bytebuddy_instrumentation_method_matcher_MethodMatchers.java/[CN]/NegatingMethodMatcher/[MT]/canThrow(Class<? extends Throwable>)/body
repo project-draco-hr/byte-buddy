@@ -1,3 +1,6 @@
 {
-  return new ExceptionMethodMatcher(exceptionType);
+  if (RuntimeException.class.isAssignableFrom(exceptionType) || Error.class.isAssignableFrom(exceptionType)) {
+    return new BooleanMethodMatcher(true);
+  }
+  return new ExceptionMethodMatcher(new TypeDescription.ForLoadedType(exceptionType));
 }

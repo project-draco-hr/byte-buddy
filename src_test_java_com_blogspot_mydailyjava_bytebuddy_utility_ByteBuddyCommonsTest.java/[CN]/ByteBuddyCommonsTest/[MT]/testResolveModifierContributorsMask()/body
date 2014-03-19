@@ -1,0 +1,3 @@
+{
+  resolveModifierContributors(ModifierContributor.EMPTY_MASK,Ownership.STATIC);
+}

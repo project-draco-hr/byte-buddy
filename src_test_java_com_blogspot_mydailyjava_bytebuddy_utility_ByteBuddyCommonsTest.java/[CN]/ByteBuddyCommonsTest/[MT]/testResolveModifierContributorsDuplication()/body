@@ -1,0 +1,3 @@
+{
+  resolveModifierContributors(Integer.MAX_VALUE,Ownership.STATIC,Ownership.MEMBER);
+}

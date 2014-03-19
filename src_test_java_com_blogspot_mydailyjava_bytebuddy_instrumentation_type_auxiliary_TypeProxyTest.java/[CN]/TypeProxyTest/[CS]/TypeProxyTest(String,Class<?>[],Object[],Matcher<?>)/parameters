@@ -1,0 +1,4 @@
+String methodName
+Class<?>[] parameterTypes
+Object[] methodArguments
+Matcher<?> matcher

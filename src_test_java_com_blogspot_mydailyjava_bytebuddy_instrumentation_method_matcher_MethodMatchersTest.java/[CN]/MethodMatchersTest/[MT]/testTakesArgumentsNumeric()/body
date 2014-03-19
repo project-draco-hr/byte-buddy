@@ -1,0 +1,8 @@
+{
+  assertThat(MethodMatchers.takesArguments(0).matches(testClassBase$foo),is(true));
+  assertThat(MethodMatchers.takesArguments(1).matches(testClassBase$bar),is(true));
+  assertThat(MethodMatchers.takesArguments(1).matches(testClassBase$bar),is(true));
+  assertThat(MethodMatchers.takesArguments(1).matches(testClassExtension$foo),is(false));
+  assertThat(MethodMatchers.takesArguments(2).matches(testClassExtension$bar),is(false));
+  assertThat(MethodMatchers.takesArguments(0).matches(testClassExtension$bar),is(false));
+}

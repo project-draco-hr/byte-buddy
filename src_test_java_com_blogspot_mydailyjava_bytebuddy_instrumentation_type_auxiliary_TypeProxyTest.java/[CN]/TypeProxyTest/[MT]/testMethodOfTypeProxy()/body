@@ -1,0 +1,14 @@
+{
+  Class<Foo> proxy=makeProxyType(Foo.class,Bar.class);
+  Field field=proxy.getDeclaredField(TypeProxy.INSTANCE_FIELD);
+  field.setAccessible(true);
+  Bar proxyTarget=new Bar();
+  Constructor<Foo> proxyConstructor=proxy.getDeclaredConstructor();
+  proxyConstructor.setAccessible(true);
+  Foo proxyInstance=proxyConstructor.newInstance();
+  field.set(proxyInstance,proxyTarget);
+  Method method=proxy.getDeclaredMethod(methodName,parameterTypes);
+  method.setAccessible(true);
+  assertThat(method.invoke(proxyInstance,methodArguments),is((Matcher)matcher));
+  proxyTarget.callTraceable.assertOnlyCall(methodName,methodArguments);
+}

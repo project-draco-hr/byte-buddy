@@ -1,4 +1,4 @@
 {
-  MethodMatcher methodMatcher=ignoreFinalizer ? not(isFinalizer()) : any();
-  return new ByteBuddy(classFormatVersion).subclass(proxiedType,ConstructorStrategy.Default.IMITATE_SUPER_TYPE).name(auxiliaryTypeName).modifiers(DEFAULT_TYPE_MODIFIER.toArray(new ModifierContributor.ForType[DEFAULT_TYPE_MODIFIER.size()])).method(methodMatcher).intercept(new MethodCall(methodAccessorFactory)).defineMethod(REFLECTION_METHOD,TargetType.DESCRIPTION,Collections.<TypeDescription>emptyList(),Ownership.STATIC).intercept(new SilentConstruction()).make();
+  MethodMatcher finalizerMatcher=ignoreFinalizer ? not(isFinalizer()) : any();
+  return new ByteBuddy(classFormatVersion).subclass(proxiedType,ConstructorStrategy.Default.IMITATE_SUPER_TYPE).name(auxiliaryTypeName).modifiers(DEFAULT_TYPE_MODIFIER.toArray(new ModifierContributor.ForType[DEFAULT_TYPE_MODIFIER.size()])).method(finalizerMatcher).intercept(new MethodCall(methodAccessorFactory)).defineMethod(REFLECTION_METHOD,TargetType.DESCRIPTION,Collections.<TypeDescription>emptyList(),Ownership.STATIC).intercept(new SilentConstruction()).make();
 }

@@ -16,6 +16,10 @@
   object$hashCode=new MethodDescription.ForMethod(Object.class.getDeclaredMethod(HASH_CODE_METHOD_NAME));
   object$finalize=new MethodDescription.ForMethod(Object.class.getDeclaredMethod(FINALIZE_METHOD_NAME));
   testModifier$finalize=new MethodDescription.ForMethod(TestModifier.class.getDeclaredMethod(FINALIZE_METHOD_NAME));
+  testClassBase$foobar=new MethodDescription.ForMethod(TestClassBase.class.getDeclaredMethod(FOOBAR_METHOD_NAME));
+  testClassExtension$fooBar=new MethodDescription.ForMethod(TestClassExtension.class.getDeclaredMethod(FOOBAR_METHOD_NAME));
+  testBean$getter=new MethodDescription.ForMethod(TestBean.class.getDeclaredMethod(GET_PROPERTY_METHOD_NAME));
+  testBean$setter=new MethodDescription.ForMethod(TestBean.class.getDeclaredMethod(SET_PROPERTY_METHOD_NAME,String.class));
   testModifier$sync=new MethodDescription.ForMethod(TestModifier.class.getDeclaredMethod(SYNC_METHOD_NAME));
   testModifier$varargs=new MethodDescription.ForMethod(TestModifier.class.getDeclaredMethod(VARARGS_METHOD_NAME,Object[].class));
   testModifier$strict=new MethodDescription.ForMethod(TestModifier.class.getDeclaredMethod(STRICT_METHOD_NAME));

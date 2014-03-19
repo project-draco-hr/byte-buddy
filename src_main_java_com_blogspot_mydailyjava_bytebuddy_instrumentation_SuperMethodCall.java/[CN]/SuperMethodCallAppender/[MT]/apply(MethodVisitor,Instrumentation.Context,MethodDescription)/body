@@ -1,7 +1,7 @@
 {
   MethodDescription targetMethod;
   if (instrumentedMethod.isConstructor()) {
-    MethodList methodList=targetType.getDeclaredMethods().filter(hasSameSignatureAs(instrumentedMethod));
+    MethodList methodList=targetType.getDeclaredMethods().filter(hasSameByteCodeSignatureAs(instrumentedMethod));
     if (methodList.size() == 0) {
       throw new IllegalArgumentException("There is no super constructor resembling " + instrumentedMethod);
     }

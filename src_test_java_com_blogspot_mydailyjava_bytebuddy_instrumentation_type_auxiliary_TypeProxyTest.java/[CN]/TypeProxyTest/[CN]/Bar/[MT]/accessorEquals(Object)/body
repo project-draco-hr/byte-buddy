@@ -1,0 +1,4 @@
+{
+  callTraceable.register(EQUALS,o);
+  return EQUALS_RESULT;
+}
