@@ -1,0 +1,7 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  if (!super.equals(other))   return false;
+  ForNamedField that=(ForNamedField)other;
+  return fieldLocatorFactory.equals(that.fieldLocatorFactory) && fieldName.equals(that.fieldName) && preparationHandler.equals(that.preparationHandler);
+}

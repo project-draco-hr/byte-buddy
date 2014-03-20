@@ -1,0 +1,3 @@
+{
+  return apply(methodVisitor,instrumentationContext,fieldDescription,methodDescription,new StackManipulation.Compound(FieldAccess.forField(fieldDescription).getter(),assigner.assign(fieldDescription.getFieldType(),methodDescription.getReturnType(),considerRuntimeType)));
+}

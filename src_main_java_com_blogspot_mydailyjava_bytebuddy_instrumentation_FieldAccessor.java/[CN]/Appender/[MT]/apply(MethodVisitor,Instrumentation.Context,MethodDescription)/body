@@ -1,0 +1,11 @@
+{
+  if (isGetter().matches(instrumentedMethod)) {
+    return applyGetter(methodVisitor,instrumentationContext,fieldLocator.locate(getFieldName(instrumentedMethod)),instrumentedMethod);
+  }
+ else   if (isSetter().matches(instrumentedMethod)) {
+    return applySetter(methodVisitor,instrumentationContext,fieldLocator.locate(getFieldName(instrumentedMethod)),instrumentedMethod);
+  }
+ else {
+    throw new IllegalArgumentException("Method " + instrumentationContext + " is no bean property");
+  }
+}

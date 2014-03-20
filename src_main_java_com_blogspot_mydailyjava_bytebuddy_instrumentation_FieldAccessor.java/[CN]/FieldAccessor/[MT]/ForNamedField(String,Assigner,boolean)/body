@@ -1,0 +1,6 @@
+{
+  super(assigner,considerRuntimeType);
+  this.fieldName=fieldName;
+  preparationHandler=PreparationHandler.NoOp.INSTANCE;
+  fieldLocatorFactory=FieldLocator.ForInstrumentedTypeHierarchy.Factory.INSTANCE;
+}

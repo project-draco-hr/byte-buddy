@@ -1,0 +1,4 @@
+{
+  super(assigner,considerRuntimeType);
+  fieldLocatorFactory=FieldLocator.ForInstrumentedTypeHierarchy.Factory.INSTANCE;
+}

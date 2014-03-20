@@ -1,0 +1,7 @@
+{
+  if (methodDescription.isStatic() && !fieldDescription.isStatic()) {
+    throw new IllegalArgumentException("Cannot call instance field " + fieldDescription + " from static method "+ methodDescription);
+  }
+  StackManipulation.Size stackSize=new StackManipulation.Compound(fieldDescription.isStatic() ? LegalTrivialStackManipulation.INSTANCE : MethodVariableAccess.REFERENCE.loadFromIndex(0),fieldAccess,MethodReturn.returning(methodDescription.getReturnType())).apply(methodVisitor,instrumentationContext);
+  return new ByteCodeAppender.Size(stackSize.getMaximalSize(),methodDescription.getStackSize());
+}
