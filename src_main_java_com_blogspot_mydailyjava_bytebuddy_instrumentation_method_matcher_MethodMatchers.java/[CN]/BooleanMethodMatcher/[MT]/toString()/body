@@ -1,3 +1,3 @@
 {
-  return "BooleanMethodMatcher{nameMatches=" + matches + '}';
+  return Boolean.toString(matches);
 }

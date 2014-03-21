@@ -1,3 +1,0 @@
-{
-  return preparationHandler.prepare(instrumentedType);
-}

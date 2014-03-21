@@ -1,3 +1,0 @@
-{
-  return "FieldAccessor.ForNamedField.PreparationHandler.FieldDefiner{" + "name='" + name + '\''+ ", typeDescription="+ typeDescription+ ", modifiers="+ modifiers+ '}';
-}

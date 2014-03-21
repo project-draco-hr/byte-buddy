@@ -1,0 +1,3 @@
+{
+  return "FieldLocator.ForInstrumentedTypeHierarchy{instrumentedType=" + instrumentedType + '}';
+}
