@@ -1,0 +1,4 @@
+{
+  register(FOO);
+  return STRING_DEFAULT_VALUE;
+}

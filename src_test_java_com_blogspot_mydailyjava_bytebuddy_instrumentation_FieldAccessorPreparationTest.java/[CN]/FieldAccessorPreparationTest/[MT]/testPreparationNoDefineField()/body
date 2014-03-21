@@ -1,0 +1,4 @@
+{
+  assertThat(FieldAccessor.ofField(FOO).prepare(instrumentedType),is(instrumentedType));
+  verifyZeroInteractions(instrumentedType);
+}

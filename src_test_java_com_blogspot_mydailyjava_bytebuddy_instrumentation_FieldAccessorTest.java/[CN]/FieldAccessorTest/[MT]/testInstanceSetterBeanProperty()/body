@@ -1,0 +1,3 @@
+{
+  testSetter(instanceSetter,FieldAccessor.ofBeanProperty(),false);
+}

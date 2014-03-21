@@ -1,0 +1,4 @@
+{
+  assertThat(FieldAccessor.ofBeanProperty().prepare(instrumentedType),is(instrumentedType));
+  verifyZeroInteractions(instrumentedType);
+}

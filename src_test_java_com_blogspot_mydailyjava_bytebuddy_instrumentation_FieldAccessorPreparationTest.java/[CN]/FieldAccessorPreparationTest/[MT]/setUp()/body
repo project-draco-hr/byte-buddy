@@ -1,0 +1,3 @@
+{
+  when(instrumentedType.withField(any(String.class),any(TypeDescription.class),anyInt())).thenReturn(instrumentedType);
+}

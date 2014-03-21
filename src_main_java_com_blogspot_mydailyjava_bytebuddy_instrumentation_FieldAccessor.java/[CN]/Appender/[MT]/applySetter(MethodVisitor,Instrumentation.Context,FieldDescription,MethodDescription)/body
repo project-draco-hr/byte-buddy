@@ -1,3 +1,6 @@
 {
+  if (fieldDescription.isFinal()) {
+    throw new IllegalArgumentException("Cannot apply setter on final field " + fieldDescription);
+  }
   return apply(methodVisitor,instrumentationContext,fieldDescription,methodDescription,new StackManipulation.Compound(MethodVariableAccess.forType(fieldDescription.getFieldType()).loadFromIndex(methodDescription.getParameterOffset(0)),assigner.assign(methodDescription.getParameterTypes().get(0),fieldDescription.getFieldType(),considerRuntimeType),FieldAccess.forField(fieldDescription).putter()));
 }

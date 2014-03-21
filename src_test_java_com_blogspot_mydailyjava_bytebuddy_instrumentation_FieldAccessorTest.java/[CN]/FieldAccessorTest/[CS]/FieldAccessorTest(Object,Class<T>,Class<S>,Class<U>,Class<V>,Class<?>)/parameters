@@ -1,0 +1,6 @@
+Object value
+Class<T> instanceGetter
+Class<S> instanceSetter
+Class<U> staticGetter
+Class<V> staticSetter
+Class<?> propertyType

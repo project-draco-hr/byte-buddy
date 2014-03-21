@@ -1,0 +1,4 @@
+{
+  register(FOO);
+  return LONG_DEFAULT_VALUE;
+}

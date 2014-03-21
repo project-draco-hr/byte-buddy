@@ -1,0 +1,4 @@
+{
+  register(FOO);
+  return INT_DEFAULT_VALUE;
+}

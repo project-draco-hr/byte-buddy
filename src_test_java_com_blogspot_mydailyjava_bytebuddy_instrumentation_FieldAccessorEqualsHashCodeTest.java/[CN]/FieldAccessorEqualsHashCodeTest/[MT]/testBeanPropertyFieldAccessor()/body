@@ -1,0 +1,10 @@
+{
+  assertThat(FieldAccessor.ofBeanProperty().hashCode(),is(FieldAccessor.ofBeanProperty().hashCode()));
+  assertThat(FieldAccessor.ofBeanProperty(),is(FieldAccessor.ofBeanProperty()));
+  assertThat(FieldAccessor.ofBeanProperty().in(first).hashCode(),is(FieldAccessor.ofBeanProperty().in(first).hashCode()));
+  assertThat(FieldAccessor.ofBeanProperty().in(first),is(FieldAccessor.ofBeanProperty().in(first)));
+  assertThat(FieldAccessor.ofBeanProperty().in(first).hashCode(),not(is(FieldAccessor.ofBeanProperty().hashCode())));
+  assertThat((FieldAccessor)FieldAccessor.ofBeanProperty().in(first),not(is((FieldAccessor)FieldAccessor.ofBeanProperty())));
+  assertThat(FieldAccessor.ofBeanProperty().in(first).hashCode(),not(is(FieldAccessor.ofBeanProperty().in(second).hashCode())));
+  assertThat(FieldAccessor.ofBeanProperty().in(first),not(is(FieldAccessor.ofBeanProperty().in(second))));
+}

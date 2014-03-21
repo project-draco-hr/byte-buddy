@@ -1,0 +1,13 @@
+{
+  DynamicType.Loaded<Z> loaded=instrument(target,instrumentation);
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(definesField ? 1 : 0));
+  Z instance=loaded.getLoaded().newInstance();
+  assertNotEquals(target,instance.getClass());
+  assertThat(instance,instanceOf(target));
+  Method setter=loaded.getLoaded().getDeclaredMethod(SET + Character.toUpperCase(FOO.charAt(0)) + FOO.substring(1),propertyType);
+  assertThat(setter.invoke(instance,value),nullValue());
+  instance.assertZeroCalls();
+  assertFieldValue(definesField ? loaded.getLoaded() : target,instance);
+}

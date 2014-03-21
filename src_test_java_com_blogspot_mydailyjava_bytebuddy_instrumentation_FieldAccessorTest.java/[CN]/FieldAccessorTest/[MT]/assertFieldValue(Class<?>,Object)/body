@@ -1,0 +1,6 @@
+{
+  Field field=fieldHolder.getDeclaredField(FOO);
+  boolean isStatic=(Modifier.STATIC & field.getModifiers()) != 0;
+  Object fieldValue=isStatic ? field.get(STATIC_FIELD) : field.get(instance);
+  assertThat(fieldValue,is(value));
+}

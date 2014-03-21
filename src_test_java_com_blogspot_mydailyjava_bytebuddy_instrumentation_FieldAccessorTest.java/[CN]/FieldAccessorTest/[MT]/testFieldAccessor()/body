@@ -1,5 +1,0 @@
-{
-  DynamicType.Loaded<Foo> loaded=instrument(Foo.class,FieldAccessor.ofBeanProperty());
-  Foo proxy=loaded.getLoaded().newInstance();
-  assertThat(proxy.getFoo(),is(10));
-}

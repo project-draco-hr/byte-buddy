@@ -1,0 +1,8 @@
+{
+  this.value=value;
+  this.instanceGetter=instanceGetter;
+  this.instanceSetter=instanceSetter;
+  this.staticGetter=staticGetter;
+  this.staticSetter=staticSetter;
+  this.propertyType=propertyType;
+}

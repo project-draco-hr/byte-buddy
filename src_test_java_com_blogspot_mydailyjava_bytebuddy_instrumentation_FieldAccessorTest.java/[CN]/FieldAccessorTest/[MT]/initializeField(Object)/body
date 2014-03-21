@@ -1,0 +1,10 @@
+{
+  Field field=instance.getClass().getDeclaredField(FOO);
+  boolean isStatic=(Modifier.STATIC & field.getModifiers()) != 0;
+  if (isStatic) {
+    field.set(STATIC_FIELD,value);
+  }
+ else {
+    field.set(instance,value);
+  }
+}

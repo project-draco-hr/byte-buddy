@@ -1,3 +1,3 @@
 {
-  return null;
+  return new ForNamedField(fieldName,preparationHandler,new FieldLocator.ForGivenType(typeDescription),assigner,considerRuntimeType);
 }

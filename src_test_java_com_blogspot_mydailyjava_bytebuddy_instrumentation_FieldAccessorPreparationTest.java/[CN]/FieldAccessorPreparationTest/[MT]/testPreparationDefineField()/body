@@ -1,0 +1,5 @@
+{
+  assertThat(FieldAccessor.ofField(FOO).defineAs(TYPE).prepare(instrumentedType),is(instrumentedType));
+  verify(instrumentedType).withField(FOO,new TypeDescription.ForLoadedType(TYPE),NO_MODIFIERS);
+  verifyNoMoreInteractions(instrumentedType);
+}

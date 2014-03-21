@@ -1,0 +1,3 @@
+{
+  testGetter(staticGetter,FieldAccessor.ofField(FOO),false);
+}
