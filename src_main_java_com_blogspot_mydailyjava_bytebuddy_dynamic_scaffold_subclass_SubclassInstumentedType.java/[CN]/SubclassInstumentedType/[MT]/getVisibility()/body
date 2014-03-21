@@ -1,14 +1,14 @@
 {
   if ((modifiers & Modifier.PUBLIC) != 0) {
-    return Visibility.PUBLIC;
+    return MemberVisibility.PUBLIC;
   }
  else   if ((modifiers & Modifier.PROTECTED) != 0) {
-    return Visibility.PROTECTED;
+    return MemberVisibility.PROTECTED;
   }
  else   if ((modifiers & Modifier.PRIVATE) != 0) {
-    return Visibility.PROTECTED;
+    return MemberVisibility.PROTECTED;
   }
  else {
-    return Visibility.PACKAGE_PRIVATE;
+    return MemberVisibility.PACKAGE_PRIVATE;
   }
 }
