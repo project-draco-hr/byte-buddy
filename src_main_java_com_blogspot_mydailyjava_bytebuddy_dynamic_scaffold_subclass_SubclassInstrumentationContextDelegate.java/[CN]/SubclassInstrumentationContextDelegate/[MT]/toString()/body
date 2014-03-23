@@ -1,3 +1,3 @@
 {
-  return "SubclassInstrumentationContextDelegate{" + "instrumentedType=" + instrumentedType + ", prefix='"+ prefix+ '\''+ ", random="+ random+ ", knownTargetMethodsToAccessorMethod="+ knownTargetMethodsToAccessorMethod+ '}';
+  return "SubclassInstrumentationContextDelegate{" + "instrumentedType=" + instrumentedType + ", bridgeMethodResolver="+ bridgeMethodResolver+ ", prefix='"+ prefix+ '\''+ ", random="+ random+ ", knownTargetMethodsToAccessorMethod="+ knownTargetMethodsToAccessorMethod+ '}';
 }

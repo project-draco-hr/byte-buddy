@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  SubclassFieldAnnotationTarget that=(SubclassFieldAnnotationTarget)other;
+  return attributeAppenderFactory.equals(that.attributeAppenderFactory) && fieldToken.equals(that.fieldToken) && SubclassDynamicTypeBuilder.this.equals(that.getSubclassDynamicTypeBuilder());
+}

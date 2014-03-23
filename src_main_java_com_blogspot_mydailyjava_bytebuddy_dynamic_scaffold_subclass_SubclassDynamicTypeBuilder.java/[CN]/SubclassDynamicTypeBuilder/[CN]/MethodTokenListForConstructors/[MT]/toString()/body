@@ -1,0 +1,3 @@
+{
+  return "MethodTokenListForConstructors{constructor=" + constructor + '}';
+}

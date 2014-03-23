@@ -1,0 +1,6 @@
+{
+  objectHashCode=new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod(HASH_CODE));
+  integerIntValue=new MethodDescription.ForLoadedMethod(Integer.class.getDeclaredMethod(INT_VALUE));
+  doubleDoubleValue=new MethodDescription.ForLoadedMethod(Double.class.getDeclaredMethod(LONG_BITS_TO_DOUBLE,long.class));
+  objectWait=new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod(WAIT,long.class,int.class));
+}

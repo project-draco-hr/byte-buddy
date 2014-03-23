@@ -3,6 +3,7 @@
   result=31 * result + namingStrategy.hashCode();
   result=31 * result + interfaceTypes.hashCode();
   result=31 * result + ignoredMethods.hashCode();
+  result=31 * result + bridgeMethodResolverFactory.hashCode();
   result=31 * result + classVisitorWrapperChain.hashCode();
   result=31 * result + methodRegistry.hashCode();
   result=31 * result + modifiers.hashCode();

@@ -1,0 +1,3 @@
+InstrumentedType instrumentedType
+BridgeMethodResolver.Factory bridgeMethodResolverFactory
+String prefix

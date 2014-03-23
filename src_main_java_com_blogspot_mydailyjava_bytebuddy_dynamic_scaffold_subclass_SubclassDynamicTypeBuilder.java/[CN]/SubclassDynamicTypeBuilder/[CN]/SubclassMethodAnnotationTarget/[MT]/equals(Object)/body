@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  SubclassMethodAnnotationTarget that=(SubclassMethodAnnotationTarget<?>)other;
+  return attributeAppenderFactory.equals(that.attributeAppenderFactory) && instrumentation.equals(that.instrumentation) && latentMethodMatcher.equals(that.latentMethodMatcher)&& methodTokens.equals(that.methodTokens)&& SubclassDynamicTypeBuilder.this.equals(that.getSubclassDynamicTypeBuilder());
+}

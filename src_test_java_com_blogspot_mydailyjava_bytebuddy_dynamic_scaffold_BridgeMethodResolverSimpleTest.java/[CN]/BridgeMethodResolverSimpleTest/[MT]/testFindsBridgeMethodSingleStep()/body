@@ -1,0 +1,8 @@
+{
+  TypeDescription target=new TypeDescription.ForLoadedType(Bar.class);
+  MethodList relevantMethods=target.getReachableMethods().filter(not(isConstructor().or(isDeclaredBy(Object.class))));
+  assertThat(relevantMethods.size(),is(2));
+  BridgeMethodResolver bridgeMethodResolver=new BridgeMethodResolver.Simple(target,conflictHandler);
+  assertThat(bridgeMethodResolver.resolve(relevantMethods.filter(isBridge()).getOnly()),is(relevantMethods.filter(not(isBridge())).getOnly()));
+  verifyZeroInteractions(conflictHandler);
+}

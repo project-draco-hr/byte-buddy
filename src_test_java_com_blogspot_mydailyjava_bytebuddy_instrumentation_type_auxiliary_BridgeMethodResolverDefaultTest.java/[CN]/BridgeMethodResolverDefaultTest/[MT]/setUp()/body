@@ -1,3 +1,0 @@
-{
-  bridgeMethodResolver=new AuxiliaryType.MethodAccessorFactory.BridgeMethodResolver.Default(new TypeDescription.ForLoadedType(Bar.class).getReachableMethods());
-}

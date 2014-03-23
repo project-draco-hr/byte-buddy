@@ -1,0 +1,7 @@
+{
+  MethodList bridgeMethods=targetType.getReachableMethods().filter(isBridge());
+  bridges=new HashMap<SignatureToken,BridgeTarget>(bridgeMethods.size());
+  for (  MethodDescription bridgeMethod : bridgeMethods) {
+    bridges.put(new SignatureToken(bridgeMethod),findBridgeTargetFor(bridgeMethod,conflictHandler));
+  }
+}

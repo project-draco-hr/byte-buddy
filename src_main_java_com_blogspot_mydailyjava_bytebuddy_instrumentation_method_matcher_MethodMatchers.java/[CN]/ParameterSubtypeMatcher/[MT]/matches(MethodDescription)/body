@@ -1,0 +1,13 @@
+{
+  TypeList parameterTypes=methodDescription.getParameterTypes();
+  if (parameterTypes.size() != this.parameterTypes.size()) {
+    return false;
+  }
+  int currentIndex=0;
+  for (  TypeDescription parameterType : parameterTypes) {
+    if (!parameterType.isAssignableTo(this.parameterTypes.get(currentIndex++))) {
+      return false;
+    }
+  }
+  return true;
+}

@@ -1,0 +1,3 @@
+{
+  return "SubclassMatchedMethodInterception{" + "base=" + SubclassDynamicTypeBuilder.this + ", latentMethodMatcher="+ latentMethodMatcher+ ", methodTokens="+ methodTokens+ '}';
+}

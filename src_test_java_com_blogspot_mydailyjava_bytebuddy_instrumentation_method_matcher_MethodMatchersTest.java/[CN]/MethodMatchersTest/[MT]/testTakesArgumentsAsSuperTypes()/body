@@ -1,0 +1,11 @@
+{
+  assertThat(MethodMatchers.takesArgumentsAsSuperTypesOf(Object.class).matches(testClassBase$foo),is(false));
+  assertThat(MethodMatchers.takesArgumentsAsSuperTypesOf(Object.class).matches(testClassBase$bar),is(true));
+  assertThat(MethodMatchers.takesArgumentsAsSuperTypesOf(String.class).matches(testClassBase$bar),is(true));
+  assertThat(MethodMatchers.takesArgumentsAsSuperTypesOf(Object.class).matches(testClassExtension$foo),is(false));
+  assertThat(MethodMatchers.takesArgumentsAsSuperTypesOf(Object.class).matches(testClassExtension$bar),is(true));
+  assertThat(MethodMatchers.takesArgumentsAsSuperTypesOf(String.class).matches(testClassExtension$bar),is(true));
+  assertThat(MethodMatchers.takesArgumentsAsSuperTypesOf(Object.class).matches(testBean$setter),is(false));
+  assertThat(MethodMatchers.takesArgumentsAsSuperTypesOf(String.class).matches(testBean$setter),is(true));
+  assertThat(MethodMatchers.takesArgumentsAsSuperTypesOf(Integer.class).matches(testBean$setter),is(false));
+}

@@ -1,0 +1,3 @@
+{
+  this.targetMethodCall=MethodInvocation.invoke(accessorMethod).special(instrumentedType);
+}

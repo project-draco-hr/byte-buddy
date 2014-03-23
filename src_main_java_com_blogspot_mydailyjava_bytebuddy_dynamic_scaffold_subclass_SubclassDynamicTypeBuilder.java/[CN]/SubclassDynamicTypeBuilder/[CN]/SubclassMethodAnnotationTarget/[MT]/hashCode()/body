@@ -1,0 +1,8 @@
+{
+  int result=methodTokens.hashCode();
+  result=31 * result + latentMethodMatcher.hashCode();
+  result=31 * result + instrumentation.hashCode();
+  result=31 * result + attributeAppenderFactory.hashCode();
+  result=31 * result + SubclassDynamicTypeBuilder.this.hashCode();
+  return result;
+}

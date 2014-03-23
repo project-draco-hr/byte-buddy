@@ -1,6 +1,6 @@
 {
   InstrumentedType instrumentedType=applyRecordedMembersTo(new SubclassInstumentedType(classFormatVersion,superType,interfaceTypes,modifiers,namingStrategy));
-  SubclassInstrumentationContextDelegate contextDelegate=new SubclassInstrumentationContextDelegate(instrumentedType);
+  SubclassInstrumentationContextDelegate contextDelegate=new SubclassInstrumentationContextDelegate(instrumentedType,bridgeMethodResolverFactory);
   Instrumentation.Context instrumentationContext=new Instrumentation.Context.Default(classFormatVersion,contextDelegate,contextDelegate);
   MethodRegistry.Compiled compiledMethodRegistry=methodRegistry.compile(instrumentedType,MethodRegistry.Compiled.Entry.Skip.INSTANCE);
   instrumentedType=compiledMethodRegistry.getInstrumentedType();

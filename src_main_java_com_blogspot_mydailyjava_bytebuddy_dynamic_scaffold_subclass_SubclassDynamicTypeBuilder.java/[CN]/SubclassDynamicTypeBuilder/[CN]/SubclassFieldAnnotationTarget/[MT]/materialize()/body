@@ -1,3 +1,3 @@
 {
-  return new SubclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,superType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,classVisitorWrapperChain,fieldRegistry.include(fieldToken,attributeAppenderFactory),methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,join(fieldTokens,fieldToken),methodTokens);
+  return new SubclassDynamicTypeBuilder<S>(classFormatVersion,namingStrategy,superType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,fieldRegistry.include(fieldToken,attributeAppenderFactory),methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,join(fieldTokens,fieldToken),methodTokens);
 }

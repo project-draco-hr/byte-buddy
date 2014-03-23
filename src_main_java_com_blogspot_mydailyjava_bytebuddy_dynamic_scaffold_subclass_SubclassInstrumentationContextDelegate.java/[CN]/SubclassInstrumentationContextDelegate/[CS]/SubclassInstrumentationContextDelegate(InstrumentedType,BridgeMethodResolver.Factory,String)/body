@@ -1,0 +1,9 @@
+{
+  this.prefix=prefix;
+  this.instrumentedType=instrumentedType;
+  random=new Random();
+  bridgeMethodResolver=bridgeMethodResolverFactory.make(instrumentedType);
+  orderedAccessorMethods=new ArrayList<MethodDescription>();
+  knownTargetMethodsToAccessorMethod=new HashMap<MethodDescription,MethodDescription>();
+  registeredAccessorMethodToTargetMethodCall=new HashMap<MethodDescription,Entry>();
+}

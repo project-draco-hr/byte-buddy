@@ -1,0 +1,13 @@
+{
+  this.classFormatVersion=classFormatVersion;
+  this.namingStrategy=namingStrategy;
+  this.interfaceTypes=interfaceTypes;
+  this.ignoredMethods=ignoredMethods;
+  this.bridgeMethodResolverFactory=bridgeMethodResolverFactory;
+  this.classVisitorWrapperChain=classVisitorWrapperChain;
+  this.methodRegistry=methodRegistry;
+  this.modifiers=modifiers;
+  this.typeAttributeAppender=typeAttributeAppender;
+  this.defaultFieldAttributeAppenderFactory=defaultFieldAttributeAppenderFactory;
+  this.defaultMethodAttributeAppenderFactory=defaultMethodAttributeAppenderFactory;
+}

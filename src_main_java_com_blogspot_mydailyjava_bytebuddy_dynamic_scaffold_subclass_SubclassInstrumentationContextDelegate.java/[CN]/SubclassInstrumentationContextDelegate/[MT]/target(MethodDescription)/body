@@ -1,7 +1,7 @@
 {
-  StackManipulation targetMethodCall=registeredAccessorMethodToTargetMethodCall.get(methodDescription);
+  Entry targetMethodCall=registeredAccessorMethodToTargetMethodCall.get(methodDescription);
   if (targetMethodCall == null) {
     throw new IllegalArgumentException("Unknown method: " + methodDescription);
   }
-  return new SameSignatureMethodCall(targetMethodCall);
+  return targetMethodCall;
 }

@@ -1,3 +1,3 @@
 {
-  return this == o || !(o == null || getClass() != o.getClass()) && returnType.equals(((ReturnTypeMatcher)o).returnType);
+  return this == other || !(other == null || getClass() != other.getClass()) && returnType.equals(((ReturnTypeMatcher)other).returnType);
 }

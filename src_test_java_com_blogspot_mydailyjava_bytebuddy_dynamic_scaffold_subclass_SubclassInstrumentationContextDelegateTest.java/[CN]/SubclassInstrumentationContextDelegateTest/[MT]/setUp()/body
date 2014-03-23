@@ -2,10 +2,12 @@
   when(firstMethod.getReturnType()).thenReturn(firstMethodReturnType);
   when(firstMethod.getParameterTypes()).thenReturn(firstMethodParameters);
   when(firstMethod.getDeclaringType()).thenReturn(superType);
+  when(firstMethod.getInternalName()).thenReturn(QUX);
   when(firstMethodReturnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(secondMethod.getReturnType()).thenReturn(secondMethodReturnType);
   when(secondMethod.getParameterTypes()).thenReturn(secondMethodParameters);
   when(secondMethod.getDeclaringType()).thenReturn(superType);
+  when(secondMethod.getInternalName()).thenReturn(BAZ);
   when(superType.isAssignableFrom(superType)).thenReturn(true);
   when(secondMethodReturnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(instrumentedType.detach()).thenReturn(instrumentedType);
@@ -13,5 +15,5 @@
   when(instrumentedType.getSupertype()).thenReturn(superType);
   when(methodList.filter(any(MethodMatcher.class))).thenReturn(methodList);
   when(methodList.iterator()).thenReturn(Arrays.<MethodDescription>asList().iterator());
-  delegate=new SubclassInstrumentationContextDelegate(instrumentedType,FOO);
+  delegate=new SubclassInstrumentationContextDelegate(instrumentedType,BridgeMethodResolver.Simple.Factory.FAIL_FAST,FOO);
 }

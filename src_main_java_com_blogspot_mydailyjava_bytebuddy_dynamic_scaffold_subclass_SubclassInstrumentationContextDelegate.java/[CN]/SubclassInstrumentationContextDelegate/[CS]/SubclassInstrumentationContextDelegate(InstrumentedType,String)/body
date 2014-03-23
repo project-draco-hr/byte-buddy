@@ -1,9 +1,0 @@
-{
-  this.prefix=prefix;
-  this.instrumentedType=instrumentedType;
-  random=new Random();
-  bridgeMethodResolver=new BridgeMethodResolver.Default(instrumentedType.getReachableMethods());
-  orderedAccessorMethods=new ArrayList<MethodDescription>();
-  knownTargetMethodsToAccessorMethod=new HashMap<MethodDescription,MethodDescription>();
-  registeredAccessorMethodToTargetMethodCall=new HashMap<MethodDescription,StackManipulation>();
-}

@@ -1,0 +1,5 @@
+{
+  objectDefaultConstructor=new MethodDescription.ForLoadedConstructor(Object.class.getDeclaredConstructor());
+  stringDefaultConstructor=new MethodDescription.ForLoadedConstructor(String.class.getDeclaredConstructor());
+  stringSingleArgConstructor=new MethodDescription.ForLoadedConstructor(String.class.getDeclaredConstructor(String.class));
+}

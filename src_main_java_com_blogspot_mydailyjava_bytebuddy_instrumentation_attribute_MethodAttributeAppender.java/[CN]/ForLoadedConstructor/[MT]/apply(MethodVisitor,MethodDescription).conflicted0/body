@@ -2,5 +2,5 @@
   if (constructor.getParameterTypes().length > methodDescription.getParameterTypes().size()) {
     throw new IllegalArgumentException("The constructor " + constructor + " has more parameters than the "+ "instrumented method "+ methodDescription);
   }
-  ForInstrumentedMethod.INSTANCE.apply(methodVisitor,new MethodDescription.ForConstructor(constructor));
+  ForInstrumentedMethod.INSTANCE.apply(methodVisitor,new MethodDescription.ForLoadedConstructor(constructor));
 }

@@ -1,0 +1,3 @@
+{
+  this(instrumentedType,bridgeMethodResolverFactory,DEFAULT_PREFIX);
+}

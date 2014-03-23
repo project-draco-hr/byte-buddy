@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  SubclassMatchedMethodInterception<?> that=(SubclassMatchedMethodInterception<?>)other;
+  return latentMethodMatcher.equals(that.latentMethodMatcher) && methodTokens.equals(that.methodTokens) && SubclassDynamicTypeBuilder.this.equals(that.getSubclassDynamicTypeBuilder());
+}

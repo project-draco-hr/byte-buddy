@@ -1,0 +1,3 @@
+{
+  return hasSameByteCodeSignatureAs(new MethodDescription.ForLoadedConstructor(constructor));
+}

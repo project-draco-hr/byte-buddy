@@ -1,0 +1,6 @@
+{
+  int result=latentMethodMatcher.hashCode();
+  result=31 * result + methodTokens.hashCode();
+  result=31 * result + SubclassDynamicTypeBuilder.this.hashCode();
+  return result;
+}

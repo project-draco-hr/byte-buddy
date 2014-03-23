@@ -1,0 +1,3 @@
+{
+  return (methodDescription.isConstructor() ? isConstructor() : named(methodDescription.getName())).and(returnsSubtypeOf(methodDescription.getReturnType())).and(takesArgumentsAsSubtypesOf(methodDescription.getParameterTypes()));
+}

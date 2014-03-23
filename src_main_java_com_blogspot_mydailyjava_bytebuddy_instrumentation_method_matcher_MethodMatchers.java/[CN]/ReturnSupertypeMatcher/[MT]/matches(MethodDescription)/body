@@ -1,0 +1,3 @@
+{
+  return methodDescription.getReturnType().isAssignableFrom(returnType);
+}

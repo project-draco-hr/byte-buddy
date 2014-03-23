@@ -1,0 +1,3 @@
+{
+  return "SubclassOptionalMatchedMethodInterception{" + "base=" + SubclassDynamicTypeBuilder.this + "interfaceType="+ interfaceType+ '}';
+}
