@@ -1,0 +1,7 @@
+{
+  Map<MethodSignatureToken,MethodDescription> descriptions=new HashMap<MethodSignatureToken,MethodDescription>(methodDescriptions.size());
+  for (  MethodDescription methodDescription : methodDescriptions) {
+    descriptions.put(new MethodSignatureToken(methodDescription),methodDescription);
+  }
+  return descriptions;
+}

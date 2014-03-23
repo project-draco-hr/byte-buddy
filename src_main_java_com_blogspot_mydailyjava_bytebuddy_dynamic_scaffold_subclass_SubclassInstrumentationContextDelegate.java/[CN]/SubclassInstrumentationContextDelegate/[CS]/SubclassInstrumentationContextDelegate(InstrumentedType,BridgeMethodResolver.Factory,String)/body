@@ -2,7 +2,9 @@
   this.prefix=prefix;
   this.instrumentedType=instrumentedType;
   random=new Random();
-  bridgeMethodResolver=bridgeMethodResolverFactory.make(instrumentedType);
+  MethodList reachableMethods=instrumentedType.getReachableMethods();
+  bridgeMethodResolver=bridgeMethodResolverFactory.make(reachableMethods);
+  this.reachableMethods=MethodSignatureToken.describe(reachableMethods);
   orderedAccessorMethods=new ArrayList<MethodDescription>();
   knownTargetMethodsToAccessorMethod=new HashMap<MethodDescription,MethodDescription>();
   registeredAccessorMethodToTargetMethodCall=new HashMap<MethodDescription,Entry>();

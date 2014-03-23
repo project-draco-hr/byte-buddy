@@ -1,4 +1,8 @@
 {
+  targetMethod=reachableMethods.get(new MethodSignatureToken(targetMethod));
+  if (targetMethod == null) {
+    throw new IllegalArgumentException("Illegal method: " + targetMethod);
+  }
   MethodDescription accessorMethod=knownTargetMethodsToAccessorMethod.get(targetMethod);
   if (accessorMethod != null) {
     return accessorMethod;

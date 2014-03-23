@@ -1,6 +1,6 @@
 {
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
-  SignatureToken that=(SignatureToken)other;
+  MethodSignatureToken that=(MethodSignatureToken)other;
   return methodDescription.getInternalName().equals(that.methodDescription.getInternalName()) && methodDescription.getReturnType().equals(that.methodDescription.getReturnType()) && methodDescription.getParameterTypes().equals(that.methodDescription.getParameterTypes());
 }
