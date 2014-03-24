@@ -1,3 +1,0 @@
-{
-  return Arrays.asList(new Object[][]{{Integer.MIN_VALUE},{-100},{-2},{6},{7},{100},{Integer.MAX_VALUE}});
-}

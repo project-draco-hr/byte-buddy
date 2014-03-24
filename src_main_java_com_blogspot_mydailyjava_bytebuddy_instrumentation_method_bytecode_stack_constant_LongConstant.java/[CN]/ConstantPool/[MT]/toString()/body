@@ -1,0 +1,3 @@
+{
+  return "LongConstant.ConstantPool{value=" + value + '}';
+}

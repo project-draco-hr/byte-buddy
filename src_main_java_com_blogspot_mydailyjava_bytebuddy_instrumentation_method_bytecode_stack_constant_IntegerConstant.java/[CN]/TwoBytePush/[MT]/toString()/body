@@ -1,0 +1,3 @@
+{
+  return "IntegerConstant.TwoBytePush{value=" + value + '}';
+}

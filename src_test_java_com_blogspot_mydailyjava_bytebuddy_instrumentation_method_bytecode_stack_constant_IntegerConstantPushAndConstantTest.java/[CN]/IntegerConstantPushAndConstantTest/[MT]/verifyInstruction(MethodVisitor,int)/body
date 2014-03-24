@@ -1,0 +1,15 @@
+{
+switch (this) {
+case BIPUSH:
+    verify(methodVisitor).visitIntInsn(Opcodes.BIPUSH,value);
+  break;
+case SIPUSH:
+verify(methodVisitor).visitIntInsn(Opcodes.SIPUSH,value);
+break;
+case LDC:
+verify(methodVisitor).visitLdcInsn(value);
+break;
+default :
+throw new AssertionError();
+}
+}
