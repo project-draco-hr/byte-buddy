@@ -1,0 +1,3 @@
+{
+  assertThat(Throw.INSTANCE.isValid(),is(true));
+}

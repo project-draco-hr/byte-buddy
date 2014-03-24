@@ -1,0 +1,4 @@
+{
+  this.throwableType=throwableType;
+  this.constructionDelegate=constructionDelegate;
+}

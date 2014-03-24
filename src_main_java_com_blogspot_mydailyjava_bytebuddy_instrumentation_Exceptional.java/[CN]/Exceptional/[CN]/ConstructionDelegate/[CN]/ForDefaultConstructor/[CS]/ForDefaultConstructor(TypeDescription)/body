@@ -1,0 +1,4 @@
+{
+  this.targetType=targetType;
+  this.targetConstructor=targetType.getDeclaredMethods().filter(isConstructor().and(takesArguments(0))).getOnly();
+}

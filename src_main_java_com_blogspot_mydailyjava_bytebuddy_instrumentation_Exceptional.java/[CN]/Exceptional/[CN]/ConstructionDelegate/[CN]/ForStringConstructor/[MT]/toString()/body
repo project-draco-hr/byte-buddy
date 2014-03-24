@@ -1,0 +1,3 @@
+{
+  return "Exceptional.ConstructionDelegate.ForStringConstructor{" + "targetType=" + targetType + ", targetConstructor="+ targetConstructor+ ", message='"+ message+ '\''+ '}';
+}
