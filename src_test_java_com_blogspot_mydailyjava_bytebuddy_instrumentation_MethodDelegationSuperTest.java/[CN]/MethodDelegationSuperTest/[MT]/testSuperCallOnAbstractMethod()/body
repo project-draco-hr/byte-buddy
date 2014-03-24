@@ -1,5 +1,12 @@
 {
   DynamicType.Loaded<FooBarQuxBaz> loaded=instrument(FooBarQuxBaz.class,MethodDelegation.to(FooBar.class));
   FooBarQuxBaz instance=loaded.getLoaded().newInstance();
-  assertThat(instance.qux(),is((Object)(FOO + QUX)));
+  try {
+    instance.qux();
+    fail();
+  }
+ catch (  RuntimeException e) {
+    assertThat(e.getMessage(),startsWith(SubclassInstrumentationContextDelegate.ABSTRACT_METHOD_WARNING_PREFIX));
+    assertEquals(RuntimeException.class,e.getClass());
+  }
 }

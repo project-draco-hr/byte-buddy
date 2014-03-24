@@ -1,0 +1,4 @@
+{
+  exceptionType=new TypeDescription.ForLoadedType(RuntimeException.class);
+  constructor=exceptionType.getDeclaredMethods().filter(isConstructor().and(takesArguments(String.class))).getOnly();
+}

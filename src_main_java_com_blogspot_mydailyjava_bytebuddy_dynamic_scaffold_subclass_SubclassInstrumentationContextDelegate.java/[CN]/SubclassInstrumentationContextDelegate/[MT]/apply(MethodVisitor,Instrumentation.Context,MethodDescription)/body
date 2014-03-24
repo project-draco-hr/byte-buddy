@@ -1,0 +1,4 @@
+{
+  StackManipulation.Size stackSize=new StackManipulation.Compound(TypeCreation.forType(exceptionType),Duplication.SINGLE,new TextConstant(ABSTRACT_METHOD_WARNING_PREFIX + instrumentedMethod),MethodInvocation.invoke(constructor),Throw.INSTANCE).apply(methodVisitor,instrumentationContext);
+  return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
+}
