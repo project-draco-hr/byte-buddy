@@ -1,5 +1,5 @@
 {
-  targetMethod=reachableMethods.get(new MethodSignatureToken(targetMethod));
+  targetMethod=reachableMethods.get(targetMethod.getUniqueSignature());
   if (targetMethod == null) {
     throw new IllegalArgumentException("Illegal method: " + targetMethod);
   }
