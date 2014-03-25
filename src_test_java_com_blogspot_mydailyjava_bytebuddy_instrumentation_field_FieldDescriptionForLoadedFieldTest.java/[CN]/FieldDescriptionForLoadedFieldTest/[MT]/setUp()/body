@@ -1,3 +1,6 @@
 {
   fieldDescription=new FieldDescription.ForLoadedField(Foo.class.getDeclaredField(FOO));
+  protectedField=new FieldDescription.ForLoadedField(PackagePrivateField.class.getDeclaredField(PackagePrivateField.PROTECTED_FIELD_NAME));
+  packagePrivateField=new FieldDescription.ForLoadedField(PackagePrivateField.class.getDeclaredField(PackagePrivateField.PACKAGE_PRIVATE_FIELD_NAME));
+  privateField=new FieldDescription.ForLoadedField(PackagePrivateField.class.getDeclaredField(PackagePrivateField.PRIVATE_FIELD_NAME));
 }
