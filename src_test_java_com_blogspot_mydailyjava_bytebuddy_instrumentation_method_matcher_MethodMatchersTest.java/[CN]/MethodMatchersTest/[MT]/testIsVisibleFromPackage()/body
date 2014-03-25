@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.isVisibleFromPackage(MethodMatchersTest.class.getPackage().getName()).matches(testClassBase$foo),is(true));
-  assertThat(MethodMatchers.isVisibleFromPackage(MethodMatchersTest.class.getPackage().getName()).matches(testClassExtension$foo),is(true));
-  assertThat(MethodMatchers.isVisibleFromPackage(JAVA_LANG_PACKAGE).matches(testClassBase$foo),is(false));
-  assertThat(MethodMatchers.isVisibleFromPackage(JAVA_LANG_PACKAGE).matches(testClassExtension$foo),is(false));
-}

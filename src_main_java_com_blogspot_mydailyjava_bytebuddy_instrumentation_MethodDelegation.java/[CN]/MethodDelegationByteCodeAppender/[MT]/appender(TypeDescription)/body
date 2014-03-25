@@ -1,5 +1,5 @@
 {
-  MethodList methodList=this.methodList.filter(isVisibleFromPackage(instrumentedType.getPackageName()));
+  MethodList methodList=this.methodList.filter(isVisibleTo(instrumentedType));
   if (methodList.size() == 0) {
     throw new IllegalStateException("No bindable method is visible to " + instrumentedType);
   }

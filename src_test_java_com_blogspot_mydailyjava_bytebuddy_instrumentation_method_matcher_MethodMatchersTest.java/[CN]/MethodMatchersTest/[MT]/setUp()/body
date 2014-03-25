@@ -28,4 +28,7 @@
   testBridge$bridge=new MethodDescription.ForLoadedMethod(TestBridge.class.getDeclaredMethod(FOO_METHOD_NAME,Number.class));
   testBridge$bridgeLegalTarget=new MethodDescription.ForLoadedMethod(TestBridge.class.getDeclaredMethod(FOO_METHOD_NAME,Integer.class));
   testBridge$bridgeIllegalTarget=new MethodDescription.ForLoadedMethod(TestBridge.class.getDeclaredMethod(FOO_METHOD_NAME,String.class));
+  privateMethod=new MethodDescription.ForLoadedMethod(PackagePrivateMethod.class.getDeclaredMethod(PackagePrivateMethod.PRIVATE_METHOD_NAME));
+  protectedMethod=new MethodDescription.ForLoadedMethod(PackagePrivateMethod.class.getDeclaredMethod(PackagePrivateMethod.PROTECTED_METHOD_NAME));
+  packagePrivateMethod=new MethodDescription.ForLoadedMethod(PackagePrivateMethod.class.getDeclaredMethod(PackagePrivateMethod.PACKAGE_PRIVATE_METHOD_NAME));
 }

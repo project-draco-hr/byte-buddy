@@ -1,3 +1,0 @@
-{
-  return this == o || !(o == null || getClass() != o.getClass()) && packageName.equals(((PackageNameMethodMatcher)o).packageName);
-}

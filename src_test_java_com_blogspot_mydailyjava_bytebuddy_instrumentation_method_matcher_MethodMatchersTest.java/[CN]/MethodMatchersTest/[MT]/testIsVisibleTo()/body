@@ -1,0 +1,7 @@
+{
+  assertThat(MethodMatchers.isVisibleTo(MethodMatchersTest.class).matches(testClassBase$foo),is(true));
+  assertThat(MethodMatchers.isVisibleTo(MethodMatchersTest.class).matches(testClassExtension$foo),is(true));
+  assertThat(MethodMatchers.isVisibleTo(Object.class).matches(protectedMethod),is(false));
+  assertThat(MethodMatchers.isVisibleTo(Object.class).matches(packagePrivateMethod),is(false));
+  assertThat(MethodMatchers.isVisibleTo(Object.class).matches(privateMethod),is(false));
+}
