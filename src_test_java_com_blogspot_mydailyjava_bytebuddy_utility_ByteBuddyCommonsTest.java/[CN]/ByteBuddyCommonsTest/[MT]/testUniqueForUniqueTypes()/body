@@ -1,0 +1,3 @@
+{
+  assertThat(uniqueTypes(Arrays.asList(first,second)),is(Arrays.asList(first,second)));
+}

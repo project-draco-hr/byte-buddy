@@ -1,0 +1,9 @@
+{
+  Set<String> types=new HashSet<String>(typeDescriptions.size());
+  for (  TypeDescription typeDescription : typeDescriptions) {
+    if (!types.add(typeDescription.getInternalName())) {
+      throw new IllegalArgumentException("Type was found more than once: " + typeDescription);
+    }
+  }
+  return typeDescriptions;
+}

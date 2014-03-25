@@ -1,4 +1,4 @@
 {
-  MethodToken methodToken=new MethodToken(isValidIdentifier(name),nonNull(returnType),nonNull(parameterTypes),resolveModifierContributors(METHOD_MODIFIER_MASK,nonNull(modifier)));
-  return new SubclassMatchedMethodInterception<T>(methodToken,join(methodTokens,methodToken));
+  MethodToken methodToken=new MethodToken(isValidIdentifier(name),nonNull(returnType),nonNull(parameterTypes),Collections.<TypeDescription>emptyList(),resolveModifierContributors(METHOD_MODIFIER_MASK,nonNull(modifier)));
+  return new SubclassExceptionDeclarableMethodInterception<T>(methodToken);
 }

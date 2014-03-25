@@ -1,0 +1,4 @@
+{
+  when(first.getInternalName()).thenReturn(FOO);
+  when(second.getInternalName()).thenReturn(BAR);
+}

@@ -1,0 +1,3 @@
+{
+  uniqueTypes(Arrays.asList(first,second,first));
+}
