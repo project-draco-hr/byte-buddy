@@ -1,5 +1,5 @@
 {
-  Class<?> loaded=new SubclassDynamicTypeBuilder<Object>(ClassFormatVersion.forCurrentJavaVersion(),new NamingStrategy.Fixed(FOO),new TypeDescription.ForLoadedType(Object.class),new TypeList.ForLoadedType(Arrays.<Class<?>>asList(Serializable.class)),Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT,TypeAttributeAppender.NoOp.INSTANCE,none(),BridgeMethodResolver.Simple.Factory.FAIL_FAST,new ClassVisitorWrapper.Chain(),new FieldRegistry.Default(),new MethodRegistry.Default(),FieldAttributeAppender.NoOp.INSTANCE,MethodAttributeAppender.NoOp.INSTANCE,ConstructorStrategy.Default.IMITATE_SUPER_TYPE).defineMethod(BAR,int.class,Arrays.<Class<?>>asList(long.class,Object.class),MemberVisibility.PUBLIC).withoutCode().make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> loaded=new SubclassDynamicTypeBuilder<Object>(ClassFormatVersion.forCurrentJavaVersion(),new NamingStrategy.Fixed(FOO),new TypeDescription.ForLoadedType(Object.class),new TypeList.ForLoadedType(Arrays.<Class<?>>asList(Serializable.class)),Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT,TypeAttributeAppender.NoOp.INSTANCE,none(),BridgeMethodResolver.Simple.Factory.FAIL_FAST,new ClassVisitorWrapper.Chain(),new FieldRegistry.Default(),new MethodRegistry.Default(),FieldAttributeAppender.NoOp.INSTANCE,MethodAttributeAppender.NoOp.INSTANCE,ConstructorStrategy.Default.IMITATE_SUPER_TYPE).defineMethod(BAR,int.class,Arrays.<Class<?>>asList(long.class,Object.class),MemberVisibility.PUBLIC).throwing(IOException.class).withoutCode().make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(loaded.getName(),is(FOO));
   assertThat(loaded.getModifiers(),is(Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT));
   assertEquals(Object.class,loaded.getSuperclass());
@@ -11,6 +11,8 @@
   assertThat(loaded.getDeclaredMethods().length,is(1));
   Method method=loaded.getDeclaredMethod(BAR,long.class,Object.class);
   assertThat(method.getName(),is(BAR));
+  assertThat(method.getExceptionTypes().length,is(1));
+  assertThat(Arrays.asList(method.getExceptionTypes()),hasItem(IOException.class));
   assertThat(method.getDeclaredAnnotations().length,is(0));
   assertEquals(int.class,method.getReturnType());
   assertThat(method.getModifiers(),is(Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT));

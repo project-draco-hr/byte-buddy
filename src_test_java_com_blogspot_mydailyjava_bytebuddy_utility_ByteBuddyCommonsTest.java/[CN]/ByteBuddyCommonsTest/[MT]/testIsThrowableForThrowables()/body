@@ -1,0 +1,3 @@
+{
+  assertThat(isThrowable(Arrays.asList(first)),is(Arrays.asList(first)));
+}

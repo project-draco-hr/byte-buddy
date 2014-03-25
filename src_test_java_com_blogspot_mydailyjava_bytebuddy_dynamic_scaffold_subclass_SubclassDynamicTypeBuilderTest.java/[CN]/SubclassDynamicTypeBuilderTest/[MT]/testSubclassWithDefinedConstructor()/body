@@ -1,0 +1,18 @@
+{
+  Class<?> loaded=new SubclassDynamicTypeBuilder<Object>(ClassFormatVersion.forCurrentJavaVersion(),new NamingStrategy.Fixed(FOO),new TypeDescription.ForLoadedType(Object.class),new TypeList.ForLoadedType(Arrays.<Class<?>>asList(Serializable.class)),Opcodes.ACC_PUBLIC,TypeAttributeAppender.NoOp.INSTANCE,none(),BridgeMethodResolver.Simple.Factory.FAIL_FAST,new ClassVisitorWrapper.Chain(),new FieldRegistry.Default(),new MethodRegistry.Default(),FieldAttributeAppender.NoOp.INSTANCE,MethodAttributeAppender.NoOp.INSTANCE,ConstructorStrategy.Default.NO_CONSTRUCTORS).defineConstructor(Arrays.<Class<?>>asList(),MemberVisibility.PUBLIC).throwing(IOException.class).intercept(SuperMethodCall.INSTANCE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(loaded.getName(),is(FOO));
+  assertThat(loaded.getModifiers(),is(Opcodes.ACC_PUBLIC));
+  assertEquals(Object.class,loaded.getSuperclass());
+  assertThat(loaded.getInterfaces().length,is(1));
+  assertThat(loaded.getClassLoader().getParent(),is(getClass().getClassLoader()));
+  assertEquals(Serializable.class,loaded.getInterfaces()[0]);
+  assertThat(loaded.getDeclaredAnnotations().length,is(0));
+  assertThat(loaded.getDeclaredFields().length,is(0));
+  assertThat(loaded.getDeclaredConstructors().length,is(1));
+  Constructor<?> constructor=loaded.getDeclaredConstructor();
+  assertThat(constructor.getExceptionTypes().length,is(1));
+  assertThat(Arrays.asList(constructor.getExceptionTypes()),hasItem(IOException.class));
+  assertThat(constructor.getDeclaredAnnotations().length,is(0));
+  assertThat(constructor.getModifiers(),is(Opcodes.ACC_PUBLIC));
+  assertThat(loaded.getDeclaredMethods().length,is(0));
+}

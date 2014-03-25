@@ -1,12 +1,13 @@
 {
   InstrumentedType instrumentedType=makePlainInstrumentedType();
   assertThat(instrumentedType.getDeclaredFields().size(),is(0));
-  instrumentedType=instrumentedType.withMethod(BAR,instrumentedType,Arrays.asList(instrumentedType),Opcodes.ACC_PUBLIC);
+  instrumentedType=instrumentedType.withMethod(BAR,instrumentedType,Arrays.asList(instrumentedType),Collections.<TypeDescription>emptyList(),Opcodes.ACC_PUBLIC);
   assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
   MethodDescription methodDescription=instrumentedType.getDeclaredMethods().get(0);
   assertThat(methodDescription.getReturnType(),is((TypeDescription)instrumentedType));
   assertThat(methodDescription.getParameterTypes().size(),is(1));
   assertThat(methodDescription.getParameterTypes(),is(Arrays.asList((TypeDescription)instrumentedType)));
+  assertThat(methodDescription.getExceptionTypes().size(),is(0));
   assertThat(methodDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
   assertThat(methodDescription.getName(),is(BAR));
 }

@@ -1,0 +1,3 @@
+{
+  isThrowable(Arrays.asList(first,second));
+}
