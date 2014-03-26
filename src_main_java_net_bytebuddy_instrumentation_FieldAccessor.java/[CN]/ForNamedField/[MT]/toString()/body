@@ -1,0 +1,3 @@
+{
+  return "FieldAccessor.ForNamedField{" + "fieldName='" + fieldName + '\''+ ", preparationHandler="+ preparationHandler+ ", fieldLocatorFactory="+ fieldLocatorFactory+ '}';
+}

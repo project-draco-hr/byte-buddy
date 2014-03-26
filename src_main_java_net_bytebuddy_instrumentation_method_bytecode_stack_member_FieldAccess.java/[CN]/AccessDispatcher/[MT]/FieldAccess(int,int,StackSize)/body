@@ -1,5 +1,0 @@
-{
-  this.putterOpcode=putterOpcode;
-  this.getterOpcode=getterOpcode;
-  this.targetSizeChange=targetSizeChange.getSize();
-}

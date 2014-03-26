@@ -1,0 +1,12 @@
+{
+  BridgeTarget bridgeTarget=bridges.get(methodDescription.getUniqueSignature());
+  if (bridgeTarget == null) {
+    return methodDescription;
+  }
+ else   if (bridgeTarget.isResolved()) {
+    return bridgeTarget.extract();
+  }
+ else {
+    return resolve(bridgeTarget.extract());
+  }
+}

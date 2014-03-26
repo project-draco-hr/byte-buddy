@@ -1,0 +1,7 @@
+{
+  int result=super.hashCode();
+  result=31 * result + fieldName.hashCode();
+  result=31 * result + preparationHandler.hashCode();
+  result=31 * result + fieldLocatorFactory.hashCode();
+  return result;
+}

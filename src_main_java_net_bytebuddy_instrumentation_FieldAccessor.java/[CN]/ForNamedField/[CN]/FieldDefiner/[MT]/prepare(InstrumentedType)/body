@@ -1,0 +1,3 @@
+{
+  return instrumentedType.withField(name,typeDescription.represents(TargetType.class) ? instrumentedType : typeDescription,modifiers);
+}

@@ -1,3 +1,0 @@
-{
-  return new BoxingStackManipulation(chainedAssigner.assign(wrapperType,targetType,considerRuntimeType));
-}

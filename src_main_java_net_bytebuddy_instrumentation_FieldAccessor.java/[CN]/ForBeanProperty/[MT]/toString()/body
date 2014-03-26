@@ -1,0 +1,3 @@
+{
+  return "FieldAccessor.ForBeanProperty{" + "fieldLocatorFactory=" + fieldLocatorFactory + '}';
+}

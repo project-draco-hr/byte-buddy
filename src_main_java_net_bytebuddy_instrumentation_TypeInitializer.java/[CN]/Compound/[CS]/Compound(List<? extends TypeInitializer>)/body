@@ -1,0 +1,3 @@
+{
+  this.typeInitializer=typeInitializers.toArray(new TypeInitializer[typeInitializers.size()]);
+}

@@ -1,0 +1,3 @@
+String name
+Class<?> type
+ModifierContributor.ForField contributor

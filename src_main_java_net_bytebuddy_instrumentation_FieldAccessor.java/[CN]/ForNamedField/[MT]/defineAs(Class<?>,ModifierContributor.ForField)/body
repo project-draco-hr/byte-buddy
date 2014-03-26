@@ -1,0 +1,3 @@
+{
+  return new ForNamedField(fieldName,new PreparationHandler.FieldDefiner(fieldName,type,modifier),FieldLocator.ForInstrumentedType.INSTANCE,assigner,considerRuntimeType);
+}

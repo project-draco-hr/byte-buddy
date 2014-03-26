@@ -1,0 +1,5 @@
+String fieldName
+PreparationHandler preparationHandler
+FieldLocator.Factory fieldLocatorFactory
+Assigner assigner
+boolean considerRuntimeType

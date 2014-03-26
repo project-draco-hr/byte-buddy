@@ -1,0 +1,5 @@
+{
+  for (  TypeInitializer typeInitializer : this.typeInitializer) {
+    typeInitializer.onLoad(type);
+  }
+}

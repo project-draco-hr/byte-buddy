@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitInsn(opcode);
-  return SIZE;
-}

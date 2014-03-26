@@ -1,0 +1,3 @@
+{
+  return in(new TypeDescription.ForLoadedType(type));
+}
