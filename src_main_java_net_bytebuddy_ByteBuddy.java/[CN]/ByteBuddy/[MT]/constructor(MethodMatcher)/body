@@ -1,0 +1,3 @@
+{
+  return invokable(isConstructor().and(nonNull(methodMatcher)));
+}

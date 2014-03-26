@@ -1,0 +1,3 @@
+{
+  return withImplementing(new TypeDescription.ForLoadedType(nonNull(type)));
+}

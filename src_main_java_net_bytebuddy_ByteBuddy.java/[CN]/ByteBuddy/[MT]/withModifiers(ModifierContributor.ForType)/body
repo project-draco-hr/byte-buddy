@@ -1,0 +1,3 @@
+{
+  return new ByteBuddy(classFormatVersion,namingStrategy,interfaceTypes,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,methodRegistry,new Definable.Defined<Integer>(resolveModifierContributors(TYPE_MODIFIER_MASK,nonNull(modifierContributor))),typeAttributeAppender,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory);
+}
