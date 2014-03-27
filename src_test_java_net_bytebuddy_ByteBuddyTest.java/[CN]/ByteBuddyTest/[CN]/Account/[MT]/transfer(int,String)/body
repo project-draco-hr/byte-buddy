@@ -1,4 +1,4 @@
 {
   this.amount-=amount;
-  return "transferred $" + amount + " to "+ recipientAccount;
+  return "transferred $" + amount + " to "+ recipient;
 }

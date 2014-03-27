@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<?> loaded=unloaded.load(classLoader,classLoadingStrategy);
   assertThat(loaded.getDescription(),is(typeDescription));
-  assertThat(loaded.getByte(),is(binaryRepresentation));
+  assertThat(loaded.getBytes(),is(binaryRepresentation));
   assertThat(loaded.getRawAuxiliaryTypes(),is(Collections.singletonMap(auxiliaryTypeDescription,auxiliaryTypeByte)));
 }

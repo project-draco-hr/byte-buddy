@@ -6,6 +6,7 @@
   }
 ).method(isAnnotatedBy(Unsafe.class)).intercept(MethodDelegation.to(Bank.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(dynamicType.getName(),is("BankAccount"));
+  assertThat(Serializable.class.isAssignableFrom(dynamicType),is(true));
   assertThat(dynamicType.isAnnotationPresent(Secured.class),is(true));
   assertThat(dynamicType.newInstance().transfer(26,"123456"),is("transferred $26 to 123XXX (obfuscated)"));
 }

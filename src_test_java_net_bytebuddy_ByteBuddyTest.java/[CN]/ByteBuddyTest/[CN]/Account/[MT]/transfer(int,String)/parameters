@@ -1,2 +1,2 @@
 int amount
-String recipientAccount
+String recipient

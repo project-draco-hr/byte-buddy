@@ -11,5 +11,5 @@
  else   if (type.isPrimitive()) {
     throw new IllegalArgumentException("Cannot delegate to primitive " + type);
   }
-  return new MethodDelegation(InstrumentationDelegate.ForStaticMethod.INSTANCE,defaultArgumentBinders(),defaultDefaultsProvider(),defaultAmbiguityResolver(),defaultAssigner(),new TypeDescription.ForLoadedType(type).getReachableMethods().filter(isStatic().and(not(isPrivate()))));
+  return new MethodDelegation(InstrumentationDelegate.ForStaticMethod.INSTANCE,defaultArgumentBinders(),defaultDefaultsProvider(),defaultAmbiguityResolver(),defaultAssigner(),new TypeDescription.ForLoadedType(type).getDeclaredMethods().filter(isStatic().and(not(isPrivate()))));
 }
