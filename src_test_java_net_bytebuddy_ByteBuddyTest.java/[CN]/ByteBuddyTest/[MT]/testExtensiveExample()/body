@@ -1,0 +1,11 @@
+{
+  Class<? extends Account> dynamicType=new ByteBuddy().subclass(Account.class).implement(Serializable.class).name("BankAccount").annotateType(new Secured(){
+    @Override public Class<? extends Annotation> annotationType(){
+      return Secured.class;
+    }
+  }
+).method(isAnnotatedBy(Unsafe.class)).intercept(MethodDelegation.to(Bank.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(dynamicType.getName(),is("BankAccount"));
+  assertThat(dynamicType.isAnnotationPresent(Secured.class),is(true));
+  assertThat(dynamicType.newInstance().transfer(26,"123456"),is("transferred $26 to 123XXX (obfuscated)"));
+}

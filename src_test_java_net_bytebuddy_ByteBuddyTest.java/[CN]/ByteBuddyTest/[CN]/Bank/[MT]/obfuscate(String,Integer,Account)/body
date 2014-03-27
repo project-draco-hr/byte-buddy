@@ -1,0 +1,3 @@
+{
+  return zuper.transfer(amount,recipientAccount.substring(0,3) + "XXX") + " (obfuscated)";
+}
