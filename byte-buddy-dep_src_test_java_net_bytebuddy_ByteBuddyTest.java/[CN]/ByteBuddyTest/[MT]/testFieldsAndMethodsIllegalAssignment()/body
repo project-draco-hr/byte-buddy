@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().subclass(Foo.class).method(isDeclaredBy(Foo.class)).intercept(FixedValue.value(0)).make();
+}

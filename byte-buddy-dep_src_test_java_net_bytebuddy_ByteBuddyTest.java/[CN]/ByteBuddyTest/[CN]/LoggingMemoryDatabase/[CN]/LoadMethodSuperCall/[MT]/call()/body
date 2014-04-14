@@ -1,0 +1,3 @@
+{
+  return LoggingMemoryDatabase.super.load(info);
+}

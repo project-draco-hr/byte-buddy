@@ -1,0 +1,4 @@
+{
+  DynamicType.Unloaded<?> dynamicType=new ByteBuddy().subclass(Object.class).name("example.Type").make();
+  assertThat(dynamicType,notNullValue());
+}

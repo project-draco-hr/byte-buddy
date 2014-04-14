@@ -1,0 +1,8 @@
+{
+  try {
+    return LoggerInterceptor.log(new LoadMethodSuperCall(info));
+  }
+ catch (  Exception e) {
+    throw new RuntimeException(e);
+  }
+}

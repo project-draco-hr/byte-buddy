@@ -1,0 +1,9 @@
+{
+  println("Calling database");
+  try {
+    return zuper.load(info + " (logged access)");
+  }
+  finally {
+    println("Returned from database");
+  }
+}

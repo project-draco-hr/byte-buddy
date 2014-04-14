@@ -1,0 +1,9 @@
+{
+  println("Calling database");
+  try {
+    return zuper.call();
+  }
+  finally {
+    println("Returned from database");
+  }
+}
