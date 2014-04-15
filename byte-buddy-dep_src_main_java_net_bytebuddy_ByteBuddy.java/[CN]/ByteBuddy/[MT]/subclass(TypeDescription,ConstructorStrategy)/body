@@ -5,5 +5,5 @@
     actualSuperType=new TypeDescription.ForLoadedType(Object.class);
     interfaceTypes=join(superType,interfaceTypes);
   }
-  return new SubclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,actualSuperType,interfaceTypes,modifiers.resolve(superType.getModifiers()),typeAttributeAppender.resolve(TypeAttributeAppender.NoOp.INSTANCE),ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(constructorStrategy));
+  return new SubclassDynamicTypeBuilder<T>(classFormatVersion,namingStrategy,actualSuperType,interfaceTypes,modifiers.resolve(superType.getModifiers() & ~TypeManifestation.INTERFACE.getMask()),typeAttributeAppender.resolve(TypeAttributeAppender.NoOp.INSTANCE),ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(constructorStrategy));
 }
