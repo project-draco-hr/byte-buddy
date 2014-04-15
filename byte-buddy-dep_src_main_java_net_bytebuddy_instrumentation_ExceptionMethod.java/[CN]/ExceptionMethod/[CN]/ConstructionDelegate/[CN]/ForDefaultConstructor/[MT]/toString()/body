@@ -1,0 +1,3 @@
+{
+  return "ExceptionMethod.ConstructionDelegate.ForDefaultConstructor{" + "targetType=" + targetType + ", targetConstructor="+ targetConstructor+ '}';
+}

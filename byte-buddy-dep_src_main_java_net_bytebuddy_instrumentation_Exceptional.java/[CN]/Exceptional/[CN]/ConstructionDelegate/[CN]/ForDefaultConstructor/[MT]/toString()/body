@@ -1,3 +1,0 @@
-{
-  return "Exceptional.ConstructionDelegate.ForDefaultConstructor{" + "targetType=" + targetType + ", targetConstructor="+ targetConstructor+ '}';
-}

@@ -1,4 +1,0 @@
-{
-  TypeDescription exceptionType=new TypeDescription.ForLoadedType(throwable);
-  return new Exceptional(exceptionType,new ConstructionDelegate.ForDefaultConstructor(exceptionType));
-}

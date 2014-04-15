@@ -1,3 +1,0 @@
-{
-  return "Exceptional{" + "throwableType=" + throwableType + ", constructionDelegate="+ constructionDelegate+ '}';
-}

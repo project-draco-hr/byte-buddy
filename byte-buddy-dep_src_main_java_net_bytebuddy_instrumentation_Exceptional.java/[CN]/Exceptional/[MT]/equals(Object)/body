@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && constructionDelegate.equals(((Exceptional)other).constructionDelegate) && throwableType.equals(((Exceptional)other).throwableType);
-}

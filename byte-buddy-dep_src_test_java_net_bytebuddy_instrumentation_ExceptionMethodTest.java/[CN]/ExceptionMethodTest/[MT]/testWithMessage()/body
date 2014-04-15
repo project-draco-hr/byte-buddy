@@ -1,0 +1,18 @@
+{
+  DynamicType.Loaded<Foo> loaded=instrument(Foo.class,ExceptionMethod.throwing(RuntimeException.class,BAR));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
+  Foo instance=loaded.getLoaded().newInstance();
+  assertNotEquals(Foo.class,instance.getClass());
+  assertThat(instance,instanceOf(Foo.class));
+  try {
+    instance.foo();
+    fail();
+  }
+ catch (  RuntimeException e) {
+    assertEquals(RuntimeException.class,e.getClass());
+    assertThat(e.getMessage(),is(BAR));
+  }
+  instance.assertZeroCalls();
+}
