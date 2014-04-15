@@ -1,0 +1,4 @@
+{
+  println("Invoked method with: " + value);
+  return value;
+}

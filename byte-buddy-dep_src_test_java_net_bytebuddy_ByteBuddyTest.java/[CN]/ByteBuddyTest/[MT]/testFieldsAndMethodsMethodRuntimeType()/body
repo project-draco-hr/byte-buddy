@@ -1,0 +1,5 @@
+{
+  Loop trivialGetterBean=new ByteBuddy().subclass(Loop.class).method(isDeclaredBy(Loop.class)).intercept(MethodDelegation.to(Interceptor.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance();
+  assertThat(trivialGetterBean.loop(42),is(42));
+  assertThat(trivialGetterBean.loop("foo"),is("foo"));
+}
