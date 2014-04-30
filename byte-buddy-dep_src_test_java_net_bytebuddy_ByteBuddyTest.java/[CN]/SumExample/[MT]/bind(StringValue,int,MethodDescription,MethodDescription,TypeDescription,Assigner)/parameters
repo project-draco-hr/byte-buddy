@@ -1,0 +1,6 @@
+StringValue annotation
+int targetParameterIndex
+MethodDescription source
+MethodDescription target
+TypeDescription instrumentedType
+Assigner assigner

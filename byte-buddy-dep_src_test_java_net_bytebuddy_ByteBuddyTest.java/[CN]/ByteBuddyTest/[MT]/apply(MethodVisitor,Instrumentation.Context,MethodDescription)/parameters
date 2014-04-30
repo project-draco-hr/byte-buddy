@@ -1,0 +1,3 @@
+MethodVisitor methodVisitor
+Instrumentation.Context instrumentationContext
+MethodDescription instrumentedMethod

@@ -1,0 +1,3 @@
+{
+  assertThat(new ByteBuddy().subclass(Object.class).method(named("toString")).intercept(MethodDelegation.to(ToStringInterceptor.class).defineArgumentBinder(StringValueHandler.INSTANCE)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance().toString(),is("Hello!"));
+}

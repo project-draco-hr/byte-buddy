@@ -1,0 +1,3 @@
+{
+  return new MethodDelegationBinder.ParameterBinding.Anonymous(new TextConstant(annotation.value()));
+}
