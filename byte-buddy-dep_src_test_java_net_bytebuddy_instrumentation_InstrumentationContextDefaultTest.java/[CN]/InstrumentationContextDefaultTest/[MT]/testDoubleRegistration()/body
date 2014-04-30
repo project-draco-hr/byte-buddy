@@ -3,10 +3,10 @@
   assertThat(defaultContext.register(firstAuxiliary),is(firstDescription));
   assertThat(defaultContext.getRegisteredAuxiliaryTypes().size(),is(1));
   assertThat(defaultContext.getRegisteredAuxiliaryTypes(),hasItem(firstDynamic));
-  verify(firstAuxiliary).make(FOO,classFormatVersion,defaultContext);
+  verify(firstAuxiliary).make(FOO,classFileVersion,defaultContext);
   verifyNoMoreInteractions(firstAuxiliary);
   verify(auxiliaryTypeNamingStrategy).name(firstAuxiliary);
   verifyNoMoreInteractions(auxiliaryTypeNamingStrategy);
   verifyZeroInteractions(methodAccessorFactory);
-  verifyZeroInteractions(classFormatVersion);
+  verifyZeroInteractions(classFileVersion);
 }

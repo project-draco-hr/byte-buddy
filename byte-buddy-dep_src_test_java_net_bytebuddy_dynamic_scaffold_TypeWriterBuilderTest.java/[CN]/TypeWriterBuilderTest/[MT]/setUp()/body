@@ -55,6 +55,6 @@
     }
   }
 );
-  typeWriter=new TypeWriter.Builder<Object>(instrumentedType,instrumentationContext,ClassFormatVersion.forCurrentJavaVersion()).build(classVisitorWrapper);
+  typeWriter=new TypeWriter.Builder<Object>(instrumentedType,instrumentationContext,ClassFileVersion.forCurrentJavaVersion()).build(classVisitorWrapper);
   verify(classVisitorWrapper).wrap(any(ClassWriter.class));
 }

@@ -1,0 +1,3 @@
+{
+  assertThat(new ClassFileVersion(Opcodes.V1_6 + 3).getVersionNumber(),is(Opcodes.V1_6 + 3));
+}

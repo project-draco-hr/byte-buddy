@@ -1,6 +1,6 @@
 {
   ClassWriter classWriter=new ClassWriter(ASM_MANUAL);
-  classWriter.visit(ClassFormatVersion.forCurrentJavaVersion().getVersionNumber(),Opcodes.ACC_PUBLIC,BAR.replace('.','/'),null,Type.getInternalName(Object.class),null);
+  classWriter.visit(ClassFileVersion.forCurrentJavaVersion().getVersionNumber(),Opcodes.ACC_PUBLIC,BAR.replace('.','/'),null,Type.getInternalName(Object.class),null);
   AnnotationVisitor annotationVisitor=classWriter.visitAnnotation(Type.getDescriptor(annotation.annotationType()),true);
   when(target.visit(any(String.class),anyBoolean())).thenReturn(annotationVisitor);
   AnnotationAppender.AnnotationVisibility annotationVisibility=AnnotationAppender.AnnotationVisibility.of(annotation);

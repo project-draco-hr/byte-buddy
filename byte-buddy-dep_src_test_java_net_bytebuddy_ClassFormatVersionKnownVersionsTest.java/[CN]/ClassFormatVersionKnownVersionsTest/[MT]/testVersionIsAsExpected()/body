@@ -1,3 +1,0 @@
-{
-  assertThat(ClassFormatVersion.forKnownJavaVersion(javaVersion).getVersionNumber(),is(byteCodeVersion));
-}

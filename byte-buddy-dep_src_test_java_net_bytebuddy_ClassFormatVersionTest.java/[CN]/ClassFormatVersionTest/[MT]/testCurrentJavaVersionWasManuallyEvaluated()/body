@@ -1,3 +1,0 @@
-{
-  assertTrue(ClassFormatVersion.forCurrentJavaVersion().getVersionNumber() <= Opcodes.V1_6 + 2);
-}

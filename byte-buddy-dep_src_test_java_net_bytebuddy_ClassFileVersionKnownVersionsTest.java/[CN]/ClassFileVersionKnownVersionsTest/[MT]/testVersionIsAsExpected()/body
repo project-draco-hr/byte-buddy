@@ -1,0 +1,3 @@
+{
+  assertThat(ClassFileVersion.forKnownJavaVersion(javaVersion).getVersionNumber(),is(byteCodeVersion));
+}

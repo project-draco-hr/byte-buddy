@@ -1,0 +1,5 @@
+{
+  this.instrumentedType=instrumentedType;
+  this.instrumentationContext=instrumentationContext;
+  this.classFileVersion=classFileVersion;
+}

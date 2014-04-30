@@ -1,0 +1,3 @@
+{
+  assertThat(new ByteBuddy().subclass(Object.class).annotateType(new RuntimeDefinitionImpl()).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().isAnnotationPresent(RuntimeDefinition.class),is(true));
+}

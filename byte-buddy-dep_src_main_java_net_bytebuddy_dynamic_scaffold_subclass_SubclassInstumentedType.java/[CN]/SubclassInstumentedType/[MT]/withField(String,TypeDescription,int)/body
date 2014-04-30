@@ -5,5 +5,5 @@
   }
   List<FieldDescription> fieldDescriptions=new ArrayList<FieldDescription>(this.fieldDescriptions);
   fieldDescriptions.add(additionalField);
-  return new SubclassInstumentedType(classFormatVersion,superClass,interfaces,this.modifiers,this.name,fieldDescriptions,methodDescriptions,typeInitializer);
+  return new SubclassInstumentedType(classFileVersion,superClass,interfaces,this.modifiers,this.name,fieldDescriptions,methodDescriptions,typeInitializer);
 }

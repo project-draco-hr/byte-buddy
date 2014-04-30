@@ -1,7 +1,7 @@
 {
   when(methodAccessorFactory.requireAccessorMethodFor(any(MethodDescription.class))).then(new SameSignatureAnswer());
   String auxiliaryTypeName=instrumentedType.getName() + "$" + QUX;
-  DynamicType dynamicType=new TypeProxy(new TypeDescription.ForLoadedType(proxyType),new TypeDescription.ForLoadedType(instrumentedType),true).make(auxiliaryTypeName,ClassFormatVersion.forCurrentJavaVersion(),methodAccessorFactory);
+  DynamicType dynamicType=new TypeProxy(new TypeDescription.ForLoadedType(proxyType),new TypeDescription.ForLoadedType(instrumentedType),true).make(auxiliaryTypeName,ClassFileVersion.forCurrentJavaVersion(),methodAccessorFactory);
   DynamicType.Unloaded<?> unloaded=(DynamicType.Unloaded<?>)dynamicType;
   Class<?> auxiliaryType=unloaded.load(getClass().getClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded();
   assertThat(auxiliaryType.getName(),is(auxiliaryTypeName));

@@ -11,7 +11,7 @@
   when(instrumentedType.getInterfaces()).thenReturn(interfaceTypes);
   Instrumentation.Context instrumentationContext=mock(Instrumentation.Context.class);
   MethodDescription proxyMethod=delegate.requireAccessorMethodFor(objectType.getDeclaredMethods().filter(named(TO_STRING)).getOnly());
-  TypeWriter.InGeneralPhase<?> typeWriter=new TypeWriter.Builder<Object>(instrumentedType,instrumentationContext,ClassFormatVersion.forCurrentJavaVersion()).build(new ClassVisitorWrapper.Chain());
+  TypeWriter.InGeneralPhase<?> typeWriter=new TypeWriter.Builder<Object>(instrumentedType,instrumentationContext,ClassFileVersion.forCurrentJavaVersion()).build(new ClassVisitorWrapper.Chain());
   TypeWriter.MethodPool constructorPool=mock(TypeWriter.MethodPool.class);
   TypeWriter.MethodPool.Entry entry=mock(TypeWriter.MethodPool.Entry.class);
   when(entry.isDefineMethod()).thenReturn(true);
