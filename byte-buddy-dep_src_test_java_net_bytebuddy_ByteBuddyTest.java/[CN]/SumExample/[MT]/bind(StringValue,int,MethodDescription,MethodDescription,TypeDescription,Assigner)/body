@@ -1,3 +1,7 @@
 {
-  return new MethodDelegationBinder.ParameterBinding.Anonymous(new TextConstant(annotation.value()));
+  if (!target.getParameterTypes().get(targetParameterIndex).represents(String.class)) {
+    throw new IllegalStateException(target + " makes wrong use of StringValue");
+  }
+  StackManipulation constant=new TextConstant(annotation.value());
+  return new MethodDelegationBinder.ParameterBinding.Anonymous(constant);
 }

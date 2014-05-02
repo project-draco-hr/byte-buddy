@@ -2,6 +2,6 @@
   if (!instrumentedMethod.getReturnType().represents(int.class)) {
     throw new IllegalArgumentException(instrumentedMethod + " must return int");
   }
-  StackManipulation.Size operandStackSize=new StackManipulation.Compound(IntegerConstant.forValue(10),IntegerConstant.forValue(50),IntegerSum.INSTANCE,MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  StackManipulation.Size operandStackSize=new StackManipulation.Compound(IntegerConstant.forValue(10),IntegerConstant.forValue(50),IntegerSum.INSTANCE,MethodReturn.INTEGER).apply(methodVisitor,instrumentationContext);
   return new Size(operandStackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }
