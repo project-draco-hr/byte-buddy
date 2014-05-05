@@ -1,0 +1,6 @@
+{
+  assertThat(new ByteBuddy().method(any()).withoutCode().hashCode(),is(new ByteBuddy().method(any()).withoutCode().hashCode()));
+  assertThat(new ByteBuddy().method(any()).withoutCode(),equalTo(new ByteBuddy().method(any()).withoutCode()));
+  assertThat(new ByteBuddy().method(any()).withoutCode().hashCode(),not(is(new ByteBuddy().method(none()).intercept(instrumentation).hashCode())));
+  assertThat(new ByteBuddy().method(any()).withoutCode(),not(equalTo(new ByteBuddy().method(none()).intercept(instrumentation))));
+}

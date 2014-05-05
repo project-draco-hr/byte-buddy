@@ -1,0 +1,3 @@
+{
+  return "BridgeMethodResolver.Simple.BridgeTarget.Resolved{target=" + target + '}';
+}

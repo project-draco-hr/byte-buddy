@@ -1,0 +1,3 @@
+{
+  assertThat(modifierContributor.getMask(),is(expectedModifier));
+}

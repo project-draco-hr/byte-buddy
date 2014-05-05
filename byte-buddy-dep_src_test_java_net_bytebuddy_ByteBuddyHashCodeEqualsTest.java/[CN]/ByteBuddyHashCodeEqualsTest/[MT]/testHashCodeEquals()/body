@@ -1,0 +1,10 @@
+{
+  assertThat(new ByteBuddy().hashCode(),is(new ByteBuddy().hashCode()));
+  assertThat(new ByteBuddy(),equalTo(new ByteBuddy()));
+  assertThat(new ByteBuddy().withModifiers(TypeManifestation.FINAL).hashCode(),is(new ByteBuddy().withModifiers(TypeManifestation.FINAL).hashCode()));
+  assertThat(new ByteBuddy().withModifiers(TypeManifestation.FINAL),equalTo(new ByteBuddy().withModifiers(TypeManifestation.FINAL)));
+  assertThat(new ByteBuddy().hashCode(),not(is(new ByteBuddy().withImplementing(Serializable.class).hashCode())));
+  assertThat(new ByteBuddy(),not(equalTo((ByteBuddy)new ByteBuddy().withImplementing(Serializable.class))));
+  assertThat(new ByteBuddy().withImplementing(Serializable.class).hashCode(),not(is(new ByteBuddy().hashCode())));
+  assertThat(new ByteBuddy().withImplementing(Serializable.class),not(equalTo(new ByteBuddy())));
+}

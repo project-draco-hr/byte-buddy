@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{Ownership.MEMBER,0},{Ownership.STATIC,Opcodes.ACC_STATIC}});
+}
