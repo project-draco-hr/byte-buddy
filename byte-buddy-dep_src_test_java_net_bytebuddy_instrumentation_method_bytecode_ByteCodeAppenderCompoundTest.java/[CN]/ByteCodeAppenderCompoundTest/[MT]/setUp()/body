@@ -1,0 +1,3 @@
+{
+  compound=new ByteCodeAppender.Compound(first,second);
+}

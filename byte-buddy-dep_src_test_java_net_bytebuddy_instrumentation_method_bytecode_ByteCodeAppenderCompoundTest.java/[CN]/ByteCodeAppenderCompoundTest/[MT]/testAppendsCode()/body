@@ -1,0 +1,4 @@
+{
+  when(first.appendsCode()).thenReturn(true);
+  assertThat(compound.appendsCode(),is(true));
+}
