@@ -1,0 +1,11 @@
+{
+  MethodDescription otherMethod=mock(MethodDescription.class);
+  assertThat(new BridgeMethodResolver.Simple.BridgeTarget.Candidate(methodDescription).hashCode(),is(new BridgeMethodResolver.Simple.BridgeTarget.Candidate(methodDescription).hashCode()));
+  assertThat(new BridgeMethodResolver.Simple.BridgeTarget.Candidate(methodDescription),is(new BridgeMethodResolver.Simple.BridgeTarget.Candidate(methodDescription)));
+  assertThat(new BridgeMethodResolver.Simple.BridgeTarget.Candidate(methodDescription).hashCode(),CoreMatchers.not(is(new BridgeMethodResolver.Simple.BridgeTarget.Candidate(otherMethod).hashCode())));
+  assertThat(new BridgeMethodResolver.Simple.BridgeTarget.Candidate(methodDescription),CoreMatchers.not(is(new BridgeMethodResolver.Simple.BridgeTarget.Candidate(otherMethod))));
+  assertThat(new BridgeMethodResolver.Simple.BridgeTarget.Resolved(methodDescription).hashCode(),is(new BridgeMethodResolver.Simple.BridgeTarget.Resolved(methodDescription).hashCode()));
+  assertThat(new BridgeMethodResolver.Simple.BridgeTarget.Resolved(methodDescription),is(new BridgeMethodResolver.Simple.BridgeTarget.Resolved(methodDescription)));
+  assertThat(new BridgeMethodResolver.Simple.BridgeTarget.Resolved(methodDescription).hashCode(),CoreMatchers.not(is(new BridgeMethodResolver.Simple.BridgeTarget.Resolved(otherMethod).hashCode())));
+  assertThat(new BridgeMethodResolver.Simple.BridgeTarget.Resolved(methodDescription),CoreMatchers.not(is(new BridgeMethodResolver.Simple.BridgeTarget.Resolved(otherMethod))));
+}

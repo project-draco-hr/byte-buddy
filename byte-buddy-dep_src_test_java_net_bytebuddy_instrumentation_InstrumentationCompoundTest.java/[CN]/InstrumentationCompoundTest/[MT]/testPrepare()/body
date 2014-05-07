@@ -1,0 +1,9 @@
+{
+  when(first.prepare(instrumentedType)).thenReturn(instrumentedType);
+  when(second.prepare(instrumentedType)).thenReturn(instrumentedType);
+  assertThat(compound.prepare(instrumentedType),is(instrumentedType));
+  verify(first).prepare(instrumentedType);
+  verify(second).prepare(instrumentedType);
+  verifyNoMoreInteractions(first);
+  verifyNoMoreInteractions(second);
+}

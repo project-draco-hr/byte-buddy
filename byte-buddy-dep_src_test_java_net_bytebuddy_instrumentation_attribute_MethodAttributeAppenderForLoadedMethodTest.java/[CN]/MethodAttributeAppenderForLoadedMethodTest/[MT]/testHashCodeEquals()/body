@@ -1,0 +1,7 @@
+{
+  Method otherMethod=Object.class.getDeclaredMethod(TO_STRING);
+  assertThat(new MethodAttributeAppender.ForLoadedMethod(method).hashCode(),is(new MethodAttributeAppender.ForLoadedMethod(method).hashCode()));
+  assertThat(new MethodAttributeAppender.ForLoadedMethod(method),is(new MethodAttributeAppender.ForLoadedMethod(method)));
+  assertThat(new MethodAttributeAppender.ForLoadedMethod(method).hashCode(),not(is(new MethodAttributeAppender.ForLoadedMethod(otherMethod).hashCode())));
+  assertThat(new MethodAttributeAppender.ForLoadedMethod(method),not(is(new MethodAttributeAppender.ForLoadedMethod(otherMethod))));
+}

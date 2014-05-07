@@ -1,0 +1,7 @@
+{
+  Annotation qux=new Qux.Instance(), baz=new Baz.Instance();
+  assertThat(new TypeAttributeAppender.ForAnnotation(qux).hashCode(),is(new TypeAttributeAppender.ForAnnotation(qux).hashCode()));
+  assertThat(new TypeAttributeAppender.ForAnnotation(qux),is(new TypeAttributeAppender.ForAnnotation(qux)));
+  assertThat(new TypeAttributeAppender.ForAnnotation(qux).hashCode(),not(is(new TypeAttributeAppender.ForAnnotation(baz).hashCode())));
+  assertThat(new TypeAttributeAppender.ForAnnotation(qux),not(is(new TypeAttributeAppender.ForAnnotation(baz))));
+}

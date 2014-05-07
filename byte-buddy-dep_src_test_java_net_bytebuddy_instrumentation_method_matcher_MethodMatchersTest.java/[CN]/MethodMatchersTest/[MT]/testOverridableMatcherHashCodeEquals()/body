@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.isOverridable().hashCode(),is(MethodMatchers.isOverridable().hashCode()));
+  assertThat(MethodMatchers.isOverridable(),is(MethodMatchers.isOverridable()));
+  assertThat(MethodMatchers.isOverridable().hashCode(),not(is(MethodMatchers.isGetter().hashCode())));
+  assertThat(MethodMatchers.isOverridable(),not(is(MethodMatchers.isGetter())));
+}

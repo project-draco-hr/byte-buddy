@@ -1,0 +1,3 @@
+{
+  assertThat(((SyntheticState)modifierContributor).isSynthetic(),is(expectedModifier != 0));
+}

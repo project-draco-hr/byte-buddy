@@ -1,0 +1,3 @@
+{
+  assertThat(((SynchronizationState)modifierContributor).isSynchronized(),is(expectedModifier != 0));
+}

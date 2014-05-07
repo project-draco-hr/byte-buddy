@@ -1,0 +1,7 @@
+{
+  AnnotationAppender.Target first=mock(AnnotationAppender.Target.class), second=mock(AnnotationAppender.Target.class);
+  assertThat(new AnnotationAppender.Default(first).hashCode(),is(new AnnotationAppender.Default(first).hashCode()));
+  assertThat(new AnnotationAppender.Default(first),is(new AnnotationAppender.Default(first)));
+  assertThat(new AnnotationAppender.Default(first).hashCode(),not(is(new AnnotationAppender.Default(second).hashCode())));
+  assertThat(new AnnotationAppender.Default(first),not(is(new AnnotationAppender.Default(second))));
+}

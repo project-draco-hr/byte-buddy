@@ -1,0 +1,7 @@
+{
+  Annotation qux=new Qux.Instance(), baz=new Baz.Instance();
+  assertThat(new FieldAttributeAppender.ForAnnotation(qux).hashCode(),is(new FieldAttributeAppender.ForAnnotation(qux).hashCode()));
+  assertThat(new FieldAttributeAppender.ForAnnotation(qux),is(new FieldAttributeAppender.ForAnnotation(qux)));
+  assertThat(new FieldAttributeAppender.ForAnnotation(qux).hashCode(),not(is(new FieldAttributeAppender.ForAnnotation(baz).hashCode())));
+  assertThat(new FieldAttributeAppender.ForAnnotation(qux),not(is(new FieldAttributeAppender.ForAnnotation(baz))));
+}

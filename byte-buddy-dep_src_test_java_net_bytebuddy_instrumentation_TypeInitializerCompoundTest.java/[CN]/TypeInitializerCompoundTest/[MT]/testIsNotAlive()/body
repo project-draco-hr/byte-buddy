@@ -1,0 +1,7 @@
+{
+  assertThat(compound.isAlive(),is(false));
+  verify(first).isAlive();
+  verify(second).isAlive();
+  verifyNoMoreInteractions(first);
+  verifyNoMoreInteractions(second);
+}

@@ -1,0 +1,7 @@
+{
+  compound.onLoad(TYPE);
+  verify(first).onLoad(TYPE);
+  verify(second).onLoad(TYPE);
+  verifyNoMoreInteractions(first);
+  verifyNoMoreInteractions(second);
+}

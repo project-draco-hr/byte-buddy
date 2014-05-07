@@ -1,0 +1,6 @@
+{
+  assertThat(new TypeAttributeAppender.ForLoadedType(FooBar.class).hashCode(),is(new TypeAttributeAppender.ForLoadedType(FooBar.class).hashCode()));
+  assertThat(new TypeAttributeAppender.ForLoadedType(FooBar.class),is(new TypeAttributeAppender.ForLoadedType(FooBar.class)));
+  assertThat(new TypeAttributeAppender.ForLoadedType(FooBar.class).hashCode(),not(is(new TypeAttributeAppender.ForLoadedType(Object.class).hashCode())));
+  assertThat(new TypeAttributeAppender.ForLoadedType(FooBar.class),not(is(new TypeAttributeAppender.ForLoadedType(Object.class))));
+}
