@@ -10,7 +10,7 @@
   String name=String.format("%s$%s$%d",targetMethod.getInternalName(),prefix,Math.abs(random.nextInt()));
   accessorMethod=new MethodDescription.Latent(name,instrumentedType,targetMethod.getReturnType(),targetMethod.getParameterTypes(),(targetMethod.isStatic() ? Opcodes.ACC_STATIC : 0) | Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL);
   knownTargetMethodsToAccessorMethod.put(targetMethod,accessorMethod);
-  Entry methodCall=targetMethod.isAbstract() || targetMethod.getDeclaringType().equals(instrumentedType) ? AbstractMethodCall.INSTANCE : new SameSignatureMethodCall(bridgeMethodResolver.resolve(targetMethod),instrumentedType);
+  Entry methodCall=targetMethod.isAbstract() || targetMethod.getDeclaringType().isInterface() || targetMethod.getDeclaringType().equals(instrumentedType) ? AbstractMethodCall.INSTANCE : new SameSignatureMethodCall(bridgeMethodResolver.resolve(targetMethod),instrumentedType);
   registeredAccessorMethodToTargetMethodCall.put(accessorMethod,methodCall);
   orderedAccessorMethods.add(accessorMethod);
   return accessorMethod;
