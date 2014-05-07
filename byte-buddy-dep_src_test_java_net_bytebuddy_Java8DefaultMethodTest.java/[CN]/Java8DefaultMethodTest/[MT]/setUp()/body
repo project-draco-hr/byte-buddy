@@ -1,0 +1,6 @@
+{
+  classLoader=new PrecompiledTypeClassLoader(getClass().getClassLoader(),DEFAULT_METHOD_INTERFACE);
+  interfaceType=classLoader.loadClass(DEFAULT_METHOD_INTERFACE);
+  interfaceMarker=interfaceType.getDeclaredField(INTERFACE_STATIC_FIELD_NAME).get(STATIC_FIELD);
+  interfaceMethod=interfaceType.getDeclaredMethod(FOO);
+}

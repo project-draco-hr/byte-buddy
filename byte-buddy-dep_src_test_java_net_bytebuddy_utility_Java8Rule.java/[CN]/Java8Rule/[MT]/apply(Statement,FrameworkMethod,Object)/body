@@ -1,0 +1,8 @@
+{
+  if (java8OrHigher || method.getAnnotation(Enforce.class) == null) {
+    return base;
+  }
+ else {
+    return new NoOpStatement();
+  }
+}

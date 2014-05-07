@@ -1,0 +1,3 @@
+{
+  return versionNumber < other.versionNumber ? -1 : versionNumber == other.versionNumber ? 0 : 1;
+}

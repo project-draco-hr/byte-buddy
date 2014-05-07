@@ -1,0 +1,11 @@
+{
+  super(parent);
+  this.precompiledType=new HashMap<String,URL>(types.length);
+  for (  String type : types) {
+    URL resource=parent.getResource(type + SUFFIX);
+    if (resource == null) {
+      throw new IllegalArgumentException("Cannot locate " + type);
+    }
+    precompiledType.put(type,resource);
+  }
+}

@@ -1,0 +1,18 @@
+{
+  URL resource=precompiledType.remove(name);
+  if (resource != null) {
+    byte[] binaryRepresentation=new byte[BUFFER_SIZE];
+    int readLength;
+    try {
+      readLength=resource.openStream().read(binaryRepresentation);
+    }
+ catch (    IOException e) {
+      throw new RuntimeException("Could not read from " + resource + " to manifest "+ name,e);
+    }
+    if (readLength == BUFFER_SIZE) {
+      throw new AssertionError(name + " compilation overflowed buffer");
+    }
+    return defineClass(name,binaryRepresentation,0,readLength);
+  }
+  return super.findClass(name);
+}
