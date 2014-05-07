@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.isPublic().hashCode(),is(MethodMatchers.isPublic().hashCode()));
+  assertThat(MethodMatchers.isPublic(),is(MethodMatchers.isPublic()));
+  assertThat(MethodMatchers.isPublic().hashCode(),not(is(MethodMatchers.isProtected().hashCode())));
+  assertThat(MethodMatchers.isPublic(),not(is(MethodMatchers.isProtected())));
+}

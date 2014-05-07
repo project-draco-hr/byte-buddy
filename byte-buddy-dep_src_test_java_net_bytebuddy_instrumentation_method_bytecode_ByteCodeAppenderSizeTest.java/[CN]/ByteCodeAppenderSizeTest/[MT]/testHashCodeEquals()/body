@@ -1,0 +1,6 @@
+{
+  assertThat(new ByteCodeAppender.Size(LOWER,BIGGER).hashCode(),is(new ByteCodeAppender.Size(LOWER,BIGGER).hashCode()));
+  assertThat(new ByteCodeAppender.Size(LOWER,BIGGER),is(new ByteCodeAppender.Size(LOWER,BIGGER)));
+  assertThat(new ByteCodeAppender.Size(LOWER,BIGGER).hashCode(),not(is(new ByteCodeAppender.Size(BIGGER,LOWER).hashCode())));
+  assertThat(new ByteCodeAppender.Size(LOWER,BIGGER),not(is(new ByteCodeAppender.Size(BIGGER,LOWER))));
+}

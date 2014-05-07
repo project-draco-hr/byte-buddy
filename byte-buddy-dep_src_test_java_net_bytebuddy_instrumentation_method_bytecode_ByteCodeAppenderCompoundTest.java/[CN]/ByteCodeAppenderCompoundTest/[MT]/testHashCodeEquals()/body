@@ -1,0 +1,6 @@
+{
+  assertThat(compound.hashCode(),is(new ByteCodeAppender.Compound(first,second).hashCode()));
+  assertThat(compound,is((ByteCodeAppender)new ByteCodeAppender.Compound(first,second)));
+  assertThat(compound.hashCode(),not(is(new ByteCodeAppender.Compound(second,first).hashCode())));
+  assertThat(compound,not(is((ByteCodeAppender)new ByteCodeAppender.Compound(second,first))));
+}

@@ -1,0 +1,8 @@
+{
+  assertThat(MethodMatchers.isSetter().hashCode(),is(MethodMatchers.isSetter().hashCode()));
+  assertThat(MethodMatchers.isSetter(),is(MethodMatchers.isSetter()));
+  assertThat(MethodMatchers.isSetter().hashCode(),not(is(MethodMatchers.isGetter().hashCode())));
+  assertThat(MethodMatchers.isSetter(),not(is(MethodMatchers.isGetter())));
+  assertThat(MethodMatchers.isGetter().hashCode(),not(is(MethodMatchers.isSetter().hashCode())));
+  assertThat(MethodMatchers.isGetter(),not(is(MethodMatchers.isSetter())));
+}

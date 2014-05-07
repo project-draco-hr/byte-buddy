@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.takesArgumentsAsSubtypesOf(Object.class).hashCode(),is(MethodMatchers.takesArgumentsAsSubtypesOf(Object.class).hashCode()));
+  assertThat(MethodMatchers.takesArgumentsAsSubtypesOf(Object.class),is(MethodMatchers.takesArgumentsAsSubtypesOf(Object.class)));
+  assertThat(MethodMatchers.takesArgumentsAsSubtypesOf(Object.class).hashCode(),not(is(MethodMatchers.takesArgumentsAsSubtypesOf(String.class).hashCode())));
+  assertThat(MethodMatchers.takesArgumentsAsSubtypesOf(Object.class),not(is(MethodMatchers.takesArgumentsAsSubtypesOf(String.class))));
+}

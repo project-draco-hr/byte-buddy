@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.is(testClassBase$foo).hashCode(),is(MethodMatchers.is(testClassBase$foo).hashCode()));
+  assertThat(MethodMatchers.is(testClassBase$foo),is(MethodMatchers.is(testClassBase$foo)));
+  assertThat(MethodMatchers.is(testClassBase$foo).hashCode(),not(is(MethodMatchers.is(testClassExtension$foo).hashCode())));
+  assertThat(MethodMatchers.is(testClassBase$foo),not(is(MethodMatchers.is(testClassExtension$foo))));
+}

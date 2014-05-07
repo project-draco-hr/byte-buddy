@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.takesArguments(Object.class).hashCode(),is(MethodMatchers.takesArguments(Object.class).hashCode()));
+  assertThat(MethodMatchers.takesArguments(Object.class),is(MethodMatchers.takesArguments(Object.class)));
+  assertThat(MethodMatchers.takesArguments(Object.class).hashCode(),not(is(MethodMatchers.takesArguments(String.class).hashCode())));
+  assertThat(MethodMatchers.takesArguments(Object.class),not(is(MethodMatchers.takesArguments(String.class))));
+}

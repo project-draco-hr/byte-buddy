@@ -1,0 +1,10 @@
+{
+  assertThat(new JunctionMethodMatcher.Conjunction(first,second).hashCode(),is(new JunctionMethodMatcher.Conjunction(first,second).hashCode()));
+  assertThat(new JunctionMethodMatcher.Conjunction(first,second),is(new JunctionMethodMatcher.Conjunction(first,second)));
+  assertThat(new JunctionMethodMatcher.Conjunction(first,second).hashCode(),not(is(new JunctionMethodMatcher.Conjunction(second,first).hashCode())));
+  assertThat(new JunctionMethodMatcher.Conjunction(first,second),not(is(new JunctionMethodMatcher.Conjunction(second,first))));
+  assertThat(new JunctionMethodMatcher.Disjunction(first,second).hashCode(),is(new JunctionMethodMatcher.Disjunction(first,second).hashCode()));
+  assertThat(new JunctionMethodMatcher.Disjunction(first,second),is(new JunctionMethodMatcher.Disjunction(first,second)));
+  assertThat(new JunctionMethodMatcher.Disjunction(first,second).hashCode(),not(is(new JunctionMethodMatcher.Disjunction(second,first).hashCode())));
+  assertThat(new JunctionMethodMatcher.Disjunction(first,second),not(is(new JunctionMethodMatcher.Disjunction(second,first))));
+}

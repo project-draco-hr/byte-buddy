@@ -1,0 +1,10 @@
+{
+  assertThat(new TypeProxy.ByReflectionFactory(first,second,true).hashCode(),is(new TypeProxy.ByReflectionFactory(first,second,true).hashCode()));
+  assertThat(new TypeProxy.ByReflectionFactory(first,second,true),is(new TypeProxy.ByReflectionFactory(first,second,true)));
+  assertThat(new TypeProxy.ByReflectionFactory(first,second,true).hashCode(),not(is(new TypeProxy.ByReflectionFactory(first,second,false).hashCode())));
+  assertThat(new TypeProxy.ByReflectionFactory(first,second,true),not(is(new TypeProxy.ByReflectionFactory(first,second,false))));
+  assertThat(new TypeProxy.ByReflectionFactory(first,second,true).hashCode(),not(is(new TypeProxy.ByReflectionFactory(first,second,false).hashCode())));
+  assertThat(new TypeProxy.ByReflectionFactory(first,second,true),not(is(new TypeProxy.ByReflectionFactory(first,second,false))));
+  assertThat(new TypeProxy.ByReflectionFactory(first,second,true).hashCode(),not(is(new TypeProxy.ByReflectionFactory(second,first,true).hashCode())));
+  assertThat(new TypeProxy.ByReflectionFactory(first,second,true),not(is(new TypeProxy.ByReflectionFactory(second,first,true))));
+}

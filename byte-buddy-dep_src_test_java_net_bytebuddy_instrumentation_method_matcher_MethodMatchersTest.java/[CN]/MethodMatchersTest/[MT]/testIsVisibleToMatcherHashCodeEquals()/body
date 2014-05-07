@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.isVisibleTo(Object.class).hashCode(),is(MethodMatchers.isVisibleTo(Object.class).hashCode()));
+  assertThat(MethodMatchers.isVisibleTo(Object.class),is(MethodMatchers.isVisibleTo(Object.class)));
+  assertThat(MethodMatchers.isVisibleTo(Object.class).hashCode(),not(is(MethodMatchers.isVisibleTo(String.class).hashCode())));
+  assertThat(MethodMatchers.isVisibleTo(Object.class),not(is(MethodMatchers.isVisibleTo(String.class))));
+}

@@ -1,0 +1,8 @@
+{
+  assertThat(MethodMatchers.any().hashCode(),is(MethodMatchers.any().hashCode()));
+  assertThat(MethodMatchers.any(),is(MethodMatchers.any()));
+  assertThat(MethodMatchers.any().hashCode(),not(is(MethodMatchers.none().hashCode())));
+  assertThat(MethodMatchers.any(),not(is(MethodMatchers.none())));
+  assertThat(MethodMatchers.none().hashCode(),not(is(MethodMatchers.any().hashCode())));
+  assertThat(MethodMatchers.none(),not(is(MethodMatchers.any())));
+}
