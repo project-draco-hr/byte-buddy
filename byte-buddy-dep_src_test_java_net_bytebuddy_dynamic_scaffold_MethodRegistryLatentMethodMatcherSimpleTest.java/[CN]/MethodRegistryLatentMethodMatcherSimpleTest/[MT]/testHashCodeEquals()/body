@@ -1,0 +1,6 @@
+{
+  assertThat(new MethodRegistry.LatentMethodMatcher.Simple(first).hashCode(),is(new MethodRegistry.LatentMethodMatcher.Simple(first).hashCode()));
+  assertThat(new MethodRegistry.LatentMethodMatcher.Simple(first),is(new MethodRegistry.LatentMethodMatcher.Simple(first)));
+  assertThat(new MethodRegistry.LatentMethodMatcher.Simple(first).hashCode(),not(is(new MethodRegistry.LatentMethodMatcher.Simple(second).hashCode())));
+  assertThat(new MethodRegistry.LatentMethodMatcher.Simple(first),not(is(new MethodRegistry.LatentMethodMatcher.Simple(second))));
+}

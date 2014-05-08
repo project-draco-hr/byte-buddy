@@ -1,0 +1,6 @@
+{
+  assertThat(new MethodRegistry.Default().hashCode(),is(new MethodRegistry.Default().hashCode()));
+  assertThat(new MethodRegistry.Default(),is(new MethodRegistry.Default()));
+  assertThat(new MethodRegistry.Default().append(latentMatchesKnownMethod,simpleInstrumentation,simpleAttributeAppenderFactory).hashCode(),not(is(new MethodRegistry.Default().hashCode())));
+  assertThat(new MethodRegistry.Default().append(latentMatchesKnownMethod,simpleInstrumentation,simpleAttributeAppenderFactory),not(is((MethodRegistry)new MethodRegistry.Default())));
+}

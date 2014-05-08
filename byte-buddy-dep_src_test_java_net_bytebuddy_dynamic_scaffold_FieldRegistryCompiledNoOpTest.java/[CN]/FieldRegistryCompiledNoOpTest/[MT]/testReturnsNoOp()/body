@@ -1,0 +1,3 @@
+{
+  assertThat(FieldRegistry.Compiled.NoOp.INSTANCE.target(fieldDescription),is((TypeWriter.FieldPool.Entry)TypeWriter.FieldPool.Entry.NoOp.INSTANCE));
+}

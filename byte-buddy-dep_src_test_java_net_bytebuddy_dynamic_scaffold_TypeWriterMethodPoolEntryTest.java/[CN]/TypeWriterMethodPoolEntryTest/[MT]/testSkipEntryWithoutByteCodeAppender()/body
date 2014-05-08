@@ -1,0 +1,3 @@
+{
+  TypeWriter.MethodPool.Entry.Skip.INSTANCE.getByteCodeAppender();
+}

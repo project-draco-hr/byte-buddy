@@ -1,0 +1,6 @@
+{
+  assertThat(new TypeWriter.MethodPool.Entry.Simple(first,methodAttributeAppender).hashCode(),is(new TypeWriter.MethodPool.Entry.Simple(first,methodAttributeAppender).hashCode()));
+  assertThat(new TypeWriter.MethodPool.Entry.Simple(first,methodAttributeAppender),is(new TypeWriter.MethodPool.Entry.Simple(first,methodAttributeAppender)));
+  assertThat(new TypeWriter.MethodPool.Entry.Simple(first,methodAttributeAppender).hashCode(),not(is(new TypeWriter.MethodPool.Entry.Simple(second,methodAttributeAppender).hashCode())));
+  assertThat(new TypeWriter.MethodPool.Entry.Simple(first,methodAttributeAppender),not(is(new TypeWriter.MethodPool.Entry.Simple(second,methodAttributeAppender))));
+}

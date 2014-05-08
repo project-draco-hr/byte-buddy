@@ -1,0 +1,6 @@
+{
+  assertThat(new FieldRegistry.Default().compile(instrumentedType,fallback).hashCode(),is(new FieldRegistry.Default().compile(instrumentedType,fallback).hashCode()));
+  assertThat(new FieldRegistry.Default().compile(instrumentedType,fallback),is(new FieldRegistry.Default().compile(instrumentedType,fallback)));
+  assertThat(new FieldRegistry.Default().include(latentFieldMatcher,distinct).compile(instrumentedType,fallback).hashCode(),not(is(new FieldRegistry.Default().hashCode())));
+  assertThat(new FieldRegistry.Default().include(latentFieldMatcher,distinct).compile(instrumentedType,fallback),not(is(new FieldRegistry.Default().compile(instrumentedType,fallback))));
+}

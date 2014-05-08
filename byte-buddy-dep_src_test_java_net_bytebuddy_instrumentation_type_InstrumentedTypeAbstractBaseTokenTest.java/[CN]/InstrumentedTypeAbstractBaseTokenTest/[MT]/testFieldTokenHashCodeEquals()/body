@@ -1,0 +1,6 @@
+{
+  assertThat(abstractBase.new FieldToken(FOO,typeDescription,MODIFIER).hashCode(),is(abstractBase.new FieldToken(FOO,typeDescription,MODIFIER).hashCode()));
+  assertThat(abstractBase.new FieldToken(FOO,typeDescription,MODIFIER),is(abstractBase.new FieldToken(FOO,typeDescription,MODIFIER)));
+  assertThat(abstractBase.new FieldToken(FOO,typeDescription,MODIFIER).hashCode(),not(is(abstractBase.new FieldToken(BAR,typeDescription,MODIFIER).hashCode())));
+  assertThat(abstractBase.new FieldToken(FOO,typeDescription,MODIFIER),not(is(abstractBase.new FieldToken(BAR,typeDescription,MODIFIER))));
+}

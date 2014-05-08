@@ -1,0 +1,6 @@
+{
+  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.Simple(first,methodAttributeAppender);
+  assertThat(entry.isDefineMethod(),is(true));
+  assertThat(entry.getByteCodeAppender(),is(first));
+  assertThat(entry.getAttributeAppender(),is(methodAttributeAppender));
+}
