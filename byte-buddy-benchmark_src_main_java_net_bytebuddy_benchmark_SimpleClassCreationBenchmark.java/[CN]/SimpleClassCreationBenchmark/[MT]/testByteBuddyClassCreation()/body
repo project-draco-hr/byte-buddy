@@ -1,0 +1,3 @@
+{
+  return new ByteBuddy().subclass(BASE_CLASS).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+}
