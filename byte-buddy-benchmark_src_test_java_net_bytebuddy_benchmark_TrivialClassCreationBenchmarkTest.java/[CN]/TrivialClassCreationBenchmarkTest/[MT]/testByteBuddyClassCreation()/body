@@ -1,0 +1,6 @@
+{
+  Class<?> type=trivialClassCreationBenchmark.benchmarkByteBuddy();
+  assertNotEquals(TrivialClassCreationBenchmark.BASE_CLASS,type);
+  assertEquals(TrivialClassCreationBenchmark.BASE_CLASS,type.getSuperclass());
+  assertNotEquals(type,trivialClassCreationBenchmark.benchmarkByteBuddy());
+}

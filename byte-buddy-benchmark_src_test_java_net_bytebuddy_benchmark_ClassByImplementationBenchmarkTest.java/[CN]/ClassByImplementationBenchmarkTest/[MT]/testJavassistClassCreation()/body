@@ -1,0 +1,7 @@
+{
+  ExampleInterface instance=classByImplementationBenchmark.benchmarkJavassist();
+  assertThat(Arrays.asList(instance.getClass().getInterfaces()),hasItem(ClassByImplementationBenchmark.BASE_CLASS));
+  assertEquals(Object.class,instance.getClass().getSuperclass());
+  assertNotEquals(instance.getClass(),classByImplementationBenchmark.benchmarkJavassist());
+  assertReturnValues(instance);
+}

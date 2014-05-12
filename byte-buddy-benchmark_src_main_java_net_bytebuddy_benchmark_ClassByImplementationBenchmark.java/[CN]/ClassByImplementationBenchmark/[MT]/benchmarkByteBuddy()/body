@@ -1,0 +1,3 @@
+{
+  return new ByteBuddy().withIgnoredMethods(none()).subclass(BASE_CLASS).method(isDeclaredBy(BASE_CLASS)).intercept(StubMethod.INSTANCE).make().load(newClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded().newInstance();
+}

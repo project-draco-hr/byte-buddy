@@ -1,0 +1,3 @@
+{
+  classByImplementationBenchmark=new ClassByImplementationBenchmark();
+}

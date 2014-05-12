@@ -1,0 +1,3 @@
+{
+  classByExtensionBenchmark=new ClassByExtensionBenchmark();
+}

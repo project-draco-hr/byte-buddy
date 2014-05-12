@@ -1,0 +1,25 @@
+{
+  ProxyFactory proxyFactory=new ProxyFactory();
+  proxyFactory.setUseCache(false);
+  ProxyFactory.classLoaderProvider=new ProxyFactory.ClassLoaderProvider(){
+    @Override public ClassLoader get(    ProxyFactory proxyFactory){
+      return newClassLoader();
+    }
+  }
+;
+  proxyFactory.setSuperclass(BASE_CLASS);
+  proxyFactory.setFilter(new MethodFilter(){
+    public boolean isHandled(    Method method){
+      return method.getDeclaringClass() == BASE_CLASS;
+    }
+  }
+);
+  Object instance=proxyFactory.createClass().newInstance();
+  ((javassist.util.proxy.Proxy)instance).setHandler(new MethodHandler(){
+    public Object invoke(    Object self,    Method thisMethod,    Method proceed,    Object[] args) throws Throwable {
+      return proceed.invoke(self,args);
+    }
+  }
+);
+  return (ExampleClass)instance;
+}

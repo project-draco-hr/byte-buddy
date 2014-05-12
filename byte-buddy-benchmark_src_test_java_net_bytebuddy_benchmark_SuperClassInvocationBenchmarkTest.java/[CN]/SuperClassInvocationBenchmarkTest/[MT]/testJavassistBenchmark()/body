@@ -1,0 +1,3 @@
+{
+  superClassInvocationBenchmark.benchmarkJavassist(blackHole);
+}

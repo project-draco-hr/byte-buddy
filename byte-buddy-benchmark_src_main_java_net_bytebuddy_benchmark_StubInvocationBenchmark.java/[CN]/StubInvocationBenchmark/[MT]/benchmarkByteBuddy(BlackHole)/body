@@ -1,0 +1,22 @@
+{
+  blackHole.consume(byteBuddyInstance.method(BOOLEAN_VALUE));
+  blackHole.consume(byteBuddyInstance.method(BYTE_VALUE));
+  blackHole.consume(byteBuddyInstance.method(SHORT_VALUE));
+  blackHole.consume(byteBuddyInstance.method(INT_VALUE));
+  blackHole.consume(byteBuddyInstance.method(CHAR_VALUE));
+  blackHole.consume(byteBuddyInstance.method(INT_VALUE));
+  blackHole.consume(byteBuddyInstance.method(LONG_VALUE));
+  blackHole.consume(byteBuddyInstance.method(FLOAT_VALUE));
+  blackHole.consume(byteBuddyInstance.method(DOUBLE_VALUE));
+  blackHole.consume(byteBuddyInstance.method(STRING_VALUE));
+  blackHole.consume(byteBuddyInstance.method(BOOLEAN_VALUE,BOOLEAN_VALUE,BOOLEAN_VALUE));
+  blackHole.consume(byteBuddyInstance.method(BYTE_VALUE,BYTE_VALUE,BYTE_VALUE));
+  blackHole.consume(byteBuddyInstance.method(SHORT_VALUE,SHORT_VALUE,SHORT_VALUE));
+  blackHole.consume(byteBuddyInstance.method(INT_VALUE,INT_VALUE,INT_VALUE));
+  blackHole.consume(byteBuddyInstance.method(CHAR_VALUE,CHAR_VALUE,CHAR_VALUE));
+  blackHole.consume(byteBuddyInstance.method(INT_VALUE,INT_VALUE,INT_VALUE));
+  blackHole.consume(byteBuddyInstance.method(LONG_VALUE,LONG_VALUE,LONG_VALUE));
+  blackHole.consume(byteBuddyInstance.method(FLOAT_VALUE,FLOAT_VALUE,FLOAT_VALUE));
+  blackHole.consume(byteBuddyInstance.method(DOUBLE_VALUE,DOUBLE_VALUE,DOUBLE_VALUE));
+  blackHole.consume(byteBuddyInstance.method(STRING_VALUE,STRING_VALUE,STRING_VALUE));
+}

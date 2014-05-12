@@ -1,0 +1,18 @@
+{
+  ProxyFactory proxyFactory=new ProxyFactory();
+  proxyFactory.setUseCache(false);
+  ProxyFactory.classLoaderProvider=new ProxyFactory.ClassLoaderProvider(){
+    @Override public ClassLoader get(    ProxyFactory proxyFactory){
+      return newClassLoader();
+    }
+  }
+;
+  proxyFactory.setSuperclass(BASE_CLASS);
+  proxyFactory.setFilter(new MethodFilter(){
+    public boolean isHandled(    Method method){
+      return false;
+    }
+  }
+);
+  return proxyFactory.createClass();
+}

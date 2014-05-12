@@ -1,0 +1,4 @@
+{
+  stubInvocationBenchmark=new StubInvocationBenchmark();
+  stubInvocationBenchmark.setUp();
+}

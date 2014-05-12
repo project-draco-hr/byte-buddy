@@ -1,0 +1,22 @@
+{
+  blackHole.consume(jdkProxyInstance.method(BOOLEAN_VALUE));
+  blackHole.consume(jdkProxyInstance.method(BYTE_VALUE));
+  blackHole.consume(jdkProxyInstance.method(SHORT_VALUE));
+  blackHole.consume(jdkProxyInstance.method(INT_VALUE));
+  blackHole.consume(jdkProxyInstance.method(CHAR_VALUE));
+  blackHole.consume(jdkProxyInstance.method(INT_VALUE));
+  blackHole.consume(jdkProxyInstance.method(LONG_VALUE));
+  blackHole.consume(jdkProxyInstance.method(FLOAT_VALUE));
+  blackHole.consume(jdkProxyInstance.method(DOUBLE_VALUE));
+  blackHole.consume(jdkProxyInstance.method(STRING_VALUE));
+  blackHole.consume(jdkProxyInstance.method(BOOLEAN_VALUE,BOOLEAN_VALUE,BOOLEAN_VALUE));
+  blackHole.consume(jdkProxyInstance.method(BYTE_VALUE,BYTE_VALUE,BYTE_VALUE));
+  blackHole.consume(jdkProxyInstance.method(SHORT_VALUE,SHORT_VALUE,SHORT_VALUE));
+  blackHole.consume(jdkProxyInstance.method(INT_VALUE,INT_VALUE,INT_VALUE));
+  blackHole.consume(jdkProxyInstance.method(CHAR_VALUE,CHAR_VALUE,CHAR_VALUE));
+  blackHole.consume(jdkProxyInstance.method(INT_VALUE,INT_VALUE,INT_VALUE));
+  blackHole.consume(jdkProxyInstance.method(LONG_VALUE,LONG_VALUE,LONG_VALUE));
+  blackHole.consume(jdkProxyInstance.method(FLOAT_VALUE,FLOAT_VALUE,FLOAT_VALUE));
+  blackHole.consume(jdkProxyInstance.method(DOUBLE_VALUE,DOUBLE_VALUE,DOUBLE_VALUE));
+  blackHole.consume(jdkProxyInstance.method(STRING_VALUE,STRING_VALUE,STRING_VALUE));
+}

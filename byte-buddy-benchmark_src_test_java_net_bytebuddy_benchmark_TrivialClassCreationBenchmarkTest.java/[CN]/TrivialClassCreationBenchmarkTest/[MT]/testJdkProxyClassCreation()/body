@@ -1,0 +1,6 @@
+{
+  Class<?> type=trivialClassCreationBenchmark.benchmarkJdkProxy();
+  assertNotEquals(Proxy.class,type);
+  assertEquals(Proxy.class,type.getSuperclass());
+  assertNotEquals(type,trivialClassCreationBenchmark.benchmarkJdkProxy());
+}

@@ -1,0 +1,7 @@
+{
+  ExampleClass instance=classByExtensionBenchmark.benchmarkJavassist();
+  assertNotEquals(ClassByExtensionBenchmark.BASE_CLASS,instance.getClass());
+  assertEquals(ClassByExtensionBenchmark.BASE_CLASS,instance.getClass().getSuperclass());
+  assertNotEquals(instance.getClass(),classByExtensionBenchmark.benchmarkJavassist());
+  assertReturnValues(instance);
+}

@@ -1,0 +1,3 @@
+{
+  superClassInvocationBenchmark.benchmarkCglib(blackHole);
+}

@@ -1,0 +1,4 @@
+{
+  superClassInvocationBenchmark=new SuperClassInvocationBenchmark();
+  superClassInvocationBenchmark.setUp();
+}

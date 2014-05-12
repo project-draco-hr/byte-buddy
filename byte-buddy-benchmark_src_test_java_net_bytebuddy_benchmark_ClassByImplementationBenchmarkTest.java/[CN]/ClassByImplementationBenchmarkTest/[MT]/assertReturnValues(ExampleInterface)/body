@@ -1,0 +1,20 @@
+{
+  assertThat(exampleInterface.method(BOOLEAN_VALUE),is(ClassByImplementationBenchmark.DEFAULT_BOOLEAN_VALUE));
+  assertThat(exampleInterface.method(BYTE_VALUE),is(ClassByImplementationBenchmark.DEFAULT_BYTE_VALUE));
+  assertThat(exampleInterface.method(SHORT_VALUE),is(ClassByImplementationBenchmark.DEFAULT_SHORT_VALUE));
+  assertThat(exampleInterface.method(CHAR_VALUE),is(ClassByImplementationBenchmark.DEFAULT_CHAR_VALUE));
+  assertThat(exampleInterface.method(INT_VALUE),is(ClassByImplementationBenchmark.DEFAULT_INT_VALUE));
+  assertThat(exampleInterface.method(LONG_VALUE),is(ClassByImplementationBenchmark.DEFAULT_LONG_VALUE));
+  assertThat(exampleInterface.method(FLOAT_VALUE),is(ClassByImplementationBenchmark.DEFAULT_FLOAT_VALUE));
+  assertThat(exampleInterface.method(DOUBLE_VALUE),is(ClassByImplementationBenchmark.DEFAULT_DOUBLE_VALUE));
+  assertThat(exampleInterface.method(REFERENCE_VALUE),is((Object)ClassByImplementationBenchmark.DEFAULT_REFERENCE_VALUE));
+  assertThat(exampleInterface.method(BOOLEAN_VALUE,BOOLEAN_VALUE,BOOLEAN_VALUE),is((boolean[])(Object)ClassByImplementationBenchmark.DEFAULT_REFERENCE_VALUE));
+  assertThat(exampleInterface.method(BYTE_VALUE,BYTE_VALUE,BYTE_VALUE),is((byte[])(Object)ClassByImplementationBenchmark.DEFAULT_REFERENCE_VALUE));
+  assertThat(exampleInterface.method(SHORT_VALUE,SHORT_VALUE,SHORT_VALUE),is((short[])(Object)ClassByImplementationBenchmark.DEFAULT_REFERENCE_VALUE));
+  assertThat(exampleInterface.method(CHAR_VALUE,CHAR_VALUE,CHAR_VALUE),is((char[])(Object)ClassByImplementationBenchmark.DEFAULT_REFERENCE_VALUE));
+  assertThat(exampleInterface.method(INT_VALUE,INT_VALUE,INT_VALUE),is((int[])(Object)ClassByImplementationBenchmark.DEFAULT_REFERENCE_VALUE));
+  assertThat(exampleInterface.method(LONG_VALUE,LONG_VALUE,LONG_VALUE),is((long[])(Object)ClassByImplementationBenchmark.DEFAULT_REFERENCE_VALUE));
+  assertThat(exampleInterface.method(FLOAT_VALUE,FLOAT_VALUE,FLOAT_VALUE),is((float[])(Object)ClassByImplementationBenchmark.DEFAULT_REFERENCE_VALUE));
+  assertThat(exampleInterface.method(DOUBLE_VALUE,DOUBLE_VALUE,DOUBLE_VALUE),is((double[])(Object)ClassByImplementationBenchmark.DEFAULT_REFERENCE_VALUE));
+  assertThat(exampleInterface.method(REFERENCE_VALUE,REFERENCE_VALUE,REFERENCE_VALUE),is((Object[])(Object)ClassByImplementationBenchmark.DEFAULT_REFERENCE_VALUE));
+}

@@ -1,0 +1,8 @@
+{
+  Enhancer enhancer=new Enhancer();
+  enhancer.setUseCache(false);
+  enhancer.setClassLoader(newClassLoader());
+  enhancer.setSuperclass(BASE_CLASS);
+  enhancer.setCallbackType(NoOp.class);
+  return enhancer.createClass();
+}

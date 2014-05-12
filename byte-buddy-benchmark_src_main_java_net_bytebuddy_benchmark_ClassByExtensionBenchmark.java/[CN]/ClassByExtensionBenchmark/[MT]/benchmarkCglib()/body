@@ -1,0 +1,25 @@
+{
+  Enhancer enhancer=new Enhancer();
+  enhancer.setUseCache(false);
+  enhancer.setClassLoader(newClassLoader());
+  enhancer.setSuperclass(BASE_CLASS);
+  CallbackHelper callbackHelper=new CallbackHelper(BASE_CLASS,new Class[0]){
+    @Override protected Object getCallback(    Method method){
+      if (method.getDeclaringClass() == BASE_CLASS) {
+        return new MethodInterceptor(){
+          @Override public Object intercept(          Object object,          Method method,          Object[] arguments,          MethodProxy methodProxy) throws Throwable {
+            return methodProxy.invokeSuper(object,arguments);
+          }
+        }
+;
+      }
+ else {
+        return NoOp.INSTANCE;
+      }
+    }
+  }
+;
+  enhancer.setCallbackFilter(callbackHelper);
+  enhancer.setCallbacks(callbackHelper.getCallbacks());
+  return (ExampleClass)enhancer.create();
+}
