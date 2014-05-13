@@ -1,0 +1,6 @@
+{
+  if (this == o)   return true;
+  if (o == null || getClass() != o.getClass())   return false;
+  ForStaticField that=(ForStaticField)o;
+  return makeAccessible == that.makeAccessible && fieldName.equals(that.fieldName) && value.equals(that.value);
+}

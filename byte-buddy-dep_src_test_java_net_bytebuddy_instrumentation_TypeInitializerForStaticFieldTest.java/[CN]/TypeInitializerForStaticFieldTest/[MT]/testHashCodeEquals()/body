@@ -1,0 +1,11 @@
+{
+  Object first=new Object(), second=new Object();
+  assertThat(TypeInitializer.ForStaticField.accessible(FOO,first).hashCode(),is(TypeInitializer.ForStaticField.accessible(FOO,first).hashCode()));
+  assertThat(TypeInitializer.ForStaticField.accessible(FOO,first),is(TypeInitializer.ForStaticField.accessible(FOO,first)));
+  assertThat(TypeInitializer.ForStaticField.accessible(FOO,first).hashCode(),not(is(TypeInitializer.ForStaticField.nonAccessible(FOO,first).hashCode())));
+  assertThat(TypeInitializer.ForStaticField.accessible(FOO,first),not(is(TypeInitializer.ForStaticField.nonAccessible(FOO,first))));
+  assertThat(TypeInitializer.ForStaticField.accessible(FOO,first).hashCode(),not(is(TypeInitializer.ForStaticField.accessible(FOO,second).hashCode())));
+  assertThat(TypeInitializer.ForStaticField.accessible(FOO,first),not(is(TypeInitializer.ForStaticField.accessible(FOO,second))));
+  assertThat(TypeInitializer.ForStaticField.accessible(FOO,first).hashCode(),not(is(TypeInitializer.ForStaticField.accessible(FOO + FOO,first).hashCode())));
+  assertThat(TypeInitializer.ForStaticField.accessible(FOO,first),not(is(TypeInitializer.ForStaticField.accessible(FOO + FOO,first))));
+}
