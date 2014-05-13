@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  TargetMethodAnnotationDrivenBinder that=(TargetMethodAnnotationDrivenBinder)other;
+  return assigner.equals(that.assigner) && defaultsProvider.equals(that.defaultsProvider) && delegationProcessor.equals(that.delegationProcessor)&& methodInvoker.equals(that.methodInvoker);
+}

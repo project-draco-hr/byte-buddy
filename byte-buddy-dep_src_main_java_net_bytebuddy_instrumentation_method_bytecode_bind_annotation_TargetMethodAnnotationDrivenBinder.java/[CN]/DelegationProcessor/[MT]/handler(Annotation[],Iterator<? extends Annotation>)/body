@@ -3,7 +3,7 @@
   for (  Annotation anAnnotation : annotation) {
     ParameterBinder<?> parameterBinder=argumentBinders.get(anAnnotation.annotationType());
     if (parameterBinder != null && handler != null) {
-      throw new IllegalArgumentException("Ambiguous binding for parameter annotated with two handled annotation types");
+      throw new IllegalStateException("Ambiguous binding for parameter annotated with two handled annotation types");
     }
  else     if (parameterBinder != null) {
       handler=makeDelegate(parameterBinder,anAnnotation);
