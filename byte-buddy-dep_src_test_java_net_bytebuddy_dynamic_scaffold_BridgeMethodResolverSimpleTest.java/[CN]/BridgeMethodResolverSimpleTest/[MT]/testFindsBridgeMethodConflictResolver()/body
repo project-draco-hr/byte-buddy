@@ -8,7 +8,10 @@
   when(bridgeTarget.extract()).thenReturn(methodDescription);
   BridgeMethodResolver bridgeMethodResolver=new BridgeMethodResolver.Simple(reachableMethods,conflictHandler);
   assertThat(bridgeMethodResolver.resolve(relevantMethods.filter(isBridge()).getOnly()),is(methodDescription));
-  verify(conflictHandler).choose(relevantMethods.filter(isBridge()).getOnly(),relevantMethods.filter(not(isBridge())));
+  ArgumentCaptor<MethodList> capturedConflictHandlerCandidates=ArgumentCaptor.forClass(MethodList.class);
+  verify(conflictHandler).choose(eq(relevantMethods.filter(isBridge()).getOnly()),capturedConflictHandlerCandidates.capture());
+  assertThat(capturedConflictHandlerCandidates.getValue().size(),is(2));
+  assertThat(capturedConflictHandlerCandidates.getValue(),containsAllOf(relevantMethods.filter(not(isBridge()))));
   verifyNoMoreInteractions(conflictHandler);
   verify(bridgeTarget).isResolved();
   verify(bridgeTarget).extract();
