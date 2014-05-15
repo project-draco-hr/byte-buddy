@@ -1,4 +1,0 @@
-{
-  this.methodStackSize=methodStackSize;
-  this.returnTypeSize=returnTypeSize;
-}

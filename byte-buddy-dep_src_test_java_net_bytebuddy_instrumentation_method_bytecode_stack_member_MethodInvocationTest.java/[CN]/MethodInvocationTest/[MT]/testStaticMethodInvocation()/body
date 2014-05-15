@@ -1,0 +1,4 @@
+{
+  when(methodDescription.isStatic()).thenReturn(true);
+  assertInvocation(MethodInvocation.invoke(methodDescription),Opcodes.INVOKESTATIC,FOO);
+}

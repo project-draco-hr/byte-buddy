@@ -1,0 +1,5 @@
+{
+  when(declaringType.isAssignableFrom(otherType)).thenReturn(true);
+  when(otherType.isInterface()).thenReturn(true);
+  assertInvocation(MethodInvocation.invoke(methodDescription).virtual(otherType),Opcodes.INVOKEINTERFACE,BAZ);
+}

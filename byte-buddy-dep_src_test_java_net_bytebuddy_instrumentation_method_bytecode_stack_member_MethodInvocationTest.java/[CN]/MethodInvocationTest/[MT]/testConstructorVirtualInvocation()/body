@@ -1,0 +1,4 @@
+{
+  when(methodDescription.isConstructor()).thenReturn(true);
+  MethodInvocation.invoke(methodDescription).virtual(otherType);
+}

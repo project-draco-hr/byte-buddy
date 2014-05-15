@@ -1,6 +1,0 @@
-{
-  when(methodDescription.isPrivate()).thenReturn(true);
-  evaluateImplicitlyTypedInvocation(Opcodes.INVOKESPECIAL);
-  verify(methodDescription,atLeast(1)).isStatic();
-  verify(methodDescription,atLeast(1)).isPrivate();
-}

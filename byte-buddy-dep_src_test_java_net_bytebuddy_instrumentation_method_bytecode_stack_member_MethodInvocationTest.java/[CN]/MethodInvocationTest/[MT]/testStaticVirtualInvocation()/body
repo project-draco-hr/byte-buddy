@@ -1,0 +1,4 @@
+{
+  when(methodDescription.isStatic()).thenReturn(true);
+  MethodInvocation.invoke(methodDescription).virtual(otherType);
+}

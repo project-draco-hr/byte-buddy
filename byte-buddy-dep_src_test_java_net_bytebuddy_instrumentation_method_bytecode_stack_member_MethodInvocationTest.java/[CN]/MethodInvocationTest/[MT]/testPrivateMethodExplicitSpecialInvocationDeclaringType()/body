@@ -1,4 +1,0 @@
-{
-  when(methodDescription.isPrivate()).thenReturn(true);
-  MethodInvocation.invoke(methodDescription).special(declaringType);
-}

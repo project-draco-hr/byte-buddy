@@ -1,7 +1,6 @@
 {
-  validateNonStaticAndTypeCompatibleCall(invocationTarget);
-  if (methodDescription.isPrivate() || methodDescription.isConstructor()) {
-    throw new IllegalArgumentException("Cannot invoke " + methodDescription + " virtually");
+  if (methodDescription.isPrivate() || methodDescription.isConstructor() || methodDescription.isStatic()) {
+    throw new IllegalStateException("Cannot invoke " + methodDescription + " virtually");
   }
   if (invocationTarget.isInterface()) {
     return INTERFACE.new Invocation(methodDescription,invocationTarget);

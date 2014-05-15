@@ -1,3 +1,0 @@
-{
-  evaluateInvocation(Opcodes.INVOKEVIRTUAL,BAZ,MethodInvocation.invoke(methodDescription).virtual(declaringTypeSubType));
-}

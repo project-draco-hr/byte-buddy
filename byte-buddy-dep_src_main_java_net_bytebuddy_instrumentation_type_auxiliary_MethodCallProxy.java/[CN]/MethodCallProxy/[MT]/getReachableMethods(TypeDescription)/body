@@ -1,0 +1,6 @@
+{
+  List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(3);
+  methodDescriptions.addAll(methodList);
+  methodDescriptions.addAll(typeDescription.getDeclaredMethods());
+  return new MethodList.Explicit(methodDescriptions);
+}

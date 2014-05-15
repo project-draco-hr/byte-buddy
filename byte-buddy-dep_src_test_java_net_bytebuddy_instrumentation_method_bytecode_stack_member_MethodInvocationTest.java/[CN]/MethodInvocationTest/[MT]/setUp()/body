@@ -1,10 +1,10 @@
 {
   when(methodDescription.getReturnType()).thenReturn(returnType);
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);
+  when(methodDescription.getStackSize()).thenReturn(ARGUMENT_STACK_SIZE);
   when(declaringType.getInternalName()).thenReturn(FOO);
+  when(otherType.getInternalName()).thenReturn(BAZ);
   when(methodDescription.getInternalName()).thenReturn(BAR);
   when(methodDescription.getDescriptor()).thenReturn(QUX);
-  when(declaringType.isAssignableFrom(declaringTypeSubType)).thenReturn(true);
-  when(declaringTypeSubType.getInternalName()).thenReturn(BAZ);
-  expectedSizeChange=configureSizeChange(methodStackSize,returnTypeSize);
+  when(returnType.getStackSize()).thenReturn(stackSize);
 }

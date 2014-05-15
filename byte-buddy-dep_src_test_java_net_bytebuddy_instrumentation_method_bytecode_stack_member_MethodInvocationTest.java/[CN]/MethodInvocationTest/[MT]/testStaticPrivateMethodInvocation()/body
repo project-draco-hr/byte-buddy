@@ -1,0 +1,5 @@
+{
+  when(methodDescription.isStatic()).thenReturn(true);
+  when(methodDescription.isPrivate()).thenReturn(true);
+  assertInvocation(MethodInvocation.invoke(methodDescription),Opcodes.INVOKESTATIC,FOO);
+}

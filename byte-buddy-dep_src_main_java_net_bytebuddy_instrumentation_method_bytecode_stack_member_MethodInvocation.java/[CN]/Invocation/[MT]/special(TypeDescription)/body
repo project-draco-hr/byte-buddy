@@ -1,15 +1,6 @@
 {
-  validateNonStaticAndTypeCompatibleCall(invocationTarget);
-  if (methodDescription.isAbstract()) {
-    throw new IllegalStateException("Cannot call INVOKESPECIAL on abstract method " + methodDescription);
-  }
- else   if ((methodDescription.isPrivate() || methodDescription.isConstructor())) {
-    if (this.typeDescription.equals(invocationTarget)) {
-      return this;
-    }
- else {
-      throw new IllegalArgumentException("Cannot apply special invocation for " + methodDescription + " on "+ invocationTarget);
-    }
+  if (!methodDescription.isSpecializableFor(invocationTarget)) {
+    throw new IllegalArgumentException("Cannot invoke " + invocationTarget + " on "+ methodDescription);
   }
   return SPECIAL.new Invocation(methodDescription,invocationTarget);
 }

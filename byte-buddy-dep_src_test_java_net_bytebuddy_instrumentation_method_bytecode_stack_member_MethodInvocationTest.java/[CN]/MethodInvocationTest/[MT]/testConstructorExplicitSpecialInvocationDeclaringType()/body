@@ -1,4 +1,0 @@
-{
-  when(methodDescription.isConstructor()).thenReturn(true);
-  MethodInvocation.invoke(methodDescription).special(declaringType);
-}

@@ -1,8 +1,0 @@
-{
-  if (methodDescription.isStatic()) {
-    throw new IllegalStateException("Method " + methodDescription + " is bound to "+ this.typeDescription);
-  }
- else   if (!this.typeDescription.isAssignableFrom(typeDescription)) {
-    throw new IllegalArgumentException("Method " + methodDescription + " cannot be called on "+ typeDescription);
-  }
-}

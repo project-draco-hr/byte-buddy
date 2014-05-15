@@ -1,0 +1,4 @@
+{
+  when(methodDescription.isPrivate()).thenReturn(true);
+  assertInvocation(MethodInvocation.invoke(methodDescription),Opcodes.INVOKESPECIAL,FOO);
+}

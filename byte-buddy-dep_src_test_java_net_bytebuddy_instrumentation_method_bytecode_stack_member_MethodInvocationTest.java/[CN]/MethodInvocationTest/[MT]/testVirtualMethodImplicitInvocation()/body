@@ -1,6 +1,0 @@
-{
-  evaluateImplicitlyTypedInvocation(Opcodes.INVOKEVIRTUAL);
-  verify(methodDescription,atLeast(1)).isStatic();
-  verify(methodDescription,atLeast(1)).isConstructor();
-  verify(methodDescription,atLeast(1)).isPrivate();
-}

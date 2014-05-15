@@ -10,6 +10,6 @@
  else {
     targetMethod=instrumentedMethod;
   }
-  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisAndArguments(instrumentedMethod),MethodInvocation.invoke(targetMethod).special(targetType),MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisReferenceAndArguments(instrumentedMethod),MethodInvocation.invoke(targetMethod).special(targetType),MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }

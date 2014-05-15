@@ -1,0 +1,3 @@
+{
+  MethodInvocation.invoke(methodDescription).special(otherType);
+}

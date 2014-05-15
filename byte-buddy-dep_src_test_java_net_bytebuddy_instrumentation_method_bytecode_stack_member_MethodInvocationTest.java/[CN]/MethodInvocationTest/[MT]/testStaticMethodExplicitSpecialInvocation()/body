@@ -1,5 +1,0 @@
-{
-  when(methodDescription.isStatic()).thenReturn(true);
-  TypeDescription explicitType=mock(TypeDescription.class);
-  MethodInvocation.invoke(methodDescription).special(explicitType);
-}

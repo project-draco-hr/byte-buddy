@@ -1,0 +1,8 @@
+{
+  assertThat(methodLookupEngine.hashCode(),is(new MethodLookupEngine.Default().hashCode()));
+  assertThat(methodLookupEngine,is((MethodLookupEngine)new MethodLookupEngine.Default()));
+  MethodLookupEngine otherEngine=new MethodLookupEngine.Default();
+  otherEngine.getReachableMethods(new TypeDescription.ForLoadedType(Object.class));
+  assertThat(methodLookupEngine.hashCode(),CoreMatchers.not(is(otherEngine.hashCode())));
+  assertThat(methodLookupEngine,CoreMatchers.not(is(otherEngine)));
+}

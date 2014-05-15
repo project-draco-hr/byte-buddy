@@ -1,0 +1,4 @@
+{
+  this.findLoadedClassMethod=findLoadedClassMethod;
+  this.loadByteArrayMethod=loadByteArrayMethod;
+}
