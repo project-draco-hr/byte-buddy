@@ -1,0 +1,6 @@
+{
+  TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
+  MethodList reachableMethods=methodLookupEngine.getReachableMethods(objectType);
+  assertThat(reachableMethods.size(),is(objectType.getDeclaredMethods().size()));
+  assertThat(reachableMethods,containsAllOf(objectType.getDeclaredMethods()));
+}

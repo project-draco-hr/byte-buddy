@@ -1,0 +1,3 @@
+{
+  return isMethod().and(not(isPrivate().or(isStatic()).or(isPackagePrivate().and(not(isVisibleTo(typeDescription))))));
+}

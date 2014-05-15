@@ -1,0 +1,10 @@
+{
+  TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
+  TypeDescription abstractSingleInterfaceClass=new TypeDescription.ForLoadedType(AbstractSingleInterfaceClass.class);
+  TypeDescription singleMethodInterface=new TypeDescription.ForLoadedType(SingleMethodInterface.class);
+  MethodList reachableMethods=methodLookupEngine.getReachableMethods(abstractSingleInterfaceClass);
+  assertThat(reachableMethods,containsAllOf(abstractSingleInterfaceClass.getDeclaredMethods()));
+  assertThat(reachableMethods,containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(abstractSingleInterfaceClass))));
+  assertThat(reachableMethods,containsAllOf(singleMethodInterface.getDeclaredMethods()));
+  assertThat(reachableMethods.size(),is(abstractSingleInterfaceClass.getDeclaredMethods().size() + singleMethodInterface.getDeclaredMethods().size() + objectType.getDeclaredMethods().filter(isVirtualTo(abstractSingleInterfaceClass)).size()));
+}

@@ -1,11 +1,12 @@
 {
   TypeDescription target=new TypeDescription.ForLoadedType(Baz.class);
-  MethodList relevantMethods=target.getReachableMethods().filter(not(isConstructor().or(isDeclaredBy(Object.class))));
+  MethodList reachableMethods=new MethodLookupEngine.Default().getReachableMethods(target);
+  MethodList relevantMethods=reachableMethods.filter(not(isConstructor().or(isDeclaredBy(Object.class))));
   assertThat(relevantMethods.size(),is(3));
   when(conflictHandler.choose(any(MethodDescription.class),any(MethodList.class))).thenReturn(bridgeTarget);
   when(bridgeTarget.isResolved()).thenReturn(true);
   when(bridgeTarget.extract()).thenReturn(methodDescription);
-  BridgeMethodResolver bridgeMethodResolver=new BridgeMethodResolver.Simple(target.getReachableMethods(),conflictHandler);
+  BridgeMethodResolver bridgeMethodResolver=new BridgeMethodResolver.Simple(reachableMethods,conflictHandler);
   assertThat(bridgeMethodResolver.resolve(relevantMethods.filter(isBridge()).getOnly()),is(methodDescription));
   verify(conflictHandler).choose(relevantMethods.filter(isBridge()).getOnly(),relevantMethods.filter(not(isBridge())));
   verifyNoMoreInteractions(conflictHandler);

@@ -1,0 +1,3 @@
+{
+  assertThat(Arrays.asList(FOO,BAR,QUX),containsAllOf(Arrays.asList(QUX,FOO,BAZ)));
+}

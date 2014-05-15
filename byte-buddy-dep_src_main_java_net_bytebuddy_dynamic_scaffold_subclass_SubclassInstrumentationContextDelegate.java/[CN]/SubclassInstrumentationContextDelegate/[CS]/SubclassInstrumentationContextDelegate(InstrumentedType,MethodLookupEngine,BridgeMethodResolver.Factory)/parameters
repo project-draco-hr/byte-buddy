@@ -1,0 +1,3 @@
+InstrumentedType instrumentedType
+MethodLookupEngine methodLookupEngine
+BridgeMethodResolver.Factory bridgeMethodResolverFactory

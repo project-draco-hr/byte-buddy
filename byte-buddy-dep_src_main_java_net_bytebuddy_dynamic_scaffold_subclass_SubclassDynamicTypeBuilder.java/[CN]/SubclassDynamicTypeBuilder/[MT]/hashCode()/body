@@ -10,6 +10,7 @@
   result=31 * result + classVisitorWrapperChain.hashCode();
   result=31 * result + fieldRegistry.hashCode();
   result=31 * result + methodRegistry.hashCode();
+  result=31 * result + methodLookupEngineFactory.hashCode();
   result=31 * result + defaultFieldAttributeAppenderFactory.hashCode();
   result=31 * result + defaultMethodAttributeAppenderFactory.hashCode();
   return result;

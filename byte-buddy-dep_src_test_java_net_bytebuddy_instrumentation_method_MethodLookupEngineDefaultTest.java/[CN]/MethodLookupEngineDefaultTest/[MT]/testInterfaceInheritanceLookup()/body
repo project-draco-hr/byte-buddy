@@ -1,0 +1,12 @@
+{
+  TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
+  TypeDescription singleMethodOverridingInterface=new TypeDescription.ForLoadedType(SingleMethodOverridingInterface.class);
+  TypeDescription additionalMethodInterface=new TypeDescription.ForLoadedType(AdditionalMethodInterface.class);
+  TypeDescription abstractAdditionalMethodInterfaceClass=new TypeDescription.ForLoadedType(AbstractAdditionalMethodInterfaceClass.class);
+  MethodList reachableMethods=methodLookupEngine.getReachableMethods(abstractAdditionalMethodInterfaceClass);
+  assertThat(reachableMethods,containsAllOf(abstractAdditionalMethodInterfaceClass.getDeclaredMethods()));
+  assertThat(reachableMethods,containsAllOf(singleMethodOverridingInterface.getDeclaredMethods()));
+  assertThat(reachableMethods,containsAllOf(additionalMethodInterface.getDeclaredMethods()));
+  assertThat(reachableMethods,containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(abstractAdditionalMethodInterfaceClass))));
+  assertThat(reachableMethods.size(),is(abstractAdditionalMethodInterfaceClass.getDeclaredMethods().size() + singleMethodOverridingInterface.getDeclaredMethods().size() + additionalMethodInterface.getDeclaredMethods().size()+ objectType.getDeclaredMethods().filter(isVirtualTo(abstractAdditionalMethodInterfaceClass)).size()));
+}

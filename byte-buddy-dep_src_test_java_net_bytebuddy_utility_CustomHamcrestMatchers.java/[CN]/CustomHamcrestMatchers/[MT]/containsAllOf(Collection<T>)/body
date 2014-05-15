@@ -1,0 +1,3 @@
+{
+  return (Matcher<Iterable<T>>)(Object)hasItems(items.toArray(new Object[items.size()]));
+}

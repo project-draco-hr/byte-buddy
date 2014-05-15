@@ -1,0 +1,11 @@
+{
+  TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
+  TypeDescription conflictingInterfaceClass=new TypeDescription.ForLoadedType(ConflictingInterfaceClass.class);
+  MethodList reachableMethods=methodLookupEngine.getReachableMethods(conflictingInterfaceClass);
+  assertThat(reachableMethods,containsAllOf(conflictingInterfaceClass.getDeclaredMethods()));
+  assertThat(reachableMethods,containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(conflictingInterfaceClass))));
+  assertThat(reachableMethods.size(),is(conflictingInterfaceClass.getDeclaredMethods().size() + objectType.getDeclaredMethods().filter(isVirtualTo(conflictingInterfaceClass)).size() + 1));
+  MethodDescription conflictMethod=reachableMethods.filter(named(FOO)).getOnly();
+  assertEquals(MethodLookupEngine.ConflictingInterfaceMethod.class,conflictMethod.getClass());
+  assertThat(conflictMethod.getDeclaringType(),is(conflictingInterfaceClass));
+}

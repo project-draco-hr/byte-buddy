@@ -1,0 +1,3 @@
+{
+  return new MethodDelegation(new InstrumentationDelegate.ForInstanceField(new TypeDescription.ForLoadedType(nonNull(type)),isValidIdentifier(fieldName)),defaultParameterBinders(),defaultDefaultsProvider(),defaultAmbiguityResolver(),defaultAssigner(),methodLookupEngine.getReachableMethods(new TypeDescription.ForLoadedType(type)).filter(not(isStatic().or(isPrivate()).or(isConstructor()))));
+}

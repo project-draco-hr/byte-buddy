@@ -1,0 +1,17 @@
+{
+  super(fieldTokens,methodTokens);
+  this.classFileVersion=classFileVersion;
+  this.namingStrategy=namingStrategy;
+  this.superType=superType;
+  this.interfaceTypes=interfaceTypes;
+  this.modifiers=modifiers;
+  this.attributeAppender=attributeAppender;
+  this.ignoredMethods=ignoredMethods;
+  this.bridgeMethodResolverFactory=bridgeMethodResolverFactory;
+  this.classVisitorWrapperChain=classVisitorWrapperChain;
+  this.fieldRegistry=fieldRegistry;
+  this.methodRegistry=methodRegistry;
+  this.methodLookupEngineFactory=methodLookupEngineFactory;
+  this.defaultFieldAttributeAppenderFactory=defaultFieldAttributeAppenderFactory;
+  this.defaultMethodAttributeAppenderFactory=defaultMethodAttributeAppenderFactory;
+}

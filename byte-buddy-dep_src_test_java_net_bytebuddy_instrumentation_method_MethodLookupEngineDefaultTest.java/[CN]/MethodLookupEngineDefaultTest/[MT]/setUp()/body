@@ -1,0 +1,3 @@
+{
+  methodLookupEngine=MethodLookupEngine.Default.Factory.INSTANCE.make();
+}
