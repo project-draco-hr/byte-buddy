@@ -1,6 +1,6 @@
 {
   TypeDescription target=new TypeDescription.ForLoadedType(Baz.class);
-  MethodList reachableMethods=new MethodLookupEngine.Default(false).getReachableMethods(target);
+  MethodList reachableMethods=new MethodLookupEngine.Default(MethodLookupEngine.Default.DefaultMethodLookup.DISABLED).getReachableMethods(target);
   MethodList relevantMethods=reachableMethods.filter(not(isConstructor().or(isDeclaredBy(Object.class))));
   assertThat(relevantMethods.size(),is(3));
   when(conflictHandler.choose(any(MethodDescription.class),any(MethodList.class))).thenReturn(bridgeTarget);

@@ -1,4 +1,4 @@
 {
   when(methodDescription.isConstructor()).thenReturn(true);
-  assertInvocation(MethodInvocation.invoke(methodDescription),Opcodes.INVOKESPECIAL,FOO);
+  assertInvocation(MethodInvocation.invoke(methodDescription),Opcodes.INVOKESPECIAL,FOO,false);
 }

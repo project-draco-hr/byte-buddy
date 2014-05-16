@@ -1,0 +1,3 @@
+{
+  return "MethodBucket{" + "classMethods=" + classMethods + ", interfaceMethods="+ interfaceMethods+ ", processedTypes="+ processedTypes+ ", virtualHost="+ virtualHost+ ", virtualMethodMatcher="+ virtualMethodMatcher+ '}';
+}

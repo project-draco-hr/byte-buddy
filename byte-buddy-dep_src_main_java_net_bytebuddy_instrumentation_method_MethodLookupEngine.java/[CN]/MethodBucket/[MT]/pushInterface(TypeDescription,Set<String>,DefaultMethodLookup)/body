@@ -1,0 +1,22 @@
+{
+  Set<String> locallyProcessedMethods=new HashSet<String>(processedMethods);
+  if (processedTypes.add(typeDescription)) {
+    for (    MethodDescription methodDescription : typeDescription.getDeclaredMethods().filter(virtualMethodMatcher)) {
+      String uniqueSignature=methodDescription.getUniqueSignature();
+      if (!processedMethods.contains(uniqueSignature)) {
+        locallyProcessedMethods.add(uniqueSignature);
+        MethodDescription conflictingMethod=interfaceMethods.get(uniqueSignature);
+        if (conflictingMethod != null && !conflictingMethod.getDeclaringType().isAssignableFrom(typeDescription)) {
+          methodDescription=ConflictingInterfaceMethod.of(virtualHost,conflictingMethod,methodDescription);
+        }
+        interfaceMethods.put(uniqueSignature,methodDescription);
+      }
+      if (defaultMethodLookup.isEnabled(typeDescription) && methodDescription.isDefaultMethod()) {
+        defaultMethods.put(methodDescription,defaultMethodLookup.locateDispatcherType(methodDescription,typeDescription));
+      }
+    }
+    for (    TypeDescription interfaceType : typeDescription.getInterfaces()) {
+      pushInterface(interfaceType,locallyProcessedMethods,defaultMethodLookup);
+    }
+  }
+}

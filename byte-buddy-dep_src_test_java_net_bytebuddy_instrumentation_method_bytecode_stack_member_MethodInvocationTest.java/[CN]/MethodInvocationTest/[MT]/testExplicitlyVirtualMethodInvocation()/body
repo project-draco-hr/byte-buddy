@@ -1,4 +1,4 @@
 {
   when(declaringType.isAssignableFrom(otherType)).thenReturn(true);
-  assertInvocation(MethodInvocation.invoke(methodDescription).virtual(otherType),Opcodes.INVOKEVIRTUAL,BAZ);
+  assertInvocation(MethodInvocation.invoke(methodDescription).virtual(otherType),Opcodes.INVOKEVIRTUAL,BAZ,false);
 }

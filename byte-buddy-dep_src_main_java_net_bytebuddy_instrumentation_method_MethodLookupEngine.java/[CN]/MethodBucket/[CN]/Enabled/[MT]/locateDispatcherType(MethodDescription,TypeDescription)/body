@@ -1,0 +1,3 @@
+{
+  return hostingTypeInterfaces.contains(typeDescription) ? methodDescription.getDeclaringType() : typeDescription;
+}

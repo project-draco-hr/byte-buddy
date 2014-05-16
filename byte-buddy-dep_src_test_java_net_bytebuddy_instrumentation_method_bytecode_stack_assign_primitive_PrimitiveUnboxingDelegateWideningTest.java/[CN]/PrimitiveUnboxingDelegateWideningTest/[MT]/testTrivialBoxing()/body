@@ -4,7 +4,7 @@
   StackManipulation.Size size=stackManipulation.apply(methodVisitor,instrumentationContext);
   assertThat(size.getSizeImpact(),is(sizeChange));
   assertThat(size.getMaximalSize(),is(interimMaximum));
-  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,Type.getInternalName(referenceType),unboxingMethodName,unboxingMethodDescriptor);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,Type.getInternalName(referenceType),unboxingMethodName,unboxingMethodDescriptor,false);
   verify(methodVisitor).visitInsn(wideningOpcode);
   verifyNoMoreInteractions(methodVisitor);
 }

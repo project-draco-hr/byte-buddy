@@ -1,6 +1,6 @@
 {
   TypeDescription target=new TypeDescription.ForLoadedType(Qux.class);
-  MethodList reachableMethods=new MethodLookupEngine.Default(false).getReachableMethods(target);
+  MethodList reachableMethods=new MethodLookupEngine.Default(MethodLookupEngine.Default.DefaultMethodLookup.DISABLED).getReachableMethods(target);
   MethodList relevantMethods=reachableMethods.filter(not(isConstructor().or(isDeclaredBy(Object.class))));
   assertThat(relevantMethods.size(),is(3));
   BridgeMethodResolver bridgeMethodResolver=new BridgeMethodResolver.Simple(reachableMethods,conflictHandler);

@@ -1,0 +1,3 @@
+{
+  pushInterfaces(typeDescriptions,new DefaultMethodLookup.Enabled(typeDescriptions));
+}

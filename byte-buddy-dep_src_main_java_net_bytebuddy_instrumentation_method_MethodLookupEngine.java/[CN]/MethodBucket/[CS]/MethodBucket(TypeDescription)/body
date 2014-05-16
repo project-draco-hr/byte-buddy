@@ -1,0 +1,9 @@
+{
+  this.virtualHost=hostingType;
+  classMethods=new HashMap<String,MethodDescription>();
+  interfaceMethods=new HashMap<String,MethodDescription>();
+  processedTypes=new HashSet<TypeDescription>();
+  defaultMethods=new HashMap<MethodDescription,TypeDescription>();
+  virtualMethodMatcher=isMethod().and(not(isPrivate().or(isStatic()).or(isPackagePrivate().and(not(isVisibleTo(hostingType))))));
+  pushClass(hostingType,any());
+}

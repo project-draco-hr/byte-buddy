@@ -1,0 +1,3 @@
+TypeDescription typeDescription
+Set<String> processedMethods
+DefaultMethodLookup defaultMethodLookup

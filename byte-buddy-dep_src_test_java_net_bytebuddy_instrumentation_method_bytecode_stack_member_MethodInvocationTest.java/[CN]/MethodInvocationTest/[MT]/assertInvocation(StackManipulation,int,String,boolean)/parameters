@@ -1,3 +1,4 @@
 StackManipulation stackManipulation
 int opcode
 String typeName
+boolean interfaceInvocation

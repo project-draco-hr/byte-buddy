@@ -1,5 +1,5 @@
 {
   when(methodDescription.isDefaultMethod()).thenReturn(true);
   when(declaringType.isInterface()).thenReturn(true);
-  assertInvocation(MethodInvocation.invoke(methodDescription),Opcodes.INVOKESPECIAL,FOO);
+  assertInvocation(MethodInvocation.invoke(methodDescription),Opcodes.INVOKESPECIAL,FOO,true);
 }

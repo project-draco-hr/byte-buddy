@@ -9,7 +9,7 @@
   verifyNoMoreInteractions(primitiveTypeDescription);
   verify(chainedAssigner).assign(referenceTypeDescription,targetType,false);
   verifyNoMoreInteractions(chainedAssigner);
-  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESTATIC,referenceTypeDescription.getInternalName(),VALUE_OF,boxingMethodDescriptor);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESTATIC,referenceTypeDescription.getInternalName(),VALUE_OF,boxingMethodDescriptor,false);
   verifyNoMoreInteractions(methodVisitor);
   verify(stackManipulation,atLeast(1)).isValid();
   verify(stackManipulation).apply(methodVisitor,instrumentationContext);

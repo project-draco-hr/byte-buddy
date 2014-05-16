@@ -1,0 +1,6 @@
+{
+  List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(classMethods.size() + interfaceMethods.size());
+  methodDescriptions.addAll(classMethods.values());
+  methodDescriptions.addAll(interfaceMethods.values());
+  return new MethodList.Explicit(methodDescriptions);
+}

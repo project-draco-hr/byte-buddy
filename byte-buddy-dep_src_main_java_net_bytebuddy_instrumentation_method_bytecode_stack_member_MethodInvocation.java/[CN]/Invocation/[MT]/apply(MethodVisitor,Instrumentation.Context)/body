@@ -1,4 +1,4 @@
 {
-  methodVisitor.visitMethodInsn(invocationOpcode,typeDescription.getInternalName(),methodDescription.getInternalName(),methodDescription.getDescriptor());
+  methodVisitor.visitMethodInsn(invocationOpcode,typeDescription.getInternalName(),methodDescription.getInternalName(),methodDescription.getDescriptor(),typeDescription.isInterface());
   return size;
 }

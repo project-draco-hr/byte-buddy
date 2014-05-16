@@ -1,0 +1,5 @@
+{
+  when(declaringType.isInterface()).thenReturn(true);
+  when(methodDescription.isStatic()).thenReturn(true);
+  assertInvocation(MethodInvocation.invoke(methodDescription),Opcodes.INVOKESTATIC,FOO,true);
+}

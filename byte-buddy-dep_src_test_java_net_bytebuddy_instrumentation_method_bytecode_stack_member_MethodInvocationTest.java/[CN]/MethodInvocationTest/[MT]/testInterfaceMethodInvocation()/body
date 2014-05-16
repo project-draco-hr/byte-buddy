@@ -1,4 +1,4 @@
 {
   when(declaringType.isInterface()).thenReturn(true);
-  assertInvocation(MethodInvocation.invoke(methodDescription),Opcodes.INVOKEINTERFACE,FOO);
+  assertInvocation(MethodInvocation.invoke(methodDescription),Opcodes.INVOKEINTERFACE,FOO,true);
 }
