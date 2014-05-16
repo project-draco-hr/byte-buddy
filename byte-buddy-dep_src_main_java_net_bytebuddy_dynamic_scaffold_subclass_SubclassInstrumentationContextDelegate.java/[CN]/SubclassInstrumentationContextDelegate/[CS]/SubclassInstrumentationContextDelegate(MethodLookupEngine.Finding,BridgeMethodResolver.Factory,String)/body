@@ -1,0 +1,13 @@
+{
+  this.prefix=prefix;
+  random=new Random();
+  this.methodLookupEngineFinding=methodLookupEngineFinding;
+  bridgeMethodResolver=bridgeMethodResolverFactory.make(methodLookupEngineFinding.getInvokableMethods());
+  this.invokableMethodsBySignature=new HashMap<String,MethodDescription>(methodLookupEngineFinding.getInvokableMethods().size());
+  for (  MethodDescription methodDescription : methodLookupEngineFinding.getInvokableMethods()) {
+    this.invokableMethodsBySignature.put(methodDescription.getUniqueSignature(),methodDescription);
+  }
+  orderedAccessorMethods=new ArrayList<MethodDescription>();
+  knownTargetMethodsToAccessorMethod=new HashMap<MethodDescription,MethodDescription>();
+  registeredAccessorMethodToTargetMethodCall=new HashMap<MethodDescription,Entry>();
+}

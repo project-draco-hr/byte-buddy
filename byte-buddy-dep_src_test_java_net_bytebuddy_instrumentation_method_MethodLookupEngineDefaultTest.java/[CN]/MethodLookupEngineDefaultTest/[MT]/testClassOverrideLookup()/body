@@ -1,8 +1,9 @@
 {
   TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
   TypeDescription classOverridingToString=new TypeDescription.ForLoadedType(ClassOverridingToString.class);
-  MethodList reachableMethods=methodLookupEngine.getReachableMethods(classOverridingToString);
-  assertThat(reachableMethods,containsAllOf(classOverridingToString.getDeclaredMethods()));
-  assertThat(reachableMethods,containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(classOverridingToString)).filter(not(named(TO_STRING)))));
-  assertThat(reachableMethods.size(),is(classOverridingToString.getDeclaredMethods().size() + objectType.getDeclaredMethods().filter(isVirtualTo(classOverridingToString)).size() - 1));
+  MethodLookupEngine.Finding finding=methodLookupEngine.process(classOverridingToString);
+  assertThat(finding.getInvokableMethods(),containsAllOf(classOverridingToString.getDeclaredMethods()));
+  assertThat(finding.getInvokableMethods(),containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(classOverridingToString)).filter(not(named(TO_STRING)))));
+  assertThat(finding.getInvokableMethods().size(),is(classOverridingToString.getDeclaredMethods().size() + objectType.getDeclaredMethods().filter(isVirtualTo(classOverridingToString)).size() - 1));
+  assertThat(finding.getInvokableDefaultMethods().size(),is(0));
 }

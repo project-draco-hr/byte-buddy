@@ -1,0 +1,3 @@
+{
+  this(methodLookupEngineFinding,bridgeMethodResolverFactory,DEFAULT_PREFIX);
+}

@@ -1,9 +1,9 @@
 {
   InstrumentedType instrumentedType=applyRecordedMembersTo(new SubclassInstumentedType(classFileVersion,superType,interfaceTypes,modifiers,namingStrategy));
-  MethodLookupEngine methodLookupEngine=methodLookupEngineFactory.make(classFileVersion);
-  SubclassInstrumentationContextDelegate contextDelegate=new SubclassInstrumentationContextDelegate(instrumentedType,methodLookupEngine,bridgeMethodResolverFactory);
+  MethodLookupEngine.Finding finding=methodLookupEngineFactory.make(classFileVersion).process(instrumentedType);
+  SubclassInstrumentationContextDelegate contextDelegate=new SubclassInstrumentationContextDelegate(finding,bridgeMethodResolverFactory);
   Instrumentation.Context instrumentationContext=new Instrumentation.Context.Default(classFileVersion,contextDelegate,contextDelegate);
   MethodRegistry.Compiled compiledMethodRegistry=methodRegistry.compile(instrumentedType,MethodRegistry.Compiled.Entry.Skip.INSTANCE);
   instrumentedType=compiledMethodRegistry.getInstrumentedType();
-  return new TypeWriter.Builder<T>(instrumentedType,instrumentationContext,classFileVersion).build(classVisitorWrapperChain).attributeType(attributeAppender).fields().write(instrumentedType.getDeclaredFields(),fieldRegistry.compile(instrumentedType,TypeWriter.FieldPool.Entry.NoOp.INSTANCE)).methods().write(methodLookupEngine.getReachableMethods(instrumentedType).filter(isOverridable().and(not(ignoredMethods)).or(isDeclaredBy(instrumentedType))),compiledMethodRegistry).write(contextDelegate.getProxiedMethods(),contextDelegate).make();
+  return new TypeWriter.Builder<T>(instrumentedType,instrumentationContext,classFileVersion).build(classVisitorWrapperChain).attributeType(attributeAppender).fields().write(instrumentedType.getDeclaredFields(),fieldRegistry.compile(instrumentedType,TypeWriter.FieldPool.Entry.NoOp.INSTANCE)).methods().write(finding.getInvokableMethods().filter(isOverridable().and(not(ignoredMethods)).or(isDeclaredBy(instrumentedType))),compiledMethodRegistry).write(contextDelegate.getProxiedMethods(),contextDelegate).make();
 }

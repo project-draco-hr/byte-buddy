@@ -2,9 +2,10 @@
   TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
   TypeDescription singleMethodOverridingInterface=new TypeDescription.ForLoadedType(SingleMethodOverridingInterface.class);
   TypeDescription abstractFoldedReverseInterfaceClass=new TypeDescription.ForLoadedType(AbstractFoldedReverseInterfaceClass.class);
-  MethodList reachableMethods=methodLookupEngine.getReachableMethods(abstractFoldedReverseInterfaceClass);
-  assertThat(reachableMethods,containsAllOf(abstractFoldedReverseInterfaceClass.getDeclaredMethods()));
-  assertThat(reachableMethods,containsAllOf(singleMethodOverridingInterface.getDeclaredMethods()));
-  assertThat(reachableMethods,containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(abstractFoldedReverseInterfaceClass))));
-  assertThat(reachableMethods.size(),is(abstractFoldedReverseInterfaceClass.getDeclaredMethods().size() + singleMethodOverridingInterface.getDeclaredMethods().size() + objectType.getDeclaredMethods().filter(isVirtualTo(abstractFoldedReverseInterfaceClass)).size()));
+  MethodLookupEngine.Finding finding=methodLookupEngine.process(abstractFoldedReverseInterfaceClass);
+  assertThat(finding.getInvokableMethods(),containsAllOf(abstractFoldedReverseInterfaceClass.getDeclaredMethods()));
+  assertThat(finding.getInvokableMethods(),containsAllOf(singleMethodOverridingInterface.getDeclaredMethods()));
+  assertThat(finding.getInvokableMethods(),containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(abstractFoldedReverseInterfaceClass))));
+  assertThat(finding.getInvokableMethods().size(),is(abstractFoldedReverseInterfaceClass.getDeclaredMethods().size() + singleMethodOverridingInterface.getDeclaredMethods().size() + objectType.getDeclaredMethods().filter(isVirtualTo(abstractFoldedReverseInterfaceClass)).size()));
+  assertThat(finding.getInvokableDefaultMethods().size(),is(0));
 }

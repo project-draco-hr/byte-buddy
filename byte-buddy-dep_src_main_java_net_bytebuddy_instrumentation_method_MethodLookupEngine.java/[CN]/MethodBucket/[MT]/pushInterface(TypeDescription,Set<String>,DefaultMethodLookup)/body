@@ -7,12 +7,12 @@
         locallyProcessedMethods.add(uniqueSignature);
         MethodDescription conflictingMethod=interfaceMethods.get(uniqueSignature);
         if (conflictingMethod != null && !conflictingMethod.getDeclaringType().isAssignableFrom(typeDescription)) {
-          methodDescription=ConflictingInterfaceMethod.of(virtualHost,conflictingMethod,methodDescription);
+          methodDescription=ConflictingInterfaceMethod.of(mostSpecificType,conflictingMethod,methodDescription);
         }
         interfaceMethods.put(uniqueSignature,methodDescription);
       }
       if (defaultMethodLookup.isEnabled(typeDescription) && methodDescription.isDefaultMethod()) {
-        defaultMethods.put(methodDescription,defaultMethodLookup.locateDispatcherType(methodDescription,typeDescription));
+        defaultInvokableMethods.put(methodDescription,defaultMethodLookup.locateDispatcherType(methodDescription,typeDescription));
       }
     }
     for (    TypeDescription interfaceType : typeDescription.getInterfaces()) {

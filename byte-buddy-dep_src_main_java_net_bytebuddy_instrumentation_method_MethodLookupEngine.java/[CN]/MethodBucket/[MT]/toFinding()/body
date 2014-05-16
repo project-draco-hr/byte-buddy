@@ -1,0 +1,6 @@
+{
+  List<MethodDescription> invokableMethods=new ArrayList<MethodDescription>(classMethods.size() + interfaceMethods.size());
+  invokableMethods.addAll(classMethods.values());
+  invokableMethods.addAll(interfaceMethods.values());
+  return new Finding.Default(mostSpecificType,new MethodList.Explicit(invokableMethods),Collections.unmodifiableMap(defaultInvokableMethods));
+}
