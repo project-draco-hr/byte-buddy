@@ -5,6 +5,6 @@
   when(firstDynamic.getDescription()).thenReturn(firstDescription);
   when(secondDynamic.getDescription()).thenReturn(secondDescription);
   when(auxiliaryTypeNamingStrategy.name(any(AuxiliaryType.class))).thenReturn(FOO,BAR);
-  when(methodAccessorFactory.requireAccessorMethodFor(firstMethod)).thenReturn(firstProxyMethod);
-  when(methodAccessorFactory.requireAccessorMethodFor(secondMethod)).thenReturn(secondProxyMethod);
+  when(methodAccessorFactory.requireAccessorMethodFor(firstMethod,AuxiliaryType.MethodAccessorFactory.LookupMode.Default.BY_SIGNATURE)).thenReturn(firstProxyMethod);
+  when(methodAccessorFactory.requireAccessorMethodFor(secondMethod,AuxiliaryType.MethodAccessorFactory.LookupMode.Default.BY_SIGNATURE)).thenReturn(secondProxyMethod);
 }

@@ -1,3 +1,3 @@
 {
-  methodLookupEngine=MethodLookupEngine.Default.Factory.INSTANCE.make();
+  methodLookupEngine=MethodLookupEngine.Default.Factory.INSTANCE.make(ClassFileVersion.JAVA_V8);
 }

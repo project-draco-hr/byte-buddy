@@ -1,0 +1,3 @@
+{
+  return versionNumber > Opcodes.V1_7;
+}

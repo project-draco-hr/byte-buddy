@@ -1,5 +1,5 @@
 {
-  when(methodAccessorFactory.requireAccessorMethodFor(any(MethodDescription.class))).then(new SameSignatureAnswer());
+  when(methodAccessorFactory.requireAccessorMethodFor(any(MethodDescription.class),eq(AuxiliaryType.MethodAccessorFactory.LookupMode.Default.BY_SIGNATURE))).then(new SameSignatureAnswer());
   String auxiliaryTypeName=instrumentedType.getName() + "$" + QUX;
   DynamicType dynamicType=new TypeProxy(new TypeDescription.ForLoadedType(proxyType),new TypeDescription.ForLoadedType(instrumentedType),true).make(auxiliaryTypeName,ClassFileVersion.forCurrentJavaVersion(),methodAccessorFactory);
   DynamicType.Unloaded<?> unloaded=(DynamicType.Unloaded<?>)dynamicType;

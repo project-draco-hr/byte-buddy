@@ -1,10 +1,10 @@
 {
-  MethodDescription firstProxyMethod=delegate.requireAccessorMethodFor(firstMethod);
+  MethodDescription firstProxyMethod=delegate.requireAccessorMethodFor(firstMethod,AuxiliaryType.MethodAccessorFactory.LookupMode.Default.BY_SIGNATURE);
   assertThat(firstProxyMethod.isStatic(),is(false));
   assertThat(firstProxyMethod,not(is(firstMethod)));
-  MethodDescription secondProxyMethod=delegate.requireAccessorMethodFor(secondMethod);
+  MethodDescription secondProxyMethod=delegate.requireAccessorMethodFor(secondMethod,AuxiliaryType.MethodAccessorFactory.LookupMode.Default.BY_SIGNATURE);
   assertThat(secondProxyMethod,not(is(secondMethod)));
-  assertThat(delegate.requireAccessorMethodFor(firstMethod),is(firstProxyMethod));
+  assertThat(delegate.requireAccessorMethodFor(firstMethod,AuxiliaryType.MethodAccessorFactory.LookupMode.Default.BY_SIGNATURE),is(firstProxyMethod));
   Iterator<MethodDescription> iterator=delegate.getProxiedMethods().iterator();
   assertThat(iterator.hasNext(),is(true));
   MethodDescription next=iterator.next();

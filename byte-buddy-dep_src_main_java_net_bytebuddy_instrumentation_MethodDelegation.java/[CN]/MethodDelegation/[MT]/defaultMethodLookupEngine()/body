@@ -1,3 +1,3 @@
 {
-  return new MethodLookupEngine.Default();
+  return new MethodLookupEngine.Default(false);
 }
