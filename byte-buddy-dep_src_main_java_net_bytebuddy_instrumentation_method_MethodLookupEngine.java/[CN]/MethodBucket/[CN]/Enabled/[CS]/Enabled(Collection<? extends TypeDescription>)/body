@@ -1,3 +1,5 @@
 {
-  this.hostingTypeInterfaces=new HashSet<TypeDescription>(hostingTypeInterfaces);
+  this.declaredInterfaceTypes=declaredInterfaceTypes;
+  defaultMethods=new HashMap<TypeDescription,Set<MethodDescription>>();
+  methodDeclarations=new HashMap<TypeDescription,Set<String>>();
 }

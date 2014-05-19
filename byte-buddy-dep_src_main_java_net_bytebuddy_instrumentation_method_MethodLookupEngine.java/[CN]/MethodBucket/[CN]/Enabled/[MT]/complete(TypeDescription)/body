@@ -1,0 +1,11 @@
+{
+  Set<String> methodDeclarations=this.methodDeclarations.get(typeDescription);
+  Set<MethodDescription> defaultMethods=this.defaultMethods.get(typeDescription);
+  for (  TypeDescription interfaceType : typeDescription.getInterfaces()) {
+    for (    MethodDescription methodDescription : this.defaultMethods.get(interfaceType)) {
+      if (!methodDeclarations.contains(methodDescription.getUniqueSignature())) {
+        defaultMethods.add(methodDescription);
+      }
+    }
+  }
+}

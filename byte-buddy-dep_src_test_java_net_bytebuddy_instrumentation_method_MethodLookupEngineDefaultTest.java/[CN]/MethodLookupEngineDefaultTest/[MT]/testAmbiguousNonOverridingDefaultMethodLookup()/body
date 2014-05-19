@@ -1,0 +1,15 @@
+{
+  TypeDescription singleDefaultMethodAmbiguousInheritanceClass=new TypeDescription.ForLoadedType(SingleDefaultMethodAmbiguousInheritanceClass.class);
+  TypeDescription singleDefaultMethodNonOverridingInterface=new TypeDescription.ForLoadedType(SingleDefaultMethodNonOverridingInterface.class);
+  TypeDescription singleDefaultMethodAmbiguousInheritanceInterface=new TypeDescription.ForLoadedType(SingleDefaultMethodAmbiguousInheritanceInterface.class);
+  TypeDescription singleDefaultMethodInterface=new TypeDescription.ForLoadedType(SingleDefaultMethodInterface.class);
+  MethodLookupEngine.Finding finding=methodLookupEngine.process(singleDefaultMethodAmbiguousInheritanceClass);
+  assertThat(finding.getLookedUpType(),is(singleDefaultMethodAmbiguousInheritanceClass));
+  MethodDescription interfaceMethod=singleDefaultMethodInterface.getDeclaredMethods().getOnly();
+  assertThat(finding.getInvokableMethods(),hasItem(interfaceMethod));
+  assertThat(finding.getInvokableDefaultMethods().size(),is(2));
+  assertThat(finding.getInvokableDefaultMethods().get(singleDefaultMethodNonOverridingInterface).size(),is(1));
+  assertThat(finding.getInvokableDefaultMethods().get(singleDefaultMethodNonOverridingInterface),hasItem(interfaceMethod));
+  assertThat(finding.getInvokableDefaultMethods().get(singleDefaultMethodAmbiguousInheritanceInterface).size(),is(1));
+  assertThat(finding.getInvokableDefaultMethods().get(singleDefaultMethodAmbiguousInheritanceInterface),hasItem(interfaceMethod));
+}

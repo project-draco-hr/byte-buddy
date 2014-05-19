@@ -1,1 +1,1 @@
-Collection<? extends TypeDescription> hostingTypeInterfaces
+Collection<? extends TypeDescription> declaredInterfaceTypes

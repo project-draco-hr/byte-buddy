@@ -1,3 +1,5 @@
 {
-  pushInterfaces(typeDescriptions,new DefaultMethodLookup.Enabled(typeDescriptions));
+  DefaultMethodLookup.Enabled defaultMethodLookup=new DefaultMethodLookup.Enabled(typeDescriptions);
+  pushInterfaces(typeDescriptions,defaultMethodLookup);
+  return defaultMethodLookup.materialize();
 }

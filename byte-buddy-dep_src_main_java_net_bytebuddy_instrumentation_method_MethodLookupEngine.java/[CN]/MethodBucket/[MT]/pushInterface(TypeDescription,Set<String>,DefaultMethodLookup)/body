@@ -1,22 +1,22 @@
 {
-  Set<String> locallyProcessedMethods=new HashSet<String>(processedMethods);
+  Set<String> locallyProcessedMethods=new HashSet<String>(processedMethodsInHierarchy);
   if (processedTypes.add(typeDescription)) {
+    defaultMethodLookup.begin(typeDescription);
     for (    MethodDescription methodDescription : typeDescription.getDeclaredMethods().filter(virtualMethodMatcher)) {
       String uniqueSignature=methodDescription.getUniqueSignature();
-      if (!processedMethods.contains(uniqueSignature)) {
-        locallyProcessedMethods.add(uniqueSignature);
+      if (locallyProcessedMethods.add(uniqueSignature)) {
         MethodDescription conflictingMethod=interfaceMethods.get(uniqueSignature);
+        MethodDescription resolvedMethod=methodDescription;
         if (conflictingMethod != null && !conflictingMethod.getDeclaringType().isAssignableFrom(typeDescription)) {
-          methodDescription=ConflictingInterfaceMethod.of(mostSpecificType,conflictingMethod,methodDescription);
+          resolvedMethod=ConflictingInterfaceMethod.of(mostSpecificType,conflictingMethod,methodDescription);
         }
-        interfaceMethods.put(uniqueSignature,methodDescription);
+        interfaceMethods.put(uniqueSignature,resolvedMethod);
       }
-      if (defaultMethodLookup.isEnabled(typeDescription) && methodDescription.isDefaultMethod()) {
-        defaultInvokableMethods.put(methodDescription,defaultMethodLookup.locateDispatcherType(methodDescription,typeDescription));
-      }
+      defaultMethodLookup.register(methodDescription);
     }
     for (    TypeDescription interfaceType : typeDescription.getInterfaces()) {
       pushInterface(interfaceType,locallyProcessedMethods,defaultMethodLookup);
     }
+    defaultMethodLookup.complete(typeDescription);
   }
 }

@@ -4,10 +4,12 @@
   TypeDescription additionalMethodInterface=new TypeDescription.ForLoadedType(AdditionalMethodInterface.class);
   TypeDescription abstractAdditionalMethodInterfaceClass=new TypeDescription.ForLoadedType(AbstractAdditionalMethodInterfaceClass.class);
   MethodLookupEngine.Finding finding=methodLookupEngine.process(abstractAdditionalMethodInterfaceClass);
+  assertThat(finding.getLookedUpType(),is(abstractAdditionalMethodInterfaceClass));
   assertThat(finding.getInvokableMethods(),containsAllOf(abstractAdditionalMethodInterfaceClass.getDeclaredMethods()));
   assertThat(finding.getInvokableMethods(),containsAllOf(singleMethodOverridingInterface.getDeclaredMethods()));
   assertThat(finding.getInvokableMethods(),containsAllOf(additionalMethodInterface.getDeclaredMethods()));
   assertThat(finding.getInvokableMethods(),containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(abstractAdditionalMethodInterfaceClass))));
   assertThat(finding.getInvokableMethods().size(),is(abstractAdditionalMethodInterfaceClass.getDeclaredMethods().size() + singleMethodOverridingInterface.getDeclaredMethods().size() + additionalMethodInterface.getDeclaredMethods().size()+ objectType.getDeclaredMethods().filter(isVirtualTo(abstractAdditionalMethodInterfaceClass)).size()));
-  assertThat(finding.getInvokableDefaultMethods().size(),is(0));
+  assertThat(finding.getInvokableDefaultMethods().size(),is(1));
+  assertThat(finding.getInvokableDefaultMethods().get(additionalMethodInterface).size(),is(0));
 }

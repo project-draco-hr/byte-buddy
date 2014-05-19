@@ -1,0 +1,9 @@
+{
+  Iterator<TypeDescription> iterator=defaultMethods.keySet().iterator();
+  while (iterator.hasNext()) {
+    if (!declaredInterfaceTypes.contains(iterator.next())) {
+      iterator.remove();
+    }
+  }
+  return Collections.unmodifiableMap(defaultMethods);
+}

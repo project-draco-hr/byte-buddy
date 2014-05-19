@@ -2,5 +2,5 @@
   List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(3);
   methodDescriptions.addAll(methodList);
   methodDescriptions.addAll(typeDescription.getDeclaredMethods());
-  return new Finding.Default(typeDescription,new MethodList.Explicit(methodDescriptions),Collections.<MethodDescription,TypeDescription>emptyMap());
+  return new Finding.Default(typeDescription,new MethodList.Explicit(methodDescriptions),Collections.<TypeDescription,Set<MethodDescription>>emptyMap());
 }

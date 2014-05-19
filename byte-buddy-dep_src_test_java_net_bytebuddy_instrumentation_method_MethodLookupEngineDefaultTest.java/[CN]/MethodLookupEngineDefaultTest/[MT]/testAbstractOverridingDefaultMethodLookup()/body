@@ -1,0 +1,7 @@
+{
+  TypeDescription singleDefaultMethodAbstractOverridingClass=new TypeDescription.ForLoadedType(SingleDefaultMethodAbstractOverridingClass.class);
+  MethodLookupEngine.Finding finding=methodLookupEngine.process(singleDefaultMethodAbstractOverridingClass);
+  assertThat(finding.getLookedUpType(),is(singleDefaultMethodAbstractOverridingClass));
+  assertThat(finding.getInvokableDefaultMethods().size(),is(1));
+  assertThat(finding.getInvokableDefaultMethods().get(new TypeDescription.ForLoadedType(SingleDefaultMethodAbstractOverridingInterface.class)).size(),is(0));
+}

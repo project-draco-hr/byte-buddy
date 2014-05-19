@@ -1,0 +1,6 @@
+{
+  methodDeclarations.get(methodDescription.getDeclaringType()).add(methodDescription.getUniqueSignature());
+  if (methodDescription.isDefaultMethod()) {
+    defaultMethods.get(methodDescription.getDeclaringType()).add(methodDescription);
+  }
+}

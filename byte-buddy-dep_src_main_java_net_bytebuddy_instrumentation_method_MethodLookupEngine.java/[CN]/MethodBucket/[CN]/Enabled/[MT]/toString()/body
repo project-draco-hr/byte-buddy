@@ -1,3 +1,0 @@
-{
-  return "MethodBucket.DefaultMethodLookup.Enabled{" + "hostingTypeInterfaces=" + hostingTypeInterfaces + '}';
-}

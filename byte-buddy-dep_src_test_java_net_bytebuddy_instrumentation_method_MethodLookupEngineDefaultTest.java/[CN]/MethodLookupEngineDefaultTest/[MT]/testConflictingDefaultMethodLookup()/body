@@ -1,0 +1,17 @@
+{
+  TypeDescription singleDefaultMethodClass=new TypeDescription.ForLoadedType(SingleDefaultMethodConflictingClass.class);
+  TypeDescription singleDefaultMethodInterface=new TypeDescription.ForLoadedType(SingleDefaultMethodInterface.class);
+  TypeDescription singleConflictingDefaultMethodInterface=new TypeDescription.ForLoadedType(SingleDefaultMethodConflictingInterface.class);
+  MethodLookupEngine.Finding finding=methodLookupEngine.process(singleDefaultMethodClass);
+  assertThat(finding.getLookedUpType(),is(singleDefaultMethodClass));
+  assertThat(finding.getInvokableDefaultMethods().size(),is(2));
+  MethodDescription firstInterfaceMethod=singleDefaultMethodInterface.getDeclaredMethods().getOnly();
+  MethodDescription secondInterfaceMethod=singleConflictingDefaultMethodInterface.getDeclaredMethods().getOnly();
+  assertThat(finding.getInvokableMethods(),CoreMatchers.not(hasItems(firstInterfaceMethod,secondInterfaceMethod)));
+  Set<MethodDescription> singleDefaultMethodInterfaceMethods=finding.getInvokableDefaultMethods().get(singleDefaultMethodInterface);
+  assertThat(singleDefaultMethodInterfaceMethods.size(),is(1));
+  assertThat(singleDefaultMethodInterfaceMethods,hasItem(firstInterfaceMethod));
+  Set<MethodDescription> singleConflictingDefaultMethodInterfaceMethods=finding.getInvokableDefaultMethods().get(singleConflictingDefaultMethodInterface);
+  assertThat(singleConflictingDefaultMethodInterfaceMethods.size(),is(1));
+  assertThat(singleConflictingDefaultMethodInterfaceMethods,hasItem(secondInterfaceMethod));
+}

@@ -1,0 +1,12 @@
+{
+  TypeDescription singleDefaultMethodClass=new TypeDescription.ForLoadedType(SingleDefaultMethodClass.class);
+  TypeDescription singleDefaultMethodInterface=new TypeDescription.ForLoadedType(SingleDefaultMethodInterface.class);
+  MethodLookupEngine.Finding finding=methodLookupEngine.process(singleDefaultMethodClass);
+  assertThat(finding.getLookedUpType(),is(singleDefaultMethodClass));
+  assertThat(finding.getInvokableDefaultMethods().size(),is(1));
+  MethodDescription interfaceMethod=singleDefaultMethodInterface.getDeclaredMethods().getOnly();
+  Set<MethodDescription> discoveredDefaultMethods=finding.getInvokableDefaultMethods().get(singleDefaultMethodInterface);
+  assertThat(discoveredDefaultMethods,hasItem(interfaceMethod));
+  assertThat(discoveredDefaultMethods.size(),is(1));
+  assertThat(finding.getInvokableMethods(),hasItem(interfaceMethod));
+}
