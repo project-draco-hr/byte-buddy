@@ -1,7 +1,7 @@
 {
-  TypeDescription singleDefaultMethodNonOverridingClass=new TypeDescription.ForLoadedType(SingleDefaultMethodNonOverridingClass.class);
-  TypeDescription singleDefaultMethodNonOverridingInterface=new TypeDescription.ForLoadedType(SingleDefaultMethodNonOverridingInterface.class);
-  TypeDescription singleDefaultMethodInterface=new TypeDescription.ForLoadedType(SingleDefaultMethodInterface.class);
+  TypeDescription singleDefaultMethodNonOverridingClass=findType(SINGLE_DEFAULT_METHOD_NON_OVERRIDING_CLASS);
+  TypeDescription singleDefaultMethodNonOverridingInterface=findType(SINGLE_DEFAULT_METHOD_NON_OVERRIDING_INTERFACE);
+  TypeDescription singleDefaultMethodInterface=findType(SINGLE_DEFAULT_METHOD_INTERFACE);
   MethodLookupEngine.Finding finding=methodLookupEngine.process(singleDefaultMethodNonOverridingClass);
   assertThat(finding.getLookedUpType(),is(singleDefaultMethodNonOverridingClass));
   MethodDescription interfaceMethod=singleDefaultMethodInterface.getDeclaredMethods().getOnly();

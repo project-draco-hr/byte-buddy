@@ -1,3 +1,4 @@
 {
   methodLookupEngine=MethodLookupEngine.Default.Factory.INSTANCE.make(ClassFileVersion.JAVA_V8);
+  classLoader=new PrecompiledTypeClassLoader(getClass().getClassLoader());
 }

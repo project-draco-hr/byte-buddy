@@ -1,5 +1,5 @@
 {
-  URL resource=precompiledType.remove(name);
+  URL resource=getSystemResource(name.replace('.','/') + SUFFIX);
   if (resource != null) {
     byte[] binaryRepresentation=new byte[BUFFER_SIZE];
     int readLength;
