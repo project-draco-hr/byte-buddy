@@ -15,6 +15,7 @@
   MethodDescription toStringMethod=new TypeDescription.ForLoadedType(Object.class).getDeclaredMethods().filter(named(TO_STRING)).getOnly();
   when(superType.isAssignableFrom(superType)).thenReturn(true);
   when(secondMethodReturnType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(instrumentationTarget.getTypeDescription()).thenReturn(instrumentedType);
   when(instrumentedType.detach()).thenReturn(instrumentedType);
   when(methodLookupEngineFinding.getInvokableMethods()).thenReturn(methodList);
   when(methodLookupEngineFinding.getLookedUpType()).thenReturn(instrumentedType);

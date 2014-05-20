@@ -8,5 +8,5 @@
   when(returnType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(superType.getDeclaredMethods()).thenReturn(superTypeMethods);
   when(superTypeMethods.filter(any(MethodMatcher.class))).thenReturn(superTypeMethods);
-  SuperMethodCall.INSTANCE.appender(typeDescription).apply(methodVisitor,instrumentationContext,methodDescription);
+  SuperMethodCall.INSTANCE.appender(instrumentationTarget).apply(methodVisitor,instrumentationContext,methodDescription);
 }

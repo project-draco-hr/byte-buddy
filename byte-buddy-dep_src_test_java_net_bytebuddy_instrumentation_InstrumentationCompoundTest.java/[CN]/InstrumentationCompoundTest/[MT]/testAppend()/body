@@ -1,9 +1,9 @@
 {
-  when(first.appender(instrumentedType)).thenReturn(byteCodeAppender);
-  when(second.appender(instrumentedType)).thenReturn(byteCodeAppender);
-  assertThat(compound.appender(instrumentedType),notNullValue());
-  verify(first).appender(instrumentedType);
-  verify(second).appender(instrumentedType);
+  when(first.appender(instrumentationTarget)).thenReturn(byteCodeAppender);
+  when(second.appender(instrumentationTarget)).thenReturn(byteCodeAppender);
+  assertThat(compound.appender(instrumentationTarget),notNullValue());
+  verify(first).appender(instrumentationTarget);
+  verify(second).appender(instrumentationTarget);
   verifyNoMoreInteractions(first);
   verifyNoMoreInteractions(second);
 }

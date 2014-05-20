@@ -1,3 +1,3 @@
 {
-  return versionNumber > Opcodes.V1_7;
+  return versionNumber > Opcodes.V1_7 && versionNumber != Opcodes.V1_1;
 }

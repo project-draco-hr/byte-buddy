@@ -3,6 +3,10 @@
   when(matchesKnownMethod.matches(knownMethod)).thenReturn(true);
   when(basicInstrumentedType.getDeclaredMethods()).thenReturn(basicMethodList);
   when(basicMethodList.size()).thenReturn(BASIC_SIZE);
+  when(basicInstrumentationTarget.getTypeDescription()).thenReturn(basicInstrumentedType);
+  when(extendedInstrumentationTarget.getTypeDescription()).thenReturn(extendedInstrumentedType);
+  when(instrumentationTargetFactory.make(basicInstrumentedType)).thenReturn(basicInstrumentationTarget);
+  when(instrumentationTargetFactory.make(extendedInstrumentedType)).thenReturn(extendedInstrumentationTarget);
   when(extendedInstrumentedType.getDeclaredMethods()).thenReturn(extendedMethodList);
   when(extendedMethodList.size()).thenReturn(EXTENDED_SIZE);
   when(extendedMethodList.subList(anyInt(),anyInt())).thenReturn(croppedMethodList);
@@ -17,11 +21,11 @@
   }
 );
   when(simpleInstrumentation.prepare(any(InstrumentedType.class))).thenReturn(basicInstrumentedType);
-  when(simpleInstrumentation.appender(any(InstrumentedType.class))).thenReturn(simpleByteCodeAppender);
+  when(simpleInstrumentation.appender(any(Instrumentation.Target.class))).thenReturn(simpleByteCodeAppender);
   when(simpleAttributeAppenderFactory.make(any(InstrumentedType.class))).thenReturn(simpleAttributeAppender);
   when(otherInstrumentation.prepare(any(InstrumentedType.class))).thenReturn(basicInstrumentedType);
-  when(otherInstrumentation.appender(any(InstrumentedType.class))).thenReturn(otherByteCodeAppender);
+  when(otherInstrumentation.appender(any(Instrumentation.Target.class))).thenReturn(otherByteCodeAppender);
   when(otherAttributeAppenderFactory.make(any(InstrumentedType.class))).thenReturn(otherAttributeAppender);
   when(extendingInstrumentation.prepare(any(InstrumentedType.class))).thenReturn(extendedInstrumentedType);
-  when(extendingInstrumentation.appender(any(InstrumentedType.class))).thenReturn(simpleByteCodeAppender);
+  when(extendingInstrumentation.appender(any(Instrumentation.Target.class))).thenReturn(simpleByteCodeAppender);
 }

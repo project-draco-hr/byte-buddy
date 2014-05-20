@@ -1,11 +1,11 @@
 {
-  MethodRegistry.Compiled compiled=new MethodRegistry.Default().prepend(latentMatchesKnownMethod,simpleInstrumentation,simpleAttributeAppenderFactory).prepend(latentMatchesKnownMethod,simpleInstrumentation,simpleAttributeAppenderFactory).compile(basicInstrumentedType,fallback);
+  MethodRegistry.Compiled compiled=new MethodRegistry.Default().prepend(latentMatchesKnownMethod,simpleInstrumentation,simpleAttributeAppenderFactory).prepend(latentMatchesKnownMethod,simpleInstrumentation,simpleAttributeAppenderFactory).compile(basicInstrumentedType,instrumentationTargetFactory,fallback);
   assertThat(compiled.target(knownMethod).isDefineMethod(),is(true));
   assertThat(compiled.target(knownMethod).getAttributeAppender(),is(simpleAttributeAppender));
   assertThat(compiled.target(knownMethod).getByteCodeAppender(),is(simpleByteCodeAppender));
   assertThat(compiled.target(unknownMethod),is(fallback));
   verify(simpleInstrumentation).prepare(basicInstrumentedType);
-  verify(simpleInstrumentation).appender(basicInstrumentedType);
+  verify(simpleInstrumentation).appender(basicInstrumentationTarget);
   verifyNoMoreInteractions(simpleInstrumentation);
   verify(simpleAttributeAppenderFactory,times(2)).make(basicInstrumentedType);
   verifyNoMoreInteractions(simpleAttributeAppenderFactory);

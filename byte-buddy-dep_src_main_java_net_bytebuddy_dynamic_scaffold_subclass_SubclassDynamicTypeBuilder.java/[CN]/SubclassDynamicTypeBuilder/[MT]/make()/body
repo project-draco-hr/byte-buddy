@@ -2,8 +2,7 @@
   InstrumentedType instrumentedType=applyRecordedMembersTo(new SubclassInstumentedType(classFileVersion,superType,interfaceTypes,modifiers,namingStrategy));
   MethodLookupEngine.Finding finding=methodLookupEngineFactory.make(classFileVersion).process(instrumentedType);
   SubclassInstrumentationContextDelegate contextDelegate=new SubclassInstrumentationContextDelegate(finding,bridgeMethodResolverFactory);
-  Instrumentation.Context instrumentationContext=new Instrumentation.Context.Default(classFileVersion,contextDelegate,contextDelegate);
-  MethodRegistry.Compiled compiledMethodRegistry=methodRegistry.compile(instrumentedType,MethodRegistry.Compiled.Entry.Skip.INSTANCE);
+  MethodRegistry.Compiled compiledMethodRegistry=methodRegistry.compile(instrumentedType,contextDelegate,MethodRegistry.Compiled.Entry.Skip.INSTANCE);
   instrumentedType=compiledMethodRegistry.getInstrumentedType();
-  return new TypeWriter.Builder<T>(instrumentedType,instrumentationContext,classFileVersion).build(classVisitorWrapperChain).attributeType(attributeAppender).fields().write(instrumentedType.getDeclaredFields(),fieldRegistry.compile(instrumentedType,TypeWriter.FieldPool.Entry.NoOp.INSTANCE)).methods().write(finding.getInvokableMethods().filter(isOverridable().and(not(ignoredMethods)).or(isDeclaredBy(instrumentedType))),compiledMethodRegistry).write(contextDelegate.getProxiedMethods(),contextDelegate).make();
+  return new TypeWriter.Builder<T>(instrumentedType,new Instrumentation.Context.Default(classFileVersion,contextDelegate,contextDelegate),classFileVersion).build(classVisitorWrapperChain).attributeType(attributeAppender).fields().write(instrumentedType.getDeclaredFields(),fieldRegistry.compile(instrumentedType,TypeWriter.FieldPool.Entry.NoOp.INSTANCE)).methods().write(finding.getInvokableMethods().filter(isOverridable().and(not(ignoredMethods)).or(isDeclaredBy(instrumentedType))),compiledMethodRegistry).write(contextDelegate.getProxiedMethods(),contextDelegate).make();
 }

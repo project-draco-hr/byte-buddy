@@ -1,8 +1,0 @@
-{
-  ByteCodeAppender[] byteCodeAppender=new ByteCodeAppender[instrumentation.length];
-  int index=0;
-  for (  Instrumentation instrumentation : this.instrumentation) {
-    byteCodeAppender[index++]=instrumentation.appender(instrumentedType);
-  }
-  return new ByteCodeAppender.Compound(byteCodeAppender);
-}

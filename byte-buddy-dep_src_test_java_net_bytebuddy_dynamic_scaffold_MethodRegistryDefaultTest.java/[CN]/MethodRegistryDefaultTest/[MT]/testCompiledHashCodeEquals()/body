@@ -1,6 +1,6 @@
 {
-  assertThat(new MethodRegistry.Default().compile(basicInstrumentedType,fallback).hashCode(),is(new MethodRegistry.Default().compile(basicInstrumentedType,fallback).hashCode()));
-  assertThat(new MethodRegistry.Default().compile(basicInstrumentedType,fallback),is(new MethodRegistry.Default().compile(basicInstrumentedType,fallback)));
-  assertThat(new MethodRegistry.Default().append(latentMatchesKnownMethod,simpleInstrumentation,simpleAttributeAppenderFactory).compile(basicInstrumentedType,fallback).hashCode(),not(is(new MethodRegistry.Default().hashCode())));
-  assertThat(new MethodRegistry.Default().append(latentMatchesKnownMethod,simpleInstrumentation,simpleAttributeAppenderFactory).compile(basicInstrumentedType,fallback),not(is(new MethodRegistry.Default().compile(basicInstrumentedType,fallback))));
+  assertThat(new MethodRegistry.Default().compile(basicInstrumentedType,instrumentationTargetFactory,fallback).hashCode(),is(new MethodRegistry.Default().compile(basicInstrumentedType,instrumentationTargetFactory,fallback).hashCode()));
+  assertThat(new MethodRegistry.Default().compile(basicInstrumentedType,instrumentationTargetFactory,fallback),is(new MethodRegistry.Default().compile(basicInstrumentedType,instrumentationTargetFactory,fallback)));
+  assertThat(new MethodRegistry.Default().append(latentMatchesKnownMethod,simpleInstrumentation,simpleAttributeAppenderFactory).compile(basicInstrumentedType,instrumentationTargetFactory,fallback).hashCode(),not(is(new MethodRegistry.Default().hashCode())));
+  assertThat(new MethodRegistry.Default().append(latentMatchesKnownMethod,simpleInstrumentation,simpleAttributeAppenderFactory).compile(basicInstrumentedType,instrumentationTargetFactory,fallback),not(is(new MethodRegistry.Default().compile(basicInstrumentedType,instrumentationTargetFactory,fallback))));
 }

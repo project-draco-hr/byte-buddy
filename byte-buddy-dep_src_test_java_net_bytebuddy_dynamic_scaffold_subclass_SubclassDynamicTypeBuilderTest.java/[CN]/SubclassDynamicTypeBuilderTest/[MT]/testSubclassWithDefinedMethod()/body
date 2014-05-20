@@ -17,7 +17,7 @@
   assertThat(loaded.getDeclaredConstructors().length,is(1));
   assertThat(loaded.getDeclaredConstructor().newInstance(),notNullValue());
   verify(instrumentation).prepare(any(InstrumentedType.class));
-  verify(instrumentation).appender(any(TypeDescription.class));
+  verify(instrumentation).appender(any(Instrumentation.Target.class));
   verifyNoMoreInteractions(instrumentation);
   verify(byteCodeAppender).appendsCode();
   verify(byteCodeAppender).apply(any(MethodVisitor.class),any(Instrumentation.Context.class),any(MethodDescription.class));

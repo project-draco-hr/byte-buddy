@@ -5,7 +5,7 @@
     }
   }
 );
-  when(instrumentation.appender(any(TypeDescription.class))).thenReturn(byteCodeAppender);
+  when(instrumentation.appender(any(Instrumentation.Target.class))).thenReturn(byteCodeAppender);
   when(byteCodeAppender.appendsCode()).thenReturn(true);
   when(byteCodeAppender.apply(any(MethodVisitor.class),any(Instrumentation.Context.class),any(MethodDescription.class))).thenAnswer(new Answer<ByteCodeAppender.Size>(){
     @Override public ByteCodeAppender.Size answer(    InvocationOnMock invocation) throws Throwable {
