@@ -1,9 +1,9 @@
 {
   if (sourceType.represents(void.class) && targetType.represents(void.class)) {
-    return LegalTrivialStackManipulation.INSTANCE;
+    return StackManipulation.LegalTrivial.INSTANCE;
   }
  else   if (sourceType.represents(void.class)) {
-    return returnDefaultValue ? DefaultValue.of(targetType) : IllegalStackManipulation.INSTANCE;
+    return returnDefaultValue ? DefaultValue.of(targetType) : StackManipulation.Illegal.INSTANCE;
   }
  else   if (targetType.represents(void.class)) {
     return ValueRemovingStackManipulation.of(sourceType);

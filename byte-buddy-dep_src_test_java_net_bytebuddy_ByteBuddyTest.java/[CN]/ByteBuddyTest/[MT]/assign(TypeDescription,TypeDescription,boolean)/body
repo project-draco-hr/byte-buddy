@@ -4,6 +4,6 @@
     return MethodInvocation.invoke(toStringMethod).virtual(sourceType);
   }
  else {
-    return IllegalStackManipulation.INSTANCE;
+    return StackManipulation.Illegal.INSTANCE;
   }
 }
