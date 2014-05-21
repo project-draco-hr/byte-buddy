@@ -1,0 +1,3 @@
+{
+  return "StackManipulation.Size{sizeImpact=" + sizeImpact + ", maximalSize="+ maximalSize+ '}';
+}

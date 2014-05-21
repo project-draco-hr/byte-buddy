@@ -1,0 +1,7 @@
+{
+  Size size=new Size(0,0);
+  for (  StackManipulation stackManipulation : this.stackManipulation) {
+    size=size.aggregate(stackManipulation.apply(methodVisitor,instrumentationContext));
+  }
+  return size;
+}

@@ -1,0 +1,3 @@
+{
+  return "StackManipulation.Compound{" + Arrays.asList(stackManipulation) + "}";
+}

@@ -1,0 +1,4 @@
+{
+  this.sizeImpact=sizeImpact;
+  this.maximalSize=maximalSize;
+}
