@@ -1,0 +1,6 @@
+{
+  int result=typeDescription.hashCode();
+  result=31 * result + defaultMethods.hashCode();
+  result=31 * result + bridgeMethodResolver.hashCode();
+  return result;
+}

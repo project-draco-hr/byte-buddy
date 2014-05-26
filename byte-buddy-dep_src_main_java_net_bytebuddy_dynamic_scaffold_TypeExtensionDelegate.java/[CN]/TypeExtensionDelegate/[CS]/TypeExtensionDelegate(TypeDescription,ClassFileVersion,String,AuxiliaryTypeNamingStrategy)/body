@@ -1,7 +1,7 @@
 {
   this.instrumentedType=instrumentedType;
   this.classFileVersion=classFileVersion;
-  this.accessorMethodPrefix=accessorMethodPrefix;
+  this.accessorMethodSuffix=accessorMethodSuffix;
   this.auxiliaryTypeNamingStrategy=auxiliaryTypeNamingStrategy;
   registeredAccessorMethods=new HashMap<Instrumentation.SpecialMethodInvocation,MethodDescription>();
   orderedAccessorMethods=new LinkedList<MethodDescription>();

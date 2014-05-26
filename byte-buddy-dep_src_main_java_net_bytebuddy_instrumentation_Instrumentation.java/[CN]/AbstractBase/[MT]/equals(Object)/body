@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  AbstractBase that=(AbstractBase)other;
+  return bridgeMethodResolver.equals(that.bridgeMethodResolver) && defaultMethods.equals(that.defaultMethods) && typeDescription.equals(that.typeDescription);
+}

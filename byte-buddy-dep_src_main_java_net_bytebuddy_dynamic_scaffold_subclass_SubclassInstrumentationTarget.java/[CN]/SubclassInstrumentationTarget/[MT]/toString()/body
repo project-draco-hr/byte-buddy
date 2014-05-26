@@ -1,0 +1,3 @@
+{
+  return "SubclassInstrumentationTarget{" + "typeDescription=" + typeDescription + ", defaultMethods="+ defaultMethods+ ", bridgeMethodResolver="+ bridgeMethodResolver+ '}';
+}
