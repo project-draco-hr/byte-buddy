@@ -4,7 +4,7 @@
   TypeDescription singleDefaultMethodManifestOverridingInterface=findType(SINGLE_DEFAULT_METHOD_MANIFEST_OVERRIDING_INTERFACE);
   TypeDescription singleDefaultMethodInterface=findType(SINGLE_DEFAULT_METHOD_INTERFACE);
   MethodLookupEngine.Finding finding=methodLookupEngine.process(singleDefaultMethodAmbiguousManifestOverridingClass);
-  assertThat(finding.getLookedUpType(),is(singleDefaultMethodAmbiguousManifestOverridingClass));
+  assertThat(finding.getTypeDescription(),is(singleDefaultMethodAmbiguousManifestOverridingClass));
   MethodDescription interfaceMethod=singleDefaultMethodInterface.getDeclaredMethods().getOnly();
   assertThat(finding.getInvokableDefaultMethods().size(),is(2));
   assertThat(finding.getInvokableDefaultMethods().get(singleDefaultMethodNonOverridingInterface).size(),is(1));

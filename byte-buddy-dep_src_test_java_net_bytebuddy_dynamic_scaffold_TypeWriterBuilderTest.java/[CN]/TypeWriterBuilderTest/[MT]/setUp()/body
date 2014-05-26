@@ -5,8 +5,6 @@
   when(instrumentedType.getInternalName()).thenReturn(FOO);
   when(instrumentedType.getName()).thenReturn(FOO);
   when(instrumentedType.getInterfaces()).thenReturn(emptyTypeList);
-  when(instrumentedType.getTypeInitializer()).thenReturn(typeInitializer);
-  when(instrumentedType.detach()).thenReturn(instrumentedType);
   when(emptyTypeList.toInternalNames()).thenReturn(null);
   when(firstField.getModifiers()).thenReturn(Opcodes.ACC_PUBLIC);
   when(firstField.getInternalName()).thenReturn(BAR);
@@ -55,6 +53,6 @@
     }
   }
 );
-  typeWriter=new TypeWriter.Builder<Object>(instrumentedType,instrumentationContext,ClassFileVersion.forCurrentJavaVersion()).build(classVisitorWrapper);
+  typeWriter=new TypeWriter.Builder<Object>(instrumentedType,typeInitializer,instrumentationContext,ClassFileVersion.forCurrentJavaVersion()).build(classVisitorWrapper);
   verify(classVisitorWrapper).wrap(any(ClassWriter.class));
 }

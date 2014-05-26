@@ -1,4 +1,0 @@
-TypeDescription proxiedType
-TypeDescription instrumentedType
-List<TypeDescription> constructorParameters
-boolean ignoreFinalizer

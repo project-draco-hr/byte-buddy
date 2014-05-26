@@ -1,0 +1,3 @@
+{
+  return MethodInvocation.invoke(methodDescription).special(typeDescription).apply(methodVisitor,instrumentationContext);
+}

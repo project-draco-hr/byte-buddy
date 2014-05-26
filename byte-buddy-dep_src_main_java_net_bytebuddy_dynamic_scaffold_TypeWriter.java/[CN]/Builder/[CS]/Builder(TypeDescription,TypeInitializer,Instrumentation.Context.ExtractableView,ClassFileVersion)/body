@@ -1,0 +1,6 @@
+{
+  this.typeDescription=typeDescription;
+  this.typeInitializer=typeInitializer;
+  this.instrumentationContext=instrumentationContext;
+  this.classFileVersion=classFileVersion;
+}

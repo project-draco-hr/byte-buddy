@@ -1,3 +1,0 @@
-{
-  assertThat(delegate.getProxiedMethods().iterator().hasNext(),is(false));
-}

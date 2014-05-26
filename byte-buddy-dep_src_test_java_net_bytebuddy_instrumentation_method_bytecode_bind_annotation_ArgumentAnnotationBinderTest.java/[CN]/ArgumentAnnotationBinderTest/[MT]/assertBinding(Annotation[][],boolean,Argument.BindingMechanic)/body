@@ -11,7 +11,7 @@
   when(targetParameters.get(targetIndex)).thenReturn(targetType);
   when(target.getParameterTypes()).thenReturn(targetParameters);
   when(target.getParameterAnnotations()).thenReturn(annotations);
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Argument.Binder.INSTANCE.bind(annotation,targetIndex,source,target,instrumentedType,assigner);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Argument.Binder.INSTANCE.bind(annotation,targetIndex,source,target,instrumentationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
   Object expectedToken=new MostSpecificTypeResolver.ParameterIndexToken(sourceIndex);
   if (bindingMechanic == Argument.BindingMechanic.UNIQUE) {

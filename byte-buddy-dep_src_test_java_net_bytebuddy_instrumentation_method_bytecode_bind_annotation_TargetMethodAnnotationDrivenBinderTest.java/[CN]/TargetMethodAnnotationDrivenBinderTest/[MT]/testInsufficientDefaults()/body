@@ -11,11 +11,11 @@
   MethodDelegationBinder.ParameterBinding<?> secondBinding=prepareArgumentBinder(secondParameterBinder,SecondPseudoAnnotation.class,new Key(BAR),true);
   Iterator<Annotation> defaultsIterator=prepareDefaultProvider(defaultsProvider,Arrays.asList(secondPseudoAnnotation));
   MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Arrays.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>asList(firstParameterBinder,secondParameterBinder),defaultsProvider,assigner,methodInvoker);
-  assertThat(methodDelegationBinder.bind(typeDescription,source,target).isValid(),is(false));
+  assertThat(methodDelegationBinder.bind(instrumentationTarget,source,target).isValid(),is(false));
   verify(firstParameterBinder,atLeast(1)).getHandledType();
   verifyNoMoreInteractions(firstParameterBinder);
   verify(secondParameterBinder,atLeast(1)).getHandledType();
-  verify((TargetMethodAnnotationDrivenBinder.ParameterBinder)secondParameterBinder).bind(secondPseudoAnnotation,0,source,target,typeDescription,assigner);
+  verify((TargetMethodAnnotationDrivenBinder.ParameterBinder)secondParameterBinder).bind(secondPseudoAnnotation,0,source,target,instrumentationTarget,assigner);
   verifyNoMoreInteractions(secondParameterBinder);
   verify(defaultsIterator,times(2)).hasNext();
   verify(defaultsIterator,times(1)).next();

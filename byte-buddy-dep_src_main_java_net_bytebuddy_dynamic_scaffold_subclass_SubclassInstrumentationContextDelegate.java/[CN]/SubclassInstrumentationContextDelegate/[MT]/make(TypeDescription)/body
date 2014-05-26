@@ -1,3 +1,0 @@
-{
-  return new Instrumentation.Target.Default(typeDescription);
-}

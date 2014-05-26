@@ -1,6 +1,0 @@
-{
-  this.proxiedType=proxiedType;
-  this.instrumentedType=instrumentedType;
-  this.constructorParameters=constructorParameters;
-  this.ignoreFinalizer=ignoreFinalizer;
-}

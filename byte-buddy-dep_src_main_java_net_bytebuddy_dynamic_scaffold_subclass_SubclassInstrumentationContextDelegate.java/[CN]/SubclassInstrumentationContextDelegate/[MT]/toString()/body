@@ -1,3 +1,0 @@
-{
-  return "SubclassInstrumentationContextDelegate{" + "prefix='" + prefix + '\''+ ", methodLookupEngineFinding="+ methodLookupEngineFinding+ ", bridgeMethodResolver="+ bridgeMethodResolver+ ", knownTargetMethodsToAccessorMethod="+ knownTargetMethodsToAccessorMethod+ '}';
-}

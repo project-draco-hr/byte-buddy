@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   TypeProxy typeProxy=(TypeProxy)other;
-  return ignoreFinalizer == typeProxy.ignoreFinalizer && instrumentedType.equals(typeProxy.instrumentedType) && proxiedType.equals(typeProxy.proxiedType);
+  return ignoreFinalizer == typeProxy.ignoreFinalizer && instrumentationTarget.equals(typeProxy.instrumentationTarget) && proxiedType.equals(typeProxy.proxiedType);
 }

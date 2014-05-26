@@ -1,0 +1,8 @@
+{
+  DynamicType dynamicType=auxiliaryTypes.get(auxiliaryType);
+  if (dynamicType == null) {
+    dynamicType=auxiliaryType.make(auxiliaryTypeNamingStrategy.name(auxiliaryType,instrumentedType),classFileVersion,this);
+    auxiliaryTypes.put(auxiliaryType,dynamicType);
+  }
+  return dynamicType.getDescription();
+}

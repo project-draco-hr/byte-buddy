@@ -4,7 +4,6 @@
   assertThat(loaded.getName(),is(FOO));
   assertEquals(Object.class,loaded.getSuperclass());
   assertThat(Modifier.isPublic(loaded.getModifiers()),is(true));
-  verify(instrumentedType).detach();
   if (fields) {
     assertThat(loaded.getDeclaredFields().length,is(2));
     assertEquals(Object.class,loaded.getDeclaredField(BAR).getType());

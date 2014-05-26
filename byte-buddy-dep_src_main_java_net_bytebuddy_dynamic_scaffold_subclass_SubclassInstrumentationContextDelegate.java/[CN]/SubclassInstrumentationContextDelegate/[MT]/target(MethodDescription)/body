@@ -1,7 +1,0 @@
-{
-  Entry targetMethodCall=registeredAccessorMethodToTargetMethodCall.get(methodDescription);
-  if (targetMethodCall == null) {
-    throw new IllegalArgumentException("Unknown method: " + methodDescription);
-  }
-  return targetMethodCall;
-}

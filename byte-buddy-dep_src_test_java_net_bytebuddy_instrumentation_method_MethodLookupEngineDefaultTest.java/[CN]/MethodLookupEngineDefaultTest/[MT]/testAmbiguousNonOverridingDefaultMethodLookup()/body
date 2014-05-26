@@ -4,7 +4,7 @@
   TypeDescription singleDefaultMethodAmbiguousInheritanceInterface=findType(SINGLE_DEFAULT_METHOD_AMBIGUOUS_INHERITANCE_INTERFACE);
   TypeDescription singleDefaultMethodInterface=findType(SINGLE_DEFAULT_METHOD_INTERFACE);
   MethodLookupEngine.Finding finding=methodLookupEngine.process(singleDefaultMethodAmbiguousInheritanceClass);
-  assertThat(finding.getLookedUpType(),is(singleDefaultMethodAmbiguousInheritanceClass));
+  assertThat(finding.getTypeDescription(),is(singleDefaultMethodAmbiguousInheritanceClass));
   MethodDescription interfaceMethod=singleDefaultMethodInterface.getDeclaredMethods().getOnly();
   assertThat(finding.getInvokableMethods(),hasItem(interfaceMethod));
   assertThat(finding.getInvokableDefaultMethods().size(),is(2));

@@ -1,6 +1,6 @@
 {
   int result=proxiedType.hashCode();
-  result=31 * result + instrumentedType.hashCode();
+  result=31 * result + instrumentationTarget.hashCode();
   result=31 * result + constructorParameters.hashCode();
   result=31 * result + (ignoreFinalizer ? 1 : 0);
   return result;

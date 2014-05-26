@@ -1,7 +1,7 @@
 {
   for (  FieldDescription fieldDescription : fieldDescriptions) {
     FieldVisitor fieldVisitor=classVisitor.visitField(fieldDescription.getModifiers(),fieldDescription.getInternalName(),fieldDescription.getDescriptor(),null,null);
-    fieldPool.target(fieldDescription).getFieldAppenderFactory().make(instrumentedType).apply(fieldVisitor,fieldDescription);
+    fieldPool.target(fieldDescription).getFieldAppenderFactory().make(typeDescription).apply(fieldVisitor,fieldDescription);
     fieldVisitor.visitEnd();
   }
   return this;

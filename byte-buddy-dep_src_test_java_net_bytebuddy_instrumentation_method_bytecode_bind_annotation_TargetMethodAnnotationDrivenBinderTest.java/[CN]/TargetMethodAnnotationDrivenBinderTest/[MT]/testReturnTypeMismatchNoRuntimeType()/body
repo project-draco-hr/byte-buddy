@@ -3,7 +3,7 @@
   when(methodInvocation.isValid()).thenReturn(true);
   when(target.getAnnotations()).thenReturn(new Annotation[0]);
   MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Collections.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>emptyList(),defaultsProvider,assigner,methodInvoker);
-  assertThat(methodDelegationBinder.bind(typeDescription,source,target).isValid(),is(false));
+  assertThat(methodDelegationBinder.bind(instrumentationTarget,source,target).isValid(),is(false));
   verify(assigner).assign(targetTypeDescription,sourceTypeDescription,false);
   verifyNoMoreInteractions(assigner);
   verifyZeroInteractions(methodInvoker);

@@ -1,5 +1,5 @@
 {
-  MethodDescription accessorMethod=methodAccessorFactory.requireAccessorMethodFor(targetMethod,MethodAccessorFactory.LookupMode.Default.EXACT);
+  MethodDescription accessorMethod=methodAccessorFactory.registerAccessorFor(specialMethodInvocation);
   LinkedHashMap<String,TypeDescription> parameterFields=extractFields(accessorMethod);
   Instrumentation methodCall=new MethodCall(accessorMethod,assigner);
   DynamicType.Builder<?> builder=new ByteBuddy(classFileVersion).subclass(Object.class,ConstructorStrategy.Default.NO_CONSTRUCTORS).methodLookupEngine(ProxyMethodLookupEngine.INSTANCE).name(auxiliaryTypeName).modifiers(DEFAULT_TYPE_MODIFIER.toArray(new ModifierContributor.ForType[DEFAULT_TYPE_MODIFIER.size()])).implement(Runnable.class).implement(Callable.class).method(not(isDeclaredBy(Object.class))).intercept(methodCall).defineConstructor(new ArrayList<TypeDescription>(parameterFields.values())).intercept(new ConstructorCall());

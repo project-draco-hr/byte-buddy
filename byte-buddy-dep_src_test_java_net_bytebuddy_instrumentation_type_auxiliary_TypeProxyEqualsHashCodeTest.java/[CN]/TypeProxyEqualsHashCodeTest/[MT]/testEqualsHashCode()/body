@@ -1,8 +1,8 @@
 {
-  assertThat(new TypeProxy(first,second,true).hashCode(),is(new TypeProxy(first,second,true).hashCode()));
-  assertThat(new TypeProxy(first,second,true),is(new TypeProxy(first,second,true)));
-  assertThat(new TypeProxy(first,second,true).hashCode(),not(is(new TypeProxy(first,second,false).hashCode())));
-  assertThat(new TypeProxy(first,second,true),not(is(new TypeProxy(first,second,false))));
-  assertThat(new TypeProxy(first,second,true).hashCode(),not(is(new TypeProxy(second,first,true).hashCode())));
-  assertThat(new TypeProxy(first,second,true),not(is(new TypeProxy(second,first,true))));
+  assertThat(new TypeProxy(first,instrumentationTarget,true).hashCode(),is(new TypeProxy(first,instrumentationTarget,true).hashCode()));
+  assertThat(new TypeProxy(first,instrumentationTarget,true),is(new TypeProxy(first,instrumentationTarget,true)));
+  assertThat(new TypeProxy(first,instrumentationTarget,true).hashCode(),not(is(new TypeProxy(first,instrumentationTarget,false).hashCode())));
+  assertThat(new TypeProxy(first,instrumentationTarget,true),not(is(new TypeProxy(first,instrumentationTarget,false))));
+  assertThat(new TypeProxy(first,instrumentationTarget,true).hashCode(),not(is(new TypeProxy(second,instrumentationTarget,true).hashCode())));
+  assertThat(new TypeProxy(first,instrumentationTarget,true),not(is(new TypeProxy(second,instrumentationTarget,true))));
 }

@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   MethodDelegationByteCodeAppender that=(MethodDelegationByteCodeAppender)other;
-  return instrumentedType.equals(that.instrumentedType) && preparingStackAssignment.equals(that.preparingStackAssignment) && processor.equals(that.processor)&& targetMethods.equals(that.targetMethods);
+  return instrumentationTarget.equals(that.instrumentationTarget) && preparingStackAssignment.equals(that.preparingStackAssignment) && processor.equals(that.processor)&& targetMethods.equals(that.targetMethods);
 }

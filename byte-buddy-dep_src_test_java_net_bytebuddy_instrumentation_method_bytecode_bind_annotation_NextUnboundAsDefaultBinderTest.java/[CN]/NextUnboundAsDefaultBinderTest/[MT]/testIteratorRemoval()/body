@@ -1,6 +1,6 @@
 {
   when(target.getParameterAnnotations()).thenReturn(new Annotation[0][0]);
-  Iterator<Argument> iterator=Argument.NextUnboundAsDefaultsProvider.INSTANCE.makeIterator(typeDescription,source,target);
+  Iterator<Argument> iterator=Argument.NextUnboundAsDefaultsProvider.INSTANCE.makeIterator(instrumentationTarget,source,target);
   assertThat(iterator.hasNext(),is(true));
   iterator.remove();
   assertThat(iterator.hasNext(),is(true));

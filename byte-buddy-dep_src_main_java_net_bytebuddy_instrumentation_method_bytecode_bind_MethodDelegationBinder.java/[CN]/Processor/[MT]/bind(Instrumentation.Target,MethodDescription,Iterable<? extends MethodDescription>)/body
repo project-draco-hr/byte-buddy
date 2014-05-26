@@ -1,0 +1,10 @@
+{
+  List<MethodBinding> possibleDelegations=new LinkedList<MethodBinding>();
+  for (  MethodDescription target : targets) {
+    MethodBinding methodBinding=methodDelegationBinder.bind(instrumentationTarget,source,target);
+    if (methodBinding.isValid()) {
+      possibleDelegations.add(methodBinding);
+    }
+  }
+  return possibleDelegations;
+}

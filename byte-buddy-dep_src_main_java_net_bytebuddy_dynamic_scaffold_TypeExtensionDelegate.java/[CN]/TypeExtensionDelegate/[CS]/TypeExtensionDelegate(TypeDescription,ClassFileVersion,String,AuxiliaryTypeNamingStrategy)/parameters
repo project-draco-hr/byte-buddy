@@ -1,0 +1,4 @@
+TypeDescription instrumentedType
+ClassFileVersion classFileVersion
+String accessorMethodPrefix
+AuxiliaryTypeNamingStrategy auxiliaryTypeNamingStrategy

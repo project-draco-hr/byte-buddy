@@ -1,4 +1,0 @@
-StackManipulation preparingStackAssignment
-TypeDescription instrumentedType
-Iterable<? extends MethodDescription> targetMethods
-MethodDelegationBinder.Processor processor

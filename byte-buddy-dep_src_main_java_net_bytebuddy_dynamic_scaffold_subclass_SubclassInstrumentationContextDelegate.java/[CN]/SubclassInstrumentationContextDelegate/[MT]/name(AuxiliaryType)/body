@@ -1,3 +1,0 @@
-{
-  return String.format("%s$%s$%d",methodLookupEngineFinding.getLookedUpType().getName(),DEFAULT_PREFIX,Math.abs(random.nextInt()));
-}

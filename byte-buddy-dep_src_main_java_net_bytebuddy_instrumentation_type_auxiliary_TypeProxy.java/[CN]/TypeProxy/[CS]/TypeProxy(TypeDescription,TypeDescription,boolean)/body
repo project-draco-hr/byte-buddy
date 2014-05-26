@@ -1,5 +1,0 @@
-{
-  this.proxiedType=proxiedType;
-  this.instrumentedType=instrumentedType;
-  this.ignoreFinalizer=ignoreFinalizer;
-}

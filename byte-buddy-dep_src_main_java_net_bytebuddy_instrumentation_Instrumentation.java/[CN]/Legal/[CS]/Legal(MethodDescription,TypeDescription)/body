@@ -1,0 +1,4 @@
+{
+  this.methodDescription=methodDescription;
+  this.typeDescription=typeDescription;
+}

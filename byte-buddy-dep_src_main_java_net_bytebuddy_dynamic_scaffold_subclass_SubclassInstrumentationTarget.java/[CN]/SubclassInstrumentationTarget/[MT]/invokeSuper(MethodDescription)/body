@@ -1,0 +1,3 @@
+{
+  return methodDescription.isSpecializableFor(typeDescription.getSupertype()) ? new Instrumentation.SpecialMethodInvocation.Legal(methodDescription,typeDescription.getSupertype()) : Instrumentation.SpecialMethodInvocation.Illegal.INSTANCE;
+}

@@ -2,7 +2,7 @@
   TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
   TypeDescription singleInterfaceClass=new TypeDescription.ForLoadedType(SingleInterfaceClass.class);
   MethodLookupEngine.Finding finding=methodLookupEngine.process(singleInterfaceClass);
-  assertThat(finding.getLookedUpType(),is(singleInterfaceClass));
+  assertThat(finding.getTypeDescription(),is(singleInterfaceClass));
   assertThat(finding.getInvokableMethods(),containsAllOf(singleInterfaceClass.getDeclaredMethods()));
   assertThat(finding.getInvokableMethods(),containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(singleInterfaceClass))));
   assertThat(finding.getInvokableMethods().size(),is(singleInterfaceClass.getDeclaredMethods().size() + objectType.getDeclaredMethods().filter(isVirtualTo(singleInterfaceClass)).size()));

@@ -3,7 +3,7 @@
   when(indexZeroArgument.value()).thenReturn(0);
   doReturn(Argument.class).when(indexZeroArgument).annotationType();
   when(target.getParameterAnnotations()).thenReturn(new Annotation[][]{{indexZeroArgument},{}});
-  Iterator<Argument> iterator=Argument.NextUnboundAsDefaultsProvider.INSTANCE.makeIterator(typeDescription,source,target);
+  Iterator<Argument> iterator=Argument.NextUnboundAsDefaultsProvider.INSTANCE.makeIterator(instrumentationTarget,source,target);
   assertThat(iterator.hasNext(),is(true));
   assertThat(iterator.next().value(),is(1));
   assertThat(iterator.hasNext(),is(false));

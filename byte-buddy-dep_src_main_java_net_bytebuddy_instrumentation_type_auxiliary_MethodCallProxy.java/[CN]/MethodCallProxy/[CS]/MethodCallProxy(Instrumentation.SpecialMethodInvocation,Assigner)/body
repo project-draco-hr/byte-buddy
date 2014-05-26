@@ -1,0 +1,4 @@
+{
+  this.specialMethodInvocation=specialMethodInvocation;
+  this.assigner=assigner;
+}

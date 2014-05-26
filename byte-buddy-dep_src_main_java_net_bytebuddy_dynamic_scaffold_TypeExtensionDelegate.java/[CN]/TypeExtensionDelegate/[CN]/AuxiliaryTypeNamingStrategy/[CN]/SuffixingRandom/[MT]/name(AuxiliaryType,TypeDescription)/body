@@ -1,0 +1,3 @@
+{
+  return String.format("%s$%s$%d",instrumentedType.getName(),suffix,Math.abs(random.nextInt()));
+}

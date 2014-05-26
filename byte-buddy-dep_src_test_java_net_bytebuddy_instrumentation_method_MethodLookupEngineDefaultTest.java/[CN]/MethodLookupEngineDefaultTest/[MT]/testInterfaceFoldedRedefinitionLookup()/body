@@ -3,7 +3,7 @@
   TypeDescription singleMethodOverridingInterface=new TypeDescription.ForLoadedType(SingleMethodOverridingInterface.class);
   TypeDescription abstractFoldedInterfaceClass=new TypeDescription.ForLoadedType(AbstractFoldedInterfaceClass.class);
   MethodLookupEngine.Finding finding=methodLookupEngine.process(abstractFoldedInterfaceClass);
-  assertThat(finding.getLookedUpType(),is(abstractFoldedInterfaceClass));
+  assertThat(finding.getTypeDescription(),is(abstractFoldedInterfaceClass));
   assertThat(finding.getInvokableMethods(),containsAllOf(abstractFoldedInterfaceClass.getDeclaredMethods()));
   assertThat(finding.getInvokableMethods(),containsAllOf(singleMethodOverridingInterface.getDeclaredMethods()));
   assertThat(finding.getInvokableMethods(),containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(abstractFoldedInterfaceClass))));

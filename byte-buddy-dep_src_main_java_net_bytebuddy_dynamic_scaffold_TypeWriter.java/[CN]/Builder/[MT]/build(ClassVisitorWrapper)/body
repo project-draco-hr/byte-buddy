@@ -1,6 +1,6 @@
 {
   ClassWriter classWriter=new ClassWriter(ASM_MANUAL_FLAG);
   ClassVisitor classVisitor=classVisitorWrapper.wrap(classWriter);
-  classVisitor.visit(classFileVersion.getVersionNumber(),instrumentedType.getModifiers(),instrumentedType.getInternalName(),null,instrumentedType.getSupertype() == null ? null : instrumentedType.getSupertype().getInternalName(),instrumentedType.getInterfaces().toInternalNames());
+  classVisitor.visit(classFileVersion.getVersionNumber(),typeDescription.getModifiers(),typeDescription.getInternalName(),null,typeDescription.getSupertype() == null ? null : typeDescription.getSupertype().getInternalName(),typeDescription.getInterfaces().toInternalNames());
   return new GeneralPhaseTypeWriter<T>(classWriter,classVisitor);
 }

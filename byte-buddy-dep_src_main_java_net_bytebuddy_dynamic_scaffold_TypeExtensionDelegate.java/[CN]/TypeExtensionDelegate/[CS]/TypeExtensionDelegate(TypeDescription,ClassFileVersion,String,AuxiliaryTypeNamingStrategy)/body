@@ -1,0 +1,11 @@
+{
+  this.instrumentedType=instrumentedType;
+  this.classFileVersion=classFileVersion;
+  this.accessorMethodPrefix=accessorMethodPrefix;
+  this.auxiliaryTypeNamingStrategy=auxiliaryTypeNamingStrategy;
+  registeredAccessorMethods=new HashMap<Instrumentation.SpecialMethodInvocation,MethodDescription>();
+  orderedAccessorMethods=new LinkedList<MethodDescription>();
+  accessorMethodEntries=new HashMap<MethodDescription,TypeWriter.MethodPool.Entry>();
+  auxiliaryTypes=new HashMap<AuxiliaryType,DynamicType>();
+  random=new Random();
+}

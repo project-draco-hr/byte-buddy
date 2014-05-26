@@ -1,4 +1,4 @@
 {
-  StackManipulation.Size stackSize=new StackManipulation.Compound(preparingStackAssignment,processor.process(instrumentedType,instrumentedMethod,targetMethods),MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(preparingStackAssignment,processor.process(instrumentationTarget,instrumentedMethod,targetMethods),MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }

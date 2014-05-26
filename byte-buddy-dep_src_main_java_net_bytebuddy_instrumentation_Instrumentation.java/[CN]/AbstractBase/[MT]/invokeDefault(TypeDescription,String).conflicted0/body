@@ -1,0 +1,10 @@
+{
+  Map<String,MethodDescription> defaultMethods=this.defaultMethods.get(targetType);
+  if (defaultMethods != null) {
+    MethodDescription defaultMethod=defaultMethods.get(uniqueMethodSignature);
+    if (defaultMethod != null) {
+      return new Instrumentation.SpecialMethodInvocation.Legal(defaultMethod,targetType);
+    }
+  }
+  return Instrumentation.SpecialMethodInvocation.Illegal.INSTANCE;
+}

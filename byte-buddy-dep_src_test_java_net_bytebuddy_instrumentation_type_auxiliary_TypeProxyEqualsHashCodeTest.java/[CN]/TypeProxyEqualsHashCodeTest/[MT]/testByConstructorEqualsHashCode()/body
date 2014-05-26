@@ -1,10 +1,10 @@
 {
-  assertThat(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),true).hashCode(),is(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),true).hashCode()));
-  assertThat(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),true),is(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),true)));
-  assertThat(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),true).hashCode(),not(is(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),false).hashCode())));
-  assertThat(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),true),not(is(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),false))));
-  assertThat(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),true).hashCode(),not(is(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),false).hashCode())));
-  assertThat(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),true),not(is(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),false))));
-  assertThat(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),true).hashCode(),not(is(new TypeProxy.ByConstructor(second,first,Collections.<TypeDescription>emptyList(),true).hashCode())));
-  assertThat(new TypeProxy.ByConstructor(first,second,Collections.<TypeDescription>emptyList(),true),not(is(new TypeProxy.ByConstructor(second,first,Collections.<TypeDescription>emptyList(),true))));
+  assertThat(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),true).hashCode(),is(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),true).hashCode()));
+  assertThat(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),true),is(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),true)));
+  assertThat(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),true).hashCode(),not(is(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),false).hashCode())));
+  assertThat(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),true),not(is(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),false))));
+  assertThat(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),true).hashCode(),not(is(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),false).hashCode())));
+  assertThat(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),true),not(is(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),false))));
+  assertThat(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),true).hashCode(),not(is(new TypeProxy.ByConstructor(second,instrumentationTarget,Collections.<TypeDescription>emptyList(),true).hashCode())));
+  assertThat(new TypeProxy.ByConstructor(first,instrumentationTarget,Collections.<TypeDescription>emptyList(),true),not(is(new TypeProxy.ByConstructor(second,instrumentationTarget,Collections.<TypeDescription>emptyList(),true))));
 }

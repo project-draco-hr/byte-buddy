@@ -1,3 +1,3 @@
 {
-  Origin.Binder.INSTANCE.bind(annotation,INDEX,source,target,instrumentedType,assigner);
+  Origin.Binder.INSTANCE.bind(annotation,INDEX,source,target,instrumentationTarget,assigner);
 }

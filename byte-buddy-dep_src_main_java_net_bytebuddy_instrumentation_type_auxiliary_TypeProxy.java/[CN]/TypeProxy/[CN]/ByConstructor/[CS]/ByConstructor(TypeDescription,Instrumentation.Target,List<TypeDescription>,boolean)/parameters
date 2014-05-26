@@ -1,0 +1,4 @@
+TypeDescription proxiedType
+Instrumentation.Target instrumentationTarget
+List<TypeDescription> constructorParameters
+boolean ignoreFinalizer

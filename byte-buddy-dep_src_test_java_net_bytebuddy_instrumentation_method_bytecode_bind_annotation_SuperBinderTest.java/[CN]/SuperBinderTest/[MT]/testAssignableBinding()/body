@@ -1,7 +1,7 @@
 {
   when(stackManipulation.isValid()).thenReturn(true);
   when(instrumentedType.isAssignableTo(targetType)).thenReturn(true);
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Super.Binder.INSTANCE.bind(annotation,INDEX,source,target,instrumentedType,assigner);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Super.Binder.INSTANCE.bind(annotation,INDEX,source,target,instrumentationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
-  verify(instantiation).proxyFor(targetType,instrumentedType,annotation);
+  verify(instantiation).proxyFor(targetType,instrumentationTarget,annotation);
 }

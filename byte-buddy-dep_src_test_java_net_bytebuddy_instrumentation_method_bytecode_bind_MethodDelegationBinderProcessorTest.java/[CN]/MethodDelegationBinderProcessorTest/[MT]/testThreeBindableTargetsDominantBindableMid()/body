@@ -1,11 +1,11 @@
 {
   List<MethodDescription> methodDescriptions=Arrays.asList(bindableTarget,dominantBindableTarget,bindableTarget);
   MethodDelegationBinder.Processor processor=new MethodDelegationBinder.Processor(methodDelegationBinder,ambiguityResolver);
-  MethodDelegationBinder.MethodBinding result=processor.process(typeDescription,source,methodDescriptions);
+  MethodDelegationBinder.MethodBinding result=processor.process(instrumentationTarget,source,methodDescriptions);
   assertThat(result,is(dominantBoundDelegation));
-  verify(methodDelegationBinder,times(2)).bind(typeDescription,source,bindableTarget);
+  verify(methodDelegationBinder,times(2)).bind(instrumentationTarget,source,bindableTarget);
   verify(boundDelegation,atLeast(2)).isValid();
-  verify(methodDelegationBinder,times(1)).bind(typeDescription,source,dominantBindableTarget);
+  verify(methodDelegationBinder,times(1)).bind(instrumentationTarget,source,dominantBindableTarget);
   verify(dominantBoundDelegation,atLeast(1)).isValid();
   verify(ambiguityResolver).resolve(source,boundDelegation,dominantBoundDelegation);
   verify(ambiguityResolver).resolve(source,dominantBoundDelegation,boundDelegation);

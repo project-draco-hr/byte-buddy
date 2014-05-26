@@ -2,7 +2,7 @@
   TypeDescription singleDefaultMethodClass=findType(SINGLE_DEFAULT_METHOD_OVERRIDING_CLASS);
   TypeDescription singleDefaultMethodInterface=findType(SINGLE_DEFAULT_METHOD_INTERFACE);
   MethodLookupEngine.Finding finding=methodLookupEngine.process(singleDefaultMethodClass);
-  assertThat(finding.getLookedUpType(),is(singleDefaultMethodClass));
+  assertThat(finding.getTypeDescription(),is(singleDefaultMethodClass));
   assertThat(finding.getInvokableDefaultMethods().size(),is(1));
   MethodDescription interfaceMethod=singleDefaultMethodInterface.getDeclaredMethods().getOnly();
   Set<MethodDescription> discoveredDefaultMethods=finding.getInvokableDefaultMethods().get(singleDefaultMethodInterface);

@@ -1,0 +1,7 @@
+{
+  TypeWriter.MethodPool.Entry targetMethodCall=accessorMethodEntries.get(methodDescription);
+  if (targetMethodCall == null) {
+    throw new IllegalArgumentException("Unknown accessor method: " + methodDescription);
+  }
+  return targetMethodCall;
+}

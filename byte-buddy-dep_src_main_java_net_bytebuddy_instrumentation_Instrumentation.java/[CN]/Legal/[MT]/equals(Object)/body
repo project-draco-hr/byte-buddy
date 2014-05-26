@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Legal aLegal=(Legal)other;
+  return typeDescription.equals(aLegal.typeDescription) && methodDescription.getInternalName().equals(aLegal.methodDescription.getInternalName()) && methodDescription.getParameterTypes().equals(aLegal.methodDescription.getParameterTypes())&& methodDescription.getReturnType().equals(aLegal.methodDescription.getReturnType());
+}

@@ -4,7 +4,7 @@
   TypeDescription additionalMethodInterface=new TypeDescription.ForLoadedType(AdditionalMethodInterface.class);
   TypeDescription abstractAdditionalMethodInterfaceClass=new TypeDescription.ForLoadedType(AbstractAdditionalMethodInterfaceClass.class);
   MethodLookupEngine.Finding finding=methodLookupEngine.process(abstractAdditionalMethodInterfaceClass);
-  assertThat(finding.getLookedUpType(),is(abstractAdditionalMethodInterfaceClass));
+  assertThat(finding.getTypeDescription(),is(abstractAdditionalMethodInterfaceClass));
   assertThat(finding.getInvokableMethods(),containsAllOf(abstractAdditionalMethodInterfaceClass.getDeclaredMethods()));
   assertThat(finding.getInvokableMethods(),containsAllOf(singleMethodOverridingInterface.getDeclaredMethods()));
   assertThat(finding.getInvokableMethods(),containsAllOf(additionalMethodInterface.getDeclaredMethods()));

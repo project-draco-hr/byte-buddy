@@ -1,6 +1,6 @@
 {
   Iterator<Annotation> annotationIterator=mock(Iterator.class);
-  when(defaultsProvider.makeIterator(any(TypeDescription.class),any(MethodDescription.class),any(MethodDescription.class))).thenReturn((Iterator)annotationIterator);
+  when(defaultsProvider.makeIterator(any(Instrumentation.Target.class),any(MethodDescription.class),any(MethodDescription.class))).thenReturn((Iterator)annotationIterator);
   OngoingStubbing<Boolean> iteratorConditionStubbing=when(annotationIterator.hasNext());
   for (  Annotation defaultIteratorValue : defaultIteratorValues) {
     iteratorConditionStubbing=iteratorConditionStubbing.thenReturn(true);
