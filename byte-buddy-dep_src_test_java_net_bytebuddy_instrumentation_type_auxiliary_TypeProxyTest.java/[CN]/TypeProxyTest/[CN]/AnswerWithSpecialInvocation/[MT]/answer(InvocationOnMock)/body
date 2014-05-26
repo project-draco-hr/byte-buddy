@@ -1,3 +1,0 @@
-{
-  return new Instrumentation.SpecialMethodInvocation.Legal((MethodDescription)invocation.getArguments()[0],instrumentedType);
-}

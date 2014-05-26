@@ -1,7 +1,7 @@
 {
   TypeDescription instrumentedTypeDescription=new TypeDescription.ForLoadedType(instrumentedType);
   when(instrumentationTarget.getTypeDescription()).thenReturn(instrumentedTypeDescription);
-  when(instrumentationTarget.invokeSuper(any(MethodDescription.class),any(Instrumentation.Target.MethodLookup.class))).then(new AnswerWithSpecialInvocation(instrumentedTypeDescription));
+  when(instrumentationTarget.invokeSuper(any(MethodDescription.class),any(Instrumentation.Target.MethodLookup.class))).then(new SameMethodAsSpecialInvocation(instrumentedTypeDescription));
   when(methodAccessorFactory.registerAccessorFor(any(Instrumentation.SpecialMethodInvocation.class))).then(new AnswerWithRepresentedMethod());
   String auxiliaryTypeName=instrumentedType.getName() + "$" + QUX;
   DynamicType dynamicType=new TypeProxy(new TypeDescription.ForLoadedType(proxyType),instrumentationTarget,true).make(auxiliaryTypeName,ClassFileVersion.forCurrentJavaVersion(),methodAccessorFactory);

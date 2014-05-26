@@ -1,0 +1,4 @@
+{
+  MethodDescription proxyMethod=methodAccessorFactory.registerAccessorFor(specialMethodInvocation);
+  return new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadFromIndex(0),fieldLoadingInstruction,MethodVariableAccess.loadArguments(proxyMethod),MethodInvocation.invoke(proxyMethod),MethodReturn.returning(proxyMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+}

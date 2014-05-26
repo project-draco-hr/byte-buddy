@@ -1,0 +1,3 @@
+{
+  return implementation.apply(methodVisitor,instrumentationContext);
+}

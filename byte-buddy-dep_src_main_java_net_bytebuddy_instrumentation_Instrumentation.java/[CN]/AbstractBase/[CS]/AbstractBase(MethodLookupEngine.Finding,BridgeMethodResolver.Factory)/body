@@ -1,6 +1,10 @@
 {
   bridgeMethodResolver=bridgeMethodResolverFactory.make(finding.getInvokableMethods());
   typeDescription=finding.getTypeDescription();
+  invokableMethods=new HashMap<String,MethodDescription>(finding.getInvokableMethods().size());
+  for (  MethodDescription methodDescription : finding.getInvokableMethods()) {
+    invokableMethods.put(methodDescription.getUniqueSignature(),methodDescription);
+  }
   defaultMethods=new HashMap<TypeDescription,Map<String,MethodDescription>>(finding.getInvokableDefaultMethods().size());
   for (  Map.Entry<TypeDescription,Set<MethodDescription>> entry : finding.getInvokableDefaultMethods().entrySet()) {
     Map<String,MethodDescription> defaultMethods=new HashMap<String,MethodDescription>(entry.getValue().size());
