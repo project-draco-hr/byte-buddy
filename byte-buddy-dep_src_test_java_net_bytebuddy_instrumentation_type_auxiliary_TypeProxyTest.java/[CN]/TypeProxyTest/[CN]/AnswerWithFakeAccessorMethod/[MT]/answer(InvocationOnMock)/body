@@ -1,0 +1,3 @@
+{
+  return ((FakeSpecialMethodInvocation.Container)invocation.getArguments()[0]).getMethodDescription();
+}

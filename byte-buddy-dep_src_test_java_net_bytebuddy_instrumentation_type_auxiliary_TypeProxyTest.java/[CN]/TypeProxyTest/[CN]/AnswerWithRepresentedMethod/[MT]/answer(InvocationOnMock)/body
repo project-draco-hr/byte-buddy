@@ -1,3 +1,0 @@
-{
-  return ((Instrumentation.SpecialMethodInvocation)invocation.getArguments()[0]).getMethodDescription();
-}
