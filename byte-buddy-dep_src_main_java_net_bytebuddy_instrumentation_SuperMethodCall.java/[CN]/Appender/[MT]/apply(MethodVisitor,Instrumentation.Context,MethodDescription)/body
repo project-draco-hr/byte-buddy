@@ -1,0 +1,15 @@
+{
+  MethodDescription targetMethod;
+  if (instrumentedMethod.isConstructor()) {
+    MethodList methodList=instrumentationTarget.getTypeDescription().getSupertype().getDeclaredMethods().filter(hasSameByteCodeSignatureAs(instrumentedMethod));
+    if (methodList.size() == 0) {
+      throw new IllegalArgumentException("There is no super constructor resembling " + instrumentedMethod);
+    }
+    targetMethod=methodList.getOnly();
+  }
+ else {
+    targetMethod=instrumentedMethod;
+  }
+  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisReferenceAndArguments(targetMethod),instrumentationTarget.invokeSuper(targetMethod,Target.MethodLookup.Default.EXACT),MethodReturn.returning(targetMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  return new Size(stackSize.getMaximalSize(),targetMethod.getStackSize());
+}

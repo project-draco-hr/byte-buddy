@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && targetType.equals(((SuperMethodCallAppender)other).targetType);
-}

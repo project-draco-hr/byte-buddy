@@ -1,4 +1,0 @@
-{
-  when(typeDescription.getSupertype()).thenReturn(null);
-  SuperMethodCall.INSTANCE.appender(instrumentationTarget);
-}
