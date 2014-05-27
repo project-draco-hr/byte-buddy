@@ -1,0 +1,6 @@
+{
+  this.instrumentationTarget=instrumentationTarget;
+  this.explicitInterfaces=explicitInterfaces;
+  this.implicitInterfaces=new HashSet<TypeDescription>(instrumentationTarget.getTypeDescription().getInterfaces());
+  implicitInterfaces.removeAll(explicitInterfaces);
+}

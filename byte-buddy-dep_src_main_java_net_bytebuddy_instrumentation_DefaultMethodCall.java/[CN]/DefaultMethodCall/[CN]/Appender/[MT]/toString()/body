@@ -1,0 +1,3 @@
+{
+  return "DefaultMethodCall.Appender{" + "instrumentationTarget=" + instrumentationTarget + ", explicitInterfaces="+ explicitInterfaces+ ", implicitInterfaces="+ implicitInterfaces+ '}';
+}

@@ -1,0 +1,2 @@
+Target instrumentationTarget
+List<TypeDescription> explicitInterfaces

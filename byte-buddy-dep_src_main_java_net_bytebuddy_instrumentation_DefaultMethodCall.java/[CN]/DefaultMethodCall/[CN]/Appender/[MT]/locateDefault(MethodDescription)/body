@@ -1,0 +1,18 @@
+{
+  String uniqueMethodSignature=methodDescription.getUniqueSignature();
+  SpecialMethodInvocation specialMethodInvocation=SpecialMethodInvocation.Illegal.INSTANCE;
+  for (  TypeDescription typeDescription : explicitInterfaces) {
+    specialMethodInvocation=instrumentationTarget.invokeDefault(typeDescription,uniqueMethodSignature);
+    if (specialMethodInvocation.isValid()) {
+      return specialMethodInvocation;
+    }
+  }
+  for (  TypeDescription typeDescription : implicitInterfaces) {
+    SpecialMethodInvocation other=instrumentationTarget.invokeDefault(typeDescription,uniqueMethodSignature);
+    if (specialMethodInvocation.isValid() && other.isValid()) {
+      throw new IllegalArgumentException();
+    }
+    specialMethodInvocation=other;
+  }
+  return specialMethodInvocation;
+}
