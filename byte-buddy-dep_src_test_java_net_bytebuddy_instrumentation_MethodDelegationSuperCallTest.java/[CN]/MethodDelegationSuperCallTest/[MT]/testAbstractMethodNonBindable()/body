@@ -1,0 +1,3 @@
+{
+  instrument(Qux.class,MethodDelegation.to(CallableClass.class));
+}

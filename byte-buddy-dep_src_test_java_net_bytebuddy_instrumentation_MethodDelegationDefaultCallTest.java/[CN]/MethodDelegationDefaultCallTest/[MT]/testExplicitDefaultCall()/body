@@ -1,0 +1,6 @@
+{
+  DynamicType.Loaded<?> loaded=instrument(Object.class,MethodDelegation.to(classLoader.loadClass(PREFERRING_INTERCEPTOR)),classLoader,not(isDeclaredBy(Object.class)),classLoader.loadClass(SINGLE_DEFAULT_METHOD),classLoader.loadClass(CONFLICTING_INTERFACE));
+  Object instance=loaded.getLoaded().newInstance();
+  Method method=loaded.getLoaded().getMethod(FOO);
+  assertThat(method.invoke(instance),is((Object)FOO));
+}
