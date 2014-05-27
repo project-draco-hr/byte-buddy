@@ -10,7 +10,7 @@
   for (  TypeDescription typeDescription : implicitInterfaces) {
     SpecialMethodInvocation other=instrumentationTarget.invokeDefault(typeDescription,uniqueMethodSignature);
     if (specialMethodInvocation.isValid() && other.isValid()) {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException(methodDescription + " has an ambiguous default method with " + other.getMethodDescription()+ " and "+ specialMethodInvocation.getMethodDescription());
     }
     specialMethodInvocation=other;
   }

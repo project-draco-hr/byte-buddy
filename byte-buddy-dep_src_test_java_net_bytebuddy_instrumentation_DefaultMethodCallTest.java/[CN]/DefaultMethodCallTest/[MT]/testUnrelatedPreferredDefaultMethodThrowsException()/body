@@ -1,0 +1,3 @@
+{
+  instrument(Object.class,DefaultMethodCall.preferring(classLoader.loadClass(NON_OVERRIDING_INTERFACE)),classLoader,not(isDeclaredBy(Object.class)),classLoader.loadClass(SINGLE_DEFAULT_METHOD),classLoader.loadClass(CONFLICTING_INTERFACE));
+}

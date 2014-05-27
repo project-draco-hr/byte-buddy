@@ -1,0 +1,4 @@
+Class<?> preferredInterface
+Class<?> secondInterface
+Object expectedResult
+Class<?> preferredInterfaces

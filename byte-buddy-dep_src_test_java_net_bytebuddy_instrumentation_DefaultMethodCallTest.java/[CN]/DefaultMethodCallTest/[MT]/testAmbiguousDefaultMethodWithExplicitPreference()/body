@@ -1,0 +1,10 @@
+{
+  Class<?> singleMethodInterface=classLoader.loadClass(SINGLE_DEFAULT_METHOD);
+  Class<?> conflictingInterface=classLoader.loadClass(CONFLICTING_INTERFACE);
+  assertConflictChoice(singleMethodInterface,conflictingInterface,FOO,singleMethodInterface);
+  assertConflictChoice(singleMethodInterface,conflictingInterface,QUX,conflictingInterface);
+  assertConflictChoice(singleMethodInterface,conflictingInterface,FOO,singleMethodInterface,conflictingInterface);
+  assertConflictChoice(singleMethodInterface,conflictingInterface,QUX,conflictingInterface,singleMethodInterface);
+  assertConflictChoice(singleMethodInterface,conflictingInterface,FOO,singleMethodInterface,classLoader.loadClass(NON_OVERRIDING_INTERFACE));
+  assertConflictChoice(singleMethodInterface,conflictingInterface,FOO,classLoader.loadClass(NON_OVERRIDING_INTERFACE),singleMethodInterface);
+}

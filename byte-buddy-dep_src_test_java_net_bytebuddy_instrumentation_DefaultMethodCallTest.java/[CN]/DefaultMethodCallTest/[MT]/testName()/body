@@ -1,3 +1,0 @@
-{
-  DynamicType.Loaded<?> loaded=instrument(null,DefaultMethodCall.unambiguousOnly());
-}
