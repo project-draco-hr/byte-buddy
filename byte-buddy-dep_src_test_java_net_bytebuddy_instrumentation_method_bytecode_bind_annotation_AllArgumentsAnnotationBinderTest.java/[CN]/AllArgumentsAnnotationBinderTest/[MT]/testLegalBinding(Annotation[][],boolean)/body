@@ -1,4 +1,5 @@
 {
+  when(annotation.value()).thenReturn(AllArguments.Binding.STRICT);
   when(stackManipulation.isValid()).thenReturn(true);
   when(sourceTypeList.iterator()).thenReturn(Arrays.asList(firstSourceType,secondSourceType).iterator());
   when(source.isStatic()).thenReturn(false);
