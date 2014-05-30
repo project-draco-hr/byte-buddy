@@ -1,0 +1,3 @@
+{
+  instrument(Qux.class,MethodDelegation.to(BazStrict.class));
+}
