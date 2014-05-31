@@ -14,3 +14,4 @@ FieldAttributeAppender.Factory defaultFieldAttributeAppenderFactory
 MethodAttributeAppender.Factory defaultMethodAttributeAppenderFactory
 List<FieldToken> fieldTokens
 List<MethodToken> methodTokens
+ConstructorStrategy constructorStrategy

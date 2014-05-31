@@ -1,3 +1,0 @@
-{
-  return new SubclassInstumentedType(classFileVersion,superClass,interfaces,modifiers,name,fieldDescriptions,methodDescriptions,TypeInitializer.NoOp.INSTANCE);
-}

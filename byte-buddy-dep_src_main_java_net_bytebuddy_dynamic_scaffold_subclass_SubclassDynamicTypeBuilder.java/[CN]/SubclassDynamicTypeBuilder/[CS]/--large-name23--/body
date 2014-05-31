@@ -1,5 +1,5 @@
 {
-  super(Collections.<FieldToken>emptyList(),new MethodTokenListForConstructors(constructorStrategy.extractConstructors(superType)));
+  super(Collections.<FieldToken>emptyList(),Collections.<MethodToken>emptyList());
   this.classFileVersion=classFileVersion;
   this.namingStrategy=namingStrategy;
   this.superType=superType;
@@ -13,5 +13,6 @@
   this.methodLookupEngineFactory=methodLookupEngineFactory;
   this.defaultFieldAttributeAppenderFactory=defaultFieldAttributeAppenderFactory;
   this.defaultMethodAttributeAppenderFactory=defaultMethodAttributeAppenderFactory;
-  this.methodRegistry=constructorStrategy.inject(methodRegistry,defaultMethodAttributeAppenderFactory);
+  this.methodRegistry=methodRegistry;
+  this.constructorStrategy=constructorStrategy;
 }
