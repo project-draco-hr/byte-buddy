@@ -1,0 +1,6 @@
+{
+  for (  MethodDescription methodDescription : constructorStrategy.extractConstructors(instrumentedType)) {
+    instrumentedType=instrumentedType.withMethod(methodDescription.getInternalName(),methodDescription.getReturnType(),methodDescription.getParameterTypes(),methodDescription.getExceptionTypes(),methodDescription.getModifiers());
+  }
+  return instrumentedType;
+}

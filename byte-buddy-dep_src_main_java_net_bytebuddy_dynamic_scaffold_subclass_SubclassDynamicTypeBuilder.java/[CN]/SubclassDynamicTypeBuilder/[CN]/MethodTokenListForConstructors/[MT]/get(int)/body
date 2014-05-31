@@ -1,3 +1,0 @@
-{
-  return new MethodToken(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,new TypeDescription.ForLoadedType(void.class),constructor.get(index).getParameterTypes(),constructor.get(index).getExceptionTypes(),constructor.get(index).getModifiers());
-}

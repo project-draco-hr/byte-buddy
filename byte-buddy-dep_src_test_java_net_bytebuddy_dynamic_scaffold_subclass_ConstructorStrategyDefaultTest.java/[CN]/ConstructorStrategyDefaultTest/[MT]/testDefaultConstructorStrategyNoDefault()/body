@@ -1,3 +1,5 @@
 {
-  ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(fooType);
+  when(methodList.filter(isConstructor().and(takesArguments(0)).and(isVisibleTo(instrumentedType)))).thenReturn(filteredMethodList);
+  when(filteredMethodList.size()).thenReturn(0);
+  ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(instrumentedType);
 }

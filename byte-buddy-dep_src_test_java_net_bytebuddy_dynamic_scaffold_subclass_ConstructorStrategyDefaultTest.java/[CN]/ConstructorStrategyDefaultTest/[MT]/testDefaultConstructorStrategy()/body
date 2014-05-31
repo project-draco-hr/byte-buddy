@@ -1,6 +1,10 @@
 {
-  assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(stringType),is(stringType.getDeclaredMethods().filter(isConstructor().and(takesArguments(0)).and(isProtected().or(isPublic())))));
+  when(methodList.filter(isConstructor().and(takesArguments(0)).and(isVisibleTo(instrumentedType)))).thenReturn(filteredMethodList);
+  when(filteredMethodList.size()).thenReturn(1);
+  assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(instrumentedType),is(filteredMethodList));
   assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.inject(methodRegistry,methodAttributeAppenderFactory),is(methodRegistry));
-  verify(methodRegistry).append(any(MethodRegistry.LatentMethodMatcher.class),any(Instrumentation.class),eq(methodAttributeAppenderFactory));
+  verify(methodRegistry).prepend(any(MethodRegistry.LatentMethodMatcher.class),any(Instrumentation.class),eq(methodAttributeAppenderFactory));
   verifyNoMoreInteractions(methodRegistry);
+  verify(instrumentedType,atLeastOnce()).getSupertype();
+  verifyNoMoreInteractions(instrumentedType);
 }
