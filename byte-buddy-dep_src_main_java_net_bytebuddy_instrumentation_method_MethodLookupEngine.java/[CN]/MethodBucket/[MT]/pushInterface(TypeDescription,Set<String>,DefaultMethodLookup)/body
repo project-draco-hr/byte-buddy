@@ -8,7 +8,7 @@
         MethodDescription conflictingMethod=interfaceMethods.get(uniqueSignature);
         MethodDescription resolvedMethod=methodDescription;
         if (conflictingMethod != null && !conflictingMethod.getDeclaringType().isAssignableFrom(typeDescription)) {
-          resolvedMethod=ConflictingInterfaceMethod.of(mostSpecificType,conflictingMethod,methodDescription);
+          resolvedMethod=ConflictingInterfaceMethod.of(typeOfInterest,conflictingMethod,methodDescription);
         }
         interfaceMethods.put(uniqueSignature,resolvedMethod);
       }
