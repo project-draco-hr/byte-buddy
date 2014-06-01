@@ -1,0 +1,3 @@
+{
+  return "TypeProxy.MethodCall.Appender.AccessorMethodInvocation{" + "appender=" + Appender.this + ", instrumentedMethod="+ instrumentedMethod+ ", specialMethodInvocation="+ specialMethodInvocation+ '}';
+}

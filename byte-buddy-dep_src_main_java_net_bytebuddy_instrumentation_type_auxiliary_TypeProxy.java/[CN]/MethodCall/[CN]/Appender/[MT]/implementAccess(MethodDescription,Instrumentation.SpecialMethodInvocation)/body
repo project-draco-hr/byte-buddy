@@ -1,0 +1,3 @@
+{
+  return specialMethodInvocation.isValid() ? new AccessorMethodInvocation(instrumentedMethod,specialMethodInvocation) : AbstractMethodErrorThrow.INSTANCE;
+}

@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  AccessorMethodInvocation that=(AccessorMethodInvocation)other;
+  return Appender.this.equals(that.getAppender()) && instrumentedMethod.equals(that.instrumentedMethod) && specialMethodInvocation.equals(that.specialMethodInvocation);
+}
