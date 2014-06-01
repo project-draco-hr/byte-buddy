@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && instrumentedType.equals(((Appender)other).instrumentedType) && MethodCall.this.equals(((Appender)other).getMethodCall());
+  return this == other || !(other == null || getClass() != other.getClass()) && instrumentedType.equals(((Appender)other).instrumentedType);
 }

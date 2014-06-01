@@ -1,5 +1,5 @@
 {
-  MethodList methodList=this.methodList.filter(isVisibleTo(instrumentationTarget.getTypeDescription()));
+  MethodList methodList=this.targetMethodCandidates.filter(isVisibleTo(instrumentationTarget.getTypeDescription()));
   if (methodList.size() == 0) {
     throw new IllegalStateException("No bindable method is visible to " + instrumentationTarget.getTypeDescription());
   }

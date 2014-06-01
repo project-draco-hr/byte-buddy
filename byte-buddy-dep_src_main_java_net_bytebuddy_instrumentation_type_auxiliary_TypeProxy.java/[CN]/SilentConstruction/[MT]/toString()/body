@@ -1,3 +1,0 @@
-{
-  return "TypeProxy.SilentConstruction{typeProxy=" + TypeProxy.this + "}";
-}

@@ -1,6 +1,6 @@
 {
-  for (  TypeDescription typeDescription : preferredInterfaces) {
+  for (  TypeDescription typeDescription : prioritizedInterfaces) {
     isInterface(typeDescription);
   }
-  this.preferredInterfaces=preferredInterfaces;
+  this.prioritizedInterfaces=prioritizedInterfaces;
 }

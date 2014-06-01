@@ -1,0 +1,6 @@
+{
+  assertThat(Instrumentation.Target.MethodLookup.Default.EXACT.resolve(methodDescription,invokableMethods,bridgeMethodResolver),is(methodDescription));
+  verifyZeroInteractions(methodDescription);
+  verifyZeroInteractions(invokableMethods);
+  verifyZeroInteractions(bridgeMethodResolver);
+}

@@ -1,3 +1,0 @@
-{
-  return "Appender{" + "constructorCall=" + ConstructorCall.this + ", instrumentedType="+ instrumentedType+ '}';
-}

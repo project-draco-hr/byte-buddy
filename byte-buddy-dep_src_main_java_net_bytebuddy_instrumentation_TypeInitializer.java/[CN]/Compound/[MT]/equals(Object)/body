@@ -1,3 +1,3 @@
 {
-  return this == o || !(o == null || getClass() != o.getClass()) && Arrays.equals(typeInitializer,((Compound)o).typeInitializer);
+  return this == other || !(other == null || getClass() != other.getClass()) && Arrays.equals(typeInitializer,((Compound)other).typeInitializer);
 }

@@ -1,5 +1,5 @@
 {
-  this.targetType=targetType;
-  this.targetConstructor=targetType.getDeclaredMethods().filter(isConstructor().and(takesArguments(String.class))).getOnly();
+  this.exceptionType=exceptionType;
+  this.targetConstructor=exceptionType.getDeclaredMethods().filter(isConstructor().and(takesArguments(String.class))).getOnly();
   this.message=message;
 }

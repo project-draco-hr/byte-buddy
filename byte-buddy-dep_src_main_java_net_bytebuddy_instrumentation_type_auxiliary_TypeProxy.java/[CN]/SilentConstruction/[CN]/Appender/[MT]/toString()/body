@@ -1,3 +1,0 @@
-{
-  return "TypeProxy.SilentConstruction.Appender{" + "silentConstruction=" + SilentConstruction.this + "instrumentedType="+ instrumentedType+ '}';
-}

@@ -1,6 +1,6 @@
 {
   this.instrumentationTarget=instrumentationTarget;
-  this.explicitInterfaces=explicitInterfaces;
-  this.implicitInterfaces=new HashSet<TypeDescription>(instrumentationTarget.getTypeDescription().getInterfaces());
-  implicitInterfaces.removeAll(explicitInterfaces);
+  this.prioritizedInterfaces=prioritizedInterfaces;
+  this.nonPrioritizedInterfaces=new HashSet<TypeDescription>(instrumentationTarget.getTypeDescription().getInterfaces());
+  nonPrioritizedInterfaces.removeAll(prioritizedInterfaces);
 }

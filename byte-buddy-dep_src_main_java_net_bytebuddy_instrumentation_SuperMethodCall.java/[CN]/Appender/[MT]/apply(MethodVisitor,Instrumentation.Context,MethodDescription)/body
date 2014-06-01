@@ -1,15 +1,8 @@
 {
-  MethodDescription targetMethod;
-  if (instrumentedMethod.isConstructor()) {
-    MethodList methodList=instrumentationTarget.getTypeDescription().getSupertype().getDeclaredMethods().filter(hasSameByteCodeSignatureAs(instrumentedMethod));
-    if (methodList.size() == 0) {
-      throw new IllegalArgumentException("There is no super constructor resembling " + instrumentedMethod);
-    }
-    targetMethod=methodList.getOnly();
+  StackManipulation superMethodCall=instrumentationTarget.invokeSuper(instrumentedMethod,Target.MethodLookup.Default.EXACT);
+  if (!superMethodCall.isValid()) {
+    throw new IllegalArgumentException("Cannot call super method of " + instrumentedMethod);
   }
- else {
-    targetMethod=instrumentedMethod;
-  }
-  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisReferenceAndArguments(targetMethod),instrumentationTarget.invokeSuper(targetMethod,Target.MethodLookup.Default.EXACT),MethodReturn.returning(targetMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
-  return new Size(stackSize.getMaximalSize(),targetMethod.getStackSize());
+  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisReferenceAndArguments(instrumentedMethod),superMethodCall,MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }

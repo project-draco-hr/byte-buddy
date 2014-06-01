@@ -1,2 +1,2 @@
 Target instrumentationTarget
-List<TypeDescription> explicitInterfaces
+List<TypeDescription> prioritizedInterfaces

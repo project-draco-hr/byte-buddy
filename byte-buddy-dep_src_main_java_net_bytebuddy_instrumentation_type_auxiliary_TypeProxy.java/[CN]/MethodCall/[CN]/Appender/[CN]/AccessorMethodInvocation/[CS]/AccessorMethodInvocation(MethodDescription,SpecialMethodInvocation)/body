@@ -1,4 +1,0 @@
-{
-  this.instrumentedMethod=instrumentedMethod;
-  this.specialMethodInvocation=specialMethodInvocation;
-}

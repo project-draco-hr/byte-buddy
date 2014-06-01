@@ -1,9 +1,9 @@
 {
-  List<TypeDescription> filtered=new ArrayList<TypeDescription>(preferredInterfaces.size());
+  List<TypeDescription> filtered=new ArrayList<TypeDescription>(prioritizedInterfaces.size());
   Set<TypeDescription> relevant=new HashSet<TypeDescription>(typeDescription.getInterfaces());
-  for (  TypeDescription preferredInterface : preferredInterfaces) {
-    if (relevant.remove(preferredInterface)) {
-      filtered.add(preferredInterface);
+  for (  TypeDescription prioritizedInterface : prioritizedInterfaces) {
+    if (relevant.remove(prioritizedInterface)) {
+      filtered.add(prioritizedInterface);
     }
   }
   return filtered;

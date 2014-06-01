@@ -1,13 +1,13 @@
 {
   String uniqueMethodSignature=methodDescription.getUniqueSignature();
   SpecialMethodInvocation specialMethodInvocation=SpecialMethodInvocation.Illegal.INSTANCE;
-  for (  TypeDescription typeDescription : explicitInterfaces) {
+  for (  TypeDescription typeDescription : prioritizedInterfaces) {
     specialMethodInvocation=instrumentationTarget.invokeDefault(typeDescription,uniqueMethodSignature);
     if (specialMethodInvocation.isValid()) {
       return specialMethodInvocation;
     }
   }
-  for (  TypeDescription typeDescription : implicitInterfaces) {
+  for (  TypeDescription typeDescription : nonPrioritizedInterfaces) {
     SpecialMethodInvocation other=instrumentationTarget.invokeDefault(typeDescription,uniqueMethodSignature);
     if (specialMethodInvocation.isValid() && other.isValid()) {
       throw new IllegalArgumentException(methodDescription + " has an ambiguous default method with " + other.getMethodDescription()+ " and "+ specialMethodInvocation.getMethodDescription());

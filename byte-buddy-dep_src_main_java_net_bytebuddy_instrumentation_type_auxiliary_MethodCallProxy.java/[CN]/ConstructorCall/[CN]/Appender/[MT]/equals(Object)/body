@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && instrumentedType.equals(((Appender)other).instrumentedType) && ConstructorCall.this.equals(((Appender)other).getConstructorCall());
-}

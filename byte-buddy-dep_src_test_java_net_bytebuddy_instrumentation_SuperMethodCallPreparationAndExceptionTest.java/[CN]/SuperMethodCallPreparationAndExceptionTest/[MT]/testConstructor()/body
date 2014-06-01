@@ -3,5 +3,6 @@
   when(methodDescription.isConstructor()).thenReturn(true);
   when(superType.getDeclaredMethods()).thenReturn(superTypeMethods);
   when(superTypeMethods.filter(any(MethodMatcher.class))).thenReturn(superTypeMethods);
+  when(instrumentationTarget.invokeSuper(methodDescription,Instrumentation.Target.MethodLookup.Default.EXACT)).thenReturn(Instrumentation.SpecialMethodInvocation.Illegal.INSTANCE);
   SuperMethodCall.INSTANCE.appender(instrumentationTarget).apply(methodVisitor,instrumentationContext,methodDescription);
 }

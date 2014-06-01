@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && TypeProxy.this.equals(((SilentConstruction)other).getTypeProxy());
-}

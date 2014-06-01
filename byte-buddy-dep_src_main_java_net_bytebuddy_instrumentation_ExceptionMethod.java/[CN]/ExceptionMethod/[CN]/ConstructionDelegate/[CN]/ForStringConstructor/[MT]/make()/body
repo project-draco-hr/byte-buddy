@@ -1,3 +1,3 @@
 {
-  return new StackManipulation.Compound(TypeCreation.forType(targetType),Duplication.SINGLE,new TextConstant(message),MethodInvocation.invoke(targetConstructor));
+  return new StackManipulation.Compound(TypeCreation.forType(exceptionType),Duplication.SINGLE,new TextConstant(message),MethodInvocation.invoke(targetConstructor));
 }
