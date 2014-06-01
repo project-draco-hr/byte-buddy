@@ -1,0 +1,6 @@
+{
+  if (!typeDescription.isInterface()) {
+    throw new IllegalStateException(source + " method carries default method call parameter on non-interface type");
+  }
+  return instrumentationTarget.invokeDefault(typeDescription,source.getUniqueSignature());
+}

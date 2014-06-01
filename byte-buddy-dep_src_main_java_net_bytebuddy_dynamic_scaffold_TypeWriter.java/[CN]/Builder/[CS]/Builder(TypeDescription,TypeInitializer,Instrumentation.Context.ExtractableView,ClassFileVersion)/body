@@ -1,5 +1,5 @@
 {
-  this.typeDescription=typeDescription;
+  this.instrumentedType=instrumentedType;
   this.typeInitializer=typeInitializer;
   this.instrumentationContext=instrumentationContext;
   this.classFileVersion=classFileVersion;

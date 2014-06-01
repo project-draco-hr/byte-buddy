@@ -1,0 +1,29 @@
+{
+  when(specialMethodInvocation.getMethodDescription()).thenReturn(methodDescription);
+  when(parameterTypes.size()).thenReturn(1);
+  when(parameterTypes.get(0)).thenReturn(parameterType);
+  final List<TypeDescription> list=new ArrayList<TypeDescription>();
+  list.add(parameterType);
+  when(parameterTypes.listIterator()).then(new Answer<Iterator<TypeDescription>>(){
+    @Override public ListIterator<TypeDescription> answer(    InvocationOnMock invocation) throws Throwable {
+      return list.listIterator();
+    }
+  }
+);
+  when(parameterTypes.iterator()).then(new Answer<Iterator<TypeDescription>>(){
+    @Override public Iterator<TypeDescription> answer(    InvocationOnMock invocation) throws Throwable {
+      return list.iterator();
+    }
+  }
+);
+  when(parameterType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(methodDescription.getDeclaringType()).thenReturn(instrumentedType);
+  when(methodDescription.getInternalName()).thenReturn(FOO);
+  when(methodDescription.getReturnType()).thenReturn(returnType);
+  when(methodDescription.getParameterTypes()).thenReturn(parameterTypes);
+  when(instrumentedType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(specialMethodInvocation.apply(Matchers.any(MethodVisitor.class),Matchers.any(Instrumentation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
+  typeExtensionDelegate=new TypeExtensionDelegate(instrumentedType,classFileVersion);
+  when(auxiliaryType.make(Matchers.any(String.class),Matchers.any(ClassFileVersion.class),Matchers.any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn(dynamicType);
+  when(dynamicType.getDescription()).thenReturn(auxiliaryTypeDescription);
+}

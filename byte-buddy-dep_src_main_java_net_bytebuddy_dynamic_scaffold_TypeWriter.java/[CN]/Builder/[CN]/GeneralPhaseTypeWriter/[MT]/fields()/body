@@ -1,3 +1,0 @@
-{
-  return new FieldPhaseTypeWriter<S>(classWriter,classVisitor);
-}

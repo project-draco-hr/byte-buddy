@@ -1,0 +1,6 @@
+{
+  assertThat(typeExtensionDelegate.register(this.auxiliaryType),is(auxiliaryTypeDescription));
+  assertThat(typeExtensionDelegate.register(this.auxiliaryType),is(auxiliaryTypeDescription));
+  assertThat(typeExtensionDelegate.getRegisteredAuxiliaryTypes().size(),is(1));
+  assertThat(typeExtensionDelegate.getRegisteredAuxiliaryTypes(),hasItem(dynamicType));
+}

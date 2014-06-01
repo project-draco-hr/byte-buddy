@@ -1,6 +1,6 @@
 {
   if (!methodDescription.isSpecializableFor(invocationTarget)) {
-    throw new IllegalArgumentException("Cannot invoke " + invocationTarget + " on "+ methodDescription);
+    return Illegal.INSTANCE;
   }
   return SPECIAL.new Invocation(methodDescription,invocationTarget);
 }

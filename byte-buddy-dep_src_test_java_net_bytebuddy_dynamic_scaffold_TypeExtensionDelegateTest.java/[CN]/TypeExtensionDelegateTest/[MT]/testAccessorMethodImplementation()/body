@@ -1,0 +1,19 @@
+{
+  MethodDescription methodDescription=typeExtensionDelegate.registerAccessorFor(specialMethodInvocation);
+  TypeWriter.MethodPool.Entry entry=typeExtensionDelegate.target(methodDescription);
+  assertThat(entry.isDefineMethod(),is(true));
+  MethodVisitor methodVisitor=mock(MethodVisitor.class);
+  entry.getAttributeAppender().apply(methodVisitor,methodDescription);
+  verifyZeroInteractions(methodVisitor);
+  assertThat(entry.getByteCodeAppender().appendsCode(),is(true));
+  Instrumentation.Context instrumentationContext=mock(Instrumentation.Context.class);
+  ByteCodeAppender.Size size=entry.getByteCodeAppender().apply(methodVisitor,instrumentationContext,this.methodDescription);
+  assertThat(size.getLocalVariableSize(),is(0));
+  assertThat(size.getOperandStackSize(),is(2));
+  verify(specialMethodInvocation).apply(methodVisitor,instrumentationContext);
+  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_0);
+  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_1);
+  verify(methodVisitor).visitInsn(Opcodes.ARETURN);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(instrumentationContext);
+}

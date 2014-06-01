@@ -13,5 +13,6 @@
   result=31 * result + methodLookupEngineFactory.hashCode();
   result=31 * result + defaultFieldAttributeAppenderFactory.hashCode();
   result=31 * result + defaultMethodAttributeAppenderFactory.hashCode();
+  result=31 * result + constructorStrategy.hashCode();
   return result;
 }

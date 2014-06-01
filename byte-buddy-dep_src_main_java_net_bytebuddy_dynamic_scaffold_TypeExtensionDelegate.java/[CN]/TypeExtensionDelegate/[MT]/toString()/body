@@ -1,0 +1,3 @@
+{
+  return "TypeExtensionDelegate{" + "instrumentedType=" + instrumentedType + ", classFileVersion="+ classFileVersion+ ", accessorMethodSuffix='"+ accessorMethodSuffix+ '\''+ ", auxiliaryTypeNamingStrategy="+ auxiliaryTypeNamingStrategy+ ", registeredAccessorMethods="+ registeredAccessorMethods+ ", orderedAccessorMethods="+ orderedAccessorMethods+ ", accessorMethodEntries="+ accessorMethodEntries+ ", auxiliaryTypes="+ auxiliaryTypes+ ", random="+ random+ '}';
+}

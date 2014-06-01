@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && findLoadedClassMethod.equals(((Resolved)other).findLoadedClassMethod) && loadByteArrayMethod.equals(((Resolved)other).loadByteArrayMethod);
-}

@@ -1,4 +1,0 @@
-{
-  typeAttributeAppender.apply(classVisitor,typeDescription);
-  return this;
-}

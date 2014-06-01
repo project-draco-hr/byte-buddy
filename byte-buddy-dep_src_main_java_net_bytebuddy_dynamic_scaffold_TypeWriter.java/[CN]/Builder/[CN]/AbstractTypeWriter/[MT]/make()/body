@@ -1,4 +1,0 @@
-{
-  classVisitor.visitEnd();
-  return new DynamicType.Default.Unloaded<S>(typeDescription,classWriter.toByteArray(),typeInitializer,instrumentationContext.getRegisteredAuxiliaryTypes());
-}

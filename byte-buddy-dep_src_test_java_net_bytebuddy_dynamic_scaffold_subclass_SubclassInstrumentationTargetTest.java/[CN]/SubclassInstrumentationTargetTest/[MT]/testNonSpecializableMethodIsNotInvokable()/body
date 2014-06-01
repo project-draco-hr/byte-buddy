@@ -1,0 +1,3 @@
+{
+  assertThat(instrumentationTarget.invokeSuper(methodDescription,methodLookup).isValid(),is(false));
+}

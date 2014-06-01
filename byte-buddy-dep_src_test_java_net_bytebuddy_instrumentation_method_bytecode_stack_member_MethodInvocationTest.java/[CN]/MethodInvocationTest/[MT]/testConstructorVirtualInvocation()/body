@@ -1,4 +1,4 @@
 {
   when(methodDescription.isConstructor()).thenReturn(true);
-  MethodInvocation.invoke(methodDescription).virtual(otherType);
+  assertThat(MethodInvocation.invoke(methodDescription).virtual(otherType).isValid(),is(false));
 }

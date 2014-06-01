@@ -3,7 +3,7 @@
   if (defaultMethods != null) {
     MethodDescription defaultMethod=defaultMethods.get(uniqueMethodSignature);
     if (defaultMethod != null) {
-      return new Instrumentation.SpecialMethodInvocation.Legal(defaultMethod,targetType);
+      return SpecialMethodInvocation.Simple.of(defaultMethod,targetType);
     }
   }
   return Instrumentation.SpecialMethodInvocation.Illegal.INSTANCE;

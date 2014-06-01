@@ -1,0 +1,3 @@
+{
+  assertThat(specialMethodInvocation.isValid(),is(true));
+}

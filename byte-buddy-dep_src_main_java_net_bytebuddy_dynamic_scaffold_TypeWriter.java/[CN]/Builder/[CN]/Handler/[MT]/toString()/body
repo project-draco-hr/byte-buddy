@@ -1,0 +1,3 @@
+{
+  return "TypeWriter.Builder.Handler{" + "builder=" + Builder.this + ", classWriter="+ classWriter+ ", classVisitor="+ classVisitor+ '}';
+}

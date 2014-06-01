@@ -1,4 +1,4 @@
-TypeDescription typeDescription
+TypeDescription instrumentedType
 TypeInitializer typeInitializer
 Instrumentation.Context.ExtractableView instrumentationContext
 ClassFileVersion classFileVersion

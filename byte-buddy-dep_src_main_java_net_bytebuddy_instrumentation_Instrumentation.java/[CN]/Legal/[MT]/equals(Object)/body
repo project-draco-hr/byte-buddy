@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  SpecialMethodInvocation specialMethodInvocation=(SpecialMethodInvocation)other;
-  return typeDescription.equals(specialMethodInvocation.getTypeDescription()) && methodDescription.getInternalName().equals(specialMethodInvocation.getMethodDescription().getInternalName()) && methodDescription.getParameterTypes().equals(specialMethodInvocation.getMethodDescription().getParameterTypes())&& methodDescription.getReturnType().equals(specialMethodInvocation.getMethodDescription().getReturnType());
-}

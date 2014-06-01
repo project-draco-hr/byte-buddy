@@ -1,0 +1,3 @@
+{
+  return "TypeExtensionDelegate.SameThreadCoModifiableIterable{elements=" + elements + '}';
+}

@@ -1,6 +1,6 @@
 {
   if (methodDescription.isPrivate() || methodDescription.isConstructor() || methodDescription.isStatic()) {
-    throw new IllegalStateException("Cannot invoke " + methodDescription + " virtually");
+    return Illegal.INSTANCE;
   }
   if (invocationTarget.isInterface()) {
     return INTERFACE.new Invocation(methodDescription,invocationTarget);
