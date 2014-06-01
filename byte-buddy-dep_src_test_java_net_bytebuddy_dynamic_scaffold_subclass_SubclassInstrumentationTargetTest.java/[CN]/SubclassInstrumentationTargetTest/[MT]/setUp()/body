@@ -1,20 +1,18 @@
 {
-  when(finding.getTypeDescription()).thenReturn(instrumentedType);
   when(instrumentedType.getSupertype()).thenReturn(superType);
-  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Arrays.asList(superMethodDescription)));
-  when(finding.getInvokableMethods()).thenReturn(new MethodList.Explicit(Arrays.asList(methodDescription)));
-  when(bridgeMethodResolverFactory.make(any(MethodList.class))).thenReturn(bridgeMethodResolver);
-  when(methodLookup.resolve(any(MethodDescription.class),any(Map.class),eq(bridgeMethodResolver))).then(new Answer<MethodDescription>(){
-    @Override public MethodDescription answer(    InvocationOnMock invocation) throws Throwable {
-      return (MethodDescription)invocation.getArguments()[0];
-    }
-  }
-);
-  when(methodDescription.getDeclaringType()).thenReturn(methodType);
-  when(methodDescription.getReturnType()).thenReturn(returnType);
-  when(returnType.getStackSize()).thenReturn(StackSize.ZERO);
-  when(methodDescription.getInternalName()).thenReturn(FOO);
+  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Arrays.asList(superMethodConstructor)));
   when(superType.getInternalName()).thenReturn(BAR);
-  when(methodDescription.getDescriptor()).thenReturn(QUX);
-  instrumentationTarget=new SubclassInstrumentationTarget(finding,bridgeMethodResolverFactory);
+  when(superMethod.getDeclaringType()).thenReturn(superType);
+  when(superType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(superMethod.getReturnType()).thenReturn(returnType);
+  when(superMethod.getInternalName()).thenReturn(BAZ);
+  when(superMethod.getDescriptor()).thenReturn(FOOBAR);
+  when(superMethod.getParameterTypes()).thenReturn(parameterTypes);
+  when(superMethodConstructor.isConstructor()).thenReturn(true);
+  when(superMethodConstructor.getParameterTypes()).thenReturn(parameterTypes);
+  when(superMethodConstructor.getReturnType()).thenReturn(returnType);
+  when(superMethodConstructor.isSpecializableFor(superType)).thenReturn(true);
+  when(superMethodConstructor.getInternalName()).thenReturn(QUXBAZ);
+  when(superMethodConstructor.getDescriptor()).thenReturn(BAZBAR);
+  super.setUp();
 }

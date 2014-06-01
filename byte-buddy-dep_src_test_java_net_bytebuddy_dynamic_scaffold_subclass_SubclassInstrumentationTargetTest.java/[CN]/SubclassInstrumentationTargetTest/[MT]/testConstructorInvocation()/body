@@ -1,13 +1,13 @@
 {
-  when(superMethod.isSpecializableFor(superType)).thenReturn(true);
+  when(superMethod.isConstructor()).thenReturn(true);
   Instrumentation.SpecialMethodInvocation specialMethodInvocation=instrumentationTarget.invokeSuper(superMethod,methodLookup);
   assertThat(specialMethodInvocation.isValid(),is(true));
-  assertThat(specialMethodInvocation.getMethodDescription(),is(superMethod));
+  assertThat(specialMethodInvocation.getMethodDescription(),is(superMethodConstructor));
   assertThat(specialMethodInvocation.getTypeDescription(),is(superType));
   MethodVisitor methodVisitor=mock(MethodVisitor.class);
   Instrumentation.Context instrumentationContext=mock(Instrumentation.Context.class);
   StackManipulation.Size size=specialMethodInvocation.apply(methodVisitor,instrumentationContext);
-  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,BAR,BAZ,FOOBAR,false);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,BAR,QUXBAZ,BAZBAR,false);
   verifyNoMoreInteractions(methodVisitor);
   verifyZeroInteractions(instrumentationContext);
   assertThat(size.getSizeImpact(),is(0));

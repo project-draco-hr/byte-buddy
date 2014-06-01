@@ -1,0 +1,14 @@
+{
+  Instrumentation.SpecialMethodInvocation specialMethodInvocation=instrumentationTarget.invokeDefault(defaultType,FOOQUX);
+  assertThat(specialMethodInvocation.isValid(),is(true));
+  assertThat(specialMethodInvocation.getMethodDescription(),is(defaultMethod));
+  assertThat(specialMethodInvocation.getTypeDescription(),is(defaultType));
+  MethodVisitor methodVisitor=mock(MethodVisitor.class);
+  Instrumentation.Context instrumentationContext=mock(Instrumentation.Context.class);
+  StackManipulation.Size size=specialMethodInvocation.apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,BAZBAR,QUXBAZ,FOOBAZ,true);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(instrumentationContext);
+}

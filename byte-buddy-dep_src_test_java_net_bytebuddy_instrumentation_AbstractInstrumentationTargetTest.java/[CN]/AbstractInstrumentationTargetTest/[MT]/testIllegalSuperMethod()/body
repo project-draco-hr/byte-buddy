@@ -1,0 +1,7 @@
+{
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  when(methodDescription.getReturnType()).thenReturn(returnType);
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
+  assertThat(instrumentationTarget.invokeSuper(methodDescription,methodLookup).isValid(),is(false));
+}

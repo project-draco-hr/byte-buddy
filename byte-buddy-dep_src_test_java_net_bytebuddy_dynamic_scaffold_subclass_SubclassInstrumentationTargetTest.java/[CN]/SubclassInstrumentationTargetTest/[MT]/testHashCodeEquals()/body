@@ -1,6 +1,6 @@
 {
-  assertThat(instrumentationTarget.hashCode(),is(instrumentationTarget.hashCode()));
-  assertThat(instrumentationTarget,is(instrumentationTarget));
+  assertThat(instrumentationTarget.hashCode(),is(new SubclassInstrumentationTarget(finding,bridgeMethodResolverFactory).hashCode()));
+  assertThat(instrumentationTarget,is((Instrumentation.Target)new SubclassInstrumentationTarget(finding,bridgeMethodResolverFactory)));
   BridgeMethodResolver.Factory factory=mock(BridgeMethodResolver.Factory.class);
   when(factory.make(any(MethodList.class))).thenReturn(mock(BridgeMethodResolver.class));
   Instrumentation.Target other=new SubclassInstrumentationTarget(finding,factory);
