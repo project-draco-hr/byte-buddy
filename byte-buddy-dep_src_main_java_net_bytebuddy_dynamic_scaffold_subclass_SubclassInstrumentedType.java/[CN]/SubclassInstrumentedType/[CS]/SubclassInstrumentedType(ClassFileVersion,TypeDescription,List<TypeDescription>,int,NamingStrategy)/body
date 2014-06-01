@@ -3,5 +3,5 @@
   this.superClass=superClass;
   this.interfaces=interfaces;
   this.modifiers=modifiers;
-  this.name=isValidTypeName(namingStrategy.getName(this));
+  this.name=isValidTypeName(namingStrategy.name(this));
 }

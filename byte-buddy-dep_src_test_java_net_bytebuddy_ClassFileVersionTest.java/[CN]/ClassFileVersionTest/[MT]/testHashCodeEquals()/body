@@ -1,0 +1,6 @@
+{
+  assertThat(ClassFileVersion.JAVA_V1.hashCode(),is(new ClassFileVersion(Opcodes.V1_1).hashCode()));
+  assertThat(ClassFileVersion.JAVA_V1,is(new ClassFileVersion(Opcodes.V1_1)));
+  assertThat(ClassFileVersion.JAVA_V1.hashCode(),not(is(new ClassFileVersion(Opcodes.V1_2).hashCode())));
+  assertThat(ClassFileVersion.JAVA_V1,not(is(new ClassFileVersion(Opcodes.V1_2))));
+}

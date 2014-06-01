@@ -1,0 +1,4 @@
+{
+  when(modifierContributorForType.getMask()).thenReturn(MASK);
+  when(typeDescription.isInterface()).thenReturn(true);
+}

@@ -1,0 +1,21 @@
+{
+  assertThat(byteBuddy.getTypeAttributeAppender().isDefined(),is(true));
+  assertThat(byteBuddy.getTypeAttributeAppender().resolve(mock(TypeAttributeAppender.class)),is(typeAttributeAppender));
+  assertThat(byteBuddy.getClassFileVersion(),is(classFileVersion));
+  assertThat(byteBuddy.getDefaultFieldAttributeAppenderFactory(),is(fieldAttributeAppenderFactory));
+  assertThat(byteBuddy.getDefaultMethodAttributeAppenderFactory(),is(methodAttributeAppenderFactory));
+  assertThat(byteBuddy.getIgnoredMethods(),is(methodMatcher));
+  assertThat(byteBuddy.getBridgeMethodResolverFactory(),is(bridgeMethodResolverFactory));
+  assertThat(byteBuddy.getInterfaceTypes().size(),is(1));
+  assertThat(byteBuddy.getInterfaceTypes(),hasItem(typeDescription));
+  assertThat(byteBuddy.getMethodLookupEngineFactory(),is(methodLookupEngineFactory));
+  assertThat(byteBuddy.getModifiers().isDefined(),is(true));
+  assertThat(byteBuddy.getModifiers().resolve(0),is(MASK));
+  assertThat(byteBuddy.getNamingStrategy(),is(namingStrategy));
+  assertThat(byteBuddy.getClassVisitorWrapperChain(),instanceOf(ClassVisitorWrapper.Chain.class));
+  ClassVisitor classVisitor=mock(ClassVisitor.class);
+  byteBuddy.getClassVisitorWrapperChain().wrap(classVisitor);
+  verify(classVisitorWrapper).wrap(classVisitor);
+  verifyNoMoreInteractions(classVisitorWrapper);
+  assertThat(byteBuddy.getMethodRegistry(),is(new MethodRegistry.Default().append(new MethodRegistry.LatentMethodMatcher.Simple(isMethod().and(methodMatcher)),instrumentation,MethodAttributeAppender.NoOp.INSTANCE)));
+}

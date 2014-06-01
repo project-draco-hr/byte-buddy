@@ -1,3 +1,3 @@
 {
-  return Arrays.asList(new Object[][]{{SuperFlag.UNDEFINED,0},{SuperFlag.DEFINED,Opcodes.ACC_SUPER}});
+  return Arrays.asList(new Object[][]{{SuperFlag.UNDEFINED,0},{SuperFlag.is(false),0},{SuperFlag.DEFINED,Opcodes.ACC_SUPER},{SuperFlag.is(true),Opcodes.ACC_SUPER}});
 }
