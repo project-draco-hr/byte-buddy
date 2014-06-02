@@ -1,2 +1,2 @@
-String left
-String right
+String comparisonTarget
+String comparisonSource

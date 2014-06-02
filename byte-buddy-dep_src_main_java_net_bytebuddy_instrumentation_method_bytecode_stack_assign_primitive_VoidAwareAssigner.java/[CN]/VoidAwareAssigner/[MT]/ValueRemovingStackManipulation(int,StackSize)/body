@@ -1,0 +1,4 @@
+{
+  this.removalOpcode=removalOpcode;
+  this.sizeChange=sizeChange.toDecreasingSize();
+}

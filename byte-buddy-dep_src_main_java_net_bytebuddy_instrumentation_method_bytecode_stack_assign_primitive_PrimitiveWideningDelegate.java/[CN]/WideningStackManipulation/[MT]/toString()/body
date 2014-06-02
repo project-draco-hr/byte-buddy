@@ -1,0 +1,3 @@
+{
+  return "PrimitiveWideningDelegate.WideningStackManipulation{" + "conversionOpcode=" + conversionOpcode + ", size="+ size+ '}';
+}

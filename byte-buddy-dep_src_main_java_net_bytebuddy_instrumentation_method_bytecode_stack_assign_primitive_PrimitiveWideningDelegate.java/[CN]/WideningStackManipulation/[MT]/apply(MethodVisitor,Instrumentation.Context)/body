@@ -1,4 +1,4 @@
 {
-  methodVisitor.visitInsn(conversionInstruction);
+  methodVisitor.visitInsn(conversionOpcode);
   return size;
 }

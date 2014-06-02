@@ -1,4 +1,0 @@
-{
-  this.removalOpCode=removalOpCode;
-  this.sizeChange=sizeChange;
-}

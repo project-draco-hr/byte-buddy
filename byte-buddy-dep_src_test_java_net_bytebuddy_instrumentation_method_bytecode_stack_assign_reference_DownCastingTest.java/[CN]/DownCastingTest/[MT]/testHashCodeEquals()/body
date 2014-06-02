@@ -1,0 +1,11 @@
+{
+  when(typeDescription.getInternalName()).thenReturn(FOO);
+  TypeDescription otherEqual=mock(TypeDescription.class);
+  when(otherEqual.getInternalName()).thenReturn(FOO);
+  assertThat(new DownCasting(typeDescription).hashCode(),is(new DownCasting(otherEqual).hashCode()));
+  assertThat(new DownCasting(typeDescription),is(new DownCasting(otherEqual)));
+  TypeDescription otherNonEqual=mock(TypeDescription.class);
+  when(otherNonEqual.getInternalName()).thenReturn(BAR);
+  assertThat(new DownCasting(typeDescription).hashCode(),not(is(new DownCasting(otherNonEqual).hashCode())));
+  assertThat(new DownCasting(typeDescription),not(is(new DownCasting(otherNonEqual))));
+}

@@ -1,2 +1,2 @@
-int conversionInstruction
+int conversionOpcode
 Size size

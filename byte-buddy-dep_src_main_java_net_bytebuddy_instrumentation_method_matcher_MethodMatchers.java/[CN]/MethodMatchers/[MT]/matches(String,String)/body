@@ -1,23 +1,23 @@
 {
 switch (this) {
 case EQUALS_FULLY:
-    return right.equals(left);
+    return comparisonSource.equals(comparisonTarget);
 case EQUALS_FULLY_IGNORE_CASE:
-  return right.equalsIgnoreCase(left);
+  return comparisonSource.equalsIgnoreCase(comparisonTarget);
 case STARTS_WITH:
-return right.startsWith(left);
+return comparisonSource.startsWith(comparisonTarget);
 case STARTS_WITH_IGNORE_CASE:
-return right.toLowerCase().startsWith(left.toLowerCase());
+return comparisonSource.toLowerCase().startsWith(comparisonTarget.toLowerCase());
 case ENDS_WITH:
-return right.endsWith(left);
+return comparisonSource.endsWith(comparisonTarget);
 case ENDS_WITH_IGNORE_CASE:
-return right.toLowerCase().endsWith(left.toLowerCase());
+return comparisonSource.toLowerCase().endsWith(comparisonTarget.toLowerCase());
 case CONTAINS:
-return right.contains(left);
+return comparisonSource.contains(comparisonTarget);
 case CONTAINS_IGNORE_CASE:
-return right.toLowerCase().contains(left.toLowerCase());
+return comparisonSource.toLowerCase().contains(comparisonTarget.toLowerCase());
 case MATCHES:
-return right.matches(left);
+return comparisonSource.matches(comparisonTarget);
 default :
 throw new AssertionError("Unknown match mode: " + this);
 }

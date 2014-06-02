@@ -1,3 +1,6 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && methodDescription.equals(((Invocation)other).methodDescription) && MethodInvocation.this.equals(((Invocation)other).getImplicitInvocationType())&& typeDescription.equals(((Invocation)other).typeDescription);
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Invocation that=(Invocation)other;
+  return MethodInvocation.this.equals(((Invocation)other).getImplicitInvocationType()) && methodDescription.getInternalName().equals(that.methodDescription.getInternalName()) && methodDescription.getReturnType().equals(((Invocation)other).methodDescription.getReturnType())&& methodDescription.getParameterTypes().equals(((Invocation)other).methodDescription.getParameterTypes())&& typeDescription.equals(that.typeDescription);
 }

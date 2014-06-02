@@ -1,3 +1,8 @@
 {
-  return 31 * (31 * MethodInvocation.this.hashCode() + typeDescription.hashCode()) + methodDescription.hashCode();
+  int result=typeDescription.hashCode();
+  result=31 * result + MethodInvocation.this.hashCode();
+  result=31 * result + methodDescription.getInternalName().hashCode();
+  result=31 * result + methodDescription.getParameterTypes().hashCode();
+  result=31 * result + methodDescription.getReturnType().hashCode();
+  return result;
 }
