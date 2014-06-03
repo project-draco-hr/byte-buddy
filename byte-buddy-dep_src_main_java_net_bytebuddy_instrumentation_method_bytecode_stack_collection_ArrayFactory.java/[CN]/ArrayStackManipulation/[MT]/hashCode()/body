@@ -1,0 +1,3 @@
+{
+  return stackManipulations.hashCode();
+}

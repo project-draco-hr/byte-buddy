@@ -1,0 +1,9 @@
+{
+  MethodDelegationBinder.Processor processor=new MethodDelegationBinder.Processor(methodDelegationBinder,ambiguityResolver);
+  MethodDelegationBinder.Processor equal=new MethodDelegationBinder.Processor(methodDelegationBinder,ambiguityResolver);
+  assertThat(processor.hashCode(),is(equal.hashCode()));
+  assertThat(processor,is(equal));
+  MethodDelegationBinder.Processor unequal=new MethodDelegationBinder.Processor(methodDelegationBinder,mock(MethodDelegationBinder.AmbiguityResolver.class));
+  assertThat(processor.hashCode(),not(is(unequal.hashCode())));
+  assertThat(processor,not(is(unequal)));
+}

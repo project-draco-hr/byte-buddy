@@ -1,0 +1,3 @@
+{
+  super(DefaultCall.class);
+}

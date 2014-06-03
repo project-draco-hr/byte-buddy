@@ -1,0 +1,6 @@
+{
+  assertThat(MethodMatchers.isDeclaredBySuperTypeOf(Object.class).hashCode(),is(MethodMatchers.isDeclaredBySuperTypeOf(Object.class).hashCode()));
+  assertThat(MethodMatchers.isDeclaredBySuperTypeOf(Object.class),is(MethodMatchers.isDeclaredBySuperTypeOf(Object.class)));
+  assertThat(MethodMatchers.isDeclaredBySuperTypeOf(Object.class).hashCode(),not(is(MethodMatchers.isDeclaredBySuperTypeOf(String.class).hashCode())));
+  assertThat(MethodMatchers.isDeclaredBySuperTypeOf(Object.class),not(is(MethodMatchers.isDeclaredBySuperTypeOf(String.class))));
+}

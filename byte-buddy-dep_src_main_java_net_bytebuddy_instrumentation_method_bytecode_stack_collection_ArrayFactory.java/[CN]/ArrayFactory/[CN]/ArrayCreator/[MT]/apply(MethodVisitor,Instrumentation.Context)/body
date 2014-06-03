@@ -1,4 +1,4 @@
 {
   methodVisitor.visitIntInsn(Opcodes.NEWARRAY,creationOpcode);
-  return SIZE;
+  return ARRAY_CREATION_SIZE_CHANGE;
 }

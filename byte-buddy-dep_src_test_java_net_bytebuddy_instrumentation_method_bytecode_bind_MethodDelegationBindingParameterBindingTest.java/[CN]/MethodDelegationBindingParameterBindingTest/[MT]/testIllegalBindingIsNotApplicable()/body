@@ -1,0 +1,3 @@
+{
+  MethodDelegationBinder.ParameterBinding.Illegal.INSTANCE.apply(methodVisitor,instrumentationContext);
+}

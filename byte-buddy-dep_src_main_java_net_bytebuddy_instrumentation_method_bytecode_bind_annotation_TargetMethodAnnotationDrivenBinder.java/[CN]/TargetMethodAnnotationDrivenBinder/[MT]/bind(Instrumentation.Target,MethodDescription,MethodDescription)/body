@@ -9,7 +9,7 @@
   MethodBinding.Builder methodDelegationBindingBuilder=new MethodBinding.Builder(methodInvoker,target);
   Iterator<? extends Annotation> defaults=defaultsProvider.makeIterator(instrumentationTarget,source,target);
   for (int targetParameterIndex=0; targetParameterIndex < target.getParameterTypes().size(); targetParameterIndex++) {
-    ParameterBinding<?> parameterBinding=delegationProcessor.handler(target.getParameterAnnotations()[targetParameterIndex],defaults).handle(targetParameterIndex,source,target,instrumentationTarget,assigner);
+    ParameterBinding<?> parameterBinding=delegationProcessor.handler(target.getParameterAnnotations()[targetParameterIndex],defaults).bind(targetParameterIndex,source,target,instrumentationTarget,assigner);
     if (!parameterBinding.isValid() || !methodDelegationBindingBuilder.append(parameterBinding)) {
       return MethodBinding.Illegal.INSTANCE;
     }

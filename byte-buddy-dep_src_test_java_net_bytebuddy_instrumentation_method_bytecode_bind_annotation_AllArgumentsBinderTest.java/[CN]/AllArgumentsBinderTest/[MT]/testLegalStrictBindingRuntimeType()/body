@@ -1,0 +1,3 @@
+{
+  testLegalStrictBinding(new Annotation[2][0],false);
+}

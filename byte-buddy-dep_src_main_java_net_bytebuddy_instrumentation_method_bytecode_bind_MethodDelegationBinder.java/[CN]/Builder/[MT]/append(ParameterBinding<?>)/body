@@ -1,4 +1,4 @@
 {
   parameterStackManipulations.add(parameterBinding);
-  return registeredTargetIndices.put(parameterBinding.getIdentificationToken(),currentParameterIndex++) == null;
+  return registeredTargetIndices.put(parameterBinding.getIdentificationToken(),nextParameterIndex++) == null;
 }

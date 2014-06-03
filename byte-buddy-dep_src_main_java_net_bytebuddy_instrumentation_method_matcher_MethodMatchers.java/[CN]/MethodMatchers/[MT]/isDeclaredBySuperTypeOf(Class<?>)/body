@@ -1,0 +1,3 @@
+{
+  return isDeclaredBySuperTypeOf(new TypeDescription.ForLoadedType(type));
+}

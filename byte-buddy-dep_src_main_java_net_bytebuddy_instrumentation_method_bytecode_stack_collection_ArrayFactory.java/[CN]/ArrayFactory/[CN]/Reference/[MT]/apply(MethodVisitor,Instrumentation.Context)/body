@@ -1,4 +1,4 @@
 {
   methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,internalTypeName);
-  return SIZE;
+  return ARRAY_CREATION_SIZE_CHANGE;
 }

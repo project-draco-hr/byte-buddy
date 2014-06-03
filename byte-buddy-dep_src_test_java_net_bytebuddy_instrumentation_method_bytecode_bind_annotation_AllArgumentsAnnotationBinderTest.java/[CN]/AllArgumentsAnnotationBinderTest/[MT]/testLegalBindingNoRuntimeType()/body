@@ -1,6 +1,0 @@
-{
-  RuntimeType runtimeType=mock(RuntimeType.class);
-  doReturn(RuntimeType.class).when(runtimeType).annotationType();
-  when(target.getParameterAnnotations()).thenReturn(new Annotation[][]{{},{runtimeType}});
-  testLegalBinding(new Annotation[][]{{},{runtimeType}},true);
-}
