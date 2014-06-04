@@ -1,0 +1,6 @@
+{
+  assertThat(new StackManipulation.Compound(first).hashCode(),is(new StackManipulation.Compound(first).hashCode()));
+  assertThat(new StackManipulation.Compound(first),is(new StackManipulation.Compound(first)));
+  assertThat(new StackManipulation.Compound(first).hashCode(),not(is(new StackManipulation.Compound(second).hashCode())));
+  assertThat(new StackManipulation.Compound(first),not(is(new StackManipulation.Compound(second))));
+}

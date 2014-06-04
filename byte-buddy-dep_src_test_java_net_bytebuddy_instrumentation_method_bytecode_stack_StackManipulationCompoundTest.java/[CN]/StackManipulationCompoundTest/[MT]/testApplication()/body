@@ -1,0 +1,15 @@
+{
+  MethodVisitor methodVisitor=mock(MethodVisitor.class);
+  Instrumentation.Context instrumentationContext=mock(Instrumentation.Context.class);
+  when(first.apply(methodVisitor,instrumentationContext)).thenReturn(new StackManipulation.Size(2,3));
+  when(second.apply(methodVisitor,instrumentationContext)).thenReturn(new StackManipulation.Size(2,3));
+  StackManipulation.Size size=new StackManipulation.Compound(first,second).apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(4));
+  assertThat(size.getMaximalSize(),is(5));
+  verify(first).apply(methodVisitor,instrumentationContext);
+  verifyNoMoreInteractions(first);
+  verify(second).apply(methodVisitor,instrumentationContext);
+  verifyNoMoreInteractions(second);
+  verifyZeroInteractions(methodVisitor);
+  verifyZeroInteractions(instrumentationContext);
+}

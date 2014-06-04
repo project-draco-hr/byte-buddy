@@ -1,0 +1,6 @@
+{
+  assertThat(new StackManipulation.Size(0,0).hashCode(),is(new StackManipulation.Size(0,0).hashCode()));
+  assertThat(new StackManipulation.Size(0,0),is(new StackManipulation.Size(0,0)));
+  assertThat(new StackManipulation.Size(0,0).hashCode(),not(is(new StackManipulation.Size(0,1).hashCode())));
+  assertThat(new StackManipulation.Size(0,0),not(is(new StackManipulation.Size(0,1))));
+}

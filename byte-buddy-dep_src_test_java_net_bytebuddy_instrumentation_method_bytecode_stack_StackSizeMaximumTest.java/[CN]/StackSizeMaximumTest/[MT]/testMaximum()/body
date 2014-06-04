@@ -1,0 +1,3 @@
+{
+  assertThat(first.maximum(second),is(expected));
+}

@@ -1,0 +1,5 @@
+{
+class Foo {
+  }
+  assertThat(new TypeDescription.ForLoadedType(Foo.class).getEnclosingMethod(),is((MethodDescription)new MethodDescription.ForLoadedMethod(TypeDescriptionForLoadedTypeTest.class.getDeclaredMethod("testEnclosingMethod"))));
+}

@@ -1,0 +1,10 @@
+{
+  assertThat(MethodInvocation.invoke(instanceMethod).hashCode(),is(MethodInvocation.invoke(instanceMethod).hashCode()));
+  assertThat(MethodInvocation.invoke(instanceMethod),is(MethodInvocation.invoke(instanceMethod)));
+  assertThat(MethodInvocation.invoke(instanceMethod).hashCode(),not(is(MethodInvocation.invoke(otherInstanceMethod).hashCode())));
+  assertThat(MethodInvocation.invoke(instanceMethod),not(is(MethodInvocation.invoke(otherInstanceMethod))));
+  assertThat(MethodInvocation.invoke(staticMethod).hashCode(),not(is(MethodInvocation.invoke(otherInstanceMethod).hashCode())));
+  assertThat(MethodInvocation.invoke(staticMethod),not(is(MethodInvocation.invoke(otherInstanceMethod))));
+  assertThat(MethodInvocation.invoke(interfaceMethod).hashCode(),not(is(MethodInvocation.invoke(otherInstanceMethod).hashCode())));
+  assertThat(MethodInvocation.invoke(interfaceMethod),not(is(MethodInvocation.invoke(otherInstanceMethod))));
+}

@@ -1,0 +1,9 @@
+{
+  when(first.isValid()).thenReturn(true);
+  when(second.isValid()).thenReturn(true);
+  assertThat(new StackManipulation.Compound(first,second).isValid(),is(true));
+  verify(first).isValid();
+  verifyNoMoreInteractions(first);
+  verify(second).isValid();
+  verifyNoMoreInteractions(second);
+}

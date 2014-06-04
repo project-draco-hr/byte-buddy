@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{StackSize.DOUBLE,StackSize.ZERO,StackSize.DOUBLE},{StackSize.DOUBLE,StackSize.SINGLE,StackSize.DOUBLE},{StackSize.DOUBLE,StackSize.DOUBLE,StackSize.DOUBLE},{StackSize.SINGLE,StackSize.DOUBLE,StackSize.DOUBLE},{StackSize.SINGLE,StackSize.SINGLE,StackSize.SINGLE},{StackSize.SINGLE,StackSize.ZERO,StackSize.SINGLE},{StackSize.ZERO,StackSize.DOUBLE,StackSize.DOUBLE},{StackSize.ZERO,StackSize.SINGLE,StackSize.SINGLE},{StackSize.ZERO,StackSize.ZERO,StackSize.ZERO}});
+}
