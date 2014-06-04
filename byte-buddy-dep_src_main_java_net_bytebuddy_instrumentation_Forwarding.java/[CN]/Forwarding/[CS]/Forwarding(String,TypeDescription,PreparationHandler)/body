@@ -1,0 +1,5 @@
+{
+  this.fieldName=fieldName;
+  this.fieldType=fieldType;
+  this.preparationHandler=preparationHandler;
+}

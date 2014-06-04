@@ -1,0 +1,3 @@
+{
+  return instrumentedType.withField(fieldName,fieldType,Opcodes.ACC_PRIVATE | Opcodes.ACC_STATIC);
+}

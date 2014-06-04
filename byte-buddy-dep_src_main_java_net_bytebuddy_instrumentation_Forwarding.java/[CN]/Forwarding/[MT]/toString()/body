@@ -1,0 +1,3 @@
+{
+  return "Forwarding{" + "fieldName='" + fieldName + '\''+ ", fieldType="+ fieldType+ ", preparationHandler="+ preparationHandler+ '}';
+}

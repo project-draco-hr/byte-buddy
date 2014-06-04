@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Forwarding that=(Forwarding)other;
+  return fieldName.equals(that.fieldName) && fieldType.equals(that.fieldType) && preparationHandler.equals(that.preparationHandler);
+}

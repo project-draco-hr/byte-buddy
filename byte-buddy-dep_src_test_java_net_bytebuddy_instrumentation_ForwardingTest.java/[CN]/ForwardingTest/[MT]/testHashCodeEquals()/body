@@ -1,0 +1,7 @@
+{
+  Foo foo=new Foo();
+  assertThat(Forwarding.to(foo).hashCode(),is(Forwarding.to(foo).hashCode()));
+  assertThat(Forwarding.to(foo),is(Forwarding.to(foo)));
+  assertThat(Forwarding.to(foo).hashCode(),not(is(Forwarding.to(new Foo()).hashCode())));
+  assertThat(Forwarding.to(foo),not(is(Forwarding.to(new Foo()))));
+}

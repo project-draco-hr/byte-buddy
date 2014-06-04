@@ -1,0 +1,3 @@
+{
+  return MethodVariableAccess.REFERENCE.loadFromIndex(0);
+}
