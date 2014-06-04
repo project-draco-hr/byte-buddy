@@ -1,0 +1,3 @@
+{
+  return comparisonSource.toLowerCase().contains(comparisonTarget.toLowerCase());
+}

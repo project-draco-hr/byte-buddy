@@ -1,0 +1,3 @@
+{
+  return comparisonSource.equalsIgnoreCase(comparisonTarget);
+}
