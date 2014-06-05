@@ -1,0 +1,5 @@
+{
+  assertThat(MethodMatchers.isEquals().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("equals",Object.class))),is(true));
+  assertThat(MethodMatchers.isEquals().matches(new MethodDescription.ForLoadedMethod(Integer.class.getDeclaredMethod("equals",Object.class))),is(true));
+  assertThat(MethodMatchers.isEquals().matches(testClassBase$foo),is(false));
+}

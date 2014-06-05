@@ -1,3 +1,0 @@
-{
-  this(specialMethodInvocation,new VoidAwareAssigner(new PrimitiveTypeAwareAssigner(ReferenceTypeAwareAssigner.INSTANCE),true));
-}

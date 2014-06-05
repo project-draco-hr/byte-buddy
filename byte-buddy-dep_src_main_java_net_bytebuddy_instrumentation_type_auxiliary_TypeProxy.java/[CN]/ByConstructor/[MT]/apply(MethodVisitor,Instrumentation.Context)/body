@@ -1,5 +1,5 @@
 {
-  TypeDescription proxyType=instrumentationContext.register(new TypeProxy(proxiedType,instrumentationTarget,ignoreFinalizer));
+  TypeDescription proxyType=instrumentationContext.register(new TypeProxy(proxiedType,instrumentationTarget,ignoreFinalizer,serializableProxy));
   StackManipulation[] constructorValue=new StackManipulation[constructorParameters.size()];
   int index=0;
   for (  TypeDescription parameterType : constructorParameters) {

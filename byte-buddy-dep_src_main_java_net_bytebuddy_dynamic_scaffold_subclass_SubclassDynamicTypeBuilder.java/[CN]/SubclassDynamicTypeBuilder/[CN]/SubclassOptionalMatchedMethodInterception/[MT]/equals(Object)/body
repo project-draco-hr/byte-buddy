@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   SubclassOptionalMatchedMethodInterception<?> that=(SubclassOptionalMatchedMethodInterception<?>)other;
-  return interfaceType.equals(that.interfaceType) && SubclassDynamicTypeBuilder.this.equals(that.getSubclassDynamicTypeBuilder());
+  return Arrays.equals(interfaceType,that.interfaceType) && SubclassDynamicTypeBuilder.this.equals(that.getSubclassDynamicTypeBuilder());
 }

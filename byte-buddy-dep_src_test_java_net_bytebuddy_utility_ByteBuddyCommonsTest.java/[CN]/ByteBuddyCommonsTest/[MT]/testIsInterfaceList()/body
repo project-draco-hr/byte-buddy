@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(Runnable.class);
+  TypeDescription otherTypeDescription=new TypeDescription.ForLoadedType(Serializable.class);
+  assertThat(isInterface(Arrays.asList(typeDescription,otherTypeDescription)),is(Arrays.asList(typeDescription,otherTypeDescription)));
+}

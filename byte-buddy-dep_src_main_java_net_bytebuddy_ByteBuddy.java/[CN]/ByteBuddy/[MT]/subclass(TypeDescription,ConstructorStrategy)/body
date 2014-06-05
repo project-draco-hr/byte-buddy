@@ -1,5 +1,5 @@
 {
-  TypeDescription actualSuperType=isImplementable(superType);
+  TypeDescription actualSuperType=isExtendable(superType);
   List<TypeDescription> interfaceTypes=this.interfaceTypes;
   if (nonNull(superType).isInterface()) {
     actualSuperType=new TypeDescription.ForLoadedType(Object.class);

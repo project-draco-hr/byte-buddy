@@ -1,3 +1,8 @@
 {
-  return withImplementing(new TypeDescription.ForLoadedType(nonNull(type)));
+  TypeDescription[] typeDescription=new TypeDescription[type.length];
+  int index=0;
+  for (  Class<?> aType : type) {
+    typeDescription[index++]=new TypeDescription.ForLoadedType(aType);
+  }
+  return withImplementing(typeDescription);
 }

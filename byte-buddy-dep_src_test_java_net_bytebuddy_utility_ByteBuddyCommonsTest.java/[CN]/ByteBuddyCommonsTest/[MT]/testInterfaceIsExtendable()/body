@@ -1,0 +1,4 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(Runnable.class);
+  assertThat(isExtendable(typeDescription),is(typeDescription));
+}

@@ -1,0 +1,3 @@
+{
+  isExtendable(new TypeDescription.ForLoadedType(int.class));
+}

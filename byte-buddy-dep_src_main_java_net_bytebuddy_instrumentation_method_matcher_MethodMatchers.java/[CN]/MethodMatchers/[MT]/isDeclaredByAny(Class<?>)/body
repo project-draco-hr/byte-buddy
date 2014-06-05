@@ -1,0 +1,8 @@
+{
+  TypeDescription[] typeDescriptions=new TypeDescription[typeDescription.length];
+  int index=0;
+  for (  Class<?> type : typeDescription) {
+    typeDescriptions[index++]=new TypeDescription.ForLoadedType(type);
+  }
+  return isDeclaredByAny(typeDescriptions);
+}

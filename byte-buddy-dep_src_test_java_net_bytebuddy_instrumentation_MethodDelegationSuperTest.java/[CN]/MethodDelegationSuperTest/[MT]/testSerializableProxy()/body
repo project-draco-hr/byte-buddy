@@ -1,0 +1,5 @@
+{
+  DynamicType.Loaded<Foo> loaded=instrument(Foo.class,MethodDelegation.to(SerializationCheck.class));
+  Foo instance=loaded.getLoaded().newInstance();
+  assertThat(instance.qux(),is((Object)(FOO + QUX)));
+}

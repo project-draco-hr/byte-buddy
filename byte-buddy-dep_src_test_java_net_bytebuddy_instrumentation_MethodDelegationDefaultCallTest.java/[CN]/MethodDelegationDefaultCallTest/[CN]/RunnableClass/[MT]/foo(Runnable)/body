@@ -1,4 +1,5 @@
 {
+  assertThat(runnable,CoreMatchers.not(instanceOf(Serializable.class)));
   runnable.run();
   return QUX;
 }

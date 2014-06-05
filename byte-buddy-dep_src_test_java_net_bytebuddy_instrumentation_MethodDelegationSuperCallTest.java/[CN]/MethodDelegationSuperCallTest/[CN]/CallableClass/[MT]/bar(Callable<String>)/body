@@ -1,3 +1,4 @@
 {
+  assertThat(callable,CoreMatchers.not(instanceOf(Serializable.class)));
   return callable.call();
 }

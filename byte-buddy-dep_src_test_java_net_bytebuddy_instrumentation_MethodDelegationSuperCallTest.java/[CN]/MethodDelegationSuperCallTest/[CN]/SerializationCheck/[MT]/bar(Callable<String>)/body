@@ -1,0 +1,4 @@
+{
+  assertThat(callable,instanceOf(Serializable.class));
+  return callable.call();
+}

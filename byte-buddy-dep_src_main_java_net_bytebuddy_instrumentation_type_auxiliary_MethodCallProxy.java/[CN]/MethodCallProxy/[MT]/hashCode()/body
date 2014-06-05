@@ -1,3 +1,6 @@
 {
-  return 31 * specialMethodInvocation.hashCode() + assigner.hashCode();
+  int result=specialMethodInvocation.hashCode();
+  result=31 * result + (serializableProxy ? 1 : 0);
+  result=31 * result + assigner.hashCode();
+  return result;
 }

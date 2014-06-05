@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   ByConstructor that=(ByConstructor)other;
-  return ignoreFinalizer == that.ignoreFinalizer && constructorParameters.equals(that.constructorParameters) && instrumentationTarget.equals(that.instrumentationTarget) && proxiedType.equals(that.proxiedType);
+  return ignoreFinalizer == that.ignoreFinalizer && serializableProxy == that.serializableProxy && constructorParameters.equals(that.constructorParameters) && instrumentationTarget.equals(that.instrumentationTarget) && proxiedType.equals(that.proxiedType);
 }

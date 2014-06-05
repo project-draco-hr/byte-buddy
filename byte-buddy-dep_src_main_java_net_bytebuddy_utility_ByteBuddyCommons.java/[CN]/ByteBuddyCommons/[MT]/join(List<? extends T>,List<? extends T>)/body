@@ -1,0 +1,6 @@
+{
+  List<T> result=new ArrayList<T>(leftList.size() + rightList.size());
+  result.addAll(leftList);
+  result.addAll(rightList);
+  return result;
+}

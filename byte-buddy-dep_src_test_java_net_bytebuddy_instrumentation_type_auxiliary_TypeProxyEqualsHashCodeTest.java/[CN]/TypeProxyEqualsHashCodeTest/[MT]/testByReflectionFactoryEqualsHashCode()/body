@@ -1,10 +1,10 @@
 {
-  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true).hashCode(),is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true).hashCode()));
-  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true),is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true)));
-  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true).hashCode(),not(is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,false).hashCode())));
-  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true),not(is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,false))));
-  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true).hashCode(),not(is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,false).hashCode())));
-  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true),not(is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,false))));
-  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true).hashCode(),not(is(new TypeProxy.ByReflectionFactory(second,instrumentationTarget,true).hashCode())));
-  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true),not(is(new TypeProxy.ByReflectionFactory(second,instrumentationTarget,true))));
+  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true,false).hashCode(),is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true,false).hashCode()));
+  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true,false),is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true,false)));
+  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true,false).hashCode(),not(is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,false,false).hashCode())));
+  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true,false),not(is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,false,false))));
+  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true,false).hashCode(),not(is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,false,false).hashCode())));
+  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true,false),not(is(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,false,false))));
+  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true,false).hashCode(),not(is(new TypeProxy.ByReflectionFactory(second,instrumentationTarget,true,false).hashCode())));
+  assertThat(new TypeProxy.ByReflectionFactory(first,instrumentationTarget,true,false),not(is(new TypeProxy.ByReflectionFactory(second,instrumentationTarget,true,false))));
 }

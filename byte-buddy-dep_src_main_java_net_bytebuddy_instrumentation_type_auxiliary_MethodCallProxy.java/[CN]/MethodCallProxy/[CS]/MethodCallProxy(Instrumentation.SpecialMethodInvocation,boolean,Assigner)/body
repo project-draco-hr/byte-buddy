@@ -1,0 +1,5 @@
+{
+  this.specialMethodInvocation=specialMethodInvocation;
+  this.serializableProxy=serializableProxy;
+  this.assigner=assigner;
+}

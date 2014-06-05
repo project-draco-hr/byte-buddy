@@ -1,3 +1,6 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && assigner.equals(((MethodCallProxy)other).assigner) && specialMethodInvocation.equals(((MethodCallProxy)other).specialMethodInvocation);
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  MethodCallProxy that=(MethodCallProxy)other;
+  return serializableProxy == that.serializableProxy && assigner.equals(that.assigner) && specialMethodInvocation.equals(that.specialMethodInvocation);
 }

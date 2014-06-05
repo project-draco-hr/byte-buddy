@@ -1,0 +1,4 @@
+TypeDescription proxiedType
+Instrumentation.Target instrumentationTarget
+boolean ignoreFinalizer
+boolean serializableProxy

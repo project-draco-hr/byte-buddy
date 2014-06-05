@@ -1,0 +1,4 @@
+{
+  assertThat(foo,instanceOf(Serializable.class));
+  return foo.qux() + QUX;
+}
