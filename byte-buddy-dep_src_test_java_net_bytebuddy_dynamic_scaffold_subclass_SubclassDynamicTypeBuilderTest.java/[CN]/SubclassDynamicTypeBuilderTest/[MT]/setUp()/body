@@ -1,11 +1,11 @@
 {
-  when(instrumentation.prepare(any(InstrumentedType.class))).thenAnswer(new Answer<InstrumentedType>(){
+  when(simpleInstrumentation.prepare(any(InstrumentedType.class))).then(new Answer<InstrumentedType>(){
     @Override public InstrumentedType answer(    InvocationOnMock invocation) throws Throwable {
       return (InstrumentedType)invocation.getArguments()[0];
     }
   }
 );
-  when(instrumentation.appender(any(Instrumentation.Target.class))).thenReturn(byteCodeAppender);
+  when(simpleInstrumentation.appender(any(Instrumentation.Target.class))).thenReturn(byteCodeAppender);
   when(byteCodeAppender.appendsCode()).thenReturn(true);
   when(byteCodeAppender.apply(any(MethodVisitor.class),any(Instrumentation.Context.class),any(MethodDescription.class))).thenAnswer(new Answer<ByteCodeAppender.Size>(){
     @Override public ByteCodeAppender.Size answer(    InvocationOnMock invocation) throws Throwable {
@@ -17,4 +17,11 @@
     }
   }
 );
+  when(preparingInstrumentation.prepare(any(InstrumentedType.class))).then(new Answer<InstrumentedType>(){
+    @Override public InstrumentedType answer(    InvocationOnMock invocation) throws Throwable {
+      return ((InstrumentedType)invocation.getArguments()[0]).withField(BAZ,new TypeDescription.ForLoadedType(Object.class),0).withMethod(QUX,new TypeDescription.ForLoadedType(int.class),Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),0).withInitializer(typeInitializer);
+    }
+  }
+);
+  when(preparingInstrumentation.appender(any(Instrumentation.Target.class))).thenReturn(byteCodeAppender);
 }

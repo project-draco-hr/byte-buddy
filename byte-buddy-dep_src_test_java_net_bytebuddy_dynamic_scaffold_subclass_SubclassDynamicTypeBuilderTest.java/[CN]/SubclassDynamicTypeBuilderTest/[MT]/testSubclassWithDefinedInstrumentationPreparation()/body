@@ -1,0 +1,30 @@
+{
+  Class<?> loaded=new SubclassDynamicTypeBuilder<Object>(ClassFileVersion.forCurrentJavaVersion(),new NamingStrategy.Fixed(FOO),new TypeDescription.ForLoadedType(Object.class),new TypeList.ForLoadedType(Arrays.<Class<?>>asList(Serializable.class)),Opcodes.ACC_PUBLIC,TypeAttributeAppender.NoOp.INSTANCE,none(),BridgeMethodResolver.Simple.Factory.FAIL_FAST,new ClassVisitorWrapper.Chain(),new FieldRegistry.Default(),new MethodRegistry.Default(),MethodLookupEngine.Default.Factory.INSTANCE,FieldAttributeAppender.NoOp.INSTANCE,MethodAttributeAppender.NoOp.INSTANCE,ConstructorStrategy.Default.IMITATE_SUPER_TYPE).defineMethod(BAR,int.class,Arrays.<Class<?>>asList(long.class,Object.class),MemberVisibility.PUBLIC).intercept(preparingInstrumentation).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(loaded.getName(),is(FOO));
+  assertThat(loaded.getModifiers(),is(Opcodes.ACC_PUBLIC));
+  assertEquals(Object.class,loaded.getSuperclass());
+  assertThat(loaded.getInterfaces().length,is(1));
+  assertThat(loaded.getClassLoader().getParent(),is(getClass().getClassLoader()));
+  assertEquals(Serializable.class,loaded.getInterfaces()[0]);
+  assertThat(loaded.getDeclaredAnnotations().length,is(0));
+  assertThat(loaded.getDeclaredFields().length,is(1));
+  Field field=loaded.getDeclaredField(BAZ);
+  assertThat(field.getModifiers(),is(0));
+  assertThat(loaded.getDeclaredMethods().length,is(2));
+  Method method=loaded.getDeclaredMethod(BAR,long.class,Object.class);
+  assertThat(method.getDeclaredAnnotations().length,is(0));
+  assertEquals(int.class,method.getReturnType());
+  assertThat(method.getModifiers(),is(Opcodes.ACC_PUBLIC));
+  Method preparedMethod=loaded.getDeclaredMethod(QUX);
+  assertThat(preparedMethod.getDeclaredAnnotations().length,is(0));
+  assertEquals(int.class,preparedMethod.getReturnType());
+  assertThat(preparedMethod.getModifiers(),is(0));
+  assertThat(loaded.getDeclaredConstructors().length,is(1));
+  assertThat(loaded.getDeclaredConstructor().newInstance(),notNullValue());
+  verify(preparingInstrumentation).prepare(any(InstrumentedType.class));
+  verify(preparingInstrumentation).appender(any(Instrumentation.Target.class));
+  verifyNoMoreInteractions(preparingInstrumentation);
+  verify(byteCodeAppender,times(2)).appendsCode();
+  verify(byteCodeAppender,times(2)).apply(any(MethodVisitor.class),any(Instrumentation.Context.class),any(MethodDescription.class));
+  verifyNoMoreInteractions(byteCodeAppender);
+}

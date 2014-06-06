@@ -1,0 +1,13 @@
+{
+  assertThat(ByteBuddyCommons.class.getDeclaredConstructors().length,is(1));
+  Constructor<?> constructor=ByteBuddyCommons.class.getDeclaredConstructor();
+  assertThat(Modifier.isPrivate(constructor.getModifiers()),is(true));
+  constructor.setAccessible(true);
+  try {
+    constructor.newInstance();
+    fail();
+  }
+ catch (  InvocationTargetException e) {
+    assertEquals(UnsupportedOperationException.class,e.getCause().getClass());
+  }
+}

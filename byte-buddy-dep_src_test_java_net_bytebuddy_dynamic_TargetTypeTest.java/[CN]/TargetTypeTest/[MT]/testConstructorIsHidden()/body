@@ -1,0 +1,13 @@
+{
+  MatcherAssert.assertThat(TargetType.class.getDeclaredConstructors().length,is(1));
+  Constructor<?> constructor=TargetType.class.getDeclaredConstructor();
+  MatcherAssert.assertThat(Modifier.isPrivate(constructor.getModifiers()),is(true));
+  constructor.setAccessible(true);
+  try {
+    constructor.newInstance();
+    fail();
+  }
+ catch (  InvocationTargetException e) {
+    assertEquals(UnsupportedOperationException.class,e.getCause().getClass());
+  }
+}
