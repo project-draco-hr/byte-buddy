@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && accessorMethod.equals(((MethodCall)other).accessorMethod);
+  return this == other || !(other == null || getClass() != other.getClass()) && accessorMethod.equals(((MethodCall)other).accessorMethod) && assigner.equals(((MethodCall)other).assigner);
 }

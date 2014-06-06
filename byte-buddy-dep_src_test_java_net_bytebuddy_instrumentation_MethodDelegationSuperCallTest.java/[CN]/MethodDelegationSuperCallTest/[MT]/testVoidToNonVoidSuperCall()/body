@@ -1,0 +1,6 @@
+{
+  DynamicType.Loaded<VoidTest> loaded=instrument(VoidTest.class,MethodDelegation.to(NonVoidTarget.class));
+  VoidTest instance=loaded.getLoaded().newInstance();
+  instance.foo();
+  instance.assertOnlyCall(FOO);
+}

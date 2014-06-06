@@ -1,0 +1,3 @@
+{
+  this.objectTypeDefaultConstructor=new TypeDescription.ForLoadedType(Object.class).getDeclaredMethods().filter(isConstructor()).getOnly();
+}

@@ -1,0 +1,4 @@
+{
+  assertThat(pipe,not(instanceOf(Serializable.class)));
+  return pipe.doPipe(target);
+}

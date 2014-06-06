@@ -1,0 +1,3 @@
+{
+  MethodDelegation.to(new ForwardingInterceptor(new Object())).defineParameterBinder(Pipe.Binder.install(InheritingForwardingType.class));
+}

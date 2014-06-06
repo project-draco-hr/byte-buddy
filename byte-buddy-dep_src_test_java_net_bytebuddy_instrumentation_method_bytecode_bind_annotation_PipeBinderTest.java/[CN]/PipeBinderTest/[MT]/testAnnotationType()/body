@@ -1,0 +1,3 @@
+{
+  assertEquals(Pipe.class,binder.getHandledType());
+}

@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  when(targetMethod.getDeclaringType()).thenReturn(targetMethodType);
+  binder=new Pipe.Binder(targetMethod);
+}
