@@ -1,0 +1,9 @@
+{
+  println("Calling database");
+  try {
+    return pipe.to(memoryDatabase);
+  }
+  finally {
+    println("Returned from database");
+  }
+}
