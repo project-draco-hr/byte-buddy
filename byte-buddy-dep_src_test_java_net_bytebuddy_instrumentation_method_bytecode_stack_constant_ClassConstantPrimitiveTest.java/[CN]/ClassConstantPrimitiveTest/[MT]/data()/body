@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{void.class,Void.class},{byte.class,Byte.class},{short.class,Short.class},{char.class,Character.class},{int.class,Integer.class},{long.class,Long.class},{float.class,Float.class},{double.class,Double.class}});
+}

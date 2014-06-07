@@ -1,0 +1,4 @@
+{
+  this.primitiveType=new TypeDescription.ForLoadedType(primitiveType);
+  this.wrapperType=new TypeDescription.ForLoadedType(wrapperType);
+}

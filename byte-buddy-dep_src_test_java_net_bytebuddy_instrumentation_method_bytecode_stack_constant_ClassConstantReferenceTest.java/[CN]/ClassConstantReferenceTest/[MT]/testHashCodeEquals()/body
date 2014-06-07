@@ -1,0 +1,6 @@
+{
+  assertThat(ClassConstant.of(typeDescription).hashCode(),is(ClassConstant.of(typeDescription).hashCode()));
+  assertThat(ClassConstant.of(typeDescription),is(ClassConstant.of(typeDescription)));
+  assertThat(ClassConstant.of(typeDescription).hashCode(),not(is(ClassConstant.of(mock(TypeDescription.class)).hashCode())));
+  assertThat(ClassConstant.of(typeDescription),not(is(ClassConstant.of(mock(TypeDescription.class)))));
+}
