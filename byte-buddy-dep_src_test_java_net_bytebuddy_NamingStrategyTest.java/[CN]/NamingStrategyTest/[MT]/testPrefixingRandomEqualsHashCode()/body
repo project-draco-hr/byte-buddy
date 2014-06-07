@@ -1,6 +1,6 @@
 {
-  assertThat(new NamingStrategy.SuffixingRandom(FOO,BAR).hashCode(),is(new NamingStrategy.SuffixingRandom(FOO,BAR).hashCode()));
-  assertThat(new NamingStrategy.SuffixingRandom(FOO,BAR),equalTo(new NamingStrategy.SuffixingRandom(FOO,BAR)));
-  assertThat(new NamingStrategy.SuffixingRandom(FOO,BAR).hashCode(),not(is(new NamingStrategy.SuffixingRandom(BAR,FOO).hashCode())));
-  assertThat(new NamingStrategy.SuffixingRandom(FOO,BAR),not(equalTo(new NamingStrategy.SuffixingRandom(BAR,FOO))));
+  assertThat(new NamingStrategy.PrefixingRandom(FOO).hashCode(),is(new NamingStrategy.PrefixingRandom(FOO).hashCode()));
+  assertThat(new NamingStrategy.PrefixingRandom(FOO),equalTo(new NamingStrategy.PrefixingRandom(FOO)));
+  assertThat(new NamingStrategy.PrefixingRandom(FOO).hashCode(),not(is(new NamingStrategy.PrefixingRandom(BAR).hashCode())));
+  assertThat(new NamingStrategy.PrefixingRandom(FOO),not(equalTo(new NamingStrategy.PrefixingRandom(BAR))));
 }
