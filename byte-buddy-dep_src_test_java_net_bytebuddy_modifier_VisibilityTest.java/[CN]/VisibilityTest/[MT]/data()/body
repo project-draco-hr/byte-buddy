@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{Visibility.PUBLIC,Opcodes.ACC_PUBLIC},{Visibility.PRIVATE,Opcodes.ACC_PRIVATE},{Visibility.PROTECTED,Opcodes.ACC_PROTECTED},{Visibility.PACKAGE_PRIVATE,0}});
+}

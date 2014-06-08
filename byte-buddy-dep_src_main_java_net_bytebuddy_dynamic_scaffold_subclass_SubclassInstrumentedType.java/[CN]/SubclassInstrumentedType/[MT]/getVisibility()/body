@@ -1,8 +1,14 @@
 {
-  if ((modifiers & Modifier.PUBLIC) != 0) {
-    return TypeVisibility.PUBLIC;
-  }
- else {
-    return TypeVisibility.PACKAGE_PRIVATE;
-  }
+switch (modifiers & ByteBuddyCommons.VISIBILITY_MODIFIER_MASK) {
+case Opcodes.ACC_PUBLIC:
+    return Visibility.PUBLIC;
+case Opcodes.ACC_PROTECTED:
+  return Visibility.PROTECTED;
+case Opcodes.ACC_PRIVATE:
+return Visibility.PRIVATE;
+case ModifierContributor.EMPTY_MASK:
+return Visibility.PACKAGE_PRIVATE;
+default :
+throw new IllegalStateException("Ambiguous modifier: " + modifiers);
+}
 }
