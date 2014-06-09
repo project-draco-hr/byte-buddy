@@ -1,0 +1,6 @@
+{
+  if ((fieldToken.getModifiers() & Opcodes.ACC_STATIC) == 0) {
+    throw new IllegalStateException("Default field values can only be set for static fields");
+  }
+  return new SubclassFieldValueTarget<S>(fieldToken,attributeAppenderFactory,defaultValue);
+}

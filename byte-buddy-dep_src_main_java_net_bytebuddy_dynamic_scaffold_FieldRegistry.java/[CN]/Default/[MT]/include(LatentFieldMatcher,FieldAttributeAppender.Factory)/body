@@ -1,8 +1,0 @@
-{
-  Map<String,TypeWriter.FieldPool.Entry> entries=new HashMap<String,TypeWriter.FieldPool.Entry>(this.entries);
-  TypeWriter.FieldPool.Entry entry=new TypeWriter.FieldPool.Entry.Simple(attributeAppenderFactory);
-  if (entries.put(latentFieldMatcher.getFieldName(),entry) != null) {
-    throw new IllegalArgumentException("the field name " + latentFieldMatcher.getFieldName() + " is already registered");
-  }
-  return new Default(entries);
-}

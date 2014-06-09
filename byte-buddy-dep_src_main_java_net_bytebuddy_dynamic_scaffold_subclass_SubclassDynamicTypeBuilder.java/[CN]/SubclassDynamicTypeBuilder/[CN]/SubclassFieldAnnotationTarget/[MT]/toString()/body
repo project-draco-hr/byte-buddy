@@ -1,3 +1,0 @@
-{
-  return "SubclassFieldAnnotationTarget{" + "base=" + SubclassDynamicTypeBuilder.this + ", fieldToken="+ fieldToken+ ", attributeAppenderFactory="+ attributeAppenderFactory+ '}';
-}

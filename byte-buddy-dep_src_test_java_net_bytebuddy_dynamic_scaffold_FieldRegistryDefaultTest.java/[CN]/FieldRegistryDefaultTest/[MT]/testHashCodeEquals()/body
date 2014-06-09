@@ -1,6 +1,6 @@
 {
   assertThat(new FieldRegistry.Default().hashCode(),is(new FieldRegistry.Default().hashCode()));
   assertThat(new FieldRegistry.Default(),is(new FieldRegistry.Default()));
-  assertThat(new FieldRegistry.Default().include(latentFieldMatcher,distinct).hashCode(),not(is(new FieldRegistry.Default().hashCode())));
-  assertThat(new FieldRegistry.Default().include(latentFieldMatcher,distinct),not(is((FieldRegistry)new FieldRegistry.Default())));
+  assertThat(new FieldRegistry.Default().include(latentFieldMatcher,distinct,null).hashCode(),not(is(new FieldRegistry.Default().hashCode())));
+  assertThat(new FieldRegistry.Default().include(latentFieldMatcher,distinct,null),not(is((FieldRegistry)new FieldRegistry.Default())));
 }

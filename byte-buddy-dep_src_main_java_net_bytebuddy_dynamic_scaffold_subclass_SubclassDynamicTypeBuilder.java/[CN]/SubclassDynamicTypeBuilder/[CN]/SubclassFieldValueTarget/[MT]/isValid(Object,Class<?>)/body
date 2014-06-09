@@ -1,0 +1,8 @@
+{
+  for (  Class<?> type : legalType) {
+    if (fieldToken.getFieldType().represents(type)) {
+      return defaultValue;
+    }
+  }
+  throw new IllegalStateException("The default");
+}

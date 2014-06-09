@@ -1,6 +1,0 @@
-{
-  int result=fieldToken.hashCode();
-  result=31 * result + attributeAppenderFactory.hashCode();
-  result=31 * result + SubclassDynamicTypeBuilder.this.hashCode();
-  return result;
-}

@@ -1,4 +1,0 @@
-{
-  this.fieldToken=fieldToken;
-  this.attributeAppenderFactory=attributeAppenderFactory;
-}
