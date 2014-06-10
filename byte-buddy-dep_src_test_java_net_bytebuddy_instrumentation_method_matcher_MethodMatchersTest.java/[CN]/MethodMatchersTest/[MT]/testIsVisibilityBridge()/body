@@ -2,4 +2,5 @@
   assertThat(MethodMatchers.isVisibilityBridge().matches(visibilityBridgeMethod),is(true));
   assertThat(MethodMatchers.isVisibilityBridge().matches(noVisibilityBridgeMethod),is(false));
   assertThat(MethodMatchers.isVisibilityBridge().matches(testClassBase$compareTo$synth),is(false));
+  assertThat(MethodMatchers.isVisibilityBridge().matches(genericExtensionBridgeMethod),is(false));
 }

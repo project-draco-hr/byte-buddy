@@ -33,4 +33,7 @@
   packagePrivateMethod=new MethodDescription.ForLoadedMethod(PackagePrivateMethod.class.getDeclaredMethod(PackagePrivateMethod.PACKAGE_PRIVATE_METHOD_NAME));
   visibilityBridgeMethod=new MethodDescription.ForLoadedMethod(VisibilityBridgeExtension.class.getDeclaredMethod(FOO_METHOD_NAME));
   noVisibilityBridgeMethod=new MethodDescription.ForLoadedMethod(VisibilityBridgeExtension.class.getDeclaredMethod(BAR_METHOD_NAME));
+  genericBaseMethod=new MethodDescription.ForLoadedMethod(GenericBaseClass.class.getDeclaredMethod(FOO_METHOD_NAME,Object.class));
+  genericExtensionBridgeMethod=new MethodDescription.ForLoadedMethod(GenericExtension.class.getDeclaredMethod(FOO_METHOD_NAME,Object.class));
+  genericExtensionBridgeTargetMethod=new MethodDescription.ForLoadedMethod(GenericExtension.class.getDeclaredMethod(FOO_METHOD_NAME,String.class));
 }

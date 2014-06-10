@@ -1,4 +1,7 @@
 {
   assertThat(MethodMatchers.isBridge().matches(testClassBase$compareTo$synth),is(true));
   assertThat(MethodMatchers.isBridge().matches(testClassBase$compareTo),is(false));
+  assertThat(MethodMatchers.isBridge().matches(genericBaseMethod),is(false));
+  assertThat(MethodMatchers.isBridge().matches(genericExtensionBridgeMethod),is(true));
+  assertThat(MethodMatchers.isBridge().matches(genericExtensionBridgeTargetMethod),is(false));
 }
