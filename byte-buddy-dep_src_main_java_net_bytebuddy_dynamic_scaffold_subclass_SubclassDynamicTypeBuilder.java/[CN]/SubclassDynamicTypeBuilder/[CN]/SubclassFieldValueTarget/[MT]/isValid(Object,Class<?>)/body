@@ -1,8 +1,8 @@
 {
-  for (  Class<?> type : legalType) {
-    if (fieldToken.getFieldType().represents(type)) {
-      return defaultValue;
-    }
+  if (fieldToken.getFieldType().represents(legalType)) {
+    return defaultValue;
   }
-  throw new IllegalStateException("The default");
+ else {
+    throw new IllegalStateException(String.format("The given value %s was not of the required type %s",defaultValue,legalType));
+  }
 }

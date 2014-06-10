@@ -1,0 +1,13 @@
+{
+  List<Class<?>> parameterTypesList;
+  if (parameterTypes instanceof List) {
+    parameterTypesList=(List<Class<?>>)parameterTypes;
+  }
+ else {
+    parameterTypesList=new ArrayList<Class<?>>();
+    for (    Class<?> parameterType : parameterTypes) {
+      parameterTypesList.add(parameterType);
+    }
+  }
+  return defineConstructor(new TypeList.ForLoadedType(parameterTypesList),modifier);
+}

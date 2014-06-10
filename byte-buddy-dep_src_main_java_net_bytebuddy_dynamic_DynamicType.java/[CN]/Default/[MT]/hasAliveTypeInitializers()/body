@@ -1,0 +1,8 @@
+{
+  for (  TypeInitializer typeInitializer : getTypeInitializers().values()) {
+    if (typeInitializer.isAlive()) {
+      return true;
+    }
+  }
+  return false;
+}

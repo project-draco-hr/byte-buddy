@@ -1,0 +1,3 @@
+{
+  return "FieldToken{" + "internalName='" + name + '\''+ ", fieldType="+ fieldType+ ", modifiers="+ modifiers+ '}';
+}

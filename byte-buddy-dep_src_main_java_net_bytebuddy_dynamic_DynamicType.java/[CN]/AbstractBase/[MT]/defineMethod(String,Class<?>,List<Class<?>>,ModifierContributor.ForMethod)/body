@@ -1,0 +1,3 @@
+{
+  return defineMethod(name,new TypeDescription.ForLoadedType(returnType),new TypeList.ForLoadedType(parameterTypes),modifier);
+}

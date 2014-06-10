@@ -1,0 +1,7 @@
+{
+  Map<TypeDescription,TypeInitializer> typeInitializers=getTypeInitializers();
+  for (  Map.Entry<TypeDescription,Class<?>> entry : uninitialized.entrySet()) {
+    typeInitializers.get(entry.getKey()).onLoad(entry.getValue());
+  }
+  return new HashMap<TypeDescription,Class<?>>(uninitialized);
+}

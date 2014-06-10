@@ -1,0 +1,4 @@
+String name
+Class<?> returnType
+List<Class<?>> parameterTypes
+ModifierContributor.ForMethod modifier

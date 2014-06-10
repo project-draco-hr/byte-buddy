@@ -1,0 +1,16 @@
+{
+  Map<TypeDescription,File> savedFiles=new HashMap<TypeDescription,File>();
+  File target=new File(folder,typeDescription.getName().replace('.',File.separatorChar) + CLASS_FILE_EXTENSION);
+  FileOutputStream fileOutputStream=new FileOutputStream(target);
+  try {
+    fileOutputStream.write(binaryRepresentation);
+  }
+  finally {
+    fileOutputStream.close();
+  }
+  savedFiles.put(typeDescription,target);
+  for (  DynamicType auxiliaryType : auxiliaryTypes) {
+    savedFiles.putAll(auxiliaryType.saveIn(folder));
+  }
+  return savedFiles;
+}

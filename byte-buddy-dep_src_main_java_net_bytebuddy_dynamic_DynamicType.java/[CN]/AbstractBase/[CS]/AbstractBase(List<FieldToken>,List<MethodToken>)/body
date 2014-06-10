@@ -1,0 +1,4 @@
+{
+  this.fieldTokens=fieldTokens;
+  this.methodTokens=methodTokens;
+}

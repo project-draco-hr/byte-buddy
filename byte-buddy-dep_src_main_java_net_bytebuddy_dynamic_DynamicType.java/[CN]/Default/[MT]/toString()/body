@@ -1,0 +1,3 @@
+{
+  return "DynamicType.Default{" + "typeDescription='" + typeDescription + '\''+ ", binaryRepresentation="+ Arrays.toString(binaryRepresentation)+ ", typeInitializer="+ typeInitializer+ ", auxiliaryTypes="+ auxiliaryTypes+ '}';
+}

@@ -1,0 +1,7 @@
+{
+  List<TypeDescription> parameterTypes=new ArrayList<TypeDescription>(this.parameterTypes.size());
+  for (  TypeDescription parameterType : this.parameterTypes) {
+    parameterTypes.add(considerSubstitution(parameterType,instrumentedType));
+  }
+  return parameterTypes;
+}

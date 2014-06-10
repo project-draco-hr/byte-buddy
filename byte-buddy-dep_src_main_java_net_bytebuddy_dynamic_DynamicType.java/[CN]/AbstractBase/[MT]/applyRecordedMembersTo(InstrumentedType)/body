@@ -1,0 +1,9 @@
+{
+  for (  FieldToken fieldToken : fieldTokens) {
+    instrumentedType=instrumentedType.withField(fieldToken.name,fieldToken.resolveFieldType(instrumentedType),fieldToken.modifiers);
+  }
+  for (  MethodToken methodToken : methodTokens) {
+    instrumentedType=instrumentedType.withMethod(methodToken.internalName,methodToken.resolveReturnType(instrumentedType),methodToken.resolveParameterTypes(instrumentedType),methodToken.resolveExceptionTypes(),methodToken.modifiers);
+  }
+  return instrumentedType;
+}

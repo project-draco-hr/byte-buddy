@@ -1,3 +1,3 @@
 {
-  return makeFieldAnnotationTarget(isValid(value,boolean.class,byte.class,short.class,char.class,int.class));
+  return makeFieldAnnotationTarget(NumericRangeValidator.of(fieldToken.getFieldType()).validate(value));
 }
