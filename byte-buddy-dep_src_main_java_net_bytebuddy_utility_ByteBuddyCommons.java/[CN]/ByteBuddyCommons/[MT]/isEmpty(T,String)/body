@@ -1,0 +1,6 @@
+{
+  if (collection.size() > 0) {
+    throw new IllegalArgumentException(exceptionMessage);
+  }
+  return collection;
+}

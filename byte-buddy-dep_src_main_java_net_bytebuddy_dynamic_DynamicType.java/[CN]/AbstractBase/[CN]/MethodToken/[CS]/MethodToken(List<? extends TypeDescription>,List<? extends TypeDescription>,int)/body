@@ -1,0 +1,3 @@
+{
+  this((modifiers & Opcodes.ACC_STATIC) != 0 ? MethodDescription.STATIC_INITIALIZER_INTERNAL_NAME : MethodDescription.CONSTRUCTOR_INTERNAL_NAME,new TypeDescription.ForLoadedType(void.class),(modifiers & Opcodes.ACC_STATIC) != 0 ? isEmpty(parameterTypes,"A static constructor must not define parameters") : parameterTypes,exceptionTypes,modifiers);
+}

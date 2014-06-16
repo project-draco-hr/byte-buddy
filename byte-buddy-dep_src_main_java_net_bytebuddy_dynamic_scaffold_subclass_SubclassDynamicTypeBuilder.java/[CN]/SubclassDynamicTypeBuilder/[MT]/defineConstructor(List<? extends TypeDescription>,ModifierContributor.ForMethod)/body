@@ -1,4 +1,3 @@
 {
-  MethodToken methodToken=new MethodToken(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,new TypeDescription.ForLoadedType(void.class),nonNull(parameterTypes),Collections.<TypeDescription>emptyList(),resolveModifierContributors(METHOD_MODIFIER_MASK,nonNull(modifier)));
-  return new SubclassExceptionDeclarableMethodInterception<T>(methodToken);
+  return new SubclassExceptionDeclarableMethodInterception<T>(new MethodToken(nonNull(parameterTypes),Collections.<TypeDescription>emptyList(),resolveModifierContributors(METHOD_MODIFIER_MASK,nonNull(modifier))));
 }

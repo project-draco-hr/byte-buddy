@@ -1,0 +1,5 @@
+{
+  when(targetType.represents(String.class)).thenReturn(true);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Origin.Binder.INSTANCE.bind(annotation,INDEX,source,target,instrumentationTarget,assigner);
+  assertThat(parameterBinding.isValid(),is(true));
+}

@@ -1,0 +1,3 @@
+List<? extends TypeDescription> parameterTypes
+List<? extends TypeDescription> exceptionTypes
+int modifiers
