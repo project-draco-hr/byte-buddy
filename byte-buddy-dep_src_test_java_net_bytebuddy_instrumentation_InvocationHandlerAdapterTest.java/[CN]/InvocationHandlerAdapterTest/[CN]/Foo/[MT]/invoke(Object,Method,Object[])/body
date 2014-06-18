@@ -1,4 +1,5 @@
 {
+  methods.add(method);
   assertThat(args.length,is(1));
   assertThat(args[0],is((Object)FOO));
   assertThat(method.getName(),is(BAR));

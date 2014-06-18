@@ -1,3 +1,3 @@
 {
-  return (MethodDescription.CONSTRUCTOR_INTERNAL_NAME.equals(internalName) || MethodDescription.STATIC_INITIALIZER_INTERNAL_NAME.equals(internalName) ? isConstructor() : named(internalName)).and(MethodMatchers.returns(resolveReturnType(instrumentedType))).and(takesArguments(resolveParameterTypes(instrumentedType)));
+  return MethodDescription.CONSTRUCTOR_INTERNAL_NAME.equals(internalName) ? isConstructor() : named(internalName).and(MethodMatchers.returns(resolveReturnType(instrumentedType))).and(takesArguments(resolveParameterTypes(instrumentedType)));
 }

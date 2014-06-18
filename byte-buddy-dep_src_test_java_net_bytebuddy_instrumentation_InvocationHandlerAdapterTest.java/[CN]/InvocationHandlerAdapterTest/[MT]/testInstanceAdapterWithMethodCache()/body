@@ -1,0 +1,18 @@
+{
+  DynamicType.Loaded<Bar> loaded=instrument(Bar.class,InvocationHandlerAdapter.toInstanceField(QUX).withMethodCache());
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(2));
+  Field field=loaded.getLoaded().getDeclaredField(QUX);
+  assertThat(field.getModifiers(),is(Modifier.PUBLIC));
+  field.setAccessible(true);
+  Bar instance=loaded.getLoaded().newInstance();
+  Foo foo=new Foo();
+  field.set(instance,foo);
+  assertThat(instance.bar(FOO),is((Object)instance));
+  assertThat(foo.methods.size(),is(1));
+  assertThat(instance.bar(FOO),is((Object)instance));
+  assertThat(foo.methods.size(),is(2));
+  assertThat(foo.methods.get(0),sameInstance(foo.methods.get(1)));
+  instance.assertZeroCalls();
+}

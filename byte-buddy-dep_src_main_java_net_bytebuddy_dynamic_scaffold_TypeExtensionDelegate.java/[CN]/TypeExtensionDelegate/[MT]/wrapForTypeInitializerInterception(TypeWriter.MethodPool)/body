@@ -1,0 +1,4 @@
+{
+  canRegisterFieldCache=false;
+  return new FieldCacheWritingMethodPool(methodPool);
+}

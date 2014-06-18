@@ -1,0 +1,3 @@
+{
+  return FieldAccess.forField(instrumentationContext.cache(methodConstant,METHOD_TYPE)).getter().apply(methodVisitor,instrumentationContext);
+}

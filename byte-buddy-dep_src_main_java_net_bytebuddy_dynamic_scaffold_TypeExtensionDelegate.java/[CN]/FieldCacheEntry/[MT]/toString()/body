@@ -1,0 +1,3 @@
+{
+  return "TypeExtensionDelegate.FieldCacheEntry{" + "fieldValue=" + fieldValue + ", fieldType="+ fieldType+ '}';
+}

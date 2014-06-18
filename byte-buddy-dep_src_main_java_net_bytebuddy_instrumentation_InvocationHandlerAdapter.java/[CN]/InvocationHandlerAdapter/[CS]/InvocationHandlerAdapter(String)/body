@@ -1,4 +1,0 @@
-{
-  this.fieldName=fieldName;
-  this.assigner=new VoidAwareAssigner(new PrimitiveTypeAwareAssigner(ReferenceTypeAwareAssigner.INSTANCE),true);
-}

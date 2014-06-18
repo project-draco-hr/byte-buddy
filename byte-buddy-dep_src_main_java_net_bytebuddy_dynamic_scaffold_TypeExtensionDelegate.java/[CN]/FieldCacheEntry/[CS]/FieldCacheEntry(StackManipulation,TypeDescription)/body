@@ -1,0 +1,4 @@
+{
+  this.fieldValue=fieldValue;
+  this.fieldType=fieldType;
+}
