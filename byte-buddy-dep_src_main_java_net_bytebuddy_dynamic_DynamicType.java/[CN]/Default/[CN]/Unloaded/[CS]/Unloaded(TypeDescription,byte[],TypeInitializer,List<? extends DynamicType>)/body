@@ -1,3 +1,0 @@
-{
-  super(typeDescription,typeByte,typeInitializer,auxiliaryTypes);
-}

@@ -1,4 +1,0 @@
-TypeDescription typeDescription
-byte[] typeByte
-TypeInitializer typeInitializer
-List<? extends DynamicType> auxiliaryTypes

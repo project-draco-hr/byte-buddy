@@ -1,6 +1,0 @@
-{
-  assertThat(new TypeInitializer.Compound(first,second).hashCode(),is(new TypeInitializer.Compound(first,second).hashCode()));
-  assertThat(new TypeInitializer.Compound(first,second),is(new TypeInitializer.Compound(first,second)));
-  assertThat(new TypeInitializer.Compound(first,second).hashCode(),not(is(new TypeInitializer.Compound(second,first).hashCode())));
-  assertThat(new TypeInitializer.Compound(first,second),not(is(new TypeInitializer.Compound(second,first))));
-}

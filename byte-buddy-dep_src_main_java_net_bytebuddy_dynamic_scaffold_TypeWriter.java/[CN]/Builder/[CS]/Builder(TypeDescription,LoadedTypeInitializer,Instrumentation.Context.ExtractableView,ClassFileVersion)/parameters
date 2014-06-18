@@ -1,0 +1,4 @@
+TypeDescription instrumentedType
+LoadedTypeInitializer loadedTypeInitializer
+Instrumentation.Context.ExtractableView instrumentationContext
+ClassFileVersion classFileVersion

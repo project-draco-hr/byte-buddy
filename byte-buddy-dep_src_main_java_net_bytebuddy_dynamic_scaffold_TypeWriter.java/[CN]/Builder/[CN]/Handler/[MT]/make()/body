@@ -1,4 +1,4 @@
 {
   classVisitor.visitEnd();
-  return new DynamicType.Default.Unloaded<S>(instrumentedType,classWriter.toByteArray(),typeInitializer,instrumentationContext.getRegisteredAuxiliaryTypes());
+  return new DynamicType.Default.Unloaded<S>(instrumentedType,classWriter.toByteArray(),loadedTypeInitializer,instrumentationContext.getRegisteredAuxiliaryTypes());
 }

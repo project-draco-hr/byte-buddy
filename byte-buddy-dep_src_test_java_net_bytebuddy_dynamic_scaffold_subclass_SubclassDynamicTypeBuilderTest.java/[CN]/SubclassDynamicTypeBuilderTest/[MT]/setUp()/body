@@ -19,7 +19,7 @@
 );
   when(preparingInstrumentation.prepare(any(InstrumentedType.class))).then(new Answer<InstrumentedType>(){
     @Override public InstrumentedType answer(    InvocationOnMock invocation) throws Throwable {
-      return ((InstrumentedType)invocation.getArguments()[0]).withField(BAZ,new TypeDescription.ForLoadedType(Object.class),0).withMethod(QUX,new TypeDescription.ForLoadedType(int.class),Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),0).withInitializer(typeInitializer);
+      return ((InstrumentedType)invocation.getArguments()[0]).withField(BAZ,new TypeDescription.ForLoadedType(Object.class),0).withMethod(QUX,new TypeDescription.ForLoadedType(int.class),Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),0).withInitializer(loadedTypeInitializer);
     }
   }
 );

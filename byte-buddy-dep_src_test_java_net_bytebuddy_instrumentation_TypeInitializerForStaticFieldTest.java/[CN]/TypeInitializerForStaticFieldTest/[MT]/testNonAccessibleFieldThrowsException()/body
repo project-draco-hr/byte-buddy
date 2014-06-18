@@ -1,6 +1,0 @@
-{
-  Object object=new Object();
-  TypeInitializer typeInitializer=TypeInitializer.ForStaticField.accessible(FOO,object);
-  assertThat(typeInitializer.isAlive(),is(true));
-  typeInitializer.onLoad(Bar.class);
-}

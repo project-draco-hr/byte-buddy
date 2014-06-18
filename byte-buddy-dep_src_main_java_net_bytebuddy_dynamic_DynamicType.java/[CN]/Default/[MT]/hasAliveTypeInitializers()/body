@@ -1,6 +1,6 @@
 {
-  for (  TypeInitializer typeInitializer : getTypeInitializers().values()) {
-    if (typeInitializer.isAlive()) {
+  for (  LoadedTypeInitializer loadedTypeInitializer : getTypeInitializers().values()) {
+    if (loadedTypeInitializer.isAlive()) {
       return true;
     }
   }

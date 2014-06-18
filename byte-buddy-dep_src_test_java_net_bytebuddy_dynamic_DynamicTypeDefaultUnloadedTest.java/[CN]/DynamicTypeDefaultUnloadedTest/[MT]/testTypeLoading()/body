@@ -3,6 +3,6 @@
   assertEquals(MAIN_TYPE,loaded.getLoaded());
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(1));
   assertEquals(AUXILIARY_TYPE,loaded.getLoadedAuxiliaryTypes().get(auxiliaryTypeDescription));
-  verify(mainTypeInitializer).onLoad(MAIN_TYPE);
-  verify(auxiliaryTypeInitializer).onLoad(AUXILIARY_TYPE);
+  verify(mainLoadedTypeInitializer).onLoad(MAIN_TYPE);
+  verify(auxiliaryLoadedTypeInitializer).onLoad(AUXILIARY_TYPE);
 }

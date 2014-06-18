@@ -1,0 +1,7 @@
+{
+  Object object=new Object();
+  LoadedTypeInitializer loadedTypeInitializer=LoadedTypeInitializer.ForStaticField.nonAccessible(FOO,object);
+  assertThat(loadedTypeInitializer.isAlive(),is(true));
+  loadedTypeInitializer.onLoad(Bar.class);
+  assertThat(Bar.foo,is(object));
+}

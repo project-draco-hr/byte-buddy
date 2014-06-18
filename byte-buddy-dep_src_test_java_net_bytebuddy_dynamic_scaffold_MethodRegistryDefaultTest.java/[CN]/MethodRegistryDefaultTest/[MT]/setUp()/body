@@ -32,6 +32,6 @@
   when(extendingInstrumentation.appender(any(Instrumentation.Target.class))).thenReturn(simpleByteCodeAppender);
   when(basicInstrumentedType.detach()).thenReturn(basicInstrumentedType);
   when(extendedInstrumentedType.detach()).thenReturn(extendedInstrumentedType);
-  when(basicInstrumentedType.getTypeInitializer()).thenReturn(typeInitializer);
-  when(extendedInstrumentedType.getTypeInitializer()).thenReturn(typeInitializer);
+  when(basicInstrumentedType.getLoadedTypeInitializer()).thenReturn(loadedTypeInitializer);
+  when(extendedInstrumentedType.getLoadedTypeInitializer()).thenReturn(loadedTypeInitializer);
 }

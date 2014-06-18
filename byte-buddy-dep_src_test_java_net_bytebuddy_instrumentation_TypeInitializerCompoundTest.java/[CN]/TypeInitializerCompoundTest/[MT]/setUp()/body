@@ -1,3 +1,0 @@
-{
-  compound=new TypeInitializer.Compound(first,second);
-}

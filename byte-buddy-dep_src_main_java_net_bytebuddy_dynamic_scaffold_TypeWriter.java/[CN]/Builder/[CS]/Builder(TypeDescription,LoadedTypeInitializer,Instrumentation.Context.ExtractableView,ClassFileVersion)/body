@@ -1,0 +1,6 @@
+{
+  this.instrumentedType=instrumentedType;
+  this.loadedTypeInitializer=loadedTypeInitializer;
+  this.instrumentationContext=instrumentationContext;
+  this.classFileVersion=classFileVersion;
+}

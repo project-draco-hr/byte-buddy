@@ -1,0 +1,7 @@
+{
+  Object object=new Object();
+  LoadedTypeInitializer loadedTypeInitializer=LoadedTypeInitializer.ForStaticField.accessible(FOO,object);
+  assertThat(loadedTypeInitializer.isAlive(),is(true));
+  loadedTypeInitializer.onLoad(Foo.class);
+  assertThat(Foo.foo,is(object));
+}

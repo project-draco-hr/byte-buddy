@@ -1,0 +1,4 @@
+TypeDescription typeDescription
+byte[] binaryRepresentation
+LoadedTypeInitializer loadedTypeInitializer
+List<? extends DynamicType> auxiliaryTypes

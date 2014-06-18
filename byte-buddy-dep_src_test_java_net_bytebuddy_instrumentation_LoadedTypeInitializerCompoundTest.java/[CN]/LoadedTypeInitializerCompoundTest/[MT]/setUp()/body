@@ -1,0 +1,3 @@
+{
+  compound=new LoadedTypeInitializer.Compound(first,second);
+}

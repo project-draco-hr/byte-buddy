@@ -1,4 +1,4 @@
 {
-  when(auxiliaryTypeInitializer.isAlive()).thenReturn(true);
+  when(auxiliaryLoadedTypeInitializer.isAlive()).thenReturn(true);
   assertThat(dynamicType.hasAliveTypeInitializers(),is(true));
 }
