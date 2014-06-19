@@ -1,0 +1,7 @@
+{
+  when(first.getDeclaringType()).thenReturn(firstType);
+  when(second.getDeclaringType()).thenReturn(secondType);
+  when(third.getDeclaringType()).thenReturn(thirdType);
+  knownMethods=MethodLookupEngine.ConflictingInterfaceMethod.class.getDeclaredField("methodDescriptions");
+  knownMethods.setAccessible(true);
+}

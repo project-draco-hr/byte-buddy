@@ -1,0 +1,7 @@
+{
+  typeExtensionDelegate.cache(stackManipulation,typeDescription);
+  assertThat(typeExtensionDelegate.getRegisteredFieldCaches().size(),is(1));
+  assertThat(typeExtensionDelegate.getRegisteredFieldCaches().get(0).getFieldType(),is(typeDescription));
+  assertThat(typeExtensionDelegate.getRegisteredFieldCaches().get(0).getDeclaringType(),is(instrumentedType));
+  assertThat(typeExtensionDelegate.getRegisteredFieldCaches().get(0).getModifiers(),is(Opcodes.ACC_STATIC | Opcodes.ACC_FINAL | Opcodes.ACC_SYNTHETIC));
+}

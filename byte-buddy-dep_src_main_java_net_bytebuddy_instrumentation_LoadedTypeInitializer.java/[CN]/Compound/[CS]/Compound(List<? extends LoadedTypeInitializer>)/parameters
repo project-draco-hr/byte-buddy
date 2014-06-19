@@ -1,1 +1,1 @@
-List<? extends LoadedTypeInitializer> typeInitializers
+List<? extends LoadedTypeInitializer> loadedTypeInitializers

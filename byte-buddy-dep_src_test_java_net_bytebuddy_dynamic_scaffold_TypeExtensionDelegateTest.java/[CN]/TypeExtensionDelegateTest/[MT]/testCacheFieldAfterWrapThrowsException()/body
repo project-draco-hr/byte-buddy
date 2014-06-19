@@ -1,0 +1,4 @@
+{
+  typeExtensionDelegate.wrapForTypeInitializerInterception(methodPool);
+  typeExtensionDelegate.cache(stackManipulation,typeDescription);
+}

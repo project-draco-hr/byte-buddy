@@ -1,0 +1,6 @@
+{
+  assertThat(PrimitiveWideningDelegate.forPrimitive(new TypeDescription.ForLoadedType(int.class)).widenTo(new TypeDescription.ForLoadedType(long.class)).hashCode(),is(PrimitiveWideningDelegate.forPrimitive(new TypeDescription.ForLoadedType(int.class)).widenTo(new TypeDescription.ForLoadedType(long.class)).hashCode()));
+  assertThat(PrimitiveWideningDelegate.forPrimitive(new TypeDescription.ForLoadedType(int.class)).widenTo(new TypeDescription.ForLoadedType(long.class)),is(PrimitiveWideningDelegate.forPrimitive(new TypeDescription.ForLoadedType(int.class)).widenTo(new TypeDescription.ForLoadedType(long.class))));
+  assertThat(PrimitiveWideningDelegate.forPrimitive(new TypeDescription.ForLoadedType(int.class)).widenTo(new TypeDescription.ForLoadedType(long.class)).hashCode(),not(is(PrimitiveWideningDelegate.forPrimitive(new TypeDescription.ForLoadedType(float.class)).widenTo(new TypeDescription.ForLoadedType(long.class)).hashCode())));
+  assertThat(PrimitiveWideningDelegate.forPrimitive(new TypeDescription.ForLoadedType(int.class)).widenTo(new TypeDescription.ForLoadedType(long.class)),not(is(PrimitiveWideningDelegate.forPrimitive(new TypeDescription.ForLoadedType(float.class)).widenTo(new TypeDescription.ForLoadedType(long.class)))));
+}

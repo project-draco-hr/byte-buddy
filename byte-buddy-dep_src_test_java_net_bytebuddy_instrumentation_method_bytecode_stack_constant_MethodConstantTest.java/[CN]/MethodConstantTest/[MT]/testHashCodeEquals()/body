@@ -1,0 +1,14 @@
+{
+  assertThat(MethodConstant.forMethod(methodDescription).hashCode(),is(MethodConstant.forMethod(methodDescription).hashCode()));
+  assertThat(MethodConstant.forMethod(methodDescription),is(MethodConstant.forMethod(methodDescription)));
+  assertThat(MethodConstant.forMethod(methodDescription).hashCode(),not(is(MethodConstant.forMethod(mock(MethodDescription.class)).hashCode())));
+  assertThat(MethodConstant.forMethod(methodDescription),not(is(MethodConstant.forMethod(mock(MethodDescription.class)))));
+  assertThat(MethodConstant.forMethod(methodDescription).hashCode(),not(is(MethodConstant.forMethod(methodDescription).cached().hashCode())));
+  assertThat(MethodConstant.forMethod(methodDescription),not(is(MethodConstant.forMethod(methodDescription).cached())));
+  assertThat(MethodConstant.forMethod(methodDescription).cached().hashCode(),is(MethodConstant.forMethod(methodDescription).cached().hashCode()));
+  assertThat(MethodConstant.forMethod(methodDescription).cached(),is(MethodConstant.forMethod(methodDescription).cached()));
+  assertThat(MethodConstant.forMethod(methodDescription).cached().hashCode(),not(is(MethodConstant.forMethod(mock(MethodDescription.class)).cached().hashCode())));
+  assertThat(MethodConstant.forMethod(methodDescription).cached(),not(is(MethodConstant.forMethod(mock(MethodDescription.class)).cached())));
+  assertThat(MethodConstant.forMethod(methodDescription).cached().hashCode(),not(is(MethodConstant.forMethod(methodDescription).hashCode())));
+  assertThat(MethodConstant.forMethod(methodDescription).cached(),not(is((StackManipulation)MethodConstant.forMethod(methodDescription))));
+}

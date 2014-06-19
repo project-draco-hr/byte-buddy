@@ -26,4 +26,9 @@
   typeExtensionDelegate=new TypeExtensionDelegate(instrumentedType,classFileVersion);
   when(auxiliaryType.make(Matchers.any(String.class),Matchers.any(ClassFileVersion.class),Matchers.any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn(dynamicType);
   when(dynamicType.getDescription()).thenReturn(auxiliaryTypeDescription);
+  when(methodPool.target(Matchers.any(MethodDescription.class))).thenReturn(methodPoolEntry);
+  when(stackManipulation.apply(Matchers.any(MethodVisitor.class),Matchers.any(Instrumentation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
+  when(typeDescription.getStackSize()).thenReturn(StackSize.ZERO);
+  when(instrumentedType.getInternalName()).thenReturn(BAR);
+  when(typeDescription.getDescriptor()).thenReturn(QUX);
 }

@@ -1,0 +1,5 @@
+{
+  typeExtensionDelegate.cache(stackManipulation,typeDescription);
+  TypeWriter.MethodPool methodPool=typeExtensionDelegate.wrapForTypeInitializerInterception(this.methodPool);
+  methodPool.target(mock(MethodDescription.class));
+}

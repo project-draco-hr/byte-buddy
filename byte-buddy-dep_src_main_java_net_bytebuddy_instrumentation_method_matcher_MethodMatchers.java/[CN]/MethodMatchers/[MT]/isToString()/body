@@ -1,0 +1,3 @@
+{
+  return named("toString").and(takesArguments(0)).and(returns(String.class));
+}

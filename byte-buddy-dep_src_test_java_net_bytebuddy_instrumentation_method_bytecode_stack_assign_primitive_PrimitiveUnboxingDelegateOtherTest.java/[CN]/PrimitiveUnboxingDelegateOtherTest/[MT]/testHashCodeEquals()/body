@@ -1,0 +1,6 @@
+{
+  assertThat(PrimitiveUnboxingDelegate.forReferenceType(new TypeDescription.ForLoadedType(Object.class)).hashCode(),is(PrimitiveUnboxingDelegate.forReferenceType(new TypeDescription.ForLoadedType(Object.class)).hashCode()));
+  assertThat(PrimitiveUnboxingDelegate.forReferenceType(new TypeDescription.ForLoadedType(Object.class)),is(PrimitiveUnboxingDelegate.forReferenceType(new TypeDescription.ForLoadedType(Object.class))));
+  assertThat(PrimitiveUnboxingDelegate.forReferenceType(new TypeDescription.ForLoadedType(Object.class)).hashCode(),not(is(PrimitiveUnboxingDelegate.forReferenceType(new TypeDescription.ForLoadedType(String.class)).hashCode())));
+  assertThat(PrimitiveUnboxingDelegate.forReferenceType(new TypeDescription.ForLoadedType(Object.class)),not(is(PrimitiveUnboxingDelegate.forReferenceType(new TypeDescription.ForLoadedType(String.class)))));
+}

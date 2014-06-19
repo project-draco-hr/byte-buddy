@@ -1,0 +1,3 @@
+{
+  PrimitiveWideningDelegate.forPrimitive(new TypeDescription.ForLoadedType(int.class)).widenTo(new TypeDescription.ForLoadedType(Object.class));
+}

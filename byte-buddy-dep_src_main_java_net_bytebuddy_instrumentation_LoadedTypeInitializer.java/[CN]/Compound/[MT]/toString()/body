@@ -1,3 +1,3 @@
 {
-  return "TypeInitializer.Compound{typeInitializer=" + Arrays.toString(loadedTypeInitializer) + '}';
+  return "LoadedTypeInitializer.Compound{typeInitializer=" + Arrays.toString(loadedTypeInitializer) + '}';
 }

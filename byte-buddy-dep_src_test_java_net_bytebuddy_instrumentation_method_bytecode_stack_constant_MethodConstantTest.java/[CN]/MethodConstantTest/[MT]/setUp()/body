@@ -5,4 +5,11 @@
   when(declaringType.getDescriptor()).thenReturn(BAR);
   when(typeList.iterator()).thenReturn(Arrays.asList(parameterType).iterator());
   when(parameterType.getDescriptor()).thenReturn(QUX);
+  when(fieldDescription.getFieldType()).thenReturn(fieldType);
+  when(fieldDescription.isStatic()).thenReturn(true);
+  when(fieldType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(fieldDescription.getDeclaringType()).thenReturn(declaringType);
+  when(declaringType.getInternalName()).thenReturn(BAZ);
+  when(fieldDescription.getInternalName()).thenReturn(FOO);
+  when(fieldDescription.getDescriptor()).thenReturn(QUX);
 }

@@ -1,0 +1,5 @@
+{
+  typeExtensionDelegate.cache(stackManipulation,typeDescription);
+  typeExtensionDelegate.cache(stackManipulation,returnType);
+  assertThat(typeExtensionDelegate.getRegisteredFieldCaches().size(),is(2));
+}

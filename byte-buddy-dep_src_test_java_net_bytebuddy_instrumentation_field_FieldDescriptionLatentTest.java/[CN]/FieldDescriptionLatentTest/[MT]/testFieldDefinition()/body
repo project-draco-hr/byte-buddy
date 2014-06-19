@@ -1,0 +1,8 @@
+{
+  FieldDescription fieldDescription=new FieldDescription.Latent(FOO,declaringType,fieldType,MODIFIERS);
+  assertThat(fieldDescription.getName(),is(FOO));
+  assertThat(fieldDescription.getInternalName(),is(FOO));
+  assertThat(fieldDescription.getModifiers(),is(MODIFIERS));
+  assertThat(fieldDescription.getFieldType(),is(fieldType));
+  assertThat(fieldDescription.getDeclaringType(),is(declaringType));
+}

@@ -1,0 +1,5 @@
+{
+  assertThat(MethodMatchers.isToString().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(true));
+  assertThat(MethodMatchers.isToString().matches(new MethodDescription.ForLoadedMethod(Integer.class.getDeclaredMethod("toString"))),is(true));
+  assertThat(MethodMatchers.isToString().matches(testClassBase$foo),is(false));
+}
