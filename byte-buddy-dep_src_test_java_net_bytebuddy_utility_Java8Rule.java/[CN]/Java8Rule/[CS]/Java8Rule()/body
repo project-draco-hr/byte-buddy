@@ -1,3 +1,0 @@
-{
-  java8OrHigher=ClassFileVersion.forCurrentJavaVersion().compareTo(ClassFileVersion.JAVA_V8) >= 0;
-}

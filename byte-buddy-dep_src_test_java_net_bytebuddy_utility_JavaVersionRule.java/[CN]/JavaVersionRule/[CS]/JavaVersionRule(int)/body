@@ -1,0 +1,3 @@
+{
+  supportsVersion=ClassFileVersion.forCurrentJavaVersion().compareTo(ClassFileVersion.forKnownJavaVersion(javaVersion)) >= 0;
+}

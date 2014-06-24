@@ -1,0 +1,8 @@
+{
+  if (supportsVersion || method.getAnnotation(Enforce.class) == null) {
+    return base;
+  }
+ else {
+    return new NoOpStatement();
+  }
+}
