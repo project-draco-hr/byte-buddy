@@ -1,0 +1,11 @@
+{
+  MethodDescription other=mock(MethodDescription.class);
+  when(other.getDeclaringType()).thenReturn(typeDescription);
+  when(other.getInternalName()).thenReturn(FOO);
+  when(other.getInternalName()).thenReturn(BAR);
+  when(other.getDescriptor()).thenReturn(BAZ);
+  assertThat(MethodHandleConstant.of(methodDescription).hashCode(),is(MethodHandleConstant.of(methodDescription).hashCode()));
+  assertThat(MethodHandleConstant.of(methodDescription),is(MethodHandleConstant.of(methodDescription)));
+  assertThat(MethodHandleConstant.of(methodDescription).hashCode(),not(is(MethodHandleConstant.of(other).hashCode())));
+  assertThat(MethodHandleConstant.of(methodDescription),not(is(MethodHandleConstant.of(other))));
+}

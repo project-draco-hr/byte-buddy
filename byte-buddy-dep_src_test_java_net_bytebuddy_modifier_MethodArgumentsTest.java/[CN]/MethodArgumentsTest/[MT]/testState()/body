@@ -1,0 +1,3 @@
+{
+  assertThat(((MethodArguments)modifierContributor).isVarargs(),is(expectedModifier != 0));
+}

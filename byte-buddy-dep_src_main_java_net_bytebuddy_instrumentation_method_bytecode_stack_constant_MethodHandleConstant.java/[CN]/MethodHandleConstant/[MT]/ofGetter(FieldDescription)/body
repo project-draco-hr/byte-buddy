@@ -1,0 +1,3 @@
+{
+  return of(fieldDescription,fieldDescription.isStatic() ? Opcodes.H_GETSTATIC : Opcodes.H_GETFIELD);
+}

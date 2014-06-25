@@ -1,0 +1,3 @@
+{
+  assertThat(((Ownership)modifierContributor).isStatic(),is(expectedModifier != 0));
+}

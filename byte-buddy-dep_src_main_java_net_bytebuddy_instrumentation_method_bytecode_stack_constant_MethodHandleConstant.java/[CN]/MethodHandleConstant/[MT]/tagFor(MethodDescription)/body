@@ -1,0 +1,17 @@
+{
+  if (methodDescription.isConstructor()) {
+    return Opcodes.H_NEWINVOKESPECIAL;
+  }
+ else   if (methodDescription.isStatic() || methodDescription.isTypeInitializer()) {
+    return Opcodes.H_INVOKESTATIC;
+  }
+ else   if (methodDescription.isPrivate() || methodDescription.isDefaultMethod()) {
+    return Opcodes.H_INVOKESPECIAL;
+  }
+ else   if (methodDescription.isInterface()) {
+    return Opcodes.H_INVOKEINTERFACE;
+  }
+ else {
+    return Opcodes.H_INVOKEVIRTUAL;
+  }
+}

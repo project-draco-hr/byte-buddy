@@ -1,0 +1,3 @@
+{
+  classLoader=new PrecompiledTypeClassLoader(getClass().getClassLoader());
+}

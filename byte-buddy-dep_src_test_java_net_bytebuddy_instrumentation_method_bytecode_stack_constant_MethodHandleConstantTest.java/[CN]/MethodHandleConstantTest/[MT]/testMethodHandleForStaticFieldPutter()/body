@@ -1,0 +1,4 @@
+{
+  when(fieldDescription.isStatic()).thenReturn(true);
+  testMethodHandle(MethodHandleConstant.ofPutter(fieldDescription),Opcodes.H_PUTSTATIC);
+}

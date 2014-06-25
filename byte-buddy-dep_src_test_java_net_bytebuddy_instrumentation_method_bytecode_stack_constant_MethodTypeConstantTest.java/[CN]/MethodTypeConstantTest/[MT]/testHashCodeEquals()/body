@@ -1,0 +1,8 @@
+{
+  MethodDescription other=mock(MethodDescription.class);
+  when(other.getDescriptor()).thenReturn(BAR);
+  assertThat(new MethodTypeConstant(methodDescription).hashCode(),is(new MethodTypeConstant(methodDescription).hashCode()));
+  assertThat(new MethodTypeConstant(methodDescription),is(new MethodTypeConstant(methodDescription)));
+  assertThat(new MethodTypeConstant(methodDescription).hashCode(),not(is(new MethodTypeConstant(other).hashCode())));
+  assertThat(new MethodTypeConstant(methodDescription),not(is(new MethodTypeConstant(other))));
+}
