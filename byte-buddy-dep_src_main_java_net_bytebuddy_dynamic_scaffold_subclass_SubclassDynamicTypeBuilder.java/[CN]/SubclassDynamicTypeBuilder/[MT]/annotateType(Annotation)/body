@@ -1,3 +1,0 @@
-{
-  return attribute(new TypeAttributeAppender.ForAnnotation(annotation));
-}

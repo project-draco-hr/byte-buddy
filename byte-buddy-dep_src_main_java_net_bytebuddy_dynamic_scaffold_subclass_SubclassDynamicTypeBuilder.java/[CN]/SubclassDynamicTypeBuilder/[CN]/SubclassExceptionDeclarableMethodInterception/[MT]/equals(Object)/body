@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && methodToken.equals(((SubclassExceptionDeclarableMethodInterception<?>)other).methodToken) && SubclassDynamicTypeBuilder.this.equals(((SubclassExceptionDeclarableMethodInterception<?>)other).getSubclassDynamicTypeBuilder());
-}

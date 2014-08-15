@@ -1,0 +1,3 @@
+{
+  return redefine(new TypeDescription.ForLoadedType(levelType),classFileLocator);
+}

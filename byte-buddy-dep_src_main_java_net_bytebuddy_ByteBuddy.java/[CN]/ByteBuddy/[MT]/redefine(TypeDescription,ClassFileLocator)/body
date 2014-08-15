@@ -1,0 +1,3 @@
+{
+  return new FlatDynamicTypeBuilder<T>(classFileVersion,namingStrategy,nonNull(levelType),interfaceTypes,modifiers.resolve(levelType.getModifiers()),typeAttributeAppender.resolve(new TypeAttributeAppender.ForType(levelType)),ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(classFileLocator));
+}

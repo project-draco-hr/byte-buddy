@@ -1,3 +1,0 @@
-{
-  return "SubclassExceptionDeclarableMethodInterception{" + "base=" + SubclassDynamicTypeBuilder.this + "methodToken="+ methodToken+ '}';
-}

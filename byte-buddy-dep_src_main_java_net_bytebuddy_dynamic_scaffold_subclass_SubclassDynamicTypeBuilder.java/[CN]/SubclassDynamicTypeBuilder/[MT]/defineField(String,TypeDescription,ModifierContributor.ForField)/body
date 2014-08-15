@@ -1,3 +1,0 @@
-{
-  return new SubclassFieldValueTarget<T>(new FieldToken(isValidIdentifier(name),nonNull(fieldType),resolveModifierContributors(FIELD_MODIFIER_MASK,nonNull(modifier))),defaultFieldAttributeAppenderFactory);
-}

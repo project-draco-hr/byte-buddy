@@ -2,9 +2,9 @@
   TypeDescription returnType=mock(TypeDescription.class);
   TypeDescription parameterType=mock(TypeDescription.class);
   TypeDescription exceptionType=mock(TypeDescription.class);
-  when(returnType.getInternalName()).thenReturn(FOO);
-  when(parameterType.getInternalName()).thenReturn(QUX);
-  when(exceptionType.getInternalName()).thenReturn(BAZ);
+  when(returnType.getName()).thenReturn(FOO);
+  when(parameterType.getName()).thenReturn(QUX);
+  when(exceptionType.getName()).thenReturn(BAZ);
   InstrumentedType instrumentedType=makePlainInstrumentedType();
   assertThat(instrumentedType.getDeclaredFields().size(),is(0));
   instrumentedType=instrumentedType.withMethod(BAR,returnType,Arrays.asList(parameterType),Arrays.asList(exceptionType),Opcodes.ACC_PUBLIC);

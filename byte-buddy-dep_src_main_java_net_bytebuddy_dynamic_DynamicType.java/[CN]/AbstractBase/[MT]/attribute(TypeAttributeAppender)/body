@@ -1,0 +1,3 @@
+{
+  return materialize(classFileVersion,namingStrategy,targetType,interfaceTypes,modifiers,new TypeAttributeAppender.Compound(this.attributeAppender,nonNull(attributeAppender)),ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,fieldRegistry,methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
+}

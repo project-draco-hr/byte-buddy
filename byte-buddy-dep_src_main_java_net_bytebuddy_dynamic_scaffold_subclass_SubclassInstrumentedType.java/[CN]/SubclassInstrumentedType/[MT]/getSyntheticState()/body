@@ -1,3 +1,0 @@
-{
-  return SyntheticState.is(isSynthetic());
-}

@@ -1,3 +1,0 @@
-{
-  return new SubclassExceptionDeclarableMethodInterception<T>(new MethodToken(nonNull(parameterTypes),Collections.<TypeDescription>emptyList(),resolveModifierContributors(METHOD_MODIFIER_MASK & ~Opcodes.ACC_STATIC,nonNull(modifier))));
-}

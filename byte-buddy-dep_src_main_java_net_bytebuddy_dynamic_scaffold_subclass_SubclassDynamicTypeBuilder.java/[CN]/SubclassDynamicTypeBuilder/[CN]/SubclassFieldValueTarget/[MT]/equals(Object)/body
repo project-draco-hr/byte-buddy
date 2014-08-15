@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  SubclassFieldValueTarget that=(SubclassFieldValueTarget<?>)other;
-  return attributeAppenderFactory.equals(that.attributeAppenderFactory) && !(defaultValue != null ? !defaultValue.equals(that.defaultValue) : that.defaultValue != null) && fieldToken.equals(that.fieldToken)&& SubclassDynamicTypeBuilder.this.equals(that.getSubclassDynamicTypeBuilder());
-}

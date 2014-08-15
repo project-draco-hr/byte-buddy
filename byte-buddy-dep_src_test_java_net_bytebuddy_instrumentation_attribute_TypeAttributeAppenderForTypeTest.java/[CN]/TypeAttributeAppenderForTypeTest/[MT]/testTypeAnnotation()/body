@@ -1,0 +1,7 @@
+{
+  TypeAttributeAppender fieldAttributeAppender=new TypeAttributeAppender.ForType(FooBar.class);
+  fieldAttributeAppender.apply(classVisitor,typeDescription);
+  verify(classVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
+  verifyNoMoreInteractions(classVisitor);
+  verifyZeroInteractions(typeDescription);
+}

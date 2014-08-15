@@ -1,3 +1,0 @@
-{
-  return new SubclassMethodAnnotationTarget<S>(methodTokens,latentMethodMatcher,instrumentation,defaultMethodAttributeAppenderFactory);
-}

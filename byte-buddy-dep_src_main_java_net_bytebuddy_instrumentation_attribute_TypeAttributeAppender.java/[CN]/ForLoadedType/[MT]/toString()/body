@@ -1,3 +1,0 @@
-{
-  return "TypeAttributeAppender.ForLoadedType{type=" + type + '}';
-}

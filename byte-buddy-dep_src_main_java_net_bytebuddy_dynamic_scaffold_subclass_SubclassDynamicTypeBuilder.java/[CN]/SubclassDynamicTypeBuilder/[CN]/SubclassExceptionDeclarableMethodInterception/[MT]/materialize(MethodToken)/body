@@ -1,3 +1,0 @@
-{
-  return new SubclassMatchedMethodInterception<S>(methodToken,join(methodTokens,methodToken));
-}

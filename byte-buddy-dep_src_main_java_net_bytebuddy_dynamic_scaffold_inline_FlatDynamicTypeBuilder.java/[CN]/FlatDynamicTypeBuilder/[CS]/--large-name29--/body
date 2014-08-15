@@ -1,0 +1,4 @@
+{
+  super(classFileVersion,namingStrategy,levelType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,fieldRegistry,methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
+  this.classFileLocator=classFileLocator;
+}

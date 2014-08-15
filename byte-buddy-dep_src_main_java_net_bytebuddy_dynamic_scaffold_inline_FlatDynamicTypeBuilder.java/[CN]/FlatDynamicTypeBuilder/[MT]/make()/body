@@ -1,0 +1,4 @@
+{
+  MethodRegistry.Compiled compiledMethodRegistry=methodRegistry.compile(applyRecordedMembersTo(new FlatInstrumentedType(classFileVersion,targetType,interfaceTypes,modifiers,namingStrategy)),methodLookupEngineFactory.make(classFileVersion),new SubclassInstrumentationTarget.Factory(bridgeMethodResolverFactory),MethodRegistry.Compiled.Entry.Skip.INSTANCE);
+  return null;
+}

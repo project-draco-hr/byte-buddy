@@ -1,6 +1,6 @@
 {
   TypeDescription fieldType=mock(TypeDescription.class);
-  when(fieldType.getInternalName()).thenReturn(FOO);
+  when(fieldType.getName()).thenReturn(FOO);
   InstrumentedType instrumentedType=makePlainInstrumentedType();
   assertThat(instrumentedType.getDeclaredFields().size(),is(0));
   instrumentedType=instrumentedType.withField(BAR,fieldType,Opcodes.ACC_PUBLIC);

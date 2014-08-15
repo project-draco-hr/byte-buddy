@@ -1,0 +1,3 @@
+{
+  return "DefaultMatchedMethodInterception{" + "base=" + AbstractBase.this + ", latentMethodMatcher="+ latentMethodMatcher+ ", methodTokens="+ methodTokens+ '}';
+}

@@ -1,0 +1,3 @@
+{
+  return AbstractBase.this.materialize(classFileVersion,namingStrategy,targetType,join(interfaceTypes,isInterface(Arrays.asList(interfaceType))),modifiers,attributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,fieldRegistry,methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
+}

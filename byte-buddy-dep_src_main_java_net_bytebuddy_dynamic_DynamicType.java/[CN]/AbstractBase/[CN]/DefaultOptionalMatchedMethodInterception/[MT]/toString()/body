@@ -1,0 +1,3 @@
+{
+  return "DefaultOptionalMatchedMethodInterception{" + "base=" + AbstractBase.this + "interfaceType="+ Arrays.toString(interfaceType)+ '}';
+}

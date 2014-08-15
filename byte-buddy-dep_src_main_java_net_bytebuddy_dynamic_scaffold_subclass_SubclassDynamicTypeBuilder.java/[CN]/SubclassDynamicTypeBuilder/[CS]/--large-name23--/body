@@ -1,18 +1,3 @@
 {
-  super(Collections.<FieldToken>emptyList(),Collections.<MethodToken>emptyList());
-  this.classFileVersion=classFileVersion;
-  this.namingStrategy=namingStrategy;
-  this.superType=superType;
-  this.interfaceTypes=new ArrayList<TypeDescription>(interfaceTypes);
-  this.modifiers=modifiers;
-  this.attributeAppender=attributeAppender;
-  this.ignoredMethods=ignoredMethods;
-  this.bridgeMethodResolverFactory=bridgeMethodResolverFactory;
-  this.classVisitorWrapperChain=classVisitorWrapperChain;
-  this.fieldRegistry=fieldRegistry;
-  this.methodLookupEngineFactory=methodLookupEngineFactory;
-  this.defaultFieldAttributeAppenderFactory=defaultFieldAttributeAppenderFactory;
-  this.defaultMethodAttributeAppenderFactory=defaultMethodAttributeAppenderFactory;
-  this.methodRegistry=methodRegistry;
-  this.constructorStrategy=constructorStrategy;
+  this(classFileVersion,namingStrategy,superType,new ArrayList<TypeDescription>(interfaceTypes),modifiers,attributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,fieldRegistry,methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,Collections.<FieldToken>emptyList(),Collections.<MethodToken>emptyList(),constructorStrategy);
 }

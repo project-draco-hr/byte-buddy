@@ -1,0 +1,3 @@
+{
+  return "SubclassFieldAnnotationTarget{" + "base=" + AbstractBase.this + ", fieldToken="+ fieldToken+ ", attributeAppenderFactory="+ attributeAppenderFactory+ ", defaultValue="+ defaultValue+ '}';
+}

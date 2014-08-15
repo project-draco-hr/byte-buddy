@@ -1,0 +1,3 @@
+{
+  return "DefaultExceptionDeclarableMethodInterception{" + "base=" + AbstractBase.this + "methodToken="+ methodToken+ '}';
+}

@@ -3,7 +3,7 @@
     MethodPool.Entry entry=methodPool.target(methodDescription);
     if (entry.isDefineMethod()) {
       boolean appendsCode=entry.getByteCodeAppender().appendsCode();
-      MethodVisitor methodVisitor=classVisitor.visitMethod(overrideModifiers(methodDescription,appendsCode),methodDescription.getInternalName(),methodDescription.getDescriptor(),null,methodDescription.getExceptionTypes().toInternalNames());
+      MethodVisitor methodVisitor=classVisitor.visitMethod(overrideModifiers(methodDescription,appendsCode),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().toInternalNames());
       entry.getAttributeAppender().apply(methodVisitor,methodDescription);
       if (appendsCode) {
         methodVisitor.visitCode();

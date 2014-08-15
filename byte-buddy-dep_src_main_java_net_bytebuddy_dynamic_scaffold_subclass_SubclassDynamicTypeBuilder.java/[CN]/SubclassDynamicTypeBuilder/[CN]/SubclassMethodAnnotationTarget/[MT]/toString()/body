@@ -1,3 +1,0 @@
-{
-  return "SubclassMethodAnnotationTarget{" + "base=" + SubclassDynamicTypeBuilder.this + ", methodTokens="+ methodTokens+ ", latentMethodMatcher="+ latentMethodMatcher+ ", instrumentation="+ instrumentation+ ", attributeAppenderFactory="+ attributeAppenderFactory+ '}';
-}
