@@ -3,4 +3,5 @@
   this.loadedTypeInitializer=loadedTypeInitializer;
   this.instrumentationContext=instrumentationContext;
   this.classFileVersion=classFileVersion;
+  this.classWriterProvider=classWriterProvider;
 }

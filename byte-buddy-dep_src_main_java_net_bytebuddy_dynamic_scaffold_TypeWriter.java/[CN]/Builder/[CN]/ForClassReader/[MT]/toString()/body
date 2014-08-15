@@ -1,0 +1,3 @@
+{
+  return "TypeWriter.ClassWriterProvider.ForClassReader{classReader=" + classReader + '}';
+}

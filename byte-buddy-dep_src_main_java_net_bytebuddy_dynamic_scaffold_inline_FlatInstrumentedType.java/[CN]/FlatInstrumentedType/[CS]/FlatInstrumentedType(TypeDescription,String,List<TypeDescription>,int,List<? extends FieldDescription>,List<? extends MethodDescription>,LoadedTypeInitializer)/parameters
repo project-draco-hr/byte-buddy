@@ -1,7 +1,7 @@
 TypeDescription levelType
 String name
-int modifiers
 List<TypeDescription> interfaces
+int modifiers
 List<? extends FieldDescription> fieldDescriptions
 List<? extends MethodDescription> methodDescriptions
 LoadedTypeInitializer loadedTypeInitializer

@@ -1,5 +1,5 @@
 {
-  ClassWriter classWriter=new ClassWriter(ASM_MANUAL_FLAG);
+  ClassWriter classWriter=classWriterProvider.make();
   ClassVisitor classVisitor=classVisitorWrapper.wrap(classWriter);
   classVisitor.visit(classFileVersion.getVersionNumber(),instrumentedType.getModifiers(),instrumentedType.getInternalName(),instrumentedType.getGenericSignature(),instrumentedType.getSupertype() == null ? null : instrumentedType.getSupertype().getInternalName(),instrumentedType.getInterfaces().toInternalNames());
   return new Handler<T>(classWriter,classVisitor);

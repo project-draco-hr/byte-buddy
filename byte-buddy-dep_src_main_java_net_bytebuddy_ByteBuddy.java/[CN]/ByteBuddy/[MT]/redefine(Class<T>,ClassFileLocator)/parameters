@@ -1,2 +1,2 @@
-Class<?> levelType
+Class<T> levelType
 ClassFileLocator classFileLocator

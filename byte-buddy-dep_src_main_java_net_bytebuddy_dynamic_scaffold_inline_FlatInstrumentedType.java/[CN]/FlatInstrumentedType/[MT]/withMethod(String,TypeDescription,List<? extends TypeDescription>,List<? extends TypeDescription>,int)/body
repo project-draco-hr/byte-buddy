@@ -5,5 +5,5 @@
   }
   List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(this.methodDescriptions);
   methodDescriptions.add(additionalMethod);
-  return new FlatInstrumentedType(levelType,name,this.modifiers,interfaces,fieldDescriptions,methodDescriptions,loadedTypeInitializer);
+  return new FlatInstrumentedType(levelType,name,interfaces,this.modifiers,fieldDescriptions,methodDescriptions,loadedTypeInitializer);
 }
