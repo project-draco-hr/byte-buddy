@@ -1,0 +1,9 @@
+{
+  for (  ClassFileLocator classFileLocator : this.classFileLocator) {
+    InputStream inputStream=classFileLocator.classFileFor(typeDescription);
+    if (inputStream != null) {
+      return inputStream;
+    }
+  }
+  return null;
+}

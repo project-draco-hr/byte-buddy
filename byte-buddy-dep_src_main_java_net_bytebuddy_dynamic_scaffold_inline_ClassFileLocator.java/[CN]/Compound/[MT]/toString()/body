@@ -1,0 +1,3 @@
+{
+  return "ClassFileLocator.Compound{classFileLocator=" + Arrays.toString(classFileLocator) + '}';
+}

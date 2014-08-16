@@ -1,0 +1,3 @@
+{
+  return rebase(levelType,ClassFileLocator.Compound.makeDefault());
+}

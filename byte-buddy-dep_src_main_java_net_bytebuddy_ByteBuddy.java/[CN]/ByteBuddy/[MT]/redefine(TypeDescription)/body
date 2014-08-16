@@ -1,3 +1,3 @@
 {
-  return redefine(levelType,ClassFileLocator.ForClassPathType.INSTANCE);
+  return redefine(levelType,ClassFileLocator.Compound.makeDefault());
 }
