@@ -1,0 +1,3 @@
+{
+  return new RebaseInstrumentationTarget(finding,bridgeMethodResolverFactory,new MethodFlatteningResolver.Default(finding.getTypeDescription().getDeclaredMethods(),ignoredMethods,placeholderType));
+}

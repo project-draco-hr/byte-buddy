@@ -15,4 +15,4 @@ MethodAttributeAppender.Factory defaultMethodAttributeAppenderFactory
 List<FieldToken> fieldTokens
 List<MethodToken> methodTokens
 ClassFileLocator classFileLocator
-InstrumentationTargetFactoryProvider instrumentationTargetFactoryProvider
+TargetHandler targetHandler

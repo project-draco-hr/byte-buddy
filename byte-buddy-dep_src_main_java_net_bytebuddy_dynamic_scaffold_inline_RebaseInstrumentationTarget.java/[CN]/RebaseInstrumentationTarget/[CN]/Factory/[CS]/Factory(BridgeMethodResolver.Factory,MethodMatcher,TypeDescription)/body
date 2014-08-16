@@ -1,0 +1,5 @@
+{
+  this.bridgeMethodResolverFactory=bridgeMethodResolverFactory;
+  this.ignoredMethods=ignoredMethods;
+  this.placeholderType=placeholderType;
+}

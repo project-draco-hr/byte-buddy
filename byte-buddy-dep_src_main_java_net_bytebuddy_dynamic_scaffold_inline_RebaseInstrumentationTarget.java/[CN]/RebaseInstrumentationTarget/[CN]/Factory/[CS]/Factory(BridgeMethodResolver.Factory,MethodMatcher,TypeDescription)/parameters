@@ -1,0 +1,3 @@
+BridgeMethodResolver.Factory bridgeMethodResolverFactory
+MethodMatcher ignoredMethods
+TypeDescription placeholderType
