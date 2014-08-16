@@ -1,0 +1,4 @@
+{
+  super(finding,bridgeMethodResolverFactory);
+  this.methodFlatteningResolver=methodFlatteningResolver;
+}

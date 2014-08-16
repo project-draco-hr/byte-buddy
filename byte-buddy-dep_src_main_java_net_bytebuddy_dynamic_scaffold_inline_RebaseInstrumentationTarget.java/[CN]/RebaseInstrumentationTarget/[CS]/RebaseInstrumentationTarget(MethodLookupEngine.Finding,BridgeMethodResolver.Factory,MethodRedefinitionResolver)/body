@@ -1,4 +1,0 @@
-{
-  super(finding,bridgeMethodResolverFactory);
-  this.methodRedefinitionResolver=methodRedefinitionResolver;
-}

@@ -1,3 +1,3 @@
 {
-  return "RebaseInstrumentationTarget{" + "typeDescription=" + typeDescription + ", defaultMethods="+ defaultMethods+ ", bridgeMethodResolver="+ bridgeMethodResolver+ ", methodRedefinitionResolver="+ methodRedefinitionResolver+ '}';
+  return "RebaseInstrumentationTarget{" + "typeDescription=" + typeDescription + ", defaultMethods="+ defaultMethods+ ", bridgeMethodResolver="+ bridgeMethodResolver+ ", methodRedefinitionResolver="+ methodFlatteningResolver+ '}';
 }
