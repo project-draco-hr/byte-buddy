@@ -1,0 +1,4 @@
+{
+  rawInput.apply(classVisitor);
+  return this;
+}

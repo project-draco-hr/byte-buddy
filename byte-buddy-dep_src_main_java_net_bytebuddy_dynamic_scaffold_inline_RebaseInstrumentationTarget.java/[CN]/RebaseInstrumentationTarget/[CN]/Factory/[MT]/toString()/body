@@ -1,3 +1,0 @@
-{
-  return "RebaseInstrumentationTarget.Factory{" + "bridgeMethodResolverFactory=" + bridgeMethodResolverFactory + '}';
-}

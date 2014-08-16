@@ -1,3 +1,0 @@
-{
-  return new RebaseInstrumentationTarget(methodLookupEngineFinding,bridgeMethodResolverFactory,null);
-}
