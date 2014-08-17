@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && auxiliaryType.equals(((ForRebaseInstrumentation)other).auxiliaryType) && ignoredMethods.equals(((ForRebaseInstrumentation)other).ignoredMethods);
-}

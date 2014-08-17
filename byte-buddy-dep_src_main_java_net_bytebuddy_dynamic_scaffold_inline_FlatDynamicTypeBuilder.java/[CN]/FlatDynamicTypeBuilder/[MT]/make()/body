@@ -1,20 +1,19 @@
 {
-  InstrumentedType rawInstrumentedType=applyRecordedMembersTo(new FlatInstrumentedType(classFileVersion,targetType,interfaceTypes,modifiers,namingStrategy));
-  TargetHandler.Prepared prepared=targetHandler.prepare(ignoredMethods,classFileVersion,rawInstrumentedType);
-  MethodRegistry.Compiled compiledMethodRegistry=methodRegistry.compile(rawInstrumentedType,methodLookupEngineFactory.make(classFileVersion),prepared.factory(bridgeMethodResolverFactory),MethodRegistry.Compiled.Entry.Skip.INSTANCE);
-  MethodLookupEngine.Finding finding=compiledMethodRegistry.getFinding();
-  TypeExtensionDelegate typeExtensionDelegate=new TypeExtensionDelegate(finding.getTypeDescription(),classFileVersion);
+  MethodRegistry.Prepared preparedMethodRegistry=methodRegistry.prepare(applyRecordedMembersTo(new FlatInstrumentedType(classFileVersion,targetType,interfaceTypes,modifiers,namingStrategy)));
+  TargetHandler.Prepared preparedTargetHandler=targetHandler.prepare(ignoredMethods,classFileVersion,preparedMethodRegistry.getInstrumentedType());
+  MethodRegistry.Compiled compiledMethodRegistry=preparedMethodRegistry.compile(preparedTargetHandler.factory(bridgeMethodResolverFactory),methodLookupEngineFactory.make(classFileVersion),MethodFlatteningDelegation.Factory.INSTANCE);
+  TypeExtensionDelegate typeExtensionDelegate=new TypeExtensionDelegate(preparedMethodRegistry.getInstrumentedType(),classFileVersion);
   try {
     InputStream classFile=exists(classFileLocator.classFileFor(targetType));
     try {
       ClassReader classReader=new ClassReader(classFile);
-      return new TypeWriter.Builder<T>(finding.getTypeDescription(),compiledMethodRegistry.getLoadedTypeInitializer(),typeExtensionDelegate,classFileVersion,new TypeWriter.Builder.ClassWriterProvider.ForClassReader(classReader)).build(classVisitorWrapperChain).make(prepared.auxiliaryTypes());
+      return new TypeWriter.Builder<T>(preparedMethodRegistry.getInstrumentedType(),preparedMethodRegistry.getLoadedTypeInitializer(),typeExtensionDelegate,classFileVersion,new TypeWriter.Builder.ClassWriterProvider.ForClassReader(classReader)).build(classVisitorWrapperChain).make(preparedTargetHandler.auxiliaryTypes());
     }
   finally {
       classFile.close();
     }
   }
  catch (  IOException e) {
-    throw new IllegalStateException("Error when reading class file",e);
+    throw new IllegalStateException("Error while reading class file",e);
   }
 }

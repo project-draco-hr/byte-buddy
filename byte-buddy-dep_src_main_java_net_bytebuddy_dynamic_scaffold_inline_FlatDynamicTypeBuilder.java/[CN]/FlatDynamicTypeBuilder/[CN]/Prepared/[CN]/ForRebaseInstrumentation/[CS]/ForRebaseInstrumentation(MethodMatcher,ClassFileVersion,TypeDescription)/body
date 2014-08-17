@@ -1,4 +1,0 @@
-{
-  this.ignoredMethods=ignoredMethods;
-  auxiliaryType=TrivialType.INSTANCE.make(trivialTypeNameFor(rawInstrumentedType),classFileVersion,AuxiliaryType.MethodAccessorFactory.Illegal.INSTANCE);
-}

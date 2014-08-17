@@ -1,3 +1,0 @@
-{
-  return String.format("%s$%s$%d",rawInstrumentedType.getInternalName(),SUFFIX,new Random().nextInt());
-}

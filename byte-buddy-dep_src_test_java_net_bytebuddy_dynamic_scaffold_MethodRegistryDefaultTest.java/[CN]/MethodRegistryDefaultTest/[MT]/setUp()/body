@@ -1,4 +1,5 @@
 {
+  when(fallbackFactory.compile(any(Instrumentation.Target.class))).thenReturn(fallback);
   when(latentMatchesKnownMethod.manifest(any(TypeDescription.class))).thenReturn(matchesKnownMethod);
   when(matchesKnownMethod.matches(knownMethod)).thenReturn(true);
   when(basicInstrumentedType.getDeclaredMethods()).thenReturn(basicMethodList);

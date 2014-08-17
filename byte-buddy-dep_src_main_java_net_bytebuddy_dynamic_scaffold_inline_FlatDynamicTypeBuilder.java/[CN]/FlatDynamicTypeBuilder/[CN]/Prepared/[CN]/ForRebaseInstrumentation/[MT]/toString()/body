@@ -1,3 +1,0 @@
-{
-  return "FlatDynamicTypeBuilder.TargetHandler.Prepared.ForRebaseInstrumentation{" + "ignoredMethods=" + ignoredMethods + ", auxiliaryType="+ auxiliaryType+ '}';
-}

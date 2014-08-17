@@ -1,0 +1,3 @@
+{
+  return "FlatDynamicTypeBuilder.MethodFlatteningDelegation{instrumentationTarget=" + instrumentationTarget + '}';
+}
