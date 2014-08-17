@@ -7,7 +7,7 @@
     InputStream classFile=exists(classFileLocator.classFileFor(targetType));
     try {
       ClassReader classReader=new ClassReader(classFile);
-      return new TypeWriter.Builder<T>(preparedMethodRegistry.getInstrumentedType(),preparedMethodRegistry.getLoadedTypeInitializer(),typeExtensionDelegate,classFileVersion,new TypeWriter.Builder.ClassWriterProvider.ForClassReader(classReader)).build(classVisitorWrapperChain).make(preparedTargetHandler.auxiliaryTypes());
+      return new TypeWriter.Builder<T>(preparedMethodRegistry.getInstrumentedType(),preparedMethodRegistry.getLoadedTypeInitializer(),typeExtensionDelegate,classFileVersion,new TypeWriter.Builder.ClassWriterProvider.ForClassReader(classReader)).build(classVisitorWrapperChain).attributeType(attributeAppender).members().writeFields(preparedMethodRegistry.getInstrumentedType().getDeclaredFields(),fieldRegistry.compile(preparedMethodRegistry.getInstrumentedType(),TypeWriter.FieldPool.Entry.NoOp.INSTANCE)).writeMethods(compiledMethodRegistry.getFinding().getInvokableMethods().filter(isOverridable().or(isDeclaredBy(preparedMethodRegistry.getInstrumentedType())).and(not(ignoredMethods))),compiledMethodRegistry).writeRaw(null).writeMethods(typeExtensionDelegate.getRegisteredAccessors(),typeExtensionDelegate).writeFields(typeExtensionDelegate.getRegisteredFieldCaches(),typeExtensionDelegate).make(preparedTargetHandler.auxiliaryTypes());
     }
   finally {
       classFile.close();
