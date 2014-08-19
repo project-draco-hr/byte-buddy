@@ -1,0 +1,3 @@
+{
+  return resolution.isRedefined() && resolution.getResolvedMethod().isConstructor() ? new RedefinedConstructorInvocation(resolution.getResolvedMethod(),typeDescription) : Instrumentation.SpecialMethodInvocation.Simple.of(resolution.getResolvedMethod(),typeDescription);
+}

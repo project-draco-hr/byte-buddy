@@ -1,0 +1,3 @@
+{
+  return "FieldRegistry.Default.Entry{" + "attributeAppenderFactory=" + attributeAppenderFactory + ", defaultValue="+ defaultValue+ '}';
+}

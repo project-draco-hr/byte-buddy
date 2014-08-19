@@ -1,3 +1,3 @@
 {
-  return MethodAttributeAppender.ForInstrumentedMethod.INSTANCE;
+  return MethodAttributeAppender.NoOp.INSTANCE;
 }

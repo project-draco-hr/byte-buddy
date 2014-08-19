@@ -1,6 +1,0 @@
-{
-  if (classFile == null) {
-    throw new IllegalStateException(classFileLocator + " cannot locate a class file for " + targetType);
-  }
-  return classFile;
-}

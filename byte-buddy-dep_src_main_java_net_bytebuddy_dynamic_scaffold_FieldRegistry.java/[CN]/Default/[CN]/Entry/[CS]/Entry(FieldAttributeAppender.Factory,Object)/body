@@ -1,0 +1,4 @@
+{
+  this.attributeAppenderFactory=attributeAppenderFactory;
+  this.defaultValue=defaultValue;
+}

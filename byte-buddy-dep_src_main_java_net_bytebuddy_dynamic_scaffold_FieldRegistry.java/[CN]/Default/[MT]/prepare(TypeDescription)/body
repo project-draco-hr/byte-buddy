@@ -1,0 +1,13 @@
+{
+  Map<String,TypeWriter.FieldPool.Entry> entries=new HashMap<String,TypeWriter.FieldPool.Entry>(this.entries.size());
+  Map<FieldAttributeAppender.Factory,FieldAttributeAppender> attributeAppenders=new HashMap<FieldAttributeAppender.Factory,FieldAttributeAppender>(this.entries.size());
+  for (  Map.Entry<String,Entry> entry : this.entries.entrySet()) {
+    FieldAttributeAppender attributeAppender=attributeAppenders.get(entry.getValue().getAttributeAppenderFactory());
+    if (attributeAppender == null) {
+      attributeAppender=entry.getValue().getAttributeAppenderFactory().make(instrumentedType);
+      attributeAppenders.put(entry.getValue().getAttributeAppenderFactory(),attributeAppender);
+    }
+    entries.put(entry.getKey(),new TypeWriter.FieldPool.Entry.Simple(attributeAppender,entry.getValue().getDefaultValue()));
+  }
+  return new Prepared(entries);
+}

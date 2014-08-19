@@ -1,6 +1,0 @@
-{
-  if (!resolution.isRedefined()) {
-    throw new IllegalArgumentException("Cannot invoke non-redefined method " + resolution.getResolvedMethod());
-  }
-  return resolution.getResolvedMethod().isConstructor() ? new RedefinedConstructorInvocation(resolution.getResolvedMethod(),typeDescription) : Instrumentation.SpecialMethodInvocation.Simple.of(resolution.getResolvedMethod(),typeDescription);
-}

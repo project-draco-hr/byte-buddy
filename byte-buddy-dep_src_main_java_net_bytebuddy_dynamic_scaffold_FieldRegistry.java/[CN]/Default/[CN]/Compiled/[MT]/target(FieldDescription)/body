@@ -1,9 +1,4 @@
 {
-  TypeWriter.FieldPool.Entry entry=entries.get(fieldDescription.getInternalName());
-  if (entry == null) {
-    return fallback;
-  }
- else {
-    return entry;
-  }
+  Entry entry=entries.get(fieldDescription.getInternalName());
+  return entry == null ? fallback : entry;
 }

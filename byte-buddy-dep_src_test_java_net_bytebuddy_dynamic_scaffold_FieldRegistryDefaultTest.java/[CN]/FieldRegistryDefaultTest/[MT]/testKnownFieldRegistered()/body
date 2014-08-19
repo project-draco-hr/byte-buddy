@@ -1,4 +1,4 @@
 {
-  assertThat(new FieldRegistry.Default().include(latentFieldMatcher,distinct,null).compile(instrumentedType,fallback).target(knownField).getFieldAppenderFactory(),is(distinct));
-  assertThat(new FieldRegistry.Default().include(latentFieldMatcher,distinct,null).compile(instrumentedType,fallback).target(unknownField),is(fallback));
+  assertThat(new FieldRegistry.Default().include(latentFieldMatcher,distinctFactory,null).prepare(instrumentedType).compile(fallback).target(knownField).getFieldAppender(),is(distinct));
+  assertThat(new FieldRegistry.Default().include(latentFieldMatcher,distinctFactory,null).prepare(instrumentedType).compile(fallback).target(unknownField),is(fallback));
 }

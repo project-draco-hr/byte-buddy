@@ -3,17 +3,6 @@
   TargetHandler.Prepared preparedTargetHandler=targetHandler.prepare(ignoredMethods,classFileVersion,preparedMethodRegistry.getInstrumentedType());
   MethodRegistry.Compiled compiledMethodRegistry=preparedMethodRegistry.compile(preparedTargetHandler.factory(bridgeMethodResolverFactory),methodLookupEngineFactory.make(classFileVersion),MethodFlatteningDelegation.Factory.INSTANCE);
   TypeExtensionDelegate typeExtensionDelegate=new TypeExtensionDelegate(preparedMethodRegistry.getInstrumentedType(),classFileVersion);
-  try {
-    InputStream classFile=exists(classFileLocator.classFileFor(targetType));
-    try {
-      ClassReader classReader=new ClassReader(classFile);
-      return new TypeWriter.Builder<T>(preparedMethodRegistry.getInstrumentedType(),preparedMethodRegistry.getLoadedTypeInitializer(),typeExtensionDelegate,classFileVersion,new TypeWriter.Builder.ClassWriterProvider.ForClassReader(classReader)).build(classVisitorWrapperChain).attributeType(attributeAppender).members().writeFields(preparedMethodRegistry.getInstrumentedType().getDeclaredFields(),fieldRegistry.compile(preparedMethodRegistry.getInstrumentedType(),TypeWriter.FieldPool.Entry.NoOp.INSTANCE)).writeMethods(compiledMethodRegistry.getInvokableMethods().filter(isOverridable().or(isDeclaredBy(preparedMethodRegistry.getInstrumentedType())).and(not(ignoredMethods))),compiledMethodRegistry).writeRaw(null).writeMethods(typeExtensionDelegate.getRegisteredAccessors(),typeExtensionDelegate).writeFields(typeExtensionDelegate.getRegisteredFieldCaches(),typeExtensionDelegate).make(preparedTargetHandler.auxiliaryTypes());
-    }
-  finally {
-      classFile.close();
-    }
-  }
- catch (  IOException e) {
-    throw new IllegalStateException("Error while reading class file",e);
-  }
+  new Engine.ForRedefinition(preparedMethodRegistry.getInstrumentedType(),classFileVersion,compiledMethodRegistry.getInvokableMethods(),classVisitorWrapperChain,attributeAppender,fieldRegistry.prepare(preparedMethodRegistry.getInstrumentedType()).compile(TypeWriter.FieldPool.Entry.NoOp.INSTANCE),compiledMethodRegistry,new Engine.ForRedefinition.InputStreamProvider.ForClassFileLocator(targetType,classFileLocator),null).create(typeExtensionDelegate);
+  return null;
 }

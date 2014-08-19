@@ -1,0 +1,3 @@
+{
+  return 31 * attributeAppenderFactory.hashCode() + (defaultValue != null ? defaultValue.hashCode() : 0);
+}
