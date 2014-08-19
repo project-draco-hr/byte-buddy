@@ -1,3 +1,0 @@
-{
-  return new Size(MethodReturn.VOID.apply(methodVisitor,instrumentationContext).getMaximalSize(),instrumentedMethod.getStackSize());
-}

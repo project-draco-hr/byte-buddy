@@ -1,0 +1,3 @@
+MethodDescription typeInitializer
+TypeWriter.MethodPool.Entry originalEntry
+Map<FieldCacheEntry,FieldDescription> registeredFieldCacheEntries

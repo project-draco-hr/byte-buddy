@@ -1,0 +1,4 @@
+{
+  boolean defineMethod=originalEntry.isDefineMethod();
+  return registeredFieldCacheEntries.size() == 0 ? originalEntry : new TypeWriter.MethodPool.Entry.Simple(new Compound(new FieldCacheAppender(registeredFieldCacheEntries),defineMethod && originalEntry.getByteCodeAppender().appendsCode() ? originalEntry.getByteCodeAppender() : new Simple(MethodReturn.VOID)),defineMethod ? originalEntry.getAttributeAppender() : MethodAttributeAppender.NoOp.INSTANCE);
+}

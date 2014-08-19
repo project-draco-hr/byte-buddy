@@ -1,3 +1,0 @@
-{
-  return "TypeExtensionDelegate.FieldCacheWritingMethodPool{" + "typeExtensionDelegate=" + TypeExtensionDelegate.this + "wrappedMethodPool="+ wrappedMethodPool+ '}';
-}

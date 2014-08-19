@@ -1,3 +1,0 @@
-{
-  return "TypeWriter.Builder{" + "instrumentedType=" + instrumentedType + ", typeInitializer="+ loadedTypeInitializer+ ", instrumentationContext="+ instrumentationContext+ ", classFileVersion="+ classFileVersion+ '}';
-}

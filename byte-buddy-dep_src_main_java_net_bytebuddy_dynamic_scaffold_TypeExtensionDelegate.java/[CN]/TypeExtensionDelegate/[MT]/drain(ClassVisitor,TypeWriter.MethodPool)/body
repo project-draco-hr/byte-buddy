@@ -1,0 +1,11 @@
+{
+  canRegisterFieldCache=false;
+  MethodDescription typeInitializer=MethodDescription.Latent.typeInitializerOf(instrumentedType);
+  FieldCacheAppender.resolve(typeInitializer,methodPool.target(typeInitializer),registeredFieldCacheEntries).apply(classVisitor,this,typeInitializer);
+  for (  FieldDescription fieldDescription : registeredFieldCacheEntries.values()) {
+    classVisitor.visitField(fieldDescription.getModifiers(),fieldDescription.getInternalName(),fieldDescription.getDescriptor(),fieldDescription.getGenericSignature(),null).visitEnd();
+  }
+  for (  Map.Entry<MethodDescription,TypeWriter.MethodPool.Entry> entry : accessorMethodEntries.entrySet()) {
+    entry.getValue().apply(classVisitor,this,entry.getKey());
+  }
+}

@@ -1,4 +1,0 @@
-{
-  this.classWriter=classWriter;
-  this.classVisitor=classVisitor;
-}

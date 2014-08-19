@@ -6,7 +6,7 @@ synchronized (classLoader) {
         return type;
       }
  else {
-        return (Class<?>)REFLECTION_STORE.getLoadByteArrayMethod().invoke(classLoader,name,binaryRepresentation,0,binaryRepresentation.length);
+        return (Class<?>)REFLECTION_STORE.getLoadByteArrayMethod().invoke(classLoader,name,binaryRepresentation,FROM_BEGINNING,binaryRepresentation.length);
       }
     }
   }

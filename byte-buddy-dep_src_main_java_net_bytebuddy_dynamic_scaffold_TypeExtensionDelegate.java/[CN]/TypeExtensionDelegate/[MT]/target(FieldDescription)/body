@@ -1,3 +1,0 @@
-{
-  return TypeWriter.FieldPool.Entry.NoOp.INSTANCE;
-}

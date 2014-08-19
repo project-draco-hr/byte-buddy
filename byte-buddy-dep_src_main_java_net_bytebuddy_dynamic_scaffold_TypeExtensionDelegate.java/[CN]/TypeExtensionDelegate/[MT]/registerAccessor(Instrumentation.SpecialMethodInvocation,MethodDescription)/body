@@ -1,5 +1,4 @@
 {
   registeredAccessorMethods.put(specialMethodInvocation,accessorMethod);
-  orderedAccessorMethods.add(accessorMethod);
   accessorMethodEntries.put(accessorMethod,new AccessorMethodDelegation(specialMethodInvocation));
 }

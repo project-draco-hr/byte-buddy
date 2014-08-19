@@ -1,6 +1,0 @@
-{
-  assertDynamicType(typeWriter.members().writeFields(Arrays.asList(firstField,secondField),compiledFieldRegistry).make(),true,false);
-  verify(compiledFieldRegistry).target(firstField);
-  verify(compiledFieldRegistry).target(secondField);
-  verifyNoMoreInteractions(compiledFieldRegistry);
-}

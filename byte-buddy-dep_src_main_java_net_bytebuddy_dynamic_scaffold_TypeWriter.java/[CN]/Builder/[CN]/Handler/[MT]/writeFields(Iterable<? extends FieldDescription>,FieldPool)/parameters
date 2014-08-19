@@ -1,2 +1,0 @@
-Iterable<? extends FieldDescription> fieldDescriptions
-FieldPool fieldPool

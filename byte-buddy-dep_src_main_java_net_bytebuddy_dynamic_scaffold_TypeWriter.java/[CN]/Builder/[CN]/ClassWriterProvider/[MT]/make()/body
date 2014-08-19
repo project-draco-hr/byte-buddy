@@ -1,3 +1,0 @@
-{
-  return new ClassWriter(ASM_MANUAL_FLAG);
-}

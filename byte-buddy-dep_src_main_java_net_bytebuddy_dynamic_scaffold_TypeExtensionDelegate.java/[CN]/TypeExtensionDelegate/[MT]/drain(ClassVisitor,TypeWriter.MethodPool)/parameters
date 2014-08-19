@@ -1,0 +1,2 @@
+ClassVisitor classVisitor
+TypeWriter.MethodPool methodPool
