@@ -1,0 +1,7 @@
+{
+  JunctionMethodMatcher methodMatcher=none();
+  for (  MethodDescription methodDescription : methodDescriptions) {
+    methodMatcher=methodMatcher.or(is(methodDescription));
+  }
+  return methodMatcher;
+}
