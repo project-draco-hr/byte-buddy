@@ -1,0 +1,3 @@
+{
+  return "FlatDynamicTypeBuilder.TargetHandler.Prepared.ForRebaseInstrumentation{" + "methodFlatteningResolver=" + methodFlatteningResolver + ", placeholderType="+ placeholderType+ '}';
+}

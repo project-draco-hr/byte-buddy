@@ -1,0 +1,4 @@
+{
+  placeholderType=TrivialType.INSTANCE.make(trivialTypeNameFor(instrumentedType),classFileVersion,AuxiliaryType.MethodAccessorFactory.Illegal.INSTANCE);
+  this.methodFlatteningResolver=new MethodFlatteningResolver.Default(ignoredMethods,placeholderType.getDescription());
+}

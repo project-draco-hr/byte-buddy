@@ -1,0 +1,3 @@
+{
+  return MethodFlatteningDelegation.Factory.INSTANCE;
+}
