@@ -1,0 +1,7 @@
+{
+  char[] buffer=new char[length];
+  for (int index=0; index < length; ++index) {
+    buffer[index]=SYMBOL[random.nextInt(SYMBOL.length)];
+  }
+  return new String(buffer);
+}

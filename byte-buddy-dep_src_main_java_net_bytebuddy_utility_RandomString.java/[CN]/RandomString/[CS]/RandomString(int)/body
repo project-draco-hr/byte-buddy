@@ -1,0 +1,7 @@
+{
+  if (length <= 0) {
+    throw new IllegalArgumentException("A random string's length cannot be zero or negative");
+  }
+  this.length=length;
+  random=new Random();
+}

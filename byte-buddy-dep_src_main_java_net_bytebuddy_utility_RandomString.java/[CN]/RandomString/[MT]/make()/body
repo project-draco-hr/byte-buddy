@@ -1,0 +1,3 @@
+{
+  return make(DEFAULT_LENGTH);
+}

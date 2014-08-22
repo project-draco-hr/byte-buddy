@@ -1,4 +1,4 @@
 {
   this.suffix=suffix;
-  random=new Random();
+  randomString=new RandomString();
 }

@@ -5,7 +5,7 @@
     return fieldCache;
   }
   validateFieldCacheAccessibility();
-  fieldCache=new FieldDescription.Latent(String.format("%s$%d",fieldCachePrefix,Math.abs(random.nextInt())),instrumentedType,fieldType,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL | Opcodes.ACC_STATIC);
+  fieldCache=new FieldDescription.Latent(String.format("%s$%s",fieldCachePrefix,randomString.nextString()),instrumentedType,fieldType,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL | Opcodes.ACC_STATIC);
   registeredFieldCacheEntries.put(fieldCacheEntry,fieldCache);
   return fieldCache;
 }

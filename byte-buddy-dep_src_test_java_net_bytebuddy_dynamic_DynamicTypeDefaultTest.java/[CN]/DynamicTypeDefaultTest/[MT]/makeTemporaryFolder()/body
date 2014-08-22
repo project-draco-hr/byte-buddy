@@ -1,7 +1,7 @@
 {
   File file=File.createTempFile(TEMP,TEMP);
   try {
-    File folder=new File(file.getParentFile(),TEMP + Math.abs(new Random().nextInt()));
+    File folder=new File(file.getParentFile(),TEMP + RandomString.make());
     assertThat(folder.mkdir(),is(true));
     return folder;
   }
