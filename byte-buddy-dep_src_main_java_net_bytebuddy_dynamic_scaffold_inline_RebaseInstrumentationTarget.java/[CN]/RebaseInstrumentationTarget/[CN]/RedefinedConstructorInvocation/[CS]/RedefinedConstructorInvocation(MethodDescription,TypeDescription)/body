@@ -1,5 +1,0 @@
-{
-  this.methodDescription=methodDescription;
-  this.typeDescription=typeDescription;
-  stackManipulation=new Compound(NullConstant.INSTANCE,MethodInvocation.invoke(methodDescription));
-}
