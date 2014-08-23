@@ -1,0 +1,7 @@
+{
+  Instrumentation instrumentation=doGetInstrumentation();
+  if (instrumentation == null) {
+    throw new IllegalStateException("The Byte Buddy agent is not initialized");
+  }
+  return instrumentation;
+}

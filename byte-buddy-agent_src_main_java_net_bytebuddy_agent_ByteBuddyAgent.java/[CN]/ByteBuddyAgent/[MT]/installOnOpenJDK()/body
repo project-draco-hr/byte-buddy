@@ -1,0 +1,13 @@
+{
+  Instrumentation instrumentation=doGetInstrumentation();
+  if (instrumentation != null) {
+    return instrumentation;
+  }
+  try {
+    doInstall();
+  }
+ catch (  Exception e) {
+    throw new IllegalStateException("The programmatic installation of the Byte Buddy agent is only possible on the OpenJDK",e);
+  }
+  return getInstrumentation();
+}

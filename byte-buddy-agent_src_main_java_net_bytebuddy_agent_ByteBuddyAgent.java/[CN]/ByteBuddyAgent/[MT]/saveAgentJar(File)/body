@@ -1,0 +1,29 @@
+{
+  InputStream inputStream=ByteBuddyAgent.Installer.class.getResourceAsStream('/' + ByteBuddyAgent.Installer.class.getName().replace('.','/') + CLASS_FILE_EXTENSION);
+  if (inputStream == null) {
+    throw new IllegalStateException("Cannot locate class file for Byte Buddy agent");
+  }
+  try {
+    Manifest manifest=new Manifest();
+    manifest.getMainAttributes().put(Attributes.Name.MANIFEST_VERSION,MANIFEST_VERSION_VALUE);
+    manifest.getMainAttributes().put(new Attributes.Name(AGENT_CLASS_PROPERTY),ByteBuddyAgent.Installer.class.getName());
+    manifest.getMainAttributes().put(new Attributes.Name(CAN_REDEFINE_CLASSES_PROPERTY),Boolean.TRUE.toString());
+    manifest.getMainAttributes().put(new Attributes.Name(CAN_SET_NATIVE_METHOD_PREFIX_PROPERTY),Boolean.TRUE.toString());
+    JarOutputStream jarOutputStream=new JarOutputStream(new FileOutputStream(agentFile),manifest);
+    try {
+      jarOutputStream.putNextEntry(new JarEntry('/' + ByteBuddyAgent.Installer.class.getName().replace('.','/') + CLASS_FILE_EXTENSION));
+      byte[] buffer=new byte[BUFFER_SIZE];
+      int index;
+      while ((index=inputStream.read(buffer)) != END_OF_FILE) {
+        jarOutputStream.write(buffer,START_INDEX,index);
+      }
+      jarOutputStream.closeEntry();
+    }
+  finally {
+      jarOutputStream.close();
+    }
+  }
+  finally {
+    inputStream.close();
+  }
+}
