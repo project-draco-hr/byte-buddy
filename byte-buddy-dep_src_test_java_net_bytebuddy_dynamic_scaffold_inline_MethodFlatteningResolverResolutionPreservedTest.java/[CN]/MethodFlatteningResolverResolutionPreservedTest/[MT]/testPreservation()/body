@@ -1,0 +1,11 @@
+{
+  MethodFlatteningResolver.Resolution resolution=new MethodFlatteningResolver.Resolution.Preserved(methodDescription);
+  assertThat(resolution.isRebased(),is(false));
+  assertThat(resolution.getResolvedMethod(),is(methodDescription));
+  try {
+    resolution.getAdditionalArguments();
+    fail();
+  }
+ catch (  IllegalStateException ignored) {
+  }
+}

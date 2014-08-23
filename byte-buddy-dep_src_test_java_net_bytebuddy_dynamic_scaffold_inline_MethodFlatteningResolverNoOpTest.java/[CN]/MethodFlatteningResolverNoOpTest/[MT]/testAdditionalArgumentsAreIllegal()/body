@@ -1,0 +1,3 @@
+{
+  MethodFlatteningResolver.NoOp.INSTANCE.resolve(methodDescription).getAdditionalArguments();
+}

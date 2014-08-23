@@ -1,0 +1,6 @@
+{
+  assertThat(new MethodFlatteningResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType).hashCode(),is(new MethodFlatteningResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType).hashCode()));
+  assertThat(new MethodFlatteningResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType),is(new MethodFlatteningResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType)));
+  assertThat(new MethodFlatteningResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType).hashCode(),not(is(new MethodFlatteningResolver.Resolution.ForRebasedConstructor(methodDescription,otherPlaceHolderType).hashCode())));
+  assertThat(new MethodFlatteningResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType),not(is(new MethodFlatteningResolver.Resolution.ForRebasedConstructor(methodDescription,otherPlaceHolderType))));
+}

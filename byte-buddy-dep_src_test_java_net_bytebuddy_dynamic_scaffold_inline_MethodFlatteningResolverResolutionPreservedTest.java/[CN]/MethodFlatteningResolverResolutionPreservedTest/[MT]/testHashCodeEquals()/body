@@ -1,0 +1,6 @@
+{
+  assertThat(new MethodFlatteningResolver.Resolution.Preserved(methodDescription).hashCode(),is(new MethodFlatteningResolver.Resolution.Preserved(methodDescription).hashCode()));
+  assertThat(new MethodFlatteningResolver.Resolution.Preserved(methodDescription),is(new MethodFlatteningResolver.Resolution.Preserved(methodDescription)));
+  assertThat(new MethodFlatteningResolver.Resolution.Preserved(otherMethodDescription).hashCode(),not(is(new MethodFlatteningResolver.Resolution.Preserved(methodDescription).hashCode())));
+  assertThat(new MethodFlatteningResolver.Resolution.Preserved(methodDescription),not(is(new MethodFlatteningResolver.Resolution.Preserved(otherMethodDescription))));
+}

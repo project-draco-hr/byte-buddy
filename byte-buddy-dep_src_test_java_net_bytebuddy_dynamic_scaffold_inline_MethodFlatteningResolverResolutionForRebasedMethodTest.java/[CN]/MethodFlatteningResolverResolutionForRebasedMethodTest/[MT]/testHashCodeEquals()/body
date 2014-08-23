@@ -1,0 +1,6 @@
+{
+  assertThat(new MethodFlatteningResolver.Resolution.ForRebasedMethod(methodDescription,methodNameTransformer).hashCode(),is(new MethodFlatteningResolver.Resolution.ForRebasedMethod(methodDescription,methodNameTransformer).hashCode()));
+  assertThat(new MethodFlatteningResolver.Resolution.ForRebasedMethod(methodDescription,methodNameTransformer),is(new MethodFlatteningResolver.Resolution.ForRebasedMethod(methodDescription,methodNameTransformer)));
+  assertThat(new MethodFlatteningResolver.Resolution.ForRebasedMethod(methodDescription,methodNameTransformer).hashCode(),not(is(new MethodFlatteningResolver.Resolution.ForRebasedMethod(methodDescription,otherMethodNameTransformer).hashCode())));
+  assertThat(new MethodFlatteningResolver.Resolution.ForRebasedMethod(methodDescription,methodNameTransformer),not(is(new MethodFlatteningResolver.Resolution.ForRebasedMethod(methodDescription,otherMethodNameTransformer))));
+}

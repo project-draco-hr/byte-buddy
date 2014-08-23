@@ -1,0 +1,9 @@
+{
+  when(resolution.getResolvedMethod()).thenReturn(methodDescription);
+  when(resolution.getAdditionalArguments()).thenReturn(stackManipulation);
+  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
+  when(methodDescription.getReturnType()).thenReturn(typeDescription);
+  when(methodDescription.getParameterTypes()).thenReturn(new TypeList.Explicit(Arrays.asList(typeDescription)));
+  when(typeDescription.getStackSize()).thenReturn(StackSize.ZERO);
+  when(methodDescription.getInternalName()).thenReturn(FOO);
+}
