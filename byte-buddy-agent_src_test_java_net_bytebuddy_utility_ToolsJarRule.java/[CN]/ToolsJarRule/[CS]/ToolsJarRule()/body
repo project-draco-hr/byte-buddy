@@ -1,3 +1,3 @@
 {
-  openJDK=checkToolsJar();
+  openJDK=new File(System.getProperty(JAVA_HOME_PROPERTY).replace('\\','/') + TOOLS_JAR_LOCATION).isFile();
 }
