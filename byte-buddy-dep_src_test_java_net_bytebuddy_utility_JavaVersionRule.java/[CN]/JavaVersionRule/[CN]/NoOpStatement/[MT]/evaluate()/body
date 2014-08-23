@@ -1,2 +1,3 @@
 {
+  Logger.getAnonymousLogger().warning("Ignored test case that requires a newer JVM version");
 }
