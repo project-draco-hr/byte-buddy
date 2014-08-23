@@ -3,6 +3,6 @@
     return (Instrumentation)ClassLoader.getSystemClassLoader().loadClass(ByteBuddyAgent.class.getName()).getDeclaredField(INSTRUMENTATION_FIELD_NAME).get(STATIC_MEMBER);
   }
  catch (  Exception e) {
-    throw new IllegalStateException("The Byte Buddy agent is not initialized",e);
+    throw new IllegalStateException("The Byte Buddy agent is not properly initialized",e);
   }
 }
