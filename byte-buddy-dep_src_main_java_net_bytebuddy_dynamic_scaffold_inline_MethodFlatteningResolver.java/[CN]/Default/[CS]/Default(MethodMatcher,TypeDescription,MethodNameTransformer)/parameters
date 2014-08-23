@@ -1,0 +1,3 @@
+MethodMatcher ignoredMethods
+TypeDescription placeholderType
+MethodNameTransformer methodNameTransformer

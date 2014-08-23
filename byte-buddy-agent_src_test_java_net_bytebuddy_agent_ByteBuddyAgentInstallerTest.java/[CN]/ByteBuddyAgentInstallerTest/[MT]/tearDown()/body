@@ -1,0 +1,5 @@
+{
+  Field field=ByteBuddyAgent.class.getDeclaredField(INSTRUMENTATION);
+  field.setAccessible(true);
+  field.set(STATIC_FIELD,null);
+}

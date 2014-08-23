@@ -1,0 +1,6 @@
+{
+  this.typeDescription=typeDescription;
+  this.loadedTypeInitializer=loadedTypeInitializer;
+  this.explicitAuxiliaryTypes=explicitAuxiliaryTypes;
+  this.engine=engine;
+}

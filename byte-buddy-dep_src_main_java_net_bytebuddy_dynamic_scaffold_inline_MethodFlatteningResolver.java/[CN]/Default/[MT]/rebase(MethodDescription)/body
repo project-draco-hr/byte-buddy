@@ -1,0 +1,3 @@
+{
+  return methodDescription.isConstructor() ? new Resolution.ForRebasedConstructor(methodDescription,placeholderType) : new Resolution.ForRebasedMethod(methodDescription,methodNameTransformer);
+}

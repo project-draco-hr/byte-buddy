@@ -1,0 +1,11 @@
+{
+  Constructor<?> constructor=ByteBuddyAgent.Installer.class.getDeclaredConstructor();
+  constructor.setAccessible(true);
+  try {
+    constructor.newInstance();
+    fail();
+  }
+ catch (  InvocationTargetException e) {
+    throw (Exception)e.getCause();
+  }
+}

@@ -1,3 +1,0 @@
-{
-  return TypeWriter.MethodPool.Entry.Skip.INSTANCE;
-}
