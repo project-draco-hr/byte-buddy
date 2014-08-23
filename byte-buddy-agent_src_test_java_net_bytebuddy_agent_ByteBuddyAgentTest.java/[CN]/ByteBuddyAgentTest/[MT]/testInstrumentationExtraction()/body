@@ -1,0 +1,7 @@
+{
+  Field field=ByteBuddyAgent.class.getDeclaredField(INSTRUMENTATION);
+  field.setAccessible(true);
+  Instrumentation instrumentation=mock(Instrumentation.class);
+  field.set(STATIC_FIELD,instrumentation);
+  assertThat(ByteBuddyAgent.getInstrumentation(),is(instrumentation));
+}
