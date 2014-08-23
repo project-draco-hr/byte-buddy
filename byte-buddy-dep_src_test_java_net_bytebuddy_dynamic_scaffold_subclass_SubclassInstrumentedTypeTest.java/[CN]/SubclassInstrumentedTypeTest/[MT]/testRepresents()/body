@@ -1,5 +1,0 @@
-{
-  assertThat(makePlainInstrumentedType().represents(Object.class),is(false));
-  assertThat(makePlainInstrumentedType().represents(Serializable.class),is(false));
-  assertThat(makePlainInstrumentedType().represents(Integer.class),is(false));
-}

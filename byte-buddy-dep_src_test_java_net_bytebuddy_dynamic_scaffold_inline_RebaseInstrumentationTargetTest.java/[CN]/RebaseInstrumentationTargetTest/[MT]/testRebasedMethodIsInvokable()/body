@@ -1,0 +1,17 @@
+{
+  Instrumentation.SpecialMethodInvocation specialMethodInvocation=instrumentationTarget.invokeSuper(targetRebaseMethod,methodLookup);
+  verify(methodFlatteningResolver).resolve(targetRebaseMethod);
+  verifyNoMoreInteractions(methodFlatteningResolver);
+  assertThat(specialMethodInvocation.isValid(),is(true));
+  verify(additionalArguments).isValid();
+  assertThat(specialMethodInvocation.getMethodDescription(),is(rebasedMethod));
+  assertThat(specialMethodInvocation.getTypeDescription(),is(instrumentedType));
+  MethodVisitor methodVisitor=mock(MethodVisitor.class);
+  Instrumentation.Context instrumentationContext=mock(Instrumentation.Context.class);
+  StackManipulation.Size size=specialMethodInvocation.apply(methodVisitor,instrumentationContext);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,BAR,BAZ,FOOBAR,false);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(instrumentationContext);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+}

@@ -1,0 +1,3 @@
+{
+  return "RebaseInstrumentationTarget.RedefinedConstructorInvocation{" + "instrumentedType=" + instrumentedType + ", methodDescription="+ methodDescription+ '}';
+}

@@ -1,0 +1,6 @@
+{
+  assertThat(new RandomString().nextString().length(),is(RandomString.DEFAULT_LENGTH));
+  assertThat(RandomString.make().length(),is(RandomString.DEFAULT_LENGTH));
+  assertThat(new RandomString(LENGTH).nextString().length(),is(LENGTH));
+  assertThat(RandomString.make(LENGTH).length(),is(LENGTH));
+}

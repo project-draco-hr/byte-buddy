@@ -1,0 +1,33 @@
+{
+  when(instrumentedType.getInternalName()).thenReturn(BAR);
+  when(targetRebaseMethod.getDeclaringType()).thenReturn(instrumentedType);
+  when(rebasedMethod.getDeclaringType()).thenReturn(instrumentedType);
+  when(methodFlatteningResolver.resolve(targetRebaseMethod)).thenReturn(rebasedResolution);
+  when(rebasedResolution.isRebased()).thenReturn(true);
+  when(rebasedResolution.getResolvedMethod()).thenReturn(rebasedMethod);
+  when(rebasedMethod.getReturnType()).thenReturn(returnType);
+  when(rebasedMethod.getInternalName()).thenReturn(BAZ);
+  when(rebasedMethod.getDescriptor()).thenReturn(FOOBAR);
+  when(rebasedMethod.getParameterTypes()).thenReturn(parameterTypes);
+  when(rebasedMethod.isSpecializableFor(instrumentedType)).thenReturn(true);
+  when(rebasedResolution.getAdditionalArguments()).thenReturn(additionalArguments);
+  when(additionalArguments.isValid()).thenReturn(true);
+  when(additionalArguments.apply(any(MethodVisitor.class),any(Instrumentation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
+  when(instrumentedType.getSupertype()).thenReturn(superType);
+  when(superType.getInternalName()).thenReturn(QUX);
+  when(superType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(superMethod.getDeclaringType()).thenReturn(superType);
+  when(superMethod.getReturnType()).thenReturn(returnType);
+  when(superMethod.getInternalName()).thenReturn(BAZ);
+  when(superMethod.getDescriptor()).thenReturn(FOOBAR);
+  when(superMethod.getParameterTypes()).thenReturn(parameterTypes);
+  when(nonRebasedMethod.getDeclaringType()).thenReturn(instrumentedType);
+  when(nonRebasedMethod.getReturnType()).thenReturn(returnType);
+  when(nonRebasedMethod.getInternalName()).thenReturn(BAZ);
+  when(nonRebasedMethod.getDescriptor()).thenReturn(FOOBAR);
+  when(nonRebasedMethod.getParameterTypes()).thenReturn(parameterTypes);
+  when(methodFlatteningResolver.resolve(nonRebasedMethod)).thenReturn(nonRebasedResolution);
+  when(nonRebasedResolution.isRebased()).thenReturn(false);
+  when(nonRebasedResolution.getResolvedMethod()).thenReturn(nonRebasedMethod);
+  super.setUp();
+}

@@ -1,3 +1,0 @@
-{
-  return resolution.getResolvedMethod().isAbstract() ? Illegal.INSTANCE : new RedefinedMethodSpecialMethodInvocation(resolution,typeDescription);
-}

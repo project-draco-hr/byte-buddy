@@ -1,5 +1,0 @@
-{
-  this.methodDescription=resolution.getResolvedMethod();
-  this.typeDescription=typeDescription;
-  stackManipulation=new Compound(resolution.getAdditionalArguments(),MethodInvocation.invoke(resolution.getResolvedMethod()));
-}

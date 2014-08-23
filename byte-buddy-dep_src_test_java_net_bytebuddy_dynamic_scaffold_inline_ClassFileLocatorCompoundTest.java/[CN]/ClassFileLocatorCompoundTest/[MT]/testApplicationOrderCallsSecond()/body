@@ -1,0 +1,8 @@
+{
+  when(otherClassFileLocator.classFileFor(typeDescription)).thenReturn(inputStream);
+  assertThat(new ClassFileLocator.Compound(classFileLocator,otherClassFileLocator).classFileFor(typeDescription),is(inputStream));
+  verify(classFileLocator).classFileFor(typeDescription);
+  verifyNoMoreInteractions(classFileLocator);
+  verify(otherClassFileLocator).classFileFor(typeDescription);
+  verifyNoMoreInteractions(otherClassFileLocator);
+}

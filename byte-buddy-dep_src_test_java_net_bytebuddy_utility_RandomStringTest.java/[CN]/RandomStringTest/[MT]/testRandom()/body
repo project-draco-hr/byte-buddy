@@ -1,0 +1,4 @@
+{
+  RandomString randomString=new RandomString();
+  assertThat(randomString.nextString(),not(randomString.nextString()));
+}

@@ -1,0 +1,9 @@
+{
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  ClassLoader classLoader=new URLClassLoader(new URL[]{getClass().getProtectionDomain().getCodeSource().getLocation()});
+  when(typeDescription.getClassLoader()).thenReturn(classLoader);
+  when(typeDescription.getInternalName()).thenReturn(getClass().getName().replace('.','/'));
+  InputStream inputStream=ClassFileLocator.Default.ATTACHED.classFileFor(typeDescription);
+  assertThat(inputStream,notNullValue());
+  inputStream.close();
+}

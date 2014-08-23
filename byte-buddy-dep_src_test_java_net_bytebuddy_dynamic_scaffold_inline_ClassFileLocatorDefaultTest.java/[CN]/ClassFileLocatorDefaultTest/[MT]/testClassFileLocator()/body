@@ -1,0 +1,5 @@
+{
+  InputStream inputStream=ClassFileLocator.Default.CLASS_PATH.classFileFor(new TypeDescription.ForLoadedType(getClass()));
+  assertThat(inputStream,notNullValue());
+  inputStream.close();
+}
