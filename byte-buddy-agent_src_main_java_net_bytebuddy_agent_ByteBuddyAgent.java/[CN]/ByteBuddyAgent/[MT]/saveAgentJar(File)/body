@@ -8,7 +8,6 @@
     manifest.getMainAttributes().put(Attributes.Name.MANIFEST_VERSION,MANIFEST_VERSION_VALUE);
     manifest.getMainAttributes().put(new Attributes.Name(AGENT_CLASS_PROPERTY),ByteBuddyAgent.Installer.class.getName());
     manifest.getMainAttributes().put(new Attributes.Name(CAN_REDEFINE_CLASSES_PROPERTY),Boolean.TRUE.toString());
-    manifest.getMainAttributes().put(new Attributes.Name(CAN_SET_NATIVE_METHOD_PREFIX_PROPERTY),Boolean.TRUE.toString());
     JarOutputStream jarOutputStream=new JarOutputStream(new FileOutputStream(agentFile),manifest);
     try {
       jarOutputStream.putNextEntry(new JarEntry('/' + ByteBuddyAgent.Installer.class.getName().replace('.','/') + CLASS_FILE_EXTENSION));

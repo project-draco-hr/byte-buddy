@@ -1,6 +1,8 @@
 {
   try {
-    return (Instrumentation)ClassLoader.getSystemClassLoader().loadClass(ByteBuddyAgent.class.getName()).getDeclaredField(INSTRUMENTATION_FIELD_NAME).get(STATIC_MEMBER);
+    Field field=ClassLoader.getSystemClassLoader().loadClass(ByteBuddyAgent.Installer.class.getName()).getDeclaredField(INSTRUMENTATION_FIELD_NAME);
+    field.setAccessible(true);
+    return (Instrumentation)field.get(STATIC_MEMBER);
   }
  catch (  Exception e) {
     throw new IllegalStateException("The Byte Buddy agent is not properly initialized",e);
