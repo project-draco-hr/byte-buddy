@@ -1,6 +1,6 @@
 {
   if (!instrumentation.isRedefineClassesSupported()) {
-    throw new IllegalArgumentException("Does not support class redefinition: " + instrumentation);
+    throw new IllegalArgumentException("Instrumentation does not support class redefinition: " + instrumentation);
   }
   this.instrumentation=instrumentation;
 }
