@@ -1,0 +1,3 @@
+{
+  new TypeWriter.Engine.ForRedefinition(instrumentedType,targetType,classFileVersion,invokableMethods,classVisitorWrapper,typeAttributeAppender,fieldPool,methodPool,classFileLocator,methodRebaseResolver).create(instrumentationContext);
+}
