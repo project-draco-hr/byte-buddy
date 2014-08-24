@@ -1,0 +1,26 @@
+{
+  Map<TypeDescription,Class<?>> loadedClasses=new HashMap<TypeDescription,Class<?>>(types.size());
+  ClassLoaderByteArrayInjector classLoaderByteArrayInjector=new ClassLoaderByteArrayInjector(classLoader);
+  List<ClassDefinition> classDefinitions=new ArrayList<ClassDefinition>(types.size());
+  for (  Map.Entry<TypeDescription,byte[]> entry : types.entrySet()) {
+    Class<?> type;
+    try {
+      type=classLoader.loadClass(entry.getKey().getName());
+      classDefinitions.add(new ClassDefinition(type,entry.getValue()));
+    }
+ catch (    ClassNotFoundException e) {
+      type=classLoaderByteArrayInjector.inject(entry.getKey().getName(),entry.getValue());
+    }
+    loadedClasses.put(entry.getKey(),type);
+  }
+  try {
+    instrumentation.redefineClasses(classDefinitions.toArray(new ClassDefinition[classDefinitions.size()]));
+  }
+ catch (  ClassNotFoundException e) {
+    throw new IllegalArgumentException(e);
+  }
+catch (  UnmodifiableClassException e) {
+    throw new IllegalStateException(e);
+  }
+  return loadedClasses;
+}
