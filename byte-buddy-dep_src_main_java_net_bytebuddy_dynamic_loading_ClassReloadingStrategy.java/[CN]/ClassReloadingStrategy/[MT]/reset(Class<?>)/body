@@ -1,0 +1,27 @@
+{
+  List<ClassDefinition> classDefinitions=new ArrayList<ClassDefinition>(type.length);
+  try {
+    for (    Class<?> aType : type) {
+      InputStream inputStream=aType.getProtectionDomain().getCodeSource().getLocation().openStream();
+      try {
+        classDefinitions.add(new ClassDefinition(aType,drain(inputStream)));
+      }
+  finally {
+        inputStream.close();
+      }
+    }
+  }
+ catch (  IOException e) {
+    throw new IllegalStateException("Exception while resetting types " + Arrays.toString(type),e);
+  }
+  try {
+    instrumentation.redefineClasses(classDefinitions.toArray(new ClassDefinition[classDefinitions.size()]));
+  }
+ catch (  ClassNotFoundException e) {
+    throw new IllegalArgumentException("Cannot locate types " + Arrays.toString(type),e);
+  }
+catch (  UnmodifiableClassException e) {
+    throw new IllegalStateException("Cannot reset types " + Arrays.toString(type),e);
+  }
+  return this;
+}

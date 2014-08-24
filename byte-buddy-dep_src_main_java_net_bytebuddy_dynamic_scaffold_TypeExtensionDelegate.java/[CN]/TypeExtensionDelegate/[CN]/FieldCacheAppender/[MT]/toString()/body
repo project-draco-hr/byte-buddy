@@ -1,0 +1,3 @@
+{
+  return "TypeExtensionDelegate.FieldCacheAppender{registeredFieldCacheEntries=" + registeredFieldCacheEntries + '}';
+}

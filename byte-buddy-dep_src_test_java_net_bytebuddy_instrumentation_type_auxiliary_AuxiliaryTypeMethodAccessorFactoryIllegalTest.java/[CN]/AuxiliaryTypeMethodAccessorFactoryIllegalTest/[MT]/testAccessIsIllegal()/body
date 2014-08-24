@@ -1,0 +1,3 @@
+{
+  AuxiliaryType.MethodAccessorFactory.Illegal.INSTANCE.registerAccessorFor(specialMethodInvocation);
+}

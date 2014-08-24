@@ -1,3 +1,3 @@
 {
-  return Prepared.ForSubclassInstrumentation.INSTANCE;
+  return new Prepared.ForRebaseInstrumentation(ignoredMethods,classFileVersion,instrumentedType);
 }

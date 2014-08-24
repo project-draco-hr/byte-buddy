@@ -1,7 +1,0 @@
-{
-  List<String> list=new ArrayList<String>();
-  Iterable<String> iterable=new TypeExtensionDelegate.SameThreadCoModifiableIterable<String>(list);
-  Iterator<String> iterator=iterable.iterator();
-  assertThat(iterator.hasNext(),is(false));
-  iterator.next();
-}

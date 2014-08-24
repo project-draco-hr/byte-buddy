@@ -1,3 +1,0 @@
-{
-  return "TypeExtensionDelegate.SameThreadCoModifiableIterable.Iterator{" + "iterable=" + SameThreadCoModifiableIterable.this + ", index="+ index+ '}';
-}
