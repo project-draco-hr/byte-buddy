@@ -1,5 +1,0 @@
-{
-  String transformed=new MethodFlatteningResolver.MethodNameTransformer.Suffixing(new RandomString()).transform(FOO);
-  assertThat(transformed,not(FOO));
-  assertThat(transformed,startsWith(FOO));
-}

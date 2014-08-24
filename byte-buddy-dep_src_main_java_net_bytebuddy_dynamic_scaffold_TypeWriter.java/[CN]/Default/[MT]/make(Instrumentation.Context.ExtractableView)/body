@@ -1,3 +1,0 @@
-{
-  return new DynamicType.Default.Unloaded<S>(typeDescription,engine.create(instrumentationContext),loadedTypeInitializer,join(explicitAuxiliaryTypes,instrumentationContext.getRegisteredAuxiliaryTypes()));
-}

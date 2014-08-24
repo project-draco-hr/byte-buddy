@@ -1,6 +1,0 @@
-{
-  assertThat(new MethodFlatteningResolver.Default(methodMatcher,placeholderType,methodNameTransformer).hashCode(),is(new MethodFlatteningResolver.Default(methodMatcher,placeholderType,methodNameTransformer).hashCode()));
-  assertThat(new MethodFlatteningResolver.Default(methodMatcher,placeholderType,methodNameTransformer),is(new MethodFlatteningResolver.Default(methodMatcher,placeholderType,methodNameTransformer)));
-  assertThat(new MethodFlatteningResolver.Default(methodMatcher,placeholderType,methodNameTransformer).hashCode(),not(is(new MethodFlatteningResolver.Default(methodMatcher,placeholderType,otherMethodNameTransformer).hashCode())));
-  assertThat(new MethodFlatteningResolver.Default(methodMatcher,placeholderType,methodNameTransformer),not(is(new MethodFlatteningResolver.Default(methodMatcher,placeholderType,otherMethodNameTransformer))));
-}

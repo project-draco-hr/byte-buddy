@@ -1,0 +1,13 @@
+ClassFileVersion classFileVersion
+NamingStrategy namingStrategy
+List<TypeDescription> interfaceTypes
+MethodMatcher ignoredMethods
+BridgeMethodResolver.Factory bridgeMethodResolverFactory
+ClassVisitorWrapper.Chain classVisitorWrapperChain
+MethodRegistry methodRegistry
+Definable<Integer> modifiers
+TypeAttributeAppender typeAttributeAppender
+MethodLookupEngine.Factory methodLookupEngineFactory
+FieldAttributeAppender.Factory defaultFieldAttributeAppenderFactory
+MethodAttributeAppender.Factory defaultMethodAttributeAppenderFactory
+MethodMatcher methodMatcher

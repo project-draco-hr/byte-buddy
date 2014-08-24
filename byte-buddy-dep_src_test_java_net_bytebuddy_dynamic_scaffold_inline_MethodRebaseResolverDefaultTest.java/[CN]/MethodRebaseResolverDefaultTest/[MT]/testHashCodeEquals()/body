@@ -1,0 +1,6 @@
+{
+  assertThat(new MethodRebaseResolver.Default(methodMatcher,placeholderType,methodNameTransformer).hashCode(),is(new MethodRebaseResolver.Default(methodMatcher,placeholderType,methodNameTransformer).hashCode()));
+  assertThat(new MethodRebaseResolver.Default(methodMatcher,placeholderType,methodNameTransformer),is(new MethodRebaseResolver.Default(methodMatcher,placeholderType,methodNameTransformer)));
+  assertThat(new MethodRebaseResolver.Default(methodMatcher,placeholderType,methodNameTransformer).hashCode(),not(is(new MethodRebaseResolver.Default(methodMatcher,placeholderType,otherMethodNameTransformer).hashCode())));
+  assertThat(new MethodRebaseResolver.Default(methodMatcher,placeholderType,methodNameTransformer),not(is(new MethodRebaseResolver.Default(methodMatcher,placeholderType,otherMethodNameTransformer))));
+}

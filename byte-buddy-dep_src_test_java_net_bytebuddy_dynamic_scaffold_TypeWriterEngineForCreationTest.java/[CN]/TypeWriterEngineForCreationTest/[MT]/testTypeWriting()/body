@@ -1,0 +1,22 @@
+{
+  assertThat(new TypeWriter.Engine.ForCreation(instrumentedType,classFileVersion,invokableMethods,classVisitorWrapper,typeAttributeAppender,fieldPool,methodPool).create(instrumentationContext),notNullValue());
+  verify(classVisitor).visit(CLASS_VERSION,TYPE_MODIFIER,FOO,QUX,BAR,new String[]{BAZ});
+  verify(classVisitor).visitEnd();
+  verifyNoMoreInteractions(classVisitor);
+  verify(fieldPool).target(firstField);
+  verify(firstFieldEntry).apply(classVisitor,firstField);
+  verify(fieldPool).target(secondField);
+  verify(secondFieldEntry).apply(classVisitor,secondField);
+  verifyNoMoreInteractions(fieldPool);
+  verifyNoMoreInteractions(firstFieldEntry);
+  verifyNoMoreInteractions(secondFieldEntry);
+  verify(methodPool).target(firstMethod);
+  verify(firstMethodEntry).apply(eq(classVisitor),any(Instrumentation.Context.ExtractableView.class),eq(firstMethod));
+  verify(methodPool).target(secondMethod);
+  verify(secondMethodEntry).apply(eq(classVisitor),any(Instrumentation.Context.ExtractableView.class),eq(secondMethod));
+  verifyNoMoreInteractions(methodPool);
+  verifyNoMoreInteractions(firstMethodEntry);
+  verifyNoMoreInteractions(secondMethodEntry);
+  verify(typeAttributeAppender).apply(classVisitor,instrumentedType);
+  verifyNoMoreInteractions(typeAttributeAppender);
+}

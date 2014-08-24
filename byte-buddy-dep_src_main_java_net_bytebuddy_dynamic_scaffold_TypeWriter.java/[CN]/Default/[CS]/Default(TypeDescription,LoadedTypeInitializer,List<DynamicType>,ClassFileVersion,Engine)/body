@@ -1,0 +1,7 @@
+{
+  this.instrumentedType=instrumentedType;
+  this.loadedTypeInitializer=loadedTypeInitializer;
+  this.explicitAuxiliaryTypes=explicitAuxiliaryTypes;
+  this.classFileVersion=classFileVersion;
+  this.engine=engine;
+}

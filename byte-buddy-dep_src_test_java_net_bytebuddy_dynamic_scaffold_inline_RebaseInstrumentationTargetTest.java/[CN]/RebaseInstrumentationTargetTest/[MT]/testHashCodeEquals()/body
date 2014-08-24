@@ -1,9 +1,9 @@
 {
-  assertThat(instrumentationTarget.hashCode(),is(new RebaseInstrumentationTarget(finding,bridgeMethodResolverFactory,methodFlatteningResolver).hashCode()));
-  assertThat(instrumentationTarget,is((Instrumentation.Target)new RebaseInstrumentationTarget(finding,bridgeMethodResolverFactory,methodFlatteningResolver)));
+  assertThat(instrumentationTarget.hashCode(),is(new RebaseInstrumentationTarget(finding,bridgeMethodResolverFactory,methodRebaseResolver).hashCode()));
+  assertThat(instrumentationTarget,is((Instrumentation.Target)new RebaseInstrumentationTarget(finding,bridgeMethodResolverFactory,methodRebaseResolver)));
   BridgeMethodResolver.Factory factory=mock(BridgeMethodResolver.Factory.class);
   when(factory.make(any(MethodList.class))).thenReturn(mock(BridgeMethodResolver.class));
-  Instrumentation.Target other=new RebaseInstrumentationTarget(finding,factory,methodFlatteningResolver);
+  Instrumentation.Target other=new RebaseInstrumentationTarget(finding,factory,methodRebaseResolver);
   assertThat(instrumentationTarget.hashCode(),not(is(other.hashCode())));
   assertThat(instrumentationTarget,not(is(other)));
 }

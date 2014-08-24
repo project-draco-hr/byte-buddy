@@ -1,0 +1,6 @@
+{
+  explicitAuxiliaryTypes=Arrays.asList(firstAuxiliary);
+  when(engine.create(any(Instrumentation.Context.ExtractableView.class))).thenReturn(MAIN);
+  when(firstAuxiliary.getDescription()).thenReturn(otherAuxiliaryDescription);
+  when(firstAuxiliary.getBytes()).thenReturn(FIRST);
+}

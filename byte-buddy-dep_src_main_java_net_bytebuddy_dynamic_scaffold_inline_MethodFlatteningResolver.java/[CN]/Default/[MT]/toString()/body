@@ -1,3 +1,0 @@
-{
-  return "MethodFlatteningResolver.Default{" + "ignoredMethods=" + ignoredMethods + ", placeholderType="+ placeholderType+ ", methodNameTransformer="+ methodNameTransformer+ '}';
-}

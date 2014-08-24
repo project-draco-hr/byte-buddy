@@ -3,5 +3,5 @@
   when(superMethod.isAbstract()).thenReturn(true);
   Instrumentation.SpecialMethodInvocation specialMethodInvocation=instrumentationTarget.invokeSuper(superMethod,methodLookup);
   assertThat(specialMethodInvocation.isValid(),is(false));
-  verifyZeroInteractions(methodFlatteningResolver);
+  verifyZeroInteractions(methodRebaseResolver);
 }

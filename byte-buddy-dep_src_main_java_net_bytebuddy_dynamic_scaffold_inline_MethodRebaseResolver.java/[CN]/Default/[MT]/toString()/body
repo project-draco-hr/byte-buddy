@@ -1,0 +1,3 @@
+{
+  return "MethodRebaseResolver.Default{" + "ignoredMethods=" + ignoredMethods + ", placeholderType="+ placeholderType+ ", methodNameTransformer="+ methodNameTransformer+ '}';
+}

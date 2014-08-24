@@ -1,3 +1,0 @@
-{
-  return new FlatDynamicTypeBuilder<T>(classFileVersion,namingStrategy,levelType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,fieldRegistry,methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens,classFileLocator,targetHandler);
-}

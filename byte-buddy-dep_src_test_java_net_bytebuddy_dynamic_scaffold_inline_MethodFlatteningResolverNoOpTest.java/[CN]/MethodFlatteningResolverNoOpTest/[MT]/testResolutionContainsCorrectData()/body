@@ -1,5 +1,0 @@
-{
-  MethodFlatteningResolver.Resolution resolution=MethodFlatteningResolver.NoOp.INSTANCE.resolve(methodDescription);
-  assertThat(resolution.isRebased(),is(false));
-  assertThat(resolution.getResolvedMethod(),is(methodDescription));
-}

@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && placeholderType.equals(((ForRebaseInstrumentation)other).placeholderType) && methodFlatteningResolver.equals(((ForRebaseInstrumentation)other).methodFlatteningResolver);
-}

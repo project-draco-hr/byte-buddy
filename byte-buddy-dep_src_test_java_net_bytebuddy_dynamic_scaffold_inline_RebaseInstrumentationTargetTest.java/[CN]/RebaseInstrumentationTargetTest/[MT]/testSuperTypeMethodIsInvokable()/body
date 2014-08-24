@@ -12,5 +12,5 @@
   verifyZeroInteractions(instrumentationContext);
   assertThat(size.getSizeImpact(),is(0));
   assertThat(size.getMaximalSize(),is(0));
-  verifyZeroInteractions(methodFlatteningResolver);
+  verifyZeroInteractions(methodRebaseResolver);
 }

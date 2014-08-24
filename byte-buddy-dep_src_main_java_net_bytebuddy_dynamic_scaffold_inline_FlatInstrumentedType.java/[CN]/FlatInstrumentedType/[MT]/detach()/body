@@ -1,3 +1,0 @@
-{
-  return new FlatInstrumentedType(levelType,name,interfaces,modifiers,fieldDescriptions,methodDescriptions,LoadedTypeInitializer.NoOp.INSTANCE);
-}

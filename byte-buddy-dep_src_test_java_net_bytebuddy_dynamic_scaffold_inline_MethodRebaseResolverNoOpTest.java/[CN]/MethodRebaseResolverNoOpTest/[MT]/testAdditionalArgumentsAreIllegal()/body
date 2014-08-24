@@ -1,0 +1,3 @@
+{
+  MethodRebaseResolver.NoOp.INSTANCE.resolve(methodDescription).getAdditionalArguments();
+}

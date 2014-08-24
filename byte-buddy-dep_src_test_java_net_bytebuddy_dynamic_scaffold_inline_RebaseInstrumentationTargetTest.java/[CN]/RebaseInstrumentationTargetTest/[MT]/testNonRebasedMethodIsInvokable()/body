@@ -1,8 +1,8 @@
 {
   when(nonRebasedMethod.isSpecializableFor(instrumentedType)).thenReturn(true);
   Instrumentation.SpecialMethodInvocation specialMethodInvocation=instrumentationTarget.invokeSuper(nonRebasedMethod,methodLookup);
-  verify(methodFlatteningResolver).resolve(nonRebasedMethod);
-  verifyNoMoreInteractions(methodFlatteningResolver);
+  verify(methodRebaseResolver).resolve(nonRebasedMethod);
+  verifyNoMoreInteractions(methodRebaseResolver);
   assertThat(specialMethodInvocation.isValid(),is(true));
   assertThat(specialMethodInvocation.getMethodDescription(),is(nonRebasedMethod));
   assertThat(specialMethodInvocation.getTypeDescription(),is(instrumentedType));

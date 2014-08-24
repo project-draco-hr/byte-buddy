@@ -1,0 +1,4 @@
+{
+  placeholderType=TrivialType.INSTANCE.make(trivialTypeNameFor(instrumentedType),classFileVersion,AuxiliaryType.MethodAccessorFactory.Illegal.INSTANCE);
+  this.methodRebaseResolver=new MethodRebaseResolver.Default(ignoredMethods,placeholderType.getDescription(),new MethodRebaseResolver.MethodNameTransformer.Suffixing(new RandomString()));
+}

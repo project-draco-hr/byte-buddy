@@ -4,5 +4,5 @@
   when(finding.getTypeDescription()).thenReturn(instrumentedType);
   when(instrumentedType.getSupertype()).thenReturn(superType);
   when(superType.getDeclaredMethods()).thenReturn(new MethodList.Empty());
-  factory=new RebaseInstrumentationTarget.Factory(bridgeMethodResolverFactory,methodFlatteningResolver);
+  factory=new RebaseInstrumentationTarget.Factory(bridgeMethodResolverFactory,methodRebaseResolver);
 }

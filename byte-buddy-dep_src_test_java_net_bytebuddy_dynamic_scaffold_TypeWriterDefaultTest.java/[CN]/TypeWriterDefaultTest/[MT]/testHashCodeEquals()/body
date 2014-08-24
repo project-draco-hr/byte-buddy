@@ -1,0 +1,6 @@
+{
+  assertThat(new TypeWriter.Default<Object>(instrumentedType,loadedTypeInitializer,explicitAuxiliaryTypes,classFileVersion,engine).hashCode(),is(new TypeWriter.Default<Object>(instrumentedType,loadedTypeInitializer,explicitAuxiliaryTypes,classFileVersion,engine).hashCode()));
+  assertThat(new TypeWriter.Default<Object>(instrumentedType,loadedTypeInitializer,explicitAuxiliaryTypes,classFileVersion,engine),is(new TypeWriter.Default<Object>(instrumentedType,loadedTypeInitializer,explicitAuxiliaryTypes,classFileVersion,engine)));
+  assertThat(new TypeWriter.Default<Object>(instrumentedType,loadedTypeInitializer,explicitAuxiliaryTypes,classFileVersion,engine).hashCode(),not(is(new TypeWriter.Default<Object>(instrumentedType,loadedTypeInitializer,explicitAuxiliaryTypes,classFileVersion,otherEngine).hashCode())));
+  assertThat(new TypeWriter.Default<Object>(instrumentedType,loadedTypeInitializer,explicitAuxiliaryTypes,classFileVersion,engine),not(is(new TypeWriter.Default<Object>(instrumentedType,loadedTypeInitializer,explicitAuxiliaryTypes,classFileVersion,otherEngine))));
+}

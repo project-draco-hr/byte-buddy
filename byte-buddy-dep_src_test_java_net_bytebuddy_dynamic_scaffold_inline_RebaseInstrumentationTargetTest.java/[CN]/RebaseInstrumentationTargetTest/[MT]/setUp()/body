@@ -2,7 +2,7 @@
   when(instrumentedType.getInternalName()).thenReturn(BAR);
   when(targetRebaseMethod.getDeclaringType()).thenReturn(instrumentedType);
   when(rebasedMethod.getDeclaringType()).thenReturn(instrumentedType);
-  when(methodFlatteningResolver.resolve(targetRebaseMethod)).thenReturn(rebasedResolution);
+  when(methodRebaseResolver.resolve(targetRebaseMethod)).thenReturn(rebasedResolution);
   when(rebasedResolution.isRebased()).thenReturn(true);
   when(rebasedResolution.getResolvedMethod()).thenReturn(rebasedMethod);
   when(rebasedMethod.getReturnType()).thenReturn(returnType);
@@ -26,7 +26,7 @@
   when(nonRebasedMethod.getInternalName()).thenReturn(BAZ);
   when(nonRebasedMethod.getDescriptor()).thenReturn(FOOBAR);
   when(nonRebasedMethod.getParameterTypes()).thenReturn(parameterTypes);
-  when(methodFlatteningResolver.resolve(nonRebasedMethod)).thenReturn(nonRebasedResolution);
+  when(methodRebaseResolver.resolve(nonRebasedMethod)).thenReturn(nonRebasedResolution);
   when(nonRebasedResolution.isRebased()).thenReturn(false);
   when(nonRebasedResolution.getResolvedMethod()).thenReturn(nonRebasedMethod);
   super.setUp();

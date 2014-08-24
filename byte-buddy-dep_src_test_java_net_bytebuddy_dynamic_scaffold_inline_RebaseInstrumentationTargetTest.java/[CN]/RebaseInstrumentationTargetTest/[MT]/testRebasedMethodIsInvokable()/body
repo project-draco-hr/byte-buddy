@@ -1,7 +1,7 @@
 {
   Instrumentation.SpecialMethodInvocation specialMethodInvocation=instrumentationTarget.invokeSuper(targetRebaseMethod,methodLookup);
-  verify(methodFlatteningResolver).resolve(targetRebaseMethod);
-  verifyNoMoreInteractions(methodFlatteningResolver);
+  verify(methodRebaseResolver).resolve(targetRebaseMethod);
+  verifyNoMoreInteractions(methodRebaseResolver);
   assertThat(specialMethodInvocation.isValid(),is(true));
   verify(additionalArguments).isValid();
   assertThat(specialMethodInvocation.getMethodDescription(),is(rebasedMethod));

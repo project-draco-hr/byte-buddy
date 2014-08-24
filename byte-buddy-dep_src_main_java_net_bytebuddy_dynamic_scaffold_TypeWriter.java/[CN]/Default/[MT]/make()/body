@@ -1,0 +1,4 @@
+{
+  Instrumentation.Context.ExtractableView instrumentationContext=new TypeExtensionDelegate(instrumentedType,classFileVersion);
+  return new DynamicType.Default.Unloaded<S>(instrumentedType,engine.create(instrumentationContext),loadedTypeInitializer,join(explicitAuxiliaryTypes,instrumentationContext.getRegisteredAuxiliaryTypes()));
+}

@@ -1,0 +1,7 @@
+{
+  TypeDescription typeDescription=new InliningInstrumentedType(ClassFileVersion.forCurrentJavaVersion(),new TypeDescription.ForLoadedType(Foo.class),new TypeList.ForLoadedType(Collections.<Class<?>>singletonList(Serializable.class)),Opcodes.ACC_PUBLIC,new NamingStrategy.Fixed(FOOBAR));
+  assertThat(typeDescription.getDeclaredMethods().size(),is(2));
+  assertThat(typeDescription.getDeclaredMethods().filter(isConstructor()).size(),is(1));
+  assertThat(typeDescription.getDeclaredMethods().filter(isMethod()).size(),is(1));
+  assertThat(typeDescription.getDeclaredFields().size(),is(1));
+}
