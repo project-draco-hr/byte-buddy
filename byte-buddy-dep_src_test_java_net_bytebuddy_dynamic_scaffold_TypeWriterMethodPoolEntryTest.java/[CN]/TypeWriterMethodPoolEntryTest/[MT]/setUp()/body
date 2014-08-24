@@ -1,0 +1,11 @@
+{
+  when(methodDescription.getInternalName()).thenReturn(FOO);
+  when(methodDescription.getDescriptor()).thenReturn(BAR);
+  when(methodDescription.getGenericSignature()).thenReturn(QUX);
+  TypeList exceptionTypes=mock(TypeList.class);
+  when(exceptionTypes.toInternalNames()).thenReturn(new String[]{BAZ});
+  when(methodDescription.getExceptionTypes()).thenReturn(exceptionTypes);
+  when(methodDescription.getAdjustedModifiers(any(Boolean.class))).thenReturn(MODIFIER);
+  when(classVisitor.visitMethod(MODIFIER,FOO,BAR,QUX,new String[]{BAZ})).thenReturn(methodVisitor);
+  when(first.apply(methodVisitor,instrumentationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(0,0));
+}

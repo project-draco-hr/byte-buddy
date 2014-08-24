@@ -1,0 +1,6 @@
+{
+  TypeWriter.MethodPool.Entry.Skip.INSTANCE.apply(classVisitor,instrumentationContext,methodDescription);
+  verifyZeroInteractions(classVisitor);
+  verifyZeroInteractions(instrumentationContext);
+  verifyZeroInteractions(methodDescription);
+}

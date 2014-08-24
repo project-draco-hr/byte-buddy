@@ -1,0 +1,7 @@
+{
+  TypeWriter.FieldPool.Entry.NoOp.INSTANCE.apply(classVisitor,fieldDescription);
+  verify(classVisitor).visitField(MODIFIER,FOO,BAR,QUX,null);
+  verifyNoMoreInteractions(classVisitor);
+  verify(fieldVisitor).visitEnd();
+  verifyNoMoreInteractions(fieldVisitor);
+}

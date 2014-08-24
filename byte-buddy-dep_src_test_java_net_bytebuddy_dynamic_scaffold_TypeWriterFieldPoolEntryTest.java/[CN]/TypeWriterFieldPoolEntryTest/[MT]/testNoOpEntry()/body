@@ -1,0 +1,4 @@
+{
+  assertThat(TypeWriter.FieldPool.Entry.NoOp.INSTANCE.getDefaultValue(),nullValue());
+  assertThat(TypeWriter.FieldPool.Entry.NoOp.INSTANCE.getFieldAppender(),is((FieldAttributeAppender)FieldAttributeAppender.NoOp.INSTANCE));
+}
