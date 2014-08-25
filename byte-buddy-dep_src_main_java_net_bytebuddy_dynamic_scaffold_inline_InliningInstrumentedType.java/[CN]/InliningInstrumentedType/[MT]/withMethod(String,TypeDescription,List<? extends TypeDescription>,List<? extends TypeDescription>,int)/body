@@ -1,9 +1,0 @@
-{
-  MethodDescription additionalMethod=new MethodToken(internalName,returnType,parameterTypes,exceptionTypes,modifiers);
-  if (methodDescriptions.contains(additionalMethod)) {
-    throw new IllegalArgumentException("Method " + additionalMethod + " is already defined on "+ this);
-  }
-  List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(this.methodDescriptions);
-  methodDescriptions.add(additionalMethod);
-  return new InliningInstrumentedType(levelType,name,interfaces,this.modifiers,fieldDescriptions,methodDescriptions,loadedTypeInitializer);
-}

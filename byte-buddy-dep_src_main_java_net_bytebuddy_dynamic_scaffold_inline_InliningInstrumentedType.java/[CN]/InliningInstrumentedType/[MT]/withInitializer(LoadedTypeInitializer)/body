@@ -1,3 +1,0 @@
-{
-  return new InliningInstrumentedType(levelType,name,interfaces,modifiers,fieldDescriptions,methodDescriptions,new LoadedTypeInitializer.Compound(this.loadedTypeInitializer,loadedTypeInitializer));
-}
