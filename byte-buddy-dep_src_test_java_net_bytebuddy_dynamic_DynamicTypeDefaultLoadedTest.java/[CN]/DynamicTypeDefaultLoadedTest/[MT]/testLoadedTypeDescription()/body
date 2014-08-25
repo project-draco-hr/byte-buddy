@@ -1,6 +1,6 @@
 {
   assertEquals(MAIN_TYPE,dynamicType.getLoaded());
-  assertThat(dynamicType.getDescription(),is(mainTypeDescription));
+  assertThat(dynamicType.getTypeDescription(),is(mainTypeDescription));
   assertThat(dynamicType.getLoadedAuxiliaryTypes().size(),is(1));
   assertThat(dynamicType.getLoadedAuxiliaryTypes().keySet(),hasItem(auxiliaryTypeDescription));
   assertEquals(AUXILIARY_TYPE,dynamicType.getLoadedAuxiliaryTypes().get(auxiliaryTypeDescription));

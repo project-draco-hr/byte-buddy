@@ -4,5 +4,5 @@
   loadedTypes.put(auxiliaryTypeDescription,AUXILIARY_TYPE);
   DynamicType auxiliaryType=mock(DynamicType.class);
   dynamicType=new DynamicType.Default.Loaded<Object>(mainTypeDescription,new byte[0],mainLoadedTypeInitializer,Collections.singletonList(auxiliaryType),loadedTypes);
-  when(auxiliaryType.getDescription()).thenReturn(mainTypeDescription);
+  when(auxiliaryType.getTypeDescription()).thenReturn(mainTypeDescription);
 }

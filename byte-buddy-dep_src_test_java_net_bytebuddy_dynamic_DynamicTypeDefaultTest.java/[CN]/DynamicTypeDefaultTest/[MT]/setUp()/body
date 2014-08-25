@@ -5,8 +5,8 @@
   when(typeDescription.getName()).thenReturn(FOO);
   when(auxiliaryType.saveIn(any(File.class))).thenReturn(Collections.<TypeDescription,File>emptyMap());
   when(auxiliaryTypeDescription.getName()).thenReturn(BAR);
-  when(auxiliaryType.getDescription()).thenReturn(auxiliaryTypeDescription);
+  when(auxiliaryType.getTypeDescription()).thenReturn(auxiliaryTypeDescription);
   when(auxiliaryType.getBytes()).thenReturn(auxiliaryTypeBinaryRepresentation);
-  when(auxiliaryType.getTypeInitializers()).thenReturn(Collections.singletonMap(auxiliaryTypeDescription,auxiliaryLoadedTypeInitializer));
+  when(auxiliaryType.getLoadedTypeInitializers()).thenReturn(Collections.singletonMap(auxiliaryTypeDescription,auxiliaryLoadedTypeInitializer));
   when(auxiliaryType.getRawAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>emptyMap());
 }

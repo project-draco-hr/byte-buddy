@@ -1,0 +1,4 @@
+{
+  T annotation=superClass.getAnnotation(annotationClass);
+  return annotation != null && annotation.getClass().isAnnotationPresent(Retention.class) && annotation.getClass().getAnnotation(Retention.class).value() == RetentionPolicy.RUNTIME ? annotation : null;
+}

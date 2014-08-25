@@ -1,0 +1,11 @@
+{
+  FieldCacheEntry fieldCacheEntry=new FieldCacheEntry(fieldValue,fieldType);
+  FieldDescription fieldCache=registeredFieldCacheEntries.get(fieldCacheEntry);
+  if (fieldCache != null) {
+    return fieldCache;
+  }
+  validateFieldCacheAccessibility();
+  fieldCache=new FieldDescription.Latent(String.format("%s$%s",fieldCachePrefix,randomString.nextString()),instrumentedType,fieldType,FIELD_CACHE_MODIFIER);
+  registeredFieldCacheEntries.put(fieldCacheEntry,fieldCache);
+  return fieldCache;
+}

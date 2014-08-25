@@ -1,0 +1,4 @@
+{
+  assertThat(latentMethod.getExceptionTypes(),is(Collections.singletonList(exceptionType)));
+  assertThat(latentConstructor.getExceptionTypes(),is(Collections.singletonList(exceptionType)));
+}

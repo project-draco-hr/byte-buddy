@@ -1,0 +1,10 @@
+{
+  Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,classFileVersion);
+  assertThat(instrumentationContext.getRegisteredAuxiliaryTypes().size(),is(0));
+  instrumentationContext.drain(classVisitor,methodPool,injectedCode);
+  verifyZeroInteractions(classVisitor);
+  verify(methodPool).target(MethodDescription.Latent.typeInitializerOf(instrumentedType));
+  verifyNoMoreInteractions(methodPool);
+  verify(injectedCode).isInjected();
+  verifyNoMoreInteractions(injectedCode);
+}

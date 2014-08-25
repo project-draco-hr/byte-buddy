@@ -1,0 +1,11 @@
+{
+  List<Annotation> annotations=new LinkedList<Annotation>(Arrays.asList(superClass.getAnnotations()));
+  Iterator<Annotation> annotationIterator=annotations.iterator();
+  while (annotationIterator.hasNext()) {
+    Annotation annotation=annotationIterator.next();
+    if (!annotation.getClass().isAnnotationPresent(Retention.class) || annotation.getClass().getAnnotation(Retention.class).value() != RetentionPolicy.RUNTIME) {
+      annotationIterator.remove();
+    }
+  }
+  return annotations.toArray(new Annotation[annotations.size()]);
+}

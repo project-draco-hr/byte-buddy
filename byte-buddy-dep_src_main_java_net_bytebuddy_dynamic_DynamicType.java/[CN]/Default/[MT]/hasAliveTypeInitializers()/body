@@ -1,8 +1,0 @@
-{
-  for (  LoadedTypeInitializer loadedTypeInitializer : getTypeInitializers().values()) {
-    if (loadedTypeInitializer.isAlive()) {
-      return true;
-    }
-  }
-  return false;
-}
