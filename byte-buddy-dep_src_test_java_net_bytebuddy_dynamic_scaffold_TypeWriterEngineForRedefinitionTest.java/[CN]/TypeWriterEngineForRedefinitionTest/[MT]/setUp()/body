@@ -19,7 +19,7 @@
   when(methodPool.target(new MethodDescription.ForLoadedConstructor(Foo.class.getDeclaredConstructor()))).thenReturn(constructorEntry);
   when(instrumentedType.getInternalName()).thenReturn(FOO);
   when(instrumentedType.getGenericSignature()).thenReturn(QUX);
-  when(instrumentedType.getActualModifiers()).thenReturn(TYPE_MODIFIER);
+  when(instrumentedType.getActualModifiers(anyBoolean())).thenReturn(TYPE_MODIFIER);
   TypeList interfaceTypes=mock(TypeList.class);
   when(interfaceTypes.toInternalNames()).thenReturn(new String[]{BAZ});
   when(instrumentedType.getInterfaces()).thenReturn(interfaceTypes);

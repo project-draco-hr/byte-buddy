@@ -1,3 +1,0 @@
-{
-  assertThat(((SuperFlag)modifierContributor).isSuperFlag(),is(expectedModifier != 0));
-}

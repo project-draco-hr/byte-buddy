@@ -9,8 +9,8 @@
   verify(classVisitor).visitMethod(Opcodes.ACC_PUBLIC,MethodDescription.CONSTRUCTOR_INTERNAL_NAME,"()V",null,null);
   verify(classVisitor).visitMethod(Opcodes.ACC_PUBLIC,FOO,"()V",null,null);
   verify(classVisitor).visitMethod(Opcodes.ACC_PUBLIC,BAR,"()V",null,null);
-  verify(classVisitor).visitMethod(Opcodes.ACC_PRIVATE | Opcodes.ACC_SYNTHETIC,BAR + FOO,BAR + QUX,QUX + FOO,new String[]{BAZ + QUX});
   verify(classVisitor).visitMethod(Opcodes.ACC_PUBLIC,QUX,"()V",null,null);
+  verify(classVisitor).visitMethod(Opcodes.ACC_PRIVATE | Opcodes.ACC_SYNTHETIC,BAR + FOO,BAR + QUX,QUX + FOO,new String[]{BAZ + QUX});
   verify(methodPool).target(new MethodDescription.ForLoadedMethod(Foo.class.getDeclaredMethod(FOO)));
   verify(fooEntry).isDefineMethod();
   verify(fooAttributeAppender).apply(any(MethodVisitor.class),eq(new MethodDescription.ForLoadedMethod(Foo.class.getDeclaredMethod(FOO))));

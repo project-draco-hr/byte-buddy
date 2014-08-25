@@ -4,7 +4,7 @@
   int currentIndex=0;
   int currentRead;
   do {
-    currentRead=inputStream.read(currentArray,currentIndex,BUFFER_SIZE);
+    currentRead=inputStream.read(currentArray,currentIndex,BUFFER_SIZE - currentIndex);
     currentIndex+=currentRead;
     if (currentIndex == BUFFER_SIZE) {
       previousBytes.add(currentArray);

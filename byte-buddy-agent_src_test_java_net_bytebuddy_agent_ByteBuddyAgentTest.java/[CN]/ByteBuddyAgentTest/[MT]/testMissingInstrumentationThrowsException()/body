@@ -1,3 +1,6 @@
 {
+  Field field=ByteBuddyAgent.Installer.class.getDeclaredField(INSTRUMENTATION);
+  field.setAccessible(true);
+  field.set(STATIC_FIELD,null);
   ByteBuddyAgent.getInstrumentation();
 }
