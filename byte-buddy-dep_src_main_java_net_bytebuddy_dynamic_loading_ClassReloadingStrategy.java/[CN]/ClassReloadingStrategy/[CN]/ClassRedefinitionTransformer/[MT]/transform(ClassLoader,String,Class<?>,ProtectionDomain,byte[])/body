@@ -1,0 +1,7 @@
+{
+  ClassDefinition redefinedClass=redefinedClasses.remove(classBeingRedefined);
+  if (redefinedClass == null) {
+    throw new IllegalArgumentException("Encountered class without redefinition information");
+  }
+  return redefinedClass.getDefinitionClassFile();
+}

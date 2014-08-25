@@ -1,0 +1,5 @@
+{
+  if (redefinedClasses.size() > 0) {
+    throw new IllegalStateException("Could not transform: " + redefinedClasses.keySet());
+  }
+}

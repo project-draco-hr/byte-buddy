@@ -1,10 +1,10 @@
 {
-  List<ClassDefinition> classDefinitions=new ArrayList<ClassDefinition>(type.length);
+  Map<Class<?>,ClassDefinition> classDefinitions=new ConcurrentHashMap<Class<?>,ClassDefinition>(type.length);
   try {
     for (    Class<?> aType : type) {
-      InputStream inputStream=aType.getProtectionDomain().getCodeSource().getLocation().openStream();
+      InputStream inputStream=aType.getClassLoader().getResourceAsStream(aType.getName().replace('.','/') + CLASS_FILE_EXTENSION);
       try {
-        classDefinitions.add(new ClassDefinition(aType,drain(inputStream)));
+        classDefinitions.put(aType,new ClassDefinition(aType,drain(inputStream)));
       }
   finally {
         inputStream.close();
@@ -15,7 +15,7 @@
     throw new IllegalStateException("Exception while resetting types " + Arrays.toString(type),e);
   }
   try {
-    instrumentation.redefineClasses(classDefinitions.toArray(new ClassDefinition[classDefinitions.size()]));
+    engine.apply(instrumentation,classDefinitions);
   }
  catch (  ClassNotFoundException e) {
     throw new IllegalArgumentException("Cannot locate types " + Arrays.toString(type),e);

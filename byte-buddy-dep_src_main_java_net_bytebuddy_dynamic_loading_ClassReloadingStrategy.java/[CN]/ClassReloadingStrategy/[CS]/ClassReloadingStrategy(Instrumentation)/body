@@ -1,6 +1,12 @@
 {
-  if (!instrumentation.isRedefineClassesSupported()) {
+  this.instrumentation=instrumentation;
+  if (instrumentation.isRedefineClassesSupported()) {
+    engine=Engine.REDEFINITION;
+  }
+ else   if (instrumentation.isRetransformClassesSupported()) {
+    engine=Engine.RETRANSFORMATION;
+  }
+ else {
     throw new IllegalArgumentException("Instrumentation does not support class redefinition: " + instrumentation);
   }
-  this.instrumentation=instrumentation;
 }

@@ -1,0 +1,13 @@
+{
+  ClassRedefinitionTransformer classRedefinitionTransformer=new ClassRedefinitionTransformer(classDefinitions);
+synchronized (instrumentation) {
+    instrumentation.addTransformer(classRedefinitionTransformer,REDEFINE_CLASSES);
+    try {
+      instrumentation.retransformClasses(classDefinitions.keySet().toArray(new Class<?>[classDefinitions.size()]));
+    }
+  finally {
+      instrumentation.removeTransformer(classRedefinitionTransformer);
+    }
+  }
+  classRedefinitionTransformer.assertTransformation();
+}

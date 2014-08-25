@@ -1,0 +1,8 @@
+{
+  Instrumentation instrumentation=mock(Instrumentation.class);
+  when(instrumentation.isRedefineClassesSupported()).thenReturn(true);
+  assertThat(new ClassReloadingStrategy(instrumentation).hashCode(),is(new ClassReloadingStrategy(instrumentation).hashCode()));
+  assertThat(new ClassReloadingStrategy(instrumentation),is(new ClassReloadingStrategy(instrumentation)));
+  assertThat(new ClassReloadingStrategy(instrumentation,ClassReloadingStrategy.Engine.REDEFINITION).hashCode(),not(is(new ClassReloadingStrategy(instrumentation,ClassReloadingStrategy.Engine.RETRANSFORMATION).hashCode())));
+  assertThat(new ClassReloadingStrategy(instrumentation,ClassReloadingStrategy.Engine.REDEFINITION),not(is(new ClassReloadingStrategy(instrumentation,ClassReloadingStrategy.Engine.RETRANSFORMATION))));
+}

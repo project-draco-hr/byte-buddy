@@ -5,10 +5,11 @@
   int currentRead;
   do {
     currentRead=inputStream.read(currentArray,currentIndex,BUFFER_SIZE - currentIndex);
-    currentIndex+=currentRead;
+    currentIndex+=currentRead > 0 ? currentRead : 0;
     if (currentIndex == BUFFER_SIZE) {
       previousBytes.add(currentArray);
       currentArray=new byte[BUFFER_SIZE];
+      currentIndex=0;
     }
   }
  while (currentRead != END_OF_STREAM);

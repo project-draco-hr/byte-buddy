@@ -1,0 +1,3 @@
+{
+  return "ClassReloadingStrategy.Engine.ClassRedefinitionTransformer{redefinedClasses=" + redefinedClasses + '}';
+}
