@@ -2,7 +2,7 @@
   Foo foo=new Foo();
   assertThat(foo.foo(),is(FOO));
   ClassReloadingStrategy classReloadingStrategy=ClassReloadingStrategy.fromInstalledAgent();
-  new ByteBuddy().redefine(Foo.class).method(named(FOO)).intercept(MethodDelegation.to(Interceptor.class)).make().load(Foo.class.getClassLoader(),classReloadingStrategy);
+  new ByteBuddy().redefine(Foo.class).method(named(FOO)).intercept(FixedValue.value(BAR)).make().load(Foo.class.getClassLoader(),classReloadingStrategy);
   assertThat(foo.foo(),is(BAR));
   classReloadingStrategy.reset(Foo.class);
   assertThat(foo.foo(),is(FOO));
