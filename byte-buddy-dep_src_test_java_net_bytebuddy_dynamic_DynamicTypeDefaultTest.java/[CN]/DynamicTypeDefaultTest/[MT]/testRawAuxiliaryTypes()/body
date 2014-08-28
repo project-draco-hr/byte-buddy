@@ -1,4 +1,4 @@
 {
   assertThat(dynamicType.getRawAuxiliaryTypes().size(),is(1));
-  assertThat(dynamicType.getRawAuxiliaryTypes().get(auxiliaryTypeDescription),is(auxiliaryTypeBinaryRepresentation));
+  assertThat(dynamicType.getRawAuxiliaryTypes().get(auxiliaryTypeDescription),is(BINARY_SECOND));
 }

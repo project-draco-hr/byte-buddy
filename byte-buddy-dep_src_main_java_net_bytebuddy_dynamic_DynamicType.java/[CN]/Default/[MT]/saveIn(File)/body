@@ -1,13 +1,15 @@
 {
   Map<TypeDescription,File> savedFiles=new HashMap<TypeDescription,File>();
   File target=new File(folder,typeDescription.getName().replace('.',File.separatorChar) + CLASS_FILE_EXTENSION);
-  target.getParentFile().mkdirs();
-  FileOutputStream fileOutputStream=new FileOutputStream(target);
+  if (target.getParentFile() != null) {
+    target.getParentFile().mkdirs();
+  }
+  OutputStream outputStream=new FileOutputStream(target);
   try {
-    fileOutputStream.write(binaryRepresentation);
+    outputStream.write(binaryRepresentation);
   }
   finally {
-    fileOutputStream.close();
+    outputStream.close();
   }
   savedFiles.put(typeDescription,target);
   for (  DynamicType auxiliaryType : auxiliaryTypes) {

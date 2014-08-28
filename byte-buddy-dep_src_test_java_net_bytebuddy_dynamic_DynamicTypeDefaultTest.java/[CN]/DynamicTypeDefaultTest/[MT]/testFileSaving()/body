@@ -4,7 +4,7 @@
   try {
     Map<TypeDescription,File> files=dynamicType.saveIn(folder);
     assertThat(files.size(),is(1));
-    assertFile(files.get(typeDescription),binaryRepresentation);
+    assertFile(files.get(typeDescription),BINARY_FIRST);
   }
   finally {
     folderDeletion=new File(folder,FOO).delete();

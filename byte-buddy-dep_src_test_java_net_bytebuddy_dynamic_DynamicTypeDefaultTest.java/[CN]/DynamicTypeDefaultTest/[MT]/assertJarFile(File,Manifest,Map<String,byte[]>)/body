@@ -1,0 +1,20 @@
+{
+  JarInputStream jarInputStream=new JarInputStream(new FileInputStream(file));
+  try {
+    assertThat(jarInputStream.getManifest(),is(manifest));
+    JarEntry jarEntry;
+    while ((jarEntry=jarInputStream.getNextJarEntry()) != null) {
+      byte[] binary=expectedEntries.remove(jarEntry.getName());
+      assertThat(binary,notNullValue());
+      byte[] buffer=new byte[binary.length];
+      assertThat(jarInputStream.read(buffer),is(buffer.length));
+      assertThat(Arrays.equals(buffer,binary),is(true));
+      assertThat(jarInputStream.read(buffer),is(-1));
+      jarInputStream.closeEntry();
+    }
+    assertThat(expectedEntries.size(),is(0));
+  }
+  finally {
+    jarInputStream.close();
+  }
+}

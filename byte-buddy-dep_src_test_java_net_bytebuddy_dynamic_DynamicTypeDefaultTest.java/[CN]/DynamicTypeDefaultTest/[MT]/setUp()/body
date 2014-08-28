@@ -1,12 +1,12 @@
 {
-  binaryRepresentation=new byte[]{0,1,2};
-  auxiliaryTypeBinaryRepresentation=new byte[]{4,5,6};
-  dynamicType=new DynamicType.Default(typeDescription,binaryRepresentation,mainLoadedTypeInitializer,Collections.singletonList(auxiliaryType));
-  when(typeDescription.getName()).thenReturn(FOOBAR);
+  dynamicType=new DynamicType.Default(typeDescription,BINARY_FIRST,mainLoadedTypeInitializer,Collections.singletonList(auxiliaryType));
+  when(typeDescription.getName()).thenReturn(FOOBAR.replace('/','.'));
+  when(typeDescription.getInternalName()).thenReturn(FOOBAR);
   when(auxiliaryType.saveIn(any(File.class))).thenReturn(Collections.<TypeDescription,File>emptyMap());
-  when(auxiliaryTypeDescription.getName()).thenReturn(QUXBAZ);
+  when(auxiliaryTypeDescription.getName()).thenReturn(QUXBAZ.replace('/','.'));
+  when(auxiliaryTypeDescription.getInternalName()).thenReturn(QUXBAZ);
   when(auxiliaryType.getTypeDescription()).thenReturn(auxiliaryTypeDescription);
-  when(auxiliaryType.getBytes()).thenReturn(auxiliaryTypeBinaryRepresentation);
+  when(auxiliaryType.getBytes()).thenReturn(BINARY_SECOND);
   when(auxiliaryType.getLoadedTypeInitializers()).thenReturn(Collections.singletonMap(auxiliaryTypeDescription,auxiliaryLoadedTypeInitializer));
   when(auxiliaryType.getRawAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>emptyMap());
 }

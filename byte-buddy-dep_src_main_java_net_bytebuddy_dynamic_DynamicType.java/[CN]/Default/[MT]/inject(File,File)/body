@@ -1,0 +1,45 @@
+{
+  JarInputStream jarInputStream=new JarInputStream(new BufferedInputStream(new FileInputStream(source)));
+  try {
+    target.createNewFile();
+    JarOutputStream jarOutputStream=new JarOutputStream(new BufferedOutputStream(new FileOutputStream(target)),jarInputStream.getManifest());
+    try {
+      Map<TypeDescription,byte[]> rawAuxiliaryTypes=getRawAuxiliaryTypes();
+      Map<String,byte[]> files=new HashMap<String,byte[]>(rawAuxiliaryTypes.size() + 1);
+      for (      Map.Entry<TypeDescription,byte[]> entry : rawAuxiliaryTypes.entrySet()) {
+        files.put(entry.getKey().getInternalName(),entry.getValue());
+      }
+      files.put(typeDescription.getInternalName(),binaryRepresentation);
+      JarEntry jarEntry;
+      while ((jarEntry=jarInputStream.getNextJarEntry()) != null) {
+        byte[] replacement=files.remove(jarEntry.getName());
+        if (replacement == null) {
+          jarOutputStream.putNextEntry(jarEntry);
+          byte[] buffer=new byte[BUFFER_SIZE];
+          int index;
+          while ((index=jarInputStream.read(buffer)) != END_OF_FILE) {
+            jarOutputStream.write(buffer,FROM_BEGINNING,index);
+          }
+        }
+ else {
+          jarOutputStream.putNextEntry(new JarEntry(jarEntry.getName()));
+          jarOutputStream.write(replacement);
+        }
+        jarInputStream.closeEntry();
+        jarOutputStream.closeEntry();
+      }
+      for (      Map.Entry<String,byte[]> entry : files.entrySet()) {
+        jarOutputStream.putNextEntry(new ZipEntry(entry.getKey()));
+        jarOutputStream.write(entry.getValue());
+        jarOutputStream.closeEntry();
+      }
+    }
+  finally {
+      jarOutputStream.close();
+    }
+  }
+  finally {
+    jarInputStream.close();
+  }
+  return target;
+}
