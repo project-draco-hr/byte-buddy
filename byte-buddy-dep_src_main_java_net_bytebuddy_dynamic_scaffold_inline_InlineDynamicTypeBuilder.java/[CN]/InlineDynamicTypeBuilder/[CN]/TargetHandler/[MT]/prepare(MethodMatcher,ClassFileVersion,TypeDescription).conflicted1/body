@@ -1,3 +1,0 @@
-{
-  return Prepared.ForSubclassInstrumentation.INSTANCE;
-}

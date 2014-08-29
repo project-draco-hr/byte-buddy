@@ -1,0 +1,3 @@
+{
+  return 31 * methodLookupEngine.hashCode() + bridgeMethodResolverFactory.hashCode();
+}

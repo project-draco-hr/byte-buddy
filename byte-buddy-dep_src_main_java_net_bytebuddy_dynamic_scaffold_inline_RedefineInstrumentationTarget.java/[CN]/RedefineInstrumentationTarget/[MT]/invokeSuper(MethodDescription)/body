@@ -1,0 +1,3 @@
+{
+  return methodDescription.getDeclaringType().equals(typeDescription) ? superTypeLookup(methodDescription.getUniqueSignature()) : super.invokeSuper(methodDescription);
+}
