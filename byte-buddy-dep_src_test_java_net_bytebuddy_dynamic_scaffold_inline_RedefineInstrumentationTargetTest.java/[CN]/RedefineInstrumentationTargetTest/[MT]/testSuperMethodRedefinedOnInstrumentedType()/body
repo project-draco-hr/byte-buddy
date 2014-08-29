@@ -1,0 +1,7 @@
+{
+  when(instrumentedTypeMethod.getInternalName()).thenReturn(BAZ);
+  when(instrumentedTypeMethod.getDescriptor()).thenReturn(FOOBAR);
+  when(superMethod.isSpecializableFor(superType)).thenReturn(true);
+  Instrumentation.SpecialMethodInvocation specialMethodInvocation=makeInstrumentationTarget().invokeSuper(instrumentedTypeMethod,Instrumentation.Target.MethodLookup.Default.EXACT);
+  assertThat(specialMethodInvocation.isValid(),is(true));
+}

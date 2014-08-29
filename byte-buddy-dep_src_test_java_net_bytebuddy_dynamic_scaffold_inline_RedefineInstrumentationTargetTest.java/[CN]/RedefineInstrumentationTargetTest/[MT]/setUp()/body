@@ -1,0 +1,23 @@
+{
+  when(instrumentedType.getSupertype()).thenReturn(superType);
+  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Arrays.asList(superMethodConstructor)));
+  when(superType.getInternalName()).thenReturn(BAR);
+  when(superMethod.getDeclaringType()).thenReturn(superType);
+  when(superType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(superMethod.getReturnType()).thenReturn(returnType);
+  when(superMethod.getInternalName()).thenReturn(BAZ);
+  when(superMethod.getDescriptor()).thenReturn(FOOBAR);
+  when(superMethod.getParameterTypes()).thenReturn(parameterTypes);
+  when(superMethodConstructor.isConstructor()).thenReturn(true);
+  when(superMethodConstructor.getParameterTypes()).thenReturn(parameterTypes);
+  when(superMethodConstructor.getReturnType()).thenReturn(returnType);
+  when(superMethodConstructor.isSpecializableFor(superType)).thenReturn(true);
+  when(superMethodConstructor.getInternalName()).thenReturn(QUXBAZ);
+  when(superMethodConstructor.getDescriptor()).thenReturn(BAZBAR);
+  when(methodLookupEngine.process(superType)).thenReturn(superTypeFinding);
+  when(superTypeFinding.getInvokableMethods()).thenReturn(superMethodList);
+  MethodList superMethodListFiltered=new MethodList.Explicit(Arrays.asList(superMethod));
+  when(superMethodList.filter(isOverridable())).thenReturn(superMethodListFiltered);
+  when(instrumentedTypeMethod.getDeclaringType()).thenReturn(instrumentedType);
+  super.setUp();
+}

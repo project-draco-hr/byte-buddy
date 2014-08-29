@@ -1,0 +1,3 @@
+{
+  return new RedefineInstrumentationTarget(finding,bridgeMethodResolverFactory,methodLookupEngine);
+}

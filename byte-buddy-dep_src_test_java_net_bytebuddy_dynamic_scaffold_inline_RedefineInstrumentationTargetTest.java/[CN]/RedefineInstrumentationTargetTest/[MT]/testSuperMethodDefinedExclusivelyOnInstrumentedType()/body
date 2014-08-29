@@ -1,0 +1,4 @@
+{
+  Instrumentation.SpecialMethodInvocation specialMethodInvocation=makeInstrumentationTarget().invokeSuper(instrumentedTypeMethod,Instrumentation.Target.MethodLookup.Default.EXACT);
+  assertThat(specialMethodInvocation.isValid(),is(false));
+}
