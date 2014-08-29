@@ -1,0 +1,6 @@
+{
+  Class<?> dynamicType=new ByteBuddy().rebase(Foo.class).name(FOO + RandomString.make()).method(named(BAR)).intercept(MethodDelegation.to(SuperInterceptor.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertEquals(Object.class,dynamicType.getSuperclass());
+  Method barMethod=dynamicType.getDeclaredMethod(BAR);
+  assertThat((String)barMethod.invoke(dynamicType.newInstance()),is(FOO + BAR));
+}

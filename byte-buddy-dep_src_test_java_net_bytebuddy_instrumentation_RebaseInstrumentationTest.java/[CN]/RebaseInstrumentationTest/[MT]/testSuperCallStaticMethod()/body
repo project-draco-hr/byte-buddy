@@ -1,0 +1,6 @@
+{
+  Class<?> dynamicType=new ByteBuddy().rebase(Qux.class).name(QUX + RandomString.make()).method(named(BAR)).intercept(MethodDelegation.to(SuperInterceptor.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertEquals(Object.class,dynamicType.getSuperclass());
+  Method barMethod=dynamicType.getDeclaredMethod(BAR);
+  assertThat((String)barMethod.invoke(STATIC_METHOD),is(FOO + BAR));
+}
