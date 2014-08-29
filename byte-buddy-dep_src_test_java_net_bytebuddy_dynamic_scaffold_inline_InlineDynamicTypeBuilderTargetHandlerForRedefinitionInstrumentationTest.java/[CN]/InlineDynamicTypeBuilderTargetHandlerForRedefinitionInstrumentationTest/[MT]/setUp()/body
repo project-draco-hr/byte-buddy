@@ -1,0 +1,4 @@
+{
+  when(methodLookupEngineFactory.make(any(boolean.class))).thenReturn(methodLookupEngine);
+  when(other.make(any(boolean.class))).thenReturn(otherEngine);
+}
