@@ -1,0 +1,6 @@
+{
+  assertThat(((Visibility)modifierContributor).isPublic(),is(isPublic));
+  assertThat(((Visibility)modifierContributor).isPackagePrivate(),is(isPackagePrivate));
+  assertThat(((Visibility)modifierContributor).isProtected(),is(isProtected));
+  assertThat(((Visibility)modifierContributor).isPrivate(),is(isPrivate));
+}

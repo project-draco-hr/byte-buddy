@@ -1,0 +1,6 @@
+{
+  assertThat(((MethodManifestation)modifierContributor).isAbstract(),is((expectedModifier & Opcodes.ACC_ABSTRACT) != 0));
+  assertThat(((MethodManifestation)modifierContributor).isBridge(),is((expectedModifier & Opcodes.ACC_BRIDGE) != 0));
+  assertThat(((MethodManifestation)modifierContributor).isFinal(),is((expectedModifier & Opcodes.ACC_FINAL) != 0));
+  assertThat(((MethodManifestation)modifierContributor).isNative(),is((expectedModifier & Opcodes.ACC_NATIVE) != 0));
+}

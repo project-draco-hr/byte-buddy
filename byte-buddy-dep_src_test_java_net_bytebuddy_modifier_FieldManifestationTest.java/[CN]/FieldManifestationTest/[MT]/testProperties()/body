@@ -1,0 +1,5 @@
+{
+  assertThat(((FieldManifestation)modifierContributor).isFinal(),is(isFinal));
+  assertThat(((FieldManifestation)modifierContributor).isVolatile(),is(isVolatile));
+  assertThat(((FieldManifestation)modifierContributor).isPlain(),is(isPlain));
+}

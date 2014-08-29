@@ -1,0 +1,6 @@
+{
+  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,Opcodes.ACC_PRIVATE,classFileVersion).getVisibility(),is(Visibility.PRIVATE));
+  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,Opcodes.ACC_PROTECTED,classFileVersion).getVisibility(),is(Visibility.PROTECTED));
+  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,Opcodes.ACC_PUBLIC,classFileVersion).getVisibility(),is(Visibility.PUBLIC));
+  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,0,classFileVersion).getVisibility(),is(Visibility.PACKAGE_PRIVATE));
+}
