@@ -1,0 +1,3 @@
+ClassLoader parent
+Map<String,byte[]> typeDefinitions
+PersistenceHandler persistenceHandler

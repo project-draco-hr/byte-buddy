@@ -1,0 +1,9 @@
+{
+  InputStream inputStream=super.getResourceAsStream(name);
+  if (inputStream != null) {
+    return inputStream;
+  }
+ else {
+    return persistenceHandler.inputStream(name,typeDefinitions);
+  }
+}

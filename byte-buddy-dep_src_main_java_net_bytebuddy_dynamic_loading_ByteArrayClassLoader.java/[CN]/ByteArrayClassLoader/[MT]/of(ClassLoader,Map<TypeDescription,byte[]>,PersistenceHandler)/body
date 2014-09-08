@@ -1,0 +1,7 @@
+{
+  Map<String,byte[]> rawTypeDefinitions=new HashMap<String,byte[]>(typeDefinitions.size());
+  for (  Map.Entry<TypeDescription,byte[]> entry : typeDefinitions.entrySet()) {
+    rawTypeDefinitions.put(entry.getKey().getName(),entry.getValue());
+  }
+  return new ByteArrayClassLoader(parent,rawTypeDefinitions,persistenceHandler);
+}

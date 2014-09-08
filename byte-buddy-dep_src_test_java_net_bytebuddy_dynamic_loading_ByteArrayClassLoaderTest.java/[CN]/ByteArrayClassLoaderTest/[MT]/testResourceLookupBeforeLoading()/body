@@ -1,0 +1,11 @@
+{
+  InputStream inputStream=classLoader.getResourceAsStream(Foo.class.getName());
+  try {
+    assertThat(inputStream,expectedResourceLookup);
+  }
+  finally {
+    if (inputStream != null) {
+      inputStream.close();
+    }
+  }
+}
