@@ -3,5 +3,5 @@
   for (  Map.Entry<TypeDescription,byte[]> entry : typeDefinitions.entrySet()) {
     rawTypeDefinitions.put(entry.getKey().getName(),entry.getValue());
   }
-  return new ByteArrayClassLoader(parent,rawTypeDefinitions,persistenceHandler);
+  return childFirst ? new ChildFirst(parent,rawTypeDefinitions,persistenceHandler) : new ByteArrayClassLoader(parent,rawTypeDefinitions,persistenceHandler);
 }

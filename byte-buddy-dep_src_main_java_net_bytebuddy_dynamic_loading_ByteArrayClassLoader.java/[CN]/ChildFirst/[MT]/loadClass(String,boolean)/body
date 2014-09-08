@@ -1,0 +1,16 @@
+{
+  Class<?> type=findLoadedClass(name);
+  if (type != null) {
+    return type;
+  }
+  try {
+    type=findClass(name);
+    if (resolve) {
+      resolveClass(type);
+    }
+    return type;
+  }
+ catch (  ClassNotFoundException e) {
+    return super.loadClass(name,resolve);
+  }
+}

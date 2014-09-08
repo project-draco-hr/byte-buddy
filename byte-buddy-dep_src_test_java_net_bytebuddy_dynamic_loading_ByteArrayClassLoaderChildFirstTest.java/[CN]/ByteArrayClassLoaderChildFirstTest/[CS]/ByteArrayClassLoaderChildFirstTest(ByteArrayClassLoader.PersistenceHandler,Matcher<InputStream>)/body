@@ -1,0 +1,4 @@
+{
+  this.persistenceHandler=persistenceHandler;
+  this.expectedResourceLookup=expectedResourceLookup;
+}

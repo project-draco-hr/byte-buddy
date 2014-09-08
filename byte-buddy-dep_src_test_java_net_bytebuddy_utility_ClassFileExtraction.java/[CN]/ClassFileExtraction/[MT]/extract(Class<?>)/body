@@ -1,6 +1,3 @@
 {
-  ClassReader classReader=new ClassReader(type.getName());
-  ClassWriter classWriter=new ClassWriter(classReader,ASM_MANUAL);
-  classReader.accept(classWriter,ASM_MANUAL);
-  return classWriter.toByteArray();
+  return extract(type,new ClassVisitorWrapper.Chain());
 }

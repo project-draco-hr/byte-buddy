@@ -1,0 +1,15 @@
+{
+  InputStream inputStream=persistenceHandler.inputStream(name,typeDefinitions);
+  if (inputStream != null) {
+    return inputStream;
+  }
+ else {
+    URL url=getResource(name);
+    try {
+      return url != null ? url.openStream() : null;
+    }
+ catch (    IOException ignored) {
+      return null;
+    }
+  }
+}

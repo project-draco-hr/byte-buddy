@@ -1,7 +1,17 @@
 {
-  byte[] javaType=persistenceHandler.lookup(name,typeDefinitions);
-  if (javaType != null) {
-    return defineClass(name,javaType,0,javaType.length);
+  try {
+    return AccessController.doPrivileged(new PrivilegedExceptionAction<Class<?>>(){
+      @Override public Class<?> run() throws ClassNotFoundException {
+        byte[] javaType=persistenceHandler.lookup(name,typeDefinitions);
+        if (javaType != null) {
+          return defineClass(name,javaType,0,javaType.length);
+        }
+        throw new ClassNotFoundException(name);
+      }
+    }
+,accessControlContext);
   }
-  return super.findClass(name);
+ catch (  PrivilegedActionException e) {
+    throw (ClassNotFoundException)e.getCause();
+  }
 }
