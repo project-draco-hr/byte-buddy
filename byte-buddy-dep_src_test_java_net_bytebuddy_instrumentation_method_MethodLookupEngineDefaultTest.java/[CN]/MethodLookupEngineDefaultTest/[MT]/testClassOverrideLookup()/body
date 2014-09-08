@@ -5,6 +5,8 @@
   assertThat(finding.getTypeDescription(),is(classOverridingToString));
   assertThat(finding.getInvokableMethods(),containsAllOf(classOverridingToString.getDeclaredMethods()));
   assertThat(finding.getInvokableMethods(),containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(classOverridingToString)).filter(not(named(TO_STRING)))));
+  assertThat(finding.getInvokableMethods().filter(named(TO_STRING)).getOnly().isSpecializableFor(classOverridingToString),is(true));
+  assertThat(finding.getInvokableMethods().filter(named(TO_STRING)).getOnly().isSpecializableFor(objectType),is(true));
   assertThat(finding.getInvokableMethods().size(),is(classOverridingToString.getDeclaredMethods().size() + objectType.getDeclaredMethods().filter(isVirtualTo(classOverridingToString)).size() - 1));
   assertThat(finding.getInvokableDefaultMethods().size(),is(0));
 }

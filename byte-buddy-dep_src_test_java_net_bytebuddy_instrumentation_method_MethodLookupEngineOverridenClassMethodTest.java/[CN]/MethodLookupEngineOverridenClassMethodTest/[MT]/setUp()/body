@@ -1,0 +1,5 @@
+{
+  when(first.getDeclaringType()).thenReturn(firstType);
+  when(second.getDeclaringType()).thenReturn(secondType);
+  when(first.getModifiers()).thenReturn(MODIFIERS);
+}
