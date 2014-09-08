@@ -1,3 +1,0 @@
-{
-  return "RedefineInstrumentationTarget.Factory{" + "methodLookupEngine=" + methodLookupEngine + ", bridgeMethodResolverFactory="+ bridgeMethodResolverFactory+ '}';
-}

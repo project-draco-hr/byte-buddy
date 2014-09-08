@@ -1,4 +1,0 @@
-{
-  this.methodLookupEngine=methodLookupEngine;
-  this.bridgeMethodResolverFactory=bridgeMethodResolverFactory;
-}

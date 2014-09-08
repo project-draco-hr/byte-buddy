@@ -1,4 +1,0 @@
-{
-  MethodDescription superMethod=superTypeMethods.get(uniqueSignature);
-  return superMethod == null ? Instrumentation.SpecialMethodInvocation.Illegal.INSTANCE : Instrumentation.SpecialMethodInvocation.Simple.of(superMethod,typeDescription.getSupertype());
-}

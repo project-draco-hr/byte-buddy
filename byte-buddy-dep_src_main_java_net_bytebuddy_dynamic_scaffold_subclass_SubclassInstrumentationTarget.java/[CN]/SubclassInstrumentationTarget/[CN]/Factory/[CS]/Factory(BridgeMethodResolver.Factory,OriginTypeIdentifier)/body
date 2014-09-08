@@ -1,0 +1,4 @@
+{
+  this.bridgeMethodResolverFactory=bridgeMethodResolverFactory;
+  this.originTypeIdentifier=originTypeIdentifier;
+}

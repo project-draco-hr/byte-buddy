@@ -2,9 +2,8 @@
   if (processedTypes.add(typeDescription)) {
     for (    MethodDescription methodDescription : typeDescription.getDeclaredMethods().filter(methodMatcher)) {
       String uniqueSignature=methodDescription.getUniqueSignature();
-      if (!classMethods.containsKey(uniqueSignature)) {
-        classMethods.put(uniqueSignature,methodDescription);
-      }
+      MethodDescription overridingMethod=classMethods.get(uniqueSignature);
+      classMethods.put(uniqueSignature,overridingMethod == null ? methodDescription : OverridenClassMethod.of(overridingMethod,methodDescription));
     }
   }
 }

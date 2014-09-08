@@ -1,0 +1,7 @@
+{
+  MethodVisitor methodVisitor=classVisitor.visitMethod(methodDescription.getAdjustedModifiers(true),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().toInternalNames());
+  methodVisitor.visitCode();
+  Size size=apply(methodVisitor,instrumentationContext,methodDescription);
+  methodVisitor.visitMaxs(size.getOperandStackSize(),size.getLocalVariableSize());
+  methodVisitor.visitEnd();
+}

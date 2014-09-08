@@ -1,7 +1,7 @@
 {
-  assertThat(factory.hashCode(),is(new SubclassInstrumentationTarget.Factory(bridgeMethodResolverFactory).hashCode()));
-  assertThat(factory,is((Instrumentation.Target.Factory)new SubclassInstrumentationTarget.Factory(bridgeMethodResolverFactory)));
+  assertThat(factory.hashCode(),is(new SubclassInstrumentationTarget.Factory(bridgeMethodResolverFactory,SubclassInstrumentationTarget.OriginTypeIdentifier.SUPER_TYPE).hashCode()));
+  assertThat(factory,is((Instrumentation.Target.Factory)new SubclassInstrumentationTarget.Factory(bridgeMethodResolverFactory,SubclassInstrumentationTarget.OriginTypeIdentifier.SUPER_TYPE)));
   BridgeMethodResolver.Factory otherFactory=mock(BridgeMethodResolver.Factory.class);
-  assertThat(factory.hashCode(),not(is(new SubclassInstrumentationTarget.Factory(otherFactory).hashCode())));
-  assertThat(factory,not(is((Instrumentation.Target.Factory)new SubclassInstrumentationTarget.Factory(otherFactory))));
+  assertThat(factory.hashCode(),not(is(new SubclassInstrumentationTarget.Factory(otherFactory,SubclassInstrumentationTarget.OriginTypeIdentifier.SUPER_TYPE).hashCode())));
+  assertThat(factory,not(is((Instrumentation.Target.Factory)new SubclassInstrumentationTarget.Factory(otherFactory,SubclassInstrumentationTarget.OriginTypeIdentifier.SUPER_TYPE))));
 }

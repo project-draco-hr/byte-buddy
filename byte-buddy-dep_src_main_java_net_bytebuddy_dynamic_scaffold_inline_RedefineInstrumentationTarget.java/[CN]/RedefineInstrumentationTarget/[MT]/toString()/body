@@ -1,3 +1,0 @@
-{
-  return "RedefineInstrumentationTarget{" + "typeDescription=" + typeDescription + ", defaultMethods="+ defaultMethods+ ", bridgeMethodResolver="+ bridgeMethodResolver+ "superTypeMethods="+ superTypeMethods+ '}';
-}

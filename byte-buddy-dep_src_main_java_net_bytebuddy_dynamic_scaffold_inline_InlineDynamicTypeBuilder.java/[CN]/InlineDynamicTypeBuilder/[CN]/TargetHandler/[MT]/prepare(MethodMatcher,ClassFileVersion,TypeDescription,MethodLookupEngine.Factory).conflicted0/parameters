@@ -1,4 +1,0 @@
-MethodMatcher ignoredMethods
-ClassFileVersion classFileVersion
-TypeDescription instrumentedType
-MethodLookupEngine.Factory methodLookupEngineFactory

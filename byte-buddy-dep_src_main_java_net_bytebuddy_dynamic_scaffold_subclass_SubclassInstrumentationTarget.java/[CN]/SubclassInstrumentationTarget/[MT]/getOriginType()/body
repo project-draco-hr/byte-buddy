@@ -1,0 +1,3 @@
+{
+  return originTypeIdentifier.identify(typeDescription);
+}

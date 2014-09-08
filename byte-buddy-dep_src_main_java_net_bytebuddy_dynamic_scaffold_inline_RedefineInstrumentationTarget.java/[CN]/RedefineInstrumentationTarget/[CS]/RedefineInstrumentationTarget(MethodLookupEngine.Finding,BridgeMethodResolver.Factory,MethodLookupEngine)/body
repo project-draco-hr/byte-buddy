@@ -1,8 +1,0 @@
-{
-  super(finding,bridgeMethodResolverFactory);
-  MethodList overridableSuperMethods=methodLookupEngine.process(typeDescription.getSupertype()).getInvokableMethods().filter(isOverridable());
-  superTypeMethods=new HashMap<String,MethodDescription>(overridableSuperMethods.size());
-  for (  MethodDescription methodDescription : overridableSuperMethods) {
-    superTypeMethods.put(methodDescription.getUniqueSignature(),methodDescription);
-  }
-}
