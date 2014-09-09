@@ -1,3 +1,4 @@
 {
-  return null;
+  byte[] binaryRepresentation=typeDefinitions.get(name);
+  return binaryRepresentation == null ? null : new ByteArrayInputStream(binaryRepresentation);
 }
