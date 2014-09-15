@@ -1,6 +1,3 @@
 {
-  assertThat(new Instrumentation.Compound(first,second).hashCode(),is(new Instrumentation.Compound(first,second).hashCode()));
-  assertThat(new Instrumentation.Compound(first,second),is(new Instrumentation.Compound(first,second)));
-  assertThat(new Instrumentation.Compound(first,second).hashCode(),not(is(new Instrumentation.Compound(second,first).hashCode())));
-  assertThat(new Instrumentation.Compound(first,second),not(is(new Instrumentation.Compound(second,first))));
+  HashCodeEqualsTester.of(Instrumentation.Compound.class).apply();
 }

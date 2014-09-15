@@ -1,7 +1,3 @@
 {
-  assertThat(dynamicType.hashCode(),is(dynamicType.hashCode()));
-  assertThat(dynamicType,is(dynamicType));
-  DynamicType other=new DynamicType.Default(auxiliaryTypeDescription,BINARY_FIRST,auxiliaryLoadedTypeInitializer,Collections.<DynamicType>emptyList());
-  assertThat(dynamicType.hashCode(),not(is(other.hashCode())));
-  assertThat(dynamicType,not(is(other)));
+  HashCodeEqualsTester.of(DynamicType.Default.class).apply();
 }

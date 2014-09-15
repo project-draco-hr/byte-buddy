@@ -1,6 +1,3 @@
 {
-  assertThat(new ClassFileLocator.Compound(classFileLocator).hashCode(),is(new ClassFileLocator.Compound(classFileLocator).hashCode()));
-  assertThat(new ClassFileLocator.Compound(classFileLocator),is(new ClassFileLocator.Compound(classFileLocator)));
-  assertThat(new ClassFileLocator.Compound(classFileLocator).hashCode(),not(is(new ClassFileLocator.Compound().hashCode())));
-  assertThat(new ClassFileLocator.Compound(classFileLocator),not(is(new ClassFileLocator.Compound())));
+  HashCodeEqualsTester.of(ClassFileLocator.Compound.class).apply();
 }

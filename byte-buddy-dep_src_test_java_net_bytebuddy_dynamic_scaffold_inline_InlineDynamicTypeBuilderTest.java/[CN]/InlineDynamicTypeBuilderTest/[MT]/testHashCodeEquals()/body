@@ -1,0 +1,3 @@
+{
+  HashCodeEqualsTester.of(InlineDynamicTypeBuilder.class).apply();
+}

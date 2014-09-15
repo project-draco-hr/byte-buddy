@@ -1,6 +1,3 @@
 {
-  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,MODIFIERS,classFileVersion).hashCode(),is(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,MODIFIERS,classFileVersion).hashCode()));
-  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,MODIFIERS,classFileVersion),is(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,MODIFIERS,classFileVersion)));
-  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,MODIFIERS,classFileVersion).hashCode(),not(is(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,MODIFIERS,other).hashCode())));
-  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,MODIFIERS,classFileVersion),not(is(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,MODIFIERS,other))));
+  HashCodeEqualsTester.of(NamingStrategy.UnnamedType.Default.class).apply();
 }

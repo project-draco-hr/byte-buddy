@@ -1,0 +1,3 @@
+{
+  HashCodeEqualsTester.of(TextConstant.class).apply();
+}

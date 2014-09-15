@@ -1,6 +1,3 @@
 {
-  assertThat(new FieldAttributeAppender.Factory.Compound(first,second).hashCode(),is(new FieldAttributeAppender.Factory.Compound(first,second).hashCode()));
-  assertThat(new FieldAttributeAppender.Factory.Compound(first,second),is(new FieldAttributeAppender.Factory.Compound(first,second)));
-  assertThat(new FieldAttributeAppender.Factory.Compound(first,second).hashCode(),not(is(new FieldAttributeAppender.Factory.Compound(second,first).hashCode())));
-  assertThat(new FieldAttributeAppender.Factory.Compound(first,second),not(is(new FieldAttributeAppender.Factory.Compound(second,first))));
+  HashCodeEqualsTester.of(FieldAttributeAppender.Factory.Compound.class).apply();
 }

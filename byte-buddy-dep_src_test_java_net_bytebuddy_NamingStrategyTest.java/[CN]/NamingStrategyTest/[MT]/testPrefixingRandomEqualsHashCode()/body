@@ -1,6 +1,3 @@
 {
-  assertThat(new NamingStrategy.PrefixingRandom(FOO).hashCode(),is(new NamingStrategy.PrefixingRandom(FOO).hashCode()));
-  assertThat(new NamingStrategy.PrefixingRandom(FOO),equalTo(new NamingStrategy.PrefixingRandom(FOO)));
-  assertThat(new NamingStrategy.PrefixingRandom(FOO).hashCode(),not(is(new NamingStrategy.PrefixingRandom(BAR).hashCode())));
-  assertThat(new NamingStrategy.PrefixingRandom(FOO),not(equalTo(new NamingStrategy.PrefixingRandom(BAR))));
+  HashCodeEqualsTester.of(NamingStrategy.PrefixingRandom.class).apply();
 }

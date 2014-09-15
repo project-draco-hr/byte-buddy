@@ -1,6 +1,3 @@
 {
-  assertThat(methodLookupEngine.hashCode(),is(new MethodLookupEngine.Default(MethodLookupEngine.Default.DefaultMethodLookup.ENABLED).hashCode()));
-  assertThat(methodLookupEngine,is((MethodLookupEngine)new MethodLookupEngine.Default(MethodLookupEngine.Default.DefaultMethodLookup.ENABLED)));
-  assertThat(methodLookupEngine.hashCode(),CoreMatchers.not(is(new MethodLookupEngine.Default(MethodLookupEngine.Default.DefaultMethodLookup.DISABLED).hashCode())));
-  assertThat(methodLookupEngine,CoreMatchers.not(is((MethodLookupEngine)new MethodLookupEngine.Default(MethodLookupEngine.Default.DefaultMethodLookup.DISABLED))));
+  HashCodeEqualsTester.of(MethodLookupEngine.Default.class).apply();
 }

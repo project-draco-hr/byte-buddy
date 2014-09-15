@@ -1,6 +1,3 @@
 {
-  assertThat(new MethodCallProxy.AssignableSignatureCall(first,false).hashCode(),is(new MethodCallProxy.AssignableSignatureCall(first,false).hashCode()));
-  assertThat(new MethodCallProxy.AssignableSignatureCall(first,false),is(new MethodCallProxy.AssignableSignatureCall(first,false)));
-  assertThat(new MethodCallProxy.AssignableSignatureCall(first,false).hashCode(),not(is(new MethodCallProxy.AssignableSignatureCall(second,false).hashCode())));
-  assertThat(new MethodCallProxy.AssignableSignatureCall(first,false),not(is(new MethodCallProxy.AssignableSignatureCall(second,false))));
+  HashCodeEqualsTester.of(MethodCallProxy.AssignableSignatureCall.class).apply();
 }

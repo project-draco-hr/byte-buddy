@@ -1,7 +1,3 @@
 {
-  Annotation qux=new Qux.Instance(), baz=new Baz.Instance();
-  assertThat(new MethodAttributeAppender.ForAnnotation(qux).hashCode(),is(new MethodAttributeAppender.ForAnnotation(qux).hashCode()));
-  assertThat(new MethodAttributeAppender.ForAnnotation(qux),is(new MethodAttributeAppender.ForAnnotation(qux)));
-  assertThat(new MethodAttributeAppender.ForAnnotation(qux).hashCode(),not(is(new MethodAttributeAppender.ForAnnotation(baz).hashCode())));
-  assertThat(new MethodAttributeAppender.ForAnnotation(qux),not(is(new MethodAttributeAppender.ForAnnotation(baz))));
+  HashCodeEqualsTester.of(MethodAttributeAppender.ForAnnotation.class).apply();
 }

@@ -1,6 +1,3 @@
 {
-  assertThat(new NamingStrategy.SuffixingRandom(FOO,BAR).hashCode(),is(new NamingStrategy.SuffixingRandom(FOO,BAR).hashCode()));
-  assertThat(new NamingStrategy.SuffixingRandom(FOO,BAR),equalTo(new NamingStrategy.SuffixingRandom(FOO,BAR)));
-  assertThat(new NamingStrategy.SuffixingRandom(FOO,BAR).hashCode(),not(is(new NamingStrategy.SuffixingRandom(BAR,FOO).hashCode())));
-  assertThat(new NamingStrategy.SuffixingRandom(FOO,BAR),not(equalTo(new NamingStrategy.SuffixingRandom(BAR,FOO))));
+  HashCodeEqualsTester.of(NamingStrategy.SuffixingRandom.class).apply();
 }

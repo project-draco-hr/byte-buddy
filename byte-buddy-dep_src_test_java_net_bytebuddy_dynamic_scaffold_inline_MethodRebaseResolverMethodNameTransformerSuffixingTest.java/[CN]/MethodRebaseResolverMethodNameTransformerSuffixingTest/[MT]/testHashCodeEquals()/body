@@ -1,0 +1,10 @@
+{
+  HashCodeEqualsTester.of(MethodRebaseResolver.MethodNameTransformer.Suffixing.class).refine(new HashCodeEqualsTester.Refinement(){
+    @Override public void apply(    Object mock){
+      if (RandomString.class.isAssignableFrom(mock.getClass())) {
+        when(((RandomString)mock).nextString()).thenReturn("" + new Random().nextInt());
+      }
+    }
+  }
+).apply();
+}

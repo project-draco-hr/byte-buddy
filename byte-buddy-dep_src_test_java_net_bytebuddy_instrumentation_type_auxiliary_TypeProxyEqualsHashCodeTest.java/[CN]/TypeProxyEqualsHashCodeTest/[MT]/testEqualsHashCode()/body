@@ -1,8 +1,3 @@
 {
-  assertThat(new TypeProxy(first,instrumentationTarget,true,false).hashCode(),is(new TypeProxy(first,instrumentationTarget,true,false).hashCode()));
-  assertThat(new TypeProxy(first,instrumentationTarget,true,false),is(new TypeProxy(first,instrumentationTarget,true,false)));
-  assertThat(new TypeProxy(first,instrumentationTarget,true,false).hashCode(),not(is(new TypeProxy(first,instrumentationTarget,false,false).hashCode())));
-  assertThat(new TypeProxy(first,instrumentationTarget,true,false),not(is(new TypeProxy(first,instrumentationTarget,false,false))));
-  assertThat(new TypeProxy(first,instrumentationTarget,true,false).hashCode(),not(is(new TypeProxy(second,instrumentationTarget,true,false).hashCode())));
-  assertThat(new TypeProxy(first,instrumentationTarget,true,false),not(is(new TypeProxy(second,instrumentationTarget,true,false))));
+  HashCodeEqualsTester.of(TypeProxy.class).apply();
 }

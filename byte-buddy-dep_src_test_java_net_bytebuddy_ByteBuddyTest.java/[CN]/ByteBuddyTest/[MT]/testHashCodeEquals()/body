@@ -1,0 +1,3 @@
+{
+  HashCodeEqualsTester.of(ByteBuddy.class).apply();
+}

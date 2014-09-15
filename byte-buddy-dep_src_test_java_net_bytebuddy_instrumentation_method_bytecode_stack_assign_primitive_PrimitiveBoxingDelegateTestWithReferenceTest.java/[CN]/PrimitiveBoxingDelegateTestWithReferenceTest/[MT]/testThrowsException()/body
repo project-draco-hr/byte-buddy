@@ -1,0 +1,3 @@
+{
+  PrimitiveBoxingDelegate.forPrimitive(new TypeDescription.ForLoadedType(Object.class));
+}

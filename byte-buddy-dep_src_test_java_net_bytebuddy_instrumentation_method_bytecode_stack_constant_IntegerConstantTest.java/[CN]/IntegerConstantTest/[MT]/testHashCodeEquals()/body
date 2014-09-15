@@ -1,0 +1,6 @@
+{
+  assertThat(IntegerConstant.forValue(value).hashCode(),is(IntegerConstant.forValue(value).hashCode()));
+  assertThat(IntegerConstant.forValue(value),is(IntegerConstant.forValue(value)));
+  assertThat(IntegerConstant.forValue(value).hashCode(),not(is(IntegerConstant.forValue(value * 2).hashCode())));
+  assertThat(IntegerConstant.forValue(value),not(is(IntegerConstant.forValue(value * 2))));
+}

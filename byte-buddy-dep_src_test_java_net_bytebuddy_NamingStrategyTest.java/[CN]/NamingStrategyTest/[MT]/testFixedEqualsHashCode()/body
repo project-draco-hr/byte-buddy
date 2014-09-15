@@ -1,6 +1,3 @@
 {
-  assertThat(new NamingStrategy.Fixed(FOO).hashCode(),is(new NamingStrategy.Fixed(FOO).hashCode()));
-  assertThat(new NamingStrategy.Fixed(FOO),equalTo(new NamingStrategy.Fixed(FOO)));
-  assertThat(new NamingStrategy.Fixed(FOO).hashCode(),not(is(new NamingStrategy.Fixed(BAR).hashCode())));
-  assertThat(new NamingStrategy.Fixed(FOO),not(equalTo(new NamingStrategy.Fixed(BAR))));
+  HashCodeEqualsTester.of(NamingStrategy.Fixed.class).apply();
 }

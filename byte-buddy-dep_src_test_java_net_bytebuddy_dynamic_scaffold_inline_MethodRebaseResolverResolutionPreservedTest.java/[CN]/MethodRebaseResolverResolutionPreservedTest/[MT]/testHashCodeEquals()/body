@@ -1,6 +1,3 @@
 {
-  assertThat(new MethodRebaseResolver.Resolution.Preserved(methodDescription).hashCode(),is(new MethodRebaseResolver.Resolution.Preserved(methodDescription).hashCode()));
-  assertThat(new MethodRebaseResolver.Resolution.Preserved(methodDescription),is(new MethodRebaseResolver.Resolution.Preserved(methodDescription)));
-  assertThat(new MethodRebaseResolver.Resolution.Preserved(otherMethodDescription).hashCode(),not(is(new MethodRebaseResolver.Resolution.Preserved(methodDescription).hashCode())));
-  assertThat(new MethodRebaseResolver.Resolution.Preserved(methodDescription),not(is(new MethodRebaseResolver.Resolution.Preserved(otherMethodDescription))));
+  HashCodeEqualsTester.of(MethodRebaseResolver.Resolution.Preserved.class).apply();
 }

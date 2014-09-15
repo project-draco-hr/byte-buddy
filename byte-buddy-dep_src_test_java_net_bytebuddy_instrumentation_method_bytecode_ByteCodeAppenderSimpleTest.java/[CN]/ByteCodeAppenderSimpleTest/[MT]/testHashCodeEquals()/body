@@ -1,6 +1,3 @@
 {
-  assertThat(new ByteCodeAppender.Simple(first,second).hashCode(),is(new ByteCodeAppender.Simple(first,second).hashCode()));
-  assertThat(new ByteCodeAppender.Simple(first,second),is(new ByteCodeAppender.Simple(first,second)));
-  assertThat(new ByteCodeAppender.Simple(first,second).hashCode(),not(is(new ByteCodeAppender.Simple(first).hashCode())));
-  assertThat(new ByteCodeAppender.Simple(first,second),not(is(new ByteCodeAppender.Simple(first))));
+  HashCodeEqualsTester.of(ByteCodeAppender.Simple.class).apply();
 }
