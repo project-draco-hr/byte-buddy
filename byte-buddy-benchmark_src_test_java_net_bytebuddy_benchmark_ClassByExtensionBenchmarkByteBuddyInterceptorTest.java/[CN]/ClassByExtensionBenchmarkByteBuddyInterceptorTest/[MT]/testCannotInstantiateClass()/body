@@ -1,0 +1,11 @@
+{
+  Constructor<?> constructor=ClassByExtensionBenchmark.ByteBuddyInterceptor.class.getDeclaredConstructor();
+  constructor.setAccessible(true);
+  try {
+    constructor.newInstance();
+    fail();
+  }
+ catch (  InvocationTargetException e) {
+    throw (UnsupportedOperationException)e.getCause();
+  }
+}

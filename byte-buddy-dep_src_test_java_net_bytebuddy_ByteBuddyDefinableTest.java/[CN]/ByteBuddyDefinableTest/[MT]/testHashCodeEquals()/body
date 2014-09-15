@@ -1,0 +1,4 @@
+{
+  HashCodeEqualsTester.of(ByteBuddy.Definable.Defined.class).apply();
+  HashCodeEqualsTester.of(ByteBuddy.Definable.Undefined.class).apply();
+}

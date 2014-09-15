@@ -1,5 +1,8 @@
 {
   for (  Constructor<?> constructor : type.getDeclaredConstructors()) {
+    if (constructor.isSynthetic() && skipSynthetic) {
+      continue;
+    }
     constructor.setAccessible(true);
     Class<?>[] parameterTypes=constructor.getParameterTypes();
     Object[] actualArguments=new Object[parameterTypes.length];
@@ -10,6 +13,9 @@
     }
     int testIndex=0;
     Object instance=constructor.newInstance(actualArguments);
+    assertThat(instance,is(instance));
+    assertThat(instance,not(is((Object)null)));
+    assertThat(instance,not(is(new Object())));
     Object similarInstance=constructor.newInstance(actualArguments);
     assertThat(instance.hashCode(),is(similarInstance.hashCode()));
     assertThat(instance,is(similarInstance));

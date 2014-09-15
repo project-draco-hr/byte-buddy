@@ -1,6 +1,3 @@
 {
-  int result=componentType.hashCode();
-  result=31 * result + arrayCreator.hashCode();
-  result=31 * result + sizeDecrease.hashCode();
-  return result;
+  return componentType.hashCode();
 }
