@@ -1,6 +1,7 @@
 {
-  Class<?> dynamicType=new ByteBuddy().redefine(Foo.class).method(named(TO_STRING)).intercept(FixedValue.value(FOO)).make().load(BOOTSTRAP_CLASS_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> dynamicType=new ByteBuddy().redefine(Foo.class).method(named(TO_STRING)).intercept(FixedValue.value(FOO)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
   assertEquals(Object.class,dynamicType.getSuperclass());
+  assertNotEquals(Foo.class,dynamicType);
   assertThat(dynamicType.getName(),is(Foo.class.getName()));
   Method barMethod=dynamicType.getDeclaredMethod(TO_STRING);
   assertThat((String)barMethod.invoke(dynamicType.newInstance()),is(FOO));
