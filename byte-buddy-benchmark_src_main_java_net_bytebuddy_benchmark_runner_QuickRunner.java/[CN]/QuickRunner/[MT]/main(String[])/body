@@ -1,3 +1,3 @@
 {
-  new Runner(new OptionsBuilder().include(WILDCARD + SuperClassInvocationBenchmark.class.getSimpleName() + WILDCARD).include(WILDCARD + StubInvocationBenchmark.class.getSimpleName() + WILDCARD).include(WILDCARD + ClassByImplementationBenchmark.class.getSimpleName() + WILDCARD).include(WILDCARD + ClassByExtensionBenchmark.class.getSimpleName() + WILDCARD).include(WILDCARD + TrivialClassCreationBenchmark.class.getSimpleName() + WILDCARD).forks(1).build()).run();
+  new Runner(new OptionsBuilder().include(WILDCARD + SuperClassInvocationBenchmark.class.getSimpleName() + WILDCARD).include(WILDCARD + StubInvocationBenchmark.class.getSimpleName() + WILDCARD).include(WILDCARD + ClassByImplementationBenchmark.class.getSimpleName() + WILDCARD).include(WILDCARD + ClassByExtensionBenchmark.class.getSimpleName() + WILDCARD).include(WILDCARD + TrivialClassCreationBenchmark.class.getSimpleName() + WILDCARD).forks(0).build()).run();
 }
