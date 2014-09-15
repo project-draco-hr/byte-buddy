@@ -1,18 +1,3 @@
 {
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).hashCode(),is(makeSimple(Opcodes.ACC_PUBLIC).hashCode()));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC),is(makeSimple(Opcodes.ACC_PUBLIC)));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).hashCode(),not(is(makeSimple(Opcodes.ACC_ABSTRACT).hashCode())));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC),not(is(makeSimple(Opcodes.ACC_ABSTRACT))));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineField(FOO,Object.class).hashCode(),is(makeSimple(Opcodes.ACC_PUBLIC).defineField(FOO,Object.class).hashCode()));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineField(FOO,Object.class),is(makeSimple(Opcodes.ACC_PUBLIC).defineField(FOO,Object.class)));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineField(FOO,Object.class).hashCode(),not(is(makeSimple(Opcodes.ACC_PUBLIC).defineField(BAR,Object.class).hashCode())));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineField(FOO,Object.class),not(is(makeSimple(Opcodes.ACC_PUBLIC).defineField(BAR,Object.class))));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).hashCode(),is(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).hashCode()));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()),is(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList())));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).hashCode(),not(is(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(BAR,Object.class,Collections.<Class<?>>emptyList()).hashCode())));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()),not(is(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(BAR,Object.class,Collections.<Class<?>>emptyList()))));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).withoutCode().hashCode(),is(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).withoutCode().hashCode()));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).withoutCode(),is(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).withoutCode()));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).withoutCode().hashCode(),not(is(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).intercept(simpleInstrumentation).hashCode())));
-  assertThat(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).withoutCode(),not(is(makeSimple(Opcodes.ACC_PUBLIC).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList()).intercept(simpleInstrumentation))));
+  HashCodeEqualsTester.of(SubclassDynamicTypeBuilder.class).apply();
 }

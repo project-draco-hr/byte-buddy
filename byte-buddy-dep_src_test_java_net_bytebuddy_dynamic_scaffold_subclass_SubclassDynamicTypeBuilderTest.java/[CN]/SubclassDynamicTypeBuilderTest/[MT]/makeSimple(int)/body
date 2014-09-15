@@ -1,3 +1,0 @@
-{
-  return new SubclassDynamicTypeBuilder<Object>(ClassFileVersion.forCurrentJavaVersion(),new NamingStrategy.Fixed(FOO),new TypeDescription.ForLoadedType(Object.class),new TypeList.ForLoadedType(Arrays.<Class<?>>asList(Serializable.class)),modifiers,TypeAttributeAppender.NoOp.INSTANCE,none(),BridgeMethodResolver.Simple.Factory.FAIL_FAST,new ClassVisitorWrapper.Chain(),new FieldRegistry.Default(),new MethodRegistry.Default(),MethodLookupEngine.Default.Factory.INSTANCE,FieldAttributeAppender.NoOp.INSTANCE,MethodAttributeAppender.NoOp.INSTANCE,ConstructorStrategy.Default.NO_CONSTRUCTORS);
-}
