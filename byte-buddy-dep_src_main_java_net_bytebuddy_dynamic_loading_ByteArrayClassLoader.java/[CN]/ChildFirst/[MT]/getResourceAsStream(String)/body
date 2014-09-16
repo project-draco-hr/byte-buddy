@@ -1,6 +1,6 @@
 {
   InputStream inputStream=persistenceHandler.inputStream(name,typeDefinitions);
-  if (inputStream != null) {
+  if (inputStream != null || (!persistenceHandler.isManifest() && isSelfDefined(name))) {
     return inputStream;
   }
  else {
