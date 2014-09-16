@@ -1,5 +1,5 @@
 {
-  InputStream inputStream=classLoader.getResourceAsStream(Foo.class.getName());
+  InputStream inputStream=classLoader.getResourceAsStream(Foo.class.getName().replace('.','/') + CLASS_FILE);
   try {
     assertThat(inputStream,expectedResourceLookup);
   }
