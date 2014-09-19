@@ -1,0 +1,7 @@
+{
+  Map<TypeDescription,Class<?>> loadedTypes=new LinkedHashMap<TypeDescription,Class<?>>(types.size());
+  for (  Map.Entry<TypeDescription,byte[]> entry : types.entrySet()) {
+    loadedTypes.put(entry.getKey(),classLoaderByteArrayInjector.inject(entry.getKey().getName(),entry.getValue()));
+  }
+  return loadedTypes;
+}

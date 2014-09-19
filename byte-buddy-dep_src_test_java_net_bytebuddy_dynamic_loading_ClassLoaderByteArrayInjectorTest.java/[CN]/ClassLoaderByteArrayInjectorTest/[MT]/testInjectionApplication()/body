@@ -1,0 +1,10 @@
+{
+  when(typeDescription.getName()).thenReturn(FOO);
+  doReturn(Object.class).when(mockInjector).inject(FOO,BYTE_ARRAY);
+  Map<TypeDescription,Class<?>> result=ClassLoaderByteArrayInjector.inject(mockInjector,Collections.singletonMap(typeDescription,BYTE_ARRAY));
+  assertThat(result.size(),is(1));
+  assertThat(result.entrySet().iterator().next().getKey(),is(typeDescription));
+  assertEquals(Object.class,result.entrySet().iterator().next().getValue());
+  verify(mockInjector).inject(FOO,BYTE_ARRAY);
+  verifyNoMoreInteractions(mockInjector);
+}

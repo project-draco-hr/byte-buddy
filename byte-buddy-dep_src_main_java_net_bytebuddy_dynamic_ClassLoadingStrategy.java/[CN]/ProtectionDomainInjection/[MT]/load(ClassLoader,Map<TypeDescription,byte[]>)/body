@@ -1,0 +1,3 @@
+{
+  return ClassLoaderByteArrayInjector.inject(new ClassLoaderByteArrayInjector(classLoader,protectionDomain),types);
+}
