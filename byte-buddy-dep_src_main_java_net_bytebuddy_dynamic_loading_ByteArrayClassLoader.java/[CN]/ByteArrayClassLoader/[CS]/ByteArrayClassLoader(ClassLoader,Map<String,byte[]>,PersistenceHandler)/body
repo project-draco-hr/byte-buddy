@@ -1,6 +1,0 @@
-{
-  super(parent);
-  this.typeDefinitions=new HashMap<String,byte[]>(typeDefinitions);
-  this.persistenceHandler=persistenceHandler;
-  accessControlContext=AccessController.getContext();
-}

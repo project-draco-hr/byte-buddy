@@ -1,4 +1,0 @@
-ClassLoader parent
-Map<TypeDescription,byte[]> typeDefinitions
-PersistenceHandler persistenceHandler
-boolean childFirst

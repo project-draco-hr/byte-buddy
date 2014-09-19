@@ -1,3 +1,0 @@
-{
-  HashCodeEqualsTester.of(ClassLoadingStrategy.ProtectionDomainInjection.class).apply();
-}

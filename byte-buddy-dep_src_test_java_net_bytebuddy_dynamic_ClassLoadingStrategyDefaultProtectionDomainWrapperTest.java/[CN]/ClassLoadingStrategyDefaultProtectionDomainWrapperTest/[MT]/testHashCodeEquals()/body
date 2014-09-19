@@ -1,0 +1,3 @@
+{
+  HashCodeEqualsTester.of(ClassLoadingStrategy.Default.ProtectionDomainWrapper.class).apply();
+}

@@ -3,5 +3,5 @@
   binaryRepresentations=new LinkedHashMap<TypeDescription,byte[]>();
   typeDescription=new TypeDescription.ForLoadedType(Foo.class);
   binaryRepresentations.put(typeDescription,ClassFileExtraction.extract(Foo.class));
-  protectionDomain=getClass().getProtectionDomain();
+  protectionDomain=Foo.class.getProtectionDomain();
 }

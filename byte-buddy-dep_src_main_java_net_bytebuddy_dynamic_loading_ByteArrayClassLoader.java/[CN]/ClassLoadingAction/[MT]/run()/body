@@ -1,7 +1,7 @@
 {
   byte[] javaType=persistenceHandler.lookup(name,typeDefinitions);
   if (javaType != null) {
-    return defineClass(name,javaType,0,javaType.length);
+    return defineClass(name,javaType,FROM_BEGINNING,javaType.length,protectionDomain);
   }
   throw new ClassNotFoundException(name);
 }

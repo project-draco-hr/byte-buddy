@@ -1,3 +1,3 @@
 {
-  return "ByteArrayClassLoader.ChildFirst{" + "parent=" + getParent() + ", typeDefinitions="+ typeDefinitions+ ", persistenceHandler="+ persistenceHandler+ ", accessControlContext="+ accessControlContext+ '}';
+  return "ByteArrayClassLoader.ChildFirst{" + "parent=" + getParent() + ", typeDefinitions="+ typeDefinitions+ ", protectionDomain="+ protectionDomain+ ", persistenceHandler="+ persistenceHandler+ ", accessControlContext="+ accessControlContext+ '}';
 }

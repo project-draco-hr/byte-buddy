@@ -1,4 +1,4 @@
 {
   Map<String,byte[]> values=Collections.singletonMap(Foo.class.getName(),ClassFileExtraction.extract(Bar.class,new RenamingWrapper(Bar.class.getName().replace('.','/'),Foo.class.getName().replace('.','/'))));
-  classLoader=new ByteArrayClassLoader.ChildFirst(getClass().getClassLoader(),values,persistenceHandler);
+  classLoader=new ByteArrayClassLoader.ChildFirst(getClass().getClassLoader(),values,DEFAULT_PROTECTION_DOMAIN,persistenceHandler);
 }

@@ -1,7 +1,0 @@
-{
-  Map<TypeDescription,Class<?>> loaded=new ClassLoadingStrategy.ProtectionDomainInjection(protectionDomain).load(classLoader,binaryRepresentations);
-  assertThat(loaded.size(),is(1));
-  Class<?> type=loaded.get(typeDescription);
-  assertThat(type.getClassLoader(),is(classLoader));
-  assertThat(type.getName(),is(Foo.class.getName()));
-}
