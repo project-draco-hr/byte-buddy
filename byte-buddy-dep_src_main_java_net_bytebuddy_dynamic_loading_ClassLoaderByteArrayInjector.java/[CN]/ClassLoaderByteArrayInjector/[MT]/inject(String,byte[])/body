@@ -6,7 +6,20 @@ synchronized (classLoader) {
         return type;
       }
  else {
-        return (Class<?>)REFLECTION_STORE.getLoadByteArrayMethod().invoke(classLoader,name,binaryRepresentation,FROM_BEGINNING,binaryRepresentation.length,protectionDomain);
+        try {
+          return AccessController.doPrivileged(new ClassLoadingAction(name,binaryRepresentation),accessControlContext);
+        }
+ catch (        PrivilegedActionException e) {
+          if (e.getCause() instanceof IllegalAccessException) {
+            throw (IllegalAccessException)e.getCause();
+          }
+ else           if (e.getCause() instanceof InvocationTargetException) {
+            throw (InvocationTargetException)e.getCause();
+          }
+ else {
+            throw (RuntimeException)e.getCause();
+          }
+        }
       }
     }
   }

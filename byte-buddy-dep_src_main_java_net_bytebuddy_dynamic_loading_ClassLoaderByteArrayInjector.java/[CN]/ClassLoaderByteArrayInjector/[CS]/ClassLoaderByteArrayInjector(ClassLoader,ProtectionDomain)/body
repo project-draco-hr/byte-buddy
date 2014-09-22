@@ -1,4 +1,5 @@
 {
   this.classLoader=classLoader;
   this.protectionDomain=protectionDomain;
+  accessControlContext=AccessController.getContext();
 }

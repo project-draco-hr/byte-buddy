@@ -1,0 +1,3 @@
+{
+  return (Class<?>)REFLECTION_STORE.getLoadByteArrayMethod().invoke(classLoader,name,binaryRepresentation,FROM_BEGINNING,binaryRepresentation.length,protectionDomain);
+}
