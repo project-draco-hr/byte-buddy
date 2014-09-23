@@ -1,0 +1,3 @@
+{
+  return "StreamDrainer{bufferSize=" + bufferSize + '}';
+}

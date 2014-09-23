@@ -4,7 +4,7 @@
     for (    Class<?> aType : type) {
       InputStream inputStream=aType.getClassLoader().getResourceAsStream(aType.getName().replace('.','/') + CLASS_FILE_EXTENSION);
       try {
-        classDefinitions.put(aType,new ClassDefinition(aType,drain(inputStream)));
+        classDefinitions.put(aType,new ClassDefinition(aType,new StreamDrainer().drain(inputStream)));
       }
   finally {
         inputStream.close();

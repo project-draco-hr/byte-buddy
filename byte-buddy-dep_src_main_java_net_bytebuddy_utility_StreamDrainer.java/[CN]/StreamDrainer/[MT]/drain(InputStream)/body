@@ -1,0 +1,23 @@
+{
+  List<byte[]> previousBytes=new LinkedList<byte[]>();
+  byte[] currentArray=new byte[bufferSize];
+  int currentIndex=0;
+  int currentRead;
+  do {
+    currentRead=inputStream.read(currentArray,currentIndex,bufferSize - currentIndex);
+    currentIndex+=currentRead > 0 ? currentRead : 0;
+    if (currentIndex == bufferSize) {
+      previousBytes.add(currentArray);
+      currentArray=new byte[bufferSize];
+      currentIndex=0;
+    }
+  }
+ while (currentRead != END_OF_STREAM);
+  byte[] result=new byte[previousBytes.size() * bufferSize + currentIndex];
+  int arrayIndex=0;
+  for (  byte[] previousByte : previousBytes) {
+    System.arraycopy(previousByte,FROM_BEGINNING,result,arrayIndex++ * bufferSize,bufferSize);
+  }
+  System.arraycopy(currentArray,FROM_BEGINNING,result,arrayIndex * bufferSize,currentIndex);
+  return result;
+}
