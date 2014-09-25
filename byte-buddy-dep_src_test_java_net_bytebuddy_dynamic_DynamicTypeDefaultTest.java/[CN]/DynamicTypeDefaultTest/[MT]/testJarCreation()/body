@@ -9,8 +9,8 @@
     assertThat(file.isFile(),is(true));
     assertThat(file.length() > 0L,is(true));
     Map<String,byte[]> bytes=new HashMap<String,byte[]>();
-    bytes.put(FOOBAR,BINARY_FIRST);
-    bytes.put(QUXBAZ,BINARY_SECOND);
+    bytes.put(FOOBAR + CLASS_FILE_EXTENSION,BINARY_FIRST);
+    bytes.put(QUXBAZ + CLASS_FILE_EXTENSION,BINARY_SECOND);
     assertJarFile(file,manifest,bytes);
   }
   finally {
