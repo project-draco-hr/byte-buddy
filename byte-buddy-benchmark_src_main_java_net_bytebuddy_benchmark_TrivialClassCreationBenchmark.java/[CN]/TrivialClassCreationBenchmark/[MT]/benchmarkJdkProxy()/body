@@ -1,3 +1,3 @@
 {
-  return Proxy.getProxyClass(newClassLoader(),new Class[0]);
+  return Proxy.getProxyClass(newClassLoader(),new Class<?>[urlLength]);
 }

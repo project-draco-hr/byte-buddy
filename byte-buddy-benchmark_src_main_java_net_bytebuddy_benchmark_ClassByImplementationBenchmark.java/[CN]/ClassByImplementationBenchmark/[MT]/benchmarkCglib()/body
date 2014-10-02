@@ -2,10 +2,10 @@
   Enhancer enhancer=new Enhancer();
   enhancer.setUseCache(false);
   enhancer.setClassLoader(newClassLoader());
-  enhancer.setSuperclass(BASE_CLASS);
-  CallbackHelper callbackHelper=new CallbackHelper(Object.class,new Class[]{BASE_CLASS}){
+  enhancer.setSuperclass(baseClass);
+  CallbackHelper callbackHelper=new CallbackHelper(Object.class,new Class[]{baseClass}){
     @Override protected Object getCallback(    Method method){
-      if (method.getDeclaringClass() == BASE_CLASS) {
+      if (method.getDeclaringClass() == baseClass) {
         return new FixedValue(){
           @Override public Object loadObject() throws Exception {
             return null;

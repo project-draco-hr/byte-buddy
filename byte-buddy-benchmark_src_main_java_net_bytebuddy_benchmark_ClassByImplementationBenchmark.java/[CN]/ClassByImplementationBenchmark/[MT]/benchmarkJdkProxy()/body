@@ -1,35 +1,35 @@
 {
-  return (ExampleInterface)Proxy.newProxyInstance(newClassLoader(),new Class<?>[]{BASE_CLASS},new InvocationHandler(){
+  return (ExampleInterface)Proxy.newProxyInstance(newClassLoader(),new Class<?>[]{baseClass},new InvocationHandler(){
     @Override public Object invoke(    Object proxy,    Method method,    Object[] args) throws Throwable {
       Class<?> returnType=method.getReturnType();
       if (returnType.isPrimitive()) {
         if (returnType == boolean.class) {
-          return DEFAULT_BOOLEAN_VALUE;
+          return defaultBooleanValue;
         }
  else         if (returnType == byte.class) {
-          return DEFAULT_BYTE_VALUE;
+          return defaultByteValue;
         }
  else         if (returnType == short.class) {
-          return DEFAULT_SHORT_VALUE;
+          return defaultShortValue;
         }
  else         if (returnType == char.class) {
-          return DEFAULT_CHAR_VALUE;
+          return defaultCharValue;
         }
  else         if (returnType == int.class) {
-          return DEFAULT_INT_VALUE;
+          return defaultIntValue;
         }
  else         if (returnType == long.class) {
-          return DEFAULT_LONG_VALUE;
+          return defaultLongValue;
         }
  else         if (returnType == float.class) {
-          return DEFAULT_FLOAT_VALUE;
+          return defaultFloatValue;
         }
  else {
-          return DEFAULT_DOUBLE_VALUE;
+          return defaultDoubleValue;
         }
       }
  else {
-        return DEFAULT_REFERENCE_VALUE;
+        return defaultReferenceValue;
       }
     }
   }

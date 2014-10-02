@@ -2,7 +2,7 @@
   Enhancer enhancer=new Enhancer();
   enhancer.setUseCache(false);
   enhancer.setClassLoader(newClassLoader());
-  enhancer.setSuperclass(BASE_CLASS);
+  enhancer.setSuperclass(baseClass);
   enhancer.setCallbackType(NoOp.class);
   return enhancer.createClass();
 }

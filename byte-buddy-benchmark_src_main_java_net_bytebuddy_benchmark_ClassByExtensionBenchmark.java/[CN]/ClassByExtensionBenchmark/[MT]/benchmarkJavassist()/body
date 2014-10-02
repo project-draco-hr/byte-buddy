@@ -7,10 +7,10 @@
     }
   }
 ;
-  proxyFactory.setSuperclass(BASE_CLASS);
+  proxyFactory.setSuperclass(baseClass);
   proxyFactory.setFilter(new MethodFilter(){
     public boolean isHandled(    Method method){
-      return method.getDeclaringClass() == BASE_CLASS;
+      return method.getDeclaringClass() == baseClass;
     }
   }
 );
