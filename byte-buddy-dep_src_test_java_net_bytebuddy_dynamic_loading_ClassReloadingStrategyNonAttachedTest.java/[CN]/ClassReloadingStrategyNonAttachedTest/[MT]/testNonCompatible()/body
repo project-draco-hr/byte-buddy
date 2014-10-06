@@ -1,0 +1,3 @@
+{
+  new ClassReloadingStrategy(mock(Instrumentation.class));
+}

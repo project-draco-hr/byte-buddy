@@ -1,0 +1,6 @@
+{
+  if (isChild(classLoader) && typeDescription.represents(redefinedType)) {
+    this.classFile=classFile;
+  }
+  return classFile;
+}

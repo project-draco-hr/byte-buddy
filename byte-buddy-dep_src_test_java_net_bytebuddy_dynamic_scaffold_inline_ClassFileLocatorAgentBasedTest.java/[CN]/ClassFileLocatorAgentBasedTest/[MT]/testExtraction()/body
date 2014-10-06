@@ -1,0 +1,10 @@
+{
+  ClassFileLocator classFileLocator=ClassFileLocator.AgentBased.fromInstalledAgent(getClass().getClassLoader());
+  InputStream inputStream=classFileLocator.classFileFor(new TypeDescription.ForLoadedType(Foo.class));
+  try {
+    assertThat(inputStream,notNullValue());
+  }
+  finally {
+    inputStream.close();
+  }
+}

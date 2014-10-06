@@ -1,0 +1,3 @@
+{
+  return "ClassFileLocator.AgentBased.ExtractionClassFileTransformer{" + "classLoader=" + classLoader + ", typeDescription="+ typeDescription+ ", classFile="+ Arrays.toString(classFile)+ '}';
+}

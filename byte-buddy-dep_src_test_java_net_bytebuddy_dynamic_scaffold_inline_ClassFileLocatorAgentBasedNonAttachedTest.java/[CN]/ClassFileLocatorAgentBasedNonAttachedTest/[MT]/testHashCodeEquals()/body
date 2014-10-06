@@ -1,0 +1,10 @@
+{
+  HashCodeEqualsTester.of(ClassFileLocator.AgentBased.class).refine(new HashCodeEqualsTester.Refinement(){
+    @Override public void apply(    Object mock){
+      if (Instrumentation.class.isAssignableFrom(mock.getClass())) {
+        when(((Instrumentation)mock).isRetransformClassesSupported()).thenReturn(true);
+      }
+    }
+  }
+).apply();
+}

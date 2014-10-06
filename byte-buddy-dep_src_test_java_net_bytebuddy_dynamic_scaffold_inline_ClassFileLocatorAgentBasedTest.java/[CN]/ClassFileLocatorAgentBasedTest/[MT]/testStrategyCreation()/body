@@ -1,0 +1,3 @@
+{
+  assertThat(ClassReloadingStrategy.fromInstalledAgent(),notNullValue());
+}

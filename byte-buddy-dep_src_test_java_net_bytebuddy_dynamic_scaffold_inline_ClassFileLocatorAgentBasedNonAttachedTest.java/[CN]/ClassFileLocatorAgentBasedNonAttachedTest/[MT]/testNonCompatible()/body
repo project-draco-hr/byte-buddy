@@ -1,0 +1,3 @@
+{
+  new ClassFileLocator.AgentBased(mock(Instrumentation.class),getClass().getClassLoader());
+}
