@@ -1,0 +1,6 @@
+{
+  for (  MethodDescription method : annotation.getAnnotationType().getDeclaredMethods()) {
+    apply(annotationVisitor,method.getReturnType(),method.getName(),annotation.getValue(method.getName()));
+  }
+  annotationVisitor.visitEnd();
+}

@@ -1,3 +1,3 @@
 {
-  return field.hashCode();
+  return fieldDescription.hashCode();
 }

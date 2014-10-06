@@ -1,0 +1,2 @@
+List<AnnotationDescription> annotations
+Iterator<AnnotationDescription> defaults

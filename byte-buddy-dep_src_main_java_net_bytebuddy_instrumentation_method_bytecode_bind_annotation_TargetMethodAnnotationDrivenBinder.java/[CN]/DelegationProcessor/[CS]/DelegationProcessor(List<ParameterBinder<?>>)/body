@@ -1,7 +1,7 @@
 {
-  Map<Class<? extends Annotation>,ParameterBinder<?>> argumentBinderMap=new HashMap<Class<? extends Annotation>,ParameterBinder<?>>();
+  Map<TypeDescription,ParameterBinder<?>> argumentBinderMap=new HashMap<TypeDescription,ParameterBinder<?>>();
   for (  ParameterBinder<?> parameterBinder : parameterBinders) {
-    if (argumentBinderMap.put(parameterBinder.getHandledType(),parameterBinder) != null) {
+    if (argumentBinderMap.put(new TypeDescription.ForLoadedType(parameterBinder.getHandledType()),parameterBinder) != null) {
       throw new IllegalArgumentException("Attempt to bind two handlers to " + parameterBinder.getHandledType());
     }
   }

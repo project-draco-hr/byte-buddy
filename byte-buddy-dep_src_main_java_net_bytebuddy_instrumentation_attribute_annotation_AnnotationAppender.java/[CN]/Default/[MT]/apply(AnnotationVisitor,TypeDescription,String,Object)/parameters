@@ -1,4 +1,4 @@
 AnnotationVisitor annotationVisitor
-Class<?> valueType
+TypeDescription valueType
 String name
 Object value
