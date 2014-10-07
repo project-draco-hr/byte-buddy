@@ -2,6 +2,6 @@
   super.setUp();
   when(targetTypeList.get(INDEX)).thenReturn(targetType);
   when(annotation.strategy()).thenReturn(instantiation);
-  when(instantiation.proxyFor(targetType,instrumentationTarget,annotation)).thenReturn(stackManipulation);
+  when(instantiation.proxyFor(targetType,instrumentationTarget,annotationDescription)).thenReturn(stackManipulation);
   when(annotation.constructorParameters()).thenReturn(new Class<?>[0]);
 }

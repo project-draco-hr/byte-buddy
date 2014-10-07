@@ -1,9 +1,9 @@
 {
   when(stackManipulation.isValid()).thenReturn(false);
   when(target.getParameterTypes()).thenReturn(typeList);
-  when(target.getParameterAnnotations()).thenReturn(new Annotation[1][0]);
+  when(target.getParameterAnnotations()).thenReturn(AnnotationList.Empty.asList(1));
   when(assigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(StackManipulation.Illegal.INSTANCE);
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=This.Binder.INSTANCE.bind(annotation,0,source,target,instrumentationTarget,assigner);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=This.Binder.INSTANCE.bind(annotationDescription,0,source,target,instrumentationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(false));
   verify(assigner).assign(instrumentedType,parameterType,false);
   verifyNoMoreInteractions(assigner);

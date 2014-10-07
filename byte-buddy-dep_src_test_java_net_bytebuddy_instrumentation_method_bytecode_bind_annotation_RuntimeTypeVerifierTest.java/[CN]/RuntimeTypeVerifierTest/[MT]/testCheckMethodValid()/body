@@ -1,6 +1,6 @@
 {
-  when(methodDescription.getAnnotations()).thenReturn(new Annotation[]{runtimeType});
+  when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Annotation[]{runtimeType}));
   assertThat(RuntimeType.Verifier.check(methodDescription),is(true));
-  verify(methodDescription).getAnnotations();
+  verify(methodDescription).getDeclaredAnnotations();
   verifyNoMoreInteractions(methodDescription);
 }

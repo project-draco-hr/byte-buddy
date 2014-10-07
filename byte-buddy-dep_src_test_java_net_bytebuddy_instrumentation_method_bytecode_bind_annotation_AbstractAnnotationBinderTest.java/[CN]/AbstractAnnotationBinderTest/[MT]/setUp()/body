@@ -1,5 +1,6 @@
 {
   annotation=mock(annotationType);
+  annotationDescription=AnnotationDescription.ForLoadedAnnotation.of(annotation);
   when(source.getParameterTypes()).thenReturn(sourceTypeList);
   when(target.getParameterTypes()).thenReturn(targetTypeList);
   when(assigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(stackManipulation);

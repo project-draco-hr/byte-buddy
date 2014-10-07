@@ -1,4 +1,4 @@
-StringValue annotation
+AnnotationDescription.Loadable<StringValue> annotation
 int targetParameterIndex
 MethodDescription source
 MethodDescription target
