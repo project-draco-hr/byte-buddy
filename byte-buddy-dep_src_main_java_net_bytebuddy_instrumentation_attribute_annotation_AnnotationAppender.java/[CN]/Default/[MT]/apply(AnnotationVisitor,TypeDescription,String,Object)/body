@@ -3,7 +3,10 @@
     handle(annotationVisitor.visitAnnotation(name,valueType.getDescriptor()),(AnnotationDescription)value);
   }
  else   if (valueType.isEnum()) {
-    annotationVisitor.visitEnum(name,valueType.getDescriptor(),((Enum<?>)value).name());
+    annotationVisitor.visitEnum(name,valueType.getDescriptor(),((AnnotationDescription.EnumerationValue)value).getName());
+  }
+ else   if (valueType.represents(TypeDescription.class)) {
+    annotationVisitor.visit(name,Type.getType(((TypeDescription)value).getDescriptor()));
   }
  else   if (valueType.isArray()) {
     AnnotationVisitor arrayVisitor=annotationVisitor.visitArray(name);
@@ -13,9 +16,6 @@
       apply(arrayVisitor,componentType,ASM_IGNORE_NAME,Array.get(value,index));
     }
     arrayVisitor.visitEnd();
-  }
- else   if (valueType.represents(Class.class)) {
-    annotationVisitor.visit(name,Type.getType((Class<?>)value));
   }
  else {
     annotationVisitor.visit(name,value);
