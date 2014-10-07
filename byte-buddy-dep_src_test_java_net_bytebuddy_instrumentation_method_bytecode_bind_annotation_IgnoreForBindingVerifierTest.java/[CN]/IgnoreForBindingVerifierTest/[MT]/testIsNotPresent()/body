@@ -1,5 +1,5 @@
 {
   assertThat(IgnoreForBinding.Verifier.check(methodDescription),is(false));
-  verify(methodDescription).isAnnotationPresent(IgnoreForBinding.class);
+  verify(annotationList).isAnnotationPresent(IgnoreForBinding.class);
   verifyNoMoreInteractions(methodDescription);
 }

@@ -1,5 +1,6 @@
 {
-  when(target.isAnnotationPresent(IgnoreForBinding.class)).thenReturn(true);
+  when(target.getDeclaredAnnotations()).thenReturn(annotationList);
+  when(annotationList.isAnnotationPresent(IgnoreForBinding.class)).thenReturn(true);
   MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Collections.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>emptyList(),defaultsProvider,assigner,methodInvoker);
   assertThat(methodDelegationBinder.bind(instrumentationTarget,source,target).isValid(),is(false));
   verifyZeroInteractions(assigner);

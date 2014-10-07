@@ -1,4 +1,4 @@
 List<ParameterBinder<?>> parameterBinders
-DefaultsProvider<?> defaultsProvider
+DefaultsProvider defaultsProvider
 Assigner assigner
 MethodInvoker methodInvoker

@@ -1,6 +1,6 @@
 InstrumentationDelegate instrumentationDelegate
 List<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>> parameterBinders
-TargetMethodAnnotationDrivenBinder.DefaultsProvider<?> defaultsProvider
+TargetMethodAnnotationDrivenBinder.DefaultsProvider defaultsProvider
 MethodDelegationBinder.AmbiguityResolver ambiguityResolver
 Assigner assigner
 MethodList targetMethodCandidates

@@ -3,7 +3,7 @@
   when(methodInvocation.isValid()).thenReturn(true);
   RuntimeType runtimeType=mock(RuntimeType.class);
   doReturn(RuntimeType.class).when(runtimeType).annotationType();
-  when(target.getAnnotations()).thenReturn(new Annotation[]{runtimeType});
+  when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Annotation[]{runtimeType}));
   MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Collections.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>emptyList(),defaultsProvider,assigner,methodInvoker);
   assertThat(methodDelegationBinder.bind(instrumentationTarget,source,target).isValid(),is(false));
   verify(assigner).assign(targetTypeDescription,sourceTypeDescription,true);

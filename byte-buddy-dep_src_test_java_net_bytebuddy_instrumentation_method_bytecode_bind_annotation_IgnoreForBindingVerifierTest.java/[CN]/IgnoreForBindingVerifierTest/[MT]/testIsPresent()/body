@@ -1,6 +1,6 @@
 {
-  when(methodDescription.isAnnotationPresent(IgnoreForBinding.class)).thenReturn(true);
+  when(annotationList.isAnnotationPresent(IgnoreForBinding.class)).thenReturn(true);
   assertThat(IgnoreForBinding.Verifier.check(methodDescription),is(true));
-  verify(methodDescription).isAnnotationPresent(IgnoreForBinding.class);
+  verify(annotationList).isAnnotationPresent(IgnoreForBinding.class);
   verifyNoMoreInteractions(methodDescription);
 }

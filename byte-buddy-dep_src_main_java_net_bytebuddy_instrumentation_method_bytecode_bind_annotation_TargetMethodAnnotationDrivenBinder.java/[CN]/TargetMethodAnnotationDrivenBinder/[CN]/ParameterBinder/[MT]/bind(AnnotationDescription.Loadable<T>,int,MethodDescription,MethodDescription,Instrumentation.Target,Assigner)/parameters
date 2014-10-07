@@ -1,4 +1,4 @@
-T annotation
+AnnotationDescription.Loadable<T> annotation
 int targetParameterIndex
 MethodDescription source
 MethodDescription target

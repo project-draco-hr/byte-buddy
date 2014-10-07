@@ -11,8 +11,8 @@
   when(target.getInternalName()).thenReturn(BAR);
   when(target.getDescriptor()).thenReturn(BAZ);
   when(target.isStatic()).thenReturn(true);
-  doReturn(FirstPseudoAnnotation.class).when(firstPseudoAnnotation).annotationType();
-  doReturn(SecondPseudoAnnotation.class).when(secondPseudoAnnotation).annotationType();
+  when(firstPseudoAnnotation.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(FirstPseudoAnnotation.class));
+  when(secondPseudoAnnotation.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(SecondPseudoAnnotation.class));
   when(sourceTypeDescription.getStackSize()).thenReturn(StackSize.ZERO);
   when(targetTypeDescription.getStackSize()).thenReturn(StackSize.ZERO);
   when(source.getReturnType()).thenReturn(sourceTypeDescription);

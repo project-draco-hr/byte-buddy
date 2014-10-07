@@ -5,10 +5,10 @@
   when(typeList.size()).thenReturn(0);
   when(target.getParameterTypes()).thenReturn(typeList);
   when(target.getStackSize()).thenReturn(0);
-  when(target.getParameterAnnotations()).thenReturn(new Annotation[2][0]);
-  when(target.getAnnotations()).thenReturn(new Annotation[0]);
+  when(target.getParameterAnnotations()).thenReturn(AnnotationList.Empty.asList(2));
+  when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   MethodDelegationBinder.ParameterBinding<?> firstBinding=prepareArgumentBinder(firstParameterBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
-  Iterator<Annotation> defaultsIterator=prepareDefaultProvider(defaultsProvider,Collections.<Annotation>emptyList());
+  Iterator<AnnotationDescription> defaultsIterator=prepareDefaultProvider(defaultsProvider,Collections.<AnnotationDescription>emptyList());
   MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Arrays.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>asList(firstParameterBinder),defaultsProvider,assigner,methodInvoker);
   MethodDelegationBinder.MethodBinding methodBinding=methodDelegationBinder.bind(instrumentationTarget,source,target);
   assertThat(methodBinding.isValid(),is(false));

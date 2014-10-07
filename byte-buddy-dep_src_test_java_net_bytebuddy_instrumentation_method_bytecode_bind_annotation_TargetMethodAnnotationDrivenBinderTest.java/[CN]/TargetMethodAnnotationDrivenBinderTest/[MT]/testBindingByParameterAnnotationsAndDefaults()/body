@@ -5,11 +5,11 @@
   when(typeList.size()).thenReturn(2);
   when(target.getParameterTypes()).thenReturn(typeList);
   when(target.getStackSize()).thenReturn(3);
-  when(target.getParameterAnnotations()).thenReturn(new Annotation[][]{{},{firstPseudoAnnotation}});
-  when(target.getAnnotations()).thenReturn(new Annotation[0]);
+  when(target.getParameterAnnotations()).thenReturn(AnnotationList.Explicit.asList(Arrays.asList(Collections.<AnnotationDescription>emptyList(),Arrays.asList(firstPseudoAnnotation))));
+  when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   MethodDelegationBinder.ParameterBinding<?> firstBinding=prepareArgumentBinder(firstParameterBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
   MethodDelegationBinder.ParameterBinding<?> secondBinding=prepareArgumentBinder(secondParameterBinder,SecondPseudoAnnotation.class,new Key(BAR),true);
-  Iterator<Annotation> defaultsIterator=prepareDefaultProvider(defaultsProvider,Collections.singletonList(secondPseudoAnnotation));
+  Iterator<AnnotationDescription> defaultsIterator=prepareDefaultProvider(defaultsProvider,Collections.singletonList(secondPseudoAnnotation));
   MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Arrays.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>asList(firstParameterBinder,secondParameterBinder),defaultsProvider,assigner,methodInvoker);
   MethodDelegationBinder.MethodBinding methodBinding=methodDelegationBinder.bind(instrumentationTarget,source,target);
   assertThat(methodBinding.isValid(),is(true));
@@ -24,7 +24,7 @@
   verify(target,atLeast(1)).getReturnType();
   verify(target,atLeast(1)).getParameterTypes();
   verify(target,atLeast(1)).getParameterAnnotations();
-  verify(target,atLeast(1)).getAnnotations();
+  verify(target,atLeast(1)).getDeclaredAnnotations();
   verify(assigner).assign(targetTypeDescription,sourceTypeDescription,false);
   verifyNoMoreInteractions(assigner);
   verify(methodInvoker).invoke(target);
