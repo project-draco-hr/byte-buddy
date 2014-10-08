@@ -1,0 +1,4 @@
+TypePool typePool
+String annotationDescriptor
+LinkedHashMap<String,AnnotationValue<?,?>> values
+Class<S> annotationType

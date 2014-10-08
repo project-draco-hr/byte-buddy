@@ -1,0 +1,11 @@
+{
+  if (!annotationType.isInstance(other)) {
+    return false;
+  }
+  for (  Method method : annotationType.getDeclaredMethods()) {
+    if (!invoke(method).equals(method.invoke(other))) {
+      return false;
+    }
+  }
+  return true;
+}

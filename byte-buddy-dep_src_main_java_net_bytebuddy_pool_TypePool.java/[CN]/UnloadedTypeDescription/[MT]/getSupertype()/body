@@ -1,0 +1,3 @@
+{
+  return superTypeName == null ? null : typePool.describe(superTypeName);
+}

@@ -1,0 +1,5 @@
+{
+  name=internalName.replace('/','.');
+  this.methodName=methodName;
+  this.methodDescriptor=methodDescriptor;
+}

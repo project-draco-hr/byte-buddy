@@ -1,0 +1,3 @@
+{
+  return declarationContext.isDeclaredInMethod() ? null : declarationContext.getEnclosingType(typePool);
+}

@@ -1,0 +1,27 @@
+{
+  this.modifiers=modifiers;
+  this.internalName=internalName;
+  returnTypeName=Type.getReturnType(methodDescriptor).getClassName();
+  parameterTypes=new TypePoolTypeList(methodDescriptor);
+  exceptionTypes=exceptionInternalName == null ? new TypeList.Empty() : new TypePoolTypeList(exceptionInternalName);
+  declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
+  for (  AnnotationToken annotationToken : annotationTokens) {
+    declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));
+  }
+  declaredParameterAnnotations=new ArrayList<List<AnnotationDescription>>(parameterTypes.size());
+  for (int index=0; index < parameterTypes.size(); index++) {
+    List<AnnotationToken> tokens=parameterAnnotationTokens.get(index);
+    List<AnnotationDescription> annotationDescriptions;
+    if (tokens == null) {
+      annotationDescriptions=new AnnotationList.Empty();
+    }
+ else {
+      annotationDescriptions=new ArrayList<AnnotationDescription>(tokens.size());
+      for (      AnnotationToken annotationToken : tokens) {
+        annotationDescriptions.add(annotationToken.toAnnotationDescription(typePool));
+      }
+    }
+    declaredParameterAnnotations.add(annotationDescriptions);
+  }
+  this.defaultValue=defaultValue;
+}

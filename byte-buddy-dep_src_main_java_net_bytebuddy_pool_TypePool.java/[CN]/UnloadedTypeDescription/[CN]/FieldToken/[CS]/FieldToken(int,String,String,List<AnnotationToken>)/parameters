@@ -1,0 +1,4 @@
+int modifiers
+String name
+String descriptor
+List<AnnotationToken> annotationTokens

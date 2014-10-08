@@ -1,0 +1,12 @@
+{
+  Type[] parameterType=Type.getArgumentTypes(methodDescriptor);
+  name=new String[parameterType.length];
+  internalName=new String[parameterType.length];
+  int index=0, stackSize=0;
+  for (  Type aParameterType : parameterType) {
+    name[index++]=aParameterType.getClassName();
+    internalName[index++]=aParameterType.getInternalName();
+    stackSize+=aParameterType.getSize();
+  }
+  this.stackSize=stackSize;
+}

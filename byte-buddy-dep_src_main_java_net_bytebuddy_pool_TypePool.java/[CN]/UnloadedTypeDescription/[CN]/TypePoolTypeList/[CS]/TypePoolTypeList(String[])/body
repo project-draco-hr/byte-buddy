@@ -1,0 +1,9 @@
+{
+  name=new String[internalName.length];
+  this.internalName=internalName;
+  int index=0;
+  for (  String anInternalName : internalName) {
+    name[index++]=anInternalName.replace('/','.');
+  }
+  stackSize=index;
+}

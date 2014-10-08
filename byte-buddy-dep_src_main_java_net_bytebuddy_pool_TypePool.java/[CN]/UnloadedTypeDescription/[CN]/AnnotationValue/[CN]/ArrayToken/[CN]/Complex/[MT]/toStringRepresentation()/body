@@ -1,0 +1,14 @@
+{
+  StringBuilder toString=new StringBuilder(componentTypeName).append('[');
+  boolean first=true;
+  for (  AnnotationValue<?,?> annotationValue : value) {
+    if (first) {
+      first=false;
+    }
+ else {
+      toString.append(", ");
+    }
+    toString.append(annotationValue.toStringRepresentation());
+  }
+  return toString.append(']').toString();
+}

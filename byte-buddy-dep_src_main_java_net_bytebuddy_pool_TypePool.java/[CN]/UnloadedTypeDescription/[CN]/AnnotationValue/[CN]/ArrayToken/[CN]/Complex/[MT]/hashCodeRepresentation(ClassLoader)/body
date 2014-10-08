@@ -1,0 +1,7 @@
+{
+  int hashCode=1;
+  for (  AnnotationValue<?,?> annotationValue : value) {
+    hashCode=31 * hashCode + annotationValue.hashCodeRepresentation(classLoader);
+  }
+  return hashCode;
+}

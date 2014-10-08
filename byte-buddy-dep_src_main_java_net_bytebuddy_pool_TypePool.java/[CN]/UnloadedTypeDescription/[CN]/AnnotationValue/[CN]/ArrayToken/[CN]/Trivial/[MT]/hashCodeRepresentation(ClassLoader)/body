@@ -1,0 +1,30 @@
+{
+  Class<?> componentType=value.getClass().getComponentType();
+  if (componentType == boolean.class) {
+    return Arrays.hashCode((boolean[])value);
+  }
+ else   if (componentType == byte.class) {
+    return Arrays.hashCode((byte[])value);
+  }
+ else   if (componentType == short.class) {
+    return Arrays.hashCode((short[])value);
+  }
+ else   if (componentType == char.class) {
+    return Arrays.hashCode((char[])value);
+  }
+ else   if (componentType == int.class) {
+    return Arrays.hashCode((int[])value);
+  }
+ else   if (componentType == long.class) {
+    return Arrays.hashCode((long[])value);
+  }
+ else   if (componentType == float.class) {
+    return Arrays.hashCode((float[])value);
+  }
+ else   if (componentType == double.class) {
+    return Arrays.hashCode((double[])value);
+  }
+ else {
+    return Arrays.hashCode((Object[])value);
+  }
+}

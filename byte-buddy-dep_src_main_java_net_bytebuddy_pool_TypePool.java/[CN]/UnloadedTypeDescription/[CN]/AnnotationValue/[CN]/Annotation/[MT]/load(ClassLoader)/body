@@ -1,0 +1,4 @@
+{
+  Class<?> annotationType=classLoader.loadClass(annotationToken.getDescriptor().replace('/','.'));
+  return (Annotation)Proxy.newProxyInstance(classLoader,new Class<?>[]{annotationType},new AnnotationInvocationHandler(classLoader,annotationType,annotationToken.getValues()));
+}

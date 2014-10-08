@@ -1,0 +1,8 @@
+{
+  Object[] array=(Object[])Array.newInstance(classLoader.loadClass(componentTypeName),value.size());
+  int index=0;
+  for (  AnnotationValue<?,?> annotationValue : value) {
+    Array.set(array,index++,annotationValue.load(classLoader));
+  }
+  return array;
+}

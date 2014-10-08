@@ -1,0 +1,4 @@
+{
+  AnnotationValue<?,?> annotationValue=values.get(methodDescription.getName());
+  return annotationValue == null ? methodDescription.getDefaultValue() : annotationValue.resolve(typePool);
+}
