@@ -1,0 +1,8 @@
+{
+  Resolved[] resolved=new Resolved[typeDescription.length];
+  int index=0;
+  for (  TypeDescription aTypeDescription : typeDescription) {
+    resolved[index++]=new Resolved.ForType(aTypeDescription);
+  }
+  return new ForComplexArray(resolved,methodDescription);
+}

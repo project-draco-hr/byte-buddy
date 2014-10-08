@@ -2,4 +2,9 @@
   this.typePool=typePool;
   this.annotationDescriptor=annotationDescriptor;
   this.values=values;
+  for (  MethodDescription methodDescription : typePool.describe(annotationDescriptor.replace('/','.')).getDeclaredMethods()) {
+    if (!values.containsKey(methodDescription.getName())) {
+      values.put(methodDescription.getName(),AnnotationValue.Resolved.of(methodDescription.getDefaultValue(),methodDescription));
+    }
+  }
 }

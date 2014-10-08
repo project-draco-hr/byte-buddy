@@ -1,0 +1,3 @@
+{
+  return value.prepare((Class)classLoader.loadClass(value.getAnnotationType().getName())).load();
+}

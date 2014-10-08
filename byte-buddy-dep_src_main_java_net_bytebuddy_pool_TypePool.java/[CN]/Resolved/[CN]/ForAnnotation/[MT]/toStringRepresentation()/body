@@ -1,0 +1,20 @@
+{
+  StringBuilder toString=new StringBuilder();
+  toString.append('@');
+  toString.append(value.getAnnotationType().getName());
+  toString.append('(');
+  boolean firstMember=true;
+  for (  MethodDescription methodDescription : value.getAnnotationType().getDeclaredMethods()) {
+    if (firstMember) {
+      firstMember=false;
+    }
+ else {
+      toString.append(", ");
+    }
+    toString.append(methodDescription.getName());
+    toString.append('=');
+    toString.append(value.getValue(methodDescription));
+  }
+  toString.append(')');
+  return toString.toString();
+}

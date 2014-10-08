@@ -1,0 +1,30 @@
+{
+  Class<?> componentType=value.getClass().getComponentType();
+  if (componentType == boolean.class) {
+    return BOOLEAN;
+  }
+ else   if (componentType == byte.class) {
+    return BYTE;
+  }
+ else   if (componentType == short.class) {
+    return SHORT;
+  }
+ else   if (componentType == char.class) {
+    return CHARACTER;
+  }
+ else   if (componentType == int.class) {
+    return INTEGER;
+  }
+ else   if (componentType == long.class) {
+    return LONG;
+  }
+ else   if (componentType == float.class) {
+    return FLOAT;
+  }
+ else   if (componentType == double.class) {
+    return DOUBLE;
+  }
+ else {
+    return REFERENCE;
+  }
+}

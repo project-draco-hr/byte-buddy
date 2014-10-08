@@ -1,0 +1,8 @@
+{
+  Resolved[] resolved=new Resolved[annotationDescription.length];
+  int index=0;
+  for (  AnnotationDescription anAnnotationDescription : annotationDescription) {
+    resolved[index++]=new Resolved.ForAnnotation(anAnnotationDescription);
+  }
+  return new ForComplexArray(resolved,methodDescription);
+}
