@@ -4,9 +4,10 @@
   internalName=new String[parameterType.length];
   int index=0, stackSize=0;
   for (  Type aParameterType : parameterType) {
-    name[index++]=aParameterType.getClassName();
-    internalName[index++]=aParameterType.getInternalName();
+    name[index]=aParameterType.getClassName();
+    internalName[index]=ByteBuddyCommons.toInternalName(aParameterType);
     stackSize+=aParameterType.getSize();
+    index++;
   }
   this.stackSize=stackSize;
 }

@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{SimpleType.class,false,null},{SimpleType[].class,true,SimpleType.class},{SimpleType[][].class,true,SimpleType[].class}});
+}

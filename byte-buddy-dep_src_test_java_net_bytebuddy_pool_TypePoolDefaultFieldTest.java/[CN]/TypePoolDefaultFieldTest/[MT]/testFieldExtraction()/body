@@ -1,0 +1,12 @@
+{
+  TypeDescription typeDescription=typePool.describe(sample.getName());
+  assertThat(typeDescription.getDeclaredFields().size(),is(3));
+  assertThat(typeDescription.getDeclaredFields().named(FIELD).getFieldType().represents(type),is(true));
+  assertThat(typeDescription.getDeclaredFields().named(FIELD).getDeclaringType(),is(typeDescription));
+  assertThat(typeDescription.getDeclaredFields().named(FIELD).getModifiers(),is(Opcodes.ACC_PRIVATE));
+  assertThat(typeDescription.getDeclaredFields().named(ARRAY_FIELD).getFieldType().isArray(),is(true));
+  assertThat(typeDescription.getDeclaredFields().named(ARRAY_FIELD).getFieldType().getComponentType().represents(type),is(true));
+  assertThat(typeDescription.getDeclaredFields().named(NESTED_ARRAY).getFieldType().isArray(),is(true));
+  assertThat(typeDescription.getDeclaredFields().named(NESTED_ARRAY).getFieldType().getComponentType().isArray(),is(true));
+  assertThat(typeDescription.getDeclaredFields().named(NESTED_ARRAY).getFieldType().getComponentType().getComponentType().represents(type),is(true));
+}

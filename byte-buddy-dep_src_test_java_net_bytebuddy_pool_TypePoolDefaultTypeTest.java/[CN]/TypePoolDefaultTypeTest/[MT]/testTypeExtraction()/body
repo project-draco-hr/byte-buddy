@@ -1,0 +1,10 @@
+{
+  TypeDescription typeDescription=typePool.describe(type.getName());
+  assertThat(typeDescription.getName(),is(type.getName()));
+  assertThat(typeDescription.getCanonicalName(),is(type.getCanonicalName()));
+  assertThat(typeDescription.getSimpleName(),is(type.getSimpleName()));
+  assertThat(typeDescription.getEnclosingClass(),is(array ? null : (TypeDescription)new TypeDescription.ForLoadedType(getClass())));
+  assertThat(typeDescription.getInternalName(),is(Type.getInternalName(type)));
+  assertThat(typeDescription.getComponentType(),is(componentType));
+  assertThat(typeDescription.isArray(),is(array));
+}
