@@ -1,3 +1,3 @@
 {
-  return Arrays.hashCode((int[])value);
+  return Arrays.hashCode((double[])value);
 }

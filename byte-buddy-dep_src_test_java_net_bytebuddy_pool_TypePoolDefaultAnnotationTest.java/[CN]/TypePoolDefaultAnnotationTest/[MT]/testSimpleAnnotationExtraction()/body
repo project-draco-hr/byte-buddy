@@ -1,3 +1,4 @@
 {
   TypeDescription typeDescription=typePool.describe(SimpleAnnotatedType.class.getName());
+  assertThat(typeDescription.getDeclaredAnnotations().isAnnotationPresent(Empty.class),is(true));
 }
