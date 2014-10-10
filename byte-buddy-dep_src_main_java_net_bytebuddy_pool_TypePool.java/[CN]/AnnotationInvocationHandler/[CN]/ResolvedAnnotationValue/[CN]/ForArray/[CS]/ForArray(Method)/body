@@ -1,0 +1,4 @@
+{
+  super(method);
+  dispatcher=Dispatcher.of(method.getReturnType().getComponentType());
+}

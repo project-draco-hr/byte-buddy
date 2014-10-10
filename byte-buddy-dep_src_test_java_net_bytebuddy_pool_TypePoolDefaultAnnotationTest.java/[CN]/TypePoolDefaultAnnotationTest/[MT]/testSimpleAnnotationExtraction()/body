@@ -1,0 +1,3 @@
+{
+  TypeDescription typeDescription=typePool.describe(SimpleAnnotatedType.class.getName());
+}

@@ -1,4 +1,0 @@
-{
-  super(value);
-  componentTypeName=methodDescription.getReturnType().getComponentType().getName();
-}

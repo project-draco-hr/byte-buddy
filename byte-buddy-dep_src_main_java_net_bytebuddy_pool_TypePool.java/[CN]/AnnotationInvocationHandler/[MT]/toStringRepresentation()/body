@@ -4,14 +4,14 @@
   toString.append(annotationType.getName());
   toString.append('(');
   boolean firstMember=true;
-  for (  Map.Entry<String,AnnotationValue<?,?>> entry : values.entrySet()) {
+  for (  Map.Entry<Method,AnnotationValue<?,?>> entry : values.entrySet()) {
     if (firstMember) {
       firstMember=false;
     }
  else {
       toString.append(", ");
     }
-    toString.append(entry.getKey());
+    toString.append(entry.getKey().getName());
     toString.append('=');
     toString.append(entry.getValue().toStringRepresentation());
   }

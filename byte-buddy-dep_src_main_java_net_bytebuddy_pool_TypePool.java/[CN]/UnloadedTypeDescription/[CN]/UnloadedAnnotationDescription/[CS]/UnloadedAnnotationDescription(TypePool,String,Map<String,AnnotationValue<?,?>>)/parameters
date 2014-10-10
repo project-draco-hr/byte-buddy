@@ -1,0 +1,3 @@
+TypePool typePool
+String annotationDescriptor
+Map<String,AnnotationValue<?,?>> values

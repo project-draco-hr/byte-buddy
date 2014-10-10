@@ -1,7 +1,0 @@
-{
-  int hashCode=1;
-  for (  Resolved resolved : value) {
-    hashCode=31 * hashCode + resolved.hashCodeRepresentation(classLoader);
-  }
-  return hashCode;
-}

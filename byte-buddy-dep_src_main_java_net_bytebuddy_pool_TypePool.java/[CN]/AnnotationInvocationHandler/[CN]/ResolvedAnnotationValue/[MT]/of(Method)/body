@@ -1,0 +1,11 @@
+{
+  if (method.getDefaultValue() == null) {
+    throw new IllegalArgumentException("Expected " + method + " to define a default value");
+  }
+  if (method.getReturnType().isArray()) {
+    return new ForArray<Object>(method);
+  }
+ else {
+    return new Trivial<Object>(method);
+  }
+}

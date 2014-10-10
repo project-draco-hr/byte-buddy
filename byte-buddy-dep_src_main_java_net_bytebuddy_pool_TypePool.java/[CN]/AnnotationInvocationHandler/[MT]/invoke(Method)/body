@@ -1,4 +1,3 @@
 {
-  AnnotationValue<?,?> annotationValue=values.get(method.getName());
-  return annotationValue == null ? method.getDefaultValue() : annotationValue.load(classLoader);
+  return values.get(method).load(classLoader);
 }

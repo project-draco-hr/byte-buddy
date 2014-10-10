@@ -1,3 +1,0 @@
-{
-  return (Enum<?>)value.prepare((Class)classLoader.loadClass(value.getEnumerationType().getName()));
-}

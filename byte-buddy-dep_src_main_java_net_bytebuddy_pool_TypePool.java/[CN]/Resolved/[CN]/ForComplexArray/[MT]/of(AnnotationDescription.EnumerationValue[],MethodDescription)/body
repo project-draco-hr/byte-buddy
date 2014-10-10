@@ -1,8 +1,0 @@
-{
-  Resolved[] resolved=new Resolved[enumerationValue.length];
-  int index=0;
-  for (  AnnotationDescription.EnumerationValue anEnumerationValue : enumerationValue) {
-    resolved[index++]=new Resolved.ForEnumeration(anEnumerationValue);
-  }
-  return new ForComplexArray(resolved,methodDescription);
-}

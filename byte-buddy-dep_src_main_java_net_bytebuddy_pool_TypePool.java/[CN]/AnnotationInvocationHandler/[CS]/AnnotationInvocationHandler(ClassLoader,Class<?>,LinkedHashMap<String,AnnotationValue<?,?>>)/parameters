@@ -1,3 +1,0 @@
-ClassLoader classLoader
-Class<?> annotationType
-LinkedHashMap<String,AnnotationValue<?,?>> values

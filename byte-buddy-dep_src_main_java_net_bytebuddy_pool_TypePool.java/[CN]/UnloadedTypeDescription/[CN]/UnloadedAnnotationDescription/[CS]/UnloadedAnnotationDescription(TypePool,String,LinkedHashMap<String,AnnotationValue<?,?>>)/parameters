@@ -1,3 +1,0 @@
-TypePool typePool
-String annotationDescriptor
-LinkedHashMap<String,AnnotationValue<?,?>> values

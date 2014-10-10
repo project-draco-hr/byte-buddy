@@ -1,8 +1,0 @@
-{
-  StringBuilder toString=new StringBuilder(componentTypeName);
-  toString.append('[');
-  for (  Resolved resolved : value) {
-    toString.append(resolved.toStringRepresentation());
-  }
-  return toString.append(']').toString();
-}
