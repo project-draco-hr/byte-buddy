@@ -1,0 +1,5 @@
+{
+  this.accessedField=accessedField;
+  this.assigner=assigner;
+  this.methodAccessorFactory=methodAccessorFactory;
+}

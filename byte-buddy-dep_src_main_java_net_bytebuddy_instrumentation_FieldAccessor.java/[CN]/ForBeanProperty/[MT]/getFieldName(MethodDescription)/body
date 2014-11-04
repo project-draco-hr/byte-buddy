@@ -1,6 +1,6 @@
 {
   String name=targetMethod.getInternalName();
-  name=name.startsWith("is") ? name.substring(2) : name.substring(3);
+  name=name.substring(name.startsWith("is") ? 2 : 3);
   if (name.length() == 0) {
     throw new IllegalArgumentException(targetMethod + " does not specify a bean name");
   }

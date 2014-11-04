@@ -1,0 +1,5 @@
+{
+  MethodDescription getterMethod=methodAccessorFactory.registerGetterFor(accessedField);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadFromIndex(0),FieldAccess.forField(typeDescription.getDeclaredFields().named(AccessorProxy.FIELD_NAME)).getter(),MethodInvocation.invoke(getterMethod),assigner.assign(getterMethod.getReturnType(),instrumentedMethod.getReturnType(),true),MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
+}
