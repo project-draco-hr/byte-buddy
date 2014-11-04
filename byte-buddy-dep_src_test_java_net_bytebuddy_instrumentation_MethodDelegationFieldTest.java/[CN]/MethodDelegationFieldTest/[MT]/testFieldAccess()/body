@@ -1,0 +1,7 @@
+{
+  DynamicType.Loaded<Foo> loaded=instrument(Foo.class,MethodDelegation.to(Swap.class).appendParameterBinder(Field.Binder.install(Get.class,Set.class)));
+  Foo foo=loaded.getLoaded().newInstance();
+  assertThat(foo.foo,is(FOO));
+  foo.swap();
+  assertThat(foo.foo,is(FOO + BAR));
+}
