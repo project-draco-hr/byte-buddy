@@ -8,5 +8,5 @@
     }
   }
  while (!(currentType=currentType.getSupertype()).represents(Object.class));
-  throw new IllegalArgumentException("There is no field '" + name + "' that is visible to "+ instrumentedType);
+  throw new IllegalArgumentException("There is no field '" + name + " that is visible to "+ instrumentedType);
 }
