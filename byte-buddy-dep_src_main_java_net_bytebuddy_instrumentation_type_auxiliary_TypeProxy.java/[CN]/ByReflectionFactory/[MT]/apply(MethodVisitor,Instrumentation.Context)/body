@@ -1,4 +1,4 @@
 {
-  TypeDescription proxyType=instrumentationContext.register(new TypeProxy(proxiedType,instrumentationTarget,ignoreFinalizer,serializableProxy));
+  TypeDescription proxyType=instrumentationContext.register(new TypeProxy(proxiedType,instrumentationTarget,InvocationFactory.ForSuperMethodCall.INSTANCE,ignoreFinalizer,serializableProxy));
   return new Compound(MethodInvocation.invoke(proxyType.getDeclaredMethods().filter(named(REFLECTION_METHOD).and(takesArguments(0))).getOnly()),Duplication.SINGLE,MethodVariableAccess.forType(instrumentationTarget.getTypeDescription()).loadFromIndex(0),FieldAccess.forField(proxyType.getDeclaredFields().named(INSTANCE_FIELD)).putter()).apply(methodVisitor,instrumentationContext);
 }

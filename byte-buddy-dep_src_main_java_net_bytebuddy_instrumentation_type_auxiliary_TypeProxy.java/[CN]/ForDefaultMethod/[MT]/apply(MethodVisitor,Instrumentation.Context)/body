@@ -1,0 +1,4 @@
+{
+  TypeDescription proxyType=instrumentationContext.register(new TypeProxy(proxiedType,instrumentationTarget,InvocationFactory.ForDefaultMethodCall.INSTANCE,true,serializableProxy));
+  return new Compound(TypeCreation.forType(proxyType),Duplication.SINGLE,MethodInvocation.invoke(proxyType.getDeclaredMethods().filter(isConstructor()).getOnly()),Duplication.SINGLE,MethodVariableAccess.forType(instrumentationTarget.getTypeDescription()).loadFromIndex(0),FieldAccess.forField(proxyType.getDeclaredFields().named(INSTANCE_FIELD)).putter()).apply(methodVisitor,instrumentationContext);
+}

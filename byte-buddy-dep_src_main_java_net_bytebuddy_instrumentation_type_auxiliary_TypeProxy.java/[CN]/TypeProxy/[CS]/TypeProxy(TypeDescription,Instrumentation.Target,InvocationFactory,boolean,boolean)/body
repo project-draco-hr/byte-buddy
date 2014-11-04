@@ -1,0 +1,7 @@
+{
+  this.proxiedType=proxiedType;
+  this.instrumentationTarget=instrumentationTarget;
+  this.invocationFactory=invocationFactory;
+  this.ignoreFinalizer=ignoreFinalizer;
+  this.serializableProxy=serializableProxy;
+}

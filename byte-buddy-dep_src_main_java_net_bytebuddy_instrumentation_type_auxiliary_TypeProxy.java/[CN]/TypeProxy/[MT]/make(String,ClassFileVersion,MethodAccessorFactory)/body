@@ -1,4 +1,4 @@
 {
   MethodMatcher finalizerMatcher=ignoreFinalizer ? not(isFinalizer()) : any();
-  return new ByteBuddy(classFileVersion).subclass(proxiedType,ConstructorStrategy.Default.IMITATE_SUPER_TYPE).name(auxiliaryTypeName).modifiers(DEFAULT_TYPE_MODIFIER).implement(serializableProxy ? new Class<?>[]{Serializable.class} : new Class<?>[0]).method(finalizerMatcher).intercept(new MethodCall(methodAccessorFactory)).defineMethod(REFLECTION_METHOD,TargetType.DESCRIPTION,Collections.<TypeDescription>emptyList(),Ownership.STATIC).intercept(SilentConstruction.INSTANCE).make();
+  return new ByteBuddy(classFileVersion).subclass(proxiedType,invocationFactory.getConstructorStrategy()).name(auxiliaryTypeName).modifiers(DEFAULT_TYPE_MODIFIER).implement(serializableProxy ? new Class<?>[]{Serializable.class} : new Class<?>[0]).method(finalizerMatcher).intercept(new MethodCall(methodAccessorFactory)).defineMethod(REFLECTION_METHOD,TargetType.DESCRIPTION,Collections.<TypeDescription>emptyList(),Ownership.STATIC).intercept(SilentConstruction.INSTANCE).make();
 }
