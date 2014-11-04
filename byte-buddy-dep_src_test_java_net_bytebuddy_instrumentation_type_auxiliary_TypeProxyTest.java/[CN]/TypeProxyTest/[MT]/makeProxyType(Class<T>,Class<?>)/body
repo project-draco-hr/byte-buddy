@@ -4,7 +4,7 @@
   when(instrumentationTarget.invokeSuper(any(MethodDescription.class),any(Instrumentation.Target.MethodLookup.class))).then(new FakeSpecialMethodInvocation(instrumentedTypeDescription));
   when(methodAccessorFactory.registerAccessorFor(any(Instrumentation.SpecialMethodInvocation.class))).then(new AnswerWithFakeAccessorMethod());
   String auxiliaryTypeName=instrumentedType.getName() + "$" + QUX;
-  DynamicType dynamicType=new TypeProxy(new TypeDescription.ForLoadedType(proxyType),instrumentationTarget,true,false).make(auxiliaryTypeName,ClassFileVersion.forCurrentJavaVersion(),methodAccessorFactory);
+  DynamicType dynamicType=new TypeProxy(new TypeDescription.ForLoadedType(proxyType),instrumentationTarget,TypeProxy.InvocationFactory.ForSuperMethodCall.INSTANCE,true,false).make(auxiliaryTypeName,ClassFileVersion.forCurrentJavaVersion(),methodAccessorFactory);
   DynamicType.Unloaded<?> unloaded=(DynamicType.Unloaded<?>)dynamicType;
   Class<?> auxiliaryType=unloaded.load(getClass().getClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded();
   assertThat(auxiliaryType.getName(),is(auxiliaryTypeName));
