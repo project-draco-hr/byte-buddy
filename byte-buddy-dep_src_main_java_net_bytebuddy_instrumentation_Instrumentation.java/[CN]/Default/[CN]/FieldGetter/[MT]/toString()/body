@@ -1,0 +1,3 @@
+{
+  return "Instrumentation.Context.Default.FieldGetter{" + "fieldDescription=" + fieldDescription + '}';
+}

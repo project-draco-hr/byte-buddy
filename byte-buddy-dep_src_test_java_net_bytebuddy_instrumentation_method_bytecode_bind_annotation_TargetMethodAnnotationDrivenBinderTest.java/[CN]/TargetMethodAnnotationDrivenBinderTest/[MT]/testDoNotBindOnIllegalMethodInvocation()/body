@@ -9,7 +9,7 @@
   when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   MethodDelegationBinder.ParameterBinding<?> firstBinding=prepareArgumentBinder(firstParameterBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
   Iterator<AnnotationDescription> defaultsIterator=prepareDefaultProvider(defaultsProvider,Collections.<AnnotationDescription>emptyList());
-  MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Arrays.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>asList(firstParameterBinder),defaultsProvider,assigner,methodInvoker);
+  MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Arrays.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>asList(firstParameterBinder),defaultsProvider,terminationHandler,assigner,methodInvoker);
   MethodDelegationBinder.MethodBinding methodBinding=methodDelegationBinder.bind(instrumentationTarget,source,target);
   assertThat(methodBinding.isValid(),is(false));
   assertThat(methodBinding.getTarget(),is(target));

@@ -1,3 +1,7 @@
 {
-  return apply(methodVisitor,instrumentationContext,fieldDescription,methodDescription,new StackManipulation.Compound(FieldAccess.forField(fieldDescription).getter(),assigner.assign(fieldDescription.getFieldType(),methodDescription.getReturnType(),considerRuntimeType)));
+  StackManipulation stackManipulation=assigner.assign(fieldDescription.getFieldType(),methodDescription.getReturnType(),considerRuntimeType);
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Getter type of " + methodDescription + " is not compatible with "+ fieldDescription);
+  }
+  return apply(methodVisitor,instrumentationContext,fieldDescription,methodDescription,new StackManipulation.Compound(FieldAccess.forField(fieldDescription).getter(),stackManipulation));
 }

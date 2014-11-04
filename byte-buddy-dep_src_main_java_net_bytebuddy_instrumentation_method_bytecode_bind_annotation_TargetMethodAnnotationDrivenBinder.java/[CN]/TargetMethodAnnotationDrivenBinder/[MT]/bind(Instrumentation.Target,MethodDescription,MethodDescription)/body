@@ -2,7 +2,7 @@
   if (IgnoreForBinding.Verifier.check(target)) {
     return MethodBinding.Illegal.INSTANCE;
   }
-  StackManipulation returningStackManipulation=assigner.assign(target.isConstructor() ? target.getDeclaringType() : target.getReturnType(),source.getReturnType(),RuntimeType.Verifier.check(target));
+  StackManipulation returningStackManipulation=terminationHandler.resolve(assigner,source,target);
   if (!returningStackManipulation.isValid()) {
     return MethodBinding.Illegal.INSTANCE;
   }

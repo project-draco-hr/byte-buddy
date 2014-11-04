@@ -1,0 +1,3 @@
+{
+  return new Forwarding(isValidIdentifier(fieldName),nonNull(fieldType),PreparationHandler.ForStaticField.INSTANCE);
+}

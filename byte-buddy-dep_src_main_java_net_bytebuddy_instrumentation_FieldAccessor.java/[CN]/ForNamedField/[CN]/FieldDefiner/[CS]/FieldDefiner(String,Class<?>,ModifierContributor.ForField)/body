@@ -1,5 +1,0 @@
-{
-  this.name=isValidIdentifier(name);
-  typeDescription=new TypeDescription.ForLoadedType(type);
-  modifiers=resolveModifierContributors(ByteBuddyCommons.FIELD_MODIFIER_MASK,contributor);
-}

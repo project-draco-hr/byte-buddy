@@ -1,0 +1,3 @@
+{
+  return this == other || !(other == null || getClass() != other.getClass()) && delegate.equals(((ForStaticField)other).delegate) && fieldName.equals(((ForStaticField)other).fieldName);
+}

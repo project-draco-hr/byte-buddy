@@ -1,3 +1,3 @@
 {
-  return new Forwarding(fieldName,new TypeDescription.ForLoadedType(fieldType),PreparationHandler.ForInstanceField.INSTANCE);
+  return toInstanceField(fieldName,new TypeDescription.ForLoadedType(nonNull(fieldType)));
 }

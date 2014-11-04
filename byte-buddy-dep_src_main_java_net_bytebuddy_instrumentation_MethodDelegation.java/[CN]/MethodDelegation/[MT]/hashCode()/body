@@ -2,6 +2,7 @@
   int result=instrumentationDelegate.hashCode();
   result=31 * result + parameterBinders.hashCode();
   result=31 * result + defaultsProvider.hashCode();
+  result=31 * result + terminationHandler.hashCode();
   result=31 * result + ambiguityResolver.hashCode();
   result=31 * result + assigner.hashCode();
   result=31 * result + targetMethodCandidates.hashCode();

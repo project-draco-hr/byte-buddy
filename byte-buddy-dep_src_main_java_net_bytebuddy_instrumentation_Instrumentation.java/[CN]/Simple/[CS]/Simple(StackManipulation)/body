@@ -1,0 +1,3 @@
+{
+  byteCodeAppender=new ByteCodeAppender.Simple(stackManipulation);
+}

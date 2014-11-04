@@ -1,1 +1,1 @@
-Class<? extends Throwable> throwable
+Class<? extends Throwable> exceptionType

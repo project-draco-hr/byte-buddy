@@ -1,15 +1,3 @@
 {
-  if (type == null) {
-    throw new NullPointerException("Type must not be null");
-  }
- else   if (type.isInterface()) {
-    throw new IllegalArgumentException("Cannot delegate to interface " + type);
-  }
- else   if (type.isArray()) {
-    throw new IllegalArgumentException("Cannot delegate to array " + type);
-  }
- else   if (type.isPrimitive()) {
-    throw new IllegalArgumentException("Cannot delegate to primitive " + type);
-  }
-  return new MethodDelegation(InstrumentationDelegate.ForStaticMethod.INSTANCE,defaultParameterBinders(),defaultDefaultsProvider(),defaultAmbiguityResolver(),defaultAssigner(),new TypeDescription.ForLoadedType(type).getDeclaredMethods().filter(isStatic().and(not(isPrivate()))));
+  return to(new TypeDescription.ForLoadedType(nonNull(type)));
 }

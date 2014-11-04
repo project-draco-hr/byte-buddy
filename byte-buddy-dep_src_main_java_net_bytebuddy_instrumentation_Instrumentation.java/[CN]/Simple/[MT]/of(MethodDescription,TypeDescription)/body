@@ -1,4 +1,0 @@
-{
-  StackManipulation stackManipulation=MethodInvocation.invoke(methodDescription).special(typeDescription);
-  return stackManipulation.isValid() && !methodDescription.isAbstract() ? new Simple(methodDescription,typeDescription,stackManipulation) : SpecialMethodInvocation.Illegal.INSTANCE;
-}

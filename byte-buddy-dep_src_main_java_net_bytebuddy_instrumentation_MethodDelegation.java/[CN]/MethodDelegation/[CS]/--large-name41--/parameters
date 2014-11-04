@@ -1,0 +1,7 @@
+InstrumentationDelegate instrumentationDelegate
+List<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>> parameterBinders
+TargetMethodAnnotationDrivenBinder.DefaultsProvider defaultsProvider
+TargetMethodAnnotationDrivenBinder.TerminationHandler terminationHandler
+MethodDelegationBinder.AmbiguityResolver ambiguityResolver
+Assigner assigner
+MethodList targetMethodCandidates

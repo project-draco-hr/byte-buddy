@@ -1,3 +1,0 @@
-{
-  return new ForNamedField(fieldName,preparationHandler,fieldLocatorFactory,assigner,considerRuntimeType);
-}

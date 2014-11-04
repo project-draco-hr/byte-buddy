@@ -1,7 +1,3 @@
 {
-  int result=methodDescription.getInternalName().hashCode();
-  result=31 * result + methodDescription.getParameterTypes().hashCode();
-  result=31 * result + methodDescription.getReturnType().hashCode();
-  result=31 * result + typeDescription.hashCode();
-  return result;
+  return byteCodeAppender.hashCode();
 }
