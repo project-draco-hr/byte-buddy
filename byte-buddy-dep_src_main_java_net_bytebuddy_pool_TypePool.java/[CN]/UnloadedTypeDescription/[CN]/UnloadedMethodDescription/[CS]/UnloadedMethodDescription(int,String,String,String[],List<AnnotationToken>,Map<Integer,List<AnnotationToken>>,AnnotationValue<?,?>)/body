@@ -1,7 +1,8 @@
 {
   this.modifiers=modifiers;
   this.internalName=internalName;
-  returnTypeName=Type.getReturnType(methodDescriptor).getClassName();
+  Type returnType=Type.getReturnType(methodDescriptor);
+  returnTypeName=returnType.getSort() == Type.ARRAY ? returnType.getDescriptor().replace('/','.') : returnType.getClassName();
   parameterTypes=new TypePoolTypeList(methodDescriptor);
   exceptionTypes=exceptionInternalName == null ? new TypeList.Empty() : new TypePoolTypeList(exceptionInternalName);
   declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());

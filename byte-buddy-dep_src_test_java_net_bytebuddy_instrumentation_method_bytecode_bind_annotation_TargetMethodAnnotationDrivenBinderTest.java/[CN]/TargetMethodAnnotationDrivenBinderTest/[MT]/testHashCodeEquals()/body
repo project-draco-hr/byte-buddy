@@ -1,3 +1,13 @@
 {
-  HashCodeEqualsTester.of(TargetMethodAnnotationDrivenBinder.class).apply();
+  HashCodeEqualsTester.of(TargetMethodAnnotationDrivenBinder.class).listType(new HashCodeEqualsTester.Generator<Object>(){
+    @Override public Class<?> generate(){
+      return TargetMethodAnnotationDrivenBinder.ParameterBinder.class;
+    }
+  }
+).refine(new HashCodeEqualsTester.Refinement<TargetMethodAnnotationDrivenBinder.ParameterBinder>(){
+    @Override public void apply(    TargetMethodAnnotationDrivenBinder.ParameterBinder mock){
+      when(mock.getHandledType()).thenReturn(Annotation.class);
+    }
+  }
+).apply();
 }

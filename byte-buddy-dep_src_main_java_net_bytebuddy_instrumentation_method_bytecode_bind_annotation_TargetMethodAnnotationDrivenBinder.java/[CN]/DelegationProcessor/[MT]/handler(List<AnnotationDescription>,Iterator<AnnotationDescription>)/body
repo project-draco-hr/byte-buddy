@@ -1,7 +1,7 @@
 {
   Handler handler=null;
   for (  AnnotationDescription annotation : annotations) {
-    ParameterBinder<?> parameterBinder=argumentBinders.get(annotation.getAnnotationType());
+    ParameterBinder<?> parameterBinder=parameterBinders.get(annotation.getAnnotationType());
     if (parameterBinder != null && handler != null) {
       throw new IllegalStateException("Ambiguous binding for parameter annotated with two handled annotation types");
     }
@@ -12,7 +12,7 @@
   if (handler == null) {
     if (defaults.hasNext()) {
       AnnotationDescription defaultAnnotation=defaults.next();
-      ParameterBinder<?> parameterBinder=argumentBinders.get(defaultAnnotation.getAnnotationType());
+      ParameterBinder<?> parameterBinder=parameterBinders.get(defaultAnnotation.getAnnotationType());
       if (parameterBinder == null) {
         return Handler.Unbound.INSTANCE;
       }

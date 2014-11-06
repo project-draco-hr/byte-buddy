@@ -1,3 +1,3 @@
 {
-  return Arrays.toString((Object[])value);
+  return Arrays.toString((double[])value);
 }

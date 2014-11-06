@@ -47,7 +47,7 @@
  else   if (List.class.isAssignableFrom(parameterType)) {
     actualArgument=Array.newInstance(Object.class,1);
     otherArgument=Array.newInstance(Object.class,1);
-    putInstance(Object.class,actualArgument,otherArgument,0);
+    putInstance(listTypeGenerator.generate(),actualArgument,otherArgument,0);
     actualArgument=Arrays.asList((Object[])actualArgument);
     otherArgument=Arrays.asList((Object[])otherArgument);
   }

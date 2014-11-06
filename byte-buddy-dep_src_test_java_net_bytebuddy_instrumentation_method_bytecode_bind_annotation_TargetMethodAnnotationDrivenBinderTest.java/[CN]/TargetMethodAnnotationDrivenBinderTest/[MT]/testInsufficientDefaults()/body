@@ -1,6 +1,7 @@
 {
   when(assignmentBinding.isValid()).thenReturn(true);
   when(methodInvocation.isValid()).thenReturn(true);
+  when(termination.isValid()).thenReturn(true);
   TypeList typeList=mock(TypeList.class);
   when(typeList.size()).thenReturn(2);
   when(target.getParameterTypes()).thenReturn(typeList);
@@ -20,8 +21,9 @@
   verify(defaultsIterator,times(2)).hasNext();
   verify(defaultsIterator,times(1)).next();
   verifyNoMoreInteractions(defaultsIterator);
-  verify(assigner).assign(targetTypeDescription,sourceTypeDescription,false);
-  verifyNoMoreInteractions(assigner);
+  verifyZeroInteractions(assigner);
+  verify(terminationHandler).resolve(assigner,source,target);
+  verifyNoMoreInteractions(terminationHandler);
   verifyZeroInteractions(methodInvoker);
   verifyZeroInteractions(firstBinding);
   verify(secondBinding,atLeast(1)).isValid();

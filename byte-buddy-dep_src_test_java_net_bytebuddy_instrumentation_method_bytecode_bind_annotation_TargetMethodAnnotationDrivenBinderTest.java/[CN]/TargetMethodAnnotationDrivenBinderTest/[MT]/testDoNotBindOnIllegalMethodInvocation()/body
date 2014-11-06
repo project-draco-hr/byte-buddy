@@ -1,6 +1,7 @@
 {
   when(assignmentBinding.isValid()).thenReturn(true);
   when(methodInvocation.isValid()).thenReturn(false);
+  when(termination.isValid()).thenReturn(true);
   TypeList typeList=mock(TypeList.class);
   when(typeList.size()).thenReturn(0);
   when(target.getParameterTypes()).thenReturn(typeList);
