@@ -1,6 +1,0 @@
-{
-  assertThat(binder.hashCode(),is(new Pipe.Binder(targetMethod).hashCode()));
-  assertThat(binder,is((TargetMethodAnnotationDrivenBinder.ParameterBinder<Pipe>)new Pipe.Binder(targetMethod)));
-  assertThat(binder.hashCode(),not(is(new Pipe.Binder(mock(MethodDescription.class)).hashCode())));
-  assertThat(binder,not(is((TargetMethodAnnotationDrivenBinder.ParameterBinder<Pipe>)new Pipe.Binder(mock(MethodDescription.class)))));
-}

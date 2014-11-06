@@ -1,0 +1,6 @@
+Class<?> type
+ApplicableGenerator generator
+ApplicableRefinement refinement
+Generator<?> listTypeGenerator
+boolean skipSynthetic
+boolean skipToString

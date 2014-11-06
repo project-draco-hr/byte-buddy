@@ -1,6 +1,0 @@
-{
-  assertThat(new ClassVisitorWrapper.Chain().hashCode(),is(new ClassVisitorWrapper.Chain().hashCode()));
-  assertThat(new ClassVisitorWrapper.Chain(),equalTo(new ClassVisitorWrapper.Chain()));
-  assertThat(new ClassVisitorWrapper.Chain().hashCode(),not(is(new ClassVisitorWrapper.Chain().append(classVisitorWrapper).hashCode())));
-  assertThat(new ClassVisitorWrapper.Chain(),not(equalTo(new ClassVisitorWrapper.Chain().append(classVisitorWrapper))));
-}

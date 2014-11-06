@@ -1,7 +1,0 @@
-{
-  this.type=type;
-  this.generator=generator;
-  this.listTypeGenerator=listTypeGenerator;
-  this.refinement=refinement;
-  this.skipSynthetic=skipSynthetic;
-}

@@ -1,3 +1,0 @@
-{
-  return new HashCodeEqualsTester(type,new ApplicableGenerator(),new ApplicableRefinement(),new ObjectTypeGenerator(),false);
-}

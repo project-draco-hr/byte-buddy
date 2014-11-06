@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(ByteCodeAppender.Simple.class).apply();
+}

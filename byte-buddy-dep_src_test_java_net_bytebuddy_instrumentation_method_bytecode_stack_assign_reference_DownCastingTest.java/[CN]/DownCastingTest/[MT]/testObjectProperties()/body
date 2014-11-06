@@ -1,0 +1,8 @@
+{
+  ObjectPropertyAssertion.of(DownCasting.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
+    @Override public void apply(    TypeDescription mock){
+      when((mock).getInternalName()).thenReturn(FOO + new Random().nextInt());
+    }
+  }
+).apply();
+}

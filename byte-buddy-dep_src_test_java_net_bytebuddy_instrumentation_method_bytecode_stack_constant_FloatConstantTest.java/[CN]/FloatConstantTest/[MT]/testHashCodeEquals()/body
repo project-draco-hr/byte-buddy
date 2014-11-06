@@ -1,6 +1,0 @@
-{
-  assertThat(FloatConstant.forValue(value).hashCode(),is(FloatConstant.forValue(value).hashCode()));
-  assertThat(FloatConstant.forValue(value),is(FloatConstant.forValue(value)));
-  assertThat(FloatConstant.forValue(value).hashCode(),not(is(FloatConstant.forValue(value * 2).hashCode())));
-  assertThat(FloatConstant.forValue(value),not(is(FloatConstant.forValue(value * 2))));
-}

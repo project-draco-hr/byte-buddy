@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(LongConstant.ConstantPool.class).apply();
+}

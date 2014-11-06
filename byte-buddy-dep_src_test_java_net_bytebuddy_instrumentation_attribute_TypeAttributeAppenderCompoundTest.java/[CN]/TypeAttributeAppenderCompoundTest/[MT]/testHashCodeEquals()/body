@@ -1,3 +1,0 @@
-{
-  HashCodeEqualsTester.of(TypeAttributeAppender.Compound.class).apply();
-}

@@ -1,3 +1,0 @@
-{
-  return "IntegerConstant.ConstantPoolValue{value=" + value + '}';
-}

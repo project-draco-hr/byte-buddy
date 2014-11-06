@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(JunctionMethodMatcher.Conjunction.class).skipToString().apply();
+  ObjectPropertyAssertion.of(JunctionMethodMatcher.Disjunction.class).skipToString().apply();
+}

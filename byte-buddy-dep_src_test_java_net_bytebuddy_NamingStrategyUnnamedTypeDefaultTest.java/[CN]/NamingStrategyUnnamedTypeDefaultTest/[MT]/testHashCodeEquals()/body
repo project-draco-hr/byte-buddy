@@ -1,3 +1,0 @@
-{
-  HashCodeEqualsTester.of(NamingStrategy.UnnamedType.Default.class).apply();
-}

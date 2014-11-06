@@ -1,5 +1,5 @@
 {
-  HashCodeEqualsTester.of(ArrayFactory.ArrayCreator.Reference.class).refine(new HashCodeEqualsTester.Refinement<TypeDescription>(){
+  ObjectPropertyAssertion.of(ArrayFactory.ArrayCreator.ForReferenceType.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
     @Override public void apply(    TypeDescription mock){
       when(mock.getInternalName()).thenReturn("" + System.identityHashCode(mock));
     }

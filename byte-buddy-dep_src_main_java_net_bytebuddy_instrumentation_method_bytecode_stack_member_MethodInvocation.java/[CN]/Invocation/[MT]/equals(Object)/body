@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   Invocation that=(Invocation)other;
-  return MethodInvocation.this.equals(((Invocation)other).getImplicitInvocationType()) && methodDescription.getInternalName().equals(that.methodDescription.getInternalName()) && methodDescription.getReturnType().equals(((Invocation)other).methodDescription.getReturnType())&& methodDescription.getParameterTypes().equals(((Invocation)other).methodDescription.getParameterTypes())&& typeDescription.equals(that.typeDescription);
+  return MethodInvocation.this.equals(((Invocation)other).getOuterInstance()) && methodDescription.getInternalName().equals(that.methodDescription.getInternalName()) && methodDescription.getReturnType().equals(((Invocation)other).methodDescription.getReturnType())&& methodDescription.getParameterTypes().equals(((Invocation)other).methodDescription.getParameterTypes())&& typeDescription.equals(that.typeDescription);
 }

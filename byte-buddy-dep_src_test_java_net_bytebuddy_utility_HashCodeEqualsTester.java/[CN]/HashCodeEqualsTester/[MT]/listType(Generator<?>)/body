@@ -1,3 +1,0 @@
-{
-  return new HashCodeEqualsTester(type,this.generator,refinement,generator,skipSynthetic);
-}

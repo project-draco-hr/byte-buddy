@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(FieldAttributeAppender.ForLoadedField.class).apply();
+}

@@ -1,3 +1,3 @@
 {
-  HashCodeEqualsTester.of(NamingStrategy.Fixed.class).apply();
+  ObjectPropertyAssertion.of(NamingStrategy.Fixed.class).apply();
 }

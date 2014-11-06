@@ -1,0 +1,13 @@
+{
+  ObjectPropertyAssertion.of(TargetMethodAnnotationDrivenBinder.class).listType(new ObjectPropertyAssertion.Generator<Object>(){
+    @Override public Class<?> generate(){
+      return TargetMethodAnnotationDrivenBinder.ParameterBinder.class;
+    }
+  }
+).refine(new ObjectPropertyAssertion.Refinement<TargetMethodAnnotationDrivenBinder.ParameterBinder>(){
+    @Override public void apply(    TargetMethodAnnotationDrivenBinder.ParameterBinder mock){
+      when(mock.getHandledType()).thenReturn(Annotation.class);
+    }
+  }
+).apply();
+}

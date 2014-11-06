@@ -1,6 +1,0 @@
-{
-  assertThat(MethodInvocation.invoke(instanceMethod).virtual(firstType).hashCode(),is(MethodInvocation.invoke(instanceMethod).virtual(firstType).hashCode()));
-  assertThat(MethodInvocation.invoke(instanceMethod).virtual(firstType),is(MethodInvocation.invoke(instanceMethod).virtual(firstType)));
-  assertThat(MethodInvocation.invoke(instanceMethod).virtual(firstType).hashCode(),not(is(MethodInvocation.invoke(instanceMethod).special(firstType).hashCode())));
-  assertThat(MethodInvocation.invoke(instanceMethod).virtual(firstType),not(is(MethodInvocation.invoke(instanceMethod).special(firstType))));
-}

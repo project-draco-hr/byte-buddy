@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypeWriter.Default.class).apply();
+}

@@ -1,3 +1,0 @@
-{
-  return "MethodConstant{methodDescription=" + methodDescription + '}';
-}

@@ -1,3 +1,0 @@
-{
-  HashCodeEqualsTester.of(TypeWriter.Default.class).apply();
-}

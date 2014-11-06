@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(Instrumentation.SpecialMethodInvocation.Simple.class).apply();
+}

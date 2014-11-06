@@ -1,6 +1,0 @@
-{
-  assertThat(MethodVariableAccess.forType(new TypeDescription.ForLoadedType(Object.class)).loadFromIndex(4).hashCode(),is(MethodVariableAccess.forType(new TypeDescription.ForLoadedType(Object.class)).loadFromIndex(4).hashCode()));
-  assertThat(MethodVariableAccess.forType(new TypeDescription.ForLoadedType(Object.class)).loadFromIndex(4),is(MethodVariableAccess.forType(new TypeDescription.ForLoadedType(Object.class)).loadFromIndex(4)));
-  assertThat(MethodVariableAccess.forType(new TypeDescription.ForLoadedType(Object.class)).loadFromIndex(3).hashCode(),not(is(MethodVariableAccess.forType(new TypeDescription.ForLoadedType(Object.class)).loadFromIndex(4).hashCode())));
-  assertThat(MethodVariableAccess.forType(new TypeDescription.ForLoadedType(Object.class)).loadFromIndex(3),not(is(MethodVariableAccess.forType(new TypeDescription.ForLoadedType(Object.class)).loadFromIndex(4))));
-}

@@ -1,3 +1,3 @@
 {
-  HashCodeEqualsTester.of(MethodDelegationBinder.AmbiguityResolver.Chain.class).apply();
+  ObjectPropertyAssertion.of(MethodDelegationBinder.AmbiguityResolver.Chain.class).apply();
 }

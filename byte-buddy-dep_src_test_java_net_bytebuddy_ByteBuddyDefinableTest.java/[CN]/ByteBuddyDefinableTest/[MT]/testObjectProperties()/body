@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(ByteBuddy.Definable.Defined.class).apply();
+  ObjectPropertyAssertion.of(ByteBuddy.Definable.Undefined.class).apply();
+}

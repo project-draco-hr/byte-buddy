@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodRebaseResolver.Resolution.ForRebasedMethod.class).apply();
+}

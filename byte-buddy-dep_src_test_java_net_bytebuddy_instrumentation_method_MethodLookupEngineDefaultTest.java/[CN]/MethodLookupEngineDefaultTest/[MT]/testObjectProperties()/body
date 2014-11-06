@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodLookupEngine.Default.class).apply();
+}

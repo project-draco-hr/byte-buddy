@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(PrimitiveTypeAwareAssigner.class).apply();
+}

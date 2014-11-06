@@ -1,3 +1,0 @@
-{
-  HashCodeEqualsTester.of(MethodRegistry.LatentMethodMatcher.Simple.class).apply();
-}

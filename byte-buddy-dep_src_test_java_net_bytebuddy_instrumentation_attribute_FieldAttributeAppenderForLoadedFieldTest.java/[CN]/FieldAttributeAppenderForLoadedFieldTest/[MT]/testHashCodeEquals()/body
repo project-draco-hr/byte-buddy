@@ -1,7 +1,0 @@
-{
-  Field otherField=Other.class.getDeclaredField(BAR);
-  assertThat(new FieldAttributeAppender.ForLoadedField(field).hashCode(),is(new FieldAttributeAppender.ForLoadedField(field).hashCode()));
-  assertThat(new FieldAttributeAppender.ForLoadedField(field),is(new FieldAttributeAppender.ForLoadedField(field)));
-  assertThat(new FieldAttributeAppender.ForLoadedField(field).hashCode(),not(is(new FieldAttributeAppender.ForLoadedField(otherField).hashCode())));
-  assertThat(new FieldAttributeAppender.ForLoadedField(field),not(is(new FieldAttributeAppender.ForLoadedField(otherField))));
-}
