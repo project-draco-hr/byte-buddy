@@ -4,5 +4,5 @@
     size=size.aggregate(stackManipulation.apply(methodVisitor,instrumentationContext));
   }
   size=size.aggregate(methodInvocation.apply(methodVisitor,instrumentationContext));
-  return size.aggregate(returnValueStackManipulation.apply(methodVisitor,instrumentationContext));
+  return size.aggregate(terminatingStackManipulation.apply(methodVisitor,instrumentationContext));
 }

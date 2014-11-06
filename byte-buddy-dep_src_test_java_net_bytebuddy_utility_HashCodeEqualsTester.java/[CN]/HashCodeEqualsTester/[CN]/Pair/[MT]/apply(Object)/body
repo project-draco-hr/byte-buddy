@@ -1,4 +1,0 @@
-{
-  first.apply(mock);
-  second.apply(mock);
-}

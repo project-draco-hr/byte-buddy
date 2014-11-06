@@ -1,5 +1,5 @@
 {
-  boolean result=returnValueStackManipulation.isValid() && methodInvocation.isValid();
+  boolean result=methodInvocation.isValid() && terminatingStackManipulation.isValid();
   Iterator<StackManipulation> assignment=parameterStackManipulations.iterator();
   while (result && assignment.hasNext()) {
     result=assignment.next().isValid();

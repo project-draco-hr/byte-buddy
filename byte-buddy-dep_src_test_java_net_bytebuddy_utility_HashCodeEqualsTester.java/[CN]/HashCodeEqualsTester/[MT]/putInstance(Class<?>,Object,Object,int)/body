@@ -60,9 +60,9 @@
     throw new IllegalArgumentException("Cannot mock final type " + parameterType);
   }
  else {
-    actualArgument=mock(parameterType);
+    actualArgument=generator.generate(parameterType);
     refinement.apply(actualArgument);
-    otherArgument=mock(parameterType);
+    otherArgument=generator.generate(parameterType);
     refinement.apply(otherArgument);
   }
   Array.set(actualArguments,index,actualArgument);

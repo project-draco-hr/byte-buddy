@@ -3,5 +3,5 @@
   this.registeredTargetIndices=new HashMap<Object,Integer>(registeredTargetIndices);
   this.methodInvocation=methodInvocation;
   this.parameterStackManipulations=new ArrayList<StackManipulation>(parameterStackManipulations);
-  this.returnValueStackManipulation=returnValueStackManipulation;
+  this.terminatingStackManipulation=terminatingStackManipulation;
 }

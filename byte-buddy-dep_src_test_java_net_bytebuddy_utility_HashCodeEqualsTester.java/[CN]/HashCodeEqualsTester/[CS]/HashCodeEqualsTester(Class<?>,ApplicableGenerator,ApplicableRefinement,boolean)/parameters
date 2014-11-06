@@ -1,0 +1,4 @@
+Class<?> type
+ApplicableGenerator generator
+ApplicableRefinement refinement
+boolean skipSynthetic

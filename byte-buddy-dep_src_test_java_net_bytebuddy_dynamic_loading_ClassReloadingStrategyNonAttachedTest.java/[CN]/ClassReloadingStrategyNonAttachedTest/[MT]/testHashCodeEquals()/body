@@ -1,9 +1,7 @@
 {
-  HashCodeEqualsTester.of(ClassReloadingStrategy.class).refine(new HashCodeEqualsTester.Refinement(){
-    @Override public void apply(    Object mock){
-      if (Instrumentation.class.isAssignableFrom(mock.getClass())) {
-        when(((Instrumentation)mock).isRedefineClassesSupported()).thenReturn(true);
-      }
+  HashCodeEqualsTester.of(ClassReloadingStrategy.class).refine(new HashCodeEqualsTester.Refinement<Instrumentation>(){
+    @Override public void apply(    Instrumentation mock){
+      when(mock.isRedefineClassesSupported()).thenReturn(true);
     }
   }
 ).apply();

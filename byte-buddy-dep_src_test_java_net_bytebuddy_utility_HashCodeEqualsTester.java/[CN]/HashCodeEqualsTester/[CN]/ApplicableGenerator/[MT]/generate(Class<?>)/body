@@ -1,0 +1,10 @@
+{
+  for (  Generator<?> generator : generators) {
+    ParameterizedType generic=(ParameterizedType)generator.getClass().getGenericInterfaces()[0];
+    Class<?> restrained=(Class<?>)generic.getActualTypeArguments()[0];
+    if (type.isAssignableFrom(restrained)) {
+      type=generator.generate();
+    }
+  }
+  return mock(type);
+}
