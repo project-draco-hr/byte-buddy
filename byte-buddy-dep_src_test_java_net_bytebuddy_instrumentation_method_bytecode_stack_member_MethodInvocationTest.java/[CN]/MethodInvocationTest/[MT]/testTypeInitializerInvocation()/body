@@ -1,0 +1,4 @@
+{
+  when(methodDescription.isTypeInitializer()).thenReturn(true);
+  assertThat(MethodInvocation.invoke(methodDescription).isValid(),is(false));
+}

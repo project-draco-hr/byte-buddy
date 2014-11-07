@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{StackSize.ZERO,Opcodes.NOP},{StackSize.SINGLE,Opcodes.POP},{StackSize.DOUBLE,Opcodes.POP2}});
+}

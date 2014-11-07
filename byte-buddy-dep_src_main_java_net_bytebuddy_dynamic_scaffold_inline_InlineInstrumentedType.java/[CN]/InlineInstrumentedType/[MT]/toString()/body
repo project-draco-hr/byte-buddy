@@ -1,3 +1,0 @@
-{
-  return "InlineInstrumentedType{" + "levelType=" + levelType + ", name='"+ name+ '\''+ ", modifiers="+ modifiers+ ", interfaces="+ interfaces+ '}';
-}
