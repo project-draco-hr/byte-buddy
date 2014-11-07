@@ -1,0 +1,5 @@
+{
+  typeDescription=new TypeDescription.ForLoadedType(type);
+  this.loadOpcode=loadOpcode;
+  this.storeOpcode=storeOpcode;
+}

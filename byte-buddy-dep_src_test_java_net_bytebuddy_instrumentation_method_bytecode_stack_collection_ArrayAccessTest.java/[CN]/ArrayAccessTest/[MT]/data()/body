@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{boolean.class,Opcodes.BALOAD,Opcodes.BASTORE},{byte.class,Opcodes.BALOAD,Opcodes.BASTORE},{short.class,Opcodes.SALOAD,Opcodes.SASTORE},{char.class,Opcodes.CALOAD,Opcodes.CASTORE},{int.class,Opcodes.IALOAD,Opcodes.IASTORE},{long.class,Opcodes.LALOAD,Opcodes.LASTORE},{float.class,Opcodes.FALOAD,Opcodes.FASTORE},{double.class,Opcodes.DALOAD,Opcodes.DASTORE},{Object.class,Opcodes.AALOAD,Opcodes.AASTORE}});
+}

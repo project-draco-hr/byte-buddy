@@ -1,0 +1,3 @@
+{
+  ArrayAccess.of(new TypeDescription.ForLoadedType(void.class));
+}

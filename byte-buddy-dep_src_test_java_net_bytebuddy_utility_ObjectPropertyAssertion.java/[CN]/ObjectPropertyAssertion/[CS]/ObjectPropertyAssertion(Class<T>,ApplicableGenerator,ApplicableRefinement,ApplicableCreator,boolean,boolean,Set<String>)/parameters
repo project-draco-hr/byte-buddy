@@ -1,4 +1,4 @@
-Class<?> type
+Class<T> type
 ApplicableGenerator generator
 ApplicableRefinement refinement
 ApplicableCreator creator

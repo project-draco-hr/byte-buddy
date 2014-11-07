@@ -1,13 +1,3 @@
 {
-  ObjectPropertyAssertion.of(AnnotationList.ForLoadedAnnotation.class).generate(new ObjectPropertyAssertion.Generator<Annotation>(){
-    @Override public Class<? extends Annotation> generate(){
-      return Foo.class;
-    }
-  }
-).refine(new ObjectPropertyAssertion.Refinement<Foo>(){
-    @Override public void apply(    Foo mock){
-      doReturn(Foo.class).when(mock).annotationType();
-    }
-  }
-).apply();
+  ObjectPropertyAssertion.of(AnnotationList.ForLoadedAnnotation.class).apply(new AnnotationList.ForLoadedAnnotation(new Annotation[0]));
 }
