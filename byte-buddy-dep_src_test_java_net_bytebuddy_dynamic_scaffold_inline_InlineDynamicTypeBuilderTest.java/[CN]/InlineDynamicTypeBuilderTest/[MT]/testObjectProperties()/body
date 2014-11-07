@@ -1,3 +1,8 @@
 {
-  ObjectPropertyAssertion.of(InlineDynamicTypeBuilder.class).apply();
+  ObjectPropertyAssertion.of(InlineDynamicTypeBuilder.class).create(new ObjectPropertyAssertion.Creator<List<?>>(){
+    @Override public List<?> create(){
+      return Arrays.asList(new Object());
+    }
+  }
+).apply();
 }

@@ -1,3 +1,0 @@
-{
-  return new ObjectPropertyAssertion(type,this.generator,refinement,generator,skipSynthetic,skipToString);
-}

@@ -1,3 +1,9 @@
 {
-  ObjectPropertyAssertion.of(FieldAttributeAppender.ForLoadedField.class).apply();
+  final Iterator<Field> iterator=Arrays.asList(Sample.class.getDeclaredField(FOO),Sample.class.getDeclaredField(BAR)).iterator();
+  ObjectPropertyAssertion.of(FieldAttributeAppender.ForLoadedField.class).create(new ObjectPropertyAssertion.Creator<Field>(){
+    @Override public Field create(){
+      return iterator.next();
+    }
+  }
+).apply();
 }

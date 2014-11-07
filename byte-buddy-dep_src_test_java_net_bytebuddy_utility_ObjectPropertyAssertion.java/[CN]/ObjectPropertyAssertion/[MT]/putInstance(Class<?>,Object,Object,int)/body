@@ -44,25 +44,15 @@
     actualArgument=enumConstants[0];
     otherArgument=enumConstants[1];
   }
- else   if (List.class.isAssignableFrom(parameterType)) {
-    actualArgument=Array.newInstance(Object.class,1);
-    otherArgument=Array.newInstance(Object.class,1);
-    putInstance(listTypeGenerator.generate(),actualArgument,otherArgument,0);
-    actualArgument=Arrays.asList((Object[])actualArgument);
-    otherArgument=Arrays.asList((Object[])otherArgument);
-  }
  else   if (parameterType.isArray()) {
     actualArgument=Array.newInstance(parameterType.getComponentType(),1);
     otherArgument=Array.newInstance(parameterType.getComponentType(),1);
     putInstance(parameterType.getComponentType(),actualArgument,otherArgument,0);
   }
- else   if ((parameterType.getModifiers() & Opcodes.ACC_FINAL) != 0) {
-    throw new IllegalArgumentException("Cannot mock final type " + parameterType);
-  }
  else {
-    actualArgument=generator.generate(parameterType);
+    actualArgument=creator.replace(parameterType,generator);
     refinement.apply(actualArgument);
-    otherArgument=generator.generate(parameterType);
+    otherArgument=creator.replace(parameterType,generator);
     refinement.apply(otherArgument);
   }
   Array.set(actualArguments,index,actualArgument);

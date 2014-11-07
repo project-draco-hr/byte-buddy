@@ -1,0 +1,15 @@
+{
+  ObjectPropertyAssertion.of(ArrayFactory.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
+    @Override public void apply(    TypeDescription mock){
+      when(mock.getInternalName()).thenReturn("" + System.identityHashCode(mock));
+      when(mock.getStackSize()).thenReturn(StackSize.ZERO);
+    }
+  }
+).ignoreFields("sizeDecrease","arrayCreator").apply();
+  ObjectPropertyAssertion.of(ArrayFactory.ArrayCreator.ForReferenceType.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
+    @Override public void apply(    TypeDescription mock){
+      when(mock.getInternalName()).thenReturn("" + System.identityHashCode(mock));
+    }
+  }
+).apply();
+}

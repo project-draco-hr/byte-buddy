@@ -1,3 +1,10 @@
 {
-  ObjectPropertyAssertion.of(DefaultMethodCall.class).apply();
+  ObjectPropertyAssertion.of(DefaultMethodCall.class).create(new ObjectPropertyAssertion.Creator<List<?>>(){
+    @Override public List<?> create(){
+      TypeDescription typeDescription=mock(TypeDescription.class);
+      when(typeDescription.isInterface()).thenReturn(true);
+      return Arrays.asList(typeDescription);
+    }
+  }
+).apply();
 }

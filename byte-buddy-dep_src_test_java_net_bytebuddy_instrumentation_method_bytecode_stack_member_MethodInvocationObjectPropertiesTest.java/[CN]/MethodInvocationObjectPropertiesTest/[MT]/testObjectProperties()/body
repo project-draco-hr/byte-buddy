@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(MethodInvocation.Invocation.class).apply();
-}

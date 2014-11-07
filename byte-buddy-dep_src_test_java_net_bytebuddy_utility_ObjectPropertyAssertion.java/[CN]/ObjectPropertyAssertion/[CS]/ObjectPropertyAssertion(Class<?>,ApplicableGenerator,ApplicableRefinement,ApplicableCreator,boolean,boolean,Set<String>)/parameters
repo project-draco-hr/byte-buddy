@@ -1,0 +1,7 @@
+Class<?> type
+ApplicableGenerator generator
+ApplicableRefinement refinement
+ApplicableCreator creator
+boolean skipSynthetic
+boolean skipToString
+Set<String> ignoredFields

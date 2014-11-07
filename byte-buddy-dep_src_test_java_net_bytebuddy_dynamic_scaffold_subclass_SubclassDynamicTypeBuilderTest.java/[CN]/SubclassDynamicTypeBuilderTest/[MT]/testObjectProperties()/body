@@ -1,3 +1,8 @@
 {
-  ObjectPropertyAssertion.of(SubclassDynamicTypeBuilder.class).apply();
+  ObjectPropertyAssertion.of(SubclassDynamicTypeBuilder.class).create(new ObjectPropertyAssertion.Creator<List<?>>(){
+    @Override public List<?> create(){
+      return Arrays.asList(mock(TypeDescription.class));
+    }
+  }
+).apply();
 }

@@ -22,11 +22,15 @@
     if (!skipToString) {
       assertThat(instance.toString(),startsWith(type.getCanonicalName().substring(type.getPackage().getName().length() + 1) + "{"));
       assertThat(instance.toString(),endsWith("}"));
-      for (      Field field : type.getDeclaredFields()) {
-        if (!field.isSynthetic() && !Modifier.isStatic(field.getModifiers())) {
-          assertThat(instance.toString(),containsString(field.getName()));
+      Class<?> currentType=type;
+      do {
+        for (        Field field : type.getDeclaredFields()) {
+          if (!field.isSynthetic() && !Modifier.isStatic(field.getModifiers()) && !ignoredFields.contains(field.getName())) {
+            assertThat(instance.toString(),containsString(field.getName()));
+          }
         }
       }
+ while ((currentType=currentType.getSuperclass()) != Object.class);
     }
  else {
       assertThat(instance.toString(),notNullValue());

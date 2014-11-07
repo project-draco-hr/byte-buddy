@@ -1,4 +1,0 @@
-{
-  ObjectPropertyAssertion.of(ArrayFactory.class).apply();
-  ObjectPropertyAssertion.of(ArrayFactory.ArrayCreator.ForReferenceType.class).apply();
-}

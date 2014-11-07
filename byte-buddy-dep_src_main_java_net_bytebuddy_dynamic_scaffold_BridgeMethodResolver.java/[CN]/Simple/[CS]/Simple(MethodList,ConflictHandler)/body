@@ -1,5 +1,5 @@
 {
-  MethodList bridgeMethods=relevant.filter(isBridge());
+  MethodList bridgeMethods=methodList.filter(isBridge());
   bridges=new HashMap<String,BridgeTarget>(bridgeMethods.size());
   for (  MethodDescription bridgeMethod : bridgeMethods) {
     bridges.put(bridgeMethod.getUniqueSignature(),findBridgeTargetFor(bridgeMethod,conflictHandler));

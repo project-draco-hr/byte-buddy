@@ -1,3 +1,3 @@
 {
-  return new ObjectPropertyAssertion(type,generator,refinement,listTypeGenerator,true,skipToString);
+  return new ObjectPropertyAssertion(type,generator,refinement,creator,true,skipToString,ignoredFields);
 }
