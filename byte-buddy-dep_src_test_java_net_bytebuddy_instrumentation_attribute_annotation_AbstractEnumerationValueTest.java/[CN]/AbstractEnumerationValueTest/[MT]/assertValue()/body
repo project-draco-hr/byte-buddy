@@ -1,0 +1,4 @@
+{
+  assertThat(firstValue().getValue(),is(first().name()));
+  assertThat(secondValue().getValue(),is(second().name()));
+}

@@ -1,0 +1,7 @@
+{
+  assertThat(firstValue(),equalTo((AnnotationDescription.EnumerationValue)new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(first())));
+  assertThat(firstValue(),not(equalTo((AnnotationDescription.EnumerationValue)new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(second()))));
+  assertThat(firstValue(),not(equalTo(new Object())));
+  assertThat(firstValue(),not(equalTo(null)));
+  assertThat(firstValue(),not(equalTo(secondValue())));
+}

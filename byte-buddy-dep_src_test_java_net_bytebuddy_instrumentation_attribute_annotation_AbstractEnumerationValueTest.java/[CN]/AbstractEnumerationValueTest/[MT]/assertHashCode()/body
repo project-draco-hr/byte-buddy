@@ -1,0 +1,5 @@
+{
+  assertThat(firstValue().hashCode(),is(first().name().hashCode() + 31 * firstValue().getEnumerationType().hashCode()));
+  assertThat(firstValue().hashCode(),not(is(second().name().hashCode() + 31 * firstValue().getEnumerationType().hashCode())));
+  assertThat(secondValue().hashCode(),is(second().name().hashCode() + 31 * firstValue().getEnumerationType().hashCode()));
+}

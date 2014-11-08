@@ -1,0 +1,5 @@
+{
+  for (  AnnotationList annotationList : AnnotationList.Empty.asList(1)) {
+    assertThat(annotationList,is(this.annotationList));
+  }
+}

@@ -1,4 +1,0 @@
-{
-  super(typePool);
-  this.type=type;
-}

@@ -1,3 +1,3 @@
 {
-  return dispatcher.toStringRepresentation(value);
+  return propertyDispatcher.toString(value);
 }

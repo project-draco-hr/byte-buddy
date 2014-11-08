@@ -1,3 +1,0 @@
-{
-  return new LoadableUnloadedEnumerationValue<T>(typePool,type);
-}

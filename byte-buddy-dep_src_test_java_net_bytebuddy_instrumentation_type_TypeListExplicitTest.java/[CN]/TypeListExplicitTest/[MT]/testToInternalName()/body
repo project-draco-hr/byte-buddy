@@ -1,0 +1,5 @@
+{
+  when(firstTypeDescription.getInternalName()).thenReturn(FOO);
+  when(secondTypeDescription.getInternalName()).thenReturn(BAR);
+  assertThat(typeList.toInternalNames(),is(new String[]{FOO,BAR}));
+}

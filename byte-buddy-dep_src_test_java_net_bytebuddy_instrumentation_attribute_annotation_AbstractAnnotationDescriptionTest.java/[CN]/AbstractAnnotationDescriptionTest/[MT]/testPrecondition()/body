@@ -1,0 +1,9 @@
+{
+  assertThat(first(),not(equalTo(second())));
+  assertThat(first(),equalTo(first()));
+  assertThat(second(),equalTo(second()));
+  assertEquals(second().annotationType(),first().annotationType());
+  assertThat(firstValue().getAnnotationType(),equalTo(secondValue().getAnnotationType()));
+  assertThat(firstValue().getAnnotationType().represents(first().annotationType()),is(true));
+  assertThat(secondValue().getAnnotationType().represents(second().annotationType()),is(true));
+}

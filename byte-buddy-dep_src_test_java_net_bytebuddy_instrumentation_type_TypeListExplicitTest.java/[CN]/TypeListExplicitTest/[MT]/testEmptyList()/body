@@ -1,0 +1,3 @@
+{
+  assertThat(new TypeList.Explicit(Collections.<TypeDescription>emptyList()).toInternalNames(),nullValue(String[].class));
+}

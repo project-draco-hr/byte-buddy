@@ -12,4 +12,5 @@
     }
   }
 ).apply();
+  ObjectPropertyAssertion.of(ArrayFactory.ArrayStackManipulation.class).apply();
 }

@@ -1,0 +1,5 @@
+{
+  AnnotationList annotationList=new AnnotationList.Explicit(Arrays.asList(foo));
+  assertThat(annotationList.ofType(Foo.class),is(fooLoadable));
+  assertThat(annotationList.ofType(Bar.class),nullValue());
+}

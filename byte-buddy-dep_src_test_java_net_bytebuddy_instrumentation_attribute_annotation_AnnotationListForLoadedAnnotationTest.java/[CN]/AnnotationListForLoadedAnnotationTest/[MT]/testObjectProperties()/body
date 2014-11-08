@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(AnnotationList.ForLoadedAnnotation.class).apply(new AnnotationList.ForLoadedAnnotation(new Annotation[0]));
-}

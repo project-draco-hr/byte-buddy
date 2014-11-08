@@ -1,0 +1,5 @@
+{
+  AnnotationList annotationList=new AnnotationList.Explicit(Arrays.asList(foo,bar)).inherited(Collections.<TypeDescription>emptySet());
+  assertThat(annotationList.size(),is(1));
+  assertThat(annotationList,hasItem(bar));
+}

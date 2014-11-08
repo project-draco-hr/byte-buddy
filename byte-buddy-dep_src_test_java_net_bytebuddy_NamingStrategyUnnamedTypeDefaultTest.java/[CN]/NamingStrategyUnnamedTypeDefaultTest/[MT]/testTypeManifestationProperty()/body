@@ -1,7 +1,5 @@
 {
   assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,Opcodes.ACC_ABSTRACT,classFileVersion).getTypeManifestation(),is(TypeManifestation.ABSTRACT));
-  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,Opcodes.ACC_ABSTRACT | Opcodes.ACC_ENUM,classFileVersion).getTypeManifestation(),is(TypeManifestation.ABSTRACT_ENUM));
-  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,Opcodes.ACC_ENUM | Opcodes.ACC_ENUM,classFileVersion).getTypeManifestation(),is(TypeManifestation.ENUM));
   assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,Opcodes.ACC_FINAL,classFileVersion).getTypeManifestation(),is(TypeManifestation.FINAL));
   assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,Opcodes.ACC_INTERFACE,classFileVersion).getTypeManifestation(),is(TypeManifestation.INTERFACE));
   assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,0,classFileVersion).getTypeManifestation(),is(TypeManifestation.PLAIN));

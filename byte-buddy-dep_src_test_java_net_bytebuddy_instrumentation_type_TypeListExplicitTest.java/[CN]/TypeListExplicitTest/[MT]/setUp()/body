@@ -1,0 +1,3 @@
+{
+  typeList=new TypeList.Explicit(Arrays.asList(firstTypeDescription,secondTypeDescription));
+}

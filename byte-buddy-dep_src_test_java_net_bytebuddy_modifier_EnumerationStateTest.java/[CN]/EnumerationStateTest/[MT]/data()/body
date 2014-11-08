@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{EnumerationState.ENUMERATION,Opcodes.ACC_ENUM},{EnumerationState.is(true),Opcodes.ACC_ENUM},{EnumerationState.NON_ENUMERATION,0},{EnumerationState.is(false),0}});
+}

@@ -1,0 +1,9 @@
+{
+  assertThat(first(),not(equalTo(second())));
+  assertThat(first(),equalTo(first()));
+  assertThat(second(),equalTo(second()));
+  assertThat(first().getDeclaringClass(),equalTo(second().getDeclaringClass()));
+  assertThat(firstValue().getEnumerationType(),equalTo(secondValue().getEnumerationType()));
+  assertThat(firstValue().getEnumerationType().represents(first().getDeclaringClass()),is(true));
+  assertThat(secondValue().getEnumerationType().represents(second().getDeclaringClass()),is(true));
+}

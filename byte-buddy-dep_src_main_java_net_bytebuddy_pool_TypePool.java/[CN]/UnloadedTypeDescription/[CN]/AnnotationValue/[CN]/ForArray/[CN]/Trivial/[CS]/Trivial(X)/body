@@ -1,4 +1,4 @@
 {
   super(value);
-  dispatcher=Dispatcher.of(value);
+  propertyDispatcher=PropertyDispatcher.of(value.getClass());
 }

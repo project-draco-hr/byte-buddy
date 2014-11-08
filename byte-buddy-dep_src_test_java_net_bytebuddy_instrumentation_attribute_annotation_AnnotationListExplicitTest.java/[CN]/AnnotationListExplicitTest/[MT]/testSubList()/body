@@ -1,0 +1,3 @@
+{
+  assertThat(new AnnotationList.Explicit(Arrays.asList(foo)).subList(0,1),is((AnnotationList)new AnnotationList.Explicit(Arrays.asList(foo))));
+}

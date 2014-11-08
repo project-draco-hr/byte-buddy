@@ -1,5 +1,5 @@
 {
-  AnnotationList annotationList=new AnnotationList.ForLoadedAnnotation(new Annotation[]{foo});
+  AnnotationList annotationList=new AnnotationList.ForLoadedAnnotation(foo);
   assertThat(annotationList.ofType(Foo.class),is(AnnotationDescription.ForLoadedAnnotation.of(foo)));
   assertThat(annotationList.ofType(Bar.class),nullValue());
 }

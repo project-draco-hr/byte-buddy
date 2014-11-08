@@ -1,0 +1,3 @@
+{
+  assertThat(((EnumerationState)modifierContributor).isEnumeration(),is((expectedModifier & Opcodes.ACC_ENUM) != 0));
+}
