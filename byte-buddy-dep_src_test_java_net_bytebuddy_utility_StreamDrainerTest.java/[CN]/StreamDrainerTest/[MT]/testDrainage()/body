@@ -1,0 +1,4 @@
+{
+  byte[] input=new byte[]{1,2,3,4};
+  assertThat(new StreamDrainer(1).drain(new ByteArrayInputStream(input)),is(input));
+}

@@ -1,0 +1,5 @@
+{
+  StackManipulation stackManipulation=TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE.resolve(assigner,source,target);
+  assertThat(stackManipulation,is(this.stackManipulation));
+  verify(annotationList).isAnnotationPresent(RuntimeType.class);
+}
