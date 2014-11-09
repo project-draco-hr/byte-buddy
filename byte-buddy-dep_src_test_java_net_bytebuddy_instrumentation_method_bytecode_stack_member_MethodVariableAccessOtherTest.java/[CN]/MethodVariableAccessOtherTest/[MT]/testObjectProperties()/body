@@ -1,3 +1,6 @@
 {
   ObjectPropertyAssertion.of(MethodVariableAccess.ArgumentLoadingStackManipulation.class).apply();
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  when(methodDescription.getParameterTypes()).thenReturn(new TypeList.Empty());
+  ObjectPropertyAssertion.of(MethodVariableAccess.TypeCastingHandler.ForBridgeTarget.class).apply(new MethodVariableAccess.TypeCastingHandler.ForBridgeTarget(methodDescription));
 }

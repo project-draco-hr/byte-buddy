@@ -1,4 +1,4 @@
 {
-  this.nonVoidAwareAssigner=nonVoidAwareAssigner;
+  this.chained=chained;
   this.returnDefaultValue=returnDefaultValue;
 }

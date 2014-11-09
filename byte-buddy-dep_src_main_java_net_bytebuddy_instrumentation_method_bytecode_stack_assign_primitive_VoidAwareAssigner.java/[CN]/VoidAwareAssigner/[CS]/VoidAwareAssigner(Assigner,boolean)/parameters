@@ -1,2 +1,2 @@
-Assigner nonVoidAwareAssigner
+Assigner chained
 boolean returnDefaultValue

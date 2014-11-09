@@ -6,9 +6,9 @@
     return returnDefaultValue ? DefaultValue.of(targetType) : StackManipulation.Illegal.INSTANCE;
   }
  else   if (targetType.represents(void.class)) {
-    return ValueRemovingStackManipulation.of(sourceType);
+    return Removal.pop(sourceType);
   }
  else {
-    return nonVoidAwareAssigner.assign(sourceType,targetType,considerRuntimeType);
+    return chained.assign(sourceType,targetType,considerRuntimeType);
   }
 }

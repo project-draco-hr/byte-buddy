@@ -1,8 +1,0 @@
-{
-  assertThat(FieldAccess.forField(instanceField).hashCode(),is(FieldAccess.forField(instanceField).hashCode()));
-  assertThat(FieldAccess.forField(instanceField),is(FieldAccess.forField(instanceField)));
-  assertThat(FieldAccess.forField(instanceField).hashCode(),not(is(FieldAccess.forField(otherInstanceField).hashCode())));
-  assertThat(FieldAccess.forField(instanceField),not(is(FieldAccess.forField(otherInstanceField))));
-  assertThat(FieldAccess.forField(staticField).hashCode(),not(is(FieldAccess.forField(otherInstanceField).hashCode())));
-  assertThat(FieldAccess.forField(staticField),not(is(FieldAccess.forField(otherInstanceField))));
-}

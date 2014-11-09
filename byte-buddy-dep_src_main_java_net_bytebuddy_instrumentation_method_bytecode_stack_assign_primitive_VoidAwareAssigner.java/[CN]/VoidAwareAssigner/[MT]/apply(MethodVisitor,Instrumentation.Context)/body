@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitInsn(removalOpcode);
-  return sizeChange;
-}

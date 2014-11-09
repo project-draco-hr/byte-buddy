@@ -1,6 +1,6 @@
 {
   if (methodDescription.isTypeInitializer()) {
-    throw new IllegalArgumentException("The type initializer cannot be represented by Java's reflection API");
+    return CanCacheIllegal.INSTANCE;
   }
  else   if (methodDescription.isConstructor()) {
     return new ForConstructor(methodDescription);
