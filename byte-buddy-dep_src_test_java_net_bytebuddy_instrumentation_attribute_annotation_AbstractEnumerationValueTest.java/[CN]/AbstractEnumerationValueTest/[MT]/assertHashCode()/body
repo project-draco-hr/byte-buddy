@@ -1,5 +1,5 @@
 {
-  assertThat(firstValue().hashCode(),is(first().name().hashCode() + 31 * firstValue().getEnumerationType().hashCode()));
-  assertThat(firstValue().hashCode(),not(is(second().name().hashCode() + 31 * firstValue().getEnumerationType().hashCode())));
-  assertThat(secondValue().hashCode(),is(second().name().hashCode() + 31 * firstValue().getEnumerationType().hashCode()));
+  assertThat(describe(Sample.FIRST).hashCode(),is(Sample.FIRST.name().hashCode() + 31 * new TypeDescription.ForLoadedType(Sample.class).hashCode()));
+  assertThat(describe(Sample.SECOND).hashCode(),is(Sample.SECOND.name().hashCode() + 31 * new TypeDescription.ForLoadedType(Sample.class).hashCode()));
+  assertThat(describe(Sample.FIRST).hashCode(),not(is(describe(Sample.SECOND).hashCode())));
 }

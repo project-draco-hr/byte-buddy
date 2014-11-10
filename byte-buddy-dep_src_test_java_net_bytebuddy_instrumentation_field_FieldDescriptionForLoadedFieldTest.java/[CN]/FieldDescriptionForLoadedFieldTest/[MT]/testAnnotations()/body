@@ -1,0 +1,4 @@
+{
+  assertThat(describe(Sample.class.getDeclaredField("annotated")).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.ForLoadedAnnotation(Sample.class.getDeclaredField("annotated").getDeclaredAnnotations())));
+  assertThat(describe(Sample.class.getDeclaredField("nonAnnotated")).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+}

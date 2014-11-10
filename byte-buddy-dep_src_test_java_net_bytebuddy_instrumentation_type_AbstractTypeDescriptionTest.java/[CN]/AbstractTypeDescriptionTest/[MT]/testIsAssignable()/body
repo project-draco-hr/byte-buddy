@@ -1,0 +1,28 @@
+{
+  assertThat(describe(Object.class).isAssignableTo(Object.class),is(true));
+  assertThat(describe(Object.class).isAssignableFrom(Object.class),is(true));
+  assertThat(describe(Object[].class).isAssignableTo(Object.class),is(true));
+  assertThat(describe(Object.class).isAssignableFrom(Object[].class),is(true));
+  assertThat(describe(String[].class).isAssignableTo(Object[].class),is(true));
+  assertThat(describe(Object[].class).isAssignableFrom(String[].class),is(true));
+  assertThat(describe(int.class).isAssignableTo(int.class),is(true));
+  assertThat(describe(int.class).isAssignableFrom(int.class),is(true));
+  assertThat(describe(void.class).isAssignableTo(void.class),is(true));
+  assertThat(describe(void.class).isAssignableFrom(void.class),is(true));
+  assertThat(describe(SampleInterfaceImplementation.class).isAssignableTo(SampleInterface.class),is(true));
+  assertThat(describe(SampleInterface.class).isAssignableFrom(SampleInterfaceImplementation.class),is(true));
+  assertThat(describe(SampleTransitiveInterfaceImplementation.class).isAssignableTo(SampleInterface.class),is(true));
+  assertThat(describe(SampleInterface.class).isAssignableFrom(SampleTransitiveInterfaceImplementation.class),is(true));
+  assertThat(describe(SampleInterface.class).isAssignableTo(Object.class),is(true));
+  assertThat(describe(Object.class).isAssignableFrom(SampleInterface.class),is(true));
+  assertThat(describe(SampleInterfaceImplementation.class).isAssignableTo(SampleClass.class),is(false));
+  assertThat(describe(SampleClass.class).isAssignableFrom(SampleInterfaceImplementation.class),is(false));
+  assertThat(describe(SampleInterfaceImplementation.class).isAssignableTo(boolean.class),is(false));
+  assertThat(describe(boolean.class).isAssignableFrom(SampleInterfaceImplementation.class),is(false));
+  assertThat(describe(boolean.class).isAssignableTo(Object.class),is(false));
+  assertThat(describe(Object.class).isAssignableFrom(boolean.class),is(false));
+  assertThat(describe(boolean[].class).isAssignableTo(Object.class),is(true));
+  assertThat(describe(Object.class).isAssignableFrom(boolean[].class),is(true));
+  assertThat(describe(boolean[].class).isAssignableTo(Object[].class),is(false));
+  assertThat(describe(Object[].class).isAssignableFrom(boolean[].class),is(false));
+}

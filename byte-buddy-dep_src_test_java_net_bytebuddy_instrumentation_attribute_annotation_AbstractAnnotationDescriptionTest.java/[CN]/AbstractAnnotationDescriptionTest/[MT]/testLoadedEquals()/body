@@ -1,0 +1,5 @@
+{
+  assertThat(describe(first).prepare(Sample.class).load(),equalTo(first));
+  assertThat(describe(second).prepare(Sample.class).load(),equalTo(second));
+  assertThat(describe(first).prepare(Sample.class).load(),not(equalTo(second)));
+}

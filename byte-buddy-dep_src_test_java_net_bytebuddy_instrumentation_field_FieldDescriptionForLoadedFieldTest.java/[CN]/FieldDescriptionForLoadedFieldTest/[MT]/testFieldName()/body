@@ -1,4 +1,0 @@
-{
-  assertThat(fieldDescription.getName(),is(FOO));
-  assertThat(fieldDescription.getInternalName(),is(FOO));
-}

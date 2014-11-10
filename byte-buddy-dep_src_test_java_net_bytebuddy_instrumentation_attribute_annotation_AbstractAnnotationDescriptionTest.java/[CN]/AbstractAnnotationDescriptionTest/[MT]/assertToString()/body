@@ -1,4 +1,4 @@
 {
-  assertToString(firstValue().toString(),first());
-  assertToString(secondValue().toString(),second());
+  assertToString(describe(first).toString(),first);
+  assertToString(describe(second).toString(),second);
 }

@@ -1,0 +1,5 @@
+{
+  assertThat(describe(SampleClass.class).getPackageName(),is(SampleClass.class.getPackage().getName()));
+  assertThat(describe(Object.class).getPackageName(),is(Object.class.getPackage().getName()));
+  assertThat(describe(Object[].class).getPackageName(),nullValue(String.class));
+}

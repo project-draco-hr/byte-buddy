@@ -1,3 +1,0 @@
-{
-  return Second.class.getAnnotation(Sample.class);
-}

@@ -1,0 +1,4 @@
+{
+  first=FooSample.class.getAnnotation(Sample.class);
+  second=BarSample.class.getAnnotation(Sample.class);
+}

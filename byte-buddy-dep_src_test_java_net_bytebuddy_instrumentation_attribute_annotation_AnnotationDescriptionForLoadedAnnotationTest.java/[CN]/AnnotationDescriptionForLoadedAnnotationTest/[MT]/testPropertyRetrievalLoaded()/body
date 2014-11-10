@@ -1,6 +1,0 @@
-{
-  Sample sample=annotationDescription.prepare(Sample.class).load();
-  assertThat(sample,notNullValue(Sample.class));
-  assertEquals(Sample.class,sample.annotationType());
-  assertThat(Sample.class.getDeclaredMethod(methodDescription.getName()).invoke(sample),is(expectedLoaded));
-}

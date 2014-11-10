@@ -1,0 +1,10 @@
+{
+  assertThat(describe(SampleClass.class),not(equalTo(describe(SampleInterface.class))));
+  assertThat(describe(SampleClass.class),not(equalTo(describe(SampleAnnotation.class))));
+  assertThat(describe(SampleClass.class),equalTo(describe(SampleClass.class)));
+  assertThat(describe(SampleInterface.class),equalTo(describe(SampleInterface.class)));
+  assertThat(describe(SampleAnnotation.class),equalTo(describe(SampleAnnotation.class)));
+  assertThat(describe(SampleClass.class),is((TypeDescription)new TypeDescription.ForLoadedType(SampleClass.class)));
+  assertThat(describe(SampleInterface.class),is((TypeDescription)new TypeDescription.ForLoadedType(SampleInterface.class)));
+  assertThat(describe(SampleAnnotation.class),is((TypeDescription)new TypeDescription.ForLoadedType(SampleAnnotation.class)));
+}

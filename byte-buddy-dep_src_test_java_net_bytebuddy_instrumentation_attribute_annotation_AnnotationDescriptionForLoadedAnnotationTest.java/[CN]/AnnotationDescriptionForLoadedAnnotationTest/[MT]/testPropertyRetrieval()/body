@@ -1,3 +1,0 @@
-{
-  assertThat(annotationDescription.getValue(methodDescription),is(expected));
-}

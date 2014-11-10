@@ -1,0 +1,15 @@
+{
+  assertThat(describe(void.class).getStackSize(),is(StackSize.ZERO));
+  assertThat(describe(boolean.class).getStackSize(),is(StackSize.SINGLE));
+  assertThat(describe(byte.class).getStackSize(),is(StackSize.SINGLE));
+  assertThat(describe(short.class).getStackSize(),is(StackSize.SINGLE));
+  assertThat(describe(char.class).getStackSize(),is(StackSize.SINGLE));
+  assertThat(describe(int.class).getStackSize(),is(StackSize.SINGLE));
+  assertThat(describe(long.class).getStackSize(),is(StackSize.DOUBLE));
+  assertThat(describe(float.class).getStackSize(),is(StackSize.SINGLE));
+  assertThat(describe(double.class).getStackSize(),is(StackSize.DOUBLE));
+  assertThat(describe(Object.class).getStackSize(),is(StackSize.SINGLE));
+  assertThat(describe(SampleClass.class).getStackSize(),is(StackSize.SINGLE));
+  assertThat(describe(Object[].class).getStackSize(),is(StackSize.SINGLE));
+  assertThat(describe(long[].class).getStackSize(),is(StackSize.SINGLE));
+}

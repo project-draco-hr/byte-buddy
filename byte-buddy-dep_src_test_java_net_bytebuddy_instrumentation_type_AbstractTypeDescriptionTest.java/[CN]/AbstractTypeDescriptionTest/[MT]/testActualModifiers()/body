@@ -1,0 +1,10 @@
+{
+  assertThat(describe(SampleClass.class).getActualModifiers(true),is(SampleClass.class.getModifiers() | Opcodes.ACC_SUPER));
+  assertThat(describe(SampleClass.class).getActualModifiers(false),is(SampleClass.class.getModifiers()));
+  assertThat(describe(SampleInterface.class).getActualModifiers(true),is((SampleInterface.class.getModifiers() & ~(Opcodes.ACC_PROTECTED | Opcodes.ACC_STATIC) | Opcodes.ACC_PUBLIC | Opcodes.ACC_SUPER)));
+  assertThat(describe(SampleInterface.class).getActualModifiers(false),is((SampleInterface.class.getModifiers() & ~(Opcodes.ACC_PROTECTED | Opcodes.ACC_STATIC) | Opcodes.ACC_PUBLIC)));
+  assertThat(describe(SampleAnnotation.class).getActualModifiers(true),is((SampleAnnotation.class.getModifiers() & ~(Opcodes.ACC_PRIVATE | Opcodes.ACC_STATIC)) | Opcodes.ACC_SUPER));
+  assertThat(describe(SampleAnnotation.class).getActualModifiers(false),is((SampleAnnotation.class.getModifiers() & ~(Opcodes.ACC_PRIVATE | Opcodes.ACC_STATIC))));
+  assertThat(describe(SamplePackagePrivate.class).getActualModifiers(true),is((SamplePackagePrivate.class.getModifiers() & ~(Opcodes.ACC_STATIC)) | Opcodes.ACC_SUPER));
+  assertThat(describe(SamplePackagePrivate.class).getActualModifiers(false),is((SamplePackagePrivate.class.getModifiers() & ~(Opcodes.ACC_STATIC))));
+}

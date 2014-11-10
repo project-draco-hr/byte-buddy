@@ -1,0 +1,4 @@
+{
+  assertThat(describe(first).getDeclaringType(),is((TypeDescription)new TypeDescription.ForLoadedType(first.getDeclaringClass())));
+  assertThat(describe(second).getDeclaringType(),is((TypeDescription)new TypeDescription.ForLoadedType(second.getDeclaringClass())));
+}

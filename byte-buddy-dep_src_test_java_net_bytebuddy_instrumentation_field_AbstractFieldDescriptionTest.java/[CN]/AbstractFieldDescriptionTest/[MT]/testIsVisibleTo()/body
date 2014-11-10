@@ -1,0 +1,22 @@
+{
+  assertThat(describe(PublicType.class.getDeclaredField("publicField")).isVisibleTo(new TypeDescription.ForLoadedType(PublicType.class)),is(true));
+  assertThat(describe(PublicType.class.getDeclaredField("protectedField")).isVisibleTo(new TypeDescription.ForLoadedType(PublicType.class)),is(true));
+  assertThat(describe(PublicType.class.getDeclaredField("packagePrivateField")).isVisibleTo(new TypeDescription.ForLoadedType(PublicType.class)),is(true));
+  assertThat(describe(PublicType.class.getDeclaredField("privateField")).isVisibleTo(new TypeDescription.ForLoadedType(PublicType.class)),is(true));
+  assertThat(describe(PublicType.class.getDeclaredField("publicField")).isVisibleTo(new TypeDescription.ForLoadedType(FirstSample.class)),is(true));
+  assertThat(describe(PublicType.class.getDeclaredField("protectedField")).isVisibleTo(new TypeDescription.ForLoadedType(FirstSample.class)),is(true));
+  assertThat(describe(PublicType.class.getDeclaredField("packagePrivateField")).isVisibleTo(new TypeDescription.ForLoadedType(FirstSample.class)),is(true));
+  assertThat(describe(PublicType.class.getDeclaredField("privateField")).isVisibleTo(new TypeDescription.ForLoadedType(FirstSample.class)),is(false));
+  assertThat(describe(PublicType.class.getDeclaredField("publicField")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(true));
+  assertThat(describe(PublicType.class.getDeclaredField("protectedField")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PublicType.class.getDeclaredField("packagePrivateField")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PublicType.class.getDeclaredField("privateField")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PublicType.class.getDeclaredField("publicField")).isVisibleTo(new TypeDescription.ForLoadedType(VisibilityFieldTestHelper.class)),is(true));
+  assertThat(describe(PublicType.class.getDeclaredField("protectedField")).isVisibleTo(new TypeDescription.ForLoadedType(VisibilityFieldTestHelper.class)),is(true));
+  assertThat(describe(PublicType.class.getDeclaredField("packagePrivateField")).isVisibleTo(new TypeDescription.ForLoadedType(VisibilityFieldTestHelper.class)),is(false));
+  assertThat(describe(PublicType.class.getDeclaredField("privateField")).isVisibleTo(new TypeDescription.ForLoadedType(VisibilityFieldTestHelper.class)),is(false));
+  assertThat(describe(PackagePrivateType.class.getDeclaredField("publicField")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PackagePrivateType.class.getDeclaredField("protectedField")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PackagePrivateType.class.getDeclaredField("packagePrivateField")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PackagePrivateType.class.getDeclaredField("privateField")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+}

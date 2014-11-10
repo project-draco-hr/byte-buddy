@@ -1,6 +1,0 @@
-{
-  assertThat(fieldDescription.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(true));
-  assertThat(privateField.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(packagePrivateField.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(protectedField.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
-}

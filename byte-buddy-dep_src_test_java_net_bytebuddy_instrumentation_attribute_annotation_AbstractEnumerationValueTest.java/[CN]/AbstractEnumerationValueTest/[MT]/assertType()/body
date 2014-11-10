@@ -1,4 +1,4 @@
 {
-  assertThat(firstValue().getEnumerationType(),is((TypeDescription)new TypeDescription.ForLoadedType(first().getDeclaringClass())));
-  assertThat(secondValue().getEnumerationType(),is((TypeDescription)new TypeDescription.ForLoadedType(first().getDeclaringClass())));
+  assertThat(describe(Sample.FIRST).getEnumerationType(),equalTo((TypeDescription)new TypeDescription.ForLoadedType(Sample.class)));
+  assertThat(describe(Sample.SECOND).getEnumerationType(),equalTo((TypeDescription)new TypeDescription.ForLoadedType(Sample.class)));
 }

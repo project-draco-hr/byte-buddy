@@ -1,0 +1,5 @@
+{
+  for (  Class<?> type : TYPES) {
+    assertThat(describe(type).getName(),is(type.getName()));
+  }
+}

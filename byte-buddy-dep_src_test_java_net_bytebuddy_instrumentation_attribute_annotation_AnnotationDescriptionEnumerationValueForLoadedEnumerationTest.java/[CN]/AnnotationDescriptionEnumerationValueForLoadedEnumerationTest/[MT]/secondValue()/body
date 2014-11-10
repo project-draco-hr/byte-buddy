@@ -1,3 +1,0 @@
-{
-  return new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(Sample.SECOND);
-}

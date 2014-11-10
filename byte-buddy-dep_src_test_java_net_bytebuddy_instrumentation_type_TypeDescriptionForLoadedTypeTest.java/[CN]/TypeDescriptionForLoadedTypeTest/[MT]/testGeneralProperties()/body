@@ -1,9 +1,0 @@
-{
-  assertThat(objectType.getCanonicalName(),is(Object.class.getCanonicalName()));
-  assertThat(objectType.isAnonymousClass(),is(Object.class.isAnonymousClass()));
-  assertThat(objectType.isLocalClass(),is(Object.class.isLocalClass()));
-  assertThat(objectType.isMemberClass(),is(Object.class.isMemberClass()));
-  assertThat(objectType.isAnnotation(),is(Object.class.isAnnotation()));
-  assertThat(objectType.isSynthetic(),is(Object.class.isSynthetic()));
-  assertThat(objectType.isInstance(new Object()),is(true));
-}

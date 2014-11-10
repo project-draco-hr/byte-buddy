@@ -1,4 +1,4 @@
 {
-  assertThat(firstValue().getValue(),is(first().name()));
-  assertThat(secondValue().getValue(),is(second().name()));
+  assertThat(describe(Sample.FIRST).getValue(),is(Sample.FIRST.name()));
+  assertThat(describe(Sample.SECOND).getValue(),is(Sample.SECOND.name()));
 }

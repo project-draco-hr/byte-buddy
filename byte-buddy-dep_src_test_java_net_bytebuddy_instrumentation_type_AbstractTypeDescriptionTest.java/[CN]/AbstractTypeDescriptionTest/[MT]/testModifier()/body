@@ -1,0 +1,6 @@
+{
+  assertThat(describe(SampleClass.class).getModifiers(),is(SampleClass.class.getModifiers()));
+  assertThat(describe(SampleInterface.class).getModifiers(),is(SampleInterface.class.getModifiers()));
+  assertThat(describe(SampleAnnotation.class).getModifiers(),is(SampleAnnotation.class.getModifiers()));
+  assertThat(describe(Object[].class).getModifiers(),is(Object[].class.getModifiers()));
+}

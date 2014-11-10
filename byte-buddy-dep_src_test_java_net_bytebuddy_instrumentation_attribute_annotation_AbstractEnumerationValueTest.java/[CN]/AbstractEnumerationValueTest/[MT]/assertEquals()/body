@@ -1,13 +1,23 @@
 {
-  AnnotationDescription.EnumerationValue enumerationValue=firstValue();
-  assertThat(enumerationValue,equalTo(enumerationValue));
-  AnnotationDescription.EnumerationValue otherType=mock(AnnotationDescription.EnumerationValue.class);
-  when(otherType.getEnumerationType()).thenReturn(mock(TypeDescription.class));
-  when(otherType.getValue()).thenReturn(first().name());
-  assertThat(firstValue(),not(equalTo(otherType)));
-  assertThat(firstValue(),equalTo((AnnotationDescription.EnumerationValue)new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(first())));
-  assertThat(firstValue(),not(equalTo((AnnotationDescription.EnumerationValue)new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(second()))));
-  assertThat(firstValue(),not(equalTo(new Object())));
-  assertThat(firstValue(),not(equalTo(null)));
-  assertThat(firstValue(),not(equalTo(secondValue())));
+  AnnotationDescription.EnumerationValue identical=describe(Sample.FIRST);
+  assertThat(identical,equalTo(identical));
+  AnnotationDescription.EnumerationValue equalFirst=mock(AnnotationDescription.EnumerationValue.class);
+  when(equalFirst.getValue()).thenReturn(Sample.FIRST.name());
+  when(equalFirst.getEnumerationType()).thenReturn(new TypeDescription.ForLoadedType(Sample.class));
+  assertThat(describe(Sample.FIRST),equalTo(equalFirst));
+  AnnotationDescription.EnumerationValue equalSecond=mock(AnnotationDescription.EnumerationValue.class);
+  when(equalSecond.getValue()).thenReturn(Sample.SECOND.name());
+  when(equalSecond.getEnumerationType()).thenReturn(new TypeDescription.ForLoadedType(Sample.class));
+  assertThat(describe(Sample.SECOND),equalTo(equalSecond));
+  AnnotationDescription.EnumerationValue equalFirstTypeOnly=mock(AnnotationDescription.EnumerationValue.class);
+  when(equalFirstTypeOnly.getValue()).thenReturn(Sample.SECOND.name());
+  when(equalFirstTypeOnly.getEnumerationType()).thenReturn(new TypeDescription.ForLoadedType(Sample.class));
+  assertThat(describe(Sample.FIRST),not(equalTo(equalFirstTypeOnly)));
+  AnnotationDescription.EnumerationValue equalFirstNameOnly=mock(AnnotationDescription.EnumerationValue.class);
+  when(equalFirstNameOnly.getValue()).thenReturn(Sample.FIRST.name());
+  when(equalFirstNameOnly.getEnumerationType()).thenReturn(new TypeDescription.ForLoadedType(Other.class));
+  assertThat(describe(Sample.FIRST),not(equalTo(equalFirstNameOnly)));
+  assertThat(describe(Sample.FIRST),not(equalTo(equalSecond)));
+  assertThat(describe(Sample.FIRST),not(equalTo(new Object())));
+  assertThat(describe(Sample.FIRST),not(equalTo(null)));
 }

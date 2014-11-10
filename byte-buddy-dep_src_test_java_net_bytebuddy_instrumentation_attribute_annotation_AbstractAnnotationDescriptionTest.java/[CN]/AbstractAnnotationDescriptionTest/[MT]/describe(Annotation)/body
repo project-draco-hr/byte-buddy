@@ -1,0 +1,3 @@
+{
+  return describe(annotation,annotation == first ? FooSample.class : BarSample.class);
+}

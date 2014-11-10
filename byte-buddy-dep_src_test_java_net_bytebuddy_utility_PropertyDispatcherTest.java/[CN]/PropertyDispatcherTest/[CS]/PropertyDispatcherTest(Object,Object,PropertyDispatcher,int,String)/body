@@ -1,0 +1,7 @@
+{
+  this.value=value;
+  this.other=other;
+  this.expectedPropertyDispatcher=expectedPropertyDispatcher;
+  this.expectedHashCode=expectedHashCode;
+  this.expectedToString=expectedToString;
+}

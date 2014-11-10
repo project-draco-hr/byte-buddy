@@ -1,3 +1,0 @@
-{
-  return AnnotationDescription.ForLoadedAnnotation.of(Second.class.getAnnotation(Sample.class));
-}

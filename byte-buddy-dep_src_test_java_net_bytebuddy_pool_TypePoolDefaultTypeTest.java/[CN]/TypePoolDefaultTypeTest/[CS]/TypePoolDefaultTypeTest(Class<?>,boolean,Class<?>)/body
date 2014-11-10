@@ -1,5 +1,0 @@
-{
-  this.type=type;
-  this.array=array;
-  this.componentType=componentType == null ? null : new TypeDescription.ForLoadedType(componentType);
-}

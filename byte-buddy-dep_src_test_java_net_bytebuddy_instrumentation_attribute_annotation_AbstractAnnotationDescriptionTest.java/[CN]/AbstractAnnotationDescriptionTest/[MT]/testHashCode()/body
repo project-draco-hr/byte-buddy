@@ -1,4 +1,5 @@
 {
-  assertThat(firstValue().hashCode(),is(firstValue().hashCode()));
-  assertThat(firstValue().hashCode(),not(is(secondValue().hashCode())));
+  assertThat(describe(first).hashCode(),is(describe(first).hashCode()));
+  assertThat(describe(second).hashCode(),is(describe(second).hashCode()));
+  assertThat(describe(first).hashCode(),not(is(describe(second).hashCode())));
 }
