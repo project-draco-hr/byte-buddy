@@ -1,0 +1,9 @@
+{
+  AnnotationDescription annotationDescription=firstValue();
+  assertThat(annotationDescription,equalTo(annotationDescription));
+  assertThat(firstValue(),equalTo((AnnotationDescription)AnnotationDescription.ForLoadedAnnotation.of(first())));
+  assertThat(firstValue(),not(equalTo((AnnotationDescription)AnnotationDescription.ForLoadedAnnotation.of(second()))));
+  assertThat(firstValue(),not(equalTo(new Object())));
+  assertThat(firstValue(),not(equalTo(null)));
+  assertThat(firstValue(),not(equalTo(secondValue())));
+}

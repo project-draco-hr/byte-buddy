@@ -1,0 +1,4 @@
+{
+  when(methodDescription.getParameterTypes()).thenReturn(new TypeList.Empty());
+  new MethodAttributeAppender.ForLoadedConstructor(constructor).apply(methodVisitor,methodDescription);
+}

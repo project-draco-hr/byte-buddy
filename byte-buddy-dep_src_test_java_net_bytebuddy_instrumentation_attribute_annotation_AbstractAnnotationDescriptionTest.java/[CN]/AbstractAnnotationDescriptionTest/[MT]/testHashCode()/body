@@ -1,0 +1,4 @@
+{
+  assertThat(firstValue().hashCode(),is(firstValue().hashCode()));
+  assertThat(firstValue().hashCode(),not(is(secondValue().hashCode())));
+}

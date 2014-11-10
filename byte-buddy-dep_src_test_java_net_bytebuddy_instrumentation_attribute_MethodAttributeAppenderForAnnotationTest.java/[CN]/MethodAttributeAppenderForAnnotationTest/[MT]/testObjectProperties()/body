@@ -11,4 +11,5 @@
     }
   }
 ).apply();
+  ObjectPropertyAssertion.of(MethodAttributeAppender.ForAnnotation.Target.OnMethodParameter.class).apply();
 }

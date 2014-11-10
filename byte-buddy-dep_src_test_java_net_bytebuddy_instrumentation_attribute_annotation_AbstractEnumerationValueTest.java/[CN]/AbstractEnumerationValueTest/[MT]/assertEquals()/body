@@ -1,4 +1,10 @@
 {
+  AnnotationDescription.EnumerationValue enumerationValue=firstValue();
+  assertThat(enumerationValue,equalTo(enumerationValue));
+  AnnotationDescription.EnumerationValue otherType=mock(AnnotationDescription.EnumerationValue.class);
+  when(otherType.getEnumerationType()).thenReturn(mock(TypeDescription.class));
+  when(otherType.getValue()).thenReturn(first().name());
+  assertThat(firstValue(),not(equalTo(otherType)));
   assertThat(firstValue(),equalTo((AnnotationDescription.EnumerationValue)new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(first())));
   assertThat(firstValue(),not(equalTo((AnnotationDescription.EnumerationValue)new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(second()))));
   assertThat(firstValue(),not(equalTo(new Object())));

@@ -1,0 +1,3 @@
+{
+  assertThat(new FieldAttributeAppender.ForLoadedField(field).make(mock(TypeDescription.class)),is((FieldAttributeAppender)new FieldAttributeAppender.ForLoadedField(field)));
+}

@@ -1,0 +1,6 @@
+{
+  ObjectPropertyAssertion.of(AnnotationAppender.Target.OnField.class).apply();
+  ObjectPropertyAssertion.of(AnnotationAppender.Target.OnMethod.class).apply();
+  ObjectPropertyAssertion.of(AnnotationAppender.Target.OnMethodParameter.class).apply();
+  ObjectPropertyAssertion.of(AnnotationAppender.Target.OnType.class).apply();
+}
