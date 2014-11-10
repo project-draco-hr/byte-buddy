@@ -1,12 +1,9 @@
 {
-  ObjectPropertyAssertion.of(SubclassInstrumentationTarget.class).refine(new ObjectPropertyAssertion.Refinement<MethodLookupEngine.Finding>(){
+  ObjectPropertyAssertion.of(RebaseInstrumentationTarget.class).refine(new ObjectPropertyAssertion.Refinement<MethodLookupEngine.Finding>(){
     @Override public void apply(    MethodLookupEngine.Finding mock){
+      when(mock.getTypeDescription()).thenReturn(mock(TypeDescription.class));
       when(mock.getInvokableMethods()).thenReturn(new MethodList.Empty());
       when(mock.getInvokableDefaultMethods()).thenReturn(Collections.<TypeDescription,Set<MethodDescription>>emptyMap());
-      TypeDescription typeDescription=mock(TypeDescription.class);
-      when(mock.getTypeDescription()).thenReturn(typeDescription);
-      when(typeDescription.getSupertype()).thenReturn(typeDescription);
-      when(typeDescription.getDeclaredMethods()).thenReturn(new MethodList.Empty());
     }
   }
 ).refine(new ObjectPropertyAssertion.Refinement<BridgeMethodResolver.Factory>(){

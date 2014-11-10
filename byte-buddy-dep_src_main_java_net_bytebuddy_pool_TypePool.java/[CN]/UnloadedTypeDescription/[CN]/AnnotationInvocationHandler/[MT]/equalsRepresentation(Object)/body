@@ -3,7 +3,8 @@
     return false;
   }
   for (  Method method : annotationType.getDeclaredMethods()) {
-    if (!invoke(method).equals(method.invoke(other))) {
+    Object thisValue=invoke(method);
+    if (!PropertyDispatcher.of(thisValue.getClass()).equals(thisValue,method.invoke(other))) {
       return false;
     }
   }

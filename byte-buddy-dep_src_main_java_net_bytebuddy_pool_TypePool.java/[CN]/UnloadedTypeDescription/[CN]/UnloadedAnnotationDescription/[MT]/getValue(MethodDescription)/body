@@ -1,4 +1,7 @@
 {
+  if (!methodDescription.getDeclaringType().getDescriptor().equals(annotationDescriptor)) {
+    throw new IllegalArgumentException(methodDescription + " is not declared by " + getAnnotationType());
+  }
   AnnotationValue<?,?> annotationValue=values.get(methodDescription.getName());
   return annotationValue == null ? methodDescription.getDefaultValue() : annotationValue.resolve(typePool);
 }

@@ -1,7 +1,7 @@
 {
   StringBuilder toString=new StringBuilder();
   toString.append('@');
-  toString.append(annotationToken.getDescriptor().replace('/','.'));
+  toString.append(annotationToken.getDescriptor().replace('/','.'),1,annotationToken.getDescriptor().length() - 1);
   toString.append('(');
   boolean firstMember=true;
   for (  Map.Entry<String,AnnotationValue<?,?>> entry : annotationToken.getValues().entrySet()) {
@@ -13,7 +13,7 @@
     }
     toString.append(entry.getKey());
     toString.append('=');
-    toString.append(entry.getValue().toStringRepresentation());
+    toString.append(entry.getValue().toStringRepresentation(classLoader));
   }
   toString.append(')');
   return toString.toString();

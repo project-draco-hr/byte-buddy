@@ -1,0 +1,4 @@
+{
+  assertThat(describe(first).isSynthetic(),is(first.isSynthetic()));
+  assertThat(describe(second).isSynthetic(),is(second.isSynthetic()));
+}

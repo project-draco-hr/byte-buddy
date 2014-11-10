@@ -1,5 +1,5 @@
 {
-  StringBuilder toString=new StringBuilder(componentTypeReference.lookup()).append('[');
+  StringBuilder toString=new StringBuilder("[");
   boolean first=true;
   for (  AnnotationValue<?,?> annotationValue : value) {
     if (first) {
@@ -8,7 +8,7 @@
  else {
       toString.append(", ");
     }
-    toString.append(annotationValue.toStringRepresentation());
+    toString.append(annotationValue.toStringRepresentation(classLoader));
   }
   return toString.append(']').toString();
 }

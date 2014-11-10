@@ -4,11 +4,14 @@
   if (componentTypeDescription.represents(Class.class)) {
     componentType=TypeDescription.class;
   }
- else   if (componentTypeDescription.isAssignableFrom(Enum.class)) {
+ else   if (componentTypeDescription.isAssignableTo(Enum.class)) {
     componentType=AnnotationDescription.EnumerationValue.class;
   }
- else   if (componentTypeDescription.isAssignableFrom(Annotation.class)) {
+ else   if (componentTypeDescription.isAssignableTo(Annotation.class)) {
     componentType=AnnotationDescription.class;
+  }
+ else   if (componentTypeDescription.represents(String.class)) {
+    componentType=String.class;
   }
  else {
     throw new IllegalStateException("Unexpected complex array component type " + componentTypeDescription);
