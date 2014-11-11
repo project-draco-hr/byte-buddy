@@ -1,5 +1,0 @@
-{
-  StackManipulation.Size size=specialMethodInvocation.apply(methodVisitor,instrumentationContext);
-  assertThat(size.getSizeImpact(),is(0));
-  assertThat(size.getMaximalSize(),is(0));
-}

@@ -1,3 +1,3 @@
 {
-  return "DefaultMethodAnnotationTarget{" + "base=" + AbstractBase.this + ", methodTokens="+ methodTokens+ ", latentMethodMatcher="+ latentMethodMatcher+ ", instrumentation="+ instrumentation+ ", attributeAppenderFactory="+ attributeAppenderFactory+ '}';
+  return "DynamicType.Builder.AbstractBase.DefaultMethodAnnotationTarget{" + "base=" + AbstractBase.this + ", methodTokens="+ methodTokens+ ", latentMethodMatcher="+ latentMethodMatcher+ ", instrumentation="+ instrumentation+ ", attributeAppenderFactory="+ attributeAppenderFactory+ '}';
 }

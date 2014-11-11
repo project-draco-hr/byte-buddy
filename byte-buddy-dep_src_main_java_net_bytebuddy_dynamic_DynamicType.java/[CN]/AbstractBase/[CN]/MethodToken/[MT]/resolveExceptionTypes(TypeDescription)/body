@@ -1,0 +1,7 @@
+{
+  List<TypeDescription> exceptionTypes=new ArrayList<TypeDescription>(this.exceptionTypes.size());
+  for (  TypeDescription exceptionType : this.exceptionTypes) {
+    exceptionTypes.add(considerSubstitution(exceptionType,instrumentedType));
+  }
+  return exceptionTypes;
+}

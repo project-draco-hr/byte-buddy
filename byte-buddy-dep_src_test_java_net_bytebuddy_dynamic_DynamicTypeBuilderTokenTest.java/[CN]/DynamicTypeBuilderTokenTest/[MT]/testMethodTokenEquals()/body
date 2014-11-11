@@ -1,0 +1,22 @@
+{
+  DynamicType.Builder.AbstractBase.MethodToken equal=mock(DynamicType.Builder.AbstractBase.MethodToken.class);
+  when(equal.getInternalName()).thenReturn(FOO);
+  when(equal.getReturnType()).thenReturn(singleType);
+  when(equal.getParameterTypes()).thenReturn(parameterTypes);
+  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX),is(equal));
+  DynamicType.Builder.AbstractBase.MethodToken equalButName=mock(DynamicType.Builder.AbstractBase.MethodToken.class);
+  when(equalButName.getInternalName()).thenReturn(BAR);
+  when(equalButName.getReturnType()).thenReturn(singleType);
+  when(equalButName.getParameterTypes()).thenReturn(parameterTypes);
+  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX),not(is(equalButName)));
+  DynamicType.Builder.AbstractBase.MethodToken equalButReturnType=mock(DynamicType.Builder.AbstractBase.MethodToken.class);
+  when(equalButReturnType.getInternalName()).thenReturn(BAR);
+  when(equalButReturnType.getReturnType()).thenReturn(mock(TypeDescription.class));
+  when(equalButReturnType.getParameterTypes()).thenReturn(parameterTypes);
+  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX),not(is(equalButReturnType)));
+  DynamicType.Builder.AbstractBase.MethodToken equalButParameterType=mock(DynamicType.Builder.AbstractBase.MethodToken.class);
+  when(equalButParameterType.getInternalName()).thenReturn(BAR);
+  when(equalButParameterType.getReturnType()).thenReturn(singleType);
+  when(equalButParameterType.getParameterTypes()).thenReturn(new TypeList.Empty());
+  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX),not(is(equalButParameterType)));
+}
