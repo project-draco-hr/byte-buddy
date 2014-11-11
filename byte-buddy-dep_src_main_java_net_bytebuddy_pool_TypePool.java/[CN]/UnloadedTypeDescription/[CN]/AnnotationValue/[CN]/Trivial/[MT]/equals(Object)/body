@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && propertyDispatcher.equals(value,((Trivial)other).value);
-}

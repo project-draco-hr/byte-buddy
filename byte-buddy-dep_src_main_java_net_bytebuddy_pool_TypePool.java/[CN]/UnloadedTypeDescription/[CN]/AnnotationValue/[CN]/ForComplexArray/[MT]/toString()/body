@@ -1,3 +1,0 @@
-{
-  return "TypePool.UnloadedTypeDescription.AnnotationValue.ForComplexArray{" + "value=" + value + ", componentTypeReference="+ componentTypeReference+ '}';
-}

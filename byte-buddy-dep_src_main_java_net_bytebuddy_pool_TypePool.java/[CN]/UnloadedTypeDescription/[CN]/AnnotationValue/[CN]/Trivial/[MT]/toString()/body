@@ -1,3 +1,0 @@
-{
-  return "TypePool.UnloadedTypeDescription.AnnotationValue.Trivial{" + "value=" + value + "propertyDispatcher="+ propertyDispatcher+ '}';
-}

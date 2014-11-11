@@ -1,3 +1,0 @@
-{
-  return typePool.describe(name);
-}
