@@ -1,0 +1,4 @@
+{
+  assertThat(describe(SampleClass.class).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.ForLoadedAnnotation(SampleClass.class.getDeclaredAnnotations())));
+  assertThat(describe(SampleInterface.class).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+}

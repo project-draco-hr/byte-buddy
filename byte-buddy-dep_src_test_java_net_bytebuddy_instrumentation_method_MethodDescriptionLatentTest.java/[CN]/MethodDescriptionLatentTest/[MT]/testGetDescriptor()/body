@@ -1,4 +1,0 @@
-{
-  assertThat(latentMethod.getDescriptor(),is(DESCRIPTOR));
-  assertThat(latentConstructor.getDescriptor(),is(DESCRIPTOR));
-}

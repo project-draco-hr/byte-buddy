@@ -1,3 +1,0 @@
-{
-  return (Type.getInternalName(method.getDeclaringClass()) + "." + method.getName()+ Type.getMethodDescriptor(method)).hashCode();
-}

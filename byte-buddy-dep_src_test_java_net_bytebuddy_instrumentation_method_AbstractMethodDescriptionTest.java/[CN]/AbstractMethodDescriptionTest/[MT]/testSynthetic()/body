@@ -1,0 +1,7 @@
+{
+  assertThat(describe(firstMethod).isSynthetic(),is(firstMethod.isSynthetic()));
+  assertThat(describe(secondMethod).isSynthetic(),is(secondMethod.isSynthetic()));
+  assertThat(describe(thirdMethod).isSynthetic(),is(thirdMethod.isSynthetic()));
+  assertThat(describe(firstConstructor).isSynthetic(),is(firstConstructor.isSynthetic()));
+  assertThat(describe(secondConstructor).isSynthetic(),is(secondConstructor.isSynthetic()));
+}

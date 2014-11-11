@@ -1,0 +1,3 @@
+{
+  assertThat((Boolean)method.invoke(simpleModifierReviewable),is(true));
+}

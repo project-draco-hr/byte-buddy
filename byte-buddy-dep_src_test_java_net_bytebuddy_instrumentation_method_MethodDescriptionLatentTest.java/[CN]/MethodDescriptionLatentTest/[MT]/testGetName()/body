@@ -1,4 +1,0 @@
-{
-  assertThat(latentMethod.getName(),is(FOO));
-  assertThat(latentConstructor.getName(),is(BAR));
-}

@@ -1,0 +1,7 @@
+{
+  assertThat(describe(firstMethod).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+  assertThat(describe(secondMethod).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+  assertThat(describe(thirdMethod).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.ForLoadedAnnotation(thirdMethod.getDeclaredAnnotations())));
+  assertThat(describe(firstConstructor).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+  assertThat(describe(secondConstructor).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.ForLoadedAnnotation(secondConstructor.getDeclaredAnnotations())));
+}

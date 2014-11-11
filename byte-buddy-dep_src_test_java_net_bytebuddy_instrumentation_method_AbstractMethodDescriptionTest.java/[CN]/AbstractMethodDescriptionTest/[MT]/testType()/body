@@ -1,0 +1,8 @@
+{
+  assertThat(describe(firstMethod).isMethod(),is(true));
+  assertThat(describe(firstMethod).isConstructor(),is(false));
+  assertThat(describe(firstMethod).isTypeInitializer(),is(false));
+  assertThat(describe(firstConstructor).isMethod(),is(false));
+  assertThat(describe(firstConstructor).isConstructor(),is(true));
+  assertThat(describe(firstConstructor).isTypeInitializer(),is(false));
+}

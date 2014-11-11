@@ -1,4 +1,0 @@
-{
-  assertThat(latentMethod.getStackSize(),is(3));
-  assertThat(latentConstructor.getStackSize(),is(3));
-}

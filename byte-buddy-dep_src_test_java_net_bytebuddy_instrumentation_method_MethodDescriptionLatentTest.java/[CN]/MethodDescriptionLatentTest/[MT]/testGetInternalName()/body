@@ -1,4 +1,0 @@
-{
-  assertThat(latentMethod.getInternalName(),is(FOO));
-  assertThat(latentConstructor.getInternalName(),is(MethodDescription.CONSTRUCTOR_INTERNAL_NAME));
-}

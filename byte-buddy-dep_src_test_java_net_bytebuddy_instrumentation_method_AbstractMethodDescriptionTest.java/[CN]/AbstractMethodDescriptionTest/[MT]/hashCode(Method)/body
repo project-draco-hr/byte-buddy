@@ -1,0 +1,6 @@
+{
+  int hashCode=new TypeDescription.ForLoadedType(method.getDeclaringClass()).hashCode();
+  hashCode=31 * hashCode + method.getName().hashCode();
+  hashCode=31 * hashCode + new TypeDescription.ForLoadedType(method.getReturnType()).hashCode();
+  return 31 * hashCode + new TypeList.ForLoadedType(method.getParameterTypes()).hashCode();
+}

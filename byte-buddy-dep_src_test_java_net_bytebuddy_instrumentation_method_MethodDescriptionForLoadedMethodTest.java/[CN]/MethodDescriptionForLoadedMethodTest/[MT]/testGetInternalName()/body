@@ -1,5 +1,0 @@
-{
-  assertThat(objectHashCode.getInternalName(),is(HASH_CODE));
-  assertThat(integerIntValue.getInternalName(),is(INT_VALUE));
-  assertThat(doubleDoubleValue.getInternalName(),is(LONG_BITS_TO_DOUBLE));
-}

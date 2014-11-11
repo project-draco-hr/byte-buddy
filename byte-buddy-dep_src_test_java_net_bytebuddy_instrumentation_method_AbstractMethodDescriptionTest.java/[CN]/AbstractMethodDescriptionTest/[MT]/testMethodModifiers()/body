@@ -1,0 +1,7 @@
+{
+  assertThat(describe(firstMethod).getModifiers(),is(firstMethod.getModifiers()));
+  assertThat(describe(secondMethod).getModifiers(),is(secondMethod.getModifiers()));
+  assertThat(describe(thirdMethod).getModifiers(),is(thirdMethod.getModifiers()));
+  assertThat(describe(firstConstructor).getModifiers(),is(firstConstructor.getModifiers()));
+  assertThat(describe(secondConstructor).getModifiers(),is(secondConstructor.getModifiers()));
+}

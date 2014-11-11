@@ -1,4 +1,5 @@
 {
   assertThat(describe(Sample.FIRST).getEnumerationType().represents(Sample.class),is(true));
-  assertThat(describe(Other.INSTANCE).getEnumerationType().represents(Other.class),is(true));
+  assertThat(describe(Sample.SECOND).getEnumerationType().represents(Sample.class),is(true));
+  assertThat(describe(Sample.FIRST).getEnumerationType().represents(Other.class),is(false));
 }

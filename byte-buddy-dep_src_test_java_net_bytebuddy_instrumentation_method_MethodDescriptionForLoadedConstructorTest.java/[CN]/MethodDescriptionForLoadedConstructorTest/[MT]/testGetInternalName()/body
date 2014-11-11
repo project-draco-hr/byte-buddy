@@ -1,5 +1,0 @@
-{
-  assertThat(objectDefaultConstructor.getInternalName(),is(MethodDescription.CONSTRUCTOR_INTERNAL_NAME));
-  assertThat(stringDefaultConstructor.getInternalName(),is(MethodDescription.CONSTRUCTOR_INTERNAL_NAME));
-  assertThat(stringSingleArgConstructor.getInternalName(),is(MethodDescription.CONSTRUCTOR_INTERNAL_NAME));
-}

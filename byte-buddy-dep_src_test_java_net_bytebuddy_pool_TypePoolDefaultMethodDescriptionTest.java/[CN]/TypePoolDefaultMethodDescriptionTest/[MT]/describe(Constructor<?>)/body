@@ -1,0 +1,3 @@
+{
+  return typePool.describe(constructor.getDeclaringClass().getName()).getDeclaredMethods().filter(is(constructor)).getOnly();
+}

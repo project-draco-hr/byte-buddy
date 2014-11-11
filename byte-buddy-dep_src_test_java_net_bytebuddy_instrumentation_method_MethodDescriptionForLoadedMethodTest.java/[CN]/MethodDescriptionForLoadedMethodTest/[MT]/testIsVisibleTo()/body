@@ -1,7 +1,0 @@
-{
-  assertThat(objectClone.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(true));
-  assertThat(integerIntValue.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(true));
-  assertThat(privateMethod.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(packagePrivateMethod.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(protectedMethod.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
-}

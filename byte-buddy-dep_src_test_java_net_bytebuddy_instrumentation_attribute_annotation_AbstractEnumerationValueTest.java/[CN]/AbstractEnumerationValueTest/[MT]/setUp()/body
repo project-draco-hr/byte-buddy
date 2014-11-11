@@ -1,0 +1,3 @@
+{
+  annotationMethod=Carrier.class.getDeclaredMethod("value");
+}

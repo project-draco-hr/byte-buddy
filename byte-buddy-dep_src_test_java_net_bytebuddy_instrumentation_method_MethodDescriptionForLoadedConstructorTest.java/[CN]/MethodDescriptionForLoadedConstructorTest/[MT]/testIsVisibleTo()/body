@@ -1,4 +1,0 @@
-{
-  assertThat(objectDefaultConstructor.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(true));
-  assertThat(packagePrivateConstructor.isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
-}

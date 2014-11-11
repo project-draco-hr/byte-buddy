@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{Opcodes.ACC_ABSTRACT,"isAbstract"},{Opcodes.ACC_ANNOTATION,"isAnnotation"},{Opcodes.ACC_BRIDGE,"isBridge"},{Opcodes.ACC_DEPRECATED,"isDeprecated"},{Opcodes.ACC_ENUM,"isEnum"},{Opcodes.ACC_FINAL,"isFinal"},{Opcodes.ACC_INTERFACE,"isInterface"},{Opcodes.ACC_MANDATED,"isMandated"},{Opcodes.ACC_NATIVE,"isNative"},{Opcodes.ACC_PRIVATE,"isPrivate"},{Opcodes.ACC_PROTECTED,"isProtected"},{Opcodes.ACC_PUBLIC,"isPublic"},{Opcodes.ACC_STATIC,"isStatic"},{Opcodes.ACC_STRICT,"isStrict"},{Opcodes.ACC_SUPER,"isSuper"},{Opcodes.ACC_SYNCHRONIZED,"isSynchronized"},{Opcodes.ACC_SYNTHETIC,"isSynthetic"},{Opcodes.ACC_TRANSIENT,"isTransient"},{Opcodes.ACC_VARARGS,"isVarArgs"},{Opcodes.ACC_VOLATILE,"isVolatile"}});
+}

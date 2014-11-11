@@ -1,0 +1,15 @@
+{
+  assertThat(describe(firstMethod),not(equalTo(describe(secondMethod))));
+  assertThat(describe(firstMethod),not(equalTo(describe(thirdMethod))));
+  assertThat(describe(firstMethod),equalTo(describe(firstMethod)));
+  assertThat(describe(secondMethod),equalTo(describe(secondMethod)));
+  assertThat(describe(thirdMethod),equalTo(describe(thirdMethod)));
+  assertThat(describe(firstMethod),is((MethodDescription)new MethodDescription.ForLoadedMethod(firstMethod)));
+  assertThat(describe(secondMethod),is((MethodDescription)new MethodDescription.ForLoadedMethod(secondMethod)));
+  assertThat(describe(thirdMethod),is((MethodDescription)new MethodDescription.ForLoadedMethod(thirdMethod)));
+  assertThat(describe(firstConstructor),not(equalTo(describe(secondConstructor))));
+  assertThat(describe(firstConstructor),equalTo(describe(firstConstructor)));
+  assertThat(describe(secondConstructor),equalTo(describe(secondConstructor)));
+  assertThat(describe(firstConstructor),is((MethodDescription)new MethodDescription.ForLoadedConstructor(firstConstructor)));
+  assertThat(describe(secondConstructor),is((MethodDescription)new MethodDescription.ForLoadedConstructor(secondConstructor)));
+}

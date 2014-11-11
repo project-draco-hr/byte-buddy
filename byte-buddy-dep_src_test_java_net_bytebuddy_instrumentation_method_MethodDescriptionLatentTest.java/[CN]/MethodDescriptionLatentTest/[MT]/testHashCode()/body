@@ -1,4 +1,0 @@
-{
-  assertThat(latentMethod.hashCode(),is((BARS + "." + FOO+ DESCRIPTOR).hashCode()));
-  assertThat(latentConstructor.hashCode(),is((BARS + "." + MethodDescription.CONSTRUCTOR_INTERNAL_NAME+ DESCRIPTOR).hashCode()));
-}

@@ -1,5 +1,0 @@
-{
-  assertThat(objectHashCode.getStackSize(),is(1));
-  assertThat(integerIntValue.getStackSize(),is(1));
-  assertThat(doubleDoubleValue.getStackSize(),is(2));
-}

@@ -1,5 +1,0 @@
-{
-  assertThat(objectHashCode.hashCode(),is(hashCode(Object.class.getMethod(HASH_CODE))));
-  assertThat(integerIntValue.hashCode(),is(hashCode(Integer.class.getMethod(INT_VALUE))));
-  assertThat(doubleDoubleValue.hashCode(),is(hashCode(Double.class.getMethod(LONG_BITS_TO_DOUBLE,long.class))));
-}
