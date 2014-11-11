@@ -1,3 +1,0 @@
-{
-  return propertyDispatcher.toString(method.getDefaultValue());
-}

@@ -1,0 +1,8 @@
+{
+  super(ASM_VERSION);
+  declarationContext=UnloadedTypeDescription.DeclarationContext.SelfDeclared.INSTANCE;
+  anonymousType=false;
+  annotationTokens=new LinkedList<UnloadedTypeDescription.AnnotationToken>();
+  fieldTokens=new LinkedList<UnloadedTypeDescription.FieldToken>();
+  methodTokens=new LinkedList<UnloadedTypeDescription.MethodToken>();
+}

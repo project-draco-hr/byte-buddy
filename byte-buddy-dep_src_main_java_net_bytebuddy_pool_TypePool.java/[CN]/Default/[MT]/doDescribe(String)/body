@@ -1,0 +1,7 @@
+{
+  byte[] binaryRepresentation=typeSourceLocator.locate(name);
+  if (binaryRepresentation == null) {
+    throw new IllegalArgumentException("Cannot locate " + name + " using "+ typeSourceLocator);
+  }
+  return parse(binaryRepresentation);
+}

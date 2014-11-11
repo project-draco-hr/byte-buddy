@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  DeclaredInMethod that=(DeclaredInMethod)other;
+  return methodDescriptor.equals(that.methodDescriptor) && methodName.equals(that.methodName) && name.equals(that.name);
+}

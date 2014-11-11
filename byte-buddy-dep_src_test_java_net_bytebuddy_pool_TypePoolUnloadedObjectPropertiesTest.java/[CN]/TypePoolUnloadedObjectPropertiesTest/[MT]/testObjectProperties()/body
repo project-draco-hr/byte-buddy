@@ -1,0 +1,15 @@
+{
+  ObjectPropertyAssertion.of(TypePool.UnloadedTypeDescription.FieldToken.class).apply();
+  ObjectPropertyAssertion.of(TypePool.UnloadedTypeDescription.MethodToken.class).apply();
+  ObjectPropertyAssertion.of(TypePool.UnloadedTypeDescription.AnnotationToken.class).apply();
+  ObjectPropertyAssertion.of(TypePool.UnloadedTypeDescription.AnnotationValue.Trivial.class).apply();
+  ObjectPropertyAssertion.of(TypePool.UnloadedTypeDescription.AnnotationValue.ForAnnotation.class).apply();
+  ObjectPropertyAssertion.of(TypePool.UnloadedTypeDescription.AnnotationValue.ForEnumeration.class).apply();
+  ObjectPropertyAssertion.of(TypePool.UnloadedTypeDescription.AnnotationValue.ForComplexArray.class).apply();
+  ObjectPropertyAssertion.of(TypePool.UnloadedTypeDescription.AnnotationValue.ForType.class).refine(new ObjectPropertyAssertion.Refinement<Type>(){
+    @Override public void apply(    Type mock){
+      when(mock.getClassName()).thenReturn("" + System.identityHashCode(mock));
+    }
+  }
+).apply();
+}

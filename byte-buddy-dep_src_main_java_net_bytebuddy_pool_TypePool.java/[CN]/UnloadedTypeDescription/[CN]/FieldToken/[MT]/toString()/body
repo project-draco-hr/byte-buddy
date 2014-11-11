@@ -1,0 +1,3 @@
+{
+  return "TypePool.UnloadedTypeDescription.FieldToken{" + "modifiers=" + modifiers + ", name='"+ name+ '\''+ ", descriptor='"+ descriptor+ '\''+ ", annotationTokens="+ annotationTokens+ '}';
+}

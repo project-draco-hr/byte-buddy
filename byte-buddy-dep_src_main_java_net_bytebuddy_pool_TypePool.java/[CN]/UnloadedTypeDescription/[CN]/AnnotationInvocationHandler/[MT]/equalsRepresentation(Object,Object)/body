@@ -1,0 +1,18 @@
+{
+  if (!annotationType.isInstance(other)) {
+    return false;
+  }
+ else   if (Proxy.isProxyClass(other.getClass())) {
+    InvocationHandler invocationHandler=Proxy.getInvocationHandler(other);
+    if (invocationHandler instanceof AnnotationInvocationHandler) {
+      return invocationHandler.equals(this);
+    }
+  }
+  for (  Method method : annotationType.getDeclaredMethods()) {
+    Object thisValue=invoke(method);
+    if (!PropertyDispatcher.of(thisValue.getClass()).equals(thisValue,method.invoke(other))) {
+      return false;
+    }
+  }
+  return true;
+}

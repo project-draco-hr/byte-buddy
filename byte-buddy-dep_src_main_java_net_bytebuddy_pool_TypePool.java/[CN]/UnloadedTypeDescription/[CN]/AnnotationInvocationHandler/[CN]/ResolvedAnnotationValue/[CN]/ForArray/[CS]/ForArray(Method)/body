@@ -1,4 +1,0 @@
-{
-  super(method);
-  propertyDispatcher=PropertyDispatcher.of(method.getReturnType().getComponentType());
-}

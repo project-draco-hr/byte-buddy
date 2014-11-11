@@ -1,0 +1,5 @@
+{
+  assertThat(typeList.size(),is(2));
+  assertThat(typeList.get(0),is((TypeDescription)new TypeDescription.ForLoadedType(Serializable.class)));
+  assertThat(typeList.get(1),is((TypeDescription)new TypeDescription.ForLoadedType(Runnable.class)));
+}

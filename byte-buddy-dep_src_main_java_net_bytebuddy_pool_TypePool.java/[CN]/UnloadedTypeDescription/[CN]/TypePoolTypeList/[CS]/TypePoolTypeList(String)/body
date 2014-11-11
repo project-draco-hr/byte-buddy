@@ -5,7 +5,7 @@
   int index=0, stackSize=0;
   for (  Type aParameterType : parameterType) {
     name[index]=aParameterType.getSort() == Type.ARRAY ? aParameterType.getInternalName().replace('/','.') : aParameterType.getClassName();
-    internalName[index]=ByteBuddyCommons.toInternalName(aParameterType);
+    internalName[index]=aParameterType.getSort() == Type.ARRAY ? aParameterType.getInternalName().replace('/','.') : aParameterType.getClassName();
     stackSize+=aParameterType.getSize();
     index++;
   }

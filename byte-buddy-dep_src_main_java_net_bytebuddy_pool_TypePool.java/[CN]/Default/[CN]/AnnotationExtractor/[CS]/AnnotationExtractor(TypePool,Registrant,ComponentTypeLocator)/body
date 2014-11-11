@@ -1,0 +1,6 @@
+{
+  super(ASM_VERSION);
+  this.typePool=typePool;
+  this.registrant=registrant;
+  this.componentTypeLocator=componentTypeLocator;
+}

@@ -1,3 +1,4 @@
 {
   this.value=value;
+  propertyDispatcher=PropertyDispatcher.of(value.getClass());
 }

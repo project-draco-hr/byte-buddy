@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(TypePool.UnloadedTypeDescription.DeclarationContext.DeclaredInType.class).apply();
+  ObjectPropertyAssertion.of(TypePool.UnloadedTypeDescription.DeclarationContext.DeclaredInMethod.class).apply();
+}

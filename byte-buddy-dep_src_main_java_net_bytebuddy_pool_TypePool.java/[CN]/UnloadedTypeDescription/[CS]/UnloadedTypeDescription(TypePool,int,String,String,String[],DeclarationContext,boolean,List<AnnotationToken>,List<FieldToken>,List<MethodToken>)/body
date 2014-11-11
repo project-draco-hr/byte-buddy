@@ -3,16 +3,7 @@
   this.modifiers=modifiers;
   this.name=name.replace('/','.');
   this.superTypeName=superTypeName == null ? null : superTypeName.replace('/','.');
-  if (interfaceName != null) {
-    this.interfaceName=new String[interfaceName.length];
-    int index=0;
-    for (    String anInterfaceName : interfaceName) {
-      this.interfaceName[index++]=anInterfaceName.replace('/','.');
-    }
-  }
- else {
-    this.interfaceName=null;
-  }
+  this.interfaceInternalName=interfaceName;
   this.declarationContext=declarationContext;
   this.anonymousType=anonymousType;
   declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());

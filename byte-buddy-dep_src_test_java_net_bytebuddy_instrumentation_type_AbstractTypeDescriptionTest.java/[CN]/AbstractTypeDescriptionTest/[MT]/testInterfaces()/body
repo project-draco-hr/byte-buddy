@@ -5,4 +5,5 @@
   assertThat(describe(SampleInterfaceImplementation.class).getInterfaces(),is((TypeList)new TypeList.ForLoadedType(SampleInterface.class)));
   assertThat(describe(SampleIndirectInterfaceImplementation.class).getInterfaces(),is((TypeList)new TypeList.Empty()));
   assertThat(describe(SampleTransitiveInterfaceImplementation.class).getInterfaces(),is((TypeList)new TypeList.ForLoadedType(SampleTransitiveInterface.class)));
+  assertThat(describe(Object[].class).getInterfaces(),is((TypeList)new TypeList.ForLoadedType(Cloneable.class,Serializable.class)));
 }

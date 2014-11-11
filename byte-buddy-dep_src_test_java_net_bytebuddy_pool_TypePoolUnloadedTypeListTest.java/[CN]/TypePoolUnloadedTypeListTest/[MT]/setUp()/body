@@ -1,0 +1,4 @@
+{
+  typePool=TypePool.Default.ofClassPath();
+  typeList=typePool.describe(Sample.class.getName()).getInterfaces();
+}

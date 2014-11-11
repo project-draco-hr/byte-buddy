@@ -1,0 +1,3 @@
+{
+  return "TypePool.UnloadedTypeDescription.AnnotationToken{" + "descriptor='" + descriptor + '\''+ ", values="+ values+ '}';
+}

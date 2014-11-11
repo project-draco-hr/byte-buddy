@@ -1,0 +1,3 @@
+{
+  methodTokens.add(new UnloadedTypeDescription.MethodToken(modifiers,internalName,descriptor,exceptionName,annotationTokens,parameterAnnotationTokens,defaultValue));
+}

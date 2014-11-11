@@ -1,0 +1,5 @@
+{
+class ConstructorType {
+  }
+  constructorType=ConstructorType.class;
+}

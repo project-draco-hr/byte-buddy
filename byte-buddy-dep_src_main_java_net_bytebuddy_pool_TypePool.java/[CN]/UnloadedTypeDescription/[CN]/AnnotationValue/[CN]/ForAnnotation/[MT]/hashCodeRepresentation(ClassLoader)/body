@@ -1,7 +1,0 @@
-{
-  int hashCode=0;
-  for (  Map.Entry<String,AnnotationValue<?,?>> entry : annotationToken.getValues().entrySet()) {
-    hashCode+=(127 * entry.getKey().hashCode()) ^ entry.getValue().hashCodeRepresentation(classLoader);
-  }
-  return hashCode;
-}

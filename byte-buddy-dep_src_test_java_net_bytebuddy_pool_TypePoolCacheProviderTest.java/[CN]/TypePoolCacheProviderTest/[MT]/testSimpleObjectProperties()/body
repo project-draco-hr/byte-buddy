@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypePool.CacheProvider.Simple.class).apply(new TypePool.CacheProvider.Simple());
+}

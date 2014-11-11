@@ -1,7 +1,7 @@
 {
   for (  Generator<?> generator : generators) {
     ParameterizedType generic=(ParameterizedType)generator.getClass().getGenericInterfaces()[0];
-    Class<?> restrained=(Class<?>)generic.getActualTypeArguments()[0];
+    Class<?> restrained=generic.getActualTypeArguments()[0] instanceof ParameterizedType ? (Class<?>)((ParameterizedType)generic.getActualTypeArguments()[0]).getRawType() : (Class<?>)generic.getActualTypeArguments()[0];
     if (type.isAssignableFrom(restrained)) {
       type=generator.generate();
     }

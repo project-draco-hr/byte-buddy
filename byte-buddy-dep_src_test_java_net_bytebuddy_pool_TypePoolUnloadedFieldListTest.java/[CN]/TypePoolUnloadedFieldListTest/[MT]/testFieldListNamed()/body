@@ -1,0 +1,4 @@
+{
+  FieldDescription fieldDescription=fieldList.named("first");
+  assertThat(fieldDescription,is(is((FieldDescription)new FieldDescription.ForLoadedField(Sample.class.getDeclaredField("first")))));
+}

@@ -1,0 +1,3 @@
+{
+  return new AnnotationExtractor(typePool,new ArrayLookup(name,componentTypeLocator.bind(name)),ComponentTypeLocator.Illegal.INSTANCE);
+}

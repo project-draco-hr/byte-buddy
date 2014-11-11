@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  AnnotationInvocationHandler that=(AnnotationInvocationHandler)other;
+  return annotationType.equals(that.annotationType) && classLoader.equals(that.classLoader) && values.equals(that.values);
+}

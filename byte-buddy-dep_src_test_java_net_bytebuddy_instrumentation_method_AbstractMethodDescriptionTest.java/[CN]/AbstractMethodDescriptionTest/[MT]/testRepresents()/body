@@ -1,0 +1,12 @@
+{
+  assertThat(describe(firstMethod).represents(firstMethod),is(true));
+  assertThat(describe(firstMethod).represents(secondMethod),is(false));
+  assertThat(describe(firstMethod).represents(thirdMethod),is(false));
+  assertThat(describe(firstMethod).represents(firstConstructor),is(false));
+  assertThat(describe(firstMethod).represents(secondConstructor),is(false));
+  assertThat(describe(firstConstructor).represents(firstConstructor),is(true));
+  assertThat(describe(firstConstructor).represents(secondConstructor),is(false));
+  assertThat(describe(firstConstructor).represents(firstMethod),is(false));
+  assertThat(describe(firstConstructor).represents(secondMethod),is(false));
+  assertThat(describe(firstConstructor).represents(thirdMethod),is(false));
+}

@@ -1,0 +1,3 @@
+{
+  return "TypePool.UnloadedTypeDescription.AnnotationValue.ForEnumeration{" + "descriptor='" + descriptor + '\''+ ", value='"+ value+ '\''+ '}';
+}

@@ -1,0 +1,5 @@
+{
+  this.descriptor=descriptor;
+  this.index=index;
+  values=new HashMap<String,UnloadedTypeDescription.AnnotationValue<?,?>>();
+}

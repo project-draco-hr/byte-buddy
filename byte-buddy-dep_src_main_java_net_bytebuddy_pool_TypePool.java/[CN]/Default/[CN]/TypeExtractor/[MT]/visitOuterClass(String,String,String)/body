@@ -1,0 +1,8 @@
+{
+  if (methodName != null) {
+    declarationContext=new UnloadedTypeDescription.DeclarationContext.DeclaredInMethod(typeName,methodName,methodDescriptor);
+  }
+ else   if (typeName != null) {
+    declarationContext=new UnloadedTypeDescription.DeclarationContext.DeclaredInType(typeName);
+  }
+}

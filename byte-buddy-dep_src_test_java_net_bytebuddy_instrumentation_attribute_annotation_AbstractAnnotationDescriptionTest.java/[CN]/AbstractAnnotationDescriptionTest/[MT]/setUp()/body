@@ -1,4 +1,6 @@
 {
   first=FooSample.class.getAnnotation(Sample.class);
   second=BarSample.class.getAnnotation(Sample.class);
+  defaultFirst=DefaultSample.class.getAnnotation(SampleDefault.class);
+  defaultSecond=NonDefaultSample.class.getAnnotation(SampleDefault.class);
 }

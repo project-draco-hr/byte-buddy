@@ -1,0 +1,13 @@
+{
+  UnloadedTypeDescription.AnnotationValue<?,?> annotationValue;
+  if (value instanceof Type) {
+    annotationValue=new UnloadedTypeDescription.AnnotationValue.ForType((Type)value);
+  }
+ else   if (value.getClass().isArray()) {
+    annotationValue=new UnloadedTypeDescription.AnnotationValue.Trivial<Object>(value);
+  }
+ else {
+    annotationValue=new UnloadedTypeDescription.AnnotationValue.Trivial<Object>(value);
+  }
+  registrant.register(name,annotationValue);
+}

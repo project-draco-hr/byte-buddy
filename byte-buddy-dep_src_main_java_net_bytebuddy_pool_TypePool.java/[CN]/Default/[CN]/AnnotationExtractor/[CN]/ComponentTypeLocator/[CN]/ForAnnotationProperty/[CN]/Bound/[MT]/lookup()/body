@@ -1,0 +1,3 @@
+{
+  return typePool.describe(annotationName).getDeclaredMethods().filter(named(name)).getOnly().getReturnType().getComponentType().getName();
+}

@@ -13,14 +13,9 @@
   for (int index=0; index < parameterTypes.size(); index++) {
     List<AnnotationToken> tokens=parameterAnnotationTokens.get(index);
     List<AnnotationDescription> annotationDescriptions;
-    if (tokens == null) {
-      annotationDescriptions=new AnnotationList.Empty();
-    }
- else {
-      annotationDescriptions=new ArrayList<AnnotationDescription>(tokens.size());
-      for (      AnnotationToken annotationToken : tokens) {
-        annotationDescriptions.add(annotationToken.toAnnotationDescription(typePool));
-      }
+    annotationDescriptions=new ArrayList<AnnotationDescription>(tokens.size());
+    for (    AnnotationToken annotationToken : tokens) {
+      annotationDescriptions.add(annotationToken.toAnnotationDescription(typePool));
     }
     declaredParameterAnnotations.add(annotationDescriptions);
   }
