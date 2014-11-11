@@ -1,34 +1,34 @@
 {
   if (fixedValue == null) {
-    return new ForPoolValue(NullConstant.INSTANCE,Object.class,defaultAssigner(),true);
+    return new ForPoolValue(NullConstant.INSTANCE,new TypeDescription.ForLoadedType(Object.class),defaultAssigner(),true);
   }
   Class<?> type=fixedValue.getClass();
   if (type == String.class) {
-    return new ForPoolValue(new TextConstant((String)fixedValue),String.class,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(new TextConstant((String)fixedValue),new TypeDescription.ForLoadedType(String.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else   if (type == Boolean.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Boolean)fixedValue),boolean.class,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(IntegerConstant.forValue((Boolean)fixedValue),new TypeDescription.ForLoadedType(boolean.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else   if (type == Byte.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Byte)fixedValue),byte.class,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(IntegerConstant.forValue((Byte)fixedValue),new TypeDescription.ForLoadedType(byte.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else   if (type == Short.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Short)fixedValue),short.class,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(IntegerConstant.forValue((Short)fixedValue),new TypeDescription.ForLoadedType(short.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else   if (type == Character.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Character)fixedValue),char.class,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(IntegerConstant.forValue((Character)fixedValue),new TypeDescription.ForLoadedType(char.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else   if (type == Integer.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Integer)fixedValue),int.class,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(IntegerConstant.forValue((Integer)fixedValue),new TypeDescription.ForLoadedType(int.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else   if (type == Long.class) {
-    return new ForPoolValue(LongConstant.forValue((Long)fixedValue),long.class,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(LongConstant.forValue((Long)fixedValue),new TypeDescription.ForLoadedType(long.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else   if (type == Float.class) {
-    return new ForPoolValue(FloatConstant.forValue((Float)fixedValue),float.class,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(FloatConstant.forValue((Float)fixedValue),new TypeDescription.ForLoadedType(float.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else   if (type == Double.class) {
-    return new ForPoolValue(DoubleConstant.forValue((Double)fixedValue),double.class,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(DoubleConstant.forValue((Double)fixedValue),new TypeDescription.ForLoadedType(double.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else {
     return reference(fixedValue);

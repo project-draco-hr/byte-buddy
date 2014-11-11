@@ -1,0 +1,6 @@
+{
+  ObjectPropertyAssertion.of(InvocationHandlerAdapter.ForInstanceDelegation.class).apply();
+  ObjectPropertyAssertion.of(InvocationHandlerAdapter.ForInstanceDelegation.Appender.class).apply();
+  ObjectPropertyAssertion.of(InvocationHandlerAdapter.ForStaticDelegation.class).skipSynthetic().apply();
+  ObjectPropertyAssertion.of(InvocationHandlerAdapter.ForStaticDelegation.Appender.class).apply();
+}

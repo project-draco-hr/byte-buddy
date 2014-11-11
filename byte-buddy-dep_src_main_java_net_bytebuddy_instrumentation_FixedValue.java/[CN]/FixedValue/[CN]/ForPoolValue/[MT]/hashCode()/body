@@ -1,3 +1,6 @@
 {
-  return 31 * 31 * super.hashCode() + 31 * valueLoadInstruction.hashCode() + loadedType.hashCode();
+  int result=super.hashCode();
+  result=31 * result + valueLoadInstruction.hashCode();
+  result=31 * result + loadedType.hashCode();
+  return result;
 }

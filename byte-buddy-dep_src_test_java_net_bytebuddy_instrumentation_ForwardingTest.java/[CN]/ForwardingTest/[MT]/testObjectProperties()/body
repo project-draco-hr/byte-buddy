@@ -1,3 +1,5 @@
 {
   ObjectPropertyAssertion.of(Forwarding.class).apply();
+  ObjectPropertyAssertion.of(Forwarding.PreparationHandler.ForStaticInstance.class).apply();
+  ObjectPropertyAssertion.of(Forwarding.Appender.class).skipSynthetic().apply();
 }

@@ -7,4 +7,18 @@
     }
   }
 ).apply();
+  final TypeDescription removalType=mock(TypeDescription.class);
+  ObjectPropertyAssertion.of(DefaultMethodCall.Appender.class).refine(new ObjectPropertyAssertion.Refinement<Instrumentation.Target>(){
+    @Override public void apply(    Instrumentation.Target mock){
+      TypeDescription typeDescription=mock(TypeDescription.class);
+      when(typeDescription.getInterfaces()).thenReturn(new TypeList.Explicit(Arrays.asList(removalType,mock(TypeDescription.class))));
+      when(mock.getTypeDescription()).thenReturn(typeDescription);
+    }
+  }
+).create(new ObjectPropertyAssertion.Creator<List<?>>(){
+    @Override public List<?> create(){
+      return Arrays.asList(removalType,mock(TypeDescription.class));
+    }
+  }
+).apply();
 }
