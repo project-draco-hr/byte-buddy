@@ -1,0 +1,5 @@
+{
+  List<MethodDescription> methodDescriptions=Arrays.asList(invisibleTarget);
+  MethodDelegationBinder.Processor processor=new MethodDelegationBinder.Processor(methodDelegationBinder,ambiguityResolver);
+  processor.process(instrumentationTarget,source,methodDescriptions);
+}
