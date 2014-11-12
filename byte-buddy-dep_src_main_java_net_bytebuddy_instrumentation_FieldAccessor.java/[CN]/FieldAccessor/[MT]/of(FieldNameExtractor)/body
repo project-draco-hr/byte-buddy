@@ -1,0 +1,3 @@
+{
+  return new ForUnnamedField(defaultAssigner(),defaultConsiderRuntimeType(),nonNull(fieldNameExtractor));
+}

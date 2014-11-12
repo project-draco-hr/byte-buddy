@@ -1,0 +1,4 @@
+{
+  when(methodDescription.getInternalName()).thenReturn("set");
+  FieldAccessor.FieldNameExtractor.ForBeanProperty.INSTANCE.fieldNameFor(methodDescription);
+}

@@ -1,8 +1,11 @@
 {
-  if (isGetter().matches(instrumentedMethod)) {
+  if (isConstructor().matches(instrumentedMethod)) {
+    throw new IllegalArgumentException("Constructors cannot define beans: " + instrumentedMethod);
+  }
+  if (takesArguments(0).and(not(returns(void.class))).matches(instrumentedMethod)) {
     return applyGetter(methodVisitor,instrumentationContext,fieldLocator.locate(getFieldName(instrumentedMethod)),instrumentedMethod);
   }
- else   if (isSetter().matches(instrumentedMethod)) {
+ else   if (takesArguments(1).and(returns(void.class)).matches(instrumentedMethod)) {
     return applySetter(methodVisitor,instrumentationContext,fieldLocator.locate(getFieldName(instrumentedMethod)),instrumentedMethod);
   }
  else {

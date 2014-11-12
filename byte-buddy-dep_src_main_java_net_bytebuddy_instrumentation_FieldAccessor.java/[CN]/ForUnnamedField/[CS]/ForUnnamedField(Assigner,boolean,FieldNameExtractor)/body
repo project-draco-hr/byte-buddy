@@ -1,0 +1,3 @@
+{
+  this(assigner,considerRuntimeType,fieldNameExtractor,FieldLocator.ForInstrumentedTypeHierarchy.Factory.INSTANCE);
+}

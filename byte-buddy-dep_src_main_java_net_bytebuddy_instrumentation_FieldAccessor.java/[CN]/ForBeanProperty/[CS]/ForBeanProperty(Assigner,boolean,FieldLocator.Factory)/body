@@ -1,4 +1,0 @@
-{
-  super(assigner,considerRuntimeType);
-  this.fieldLocatorFactory=fieldLocatorFactory;
-}
