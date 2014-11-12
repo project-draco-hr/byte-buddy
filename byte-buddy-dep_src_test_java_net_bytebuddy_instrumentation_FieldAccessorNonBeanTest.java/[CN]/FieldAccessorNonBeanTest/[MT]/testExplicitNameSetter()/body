@@ -1,0 +1,10 @@
+{
+  DynamicType.Loaded<SampleSetter> loaded=instrument(SampleSetter.class,FieldAccessor.ofField(FOO));
+  SampleSetter sampleSetter=loaded.getLoaded().newInstance();
+  Field field=SampleSetter.class.getDeclaredField(FOO);
+  field.setAccessible(true);
+  assertThat(field.get(sampleSetter),is((Object)STRING_DEFAULT_VALUE));
+  sampleSetter.bar(STRING_VALUE);
+  assertThat(field.get(sampleSetter),is((Object)STRING_VALUE));
+  sampleSetter.assertZeroCalls();
+}
