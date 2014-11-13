@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.ComponentTypeLocator.ForAnnotationProperty.Bound{" + "name='" + name + '\''+ '}';
+}

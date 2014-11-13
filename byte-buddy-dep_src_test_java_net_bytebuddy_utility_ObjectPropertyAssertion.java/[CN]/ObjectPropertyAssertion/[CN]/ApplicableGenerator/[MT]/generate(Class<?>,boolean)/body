@@ -6,5 +6,5 @@
       type=generator.generate();
     }
   }
-  return mock(type);
+  return type == String.class ? alternative ? OTHER_STRING : DEFAULT_STRING : mock(type);
 }

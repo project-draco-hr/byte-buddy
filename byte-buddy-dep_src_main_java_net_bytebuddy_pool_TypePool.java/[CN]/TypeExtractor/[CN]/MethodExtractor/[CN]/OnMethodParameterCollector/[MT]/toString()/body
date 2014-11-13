@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.TypeExtractor.MethodExtractor.OnMethodParameterCollector{" + "methodExtractor=" + MethodExtractor.this + ", descriptor='"+ descriptor+ '\''+ ", index="+ index+ ", values="+ values+ '}';
+}

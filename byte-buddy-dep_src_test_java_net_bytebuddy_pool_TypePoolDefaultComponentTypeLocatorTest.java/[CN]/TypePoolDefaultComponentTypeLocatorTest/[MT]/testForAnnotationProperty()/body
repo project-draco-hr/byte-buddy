@@ -1,0 +1,14 @@
+{
+  TypePool typePool=mock(TypePool.class);
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(typePool.describe(BAR)).thenReturn(typeDescription);
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  when(typeDescription.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Arrays.asList(methodDescription)));
+  when(methodDescription.getName()).thenReturn(FOO);
+  TypeDescription returnType=mock(TypeDescription.class);
+  when(methodDescription.getReturnType()).thenReturn(returnType);
+  TypeDescription componentType=mock(TypeDescription.class);
+  when(returnType.getComponentType()).thenReturn(componentType);
+  when(componentType.getName()).thenReturn(QUX);
+  assertThat(new TypePool.Default.ComponentTypeLocator.ForAnnotationProperty(typePool,BAR_DESCRIPTOR).bind(FOO).lookup(),is(QUX));
+}

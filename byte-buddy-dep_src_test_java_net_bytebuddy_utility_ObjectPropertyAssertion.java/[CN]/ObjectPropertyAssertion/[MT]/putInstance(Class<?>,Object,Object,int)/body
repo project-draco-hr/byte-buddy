@@ -32,10 +32,6 @@
     actualArgument=DEFAULT_DOUBLE;
     otherArgument=OTHER_DOUBLE;
   }
- else   if (parameterType == String.class) {
-    actualArgument=DEFAULT_STRING;
-    otherArgument=OTHER_STRING;
-  }
  else   if (parameterType.isEnum()) {
     Object[] enumConstants=parameterType.getEnumConstants();
     if (enumConstants.length == 1) {
@@ -50,9 +46,9 @@
     putInstance(parameterType.getComponentType(),actualArgument,otherArgument,0);
   }
  else {
-    actualArgument=creator.replace(parameterType,generator);
+    actualArgument=creator.replace(parameterType,generator,false);
     refinement.apply(actualArgument);
-    otherArgument=creator.replace(parameterType,generator);
+    otherArgument=creator.replace(parameterType,generator,true);
     refinement.apply(otherArgument);
   }
   Array.set(actualArguments,index,actualArgument);

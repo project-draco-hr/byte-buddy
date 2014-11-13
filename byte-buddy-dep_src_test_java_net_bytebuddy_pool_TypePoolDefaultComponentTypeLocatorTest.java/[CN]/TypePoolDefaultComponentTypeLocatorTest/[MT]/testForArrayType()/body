@@ -1,0 +1,3 @@
+{
+  assertThat(new TypePool.Default.ComponentTypeLocator.ForArrayType("()[" + BAR_DESCRIPTOR).bind(FOO).lookup(),is(BAR));
+}
