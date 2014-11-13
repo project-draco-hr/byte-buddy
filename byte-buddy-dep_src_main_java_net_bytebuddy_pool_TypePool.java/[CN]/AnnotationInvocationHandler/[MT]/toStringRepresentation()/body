@@ -13,7 +13,7 @@
     }
     toString.append(entry.getKey().getName());
     toString.append('=');
-    toString.append(PropertyDispatcher.of(entry.getKey().getReturnType()).toString(entry.getValue().load(classLoader)));
+    toString.append(PropertyDispatcher.of(entry.getKey().getReturnType()).toString(entry.getValue().load(classLoader,entry.getKey())));
   }
   toString.append(')');
   return toString.toString();

@@ -9,6 +9,6 @@
       method.setAccessible(true);
     }
     AnnotationValue<?,?> annotationValue=values.get(method.getName());
-    this.values.put(method,annotationValue == null ? ResolvedAnnotationValue.of(method) : annotationValue);
+    this.values.put(method,annotationValue == null ? ResolvedAnnotationValue.INSTANCE : annotationValue);
   }
 }

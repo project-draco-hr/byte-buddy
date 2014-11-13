@@ -1,6 +1,0 @@
-{
-  if (method.getDefaultValue() == null) {
-    throw new IllegalStateException("Expected " + method + " to define a default value");
-  }
-  return new ResolvedAnnotationValue(method);
-}

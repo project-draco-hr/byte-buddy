@@ -1,3 +1,0 @@
-{
-  return "TypePool.LazyTypeDescription.AnnotationInvocationHandler.ResolvedAnnotationValue{" + "method=" + method + '}';
-}

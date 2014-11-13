@@ -1,17 +1,47 @@
 {
-  if (method.getDeclaringClass() != annotationType) {
-    if (method.getName().equals(HASH_CODE)) {
-      return hashCodeRepresentation();
+  try {
+    if (method.getDeclaringClass() != annotationType) {
+      if (method.getName().equals(HASH_CODE)) {
+        return hashCodeRepresentation();
+      }
+ else       if (method.getName().equals(EQUALS) && method.getParameterTypes().length == 1) {
+        return equalsRepresentation(arguments[0]);
+      }
+ else       if (method.getName().equals(TO_STRING)) {
+        return toStringRepresentation();
+      }
+ else {
+        return annotationType;
+      }
     }
- else     if (method.getName().equals(EQUALS) && method.getParameterTypes().length == 1) {
-      return equalsRepresentation(arguments[0]);
+    Object value=invoke(method);
+    if (value == null) {
+      throw new IncompleteAnnotationException(annotationType,method.getName());
     }
- else     if (method.getName().equals(TO_STRING)) {
-      return toStringRepresentation();
+ else     if (!resolvePrimitive(method.getReturnType()).isAssignableFrom(value.getClass())) {
+      throw new AnnotationTypeMismatchException(method,value.getClass().toString());
+    }
+    return value;
+  }
+ catch (  ClassNotFoundException e) {
+    throw new IllegalStateException("Cannot find type used in annotation",e);
+  }
+catch (  InvocationTargetException e) {
+    Throwable cause=e.getCause();
+    if (cause instanceof AnnotationTypeMismatchException) {
+      throw (AnnotationTypeMismatchException)cause;
+    }
+ else     if (cause instanceof IncompleteAnnotationException) {
+      throw (IncompleteAnnotationException)cause;
+    }
+ else     if (cause instanceof EnumConstantNotPresentException) {
+      throw (EnumConstantNotPresentException)cause;
     }
  else {
-      return annotationType;
+      throw new IllegalStateException("Error while reading annotation property",cause);
     }
   }
-  return invoke(method);
+catch (  IllegalAccessException e) {
+    throw new IllegalStateException("Could not access annotation property",e);
+  }
 }
