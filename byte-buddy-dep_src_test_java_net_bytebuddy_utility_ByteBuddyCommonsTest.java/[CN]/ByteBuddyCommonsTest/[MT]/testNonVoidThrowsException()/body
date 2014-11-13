@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(typeDescription.represents(void.class)).thenReturn(true);
+  assertThat(nonVoid(typeDescription),sameInstance(typeDescription));
+}

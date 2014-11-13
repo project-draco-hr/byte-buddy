@@ -1,0 +1,6 @@
+{
+  for (  TypeDescription typeDescription : types) {
+    isInterface(typeDescription);
+  }
+  return types;
+}
