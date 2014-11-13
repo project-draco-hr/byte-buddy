@@ -1,0 +1,5 @@
+{
+  this.typePool=typePool;
+  this.descriptor=descriptor;
+  this.values=values;
+}

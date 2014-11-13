@@ -1,0 +1,3 @@
+{
+  annotationRegistrant.register(name,new LazyTypeDescription.AnnotationValue.ForComplexArray(componentTypeReference,values));
+}

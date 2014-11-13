@@ -1,3 +1,0 @@
-{
-  return typePool.describe(annotationDescriptor.substring(1,annotationDescriptor.length() - 1).replace('/','.'));
-}

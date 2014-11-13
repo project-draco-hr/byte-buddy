@@ -1,3 +1,0 @@
-{
-  return "MethodCallProxy.ConstructorCall.Appender{instrumentedType=" + instrumentedType + '}';
-}

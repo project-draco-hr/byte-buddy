@@ -1,5 +1,0 @@
-{
-  this.typePool=typePool;
-  this.annotationDescriptor=annotationDescriptor;
-  this.values=values;
-}

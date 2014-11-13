@@ -1,3 +1,0 @@
-{
-  return unloadedTypeDescription.new UnloadedMethodDescription(getModifiers(),getName(),getDescriptor(),getExceptionName(),getAnnotationTokens(),getParameterAnnotationTokens(),getDefaultValue());
-}

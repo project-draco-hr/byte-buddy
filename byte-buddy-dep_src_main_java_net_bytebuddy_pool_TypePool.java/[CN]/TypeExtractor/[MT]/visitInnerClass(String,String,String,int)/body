@@ -5,7 +5,7 @@
       anonymousType=true;
     }
     if (declarationContext.isSelfDeclared()) {
-      declarationContext=new UnloadedTypeDescription.DeclarationContext.DeclaredInType(outerName);
+      declarationContext=new LazyTypeDescription.DeclarationContext.DeclaredInType(outerName);
     }
   }
 }

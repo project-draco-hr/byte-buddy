@@ -1,3 +1,0 @@
-{
-  registrant.register(name,new UnloadedTypeDescription.AnnotationValue.ForAnnotation(new UnloadedTypeDescription.AnnotationToken(descriptor,values)));
-}

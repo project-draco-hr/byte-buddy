@@ -1,8 +1,8 @@
 {
   super(ASM_VERSION);
-  declarationContext=UnloadedTypeDescription.DeclarationContext.SelfDeclared.INSTANCE;
+  declarationContext=LazyTypeDescription.DeclarationContext.SelfDeclared.INSTANCE;
   anonymousType=false;
-  annotationTokens=new LinkedList<UnloadedTypeDescription.AnnotationToken>();
-  fieldTokens=new LinkedList<UnloadedTypeDescription.FieldToken>();
-  methodTokens=new LinkedList<UnloadedTypeDescription.MethodToken>();
+  annotationTokens=new LinkedList<LazyTypeDescription.AnnotationToken>();
+  fieldTokens=new LinkedList<LazyTypeDescription.FieldToken>();
+  methodTokens=new LinkedList<LazyTypeDescription.MethodToken>();
 }

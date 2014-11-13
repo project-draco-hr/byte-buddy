@@ -1,3 +1,0 @@
-{
-  return unloadedTypeDescription.new UnloadedFieldDescription(getModifiers(),getName(),getDescriptor(),getAnnotationTokens());
-}

@@ -1,0 +1,15 @@
+{
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.FieldToken.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.MethodToken.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationToken.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationValue.Trivial.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationValue.ForAnnotation.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationValue.ForEnumeration.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationValue.ForComplexArray.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationValue.ForType.class).refine(new ObjectPropertyAssertion.Refinement<Type>(){
+    @Override public void apply(    Type mock){
+      when(mock.getClassName()).thenReturn("" + System.identityHashCode(mock));
+    }
+  }
+).apply();
+}

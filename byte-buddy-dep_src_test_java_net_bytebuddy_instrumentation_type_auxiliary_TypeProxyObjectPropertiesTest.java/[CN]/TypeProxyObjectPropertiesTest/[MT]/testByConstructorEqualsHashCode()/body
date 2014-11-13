@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypeProxy.ByConstructor.class).apply();
-}

@@ -1,3 +1,0 @@
-{
-  return new AnnotationExtractor(typePool,new AnnotationLookup(name,descriptor),new ComponentTypeLocator.ForAnnotationProperty(typePool,descriptor));
-}

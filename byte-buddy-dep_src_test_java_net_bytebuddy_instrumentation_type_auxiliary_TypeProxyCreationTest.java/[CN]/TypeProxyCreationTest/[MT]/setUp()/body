@@ -1,0 +1,13 @@
+{
+  for (  ModifierContributor modifierContributor : AuxiliaryType.DEFAULT_TYPE_MODIFIER) {
+    modifiers=modifiers | modifierContributor.getMask();
+  }
+  foo=new TypeDescription.ForLoadedType(Foo.class);
+  MethodLookupEngine methodLookupEngine=MethodLookupEngine.Default.Factory.INSTANCE.make(true);
+  fooMethods=methodLookupEngine.process(foo).getInvokableMethods().filter(isOverridable().and(MethodMatchers.not(isDefaultFinalizer())));
+  when(proxyMethod.getParameterTypes()).thenReturn(new TypeList.Explicit(Arrays.asList(foo,foo,foo)));
+  when(proxyMethod.getDeclaringType()).thenReturn(foo);
+  when(proxyMethod.getInternalName()).thenReturn(FOO);
+  when(proxyMethod.getDescriptor()).thenReturn(FOO);
+  when(proxyMethod.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(Object.class));
+}

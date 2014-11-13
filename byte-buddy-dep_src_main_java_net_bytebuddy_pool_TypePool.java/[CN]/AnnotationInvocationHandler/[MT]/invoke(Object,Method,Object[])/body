@@ -3,8 +3,8 @@
     if (method.getName().equals(HASH_CODE)) {
       return hashCodeRepresentation();
     }
- else     if (method.getName().equals(EQUALS)) {
-      return equalsRepresentation(proxy,arguments[0]);
+ else     if (method.getName().equals(EQUALS) && method.getParameterTypes().length == 1) {
+      return equalsRepresentation(arguments[0]);
     }
  else     if (method.getName().equals(TO_STRING)) {
       return toStringRepresentation();

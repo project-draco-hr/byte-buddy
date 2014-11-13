@@ -4,9 +4,9 @@
   this.internalName=internalName;
   this.descriptor=descriptor;
   this.exceptionName=exceptionName;
-  annotationTokens=new LinkedList<UnloadedTypeDescription.AnnotationToken>();
-  parameterAnnotationTokens=new HashMap<Integer,List<UnloadedTypeDescription.AnnotationToken>>();
+  annotationTokens=new LinkedList<LazyTypeDescription.AnnotationToken>();
+  parameterAnnotationTokens=new HashMap<Integer,List<LazyTypeDescription.AnnotationToken>>();
   for (int i=0; i < Type.getMethodType(descriptor).getArgumentTypes().length; i++) {
-    parameterAnnotationTokens.put(i,new LinkedList<UnloadedTypeDescription.AnnotationToken>());
+    parameterAnnotationTokens.put(i,new LinkedList<LazyTypeDescription.AnnotationToken>());
   }
 }

@@ -1,3 +1,5 @@
 {
+  when(firstTypeDescription.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(secondTypeDescription.getStackSize()).thenReturn(StackSize.DOUBLE);
   typeList=new TypeList.Explicit(Arrays.asList(firstTypeDescription,secondTypeDescription));
 }

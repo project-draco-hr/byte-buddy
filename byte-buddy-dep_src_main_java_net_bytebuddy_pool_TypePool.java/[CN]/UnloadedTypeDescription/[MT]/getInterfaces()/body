@@ -1,3 +1,0 @@
-{
-  return interfaceInternalName == null ? new TypeList.Empty() : new TypePoolTypeList(interfaceInternalName);
-}

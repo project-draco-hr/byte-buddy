@@ -1,0 +1,3 @@
+{
+  return "TypeProxy.ForSuperMethodByReflectionFactory{" + "proxiedType=" + proxiedType + ", instrumentationTarget="+ instrumentationTarget+ ", ignoreFinalizer="+ ignoreFinalizer+ ", serializableProxy="+ serializableProxy+ '}';
+}

@@ -1,3 +1,0 @@
-{
-  registrant.register(name,new UnloadedTypeDescription.AnnotationValue.ForComplexArray(values,componentTypeReference));
-}

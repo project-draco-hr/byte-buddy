@@ -1,0 +1,5 @@
+{
+  assertThat(new TypePool.LazyTypeDescription.DeclarationContext.DeclaredInType(FOO_INTERNAL).isDeclaredInMethod(),is(false));
+  assertThat(new TypePool.LazyTypeDescription.DeclarationContext.DeclaredInType(FOO_INTERNAL).isDeclaredInType(),is(true));
+  assertThat(new TypePool.LazyTypeDescription.DeclarationContext.DeclaredInType(FOO_INTERNAL).isSelfDeclared(),is(false));
+}

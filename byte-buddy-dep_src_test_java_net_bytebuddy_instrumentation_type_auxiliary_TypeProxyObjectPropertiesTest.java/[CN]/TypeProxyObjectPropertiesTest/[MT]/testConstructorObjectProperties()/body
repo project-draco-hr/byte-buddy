@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypeProxy.ForSuperMethodByConstructor.class).apply();
+}

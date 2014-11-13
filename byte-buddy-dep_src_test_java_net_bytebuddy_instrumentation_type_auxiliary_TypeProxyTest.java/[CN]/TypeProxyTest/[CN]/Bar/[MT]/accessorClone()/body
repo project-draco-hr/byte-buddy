@@ -1,4 +1,0 @@
-{
-  callTraceable.register(CLONE);
-  return CLONE;
-}

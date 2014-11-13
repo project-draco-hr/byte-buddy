@@ -1,0 +1,3 @@
+{
+  assertThat(new TypePool.LazyTypeDescription.DeclarationContext.DeclaredInType(FOO_INTERNAL).getEnclosingMethod(mock(TypePool.class)),nullValue(MethodDescription.class));
+}

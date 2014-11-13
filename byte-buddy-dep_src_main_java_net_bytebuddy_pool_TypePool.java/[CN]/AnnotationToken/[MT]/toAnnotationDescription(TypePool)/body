@@ -1,3 +1,3 @@
 {
-  return new UnloadedAnnotationDescription(typePool,descriptor,values);
+  return new LazyAnnotationDescription(typePool,descriptor,values);
 }
