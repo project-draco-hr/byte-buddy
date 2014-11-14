@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypeDescription.BinaryRepresentation.Explicit.class).apply();
+}

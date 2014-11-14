@@ -1,7 +1,7 @@
 {
-  byte[] binaryRepresentation=typeSourceLocator.locate(name);
-  if (binaryRepresentation == null) {
-    throw new IllegalArgumentException("Cannot locate " + name + " using "+ typeSourceLocator);
+  TypeDescription.BinaryRepresentation binaryRepresentation=sourceLocator.locate(name);
+  if (!binaryRepresentation.isValid()) {
+    throw new IllegalArgumentException("Cannot locate " + name + " using "+ sourceLocator);
   }
-  return parse(binaryRepresentation);
+  return parse(binaryRepresentation.getData());
 }

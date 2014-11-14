@@ -1,0 +1,3 @@
+{
+  return (S)Proxy.newProxyInstance(classLoader,new Class<?>[]{annotationType},new AnnotationInvocationHandler(annotationType.getClassLoader(),annotationType,values));
+}

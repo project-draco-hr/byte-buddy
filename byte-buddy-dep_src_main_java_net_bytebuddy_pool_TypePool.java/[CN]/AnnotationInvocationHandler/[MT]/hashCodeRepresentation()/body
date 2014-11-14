@@ -1,7 +1,7 @@
 {
   int hashCode=0;
-  for (  Map.Entry<Method,AnnotationValue<?,?>> entry : values.entrySet()) {
-    hashCode+=(127 * entry.getKey().getName().hashCode()) ^ PropertyDispatcher.of(entry.getKey().getReturnType()).hashCode(entry.getValue().load(classLoader,entry.getKey()));
+  for (  Map.Entry<Method,Object> entry : values.entrySet()) {
+    hashCode+=(127 * entry.getKey().getName().hashCode()) ^ PropertyDispatcher.of(entry.getKey().getReturnType()).hashCode(entry.getValue());
   }
   return hashCode;
 }

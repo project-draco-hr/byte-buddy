@@ -1,9 +1,7 @@
 {
   TypeDescription typeDescription=mock(TypeDescription.class);
-  ClassLoader classLoader=new URLClassLoader(new URL[]{getClass().getProtectionDomain().getCodeSource().getLocation()});
-  when(typeDescription.getClassLoader()).thenReturn(classLoader);
+  TypeDescription.BinaryRepresentation binaryRepresentation=mock(TypeDescription.BinaryRepresentation.class);
+  when(typeDescription.toBinary()).thenReturn(binaryRepresentation);
   when(typeDescription.getInternalName()).thenReturn(getClass().getName().replace('.','/'));
-  InputStream inputStream=ClassFileLocator.Default.ATTACHED.classFileFor(typeDescription);
-  assertThat(inputStream,notNullValue());
-  inputStream.close();
+  assertThat(ClassFileLocator.Default.ATTACHED.classFileFor(typeDescription),notNullValue());
 }

@@ -1,14 +1,3 @@
 {
-  final Iterator<Class<?>> typeIterator=Arrays.<Class<?>>asList(FirstSample.class,SecondSample.class).iterator();
-  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationInvocationHandler.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
-    @Override public Class<?> create(){
-      return typeIterator.next();
-    }
-  }
-).refine(new ObjectPropertyAssertion.Refinement<Map<?,?>>(){
-    @Override public void apply(    Map<?,?> mock){
-      when(mock.get(Mockito.any(String.class))).thenReturn(Mockito.mock(TypePool.LazyTypeDescription.AnnotationValue.class));
-    }
-  }
-).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationInvocationHandler.class).apply(new TypePool.LazyTypeDescription.AnnotationInvocationHandler(mock(ClassLoader.class),Annotation.class,mock(Map.class)));
 }

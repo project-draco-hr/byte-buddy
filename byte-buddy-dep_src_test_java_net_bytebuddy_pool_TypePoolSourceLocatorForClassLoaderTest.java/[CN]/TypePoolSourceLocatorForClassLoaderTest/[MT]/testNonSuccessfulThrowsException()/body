@@ -1,0 +1,3 @@
+{
+  TypePool.SourceLocator.ForClassLoader.ofSystemClassLoader().locate(FOO).getData();
+}

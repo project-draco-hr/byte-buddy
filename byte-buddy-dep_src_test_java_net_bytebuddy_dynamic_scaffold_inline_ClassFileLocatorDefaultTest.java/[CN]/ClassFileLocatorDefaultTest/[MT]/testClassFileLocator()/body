@@ -1,5 +1,12 @@
 {
-  InputStream inputStream=ClassFileLocator.Default.CLASS_PATH.classFileFor(new TypeDescription.ForLoadedType(getClass()));
-  assertThat(inputStream,notNullValue());
-  inputStream.close();
+  TypeDescription.BinaryRepresentation binaryRepresentation=ClassFileLocator.Default.CLASS_PATH.classFileFor(new TypeDescription.ForLoadedType(Object.class));
+  assertThat(binaryRepresentation,notNullValue());
+  assertThat(binaryRepresentation.isValid(),is(true));
+  InputStream inputStream=getClass().getClassLoader().getResourceAsStream(Object.class.getName().replace('.','/') + ".class");
+  try {
+    assertThat(binaryRepresentation.getData(),is(new StreamDrainer().drain(inputStream)));
+  }
+  finally {
+    inputStream.close();
+  }
 }

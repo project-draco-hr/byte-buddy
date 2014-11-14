@@ -1,0 +1,8 @@
+{
+  when(first.locate(any(String.class))).thenReturn(illegalBinary);
+  when(first.locate(FOO)).thenReturn(legalBinary);
+  when(second.locate(any(String.class))).thenReturn(illegalBinary);
+  when(second.locate(BAR)).thenReturn(legalBinary);
+  when(legalBinary.isValid()).thenReturn(true);
+  when(illegalBinary.isValid()).thenReturn(false);
+}

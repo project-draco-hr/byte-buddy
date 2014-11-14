@@ -1,10 +1,6 @@
 {
   ClassFileLocator classFileLocator=ClassFileLocator.AgentBased.fromInstalledAgent(getClass().getClassLoader());
-  InputStream inputStream=classFileLocator.classFileFor(new TypeDescription.ForLoadedType(Foo.class));
-  try {
-    assertThat(inputStream,notNullValue());
-  }
-  finally {
-    inputStream.close();
-  }
+  TypeDescription.BinaryRepresentation binaryRepresentation=classFileLocator.classFileFor(new TypeDescription.ForLoadedType(Foo.class));
+  assertThat(binaryRepresentation.isValid(),is(true));
+  assertThat(binaryRepresentation.getData(),notNullValue(byte[].class));
 }

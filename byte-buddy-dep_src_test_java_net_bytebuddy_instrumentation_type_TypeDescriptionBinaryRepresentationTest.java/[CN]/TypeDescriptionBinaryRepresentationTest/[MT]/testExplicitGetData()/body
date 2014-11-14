@@ -1,0 +1,3 @@
+{
+  assertThat(new TypeDescription.BinaryRepresentation.Explicit(DATA).getData(),is(DATA));
+}

@@ -2,13 +2,13 @@
   this.classLoader=classLoader;
   this.annotationType=annotationType;
   Method[] declaredMethod=annotationType.getDeclaredMethods();
-  this.values=new LinkedHashMap<Method,AnnotationValue<?,?>>(declaredMethod.length);
+  this.values=new LinkedHashMap<Method,Object>(declaredMethod.length);
   TypeDescription thisType=new ForLoadedType(getClass());
   for (  Method method : declaredMethod) {
     if (!new MethodDescription.ForLoadedMethod(method).isVisibleTo(thisType)) {
       method.setAccessible(true);
     }
     AnnotationValue<?,?> annotationValue=values.get(method.getName());
-    this.values.put(method,annotationValue == null ? ResolvedAnnotationValue.INSTANCE : annotationValue);
+    this.values.put(method,annotationValue == null ? method.getDefaultValue() : annotationValue.load(classLoader));
   }
 }
