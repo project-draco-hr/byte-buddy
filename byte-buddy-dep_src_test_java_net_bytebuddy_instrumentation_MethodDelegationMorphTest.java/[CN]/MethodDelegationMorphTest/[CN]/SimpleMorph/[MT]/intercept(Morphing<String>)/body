@@ -1,4 +1,3 @@
 {
-  assertThat(morphing,not(instanceOf(Serializable.class)));
   return morphing.morph(QUX);
 }

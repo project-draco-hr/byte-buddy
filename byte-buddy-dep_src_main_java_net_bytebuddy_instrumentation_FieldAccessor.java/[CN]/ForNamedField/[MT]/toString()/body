@@ -1,3 +1,3 @@
 {
-  return "FieldAccessor.ForNamedField{" + "fieldName='" + fieldName + '\''+ ", preparationHandler="+ preparationHandler+ ", fieldLocatorFactory="+ fieldLocatorFactory+ '}';
+  return "FieldAccessor.ForNamedField{" + "assigner=" + assigner + "considerRuntimeType="+ considerRuntimeType+ "fieldName='"+ fieldName+ '\''+ ", preparationHandler="+ preparationHandler+ ", fieldLocatorFactory="+ fieldLocatorFactory+ '}';
 }

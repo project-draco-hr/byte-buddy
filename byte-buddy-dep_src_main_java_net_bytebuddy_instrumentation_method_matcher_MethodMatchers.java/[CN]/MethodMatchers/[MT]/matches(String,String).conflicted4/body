@@ -1,3 +1,3 @@
 {
-  return comparisonSource.equals(comparisonTarget);
+  return comparisonSource.matches(comparisonTarget);
 }
