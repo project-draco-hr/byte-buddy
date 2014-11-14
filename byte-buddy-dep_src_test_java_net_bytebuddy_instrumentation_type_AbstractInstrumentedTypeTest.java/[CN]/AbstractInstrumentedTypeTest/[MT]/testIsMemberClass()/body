@@ -1,0 +1,3 @@
+{
+  assertThat(makePlainInstrumentedType().isMemberClass(),is(false));
+}

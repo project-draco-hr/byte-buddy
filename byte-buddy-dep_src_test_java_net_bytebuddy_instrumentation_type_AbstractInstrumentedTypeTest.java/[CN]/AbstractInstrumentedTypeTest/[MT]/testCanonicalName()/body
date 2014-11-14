@@ -1,0 +1,4 @@
+{
+  TypeDescription typeDescription=makePlainInstrumentedType();
+  assertThat(typeDescription.getCanonicalName(),is(typeDescription.getName()));
+}

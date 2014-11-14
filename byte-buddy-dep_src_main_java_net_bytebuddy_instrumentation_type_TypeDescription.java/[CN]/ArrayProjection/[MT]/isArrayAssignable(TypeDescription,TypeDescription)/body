@@ -1,0 +1,12 @@
+{
+  int sourceArity=0, targetArity=0;
+  while (sourceType.isArray()) {
+    sourceArity++;
+    sourceType=sourceType.getComponentType();
+  }
+  while (targetType.isArray()) {
+    targetArity++;
+    targetType=targetType.getComponentType();
+  }
+  return sourceArity == targetArity && sourceType.isAssignableFrom(targetType);
+}

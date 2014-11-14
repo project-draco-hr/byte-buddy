@@ -1,0 +1,13 @@
+{
+  Method enclosingMethod=type.getEnclosingMethod();
+  Constructor<?> enclosingConstructor=type.getEnclosingConstructor();
+  if (enclosingMethod != null) {
+    return new MethodDescription.ForLoadedMethod(enclosingMethod);
+  }
+ else   if (enclosingConstructor != null) {
+    return new MethodDescription.ForLoadedConstructor(enclosingConstructor);
+  }
+ else {
+    return null;
+  }
+}

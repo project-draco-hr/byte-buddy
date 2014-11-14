@@ -1,0 +1,3 @@
+{
+  return other == this || other instanceof TypeDescription && getName().equals(((TypeDescription)other).getName());
+}

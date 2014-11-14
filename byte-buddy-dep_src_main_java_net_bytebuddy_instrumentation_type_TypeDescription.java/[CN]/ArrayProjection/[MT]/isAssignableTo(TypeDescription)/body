@@ -1,0 +1,3 @@
+{
+  return typeDescription.represents(Object.class) || isArrayAssignable(typeDescription,this);
+}

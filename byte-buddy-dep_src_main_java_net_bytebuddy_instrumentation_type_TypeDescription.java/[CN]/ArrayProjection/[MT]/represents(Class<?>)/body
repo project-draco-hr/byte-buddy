@@ -1,0 +1,8 @@
+{
+  int arity=0;
+  while (type.isArray()) {
+    type=type.getComponentType();
+    arity++;
+  }
+  return arity == this.arity && componentType.represents(type);
+}
