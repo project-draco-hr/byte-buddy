@@ -1,0 +1,5 @@
+FieldDescription accessedField
+Assigner assigner
+TypeDescription instrumentedType
+AccessType accessType
+boolean serializableProxy

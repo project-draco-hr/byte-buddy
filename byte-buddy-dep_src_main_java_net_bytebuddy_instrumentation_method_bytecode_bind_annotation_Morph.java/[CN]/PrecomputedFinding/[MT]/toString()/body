@@ -1,0 +1,3 @@
+{
+  return "Morph.Binder.PrecomputedFinding{" + "binder=" + Binder.this + ", typeDescription="+ typeDescription+ '}';
+}

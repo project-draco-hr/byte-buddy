@@ -1,0 +1,9 @@
+{
+  int result=accessedField.hashCode();
+  result=31 * result + instrumentedType.hashCode();
+  result=31 * result + assigner.hashCode();
+  result=31 * result + Binder.this.hashCode();
+  result=31 * result + accessType.hashCode();
+  result=31 * result + (serializableProxy ? 1 : 0);
+  return result;
+}

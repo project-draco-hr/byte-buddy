@@ -1,0 +1,3 @@
+{
+  return new ByteBuddy(classFileVersion).subclass(accessType.proxyType(getterMethod,setterMethod),ConstructorStrategy.Default.NO_CONSTRUCTORS).name(auxiliaryTypeName).modifiers(DEFAULT_TYPE_MODIFIER).implement(serializableProxy ? new Class<?>[]{Serializable.class} : new Class<?>[0]).defineConstructor(accessedField.isStatic() ? Collections.<TypeDescription>emptyList() : Collections.singletonList(instrumentedType)).intercept(accessedField.isStatic() ? StaticFieldConstructor.INSTANCE : new InstanceFieldConstructor(instrumentedType)).method(isDeclaredBy(accessType.proxyType(getterMethod,setterMethod))).intercept(accessType.access(accessedField,assigner,methodAccessorFactory)).make();
+}

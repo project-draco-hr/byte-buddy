@@ -1,0 +1,3 @@
+{
+  return instrumentedType.withField(AccessorProxy.FIELD_NAME,this.instrumentedType,Opcodes.ACC_FINAL | Opcodes.ACC_PRIVATE);
+}

@@ -1,0 +1,6 @@
+{
+  List<MethodDescription> invokableMethods=new ArrayList<MethodDescription>(2);
+  invokableMethods.addAll(typeDescription.getDeclaredMethods());
+  invokableMethods.add(forwardingMethod);
+  return new MethodList.Explicit(invokableMethods);
+}
