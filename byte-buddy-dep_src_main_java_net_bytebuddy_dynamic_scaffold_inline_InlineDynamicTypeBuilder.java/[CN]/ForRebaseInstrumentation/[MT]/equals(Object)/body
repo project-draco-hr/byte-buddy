@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForRebaseInstrumentation that=(ForRebaseInstrumentation)other;
+  return methodRebaseResolver.equals(that.methodRebaseResolver) && placeholderType.equals(that.placeholderType);
+}

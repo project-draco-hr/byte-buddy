@@ -5,4 +5,16 @@
     }
   }
 ).apply();
+  ObjectPropertyAssertion.of(InlineDynamicTypeBuilder.TargetHandler.Prepared.ForRebaseInstrumentation.class).refine(new ObjectPropertyAssertion.Refinement<DynamicType>(){
+    @Override public void apply(    DynamicType mock){
+      when(mock.getTypeDescription()).thenReturn(Mockito.mock(TypeDescription.class));
+    }
+  }
+).refine(new ObjectPropertyAssertion.Refinement<RandomString>(){
+    @Override public void apply(    RandomString mock){
+      when(mock.nextString()).thenReturn(FOO + System.identityHashCode(mock));
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(InlineDynamicTypeBuilder.TargetHandler.Prepared.ForRebaseInstrumentation.MethodRebaseDelegation.class).apply();
 }
