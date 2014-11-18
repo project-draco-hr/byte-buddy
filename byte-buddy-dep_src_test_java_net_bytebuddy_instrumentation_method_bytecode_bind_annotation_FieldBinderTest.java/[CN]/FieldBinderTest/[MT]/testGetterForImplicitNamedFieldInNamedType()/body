@@ -1,0 +1,13 @@
+{
+  when(targetTypeList.get(0)).thenReturn(getterType);
+  doReturn(Foo.class).when(annotation).definingType();
+  when(annotation.value()).thenReturn(Field.BEAN_PROPERTY);
+  when(fieldDescription.getInternalName()).thenReturn(FOO);
+  when(source.getReturnType()).thenReturn(fieldType);
+  when(source.getParameterTypes()).thenReturn(new TypeList.Empty());
+  when(source.getName()).thenReturn("getFoo");
+  when(source.getInternalName()).thenReturn("getFoo");
+  when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
+  MethodDelegationBinder.ParameterBinding<?> binding=new Field.Binder(getterMethod,setterMethod).bind(annotationDescription,0,source,target,instrumentationTarget,assigner);
+  assertThat(binding.isValid(),is(true));
+}

@@ -1,0 +1,13 @@
+{
+  when(targetTypeList.get(0)).thenReturn(setterType);
+  doReturn(void.class).when(annotation).definingType();
+  when(annotation.value()).thenReturn(FOO);
+  when(fieldDescription.getInternalName()).thenReturn(FOO);
+  when(source.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(void.class));
+  when(source.getParameterTypes()).thenReturn(new TypeList.Explicit(Arrays.asList(fieldType)));
+  when(source.getName()).thenReturn("setFoo");
+  when(source.getInternalName()).thenReturn("setFoo");
+  when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
+  MethodDelegationBinder.ParameterBinding<?> binding=new Field.Binder(getterMethod,setterMethod).bind(annotationDescription,0,source,target,instrumentationTarget,assigner);
+  assertThat(binding.isValid(),is(true));
+}

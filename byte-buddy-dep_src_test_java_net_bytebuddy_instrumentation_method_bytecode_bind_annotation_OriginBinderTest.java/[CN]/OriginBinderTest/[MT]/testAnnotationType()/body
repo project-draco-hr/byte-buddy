@@ -1,3 +1,0 @@
-{
-  assertEquals(Origin.class,Origin.Binder.INSTANCE.getHandledType());
-}

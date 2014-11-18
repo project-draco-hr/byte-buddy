@@ -10,25 +10,25 @@
   ObjectPropertyAssertion.of(Field.Binder.InstanceFieldConstructor.class).apply();
   ObjectPropertyAssertion.of(Field.Binder.InstanceFieldConstructor.Appender.class).refine(new ObjectPropertyAssertion.Refinement<Instrumentation.Target>(){
     @Override public void apply(    Instrumentation.Target mock){
-      TypeDescription typeDescription=Mockito.mock(TypeDescription.class);
+      TypeDescription typeDescription=mock(TypeDescription.class);
       when(mock.getTypeDescription()).thenReturn(typeDescription);
-      FieldList fieldList=Mockito.mock(FieldList.class);
+      FieldList fieldList=mock(FieldList.class);
       when(typeDescription.getDeclaredFields()).thenReturn(fieldList);
-      when(fieldList.named(any(String.class))).thenReturn(Mockito.mock(FieldDescription.class));
+      when(fieldList.named(any(String.class))).thenReturn(mock(FieldDescription.class));
     }
   }
 ).skipSynthetic().apply();
   ObjectPropertyAssertion.of(Field.Binder.AccessType.Getter.class).apply();
   ObjectPropertyAssertion.of(Field.Binder.AccessType.Getter.Appender.class).refine(new ObjectPropertyAssertion.Refinement<Instrumentation.Target>(){
     @Override public void apply(    Instrumentation.Target mock){
-      when(mock.getTypeDescription()).thenReturn(Mockito.mock(TypeDescription.class));
+      when(mock.getTypeDescription()).thenReturn(mock(TypeDescription.class));
     }
   }
 ).skipSynthetic().apply();
   ObjectPropertyAssertion.of(Field.Binder.AccessType.Setter.class).apply();
   ObjectPropertyAssertion.of(Field.Binder.AccessType.Setter.Appender.class).refine(new ObjectPropertyAssertion.Refinement<Instrumentation.Target>(){
     @Override public void apply(    Instrumentation.Target mock){
-      when(mock.getTypeDescription()).thenReturn(Mockito.mock(TypeDescription.class));
+      when(mock.getTypeDescription()).thenReturn(mock(TypeDescription.class));
     }
   }
 ).skipSynthetic().apply();

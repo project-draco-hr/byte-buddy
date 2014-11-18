@@ -1,3 +1,0 @@
-{
-  assertEquals(Morph.class,new Morph.Binder(morphMethod).getHandledType());
-}
