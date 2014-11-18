@@ -1,0 +1,4 @@
+{
+  Class<?> type=classLoader.loadClass(annotationToken.getDescriptor().substring(1,annotationToken.getDescriptor().length() - 1).replace('/','.'));
+  return type.isAnnotation() ? new LegalRuntimeType(classLoader,(Class<? extends Annotation>)type,annotationToken.getValues()) : new IncompatibleRuntimeType(type);
+}

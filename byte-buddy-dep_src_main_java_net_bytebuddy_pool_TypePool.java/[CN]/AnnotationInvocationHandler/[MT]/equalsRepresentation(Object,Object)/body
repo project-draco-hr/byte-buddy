@@ -12,9 +12,18 @@
     }
   }
   try {
-    for (    Method method : annotationType.getDeclaredMethods()) {
-      Object thisValue=values.get(method);
-      if (!PropertyDispatcher.of(thisValue.getClass()).equals(thisValue,method.invoke(other))) {
+    for (    Map.Entry<Method,AnnotationValue.Loaded<?>> entry : values.entrySet()) {
+      if (entry.getValue().getState().isResolved()) {
+        try {
+          if (!PropertyDispatcher.of(entry.getKey().getReturnType()).equals(entry.getValue().resolve(),entry.getKey().invoke(other))) {
+            return false;
+          }
+        }
+ catch (        RuntimeException e) {
+          return false;
+        }
+      }
+ else {
         return false;
       }
     }
@@ -22,8 +31,8 @@
  catch (  InvocationTargetException ignored) {
     return false;
   }
-catch (  IllegalAccessException ignored) {
-    throw new AssertionError();
+catch (  IllegalAccessException e) {
+    throw new AssertionError(e);
   }
   return true;
 }

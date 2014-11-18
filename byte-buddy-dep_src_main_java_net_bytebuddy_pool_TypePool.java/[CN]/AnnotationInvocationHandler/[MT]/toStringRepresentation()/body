@@ -4,7 +4,10 @@
   toString.append(annotationType.getName());
   toString.append('(');
   boolean firstMember=true;
-  for (  Map.Entry<Method,Object> entry : values.entrySet()) {
+  for (  Map.Entry<Method,AnnotationValue.Loaded<?>> entry : values.entrySet()) {
+    if (!entry.getValue().getState().isDefined()) {
+      continue;
+    }
     if (firstMember) {
       firstMember=false;
     }
@@ -13,7 +16,7 @@
     }
     toString.append(entry.getKey().getName());
     toString.append('=');
-    toString.append(PropertyDispatcher.of(entry.getKey().getReturnType()).toString(entry.getValue()));
+    toString.append(entry.getValue().toString());
   }
   toString.append(')');
   return toString.toString();

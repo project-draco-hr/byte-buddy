@@ -1,0 +1,3 @@
+ClassLoader classLoader
+Class<? extends Annotation> annotationType
+Map<String,AnnotationValue<?,?>> annotationValues

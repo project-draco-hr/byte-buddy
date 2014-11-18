@@ -13,12 +13,9 @@
       return annotationType;
     }
   }
-  Object value=values.get(method);
-  if (value == null) {
-    throw new IncompleteAnnotationException(annotationType,method.getName());
-  }
- else   if (!asWrapper(method.getReturnType()).isAssignableFrom(value.getClass())) {
+  Object value=values.get(method).resolve();
+  if (!asWrapper(method.getReturnType()).isAssignableFrom(value.getClass())) {
     throw new AnnotationTypeMismatchException(method,value.getClass().toString());
   }
-  return PropertyDispatcher.of(method.getReturnType()).conditionalClone(value);
+  return value;
 }

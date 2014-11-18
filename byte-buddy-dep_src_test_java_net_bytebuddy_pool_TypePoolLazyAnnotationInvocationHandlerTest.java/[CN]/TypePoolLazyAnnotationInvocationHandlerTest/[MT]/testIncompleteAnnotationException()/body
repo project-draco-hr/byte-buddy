@@ -1,3 +1,4 @@
 {
-  new TypePool.LazyTypeDescription.AnnotationInvocationHandler(getClass().getClassLoader(),Foo.class,Collections.<String,TypePool.LazyTypeDescription.AnnotationValue<?,?>>singletonMap(FOO,annotationValue)).invoke(new Object(),Foo.class.getDeclaredMethod("foo"),new Object[0]);
+  when(freeAnnotationValue.load(getClass().getClassLoader())).thenReturn((TypePool.LazyTypeDescription.AnnotationValue.Loaded)TypePool.LazyTypeDescription.AnnotationInvocationHandler.DefaultValue.of(Object.class.getMethod("toString")));
+  new TypePool.LazyTypeDescription.AnnotationInvocationHandler(getClass().getClassLoader(),Foo.class,Collections.<String,TypePool.LazyTypeDescription.AnnotationValue<?,?>>singletonMap(FOO,freeAnnotationValue)).invoke(new Object(),Foo.class.getDeclaredMethod("foo"),new Object[0]);
 }
