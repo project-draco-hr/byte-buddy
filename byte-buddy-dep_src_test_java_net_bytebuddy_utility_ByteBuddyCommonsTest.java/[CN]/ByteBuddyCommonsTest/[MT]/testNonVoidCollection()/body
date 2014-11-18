@@ -1,0 +1,4 @@
+{
+  List<TypeDescription> typeDescriptions=Arrays.asList(mock(TypeDescription.class));
+  assertThat(nonVoid(typeDescriptions),sameInstance(typeDescriptions));
+}

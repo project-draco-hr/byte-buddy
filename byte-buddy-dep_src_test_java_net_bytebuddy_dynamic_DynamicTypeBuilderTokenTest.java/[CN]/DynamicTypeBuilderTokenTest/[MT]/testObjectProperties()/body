@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(DynamicType.Builder.AbstractBase.MethodToken.class).apply(new DynamicType.Builder.AbstractBase.MethodToken(FOO,mock(TypeDescription.class),Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),0));
+}

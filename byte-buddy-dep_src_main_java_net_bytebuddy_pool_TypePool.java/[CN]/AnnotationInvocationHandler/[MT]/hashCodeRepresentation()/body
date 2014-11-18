@@ -1,0 +1,10 @@
+{
+  int hashCode=0;
+  for (  Map.Entry<Method,AnnotationValue.Loaded<?>> entry : values.entrySet()) {
+    if (!entry.getValue().getState().isDefined()) {
+      continue;
+    }
+    hashCode+=(127 * entry.getKey().getName().hashCode()) ^ entry.getValue().hashCode();
+  }
+  return hashCode;
+}

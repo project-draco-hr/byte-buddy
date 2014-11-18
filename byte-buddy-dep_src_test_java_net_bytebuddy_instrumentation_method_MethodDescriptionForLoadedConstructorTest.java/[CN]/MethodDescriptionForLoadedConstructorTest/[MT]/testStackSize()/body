@@ -1,5 +1,0 @@
-{
-  assertThat(objectDefaultConstructor.getStackSize(),is(1));
-  assertThat(stringDefaultConstructor.getStackSize(),is(1));
-  assertThat(stringSingleArgConstructor.getStackSize(),is(2));
-}

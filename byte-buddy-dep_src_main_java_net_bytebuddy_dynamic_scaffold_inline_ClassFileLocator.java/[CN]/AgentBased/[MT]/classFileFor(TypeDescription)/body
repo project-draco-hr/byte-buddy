@@ -5,7 +5,7 @@
       instrumentation.addTransformer(classFileTransformer,true);
       instrumentation.retransformClasses(classLoader.loadClass(typeDescription.getName()));
       byte[] binaryRepresentation=classFileTransformer.getClassFile();
-      return binaryRepresentation == null ? null : new ByteArrayInputStream(binaryRepresentation);
+      return binaryRepresentation == null ? TypeDescription.BinaryRepresentation.Illegal.INSTANCE : new TypeDescription.BinaryRepresentation.Explicit(binaryRepresentation);
     }
   finally {
       instrumentation.removeTransformer(classFileTransformer);

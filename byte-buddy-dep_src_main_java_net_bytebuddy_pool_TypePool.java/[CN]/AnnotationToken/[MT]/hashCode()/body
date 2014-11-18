@@ -1,0 +1,5 @@
+{
+  int result=descriptor.hashCode();
+  result=31 * result + values.hashCode();
+  return result;
+}

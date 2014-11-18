@@ -1,0 +1,6 @@
+{
+  int result=name.hashCode();
+  result=31 * result + ClassLoaderByteArrayInjector.class.hashCode();
+  result=31 * result + Arrays.hashCode(binaryRepresentation);
+  return result;
+}

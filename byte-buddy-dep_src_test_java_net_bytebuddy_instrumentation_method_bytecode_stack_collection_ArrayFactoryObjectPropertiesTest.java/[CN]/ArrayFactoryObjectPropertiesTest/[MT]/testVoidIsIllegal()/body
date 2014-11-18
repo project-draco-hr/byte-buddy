@@ -1,0 +1,3 @@
+{
+  ArrayFactory.targeting(new TypeDescription.ForLoadedType(void.class));
+}

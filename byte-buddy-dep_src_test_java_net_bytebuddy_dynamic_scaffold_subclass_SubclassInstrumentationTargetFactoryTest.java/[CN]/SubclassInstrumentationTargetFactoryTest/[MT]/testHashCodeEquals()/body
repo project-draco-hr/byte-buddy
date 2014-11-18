@@ -1,3 +1,0 @@
-{
-  HashCodeEqualsTester.of(SubclassInstrumentationTarget.Factory.class).apply();
-}

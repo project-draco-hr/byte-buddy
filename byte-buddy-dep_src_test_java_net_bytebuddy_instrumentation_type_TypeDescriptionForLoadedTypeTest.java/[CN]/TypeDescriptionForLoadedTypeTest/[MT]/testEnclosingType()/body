@@ -1,8 +1,0 @@
-{
-class Foo {
-class Bar {
-    }
-  }
-  assertThat(new TypeDescription.ForLoadedType(Foo.Bar.class).getEnclosingClass(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
-  assertThat(new TypeDescription.ForLoadedType(Foo.Bar.class).getDeclaringType(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
-}

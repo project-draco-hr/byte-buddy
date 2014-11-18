@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && internalName.equals(((MethodToken)other).internalName) && parameterTypes.equals(((MethodToken)other).parameterTypes)&& returnType.equals(((MethodToken)other).returnType);
+  return (this == other || other instanceof MethodToken) && internalName.equals(((MethodToken)other).getInternalName()) && parameterTypes.equals(((MethodToken)other).getParameterTypes())&& returnType.equals(((MethodToken)other).getReturnType());
 }

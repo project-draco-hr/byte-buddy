@@ -1,3 +1,3 @@
 {
-  return toInstanceField(type,fieldName,defaultMethodLookupEngine());
+  return toInstanceField(new TypeDescription.ForLoadedType(nonNull(type)),fieldName);
 }

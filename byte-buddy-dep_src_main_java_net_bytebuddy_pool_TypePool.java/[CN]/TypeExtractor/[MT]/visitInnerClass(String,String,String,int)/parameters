@@ -1,0 +1,4 @@
+String internalName
+String outerName
+String innerName
+int modifiers

@@ -1,9 +1,0 @@
-{
-  assertThat(instrumentationTarget.hashCode(),is(new SubclassInstrumentationTarget(finding,bridgeMethodResolverFactory,SubclassInstrumentationTarget.OriginTypeIdentifier.SUPER_TYPE).hashCode()));
-  assertThat(instrumentationTarget,is((Instrumentation.Target)new SubclassInstrumentationTarget(finding,bridgeMethodResolverFactory,SubclassInstrumentationTarget.OriginTypeIdentifier.SUPER_TYPE)));
-  BridgeMethodResolver.Factory factory=mock(BridgeMethodResolver.Factory.class);
-  when(factory.make(any(MethodList.class))).thenReturn(mock(BridgeMethodResolver.class));
-  Instrumentation.Target other=new SubclassInstrumentationTarget(finding,factory,SubclassInstrumentationTarget.OriginTypeIdentifier.SUPER_TYPE);
-  assertThat(instrumentationTarget.hashCode(),not(is(other.hashCode())));
-  assertThat(instrumentationTarget,not(is(other)));
-}

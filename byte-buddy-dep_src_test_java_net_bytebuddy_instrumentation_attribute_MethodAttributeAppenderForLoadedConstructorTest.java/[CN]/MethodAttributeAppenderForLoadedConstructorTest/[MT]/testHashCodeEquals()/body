@@ -1,7 +1,0 @@
-{
-  Constructor<?> otherConstructor=Object.class.getDeclaredConstructor();
-  assertThat(new MethodAttributeAppender.ForLoadedConstructor(constructor).hashCode(),is(new MethodAttributeAppender.ForLoadedConstructor(constructor).hashCode()));
-  assertThat(new MethodAttributeAppender.ForLoadedConstructor(constructor),is(new MethodAttributeAppender.ForLoadedConstructor(constructor)));
-  assertThat(new MethodAttributeAppender.ForLoadedConstructor(constructor).hashCode(),not(is(new MethodAttributeAppender.ForLoadedConstructor(otherConstructor).hashCode())));
-  assertThat(new MethodAttributeAppender.ForLoadedConstructor(constructor),not(is(new MethodAttributeAppender.ForLoadedConstructor(otherConstructor))));
-}

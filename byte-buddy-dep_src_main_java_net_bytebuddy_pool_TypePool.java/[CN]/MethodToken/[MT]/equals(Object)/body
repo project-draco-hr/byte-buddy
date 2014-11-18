@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  MethodToken that=(MethodToken)other;
+  return modifiers == that.modifiers && annotationTokens.equals(that.annotationTokens) && defaultValue.equals(that.defaultValue) && descriptor.equals(that.descriptor) && Arrays.equals(exceptionName,that.exceptionName) && name.equals(that.name) && parameterAnnotationTokens.equals(that.parameterAnnotationTokens);
+}

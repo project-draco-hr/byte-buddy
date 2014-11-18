@@ -1,0 +1,5 @@
+{
+  AnnotationList annotationList=new AnnotationList.Explicit(Arrays.asList(foo));
+  assertThat(annotationList.isAnnotationPresent(Foo.class),is(true));
+  assertThat(annotationList.isAnnotationPresent(Bar.class),is(false));
+}

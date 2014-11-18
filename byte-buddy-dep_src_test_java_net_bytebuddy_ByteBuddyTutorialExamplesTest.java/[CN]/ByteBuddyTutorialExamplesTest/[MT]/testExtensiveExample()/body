@@ -1,12 +1,4 @@
 {
-  Class<? extends Account> dynamicType=new ByteBuddy().subclass(Account.class).implement(Serializable.class).name("BankAccount").annotateType(new Secured(){
-    @Override public Class<? extends Annotation> annotationType(){
-      return Secured.class;
-    }
-  }
-).method(isAnnotatedBy(Unsafe.class)).intercept(MethodDelegation.to(Bank.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(dynamicType.getName(),is("BankAccount"));
-  assertThat(Serializable.class.isAssignableFrom(dynamicType),is(true));
-  assertThat(dynamicType.isAnnotationPresent(Secured.class),is(true));
-  assertThat(dynamicType.newInstance().transfer(26,"123456"),is("transferred $26 to 123XXX (obfuscated)"));
+  Class<? extends Comparator> dynamicType=new ByteBuddy().subclass(Comparator.class).method(named("compare")).intercept(MethodDelegation.to(new ComparisonInterceptor())).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(dynamicType.newInstance().compare(3,1),is(2));
 }

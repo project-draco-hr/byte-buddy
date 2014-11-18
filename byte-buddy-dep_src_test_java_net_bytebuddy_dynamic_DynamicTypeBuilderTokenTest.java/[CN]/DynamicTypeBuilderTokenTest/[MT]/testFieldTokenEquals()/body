@@ -1,0 +1,7 @@
+{
+  DynamicType.Builder.AbstractBase.FieldToken equal=mock(DynamicType.Builder.AbstractBase.FieldToken.class);
+  when(equal.getFieldName()).thenReturn(FOO);
+  assertThat(new DynamicType.Builder.AbstractBase.FieldToken(FOO,singleType,QUX),is(equal));
+  DynamicType.Builder.AbstractBase.FieldToken equalButName=mock(DynamicType.Builder.AbstractBase.FieldToken.class);
+  when(equalButName.getFieldName()).thenReturn(BAR);
+}

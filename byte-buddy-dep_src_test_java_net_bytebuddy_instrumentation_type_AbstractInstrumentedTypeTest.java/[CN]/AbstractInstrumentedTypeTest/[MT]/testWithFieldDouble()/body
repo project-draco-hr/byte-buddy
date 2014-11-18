@@ -1,0 +1,5 @@
+{
+  TypeDescription fieldType=mock(TypeDescription.class);
+  when(fieldType.getName()).thenReturn(FOO);
+  makePlainInstrumentedType().withField(BAR,fieldType,Opcodes.ACC_PUBLIC).withField(BAR,fieldType,Opcodes.ACC_PUBLIC);
+}

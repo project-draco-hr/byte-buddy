@@ -1,0 +1,3 @@
+{
+  TypeDescription.ArrayProjection.of(mock(TypeDescription.class),-1);
+}

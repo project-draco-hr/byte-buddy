@@ -1,0 +1,3 @@
+{
+  return new AnnotationExtractor(new ArrayLookup(name,componentTypeLocator.bind(name)),ComponentTypeLocator.Illegal.INSTANCE);
+}

@@ -1,0 +1,4 @@
+{
+  assertThat(proxy,not(instanceOf(Serializable.class)));
+  return proxy.foo() + BAR;
+}

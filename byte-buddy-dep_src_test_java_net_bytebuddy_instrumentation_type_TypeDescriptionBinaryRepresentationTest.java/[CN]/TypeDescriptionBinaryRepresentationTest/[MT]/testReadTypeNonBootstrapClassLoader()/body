@@ -1,0 +1,11 @@
+{
+  TypeDescription.BinaryRepresentation binaryRepresentation=TypeDescription.BinaryRepresentation.Explicit.of(Foo.class);
+  assertThat(binaryRepresentation.isValid(),is(true));
+  InputStream inputStream=getClass().getClassLoader().getResourceAsStream(Foo.class.getName().replace('.','/') + ".class");
+  try {
+    assertThat(binaryRepresentation.getData(),is(new StreamDrainer().drain(inputStream)));
+  }
+  finally {
+    inputStream.close();
+  }
+}

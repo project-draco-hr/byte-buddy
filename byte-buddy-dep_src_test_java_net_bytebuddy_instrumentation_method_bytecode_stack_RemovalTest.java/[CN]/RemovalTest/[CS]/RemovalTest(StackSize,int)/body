@@ -1,0 +1,4 @@
+{
+  this.stackSize=stackSize;
+  this.opcode=opcode;
+}

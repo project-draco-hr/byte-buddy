@@ -1,0 +1,5 @@
+{
+  super(Empty.class);
+  typeDescription=new TypeDescription.ForLoadedType(type);
+  this.opcode=opcode;
+}

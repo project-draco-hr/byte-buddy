@@ -1,0 +1,5 @@
+{
+  int result=findLoadedClassMethod.hashCode();
+  result=31 * result + loadByteArrayMethod.hashCode();
+  return result;
+}

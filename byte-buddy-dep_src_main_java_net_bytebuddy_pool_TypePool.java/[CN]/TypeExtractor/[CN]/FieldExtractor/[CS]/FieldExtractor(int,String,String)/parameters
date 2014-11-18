@@ -1,0 +1,3 @@
+int modifiers
+String internalName
+String descriptor

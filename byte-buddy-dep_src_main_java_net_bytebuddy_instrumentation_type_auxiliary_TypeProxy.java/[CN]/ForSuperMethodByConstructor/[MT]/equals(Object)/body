@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForSuperMethodByConstructor that=(ForSuperMethodByConstructor)other;
+  return ignoreFinalizer == that.ignoreFinalizer && serializableProxy == that.serializableProxy && constructorParameters.equals(that.constructorParameters) && instrumentationTarget.equals(that.instrumentationTarget) && proxiedType.equals(that.proxiedType);
+}

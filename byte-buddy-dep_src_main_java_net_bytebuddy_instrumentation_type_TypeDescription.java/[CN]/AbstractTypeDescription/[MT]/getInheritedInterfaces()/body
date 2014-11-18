@@ -1,0 +1,11 @@
+{
+  Set<TypeDescription> interfaces=new HashSet<TypeDescription>();
+  TypeDescription current=this;
+  do {
+    for (    TypeDescription interfaceType : current.getInterfaces()) {
+      collect(interfaceType,interfaces);
+    }
+  }
+ while ((current=current.getSupertype()) != null);
+  return new TypeList.Explicit(new ArrayList<TypeDescription>(interfaces));
+}

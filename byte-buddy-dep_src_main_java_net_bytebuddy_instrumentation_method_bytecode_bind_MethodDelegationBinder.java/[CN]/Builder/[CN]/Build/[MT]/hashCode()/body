@@ -3,6 +3,6 @@
   result=31 * result + registeredTargetIndices.hashCode();
   result=31 * result + methodInvocation.hashCode();
   result=31 * result + parameterStackManipulations.hashCode();
-  result=31 * result + returnValueStackManipulation.hashCode();
+  result=31 * result + terminatingStackManipulation.hashCode();
   return result;
 }

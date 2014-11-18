@@ -1,0 +1,3 @@
+{
+  return typeDescription.represents(void.class) ? new LookupEngine.ForHierarchy(fieldName) : new LookupEngine.ForExplicitType(fieldName,typeDescription.represents(TargetType.class) ? instrumentedType : typeDescription);
+}

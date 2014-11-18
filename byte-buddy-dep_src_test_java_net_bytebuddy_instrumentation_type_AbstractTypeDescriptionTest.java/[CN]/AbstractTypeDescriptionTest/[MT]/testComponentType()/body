@@ -1,0 +1,4 @@
+{
+  assertThat(describe(Object.class).getComponentType(),nullValue(Object.class));
+  assertThat(describe(Object[].class).getComponentType(),is(describe(Object.class)));
+}

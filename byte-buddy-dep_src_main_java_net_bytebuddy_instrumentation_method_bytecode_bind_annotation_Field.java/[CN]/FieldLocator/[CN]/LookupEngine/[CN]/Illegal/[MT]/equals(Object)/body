@@ -1,0 +1,3 @@
+{
+  return other == this || (other != null && other.getClass() == getClass());
+}

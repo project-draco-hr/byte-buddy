@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Resolved resolved=(Resolved)other;
+  return findLoadedClassMethod.equals(resolved.findLoadedClassMethod) && loadByteArrayMethod.equals(resolved.loadByteArrayMethod);
+}

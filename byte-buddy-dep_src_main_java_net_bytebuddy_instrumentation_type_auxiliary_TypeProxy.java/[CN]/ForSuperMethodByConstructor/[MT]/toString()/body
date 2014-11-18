@@ -1,0 +1,3 @@
+{
+  return "TypeProxy.ForSuperMethodByConstructor{" + "proxiedType=" + proxiedType + ", instrumentationTarget="+ instrumentationTarget+ ", constructorParameters="+ constructorParameters+ ", ignoreFinalizer="+ ignoreFinalizer+ ", serializableProxy="+ serializableProxy+ '}';
+}

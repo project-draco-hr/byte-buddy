@@ -1,9 +1,0 @@
-{
-  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
-  when(methodDescription.getReturnType()).thenReturn(returnType);
-  when(returnType.getStackSize()).thenReturn(StackSize.ZERO);
-  when(methodDescription.isSpecializableFor(typeDescription)).thenReturn(true);
-  when(methodDescription.getInternalName()).thenReturn(FOO);
-  when(methodDescription.getParameterTypes()).thenReturn(parameterTypes);
-  specialMethodInvocation=Instrumentation.SpecialMethodInvocation.Simple.of(methodDescription,typeDescription);
-}

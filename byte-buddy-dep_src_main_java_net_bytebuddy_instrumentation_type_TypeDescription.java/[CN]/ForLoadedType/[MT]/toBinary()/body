@@ -1,0 +1,3 @@
+{
+  return BinaryRepresentation.Explicit.of(type);
+}

@@ -1,0 +1,3 @@
+{
+  when(legal.isValid()).thenReturn(true);
+}

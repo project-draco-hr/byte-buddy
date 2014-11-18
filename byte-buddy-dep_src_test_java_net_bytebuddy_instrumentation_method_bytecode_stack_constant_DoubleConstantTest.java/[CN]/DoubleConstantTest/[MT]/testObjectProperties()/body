@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(DoubleConstant.ConstantPool.class).apply();
+}

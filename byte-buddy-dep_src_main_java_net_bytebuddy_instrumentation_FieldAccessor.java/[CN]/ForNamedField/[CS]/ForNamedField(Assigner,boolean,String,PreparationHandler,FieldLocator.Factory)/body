@@ -1,0 +1,6 @@
+{
+  super(assigner,considerRuntimeType);
+  this.fieldName=fieldName;
+  this.preparationHandler=preparationHandler;
+  this.fieldLocatorFactory=fieldLocatorFactory;
+}

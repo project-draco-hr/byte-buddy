@@ -1,0 +1,9 @@
+{
+  DynamicType.Loaded<ExplicitInherited> loaded=instrument(ExplicitInherited.class,MethodDelegation.to(Swap.class).appendParameterBinder(Field.Binder.install(Get.class,Set.class)));
+  ExplicitInherited explicitInherited=loaded.getLoaded().newInstance();
+  assertThat(((Explicit)explicitInherited).foo,is(FOO));
+  assertThat(explicitInherited.foo,is(QUX));
+  explicitInherited.swap();
+  assertThat(((Explicit)explicitInherited).foo,is(FOO));
+  assertThat(explicitInherited.foo,is(QUX + BAR));
+}

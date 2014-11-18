@@ -1,0 +1,3 @@
+{
+  PrimitiveUnboxingDelegate.forPrimitive(new TypeDescription.ForLoadedType(void.class));
+}

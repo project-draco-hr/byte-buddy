@@ -1,0 +1,3 @@
+{
+  assertThat(typeList.subList(0,1),is((TypeList)new TypeList.ForLoadedType(Object.class)));
+}

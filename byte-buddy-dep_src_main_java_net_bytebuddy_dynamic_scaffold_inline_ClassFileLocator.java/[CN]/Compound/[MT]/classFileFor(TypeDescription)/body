@@ -1,8 +1,8 @@
 {
   for (  ClassFileLocator classFileLocator : this.classFileLocator) {
-    InputStream inputStream=classFileLocator.classFileFor(typeDescription);
-    if (inputStream != null) {
-      return inputStream;
+    TypeDescription.BinaryRepresentation binaryRepresentation=classFileLocator.classFileFor(typeDescription);
+    if (binaryRepresentation.isValid()) {
+      return binaryRepresentation;
     }
   }
   return null;

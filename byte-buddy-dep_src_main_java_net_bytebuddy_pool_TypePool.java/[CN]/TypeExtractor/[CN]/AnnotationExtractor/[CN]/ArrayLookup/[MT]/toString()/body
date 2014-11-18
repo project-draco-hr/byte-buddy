@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.TypeExtractor.AnnotationExtractor.ArrayLookup{" + "annotationExtractor=" + AnnotationExtractor.this + ", name='"+ name+ '\''+ ", componentTypeReference="+ componentTypeReference+ ", values="+ values+ '}';
+}

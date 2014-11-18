@@ -1,0 +1,3 @@
+{
+  return superTypeName == null || isInterface() ? null : typePool.describe(superTypeName);
+}

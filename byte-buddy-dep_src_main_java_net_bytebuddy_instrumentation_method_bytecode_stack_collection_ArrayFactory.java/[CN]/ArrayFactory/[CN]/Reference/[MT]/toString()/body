@@ -1,3 +1,0 @@
-{
-  return "ArrayFactory.ArrayCreator.Reference{" + "internalTypeName='" + internalTypeName + '\''+ '}';
-}

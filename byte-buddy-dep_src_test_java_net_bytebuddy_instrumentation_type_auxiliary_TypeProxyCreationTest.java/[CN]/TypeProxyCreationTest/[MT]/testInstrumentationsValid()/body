@@ -1,0 +1,3 @@
+{
+  assertThat(TypeProxy.AbstractMethodErrorThrow.INSTANCE.isValid(),is(true));
+}

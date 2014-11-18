@@ -1,0 +1,4 @@
+{
+  Method method=Object.class.getDeclaredMethod("toString");
+  assertThat(new MethodDescription.ForLoadedMethod(method).getLoadedMethod(),sameInstance(method));
+}

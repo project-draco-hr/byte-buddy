@@ -1,0 +1,4 @@
+{
+  assertThat(describe(first).getModifiers(),is(first.getModifiers()));
+  assertThat(describe(second).getModifiers(),is(second.getModifiers()));
+}

@@ -1,0 +1,3 @@
+{
+  Default.Binder.INSTANCE.bind(annotationDescription,INDEX,source,target,instrumentationTarget,assigner);
+}

@@ -1,4 +1,4 @@
 {
   when(targetType.getInternalName()).thenReturn(FOO);
-  Origin.Binder.INSTANCE.bind(annotation,INDEX,source,target,instrumentationTarget,assigner);
+  Origin.Binder.INSTANCE.bind(annotationDescription,INDEX,source,target,instrumentationTarget,assigner);
 }

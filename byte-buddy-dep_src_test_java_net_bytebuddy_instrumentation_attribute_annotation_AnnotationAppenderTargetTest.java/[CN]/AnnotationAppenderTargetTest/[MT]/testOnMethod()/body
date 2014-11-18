@@ -1,0 +1,5 @@
+{
+  new AnnotationAppender.Target.OnMethod(methodVisitor).visit(FOO,true);
+  verify(methodVisitor).visitAnnotation(FOO,true);
+  verifyNoMoreInteractions(methodVisitor);
+}

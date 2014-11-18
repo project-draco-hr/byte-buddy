@@ -1,5 +1,12 @@
 {
-  when(classFileLocator.classFileFor(targetType)).thenReturn(getClass().getClassLoader().getResourceAsStream(Foo.class.getName().replace('.','/') + ".class"));
+  when(binaryRepresentation.isValid()).thenReturn(true);
+  InputStream inputStream=getClass().getClassLoader().getResourceAsStream(Foo.class.getName().replace('.','/') + ".class");
+  try {
+    when(binaryRepresentation.getData()).thenReturn(new StreamDrainer().drain(inputStream));
+  }
+  finally {
+    inputStream.close();
+  }
   when(barResolution.isRebased()).thenReturn(true);
   assertThat(new TypeWriter.Engine.ForRedefinition(instrumentedType,targetType,classFileVersion,invokableMethods,classVisitorWrapper,typeAttributeAppender,fieldPool,methodPool,classFileLocator,methodRebaseResolver).create(instrumentationContext),notNullValue());
   verify(classFileVersion).compareTo(any(ClassFileVersion.class));

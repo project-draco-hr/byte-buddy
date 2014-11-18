@@ -1,0 +1,12 @@
+{
+  assertThat(describe(firstMethod).getName(),is(firstMethod.getName()));
+  assertThat(describe(secondMethod).getName(),is(secondMethod.getName()));
+  assertThat(describe(thirdMethod).getName(),is(thirdMethod.getName()));
+  assertThat(describe(firstConstructor).getName(),is(firstConstructor.getDeclaringClass().getName()));
+  assertThat(describe(secondConstructor).getName(),is(secondConstructor.getDeclaringClass().getName()));
+  assertThat(describe(firstMethod).getInternalName(),is(firstMethod.getName()));
+  assertThat(describe(secondMethod).getInternalName(),is(secondMethod.getName()));
+  assertThat(describe(thirdMethod).getInternalName(),is(thirdMethod.getName()));
+  assertThat(describe(firstConstructor).getInternalName(),is(MethodDescription.CONSTRUCTOR_INTERNAL_NAME));
+  assertThat(describe(secondConstructor).getInternalName(),is(MethodDescription.CONSTRUCTOR_INTERNAL_NAME));
+}

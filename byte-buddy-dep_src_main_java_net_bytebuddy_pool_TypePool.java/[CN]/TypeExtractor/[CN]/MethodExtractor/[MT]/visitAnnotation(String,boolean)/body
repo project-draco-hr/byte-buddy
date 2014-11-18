@@ -1,0 +1,3 @@
+{
+  return new AnnotationExtractor(new OnMethodCollector(descriptor),new ComponentTypeLocator.ForAnnotationProperty(Default.this,descriptor));
+}

@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(ArrayAccess.Loader.class).apply();
+  ObjectPropertyAssertion.of(ArrayAccess.Putter.class).apply();
+}

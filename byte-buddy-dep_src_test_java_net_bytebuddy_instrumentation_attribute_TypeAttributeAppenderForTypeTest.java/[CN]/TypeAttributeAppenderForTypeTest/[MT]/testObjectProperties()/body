@@ -1,0 +1,9 @@
+{
+  final Iterator<Class<?>> iterator=Arrays.<Class<?>>asList(Void.class,String.class).iterator();
+  ObjectPropertyAssertion.of(TypeAttributeAppender.ForType.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
+    @Override public Class<?> create(){
+      return iterator.next();
+    }
+  }
+).apply();
+}

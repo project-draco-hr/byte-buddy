@@ -1,3 +1,15 @@
 {
-  HashCodeEqualsTester.of(ExceptionMethod.class).apply();
+  ObjectPropertyAssertion.of(ExceptionMethod.class).apply();
+  ObjectPropertyAssertion.of(ExceptionMethod.ConstructionDelegate.ForDefaultConstructor.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
+    @Override public void apply(    TypeDescription mock){
+      when(mock.getDeclaredMethods()).thenReturn(new MethodList.ForLoadedType(Object.class));
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(ExceptionMethod.ConstructionDelegate.ForStringConstructor.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
+    @Override public void apply(    TypeDescription mock){
+      when(mock.getDeclaredMethods()).thenReturn(new MethodList.ForLoadedType(String.class));
+    }
+  }
+).apply();
 }

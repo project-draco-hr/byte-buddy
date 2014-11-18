@@ -1,0 +1,3 @@
+{
+  assertThat(methodList.subList(0,1),is((MethodList)new MethodList.Explicit(Arrays.asList(firstMethodDescription))));
+}

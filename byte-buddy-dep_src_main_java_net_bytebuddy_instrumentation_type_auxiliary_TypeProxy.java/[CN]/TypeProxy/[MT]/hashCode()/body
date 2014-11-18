@@ -1,6 +1,7 @@
 {
   int result=proxiedType.hashCode();
   result=31 * result + instrumentationTarget.hashCode();
+  result=31 * result + invocationFactory.hashCode();
   result=31 * result + (ignoreFinalizer ? 1 : 0);
   result=31 * result + (serializableProxy ? 1 : 0);
   return result;

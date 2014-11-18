@@ -1,5 +1,0 @@
-{
-  assertThat(objectHashCode.getDescriptor(),is(Type.getMethodDescriptor(Object.class.getDeclaredMethod(HASH_CODE))));
-  assertThat(integerIntValue.getDescriptor(),is(Type.getMethodDescriptor(Integer.class.getDeclaredMethod(INT_VALUE))));
-  assertThat(doubleDoubleValue.getDescriptor(),is(Type.getMethodDescriptor(Double.class.getDeclaredMethod(LONG_BITS_TO_DOUBLE,long.class))));
-}

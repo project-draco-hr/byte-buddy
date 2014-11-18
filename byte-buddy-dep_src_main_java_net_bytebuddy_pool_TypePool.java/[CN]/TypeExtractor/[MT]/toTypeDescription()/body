@@ -1,0 +1,3 @@
+{
+  return new LazyTypeDescription(Default.this,modifiers,internalName,superTypeName,interfaceName,declarationContext,anonymousType,annotationTokens,fieldTokens,methodTokens);
+}

@@ -1,0 +1,6 @@
+{
+  int hashCode=new TypeDescription.ForLoadedType(constructor.getDeclaringClass()).hashCode();
+  hashCode=31 * hashCode + MethodDescription.CONSTRUCTOR_INTERNAL_NAME.hashCode();
+  hashCode=31 * hashCode + new TypeDescription.ForLoadedType(void.class).hashCode();
+  return 31 * hashCode + new TypeList.ForLoadedType(constructor.getParameterTypes()).hashCode();
+}

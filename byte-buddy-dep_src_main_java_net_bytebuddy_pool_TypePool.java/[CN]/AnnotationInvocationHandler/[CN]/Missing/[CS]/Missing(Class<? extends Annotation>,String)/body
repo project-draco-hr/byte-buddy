@@ -1,0 +1,4 @@
+{
+  this.annotationType=annotationType;
+  this.property=property;
+}

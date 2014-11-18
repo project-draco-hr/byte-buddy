@@ -1,7 +1,0 @@
-{
-  TypeDescription otherType=mock(TypeDescription.class);
-  when(otherType.getName()).thenReturn(type.getName());
-  assertThat(typeDescription.equals(otherType),is(true));
-  verify(otherType).getName();
-  verifyNoMoreInteractions(otherType);
-}

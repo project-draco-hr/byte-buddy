@@ -1,6 +1,0 @@
-{
-  assertThat(new MethodRebaseResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType).hashCode(),is(new MethodRebaseResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType).hashCode()));
-  assertThat(new MethodRebaseResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType),is(new MethodRebaseResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType)));
-  assertThat(new MethodRebaseResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType).hashCode(),not(is(new MethodRebaseResolver.Resolution.ForRebasedConstructor(methodDescription,otherPlaceHolderType).hashCode())));
-  assertThat(new MethodRebaseResolver.Resolution.ForRebasedConstructor(methodDescription,placeholderType),not(is(new MethodRebaseResolver.Resolution.ForRebasedConstructor(methodDescription,otherPlaceHolderType))));
-}

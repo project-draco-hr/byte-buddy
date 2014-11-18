@@ -1,0 +1,5 @@
+{
+  super(ASM_VERSION);
+  this.annotationRegistrant=annotationRegistrant;
+  this.componentTypeLocator=componentTypeLocator;
+}

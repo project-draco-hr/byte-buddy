@@ -1,0 +1,6 @@
+{
+  ObjectPropertyAssertion.of(MethodLookupEngine.Default.class).apply();
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(typeDescription.getDeclaredMethods()).thenReturn(new MethodList.Empty());
+  ObjectPropertyAssertion.of(MethodLookupEngine.Default.MethodBucket.class).apply(new MethodLookupEngine.Default.MethodBucket(typeDescription));
+}

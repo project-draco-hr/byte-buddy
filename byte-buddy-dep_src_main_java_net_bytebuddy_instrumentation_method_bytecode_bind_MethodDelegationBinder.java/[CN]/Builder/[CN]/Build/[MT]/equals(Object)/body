@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   Build build=(Build)other;
-  return methodInvocation.equals(build.methodInvocation) && parameterStackManipulations.equals(build.parameterStackManipulations) && registeredTargetIndices.equals(build.registeredTargetIndices)&& returnValueStackManipulation.equals(build.returnValueStackManipulation)&& target.equals(build.target);
+  return methodInvocation.equals(build.methodInvocation) && parameterStackManipulations.equals(build.parameterStackManipulations) && registeredTargetIndices.equals(build.registeredTargetIndices)&& terminatingStackManipulation.equals(build.terminatingStackManipulation)&& target.equals(build.target);
 }

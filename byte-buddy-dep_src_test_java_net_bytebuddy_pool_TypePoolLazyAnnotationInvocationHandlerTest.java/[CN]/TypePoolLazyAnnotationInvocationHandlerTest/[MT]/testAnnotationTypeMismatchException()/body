@@ -1,0 +1,4 @@
+{
+  when(loadedAnnotationValue.resolve()).thenReturn(new Object());
+  new TypePool.LazyTypeDescription.AnnotationInvocationHandler(getClass().getClassLoader(),Foo.class,Collections.<String,TypePool.LazyTypeDescription.AnnotationValue<?,?>>singletonMap(FOO,annotationValue)).invoke(new Object(),Foo.class.getDeclaredMethod("foo"),new Object[0]);
+}

@@ -1,0 +1,4 @@
+{
+  when(freeAnnotationValue.load(getClass().getClassLoader())).thenReturn((TypePool.LazyTypeDescription.AnnotationValue.Loaded)new TypePool.LazyTypeDescription.AnnotationValue.ForEnumeration.IncompatibleRuntimeType(Foo.class));
+  new TypePool.LazyTypeDescription.AnnotationInvocationHandler(getClass().getClassLoader(),Foo.class,Collections.<String,TypePool.LazyTypeDescription.AnnotationValue<?,?>>singletonMap(FOO,freeAnnotationValue)).invoke(new Object(),Foo.class.getDeclaredMethod("foo"),new Object[0]);
+}

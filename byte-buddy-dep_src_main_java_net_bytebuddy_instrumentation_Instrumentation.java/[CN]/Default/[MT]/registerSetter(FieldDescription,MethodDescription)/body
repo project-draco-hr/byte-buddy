@@ -1,0 +1,4 @@
+{
+  registeredSetters.put(fieldDescription,accessorMethod);
+  accessorMethodEntries.put(accessorMethod,new FieldSetter(fieldDescription));
+}

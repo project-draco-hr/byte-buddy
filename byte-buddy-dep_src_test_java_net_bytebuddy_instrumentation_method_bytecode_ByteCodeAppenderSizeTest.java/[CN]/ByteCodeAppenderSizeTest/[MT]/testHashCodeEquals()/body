@@ -1,3 +1,0 @@
-{
-  HashCodeEqualsTester.of(ByteCodeAppender.Size.class).apply();
-}

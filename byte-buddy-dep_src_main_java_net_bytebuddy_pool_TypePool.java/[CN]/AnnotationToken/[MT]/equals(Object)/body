@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  AnnotationToken that=(AnnotationToken)other;
+  return descriptor.equals(that.descriptor) && values.equals(that.values);
+}

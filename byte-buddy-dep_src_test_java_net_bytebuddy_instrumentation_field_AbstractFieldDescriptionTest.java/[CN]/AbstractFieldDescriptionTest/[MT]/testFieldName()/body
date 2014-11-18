@@ -1,0 +1,6 @@
+{
+  assertThat(describe(first).getName(),is(first.getName()));
+  assertThat(describe(second).getName(),is(second.getName()));
+  assertThat(describe(first).getInternalName(),is(first.getName()));
+  assertThat(describe(second).getInternalName(),is(second.getName()));
+}

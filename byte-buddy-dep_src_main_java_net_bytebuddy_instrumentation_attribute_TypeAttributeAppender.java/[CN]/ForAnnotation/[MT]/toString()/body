@@ -1,3 +1,3 @@
 {
-  return "TypeAttributeAppender.ForAnnotation{annotation=" + Arrays.toString(annotation) + '}';
+  return "TypeAttributeAppender.ForAnnotation{annotations=" + annotations + '}';
 }

@@ -1,0 +1,11 @@
+{
+  if (!methodDescription.getDeclaringType().getDescriptor().equals(descriptor)) {
+    throw new IllegalArgumentException(methodDescription + " is not declared by " + getAnnotationType());
+  }
+  AnnotationValue<?,?> annotationValue=values.get(methodDescription.getName());
+  Object value=annotationValue == null ? getAnnotationType().getDeclaredMethods().filter(is(methodDescription)).getOnly().getDefaultValue() : annotationValue.resolve(typePool);
+  if (value == null) {
+    throw new IllegalStateException(methodDescription + " is not defined on annotation");
+  }
+  return PropertyDispatcher.of(value.getClass()).conditionalClone(value);
+}

@@ -1,9 +1,0 @@
-{
-  assertThat(objectType.getSupertype(),nullValue(TypeDescription.class));
-  assertThat(intType.getSupertype(),nullValue(TypeDescription.class));
-  assertThat(longType.getSupertype(),nullValue(TypeDescription.class));
-  assertThat(numberType.getSupertype(),equalTo(objectType));
-  assertThat(integerType.getSupertype(),equalTo(numberType));
-  assertThat(serializableType.getSupertype(),nullValue(TypeDescription.class));
-  assertThat(objectArrayType.getSupertype(),equalTo(objectType));
-}

@@ -1,34 +1,34 @@
 {
   if (componentType.isPrimitive()) {
     if (componentType.represents(boolean.class)) {
-      return ArrayCreator.Primitive.BOOLEAN;
+      return ArrayCreator.ForPrimitiveType.BOOLEAN;
     }
  else     if (componentType.represents(byte.class)) {
-      return ArrayCreator.Primitive.BYTE;
+      return ArrayCreator.ForPrimitiveType.BYTE;
     }
  else     if (componentType.represents(short.class)) {
-      return ArrayCreator.Primitive.SHORT;
+      return ArrayCreator.ForPrimitiveType.SHORT;
     }
  else     if (componentType.represents(char.class)) {
-      return ArrayCreator.Primitive.CHARACTER;
+      return ArrayCreator.ForPrimitiveType.CHARACTER;
     }
  else     if (componentType.represents(int.class)) {
-      return ArrayCreator.Primitive.INTEGER;
+      return ArrayCreator.ForPrimitiveType.INTEGER;
     }
  else     if (componentType.represents(long.class)) {
-      return ArrayCreator.Primitive.LONG;
+      return ArrayCreator.ForPrimitiveType.LONG;
     }
  else     if (componentType.represents(float.class)) {
-      return ArrayCreator.Primitive.FLOAT;
+      return ArrayCreator.ForPrimitiveType.FLOAT;
     }
  else     if (componentType.represents(double.class)) {
-      return ArrayCreator.Primitive.DOUBLE;
+      return ArrayCreator.ForPrimitiveType.DOUBLE;
     }
  else {
       throw new IllegalArgumentException("Cannot create array of type " + componentType);
     }
   }
  else {
-    return new ArrayCreator.Reference(componentType);
+    return new ArrayCreator.ForReferenceType(componentType);
   }
 }

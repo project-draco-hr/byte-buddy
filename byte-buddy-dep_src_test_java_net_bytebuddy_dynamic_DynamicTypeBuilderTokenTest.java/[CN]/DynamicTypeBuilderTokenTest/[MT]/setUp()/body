@@ -1,0 +1,4 @@
+{
+  parameterTypes=new TypeList.Explicit(Arrays.asList(parameterType));
+  exceptionTypes=new TypeList.Explicit(Arrays.asList(exceptionType));
+}

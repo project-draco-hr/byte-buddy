@@ -1,0 +1,4 @@
+{
+  assertEquals(Sample.class,describe(first).prepare(Sample.class).load().annotationType());
+  assertEquals(Sample.class,describe(second).prepare(Sample.class).load().annotationType());
+}

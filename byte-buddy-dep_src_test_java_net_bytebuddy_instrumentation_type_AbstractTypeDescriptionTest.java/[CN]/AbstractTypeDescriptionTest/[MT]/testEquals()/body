@@ -1,0 +1,13 @@
+{
+  TypeDescription identical=describe(SampleClass.class);
+  assertThat(identical,equalTo(identical));
+  TypeDescription equalFirst=mock(TypeDescription.class);
+  when(equalFirst.getName()).thenReturn(SampleClass.class.getName());
+  assertThat(describe(SampleClass.class),equalTo(equalFirst));
+  assertThat(describe(SampleClass.class),not(equalTo(describe(SampleInterface.class))));
+  assertThat(describe(SampleClass.class),not(equalTo((TypeDescription)new TypeDescription.ForLoadedType(SampleInterface.class))));
+  assertThat(describe(SampleClass.class),not(equalTo(new Object())));
+  assertThat(describe(SampleClass.class),not(equalTo(null)));
+  assertThat(describe(Object[].class),equalTo((TypeDescription)new TypeDescription.ForLoadedType(Object[].class)));
+  assertThat(describe(Object[].class),not(equalTo((TypeDescription)new TypeDescription.ForLoadedType(Object.class))));
+}

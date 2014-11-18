@@ -1,0 +1,3 @@
+{
+  return defaultValue == null ? null : defaultValue.resolve(typePool);
+}

@@ -1,6 +1,0 @@
-{
-  assertThat(ArrayFactory.targeting(new TypeDescription.ForLoadedType(Object.class)).withValues(Arrays.asList(stackManipulation)).hashCode(),is(ArrayFactory.targeting(new TypeDescription.ForLoadedType(Object.class)).withValues(Arrays.asList(stackManipulation)).hashCode()));
-  assertThat(ArrayFactory.targeting(new TypeDescription.ForLoadedType(Object.class)).withValues(Arrays.asList(stackManipulation)),is(ArrayFactory.targeting(new TypeDescription.ForLoadedType(Object.class)).withValues(Arrays.asList(stackManipulation))));
-  assertThat(ArrayFactory.targeting(new TypeDescription.ForLoadedType(Object.class)).withValues(Arrays.asList(stackManipulation)).hashCode(),not(is(ArrayFactory.targeting(new TypeDescription.ForLoadedType(Object.class)).withValues(Arrays.asList(mock(StackManipulation.class))).hashCode())));
-  assertThat(ArrayFactory.targeting(new TypeDescription.ForLoadedType(Object.class)).withValues(Arrays.asList(stackManipulation)),not(is(ArrayFactory.targeting(new TypeDescription.ForLoadedType(Object.class)).withValues(Arrays.asList(mock(StackManipulation.class))))));
-}

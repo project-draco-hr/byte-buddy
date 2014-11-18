@@ -1,3 +1,0 @@
-{
-  assertThat(specialMethodInvocation.getMethodDescription(),is(methodDescription));
-}

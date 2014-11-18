@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(DefaultCall.Binder.DefaultMethodLocator.Explicit.class).apply();
+}

@@ -1,6 +1,0 @@
-{
-  for (  Method method : annotation.annotationType().getDeclaredMethods()) {
-    apply(annotationVisitor,method.getReturnType(),method.getName(),method.invoke(annotation));
-  }
-  annotationVisitor.visitEnd();
-}

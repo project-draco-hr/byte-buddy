@@ -1,0 +1,12 @@
+{
+  Constructor<?> constructor=IgnoreForBinding.Verifier.class.getDeclaredConstructor();
+  assertThat(constructor.getModifiers(),Is.is(Opcodes.ACC_PRIVATE));
+  constructor.setAccessible(true);
+  try {
+    constructor.newInstance();
+    fail();
+  }
+ catch (  InvocationTargetException e) {
+    throw (UnsupportedOperationException)e.getCause();
+  }
+}

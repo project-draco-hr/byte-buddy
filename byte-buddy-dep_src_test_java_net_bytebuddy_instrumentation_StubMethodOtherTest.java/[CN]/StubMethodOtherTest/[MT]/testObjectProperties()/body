@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(SuperMethodCall.Appender.class).skipSynthetic().apply();
+}

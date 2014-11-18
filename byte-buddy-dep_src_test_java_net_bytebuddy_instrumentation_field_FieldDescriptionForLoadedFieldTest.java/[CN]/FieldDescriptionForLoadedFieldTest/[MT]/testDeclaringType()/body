@@ -1,3 +1,0 @@
-{
-  assertThat(fieldDescription.getDeclaringType().represents(Foo.class),is(true));
-}

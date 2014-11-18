@@ -1,0 +1,6 @@
+{
+  this.modifiers=modifiers;
+  this.internalName=internalName;
+  this.superTypeName=superTypeName;
+  this.interfaceName=interfaceName;
+}

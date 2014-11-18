@@ -1,0 +1,3 @@
+{
+  return TypeDescription.ArrayProjection.of(new TypeDescription.ForLoadedType(type),0);
+}

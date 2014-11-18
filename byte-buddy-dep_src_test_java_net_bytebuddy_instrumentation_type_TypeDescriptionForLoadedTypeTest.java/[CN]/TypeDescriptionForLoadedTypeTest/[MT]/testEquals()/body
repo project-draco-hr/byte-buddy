@@ -1,9 +1,0 @@
-{
-  assertTypeEquality(objectType,Object.class);
-  assertTypeEquality(intType,int.class);
-  assertTypeEquality(longType,long.class);
-  assertTypeEquality(numberType,Number.class);
-  assertTypeEquality(integerType,Integer.class);
-  assertTypeEquality(serializableType,Serializable.class);
-  assertTypeEquality(objectArrayType,Object[].class);
-}

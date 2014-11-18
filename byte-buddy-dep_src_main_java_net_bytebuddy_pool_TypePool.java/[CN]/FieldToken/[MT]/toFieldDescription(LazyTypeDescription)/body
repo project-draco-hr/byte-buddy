@@ -1,0 +1,3 @@
+{
+  return lazyTypeDescription.new LazyFieldDescription(getModifiers(),getName(),getDescriptor(),getAnnotationTokens());
+}

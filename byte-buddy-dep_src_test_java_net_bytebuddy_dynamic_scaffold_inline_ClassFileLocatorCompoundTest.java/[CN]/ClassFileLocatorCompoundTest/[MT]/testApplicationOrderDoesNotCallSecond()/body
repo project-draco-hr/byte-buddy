@@ -1,6 +1,6 @@
 {
-  when(classFileLocator.classFileFor(typeDescription)).thenReturn(inputStream);
-  assertThat(new ClassFileLocator.Compound(classFileLocator,otherClassFileLocator).classFileFor(typeDescription),is(inputStream));
+  when(classFileLocator.classFileFor(typeDescription)).thenReturn(legal);
+  assertThat(new ClassFileLocator.Compound(classFileLocator,otherClassFileLocator).classFileFor(typeDescription),is(legal));
   verify(classFileLocator).classFileFor(typeDescription);
   verifyNoMoreInteractions(classFileLocator);
   verifyZeroInteractions(otherClassFileLocator);

@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(typeDescription.represents(void.class)).thenReturn(true);
+  nonVoid(Arrays.asList(typeDescription));
+}

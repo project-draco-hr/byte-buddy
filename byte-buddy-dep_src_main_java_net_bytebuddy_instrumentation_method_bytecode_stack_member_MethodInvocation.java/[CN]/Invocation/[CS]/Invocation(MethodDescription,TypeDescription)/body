@@ -1,7 +1,4 @@
 {
   this.typeDescription=typeDescription;
   this.methodDescription=methodDescription;
-  int parameterSize=methodDescription.getStackSize();
-  int returnValueSize=methodDescription.getReturnType().getStackSize().getSize();
-  size=new Size(returnValueSize - parameterSize,Math.max(0,returnValueSize - parameterSize));
 }

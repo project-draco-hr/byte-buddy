@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypeAttributeAppender.Compound.class).apply();
+}

@@ -1,0 +1,3 @@
+{
+  when(methodDescription.getDeclaredAnnotations()).thenReturn(annotationList);
+}

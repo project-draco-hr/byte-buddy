@@ -1,0 +1,3 @@
+{
+  return isAssignableTo(new ForLoadedType(type));
+}

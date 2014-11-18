@@ -1,6 +1,6 @@
 {
   AnnotationAppender appender=new AnnotationAppender.Default(target.make(methodVisitor,methodDescription));
-  for (  Annotation annotation : this.annotation) {
+  for (  AnnotationDescription annotation : this.annotations) {
     appender.append(annotation,AnnotationAppender.AnnotationVisibility.of(annotation));
   }
 }

@@ -1,0 +1,3 @@
+{
+  return new ObjectPropertyAssertion<S>(type,new ApplicableGenerator(),new ApplicableRefinement(),new ApplicableCreator(),false,false,new HashSet<String>());
+}

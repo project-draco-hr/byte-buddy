@@ -1,0 +1,4 @@
+{
+  when(methodDescription.getInternalName()).thenReturn("get" + FOO_CAPITAL);
+  assertThat(FieldAccessor.FieldNameExtractor.ForBeanProperty.INSTANCE.fieldNameFor(methodDescription),is(FOO));
+}

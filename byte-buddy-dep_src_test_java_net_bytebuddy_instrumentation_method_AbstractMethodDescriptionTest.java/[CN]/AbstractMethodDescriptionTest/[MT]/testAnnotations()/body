@@ -1,0 +1,12 @@
+{
+  assertThat(describe(firstMethod).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+  assertThat(describe(secondMethod).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+  assertThat(describe(thirdMethod).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.ForLoadedAnnotation(thirdMethod.getDeclaredAnnotations())));
+  assertThat(describe(firstConstructor).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+  assertThat(describe(secondConstructor).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.ForLoadedAnnotation(secondConstructor.getDeclaredAnnotations())));
+  assertThat(describe(firstMethod).getParameterAnnotations(),is(AnnotationList.Empty.asList(0)));
+  assertThat(describe(secondMethod).getParameterAnnotations(),is(AnnotationList.Empty.asList(2)));
+  assertThat(describe(thirdMethod).getParameterAnnotations(),is(AnnotationList.ForLoadedAnnotation.asList(thirdMethod.getParameterAnnotations())));
+  assertThat(describe(firstConstructor).getParameterAnnotations(),is(AnnotationList.Empty.asList(1)));
+  assertThat(describe(secondConstructor).getParameterAnnotations(),is(AnnotationList.ForLoadedAnnotation.asList(secondConstructor.getParameterAnnotations())));
+}

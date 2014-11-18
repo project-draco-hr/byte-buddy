@@ -1,0 +1,6 @@
+{
+  assertThat(methodList.size(),is(3));
+  assertThat(methodList.get(0),is((MethodDescription)new MethodDescription.ForLoadedConstructor(Sample.class.getDeclaredConstructor())));
+  assertThat(methodList.get(1),is((MethodDescription)new MethodDescription.ForLoadedMethod(Sample.class.getDeclaredMethod("first"))));
+  assertThat(methodList.get(2),is((MethodDescription)new MethodDescription.ForLoadedMethod(Sample.class.getDeclaredMethod("second",String.class))));
+}

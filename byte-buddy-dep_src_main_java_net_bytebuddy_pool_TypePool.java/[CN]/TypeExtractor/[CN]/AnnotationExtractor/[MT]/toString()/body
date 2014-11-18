@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.TypeExtractor.AnnotationExtractor{" + "typeExtractor=" + TypeExtractor.this + "annotationRegistrant="+ annotationRegistrant+ ", componentTypeLocator="+ componentTypeLocator+ '}';
+}

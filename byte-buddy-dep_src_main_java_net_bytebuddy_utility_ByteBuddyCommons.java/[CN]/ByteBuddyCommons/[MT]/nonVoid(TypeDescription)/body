@@ -1,0 +1,6 @@
+{
+  if (nonNull(typeDescription).represents(void.class)) {
+    throw new IllegalArgumentException("Type must not be void");
+  }
+  return typeDescription;
+}

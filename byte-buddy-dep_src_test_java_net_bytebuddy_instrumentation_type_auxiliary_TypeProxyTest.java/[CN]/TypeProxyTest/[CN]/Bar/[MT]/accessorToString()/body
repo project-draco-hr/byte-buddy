@@ -1,4 +1,0 @@
-{
-  callTraceable.register(TO_STRING);
-  return TO_STRING;
-}

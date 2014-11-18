@@ -1,4 +1,0 @@
-{
-  callTraceable.register(HASH_CODE);
-  return HASH_CODE_RESULT;
-}

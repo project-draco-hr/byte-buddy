@@ -1,0 +1,8 @@
+{
+  try {
+    return load(classLoader);
+  }
+ catch (  ClassNotFoundException e) {
+    throw new IllegalStateException(ForLoadedAnnotation.ERROR_MESSAGE,e);
+  }
+}

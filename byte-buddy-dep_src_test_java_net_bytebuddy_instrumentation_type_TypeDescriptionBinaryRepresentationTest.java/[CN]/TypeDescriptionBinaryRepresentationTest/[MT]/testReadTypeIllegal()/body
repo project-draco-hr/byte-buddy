@@ -1,0 +1,6 @@
+{
+  Class<?> nonClassFileType=new ByteBuddy().subclass(Object.class).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  TypeDescription.BinaryRepresentation binaryRepresentation=TypeDescription.BinaryRepresentation.Explicit.of(nonClassFileType);
+  assertThat(binaryRepresentation.isValid(),is(false));
+  binaryRepresentation.getData();
+}

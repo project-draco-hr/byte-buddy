@@ -1,0 +1,7 @@
+{
+  assertThat(describe(firstMethod).toString(),is(firstMethod.toString()));
+  assertThat(describe(secondMethod).toString(),is(secondMethod.toString()));
+  assertThat(describe(thirdMethod).toString(),is(thirdMethod.toString()));
+  assertThat(describe(firstConstructor).toString(),is(firstConstructor.toString()));
+  assertThat(describe(secondConstructor).toString(),is(secondConstructor.toString()));
+}

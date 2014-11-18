@@ -1,0 +1,38 @@
+{
+  if (self == other) {
+    return true;
+  }
+ else   if (!annotationType.isInstance(other)) {
+    return false;
+  }
+ else   if (Proxy.isProxyClass(other.getClass())) {
+    InvocationHandler invocationHandler=Proxy.getInvocationHandler(other);
+    if (invocationHandler instanceof AnnotationInvocationHandler) {
+      return invocationHandler.equals(this);
+    }
+  }
+  try {
+    for (    Map.Entry<Method,AnnotationValue.Loaded<?>> entry : values.entrySet()) {
+      if (entry.getValue().getState().isResolved()) {
+        try {
+          if (!PropertyDispatcher.of(entry.getKey().getReturnType()).equals(entry.getValue().resolve(),entry.getKey().invoke(other))) {
+            return false;
+          }
+        }
+ catch (        RuntimeException e) {
+          return false;
+        }
+      }
+ else {
+        return false;
+      }
+    }
+  }
+ catch (  InvocationTargetException ignored) {
+    return false;
+  }
+catch (  IllegalAccessException e) {
+    throw new AssertionError(e);
+  }
+  return true;
+}

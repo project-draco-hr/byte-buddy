@@ -1,0 +1,4 @@
+{
+  first=FirstSample.class.getDeclaredField("first");
+  second=SecondSample.class.getDeclaredField("second");
+}

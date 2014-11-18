@@ -1,0 +1,7 @@
+{
+  int result=modifiers;
+  result=31 * result + name.hashCode();
+  result=31 * result + descriptor.hashCode();
+  result=31 * result + annotationTokens.hashCode();
+  return result;
+}

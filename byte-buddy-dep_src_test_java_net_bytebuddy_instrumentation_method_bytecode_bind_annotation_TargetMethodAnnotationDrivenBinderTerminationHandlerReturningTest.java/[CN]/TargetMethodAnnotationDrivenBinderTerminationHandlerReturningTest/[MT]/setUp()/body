@@ -1,0 +1,6 @@
+{
+  when(source.getReturnType()).thenReturn(sourceType);
+  when(target.getReturnType()).thenReturn(targetType);
+  when(assigner.assign(eq(targetType),eq(sourceType),any(boolean.class))).thenReturn(stackManipulation);
+  when(target.getDeclaredAnnotations()).thenReturn(annotationList);
+}

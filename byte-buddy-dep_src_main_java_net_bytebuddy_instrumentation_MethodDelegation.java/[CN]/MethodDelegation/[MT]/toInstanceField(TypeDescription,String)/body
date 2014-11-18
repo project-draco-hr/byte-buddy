@@ -1,0 +1,3 @@
+{
+  return toInstanceField(nonNull(typeDescription),isValidIdentifier(fieldName),defaultMethodLookupEngine());
+}

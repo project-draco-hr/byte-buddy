@@ -1,0 +1,19 @@
+{
+  Class<?> carrier;
+  if (annotation == first) {
+    carrier=FooSample.class;
+  }
+ else   if (annotation == second) {
+    carrier=BarSample.class;
+  }
+ else   if (annotation == defaultFirst) {
+    carrier=DefaultSample.class;
+  }
+ else   if (annotation == defaultSecond) {
+    carrier=NonDefaultSample.class;
+  }
+ else {
+    throw new AssertionError();
+  }
+  return describe(annotation,carrier);
+}

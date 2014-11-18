@@ -11,10 +11,14 @@
   when(target.getInternalName()).thenReturn(BAR);
   when(target.getDescriptor()).thenReturn(BAZ);
   when(target.isStatic()).thenReturn(true);
-  doReturn(FirstPseudoAnnotation.class).when(firstPseudoAnnotation).annotationType();
-  doReturn(SecondPseudoAnnotation.class).when(secondPseudoAnnotation).annotationType();
+  when(firstPseudoAnnotation.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(FirstPseudoAnnotation.class));
+  when(firstPseudoAnnotation.prepare(FirstPseudoAnnotation.class)).thenReturn(firstPseudoAnnotation);
+  when(secondPseudoAnnotation.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(SecondPseudoAnnotation.class));
+  when(secondPseudoAnnotation.prepare(SecondPseudoAnnotation.class)).thenReturn(secondPseudoAnnotation);
   when(sourceTypeDescription.getStackSize()).thenReturn(StackSize.ZERO);
   when(targetTypeDescription.getStackSize()).thenReturn(StackSize.ZERO);
   when(source.getReturnType()).thenReturn(sourceTypeDescription);
   when(target.getReturnType()).thenReturn(targetTypeDescription);
+  when(terminationHandler.resolve(assigner,source,target)).thenReturn(termination);
+  when(termination.apply(any(MethodVisitor.class),any(Instrumentation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
 }

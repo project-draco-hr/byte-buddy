@@ -1,0 +1,10 @@
+{
+  when(targetTypeList.get(INDEX)).thenReturn(morphType);
+  when(morphMethod.getDeclaringType()).thenReturn(morphType);
+  doReturn(void.class).when(annotation).defaultTarget();
+  when(instrumentationTarget.invokeSuper(source,Instrumentation.Target.MethodLookup.Default.EXACT)).thenReturn(specialMethodInvocation);
+  when(specialMethodInvocation.isValid()).thenReturn(true);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=new Morph.Binder(morphMethod).bind(annotationDescription,0,source,target,instrumentationTarget,assigner);
+  assertThat(parameterBinding.isValid(),is(true));
+  verify(specialMethodInvocation).isValid();
+}

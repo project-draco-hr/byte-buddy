@@ -1,0 +1,14 @@
+{
+  TypePool.CacheProvider simple=new TypePool.CacheProvider.Simple();
+  assertThat(simple.find(FOO),nullValue(TypeDescription.class));
+  assertThat(simple.register(typeDescription),sameInstance(typeDescription));
+  assertThat(simple.find(FOO),sameInstance(typeDescription));
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(typeDescription.getName()).thenReturn(FOO);
+  assertThat(simple.register(typeDescription),sameInstance(this.typeDescription));
+  assertThat(simple.find(FOO),sameInstance(this.typeDescription));
+  simple.clear();
+  assertThat(simple.find(FOO),nullValue(TypeDescription.class));
+  assertThat(simple.register(typeDescription),sameInstance(typeDescription));
+  assertThat(simple.find(FOO),sameInstance(typeDescription));
+}

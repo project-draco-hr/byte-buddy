@@ -1,5 +1,0 @@
-{
-  assertThat(objectType.isVisibleTo(integerType),is(true));
-  assertThat(objectType.isVisibleTo(new TypeDescription.ForLoadedType(PackagePrivateType.TYPE)),is(true));
-  assertThat(new TypeDescription.ForLoadedType(PackagePrivateType.TYPE).isVisibleTo(objectType),is(false));
-}

@@ -1,0 +1,3 @@
+{
+  methodTokens.add(new LazyTypeDescription.MethodToken(modifiers,internalName,descriptor,exceptionName,annotationTokens,parameterAnnotationTokens,defaultValue));
+}

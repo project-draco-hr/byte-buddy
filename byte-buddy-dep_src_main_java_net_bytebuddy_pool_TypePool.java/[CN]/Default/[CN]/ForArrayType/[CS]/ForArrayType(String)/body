@@ -1,0 +1,4 @@
+{
+  String arrayType=Type.getMethodType(methodDescriptor).getReturnType().getClassName();
+  componentType=arrayType.substring(0,arrayType.length() - 2);
+}

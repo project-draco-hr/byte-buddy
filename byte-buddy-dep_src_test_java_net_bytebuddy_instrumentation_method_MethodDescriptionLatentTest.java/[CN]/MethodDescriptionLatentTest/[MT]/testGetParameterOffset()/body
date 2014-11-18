@@ -1,4 +1,0 @@
-{
-  assertThat(latentMethod.getParameterOffset(0),is(1));
-  assertThat(latentConstructor.getParameterOffset(0),is(1));
-}

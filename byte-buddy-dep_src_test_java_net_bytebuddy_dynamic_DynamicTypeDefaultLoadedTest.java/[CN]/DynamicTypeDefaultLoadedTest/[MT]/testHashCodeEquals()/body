@@ -1,3 +1,0 @@
-{
-  HashCodeEqualsTester.of(DynamicType.Default.Loaded.class).apply();
-}

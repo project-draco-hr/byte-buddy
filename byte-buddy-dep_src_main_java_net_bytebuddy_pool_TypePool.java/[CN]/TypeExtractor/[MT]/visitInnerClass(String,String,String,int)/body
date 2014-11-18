@@ -1,0 +1,11 @@
+{
+  if (internalName.equals(this.internalName)) {
+    this.modifiers=modifiers;
+    if (innerName == null) {
+      anonymousType=true;
+    }
+    if (declarationContext.isSelfDeclared()) {
+      declarationContext=new LazyTypeDescription.DeclarationContext.DeclaredInType(outerName);
+    }
+  }
+}

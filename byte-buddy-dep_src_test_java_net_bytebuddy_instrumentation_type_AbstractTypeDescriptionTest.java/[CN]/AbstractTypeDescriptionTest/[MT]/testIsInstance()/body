@@ -1,0 +1,7 @@
+{
+  assertThat(describe(SampleClass.class).isInstance(new SampleClass()),is(true));
+  assertThat(describe(SampleClass.class).isInstance(new Object()),is(false));
+  assertThat(describe(SampleInterface.class).isInstance(new SampleInterfaceImplementation()),is(true));
+  assertThat(describe(Object[].class).isInstance(new Object[0]),is(true));
+  assertThat(describe(Object[].class).isInstance(new Object()),is(false));
+}

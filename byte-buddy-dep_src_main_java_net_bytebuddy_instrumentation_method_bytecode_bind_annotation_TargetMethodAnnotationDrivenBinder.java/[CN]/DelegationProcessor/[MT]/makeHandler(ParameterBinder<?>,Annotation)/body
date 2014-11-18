@@ -1,3 +1,0 @@
-{
-  return new Handler.Bound<Annotation>((ParameterBinder<Annotation>)parameterBinder,annotation);
-}

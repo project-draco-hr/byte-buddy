@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(DynamicType.Default.Unloaded.class).apply();
+}

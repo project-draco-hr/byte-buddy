@@ -1,0 +1,4 @@
+{
+  AnnotationList annotationList=new AnnotationList.ForLoadedAnnotation(foo,bar).inherited(Collections.singleton(new TypeDescription.ForLoadedType(Bar.class)));
+  assertThat(annotationList.size(),is(0));
+}

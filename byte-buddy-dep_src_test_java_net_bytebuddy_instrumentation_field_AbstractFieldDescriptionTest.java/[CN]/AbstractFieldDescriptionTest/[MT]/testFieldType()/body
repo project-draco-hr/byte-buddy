@@ -1,0 +1,4 @@
+{
+  assertThat(describe(first).getFieldType(),is((TypeDescription)new TypeDescription.ForLoadedType(first.getType())));
+  assertThat(describe(second).getFieldType(),is((TypeDescription)new TypeDescription.ForLoadedType(second.getType())));
+}

@@ -1,0 +1,6 @@
+{
+  if (!throwable.isAssignableTo(Throwable.class)) {
+    throw new IllegalArgumentException(throwable + " does not extend throwable");
+  }
+  return new ExceptionMethod(nonNull(throwable),new ConstructionDelegate.ForDefaultConstructor(throwable));
+}

@@ -1,6 +1,0 @@
-{
-  assertThat(RebaseInstrumentationTarget.RebasedMethodSpecialMethodInvocation.of(resolution,typeDescription).hashCode(),is(RebaseInstrumentationTarget.RebasedMethodSpecialMethodInvocation.of(resolution,typeDescription).hashCode()));
-  assertThat(RebaseInstrumentationTarget.RebasedMethodSpecialMethodInvocation.of(resolution,typeDescription),is(RebaseInstrumentationTarget.RebasedMethodSpecialMethodInvocation.of(resolution,typeDescription)));
-  assertThat(RebaseInstrumentationTarget.RebasedMethodSpecialMethodInvocation.of(resolution,typeDescription).hashCode(),not(is(RebaseInstrumentationTarget.RebasedMethodSpecialMethodInvocation.of(resolution,otherTypeDescription).hashCode())));
-  assertThat(RebaseInstrumentationTarget.RebasedMethodSpecialMethodInvocation.of(resolution,typeDescription),not(is(RebaseInstrumentationTarget.RebasedMethodSpecialMethodInvocation.of(resolution,otherTypeDescription))));
-}

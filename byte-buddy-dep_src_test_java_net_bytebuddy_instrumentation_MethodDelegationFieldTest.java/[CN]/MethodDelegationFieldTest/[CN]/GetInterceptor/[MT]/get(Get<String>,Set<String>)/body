@@ -1,0 +1,4 @@
+{
+  setter.set(getter.get() + BAR);
+  return getter.get();
+}

@@ -1,3 +1,0 @@
-{
-  return (Type.getInternalName(constructor.getDeclaringClass()) + "." + MethodDescription.CONSTRUCTOR_INTERNAL_NAME+ Type.getConstructorDescriptor(constructor)).hashCode();
-}

@@ -1,0 +1,6 @@
+{
+  assertThat(new DynamicType.Builder.AbstractBase.FieldToken(FOO,singleType,QUX).hashCode(),is(new DynamicType.Builder.AbstractBase.FieldToken(FOO,singleType,QUX).hashCode()));
+  assertThat(new DynamicType.Builder.AbstractBase.FieldToken(FOO,singleType,QUX).hashCode(),not(is(new DynamicType.Builder.AbstractBase.FieldToken(BAR,singleType,QUX).hashCode())));
+  assertThat(new DynamicType.Builder.AbstractBase.FieldToken(FOO,singleType,QUX).hashCode(),is(new DynamicType.Builder.AbstractBase.FieldToken(FOO,mock(TypeDescription.class),QUX).hashCode()));
+  assertThat(new DynamicType.Builder.AbstractBase.FieldToken(FOO,singleType,QUX).hashCode(),is(new DynamicType.Builder.AbstractBase.FieldToken(FOO,singleType,BAZ).hashCode()));
+}

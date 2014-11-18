@@ -1,0 +1,3 @@
+{
+  assertThat(PropertyDispatcher.of(value.getClass()).toString(value),is(expectedToString));
+}

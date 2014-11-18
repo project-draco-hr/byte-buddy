@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypeWriter.Engine.ForCreation.class).apply();
+}

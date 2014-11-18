@@ -1,0 +1,3 @@
+{
+  return new MethodDescription.Latent(method.getName(),new TypeDescription.ForLoadedType(method.getDeclaringClass()),new TypeDescription.ForLoadedType(method.getReturnType()),new TypeList.ForLoadedType(method.getParameterTypes()),method.getModifiers(),new TypeList.ForLoadedType(method.getExceptionTypes()));
+}

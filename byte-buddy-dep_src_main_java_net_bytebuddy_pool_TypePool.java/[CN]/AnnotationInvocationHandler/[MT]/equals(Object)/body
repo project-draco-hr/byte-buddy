@@ -1,0 +1,15 @@
+{
+  if (this == other)   return true;
+  if (!(other instanceof AnnotationInvocationHandler))   return false;
+  AnnotationInvocationHandler that=(AnnotationInvocationHandler)other;
+  if (!annotationType.equals(that.annotationType)) {
+    return false;
+  }
+  for (  Map.Entry<Method,?> entry : values.entrySet()) {
+    Object value=that.values.get(entry.getKey());
+    if (!PropertyDispatcher.of(value.getClass()).equals(value,entry.getValue())) {
+      return false;
+    }
+  }
+  return true;
+}

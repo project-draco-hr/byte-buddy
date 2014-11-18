@@ -1,0 +1,7 @@
+int modifiers
+String name
+String descriptor
+String[] exceptionName
+List<AnnotationToken> annotationTokens
+Map<Integer,List<AnnotationToken>> parameterAnnotationTokens
+AnnotationValue<?,?> defaultValue

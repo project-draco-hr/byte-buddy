@@ -1,0 +1,4 @@
+{
+  assertThat(describe(Object.class.getDeclaredMethod("toString")).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+  assertThat(describe(Object.class.getDeclaredConstructor()).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+}

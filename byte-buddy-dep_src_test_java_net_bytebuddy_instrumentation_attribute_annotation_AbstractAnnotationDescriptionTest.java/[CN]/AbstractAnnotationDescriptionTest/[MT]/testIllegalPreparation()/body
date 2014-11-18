@@ -1,0 +1,3 @@
+{
+  describe(first).prepare(Other.class);
+}

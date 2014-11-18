@@ -1,6 +1,7 @@
 {
   int result=delegationProcessor.hashCode();
   result=31 * result + defaultsProvider.hashCode();
+  result=31 * result + terminationHandler.hashCode();
   result=31 * result + assigner.hashCode();
   result=31 * result + methodInvoker.hashCode();
   return result;

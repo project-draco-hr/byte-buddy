@@ -1,0 +1,7 @@
+{
+  firstMethod=Sample.class.getDeclaredMethod("first");
+  secondMethod=Sample.class.getDeclaredMethod("second",String.class,long.class);
+  thirdMethod=Sample.class.getDeclaredMethod("third",Object[].class,int[].class);
+  firstConstructor=Sample.class.getDeclaredConstructor(Void.class);
+  secondConstructor=Sample.class.getDeclaredConstructor(int[].class,long.class);
+}

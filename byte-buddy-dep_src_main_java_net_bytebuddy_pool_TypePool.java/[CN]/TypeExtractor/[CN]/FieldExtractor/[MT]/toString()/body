@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.TypeExtractor.FieldExtractor{" + "typeExtractor=" + TypeExtractor.this + ", modifiers="+ modifiers+ ", internalName='"+ internalName+ '\''+ ", descriptor='"+ descriptor+ '\''+ ", annotationTokens="+ annotationTokens+ '}';
+}

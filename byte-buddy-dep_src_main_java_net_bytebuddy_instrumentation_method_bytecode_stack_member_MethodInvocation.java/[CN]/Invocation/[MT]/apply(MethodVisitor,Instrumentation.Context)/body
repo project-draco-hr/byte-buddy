@@ -1,4 +1,6 @@
 {
   methodVisitor.visitMethodInsn(invocationOpcode,typeDescription.getInternalName(),methodDescription.getInternalName(),methodDescription.getDescriptor(),typeDescription.isInterface());
-  return size;
+  int parameterSize=methodDescription.getStackSize();
+  int returnValueSize=methodDescription.getReturnType().getStackSize().getSize();
+  return new Size(returnValueSize - parameterSize,Math.max(0,returnValueSize - parameterSize));
 }

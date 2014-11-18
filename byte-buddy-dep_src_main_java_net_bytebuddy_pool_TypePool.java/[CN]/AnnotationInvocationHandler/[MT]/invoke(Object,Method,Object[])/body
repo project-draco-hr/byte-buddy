@@ -1,0 +1,21 @@
+{
+  if (method.getDeclaringClass() != annotationType) {
+    if (method.getName().equals(HASH_CODE)) {
+      return hashCodeRepresentation();
+    }
+ else     if (method.getName().equals(EQUALS) && method.getParameterTypes().length == 1) {
+      return equalsRepresentation(proxy,arguments[0]);
+    }
+ else     if (method.getName().equals(TO_STRING)) {
+      return toStringRepresentation();
+    }
+ else {
+      return annotationType;
+    }
+  }
+  Object value=values.get(method).resolve();
+  if (!asWrapper(method.getReturnType()).isAssignableFrom(value.getClass())) {
+    throw new AnnotationTypeMismatchException(method,value.getClass().toString());
+  }
+  return value;
+}

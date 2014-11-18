@@ -1,3 +1,0 @@
-{
-  return typeDescription.represents(TargetType.class) ? in(FieldLocator.ForInstrumentedType.INSTANCE) : in(new FieldLocator.ForGivenType(typeDescription));
-}

@@ -1,0 +1,4 @@
+{
+  assertToString(describe(first).toString(),first);
+  assertToString(describe(second).toString(),second);
+}

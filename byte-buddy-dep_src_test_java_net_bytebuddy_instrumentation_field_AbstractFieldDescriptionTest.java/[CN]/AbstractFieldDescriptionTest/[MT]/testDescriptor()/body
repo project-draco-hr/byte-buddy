@@ -1,0 +1,4 @@
+{
+  assertThat(describe(first).getDescriptor(),is(Type.getDescriptor(first.getType())));
+  assertThat(describe(second).getDescriptor(),is(Type.getDescriptor(second.getType())));
+}

@@ -1,4 +1,3 @@
 {
-  TypeDescription exceptionType=new TypeDescription.ForLoadedType(throwable);
-  return new ExceptionMethod(exceptionType,new ConstructionDelegate.ForStringConstructor(exceptionType,message));
+  return throwing(new TypeDescription.ForLoadedType(nonNull(exceptionType)),message);
 }

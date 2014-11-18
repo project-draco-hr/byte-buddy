@@ -1,3 +1,0 @@
-{
-  HashCodeEqualsTester.of(TypeProxy.ByConstructor.class).apply();
-}

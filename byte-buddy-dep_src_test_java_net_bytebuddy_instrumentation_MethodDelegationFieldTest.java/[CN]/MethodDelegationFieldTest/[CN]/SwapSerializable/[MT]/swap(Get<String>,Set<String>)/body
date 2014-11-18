@@ -1,0 +1,5 @@
+{
+  assertThat(getter,instanceOf(Serializable.class));
+  assertThat(setter,instanceOf(Serializable.class));
+  setter.set(getter.get() + BAR);
+}

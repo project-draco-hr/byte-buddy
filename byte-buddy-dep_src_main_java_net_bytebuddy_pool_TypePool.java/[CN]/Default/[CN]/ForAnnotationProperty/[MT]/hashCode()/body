@@ -1,0 +1,5 @@
+{
+  int result=typePool.hashCode();
+  result=31 * result + annotationName.hashCode();
+  return result;
+}

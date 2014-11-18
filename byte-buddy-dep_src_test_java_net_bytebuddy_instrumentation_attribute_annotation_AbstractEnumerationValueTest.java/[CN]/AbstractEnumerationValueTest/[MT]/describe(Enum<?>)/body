@@ -1,0 +1,8 @@
+{
+  if (enumeration == Sample.FIRST) {
+    return describe(enumeration,FirstCarrier.class,new MethodDescription.ForLoadedMethod(annotationMethod));
+  }
+ else {
+    return describe(enumeration,SecondCarrier.class,new MethodDescription.ForLoadedMethod(annotationMethod));
+  }
+}

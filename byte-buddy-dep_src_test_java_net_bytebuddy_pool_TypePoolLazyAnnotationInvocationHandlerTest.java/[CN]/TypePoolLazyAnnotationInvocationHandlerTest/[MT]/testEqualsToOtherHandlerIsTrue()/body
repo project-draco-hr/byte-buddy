@@ -1,0 +1,7 @@
+{
+  when(loadedAnnotationValue.getState()).thenReturn(TypePool.LazyTypeDescription.AnnotationValue.Loaded.State.RESOLVED);
+  when(loadedAnnotationValue.resolve()).thenReturn(FOO);
+  InvocationHandler invocationHandler=new TypePool.LazyTypeDescription.AnnotationInvocationHandler(getClass().getClassLoader(),Foo.class,Collections.<String,TypePool.LazyTypeDescription.AnnotationValue<?,?>>singletonMap(FOO,annotationValue));
+  assertThat(new TypePool.LazyTypeDescription.AnnotationInvocationHandler(getClass().getClassLoader(),Foo.class,Collections.<String,TypePool.LazyTypeDescription.AnnotationValue<?,?>>singletonMap(FOO,annotationValue)).invoke(new Object(),Object.class.getDeclaredMethod("equals",Object.class),new Object[]{Proxy.newProxyInstance(getClass().getClassLoader(),new Class<?>[]{Foo.class},invocationHandler)}),is((Object)true));
+  verify(loadedAnnotationValue,never()).resolve();
+}

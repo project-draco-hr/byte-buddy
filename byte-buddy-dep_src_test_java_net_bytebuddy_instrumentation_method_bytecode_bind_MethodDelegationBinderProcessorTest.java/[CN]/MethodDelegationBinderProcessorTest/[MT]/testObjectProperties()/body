@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodDelegationBinder.Processor.class).apply();
+}

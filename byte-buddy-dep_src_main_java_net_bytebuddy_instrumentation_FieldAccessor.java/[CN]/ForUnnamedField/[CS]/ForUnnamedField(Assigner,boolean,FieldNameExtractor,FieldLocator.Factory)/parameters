@@ -1,0 +1,4 @@
+Assigner assigner
+boolean considerRuntimeType
+FieldNameExtractor fieldNameExtractor
+FieldLocator.Factory fieldLocatorFactory

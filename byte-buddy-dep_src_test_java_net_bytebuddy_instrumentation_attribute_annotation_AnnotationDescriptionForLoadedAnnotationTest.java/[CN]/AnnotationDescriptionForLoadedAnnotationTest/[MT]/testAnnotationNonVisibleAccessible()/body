@@ -1,0 +1,5 @@
+{
+  Method method=PrivateAnnotation.class.getDeclaredMethod("value");
+  method.setAccessible(true);
+  assertThat(describe(Carrier.class.getAnnotation(PrivateAnnotation.class),Carrier.class).getValue(new MethodDescription.ForLoadedMethod(method),String.class),is(FOO));
+}

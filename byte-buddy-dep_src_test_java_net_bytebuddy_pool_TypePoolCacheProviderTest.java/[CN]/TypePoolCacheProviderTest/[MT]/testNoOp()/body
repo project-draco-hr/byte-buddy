@@ -1,0 +1,6 @@
+{
+  assertThat(TypePool.CacheProvider.NoOp.INSTANCE.find(FOO),nullValue(TypeDescription.class));
+  assertThat(TypePool.CacheProvider.NoOp.INSTANCE.register(typeDescription),sameInstance(typeDescription));
+  assertThat(TypePool.CacheProvider.NoOp.INSTANCE.find(FOO),nullValue(TypeDescription.class));
+  TypePool.CacheProvider.NoOp.INSTANCE.clear();
+}

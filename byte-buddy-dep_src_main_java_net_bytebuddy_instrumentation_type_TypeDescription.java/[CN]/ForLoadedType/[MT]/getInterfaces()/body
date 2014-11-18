@@ -1,0 +1,3 @@
+{
+  return type.isArray() ? new TypeList.ForLoadedType(Cloneable.class,Serializable.class) : new TypeList.ForLoadedType(type.getInterfaces());
+}

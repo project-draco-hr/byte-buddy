@@ -8,9 +8,9 @@
   when(componentType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(targetTypeList.get(1)).thenReturn(targetType);
   when(targetTypeList.size()).thenReturn(2);
-  when(target.getParameterAnnotations()).thenReturn(new Annotation[2][0]);
+  when(target.getParameterAnnotations()).thenReturn(AnnotationList.Empty.asList(2));
   when(componentType.getInternalName()).thenReturn(FOO);
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=AllArguments.Binder.INSTANCE.bind(annotation,1,source,target,instrumentationTarget,assigner);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=AllArguments.Binder.INSTANCE.bind(annotationDescription,1,source,target,instrumentationTarget,assigner);
   MethodVisitor methodVisitor=mock(MethodVisitor.class);
   Instrumentation.Context instrumentationContext=mock(Instrumentation.Context.class);
   StackManipulation.Size size=parameterBinding.apply(methodVisitor,instrumentationContext);

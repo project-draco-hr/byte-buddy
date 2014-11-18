@@ -1,0 +1,5 @@
+{
+  ObjectPropertyAssertion.of(IntegerConstant.SingleBytePush.class).apply();
+  ObjectPropertyAssertion.of(IntegerConstant.TwoBytePush.class).apply();
+  ObjectPropertyAssertion.of(IntegerConstant.ConstantPool.class).apply();
+}

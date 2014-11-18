@@ -1,0 +1,4 @@
+{
+  this.descriptor=descriptor;
+  values=new HashMap<String,LazyTypeDescription.AnnotationValue<?,?>>();
+}

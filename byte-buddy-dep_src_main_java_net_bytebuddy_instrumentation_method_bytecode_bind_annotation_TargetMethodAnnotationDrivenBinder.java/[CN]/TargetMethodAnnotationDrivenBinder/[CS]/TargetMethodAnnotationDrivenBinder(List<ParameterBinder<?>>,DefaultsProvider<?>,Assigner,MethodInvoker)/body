@@ -1,6 +1,0 @@
-{
-  this.delegationProcessor=new DelegationProcessor(parameterBinders);
-  this.defaultsProvider=defaultsProvider;
-  this.assigner=assigner;
-  this.methodInvoker=methodInvoker;
-}

@@ -1,5 +1,0 @@
-{
-  assertThat(numberType.getInterfaces().size(),is(1));
-  assertThat(numberType.getInterfaces(),hasItems(serializableType));
-  assertThat(objectType.getInterfaces().size(),is(0));
-}

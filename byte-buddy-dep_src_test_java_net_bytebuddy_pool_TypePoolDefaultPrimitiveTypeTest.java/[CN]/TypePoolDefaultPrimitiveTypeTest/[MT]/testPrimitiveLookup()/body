@@ -1,0 +1,3 @@
+{
+  assertThat(typePool.describe(primitiveType.getName()).represents(primitiveType),is(true));
+}

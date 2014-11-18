@@ -1,0 +1,3 @@
+{
+  describe(first).getValue(new MethodDescription.ForLoadedMethod(Object.class.getMethod("toString")));
+}

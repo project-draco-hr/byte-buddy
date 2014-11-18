@@ -1,0 +1,3 @@
+{
+  assertThat(new AnnotationList.ForLoadedAnnotation(foo,bar).subList(0,1),is((AnnotationList)new AnnotationList.ForLoadedAnnotation(foo)));
+}

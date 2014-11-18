@@ -1,0 +1,4 @@
+{
+  assertThat(describe(first).toString(),is(first.toString()));
+  assertThat(describe(second).toString(),is(second.toString()));
+}

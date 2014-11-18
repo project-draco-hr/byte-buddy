@@ -1,0 +1,4 @@
+{
+  Package packageReference=type.getPackage();
+  return packageReference == null ? null : packageReference.getName();
+}

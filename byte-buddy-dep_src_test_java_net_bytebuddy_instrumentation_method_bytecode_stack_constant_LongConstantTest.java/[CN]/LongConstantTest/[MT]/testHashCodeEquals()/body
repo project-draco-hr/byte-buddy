@@ -1,6 +1,0 @@
-{
-  assertThat(LongConstant.forValue(value).hashCode(),is(LongConstant.forValue(value).hashCode()));
-  assertThat(LongConstant.forValue(value),is(LongConstant.forValue(value)));
-  assertThat(LongConstant.forValue(value).hashCode(),not(is(LongConstant.forValue(value * 2).hashCode())));
-  assertThat(LongConstant.forValue(value),not(is(LongConstant.forValue(value * 2))));
-}

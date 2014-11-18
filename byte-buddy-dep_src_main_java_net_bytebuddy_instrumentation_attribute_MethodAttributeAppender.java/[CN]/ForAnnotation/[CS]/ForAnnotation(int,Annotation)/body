@@ -1,4 +1,4 @@
 {
-  this.annotation=annotation;
+  annotations=new AnnotationList.ForLoadedAnnotation(annotation);
   target=new Target.OnMethodParameter(parameterIndex);
 }

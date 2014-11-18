@@ -1,0 +1,6 @@
+{
+  assertAnnotations(SampleClass.class);
+  assertAnnotations(SampleInterface.class);
+  assertAnnotations(SampleClassInherited.class);
+  assertAnnotations(SampleClassInheritedOverride.class);
+}

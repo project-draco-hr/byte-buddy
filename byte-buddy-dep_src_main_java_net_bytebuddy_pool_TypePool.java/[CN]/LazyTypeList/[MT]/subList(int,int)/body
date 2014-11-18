@@ -1,0 +1,12 @@
+{
+  if (fromIndex < 0) {
+    throw new IndexOutOfBoundsException("fromIndex = " + fromIndex);
+  }
+ else   if (toIndex > internalName.length) {
+    throw new IndexOutOfBoundsException("toIndex = " + toIndex);
+  }
+ else   if (fromIndex > toIndex) {
+    throw new IllegalArgumentException("fromIndex(" + fromIndex + ") > toIndex("+ toIndex+ ")");
+  }
+  return new LazyTypeList(Arrays.asList(internalName).subList(fromIndex,toIndex).toArray(new String[toIndex - fromIndex]));
+}
