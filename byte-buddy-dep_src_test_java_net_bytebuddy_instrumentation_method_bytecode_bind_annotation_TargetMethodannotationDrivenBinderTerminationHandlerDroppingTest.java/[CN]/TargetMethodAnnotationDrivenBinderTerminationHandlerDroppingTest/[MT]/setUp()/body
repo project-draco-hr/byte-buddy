@@ -1,4 +1,0 @@
-{
-  when(target.getReturnType()).thenReturn(targetType);
-  when(targetType.getStackSize()).thenReturn(StackSize.SINGLE);
-}
