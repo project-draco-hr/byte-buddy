@@ -1,5 +1,0 @@
-{
-  when(firstFieldDescription.getInternalName()).thenReturn(BAR);
-  when(secondFieldDescription.getInternalName()).thenReturn(BAR);
-  fieldList.named(FOO);
-}

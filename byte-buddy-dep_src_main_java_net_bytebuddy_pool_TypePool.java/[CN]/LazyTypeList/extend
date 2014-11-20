@@ -1,1 +1,1 @@
-AbstractList<TypeDescription>
+FilterableList.AbstractBase<TypeDescription,TypeList>

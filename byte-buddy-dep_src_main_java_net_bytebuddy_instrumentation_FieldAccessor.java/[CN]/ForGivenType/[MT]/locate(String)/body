@@ -1,5 +1,5 @@
 {
-  FieldDescription fieldDescription=targetType.getDeclaredFields().named(name);
+  FieldDescription fieldDescription=targetType.getDeclaredFields().filter(ElementMatchers.named(name)).getOnly();
   if (!fieldDescription.isVisibleTo(instrumentedType)) {
     throw new IllegalArgumentException(fieldDescription + " is not visible to " + instrumentedType);
   }

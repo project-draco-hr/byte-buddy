@@ -1,3 +1,3 @@
 {
-  fieldDescription=instrumentationTarget.getTypeDescription().getDeclaredFields().named(AccessorProxy.FIELD_NAME);
+  fieldDescription=instrumentationTarget.getTypeDescription().getDeclaredFields().filter((ElementMatchers.named(AccessorProxy.FIELD_NAME))).getOnly();
 }
