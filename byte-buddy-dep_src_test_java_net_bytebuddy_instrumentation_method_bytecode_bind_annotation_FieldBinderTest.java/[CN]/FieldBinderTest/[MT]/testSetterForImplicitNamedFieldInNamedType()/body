@@ -6,6 +6,7 @@
   when(source.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(void.class));
   when(source.getParameterTypes()).thenReturn(new TypeList.Explicit(Arrays.asList(fieldType)));
   when(source.getName()).thenReturn("setFoo");
+  when(source.getSourceCodeName()).thenReturn("setFoo");
   when(source.getInternalName()).thenReturn("setFoo");
   when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
   MethodDelegationBinder.ParameterBinding<?> binding=new Field.Binder(getterMethod,setterMethod).bind(annotationDescription,0,source,target,instrumentationTarget,assigner);

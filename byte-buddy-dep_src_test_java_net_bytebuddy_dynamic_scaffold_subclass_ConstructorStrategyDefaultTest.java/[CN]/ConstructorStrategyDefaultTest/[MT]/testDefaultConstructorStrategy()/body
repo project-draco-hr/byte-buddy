@@ -1,5 +1,5 @@
 {
-  when(methodList.filter(takesArguments(0).and(isVisibleTo(instrumentedType).and(isConstructor())))).thenReturn(filteredMethodList);
+  when(methodList.filter(isConstructor().and(takesArguments(0)).<MethodDescription>and(isVisibleTo(instrumentedType)))).thenReturn(filteredMethodList);
   when(filteredMethodList.size()).thenReturn(1);
   assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(instrumentedType),is(filteredMethodList));
   assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.inject(methodRegistry,methodAttributeAppenderFactory),is(methodRegistry));
