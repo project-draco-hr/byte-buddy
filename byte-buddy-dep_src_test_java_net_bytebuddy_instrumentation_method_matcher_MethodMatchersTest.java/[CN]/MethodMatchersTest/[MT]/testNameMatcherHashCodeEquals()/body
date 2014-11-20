@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.named(FOO_METHOD_NAME).hashCode(),is(MethodMatchers.named(FOO_METHOD_NAME).hashCode()));
-  assertThat(MethodMatchers.named(FOO_METHOD_NAME),is(MethodMatchers.named(FOO_METHOD_NAME)));
-  assertThat(MethodMatchers.named(FOO_METHOD_NAME).hashCode(),not(is(MethodMatchers.named(BAR_METHOD_NAME).hashCode())));
-  assertThat(MethodMatchers.named(FOO_METHOD_NAME),not(is(MethodMatchers.named(BAR_METHOD_NAME))));
-}

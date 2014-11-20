@@ -1,3 +1,0 @@
-{
-  return methodDescription.getDeclaringType().represents(Object.class) && methodDescription.getName().equals(FINALIZE_METHOD_NAME) && methodDescription.getParameterTypes().size() == 0;
-}

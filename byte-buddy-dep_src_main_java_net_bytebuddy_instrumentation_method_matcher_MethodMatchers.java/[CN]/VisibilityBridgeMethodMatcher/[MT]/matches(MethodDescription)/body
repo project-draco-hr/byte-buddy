@@ -1,3 +1,0 @@
-{
-  return methodDescription.isBridge() && methodDescription.getDeclaringType().getDeclaredMethods().filter(isMethod().and(not(is(methodDescription))).and(isBridgeMethodCompatibleTo(methodDescription))).size() == 0;
-}

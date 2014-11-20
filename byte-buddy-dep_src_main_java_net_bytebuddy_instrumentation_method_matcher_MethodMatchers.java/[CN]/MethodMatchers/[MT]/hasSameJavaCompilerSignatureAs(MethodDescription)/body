@@ -1,3 +1,0 @@
-{
-  return methodDescription.isTypeInitializer() ? isTypeInitializer() : (methodDescription.isConstructor() ? isConstructor() : named(methodDescription.getName())).and(takesArguments(methodDescription.getParameterTypes()));
-}

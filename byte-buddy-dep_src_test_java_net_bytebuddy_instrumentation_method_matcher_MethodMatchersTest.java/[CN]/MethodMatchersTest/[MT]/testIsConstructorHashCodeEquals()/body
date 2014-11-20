@@ -1,8 +1,0 @@
-{
-  assertThat(MethodMatchers.isConstructor().hashCode(),is(MethodMatchers.isConstructor().hashCode()));
-  assertThat(MethodMatchers.isConstructor(),is(MethodMatchers.isConstructor()));
-  assertThat(MethodMatchers.isConstructor().hashCode(),not(is(MethodMatchers.isMethod().hashCode())));
-  assertThat(MethodMatchers.isConstructor(),not(is(MethodMatchers.isMethod())));
-  assertThat(MethodMatchers.isConstructor().hashCode(),not(is(MethodMatchers.isTypeInitializer().hashCode())));
-  assertThat(MethodMatchers.isConstructor(),not(is(MethodMatchers.isTypeInitializer())));
-}

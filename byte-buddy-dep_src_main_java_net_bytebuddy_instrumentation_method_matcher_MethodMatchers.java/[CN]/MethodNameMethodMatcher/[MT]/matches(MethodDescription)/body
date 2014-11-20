@@ -1,3 +1,0 @@
-{
-  return !methodDescription.isConstructor() && !methodDescription.isTypeInitializer() && matchMode.matches(name,methodDescription.getName());
-}

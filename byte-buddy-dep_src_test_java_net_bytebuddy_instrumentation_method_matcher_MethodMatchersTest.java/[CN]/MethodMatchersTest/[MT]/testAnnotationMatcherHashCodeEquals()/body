@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.isAnnotatedBy(Foo.class).hashCode(),is(MethodMatchers.isAnnotatedBy(Foo.class).hashCode()));
-  assertThat(MethodMatchers.isAnnotatedBy(Foo.class),is(MethodMatchers.isAnnotatedBy(Foo.class)));
-  assertThat(MethodMatchers.isAnnotatedBy(Foo.class).hashCode(),not(is(MethodMatchers.isAnnotatedBy(Override.class).hashCode())));
-  assertThat(MethodMatchers.isAnnotatedBy(Foo.class),not(is(MethodMatchers.isAnnotatedBy(Override.class))));
-}

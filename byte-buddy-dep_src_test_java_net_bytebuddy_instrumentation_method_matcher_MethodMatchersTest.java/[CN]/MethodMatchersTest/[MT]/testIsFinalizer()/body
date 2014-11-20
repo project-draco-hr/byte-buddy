@@ -1,5 +1,0 @@
-{
-  assertThat(MethodMatchers.isFinalizer().matches(testClassBase$foo),is(false));
-  assertThat(MethodMatchers.isFinalizer().matches(object$finalize),is(true));
-  assertThat(MethodMatchers.isFinalizer().matches(testModifier$finalize),is(true));
-}

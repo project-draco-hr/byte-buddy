@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.takesArguments(0).hashCode(),is(MethodMatchers.takesArguments(0).hashCode()));
-  assertThat(MethodMatchers.takesArguments(0),is(MethodMatchers.takesArguments(0)));
-  assertThat(MethodMatchers.takesArguments(0).hashCode(),not(is(MethodMatchers.takesArguments(1).hashCode())));
-  assertThat(MethodMatchers.takesArguments(0),not(is(MethodMatchers.takesArguments(1))));
-}

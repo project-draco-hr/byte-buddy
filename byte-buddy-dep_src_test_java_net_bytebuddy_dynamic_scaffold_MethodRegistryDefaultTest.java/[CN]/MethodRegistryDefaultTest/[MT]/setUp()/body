@@ -1,6 +1,6 @@
 {
   when(fallbackFactory.compile(any(Instrumentation.Target.class))).thenReturn(fallback);
-  when(latentMatchesKnownMethod.manifest(any(TypeDescription.class))).thenReturn(matchesKnownMethod);
+  when(latentMatchesKnownMethod.manifest(any(TypeDescription.class))).thenReturn((ElementMatcher)matchesKnownMethod);
   when(matchesKnownMethod.matches(knownMethod)).thenReturn(true);
   when(basicInstrumentedType.getDeclaredMethods()).thenReturn(basicMethodList);
   when(basicMethodList.size()).thenReturn(BASIC_SIZE);
@@ -17,7 +17,7 @@
   when(extendedMethodList.subList(anyInt(),anyInt())).thenReturn(croppedMethodList);
   when(zeroSize.size()).thenReturn(0);
   when(singleSize.size()).thenReturn(1);
-  when(croppedMethodList.filter(any(MethodMatcher.class))).thenAnswer(new Answer<MethodList>(){
+  when(croppedMethodList.filter(any(ElementMatcher.class))).thenAnswer(new Answer<MethodList>(){
     @Override public MethodList answer(    InvocationOnMock invocation) throws Throwable {
       Field field=invocation.getArguments()[0].getClass().getDeclaredField("methodDescription");
       field.setAccessible(true);

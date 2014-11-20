@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.nameStartsWith(FOO_METHOD_NAME.substring(0,1)).matches(testClassBase$foo),is(true));
-  assertThat(MethodMatchers.nameStartsWith(FOO_METHOD_NAME.substring(0,1)).matches(testClassExtension$foo),is(true));
-  assertThat(MethodMatchers.nameStartsWith(BAR_METHOD_NAME.substring(0,1)).matches(testClassBase$foo),is(false));
-  assertThat(MethodMatchers.nameStartsWith(BAR_METHOD_NAME.substring(0,1)).matches(testClassExtension$foo),is(false));
-}

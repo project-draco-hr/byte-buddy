@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.isSetter().matches(testBean$setter),is(true));
-  assertThat(MethodMatchers.isSetter().matches(testBean$getter),is(false));
-  assertThat(MethodMatchers.isSetter(String.class).matches(testBean$setter),is(true));
-  assertThat(MethodMatchers.isSetter(Object.class).matches(testBean$setter),is(false));
-}

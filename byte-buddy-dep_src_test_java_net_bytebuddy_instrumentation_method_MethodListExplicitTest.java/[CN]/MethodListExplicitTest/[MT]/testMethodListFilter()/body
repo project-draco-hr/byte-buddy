@@ -1,5 +1,5 @@
 {
-  MethodMatcher methodMatcher=mock(MethodMatcher.class);
+  @SuppressWarnings("unchecked") ElementMatcher<? super MethodDescription> methodMatcher=mock(ElementMatcher.class);
   when(methodMatcher.matches(firstMethodDescription)).thenReturn(true);
   methodList=methodList.filter(methodMatcher);
   assertThat(methodList.size(),is(1));

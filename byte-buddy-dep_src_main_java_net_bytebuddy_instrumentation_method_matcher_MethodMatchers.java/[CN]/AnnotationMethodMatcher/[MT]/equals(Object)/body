@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && annotationType.equals(((AnnotationMethodMatcher)other).annotationType);
-}

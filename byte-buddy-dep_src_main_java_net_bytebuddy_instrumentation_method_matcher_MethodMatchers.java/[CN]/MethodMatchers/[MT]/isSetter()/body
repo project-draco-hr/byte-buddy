@@ -1,3 +1,0 @@
-{
-  return takesArguments(1).and(nameStartsWith("set")).and(returns(void.class));
-}

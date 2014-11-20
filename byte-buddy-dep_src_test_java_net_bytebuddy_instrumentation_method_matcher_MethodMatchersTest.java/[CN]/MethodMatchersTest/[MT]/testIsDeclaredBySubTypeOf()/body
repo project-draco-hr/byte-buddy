@@ -1,8 +1,0 @@
-{
-  assertThat(MethodMatchers.isDeclaredBySubtypeOf(TestModifier.class).matches(testModifier$finalize),is(true));
-  assertThat(MethodMatchers.isDeclaredBySubtypeOf(Object.class).matches(testModifier$finalize),is(true));
-  assertThat(MethodMatchers.isDeclaredBySubtypeOf(TestModifier.class).matches(testClassExtension$fooBar),is(false));
-  assertThat(MethodMatchers.isDeclaredBySubtypeOf(Object.class).matches(testClassExtension$fooBar),is(true));
-  assertThat(MethodMatchers.isDeclaredBySubtypeOf(TestModifier.class).matches(testClassBase$foo),is(false));
-  assertThat(MethodMatchers.isDeclaredBySubtypeOf(Object.class).matches(testClassBase$foo),is(true));
-}

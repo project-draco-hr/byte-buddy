@@ -1,1 +1,1 @@
-ElementMatcher.Junction.AbstractBase<MethodDescription>
+ElementMatcher.Junction.AbstractBase<T>

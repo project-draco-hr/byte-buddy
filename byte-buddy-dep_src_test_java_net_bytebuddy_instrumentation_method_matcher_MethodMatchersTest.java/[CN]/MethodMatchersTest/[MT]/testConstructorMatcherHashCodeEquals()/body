@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.is(TestClassBase.class.getDeclaredConstructor()).hashCode(),is(MethodMatchers.is(TestClassBase.class.getDeclaredConstructor()).hashCode()));
-  assertThat(MethodMatchers.is(TestClassBase.class.getDeclaredConstructor()),is(MethodMatchers.is(TestClassBase.class.getDeclaredConstructor())));
-  assertThat(MethodMatchers.is(TestClassBase.class.getDeclaredConstructor()).hashCode(),not(is(MethodMatchers.is(TestClassExtension.class.getDeclaredConstructor()).hashCode())));
-  assertThat(MethodMatchers.is(TestClassBase.class.getDeclaredConstructor()),not(is(MethodMatchers.is(TestClassExtension.class.getDeclaredConstructor()))));
-}

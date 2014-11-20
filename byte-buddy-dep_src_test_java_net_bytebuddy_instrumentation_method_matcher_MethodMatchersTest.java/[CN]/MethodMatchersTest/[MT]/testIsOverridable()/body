@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.isOverridable().matches(testClassBase$foo),is(true));
-  assertThat(MethodMatchers.isOverridable().matches(testClassBase$bar),is(false));
-  assertThat(MethodMatchers.isOverridable().matches(testClassBase$stat),is(false));
-  assertThat(MethodMatchers.isOverridable().matches(testModifier$constructor),is(false));
-}

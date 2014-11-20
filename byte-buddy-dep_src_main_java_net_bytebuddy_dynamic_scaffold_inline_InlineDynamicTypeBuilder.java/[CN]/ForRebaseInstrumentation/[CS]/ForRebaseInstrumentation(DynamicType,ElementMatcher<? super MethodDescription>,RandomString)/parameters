@@ -1,0 +1,3 @@
+DynamicType placeholderType
+ElementMatcher<? super MethodDescription> ignoredMethods
+RandomString randomString

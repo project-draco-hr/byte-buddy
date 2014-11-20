@@ -1,3 +1,0 @@
-{
-  return isDeclaredBySubtypeOf(new TypeDescription.ForLoadedType(type));
-}

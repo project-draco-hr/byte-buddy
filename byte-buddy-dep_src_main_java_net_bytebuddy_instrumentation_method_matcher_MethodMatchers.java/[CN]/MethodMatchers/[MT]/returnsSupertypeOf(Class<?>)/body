@@ -1,3 +1,0 @@
-{
-  return returnsSupertypeOf(new TypeDescription.ForLoadedType(type));
-}

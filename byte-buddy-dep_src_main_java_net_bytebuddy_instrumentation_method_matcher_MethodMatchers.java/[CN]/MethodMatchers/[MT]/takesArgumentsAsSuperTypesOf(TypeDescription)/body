@@ -1,3 +1,0 @@
-{
-  return takesArgumentsAsSuperTypesOf(Arrays.asList(types));
-}

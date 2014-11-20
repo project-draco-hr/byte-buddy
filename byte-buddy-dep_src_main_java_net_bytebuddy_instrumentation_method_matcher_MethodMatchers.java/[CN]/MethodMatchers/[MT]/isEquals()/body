@@ -1,3 +1,0 @@
-{
-  return named("equals").and(takesArguments(Object.class)).and(returns(boolean.class));
-}

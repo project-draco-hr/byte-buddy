@@ -1,3 +1,0 @@
-{
-  return comparisonSource.toLowerCase().startsWith(comparisonTarget.toLowerCase());
-}

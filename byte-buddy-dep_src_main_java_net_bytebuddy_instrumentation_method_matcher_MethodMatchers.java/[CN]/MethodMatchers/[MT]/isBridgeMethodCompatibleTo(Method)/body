@@ -1,3 +1,0 @@
-{
-  return isBridgeMethodCompatibleTo(new MethodDescription.ForLoadedMethod(method));
-}

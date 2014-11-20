@@ -1,7 +1,0 @@
-{
-  assertThat(MethodMatchers.isTypeInitializer().matches(testModifier$constructor),is(false));
-  assertThat(MethodMatchers.isTypeInitializer().matches(testClassBase$constructor),is(false));
-  assertThat(MethodMatchers.isTypeInitializer().matches(testClassBase$foo),is(false));
-  assertThat(MethodMatchers.isTypeInitializer().matches(testClassBase$bar),is(false));
-  assertThat(MethodMatchers.isTypeInitializer().matches(MethodDescription.Latent.typeInitializerOf(new TypeDescription.ForLoadedType(Object.class))),is(true));
-}

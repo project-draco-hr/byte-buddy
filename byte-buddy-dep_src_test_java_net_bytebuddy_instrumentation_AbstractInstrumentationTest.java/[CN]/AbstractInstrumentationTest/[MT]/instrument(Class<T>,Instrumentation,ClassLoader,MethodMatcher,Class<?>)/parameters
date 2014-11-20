@@ -1,5 +1,0 @@
-Class<T> target
-Instrumentation instrumentation
-ClassLoader classLoader
-MethodMatcher targetMethods
-Class<?> interfaces

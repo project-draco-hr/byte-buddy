@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.canThrow(IOException.class).hashCode(),is(MethodMatchers.canThrow(IOException.class).hashCode()));
-  assertThat(MethodMatchers.canThrow(IOException.class),is(MethodMatchers.canThrow(IOException.class)));
-  assertThat(MethodMatchers.canThrow(IOException.class).hashCode(),not(is(MethodMatchers.canThrow(ExecutionException.class).hashCode())));
-  assertThat(MethodMatchers.canThrow(IOException.class),not(is(MethodMatchers.canThrow(ExecutionException.class))));
-}

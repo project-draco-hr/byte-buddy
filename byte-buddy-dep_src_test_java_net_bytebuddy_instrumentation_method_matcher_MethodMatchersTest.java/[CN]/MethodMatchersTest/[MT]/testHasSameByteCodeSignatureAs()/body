@@ -1,5 +1,0 @@
-{
-  assertThat(MethodMatchers.hasSameByteCodeSignatureAs(object$finalize).matches(testModifier$finalize),is(true));
-  assertThat(MethodMatchers.hasSameByteCodeSignatureAs(testClassBase$foobar).matches(testClassExtension$fooBar),is(false));
-  assertThat(MethodMatchers.hasSameByteCodeSignatureAs(object$finalize).matches(testClassBase$foo),is(false));
-}

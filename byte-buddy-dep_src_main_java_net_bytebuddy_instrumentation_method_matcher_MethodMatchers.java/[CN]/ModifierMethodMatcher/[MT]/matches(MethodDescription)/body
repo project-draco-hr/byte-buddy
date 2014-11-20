@@ -1,3 +1,0 @@
-{
-  return (methodDescription.getModifiers() & modifiers) != 0;
-}

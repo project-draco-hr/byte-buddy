@@ -1,4 +1,0 @@
-{
-  assertThat(MethodMatchers.isNative().matches(testClassExtension$stat),is(false));
-  assertThat(MethodMatchers.isNative().matches(object$hashCode),is(true));
-}

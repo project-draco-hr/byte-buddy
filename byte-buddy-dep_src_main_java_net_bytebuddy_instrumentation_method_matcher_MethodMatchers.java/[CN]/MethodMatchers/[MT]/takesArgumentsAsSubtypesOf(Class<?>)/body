@@ -1,3 +1,0 @@
-{
-  return takesArgumentsAsSubtypesOf(new TypeList.ForLoadedType(types));
-}

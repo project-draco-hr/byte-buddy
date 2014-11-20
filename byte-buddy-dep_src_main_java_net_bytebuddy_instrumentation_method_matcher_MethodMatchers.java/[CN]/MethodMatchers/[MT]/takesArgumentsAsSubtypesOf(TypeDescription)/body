@@ -1,3 +1,0 @@
-{
-  return takesArgumentsAsSubtypesOf(Arrays.asList(types));
-}

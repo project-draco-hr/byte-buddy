@@ -1,5 +1,0 @@
-{
-  assertThat(MethodMatchers.isHashCode().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("hashCode"))),is(true));
-  assertThat(MethodMatchers.isHashCode().matches(new MethodDescription.ForLoadedMethod(Integer.class.getDeclaredMethod("hashCode"))),is(true));
-  assertThat(MethodMatchers.isHashCode().matches(testClassBase$foo),is(false));
-}

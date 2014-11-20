@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.nameContains(FOO_METHOD_NAME.substring(1,2)).matches(testClassBase$foo),is(true));
-  assertThat(MethodMatchers.nameContains(FOO_METHOD_NAME.substring(1,2)).matches(testClassExtension$foo),is(true));
-  assertThat(MethodMatchers.nameContains(BAR_METHOD_NAME.substring(1,2)).matches(testClassBase$foo),is(false));
-  assertThat(MethodMatchers.nameContains(BAR_METHOD_NAME.substring(1,2)).matches(testClassExtension$foo),is(false));
-}

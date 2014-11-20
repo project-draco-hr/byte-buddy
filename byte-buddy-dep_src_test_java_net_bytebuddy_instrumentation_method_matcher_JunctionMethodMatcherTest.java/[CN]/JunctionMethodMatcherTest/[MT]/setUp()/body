@@ -1,3 +1,0 @@
-{
-  testClass$foo=MatchedClass.class.getDeclaredMethod(FOO_METHOD_NAME);
-}

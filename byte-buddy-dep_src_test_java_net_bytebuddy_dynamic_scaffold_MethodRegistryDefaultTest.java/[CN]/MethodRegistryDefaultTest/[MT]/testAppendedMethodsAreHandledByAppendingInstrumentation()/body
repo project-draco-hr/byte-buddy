@@ -13,7 +13,7 @@
   assertThat(compiled.target(instrumentationAppendedMethod).isDefineMethod(),is(true));
   assertThat(compiled.target(instrumentationAppendedMethod).getByteCodeAppender(),is(simpleByteCodeAppender));
   assertThat(compiled.target(instrumentationAppendedMethod).getAttributeAppender(),is((MethodAttributeAppender)MethodAttributeAppender.NoOp.INSTANCE));
-  verify(croppedMethodList,times(7)).filter(any(MethodMatcher.class));
+  verify(croppedMethodList,times(7)).filter(any(ElementMatcher.class));
   verify(fallbackFactory).compile(extendedInstrumentationTarget);
   verifyNoMoreInteractions(fallbackFactory);
 }

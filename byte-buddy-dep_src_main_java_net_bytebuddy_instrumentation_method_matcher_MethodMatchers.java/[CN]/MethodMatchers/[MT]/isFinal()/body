@@ -1,3 +1,0 @@
-{
-  return new ModifierMethodMatcher(Modifier.FINAL);
-}

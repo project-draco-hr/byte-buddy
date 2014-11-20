@@ -1,0 +1,5 @@
+Class<T> target
+Instrumentation instrumentation
+ClassLoader classLoader
+ElementMatcher<? super MethodDescription> targetMethods
+Class<?> interfaces

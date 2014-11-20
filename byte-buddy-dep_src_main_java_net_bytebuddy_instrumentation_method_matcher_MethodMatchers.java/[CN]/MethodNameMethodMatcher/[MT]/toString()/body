@@ -1,3 +1,0 @@
-{
-  return matchMode.getDescription() + '(' + name+ ')';
-}

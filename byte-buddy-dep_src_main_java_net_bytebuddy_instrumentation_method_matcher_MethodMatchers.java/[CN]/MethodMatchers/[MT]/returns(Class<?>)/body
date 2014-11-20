@@ -1,3 +1,0 @@
-{
-  return new ReturnTypeMethodMatcher(new TypeDescription.ForLoadedType(type));
-}

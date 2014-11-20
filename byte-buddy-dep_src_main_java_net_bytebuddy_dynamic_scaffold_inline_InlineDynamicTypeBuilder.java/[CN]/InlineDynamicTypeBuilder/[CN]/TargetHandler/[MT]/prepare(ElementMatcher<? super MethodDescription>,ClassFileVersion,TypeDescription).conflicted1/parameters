@@ -1,0 +1,3 @@
+ElementMatcher<? super MethodDescription> ignoredMethods
+ClassFileVersion classFileVersion
+TypeDescription instrumentedType

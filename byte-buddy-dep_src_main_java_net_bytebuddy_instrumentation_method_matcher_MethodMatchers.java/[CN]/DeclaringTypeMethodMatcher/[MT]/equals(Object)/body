@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && declaringType.equals(((DeclaringTypeMethodMatcher)other).declaringType);
-}

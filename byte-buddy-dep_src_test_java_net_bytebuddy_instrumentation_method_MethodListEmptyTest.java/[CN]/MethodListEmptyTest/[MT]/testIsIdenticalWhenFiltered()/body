@@ -1,3 +1,3 @@
 {
-  assertThat(methodList.filter(MethodMatchers.any()),is(methodList));
+  assertThat(methodList.filter(any()),is(methodList));
 }

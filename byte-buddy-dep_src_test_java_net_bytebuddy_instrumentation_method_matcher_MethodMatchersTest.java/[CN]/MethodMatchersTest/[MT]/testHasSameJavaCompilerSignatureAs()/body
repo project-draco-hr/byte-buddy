@@ -1,5 +1,0 @@
-{
-  assertThat(MethodMatchers.hasSameJavaCompilerSignatureAs(object$finalize).matches(testModifier$finalize),is(true));
-  assertThat(MethodMatchers.hasSameJavaCompilerSignatureAs(testClassBase$foobar).matches(testClassExtension$fooBar),is(true));
-  assertThat(MethodMatchers.hasSameJavaCompilerSignatureAs(object$finalize).matches(testClassBase$foo),is(false));
-}

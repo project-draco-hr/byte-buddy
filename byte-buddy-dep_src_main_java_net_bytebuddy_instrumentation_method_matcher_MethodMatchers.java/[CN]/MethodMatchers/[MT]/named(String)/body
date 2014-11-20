@@ -1,3 +1,0 @@
-{
-  return new MethodNameMethodMatcher(name,MatchMode.EQUALS_FULLY);
-}

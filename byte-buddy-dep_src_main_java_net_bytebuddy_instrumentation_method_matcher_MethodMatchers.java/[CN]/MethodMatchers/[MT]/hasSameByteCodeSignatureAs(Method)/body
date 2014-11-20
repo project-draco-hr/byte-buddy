@@ -1,3 +1,0 @@
-{
-  return hasSameByteCodeSignatureAs(new MethodDescription.ForLoadedMethod(method));
-}

@@ -1,3 +1,0 @@
-{
-  return takesArgumentsAsSuperTypesOf(new TypeList.ForLoadedType(types));
-}

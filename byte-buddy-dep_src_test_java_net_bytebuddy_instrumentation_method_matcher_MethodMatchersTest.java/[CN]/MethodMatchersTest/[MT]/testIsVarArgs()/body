@@ -1,5 +1,0 @@
-{
-  assertThat(MethodMatchers.isVarArgs().matches(testModifier$strict),is(false));
-  assertThat(MethodMatchers.isVarArgs().matches(testModifier$sync),is(false));
-  assertThat(MethodMatchers.isVarArgs().matches(testModifier$varargs),is(true));
-}

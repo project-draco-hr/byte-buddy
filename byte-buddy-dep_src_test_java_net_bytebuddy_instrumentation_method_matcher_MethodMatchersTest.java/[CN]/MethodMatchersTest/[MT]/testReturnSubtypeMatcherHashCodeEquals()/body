@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.returnsSubtypeOf(Object.class).hashCode(),is(MethodMatchers.returnsSubtypeOf(Object.class).hashCode()));
-  assertThat(MethodMatchers.returnsSubtypeOf(Object.class),is(MethodMatchers.returnsSubtypeOf(Object.class)));
-  assertThat(MethodMatchers.returnsSubtypeOf(Object.class).hashCode(),not(is(MethodMatchers.returnsSubtypeOf(String.class).hashCode())));
-  assertThat(MethodMatchers.returnsSubtypeOf(Object.class),not(is(MethodMatchers.returnsSubtypeOf(String.class))));
-}

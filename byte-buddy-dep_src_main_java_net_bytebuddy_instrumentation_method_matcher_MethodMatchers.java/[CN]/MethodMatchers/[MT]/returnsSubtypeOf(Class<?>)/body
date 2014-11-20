@@ -1,3 +1,0 @@
-{
-  return returnsSubtypeOf(new TypeDescription.ForLoadedType(type));
-}

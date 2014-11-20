@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.isDeclaredBy(Object.class).hashCode(),is(MethodMatchers.isDeclaredBy(Object.class).hashCode()));
-  assertThat(MethodMatchers.isDeclaredBy(Object.class),is(MethodMatchers.isDeclaredBy(Object.class)));
-  assertThat(MethodMatchers.isDeclaredBy(Object.class).hashCode(),not(is(MethodMatchers.isDeclaredBy(String.class).hashCode())));
-  assertThat(MethodMatchers.isDeclaredBy(Object.class),not(is(MethodMatchers.isDeclaredBy(String.class))));
-}

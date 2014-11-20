@@ -1,3 +1,0 @@
-{
-  return hasSameJavaCompilerSignatureAs(new MethodDescription.ForLoadedMethod(method));
-}

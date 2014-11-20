@@ -1,3 +1,0 @@
-{
-  return takesArguments(0).and(not(returns(void.class))).and(nameStartsWith("get").or(nameStartsWith("is").and(returns(boolean.class).or(returns(Boolean.class)))));
-}

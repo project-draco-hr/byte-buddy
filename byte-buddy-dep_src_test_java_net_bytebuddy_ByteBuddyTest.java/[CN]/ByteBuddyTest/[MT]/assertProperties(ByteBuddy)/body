@@ -3,7 +3,7 @@
   assertThat(byteBuddy.getClassFileVersion(),is(classFileVersion));
   assertThat(byteBuddy.getDefaultFieldAttributeAppenderFactory(),is(fieldAttributeAppenderFactory));
   assertThat(byteBuddy.getDefaultMethodAttributeAppenderFactory(),is(methodAttributeAppenderFactory));
-  assertThat(byteBuddy.getIgnoredMethods(),is(methodMatcher));
+  assertThat(byteBuddy.getIgnoredMethods(),is((ElementMatcher)methodMatcher));
   assertThat(byteBuddy.getBridgeMethodResolverFactory(),is(bridgeMethodResolverFactory));
   assertThat(byteBuddy.getInterfaceTypes().size(),is(1));
   assertThat(byteBuddy.getInterfaceTypes(),hasItem(typeDescription));

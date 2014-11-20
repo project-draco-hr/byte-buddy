@@ -1,3 +1,0 @@
-{
-  return comparisonSource.contains(comparisonTarget);
-}

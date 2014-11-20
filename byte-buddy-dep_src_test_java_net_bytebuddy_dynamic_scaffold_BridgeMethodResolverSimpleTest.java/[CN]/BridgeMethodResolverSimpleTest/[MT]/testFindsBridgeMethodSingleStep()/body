@@ -1,7 +1,7 @@
 {
   TypeDescription target=new TypeDescription.ForLoadedType(Bar.class);
   MethodList invokableMethods=new MethodLookupEngine.Default(MethodLookupEngine.Default.DefaultMethodLookup.DISABLED).process(target).getInvokableMethods();
-  MethodList relevantMethods=invokableMethods.filter(not(isConstructor().or(isDeclaredBy(Object.class))));
+  MethodList relevantMethods=invokableMethods.filter(not(isDeclaredBy(Object.class).or(isConstructor())));
   assertThat(relevantMethods.size(),is(2));
   BridgeMethodResolver bridgeMethodResolver=new BridgeMethodResolver.Simple(invokableMethods,conflictHandler);
   assertThat(bridgeMethodResolver.resolve(relevantMethods.filter(isBridge()).getOnly()),is(relevantMethods.filter(not(isBridge())).getOnly()));

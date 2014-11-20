@@ -1,7 +1,7 @@
 {
   TypeDescription target=new TypeDescription.ForLoadedType(Baz.class);
   MethodList invokableMethods=new MethodLookupEngine.Default(MethodLookupEngine.Default.DefaultMethodLookup.DISABLED).process(target).getInvokableMethods();
-  MethodList relevantMethods=invokableMethods.filter(not(isConstructor().or(isDeclaredBy(Object.class))));
+  MethodList relevantMethods=invokableMethods.filter(not(isDeclaredBy(Object.class).or(isConstructor())));
   assertThat(relevantMethods.size(),is(3));
   when(conflictHandler.choose(any(MethodDescription.class),any(MethodList.class))).thenReturn(bridgeTarget);
   when(bridgeTarget.isResolved()).thenReturn(true);

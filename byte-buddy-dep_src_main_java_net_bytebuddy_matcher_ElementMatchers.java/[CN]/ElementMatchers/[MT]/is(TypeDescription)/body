@@ -1,3 +1,0 @@
-{
-  return new EqualityMatcher<TypeDescription>(nonNull(typeDescription));
-}

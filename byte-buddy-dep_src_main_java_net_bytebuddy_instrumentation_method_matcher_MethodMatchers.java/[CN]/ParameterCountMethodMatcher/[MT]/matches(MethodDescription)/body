@@ -1,3 +1,0 @@
-{
-  return methodDescription.getParameterTypes().size() == numberOfParameters;
-}

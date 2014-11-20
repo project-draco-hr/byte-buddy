@@ -4,7 +4,7 @@
   MethodLookupEngine.Finding finding=methodLookupEngine.process(classOverridingToStringAbstract);
   assertThat(finding.getTypeDescription(),is(classOverridingToStringAbstract));
   assertThat(finding.getInvokableMethods(),containsAllOf(classOverridingToStringAbstract.getDeclaredMethods()));
-  assertThat(finding.getInvokableMethods(),containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(classOverridingToStringAbstract)).filter(not(named(TO_STRING)))));
+  assertThat(finding.getInvokableMethods(),containsAllOf(objectType.getDeclaredMethods().filter(isVirtualTo(classOverridingToStringAbstract)).filter(ElementMatchers.not(named(TO_STRING)))));
   assertThat(finding.getInvokableMethods().filter(named(TO_STRING)).getOnly().isSpecializableFor(classOverridingToStringAbstract),is(false));
   assertThat(finding.getInvokableMethods().filter(named(TO_STRING)).getOnly().isSpecializableFor(objectType),is(true));
   assertThat(finding.getInvokableMethods().size(),is(classOverridingToStringAbstract.getDeclaredMethods().size() + objectType.getDeclaredMethods().filter(isVirtualTo(classOverridingToStringAbstract)).size() - 1));

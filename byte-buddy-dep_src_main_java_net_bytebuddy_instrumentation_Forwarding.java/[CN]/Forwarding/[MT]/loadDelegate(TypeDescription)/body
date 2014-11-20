@@ -1,3 +1,3 @@
 {
-  return new StackManipulation.Compound(preparationHandler.loadFieldOwner(),FieldAccess.forField(instrumentedType.getDeclaredFields().filter((ElementMatchers.named(fieldName))).getOnly()).getter());
+  return new StackManipulation.Compound(preparationHandler.loadFieldOwner(),FieldAccess.forField(instrumentedType.getDeclaredFields().filter((named(fieldName))).getOnly()).getter());
 }

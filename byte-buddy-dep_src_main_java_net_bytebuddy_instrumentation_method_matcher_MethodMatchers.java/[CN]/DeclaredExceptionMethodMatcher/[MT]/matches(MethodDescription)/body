@@ -1,8 +1,0 @@
-{
-  for (  TypeDescription exceptionType : methodDescription.getExceptionTypes()) {
-    if (exceptionType.isAssignableFrom(this.exceptionType)) {
-      return true;
-    }
-  }
-  return false;
-}

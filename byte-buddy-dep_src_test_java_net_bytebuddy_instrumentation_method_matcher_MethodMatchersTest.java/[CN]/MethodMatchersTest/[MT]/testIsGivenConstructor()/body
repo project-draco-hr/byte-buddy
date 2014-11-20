@@ -1,5 +1,0 @@
-{
-  assertThat(MethodMatchers.is(TestClassBase.class.getDeclaredConstructor()).matches(testClassBase$constructor),is(true));
-  assertThat(MethodMatchers.is(TestClassExtension.class.getDeclaredConstructor()).matches(testModifier$constructor),is(false));
-  assertThat(MethodMatchers.is(TestClassBase.class.getDeclaredConstructor()).matches(testClassBase$bar),is(false));
-}

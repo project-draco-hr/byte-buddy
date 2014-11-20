@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.is(TestClassBase.class.getDeclaredMethod(FOO_METHOD_NAME)).hashCode(),is(MethodMatchers.is(TestClassBase.class.getDeclaredMethod(FOO_METHOD_NAME)).hashCode()));
-  assertThat(MethodMatchers.is(TestClassBase.class.getDeclaredMethod(FOO_METHOD_NAME)),is(MethodMatchers.is(TestClassBase.class.getDeclaredMethod(FOO_METHOD_NAME))));
-  assertThat(MethodMatchers.is(TestClassBase.class.getDeclaredMethod(FOO_METHOD_NAME)).hashCode(),not(is(MethodMatchers.is(TestClassBase.class.getDeclaredMethod(BAR_METHOD_NAME,Object.class)).hashCode())));
-  assertThat(MethodMatchers.is(TestClassBase.class.getDeclaredMethod(FOO_METHOD_NAME)),not(is(MethodMatchers.is(TestClassBase.class.getDeclaredMethod(BAR_METHOD_NAME,Object.class)))));
-}

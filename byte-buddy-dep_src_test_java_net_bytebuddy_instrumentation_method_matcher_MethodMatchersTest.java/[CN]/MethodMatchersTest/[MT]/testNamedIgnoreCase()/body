@@ -1,6 +1,0 @@
-{
-  assertThat(MethodMatchers.namedIgnoreCase(FOO_METHOD_NAME.toUpperCase()).matches(testClassBase$foo),is(true));
-  assertThat(MethodMatchers.namedIgnoreCase(FOO_METHOD_NAME.toUpperCase()).matches(testClassExtension$foo),is(true));
-  assertThat(MethodMatchers.namedIgnoreCase(BAR_METHOD_NAME.toUpperCase()).matches(testClassBase$foo),is(false));
-  assertThat(MethodMatchers.namedIgnoreCase(BAR_METHOD_NAME.toUpperCase()).matches(testClassExtension$foo),is(false));
-}

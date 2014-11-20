@@ -1,4 +1,0 @@
-{
-  assertThat(MethodMatchers.none().matches(testClassBase$foo),is(false));
-  assertThat(MethodMatchers.none().matches(testClassExtension$foo),is(false));
-}
