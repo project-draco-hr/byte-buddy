@@ -1,3 +1,0 @@
-{
-  return new NegatingMatcher<S>(nonNull(elementMatcher));
-}

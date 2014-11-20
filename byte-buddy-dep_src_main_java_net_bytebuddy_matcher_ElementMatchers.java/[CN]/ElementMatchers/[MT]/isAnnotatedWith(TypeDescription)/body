@@ -1,0 +1,3 @@
+{
+  return isAnnotatedWith(is(typeDescription));
+}

@@ -1,0 +1,3 @@
+{
+  return new AnnotationMatcher<T>(new ListItemMatcher<AnnotationDescription>(annotationDescription,ListItemMatcher.Mode.MATCH_ANY));
+}
