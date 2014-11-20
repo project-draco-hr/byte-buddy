@@ -1,0 +1,3 @@
+{
+  return isFinalizer().and(isDeclaredBy(Object.class));
+}

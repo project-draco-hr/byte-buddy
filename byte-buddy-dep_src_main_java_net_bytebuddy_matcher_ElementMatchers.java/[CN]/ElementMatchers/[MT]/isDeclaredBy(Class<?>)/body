@@ -1,0 +1,3 @@
+{
+  return isDeclaredBy(new TypeDescription.ForLoadedType(nonNull(type)));
+}

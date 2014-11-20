@@ -1,0 +1,3 @@
+{
+  return isGetter(new TypeDescription.ForLoadedType(nonNull(type)));
+}

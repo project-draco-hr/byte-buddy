@@ -1,0 +1,3 @@
+{
+  return isSubTypeOf(new TypeDescription.ForLoadedType(nonNull(type)));
+}

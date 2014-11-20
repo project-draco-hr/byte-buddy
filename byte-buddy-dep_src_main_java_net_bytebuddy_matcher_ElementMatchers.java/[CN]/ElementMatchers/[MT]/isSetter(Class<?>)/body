@@ -1,0 +1,3 @@
+{
+  return isSetter(new TypeDescription.ForLoadedType(nonNull(type)));
+}

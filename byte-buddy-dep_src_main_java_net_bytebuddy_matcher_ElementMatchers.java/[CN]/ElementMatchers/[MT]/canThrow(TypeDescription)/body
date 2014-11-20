@@ -1,0 +1,8 @@
+{
+  if (exceptionType.isAssignableTo(Throwable.class)) {
+    return exceptionType.isAssignableTo(RuntimeType.class) || exceptionType.isAssignableTo(Error.class) ? new BooleanMatcher<MethodDescription>(true) : canThrow(new ListItemMatcher<TypeDescription>(new SubTypeMatcher<TypeDescription>(exceptionType),ListItemMatcher.Mode.MATCH_ANY));
+  }
+ else {
+    throw new IllegalArgumentException(exceptionType + " is not an exception type");
+  }
+}

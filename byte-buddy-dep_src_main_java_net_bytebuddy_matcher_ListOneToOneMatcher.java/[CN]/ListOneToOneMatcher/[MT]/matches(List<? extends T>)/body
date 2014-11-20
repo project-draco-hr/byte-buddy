@@ -1,0 +1,12 @@
+{
+  if (target.size() != elementMatchers.size()) {
+    return false;
+  }
+  Iterator<? extends ElementMatcher<? super T>> iterator=elementMatchers.iterator();
+  for (  T value : target) {
+    if (!iterator.next().matches(value)) {
+      return false;
+    }
+  }
+  return true;
+}

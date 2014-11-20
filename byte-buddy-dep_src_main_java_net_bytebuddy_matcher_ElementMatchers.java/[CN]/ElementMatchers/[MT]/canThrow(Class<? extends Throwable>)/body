@@ -1,0 +1,3 @@
+{
+  return canThrow(new TypeDescription.ForLoadedType(nonNull(exceptionType)));
+}

@@ -1,0 +1,3 @@
+{
+  return new NameMatcher<ByteCodeElement>(new StringMatcher(nonNull(suffix),StringMatcher.Mode.ENDS_WITH));
+}

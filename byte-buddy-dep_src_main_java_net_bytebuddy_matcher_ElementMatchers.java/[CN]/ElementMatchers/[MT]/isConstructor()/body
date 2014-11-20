@@ -1,0 +1,3 @@
+{
+  return new MethodSortMatcher<MethodDescription>(MethodSortMatcher.Sort.CONSTRUCTOR);
+}

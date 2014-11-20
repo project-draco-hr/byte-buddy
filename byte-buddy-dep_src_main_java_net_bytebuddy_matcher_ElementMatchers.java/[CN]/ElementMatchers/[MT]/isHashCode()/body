@@ -1,0 +1,3 @@
+{
+  return named("hashCode").and(takesArguments(0)).and(returns(int.class));
+}

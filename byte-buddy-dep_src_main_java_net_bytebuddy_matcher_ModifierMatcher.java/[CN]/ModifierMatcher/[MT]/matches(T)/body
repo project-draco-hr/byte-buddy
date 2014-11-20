@@ -1,0 +1,3 @@
+{
+  return (matchMode.getModifiers() & target.getModifiers()) != 0;
+}

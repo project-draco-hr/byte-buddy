@@ -1,0 +1,3 @@
+{
+  return methodDescription.isTypeInitializer() ? new BooleanMatcher<MethodDescription>(false) : (methodDescription.isConstructor() ? isConstructor() : new NameMatcher<MethodDescription>(new StringMatcher(methodDescription.getName(),StringMatcher.Mode.EQUALS_FULLY))).and(returns(isSubTypeOf(methodDescription.getReturnType()))).and(takesArguments(isSubTypeOf(methodDescription.getParameterTypes())));
+}

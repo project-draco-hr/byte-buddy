@@ -1,0 +1,3 @@
+{
+  return nameMatcher.matches(target.getName());
+}

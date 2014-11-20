@@ -1,0 +1,3 @@
+{
+  return new MethodParameterTypeMatcher<MethodDescription>(nonNull(parameterMatcher));
+}
