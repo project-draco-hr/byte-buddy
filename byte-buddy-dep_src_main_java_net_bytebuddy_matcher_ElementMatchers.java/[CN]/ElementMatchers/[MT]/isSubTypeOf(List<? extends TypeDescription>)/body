@@ -1,7 +1,0 @@
-{
-  List<ElementMatcher<TypeDescription>> matchers=new ArrayList<ElementMatcher<TypeDescription>>(typeDescriptions.size());
-  for (  TypeDescription typeDescription : typeDescriptions) {
-    matchers.add(isSubTypeOf(typeDescription));
-  }
-  return new ListOneToOneMatcher<TypeDescription>(matchers);
-}
