@@ -1,7 +1,7 @@
 {
-  FieldDescription fieldDescription=targetType.getDeclaredFields().filter(ElementMatchers.named(name)).getOnly();
-  if (!fieldDescription.isVisibleTo(instrumentedType)) {
-    throw new IllegalArgumentException(fieldDescription + " is not visible to " + instrumentedType);
+  FieldList fieldList=targetType.getDeclaredFields().filter(named(name).and(isVisibleTo(instrumentedType)));
+  if (fieldList.size() != 1) {
+    throw new IllegalArgumentException("No field named " + name + " on "+ targetType+ " is visible to "+ instrumentedType);
   }
-  return fieldDescription;
+  return fieldList.getOnly();
 }

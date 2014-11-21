@@ -1,10 +1,9 @@
 {
   TypeDescription currentType=instrumentedType;
   do {
-    for (    FieldDescription fieldDescription : currentType.getDeclaredFields()) {
-      if (fieldDescription.getInternalName().equals(fieldName) && fieldDescription.isVisibleTo(instrumentedType)) {
-        return new Resolution.Resolved(fieldDescription);
-      }
+    FieldList fieldList=currentType.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
+    if (fieldList.size() == 1) {
+      return new Resolution.Resolved(fieldList.getOnly());
     }
   }
  while ((currentType=currentType.getSupertype()) != null);

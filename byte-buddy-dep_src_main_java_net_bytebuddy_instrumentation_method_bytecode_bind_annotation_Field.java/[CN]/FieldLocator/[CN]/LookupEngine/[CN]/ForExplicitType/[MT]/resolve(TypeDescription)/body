@@ -1,8 +1,4 @@
 {
-  for (  FieldDescription fieldDescription : typeDescription.getDeclaredFields()) {
-    if (fieldDescription.getInternalName().equals(fieldName)) {
-      return fieldDescription.isVisibleTo(instrumentedType) ? new Resolution.Resolved(fieldDescription) : new Resolution.Unresolved();
-    }
-  }
-  return new Resolution.Unresolved();
+  FieldList fieldList=typeDescription.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
+  return fieldList.size() == 1 ? new Resolution.Resolved(fieldList.getOnly()) : new Resolution.Unresolved();
 }
