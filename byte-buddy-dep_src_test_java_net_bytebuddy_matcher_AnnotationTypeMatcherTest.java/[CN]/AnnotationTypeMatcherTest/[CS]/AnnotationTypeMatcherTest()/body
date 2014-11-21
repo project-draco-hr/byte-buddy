@@ -1,0 +1,3 @@
+{
+  super((Class<AnnotationTypeMatcher<?>>)(Object)AnnotationTypeMatcher.class,"annotationType");
+}

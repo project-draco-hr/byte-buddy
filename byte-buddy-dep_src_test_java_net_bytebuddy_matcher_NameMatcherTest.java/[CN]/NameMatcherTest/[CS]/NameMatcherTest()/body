@@ -1,0 +1,3 @@
+{
+  super((Class<NameMatcher<?>>)(Object)NameMatcher.class,"name");
+}

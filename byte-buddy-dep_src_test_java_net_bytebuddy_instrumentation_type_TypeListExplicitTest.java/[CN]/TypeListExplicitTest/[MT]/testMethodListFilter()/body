@@ -1,0 +1,7 @@
+{
+  @SuppressWarnings("unchecked") ElementMatcher<? super TypeDescription> typeMatcher=mock(ElementMatcher.class);
+  when(typeMatcher.matches(firstTypeDescription)).thenReturn(true);
+  typeList=typeList.filter(typeMatcher);
+  assertThat(typeList.size(),is(1));
+  assertThat(typeList.getOnly(),is(firstTypeDescription));
+}

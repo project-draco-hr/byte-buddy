@@ -1,0 +1,3 @@
+{
+  super((Class<BooleanMatcher<?>>)(Object)BooleanMatcher.class,"");
+}

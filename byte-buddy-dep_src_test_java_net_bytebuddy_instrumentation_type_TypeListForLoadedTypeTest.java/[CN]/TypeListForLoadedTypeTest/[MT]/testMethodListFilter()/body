@@ -1,0 +1,5 @@
+{
+  typeList=typeList.filter(ElementMatchers.is(Object.class));
+  assertThat(typeList.size(),is(1));
+  assertThat(typeList.getOnly(),is((TypeDescription)new TypeDescription.ForLoadedType(Object.class)));
+}

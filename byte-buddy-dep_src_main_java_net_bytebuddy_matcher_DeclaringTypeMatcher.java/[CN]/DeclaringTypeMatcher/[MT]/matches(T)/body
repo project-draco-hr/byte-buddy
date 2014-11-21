@@ -1,3 +1,4 @@
 {
-  return typeMatcher.matches(target.getDeclaringType());
+  TypeDescription typeDescription=target.getDeclaringType();
+  return typeDescription != null && typeMatcher.matches(typeDescription);
 }

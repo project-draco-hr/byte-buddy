@@ -1,0 +1,3 @@
+{
+  super((Class<? extends SuperTypeMatcher<?>>)(Object)SuperTypeMatcher.class,"isSuperTypeOf");
+}

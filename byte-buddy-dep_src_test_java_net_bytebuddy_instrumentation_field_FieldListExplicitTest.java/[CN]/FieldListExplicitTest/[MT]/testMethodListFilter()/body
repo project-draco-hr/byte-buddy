@@ -1,0 +1,7 @@
+{
+  @SuppressWarnings("unchecked") ElementMatcher<? super FieldDescription> fieldMatcher=mock(ElementMatcher.class);
+  when(fieldMatcher.matches(firstFieldDescription)).thenReturn(true);
+  fieldList=fieldList.filter(fieldMatcher);
+  assertThat(fieldList.size(),is(1));
+  assertThat(fieldList.getOnly(),is(firstFieldDescription));
+}

@@ -1,0 +1,7 @@
+{
+  Object target=new Object();
+  when(elementMatcher.matches(target)).thenReturn(true);
+  assertThat(new NegatingMatcher<Object>(elementMatcher).matches(target),is(false));
+  verify(elementMatcher).matches(target);
+  verifyNoMoreInteractions(elementMatcher);
+}

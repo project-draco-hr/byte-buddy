@@ -1,0 +1,4 @@
+{
+  Object target=new Object();
+  assertThat(new EqualityMatcher<Object>(target).matches(target),is(true));
+}

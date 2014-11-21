@@ -1,0 +1,6 @@
+{
+  when(annotationTypeMatcher.matches(annotationList)).thenReturn(true);
+  assertThat(new AnnotationMatcher<AnnotatedElement>(annotationTypeMatcher).matches(annotatedElement),is(true));
+  verify(annotationTypeMatcher).matches(annotationList);
+  verifyNoMoreInteractions(annotationTypeMatcher);
+}

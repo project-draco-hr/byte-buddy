@@ -1,0 +1,7 @@
+{
+  when(otherType.isAssignableTo(typeDescription)).thenReturn(false);
+  assertThat(new SubTypeMatcher<TypeDescription>(typeDescription).matches(otherType),is(false));
+  verify(otherType).isAssignableTo(typeDescription);
+  verifyNoMoreInteractions(otherType);
+  verifyZeroInteractions(typeDescription);
+}

@@ -1,0 +1,7 @@
+{
+  when(byteCodeElement.isVisibleTo(typeDescription)).thenReturn(false);
+  assertThat(new VisibilityMatcher<ByteCodeElement>(typeDescription).matches(byteCodeElement),is(false));
+  verify(byteCodeElement).isVisibleTo(typeDescription);
+  verifyNoMoreInteractions(byteCodeElement);
+  verifyZeroInteractions(typeDescription);
+}

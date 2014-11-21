@@ -1,5 +1,5 @@
 {
   Set<String> ignoredFields=new HashSet<String>(this.ignoredFields);
   ignoredFields.addAll(Arrays.asList(field));
-  return new ObjectPropertyAssertion<T>(type,generator,refinement,creator,skipSynthetic,true,ignoredFields);
+  return new ObjectPropertyAssertion<T>(type,generator,refinement,creator,skipSynthetic,optionalToStringRegex,ignoredFields);
 }

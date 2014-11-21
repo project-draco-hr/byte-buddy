@@ -1,0 +1,3 @@
+{
+  super((Class<AnnotationMatcher<?>>)(Object)AnnotationMatcher.class,"hasAnnotation");
+}

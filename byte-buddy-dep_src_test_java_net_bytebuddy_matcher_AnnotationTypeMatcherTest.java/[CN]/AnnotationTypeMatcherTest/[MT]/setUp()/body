@@ -1,0 +1,3 @@
+{
+  when(annotatedElement.getAnnotationType()).thenReturn(annotationType);
+}

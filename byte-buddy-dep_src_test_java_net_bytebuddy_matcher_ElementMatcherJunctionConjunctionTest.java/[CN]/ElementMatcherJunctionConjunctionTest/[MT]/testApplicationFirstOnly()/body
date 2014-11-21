@@ -1,0 +1,8 @@
+{
+  Object target=new Object();
+  when(first.matches(target)).thenReturn(false);
+  assertThat(new ElementMatcher.Junction.Conjunction<Object>(first,second).matches(target),is(false));
+  verify(first).matches(target);
+  verifyNoMoreInteractions(first);
+  verifyZeroInteractions(second);
+}

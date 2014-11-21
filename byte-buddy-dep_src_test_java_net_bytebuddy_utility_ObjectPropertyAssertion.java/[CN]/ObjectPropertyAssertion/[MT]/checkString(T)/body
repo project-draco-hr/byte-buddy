@@ -1,5 +1,5 @@
 {
-  assertThat(instance.toString(),startsWith(type.getCanonicalName().substring(type.getPackage().getName().length() + 1) + "{"));
+  assertThat(instance.toString(),CoreMatchers.startsWith(type.getCanonicalName().substring(type.getPackage().getName().length() + 1) + "{"));
   assertThat(instance.toString(),endsWith("}"));
   Class<?> currentType=type;
   do {

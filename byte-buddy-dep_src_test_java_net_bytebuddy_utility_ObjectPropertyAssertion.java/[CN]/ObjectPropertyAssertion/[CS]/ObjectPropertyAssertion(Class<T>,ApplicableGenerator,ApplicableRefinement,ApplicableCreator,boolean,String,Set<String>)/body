@@ -1,0 +1,9 @@
+{
+  this.type=type;
+  this.generator=generator;
+  this.refinement=refinement;
+  this.creator=creator;
+  this.skipSynthetic=skipSynthetic;
+  this.optionalToStringRegex=optionalToStringRegex;
+  this.ignoredFields=ignoredFields;
+}

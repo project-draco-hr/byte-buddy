@@ -1,3 +1,0 @@
-{
-  return new ObjectPropertyAssertion<T>(type,generator,refinement,creator,skipSynthetic,true,ignoredFields);
-}

@@ -1,0 +1,4 @@
+{
+  assertThat(new BooleanMatcher<Object>(true).toString(),is("any()"));
+  assertThat(new BooleanMatcher<Object>(false).toString(),is("none()"));
+}

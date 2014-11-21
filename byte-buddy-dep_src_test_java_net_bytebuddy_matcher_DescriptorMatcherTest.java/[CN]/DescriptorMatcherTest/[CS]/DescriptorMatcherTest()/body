@@ -1,0 +1,3 @@
+{
+  super((Class<DescriptorMatcher<?>>)(Object)DescriptorMatcher.class,"hasDescriptor");
+}

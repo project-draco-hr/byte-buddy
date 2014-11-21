@@ -1,0 +1,6 @@
+{
+  when(nameMatcher.matches(FOO)).thenReturn(false);
+  assertThat(new NameMatcher<ByteCodeElement>(nameMatcher).matches(byteCodeElement),is(false));
+  verify(nameMatcher).matches(FOO);
+  verifyNoMoreInteractions(nameMatcher);
+}

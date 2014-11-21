@@ -1,0 +1,3 @@
+{
+  assertThat(new EqualityMatcher<Object>(new Object()).matches(new Object()),is(false));
+}

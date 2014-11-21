@@ -1,0 +1,3 @@
+{
+  super((Class<? extends ElementMatcher.Junction.Disjunction<?>>)(Object)ElementMatcher.Junction.Disjunction.class,"");
+}

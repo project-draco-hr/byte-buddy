@@ -1,3 +1,3 @@
 {
-  return new ObjectPropertyAssertion<T>(type,generator,refinement,this.creator.with(creator),skipSynthetic,skipToString,ignoredFields);
+  return new ObjectPropertyAssertion<T>(type,generator,refinement,this.creator.with(creator),skipSynthetic,optionalToStringRegex,ignoredFields);
 }

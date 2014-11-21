@@ -1,0 +1,3 @@
+{
+  when(methodDescription.getReturnType()).thenReturn(returnType);
+}

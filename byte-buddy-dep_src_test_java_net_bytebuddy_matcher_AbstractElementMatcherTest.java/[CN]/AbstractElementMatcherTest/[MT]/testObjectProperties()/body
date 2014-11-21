@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(type).specificToString(makeRegex(startsWith)).apply();
+}

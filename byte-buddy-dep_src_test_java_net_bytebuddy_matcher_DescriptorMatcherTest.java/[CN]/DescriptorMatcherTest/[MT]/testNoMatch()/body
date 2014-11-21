@@ -1,0 +1,6 @@
+{
+  when(descriptorMatcher.matches(FOO)).thenReturn(false);
+  assertThat(new DescriptorMatcher<ByteCodeElement>(descriptorMatcher).matches(byteCodeElement),is(false));
+  verify(descriptorMatcher).matches(FOO);
+  verifyNoMoreInteractions(descriptorMatcher);
+}

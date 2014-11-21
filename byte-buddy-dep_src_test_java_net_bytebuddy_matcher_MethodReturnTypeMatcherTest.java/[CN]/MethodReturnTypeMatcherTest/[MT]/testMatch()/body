@@ -1,0 +1,6 @@
+{
+  when(typeMatcher.matches(returnType)).thenReturn(true);
+  assertThat(new MethodReturnTypeMatcher<MethodDescription>(typeMatcher).matches(methodDescription),is(true));
+  verify(typeMatcher).matches(returnType);
+  verifyNoMoreInteractions(typeMatcher);
+}

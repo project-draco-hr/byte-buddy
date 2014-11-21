@@ -19,11 +19,11 @@
     Object similarInstance=constructor.newInstance(actualArguments);
     assertThat(instance.hashCode(),is(similarInstance.hashCode()));
     assertThat(instance,is(similarInstance));
-    if (!skipToString) {
+    if (optionalToStringRegex == null) {
       checkString(instance);
     }
  else {
-      assertThat(instance.toString(),notNullValue());
+      assertThat(instance.toString(),new RegexMatcher(optionalToStringRegex));
     }
     for (    Object otherArgument : otherArguments) {
       Object[] compareArguments=new Object[actualArguments.length];

@@ -1,0 +1,3 @@
+{
+  super((Class<NegatingMatcher<?>>)(Object)NegatingMatcher.class,"not");
+}

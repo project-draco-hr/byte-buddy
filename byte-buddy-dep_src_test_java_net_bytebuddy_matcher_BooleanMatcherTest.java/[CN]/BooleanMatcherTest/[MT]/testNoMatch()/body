@@ -1,0 +1,5 @@
+{
+  Object target=mock(Object.class);
+  assertThat(new BooleanMatcher<Object>(false).matches(target),is(false));
+  verifyZeroInteractions(target);
+}

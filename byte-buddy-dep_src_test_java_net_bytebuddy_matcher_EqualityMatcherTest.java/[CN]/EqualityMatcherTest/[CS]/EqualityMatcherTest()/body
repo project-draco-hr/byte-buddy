@@ -1,0 +1,3 @@
+{
+  super((Class<EqualityMatcher<?>>)(Object)EqualityMatcher.class,"is");
+}
