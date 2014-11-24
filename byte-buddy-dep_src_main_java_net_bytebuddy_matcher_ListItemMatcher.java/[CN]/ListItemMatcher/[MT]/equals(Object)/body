@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && elementMatcher.equals(((ListItemMatcher)other).elementMatcher) && mode == ((ListItemMatcher)other).mode;
-}

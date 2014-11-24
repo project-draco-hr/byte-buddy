@@ -1,3 +1,3 @@
 {
-  return new ModifierMatcher<T>(ModifierMatcher.MatchMode.SYNTHETIC);
+  return new ModifierMatcher<T>(ModifierMatcher.Mode.SYNTHETIC);
 }

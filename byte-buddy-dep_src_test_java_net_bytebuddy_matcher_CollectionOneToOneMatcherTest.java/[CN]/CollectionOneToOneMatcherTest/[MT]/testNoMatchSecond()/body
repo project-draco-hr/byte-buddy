@@ -1,0 +1,9 @@
+{
+  when(firstMatcher.matches(first)).thenReturn(true);
+  when(secondMatcher.matches(second)).thenReturn(false);
+  assertThat(new CollectionOneToOneMatcher<Object>(Arrays.asList(firstMatcher,secondMatcher)).matches(iterable),is(false));
+  verify(firstMatcher).matches(first);
+  verifyNoMoreInteractions(firstMatcher);
+  verify(secondMatcher).matches(second);
+  verifyNoMoreInteractions(secondMatcher);
+}

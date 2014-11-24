@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{ModifierMatcher.Mode.BRIDGE,Opcodes.ACC_BRIDGE},{ModifierMatcher.Mode.FINAL,Opcodes.ACC_FINAL},{ModifierMatcher.Mode.NATIVE,Opcodes.ACC_NATIVE},{ModifierMatcher.Mode.PRIVATE,Opcodes.ACC_PRIVATE},{ModifierMatcher.Mode.PROTECTED,Opcodes.ACC_PROTECTED},{ModifierMatcher.Mode.PUBLIC,Opcodes.ACC_PUBLIC},{ModifierMatcher.Mode.STATIC,Opcodes.ACC_STATIC},{ModifierMatcher.Mode.STRICT,Opcodes.ACC_STRICT},{ModifierMatcher.Mode.SYNCHRONIZED,Opcodes.ACC_SYNCHRONIZED},{ModifierMatcher.Mode.SYNTHETIC,Opcodes.ACC_SYNTHETIC}});
+}

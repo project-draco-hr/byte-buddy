@@ -1,0 +1,8 @@
+{
+  when(elementMatcher.matches(first)).thenReturn(false);
+  when(elementMatcher.matches(second)).thenReturn(true);
+  assertThat(new CollectionItemMatcher<Object>(elementMatcher).matches(iterable),is(true));
+  verify(elementMatcher).matches(first);
+  verify(elementMatcher).matches(second);
+  verifyNoMoreInteractions(elementMatcher);
+}

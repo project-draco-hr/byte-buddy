@@ -1,6 +1,0 @@
-{
-  when(list.size()).thenReturn(0);
-  assertThat(new ListLengthMatcher<List<?>>(1).matches(list),is(false));
-  verify(list).size();
-  verifyNoMoreInteractions(list);
-}

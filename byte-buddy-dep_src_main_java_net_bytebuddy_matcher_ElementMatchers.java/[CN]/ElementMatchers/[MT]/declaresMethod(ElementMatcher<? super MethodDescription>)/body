@@ -1,0 +1,3 @@
+{
+  return new DeclaringMethodMatcher<T>(new CollectionItemMatcher<MethodDescription>(nonNull(methodMatcher)));
+}

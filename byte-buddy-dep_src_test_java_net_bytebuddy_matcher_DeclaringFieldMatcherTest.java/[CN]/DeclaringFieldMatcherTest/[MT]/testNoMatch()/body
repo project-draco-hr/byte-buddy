@@ -1,0 +1,9 @@
+{
+  when(typeDescription.getDeclaredFields()).thenReturn(fieldList);
+  when(fieldMatcher.matches(fieldList)).thenReturn(false);
+  assertThat(new DeclaringFieldMatcher<TypeDescription>(fieldMatcher).matches(typeDescription),is(false));
+  verify(fieldMatcher).matches(fieldList);
+  verifyNoMoreInteractions(fieldMatcher);
+  verify(typeDescription).getDeclaredFields();
+  verifyNoMoreInteractions(typeDescription);
+}

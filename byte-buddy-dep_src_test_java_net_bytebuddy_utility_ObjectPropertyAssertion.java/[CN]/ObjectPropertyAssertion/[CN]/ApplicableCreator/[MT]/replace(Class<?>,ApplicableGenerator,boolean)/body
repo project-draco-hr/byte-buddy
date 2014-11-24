@@ -6,5 +6,5 @@
       return creator.create();
     }
   }
-  return generator.generate(type,alterative);
+  return generator.generate(type,alternative);
 }

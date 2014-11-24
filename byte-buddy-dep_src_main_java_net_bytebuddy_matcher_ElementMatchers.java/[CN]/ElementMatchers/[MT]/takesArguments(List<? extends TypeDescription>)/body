@@ -1,7 +1,0 @@
-{
-  List<ElementMatcher<? super TypeDescription>> typeMatchers=new ArrayList<ElementMatcher<? super TypeDescription>>(typeDescriptions.size());
-  for (  TypeDescription typeDescription : typeDescriptions) {
-    typeMatchers.add(is(nonVoid(typeDescription)));
-  }
-  return takesArguments(new ListOneToOneMatcher<TypeDescription>(typeMatchers));
-}

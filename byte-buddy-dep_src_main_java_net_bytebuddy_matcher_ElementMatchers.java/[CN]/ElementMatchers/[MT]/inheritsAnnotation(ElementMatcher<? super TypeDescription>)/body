@@ -1,0 +1,3 @@
+{
+  return hasAnnotation(new AnnotationTypeMatcher<AnnotationDescription>(nonNull(annotationTypeMatcher)));
+}

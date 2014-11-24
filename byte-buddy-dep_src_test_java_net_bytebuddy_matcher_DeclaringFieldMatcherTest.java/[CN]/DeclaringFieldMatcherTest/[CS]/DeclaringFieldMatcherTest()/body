@@ -1,0 +1,3 @@
+{
+  super((Class<DeclaringFieldMatcher<?>>)(Object)DeclaringFieldMatcher.class,"declaresFields");
+}

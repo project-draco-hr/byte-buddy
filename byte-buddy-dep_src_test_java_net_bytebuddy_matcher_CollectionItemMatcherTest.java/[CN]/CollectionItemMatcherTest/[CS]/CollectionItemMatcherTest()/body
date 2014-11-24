@@ -1,0 +1,3 @@
+{
+  super((Class<CollectionItemMatcher<?>>)(Object)CollectionItemMatcher.class,"whereOne");
+}

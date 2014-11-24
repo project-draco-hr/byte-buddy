@@ -1,0 +1,14 @@
+{
+  StringBuilder stringBuilder=new StringBuilder("containing(");
+  boolean first=true;
+  for (  Object value : elementMatchers) {
+    if (first) {
+      first=false;
+    }
+ else {
+      stringBuilder.append(", ");
+    }
+    stringBuilder.append(value);
+  }
+  return stringBuilder.append(")").toString();
+}

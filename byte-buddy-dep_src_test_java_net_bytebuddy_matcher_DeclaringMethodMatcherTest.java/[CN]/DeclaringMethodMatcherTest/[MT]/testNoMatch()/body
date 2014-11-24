@@ -1,0 +1,9 @@
+{
+  when(typeDescription.getDeclaredMethods()).thenReturn(methodList);
+  when(methodMatcher.matches(methodList)).thenReturn(false);
+  assertThat(new DeclaringMethodMatcher<TypeDescription>(methodMatcher).matches(typeDescription),is(false));
+  verify(methodMatcher).matches(methodList);
+  verifyNoMoreInteractions(methodMatcher);
+  verify(typeDescription).getDeclaredMethods();
+  verifyNoMoreInteractions(typeDescription);
+}

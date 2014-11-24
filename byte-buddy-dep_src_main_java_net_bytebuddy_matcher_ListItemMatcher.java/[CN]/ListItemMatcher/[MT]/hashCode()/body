@@ -1,5 +1,0 @@
-{
-  int result=elementMatcher.hashCode();
-  result=31 * result + mode.hashCode();
-  return result;
-}

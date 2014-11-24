@@ -19,7 +19,10 @@
     Object similarInstance=constructor.newInstance(actualArguments);
     assertThat(instance.hashCode(),is(similarInstance.hashCode()));
     assertThat(instance,is(similarInstance));
-    if (optionalToStringRegex == null) {
+    if (skipToString) {
+      assertThat(instance.toString(),notNullValue());
+    }
+ else     if (optionalToStringRegex == null) {
       checkString(instance);
     }
  else {

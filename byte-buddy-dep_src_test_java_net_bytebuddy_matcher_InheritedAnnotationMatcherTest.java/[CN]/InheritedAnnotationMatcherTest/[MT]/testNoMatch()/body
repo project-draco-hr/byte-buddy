@@ -1,0 +1,9 @@
+{
+  when(typeDescription.getInheritedAnnotations()).thenReturn(annotationList);
+  when(annotationMatcher.matches(annotationList)).thenReturn(false);
+  assertThat(new InheritedAnnotationMatcher<TypeDescription>(annotationMatcher).matches(typeDescription),is(false));
+  verify(annotationMatcher).matches(annotationList);
+  verifyNoMoreInteractions(annotationMatcher);
+  verify(typeDescription).getInheritedAnnotations();
+  verifyNoMoreInteractions(typeDescription);
+}

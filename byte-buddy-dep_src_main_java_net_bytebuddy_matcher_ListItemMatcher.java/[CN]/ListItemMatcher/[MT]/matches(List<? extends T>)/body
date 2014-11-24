@@ -1,8 +1,0 @@
-{
-  for (  T value : target) {
-    if (elementMatcher.matches(value)) {
-      return mode.isMatch();
-    }
-  }
-  return !mode.isMatch();
-}

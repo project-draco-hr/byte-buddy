@@ -1,5 +1,5 @@
 {
-  MethodList targetCandidates=bridgeMethod.getDeclaringType().getDeclaredMethods().filter(not(isBridge()).and(isCompatibleTo(bridgeMethod)));
+  MethodList targetCandidates=bridgeMethod.getDeclaringType().getDeclaredMethods().filter(not(isBridge()).and(isSpecializationOf(bridgeMethod)));
 switch (targetCandidates.size()) {
 case 0:
     return new BridgeTarget.Resolved(bridgeMethod);

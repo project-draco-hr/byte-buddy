@@ -1,0 +1,5 @@
+{
+  first=new Object();
+  second=new Object();
+  iterable=Arrays.asList(first,second);
+}

@@ -1,0 +1,8 @@
+{
+  return propertyAssertion.create(new ObjectPropertyAssertion.Creator<List<?>>(){
+    @Override @SuppressWarnings("unchecked") public List<?> create(){
+      return Collections.singletonList(mock(ElementMatcher.class));
+    }
+  }
+);
+}

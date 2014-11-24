@@ -1,0 +1,4 @@
+{
+  this.modifiers=modifiers;
+  this.description=description;
+}

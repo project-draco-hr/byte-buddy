@@ -1,0 +1,3 @@
+{
+  super((Class<InheritedAnnotationMatcher<?>>)(Object)InheritedAnnotationMatcher.class,"inheritsAnnotations");
+}

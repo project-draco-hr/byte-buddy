@@ -1,0 +1,6 @@
+{
+  when(modifierReviewable.getModifiers()).thenReturn(0);
+  assertThat(new ModifierMatcher<ModifierReviewable>(mode).matches(modifierReviewable),is(false));
+  verify(modifierReviewable).getModifiers();
+  verifyNoMoreInteractions(modifierReviewable);
+}

@@ -1,3 +1,0 @@
-{
-  super((Class<ListLengthMatcher<?>>)(Object)ListLengthMatcher.class,"length");
-}

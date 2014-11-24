@@ -1,3 +1,0 @@
-{
-  this.elementMatchers=new ArrayList<ElementMatcher<? super T>>(elementMatchers);
-}

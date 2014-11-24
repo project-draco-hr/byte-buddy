@@ -1,3 +1,3 @@
 {
-  return new ObjectPropertyAssertion<T>(type,generator,refinement,creator,true,optionalToStringRegex,ignoredFields);
+  return new ObjectPropertyAssertion<T>(type,generator,refinement,creator,true,skipToString,optionalToStringRegex,ignoredFields);
 }

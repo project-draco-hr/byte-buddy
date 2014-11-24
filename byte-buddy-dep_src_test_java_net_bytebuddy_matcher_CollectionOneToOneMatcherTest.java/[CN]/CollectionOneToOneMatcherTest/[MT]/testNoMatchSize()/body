@@ -1,0 +1,5 @@
+{
+  assertThat(new CollectionOneToOneMatcher<Object>(Arrays.asList(firstMatcher)).matches(iterable),is(false));
+  verifyZeroInteractions(firstMatcher);
+  verifyZeroInteractions(secondMatcher);
+}

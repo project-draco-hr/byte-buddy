@@ -1,0 +1,3 @@
+{
+  return inheritsAnnotation(is(typeDescription));
+}

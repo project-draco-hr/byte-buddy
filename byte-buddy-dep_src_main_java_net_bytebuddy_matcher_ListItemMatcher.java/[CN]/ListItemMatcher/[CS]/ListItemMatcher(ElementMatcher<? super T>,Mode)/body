@@ -1,4 +1,0 @@
-{
-  this.elementMatcher=elementMatcher;
-  this.mode=mode;
-}

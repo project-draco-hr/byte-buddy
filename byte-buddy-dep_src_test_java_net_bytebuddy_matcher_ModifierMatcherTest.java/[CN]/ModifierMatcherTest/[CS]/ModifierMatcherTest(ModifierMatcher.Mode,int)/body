@@ -1,0 +1,5 @@
+{
+  super((Class<ModifierMatcher<?>>)(Object)ModifierMatcher.class,mode.getDescription());
+  this.mode=mode;
+  this.modifiers=modifiers;
+}

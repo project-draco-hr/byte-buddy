@@ -1,0 +1,6 @@
+{
+  when(collection.size()).thenReturn(1);
+  assertThat(new CollectionSizeMatcher<Collection<?>>(1).matches(collection),is(true));
+  verify(collection).size();
+  verifyNoMoreInteractions(collection);
+}

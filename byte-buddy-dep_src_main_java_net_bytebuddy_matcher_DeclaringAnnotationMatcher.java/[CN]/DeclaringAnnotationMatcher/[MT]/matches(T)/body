@@ -1,0 +1,3 @@
+{
+  return annotationMatcher.matches(target.getDeclaredAnnotations());
+}

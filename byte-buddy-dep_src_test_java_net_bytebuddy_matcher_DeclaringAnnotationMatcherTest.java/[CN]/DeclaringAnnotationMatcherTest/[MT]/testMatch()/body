@@ -1,0 +1,9 @@
+{
+  when(annotatedElement.getDeclaredAnnotations()).thenReturn(annotationList);
+  when(annotationMatcher.matches(annotationList)).thenReturn(true);
+  assertThat(new DeclaringAnnotationMatcher<AnnotatedElement>(annotationMatcher).matches(annotatedElement),is(true));
+  verify(annotationMatcher).matches(annotationList);
+  verifyNoMoreInteractions(annotationMatcher);
+  verify(annotatedElement).getDeclaredAnnotations();
+  verifyNoMoreInteractions(annotatedElement);
+}

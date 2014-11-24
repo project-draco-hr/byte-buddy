@@ -1,0 +1,8 @@
+{
+  TypeList parameterTypes=methodDescription.getParameterTypes();
+  List<ElementMatcher<TypeDescription>> matchers=new ArrayList<ElementMatcher<TypeDescription>>(parameterTypes.size());
+  for (  TypeDescription typeDescription : parameterTypes) {
+    matchers.add(isSubTypeOf(typeDescription));
+  }
+  return (methodDescription.isStatic() ? ElementMatchers.<T>isStatic() : ElementMatchers.<T>not(isStatic())).<T>and(named(methodDescription.getName())).<T>and(returns(isSubTypeOf(methodDescription.getReturnType()))).and(takesArguments(new CollectionOneToOneMatcher<TypeDescription>(matchers)));
+}
