@@ -1,0 +1,3 @@
+{
+  super((Class<NullMatcher<?>>)(Object)NullMatcher.class,"isNull");
+}

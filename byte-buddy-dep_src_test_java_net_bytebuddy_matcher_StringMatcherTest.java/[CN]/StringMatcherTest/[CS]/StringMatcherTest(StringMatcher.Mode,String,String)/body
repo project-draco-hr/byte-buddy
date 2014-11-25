@@ -1,0 +1,6 @@
+{
+  super(StringMatcher.class,mode.getDescription());
+  this.mode=mode;
+  this.matching=matching;
+  this.nonMatching=nonMatching;
+}

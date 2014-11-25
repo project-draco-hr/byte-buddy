@@ -1,0 +1,3 @@
+{
+  assertThat(new NullMatcher<Object>().matches(null),is(true));
+}

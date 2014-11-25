@@ -1,0 +1,7 @@
+{
+  ElementMatcher.Junction<T> matcher=none();
+  for (  Object value : values) {
+    matcher=matcher.or(is(value));
+  }
+  return matcher;
+}

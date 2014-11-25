@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{StringMatcher.Mode.CONTAINS,"fo","fooo"},{StringMatcher.Mode.CONTAINS_IGNORE_CASE,"FO","fooo"},{StringMatcher.Mode.ENDS_WITH,"oo","f"},{StringMatcher.Mode.ENDS_WITH_IGNORE_CASE,"OO","f"},{StringMatcher.Mode.EQUALS_FULLY,"foo","bar"},{StringMatcher.Mode.EQUALS_FULLY_IGNORE_CASE,"FOO","bar"},{StringMatcher.Mode.MATCHES,"[a-z]{3}","bar"},{StringMatcher.Mode.STARTS_WITH,"fo","fooo"},{StringMatcher.Mode.STARTS_WITH_IGNORE_CASE,"FO","fooo"}});
+}

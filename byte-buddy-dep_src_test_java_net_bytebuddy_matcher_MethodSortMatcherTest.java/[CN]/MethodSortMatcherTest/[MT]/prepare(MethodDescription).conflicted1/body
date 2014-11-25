@@ -1,0 +1,3 @@
+{
+  when(mock.isMethod()).thenReturn(true);
+}

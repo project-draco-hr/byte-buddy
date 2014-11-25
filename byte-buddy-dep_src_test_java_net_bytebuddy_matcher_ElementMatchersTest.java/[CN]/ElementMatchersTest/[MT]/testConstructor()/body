@@ -1,0 +1,12 @@
+{
+  assertThat(Modifier.isPrivate(ElementMatchers.class.getDeclaredConstructor().getModifiers()),is(true));
+  Constructor<?> constructor=ElementMatchers.class.getDeclaredConstructor();
+  constructor.setAccessible(true);
+  try {
+    constructor.newInstance();
+    fail();
+  }
+ catch (  InvocationTargetException e) {
+    throw (UnsupportedOperationException)e.getCause();
+  }
+}

@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && mode == ((StringMatcher)other).mode && name.equals(((StringMatcher)other).name);
+  return this == other || !(other == null || getClass() != other.getClass()) && mode == ((StringMatcher)other).mode && value.equals(((StringMatcher)other).value);
 }

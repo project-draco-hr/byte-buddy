@@ -1,0 +1,3 @@
+{
+  return value == null ? new NullMatcher<T>() : new EqualityMatcher<T>(value);
+}

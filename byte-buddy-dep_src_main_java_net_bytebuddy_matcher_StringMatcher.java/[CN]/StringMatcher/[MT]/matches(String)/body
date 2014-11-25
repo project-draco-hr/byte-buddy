@@ -1,3 +1,3 @@
 {
-  return mode.matches(name,target);
+  return mode.matches(value,target);
 }

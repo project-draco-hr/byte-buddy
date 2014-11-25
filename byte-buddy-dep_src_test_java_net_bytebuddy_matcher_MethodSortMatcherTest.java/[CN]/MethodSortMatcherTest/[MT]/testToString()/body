@@ -1,0 +1,3 @@
+{
+  assertThat(new MethodSortMatcher<MethodDescription>(sort).toString(),is(sort.getDescription()));
+}

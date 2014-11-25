@@ -1,7 +1,0 @@
-{
-  ElementMatcher.Junction<T> matcher=any();
-  for (  T value : values) {
-    matcher=matcher.and(not(new EqualityMatcher<T>(value)));
-  }
-  return matcher;
-}

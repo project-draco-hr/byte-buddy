@@ -1,0 +1,3 @@
+{
+  assertThat(new StringMatcher(nonMatching,mode).matches(FOO),is(false));
+}
