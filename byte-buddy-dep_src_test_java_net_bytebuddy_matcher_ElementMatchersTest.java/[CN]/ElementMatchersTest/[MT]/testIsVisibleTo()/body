@@ -1,0 +1,4 @@
+{
+  assertThat(ElementMatchers.isVisibleTo(Object.class).matches(new TypeDescription.ForLoadedType(IsVisibleTo.class)),is(true));
+  assertThat(ElementMatchers.isVisibleTo(Object.class).matches(new TypeDescription.ForLoadedType(IsNotVisibleTo.class)),is(false));
+}

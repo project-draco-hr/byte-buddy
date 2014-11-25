@@ -1,0 +1,6 @@
+{
+  ModifierReviewable modifierReviewable=mock(ModifierReviewable.class);
+  when(modifierReviewable.getModifiers()).thenReturn(Opcodes.ACC_SYNTHETIC);
+  assertThat(ElementMatchers.isSynthetic().matches(modifierReviewable),is(true));
+  assertThat(ElementMatchers.isSynthetic().matches(mock(ModifierReviewable.class)),is(false));
+}

@@ -1,0 +1,6 @@
+{
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  when(methodDescription.getModifiers()).thenReturn(Opcodes.ACC_NATIVE);
+  assertThat(ElementMatchers.isNative().matches(methodDescription),is(true));
+  assertThat(ElementMatchers.isNative().matches(mock(MethodDescription.class)),is(false));
+}

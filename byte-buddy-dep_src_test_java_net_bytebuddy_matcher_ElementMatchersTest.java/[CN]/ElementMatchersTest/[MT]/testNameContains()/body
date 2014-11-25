@@ -1,0 +1,7 @@
+{
+  ByteCodeElement byteCodeElement=mock(ByteCodeElement.class);
+  when(byteCodeElement.getSourceCodeName()).thenReturn(FOO);
+  assertThat(ElementMatchers.nameContains(FOO.substring(1,2)).matches(byteCodeElement),is(true));
+  assertThat(ElementMatchers.nameContains(FOO.substring(1,2).toUpperCase()).matches(byteCodeElement),is(false));
+  assertThat(ElementMatchers.nameContains(BAR).matches(byteCodeElement),is(false));
+}

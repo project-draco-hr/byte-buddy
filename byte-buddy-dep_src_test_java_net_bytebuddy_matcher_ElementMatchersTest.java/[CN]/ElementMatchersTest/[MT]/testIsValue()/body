@@ -1,0 +1,7 @@
+{
+  Object value=new Object();
+  assertThat(ElementMatchers.is(value).matches(value),is(true));
+  assertThat(ElementMatchers.is(value).matches(new Object()),is(false));
+  assertThat(ElementMatchers.is((Object)null).matches(null),is(true));
+  assertThat(ElementMatchers.is((Object)null).matches(new Object()),is(false));
+}

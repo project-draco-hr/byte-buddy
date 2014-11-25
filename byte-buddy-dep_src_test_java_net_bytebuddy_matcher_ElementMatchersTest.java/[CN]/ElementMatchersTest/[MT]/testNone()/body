@@ -1,0 +1,3 @@
+{
+  assertThat(ElementMatchers.none().matches(new Object()),is(false));
+}

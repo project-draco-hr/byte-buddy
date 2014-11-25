@@ -1,0 +1,7 @@
+{
+  ByteCodeElement byteCodeElement=mock(ByteCodeElement.class);
+  when(byteCodeElement.getDescriptor()).thenReturn(FOO);
+  assertThat(ElementMatchers.hasDescriptor(FOO).matches(byteCodeElement),is(true));
+  assertThat(ElementMatchers.hasDescriptor(FOO.toUpperCase()).matches(byteCodeElement),is(false));
+  assertThat(ElementMatchers.hasDescriptor(BAR).matches(byteCodeElement),is(false));
+}

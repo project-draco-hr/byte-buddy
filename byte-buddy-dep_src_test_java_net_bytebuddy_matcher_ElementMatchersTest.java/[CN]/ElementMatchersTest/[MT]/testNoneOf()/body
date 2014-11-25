@@ -1,0 +1,6 @@
+{
+  Object value=new Object(), otherValue=new Object();
+  assertThat(ElementMatchers.noneOf(value,otherValue).matches(value),is(false));
+  assertThat(ElementMatchers.noneOf(value,otherValue).matches(otherValue),is(false));
+  assertThat(ElementMatchers.noneOf(value,otherValue).matches(new Object()),is(true));
+}

@@ -1,0 +1,6 @@
+{
+  MethodDescription modifierReviewable=mock(MethodDescription.class);
+  when(modifierReviewable.getModifiers()).thenReturn(Opcodes.ACC_VARARGS);
+  assertThat(ElementMatchers.isVarArgs().matches(modifierReviewable),is(true));
+  assertThat(ElementMatchers.isVarArgs().matches(mock(MethodDescription.class)),is(false));
+}

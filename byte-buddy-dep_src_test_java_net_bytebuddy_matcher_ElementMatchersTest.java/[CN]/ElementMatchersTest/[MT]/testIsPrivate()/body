@@ -1,0 +1,6 @@
+{
+  ModifierReviewable modifierReviewable=mock(ModifierReviewable.class);
+  when(modifierReviewable.getModifiers()).thenReturn(Opcodes.ACC_PRIVATE);
+  assertThat(ElementMatchers.isPrivate().matches(modifierReviewable),is(true));
+  assertThat(ElementMatchers.isPrivate().matches(mock(ModifierReviewable.class)),is(false));
+}

@@ -1,0 +1,6 @@
+{
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  when(methodDescription.getModifiers()).thenReturn(Opcodes.ACC_STRICT);
+  assertThat(ElementMatchers.isStrict().matches(methodDescription),is(true));
+  assertThat(ElementMatchers.isStrict().matches(mock(MethodDescription.class)),is(false));
+}

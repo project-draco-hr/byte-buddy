@@ -1,0 +1,6 @@
+{
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  when(methodDescription.getModifiers()).thenReturn(Opcodes.ACC_SYNCHRONIZED);
+  assertThat(ElementMatchers.isSynchronized().matches(methodDescription),is(true));
+  assertThat(ElementMatchers.isSynchronized().matches(mock(MethodDescription.class)),is(false));
+}

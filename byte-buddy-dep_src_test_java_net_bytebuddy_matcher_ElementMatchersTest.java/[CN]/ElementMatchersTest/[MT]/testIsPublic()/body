@@ -1,0 +1,6 @@
+{
+  ModifierReviewable modifierReviewable=mock(ModifierReviewable.class);
+  when(modifierReviewable.getModifiers()).thenReturn(Opcodes.ACC_PUBLIC);
+  assertThat(ElementMatchers.isPublic().matches(modifierReviewable),is(true));
+  assertThat(ElementMatchers.isPublic().matches(mock(ModifierReviewable.class)),is(false));
+}

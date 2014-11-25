@@ -1,0 +1,6 @@
+{
+  MethodDescription modifierReviewable=mock(MethodDescription.class);
+  when(modifierReviewable.getModifiers()).thenReturn(Opcodes.ACC_BRIDGE);
+  assertThat(ElementMatchers.isBridge().matches(modifierReviewable),is(true));
+  assertThat(ElementMatchers.isBridge().matches(mock(MethodDescription.class)),is(false));
+}

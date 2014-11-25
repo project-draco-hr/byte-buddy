@@ -1,0 +1,6 @@
+{
+  ModifierReviewable modifierReviewable=mock(ModifierReviewable.class);
+  when(modifierReviewable.getModifiers()).thenReturn(Opcodes.ACC_FINAL);
+  assertThat(ElementMatchers.isFinal().matches(modifierReviewable),is(true));
+  assertThat(ElementMatchers.isFinal().matches(mock(ModifierReviewable.class)),is(false));
+}

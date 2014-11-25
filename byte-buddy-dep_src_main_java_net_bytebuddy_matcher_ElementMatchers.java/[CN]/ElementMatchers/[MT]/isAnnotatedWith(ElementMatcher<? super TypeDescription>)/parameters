@@ -1,1 +1,1 @@
-ElementMatcher<? super TypeDescription> annotationTypeMatcher
+ElementMatcher<? super TypeDescription> matcher

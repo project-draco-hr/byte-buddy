@@ -1,0 +1,11 @@
+{
+  Object value=new Object();
+  @SuppressWarnings("unchecked") ElementMatcher<Object> elementMatcher=mock(ElementMatcher.class);
+  when(elementMatcher.matches(value)).thenReturn(true);
+  assertThat(ElementMatchers.not(elementMatcher).matches(value),is(false));
+  verify(elementMatcher).matches(value);
+  Object otherValue=new Object();
+  assertThat(ElementMatchers.not(elementMatcher).matches(otherValue),is(true));
+  verify(elementMatcher).matches(otherValue);
+  verifyNoMoreInteractions(elementMatcher);
+}

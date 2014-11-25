@@ -1,3 +1,3 @@
 {
-  return new DescriptorMatcher<T>(new StringMatcher(methodDescriptor,StringMatcher.Mode.EQUALS_FULLY));
+  return new DescriptorMatcher<T>(new StringMatcher(descriptor,StringMatcher.Mode.EQUALS_FULLY));
 }

@@ -1,0 +1,6 @@
+{
+  ModifierReviewable modifierReviewable=mock(ModifierReviewable.class);
+  when(modifierReviewable.getModifiers()).thenReturn(Opcodes.ACC_PROTECTED);
+  assertThat(ElementMatchers.isProtected().matches(modifierReviewable),is(true));
+  assertThat(ElementMatchers.isProtected().matches(mock(ModifierReviewable.class)),is(false));
+}

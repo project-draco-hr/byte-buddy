@@ -1,3 +1,3 @@
 {
-  return new DeclaringTypeMatcher<T>(nonNull(typeMatcher));
+  return new DeclaringTypeMatcher<T>(nonNull(matcher));
 }

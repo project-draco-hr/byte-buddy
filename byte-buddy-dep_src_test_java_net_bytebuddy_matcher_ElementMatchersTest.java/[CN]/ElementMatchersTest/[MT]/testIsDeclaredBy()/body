@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isDeclaredBy(IsDeclaredBy.class).matches(new TypeDescription.ForLoadedType(IsDeclaredBy.Inner.class)),is(true));
+  assertThat(ElementMatchers.isDeclaredBy(IsDeclaredBy.class).matches(mock(ByteCodeElement.class)),is(false));
+  assertThat(ElementMatchers.isDeclaredBy(Object.class).matches(mock(ByteCodeElement.class)),is(false));
+}
