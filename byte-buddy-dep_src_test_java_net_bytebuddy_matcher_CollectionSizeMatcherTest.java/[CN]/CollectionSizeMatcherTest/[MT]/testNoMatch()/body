@@ -1,6 +1,6 @@
 {
-  when(collection.size()).thenReturn(0);
-  assertThat(new CollectionSizeMatcher<Collection<?>>(1).matches(collection),is(false));
-  verify(collection).size();
+  when(collection.iterator()).thenReturn(Collections.emptyList().iterator());
+  assertThat(new CollectionSizeMatcher<Iterable<?>>(1).matches(collection),is(false));
+  verify(collection).iterator();
   verifyNoMoreInteractions(collection);
 }

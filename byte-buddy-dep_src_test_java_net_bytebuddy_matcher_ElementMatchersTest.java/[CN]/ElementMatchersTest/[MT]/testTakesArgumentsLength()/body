@@ -1,0 +1,6 @@
+{
+  assertThat(ElementMatchers.takesArguments(1).matches(new MethodDescription.ForLoadedMethod(TakesArguments.class.getDeclaredMethod(FOO,Void.class))),is(true));
+  assertThat(ElementMatchers.takesArguments(2).matches(new MethodDescription.ForLoadedMethod(TakesArguments.class.getDeclaredMethod(FOO,Void.class))),is(false));
+  assertThat(ElementMatchers.takesArguments(2).matches(new MethodDescription.ForLoadedMethod(TakesArguments.class.getDeclaredMethod(BAR,String.class,int.class))),is(true));
+  assertThat(ElementMatchers.takesArguments(3).matches(new MethodDescription.ForLoadedMethod(TakesArguments.class.getDeclaredMethod(BAR,String.class,int.class))),is(false));
+}

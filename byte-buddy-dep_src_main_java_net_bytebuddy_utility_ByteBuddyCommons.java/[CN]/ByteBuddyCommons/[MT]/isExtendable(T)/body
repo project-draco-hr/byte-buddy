@@ -1,0 +1,9 @@
+{
+  if (nonNull(typeDescription).isArray() || typeDescription.isPrimitive()) {
+    throw new IllegalArgumentException(typeDescription + " is not implementable");
+  }
+ else   if (typeDescription.isFinal()) {
+    throw new IllegalArgumentException("Cannot implement a final class such as " + typeDescription);
+  }
+  return typeDescription;
+}

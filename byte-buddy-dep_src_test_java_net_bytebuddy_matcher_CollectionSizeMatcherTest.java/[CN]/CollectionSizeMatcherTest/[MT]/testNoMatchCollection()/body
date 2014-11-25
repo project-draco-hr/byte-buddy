@@ -1,0 +1,3 @@
+{
+  assertThat(new CollectionSizeMatcher<Iterable<?>>(0).matches(Arrays.asList(new Object())),is(false));
+}

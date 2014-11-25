@@ -1,3 +1,12 @@
 {
-  return target.size() == size;
+  if (target instanceof Collection) {
+    return ((Collection<?>)target).size() == size;
+  }
+ else {
+    int size=0;
+    for (    Object ignored : target) {
+      size++;
+    }
+    return size == this.size;
+  }
 }

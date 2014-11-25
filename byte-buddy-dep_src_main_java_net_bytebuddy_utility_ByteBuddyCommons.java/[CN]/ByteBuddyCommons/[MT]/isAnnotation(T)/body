@@ -1,0 +1,6 @@
+{
+  if (!nonNull(typeDescriptions).isAnnotation()) {
+    throw new IllegalArgumentException(typeDescriptions + " is not an annotation type");
+  }
+  return typeDescriptions;
+}

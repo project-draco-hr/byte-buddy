@@ -1,0 +1,6 @@
+{
+  assertThat(ElementMatchers.is(IsEqual.class.getDeclaredMethod(FOO)).matches(new MethodDescription.ForLoadedMethod(IsEqual.class.getDeclaredMethod(FOO))),is(true));
+  assertThat(ElementMatchers.is(IsEqual.class.getDeclaredMethod(FOO)).matches(mock(MethodDescription.class)),is(false));
+  assertThat(ElementMatchers.is(IsEqual.class.getDeclaredConstructor()).matches(new MethodDescription.ForLoadedConstructor(IsEqual.class.getDeclaredConstructor())),is(true));
+  assertThat(ElementMatchers.is(IsEqual.class.getDeclaredConstructor()).matches(mock(MethodDescription.class)),is(false));
+}
