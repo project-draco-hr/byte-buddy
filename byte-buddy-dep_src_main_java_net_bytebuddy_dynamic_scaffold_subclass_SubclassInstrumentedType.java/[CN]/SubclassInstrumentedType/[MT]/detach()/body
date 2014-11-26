@@ -1,3 +1,3 @@
 {
-  return new SubclassInstrumentedType(classFileVersion,superClass,interfaces,modifiers,name,fieldDescriptions,methodDescriptions,LoadedTypeInitializer.NoOp.INSTANCE);
+  return new SubclassInstrumentedType(classFileVersion,superClass,interfaces,modifiers,name,fieldDescriptions,methodDescriptions,LoadedTypeInitializer.NoOp.INSTANCE,TypeInitializer.None.INSTANCE);
 }

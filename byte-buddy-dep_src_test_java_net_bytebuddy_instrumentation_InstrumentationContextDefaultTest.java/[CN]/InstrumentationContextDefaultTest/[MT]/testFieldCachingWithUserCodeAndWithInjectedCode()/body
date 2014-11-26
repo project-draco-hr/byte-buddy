@@ -2,7 +2,8 @@
   when(entry.isDefineMethod()).thenReturn(true);
   when(byteCodeAppender.appendsCode()).thenReturn(true);
   when(injectedCode.isInjected()).thenReturn(true);
-  Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,classFileVersion);
+  when(typeInitializer.expandWith(injectedCodeAppender)).thenReturn(new InstrumentedType.TypeInitializer.Simple(injectedCodeAppender));
+  Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   FieldDescription firstField=instrumentationContext.cache(firstFieldValue,firstFieldType);
   assertThat(instrumentationContext.cache(firstFieldValue,firstFieldType),is(firstField));
   FieldDescription secondField=instrumentationContext.cache(secondFieldValue,secondFieldType);
@@ -22,6 +23,8 @@
   verify(injectedCode).getInjectedCode();
   verify(injectedCodeAppender).apply(methodVisitor,instrumentationContext);
   verifyNoMoreInteractions(injectedCode);
+  verify(typeInitializer).expandWith(injectedCodeAppender);
+  verifyNoMoreInteractions(typeInitializer);
   verify(entry).isDefineMethod();
   verify(entry,atLeast(1)).getAttributeAppender();
   verify(attributeAppender).apply(methodVisitor,MethodDescription.Latent.typeInitializerOf(instrumentedType));

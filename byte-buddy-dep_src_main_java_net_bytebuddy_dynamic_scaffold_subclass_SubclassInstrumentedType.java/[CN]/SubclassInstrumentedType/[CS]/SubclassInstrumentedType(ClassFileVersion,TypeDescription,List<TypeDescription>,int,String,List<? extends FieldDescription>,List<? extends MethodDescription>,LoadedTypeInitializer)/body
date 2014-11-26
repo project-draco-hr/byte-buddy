@@ -1,8 +1,0 @@
-{
-  super(loadedTypeInitializer,name,fieldDescriptions,methodDescriptions);
-  this.classFileVersion=classFileVersion;
-  this.superClass=superClass;
-  this.interfaces=interfaces;
-  this.modifiers=modifiers;
-  this.name=name;
-}

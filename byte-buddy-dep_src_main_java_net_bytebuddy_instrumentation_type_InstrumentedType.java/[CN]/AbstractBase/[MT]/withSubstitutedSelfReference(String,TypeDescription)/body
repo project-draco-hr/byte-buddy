@@ -1,0 +1,3 @@
+{
+  return typeDescription.getName().equals(typeName) ? this : typeDescription;
+}

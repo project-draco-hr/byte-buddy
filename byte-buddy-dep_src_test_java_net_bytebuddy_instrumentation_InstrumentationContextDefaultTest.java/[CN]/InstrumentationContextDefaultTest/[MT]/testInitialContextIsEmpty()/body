@@ -1,5 +1,5 @@
 {
-  Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,classFileVersion);
+  Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   assertThat(instrumentationContext.getRegisteredAuxiliaryTypes().size(),is(0));
   instrumentationContext.drain(classVisitor,methodPool,injectedCode);
   verifyZeroInteractions(classVisitor);

@@ -1,5 +1,0 @@
-{
-  boolean defineMethod=originalEntry.isDefineMethod();
-  boolean injectCode=injectedCode.isInjected();
-  return registeredFieldCacheEntries.size() == 0 && !injectCode ? originalEntry : new TypeWriter.MethodPool.Entry.Simple(new Compound(new FieldCacheAppender(registeredFieldCacheEntries),new Simple(injectCode ? injectedCode.getInjectedCode() : StackManipulation.LegalTrivial.INSTANCE),defineMethod && originalEntry.getByteCodeAppender().appendsCode() ? originalEntry.getByteCodeAppender() : new Simple(MethodReturn.VOID)),defineMethod ? originalEntry.getAttributeAppender() : MethodAttributeAppender.NoOp.INSTANCE);
-}

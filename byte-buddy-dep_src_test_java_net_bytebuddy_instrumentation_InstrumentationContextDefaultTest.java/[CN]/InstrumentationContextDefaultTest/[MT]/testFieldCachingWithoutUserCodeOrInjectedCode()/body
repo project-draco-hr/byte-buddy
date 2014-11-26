@@ -1,5 +1,5 @@
 {
-  Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,classFileVersion);
+  Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   FieldDescription firstField=instrumentationContext.cache(firstFieldValue,firstFieldType);
   assertThat(instrumentationContext.cache(firstFieldValue,firstFieldType),is(firstField));
   FieldDescription secondField=instrumentationContext.cache(secondFieldValue,secondFieldType);

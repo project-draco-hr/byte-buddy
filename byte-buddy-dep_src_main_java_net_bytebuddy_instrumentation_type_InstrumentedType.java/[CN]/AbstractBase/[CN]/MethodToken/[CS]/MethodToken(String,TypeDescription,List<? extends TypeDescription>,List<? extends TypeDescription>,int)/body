@@ -1,0 +1,7 @@
+{
+  this.internalName=internalName;
+  this.returnType=returnType;
+  this.parameterTypes=new ArrayList<TypeDescription>(parameterTypes);
+  this.exceptionTypes=new ArrayList<TypeDescription>(exceptionTypes);
+  this.modifiers=modifiers;
+}

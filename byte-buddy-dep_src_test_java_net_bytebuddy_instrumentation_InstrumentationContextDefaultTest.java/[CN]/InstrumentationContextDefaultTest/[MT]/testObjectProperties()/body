@@ -1,4 +1,5 @@
 {
+  ObjectPropertyAssertion.of(Instrumentation.Context.Default.class).apply(new Instrumentation.Context.Default(mock(TypeDescription.class),mock(InstrumentedType.TypeInitializer.class),mock(ClassFileVersion.class)));
   ObjectPropertyAssertion.of(Instrumentation.Context.Default.FieldCacheAppender.class);
   ObjectPropertyAssertion.of(Instrumentation.Context.Default.FieldCacheEntry.class);
   ObjectPropertyAssertion.of(Instrumentation.Context.Default.AccessorMethodDelegation.class);

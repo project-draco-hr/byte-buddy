@@ -1,0 +1,12 @@
+{
+  this.loadedTypeInitializer=loadedTypeInitializer;
+  this.typeInitializer=typeInitializer;
+  this.fieldDescriptions=new ArrayList<FieldDescription>(fieldDescriptions.size());
+  for (  FieldDescription fieldDescription : fieldDescriptions) {
+    this.fieldDescriptions.add(new FieldToken(typeName,fieldDescription));
+  }
+  this.methodDescriptions=new ArrayList<MethodDescription>(methodDescriptions.size());
+  for (  MethodDescription methodDescription : methodDescriptions) {
+    this.methodDescriptions.add(new MethodToken(typeName,methodDescription));
+  }
+}

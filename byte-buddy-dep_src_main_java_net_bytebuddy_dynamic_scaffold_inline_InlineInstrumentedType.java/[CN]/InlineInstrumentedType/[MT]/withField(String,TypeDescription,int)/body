@@ -5,5 +5,5 @@
   }
   List<FieldDescription> fieldDescriptions=new ArrayList<FieldDescription>(this.fieldDescriptions);
   fieldDescriptions.add(additionalField);
-  return new InlineInstrumentedType(levelType,name,interfaces,this.modifiers,fieldDescriptions,methodDescriptions,loadedTypeInitializer);
+  return new InlineInstrumentedType(levelType,name,interfaces,this.modifiers,fieldDescriptions,methodDescriptions,loadedTypeInitializer,typeInitializer);
 }

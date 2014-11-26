@@ -5,5 +5,5 @@
   }
   List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(this.methodDescriptions);
   methodDescriptions.add(additionalMethod);
-  return new InlineInstrumentedType(levelType,name,interfaces,this.modifiers,fieldDescriptions,methodDescriptions,loadedTypeInitializer);
+  return new InlineInstrumentedType(levelType,name,interfaces,this.modifiers,fieldDescriptions,methodDescriptions,loadedTypeInitializer,typeInitializer);
 }

@@ -1,0 +1,13 @@
+{
+  internalName=methodDescription.getInternalName();
+  returnType=withSubstitutedSelfReference(typeName,methodDescription.getReturnType());
+  parameterTypes=new ArrayList<TypeDescription>(methodDescription.getParameterTypes().size());
+  for (  TypeDescription typeDescription : methodDescription.getParameterTypes()) {
+    parameterTypes.add(withSubstitutedSelfReference(typeName,typeDescription));
+  }
+  exceptionTypes=new ArrayList<TypeDescription>(methodDescription.getExceptionTypes().size());
+  for (  TypeDescription typeDescription : methodDescription.getExceptionTypes()) {
+    exceptionTypes.add(withSubstitutedSelfReference(typeName,typeDescription));
+  }
+  modifiers=methodDescription.getModifiers();
+}

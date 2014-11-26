@@ -1,5 +1,5 @@
 {
-  super(LoadedTypeInitializer.NoOp.INSTANCE,levelType.getName(),levelType.getDeclaredFields(),levelType.getDeclaredMethods());
+  super(LoadedTypeInitializer.NoOp.INSTANCE,TypeInitializer.None.INSTANCE,levelType.getName(),levelType.getDeclaredFields(),levelType.getDeclaredMethods());
   this.levelType=levelType;
   this.modifiers=modifiers;
   Set<TypeDescription> interfaceTypes=new HashSet<TypeDescription>(levelType.getInterfaces());

@@ -1,6 +1,6 @@
 {
   when(secondSpecialMethod.isStatic()).thenReturn(true);
-  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,classFileVersion);
+  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   MethodDescription secondMethodDescription=instrumentationContext.registerAccessorFor(secondSpecialInvocation);
   assertThat(instrumentationContext.registerAccessorFor(secondSpecialInvocation),is(secondMethodDescription));
   instrumentationContext.drain(classVisitor,methodPool,injectedCode);

@@ -1,0 +1,6 @@
+TypeDescription instrumentedType
+InstrumentedType.TypeInitializer typeInitializer
+ClassFileVersion classFileVersion
+String accessorMethodSuffix
+String fieldCachePrefix
+AuxiliaryTypeNamingStrategy auxiliaryTypeNamingStrategy

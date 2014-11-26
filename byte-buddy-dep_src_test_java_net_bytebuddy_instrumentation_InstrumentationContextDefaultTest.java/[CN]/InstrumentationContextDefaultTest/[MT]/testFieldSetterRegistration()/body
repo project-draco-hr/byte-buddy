@@ -1,5 +1,5 @@
 {
-  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,classFileVersion);
+  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   MethodDescription firstFieldSetter=instrumentationContext.registerSetterFor(firstField);
   assertThat(firstFieldSetter.getParameterTypes(),is((TypeList)new TypeList.Explicit(Arrays.asList(firstFieldType))));
   assertThat(firstFieldSetter.getReturnType(),is((TypeDescription)new TypeDescription.ForLoadedType(void.class)));

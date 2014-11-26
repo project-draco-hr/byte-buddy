@@ -1,0 +1,3 @@
+{
+  return new InlineInstrumentedType(levelType,name,interfaces,modifiers,fieldDescriptions,methodDescriptions,loadedTypeInitializer,typeInitializer.expandWith(stackManipulation));
+}

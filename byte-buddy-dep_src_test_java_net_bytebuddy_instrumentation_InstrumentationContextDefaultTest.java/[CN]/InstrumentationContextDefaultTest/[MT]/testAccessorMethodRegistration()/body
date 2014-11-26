@@ -1,5 +1,5 @@
 {
-  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,classFileVersion);
+  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   MethodDescription firstMethodDescription=instrumentationContext.registerAccessorFor(firstSpecialInvocation);
   assertThat(firstMethodDescription.getParameterTypes(),is((TypeList)new TypeList.Explicit(Arrays.asList(firstSpecialParameterType))));
   assertThat(firstMethodDescription.getReturnType(),is(firstSpecialReturnType));

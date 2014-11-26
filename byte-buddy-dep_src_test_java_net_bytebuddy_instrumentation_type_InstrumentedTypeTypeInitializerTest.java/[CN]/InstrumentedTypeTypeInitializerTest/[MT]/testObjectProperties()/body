@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(InstrumentedType.TypeInitializer.Simple.class).apply();
+}

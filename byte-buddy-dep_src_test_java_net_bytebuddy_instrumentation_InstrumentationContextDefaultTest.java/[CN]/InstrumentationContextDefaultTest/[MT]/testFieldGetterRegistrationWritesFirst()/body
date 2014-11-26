@@ -1,5 +1,5 @@
 {
-  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,classFileVersion);
+  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   MethodDescription firstMethodDescription=instrumentationContext.registerGetterFor(firstField);
   assertThat(instrumentationContext.registerGetterFor(firstField),is(firstMethodDescription));
   instrumentationContext.drain(classVisitor,methodPool,injectedCode);

@@ -1,6 +1,7 @@
 {
   int result=instrumentedType.hashCode();
   result=31 * result + loadedTypeInitializer.hashCode();
+  result=31 * result + typeInitializer.hashCode();
   result=31 * result + explicitAuxiliaryTypes.hashCode();
   result=31 * result + engine.hashCode();
   result=31 * result + classFileVersion.hashCode();

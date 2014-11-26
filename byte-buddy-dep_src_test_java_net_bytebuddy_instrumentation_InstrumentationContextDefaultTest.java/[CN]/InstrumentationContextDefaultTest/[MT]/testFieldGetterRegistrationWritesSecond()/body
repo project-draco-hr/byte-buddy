@@ -1,6 +1,6 @@
 {
   when(secondField.isStatic()).thenReturn(true);
-  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,classFileVersion);
+  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   MethodDescription secondMethodDescription=instrumentationContext.registerGetterFor(secondField);
   assertThat(instrumentationContext.registerGetterFor(secondField),is(secondMethodDescription));
   instrumentationContext.drain(classVisitor,methodPool,injectedCode);
