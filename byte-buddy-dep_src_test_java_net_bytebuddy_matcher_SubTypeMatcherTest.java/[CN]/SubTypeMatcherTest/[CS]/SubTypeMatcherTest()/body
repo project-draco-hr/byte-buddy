@@ -1,3 +1,3 @@
 {
-  super((Class<? extends SubTypeMatcher<?>>)(Object)SubTypeMatcher.class,"isSubTypeOf");
+  super((Class<? extends SubTypeMatcher2<?>>)(Object)SubTypeMatcher2.class,"isSubTypeOf");
 }
