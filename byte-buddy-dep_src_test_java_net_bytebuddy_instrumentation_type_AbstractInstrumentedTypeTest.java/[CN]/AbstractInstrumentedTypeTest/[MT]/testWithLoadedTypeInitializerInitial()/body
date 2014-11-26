@@ -1,0 +1,4 @@
+{
+  LoadedTypeInitializer loadedTypeInitializer=makePlainInstrumentedType().getLoadedTypeInitializer();
+  assertThat(loadedTypeInitializer.isAlive(),is(false));
+}

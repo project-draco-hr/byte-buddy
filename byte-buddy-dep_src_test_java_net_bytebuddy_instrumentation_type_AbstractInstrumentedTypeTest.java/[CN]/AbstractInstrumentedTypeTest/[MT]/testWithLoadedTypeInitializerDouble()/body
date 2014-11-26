@@ -1,0 +1,7 @@
+{
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getDeclaredFields().size(),is(0));
+  LoadedTypeInitializer first=mock(LoadedTypeInitializer.class), second=mock(LoadedTypeInitializer.class);
+  instrumentedType=instrumentedType.withInitializer(first).withInitializer(second);
+  assertThat(instrumentedType.getLoadedTypeInitializer(),is((LoadedTypeInitializer)new LoadedTypeInitializer.Compound(new LoadedTypeInitializer.Compound(LoadedTypeInitializer.NoOp.INSTANCE,first),second)));
+}

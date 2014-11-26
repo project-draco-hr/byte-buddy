@@ -1,0 +1,9 @@
+{
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getDeclaredFields().size(),is(0));
+  StackManipulation first=mock(StackManipulation.class), second=mock(StackManipulation.class);
+  instrumentedType=instrumentedType.withInitializer(first).withInitializer(second);
+  InstrumentedType.TypeInitializer typeInitializer=instrumentedType.getTypeInitializer();
+  assertThat(typeInitializer.isDefined(),is(true));
+  assertThat(typeInitializer.getStackManipulation(),is((StackManipulation)new StackManipulation.Compound(first,second)));
+}

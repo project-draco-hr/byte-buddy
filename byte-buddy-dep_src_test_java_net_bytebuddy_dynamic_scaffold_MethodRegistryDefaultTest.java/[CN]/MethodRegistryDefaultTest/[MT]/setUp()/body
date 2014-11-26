@@ -37,4 +37,6 @@
   when(extendedInstrumentedType.detach()).thenReturn(extendedInstrumentedType);
   when(basicInstrumentedType.getLoadedTypeInitializer()).thenReturn(loadedTypeInitializer);
   when(extendedInstrumentedType.getLoadedTypeInitializer()).thenReturn(loadedTypeInitializer);
+  when(basicInstrumentedType.getTypeInitializer()).thenReturn(typeInitializer);
+  when(extendedInstrumentedType.getTypeInitializer()).thenReturn(typeInitializer);
 }
