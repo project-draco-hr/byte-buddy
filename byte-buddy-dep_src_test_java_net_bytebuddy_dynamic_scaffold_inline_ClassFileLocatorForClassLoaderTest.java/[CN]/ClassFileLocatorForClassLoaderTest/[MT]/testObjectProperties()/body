@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(ClassFileLocator.ForClassLoader.class).apply();
+}
