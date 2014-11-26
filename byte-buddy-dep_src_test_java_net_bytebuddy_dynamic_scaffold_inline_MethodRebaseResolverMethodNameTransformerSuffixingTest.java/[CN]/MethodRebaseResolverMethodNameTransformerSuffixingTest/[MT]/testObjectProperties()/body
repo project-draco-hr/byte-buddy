@@ -1,8 +1,3 @@
 {
-  ObjectPropertyAssertion.of(MethodRebaseResolver.MethodNameTransformer.Suffixing.class).refine(new ObjectPropertyAssertion.Refinement<RandomString>(){
-    @Override public void apply(    RandomString mock){
-      when(mock.nextString()).thenReturn("" + new Random().nextInt());
-    }
-  }
-).apply();
+  ObjectPropertyAssertion.of(MethodRebaseResolver.MethodNameTransformer.Suffixing.class).apply();
 }

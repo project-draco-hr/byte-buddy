@@ -1,3 +1,6 @@
 {
-  return 31 * fieldName.hashCode() + (cacheMethods ? 1 : 0);
+  int result=fieldName.hashCode();
+  result=31 * result + assigner.hashCode();
+  result=31 * result + (cacheMethods ? 1 : 0);
+  return result;
 }

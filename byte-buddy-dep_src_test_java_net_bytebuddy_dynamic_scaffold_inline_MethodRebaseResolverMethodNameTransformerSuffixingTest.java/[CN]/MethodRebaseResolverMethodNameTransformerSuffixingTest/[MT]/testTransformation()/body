@@ -1,5 +1,5 @@
 {
-  String transformed=new MethodRebaseResolver.MethodNameTransformer.Suffixing(new RandomString()).transform(FOO);
+  String transformed=new MethodRebaseResolver.MethodNameTransformer.Suffixing().transform(FOO);
   assertThat(transformed,not(FOO));
   assertThat(transformed,startsWith(FOO));
 }

@@ -1,3 +1,0 @@
-{
-  return Prepared.ForRebaseInstrumentation.of(ignoredMethods,classFileVersion,instrumentedType);
-}

@@ -1,4 +1,0 @@
-{
-  this.placeholderType=placeholderType;
-  methodRebaseResolver=new MethodRebaseResolver.Default(ignoredMethods,placeholderType.getTypeDescription(),new MethodRebaseResolver.MethodNameTransformer.Suffixing(randomString));
-}

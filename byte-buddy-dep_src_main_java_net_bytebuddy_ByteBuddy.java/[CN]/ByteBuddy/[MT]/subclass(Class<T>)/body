@@ -1,3 +1,3 @@
 {
-  return subclass(superType,ConstructorStrategy.Default.IMITATE_SUPER_TYPE);
+  return subclass(new TypeDescription.ForLoadedType(nonNull(superType)));
 }

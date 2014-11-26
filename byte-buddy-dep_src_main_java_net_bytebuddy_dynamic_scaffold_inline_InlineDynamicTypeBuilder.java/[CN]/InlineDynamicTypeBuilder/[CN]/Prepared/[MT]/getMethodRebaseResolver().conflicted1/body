@@ -1,0 +1,3 @@
+{
+  return MethodRebaseResolver.NoOp.INSTANCE;
+}

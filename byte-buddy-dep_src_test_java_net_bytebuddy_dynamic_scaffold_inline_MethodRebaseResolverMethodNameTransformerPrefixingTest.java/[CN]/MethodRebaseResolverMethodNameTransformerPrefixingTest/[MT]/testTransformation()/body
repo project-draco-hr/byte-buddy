@@ -1,0 +1,5 @@
+{
+  String transformed=new MethodRebaseResolver.MethodNameTransformer.Prefixing().transform(FOO);
+  assertThat(transformed,not(FOO));
+  assertThat(transformed,endsWith(FOO));
+}
