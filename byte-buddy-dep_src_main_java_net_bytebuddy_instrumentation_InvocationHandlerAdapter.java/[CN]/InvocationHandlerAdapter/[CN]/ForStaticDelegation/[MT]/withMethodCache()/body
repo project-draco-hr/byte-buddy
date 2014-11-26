@@ -1,3 +1,3 @@
 {
-  return new ForStaticDelegation(invocationHandler,fieldName,true);
+  return new ForStaticDelegation(fieldName,true,assigner,invocationHandler);
 }

@@ -1,3 +1,3 @@
 {
-  this(classFileVersion,new NamingStrategy.SuffixingRandom(BYTE_BUDDY_DEFAULT_PREFIX),new TypeList.Empty(),isDefaultFinalizer().or(isSynthetic().and(not(isVisibilityBridge()))),BridgeMethodResolver.Simple.Factory.FAIL_ON_REQUEST,new ClassVisitorWrapper.Chain(),new MethodRegistry.Default(),new Definable.Undefined<Integer>(),TypeAttributeAppender.NoOp.INSTANCE,MethodLookupEngine.Default.Factory.INSTANCE,FieldAttributeAppender.NoOp.INSTANCE,MethodAttributeAppender.NoOp.INSTANCE);
+  this(nonNull(classFileVersion),new NamingStrategy.SuffixingRandom(BYTE_BUDDY_DEFAULT_PREFIX),new TypeList.Empty(),isDefaultFinalizer().or(isSynthetic().and(not(isVisibilityBridge()))),BridgeMethodResolver.Simple.Factory.FAIL_ON_REQUEST,new ClassVisitorWrapper.Chain(),new MethodRegistry.Default(),new Definable.Undefined<Integer>(),TypeAttributeAppender.NoOp.INSTANCE,MethodLookupEngine.Default.Factory.INSTANCE,FieldAttributeAppender.NoOp.INSTANCE,MethodAttributeAppender.NoOp.INSTANCE);
 }

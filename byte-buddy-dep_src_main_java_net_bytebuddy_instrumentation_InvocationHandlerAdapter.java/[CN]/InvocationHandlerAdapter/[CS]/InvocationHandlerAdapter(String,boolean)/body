@@ -1,5 +1,0 @@
-{
-  this.fieldName=fieldName;
-  this.cacheMethods=cacheMethods;
-  assigner=new VoidAwareAssigner(new PrimitiveTypeAwareAssigner(ReferenceTypeAwareAssigner.INSTANCE));
-}

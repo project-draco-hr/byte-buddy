@@ -1,0 +1,4 @@
+String fieldName
+boolean cacheMethods
+Assigner assigner
+InvocationHandler invocationHandler

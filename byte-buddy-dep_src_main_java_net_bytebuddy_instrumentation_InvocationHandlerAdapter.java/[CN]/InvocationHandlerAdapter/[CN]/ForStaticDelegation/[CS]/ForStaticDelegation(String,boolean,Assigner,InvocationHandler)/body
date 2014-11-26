@@ -1,4 +1,4 @@
 {
-  super(fieldName,cacheMethods);
+  super(fieldName,cacheMethods,assigner);
   this.invocationHandler=invocationHandler;
 }
