@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && typeDescription.equals(((SubTypeMatcher2)other).typeDescription);
-}
