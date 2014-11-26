@@ -1,9 +1,10 @@
 {
   TypeList parameterTypes=instrumentedMethod.getParameterTypes();
   List<StackManipulation> instruction=new ArrayList<StackManipulation>(parameterTypes.size());
+  TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
   int currentIndex=1;
   for (  TypeDescription parameterType : parameterTypes) {
-    instruction.add(MethodVariableAccess.forType(parameterType).loadFromIndex(currentIndex));
+    instruction.add(new StackManipulation.Compound(MethodVariableAccess.forType(parameterType).loadFromIndex(currentIndex),assigner.assign(parameterType,objectType,false)));
     currentIndex+=parameterType.getStackSize().getSize();
   }
   return instruction;

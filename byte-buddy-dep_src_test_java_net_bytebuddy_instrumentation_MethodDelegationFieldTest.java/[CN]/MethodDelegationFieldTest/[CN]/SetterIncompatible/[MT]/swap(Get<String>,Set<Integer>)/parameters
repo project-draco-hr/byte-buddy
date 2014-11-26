@@ -1,0 +1,2 @@
+Get<String> getter
+Set<Integer> setter
