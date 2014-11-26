@@ -1,0 +1,5 @@
+{
+  when(leftType.isAssignableFrom(rightType)).thenReturn(true);
+  assertThat(DeclaringTypeResolver.INSTANCE.resolve(source,left,left),is(MethodDelegationBinder.AmbiguityResolver.Resolution.AMBIGUOUS));
+  verifyZeroInteractions(leftType);
+}

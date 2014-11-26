@@ -1,7 +1,0 @@
-{
-  Matcher<? super MostSpecificTypeResolver.ParameterIndexToken> token=CoreMatchers.anything();
-  for (  int anIndex : index) {
-    token=anyOf(new IndexTokenMatcher(anIndex),token);
-  }
-  return token;
-}

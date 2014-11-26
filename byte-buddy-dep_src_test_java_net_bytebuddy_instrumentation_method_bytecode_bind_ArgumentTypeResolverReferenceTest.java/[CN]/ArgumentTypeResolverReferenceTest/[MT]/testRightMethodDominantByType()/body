@@ -1,0 +1,14 @@
+{
+  when(sourceTypeList.size()).thenReturn(1);
+  when(leftTypeList.get(0)).thenReturn(weakTargetType);
+  when(left.getTargetParameterIndex(any())).thenAnswer(new TokenAnswer(new int[][]{{0,0}}));
+  when(rightTypeList.get(1)).thenReturn(dominantTargetType);
+  when(right.getTargetParameterIndex(any())).thenAnswer(new TokenAnswer(new int[][]{{0,1}}));
+  MethodDelegationBinder.AmbiguityResolver.Resolution resolution=ArgumentTypeResolver.INSTANCE.resolve(source,left,right);
+  assertThat(resolution,is(MethodDelegationBinder.AmbiguityResolver.Resolution.RIGHT));
+  verify(source,atLeast(1)).getParameterTypes();
+  verify(left,atLeast(1)).getTargetParameterIndex(argThat(describesArgument(0)));
+  verify(left,never()).getTargetParameterIndex(argThat(not(describesArgument(0))));
+  verify(right,atLeast(1)).getTargetParameterIndex(argThat(describesArgument(0)));
+  verify(right,never()).getTargetParameterIndex(argThat(not(describesArgument(0))));
+}

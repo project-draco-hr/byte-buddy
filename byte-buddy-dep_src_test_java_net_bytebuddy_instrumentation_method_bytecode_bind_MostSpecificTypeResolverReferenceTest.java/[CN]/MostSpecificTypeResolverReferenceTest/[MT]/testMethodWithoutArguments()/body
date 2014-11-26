@@ -1,8 +1,0 @@
-{
-  when(source.getParameterTypes()).thenReturn(sourceTypeList);
-  MethodDelegationBinder.AmbiguityResolver.Resolution resolution=MostSpecificTypeResolver.INSTANCE.resolve(source,left,right);
-  assertThat(resolution.isUnresolved(),is(true));
-  verify(source,atLeast(1)).getParameterTypes();
-  verifyZeroInteractions(left);
-  verifyZeroInteractions(right);
-}

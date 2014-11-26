@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  when(leftMethod.getDeclaringType()).thenReturn(leftType);
+  when(rightMethod.getDeclaringType()).thenReturn(rightType);
+}
