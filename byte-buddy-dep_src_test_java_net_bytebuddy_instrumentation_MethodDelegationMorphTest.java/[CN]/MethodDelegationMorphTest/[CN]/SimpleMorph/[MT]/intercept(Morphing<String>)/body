@@ -1,4 +1,5 @@
 {
+  register(BAR);
   assertThat(morphing,CoreMatchers.not(instanceOf(Serializable.class)));
-  return morphing.morph(QUX);
+  return morphing.morph(arguments);
 }

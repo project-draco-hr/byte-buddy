@@ -1,5 +1,5 @@
 {
-  DynamicType.Loaded<Foo> loaded=instrument(Foo.class,MethodDelegation.to(SimpleMorph.class).appendParameterBinder(Morph.Binder.install(Morphing.class)));
+  DynamicType.Loaded<Foo> loaded=instrument(Foo.class,MethodDelegation.to(new SimpleMorph(QUX)).appendParameterBinder(Morph.Binder.install(Morphing.class)));
   Foo instance=loaded.getLoaded().newInstance();
   assertThat(instance.foo(FOO),is(QUX + BAR));
 }

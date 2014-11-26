@@ -1,0 +1,6 @@
+{
+  DynamicType.Loaded<Baz> loaded=instrument(Baz.class,MethodDelegation.to(new PrimitiveForwardingInterceptor(new Baz())).defineParameterBinder(Pipe.Binder.install(ForwardingType.class)));
+  Baz instance=loaded.getLoaded().newInstance();
+  assertThat(instance.foo(BAZ),is(BAZ * 2L));
+  instance.assertZeroCalls();
+}

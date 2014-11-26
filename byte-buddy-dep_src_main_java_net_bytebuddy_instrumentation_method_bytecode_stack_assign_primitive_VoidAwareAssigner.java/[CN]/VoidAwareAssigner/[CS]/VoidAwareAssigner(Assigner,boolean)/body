@@ -1,4 +1,0 @@
-{
-  this.chained=chained;
-  this.returnDefaultValue=returnDefaultValue;
-}

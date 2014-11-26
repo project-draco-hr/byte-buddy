@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && returnDefaultValue == ((VoidAwareAssigner)other).returnDefaultValue && chained.equals(((VoidAwareAssigner)other).chained);
+  return this == other || !(other == null || getClass() != other.getClass()) && chained.equals(((VoidAwareAssigner)other).chained);
 }

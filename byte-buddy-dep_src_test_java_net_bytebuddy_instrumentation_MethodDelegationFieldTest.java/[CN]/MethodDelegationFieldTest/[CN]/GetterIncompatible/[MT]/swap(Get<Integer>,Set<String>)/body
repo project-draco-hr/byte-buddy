@@ -1,0 +1,3 @@
+{
+  Integer value=getter.get();
+}

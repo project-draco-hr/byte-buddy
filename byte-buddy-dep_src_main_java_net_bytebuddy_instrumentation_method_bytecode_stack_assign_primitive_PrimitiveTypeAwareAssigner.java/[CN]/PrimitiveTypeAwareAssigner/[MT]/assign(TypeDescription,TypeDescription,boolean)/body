@@ -3,12 +3,12 @@
     return PrimitiveWideningDelegate.forPrimitive(sourceType).widenTo(targetType);
   }
  else   if (sourceType.isPrimitive()) {
-    return PrimitiveBoxingDelegate.forPrimitive(sourceType).assignBoxedTo(targetType,referenceTypeAwareAssigner,considerRuntimeType);
+    return PrimitiveBoxingDelegate.forPrimitive(sourceType).assignBoxedTo(targetType,referenceTypeAwareAssigner,dynamicallyTyped);
   }
  else   if (targetType.isPrimitive()) {
-    return PrimitiveUnboxingDelegate.forReferenceType(sourceType).assignUnboxedTo(targetType,referenceTypeAwareAssigner,considerRuntimeType);
+    return PrimitiveUnboxingDelegate.forReferenceType(sourceType).assignUnboxedTo(targetType,referenceTypeAwareAssigner,dynamicallyTyped);
   }
  else {
-    return referenceTypeAwareAssigner.assign(sourceType,targetType,considerRuntimeType);
+    return referenceTypeAwareAssigner.assign(sourceType,targetType,dynamicallyTyped);
   }
 }
