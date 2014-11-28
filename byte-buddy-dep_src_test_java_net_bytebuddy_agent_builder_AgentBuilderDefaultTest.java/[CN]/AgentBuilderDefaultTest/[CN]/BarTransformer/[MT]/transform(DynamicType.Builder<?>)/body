@@ -1,0 +1,3 @@
+{
+  return builder.method(named(FOO)).intercept(MethodDelegation.to(new BarTransformer.Interceptor()));
+}

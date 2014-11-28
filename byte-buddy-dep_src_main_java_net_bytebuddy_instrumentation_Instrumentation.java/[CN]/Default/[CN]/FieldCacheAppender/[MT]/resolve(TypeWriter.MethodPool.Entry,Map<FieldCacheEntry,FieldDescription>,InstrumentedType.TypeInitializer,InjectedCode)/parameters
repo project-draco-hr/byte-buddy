@@ -1,3 +1,4 @@
 TypeWriter.MethodPool.Entry originalEntry
 Map<FieldCacheEntry,FieldDescription> registeredFieldCacheEntries
 InstrumentedType.TypeInitializer typeInitializer
+InjectedCode injectedCode

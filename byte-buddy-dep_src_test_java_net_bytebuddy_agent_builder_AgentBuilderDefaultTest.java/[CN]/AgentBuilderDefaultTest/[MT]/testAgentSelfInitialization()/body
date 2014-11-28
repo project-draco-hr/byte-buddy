@@ -1,0 +1,9 @@
+{
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().rebase(isAnnotatedWith(ShouldRebase.class)).transform(new BarTransformer()).registerWithByteBuddyAgent();
+  try {
+    assertThat(new Bar().foo(),is(BAR));
+  }
+  finally {
+    ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);
+  }
+}
