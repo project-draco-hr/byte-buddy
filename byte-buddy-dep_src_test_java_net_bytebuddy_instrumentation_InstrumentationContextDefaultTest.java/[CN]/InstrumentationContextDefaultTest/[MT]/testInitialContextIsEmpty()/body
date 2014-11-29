@@ -5,6 +5,6 @@
   verifyZeroInteractions(classVisitor);
   verify(methodPool).target(MethodDescription.Latent.typeInitializerOf(instrumentedType));
   verifyNoMoreInteractions(methodPool);
-  verify(injectedCode).isInjected();
+  verify(injectedCode).isDefined();
   verifyNoMoreInteractions(injectedCode);
 }

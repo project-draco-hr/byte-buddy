@@ -1,7 +1,5 @@
 {
-  when(byteCodeAppender.appendsCode()).thenReturn(true);
-  when(injectedCode.isInjected()).thenReturn(true);
-  when(typeInitializer.expandWith(injectedCodeAppender)).thenReturn(new InstrumentedType.TypeInitializer.Simple(injectedCodeAppender));
+  when(entry.isDefineMethod()).thenReturn(true);
   Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   FieldDescription firstField=instrumentationContext.cache(firstFieldValue,firstFieldType);
   assertThat(instrumentationContext.cache(firstFieldValue,firstFieldType),is(firstField));
@@ -18,14 +16,9 @@
   verify(methodVisitor).visitFieldInsn(eq(Opcodes.PUTSTATIC),eq(BAZ),any(String.class),eq(BAR));
   verify(secondFieldValue).apply(methodVisitor,instrumentationContext);
   verify(methodVisitor).visitFieldInsn(eq(Opcodes.PUTSTATIC),eq(BAZ),any(String.class),eq(QUX));
-  verify(injectedCode).isInjected();
-  verify(injectedCode).getInjectedCode();
-  verify(injectedCodeAppender).apply(methodVisitor,instrumentationContext);
-  verifyNoMoreInteractions(injectedCode);
-  verify(typeInitializer).expandWith(injectedCodeAppender);
-  verifyNoMoreInteractions(typeInitializer);
-  verify(entry).isDefineMethod();
-  verify(methodVisitor).visitInsn(Opcodes.RETURN);
+  verify(attributeAppender).apply(methodVisitor,MethodDescription.Latent.typeInitializerOf(instrumentedType));
+  verify(byteCodeAppender).apply(methodVisitor,instrumentationContext,MethodDescription.Latent.typeInitializerOf(instrumentedType));
+  verifyNoMoreInteractions(byteCodeAppender);
   verify(methodVisitor).visitMaxs(0,0);
   verify(methodVisitor).visitEnd();
   verifyNoMoreInteractions(methodVisitor);
@@ -33,6 +26,10 @@
   verifyNoMoreInteractions(secondFieldValue);
   verify(methodPool).target(MethodDescription.Latent.typeInitializerOf(instrumentedType));
   verifyNoMoreInteractions(methodPool);
-  verifyZeroInteractions(attributeAppender);
-  verifyZeroInteractions(byteCodeAppender);
+  verify(injectedCode).isDefined();
+  verifyNoMoreInteractions(injectedCode);
+  verify(typeInitializer).isDefined();
+  verifyNoMoreInteractions(typeInitializer);
+  verifyZeroInteractions(injectedCodeAppender);
+  verifyZeroInteractions(typeInitializerAppender);
 }

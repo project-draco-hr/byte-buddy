@@ -1,0 +1,5 @@
+{
+  Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
+  instrumentationContext.drain(classVisitor,methodPool,injectedCode);
+  verifyZeroInteractions(classFileVersion);
+}

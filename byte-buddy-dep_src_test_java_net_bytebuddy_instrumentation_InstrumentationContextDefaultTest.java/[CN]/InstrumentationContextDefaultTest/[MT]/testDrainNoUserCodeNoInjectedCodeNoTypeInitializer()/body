@@ -23,9 +23,12 @@
   verifyNoMoreInteractions(secondFieldValue);
   verify(methodPool).target(MethodDescription.Latent.typeInitializerOf(instrumentedType));
   verifyNoMoreInteractions(methodPool);
-  verify(injectedCode).isInjected();
+  verify(injectedCode).isDefined();
   verifyNoMoreInteractions(injectedCode);
+  verify(typeInitializer).isDefined();
+  verifyNoMoreInteractions(typeInitializer);
   verifyZeroInteractions(injectedCodeAppender);
+  verifyZeroInteractions(typeInitializerAppender);
   verifyZeroInteractions(attributeAppender);
   verifyZeroInteractions(byteCodeAppender);
 }

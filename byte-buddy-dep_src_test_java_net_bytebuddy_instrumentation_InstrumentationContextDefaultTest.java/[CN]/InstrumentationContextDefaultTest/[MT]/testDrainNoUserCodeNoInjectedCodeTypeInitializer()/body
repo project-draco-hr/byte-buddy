@@ -1,6 +1,5 @@
 {
-  when(entry.isDefineMethod()).thenReturn(true);
-  when(byteCodeAppender.appendsCode()).thenReturn(true);
+  when(typeInitializer.isDefined()).thenReturn(true);
   Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   FieldDescription firstField=instrumentationContext.cache(firstFieldValue,firstFieldType);
   assertThat(instrumentationContext.cache(firstFieldValue,firstFieldType),is(firstField));
@@ -17,10 +16,14 @@
   verify(methodVisitor).visitFieldInsn(eq(Opcodes.PUTSTATIC),eq(BAZ),any(String.class),eq(BAR));
   verify(secondFieldValue).apply(methodVisitor,instrumentationContext);
   verify(methodVisitor).visitFieldInsn(eq(Opcodes.PUTSTATIC),eq(BAZ),any(String.class),eq(QUX));
-  verify(attributeAppender).apply(methodVisitor,MethodDescription.Latent.typeInitializerOf(instrumentedType));
-  verify(byteCodeAppender).appendsCode();
-  verify(byteCodeAppender).apply(methodVisitor,instrumentationContext,MethodDescription.Latent.typeInitializerOf(instrumentedType));
-  verifyNoMoreInteractions(byteCodeAppender);
+  verify(injectedCode).isDefined();
+  verifyNoMoreInteractions(injectedCode);
+  verify(typeInitializer).isDefined();
+  verify(typeInitializer).getStackManipulation();
+  verify(typeInitializerAppender).apply(methodVisitor,instrumentationContext);
+  verifyNoMoreInteractions(typeInitializer);
+  verify(entry,atLeast(1)).isDefineMethod();
+  verify(methodVisitor).visitInsn(Opcodes.RETURN);
   verify(methodVisitor).visitMaxs(0,0);
   verify(methodVisitor).visitEnd();
   verifyNoMoreInteractions(methodVisitor);
@@ -28,7 +31,9 @@
   verifyNoMoreInteractions(secondFieldValue);
   verify(methodPool).target(MethodDescription.Latent.typeInitializerOf(instrumentedType));
   verifyNoMoreInteractions(methodPool);
-  verify(injectedCode).isInjected();
+  verify(injectedCode).isDefined();
   verifyNoMoreInteractions(injectedCode);
   verifyZeroInteractions(injectedCodeAppender);
+  verifyZeroInteractions(attributeAppender);
+  verifyZeroInteractions(byteCodeAppender);
 }

@@ -1,8 +1,5 @@
 {
-  when(entry.isDefineMethod()).thenReturn(true);
-  when(byteCodeAppender.appendsCode()).thenReturn(true);
-  when(injectedCode.isInjected()).thenReturn(true);
-  when(typeInitializer.expandWith(injectedCodeAppender)).thenReturn(new InstrumentedType.TypeInitializer.Simple(injectedCodeAppender));
+  when(injectedCode.isDefined()).thenReturn(true);
   Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   FieldDescription firstField=instrumentationContext.cache(firstFieldValue,firstFieldType);
   assertThat(instrumentationContext.cache(firstFieldValue,firstFieldType),is(firstField));
@@ -19,19 +16,14 @@
   verify(methodVisitor).visitFieldInsn(eq(Opcodes.PUTSTATIC),eq(BAZ),any(String.class),eq(BAR));
   verify(secondFieldValue).apply(methodVisitor,instrumentationContext);
   verify(methodVisitor).visitFieldInsn(eq(Opcodes.PUTSTATIC),eq(BAZ),any(String.class),eq(QUX));
-  verify(injectedCode).isInjected();
+  verify(injectedCode).isDefined();
   verify(injectedCode).getInjectedCode();
   verify(injectedCodeAppender).apply(methodVisitor,instrumentationContext);
   verifyNoMoreInteractions(injectedCode);
-  verify(typeInitializer).expandWith(injectedCodeAppender);
+  verify(typeInitializer).isDefined();
   verifyNoMoreInteractions(typeInitializer);
-  verify(entry).isDefineMethod();
-  verify(entry,atLeast(1)).getAttributeAppender();
-  verify(attributeAppender).apply(methodVisitor,MethodDescription.Latent.typeInitializerOf(instrumentedType));
-  verify(entry,atLeast(1)).getByteCodeAppender();
-  verify(byteCodeAppender).appendsCode();
-  verify(byteCodeAppender).apply(methodVisitor,instrumentationContext,MethodDescription.Latent.typeInitializerOf(instrumentedType));
-  verifyNoMoreInteractions(byteCodeAppender);
+  verify(entry,atLeast(1)).isDefineMethod();
+  verify(methodVisitor).visitInsn(Opcodes.RETURN);
   verify(methodVisitor).visitMaxs(0,0);
   verify(methodVisitor).visitEnd();
   verifyNoMoreInteractions(methodVisitor);
@@ -39,4 +31,9 @@
   verifyNoMoreInteractions(secondFieldValue);
   verify(methodPool).target(MethodDescription.Latent.typeInitializerOf(instrumentedType));
   verifyNoMoreInteractions(methodPool);
+  verify(typeInitializer).isDefined();
+  verifyNoMoreInteractions(typeInitializer);
+  verifyZeroInteractions(typeInitializerAppender);
+  verifyZeroInteractions(attributeAppender);
+  verifyZeroInteractions(byteCodeAppender);
 }
