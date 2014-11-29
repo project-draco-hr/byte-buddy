@@ -1,0 +1,6 @@
+{
+  assertThat(ElementMatchers.is(Object.class.getDeclaredMethod("toString")).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(true));
+  assertThat(ElementMatchers.is(Object.class.getDeclaredMethod("toString")).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("hashCode"))),is(false));
+  assertThat(ElementMatchers.is(Object.class.getDeclaredConstructor()).matches(new MethodDescription.ForLoadedConstructor(Object.class.getDeclaredConstructor())),is(true));
+  assertThat(ElementMatchers.is(Object.class.getDeclaredConstructor()).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("hashCode"))),is(false));
+}

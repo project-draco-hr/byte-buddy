@@ -1,0 +1,12 @@
+{
+  assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getFoo"))),is(false));
+  assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("isQux"))),is(true));
+  assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getQux"))),is(true));
+  assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("isBar"))),is(true));
+  assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getBar"))),is(true));
+  assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("isBaz"))),is(false));
+  assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getBaz"))),is(true));
+  assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getBaz",Void.class))),is(false));
+  assertThat(ElementMatchers.isGetter(String.class).matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getBaz"))),is(true));
+  assertThat(ElementMatchers.isGetter(Void.class).matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getBaz"))),is(false));
+}

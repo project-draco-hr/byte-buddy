@@ -1,0 +1,9 @@
+{
+  Method toString=Object.class.getDeclaredMethod("toString"), hashCode=Object.class.getDeclaredMethod("hashCode");
+  assertThat(ElementMatchers.anyOf(toString).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(true));
+  assertThat(ElementMatchers.anyOf(toString,hashCode).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(true));
+  assertThat(ElementMatchers.anyOf(toString).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("hashCode"))),is(false));
+  assertThat(ElementMatchers.anyOf(Object.class.getDeclaredConstructor()).matches(new MethodDescription.ForLoadedConstructor(Object.class.getDeclaredConstructor())),is(true));
+  assertThat(ElementMatchers.anyOf(Object.class.getDeclaredConstructor(),String.class.getDeclaredConstructor(String.class)).matches(new MethodDescription.ForLoadedConstructor(Object.class.getDeclaredConstructor())),is(true));
+  assertThat(ElementMatchers.anyOf(Object.class.getDeclaredConstructor()).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("hashCode"))),is(false));
+}

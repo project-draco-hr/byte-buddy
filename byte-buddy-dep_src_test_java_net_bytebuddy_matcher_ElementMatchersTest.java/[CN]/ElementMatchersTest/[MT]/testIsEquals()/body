@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isEquals().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("equals",Object.class))),is(true));
+  assertThat(ElementMatchers.isEquals().matches(new MethodDescription.ForLoadedMethod(ObjectMethods.class.getDeclaredMethod("equals",Object.class))),is(true));
+  assertThat(ElementMatchers.isEquals().matches(new MethodDescription.ForLoadedMethod(Runnable.class.getDeclaredMethod("run"))),is(false));
+}

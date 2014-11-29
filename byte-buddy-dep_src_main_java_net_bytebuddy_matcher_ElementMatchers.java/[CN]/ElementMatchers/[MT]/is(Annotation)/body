@@ -1,0 +1,3 @@
+{
+  return is(AnnotationDescription.ForLoadedAnnotation.of(nonNull(annotation)));
+}

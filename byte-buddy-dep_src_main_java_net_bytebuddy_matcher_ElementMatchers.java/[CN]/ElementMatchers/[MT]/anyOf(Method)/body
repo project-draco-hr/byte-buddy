@@ -1,0 +1,3 @@
+{
+  return anyOf(new MethodList.ForLoadedType(new Constructor<?>[0],nonNull(value)));
+}

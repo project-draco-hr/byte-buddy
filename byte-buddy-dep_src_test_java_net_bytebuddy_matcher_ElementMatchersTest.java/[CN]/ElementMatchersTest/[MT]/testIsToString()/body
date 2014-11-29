@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isToString().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(true));
+  assertThat(ElementMatchers.isToString().matches(new MethodDescription.ForLoadedMethod(ObjectMethods.class.getDeclaredMethod("toString"))),is(true));
+  assertThat(ElementMatchers.isToString().matches(new MethodDescription.ForLoadedMethod(Runnable.class.getDeclaredMethod("run"))),is(false));
+}

@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isDefaultFinalizer().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("finalize"))),is(true));
+  assertThat(ElementMatchers.isDefaultFinalizer().matches(new MethodDescription.ForLoadedMethod(ObjectMethods.class.getDeclaredMethod("finalize"))),is(false));
+  assertThat(ElementMatchers.isDefaultFinalizer().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(false));
+}

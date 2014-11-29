@@ -1,0 +1,3 @@
+{
+  return anyOf(new AnnotationList.ForLoadedAnnotation(nonNull(value)));
+}

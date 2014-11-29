@@ -1,0 +1,10 @@
+{
+  assertThat(ElementMatchers.canThrow(IOException.class).matches(new MethodDescription.ForLoadedMethod(CanThrow.class.getDeclaredMethod(FOO))),is(true));
+  assertThat(ElementMatchers.canThrow(SQLException.class).matches(new MethodDescription.ForLoadedMethod(CanThrow.class.getDeclaredMethod(FOO))),is(false));
+  assertThat(ElementMatchers.canThrow(Error.class).matches(new MethodDescription.ForLoadedMethod(CanThrow.class.getDeclaredMethod(FOO))),is(true));
+  assertThat(ElementMatchers.canThrow(RuntimeException.class).matches(new MethodDescription.ForLoadedMethod(CanThrow.class.getDeclaredMethod(FOO))),is(true));
+  assertThat(ElementMatchers.canThrow(IOException.class).matches(new MethodDescription.ForLoadedMethod(CanThrow.class.getDeclaredMethod(BAR))),is(false));
+  assertThat(ElementMatchers.canThrow(SQLException.class).matches(new MethodDescription.ForLoadedMethod(CanThrow.class.getDeclaredMethod(BAR))),is(false));
+  assertThat(ElementMatchers.canThrow(Error.class).matches(new MethodDescription.ForLoadedMethod(CanThrow.class.getDeclaredMethod(BAR))),is(true));
+  assertThat(ElementMatchers.canThrow(RuntimeException.class).matches(new MethodDescription.ForLoadedMethod(CanThrow.class.getDeclaredMethod(BAR))),is(true));
+}

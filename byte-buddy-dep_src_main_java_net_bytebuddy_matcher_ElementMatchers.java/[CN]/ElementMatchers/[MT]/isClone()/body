@@ -1,0 +1,3 @@
+{
+  return named("clone").and(takesArguments(0)).and(returns(Object.class));
+}

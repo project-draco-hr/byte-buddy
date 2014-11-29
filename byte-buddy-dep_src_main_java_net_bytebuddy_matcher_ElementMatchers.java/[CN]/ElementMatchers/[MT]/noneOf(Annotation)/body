@@ -1,0 +1,3 @@
+{
+  return noneOf(new AnnotationList.ForLoadedAnnotation(nonNull(value)));
+}

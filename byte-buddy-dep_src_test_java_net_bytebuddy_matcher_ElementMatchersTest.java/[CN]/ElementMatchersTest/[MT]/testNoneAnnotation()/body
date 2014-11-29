@@ -1,0 +1,6 @@
+{
+  AnnotationDescription annotationDescription=new TypeDescription.ForLoadedType(IsAnnotatedWith.class).getDeclaredAnnotations().ofType(IsAnnotatedWithAnnotation.class);
+  assertThat(ElementMatchers.noneOf(IsAnnotatedWith.class.getAnnotation(IsAnnotatedWithAnnotation.class)).matches(annotationDescription),is(false));
+  assertThat(ElementMatchers.noneOf(IsAnnotatedWith.class.getAnnotation(IsAnnotatedWithAnnotation.class),Other.class.getAnnotation(OtherAnnotation.class)).matches(annotationDescription),is(false));
+  assertThat(ElementMatchers.noneOf(Other.class.getAnnotation(OtherAnnotation.class)).matches(annotationDescription),is(true));
+}

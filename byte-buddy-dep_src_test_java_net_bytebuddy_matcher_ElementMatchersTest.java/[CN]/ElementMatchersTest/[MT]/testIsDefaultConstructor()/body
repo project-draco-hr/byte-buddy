@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isDefaultConstructor().matches(new MethodDescription.ForLoadedConstructor(Object.class.getDeclaredConstructor())),is(true));
+  assertThat(ElementMatchers.isDefaultConstructor().matches(new MethodDescription.ForLoadedConstructor(String.class.getDeclaredConstructor(String.class))),is(false));
+  assertThat(ElementMatchers.isDefaultConstructor().matches(new MethodDescription.ForLoadedMethod(Runnable.class.getDeclaredMethod("run"))),is(false));
+}

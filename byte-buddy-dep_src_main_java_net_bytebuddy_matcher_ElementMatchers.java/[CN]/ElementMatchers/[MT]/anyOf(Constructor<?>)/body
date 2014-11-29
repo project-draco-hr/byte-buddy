@@ -1,0 +1,3 @@
+{
+  return anyOf(new MethodList.ForLoadedType(nonNull(value),new Method[0]));
+}

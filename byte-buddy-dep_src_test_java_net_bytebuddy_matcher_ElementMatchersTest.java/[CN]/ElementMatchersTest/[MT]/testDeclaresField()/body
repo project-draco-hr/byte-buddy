@@ -1,0 +1,6 @@
+{
+  assertThat(ElementMatchers.declaresField(ElementMatchers.isAnnotatedWith(OtherAnnotation.class)).matches(new TypeDescription.ForLoadedType(DeclaresFieldOrMethod.class)),is(true));
+  assertThat(ElementMatchers.declaresField(ElementMatchers.isAnnotatedWith(OtherAnnotation.class)).matches(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(ElementMatchers.declaresMethod(ElementMatchers.isAnnotatedWith(OtherAnnotation.class)).matches(new TypeDescription.ForLoadedType(DeclaresFieldOrMethod.class)),is(true));
+  assertThat(ElementMatchers.declaresMethod(ElementMatchers.isAnnotatedWith(OtherAnnotation.class)).matches(new TypeDescription.ForLoadedType(Object.class)),is(false));
+}

@@ -1,0 +1,4 @@
+{
+  assertThat(ElementMatchers.inheritsAnnotation(OtherAnnotation.class).matches(new TypeDescription.ForLoadedType(OtherInherited.class)),is(true));
+  assertThat(ElementMatchers.isAnnotatedWith(OtherAnnotation.class).matches(new TypeDescription.ForLoadedType(OtherInherited.class)),is(false));
+}

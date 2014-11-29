@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isHashCode().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("hashCode"))),is(true));
+  assertThat(ElementMatchers.isHashCode().matches(new MethodDescription.ForLoadedMethod(ObjectMethods.class.getDeclaredMethod("hashCode"))),is(true));
+  assertThat(ElementMatchers.isHashCode().matches(new MethodDescription.ForLoadedMethod(Runnable.class.getDeclaredMethod("run"))),is(false));
+}

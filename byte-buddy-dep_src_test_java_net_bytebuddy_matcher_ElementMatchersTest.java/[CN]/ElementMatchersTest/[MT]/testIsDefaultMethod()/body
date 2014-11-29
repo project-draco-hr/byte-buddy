@@ -1,0 +1,4 @@
+{
+  assertThat(ElementMatchers.isDefaultMethod().matches(new MethodDescription.ForLoadedMethod(classLoader.loadClass(SINGLE_DEFAULT_METHOD).getDeclaredMethod(FOO))),is(true));
+  assertThat(ElementMatchers.isDefaultMethod().matches(new MethodDescription.ForLoadedMethod(Runnable.class.getDeclaredMethod("run"))),is(false));
+}

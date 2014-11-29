@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isVisibilityBridge().matches(new MethodDescription.ForLoadedMethod(IsVisibilityBridge.class.getDeclaredMethod(FOO))),is(true));
+  assertThat(ElementMatchers.isVisibilityBridge().matches(new MethodDescription.ForLoadedMethod(IsBridge.class.getDeclaredMethod(FOO,Object.class))),is(false));
+  assertThat(ElementMatchers.isVisibilityBridge().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(false));
+}

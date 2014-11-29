@@ -17,7 +17,7 @@
   verify(secondFieldValue).apply(methodVisitor,instrumentationContext);
   verify(methodVisitor).visitFieldInsn(eq(Opcodes.PUTSTATIC),eq(BAZ),any(String.class),eq(QUX));
   verify(injectedCode).isDefined();
-  verify(injectedCode).getInjectedCode();
+  verify(injectedCode).getStackManipulation();
   verify(injectedCodeAppender).apply(methodVisitor,instrumentationContext);
   verifyNoMoreInteractions(injectedCode);
   verify(typeInitializer).isDefined();

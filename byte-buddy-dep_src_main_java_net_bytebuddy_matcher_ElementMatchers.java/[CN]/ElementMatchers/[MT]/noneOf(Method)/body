@@ -1,0 +1,3 @@
+{
+  return noneOf(new MethodList.ForLoadedType(new Constructor<?>[0],nonNull(value)));
+}
