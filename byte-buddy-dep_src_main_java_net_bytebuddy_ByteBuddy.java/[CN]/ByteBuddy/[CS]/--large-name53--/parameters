@@ -1,5 +1,5 @@
 ClassFileVersion classFileVersion
-NamingStrategy namingStrategy
+NamingStrategy.Unbound namingStrategy
 List<TypeDescription> interfaceTypes
 ElementMatcher<? super MethodDescription> ignoredMethods
 BridgeMethodResolver.Factory bridgeMethodResolverFactory
@@ -10,4 +10,3 @@ TypeAttributeAppender typeAttributeAppender
 MethodLookupEngine.Factory methodLookupEngineFactory
 FieldAttributeAppender.Factory defaultFieldAttributeAppenderFactory
 MethodAttributeAppender.Factory defaultMethodAttributeAppenderFactory
-ElementMatcher<? super MethodDescription> methodMatcher

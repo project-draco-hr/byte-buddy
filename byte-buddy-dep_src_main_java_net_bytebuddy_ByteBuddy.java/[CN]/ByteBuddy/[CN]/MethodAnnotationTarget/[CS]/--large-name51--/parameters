@@ -1,5 +1,5 @@
 ClassFileVersion classFileVersion
-NamingStrategy namingStrategy
+NamingStrategy.Unbound namingStrategy
 List<TypeDescription> interfaceTypes
 ElementMatcher<? super MethodDescription> ignoredMethods
 BridgeMethodResolver.Factory bridgeMethodResolverFactory

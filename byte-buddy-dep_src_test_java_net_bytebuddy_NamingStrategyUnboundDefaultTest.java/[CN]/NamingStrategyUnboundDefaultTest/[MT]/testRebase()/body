@@ -1,0 +1,3 @@
+{
+  assertThat(new NamingStrategy.Unbound.Default(FOO).rebase(typeDescription),is((NamingStrategy)new NamingStrategy.Fixed(BAR)));
+}

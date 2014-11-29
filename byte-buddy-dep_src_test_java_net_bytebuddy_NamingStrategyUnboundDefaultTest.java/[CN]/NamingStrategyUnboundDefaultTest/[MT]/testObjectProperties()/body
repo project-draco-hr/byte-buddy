@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(NamingStrategy.Unbound.Default.class).apply();
+}

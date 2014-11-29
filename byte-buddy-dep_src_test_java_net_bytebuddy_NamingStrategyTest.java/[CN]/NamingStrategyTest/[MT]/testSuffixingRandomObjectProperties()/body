@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(NamingStrategy.SuffixingRandom.class).apply();
+  ObjectPropertyAssertion.of(NamingStrategy.SuffixingRandom.BaseNameResolver.ForGivenType.class).apply();
+}
