@@ -1,0 +1,10 @@
+{
+  Handler handler;
+  try {
+    handler=new Handler.Default(classLoader);
+  }
+ catch (  Exception e) {
+    handler=new Handler.Exceptional(e);
+  }
+  this.handler=handler;
+}

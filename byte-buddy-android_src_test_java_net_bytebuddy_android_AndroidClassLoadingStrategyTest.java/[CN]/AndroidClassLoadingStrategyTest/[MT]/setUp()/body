@@ -1,0 +1,8 @@
+{
+  directory=File.createTempFile(FOO,TEMP);
+  assertThat(directory.delete(),is(true));
+  directory=new File(directory.getParentFile(),UUID.randomUUID().toString());
+  assertThat(directory.mkdir(),is(true));
+  when(first.getName()).thenReturn(FOO);
+  when(second.getName()).thenReturn(BAR);
+}

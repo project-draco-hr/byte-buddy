@@ -1,0 +1,13 @@
+{
+  assertThat(instance.toString(),CoreMatchers.startsWith(type.getCanonicalName().substring(type.getPackage().getName().length() + 1) + "{"));
+  assertThat(instance.toString(),endsWith("}"));
+  Class<?> currentType=type;
+  do {
+    for (    Field field : type.getDeclaredFields()) {
+      if (!field.isSynthetic() && !Modifier.isStatic(field.getModifiers()) && !ignoredFields.contains(field.getName())) {
+        assertThat(instance.toString(),containsString(field.getName()));
+      }
+    }
+  }
+ while ((currentType=currentType.getSuperclass()) != Object.class);
+}

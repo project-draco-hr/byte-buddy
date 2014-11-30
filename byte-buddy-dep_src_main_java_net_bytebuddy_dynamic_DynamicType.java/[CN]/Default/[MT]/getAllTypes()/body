@@ -1,0 +1,8 @@
+{
+  Map<TypeDescription,byte[]> allTypes=new HashMap<TypeDescription,byte[]>(auxiliaryTypes.size() + 1);
+  for (  DynamicType auxiliaryType : auxiliaryTypes) {
+    allTypes.putAll(auxiliaryType.getAllTypes());
+  }
+  allTypes.put(typeDescription,binaryRepresentation);
+  return allTypes;
+}

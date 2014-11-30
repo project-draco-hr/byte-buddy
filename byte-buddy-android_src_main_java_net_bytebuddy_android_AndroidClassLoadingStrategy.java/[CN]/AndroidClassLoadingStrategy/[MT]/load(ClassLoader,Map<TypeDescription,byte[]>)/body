@@ -1,0 +1,34 @@
+{
+  DexCreator.Creation creation=dexCreator.makeDexFile();
+  for (  Map.Entry<TypeDescription,byte[]> entry : types.entrySet()) {
+    creation.register(entry.getKey().getName(),entry.getValue());
+  }
+  File dexFile=new File(directory,UUID.randomUUID().toString());
+  try {
+    try {
+      if (!dexFile.createNewFile()) {
+        throw new IllegalStateException("Cannot create " + dexFile);
+      }
+      creation.writeTo(dexFile);
+    }
+ catch (    IOException e) {
+      throw new IllegalStateException("Cannot write dex file",e);
+    }
+    ClassLoader dexClassLoader=new DexClassLoader(dexFile.getAbsolutePath(),directory.getAbsolutePath(),EMPTY_LIBRARY_PATH,classLoader);
+    Map<TypeDescription,Class<?>> loadedTypes=new HashMap<TypeDescription,Class<?>>(types.size());
+    for (    TypeDescription typeDescription : types.keySet()) {
+      try {
+        loadedTypes.put(typeDescription,dexClassLoader.loadClass(typeDescription.getName()));
+      }
+ catch (      ClassNotFoundException e) {
+        throw new IllegalStateException("Cannot load " + typeDescription,e);
+      }
+    }
+    return loadedTypes;
+  }
+  finally {
+    if (!dexFile.delete()) {
+      Logger.getAnonymousLogger().warning("Could not delete " + dexFile);
+    }
+  }
+}

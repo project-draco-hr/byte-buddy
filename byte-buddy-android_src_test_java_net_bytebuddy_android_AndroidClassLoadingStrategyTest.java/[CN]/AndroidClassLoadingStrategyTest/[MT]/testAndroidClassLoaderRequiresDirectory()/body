@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.class).apply(new AndroidClassLoadingStrategy(mock(File.class),mock(AndroidClassLoadingStrategy.DexProcessor.class)));
+}

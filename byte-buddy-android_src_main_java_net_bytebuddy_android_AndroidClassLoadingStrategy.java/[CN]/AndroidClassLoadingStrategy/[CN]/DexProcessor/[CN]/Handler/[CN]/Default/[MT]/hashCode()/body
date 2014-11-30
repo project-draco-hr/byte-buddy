@@ -1,0 +1,9 @@
+{
+  int result=compilerOptions.hashCode();
+  result=31 * result + dexOptions.hashCode();
+  result=31 * result + dexFileConstructor.hashCode();
+  result=31 * result + dexAddMethod.hashCode();
+  result=31 * result + dexToFileMethod.hashCode();
+  result=31 * result + dexCompileMethod.hashCode();
+  return result;
+}

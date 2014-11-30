@@ -1,0 +1,9 @@
+{
+  ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.class).apply(new AndroidClassLoadingStrategy(directory,mock(AndroidClassLoadingStrategy.DexProcessor.class)));
+  ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.DexProcessor.class).apply();
+  ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.DexProcessor.ForSdkCompiler.Process.class).apply();
+  ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.DexProcessor.ForSdkCompiler.Handler.Default.class).apply();
+  ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.DexProcessor.ForSdkCompiler.Handler.Exceptional.class).apply();
+  ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.DexCreator.class).apply();
+  ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.DexCreator.Creation.class).apply();
+}

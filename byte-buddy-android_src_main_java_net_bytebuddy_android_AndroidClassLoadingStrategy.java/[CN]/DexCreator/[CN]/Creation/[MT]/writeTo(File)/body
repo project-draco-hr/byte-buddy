@@ -1,0 +1,9 @@
+{
+  Writer writer=new OutputStreamWriter(new FileOutputStream(file));
+  try {
+    process.store(writer);
+  }
+  finally {
+    writer.close();
+  }
+}

@@ -1,0 +1,11 @@
+{
+  Class<?> dexCompilerOptionsType=classLoader.loadClass("com.android.dx.dex.cf.CfOptions");
+  compilerOptions=dexCompilerOptionsType.newInstance();
+  Class<?> dexOptionsType=classLoader.loadClass("com.android.dx.dex.DexOptions");
+  dexOptions=dexOptionsType.newInstance();
+  Class<?> dexFileType=classLoader.loadClass("com.android.dx.dex.file.DexFile");
+  dexFileConstructor=dexFileType.getDeclaredConstructor(dexOptionsType);
+  dexAddMethod=dexFileType.getDeclaredMethod("add",classLoader.loadClass("com.android.dx.dex.file.ClassDefItem"));
+  dexToFileMethod=dexFileType.getDeclaredMethod("toDex",Writer.class,boolean.class);
+  dexCompileMethod=classLoader.loadClass("com.android.dx.dex.cf.CfTranslator").getDeclaredMethod("translate",String.class,byte[].class,dexCompilerOptionsType,dexOptionsType);
+}

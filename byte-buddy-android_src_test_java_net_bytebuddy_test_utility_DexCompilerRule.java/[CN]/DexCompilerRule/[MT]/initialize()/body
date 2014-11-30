@@ -1,0 +1,25 @@
+{
+  if (!initialized) {
+    initialized=true;
+    if (ManagementFactory.getRuntimeMXBean().getClassPath().contains("dx.jar")) {
+      dexCompilerOnClassPath=true;
+      return;
+    }
+    String directory=System.getProperty("user.dir");
+    if (directory == null) {
+      Logger.getAnonymousLogger().warning("Cannot find user.dir system property");
+      return;
+    }
+    File dxJar=new File(directory,"byte-buddy-android" + File.separator + "android"+ File.separator+ "dx.jar");
+    if (!dxJar.isFile()) {
+      return;
+    }
+    try {
+      ByteBuddyAgent.installOnOpenJDK().appendToSystemClassLoaderSearch(new JarFile(dxJar));
+      dexCompilerOnClassPath=true;
+    }
+ catch (    Exception e) {
+      Logger.getAnonymousLogger().warning("Cannot append dx.jar to class path: " + e.getMessage());
+    }
+  }
+}

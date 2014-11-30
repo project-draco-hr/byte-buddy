@@ -1,0 +1,6 @@
+{
+  super(parent);
+  this.dexPath=dexPath;
+  this.optimizedDirectory=optimizedDirectory;
+  assertThat(libraryPath,is(""));
+}

@@ -1,0 +1,4 @@
+String dexPath
+String optimizedDirectory
+String libraryPath
+ClassLoader parent

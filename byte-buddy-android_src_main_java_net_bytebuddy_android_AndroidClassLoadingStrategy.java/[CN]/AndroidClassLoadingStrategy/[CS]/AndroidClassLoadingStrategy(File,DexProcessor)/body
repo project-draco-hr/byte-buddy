@@ -1,0 +1,7 @@
+{
+  dexCreator=new DexCreator(nonNull(dexProcessor));
+  if (!directory.isDirectory()) {
+    throw new IllegalArgumentException("Not a directory " + directory);
+  }
+  this.directory=directory;
+}
