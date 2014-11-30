@@ -3,18 +3,21 @@
   for (  Map.Entry<TypeDescription,byte[]> entry : types.entrySet()) {
     creation.register(entry.getKey().getName(),entry.getValue());
   }
-  File dexFile=new File(directory,UUID.randomUUID().toString());
+  File zipFile=new File(privateDirectory,randomString.nextString() + JAR_FILE_EXTENSION);
   try {
+    if (!zipFile.createNewFile()) {
+      throw new IllegalStateException("Cannot create " + zipFile);
+    }
+    JarOutputStream zipOutputStream=new JarOutputStream(new FileOutputStream(zipFile));
     try {
-      if (!dexFile.createNewFile()) {
-        throw new IllegalStateException("Cannot create " + dexFile);
-      }
-      creation.writeTo(dexFile);
+      zipOutputStream.putNextEntry(new JarEntry(DEX_CLASS_FILE));
+      creation.writeTo(zipOutputStream);
+      zipOutputStream.closeEntry();
     }
- catch (    IOException e) {
-      throw new IllegalStateException("Cannot write dex file",e);
+  finally {
+      zipOutputStream.close();
     }
-    ClassLoader dexClassLoader=new DexClassLoader(dexFile.getAbsolutePath(),directory.getAbsolutePath(),EMPTY_LIBRARY_PATH,classLoader);
+    ClassLoader dexClassLoader=new DexClassLoader(zipFile.getAbsolutePath(),privateDirectory.getAbsolutePath(),EMPTY_LIBRARY_PATH,classLoader);
     Map<TypeDescription,Class<?>> loadedTypes=new HashMap<TypeDescription,Class<?>>(types.size());
     for (    TypeDescription typeDescription : types.keySet()) {
       try {
@@ -26,9 +29,12 @@
     }
     return loadedTypes;
   }
-  finally {
-    if (!dexFile.delete()) {
-      Logger.getAnonymousLogger().warning("Could not delete " + dexFile);
+ catch (  IOException e) {
+    throw new IllegalStateException("Cannot write to zip file " + zipFile,e);
+  }
+ finally {
+    if (!zipFile.delete()) {
+      Logger.getAnonymousLogger().warning("Could not delete " + zipFile);
     }
   }
 }

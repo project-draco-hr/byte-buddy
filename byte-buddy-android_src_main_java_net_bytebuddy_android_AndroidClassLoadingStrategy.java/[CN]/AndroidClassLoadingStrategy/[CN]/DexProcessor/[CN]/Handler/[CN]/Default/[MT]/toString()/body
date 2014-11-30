@@ -1,3 +1,0 @@
-{
-  return "AndroidClassLoadingStrategy.DexProcessor.ForSdkCompiler.Handler.Default{" + "compilerOptions=" + compilerOptions + ", dexOptions="+ dexOptions+ ", dexFileConstructor="+ dexFileConstructor+ ", dexAddMethod="+ dexAddMethod+ ", dexToFileMethod="+ dexToFileMethod+ ", dexCompileMethod="+ dexCompileMethod+ '}';
-}

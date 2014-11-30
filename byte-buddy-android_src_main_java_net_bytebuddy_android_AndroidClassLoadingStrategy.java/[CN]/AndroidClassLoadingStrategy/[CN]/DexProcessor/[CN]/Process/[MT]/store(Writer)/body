@@ -1,8 +1,0 @@
-{
-  try {
-    ForSdkCompiler.INSTANCE.handler.getDexToFileMethod().invoke(dexFile,writer,false);
-  }
- catch (  Throwable e) {
-    throw new IllegalStateException("Cannot write dex file",e);
-  }
-}

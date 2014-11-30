@@ -1,6 +1,6 @@
 {
   super(parent);
-  this.dexPath=dexPath;
-  this.optimizedDirectory=optimizedDirectory;
-  assertThat(libraryPath,is(""));
+  assertThat(new File(dexPath).isFile(),is(true));
+  assertThat(new File(optimizedDirectory).isFile(),is(true));
+  assertThat(libraryPath,notNullValue());
 }

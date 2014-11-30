@@ -1,8 +1,0 @@
-{
-  try {
-    return new Process(handler.getDexFileConstructor().newInstance(handler.getDexOptions()));
-  }
- catch (  Throwable e) {
-    throw new IllegalStateException("Cannot create new dex file",e);
-  }
-}

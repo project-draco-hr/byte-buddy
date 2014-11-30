@@ -1,8 +1,3 @@
 {
-  try {
-    ForSdkCompiler.INSTANCE.handler.getDexAddMethod().invoke(dexFile,ForSdkCompiler.INSTANCE.handler.getDexCompileMethod().invoke(STATIC_METHOD,name.replace('.','/') + CLASS_FILE_EXTENSION,binaryRepresentation,ForSdkCompiler.INSTANCE.handler.getCompilerOptions(),ForSdkCompiler.INSTANCE.handler.getDexOptions()));
-  }
- catch (  Throwable e) {
-    throw new IllegalStateException("Cannot register " + name,e);
-  }
+  dexFile.add(CfTranslator.translate(name.replace('.','/') + CLASS_FILE_EXTENSION,binaryRepresentation,ForSdkCompiler.INSTANCE.cfOptions,ForSdkCompiler.INSTANCE.dexOptions));
 }

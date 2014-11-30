@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  Default aDefault=(Default)other;
-  return compilerOptions.equals(aDefault.compilerOptions) && dexAddMethod.equals(aDefault.dexAddMethod) && dexCompileMethod.equals(aDefault.dexCompileMethod)&& dexFileConstructor.equals(aDefault.dexFileConstructor)&& dexOptions.equals(aDefault.dexOptions)&& dexToFileMethod.equals(aDefault.dexToFileMethod);
-}

@@ -1,0 +1,3 @@
+{
+  dexFile.writeTo(outputStream,null,false);
+}

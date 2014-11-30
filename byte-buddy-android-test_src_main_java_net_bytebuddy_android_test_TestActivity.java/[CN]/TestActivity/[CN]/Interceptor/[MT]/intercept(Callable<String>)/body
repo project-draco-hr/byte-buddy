@@ -1,0 +1,7 @@
+{
+  String toString=zuper.call();
+  if (toString.equals(FOO)) {
+    throw new IllegalStateException("Super call proxy invocation did not derive in its value");
+  }
+  return FOO;
+}

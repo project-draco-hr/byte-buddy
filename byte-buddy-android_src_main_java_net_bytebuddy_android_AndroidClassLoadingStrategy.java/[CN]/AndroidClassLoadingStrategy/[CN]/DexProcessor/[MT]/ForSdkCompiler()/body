@@ -1,0 +1,4 @@
+{
+  dexOptions=new DexOptions();
+  cfOptions=new CfOptions();
+}
