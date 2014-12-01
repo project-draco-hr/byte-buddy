@@ -1,5 +1,5 @@
 {
-  TypeDescription componentTypeDescription=typePool.describe(componentTypeReference.lookup());
+  TypeDescription componentTypeDescription=typePool.describe(componentTypeReference.lookup()).resolve();
   Class<?> componentType;
   if (componentTypeDescription.represents(Class.class)) {
     componentType=TypeDescription.class;

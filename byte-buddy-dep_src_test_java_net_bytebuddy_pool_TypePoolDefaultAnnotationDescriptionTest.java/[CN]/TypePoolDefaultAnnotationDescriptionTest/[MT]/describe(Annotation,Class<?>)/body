@@ -1,3 +1,3 @@
 {
-  return typePool.describe(declaringType.getName()).getDeclaredAnnotations().ofType(annotation.annotationType());
+  return typePool.describe(declaringType.getName()).resolve().getDeclaredAnnotations().ofType(annotation.annotationType());
 }

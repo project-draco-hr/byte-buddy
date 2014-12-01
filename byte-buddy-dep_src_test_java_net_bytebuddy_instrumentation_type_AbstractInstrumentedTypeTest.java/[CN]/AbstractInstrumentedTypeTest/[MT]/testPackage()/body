@@ -1,0 +1,3 @@
+{
+  assertThat(makePlainInstrumentedType().getPackage().getName(),is(FOO));
+}

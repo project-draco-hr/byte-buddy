@@ -1,4 +1,4 @@
 {
-  String thisPackage=getPackageName(), otherPackage=typeDescription.getPackageName();
-  return (thisPackage == null && otherPackage == null) || (thisPackage != null && thisPackage.equals(otherPackage));
+  PackageDescription thisPackage=getPackage(), otherPackage=typeDescription.getPackage();
+  return thisPackage == null || otherPackage == null ? thisPackage == otherPackage : thisPackage.equals(otherPackage);
 }

@@ -1,7 +1,4 @@
 {
   TypeDescription.BinaryRepresentation binaryRepresentation=sourceLocator.locate(name);
-  if (!binaryRepresentation.isValid()) {
-    throw new IllegalArgumentException("Cannot locate " + name + " using "+ sourceLocator);
-  }
-  return parse(binaryRepresentation.getData());
+  return binaryRepresentation.isValid() ? new Resolution.Simple(parse(binaryRepresentation.getData())) : new Resolution.Illegal(name);
 }

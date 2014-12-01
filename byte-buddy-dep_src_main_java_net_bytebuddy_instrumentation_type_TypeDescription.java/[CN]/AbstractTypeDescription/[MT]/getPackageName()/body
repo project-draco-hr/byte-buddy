@@ -1,0 +1,5 @@
+{
+  String name=getName();
+  int packageIndex=name.lastIndexOf('.');
+  return packageIndex == -1 ? null : name.substring(0,packageIndex);
+}

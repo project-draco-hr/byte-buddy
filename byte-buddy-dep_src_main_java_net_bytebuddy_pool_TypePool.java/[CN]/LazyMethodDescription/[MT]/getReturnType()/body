@@ -1,3 +1,3 @@
 {
-  return typePool.describe(returnTypeName);
+  return typePool.describe(returnTypeName).resolve();
 }

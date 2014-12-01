@@ -12,6 +12,10 @@
     name=primitiveName == null ? name.substring(1,name.length() - 1) : primitiveName;
   }
   TypeDescription typeDescription=PRIMITIVE_TYPES.get(name);
-  typeDescription=typeDescription == null ? cacheProvider.find(name) : typeDescription;
-  return TypeDescription.ArrayProjection.of(typeDescription == null ? cacheProvider.register(doDescribe(name)) : typeDescription,arity);
+  Resolution resolution=typeDescription == null ? cacheProvider.find(name) : new Resolution.Simple(typeDescription);
+  if (resolution == null) {
+    resolution=doDescribe(name);
+    cacheProvider.register(name,resolution);
+  }
+  return resolution.isResolved() ? new Resolution.Simple(TypeDescription.ArrayProjection.of(resolution.resolve(),arity)) : resolution;
 }

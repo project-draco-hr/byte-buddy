@@ -1,4 +1,4 @@
 {
   typePool=TypePool.Default.ofClassPath();
-  annotationList=typePool.describe(Carrier.class.getName()).getDeclaredAnnotations();
+  annotationList=typePool.describe(Carrier.class.getName()).resolve().getDeclaredAnnotations();
 }

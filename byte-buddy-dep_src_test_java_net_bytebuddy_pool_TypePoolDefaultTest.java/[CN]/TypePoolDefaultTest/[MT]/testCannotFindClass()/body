@@ -1,3 +1,6 @@
 {
-  typePool.describe("foo");
+  TypePool.Resolution resolution=typePool.describe("foo");
+  assertThat(resolution.isResolved(),is(false));
+  resolution.resolve();
+  fail();
 }
