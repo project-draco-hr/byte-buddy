@@ -1,7 +1,7 @@
 {
-  DexCreator.Creation creation=dexCreator.makeDexFile();
+  DexProcessor.Conversion conversion=dexProcessor.create();
   for (  Map.Entry<TypeDescription,byte[]> entry : types.entrySet()) {
-    creation.register(entry.getKey().getName(),entry.getValue());
+    conversion.register(entry.getKey().getName(),entry.getValue());
   }
   File zipFile=new File(privateDirectory,randomString.nextString() + JAR_FILE_EXTENSION);
   try {
@@ -11,7 +11,7 @@
     JarOutputStream zipOutputStream=new JarOutputStream(new FileOutputStream(zipFile));
     try {
       zipOutputStream.putNextEntry(new JarEntry(DEX_CLASS_FILE));
-      creation.writeTo(zipOutputStream);
+      conversion.drainTo(zipOutputStream);
       zipOutputStream.closeEntry();
     }
   finally {

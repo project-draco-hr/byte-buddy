@@ -1,0 +1,4 @@
+{
+  this.dexFileOptions=dexFileOptions;
+  this.dexCompilerOptions=dexCompilerOptions;
+}

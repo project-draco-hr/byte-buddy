@@ -1,3 +1,0 @@
-{
-  assertThat(directory.delete(),is(true));
-}

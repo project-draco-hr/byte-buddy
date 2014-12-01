@@ -1,6 +1,0 @@
-{
-  ClassLoadingStrategy classLoadingStrategy=new AndroidClassLoadingStrategy(directory);
-  Map<TypeDescription,Class<?>> map=classLoadingStrategy.load(getClass().getClassLoader(),dynamicType.getAllTypes());
-  assertThat(map.size(),is(1));
-  assertEquals(DexClassLoader.Target.class,map.get(dynamicType.getTypeDescription()));
-}

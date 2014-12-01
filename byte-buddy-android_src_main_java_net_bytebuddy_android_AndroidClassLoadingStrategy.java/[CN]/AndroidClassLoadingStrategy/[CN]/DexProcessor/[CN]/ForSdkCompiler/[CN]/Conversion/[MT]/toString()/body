@@ -1,0 +1,3 @@
+{
+  return "AndroidClassLoadingStrategy.DexProcessor.ForSdkCompiler.Conversion{" + "dexProcessor=" + ForSdkCompiler.this + ", dexFile="+ dexFile+ '}';
+}

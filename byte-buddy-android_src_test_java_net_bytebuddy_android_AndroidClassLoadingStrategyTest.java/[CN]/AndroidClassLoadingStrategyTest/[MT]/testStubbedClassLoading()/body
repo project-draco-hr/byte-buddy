@@ -1,0 +1,7 @@
+{
+  DynamicType dynamicType=new ByteBuddy().subclass(Object.class).method(named(TO_STRING)).intercept(FixedValue.value(FOO)).make();
+  ClassLoadingStrategy classLoadingStrategy=new AndroidClassLoadingStrategy(directory);
+  Map<TypeDescription,Class<?>> map=classLoadingStrategy.load(getClass().getClassLoader(),dynamicType.getAllTypes());
+  assertThat(map.size(),is(1));
+  assertEquals(DexClassLoader.Target.class,map.get(dynamicType.getTypeDescription()));
+}

@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && dexProcessor.equals(((DexCreator)other).dexProcessor);
-}

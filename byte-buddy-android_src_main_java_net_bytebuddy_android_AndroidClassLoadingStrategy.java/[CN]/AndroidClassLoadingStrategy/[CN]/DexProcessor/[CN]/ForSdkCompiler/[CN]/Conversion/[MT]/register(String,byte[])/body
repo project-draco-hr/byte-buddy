@@ -1,0 +1,3 @@
+{
+  dexFile.add(CfTranslator.translate(name.replace('.','/') + CLASS_FILE_EXTENSION,binaryRepresentation,dexCompilerOptions,dexFileOptions));
+}

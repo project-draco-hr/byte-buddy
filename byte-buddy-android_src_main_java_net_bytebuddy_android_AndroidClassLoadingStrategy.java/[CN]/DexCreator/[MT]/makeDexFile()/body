@@ -1,3 +1,0 @@
-{
-  return new Creation(dexProcessor.makeDexFile());
-}

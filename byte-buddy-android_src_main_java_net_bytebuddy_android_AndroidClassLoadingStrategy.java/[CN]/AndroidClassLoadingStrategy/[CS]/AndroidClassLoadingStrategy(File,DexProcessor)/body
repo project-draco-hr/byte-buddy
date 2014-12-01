@@ -1,8 +1,8 @@
 {
-  dexCreator=new DexCreator(nonNull(dexProcessor));
   if (!privateDirectory.isDirectory()) {
     throw new IllegalArgumentException("Not a directory " + privateDirectory);
   }
   this.privateDirectory=privateDirectory;
+  this.dexProcessor=dexProcessor;
   randomString=new RandomString();
 }

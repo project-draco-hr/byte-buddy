@@ -1,8 +1,0 @@
-{
-  try {
-    process.register(name,bytes);
-  }
- catch (  Exception e) {
-    throw new IllegalStateException("Cannot translate class " + name,e);
-  }
-}

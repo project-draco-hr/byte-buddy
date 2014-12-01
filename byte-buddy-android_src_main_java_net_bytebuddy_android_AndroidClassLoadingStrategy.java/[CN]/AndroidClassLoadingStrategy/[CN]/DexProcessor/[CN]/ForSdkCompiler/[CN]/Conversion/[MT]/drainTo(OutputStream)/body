@@ -1,0 +1,3 @@
+{
+  dexFile.writeTo(outputStream,NO_PRINT_OUTPUT,NOT_VERBOSE);
+}

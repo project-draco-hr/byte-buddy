@@ -1,0 +1,3 @@
+{
+  return dexFile.hashCode() + 31 * ForSdkCompiler.this.hashCode();
+}

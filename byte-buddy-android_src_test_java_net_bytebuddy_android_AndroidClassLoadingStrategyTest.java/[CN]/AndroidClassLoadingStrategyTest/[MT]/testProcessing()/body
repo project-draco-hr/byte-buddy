@@ -1,7 +1,7 @@
 {
   AndroidClassLoadingStrategy.DexProcessor dexProcessor=mock(AndroidClassLoadingStrategy.DexProcessor.class);
-  AndroidClassLoadingStrategy.DexProcessor.Process process=mock(AndroidClassLoadingStrategy.DexProcessor.Process.class);
-  when(dexProcessor.makeDexFile()).thenReturn(process);
+  AndroidClassLoadingStrategy.DexProcessor.Conversion conversion=mock(AndroidClassLoadingStrategy.DexProcessor.Conversion.class);
+  when(dexProcessor.create()).thenReturn(conversion);
   ClassLoadingStrategy classLoadingStrategy=new AndroidClassLoadingStrategy(directory,dexProcessor);
   Map<TypeDescription,byte[]> unloaded=new HashMap<TypeDescription,byte[]>();
   unloaded.put(first,QUX);
@@ -10,10 +10,10 @@
   assertThat(loaded.size(),is(2));
   assertEquals(DexClassLoader.Target.class,loaded.get(first));
   assertEquals(DexClassLoader.Target.class,loaded.get(second));
-  verify(dexProcessor).makeDexFile();
+  verify(dexProcessor).create();
   verifyNoMoreInteractions(dexProcessor);
-  verify(process).register(FOO,QUX);
-  verify(process).register(BAR,BAZ);
-  verify(process).store(any(OutputStream.class));
-  verifyNoMoreInteractions(process);
+  verify(conversion).register(FOO,QUX);
+  verify(conversion).register(BAR,BAZ);
+  verify(conversion).drainTo(any(OutputStream.class));
+  verifyNoMoreInteractions(conversion);
 }

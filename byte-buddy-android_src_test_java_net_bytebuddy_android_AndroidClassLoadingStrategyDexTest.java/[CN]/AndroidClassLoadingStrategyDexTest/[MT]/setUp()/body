@@ -1,7 +1,0 @@
-{
-  directory=File.createTempFile(FOO,TEMP);
-  assertThat(directory.delete(),is(true));
-  directory=new File(directory.getParentFile(),UUID.randomUUID().toString());
-  assertThat(directory.mkdir(),is(true));
-  dynamicType=new ByteBuddy().subclass(Object.class).method(named("toString")).intercept(FixedValue.value("FOO")).make();
-}

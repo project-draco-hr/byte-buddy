@@ -1,3 +1,0 @@
-{
-  return "AndroidClassLoadingStrategy.DexCreator{" + "dexProcessor=" + dexProcessor + '}';
-}

@@ -1,0 +1,3 @@
+{
+  return this == other || !(other == null || getClass() != other.getClass()) && dexCompilerOptions.equals(((ForSdkCompiler)other).dexCompilerOptions) && dexFileOptions.equals(((ForSdkCompiler)other).dexFileOptions);
+}

@@ -1,0 +1,5 @@
+{
+  int result=dexFileOptions.hashCode();
+  result=31 * result + dexCompilerOptions.hashCode();
+  return result;
+}
