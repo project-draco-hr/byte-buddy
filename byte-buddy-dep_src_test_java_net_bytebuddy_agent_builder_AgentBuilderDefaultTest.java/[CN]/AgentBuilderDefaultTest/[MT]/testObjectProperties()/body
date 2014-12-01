@@ -1,0 +1,14 @@
+{
+  ObjectPropertyAssertion.of(AgentBuilder.Default.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.Matched.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.Entry.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.ExecutingTransformer.class).apply(new AgentBuilder.Default().new ExecutingTransformer());
+  ObjectPropertyAssertion.of(AgentBuilder.Default.InitializationStrategy.SelfInjection.class).apply();
+  final Iterator<Class<?>> iterator=Arrays.<Class<?>>asList(Object.class,AgentBuilderDefaultTest.class).iterator();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.InitializationStrategy.SelfInjection.Nexus.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
+    @Override public Class<?> create(){
+      return iterator.next();
+    }
+  }
+).apply();
+}

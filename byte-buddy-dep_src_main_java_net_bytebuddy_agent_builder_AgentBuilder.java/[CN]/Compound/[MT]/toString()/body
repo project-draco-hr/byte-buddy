@@ -1,3 +1,3 @@
 {
-  return "AgentBuilder.ExceptionRegistrant.Compound{" + "exceptionRegistrant=" + Arrays.toString(listener) + '}';
+  return "AgentBuilder.Listener.Compound{" + "listener=" + Arrays.toString(listener) + '}';
 }

@@ -1,0 +1,7 @@
+{
+  new AgentBuilder.Listener.Compound(first,second).onTransformation(dynamicType);
+  verify(first).onTransformation(dynamicType);
+  verifyNoMoreInteractions(first);
+  verify(second).onTransformation(dynamicType);
+  verifyNoMoreInteractions(second);
+}

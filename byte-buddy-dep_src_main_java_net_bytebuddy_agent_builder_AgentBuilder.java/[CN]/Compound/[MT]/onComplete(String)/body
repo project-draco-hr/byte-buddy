@@ -1,5 +1,5 @@
 {
   for (  Listener listener : this.listener) {
-    listener.afterTransformation(typeName);
+    listener.onComplete(typeName);
   }
 }

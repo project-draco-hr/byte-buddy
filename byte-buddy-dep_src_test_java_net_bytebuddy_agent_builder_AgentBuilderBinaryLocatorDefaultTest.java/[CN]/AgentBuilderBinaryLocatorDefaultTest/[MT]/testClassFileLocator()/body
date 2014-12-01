@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.BinaryLocator.Default.INSTANCE.initialize(FOO,QUX,classLoader).getClassFileLocator(),notNullValue(ClassFileLocator.class));
+}

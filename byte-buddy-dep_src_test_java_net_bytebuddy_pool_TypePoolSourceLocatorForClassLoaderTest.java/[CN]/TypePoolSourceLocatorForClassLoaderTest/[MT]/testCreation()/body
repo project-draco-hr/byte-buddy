@@ -1,0 +1,5 @@
+{
+  ClassLoader classLoader=mock(ClassLoader.class);
+  assertThat(TypePool.SourceLocator.ForClassLoader.of(classLoader),is((TypePool.SourceLocator)new TypePool.SourceLocator.ForClassLoader(classLoader)));
+  assertThat(TypePool.SourceLocator.ForClassLoader.of(null),is((TypePool.SourceLocator)new TypePool.SourceLocator.ForClassLoader(ClassLoader.getSystemClassLoader())));
+}

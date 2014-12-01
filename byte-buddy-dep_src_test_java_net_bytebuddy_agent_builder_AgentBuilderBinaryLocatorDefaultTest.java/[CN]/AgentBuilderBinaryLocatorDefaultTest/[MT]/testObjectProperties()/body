@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(AgentBuilder.BinaryLocator.Default.Initialized.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.BinaryLocator.Default.Initialized.ProxySourceLocator.class).apply();
+}

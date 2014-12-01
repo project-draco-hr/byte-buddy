@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.Transformer.NoOp.INSTANCE.transform(builder),sameInstance((DynamicType.Builder)builder));
+}

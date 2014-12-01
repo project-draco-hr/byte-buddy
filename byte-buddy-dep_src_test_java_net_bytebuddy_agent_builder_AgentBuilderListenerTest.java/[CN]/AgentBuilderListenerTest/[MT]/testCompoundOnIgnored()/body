@@ -1,0 +1,7 @@
+{
+  new AgentBuilder.Listener.Compound(first,second).onIgnored(FOO);
+  verify(first).onIgnored(FOO);
+  verifyNoMoreInteractions(first);
+  verify(second).onIgnored(FOO);
+  verifyNoMoreInteractions(second);
+}
