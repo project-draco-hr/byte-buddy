@@ -14,8 +14,7 @@
   TypeDescription typeDescription=PRIMITIVE_TYPES.get(name);
   Resolution resolution=typeDescription == null ? cacheProvider.find(name) : new Resolution.Simple(typeDescription);
   if (resolution == null) {
-    resolution=doDescribe(name);
-    cacheProvider.register(name,resolution);
+    resolution=cacheProvider.register(name,doDescribe(name));
   }
-  return resolution.isResolved() ? new Resolution.Simple(TypeDescription.ArrayProjection.of(resolution.resolve(),arity)) : resolution;
+  return ArrayTypeResolution.of(resolution,arity);
 }

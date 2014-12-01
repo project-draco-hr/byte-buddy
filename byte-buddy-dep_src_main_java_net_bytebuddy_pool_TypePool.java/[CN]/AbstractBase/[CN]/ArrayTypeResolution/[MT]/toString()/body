@@ -1,0 +1,3 @@
+{
+  return "TypePool.AbstractBase.ArrayTypeResolution{" + "resolution=" + resolution + ", arity="+ arity+ '}';
+}

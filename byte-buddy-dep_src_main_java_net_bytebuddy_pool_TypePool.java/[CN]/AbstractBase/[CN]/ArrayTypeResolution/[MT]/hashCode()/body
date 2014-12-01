@@ -1,0 +1,5 @@
+{
+  int result=resolution.hashCode();
+  result=31 * result + arity;
+  return result;
+}
