@@ -1,0 +1,8 @@
+{
+  assertThat(describe(Child.class).toString(),not(equalTo(null)));
+  assertThat(describe(Child.class).toString(),not(equalTo(new Object())));
+  assertThat(describe(Child.class).toString(),equalTo(describe(Child.class).toString()));
+  assertThat(describe(Child.class).toString(),not(equalTo(describe(Sample.class).toString())));
+  assertThat(describe(Sample.class).toString(),equalTo(describe(Sample.class).toString()));
+  assertThat(describe(Sample.class).toString(),not(equalTo(describe(Child.class).toString())));
+}

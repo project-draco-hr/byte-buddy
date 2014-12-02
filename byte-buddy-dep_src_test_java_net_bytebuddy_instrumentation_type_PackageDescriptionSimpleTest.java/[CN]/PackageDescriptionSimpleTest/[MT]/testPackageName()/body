@@ -1,0 +1,3 @@
+{
+  assertThat(new PackageDescription.Simple(FOO).getName(),is(FOO));
+}

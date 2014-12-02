@@ -1,0 +1,4 @@
+{
+  assertThat(describe(Child.class).getName(),is(Child.class.getPackage().getName()));
+  assertThat(describe(Child.class).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(new PackageDescription.Simple(FOO).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
+}
