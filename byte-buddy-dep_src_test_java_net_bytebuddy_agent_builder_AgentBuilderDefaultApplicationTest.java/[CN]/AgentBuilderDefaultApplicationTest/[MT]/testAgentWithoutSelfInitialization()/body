@@ -1,5 +1,5 @@
 {
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().disableSelfInitialization().rebase(isAnnotatedWith(ShouldRebase.class)).transform(new FooTransformer()).registerWithByteBuddyAgent();
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().disableSelfInitialization().rebase(isAnnotatedWith(ShouldRebase.class)).transform(new FooTransformer()).installOnByteBuddyAgent();
   try {
     assertThat(new Foo().foo(),is(BAR));
   }

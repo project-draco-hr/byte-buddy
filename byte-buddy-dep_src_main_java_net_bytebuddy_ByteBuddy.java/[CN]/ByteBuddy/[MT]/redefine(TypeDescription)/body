@@ -1,3 +1,0 @@
-{
-  return redefine(levelType,ClassFileLocator.ForClassLoader.ofClassPath());
-}
