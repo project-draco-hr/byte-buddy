@@ -1,0 +1,5 @@
+{
+  ObjectPropertyAssertion.of(TypePool.Resolution.Simple.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Resolution.Illegal.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.ArrayTypeResolution.class).apply();
+}

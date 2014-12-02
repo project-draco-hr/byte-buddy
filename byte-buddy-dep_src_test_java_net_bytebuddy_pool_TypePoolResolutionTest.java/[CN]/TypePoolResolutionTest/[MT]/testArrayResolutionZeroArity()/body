@@ -1,0 +1,4 @@
+{
+  TypePool.Resolution resolution=mock(TypePool.Resolution.class);
+  assertThat(TypePool.Default.ArrayTypeResolution.of(resolution,0),is(resolution));
+}

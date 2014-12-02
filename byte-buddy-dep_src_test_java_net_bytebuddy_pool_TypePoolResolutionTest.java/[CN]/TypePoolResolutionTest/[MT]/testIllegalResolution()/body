@@ -1,0 +1,5 @@
+{
+  assertThat(new TypePool.Resolution.Illegal(FOO).isResolved(),is(false));
+  new TypePool.Resolution.Illegal(FOO).resolve();
+  fail();
+}

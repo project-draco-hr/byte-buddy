@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  assertThat(new TypePool.Resolution.Simple(typeDescription).isResolved(),is(true));
+  assertThat(new TypePool.Resolution.Simple(typeDescription).resolve(),is(typeDescription));
+}
