@@ -1,6 +1,6 @@
 {
   if (isChild(classLoader) && typeName.equals(redefinedType.getName())) {
-    this.classFile=classFile;
+    this.binaryRepresentation=classFile;
   }
   return DO_NOT_TRANSFORM;
 }
