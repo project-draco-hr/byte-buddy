@@ -1,0 +1,9 @@
+{
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().rebase(isAnnotatedWith(ShouldRebase.class)).transform(new QuxTransformer()).registerWithByteBuddyAgent();
+  try {
+    assertThat(new Qux().foo(),is(FOO + BAR));
+  }
+  finally {
+    ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);
+  }
+}
