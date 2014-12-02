@@ -1,8 +1,8 @@
 {
-  when(binaryRepresentation.isValid()).thenReturn(true);
+  when(resolution.isResolved()).thenReturn(true);
   InputStream inputStream=getClass().getClassLoader().getResourceAsStream(Foo.class.getName().replace('.','/') + ".class");
   try {
-    when(binaryRepresentation.getData()).thenReturn(new StreamDrainer().drain(inputStream));
+    when(resolution.resolve()).thenReturn(new StreamDrainer().drain(inputStream));
   }
   finally {
     inputStream.close();

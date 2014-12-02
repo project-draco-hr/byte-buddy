@@ -1,3 +1,0 @@
-{
-  return isArrayAssignable(this,typeDescription);
-}

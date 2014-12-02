@@ -1,0 +1,17 @@
+{
+  try {
+    ExtractionClassFileTransformer classFileTransformer=new ExtractionClassFileTransformer(classLoader,typeName);
+    try {
+      instrumentation.addTransformer(classFileTransformer,true);
+      instrumentation.retransformClasses(classLoader.loadClass(typeName));
+      byte[] binaryRepresentation=classFileTransformer.getClassFile();
+      return binaryRepresentation == null ? Resolution.Illegal.INSTANCE : new Resolution.Explicit(binaryRepresentation);
+    }
+  finally {
+      instrumentation.removeTransformer(classFileTransformer);
+    }
+  }
+ catch (  Exception ignored) {
+    return null;
+  }
+}

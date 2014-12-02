@@ -1,3 +1,0 @@
-{
-  assertThat(new TypeDescription.BinaryRepresentation.Explicit(DATA).isValid(),is(true));
-}

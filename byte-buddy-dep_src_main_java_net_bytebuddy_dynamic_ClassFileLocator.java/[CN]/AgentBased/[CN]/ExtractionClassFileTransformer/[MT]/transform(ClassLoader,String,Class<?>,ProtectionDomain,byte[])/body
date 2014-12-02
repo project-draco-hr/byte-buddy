@@ -1,0 +1,6 @@
+{
+  if (isChild(classLoader) && typeName.equals(redefinedType.getName())) {
+    this.classFile=classFile;
+  }
+  return DO_NOT_TRANSFORM;
+}

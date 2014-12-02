@@ -1,0 +1,14 @@
+{
+  InputStream inputStream=classLoader.getResourceAsStream(typeName.replace('.','/') + CLASS_FILE_EXTENSION);
+  if (inputStream != null) {
+    try {
+      return new Resolution.Explicit(new StreamDrainer().drain(inputStream));
+    }
+  finally {
+      inputStream.close();
+    }
+  }
+ else {
+    return Resolution.Illegal.INSTANCE;
+  }
+}

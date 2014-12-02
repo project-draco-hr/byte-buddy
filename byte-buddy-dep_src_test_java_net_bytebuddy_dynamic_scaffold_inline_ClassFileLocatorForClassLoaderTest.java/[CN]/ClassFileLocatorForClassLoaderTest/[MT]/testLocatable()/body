@@ -1,9 +1,0 @@
-{
-  ByteArrayInputStream inputStream=new ByteArrayInputStream(new byte[]{1,2,3});
-  when(classLoader.getResourceAsStream(FOOBAR + ".class")).thenReturn(inputStream);
-  TypeDescription.BinaryRepresentation binaryRepresentation=new ClassFileLocator.ForClassLoader(classLoader).classFileFor(FOOBAR);
-  assertThat(binaryRepresentation.isValid(),is(true));
-  assertThat(binaryRepresentation.getData(),is(new byte[]{1,2,3}));
-  verify(classLoader).getResourceAsStream(FOOBAR + ".class");
-  verifyNoMoreInteractions(classLoader);
-}

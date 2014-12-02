@@ -1,5 +1,0 @@
-{
-  int simpleNameIndex=getInternalName().lastIndexOf('$');
-  simpleNameIndex=simpleNameIndex == -1 ? getInternalName().lastIndexOf('/') : simpleNameIndex;
-  return simpleNameIndex == -1 ? getInternalName() : getInternalName().substring(simpleNameIndex + 1);
-}

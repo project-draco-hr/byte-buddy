@@ -1,0 +1,7 @@
+{
+  when(classFileLocator.locate(FOO)).thenReturn(legal);
+  assertThat(new ClassFileLocator.Compound(classFileLocator,otherClassFileLocator).locate(FOO),is(legal));
+  verify(classFileLocator).locate(FOO);
+  verifyNoMoreInteractions(classFileLocator);
+  verifyZeroInteractions(otherClassFileLocator);
+}

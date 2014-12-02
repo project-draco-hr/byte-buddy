@@ -1,3 +1,0 @@
-{
-  return new TypeList.ForLoadedType(Cloneable.class,Serializable.class);
-}

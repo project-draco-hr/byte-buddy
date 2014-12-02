@@ -1,0 +1,6 @@
+{
+  ClassFileLocator classFileLocator=ClassFileLocator.AgentBased.fromInstalledAgent(getClass().getClassLoader());
+  ClassFileLocator.Resolution resolution=classFileLocator.locate(Foo.class.getName());
+  assertThat(resolution.isResolved(),is(true));
+  assertThat(resolution.resolve(),notNullValue(byte[].class));
+}

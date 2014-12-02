@@ -1,0 +1,11 @@
+{
+  ClassFileLocator.Resolution resolution=ClassFileLocator.Resolution.Explicit.of(Foo.class);
+  assertThat(resolution.isResolved(),is(true));
+  InputStream inputStream=getClass().getClassLoader().getResourceAsStream(Foo.class.getName().replace('.','/') + ".class");
+  try {
+    assertThat(resolution.resolve(),is(new StreamDrainer().drain(inputStream)));
+  }
+  finally {
+    inputStream.close();
+  }
+}

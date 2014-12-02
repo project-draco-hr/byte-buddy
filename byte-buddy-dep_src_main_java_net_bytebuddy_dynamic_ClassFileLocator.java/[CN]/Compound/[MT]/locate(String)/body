@@ -1,0 +1,9 @@
+{
+  for (  ClassFileLocator classFileLocator : this.classFileLocator) {
+    Resolution resolution=classFileLocator.locate(typeName);
+    if (resolution.isResolved()) {
+      return resolution;
+    }
+  }
+  return null;
+}

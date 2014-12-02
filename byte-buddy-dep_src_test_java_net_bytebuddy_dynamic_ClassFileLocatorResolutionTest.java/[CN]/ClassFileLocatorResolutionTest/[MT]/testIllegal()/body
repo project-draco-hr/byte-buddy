@@ -1,0 +1,3 @@
+{
+  MatcherAssert.assertThat(ClassFileLocator.Resolution.Illegal.INSTANCE.isResolved(),is(false));
+}

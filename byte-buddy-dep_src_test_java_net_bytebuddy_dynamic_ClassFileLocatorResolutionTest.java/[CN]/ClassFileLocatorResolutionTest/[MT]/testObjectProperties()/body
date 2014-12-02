@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(ClassFileLocator.Resolution.Explicit.class).apply();
+}

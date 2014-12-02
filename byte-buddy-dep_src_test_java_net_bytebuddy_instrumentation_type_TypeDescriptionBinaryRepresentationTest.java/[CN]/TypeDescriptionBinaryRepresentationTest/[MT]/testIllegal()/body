@@ -1,3 +1,0 @@
-{
-  assertThat(TypeDescription.BinaryRepresentation.Illegal.INSTANCE.isValid(),is(false));
-}

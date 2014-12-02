@@ -1,7 +1,0 @@
-{
-  when(classFileLocator.classFileFor(FOO)).thenReturn(legal);
-  assertThat(new ClassFileLocator.Compound(classFileLocator,otherClassFileLocator).classFileFor(FOO),is(legal));
-  verify(classFileLocator).classFileFor(FOO);
-  verifyNoMoreInteractions(classFileLocator);
-  verifyZeroInteractions(otherClassFileLocator);
-}
