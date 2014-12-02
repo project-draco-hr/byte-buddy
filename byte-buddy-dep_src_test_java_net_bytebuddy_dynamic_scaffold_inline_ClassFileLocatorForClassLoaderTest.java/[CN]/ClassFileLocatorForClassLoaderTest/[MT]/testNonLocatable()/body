@@ -1,5 +1,5 @@
 {
-  TypeDescription.BinaryRepresentation binaryRepresentation=new ClassFileLocator.ForClassLoader(classLoader).classFileFor(typeDescription);
+  TypeDescription.BinaryRepresentation binaryRepresentation=new ClassFileLocator.ForClassLoader(classLoader).classFileFor(FOOBAR);
   assertThat(binaryRepresentation.isValid(),is(false));
   verify(classLoader).getResourceAsStream(FOOBAR + ".class");
   verifyNoMoreInteractions(classLoader);

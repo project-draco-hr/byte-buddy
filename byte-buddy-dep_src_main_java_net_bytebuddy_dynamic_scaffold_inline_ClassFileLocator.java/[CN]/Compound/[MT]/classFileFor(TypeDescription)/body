@@ -1,9 +1,0 @@
-{
-  for (  ClassFileLocator classFileLocator : this.classFileLocator) {
-    TypeDescription.BinaryRepresentation binaryRepresentation=classFileLocator.classFileFor(typeDescription);
-    if (binaryRepresentation.isValid()) {
-      return binaryRepresentation;
-    }
-  }
-  return null;
-}

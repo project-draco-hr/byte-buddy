@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypePool.SourceLocator.ForClassLoader.class).apply();
-}

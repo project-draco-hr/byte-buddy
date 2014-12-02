@@ -1,7 +1,0 @@
-{
-  TypeDescription typeDescription=mock(TypeDescription.class);
-  TypeDescription.BinaryRepresentation binaryRepresentation=mock(TypeDescription.BinaryRepresentation.class);
-  when(typeDescription.toBinary()).thenReturn(binaryRepresentation);
-  when(typeDescription.getInternalName()).thenReturn(getClass().getName().replace('.','/'));
-  assertThat(ClassFileLocator.Default.ATTACHED.classFileFor(typeDescription),notNullValue());
-}

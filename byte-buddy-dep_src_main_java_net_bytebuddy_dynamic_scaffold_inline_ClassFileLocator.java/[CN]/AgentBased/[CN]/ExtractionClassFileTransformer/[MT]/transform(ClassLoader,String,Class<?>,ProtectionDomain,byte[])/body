@@ -1,6 +1,0 @@
-{
-  if (isChild(classLoader) && typeDescription.represents(redefinedType)) {
-    this.classFile=classFile;
-  }
-  return DO_NOT_TRANSFORM;
-}

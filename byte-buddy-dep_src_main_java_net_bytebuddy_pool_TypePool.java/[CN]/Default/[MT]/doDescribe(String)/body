@@ -1,4 +1,9 @@
 {
-  TypeDescription.BinaryRepresentation binaryRepresentation=sourceLocator.locate(name);
-  return binaryRepresentation.isValid() ? new Resolution.Simple(parse(binaryRepresentation.getData())) : new Resolution.Illegal(name);
+  try {
+    TypeDescription.BinaryRepresentation binaryRepresentation=classFileLocator.classFileFor(name);
+    return binaryRepresentation.isValid() ? new Resolution.Simple(parse(binaryRepresentation.getData())) : new Resolution.Illegal(name);
+  }
+ catch (  IOException e) {
+    throw new IllegalStateException("Error while reading class file",e);
+  }
 }

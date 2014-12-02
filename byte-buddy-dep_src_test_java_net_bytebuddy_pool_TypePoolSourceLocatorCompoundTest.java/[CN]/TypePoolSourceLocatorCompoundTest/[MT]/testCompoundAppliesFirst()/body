@@ -1,7 +1,0 @@
-{
-  TypePool.SourceLocator sourceLocator=new TypePool.SourceLocator.Compound(first,second);
-  assertThat(sourceLocator.locate(FOO).isValid(),is(true));
-  verify(first).locate(FOO);
-  verifyNoMoreInteractions(first);
-  verifyZeroInteractions(second);
-}

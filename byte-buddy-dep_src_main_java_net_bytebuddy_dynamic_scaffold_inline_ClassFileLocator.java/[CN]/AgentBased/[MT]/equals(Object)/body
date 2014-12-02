@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && classLoader.equals(((AgentBased)other).classLoader) && instrumentation.equals(((AgentBased)other).instrumentation);
-}

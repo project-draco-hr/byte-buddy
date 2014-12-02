@@ -1,3 +1,0 @@
-{
-  assertThat(TypePool.SourceLocator.ForClassLoader.ofSystemClassLoader().locate(FOO).isValid(),is(false));
-}

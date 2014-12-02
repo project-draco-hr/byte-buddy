@@ -1,3 +1,0 @@
-{
-  return new Compound(Default.ATTACHED,Default.CLASS_PATH);
-}
