@@ -17,7 +17,7 @@
   finally {
       zipOutputStream.close();
     }
-    ClassLoader dexClassLoader=new DexClassLoader(zipFile.getAbsolutePath(),privateDirectory.getAbsolutePath(),EMPTY_LIBRARY_PATH,classLoader);
+    ClassLoader dexClassLoader=dexProcessor.makeClassLoader(zipFile,privateDirectory,classLoader);
     Map<TypeDescription,Class<?>> loadedTypes=new HashMap<TypeDescription,Class<?>>(types.size());
     for (    TypeDescription typeDescription : types.keySet()) {
       try {

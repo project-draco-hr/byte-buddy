@@ -1,0 +1,3 @@
+{
+  return new DexClassLoader(zipFile.getAbsolutePath(),privateDirectory.getAbsolutePath(),EMPTY_LIBRARY_PATH,parentClassLoader);
+}

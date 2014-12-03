@@ -1,6 +1,0 @@
-{
-  super(parent);
-  assertThat(new File(dexPath).isFile(),is(true));
-  assertThat(new File(optimizedDirectory).isDirectory(),is(true));
-  assertThat(libraryPath,nullValue());
-}
