@@ -1,8 +1,8 @@
 {
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default().disableSelfInitialization().withNativeMethodPrefix(QUX).rebase(isAnnotatedWith(ShouldRebase.class)).transform(new FooTransformer()).installOnByteBuddyAgent();
   try {
-    assertThat(new Foo().foo(),is(BAR));
-    assertThat(Foo.class.getDeclaredMethod(QUX + FOO),notNullValue(Method.class));
+    assertThat(new Baz().foo(),is(BAR));
+    assertThat(Baz.class.getDeclaredMethod(QUX + FOO),notNullValue(Method.class));
   }
   finally {
     ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);
