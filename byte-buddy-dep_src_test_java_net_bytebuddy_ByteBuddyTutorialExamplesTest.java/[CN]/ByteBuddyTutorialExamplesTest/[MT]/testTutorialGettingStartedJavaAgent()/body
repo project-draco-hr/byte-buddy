@@ -1,0 +1,8 @@
+{
+  new AgentBuilder.Default().rebase(isAnnotatedWith(Rebase.class)).transform(new AgentBuilder.Transformer(){
+    @Override public DynamicType.Builder<?> transform(    DynamicType.Builder<?> builder){
+      return builder.method(named("toString")).intercept(FixedValue.value("transformed"));
+    }
+  }
+).installOn(mock(java.lang.instrument.Instrumentation.class));
+}
