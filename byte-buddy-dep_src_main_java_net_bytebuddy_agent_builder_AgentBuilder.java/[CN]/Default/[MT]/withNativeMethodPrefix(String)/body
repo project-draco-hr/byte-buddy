@@ -1,0 +1,6 @@
+{
+  if (nonNull(prefix).length() == 0) {
+    throw new IllegalArgumentException("The empty string is not a legal value for a native method prefix");
+  }
+  return new Default(byteBuddy,binaryLocator,listener,prefix,disableSelfInitialization,retransformation,entries);
+}

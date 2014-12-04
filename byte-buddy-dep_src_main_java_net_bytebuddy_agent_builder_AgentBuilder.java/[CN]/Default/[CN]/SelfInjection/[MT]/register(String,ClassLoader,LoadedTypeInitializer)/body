@@ -1,0 +1,5 @@
+{
+  if (loadedTypeInitializer.isAlive()) {
+    accessor.register(name,classLoader,loadedTypeInitializer);
+  }
+}

@@ -1,0 +1,4 @@
+{
+  name=type.getName();
+  classLoader=type.getClassLoader();
+}

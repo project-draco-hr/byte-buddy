@@ -1,0 +1,32 @@
+{
+  String binaryTypeName=internalTypeName.replace('/','.');
+  try {
+    BinaryLocator.Initialized initialized=binaryLocator.initialize(binaryTypeName,binaryRepresentation,classLoader);
+    TypeDescription typeDescription=initialized.getTypePool().describe(binaryTypeName).resolve();
+    for (    Transformation transformation : entries) {
+      if (transformation.matches(typeDescription,classLoader,classBeingRedefined,protectionDomain)) {
+        DynamicType.Unloaded<?> dynamicType=initializationStrategy.apply(transformation.transform(byteBuddy.rebase(typeDescription,initialized.getClassFileLocator(),methodNameTransformer))).make();
+        Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=dynamicType.getLoadedTypeInitializers();
+        if (loadedTypeInitializers.size() > 1) {
+          ClassLoaderByteArrayInjector injector=new ClassLoaderByteArrayInjector(classLoader,protectionDomain);
+          for (          Map.Entry<TypeDescription,byte[]> auxiliary : dynamicType.getRawAuxiliaryTypes().entrySet()) {
+            Class<?> type=injector.inject(auxiliary.getKey().getName(),auxiliary.getValue());
+            initializationStrategy.initialize(type,loadedTypeInitializers.get(auxiliary.getKey()));
+          }
+        }
+        initializationStrategy.register(binaryTypeName,classLoader,loadedTypeInitializers.get(dynamicType.getTypeDescription()));
+        listener.onTransformation(dynamicType);
+        return dynamicType.getBytes();
+      }
+    }
+    listener.onIgnored(binaryTypeName);
+    return NO_TRANSFORMATION;
+  }
+ catch (  Throwable throwable) {
+    listener.onError(binaryTypeName,throwable);
+    return NO_TRANSFORMATION;
+  }
+ finally {
+    listener.onComplete(binaryTypeName);
+  }
+}

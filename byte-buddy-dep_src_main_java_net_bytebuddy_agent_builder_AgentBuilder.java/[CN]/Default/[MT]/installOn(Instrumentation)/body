@@ -1,0 +1,8 @@
+{
+  ClassFileTransformer classFileTransformer=makeRaw();
+  instrumentation.addTransformer(classFileTransformer,retransformation);
+  if (!NO_NATIVE_PREFIX.equals(nonNull(nativeMethodPrefix))) {
+    instrumentation.setNativeMethodPrefix(classFileTransformer,nativeMethodPrefix);
+  }
+  return classFileTransformer;
+}

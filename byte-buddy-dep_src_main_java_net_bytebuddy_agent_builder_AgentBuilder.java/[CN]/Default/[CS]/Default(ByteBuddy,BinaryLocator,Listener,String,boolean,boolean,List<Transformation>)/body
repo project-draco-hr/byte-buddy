@@ -1,0 +1,9 @@
+{
+  this.byteBuddy=byteBuddy;
+  this.binaryLocator=binaryLocator;
+  this.listener=listener;
+  this.nativeMethodPrefix=nativeMethodPrefix;
+  this.disableSelfInitialization=disableSelfInitialization;
+  this.retransformation=retransformation;
+  this.entries=entries;
+}

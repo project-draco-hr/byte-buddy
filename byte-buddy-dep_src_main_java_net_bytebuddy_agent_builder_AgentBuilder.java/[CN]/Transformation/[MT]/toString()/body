@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Default.Transformation{" + "rawMatcher=" + rawMatcher + ", transformer="+ transformer+ '}';
+}

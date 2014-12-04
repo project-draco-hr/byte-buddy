@@ -1,0 +1,3 @@
+{
+  return new StackManipulation.Compound(MethodInvocation.invoke(systemClassLoader),new TextConstant(Nexus.class.getName()),MethodInvocation.invoke(loadClass),new TextConstant("initialize"),ArrayFactory.targeting(new TypeDescription.ForLoadedType(Class.class)).withValues(Collections.singletonList(ClassConstant.of(new TypeDescription.ForLoadedType(Class.class)))),MethodInvocation.invoke(getDeclaredMethod),NullConstant.INSTANCE,ArrayFactory.targeting(new TypeDescription.ForLoadedType(Object.class)).withValues(Collections.singletonList(ClassConstant.of(instrumentedType))),MethodInvocation.invoke(invokeMethod),Removal.SINGLE);
+}

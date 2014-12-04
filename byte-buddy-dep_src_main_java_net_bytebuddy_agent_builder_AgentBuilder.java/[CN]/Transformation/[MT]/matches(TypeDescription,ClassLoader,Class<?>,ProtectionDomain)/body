@@ -1,0 +1,3 @@
+{
+  return rawMatcher.matches(typeDescription,classLoader,classBeingRedefined,protectionDomain);
+}

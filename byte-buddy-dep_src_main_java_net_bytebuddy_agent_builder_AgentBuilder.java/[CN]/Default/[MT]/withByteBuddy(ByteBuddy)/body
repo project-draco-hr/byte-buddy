@@ -1,0 +1,3 @@
+{
+  return new Default(nonNull(byteBuddy),binaryLocator,listener,nativeMethodPrefix,disableSelfInitialization,retransformation,entries);
+}

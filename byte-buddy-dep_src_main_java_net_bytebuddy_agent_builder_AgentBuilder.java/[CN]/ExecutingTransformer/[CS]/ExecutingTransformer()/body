@@ -1,0 +1,4 @@
+{
+  methodNameTransformer=NO_NATIVE_PREFIX.equals(nativeMethodPrefix) ? new MethodRebaseResolver.MethodNameTransformer.Suffixing() : new MethodRebaseResolver.MethodNameTransformer.Prefixing(nativeMethodPrefix);
+  initializationStrategy=disableSelfInitialization ? InitializationStrategy.NoOp.INSTANCE : new InitializationStrategy.SelfInjection();
+}

@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Default.ExecutingTransformer{" + "agentBuilder=" + Default.this + ", methodNameTransformer="+ methodNameTransformer+ ", initializationStrategy="+ initializationStrategy+ '}';
+}

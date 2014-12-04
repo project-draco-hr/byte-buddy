@@ -1,0 +1,15 @@
+{
+  try {
+    ClassLoader classLoader=ClassLoader.getSystemClassLoader();
+    ClassLoaderByteArrayInjector injector=new ClassLoaderByteArrayInjector(classLoader);
+    Class<?> nexus=injector.inject(Nexus.class.getName(),new StreamDrainer().drain(classLoader.getResourceAsStream(Nexus.class.getName().replace('.','/') + ".class")));
+    registration=nexus.getDeclaredMethod("register",String.class,ClassLoader.class,Object.class);
+    systemClassLoader=new TypeDescription.ForLoadedType(ClassLoader.class).getDeclaredMethods().filter(named("getSystemClassLoader")).getOnly();
+    loadClass=new TypeDescription.ForLoadedType(ClassLoader.class).getDeclaredMethods().filter(named("loadClass").and(takesArguments(String.class))).getOnly();
+    getDeclaredMethod=new TypeDescription.ForLoadedType(Class.class).getDeclaredMethods().filter(named("getDeclaredMethod").and(takesArguments(String.class,Class[].class))).getOnly();
+    invokeMethod=new TypeDescription.ForLoadedType(Method.class).getDeclaredMethods().filter(named("invoke").and(takesArguments(Object.class,Object[].class))).getOnly();
+  }
+ catch (  Exception e) {
+    throw new IllegalStateException("Cannot create type initialization accessor",e);
+  }
+}

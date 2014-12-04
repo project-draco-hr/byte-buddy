@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Default{" + "byteBuddy=" + byteBuddy + ", binaryLocator="+ binaryLocator+ ", listener="+ listener+ ", nativeMethodPrefix="+ nativeMethodPrefix+ ", disableSelfInitialization="+ disableSelfInitialization+ ", retransformation="+ retransformation+ ", entries="+ entries+ '}';
+}
