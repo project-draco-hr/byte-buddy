@@ -3,6 +3,6 @@
   if (!superMethodCall.isValid()) {
     throw new IllegalArgumentException("Cannot call super method of " + instrumentedMethod);
   }
-  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisReferenceAndArguments(instrumentedMethod),superMethodCall,MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisReferenceAndArguments(instrumentedMethod),superMethodCall,terminationHandler.of(instrumentedMethod)).apply(methodVisitor,instrumentationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }

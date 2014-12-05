@@ -1,0 +1,6 @@
+{
+  DynamicType.Loaded<Foo> loaded=instrument(Foo.class,SuperMethodCall.INSTANCE.andThen(new Instrumentation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)));
+  Foo foo=loaded.getLoaded().newInstance();
+  assertThat(foo.foo(),is(FOO));
+  foo.assertOnlyCall(FOO);
+}

@@ -1,0 +1,3 @@
+{
+  return Removal.pop(methodDescription.getReturnType());
+}
