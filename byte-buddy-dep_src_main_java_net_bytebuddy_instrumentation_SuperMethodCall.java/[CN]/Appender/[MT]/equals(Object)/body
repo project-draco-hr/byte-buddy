@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && instrumentationTarget.equals(((Appender)other).instrumentationTarget);
+  return this == other || !(other == null || getClass() != other.getClass()) && instrumentationTarget.equals(((Appender)other).instrumentationTarget) && terminationHandler.equals(((Appender)other).terminationHandler);
 }
