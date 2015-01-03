@@ -1,0 +1,4 @@
+{
+  assertThat(ElementMatchers.notBootstrap().matches(mock(ClassLoader.class)),is(true));
+  assertThat(ElementMatchers.notBootstrap().matches(null),is(false));
+}
