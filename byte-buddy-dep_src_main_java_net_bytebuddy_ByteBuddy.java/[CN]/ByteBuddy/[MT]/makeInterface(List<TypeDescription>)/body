@@ -1,0 +1,3 @@
+{
+  return new SubclassDynamicTypeBuilder<Object>(classFileVersion,namingStrategy.subclass(new TypeDescription.ForLoadedType(Object.class)),new TypeDescription.ForLoadedType(Object.class),join(interfaceTypes,nonNull(typeDescriptions)),modifiers.resolve(Opcodes.ACC_INTERFACE | Opcodes.ACC_ABSTRACT | Opcodes.ACC_PUBLIC),typeAttributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,ConstructorStrategy.Default.NO_CONSTRUCTORS);
+}

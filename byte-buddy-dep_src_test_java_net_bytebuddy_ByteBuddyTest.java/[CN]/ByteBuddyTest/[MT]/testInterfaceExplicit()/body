@@ -1,0 +1,7 @@
+{
+  Class<?> type=new ByteBuddy().makeInterface().modifiers(TypeManifestation.INTERFACE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.isInterface(),is(true));
+  assertThat(type.getDeclaredMethods().length,is(0));
+  assertThat(type.getDeclaredFields().length,is(0));
+  assertThat(type.getInterfaces().length,is(0));
+}

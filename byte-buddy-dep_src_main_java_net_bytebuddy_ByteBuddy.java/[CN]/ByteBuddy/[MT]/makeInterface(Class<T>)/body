@@ -1,0 +1,3 @@
+{
+  return (DynamicType.Builder<T>)makeInterface(new TypeDescription.ForLoadedType(nonNull(type)));
+}
