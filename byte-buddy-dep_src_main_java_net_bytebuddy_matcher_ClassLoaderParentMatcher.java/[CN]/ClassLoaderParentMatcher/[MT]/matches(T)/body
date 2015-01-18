@@ -1,0 +1,10 @@
+{
+  ClassLoader current=classLoader;
+  while (current != null) {
+    if (current == target) {
+      return true;
+    }
+    current=current.getParent();
+  }
+  return target == null;
+}

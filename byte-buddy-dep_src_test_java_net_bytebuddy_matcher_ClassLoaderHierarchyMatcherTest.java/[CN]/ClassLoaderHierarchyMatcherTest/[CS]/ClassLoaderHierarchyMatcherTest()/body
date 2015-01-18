@@ -1,0 +1,3 @@
+{
+  super((Class<ClassLoaderHierarchyMatcher<?>>)(Object)ClassLoaderHierarchyMatcher.class,"hasChild");
+}

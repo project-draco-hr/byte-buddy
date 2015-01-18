@@ -1,0 +1,6 @@
+{
+  assertThat(new ClassLoaderHierarchyMatcher<ClassLoader>(classLoaderMatcher).matches(classLoader),is(false));
+  verify(classLoaderMatcher).matches(classLoader);
+  verify(classLoaderMatcher).matches(null);
+  verifyNoMoreInteractions(classLoaderMatcher);
+}

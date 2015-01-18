@@ -1,0 +1,3 @@
+{
+  return defineMethod(method.getName(),method.getReturnType(),Arrays.asList(method.getParameterTypes()),method.getModifiers());
+}

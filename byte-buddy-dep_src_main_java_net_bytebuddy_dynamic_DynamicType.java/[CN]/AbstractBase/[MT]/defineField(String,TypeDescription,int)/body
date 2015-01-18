@@ -1,0 +1,3 @@
+{
+  return new DefaultFieldValueTarget(new FieldToken(isValidIdentifier(name),nonVoid(fieldTypeDescription),modifiers),defaultFieldAttributeAppenderFactory);
+}

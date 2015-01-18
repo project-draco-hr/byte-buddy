@@ -1,0 +1,3 @@
+{
+  super((Class<ClassLoaderParentMatcher<?>>)(Object)ClassLoaderParentMatcher.class,"isParentOf");
+}

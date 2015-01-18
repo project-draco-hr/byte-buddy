@@ -1,0 +1,6 @@
+{
+  assertThat(ElementMatchers.isExtensionClassLoader().matches(ClassLoader.getSystemClassLoader().getParent()),is(true));
+  assertThat(ElementMatchers.isExtensionClassLoader().matches(ClassLoader.getSystemClassLoader()),is(false));
+  assertThat(ElementMatchers.isExtensionClassLoader().matches(null),is(false));
+  assertThat(ElementMatchers.isExtensionClassLoader().matches(mock(ClassLoader.class)),is(false));
+}

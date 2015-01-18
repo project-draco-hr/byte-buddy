@@ -1,0 +1,3 @@
+{
+  assertThat(new ClassLoaderParentMatcher<ClassLoader>(noChild).matches(parent),is(false));
+}

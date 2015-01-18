@@ -1,0 +1,5 @@
+{
+  parent=new URLClassLoader(new URL[0],null);
+  noChild=new URLClassLoader(new URL[0],null);
+  child=new URLClassLoader(new URL[0],parent);
+}

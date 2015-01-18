@@ -1,0 +1,8 @@
+{
+  ClassLoader parent=new URLClassLoader(new URL[0],null);
+  assertThat(ElementMatchers.isParentOf(new URLClassLoader(new URL[0],parent)).matches(parent),is(true));
+  assertThat(ElementMatchers.isParentOf(new URLClassLoader(new URL[0],null)).matches(parent),is(false));
+  assertThat(ElementMatchers.isParentOf(null).matches(new URLClassLoader(new URL[0],null)),is(false));
+  assertThat(ElementMatchers.isParentOf(null).matches(null),is(true));
+  assertThat(ElementMatchers.isParentOf(mock(ClassLoader.class)).matches(null),is(true));
+}
