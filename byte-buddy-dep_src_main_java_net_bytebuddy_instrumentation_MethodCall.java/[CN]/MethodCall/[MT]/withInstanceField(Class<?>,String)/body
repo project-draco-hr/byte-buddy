@@ -1,0 +1,3 @@
+{
+  return withInstanceField(new TypeDescription.ForLoadedType(nonNull(type)),name);
+}

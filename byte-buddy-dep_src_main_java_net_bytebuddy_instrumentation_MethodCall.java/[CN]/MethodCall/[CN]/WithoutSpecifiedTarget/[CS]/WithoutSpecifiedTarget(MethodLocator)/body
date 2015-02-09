@@ -1,0 +1,3 @@
+{
+  super(methodLocator,TargetHandler.ForSelfOrStaticInvocation.INSTANCE,Collections.<ArgumentLoader>emptyList(),MethodInvoker.ForStandardInvocation.INSTANCE,TerminationHandler.ForMethodReturn.INSTANCE,defaultAssigner(),defaultDynamicallyTyped());
+}

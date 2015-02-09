@@ -1,0 +1,3 @@
+{
+  instrument(InstanceMethod.class,MethodCall.invoke(String.class.getDeclaredMethod("toLowerCase")),InstanceMethod.class.getClassLoader(),named(FOO));
+}

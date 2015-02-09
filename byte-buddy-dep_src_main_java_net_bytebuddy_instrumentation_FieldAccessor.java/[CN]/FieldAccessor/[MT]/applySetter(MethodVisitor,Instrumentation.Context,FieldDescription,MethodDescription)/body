@@ -1,5 +1,5 @@
 {
-  StackManipulation stackManipulation=assigner.assign(methodDescription.getParameterTypes().get(0),fieldDescription.getFieldType(),considerRuntimeType);
+  StackManipulation stackManipulation=assigner.assign(methodDescription.getParameterTypes().get(0),fieldDescription.getFieldType(),dynamicallyTyped);
   if (!stackManipulation.isValid()) {
     throw new IllegalStateException("Setter type of " + methodDescription + " is not compatible with "+ fieldDescription);
   }

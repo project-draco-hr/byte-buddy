@@ -1,2 +1,2 @@
 Annotation[][] targetAnnotations
-boolean considerRuntimeType
+boolean dynamicallyTyped

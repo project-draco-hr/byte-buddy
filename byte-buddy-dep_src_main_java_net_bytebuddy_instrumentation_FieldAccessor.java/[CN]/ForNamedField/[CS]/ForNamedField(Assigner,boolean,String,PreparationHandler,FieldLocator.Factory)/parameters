@@ -1,5 +1,5 @@
 Assigner assigner
-boolean considerRuntimeType
+boolean dynamicallyTyped
 String fieldName
 PreparationHandler preparationHandler
 FieldLocator.Factory fieldLocatorFactory

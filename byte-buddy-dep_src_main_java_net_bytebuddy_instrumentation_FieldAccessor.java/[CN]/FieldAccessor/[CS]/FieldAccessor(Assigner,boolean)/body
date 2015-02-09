@@ -1,4 +1,4 @@
 {
   this.assigner=assigner;
-  this.considerRuntimeType=considerRuntimeType;
+  this.dynamicallyTyped=dynamicallyTyped;
 }

@@ -1,5 +1,5 @@
 {
-  if (!instrumentedMethod.getDeclaringType().isAssignableFrom(fieldType)) {
+  if (!instrumentedMethod.isInvokableOn(fieldType)) {
     throw new IllegalArgumentException("Cannot forward " + instrumentedMethod + " to "+ fieldType);
   }
  else   if (instrumentedMethod.isStatic()) {

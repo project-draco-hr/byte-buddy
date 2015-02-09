@@ -1,0 +1,20 @@
+{
+  ObjectPropertyAssertion.of(MethodCall.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.WithoutSpecifiedTarget.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.Appender.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.MethodLocator.ForExplicitMethod.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.TargetHandler.ForStaticField.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.TargetHandler.ForInstanceField.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForBooleanConstant.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForByteConstant.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForCharacterConstant.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForDoubleConstant.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForStaticFieldValue.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForInstanceFieldValue.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForFloatConstant.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForIntegerConstant.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForLongConstant.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForMethodParameter.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForShortConstant.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForTextConstant.class).apply();
+}

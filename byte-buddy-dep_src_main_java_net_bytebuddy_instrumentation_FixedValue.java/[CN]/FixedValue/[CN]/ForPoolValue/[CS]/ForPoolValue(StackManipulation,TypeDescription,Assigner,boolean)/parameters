@@ -1,4 +1,4 @@
 StackManipulation valueLoadInstruction
 TypeDescription loadedType
 Assigner assigner
-boolean considerRuntimeType
+boolean dynamicallyTyped

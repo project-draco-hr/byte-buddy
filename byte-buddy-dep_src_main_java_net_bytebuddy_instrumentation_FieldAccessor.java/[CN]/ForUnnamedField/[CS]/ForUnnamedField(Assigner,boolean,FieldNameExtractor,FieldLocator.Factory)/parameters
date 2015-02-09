@@ -1,4 +1,4 @@
 Assigner assigner
-boolean considerRuntimeType
+boolean dynamicallyTyped
 FieldNameExtractor fieldNameExtractor
 FieldLocator.Factory fieldLocatorFactory

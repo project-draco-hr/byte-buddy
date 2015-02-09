@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=new StackManipulation.Compound(IntegerConstant.forValue(value),assigner.assign(new TypeDescription.ForLoadedType(char.class),targetType,dynamicallyTyped));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign char value to " + targetType);
+  }
+  return stackManipulation;
+}

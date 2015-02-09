@@ -1,0 +1,10 @@
+{
+  DynamicType.Loaded<StaticMethod> loaded=instrument(StaticMethod.class,MethodCall.invoke(StaticMethod.class.getDeclaredMethod(BAR)),StaticMethod.class.getClassLoader(),named(FOO));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
+  StaticMethod instance=loaded.getLoaded().newInstance();
+  assertThat(instance.foo(),is(BAR));
+  assertNotEquals(StaticMethod.class,instance.getClass());
+  assertThat(instance,instanceOf(StaticMethod.class));
+}

@@ -1,0 +1,3 @@
+{
+  return invoke(new MethodDescription.ForLoadedMethod(nonNull(method)));
+}

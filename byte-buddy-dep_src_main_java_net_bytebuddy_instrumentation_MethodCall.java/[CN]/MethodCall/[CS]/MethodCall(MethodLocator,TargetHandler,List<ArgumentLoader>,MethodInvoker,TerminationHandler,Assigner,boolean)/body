@@ -1,0 +1,9 @@
+{
+  this.methodLocator=methodLocator;
+  this.targetHandler=targetHandler;
+  this.argumentLoaders=argumentLoaders;
+  this.methodInvoker=methodInvoker;
+  this.terminationHandler=terminationHandler;
+  this.assigner=assigner;
+  this.dynamicallyTyped=dynamicallyTyped;
+}

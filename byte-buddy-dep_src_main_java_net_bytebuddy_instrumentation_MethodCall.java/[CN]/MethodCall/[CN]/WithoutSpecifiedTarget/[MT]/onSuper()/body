@@ -1,0 +1,3 @@
+{
+  return new MethodCall(methodLocator,TargetHandler.ForSelfOrStaticInvocation.INSTANCE,argumentLoaders,MethodInvoker.ForSuperMethodInvocation.INSTANCE,TerminationHandler.ForMethodReturn.INSTANCE,assigner,dynamicallyTyped);
+}

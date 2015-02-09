@@ -1,0 +1,3 @@
+{
+  return "MethodCall.ArgumentLoader.ForFloatConstant{value=" + value + '}';
+}

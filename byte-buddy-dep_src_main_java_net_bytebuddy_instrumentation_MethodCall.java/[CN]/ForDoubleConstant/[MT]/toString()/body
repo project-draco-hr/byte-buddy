@@ -1,0 +1,3 @@
+{
+  return "MethodCall.ArgumentLoader.ForDoubleConstant{value=" + value + '}';
+}

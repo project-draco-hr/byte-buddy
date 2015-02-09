@@ -1,0 +1,3 @@
+{
+  return construct(new MethodDescription.ForLoadedConstructor(nonNull(constructor)));
+}

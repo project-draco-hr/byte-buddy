@@ -1,0 +1,3 @@
+{
+  return new MethodCall(methodLocator,targetHandler,join(argumentLoaders,new ArgumentLoader.ForInstanceFieldValue(nonNull(typeDescription),nonNull(name))),methodInvoker,terminationHandler,assigner,dynamicallyTyped);
+}

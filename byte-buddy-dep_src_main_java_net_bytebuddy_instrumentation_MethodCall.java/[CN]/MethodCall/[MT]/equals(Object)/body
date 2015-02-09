@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (!(other instanceof MethodCall))   return false;
+  MethodCall that=(MethodCall)other;
+  return dynamicallyTyped == that.dynamicallyTyped && argumentLoaders.equals(that.argumentLoaders) && assigner.equals(that.assigner) && methodInvoker.equals(that.methodInvoker) && methodLocator.equals(that.methodLocator) && targetHandler.equals(that.targetHandler) && terminationHandler.equals(that.terminationHandler);
+}
