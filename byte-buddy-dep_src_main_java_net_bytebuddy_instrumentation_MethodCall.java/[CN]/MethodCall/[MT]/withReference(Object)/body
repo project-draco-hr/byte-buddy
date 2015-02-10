@@ -1,7 +1,7 @@
 {
   List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(argument.length);
   for (  Object anArgument : argument) {
-    argumentLoaders.add(anArgument == null ? ArgumentLoader.ForNullConstant.INSTANCE : new ArgumentLoader.ForStaticFieldValue(anArgument));
+    argumentLoaders.add(anArgument == null ? ArgumentLoader.ForNullConstant.INSTANCE : new ArgumentLoader.ForStaticField(anArgument));
   }
   return new MethodCall(methodLocator,targetHandler,join(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,dynamicallyTyped);
 }

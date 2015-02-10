@@ -1,0 +1,7 @@
+{
+  List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(fieldName.length);
+  for (  String aFieldName : fieldName) {
+    argumentLoaders.add(new ArgumentLoader.ForExistingField(aFieldName));
+  }
+  return new MethodCall(methodLocator,targetHandler,join(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,dynamicallyTyped);
+}

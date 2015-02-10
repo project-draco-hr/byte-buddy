@@ -9,8 +9,9 @@
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForByteConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForCharacterConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForDoubleConstant.class).apply();
-  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForStaticFieldValue.class).apply();
-  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForInstanceFieldValue.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForStaticField.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForInstanceField.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForExistingField.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForFloatConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForIntegerConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForLongConstant.class).apply();

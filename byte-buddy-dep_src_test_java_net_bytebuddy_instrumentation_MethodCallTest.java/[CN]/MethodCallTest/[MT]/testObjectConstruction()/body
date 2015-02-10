@@ -1,0 +1,13 @@
+{
+  DynamicType.Loaded<SelfReference> loaded=instrument(SelfReference.class,MethodCall.construct(SelfReference.class.getDeclaredConstructor()));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
+  SelfReference instance=loaded.getLoaded().newInstance();
+  SelfReference created=instance.foo();
+  assertEquals(SelfReference.class,created.getClass());
+  assertNotEquals(SelfReference.class,instance.getClass());
+  assertThat(instance,instanceOf(SelfReference.class));
+  assertThat(created,not(instance));
+}
