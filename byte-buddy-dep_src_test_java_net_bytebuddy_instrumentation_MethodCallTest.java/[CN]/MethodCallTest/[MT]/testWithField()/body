@@ -1,0 +1,13 @@
+{
+  DynamicType.Loaded<MethodCallWithField> loaded=instrument(MethodCallWithField.class,MethodCall.invokeSuper().withField(FOO));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredMethod(FOO,String.class),not(nullValue(Method.class)));
+  assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
+  MethodCallWithField instance=loaded.getLoaded().newInstance();
+  instance.foo=FOO;
+  assertNotEquals(MethodCallWithField.class,instance.getClass());
+  assertThat(instance,instanceOf(MethodCallWithField.class));
+  assertThat(instance.foo(BAR),is(FOO));
+}

@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{BOOLEAN_VALUE,true,false},{BYTE_VALUE,true,false},{SHORT_VALUE,true,false},{CHAR_VALUE,true,false},{INT_VALUE,true,false},{LONG_VALUE,true,false},{FLOAT_VALUE,true,false},{DOUBLE_VALUE,true,false},{NULL_CONSTANT,false,false},{STRING_VALUE,true,false},{REFERENCE_VALUE,true,true}});
+}

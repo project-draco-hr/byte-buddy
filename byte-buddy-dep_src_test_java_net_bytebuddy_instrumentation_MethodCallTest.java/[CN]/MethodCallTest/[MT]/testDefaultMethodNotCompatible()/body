@@ -1,0 +1,3 @@
+{
+  instrument(Object.class,MethodCall.invoke(String.class.getDeclaredMethod("toString")).onDefault());
+}

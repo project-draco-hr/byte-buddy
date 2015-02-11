@@ -1,0 +1,3 @@
+{
+  instrument(MethodCallWithField.class,MethodCall.invokeSuper().withField(FOO).withAssigner(nonAssigner,false));
+}
