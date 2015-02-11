@@ -1,0 +1,3 @@
+{
+  MethodCall.construct(mock(MethodDescription.class));
+}

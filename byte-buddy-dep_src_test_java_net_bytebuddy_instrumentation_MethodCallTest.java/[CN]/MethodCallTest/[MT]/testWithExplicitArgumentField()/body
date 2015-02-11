@@ -1,0 +1,12 @@
+{
+  DynamicType.Loaded<MethodCallWithExplicitArgument> loaded=instrument(MethodCallWithExplicitArgument.class,MethodCall.invokeSuper().withReference(FOO));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredMethod(FOO,String.class),not(nullValue(Method.class)));
+  assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(1));
+  MethodCallWithExplicitArgument instance=loaded.getLoaded().newInstance();
+  assertNotEquals(MethodCallWithExplicitArgument.class,instance.getClass());
+  assertThat(instance,instanceOf(MethodCallWithExplicitArgument.class));
+  assertThat(instance.foo(BAR),is(FOO));
+}
