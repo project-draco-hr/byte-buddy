@@ -1,5 +1,6 @@
 {
-  when(targetType.getInternalName()).thenReturn(METHOD_HANDLE_TYPE_INTERNAL_NAME);
+  targetType=new TypeDescription.ForLoadedType(JavaType.METHOD_HANDLE.load());
+  when(targetTypeList.get(INDEX)).thenReturn(targetType);
   when(source.getDeclaringType()).thenReturn(mock(TypeDescription.class));
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=Origin.Binder.INSTANCE.bind(annotationDescription,INDEX,source,target,instrumentationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));

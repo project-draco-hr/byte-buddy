@@ -1,3 +1,0 @@
-{
-  return typeDescription.getInternalName().equals(METHOD_HANDLE_TYPE_INTERNAL_NAME);
-}

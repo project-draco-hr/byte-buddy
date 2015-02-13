@@ -1,0 +1,9 @@
+{
+  for (  Method method : StandardArgumentBootstrap.class.getDeclaredMethods()) {
+    if (method.getName().equals(FOO)) {
+      continue;
+    }
+    DynamicType.Loaded<Simple> dynamicType=instrument(Simple.class,InvokeDynamic.bootstrap(method));
+    assertThat(dynamicType.getLoaded().newInstance().foo(),is(FOO));
+  }
+}

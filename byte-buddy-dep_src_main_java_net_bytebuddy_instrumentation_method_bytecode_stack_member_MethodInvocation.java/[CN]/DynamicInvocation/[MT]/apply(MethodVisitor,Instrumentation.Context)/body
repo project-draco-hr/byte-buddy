@@ -1,0 +1,4 @@
+{
+  methodVisitor.visitInvokeDynamicInsn(methodName,methodDescriptor,new Handle(handle,bootstrapMethod.getDeclaringType().getInternalName(),bootstrapMethod.getInternalName(),bootstrapMethod.getDescriptor()),arguments.toArray(new Object[arguments.size()]));
+  return (bootstrapMethod.isConstructor() ? StackSize.SINGLE : bootstrapMethod.getReturnType().getStackSize()).toIncreasingSize();
+}

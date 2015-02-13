@@ -1,0 +1,3 @@
+{
+  return methodDescription.isBootstrap() ? new DynamicInvocation(methodName,returnType,methodType,methodDescription,arguments) : Illegal.INSTANCE;
+}

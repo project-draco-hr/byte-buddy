@@ -1,0 +1,4 @@
+String methodName
+TypeDescription returnType
+List<? extends TypeDescription> methodType
+List<?> arguments

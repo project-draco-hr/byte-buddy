@@ -1,0 +1,10 @@
+{
+  this.methodName=methodName;
+  StringBuilder stringBuilder=new StringBuilder("(");
+  for (  TypeDescription parameterType : parameterTypes) {
+    stringBuilder.append(parameterType.getDescriptor());
+  }
+  methodDescriptor=stringBuilder.append(')').append(returnType.getDescriptor()).toString();
+  this.bootstrapMethod=bootstrapMethod;
+  this.arguments=arguments;
+}
