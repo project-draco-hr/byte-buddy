@@ -1,0 +1,5 @@
+{
+  this.nameProvider=nameProvider;
+  this.returnTypeProvider=returnTypeProvider;
+  this.argumentProviders=argumentProviders;
+}

@@ -1,0 +1,7 @@
+{
+  List<TargetProvider.ArgumentProvider> argumentProviders=new ArrayList<TargetProvider.ArgumentProvider>(index.length);
+  for (  int anIndex : index) {
+    argumentProviders.add(new TargetProvider.ArgumentProvider.ForMethodParameter(anIndex));
+  }
+  return new InvokeDynamic(bootstrapMethod,handleArguments,targetProvider.withArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
+}

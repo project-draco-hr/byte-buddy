@@ -1,0 +1,4 @@
+String internalName
+TypeDescription returnType
+List<ArgumentProvider> argumentProviders
+MethodDescription instrumentedMethod

@@ -1,0 +1,6 @@
+{
+  for (  ArgumentProvider argumentProvider : argumentProviders) {
+    instrumentedType=argumentProvider.prepare(instrumentedType);
+  }
+  return instrumentedType;
+}

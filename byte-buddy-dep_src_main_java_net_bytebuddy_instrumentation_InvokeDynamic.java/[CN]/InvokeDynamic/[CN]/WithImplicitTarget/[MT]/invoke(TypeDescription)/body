@@ -1,0 +1,3 @@
+{
+  return invoke(TargetProvider.ForSyntheticCall.NameProvider.ForInterceptedMethod.INSTANCE,new TargetProvider.ForSyntheticCall.ReturnTypeProvider.ForExplicitType(returnType));
+}

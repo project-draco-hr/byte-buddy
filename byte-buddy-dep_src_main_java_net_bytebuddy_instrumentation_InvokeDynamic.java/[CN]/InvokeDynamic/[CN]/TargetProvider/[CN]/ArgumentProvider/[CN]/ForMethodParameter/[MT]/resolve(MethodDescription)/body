@@ -1,0 +1,7 @@
+{
+  TypeList parameterTypes=instrumentedMethod.getParameterTypes();
+  if (parameterTypes.size() >= index) {
+    throw new IllegalArgumentException("No parameter " + index + " for "+ instrumentedMethod);
+  }
+  return parameterTypes.get(index);
+}

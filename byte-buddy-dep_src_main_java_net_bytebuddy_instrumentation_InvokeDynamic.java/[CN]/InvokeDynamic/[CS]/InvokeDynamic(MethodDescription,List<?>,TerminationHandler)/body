@@ -1,8 +1,0 @@
-{
-  if (!bootstrapMethod.isBootstrap()) {
-    throw new IllegalArgumentException("Not a valid bootstrap method: " + bootstrapMethod);
-  }
-  this.bootstrapMethod=bootstrapMethod;
-  this.arguments=arguments;
-  this.terminationHandler=terminationHandler;
-}

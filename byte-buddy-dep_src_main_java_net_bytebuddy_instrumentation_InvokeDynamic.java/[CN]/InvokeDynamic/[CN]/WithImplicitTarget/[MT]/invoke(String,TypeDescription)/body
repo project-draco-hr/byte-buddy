@@ -1,0 +1,3 @@
+{
+  return invoke(new TargetProvider.ForSyntheticCall.NameProvider.ForExplicitName(isValidIdentifier(methodName)),new TargetProvider.ForSyntheticCall.ReturnTypeProvider.ForExplicitType(returnType));
+}

@@ -1,0 +1,11 @@
+{
+  if (!bootstrapMethod.isBootstrap()) {
+    throw new IllegalArgumentException("Not a valid bootstrap method: " + bootstrapMethod);
+  }
+  this.bootstrapMethod=bootstrapMethod;
+  this.handleArguments=handleArguments;
+  this.targetProvider=targetProvider;
+  this.terminationHandler=terminationHandler;
+  this.assigner=assigner;
+  this.dynamicallyTyped=dynamicallyTyped;
+}

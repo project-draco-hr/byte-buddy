@@ -1,3 +1,0 @@
-{
-  return Removal.pop(interceptedMethod.isConstructor() ? interceptedMethod.getDeclaringType() : interceptedMethod.getReturnType());
-}

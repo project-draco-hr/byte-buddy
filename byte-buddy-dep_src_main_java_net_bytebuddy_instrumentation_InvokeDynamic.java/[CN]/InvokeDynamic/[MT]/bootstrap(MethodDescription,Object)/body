@@ -1,3 +1,7 @@
 {
-  return new InvokeDynamic(nonNull(methodDescription),Arrays.asList(nonNull(argument)),TerminationHandler.ForMethodReturn.INSTANCE);
+  List<?> arguments=Arrays.asList(nonNull(argument));
+  if (!bootstrapCompatible(bootstrapMethod,arguments)) {
+    throw new IllegalArgumentException("Bootstrap method " + bootstrapMethod + " does not accept "+ arguments);
+  }
+  return new WithImplicitTarget(nonNull(bootstrapMethod),arguments,TargetProvider.ForInterceptedMethod.INSTANCE,TerminationHandler.ForMethodReturn.INSTANCE,defaultAssigner(),defaultDynamicallyTyped());
 }

@@ -1,0 +1,3 @@
+{
+  return FloatConstant.forValue(value);
+}

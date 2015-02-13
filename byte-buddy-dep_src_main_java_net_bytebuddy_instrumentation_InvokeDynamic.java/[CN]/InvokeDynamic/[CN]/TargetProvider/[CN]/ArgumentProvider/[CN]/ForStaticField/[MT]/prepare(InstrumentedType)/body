@@ -1,0 +1,3 @@
+{
+  return instrumentedType.withField(name,new TypeDescription.ForLoadedType(value.getClass()),FIELD_MODIFIER).withInitializer(LoadedTypeInitializer.ForStaticField.nonAccessible(name,value));
+}

@@ -1,0 +1,6 @@
+MethodDescription bootstrapMethod
+List<?> handleArguments
+TargetProvider targetProvider
+TerminationHandler terminationHandler
+Assigner assigner
+boolean dynamicallyTyped
