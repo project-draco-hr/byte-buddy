@@ -4,4 +4,5 @@
   }
   this.bootstrapMethod=bootstrapMethod;
   this.arguments=arguments;
+  this.terminationHandler=terminationHandler;
 }

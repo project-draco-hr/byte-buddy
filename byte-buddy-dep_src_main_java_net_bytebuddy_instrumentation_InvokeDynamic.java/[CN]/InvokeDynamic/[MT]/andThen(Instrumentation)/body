@@ -1,0 +1,3 @@
+{
+  return new Instrumentation.Compound(new InvokeDynamic(bootstrapMethod,arguments,TerminationHandler.ForChainedInvocation.INSTANCE),nonNull(instrumentation));
+}

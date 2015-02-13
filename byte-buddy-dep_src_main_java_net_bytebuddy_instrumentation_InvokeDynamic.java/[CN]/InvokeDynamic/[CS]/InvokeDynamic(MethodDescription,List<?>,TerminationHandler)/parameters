@@ -1,2 +1,3 @@
 MethodDescription bootstrapMethod
 List<?> arguments
+TerminationHandler terminationHandler

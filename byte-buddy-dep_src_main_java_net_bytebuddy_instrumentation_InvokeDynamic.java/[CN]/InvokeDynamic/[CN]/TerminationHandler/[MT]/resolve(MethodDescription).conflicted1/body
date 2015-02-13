@@ -1,0 +1,3 @@
+{
+  return MethodReturn.returning(interceptedMethod.getReturnType());
+}
