@@ -1,0 +1,3 @@
+{
+  return new Resolved.Simple(LongConstant.forValue(value),new TypeDescription.ForLoadedType(long.class));
+}

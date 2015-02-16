@@ -1,0 +1,19 @@
+{
+  TypeDescription currentType=instrumentedType;
+  FieldDescription fieldDescription=null;
+  do {
+    FieldList fieldList=currentType.getDeclaredFields().filter(named(fieldName));
+    if (fieldList.size() != 0) {
+      fieldDescription=fieldList.getOnly();
+    }
+    currentType=currentType.getSupertype();
+  }
+ while (currentType != null && (fieldDescription == null || !fieldDescription.isVisibleTo(instrumentedType)));
+  if (fieldDescription == null) {
+    throw new IllegalStateException(instrumentedType + " does not define a visible field " + fieldName);
+  }
+ else   if (!fieldDescription.isStatic() && instrumentedMethod.isStatic()) {
+    throw new IllegalStateException("Cannot access non-static " + fieldDescription + " from "+ instrumentedMethod);
+  }
+  return new Resolved.Simple(new StackManipulation.Compound(fieldDescription.isStatic() ? StackManipulation.LegalTrivial.INSTANCE : MethodVariableAccess.REFERENCE.loadFromIndex(0),FieldAccess.forField(fieldDescription).getter()),fieldDescription.getFieldType());
+}

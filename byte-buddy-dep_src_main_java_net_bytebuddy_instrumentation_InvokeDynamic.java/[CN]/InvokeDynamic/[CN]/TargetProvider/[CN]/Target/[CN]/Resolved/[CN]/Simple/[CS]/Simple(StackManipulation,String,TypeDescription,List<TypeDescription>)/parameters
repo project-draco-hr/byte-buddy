@@ -1,0 +1,4 @@
+StackManipulation stackManipulation
+String internalName
+TypeDescription returnType
+List<TypeDescription> parameterTypes

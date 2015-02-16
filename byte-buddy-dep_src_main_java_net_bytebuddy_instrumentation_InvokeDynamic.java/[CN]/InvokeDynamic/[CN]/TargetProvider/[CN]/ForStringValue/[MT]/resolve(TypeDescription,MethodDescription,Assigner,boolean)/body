@@ -1,0 +1,3 @@
+{
+  return new Resolved.Simple(new TextConstant(value),new TypeDescription.ForLoadedType(String.class));
+}

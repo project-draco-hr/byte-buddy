@@ -1,8 +1,0 @@
-{
-  StackManipulation[] stackManipulation=new StackManipulation[argumentProviders.size()];
-  int index=0;
-  for (  ArgumentProvider argumentProvider : argumentProviders) {
-    stackManipulation[index++]=argumentProvider.resolve(instrumentedType,instrumentedMethod);
-  }
-  return new StackManipulation.Compound(stackManipulation);
-}

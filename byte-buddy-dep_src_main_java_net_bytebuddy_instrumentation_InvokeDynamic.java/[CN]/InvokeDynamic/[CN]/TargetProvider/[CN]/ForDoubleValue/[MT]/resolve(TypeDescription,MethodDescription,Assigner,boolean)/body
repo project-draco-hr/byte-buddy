@@ -1,0 +1,3 @@
+{
+  return new Resolved.Simple(DoubleConstant.forValue(value),new TypeDescription.ForLoadedType(double.class));
+}

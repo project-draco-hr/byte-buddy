@@ -1,6 +1,5 @@
 {
-  TargetProvider.Target target=targetProvider.resolve(instrumentedMethod);
-  TypeDescription returnType=target.getReturnType();
-  StackManipulation.Size size=new StackManipulation.Compound(target.resolve(instrumentedType),MethodInvocation.invoke(bootstrapMethod).dynamic(target.getInternalName(),returnType,target.resolveParameterTypes(instrumentedType),handleArguments),terminationHandler.resolve(instrumentedMethod,returnType,assigner,dynamicallyTyped)).apply(methodVisitor,instrumentationContext);
+  TargetProvider.Target.Resolved target=targetProvider.make(instrumentedMethod).resolve(instrumentedType,assigner,dynamicallyTyped);
+  StackManipulation.Size size=new StackManipulation.Compound(target.getStackManipulation(),MethodInvocation.invoke(bootstrapMethod).dynamic(target.getInternalName(),target.getReturnType(),target.getParameterTypes(),handleArguments),terminationHandler.resolve(instrumentedMethod,target.getReturnType(),assigner,dynamicallyTyped)).apply(methodVisitor,instrumentationContext);
   return new Size(size.getMaximalSize(),instrumentedMethod.getStackSize());
 }

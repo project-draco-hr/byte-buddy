@@ -1,3 +1,0 @@
-{
-  return DoubleConstant.forValue(value);
-}

@@ -1,0 +1,7 @@
+{
+  List<TargetProvider.ArgumentProvider> argumentProviders=new ArrayList<TargetProvider.ArgumentProvider>(fieldName.length);
+  for (  String aFieldName : fieldName) {
+    argumentProviders.add(new TargetProvider.ArgumentProvider.ForExistingField(nonNull(aFieldName)));
+  }
+  return new InvokeDynamic(bootstrapMethod,handleArguments,targetProvider.withArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
+}

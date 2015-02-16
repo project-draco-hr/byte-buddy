@@ -1,6 +1,0 @@
-{
-  if (instrumentedMethod.isStatic()) {
-    throw new IllegalStateException("Cannot get this instance from static method: " + instrumentedMethod);
-  }
-  return MethodVariableAccess.REFERENCE.loadFromIndex(0);
-}

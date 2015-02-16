@@ -1,0 +1,3 @@
+{
+  return new Resolved.Simple(FloatConstant.forValue(value),new TypeDescription.ForLoadedType(float.class));
+}

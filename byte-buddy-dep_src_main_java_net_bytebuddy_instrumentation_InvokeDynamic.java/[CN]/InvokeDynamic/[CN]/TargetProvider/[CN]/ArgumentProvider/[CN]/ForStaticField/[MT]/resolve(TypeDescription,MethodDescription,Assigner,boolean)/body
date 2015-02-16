@@ -1,0 +1,4 @@
+{
+  FieldDescription fieldDescription=instrumentedType.getDeclaredFields().filter(named(name)).getOnly();
+  return new Resolved.Simple(FieldAccess.forField(fieldDescription).getter(),fieldDescription.getFieldType());
+}

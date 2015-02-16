@@ -1,0 +1,32 @@
+{
+  if (value instanceof Boolean) {
+    return BOOLEAN.make(value);
+  }
+ else   if (value instanceof Byte) {
+    return BYTE.make(value);
+  }
+ else   if (value instanceof Short) {
+    return SHORT.make(value);
+  }
+ else   if (value instanceof Character) {
+    return CHARACTER.make(value);
+  }
+ else   if (value instanceof Integer) {
+    return INTEGER.make(value);
+  }
+ else   if (value instanceof Long) {
+    return LONG.make(value);
+  }
+ else   if (value instanceof Float) {
+    return FLOAT.make(value);
+  }
+ else   if (value instanceof Double) {
+    return DOUBLE.make(value);
+  }
+ else   if (value instanceof String) {
+    return new ForStringValue((String)value);
+  }
+ else {
+    return new ForStaticField(value);
+  }
+}

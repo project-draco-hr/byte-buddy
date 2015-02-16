@@ -1,0 +1,3 @@
+{
+  return new Resolved.Simple(IntegerConstant.forValue(value),new TypeDescription.ForLoadedType(short.class));
+}

@@ -1,0 +1,6 @@
+{
+  this.stackManipulation=stackManipulation;
+  this.internalName=internalName;
+  this.returnType=returnType;
+  this.parameterTypes=parameterTypes;
+}

@@ -1,0 +1,6 @@
+{
+  if (instrumentedMethod.isStatic()) {
+    throw new IllegalStateException("Cannot get this instance from static method: " + instrumentedMethod);
+  }
+  return new Resolved.Simple(MethodVariableAccess.REFERENCE.loadFromIndex(0),instrumentedType);
+}

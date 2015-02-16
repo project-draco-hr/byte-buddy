@@ -1,3 +1,0 @@
-{
-  return FieldAccess.forField(instrumentedType.getDeclaredFields().filter(named(name)).getOnly()).getter();
-}
