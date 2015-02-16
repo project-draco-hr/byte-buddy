@@ -1,5 +1,5 @@
 {
-  for (  Method method : StandardArgumentBootstrap.class.getDeclaredMethods()) {
+  for (  Method method : classLoader.loadClass(STANDARD_ARGUMENT_BOOTSTRAP).getDeclaredMethods()) {
     if (method.getName().equals(FOO)) {
       continue;
     }

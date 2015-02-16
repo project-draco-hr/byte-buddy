@@ -1,11 +1,6 @@
 {
-  ListIterator<TypeDescription> parameterTypes=bootstrapMethod.getParameterTypes().listIterator();
-  if (!parameterTypes.hasPrevious()) {
-    return false;
-  }
-  TypeDescription currentParameter=parameterTypes.previous();
-  if (currentParameter.represents(Object[].class)) {
-    return true;
+  if (!bootstrapMethod.isBootstrap()) {
+    throw new IllegalArgumentException("Not a bootstrap method: " + bootstrapMethod);
   }
   return true;
 }

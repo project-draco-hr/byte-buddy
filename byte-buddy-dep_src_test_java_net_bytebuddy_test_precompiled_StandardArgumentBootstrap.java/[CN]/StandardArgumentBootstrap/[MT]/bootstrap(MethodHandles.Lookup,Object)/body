@@ -1,3 +1,0 @@
-{
-  return new ConstantCallSite(lookup.findStatic(StandardArgumentBootstrap.class,(String)args[0],(MethodType)args[1]));
-}
