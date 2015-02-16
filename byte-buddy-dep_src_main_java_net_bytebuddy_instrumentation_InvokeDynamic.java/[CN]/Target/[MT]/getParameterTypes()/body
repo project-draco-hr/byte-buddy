@@ -1,7 +1,0 @@
-{
-  List<TypeDescription> parameterTypes=new ArrayList<TypeDescription>(argumentProviders.size());
-  for (  ArgumentProvider argumentProvider : argumentProviders) {
-    parameterTypes.add(argumentProvider.resolve(instrumentedMethod));
-  }
-  return parameterTypes;
-}

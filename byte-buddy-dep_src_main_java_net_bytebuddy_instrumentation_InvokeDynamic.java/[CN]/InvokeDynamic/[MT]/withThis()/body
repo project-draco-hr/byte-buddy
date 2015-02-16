@@ -1,0 +1,3 @@
+{
+  return new InvokeDynamic(bootstrapMethod,handleArguments,targetProvider.withArguments(Collections.<TargetProvider.ArgumentProvider>singletonList(TargetProvider.ArgumentProvider.ForThisInstance.INSTANCE)),terminationHandler,assigner,dynamicallyTyped);
+}
