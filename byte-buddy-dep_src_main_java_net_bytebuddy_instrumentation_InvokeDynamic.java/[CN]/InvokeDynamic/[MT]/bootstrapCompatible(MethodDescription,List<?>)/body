@@ -2,5 +2,24 @@
   if (!bootstrapMethod.isBootstrap()) {
     throw new IllegalArgumentException("Not a bootstrap method: " + bootstrapMethod);
   }
-  return true;
+  for (  Object argument : arguments) {
+    if (!new TypeDescription.ForLoadedType(argument.getClass()).isConstantPool()) {
+      throw new IllegalArgumentException("Not a constant pool value: " + argument);
+    }
+  }
+  List<TypeDescription> parameterTypes=bootstrapMethod.getParameterTypes();
+  if (parameterTypes.size() < 3) {
+    return arguments.size() == 0 || parameterTypes.get(parameterTypes.size() - 1).represents(Object[].class);
+  }
+ else {
+    int index=3;
+    Iterator<?> argumentIterator=arguments.iterator();
+    for (    TypeDescription parameterType : parameterTypes.subList(3,parameterTypes.size())) {
+      if (!argumentIterator.hasNext() || !parameterType.isAssignableFrom(argumentIterator.next().getClass())) {
+        return index == parameterTypes.size() && parameterType.represents(Object[].class);
+      }
+      index++;
+    }
+    return true;
+  }
 }
