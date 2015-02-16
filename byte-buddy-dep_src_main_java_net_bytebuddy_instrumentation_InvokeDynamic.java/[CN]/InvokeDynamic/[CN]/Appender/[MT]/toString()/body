@@ -1,0 +1,3 @@
+{
+  return "InvokeDynamic.Appender{" + "invokeDynamic=" + InvokeDynamic.this + ", instrumentedType="+ instrumentedType+ '}';
+}

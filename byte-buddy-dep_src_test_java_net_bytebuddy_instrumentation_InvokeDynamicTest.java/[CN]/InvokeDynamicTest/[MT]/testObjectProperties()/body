@@ -1,0 +1,5 @@
+{
+  ObjectPropertyAssertion.of(InvokeDynamic.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.Appender.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.WithImplicitTarget.class).apply();
+}

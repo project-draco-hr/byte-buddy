@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (!(other instanceof InvokeDynamic))   return false;
+  InvokeDynamic that=(InvokeDynamic)other;
+  return dynamicallyTyped == that.dynamicallyTyped && assigner.equals(that.assigner) && bootstrapMethod.equals(that.bootstrapMethod) && handleArguments.equals(that.handleArguments) && targetProvider.equals(that.targetProvider) && terminationHandler.equals(that.terminationHandler);
+}

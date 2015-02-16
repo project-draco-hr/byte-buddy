@@ -1,0 +1,9 @@
+{
+  int result=bootstrapMethod.hashCode();
+  result=31 * result + handleArguments.hashCode();
+  result=31 * result + targetProvider.hashCode();
+  result=31 * result + terminationHandler.hashCode();
+  result=31 * result + assigner.hashCode();
+  result=31 * result + (dynamicallyTyped ? 1 : 0);
+  return result;
+}
