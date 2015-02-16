@@ -1,0 +1,3 @@
+{
+  super(lookup.findStatic(StandardArgumentBootstrap.class,methodName,(MethodType)args[0]));
+}
