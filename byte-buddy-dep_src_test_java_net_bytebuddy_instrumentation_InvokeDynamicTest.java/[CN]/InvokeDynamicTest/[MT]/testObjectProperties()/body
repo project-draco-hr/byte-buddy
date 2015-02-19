@@ -2,4 +2,24 @@
   ObjectPropertyAssertion.of(InvokeDynamic.class).apply();
   ObjectPropertyAssertion.of(InvokeDynamic.Appender.class).apply();
   ObjectPropertyAssertion.of(InvokeDynamic.WithImplicitTarget.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.WithImplicitArguments.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.Default.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.Default.Target.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.Target.Resolved.Simple.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.Target.ForMethodDescription.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.Default.NameProvider.ForExplicitName.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.Default.ReturnTypeProvider.ForExplicitType.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForBooleanValue.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForByteValue.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForShortValue.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForCharacterValue.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForIntegerValue.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForLongValue.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForFloatValue.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForDoubleValue.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForExistingField.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForInstanceField.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForStaticField.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.Resolved.Simple.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ConstantPoolWrapper.WrappingArgumentProvider.class).apply();
 }

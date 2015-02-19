@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  DynamicInvocation that=(DynamicInvocation)other;
+  return MethodInvocation.this == that.getOuter() && arguments.equals(that.arguments) && bootstrapMethod.equals(that.bootstrapMethod) && returnType.equals(that.returnType) && parameterTypes.equals(that.parameterTypes) && methodName.equals(that.methodName);
+}

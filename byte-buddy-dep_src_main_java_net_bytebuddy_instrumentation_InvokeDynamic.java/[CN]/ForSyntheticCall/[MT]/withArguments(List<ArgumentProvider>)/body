@@ -1,3 +1,0 @@
-{
-  return new ForSyntheticCall(nameProvider,returnTypeProvider,join(this.argumentProviders,argumentProviders));
-}

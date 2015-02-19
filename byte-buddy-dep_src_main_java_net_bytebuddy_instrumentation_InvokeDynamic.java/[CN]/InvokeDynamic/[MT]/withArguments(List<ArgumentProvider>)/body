@@ -1,3 +1,0 @@
-{
-  return new ForSyntheticCall(ForSyntheticCall.NameProvider.ForInterceptedMethod.INSTANCE,ForSyntheticCall.ReturnTypeProvider.ForInterceptedMethod.INSTANCE,argumentProviders);
-}

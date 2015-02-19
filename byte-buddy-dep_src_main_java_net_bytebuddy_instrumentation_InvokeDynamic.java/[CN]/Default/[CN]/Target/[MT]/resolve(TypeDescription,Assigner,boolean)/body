@@ -1,0 +1,11 @@
+{
+  StackManipulation[] stackManipulation=new StackManipulation[argumentProviders.size()];
+  List<TypeDescription> parameterTypes=new LinkedList<TypeDescription>();
+  int index=0;
+  for (  ArgumentProvider argumentProvider : argumentProviders) {
+    ArgumentProvider.Resolved resolved=argumentProvider.resolve(instrumentedType,instrumentedMethod,assigner,dynamicallyTyped);
+    parameterTypes.addAll(resolved.getLoadedTypes());
+    stackManipulation[index++]=resolved.getLoadInstruction();
+  }
+  return new Resolved.Simple(new StackManipulation.Compound(stackManipulation),internalName,returnType,parameterTypes);
+}

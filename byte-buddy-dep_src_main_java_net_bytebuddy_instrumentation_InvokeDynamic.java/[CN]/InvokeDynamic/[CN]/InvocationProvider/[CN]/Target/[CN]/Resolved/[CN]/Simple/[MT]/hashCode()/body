@@ -1,0 +1,7 @@
+{
+  int result=stackManipulation.hashCode();
+  result=31 * result + internalName.hashCode();
+  result=31 * result + returnType.hashCode();
+  result=31 * result + parameterTypes.hashCode();
+  return result;
+}

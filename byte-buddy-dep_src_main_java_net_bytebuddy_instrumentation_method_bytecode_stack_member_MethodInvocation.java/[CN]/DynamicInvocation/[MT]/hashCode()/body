@@ -1,0 +1,9 @@
+{
+  int result=methodName.hashCode();
+  result=31 * result + MethodInvocation.this.hashCode();
+  result=31 * result + returnType.hashCode();
+  result=31 * result + parameterTypes.hashCode();
+  result=31 * result + bootstrapMethod.hashCode();
+  result=31 * result + arguments.hashCode();
+  return result;
+}

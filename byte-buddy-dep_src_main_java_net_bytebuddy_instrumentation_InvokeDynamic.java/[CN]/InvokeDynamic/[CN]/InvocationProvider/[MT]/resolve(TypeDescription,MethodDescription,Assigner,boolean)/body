@@ -1,0 +1,3 @@
+{
+  return new Resolved.Simple(MethodVariableAccess.loadArguments(instrumentedMethod),instrumentedMethod.getParameterTypes());
+}

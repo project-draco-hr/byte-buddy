@@ -1,0 +1,3 @@
+{
+  return "MethodInvocation.DynamicInvocation{" + "methodInvocation=" + MethodInvocation.this + ", methodName='"+ methodName+ '\''+ ", returnType="+ returnType+ ", parameterTypes="+ parameterTypes+ ", bootstrapMethod="+ bootstrapMethod+ ", arguments="+ arguments+ '}';
+}

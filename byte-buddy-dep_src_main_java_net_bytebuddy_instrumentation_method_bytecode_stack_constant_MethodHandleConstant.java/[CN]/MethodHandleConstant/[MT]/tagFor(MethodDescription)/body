@@ -2,7 +2,7 @@
   if (methodDescription.isConstructor()) {
     return Opcodes.H_NEWINVOKESPECIAL;
   }
- else   if (methodDescription.isStatic() || methodDescription.isTypeInitializer()) {
+ else   if (methodDescription.isStatic()) {
     return Opcodes.H_INVOKESTATIC;
   }
  else   if (methodDescription.isPrivate() || methodDescription.isDefaultMethod()) {

@@ -1,0 +1,7 @@
+{
+  this.methodName=methodName;
+  this.returnType=returnType;
+  this.parameterTypes=parameterTypes;
+  this.bootstrapMethod=bootstrapMethod;
+  this.arguments=arguments;
+}

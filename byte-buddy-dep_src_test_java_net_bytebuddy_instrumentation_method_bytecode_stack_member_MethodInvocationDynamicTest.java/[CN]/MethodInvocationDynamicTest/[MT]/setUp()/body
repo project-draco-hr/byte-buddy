@@ -1,0 +1,13 @@
+{
+  when(methodDescription.getDeclaringType()).thenReturn(declaringType);
+  when(methodDescription.getParameterTypes()).thenReturn(new TypeList.Explicit(Arrays.asList(firstType,secondType)));
+  when(firstType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(firstType.getDescriptor()).thenReturn(FOO);
+  when(secondType.getDescriptor()).thenReturn(BAR);
+  when(secondType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(returnType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(returnType.getDescriptor()).thenReturn(QUX);
+  when(methodDescription.getInternalName()).thenReturn(QUX);
+  when(methodDescription.getDescriptor()).thenReturn(BAZ);
+  when(declaringType.getInternalName()).thenReturn(BAR);
+}

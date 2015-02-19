@@ -1,0 +1,6 @@
+{
+  JavaType.METHOD_HANDLE.load();
+  JavaType.METHOD_TYPE.load();
+  JavaType.METHOD_TYPES_LOOKUP.load();
+  JavaType.CALL_SITE.load();
+}

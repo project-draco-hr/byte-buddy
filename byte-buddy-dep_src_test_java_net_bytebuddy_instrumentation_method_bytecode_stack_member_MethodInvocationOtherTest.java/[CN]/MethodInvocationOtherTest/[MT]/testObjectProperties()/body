@@ -10,4 +10,5 @@
     }
   }
 ).apply();
+  ObjectPropertyAssertion.of(MethodInvocation.DynamicInvocation.class).apply();
 }

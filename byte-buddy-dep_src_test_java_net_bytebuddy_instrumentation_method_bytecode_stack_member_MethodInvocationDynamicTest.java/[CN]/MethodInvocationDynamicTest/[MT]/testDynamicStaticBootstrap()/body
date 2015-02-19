@@ -1,0 +1,10 @@
+{
+  when(methodDescription.isBootstrap(Mockito.any(List.class))).thenReturn(true);
+  when(methodDescription.isStatic()).thenReturn(true);
+  StackManipulation stackManipulation=MethodInvocation.invoke(methodDescription).dynamic(FOO,returnType,Arrays.asList(firstType,secondType),Collections.singletonList(argument));
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getSizeImpact(),is(0));
+  verify(methodVisitor).visitInvokeDynamicInsn(FOO,"(" + FOO + BAR+ ")"+ QUX,new Handle(Opcodes.H_INVOKESTATIC,BAR,QUX,BAZ),argument);
+}

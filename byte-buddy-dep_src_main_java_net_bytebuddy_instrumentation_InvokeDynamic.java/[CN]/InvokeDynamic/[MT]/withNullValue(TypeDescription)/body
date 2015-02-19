@@ -1,10 +1,10 @@
 {
-  List<TargetProvider.ArgumentProvider> argumentProviders=new ArrayList<TargetProvider.ArgumentProvider>(typeDescription.length);
+  List<InvocationProvider.ArgumentProvider> argumentProviders=new ArrayList<InvocationProvider.ArgumentProvider>(typeDescription.length);
   for (  TypeDescription aTypeDescription : typeDescription) {
     if (aTypeDescription.isPrimitive()) {
       throw new IllegalArgumentException("Cannot assign null to primitive type: " + aTypeDescription);
     }
-    argumentProviders.add(new TargetProvider.ArgumentProvider.ForNullValue(aTypeDescription));
+    argumentProviders.add(new InvocationProvider.ArgumentProvider.ForNullValue(aTypeDescription));
   }
-  return new InvokeDynamic(bootstrapMethod,handleArguments,targetProvider.withArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
+  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
 }

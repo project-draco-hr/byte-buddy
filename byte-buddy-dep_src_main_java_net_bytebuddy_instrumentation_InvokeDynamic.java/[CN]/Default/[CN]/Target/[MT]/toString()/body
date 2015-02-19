@@ -1,0 +1,3 @@
+{
+  return "InvokeDynamic.InvocationProvider.Default.Target{" + "internalName='" + internalName + '\''+ ", returnType="+ returnType+ ", argumentProviders="+ argumentProviders+ ", instrumentedMethod="+ instrumentedMethod+ '}';
+}

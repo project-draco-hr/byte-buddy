@@ -1,0 +1,3 @@
+{
+  this(NameProvider.ForInterceptedMethod.INSTANCE,ReturnTypeProvider.ForInterceptedMethod.INSTANCE,Collections.<ArgumentProvider>singletonList(ArgumentProvider.ForInterceptedMethodInstanceAndParameters.INSTANCE));
+}

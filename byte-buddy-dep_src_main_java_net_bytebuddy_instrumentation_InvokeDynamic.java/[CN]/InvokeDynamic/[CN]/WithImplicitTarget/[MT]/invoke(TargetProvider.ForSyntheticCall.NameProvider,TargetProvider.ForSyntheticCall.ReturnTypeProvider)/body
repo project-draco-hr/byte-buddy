@@ -1,3 +1,0 @@
-{
-  return new InvokeDynamic(bootstrapMethod,handleArguments,new TargetProvider.ForSyntheticCall(nameProvider,returnTypeProvider,Collections.<TargetProvider.ArgumentProvider>emptyList()),terminationHandler,assigner,dynamicallyTyped);
-}

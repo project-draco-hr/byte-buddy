@@ -1,0 +1,4 @@
+{
+  StackManipulation stackManipulation=MethodInvocation.invoke(methodDescription).dynamic(FOO,returnType,Arrays.asList(firstType,secondType),Collections.singletonList(argument));
+  assertThat(stackManipulation.isValid(),is(false));
+}

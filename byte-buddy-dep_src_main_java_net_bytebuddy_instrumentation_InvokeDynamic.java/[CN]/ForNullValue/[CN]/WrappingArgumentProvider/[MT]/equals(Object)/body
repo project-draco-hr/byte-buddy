@@ -1,0 +1,3 @@
+{
+  return this == other || !(other == null || getClass() != other.getClass()) && ConstantPoolWrapper.this.equals(((WrappingArgumentProvider)other).getOuter()) && stackManipulation.equals(((WrappingArgumentProvider)other).stackManipulation);
+}

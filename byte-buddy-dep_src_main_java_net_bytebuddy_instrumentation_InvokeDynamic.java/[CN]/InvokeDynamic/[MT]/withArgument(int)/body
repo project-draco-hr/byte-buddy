@@ -1,10 +1,10 @@
 {
-  List<TargetProvider.ArgumentProvider> argumentProviders=new ArrayList<TargetProvider.ArgumentProvider>(index.length);
+  List<InvocationProvider.ArgumentProvider> argumentProviders=new ArrayList<InvocationProvider.ArgumentProvider>(index.length);
   for (  int anIndex : index) {
     if (anIndex < 0) {
       throw new IllegalArgumentException("Method parameter indices cannot be negative: " + anIndex);
     }
-    argumentProviders.add(new TargetProvider.ArgumentProvider.ForMethodParameter(anIndex));
+    argumentProviders.add(new InvocationProvider.ArgumentProvider.ForMethodParameter(anIndex));
   }
-  return new InvokeDynamic(bootstrapMethod,handleArguments,targetProvider.withArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
+  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
 }

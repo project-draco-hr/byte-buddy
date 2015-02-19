@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Target target=(Target)other;
+  return argumentProviders.equals(target.argumentProviders) && instrumentedMethod.equals(target.instrumentedMethod) && internalName.equals(target.internalName)&& returnType.equals(target.returnType);
+}

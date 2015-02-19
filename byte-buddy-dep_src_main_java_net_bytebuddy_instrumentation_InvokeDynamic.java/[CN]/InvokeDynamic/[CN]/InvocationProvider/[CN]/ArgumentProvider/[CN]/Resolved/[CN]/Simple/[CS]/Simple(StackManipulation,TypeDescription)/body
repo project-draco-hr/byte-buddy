@@ -1,0 +1,3 @@
+{
+  this(stackManipulation,Collections.singletonList(loadedType));
+}

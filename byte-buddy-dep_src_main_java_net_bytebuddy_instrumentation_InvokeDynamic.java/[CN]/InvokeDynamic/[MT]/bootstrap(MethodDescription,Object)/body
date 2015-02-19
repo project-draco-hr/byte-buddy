@@ -1,7 +1,7 @@
 {
   List<?> arguments=Arrays.asList(nonNull(argument));
-  if (!bootstrapCompatible(bootstrapMethod,arguments)) {
-    throw new IllegalArgumentException("Bootstrap method " + bootstrapMethod + " does not accept "+ arguments);
+  if (!bootstrapMethod.isBootstrap(arguments)) {
+    throw new IllegalArgumentException("Not a valid bootstrap method " + bootstrapMethod + " for "+ arguments);
   }
-  return new WithImplicitTarget(nonNull(bootstrapMethod),arguments,TargetProvider.ForInterceptedMethod.INSTANCE,TerminationHandler.ForMethodReturn.INSTANCE,defaultAssigner(),defaultDynamicallyTyped());
+  return new WithImplicitTarget(bootstrapMethod,arguments,new InvocationProvider.Default(),TerminationHandler.ForMethodReturn.INSTANCE,defaultAssigner(),defaultDynamicallyTyped());
 }

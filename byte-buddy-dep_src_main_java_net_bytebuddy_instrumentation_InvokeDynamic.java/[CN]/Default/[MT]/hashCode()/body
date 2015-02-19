@@ -1,0 +1,6 @@
+{
+  int result=nameProvider.hashCode();
+  result=31 * result + returnTypeProvider.hashCode();
+  result=31 * result + argumentProviders.hashCode();
+  return result;
+}

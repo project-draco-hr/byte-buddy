@@ -1,3 +1,3 @@
 {
-  return invoke(new TargetProvider.ForSyntheticCall.NameProvider.ForExplicitName(isValidIdentifier(methodName)),TargetProvider.ForSyntheticCall.ReturnTypeProvider.ForInterceptedMethod.INSTANCE);
+  return new WithImplicitArguments(bootstrapMethod,handleArguments,invocationProvider.withNameProvider(new InvocationProvider.NameProvider.ForExplicitName(nonNull(methodName))),terminationHandler,assigner,dynamicallyTyped);
 }

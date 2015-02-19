@@ -1,0 +1,3 @@
+{
+  return "InvokeDynamic.InvocationProvider.ArgumentProvider.Resolved.Simple{" + "stackManipulation=" + stackManipulation + ", loadedTypes="+ loadedTypes+ '}';
+}

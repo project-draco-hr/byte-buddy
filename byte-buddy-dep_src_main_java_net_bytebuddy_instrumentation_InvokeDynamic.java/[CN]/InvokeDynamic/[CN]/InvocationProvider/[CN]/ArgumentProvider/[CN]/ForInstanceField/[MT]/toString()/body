@@ -1,0 +1,3 @@
+{
+  return "InvokeDynamic.InvocationProvider.ArgumentProvider.ForInstanceField{" + "fieldName='" + fieldName + '\''+ ", fieldType="+ fieldType+ '}';
+}

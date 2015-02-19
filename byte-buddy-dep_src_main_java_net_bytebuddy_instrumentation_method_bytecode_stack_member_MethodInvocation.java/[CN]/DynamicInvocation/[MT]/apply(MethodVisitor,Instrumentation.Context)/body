@@ -1,4 +1,10 @@
 {
+  StringBuilder stringBuilder=new StringBuilder("(");
+  for (  TypeDescription parameterType : parameterTypes) {
+    stringBuilder.append(parameterType.getDescriptor());
+  }
+  String methodDescriptor=stringBuilder.append(')').append(returnType.getDescriptor()).toString();
   methodVisitor.visitInvokeDynamicInsn(methodName,methodDescriptor,new Handle(handle,bootstrapMethod.getDeclaringType().getInternalName(),bootstrapMethod.getInternalName(),bootstrapMethod.getDescriptor()),arguments.toArray(new Object[arguments.size()]));
-  return (bootstrapMethod.isConstructor() ? StackSize.SINGLE : bootstrapMethod.getReturnType().getStackSize()).toIncreasingSize();
+  int stackSize=returnType.getStackSize().getSize() - parameterTypes.getStackSize();
+  return new Size(stackSize,Math.max(stackSize,0));
 }

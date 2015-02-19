@@ -1,0 +1,5 @@
+String methodName
+TypeDescription returnType
+TypeList parameterTypes
+MethodDescription bootstrapMethod
+List<?> arguments

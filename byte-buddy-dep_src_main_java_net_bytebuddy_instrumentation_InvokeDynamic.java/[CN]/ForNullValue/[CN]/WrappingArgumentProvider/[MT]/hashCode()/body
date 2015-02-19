@@ -1,0 +1,3 @@
+{
+  return stackManipulation.hashCode() + 31 * ConstantPoolWrapper.this.hashCode();
+}

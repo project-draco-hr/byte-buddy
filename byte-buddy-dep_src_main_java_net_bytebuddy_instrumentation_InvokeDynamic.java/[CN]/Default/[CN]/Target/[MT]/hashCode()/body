@@ -1,0 +1,7 @@
+{
+  int result=internalName.hashCode();
+  result=31 * result + returnType.hashCode();
+  result=31 * result + argumentProviders.hashCode();
+  result=31 * result + instrumentedMethod.hashCode();
+  return result;
+}

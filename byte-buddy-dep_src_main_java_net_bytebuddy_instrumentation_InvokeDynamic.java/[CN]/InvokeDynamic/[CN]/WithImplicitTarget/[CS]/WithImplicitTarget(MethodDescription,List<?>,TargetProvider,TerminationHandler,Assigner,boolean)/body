@@ -1,3 +1,0 @@
-{
-  super(bootstrapMethod,handleArguments,targetProvider,terminationHandler,assigner,dynamicallyTyped);
-}
