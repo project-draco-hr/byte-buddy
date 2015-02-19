@@ -1,0 +1,3 @@
+{
+  return instrumentedType.withField(fieldName,new TypeDescription.ForLoadedType(value.getClass()),FIELD_MODIFIER).withInitializer(new LoadedTypeInitializer.ForStaticField<Object>(fieldName,value,true));
+}

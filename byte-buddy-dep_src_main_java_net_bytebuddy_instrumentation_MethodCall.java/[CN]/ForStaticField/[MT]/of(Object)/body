@@ -1,0 +1,35 @@
+{
+  if (value == null) {
+    return ForNullConstant.INSTANCE;
+  }
+ else   if (value.getClass() == String.class) {
+    return new ForTextConstant((String)value);
+  }
+ else   if (value.getClass() == Boolean.class) {
+    return new ForBooleanConstant((Boolean)value);
+  }
+ else   if (value.getClass() == Byte.class) {
+    return new ForByteConstant((Byte)value);
+  }
+ else   if (value.getClass() == Short.class) {
+    return new ForShortConstant((Short)value);
+  }
+ else   if (value.getClass() == Character.class) {
+    return new ForCharacterConstant((Character)value);
+  }
+ else   if (value.getClass() == Integer.class) {
+    return new ForIntegerConstant((Integer)value);
+  }
+ else   if (value.getClass() == Long.class) {
+    return new ForLongConstant((Long)value);
+  }
+ else   if (value.getClass() == Float.class) {
+    return new ForFloatConstant((Float)value);
+  }
+ else   if (value.getClass() == Double.class) {
+    return new ForDoubleConstant((Double)value);
+  }
+ else {
+    return new ForStaticField(value);
+  }
+}

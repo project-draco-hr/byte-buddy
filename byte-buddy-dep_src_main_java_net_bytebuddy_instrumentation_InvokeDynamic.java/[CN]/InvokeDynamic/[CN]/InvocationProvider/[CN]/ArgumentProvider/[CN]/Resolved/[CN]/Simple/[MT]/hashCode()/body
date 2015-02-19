@@ -1,5 +1,0 @@
-{
-  int result=stackManipulation.hashCode();
-  result=31 * result + loadedTypes.hashCode();
-  return result;
-}

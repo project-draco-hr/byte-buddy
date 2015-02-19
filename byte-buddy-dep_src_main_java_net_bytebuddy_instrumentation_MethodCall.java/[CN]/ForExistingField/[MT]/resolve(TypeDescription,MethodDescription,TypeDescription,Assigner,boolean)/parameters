@@ -1,0 +1,5 @@
+TypeDescription instrumentedType
+MethodDescription interceptedMethod
+TypeDescription targetType
+Assigner assigner
+boolean dynamicallyTyped

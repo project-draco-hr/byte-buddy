@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  Simple simple=(Simple)other;
-  return loadedTypes.equals(simple.loadedTypes) && stackManipulation.equals(simple.stackManipulation);
-}

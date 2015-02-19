@@ -1,0 +1,3 @@
+{
+  return "MethodCall.ArgumentLoader.ForStaticField{" + "value=" + value + ", fieldName='"+ fieldName+ '\''+ '}';
+}
