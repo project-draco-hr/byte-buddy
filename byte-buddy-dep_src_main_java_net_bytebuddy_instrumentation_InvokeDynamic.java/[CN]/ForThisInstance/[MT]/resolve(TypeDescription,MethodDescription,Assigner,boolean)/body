@@ -1,0 +1,9 @@
+{
+  if (instrumentedMethod.isStatic()) {
+    throw new IllegalStateException("Cannot get this instance from static method: " + instrumentedMethod);
+  }
+ else   if (!instrumentedType.isAssignableTo(typeDescription)) {
+    throw new IllegalStateException(instrumentedType + " is not assignable to " + instrumentedType);
+  }
+  return new Resolved.Simple(MethodVariableAccess.REFERENCE.loadFromIndex(0),typeDescription);
+}

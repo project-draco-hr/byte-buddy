@@ -1,0 +1,7 @@
+{
+  Class<?> type=classLoader.loadClass(ARGUMENT_BOOTSTRAP);
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
+  Object value=new Object();
+  DynamicType.Loaded<Simple> dynamicType=instrument(Simple.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP)).getOnly()).invoke(FOO,String.class).withoutImplicitArguments().withBooleanValue(BOOLEAN).withByteValue(BYTE).withShortValue(SHORT).withCharacterValue(CHARACTER).withIntegerValue(INTEGER).withLongValue(LONG).withFloatValue(FLOAT).withDoubleValue(DOUBLE).withValue(FOO,value),classLoader,isDeclaredBy(Simple.class));
+  assertThat(dynamicType.getLoaded().newInstance().foo(),is("" + BOOLEAN + BYTE+ SHORT+ CHARACTER+ INTEGER+ LONG+ FLOAT+ DOUBLE+ FOO+ value));
+}

@@ -1,7 +1,7 @@
 {
   TypeList parameterTypes=instrumentedMethod.getParameterTypes();
-  if (parameterTypes.size() >= index) {
-    throw new IllegalArgumentException("No parameter " + index + " for "+ instrumentedMethod);
+  if (index >= parameterTypes.size()) {
+    throw new IllegalStateException("No parameter " + index + " for "+ instrumentedMethod);
   }
   return new Resolved.Simple(MethodVariableAccess.forType(parameterTypes.get(index)).loadFromIndex(instrumentedMethod.getParameterOffset(index)),parameterTypes.get(index));
 }

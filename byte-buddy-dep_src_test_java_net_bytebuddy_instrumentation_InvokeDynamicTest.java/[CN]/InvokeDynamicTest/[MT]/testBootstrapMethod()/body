@@ -3,7 +3,7 @@
     if (method.getName().equals(FOO)) {
       continue;
     }
-    DynamicType.Loaded<Simple> dynamicType=instrument(Simple.class,InvokeDynamic.bootstrap(method).withoutArguments(),classLoader,isDeclaredBy(Simple.class));
+    DynamicType.Loaded<Simple> dynamicType=instrument(Simple.class,InvokeDynamic.bootstrap(method).withoutImplicitArguments(),classLoader,isDeclaredBy(Simple.class));
     assertThat(dynamicType.getLoaded().newInstance().foo(),is(FOO));
   }
 }

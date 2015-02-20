@@ -1,0 +1,12 @@
+MethodHandles.Lookup lookup
+String methodName
+MethodType methodType
+int arg0
+int arg1
+int arg2
+int arg3
+int arg4
+long arg5
+float arg6
+double arg7
+String arg8

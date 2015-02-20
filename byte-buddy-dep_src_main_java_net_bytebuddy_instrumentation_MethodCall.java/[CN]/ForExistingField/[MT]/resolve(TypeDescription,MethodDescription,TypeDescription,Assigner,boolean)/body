@@ -9,7 +9,7 @@
     currentType=currentType.getSupertype();
   }
  while (currentType != null && (fieldDescription == null || !fieldDescription.isVisibleTo(instrumentedType)));
-  if (fieldDescription == null) {
+  if (fieldDescription == null || !fieldDescription.isVisibleTo(instrumentedType)) {
     throw new IllegalStateException(instrumentedType + " does not define a visible field " + fieldName);
   }
  else   if (!fieldDescription.isStatic() && interceptedMethod.isStatic()) {

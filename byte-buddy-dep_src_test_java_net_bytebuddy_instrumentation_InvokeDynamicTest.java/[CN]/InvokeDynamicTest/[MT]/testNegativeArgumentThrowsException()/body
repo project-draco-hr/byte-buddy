@@ -1,0 +1,5 @@
+{
+  Class<?> type=classLoader.loadClass(ARGUMENT_BOOTSTRAP);
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
+  InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP)).getOnly()).invoke(QUX,String.class).withoutImplicitArguments().withArgument(-1);
+}

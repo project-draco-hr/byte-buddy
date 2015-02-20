@@ -1,5 +1,5 @@
 {
-  if (interceptedMethod.getParameterTypes().size() <= index) {
+  if (index >= interceptedMethod.getParameterTypes().size()) {
     throw new IllegalStateException(interceptedMethod + " does not have a parameter with index " + index);
   }
   TypeDescription originType=interceptedMethod.getParameterTypes().get(index);

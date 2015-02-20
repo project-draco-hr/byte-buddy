@@ -1,3 +1,0 @@
-{
-  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArgument(new InvocationProvider.ArgumentProvider.ForDoubleValue(value)),terminationHandler,assigner,dynamicallyTyped);
-}

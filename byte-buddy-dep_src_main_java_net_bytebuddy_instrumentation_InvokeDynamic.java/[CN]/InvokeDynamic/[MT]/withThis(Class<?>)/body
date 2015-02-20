@@ -1,0 +1,3 @@
+{
+  return withThis(new TypeList.ForLoadedType(type).toArray(new TypeDescription[type.length]));
+}
