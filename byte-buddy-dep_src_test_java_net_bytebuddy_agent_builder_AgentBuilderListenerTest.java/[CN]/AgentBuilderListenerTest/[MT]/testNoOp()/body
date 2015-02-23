@@ -1,5 +1,5 @@
 {
-  AgentBuilder.Listener.NoOp.INSTANCE.onTransformation(dynamicType);
+  AgentBuilder.Listener.NoOp.INSTANCE.onTransformation(typeDescription,dynamicType);
   verifyZeroInteractions(dynamicType);
   AgentBuilder.Listener.NoOp.INSTANCE.onError(FOO,throwable);
   verifyZeroInteractions(throwable);
