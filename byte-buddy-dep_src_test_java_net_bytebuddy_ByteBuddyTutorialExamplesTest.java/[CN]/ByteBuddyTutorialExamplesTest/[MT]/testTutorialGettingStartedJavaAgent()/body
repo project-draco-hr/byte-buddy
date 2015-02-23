@@ -1,6 +1,6 @@
 {
   new AgentBuilder.Default().rebase(isAnnotatedWith(Rebase.class)).transform(new AgentBuilder.Transformer(){
-    @Override public DynamicType.Builder<?> transform(    DynamicType.Builder<?> builder){
+    @Override public DynamicType.Builder<?> transform(    DynamicType.Builder<?> builder,    TypeDescription typeDescription){
       return builder.method(named("toString")).intercept(FixedValue.value("transformed"));
     }
   }

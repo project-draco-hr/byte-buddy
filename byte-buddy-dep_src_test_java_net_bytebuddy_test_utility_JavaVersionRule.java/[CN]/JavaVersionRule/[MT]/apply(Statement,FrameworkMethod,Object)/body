@@ -1,3 +1,4 @@
 {
-  return supportsVersion || method.getAnnotation(Enforce.class) == null ? base : new NoOpStatement();
+  Enforce enforce=method.getAnnotation(Enforce.class);
+  return enforce == null || ClassFileVersion.forKnownJavaVersion(enforce.value()).compareTo(supportedVersion) <= 0 ? base : new NoOpStatement(method.getAnnotation(Enforce.class).value());
 }
