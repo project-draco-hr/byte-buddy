@@ -15,7 +15,7 @@
           }
         }
         initializationStrategy.register(binaryTypeName,classLoader,loadedTypeInitializers.get(dynamicType.getTypeDescription()));
-        listener.onTransformation(dynamicType);
+        listener.onTransformation(typeDescription,dynamicType);
         return dynamicType.getBytes();
       }
     }
