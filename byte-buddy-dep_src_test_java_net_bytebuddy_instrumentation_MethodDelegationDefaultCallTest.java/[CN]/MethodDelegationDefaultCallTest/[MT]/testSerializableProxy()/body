@@ -1,5 +1,5 @@
 {
-  DynamicType.Loaded<?> loaded=instrument(Object.class,MethodDelegation.to(SerializationCheck.class),classLoader,not(isDeclaredBy(Object.class)),classLoader.loadClass(SINGLE_DEFAULT_METHOD));
+  DynamicType.Loaded<?> loaded=instrument(Object.class,MethodDelegation.to(SerializationCheck.class),classLoader,isMethod().and(not(isDeclaredBy(Object.class))),classLoader.loadClass(SINGLE_DEFAULT_METHOD));
   Object instance=loaded.getLoaded().newInstance();
   Method method=loaded.getLoaded().getMethod(FOO);
   assertThat(method.invoke(instance),is((Object)FOO));
