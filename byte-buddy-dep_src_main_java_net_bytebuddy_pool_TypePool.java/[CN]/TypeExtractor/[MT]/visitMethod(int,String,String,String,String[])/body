@@ -2,5 +2,5 @@
   if (internalName.equals(MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME)) {
     return null;
   }
-  return new MethodExtractor(modifiers,internalName,descriptor,exceptionName);
+  return new MethodExtractor(modifiers,internalName,descriptor,genericSignature,exceptionName);
 }

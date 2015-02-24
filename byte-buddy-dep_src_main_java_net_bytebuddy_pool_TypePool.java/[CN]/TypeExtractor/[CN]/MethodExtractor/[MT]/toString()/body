@@ -1,3 +1,3 @@
 {
-  return "TypePool.Default.TypeExtractor.MethodExtractor{" + "typeExtractor=" + TypeExtractor.this + ", modifiers="+ modifiers+ ", internalName='"+ internalName+ '\''+ ", descriptor='"+ descriptor+ '\''+ ", exceptionName="+ Arrays.toString(exceptionName)+ ", annotationTokens="+ annotationTokens+ ", parameterAnnotationTokens="+ parameterAnnotationTokens+ ", defaultValue="+ defaultValue+ '}';
+  return "TypePool.Default.TypeExtractor.MethodExtractor{" + "typeExtractor=" + TypeExtractor.this + ", modifiers="+ modifiers+ ", internalName='"+ internalName+ '\''+ ", descriptor='"+ descriptor+ '\''+ ", genericSignature='"+ genericSignature+ '\''+ ", exceptionName="+ Arrays.toString(exceptionName)+ ", annotationTokens="+ annotationTokens+ ", parameterAnnotationTokens="+ parameterAnnotationTokens+ ", defaultValue="+ defaultValue+ '}';
 }

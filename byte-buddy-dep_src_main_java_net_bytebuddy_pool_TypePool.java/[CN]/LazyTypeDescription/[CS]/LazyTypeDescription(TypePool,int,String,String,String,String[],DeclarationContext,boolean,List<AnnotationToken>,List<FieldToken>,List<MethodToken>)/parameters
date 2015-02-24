@@ -1,0 +1,11 @@
+TypePool typePool
+int modifiers
+String name
+String superTypeName
+String genericSignature
+String[] interfaceName
+DeclarationContext declarationContext
+boolean anonymousType
+List<AnnotationToken> annotationTokens
+List<FieldToken> fieldTokens
+List<MethodToken> methodTokens

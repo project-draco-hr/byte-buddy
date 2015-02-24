@@ -1,0 +1,8 @@
+{
+  super(ASM_VERSION);
+  this.modifiers=modifiers;
+  this.internalName=internalName;
+  this.descriptor=descriptor;
+  this.genericSignature=genericSignature;
+  annotationTokens=new LinkedList<LazyTypeDescription.AnnotationToken>();
+}

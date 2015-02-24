@@ -1,3 +1,3 @@
 {
-  return lazyTypeDescription.new LazyMethodDescription(getModifiers(),getName(),getDescriptor(),getExceptionName(),getAnnotationTokens(),getParameterAnnotationTokens(),getDefaultValue());
+  return lazyTypeDescription.new LazyMethodDescription(getModifiers(),getName(),getDescriptor(),getGenericSignature(),getExceptionName(),getAnnotationTokens(),getParameterAnnotationTokens(),getDefaultValue());
 }

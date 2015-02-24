@@ -1,6 +1,0 @@
-{
-  this.modifiers=modifiers;
-  this.name=name;
-  this.descriptor=descriptor;
-  this.annotationTokens=annotationTokens;
-}
