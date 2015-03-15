@@ -10,4 +10,7 @@
     exceptionTypes.add(withSubstitutedSelfReference(typeName,typeDescription));
   }
   modifiers=methodDescription.getModifiers();
+  declaredAnnotations=methodDescription.getDeclaredAnnotations();
+  parameterAnnotations=methodDescription.getParameterAnnotations();
+  defaultValue=methodDescription.getDefaultValue();
 }

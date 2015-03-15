@@ -1,3 +1,0 @@
-{
-  return internalName.equals(MethodDescription.CONSTRUCTOR_INTERNAL_NAME);
-}

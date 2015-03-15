@@ -1,3 +1,0 @@
-{
-  return CONSTRUCTOR_INTERNAL_NAME.equals(internalName);
-}
