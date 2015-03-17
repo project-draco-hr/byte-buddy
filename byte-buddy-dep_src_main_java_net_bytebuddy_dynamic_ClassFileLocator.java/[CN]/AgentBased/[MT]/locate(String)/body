@@ -12,6 +12,6 @@
     }
   }
  catch (  Exception ignored) {
-    return null;
+    return Resolution.Illegal.INSTANCE;
   }
 }
