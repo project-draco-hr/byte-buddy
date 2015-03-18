@@ -1,7 +1,6 @@
 {
   when(typeDescription.getSupertype()).thenReturn(superType);
-  when(methodDescription.getParameterTypes()).thenReturn(methodParameters);
-  when(methodParameters.iterator()).thenReturn(Arrays.<TypeDescription>asList().iterator());
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty());
   when(methodDescription.getReturnType()).thenReturn(returnType);
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);
   when(declaringType.getStackSize()).thenReturn(StackSize.SINGLE);

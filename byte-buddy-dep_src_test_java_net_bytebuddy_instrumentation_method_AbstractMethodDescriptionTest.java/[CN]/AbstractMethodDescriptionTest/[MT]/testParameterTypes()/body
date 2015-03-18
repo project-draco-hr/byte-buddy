@@ -1,7 +1,7 @@
 {
-  assertThat(describe(firstMethod).getParameterTypes(),is((TypeList)new TypeList.ForLoadedType(firstMethod.getParameterTypes())));
-  assertThat(describe(secondMethod).getParameterTypes(),is((TypeList)new TypeList.ForLoadedType(secondMethod.getParameterTypes())));
-  assertThat(describe(thirdMethod).getParameterTypes(),is((TypeList)new TypeList.ForLoadedType(thirdMethod.getParameterTypes())));
-  assertThat(describe(firstConstructor).getParameterTypes(),is((TypeList)new TypeList.ForLoadedType(firstConstructor.getParameterTypes())));
-  assertThat(describe(secondConstructor).getParameterTypes(),is((TypeList)new TypeList.ForLoadedType(secondConstructor.getParameterTypes())));
+  assertThat(describe(firstMethod).getParameters().asTypeList(),is((TypeList)new TypeList.ForLoadedType(firstMethod.getParameterTypes())));
+  assertThat(describe(secondMethod).getParameters().asTypeList(),is((TypeList)new TypeList.ForLoadedType(secondMethod.getParameterTypes())));
+  assertThat(describe(thirdMethod).getParameters().asTypeList(),is((TypeList)new TypeList.ForLoadedType(thirdMethod.getParameterTypes())));
+  assertThat(describe(firstConstructor).getParameters().asTypeList(),is((TypeList)new TypeList.ForLoadedType(firstConstructor.getParameterTypes())));
+  assertThat(describe(secondConstructor).getParameters().asTypeList(),is((TypeList)new TypeList.ForLoadedType(secondConstructor.getParameterTypes())));
 }

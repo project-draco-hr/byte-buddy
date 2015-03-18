@@ -4,7 +4,7 @@
   when(annotation.value()).thenReturn(FOO);
   when(fieldDescription.getInternalName()).thenReturn(FOO);
   when(source.getReturnType()).thenReturn(fieldType);
-  when(source.getParameterTypes()).thenReturn(new TypeList.Empty());
+  when(source.getParameters()).thenReturn(new ParameterList.Empty());
   when(source.getName()).thenReturn("getFoo");
   when(source.getInternalName()).thenReturn("getFoo");
   when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);

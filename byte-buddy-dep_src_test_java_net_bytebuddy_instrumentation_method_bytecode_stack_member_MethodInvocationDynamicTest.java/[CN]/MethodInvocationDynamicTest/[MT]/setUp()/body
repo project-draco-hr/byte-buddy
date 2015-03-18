@@ -1,6 +1,6 @@
 {
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);
-  when(methodDescription.getParameterTypes()).thenReturn(new TypeList.Explicit(Arrays.asList(firstType,secondType)));
+  when(methodDescription.getParameters()).thenReturn(ParameterList.Explicit.latent(methodDescription,Arrays.asList(firstType,secondType)));
   when(firstType.getStackSize()).thenReturn(StackSize.ZERO);
   when(firstType.getDescriptor()).thenReturn(FOO);
   when(secondType.getDescriptor()).thenReturn(BAR);
