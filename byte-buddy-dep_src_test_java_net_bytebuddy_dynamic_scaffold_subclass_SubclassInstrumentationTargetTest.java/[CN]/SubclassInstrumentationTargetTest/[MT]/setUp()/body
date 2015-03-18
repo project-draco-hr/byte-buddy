@@ -1,4 +1,5 @@
 {
+  when(parameterList.asTypeList()).thenReturn(parameterTypes);
   when(instrumentedType.getSupertype()).thenReturn(superType);
   when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Arrays.asList(superMethodConstructor)));
   when(superType.getInternalName()).thenReturn(BAR);
@@ -7,9 +8,9 @@
   when(superMethod.getReturnType()).thenReturn(returnType);
   when(superMethod.getInternalName()).thenReturn(BAZ);
   when(superMethod.getDescriptor()).thenReturn(FOOBAR);
-  when(superMethod.getParameterTypes()).thenReturn(parameterTypes);
+  when(superMethod.getParameters()).thenReturn(parameterList);
   when(superMethodConstructor.isConstructor()).thenReturn(true);
-  when(superMethodConstructor.getParameterTypes()).thenReturn(parameterTypes);
+  when(superMethodConstructor.getParameters()).thenReturn(parameterList);
   when(superMethodConstructor.getReturnType()).thenReturn(returnType);
   when(superMethodConstructor.isSpecializableFor(superType)).thenReturn(true);
   when(superMethodConstructor.getInternalName()).thenReturn(QUXBAZ);

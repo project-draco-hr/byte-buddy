@@ -1,8 +1,8 @@
 {
-  if (index >= interceptedMethod.getParameterTypes().size()) {
+  if (index >= interceptedMethod.getParameters().size()) {
     throw new IllegalStateException(interceptedMethod + " does not have a parameter with index " + index);
   }
-  TypeDescription originType=interceptedMethod.getParameterTypes().get(index);
+  TypeDescription originType=interceptedMethod.getParameters().get(index).getTypeDescription();
   StackManipulation stackManipulation=new StackManipulation.Compound(MethodVariableAccess.forType(originType).loadFromIndex(interceptedMethod.getParameterOffset(index)),assigner.assign(originType,targetType,dynamicallyTyped));
   if (!stackManipulation.isValid()) {
     throw new IllegalStateException("Cannot assign " + originType + " to "+ targetType+ " for "+ interceptedMethod);

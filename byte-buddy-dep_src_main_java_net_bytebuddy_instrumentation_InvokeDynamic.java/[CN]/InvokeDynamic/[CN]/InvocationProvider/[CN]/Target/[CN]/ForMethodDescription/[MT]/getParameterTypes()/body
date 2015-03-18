@@ -1,3 +1,3 @@
 {
-  return methodDescription.isStatic() ? methodDescription.getParameterTypes() : new TypeList.Explicit(join(methodDescription.getDeclaringType(),methodDescription.getParameterTypes()));
+  return methodDescription.isStatic() ? methodDescription.getParameters().asTypeList() : new TypeList.Explicit(join(methodDescription.getDeclaringType(),methodDescription.getParameters().asTypeList()));
 }

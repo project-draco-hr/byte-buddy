@@ -4,7 +4,7 @@
   MethodList superConstructors=superType == null ? new MethodList.Empty() : superType.getDeclaredMethods().filter(isConstructor());
   this.superConstructors=new HashMap<TypeList,MethodDescription>(superConstructors.size());
   for (  MethodDescription superConstructor : superConstructors) {
-    this.superConstructors.put(superConstructor.getParameterTypes(),superConstructor);
+    this.superConstructors.put(superConstructor.getParameters().asTypeList(),superConstructor);
   }
   this.originTypeIdentifier=originTypeIdentifier;
 }
