@@ -1,5 +1,5 @@
 {
-  TypeList typeList=mock(TypeList.class);
-  when(typeList.size()).thenReturn(PARAMETER_INDEX + 1);
-  when(methodDescription.getParameterTypes()).thenReturn(typeList);
+  ParameterList parameterList=mock(ParameterList.class);
+  when(parameterList.size()).thenReturn(PARAMETER_INDEX + 1);
+  when(methodDescription.getParameters()).thenReturn(parameterList);
 }

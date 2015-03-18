@@ -5,7 +5,7 @@
   assertThat(resolution.getResolvedMethod().getInternalName(),is(BAR));
   assertThat(resolution.getResolvedMethod().getModifiers(),is(MethodRebaseResolver.REBASED_METHOD_MODIFIER | Opcodes.ACC_NATIVE));
   assertThat(resolution.getResolvedMethod().getDeclaringType(),is(instrumentedType));
-  assertThat(resolution.getResolvedMethod().getParameterTypes(),is((TypeList)new TypeList.Empty()));
+  assertThat(resolution.getResolvedMethod().getParameters(),is((ParameterList)new ParameterList.Empty()));
   assertThat(resolution.getResolvedMethod().getReturnType(),is(returnType));
   assertThat(resolution.getAdditionalArguments().isValid(),is(true));
   StackManipulation.Size size=resolution.getAdditionalArguments().apply(methodVisitor,instrumentationContext);

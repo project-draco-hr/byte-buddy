@@ -6,7 +6,7 @@
       when(returnType.getStackSize()).thenReturn(StackSize.ZERO);
       when(mock.getReturnType()).thenReturn(returnType);
       when(mock.getInternalName()).thenReturn(FOO);
-      when(mock.getParameterTypes()).thenReturn(new TypeList.Empty());
+      when(mock.getParameters()).thenReturn(new ParameterList.Empty());
     }
   }
 ).apply();

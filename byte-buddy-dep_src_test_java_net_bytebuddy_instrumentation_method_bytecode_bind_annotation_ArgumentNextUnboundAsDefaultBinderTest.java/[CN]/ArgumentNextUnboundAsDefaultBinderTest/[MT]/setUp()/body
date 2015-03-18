@@ -1,5 +1,6 @@
 {
-  when(typeList.size()).thenReturn(2);
-  when(typeList.iterator()).thenReturn(Arrays.asList(mock(TypeDescription.class),mock(TypeDescription.class)).iterator());
-  when(source.getParameterTypes()).thenReturn(typeList);
+  sourceParameters=ParameterList.Explicit.latent(source,Arrays.asList(mock(TypeDescription.class),mock(TypeDescription.class)));
+  targetParameters=new ParameterList.Explicit(Arrays.asList(firstTargetParameter,secondTargetParameter));
+  when(source.getParameters()).thenReturn(sourceParameters);
+  when(target.getParameters()).thenReturn(targetParameters);
 }

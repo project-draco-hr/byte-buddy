@@ -1,5 +1,5 @@
 {
   super.setUp();
-  when(leftMethod.getParameterTypes()).thenReturn(leftList);
-  when(rightMethod.getParameterTypes()).thenReturn(rightList);
+  when(leftMethod.getParameters()).thenReturn(leftList);
+  when(rightMethod.getParameters()).thenReturn(rightList);
 }

@@ -1,15 +1,15 @@
 {
-  when(sourceTypeList.size()).thenReturn(2);
-  when(leftTypeList.get(0)).thenReturn(dominantTargetType);
-  when(leftTypeList.get(1)).thenReturn(weakTargetType);
+  when(sourceParameterList.size()).thenReturn(2);
+  when(leftParameterList.get(0)).thenReturn(dominantTargetParameter);
+  when(leftParameterList.get(1)).thenReturn(weakTargetParameter);
   when(left.getTargetParameterIndex(any(ArgumentTypeResolver.ParameterIndexToken.class))).thenAnswer(new TokenAnswer(new int[][]{{0,0},{1,1}}));
-  when(rightTypeList.get(0)).thenReturn(dominantTargetType);
+  when(rightParameterList.get(0)).thenReturn(dominantTargetParameter);
   when(right.getTargetParameterIndex(any(ArgumentTypeResolver.ParameterIndexToken.class))).thenAnswer(new TokenAnswer(new int[][]{{0,0}}));
   MethodDelegationBinder.AmbiguityResolver.Resolution resolution=ArgumentTypeResolver.INSTANCE.resolve(source,left,right);
   assertThat(resolution,is(MethodDelegationBinder.AmbiguityResolver.Resolution.LEFT));
-  verify(source,atLeast(1)).getParameterTypes();
-  verify(leftMethod,atLeast(1)).getParameterTypes();
-  verify(rightMethod,atLeast(1)).getParameterTypes();
+  verify(source,atLeast(1)).getParameters();
+  verify(leftMethod,atLeast(1)).getParameters();
+  verify(rightMethod,atLeast(1)).getParameters();
   verify(left,atLeast(1)).getTargetParameterIndex(argThat(describesArgument(0)));
   verify(left,atLeast(1)).getTargetParameterIndex(argThat(describesArgument(1)));
   verify(left,never()).getTargetParameterIndex(argThat(not(describesArgument(0,1))));

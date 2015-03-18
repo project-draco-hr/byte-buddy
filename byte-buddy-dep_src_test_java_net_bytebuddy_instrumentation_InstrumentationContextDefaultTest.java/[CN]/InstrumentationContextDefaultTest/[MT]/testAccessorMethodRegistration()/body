@@ -1,7 +1,7 @@
 {
   Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   MethodDescription firstMethodDescription=instrumentationContext.registerAccessorFor(firstSpecialInvocation);
-  assertThat(firstMethodDescription.getParameterTypes(),is((TypeList)new TypeList.Explicit(Arrays.asList(firstSpecialParameterType))));
+  assertThat(firstMethodDescription.getParameters(),is(ParameterList.Explicit.latent(firstMethodDescription,Arrays.asList(firstSpecialParameterType))));
   assertThat(firstMethodDescription.getReturnType(),is(firstSpecialReturnType));
   assertThat(firstMethodDescription.getInternalName(),startsWith(FOO));
   assertThat(firstMethodDescription.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER));
@@ -9,7 +9,7 @@
   assertThat(instrumentationContext.registerAccessorFor(firstSpecialInvocation),is(firstMethodDescription));
   when(secondSpecialMethod.isStatic()).thenReturn(true);
   MethodDescription secondMethodDescription=instrumentationContext.registerAccessorFor(secondSpecialInvocation);
-  assertThat(secondMethodDescription.getParameterTypes(),is((TypeList)new TypeList.Explicit(Arrays.asList(secondSpecialParameterType))));
+  assertThat(secondMethodDescription.getParameters(),is(ParameterList.Explicit.latent(secondMethodDescription,Arrays.asList(secondSpecialParameterType))));
   assertThat(secondMethodDescription.getReturnType(),is(secondSpecialReturnType));
   assertThat(secondMethodDescription.getInternalName(),startsWith(BAR));
   assertThat(secondMethodDescription.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC));

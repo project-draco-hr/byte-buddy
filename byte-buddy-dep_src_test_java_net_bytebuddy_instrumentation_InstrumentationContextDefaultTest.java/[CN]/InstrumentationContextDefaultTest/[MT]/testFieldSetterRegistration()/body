@@ -1,7 +1,7 @@
 {
   Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,typeInitializer,classFileVersion);
   MethodDescription firstFieldSetter=instrumentationContext.registerSetterFor(firstField);
-  assertThat(firstFieldSetter.getParameterTypes(),is((TypeList)new TypeList.Explicit(Arrays.asList(firstFieldType))));
+  assertThat(firstFieldSetter.getParameters(),is(ParameterList.Explicit.latent(firstFieldSetter,Arrays.asList(firstFieldType))));
   assertThat(firstFieldSetter.getReturnType(),is((TypeDescription)new TypeDescription.ForLoadedType(void.class)));
   assertThat(firstFieldSetter.getInternalName(),startsWith(FOO));
   assertThat(firstFieldSetter.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER));
@@ -9,7 +9,7 @@
   assertThat(instrumentationContext.registerSetterFor(firstField),is(firstFieldSetter));
   when(secondField.isStatic()).thenReturn(true);
   MethodDescription secondFieldSetter=instrumentationContext.registerSetterFor(secondField);
-  assertThat(secondFieldSetter.getParameterTypes(),is((TypeList)new TypeList.Explicit(Arrays.asList(secondFieldType))));
+  assertThat(secondFieldSetter.getParameters(),is(ParameterList.Explicit.latent(secondFieldSetter,Arrays.asList(secondFieldType))));
   assertThat(secondFieldSetter.getReturnType(),is((TypeDescription)new TypeDescription.ForLoadedType(void.class)));
   assertThat(secondFieldSetter.getInternalName(),startsWith(BAR));
   assertThat(secondFieldSetter.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC));

@@ -1,7 +1,7 @@
 {
   ObjectPropertyAssertion.of(MethodRebaseResolver.Resolution.ForRebasedMethod.class).refine(new ObjectPropertyAssertion.Refinement<MethodDescription>(){
     @Override public void apply(    MethodDescription mock){
-      when(mock.getParameterTypes()).thenReturn(new TypeList.Empty());
+      when(mock.getParameters()).thenReturn(new ParameterList.Empty());
       when(mock.getExceptionTypes()).thenReturn(new TypeList.Empty());
       when(mock.getDeclaringType()).thenReturn(mock(TypeDescription.class));
       when(mock.getReturnType()).thenReturn(mock(TypeDescription.class));

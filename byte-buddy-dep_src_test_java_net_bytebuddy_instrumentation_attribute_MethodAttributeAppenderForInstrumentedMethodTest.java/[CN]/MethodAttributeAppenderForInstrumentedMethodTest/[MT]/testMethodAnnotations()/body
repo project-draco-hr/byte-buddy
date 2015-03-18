@@ -1,11 +1,11 @@
 {
   when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Qux.Instance(),new Baz.Instance(),new QuxBaz.Instance()));
-  when(methodDescription.getParameterAnnotations()).thenReturn(AnnotationList.Empty.asList(0));
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty());
   MethodAttributeAppender.ForInstrumentedMethod.INSTANCE.apply(methodVisitor,methodDescription);
   verify(methodVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
   verify(methodVisitor).visitAnnotation(Type.getDescriptor(QuxBaz.class),false);
   verifyNoMoreInteractions(methodVisitor);
   verify(methodDescription).getDeclaredAnnotations();
-  verify(methodDescription).getParameterAnnotations();
+  verify(methodDescription).getParameters();
   verifyNoMoreInteractions(methodDescription);
 }

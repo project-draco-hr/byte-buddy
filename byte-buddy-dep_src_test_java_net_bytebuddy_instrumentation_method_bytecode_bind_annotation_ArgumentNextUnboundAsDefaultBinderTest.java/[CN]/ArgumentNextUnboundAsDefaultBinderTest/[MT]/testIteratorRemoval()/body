@@ -1,5 +1,6 @@
 {
-  when(target.getParameterAnnotations()).thenReturn(AnnotationList.Empty.asList(0));
+  when(firstTargetParameter.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(secondTargetParameter.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   Iterator<AnnotationDescription> iterator=Argument.NextUnboundAsDefaultsProvider.INSTANCE.makeIterator(instrumentationTarget,source,target);
   assertThat(iterator.hasNext(),is(true));
   iterator.remove();

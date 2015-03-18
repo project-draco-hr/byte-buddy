@@ -1,5 +1,5 @@
 {
-  TypeList parameterTypes=methodDescription.getParameterTypes();
+  TypeList parameterTypes=methodDescription.getParameters().asTypeList();
   List<ElementMatcher<TypeDescription>> matchers=new ArrayList<ElementMatcher<TypeDescription>>(parameterTypes.size());
   for (  TypeDescription typeDescription : parameterTypes) {
     matchers.add(isSubTypeOf(typeDescription));

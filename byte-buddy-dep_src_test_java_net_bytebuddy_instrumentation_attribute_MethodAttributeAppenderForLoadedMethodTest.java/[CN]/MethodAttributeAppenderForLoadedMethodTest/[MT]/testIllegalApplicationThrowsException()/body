@@ -1,4 +1,4 @@
 {
-  when(methodDescription.getParameterTypes()).thenReturn(new TypeList.Empty());
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty());
   new MethodAttributeAppender.ForLoadedMethod(method).apply(methodVisitor,methodDescription);
 }

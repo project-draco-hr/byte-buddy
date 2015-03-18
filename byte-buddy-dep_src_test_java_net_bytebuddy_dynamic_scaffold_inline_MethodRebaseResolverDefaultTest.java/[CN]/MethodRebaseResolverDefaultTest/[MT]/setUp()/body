@@ -1,6 +1,6 @@
 {
   when(methodDescription.getDeclaringType()).thenReturn(instrumentedType);
-  when(methodDescription.getParameterTypes()).thenReturn(new TypeList.Empty());
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty());
   when(methodDescription.getReturnType()).thenReturn(returnType);
   when(methodDescription.getInternalName()).thenReturn(FOO);
   when(methodNameTransformer.transform(FOO)).thenReturn(BAR);

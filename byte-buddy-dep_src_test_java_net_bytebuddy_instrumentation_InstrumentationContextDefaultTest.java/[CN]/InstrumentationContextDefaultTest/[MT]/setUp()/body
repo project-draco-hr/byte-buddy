@@ -26,7 +26,7 @@
   when(firstSpecialInvocation.getTypeDescription()).thenReturn(firstSpecialType);
   when(firstSpecialMethod.getReturnType()).thenReturn(firstSpecialReturnType);
   when(firstSpecialMethod.getInternalName()).thenReturn(FOO);
-  when(firstSpecialMethod.getParameterTypes()).thenReturn(new TypeList.Explicit(Arrays.asList(firstSpecialParameterType)));
+  when(firstSpecialMethod.getParameters()).thenReturn(ParameterList.Explicit.latent(firstSpecialMethod,Arrays.asList(firstSpecialParameterType)));
   when(firstSpecialMethod.getExceptionTypes()).thenReturn(firstSpecialExceptionTypes);
   when(firstSpecialParameterType.getDescriptor()).thenReturn(BAZ);
   when(firstSpecialReturnType.getDescriptor()).thenReturn(QUX);
@@ -38,7 +38,7 @@
   when(secondSpecialInvocation.getTypeDescription()).thenReturn(secondSpecialType);
   when(secondSpecialMethod.getInternalName()).thenReturn(BAR);
   when(secondSpecialMethod.getReturnType()).thenReturn(secondSpecialReturnType);
-  when(secondSpecialMethod.getParameterTypes()).thenReturn(new TypeList.Explicit(Arrays.asList(secondSpecialParameterType)));
+  when(secondSpecialMethod.getParameters()).thenReturn(ParameterList.Explicit.latent(secondSpecialMethod,Arrays.asList(secondSpecialParameterType)));
   when(secondSpecialMethod.getExceptionTypes()).thenReturn(secondSpecialExceptionTypes);
   when(secondSpecialParameterType.getDescriptor()).thenReturn(BAR);
   when(secondSpecialReturnType.getDescriptor()).thenReturn(FOO);
