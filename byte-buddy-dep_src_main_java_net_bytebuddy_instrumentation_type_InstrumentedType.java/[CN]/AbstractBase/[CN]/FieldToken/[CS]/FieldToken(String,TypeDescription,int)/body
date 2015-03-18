@@ -1,6 +1,0 @@
-{
-  this.name=name;
-  this.fieldType=fieldType;
-  this.modifiers=modifiers;
-  declaredAnnotations=Collections.emptyList();
-}

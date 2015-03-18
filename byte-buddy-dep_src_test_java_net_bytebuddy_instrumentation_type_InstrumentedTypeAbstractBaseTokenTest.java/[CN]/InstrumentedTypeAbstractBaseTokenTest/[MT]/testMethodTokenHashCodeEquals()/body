@@ -1,6 +1,0 @@
-{
-  assertThat(abstractBase.new MethodToken(FOO,typeDescription,Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),MODIFIER).hashCode(),is(abstractBase.new MethodToken(FOO,typeDescription,Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),MODIFIER).hashCode()));
-  assertThat(abstractBase.new MethodToken(FOO,typeDescription,Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),MODIFIER),is(abstractBase.new MethodToken(FOO,typeDescription,Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),MODIFIER)));
-  assertThat(abstractBase.new MethodToken(FOO,typeDescription,Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),MODIFIER).hashCode(),not(is(abstractBase.new MethodToken(BAR,typeDescription,Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),MODIFIER).hashCode())));
-  assertThat(abstractBase.new MethodToken(FOO,typeDescription,Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),MODIFIER),not(is(abstractBase.new MethodToken(BAR,typeDescription,Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),MODIFIER))));
-}
