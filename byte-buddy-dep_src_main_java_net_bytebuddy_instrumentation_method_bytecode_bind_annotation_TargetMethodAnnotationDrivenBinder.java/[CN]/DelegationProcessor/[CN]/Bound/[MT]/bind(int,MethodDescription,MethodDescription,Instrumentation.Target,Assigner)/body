@@ -1,3 +1,0 @@
-{
-  return parameterBinder.bind(annotation,targetParameterIndex,source,target,instrumentationTarget,assigner);
-}

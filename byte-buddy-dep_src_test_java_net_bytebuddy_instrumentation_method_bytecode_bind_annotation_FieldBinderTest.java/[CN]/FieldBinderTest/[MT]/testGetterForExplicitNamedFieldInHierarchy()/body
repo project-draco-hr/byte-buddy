@@ -1,13 +1,13 @@
 {
-  when(targetTypeList.get(0)).thenReturn(getterType);
+  when(target.getTypeDescription()).thenReturn(getterType);
   doReturn(void.class).when(annotation).definingType();
   when(annotation.value()).thenReturn(FOO);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
   when(source.getReturnType()).thenReturn(fieldType);
-  when(source.getParameterTypes()).thenReturn(new TypeList.Empty());
+  when(source.getParameters()).thenReturn(new ParameterList.Empty());
   when(source.getName()).thenReturn("getFoo");
   when(source.getInternalName()).thenReturn("getFoo");
   when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
-  MethodDelegationBinder.ParameterBinding<?> binding=new Field.Binder(getterMethod,setterMethod).bind(annotationDescription,0,source,target,instrumentationTarget,assigner);
+  MethodDelegationBinder.ParameterBinding<?> binding=new Field.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,instrumentationTarget,assigner);
   assertThat(binding.isValid(),is(true));
 }

@@ -2,6 +2,6 @@
   when(targetType.isInterface()).thenReturn(true);
   when(stackManipulation.isValid()).thenReturn(true);
   when(interfaces.contains(targetType)).thenReturn(true);
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Default.Binder.INSTANCE.bind(annotationDescription,INDEX,source,target,instrumentationTarget,assigner);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Default.Binder.INSTANCE.bind(annotationDescription,source,target,instrumentationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
 }

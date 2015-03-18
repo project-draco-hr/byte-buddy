@@ -1,5 +1,5 @@
 {
   super.setUp();
-  when(targetTypeList.get(INDEX)).thenReturn(targetType);
+  when(target.getTypeDescription()).thenReturn(targetType);
   when(instrumentedType.getInterfaces()).thenReturn(interfaces);
 }

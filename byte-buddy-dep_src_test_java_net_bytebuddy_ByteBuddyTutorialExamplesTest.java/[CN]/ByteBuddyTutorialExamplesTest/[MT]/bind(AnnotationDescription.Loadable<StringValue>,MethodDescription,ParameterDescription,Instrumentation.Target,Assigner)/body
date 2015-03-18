@@ -1,0 +1,7 @@
+{
+  if (!target.getTypeDescription().represents(String.class)) {
+    throw new IllegalStateException(target + " makes wrong use of StringValue");
+  }
+  StackManipulation constant=new TextConstant(annotation.loadSilent().value());
+  return new MethodDelegationBinder.ParameterBinding.Anonymous(constant);
+}

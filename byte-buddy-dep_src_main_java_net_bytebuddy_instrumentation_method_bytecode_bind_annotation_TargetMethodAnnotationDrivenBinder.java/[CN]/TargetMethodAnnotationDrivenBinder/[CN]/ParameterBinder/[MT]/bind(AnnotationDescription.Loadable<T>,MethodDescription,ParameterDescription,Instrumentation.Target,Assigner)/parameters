@@ -1,0 +1,5 @@
+AnnotationDescription.Loadable<T> annotation
+MethodDescription source
+ParameterDescription target
+Instrumentation.Target instrumentationTarget
+Assigner assigner

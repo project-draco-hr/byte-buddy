@@ -1,13 +1,13 @@
 {
   when(stackManipulation.isValid()).thenReturn(true);
-  when(target.getParameterTypes()).thenReturn(typeList);
+  when(target.getTypeDescription()).thenReturn(parameterType);
   RuntimeType runtimeType=mock(RuntimeType.class);
   doReturn(RuntimeType.class).when(runtimeType).annotationType();
-  when(target.getParameterAnnotations()).thenReturn(AnnotationList.ForLoadedAnnotation.asList(new Annotation[][]{{runtimeType}}));
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=This.Binder.INSTANCE.bind(annotationDescription,0,source,target,instrumentationTarget,assigner);
+  when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(runtimeType));
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=This.Binder.INSTANCE.bind(annotationDescription,source,target,instrumentationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
   verify(assigner).assign(instrumentedType,parameterType,true);
   verifyNoMoreInteractions(assigner);
-  verify(target,atLeast(1)).getParameterTypes();
-  verify(target,atLeast(1)).getParameterAnnotations();
+  verify(target,atLeast(1)).getTypeDescription();
+  verify(target,atLeast(1)).getDeclaredAnnotations();
 }

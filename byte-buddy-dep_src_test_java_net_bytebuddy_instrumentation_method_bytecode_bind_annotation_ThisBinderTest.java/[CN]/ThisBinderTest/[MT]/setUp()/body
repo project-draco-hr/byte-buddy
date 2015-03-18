@@ -1,5 +1,4 @@
 {
   super.setUp();
   when(stackManipulation.isValid()).thenReturn(true);
-  when(typeList.get(0)).thenReturn(parameterType);
 }

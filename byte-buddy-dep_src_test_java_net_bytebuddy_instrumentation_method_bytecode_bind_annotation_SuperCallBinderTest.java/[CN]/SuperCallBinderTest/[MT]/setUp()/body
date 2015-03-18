@@ -1,5 +1,5 @@
 {
   super.setUp();
-  when(targetTypeList.get(0)).thenReturn(targetParameterType);
+  when(target.getTypeDescription()).thenReturn(targetParameterType);
   when(instrumentationTarget.invokeSuper(eq(source),any(Instrumentation.Target.MethodLookup.class))).thenReturn(specialMethodInvocation);
 }

@@ -1,4 +1,4 @@
 {
-  when(targetTypeList.get(0)).thenReturn(mock(TypeDescription.class));
-  new Field.Binder(getterMethod,setterMethod).bind(annotationDescription,0,source,target,instrumentationTarget,assigner);
+  when(target.getTypeDescription()).thenReturn(mock(TypeDescription.class));
+  new Field.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,instrumentationTarget,assigner);
 }

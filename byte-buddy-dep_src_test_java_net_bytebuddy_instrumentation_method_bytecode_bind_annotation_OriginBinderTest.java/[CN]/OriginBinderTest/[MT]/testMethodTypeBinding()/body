@@ -1,7 +1,7 @@
 {
   targetType=new TypeDescription.ForLoadedType(JavaType.METHOD_TYPE.load());
-  when(targetTypeList.get(INDEX)).thenReturn(targetType);
+  when(target.getTypeDescription()).thenReturn(targetType);
   when(source.getDescriptor()).thenReturn(FOO);
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Origin.Binder.INSTANCE.bind(annotationDescription,INDEX,source,target,instrumentationTarget,assigner);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Origin.Binder.INSTANCE.bind(annotationDescription,source,target,instrumentationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
 }

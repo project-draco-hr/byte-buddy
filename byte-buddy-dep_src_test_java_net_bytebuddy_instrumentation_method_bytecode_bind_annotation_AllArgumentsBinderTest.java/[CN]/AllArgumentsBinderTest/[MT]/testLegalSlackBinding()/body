@@ -1,4 +1,5 @@
 {
+  when(target.getIndex()).thenReturn(1);
   when(annotation.value()).thenReturn(AllArguments.Assignment.SLACK);
   when(stackManipulation.isValid()).thenReturn(false);
   when(sourceTypeList.iterator()).thenReturn(Arrays.asList(firstSourceType,secondSourceType).iterator());
@@ -6,11 +7,10 @@
   when(targetType.isArray()).thenReturn(true);
   when(targetType.getComponentType()).thenReturn(componentType);
   when(componentType.getStackSize()).thenReturn(StackSize.SINGLE);
-  when(targetTypeList.get(1)).thenReturn(targetType);
-  when(targetTypeList.size()).thenReturn(2);
-  when(target.getParameterAnnotations()).thenReturn(AnnotationList.Empty.asList(2));
+  when(target.getTypeDescription()).thenReturn(targetType);
+  when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   when(componentType.getInternalName()).thenReturn(FOO);
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=AllArguments.Binder.INSTANCE.bind(annotationDescription,1,source,target,instrumentationTarget,assigner);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=AllArguments.Binder.INSTANCE.bind(annotationDescription,source,target,instrumentationTarget,assigner);
   MethodVisitor methodVisitor=mock(MethodVisitor.class);
   Instrumentation.Context instrumentationContext=mock(Instrumentation.Context.class);
   StackManipulation.Size size=parameterBinding.apply(methodVisitor,instrumentationContext);
@@ -21,10 +21,10 @@
   verifyNoMoreInteractions(methodVisitor);
   verifyZeroInteractions(instrumentationContext);
   assertThat(parameterBinding.isValid(),is(true));
-  verify(source,atLeast(1)).getParameterTypes();
+  verify(source,atLeast(1)).getParameters();
   verify(source,atLeast(1)).isStatic();
-  verify(target,atLeast(1)).getParameterTypes();
-  verify(target,atLeast(1)).getParameterAnnotations();
+  verify(target,atLeast(1)).getTypeDescription();
+  verify(target,atLeast(1)).getDeclaredAnnotations();
   verify(assigner).assign(firstSourceType,componentType,false);
   verify(assigner).assign(secondSourceType,componentType,false);
   verifyNoMoreInteractions(assigner);

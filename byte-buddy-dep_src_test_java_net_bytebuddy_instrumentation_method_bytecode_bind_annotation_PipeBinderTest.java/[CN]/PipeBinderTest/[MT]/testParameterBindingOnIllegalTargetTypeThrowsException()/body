@@ -1,4 +1,4 @@
 {
-  when(targetTypeList.get(0)).thenReturn(mock(TypeDescription.class));
-  binder.bind(annotationDescription,0,source,target,instrumentationTarget,assigner);
+  when(target.getTypeDescription()).thenReturn(mock(TypeDescription.class));
+  binder.bind(annotationDescription,source,target,instrumentationTarget,assigner);
 }

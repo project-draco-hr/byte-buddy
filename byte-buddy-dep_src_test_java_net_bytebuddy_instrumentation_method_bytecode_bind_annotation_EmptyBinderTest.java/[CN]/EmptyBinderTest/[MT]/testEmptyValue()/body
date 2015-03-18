@@ -1,6 +1,6 @@
 {
-  when(targetTypeList.get(0)).thenReturn(typeDescription);
-  TargetMethodAnnotationDrivenBinder.ParameterBinding<?> binding=Empty.Binder.INSTANCE.bind(annotationDescription,0,source,target,instrumentationTarget,assigner);
+  when(target.getTypeDescription()).thenReturn(typeDescription);
+  TargetMethodAnnotationDrivenBinder.ParameterBinding<?> binding=Empty.Binder.INSTANCE.bind(annotationDescription,source,target,instrumentationTarget,assigner);
   assertThat(binding.isValid(),is(true));
   StackManipulation.Size size=binding.apply(methodVisitor,instrumentationContext);
   assertThat(size.getSizeImpact(),is(typeDescription.getStackSize().getSize()));

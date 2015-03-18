@@ -6,7 +6,7 @@
   when(source.isSpecializableFor(interface1)).thenReturn(true);
   when(source.isSpecializableFor(interface2)).thenReturn(true);
   when(instrumentedType.getInterfaces()).thenReturn(new TypeList.Explicit(Arrays.asList(interface1,interface2)));
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=DefaultCall.Binder.INSTANCE.bind(annotationDescription,0,source,target,instrumentationTarget,assigner);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=DefaultCall.Binder.INSTANCE.bind(annotationDescription,source,target,instrumentationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(false));
   verify(instrumentationTarget).getTypeDescription();
   verify(instrumentationTarget).invokeDefault(interface1,FOO);
