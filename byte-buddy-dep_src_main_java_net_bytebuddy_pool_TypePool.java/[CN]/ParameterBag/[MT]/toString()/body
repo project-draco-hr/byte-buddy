@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.ParameterBag{" + "parameterType=" + Arrays.toString(parameterType) + ", parameterRegistry="+ parameterRegistry+ '}';
+}

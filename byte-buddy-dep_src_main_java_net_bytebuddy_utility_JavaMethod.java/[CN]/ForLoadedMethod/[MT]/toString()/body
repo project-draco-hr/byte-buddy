@@ -1,0 +1,3 @@
+{
+  return "JavaMethod.ForLoadedMethod{" + "method=" + method + '}';
+}

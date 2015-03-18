@@ -6,8 +6,11 @@
   this.genericSignature=genericSignature;
   this.exceptionName=exceptionName;
   annotationTokens=new LinkedList<LazyTypeDescription.AnnotationToken>();
-  parameterAnnotationTokens=new HashMap<Integer,List<LazyTypeDescription.AnnotationToken>>();
-  for (int i=0; i < Type.getMethodType(descriptor).getArgumentTypes().length; i++) {
+  Type[] parameterTypes=Type.getMethodType(descriptor).getArgumentTypes();
+  parameterAnnotationTokens=new HashMap<Integer,List<LazyTypeDescription.AnnotationToken>>(parameterTypes.length);
+  for (int i=0; i < parameterTypes.length; i++) {
     parameterAnnotationTokens.put(i,new LinkedList<LazyTypeDescription.AnnotationToken>());
   }
+  parameterTokens=new ArrayList<LazyTypeDescription.MethodToken.ParameterToken>(parameterTypes.length);
+  legacyParameterBag=new ParameterBag(parameterTypes);
 }

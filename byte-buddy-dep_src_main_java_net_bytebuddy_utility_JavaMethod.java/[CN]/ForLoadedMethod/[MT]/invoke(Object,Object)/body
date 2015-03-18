@@ -1,0 +1,11 @@
+{
+  try {
+    return method.invoke(instance,argument);
+  }
+ catch (  IllegalAccessException e) {
+    throw new IllegalStateException("Cannot invoke dynamically-linked method",e);
+  }
+catch (  InvocationTargetException e) {
+    throw new IllegalStateException("Exception when invoking method",e.getCause());
+  }
+}

@@ -1,0 +1,5 @@
+{
+  if (firstLabel == null) {
+    firstLabel=label;
+  }
+}

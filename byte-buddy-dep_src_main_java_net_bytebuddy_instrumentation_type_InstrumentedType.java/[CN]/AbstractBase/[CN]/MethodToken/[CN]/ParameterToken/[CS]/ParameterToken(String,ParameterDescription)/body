@@ -1,0 +1,7 @@
+{
+  parameterType=withSubstitutedSelfReference(typeName,parameterDescription.getTypeDescription());
+  index=parameterDescription.getIndex();
+  name=parameterDescription.isNamed() ? parameterDescription.getName() : null;
+  modifiers=parameterDescription.getModifiers();
+  parameterAnnotations=Collections.emptyList();
+}

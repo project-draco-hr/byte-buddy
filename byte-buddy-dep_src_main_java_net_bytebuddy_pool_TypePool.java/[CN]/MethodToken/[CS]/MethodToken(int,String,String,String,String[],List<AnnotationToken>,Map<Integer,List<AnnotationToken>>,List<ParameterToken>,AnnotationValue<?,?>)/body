@@ -1,0 +1,11 @@
+{
+  this.modifiers=modifiers;
+  this.name=name;
+  this.descriptor=descriptor;
+  this.genericSignature=genericSignature;
+  this.exceptionName=exceptionName;
+  this.annotationTokens=annotationTokens;
+  this.parameterAnnotationTokens=parameterAnnotationTokens;
+  this.parameterTokens=parameterTokens;
+  this.defaultValue=defaultValue;
+}

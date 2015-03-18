@@ -1,0 +1,10 @@
+{
+  List<LazyTypeDescription.MethodToken.ParameterToken> parameterTokens=new ArrayList<LazyTypeDescription.MethodToken.ParameterToken>(parameterType.length);
+  int offset=isStatic ? StackSize.ZERO.getSize() : StackSize.SINGLE.getSize();
+  for (  Type aParameterType : parameterType) {
+    String name=this.parameterRegistry.get(offset);
+    parameterTokens.add(name == null ? new LazyTypeDescription.MethodToken.ParameterToken() : new LazyTypeDescription.MethodToken.ParameterToken(name));
+    offset+=aParameterType.getSize();
+  }
+  return parameterTokens;
+}

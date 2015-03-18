@@ -12,5 +12,9 @@
   modifiers=methodDescription.getModifiers();
   declaredAnnotations=methodDescription.getDeclaredAnnotations();
   parameterAnnotations=methodDescription.getParameterAnnotations();
+  parameters=new ArrayList<ParameterDescription>(methodDescription.getParameters().size());
+  for (  ParameterDescription parameterDescription : methodDescription.getParameters()) {
+    parameters.add(new ParameterToken(typeName,parameterDescription));
+  }
   defaultValue=methodDescription.getDefaultValue();
 }

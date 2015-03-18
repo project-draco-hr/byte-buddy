@@ -1,4 +1,4 @@
 {
   String packageName=getPackageName();
-  return packageName == null ? null : new LazyPackageDescription(packageName);
+  return packageName == null ? null : new LazyPackageDescription(typePool,packageName);
 }

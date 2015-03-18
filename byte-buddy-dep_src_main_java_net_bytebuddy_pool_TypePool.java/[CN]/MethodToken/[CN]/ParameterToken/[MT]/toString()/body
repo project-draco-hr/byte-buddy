@@ -1,0 +1,3 @@
+{
+  return "TypePool.LazyTypeDescription.MethodToken.ParameterToken{" + "name='" + name + '\''+ ", modifiers="+ modifiers+ '}';
+}

@@ -1,0 +1,5 @@
+{
+  if (start == firstLabel) {
+    legacyParameterBag.register(index,name);
+  }
+}

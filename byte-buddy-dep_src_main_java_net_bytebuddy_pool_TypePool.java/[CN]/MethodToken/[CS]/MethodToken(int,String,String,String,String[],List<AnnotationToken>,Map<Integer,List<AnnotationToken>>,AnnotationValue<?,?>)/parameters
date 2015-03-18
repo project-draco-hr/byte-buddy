@@ -1,8 +1,0 @@
-int modifiers
-String name
-String descriptor
-String genericSignature
-String[] exceptionName
-List<AnnotationToken> annotationTokens
-Map<Integer,List<AnnotationToken>> parameterAnnotationTokens
-AnnotationValue<?,?> defaultValue

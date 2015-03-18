@@ -1,3 +1,0 @@
-{
-  return AnnotationList.Explicit.asList(declaredParameterAnnotations);
-}

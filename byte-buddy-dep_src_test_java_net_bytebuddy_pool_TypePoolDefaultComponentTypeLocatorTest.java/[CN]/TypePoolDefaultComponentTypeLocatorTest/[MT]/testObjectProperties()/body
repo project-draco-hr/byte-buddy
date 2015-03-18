@@ -10,6 +10,7 @@
   TypePool.Default.TypeExtractor typeExtractor=new TypePool.Default(mock(TypePool.CacheProvider.class),mock(ClassFileLocator.class)).new TypeExtractor();
   ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.OnTypeCollector.class).apply(typeExtractor.new OnTypeCollector(FOO));
   ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.MethodExtractor.class).apply(typeExtractor.new MethodExtractor(0,FOO,"()" + BAR_DESCRIPTOR,BAZ,null));
+  ObjectPropertyAssertion.of(TypePool.Default.ParameterBag.class).apply(new TypePool.Default.ParameterBag(new Type[0]));
   ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.MethodExtractor.OnMethodCollector.class).apply(typeExtractor.new MethodExtractor(0,FOO,"()" + BAR_DESCRIPTOR,BAZ,null).new OnMethodCollector(FOO));
   ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.MethodExtractor.OnMethodParameterCollector.class).apply(typeExtractor.new MethodExtractor(0,FOO,"()" + BAR_DESCRIPTOR,BAZ,null).new OnMethodParameterCollector(FOO,0));
   ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.FieldExtractor.class).apply(typeExtractor.new FieldExtractor(0,FOO,BAR_DESCRIPTOR,BAZ));

@@ -1,0 +1,7 @@
+{
+  Method method=Object.class.getDeclaredMethod("toString");
+  JavaMethod javaMethod=new JavaMethod.ForLoadedMethod(method);
+  Object instance=new Object();
+  assertThat(javaMethod.isInvokable(),is(true));
+  assertThat(javaMethod.invoke(instance),is((Object)instance.toString()));
+}

@@ -1,0 +1,4 @@
+{
+  this.parameterType=parameterType;
+  parameterRegistry=new HashMap<Integer,String>(parameterType.length);
+}
