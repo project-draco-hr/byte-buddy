@@ -1,0 +1,11 @@
+{
+  assertThat(describe(secondMethod).getParameters().get(0).isNamed(),is(false));
+  assertThat(describe(secondMethod).getParameters().get(1).isNamed(),is(false));
+  assertThat(describe(secondMethod).getParameters().get(0).getName(),is("arg0"));
+  assertThat(describe(secondMethod).getParameters().get(1).getName(),is("arg1"));
+  assertThat(describe(secondMethod).getParameters().get(0).getModifiers(),is(0));
+  assertThat(describe(secondMethod).getParameters().get(1).getModifiers(),is(0));
+  assertThat(describe(firstConstructor).getParameters().get(0).isNamed(),is(canReadDebugInformation()));
+  assertThat(describe(firstConstructor).getParameters().get(0).getName(),is(canReadDebugInformation() ? "argument" : "arg0"));
+  assertThat(describe(firstConstructor).getParameters().get(0).getModifiers(),is(0));
+}

@@ -1,0 +1,19 @@
+{
+  Class<?> type=classLoader.loadClass("net.bytebuddy.test.precompiled.ParameterNames");
+  assertThat(describe(type.getDeclaredMethod("foo",String.class,long.class,int.class)).getParameters().get(0).isNamed(),is(true));
+  assertThat(describe(type.getDeclaredMethod("foo",String.class,long.class,int.class)).getParameters().get(1).isNamed(),is(true));
+  assertThat(describe(type.getDeclaredMethod("foo",String.class,long.class,int.class)).getParameters().get(2).isNamed(),is(true));
+  assertThat(describe(type.getDeclaredMethod("foo",String.class,long.class,int.class)).getParameters().get(0).getName(),is("first"));
+  assertThat(describe(type.getDeclaredMethod("foo",String.class,long.class,int.class)).getParameters().get(1).getName(),is("second"));
+  assertThat(describe(type.getDeclaredMethod("foo",String.class,long.class,int.class)).getParameters().get(2).getName(),is("third"));
+  assertThat(describe(type.getDeclaredMethod("bar",String.class,long.class,int.class)).getParameters().get(0).isNamed(),is(true));
+  assertThat(describe(type.getDeclaredMethod("bar",String.class,long.class,int.class)).getParameters().get(1).isNamed(),is(true));
+  assertThat(describe(type.getDeclaredMethod("bar",String.class,long.class,int.class)).getParameters().get(2).isNamed(),is(true));
+  assertThat(describe(type.getDeclaredMethod("bar",String.class,long.class,int.class)).getParameters().get(0).getName(),is("first"));
+  assertThat(describe(type.getDeclaredMethod("bar",String.class,long.class,int.class)).getParameters().get(1).getName(),is("second"));
+  assertThat(describe(type.getDeclaredMethod("bar",String.class,long.class,int.class)).getParameters().get(2).getName(),is("third"));
+  assertThat(describe(type.getDeclaredConstructor(String.class,int.class)).getParameters().get(0).isNamed(),is(true));
+  assertThat(describe(type.getDeclaredConstructor(String.class,int.class)).getParameters().get(1).isNamed(),is(true));
+  assertThat(describe(type.getDeclaredConstructor(String.class,int.class)).getParameters().get(0).getName(),is("first"));
+  assertThat(describe(type.getDeclaredConstructor(String.class,int.class)).getParameters().get(1).getName(),is("second"));
+}
