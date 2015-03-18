@@ -1,12 +1,9 @@
 {
   this.internalName=internalName;
   this.returnType=returnType;
-  this.parameterTypes=new ArrayList<TypeDescription>(parameterTypes);
   this.exceptionTypes=new ArrayList<TypeDescription>(exceptionTypes);
   this.modifiers=modifiers;
   declaredAnnotations=Collections.emptyList();
-  parameterAnnotations=new ArrayList<AnnotationList>(parameterTypes.size());
-  Collections.fill(parameterAnnotations,new AnnotationList.Empty());
   parameters=ParameterList.Explicit.latent(this,parameterTypes);
   defaultValue=null;
 }
