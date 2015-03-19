@@ -1,0 +1,5 @@
+{
+  assertThat(describe(secondMethod).getParameters().get(0).hashCode(),is(hashCode(secondMethod,0)));
+  assertThat(describe(secondMethod).getParameters().get(1).hashCode(),is(hashCode(secondMethod,1)));
+  assertThat(describe(firstConstructor).getParameters().get(0).hashCode(),is(hashCode(firstConstructor,0)));
+}

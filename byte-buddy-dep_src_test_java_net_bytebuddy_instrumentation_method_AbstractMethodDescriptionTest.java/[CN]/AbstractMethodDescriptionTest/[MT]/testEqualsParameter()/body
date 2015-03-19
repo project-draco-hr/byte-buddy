@@ -1,0 +1,17 @@
+{
+  ParameterDescription identical=describe(secondMethod).getParameters().get(0);
+  assertThat(identical,equalTo(identical));
+  assertThat(describe(secondMethod).getParameters().get(0),is(describe(secondMethod).getParameters().get(0)));
+  ParameterDescription equal=mock(ParameterDescription.class);
+  when(equal.getDeclaringMethod()).thenReturn(describe(secondMethod));
+  when(equal.getIndex()).thenReturn(0);
+  assertThat(describe(secondMethod).getParameters().get(0),equalTo(equal));
+  ParameterDescription notEqualMethod=mock(ParameterDescription.class);
+  when(equal.getDeclaringMethod()).thenReturn(mock(MethodDescription.class));
+  when(equal.getIndex()).thenReturn(0);
+  assertThat(describe(secondMethod).getParameters().get(0),not(equalTo(notEqualMethod)));
+  ParameterDescription notEqualMethodIndex=mock(ParameterDescription.class);
+  when(equal.getDeclaringMethod()).thenReturn(describe(secondMethod));
+  when(equal.getIndex()).thenReturn(1);
+  assertThat(describe(secondMethod).getParameters().get(0),not(equalTo(notEqualMethodIndex)));
+}

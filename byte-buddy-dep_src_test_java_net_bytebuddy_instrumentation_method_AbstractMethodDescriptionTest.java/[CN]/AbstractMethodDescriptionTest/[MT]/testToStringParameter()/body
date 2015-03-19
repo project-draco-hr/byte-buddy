@@ -1,0 +1,6 @@
+{
+  Class<?> executable=Class.forName("java.lang.reflect.Executable");
+  Method method=executable.getDeclaredMethod("getParameters");
+  assertThat(describe(secondMethod).getParameters().get(0).toString(),is(((Object[])method.invoke(secondMethod))[0].toString()));
+  assertThat(describe(secondMethod).getParameters().get(1).toString(),is(((Object[])method.invoke(secondMethod))[1].toString()));
+}
