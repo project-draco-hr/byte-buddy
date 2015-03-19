@@ -2,7 +2,10 @@
   when(methodDescription.isConstructor()).thenReturn(true);
   when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
   when(methodDescription.getReturnType()).thenReturn(returnType);
-  when(methodDescription.getParameters()).thenReturn(ParameterList.Explicit.latent(methodDescription,Arrays.asList(parameterType)));
+  when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(placeholderType.getStackSize()).thenReturn(StackSize.ZERO);
+  ParameterList parameterList=ParameterList.Explicit.latent(methodDescription,Arrays.asList(parameterType));
+  when(methodDescription.getParameters()).thenReturn(parameterList);
   when(methodDescription.getInternalName()).thenReturn(FOO);
   when(methodDescription.getDescriptor()).thenReturn(QUX);
   when(typeDescription.getInternalName()).thenReturn(BAR);

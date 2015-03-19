@@ -4,4 +4,5 @@
   when(setterMethod.getDeclaringType()).thenReturn(setterType);
   when(instrumentedType.getDeclaredFields()).thenReturn(new FieldList.Explicit(Arrays.asList(fieldDescription)));
   when(fieldDescription.getFieldType()).thenReturn(fieldType);
+  when(fieldType.getStackSize()).thenReturn(StackSize.ZERO);
 }

@@ -4,7 +4,8 @@
   when(annotation.value()).thenReturn(Field.BEAN_PROPERTY);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
   when(source.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(void.class));
-  when(source.getParameters()).thenReturn(ParameterList.Explicit.latent(source,Arrays.asList(fieldType)));
+  ParameterList parameterList=ParameterList.Explicit.latent(source,Arrays.asList(fieldType));
+  when(source.getParameters()).thenReturn(parameterList);
   when(source.getName()).thenReturn("setFoo");
   when(source.getSourceCodeName()).thenReturn("setFoo");
   when(source.getInternalName()).thenReturn("setFoo");

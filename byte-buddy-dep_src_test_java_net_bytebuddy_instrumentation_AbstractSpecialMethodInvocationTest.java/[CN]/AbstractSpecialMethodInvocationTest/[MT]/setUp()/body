@@ -1,3 +1,4 @@
 {
+  when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
   parameterTypes=new TypeList.Explicit(Arrays.asList(parameterType));
 }

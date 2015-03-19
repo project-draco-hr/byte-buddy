@@ -1,11 +1,13 @@
 {
   when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
   when(methodDescription.getReturnType()).thenReturn(returnType);
-  when(methodDescription.getParameters()).thenReturn(ParameterList.Explicit.latent(methodDescription,Arrays.asList(parameterType)));
   when(methodDescription.getInternalName()).thenReturn(FOO);
   when(methodDescription.getDescriptor()).thenReturn(BAZ);
   when(typeDescription.getInternalName()).thenReturn(BAR);
   when(typeDescription.getDescriptor()).thenReturn(BAR);
   when(methodNameTransformer.transform(FOO)).thenReturn(QUX);
   when(otherMethodNameTransformer.transform(FOO)).thenReturn(FOO + BAR);
+  when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
+  ParameterList parameterList=ParameterList.Explicit.latent(methodDescription,Arrays.asList(parameterType));
+  when(methodDescription.getParameters()).thenReturn(parameterList);
 }

@@ -4,7 +4,7 @@
   TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
   int currentIndex=1;
   for (  TypeDescription parameterType : parameterTypes) {
-    instruction.add(new StackManipulation.Compound(MethodVariableAccess.forType(parameterType).loadFromIndex(currentIndex),assigner.assign(parameterType,objectType,false)));
+    instruction.add(new StackManipulation.Compound(MethodVariableAccess.forType(parameterType).loadOffset(currentIndex),assigner.assign(parameterType,objectType,false)));
     currentIndex+=parameterType.getStackSize().getSize();
   }
   return instruction;

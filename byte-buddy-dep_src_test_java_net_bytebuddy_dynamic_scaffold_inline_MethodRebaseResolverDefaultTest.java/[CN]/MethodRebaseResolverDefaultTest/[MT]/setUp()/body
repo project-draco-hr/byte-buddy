@@ -4,4 +4,5 @@
   when(methodDescription.getReturnType()).thenReturn(returnType);
   when(methodDescription.getInternalName()).thenReturn(FOO);
   when(methodNameTransformer.transform(FOO)).thenReturn(BAR);
+  when(placeholderType.getStackSize()).thenReturn(StackSize.ZERO);
 }

@@ -1,10 +1,10 @@
 {
-  StackManipulation thisReference=MethodVariableAccess.REFERENCE.loadFromIndex(0);
+  StackManipulation thisReference=MethodVariableAccess.REFERENCE.loadOffset(0);
   FieldList fieldList=instrumentedType.getDeclaredFields();
   StackManipulation[] fieldLoading=new StackManipulation[fieldList.size()];
   int index=0;
   for (  FieldDescription fieldDescription : fieldList) {
-    fieldLoading[index]=new StackManipulation.Compound(thisReference,MethodVariableAccess.forType(fieldDescription.getFieldType()).loadFromIndex(instrumentedMethod.getParameterOffset(index)),FieldAccess.forField(fieldDescription).putter());
+    fieldLoading[index]=new StackManipulation.Compound(thisReference,MethodVariableAccess.forType(fieldDescription.getFieldType()).loadOffset(instrumentedMethod.getParameters().get(index).getOffset()),FieldAccess.forField(fieldDescription).putter());
     index++;
   }
   StackManipulation.Size stackSize=new StackManipulation.Compound(thisReference,MethodInvocation.invoke(ConstructorCall.INSTANCE.objectTypeDefaultConstructor),new StackManipulation.Compound(fieldLoading),MethodReturn.VOID).apply(methodVisitor,instrumentationContext);
