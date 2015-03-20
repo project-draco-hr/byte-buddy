@@ -1,4 +1,0 @@
-{
-  when(methodDescription.getParameters()).thenReturn(parameterList);
-  when(parameterList.asTypeList()).thenReturn(typeList);
-}

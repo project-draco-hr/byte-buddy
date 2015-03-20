@@ -1,3 +1,0 @@
-{
-  return parameterMatcher.matches(target.getParameters().asTypeList());
-}

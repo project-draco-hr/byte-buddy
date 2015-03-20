@@ -1,0 +1,3 @@
+{
+  super((Class<MethodParameterMatcher<?>>)(Object)MethodParameterMatcher.class,"hasParameter");
+}
