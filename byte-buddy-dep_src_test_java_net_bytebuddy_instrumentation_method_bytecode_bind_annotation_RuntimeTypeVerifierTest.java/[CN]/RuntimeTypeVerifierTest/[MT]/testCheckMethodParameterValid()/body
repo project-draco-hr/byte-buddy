@@ -1,6 +1,0 @@
-{
-  when(parameterDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(runtimeType));
-  assertThat(RuntimeType.Verifier.check(parameterDescription),is(true));
-  verify(parameterDescription).getDeclaredAnnotations();
-  verifyNoMoreInteractions(parameterDescription);
-}

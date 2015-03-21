@@ -1,0 +1,6 @@
+{
+  when(annotatedElement.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation());
+  assertThat(RuntimeType.Verifier.check(annotatedElement),is(false));
+  verify(annotatedElement).getDeclaredAnnotations();
+  verifyNoMoreInteractions(annotatedElement);
+}
