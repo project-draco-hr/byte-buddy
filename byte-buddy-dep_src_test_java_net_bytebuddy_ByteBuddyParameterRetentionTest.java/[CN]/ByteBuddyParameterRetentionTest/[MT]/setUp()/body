@@ -1,0 +1,4 @@
+{
+  classLoader=new PrecompiledTypeClassLoader(getClass().getClassLoader());
+  typePool=TypePool.Default.ofClassPath();
+}

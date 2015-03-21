@@ -9,4 +9,6 @@
   verify(methodVisitor).visitEnd();
   verifyNoMoreInteractions(methodVisitor);
   verifyZeroInteractions(instrumentationContext);
+  verify(parameterDescription,never()).getName();
+  verify(parameterDescription,never()).getModifiers();
 }

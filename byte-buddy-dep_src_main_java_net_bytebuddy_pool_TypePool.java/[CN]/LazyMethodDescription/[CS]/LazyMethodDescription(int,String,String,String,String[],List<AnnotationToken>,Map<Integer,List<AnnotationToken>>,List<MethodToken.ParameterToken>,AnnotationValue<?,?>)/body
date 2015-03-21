@@ -21,7 +21,7 @@
     declaredParameterAnnotations.add(annotationDescriptions);
   }
   parameterNames=new String[parameterTypes.size()];
-  parameterModifiers=new int[parameterTypes.size()];
+  parameterModifiers=new Integer[parameterTypes.size()];
   if (parameterTokens.size() == parameterTypes.size()) {
     int index=0;
     for (    MethodToken.ParameterToken parameterToken : parameterTokens) {

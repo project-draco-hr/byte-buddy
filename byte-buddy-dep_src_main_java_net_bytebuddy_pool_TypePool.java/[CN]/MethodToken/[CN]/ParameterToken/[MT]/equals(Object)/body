@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   ParameterToken that=((ParameterToken)other);
-  return modifiers == that.modifiers && !(name != null ? !name.equals(that.name) : that.name != null);
+  return !(modifiers != null ? !modifiers.equals(that.modifiers) : that.modifiers != null) && !(name != null ? !name.equals(that.name) : that.name != null);
 }

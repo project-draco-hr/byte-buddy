@@ -1,5 +1,5 @@
 {
   int result=name != null ? name.hashCode() : 0;
-  result=31 * result + modifiers;
+  result=31 * result + (modifiers != null ? modifiers.hashCode() : 0);
   return result;
 }
