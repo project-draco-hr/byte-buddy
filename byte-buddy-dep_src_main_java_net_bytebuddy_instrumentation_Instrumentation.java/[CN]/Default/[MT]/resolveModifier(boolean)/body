@@ -1,0 +1,3 @@
+{
+  return ACCESSOR_METHOD_MODIFIER | (isStatic ? Opcodes.ACC_STATIC : 0);
+}
