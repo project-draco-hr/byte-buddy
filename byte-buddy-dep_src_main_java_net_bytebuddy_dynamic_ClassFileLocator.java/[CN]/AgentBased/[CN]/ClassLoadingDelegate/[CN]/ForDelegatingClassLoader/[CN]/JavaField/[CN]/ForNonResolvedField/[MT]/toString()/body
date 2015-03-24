@@ -1,0 +1,3 @@
+{
+  return "ClassFileLocator.AgentBased.ClassLoadingDelegate.ForDelegatingClassLoader.JavaField.ForNonResolvedField{" + "exception=" + exception + '}';
+}

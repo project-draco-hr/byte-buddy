@@ -1,3 +1,3 @@
 {
-  return "ClassFileLocator.AgentBased{" + "instrumentation=" + instrumentation + ", classLoader="+ classLoader+ '}';
+  return "ClassFileLocator.AgentBased{" + "instrumentation=" + instrumentation + ", classLoadingDelegate="+ classLoadingDelegate+ '}';
 }

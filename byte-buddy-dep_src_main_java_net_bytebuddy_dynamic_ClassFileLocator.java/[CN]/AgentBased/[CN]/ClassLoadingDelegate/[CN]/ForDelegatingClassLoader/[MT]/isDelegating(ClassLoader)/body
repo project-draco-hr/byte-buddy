@@ -1,0 +1,3 @@
+{
+  return classLoader != null && classLoader.getClass().getName().equals(DELEGATING_CLASS_LOADER_NAME);
+}

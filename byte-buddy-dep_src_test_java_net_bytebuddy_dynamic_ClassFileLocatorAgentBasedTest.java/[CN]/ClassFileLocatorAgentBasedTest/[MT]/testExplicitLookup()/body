@@ -1,0 +1,13 @@
+{
+  ClassFileLocator.AgentBased.ClassLoadingDelegate fallback=mock(ClassFileLocator.AgentBased.ClassLoadingDelegate.class);
+  ClassFileLocator.AgentBased.ClassLoadingDelegate classLoadingDelegate=new ClassFileLocator.AgentBased.ClassLoadingDelegate.Explicit(fallback,Arrays.<Class<?>>asList(Object.class));
+  assertEquals(Object.class,classLoadingDelegate.locate(Object.class.getName()));
+  doReturn(String.class).when(fallback).locate(String.class.getName());
+  assertEquals(String.class,classLoadingDelegate.locate(String.class.getName()));
+  verify(fallback).locate(String.class.getName());
+  ClassLoader classLoader=mock(ClassLoader.class);
+  when(fallback.getClassLoader()).thenReturn(classLoader);
+  assertThat(classLoadingDelegate.getClassLoader(),is(classLoader));
+  verify(fallback).getClassLoader();
+  verifyNoMoreInteractions(fallback);
+}

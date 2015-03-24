@@ -1,0 +1,3 @@
+{
+  this(new Default(classLoader),types);
+}

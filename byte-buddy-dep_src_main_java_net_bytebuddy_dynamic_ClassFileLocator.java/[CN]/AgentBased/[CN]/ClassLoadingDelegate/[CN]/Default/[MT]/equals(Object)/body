@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Default aDefault=(Default)other;
+  return !(classLoader != null ? !classLoader.equals(aDefault.classLoader) : aDefault.classLoader != null);
+}

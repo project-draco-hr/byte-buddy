@@ -1,0 +1,3 @@
+{
+  return "ClassFileLocator.AgentBased.ClassLoadingDelegate.Explicit{" + "fallbackDelegate=" + fallbackDelegate + ", types="+ types+ '}';
+}

@@ -1,0 +1,4 @@
+{
+  Class<?> type=types.get(name);
+  return type == null ? fallbackDelegate.locate(name) : type;
+}

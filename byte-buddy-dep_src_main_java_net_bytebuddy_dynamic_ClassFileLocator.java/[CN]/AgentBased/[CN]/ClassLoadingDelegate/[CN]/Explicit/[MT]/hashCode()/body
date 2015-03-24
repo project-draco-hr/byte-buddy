@@ -1,0 +1,5 @@
+{
+  int result=fallbackDelegate.hashCode();
+  result=31 * result + types.hashCode();
+  return result;
+}

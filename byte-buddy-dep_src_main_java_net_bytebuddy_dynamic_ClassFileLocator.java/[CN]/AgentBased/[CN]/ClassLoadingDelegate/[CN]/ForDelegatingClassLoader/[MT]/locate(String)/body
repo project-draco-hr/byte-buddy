@@ -1,0 +1,14 @@
+{
+  Vector<Class<?>> classes;
+  try {
+    classes=(Vector<Class<?>>)CLASSES_FIELD.readValue(classLoader);
+  }
+ catch (  Exception ignored) {
+    return super.locate(name);
+  }
+  if (classes.size() != 1) {
+    return super.locate(name);
+  }
+  Class<?> type=classes.get(ONLY);
+  return type.getName().equals(name) ? type : super.locate(name);
+}

@@ -1,0 +1,3 @@
+{
+  return "ClassFileLocator.AgentBased.ClassLoadingDelegate.Default{" + "classLoader=" + classLoader + '}';
+}

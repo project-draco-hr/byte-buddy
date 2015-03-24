@@ -1,0 +1,16 @@
+{
+  Method bar=Foo.class.getDeclaredMethod("bar");
+  for (int i=0; i < 20; i++) {
+    bar.invoke(new Foo());
+  }
+  Field field=Method.class.getDeclaredField("methodAccessor");
+  field.setAccessible(true);
+  Object methodAccessor=field.get(bar);
+  Field delegate=methodAccessor.getClass().getDeclaredField("delegate");
+  delegate.setAccessible(true);
+  Class<?> delegateClass=delegate.get(methodAccessor).getClass();
+  ClassFileLocator classFileLocator=ClassFileLocator.AgentBased.fromInstalledAgent(delegateClass.getClassLoader());
+  ClassFileLocator.Resolution resolution=classFileLocator.locate(delegateClass.getName());
+  assertThat(resolution.isResolved(),is(true));
+  assertThat(resolution.resolve(),notNullValue(byte[].class));
+}
