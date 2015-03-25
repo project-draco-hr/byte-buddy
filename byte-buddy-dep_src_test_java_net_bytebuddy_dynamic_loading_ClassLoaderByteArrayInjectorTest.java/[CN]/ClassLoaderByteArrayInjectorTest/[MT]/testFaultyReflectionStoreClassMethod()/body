@@ -1,3 +1,0 @@
-{
-  new ClassLoaderByteArrayInjector.ReflectionStore.Faulty(new Exception()).getFindLoadedClassMethod();
-}

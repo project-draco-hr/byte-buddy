@@ -1,0 +1,3 @@
+{
+  return "ClassReloadingStrategy.BootstrapInjection.Enabled{" + "folder=" + folder + '}';
+}

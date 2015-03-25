@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   Default aDefault=(Default)other;
-  return binaryLocator.equals(aDefault.binaryLocator) && byteBuddy.equals(aDefault.byteBuddy) && listener.equals(aDefault.listener)&& nativeMethodPrefix.equals(aDefault.nativeMethodPrefix)&& disableSelfInitialization == aDefault.disableSelfInitialization && retransformation == aDefault.retransformation && entries.equals(aDefault.entries);
+  return binaryLocator.equals(aDefault.binaryLocator) && byteBuddy.equals(aDefault.byteBuddy) && listener.equals(aDefault.listener)&& nativeMethodPrefix.equals(aDefault.nativeMethodPrefix)&& disableSelfInitialization == aDefault.disableSelfInitialization && retransformation == aDefault.retransformation && bootstrapInjectionStrategy.equals(aDefault.bootstrapInjectionStrategy) && entries.equals(aDefault.entries);
 }

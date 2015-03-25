@@ -1,0 +1,4 @@
+{
+  this.folder=folder;
+  this.instrumentation=instrumentation;
+}

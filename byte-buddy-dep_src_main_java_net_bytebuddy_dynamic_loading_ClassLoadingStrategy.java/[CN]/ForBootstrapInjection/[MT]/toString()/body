@@ -1,0 +1,3 @@
+{
+  return "ClassLoadingStrategy.ForBootstrapInjection{" + "instrumentation=" + instrumentation + ", folder="+ folder+ '}';
+}

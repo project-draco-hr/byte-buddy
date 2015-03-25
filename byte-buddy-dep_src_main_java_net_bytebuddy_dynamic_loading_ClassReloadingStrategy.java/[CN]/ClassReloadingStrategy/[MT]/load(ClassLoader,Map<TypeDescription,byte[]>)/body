@@ -1,20 +1,21 @@
 {
   Map<TypeDescription,Class<?>> loadedClasses=new HashMap<TypeDescription,Class<?>>(types.size());
-  ClassLoaderByteArrayInjector classLoaderByteArrayInjector=new ClassLoaderByteArrayInjector(classLoader);
+  Map<TypeDescription,byte[]> unloadedClasses=new HashMap<TypeDescription,byte[]>(types.size());
   Map<Class<?>,ClassDefinition> classDefinitions=new ConcurrentHashMap<Class<?>,ClassDefinition>(types.size());
   for (  Map.Entry<TypeDescription,byte[]> entry : types.entrySet()) {
-    Class<?> type;
     try {
-      type=classLoader.loadClass(entry.getKey().getName());
+      Class<?> type=classLoader.loadClass(entry.getKey().getName());
       classDefinitions.put(type,new ClassDefinition(type,entry.getValue()));
+      loadedClasses.put(entry.getKey(),type);
     }
  catch (    ClassNotFoundException ignored) {
-      type=classLoaderByteArrayInjector.inject(entry.getKey().getName(),entry.getValue());
+      unloadedClasses.put(entry.getKey(),entry.getValue());
     }
-    loadedClasses.put(entry.getKey(),type);
   }
   try {
     engine.apply(instrumentation,classDefinitions);
+    ClassInjector classInjector=classLoader == null ? bootstrapInjection.make(instrumentation) : new ClassInjector.UsingReflection(classLoader);
+    loadedClasses.putAll(classInjector.inject(unloadedClasses));
   }
  catch (  ClassNotFoundException e) {
     throw new IllegalArgumentException("Could not locate classes for redefinition",e);

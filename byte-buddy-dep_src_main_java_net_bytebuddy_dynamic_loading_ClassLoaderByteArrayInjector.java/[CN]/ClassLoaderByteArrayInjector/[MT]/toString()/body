@@ -1,3 +1,0 @@
-{
-  return "ClassLoaderByteArrayInjector{" + "protectionDomain=" + protectionDomain + "accessControlContext="+ accessControlContext+ ", classLoader="+ classLoader+ '}';
-}

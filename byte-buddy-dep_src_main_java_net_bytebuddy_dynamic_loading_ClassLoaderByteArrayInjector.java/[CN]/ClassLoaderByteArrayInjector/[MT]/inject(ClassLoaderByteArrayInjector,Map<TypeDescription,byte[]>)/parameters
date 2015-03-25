@@ -1,2 +1,0 @@
-ClassLoaderByteArrayInjector classLoaderByteArrayInjector
-Map<TypeDescription,byte[]> types

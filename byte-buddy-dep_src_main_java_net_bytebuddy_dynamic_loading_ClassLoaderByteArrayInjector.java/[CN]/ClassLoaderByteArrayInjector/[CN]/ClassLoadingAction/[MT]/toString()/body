@@ -1,3 +1,0 @@
-{
-  return "ClassLoaderByteArrayInjector.ClassLoadingAction{" + "injector=" + ClassLoaderByteArrayInjector.this + ", name='"+ name+ '\''+ ", binaryRepresentation="+ Arrays.toString(binaryRepresentation)+ '}';
-}

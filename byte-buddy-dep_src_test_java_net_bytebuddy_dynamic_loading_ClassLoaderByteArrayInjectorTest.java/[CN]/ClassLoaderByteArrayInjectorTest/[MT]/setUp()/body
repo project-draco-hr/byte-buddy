@@ -1,4 +1,0 @@
-{
-  classLoader=new URLClassLoader(new URL[0],null);
-  classLoaderByteArrayInjector=new ClassLoaderByteArrayInjector(classLoader);
-}

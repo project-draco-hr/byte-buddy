@@ -1,3 +1,0 @@
-{
-  assertThat(ByteBuddyAgent.installOnOpenJDK(),instanceOf(Instrumentation.class));
-}

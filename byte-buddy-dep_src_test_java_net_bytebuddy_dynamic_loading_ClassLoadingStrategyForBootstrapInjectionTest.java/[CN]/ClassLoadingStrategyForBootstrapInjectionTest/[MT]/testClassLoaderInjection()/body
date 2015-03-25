@@ -1,0 +1,10 @@
+{
+  ClassLoadingStrategy bootstrapStrategy=new ClassLoadingStrategy.ForBootstrapInjection(ByteBuddyAgent.installOnOpenJDK(),file);
+  String name=BAR + RandomString.make();
+  ClassLoader classLoader=new URLClassLoader(new URL[0],null);
+  DynamicType dynamicType=new ByteBuddy().subclass(Object.class).name(name).make();
+  Map<TypeDescription,Class<?>> loaded=bootstrapStrategy.load(classLoader,Collections.singletonMap(dynamicType.getTypeDescription(),dynamicType.getBytes()));
+  assertThat(loaded.size(),is(1));
+  assertThat(loaded.get(dynamicType.getTypeDescription()).getName(),is(name));
+  assertThat(loaded.get(dynamicType.getTypeDescription()).getClassLoader(),is(classLoader));
+}

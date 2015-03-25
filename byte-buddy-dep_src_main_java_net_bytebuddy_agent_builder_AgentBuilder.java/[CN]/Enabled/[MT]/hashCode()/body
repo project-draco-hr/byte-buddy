@@ -1,0 +1,5 @@
+{
+  int result=folder.hashCode();
+  result=31 * result + instrumentation.hashCode();
+  return result;
+}

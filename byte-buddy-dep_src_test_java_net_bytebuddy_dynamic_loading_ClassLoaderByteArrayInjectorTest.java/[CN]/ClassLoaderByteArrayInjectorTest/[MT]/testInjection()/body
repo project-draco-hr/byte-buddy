@@ -1,4 +1,0 @@
-{
-  classLoaderByteArrayInjector.inject(Foo.class.getName(),ClassFileExtraction.extract(Foo.class));
-  assertThat(classLoader.loadClass(Foo.class.getName()).getClassLoader(),is(classLoader));
-}

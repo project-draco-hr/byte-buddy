@@ -1,0 +1,6 @@
+{
+  file=File.createTempFile(FOO,BAR);
+  assertThat(file.delete(),is(true));
+  file=new File(file.getParentFile(),RandomString.make());
+  assertThat(file.mkdir(),is(true));
+}

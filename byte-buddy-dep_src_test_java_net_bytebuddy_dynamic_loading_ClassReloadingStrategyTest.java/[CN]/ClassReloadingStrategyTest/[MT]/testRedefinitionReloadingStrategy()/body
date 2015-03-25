@@ -1,4 +1,5 @@
 {
+  assertThat(ByteBuddyAgent.installOnOpenJDK(),instanceOf(Instrumentation.class));
   Instrumentation instrumentation=spy(ByteBuddyAgent.getInstrumentation());
   Foo foo=new Foo();
   assertThat(foo.foo(),is(FOO));

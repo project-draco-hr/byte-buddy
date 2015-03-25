@@ -1,0 +1,3 @@
+{
+  return new ClassReloadingStrategy(instrumentation,engine,new BootstrapInjection.Enabled(folder));
+}

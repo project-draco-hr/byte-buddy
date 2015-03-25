@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Enabled enabled=(Enabled)other;
+  return folder.equals(enabled.folder) && instrumentation.equals(enabled.instrumentation);
+}

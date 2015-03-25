@@ -1,4 +1,5 @@
 {
+  assertThat(ByteBuddyAgent.installOnOpenJDK(),instanceOf(Instrumentation.class));
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default().rebase(isAnnotatedWith(ShouldRebase.class)).transform(new BarTransformer()).installOnByteBuddyAgent();
   try {
     assertThat(new Bar().foo(),is(BAR));

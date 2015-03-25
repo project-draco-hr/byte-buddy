@@ -9,4 +9,5 @@
  else {
     throw new IllegalArgumentException("Instrumentation does not support class redefinition: " + instrumentation);
   }
+  bootstrapInjection=BootstrapInjection.Disabled.INSTANCE;
 }

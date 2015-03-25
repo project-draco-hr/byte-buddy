@@ -1,0 +1,4 @@
+{
+  classLoader=new URLClassLoader(new URL[0],null);
+  classInjector=new ClassInjector.UsingReflection(classLoader);
+}

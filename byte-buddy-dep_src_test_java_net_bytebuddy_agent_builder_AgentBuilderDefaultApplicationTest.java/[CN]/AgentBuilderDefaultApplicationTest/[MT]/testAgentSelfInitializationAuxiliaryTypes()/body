@@ -1,4 +1,5 @@
 {
+  assertThat(ByteBuddyAgent.installOnOpenJDK(),instanceOf(Instrumentation.class));
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default().rebase(isAnnotatedWith(ShouldRebase.class)).transform(new QuxTransformer()).installOnByteBuddyAgent();
   try {
     assertThat(new Qux().foo(),is(FOO + BAR));

@@ -1,0 +1,3 @@
+{
+  new ClassInjector.UsingReflection.ReflectionStore.Faulty(new Exception()).getFindLoadedClassMethod();
+}

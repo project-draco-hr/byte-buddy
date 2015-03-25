@@ -1,4 +1,5 @@
 {
   this.instrumentation=instrumentation;
   this.engine=engine;
+  bootstrapInjection=BootstrapInjection.Disabled.INSTANCE;
 }
