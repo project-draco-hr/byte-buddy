@@ -1,5 +1,5 @@
 {
-  new FieldAttributeAppender.ForAnnotation(new Baz.Instance()).apply(fieldVisitor,fieldDescription);
+  new FieldAttributeAppender.ForAnnotation(new AnnotationList.ForLoadedAnnotation(new Baz.Instance())).apply(fieldVisitor,fieldDescription);
   verify(fieldVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
   verifyNoMoreInteractions(fieldVisitor);
   verifyZeroInteractions(fieldDescription);

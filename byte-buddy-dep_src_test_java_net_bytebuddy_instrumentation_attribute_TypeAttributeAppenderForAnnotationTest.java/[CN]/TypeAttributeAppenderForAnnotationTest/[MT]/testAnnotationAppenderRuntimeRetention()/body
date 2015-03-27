@@ -1,5 +1,5 @@
 {
-  new TypeAttributeAppender.ForAnnotation(new Baz.Instance()).apply(classVisitor,typeDescription);
+  new TypeAttributeAppender.ForAnnotation(new AnnotationList.ForLoadedAnnotation(new Baz.Instance())).apply(classVisitor,typeDescription);
   verify(classVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
   verifyNoMoreInteractions(classVisitor);
   verifyZeroInteractions(typeDescription);

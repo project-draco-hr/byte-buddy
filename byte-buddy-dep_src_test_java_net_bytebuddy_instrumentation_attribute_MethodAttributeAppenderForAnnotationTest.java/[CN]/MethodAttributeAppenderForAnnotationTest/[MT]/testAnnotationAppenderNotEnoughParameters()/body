@@ -1,3 +1,3 @@
 {
-  new MethodAttributeAppender.ForAnnotation(PARAMETER_INDEX + 1,new Baz.Instance()).apply(methodVisitor,methodDescription);
+  new MethodAttributeAppender.ForAnnotation(PARAMETER_INDEX + 1,new AnnotationList.ForLoadedAnnotation(new Baz.Instance())).apply(methodVisitor,methodDescription);
 }

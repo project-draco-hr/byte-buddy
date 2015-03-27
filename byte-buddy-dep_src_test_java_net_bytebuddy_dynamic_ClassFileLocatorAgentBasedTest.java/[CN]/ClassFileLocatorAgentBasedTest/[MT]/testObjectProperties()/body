@@ -15,7 +15,7 @@
   }
 ).apply();
   ObjectPropertyAssertion.of(ClassFileLocator.AgentBased.ClassLoadingDelegate.ForDelegatingClassLoader.JavaField.ForNonResolvedField.class).apply();
-  final Iterator<Class<?>> otherIterator=Arrays.asList(Integer.class,String.class,Object.class,Byte.class).iterator();
+  final Iterator<Class<?>> otherIterator=Arrays.<Class<?>>asList(Integer.class,String.class,Object.class,Byte.class).iterator();
   ObjectPropertyAssertion.of(ClassFileLocator.AgentBased.ClassLoadingDelegate.Explicit.class).create(new ObjectPropertyAssertion.Creator<Collection<Class<?>>>(){
     @Override public Collection<Class<?>> create(){
       return Collections.<Class<?>>singletonList(otherIterator.next());

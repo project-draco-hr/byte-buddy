@@ -1,0 +1,4 @@
+{
+  this.annotations=annotations;
+  target=Target.OnMethod.INSTANCE;
+}
