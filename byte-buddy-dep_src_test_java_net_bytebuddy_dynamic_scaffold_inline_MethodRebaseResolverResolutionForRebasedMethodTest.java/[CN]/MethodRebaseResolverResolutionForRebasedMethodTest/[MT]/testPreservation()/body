@@ -5,7 +5,7 @@
   assertThat(resolution.getResolvedMethod().getInternalName(),is(QUX));
   assertThat(resolution.getResolvedMethod().getModifiers(),is(MethodRebaseResolver.REBASED_METHOD_MODIFIER));
   assertThat(resolution.getResolvedMethod().getReturnType(),is(returnType));
-  assertThat(resolution.getResolvedMethod().getParameters(),is(ParameterList.Explicit.latent(resolution.getResolvedMethod(),Arrays.asList(parameterType))));
+  assertThat(resolution.getResolvedMethod().getParameters(),is(ParameterList.Explicit.latent(resolution.getResolvedMethod(),Collections.singletonList(parameterType))));
   StackManipulation.Size size=resolution.getAdditionalArguments().apply(methodVisitor,instrumentationContext);
   assertThat(size.getSizeImpact(),is(0));
   assertThat(size.getMaximalSize(),is(0));

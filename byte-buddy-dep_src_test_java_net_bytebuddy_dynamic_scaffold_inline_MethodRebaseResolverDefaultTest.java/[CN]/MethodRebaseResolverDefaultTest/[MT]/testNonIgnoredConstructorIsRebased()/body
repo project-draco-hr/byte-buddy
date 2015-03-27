@@ -5,7 +5,7 @@
   assertThat(resolution.getResolvedMethod().getInternalName(),is(FOO));
   assertThat(resolution.getResolvedMethod().getModifiers(),is(MethodRebaseResolver.REBASED_METHOD_MODIFIER));
   assertThat(resolution.getResolvedMethod().getDeclaringType(),is(instrumentedType));
-  assertThat(resolution.getResolvedMethod().getParameters(),is(ParameterList.Explicit.latent(resolution.getResolvedMethod(),Arrays.asList(placeholderType))));
+  assertThat(resolution.getResolvedMethod().getParameters(),is(ParameterList.Explicit.latent(resolution.getResolvedMethod(),Collections.singletonList(placeholderType))));
   assertThat(resolution.getResolvedMethod().getReturnType(),is(returnType));
   assertThat(resolution.getAdditionalArguments().isValid(),is(true));
   StackManipulation.Size size=resolution.getAdditionalArguments().apply(methodVisitor,instrumentationContext);

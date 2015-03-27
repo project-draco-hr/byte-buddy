@@ -1,4 +1,4 @@
 {
-  List<String> list=Arrays.asList(FOO);
+  List<String> list=Collections.singletonList(FOO);
   assertThat(isNotEmpty(list,FOO),sameInstance(list));
 }

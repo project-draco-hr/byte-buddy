@@ -1,6 +1,6 @@
 {
   when(finding.getTypeDescription()).thenReturn(instrumentedType);
-  when(finding.getInvokableMethods()).thenReturn(new MethodList.Explicit(Arrays.asList(invokableMethod)));
+  when(finding.getInvokableMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(invokableMethod)));
   when(finding.getInvokableDefaultMethods()).thenReturn(Collections.singletonMap(defaultType,Collections.singleton(defaultMethod)));
   when(bridgeMethodResolverFactory.make(any(MethodList.class))).thenReturn(bridgeMethodResolver);
   when(methodLookup.resolve(any(MethodDescription.class),any(Map.class),eq(bridgeMethodResolver))).then(new Answer<MethodDescription>(){

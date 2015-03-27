@@ -1,5 +1,5 @@
 {
-  when(collection.iterator()).thenReturn(Arrays.asList(new Object()).iterator());
+  when(collection.iterator()).thenReturn(Collections.singletonList(new Object()).iterator());
   assertThat(new CollectionSizeMatcher<Iterable<?>>(1).matches(collection),is(true));
   verify(collection).iterator();
   verifyNoMoreInteractions(collection);

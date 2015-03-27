@@ -1,6 +1,6 @@
 {
   Iterator<AnnotationDescription> annotationDescriptions=Arrays.asList(foo,bar).iterator();
-  for (  AnnotationList annotationList : AnnotationList.Explicit.asList(Arrays.asList(Arrays.asList(foo),Arrays.asList(bar)))) {
+  for (  AnnotationList annotationList : AnnotationList.Explicit.asList(Arrays.asList(Collections.singletonList(foo),Collections.singletonList(bar)))) {
     assertThat(annotationList.size(),is(1));
     assertThat(annotationList,hasItem(annotationDescriptions.next()));
   }

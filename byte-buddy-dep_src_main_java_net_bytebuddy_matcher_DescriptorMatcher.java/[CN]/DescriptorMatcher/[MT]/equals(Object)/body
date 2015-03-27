@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && descriptorMatcher.equals(((DescriptorMatcher)other).descriptorMatcher);
+  return this == other || !(other == null || getClass() != other.getClass()) && descriptorMatcher.equals(((DescriptorMatcher<?>)other).descriptorMatcher);
 }

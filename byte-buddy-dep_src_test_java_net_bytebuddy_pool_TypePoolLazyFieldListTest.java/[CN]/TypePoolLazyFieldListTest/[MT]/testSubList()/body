@@ -1,3 +1,3 @@
 {
-  assertThat(fieldList.subList(0,1),is((FieldList)new FieldList.Explicit(Arrays.asList(fieldList.get(0)))));
+  assertThat(fieldList.subList(0,1),is((FieldList)new FieldList.Explicit(Collections.singletonList(fieldList.get(0)))));
 }

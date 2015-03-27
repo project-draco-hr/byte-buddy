@@ -1,3 +1,3 @@
 {
-  isEmpty(Arrays.asList(BAR),FOO);
+  isEmpty(Collections.singletonList(BAR),FOO);
 }

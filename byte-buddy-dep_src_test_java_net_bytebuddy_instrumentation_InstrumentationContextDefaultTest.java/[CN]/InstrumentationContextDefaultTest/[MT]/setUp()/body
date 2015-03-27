@@ -33,7 +33,7 @@
   when(firstSpecialParameterType.getStackSize()).thenReturn(StackSize.ZERO);
   when(firstSpecialReturnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(firstSpecialInvocation.apply(any(MethodVisitor.class),any(Instrumentation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
-  ParameterList firstSpecialMethodParameters=ParameterList.Explicit.latent(firstSpecialMethod,Arrays.asList(firstSpecialParameterType));
+  ParameterList firstSpecialMethodParameters=ParameterList.Explicit.latent(firstSpecialMethod,Collections.singletonList(firstSpecialParameterType));
   when(firstSpecialMethod.getParameters()).thenReturn(firstSpecialMethodParameters);
   when(secondSpecialInvocation.getMethodDescription()).thenReturn(secondSpecialMethod);
   when(secondSpecialInvocation.getTypeDescription()).thenReturn(secondSpecialType);
@@ -46,7 +46,7 @@
   when(secondSpecialParameterType.getStackSize()).thenReturn(StackSize.ZERO);
   when(secondSpecialReturnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(secondSpecialInvocation.apply(any(MethodVisitor.class),any(Instrumentation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
-  ParameterList secondSpecialMethodParameters=ParameterList.Explicit.latent(secondSpecialMethod,Arrays.asList(secondSpecialParameterType));
+  ParameterList secondSpecialMethodParameters=ParameterList.Explicit.latent(secondSpecialMethod,Collections.singletonList(secondSpecialParameterType));
   when(secondSpecialMethod.getParameters()).thenReturn(secondSpecialMethodParameters);
   when(firstField.getFieldType()).thenReturn(firstFieldType);
   when(firstField.getName()).thenReturn(FOO);

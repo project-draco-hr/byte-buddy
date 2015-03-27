@@ -1,5 +1,5 @@
 {
-  assertThat(new CollectionOneToOneMatcher<Object>(Arrays.asList(firstMatcher,secondMatcher)).matches(Arrays.asList(firstMatcher)),is(false));
+  assertThat(new CollectionOneToOneMatcher<Object>(Arrays.asList(firstMatcher,secondMatcher)).matches(Collections.singletonList(firstMatcher)),is(false));
   verifyZeroInteractions(firstMatcher);
   verifyZeroInteractions(secondMatcher);
 }

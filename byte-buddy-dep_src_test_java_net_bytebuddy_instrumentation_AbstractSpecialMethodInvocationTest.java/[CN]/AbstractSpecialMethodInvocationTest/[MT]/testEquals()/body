@@ -41,7 +41,7 @@
   when(equalMethodButParameter.getReturnType()).thenReturn(returnType);
   TypeDescription parameterType=mock(TypeDescription.class);
   when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
-  ParameterList equalMethodButParameterParameters=ParameterList.Explicit.latent(equalMethodButParameter,Arrays.asList(parameterType));
+  ParameterList equalMethodButParameterParameters=ParameterList.Explicit.latent(equalMethodButParameter,Collections.singletonList(parameterType));
   when(equalMethodButParameter.getParameters()).thenReturn(equalMethodButParameterParameters);
   assertThat(make(FOO,returnType,parameterTypes,targetType),not(is(equalButParameter)));
   assertThat(make(FOO,returnType,parameterTypes,targetType),not(is(new Object())));

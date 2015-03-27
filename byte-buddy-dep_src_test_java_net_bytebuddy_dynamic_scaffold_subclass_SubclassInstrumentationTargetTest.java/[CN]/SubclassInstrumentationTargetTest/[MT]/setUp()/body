@@ -1,7 +1,7 @@
 {
   when(parameterList.asTypeList()).thenReturn(parameterTypes);
   when(instrumentedType.getSupertype()).thenReturn(superType);
-  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Arrays.asList(superMethodConstructor)));
+  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(superMethodConstructor)));
   when(superType.getInternalName()).thenReturn(BAR);
   when(superMethod.getDeclaringType()).thenReturn(superType);
   when(superType.getStackSize()).thenReturn(StackSize.ZERO);

@@ -1,3 +1,3 @@
 {
-  assertThat(isThrowable(Arrays.asList(first)),is(Arrays.asList(first)));
+  assertThat(isThrowable(Collections.singletonList(first)),is(Collections.singletonList(first)));
 }

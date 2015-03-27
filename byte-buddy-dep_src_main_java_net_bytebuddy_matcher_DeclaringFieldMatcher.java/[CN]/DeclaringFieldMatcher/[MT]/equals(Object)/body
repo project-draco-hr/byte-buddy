@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && fieldMatcher.equals(((DeclaringFieldMatcher)other).fieldMatcher);
+  return this == other || !(other == null || getClass() != other.getClass()) && fieldMatcher.equals(((DeclaringFieldMatcher<?>)other).fieldMatcher);
 }

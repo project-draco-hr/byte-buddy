@@ -1,7 +1,7 @@
 {
   ObjectPropertyAssertion.of(LoadedTypeInitializer.Compound.class).create(new ObjectPropertyAssertion.Creator<List<?>>(){
     @Override public List<?> create(){
-      return Arrays.asList(mock(LoadedTypeInitializer.class));
+      return Collections.singletonList(mock(LoadedTypeInitializer.class));
     }
   }
 ).apply();

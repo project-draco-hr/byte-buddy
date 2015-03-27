@@ -1,5 +1,5 @@
 {
-  explicitAuxiliaryTypes=Arrays.asList(firstAuxiliary);
+  explicitAuxiliaryTypes=Collections.singletonList(firstAuxiliary);
   when(engine.create(any(Instrumentation.Context.ExtractableView.class))).thenReturn(MAIN);
   when(firstAuxiliary.getTypeDescription()).thenReturn(otherAuxiliaryDescription);
   when(firstAuxiliary.getBytes()).thenReturn(FIRST);
