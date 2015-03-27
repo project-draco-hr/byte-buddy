@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(ReferenceTypeAwareAssigner.class).apply();
+}

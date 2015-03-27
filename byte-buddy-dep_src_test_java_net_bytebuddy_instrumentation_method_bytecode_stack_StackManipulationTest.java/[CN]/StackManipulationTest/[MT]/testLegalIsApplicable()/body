@@ -1,0 +1,5 @@
+{
+  StackManipulation.Size size=StackManipulation.LegalTrivial.INSTANCE.apply(methodVisitor,instrumentationContext);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+}

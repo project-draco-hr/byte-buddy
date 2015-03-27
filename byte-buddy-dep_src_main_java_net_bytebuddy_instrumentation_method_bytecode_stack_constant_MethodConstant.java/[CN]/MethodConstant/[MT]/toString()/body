@@ -1,0 +1,3 @@
+{
+  return "MethodConstant.CanCacheIllegal." + name();
+}

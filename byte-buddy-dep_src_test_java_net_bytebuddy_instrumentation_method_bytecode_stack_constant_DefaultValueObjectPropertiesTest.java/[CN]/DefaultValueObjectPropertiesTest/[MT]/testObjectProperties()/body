@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(DefaultValue.class).apply();
+}

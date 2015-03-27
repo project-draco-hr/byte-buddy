@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(FloatConstant.class).apply();
+  ObjectPropertyAssertion.of(FloatConstant.ConstantPool.class).apply();
+}

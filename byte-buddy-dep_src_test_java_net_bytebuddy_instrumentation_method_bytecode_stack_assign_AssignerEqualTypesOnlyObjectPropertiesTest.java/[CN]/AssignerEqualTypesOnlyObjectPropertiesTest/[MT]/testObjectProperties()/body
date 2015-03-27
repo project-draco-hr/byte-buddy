@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(Assigner.EqualTypesOnly.class).apply();
+}

@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(PrimitiveBoxingDelegate.class).apply();
+}

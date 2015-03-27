@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(ModifierMatcher.Mode.class).apply();
+}

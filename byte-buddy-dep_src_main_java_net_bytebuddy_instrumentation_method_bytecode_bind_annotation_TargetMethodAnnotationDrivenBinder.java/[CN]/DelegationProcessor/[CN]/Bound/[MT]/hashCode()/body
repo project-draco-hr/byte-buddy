@@ -1,0 +1,5 @@
+{
+  int result=parameterBinder.hashCode();
+  result=31 * result + annotation.hashCode();
+  return result;
+}

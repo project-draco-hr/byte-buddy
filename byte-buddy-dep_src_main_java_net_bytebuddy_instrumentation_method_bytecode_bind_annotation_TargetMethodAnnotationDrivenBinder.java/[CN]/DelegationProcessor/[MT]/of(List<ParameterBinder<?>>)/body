@@ -5,5 +5,5 @@
       throw new IllegalArgumentException("Attempt to bind two handlers to " + parameterBinder.getHandledType());
     }
   }
-  this.parameterBinders=Collections.unmodifiableMap(parameterBinderMap);
+  return new DelegationProcessor(parameterBinderMap);
 }

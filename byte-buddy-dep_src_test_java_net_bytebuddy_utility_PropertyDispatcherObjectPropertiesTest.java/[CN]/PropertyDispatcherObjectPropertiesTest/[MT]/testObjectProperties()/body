@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(PropertyDispatcher.class).apply();
+}

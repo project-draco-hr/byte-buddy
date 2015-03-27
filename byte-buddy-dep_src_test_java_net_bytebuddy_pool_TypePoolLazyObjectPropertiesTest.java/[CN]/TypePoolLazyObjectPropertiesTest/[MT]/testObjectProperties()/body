@@ -19,4 +19,5 @@
     }
   }
 ).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationValue.Loaded.State.class).apply();
 }

@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(Assigner.Refusing.class).apply();
+}

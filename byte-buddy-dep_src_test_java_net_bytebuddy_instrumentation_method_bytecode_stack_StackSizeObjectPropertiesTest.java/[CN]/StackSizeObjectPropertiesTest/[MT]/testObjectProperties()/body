@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(StackSize.class).apply();
+}

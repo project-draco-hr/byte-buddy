@@ -1,3 +1,5 @@
 {
+  ObjectPropertyAssertion.of(PrimitiveUnboxingDelegate.class).apply();
   ObjectPropertyAssertion.of(PrimitiveUnboxingDelegate.ImplicitlyTypedUnboxingResponsible.class).apply();
+  ObjectPropertyAssertion.of(PrimitiveUnboxingDelegate.ExplicitlyTypedUnboxingResponsible.class).apply();
 }

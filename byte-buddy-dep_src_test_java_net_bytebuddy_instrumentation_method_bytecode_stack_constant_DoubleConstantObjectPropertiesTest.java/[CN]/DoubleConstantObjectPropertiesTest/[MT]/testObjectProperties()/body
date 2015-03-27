@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(DoubleConstant.class).apply();
+  ObjectPropertyAssertion.of(DoubleConstant.ConstantPool.class).apply();
+}

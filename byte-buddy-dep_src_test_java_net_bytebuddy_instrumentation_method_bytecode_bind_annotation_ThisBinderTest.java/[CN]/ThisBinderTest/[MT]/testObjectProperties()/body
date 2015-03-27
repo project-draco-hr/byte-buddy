@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(This.Binder.class).apply();
+}

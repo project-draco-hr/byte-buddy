@@ -1,5 +1,5 @@
 {
-  delegationProcessor=new DelegationProcessor(parameterBinders);
+  delegationProcessor=DelegationProcessor.of(parameterBinders);
   this.defaultsProvider=defaultsProvider;
   this.terminationHandler=terminationHandler;
   this.assigner=assigner;

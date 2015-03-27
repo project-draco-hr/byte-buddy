@@ -1,0 +1,3 @@
+{
+  assertThat(StackManipulation.Illegal.INSTANCE.isValid(),is(false));
+}

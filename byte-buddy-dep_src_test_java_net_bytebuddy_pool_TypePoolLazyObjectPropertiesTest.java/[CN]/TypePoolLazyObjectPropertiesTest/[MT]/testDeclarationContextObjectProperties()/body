@@ -1,4 +1,5 @@
 {
   ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.DeclarationContext.DeclaredInType.class).apply();
   ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.DeclarationContext.DeclaredInMethod.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.DeclarationContext.SelfDeclared.class).apply();
 }

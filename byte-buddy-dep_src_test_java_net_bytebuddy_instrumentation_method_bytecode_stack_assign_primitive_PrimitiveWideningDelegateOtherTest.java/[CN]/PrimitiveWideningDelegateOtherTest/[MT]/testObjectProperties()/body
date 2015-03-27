@@ -1,3 +1,4 @@
 {
+  ObjectPropertyAssertion.of(PrimitiveWideningDelegate.class).apply();
   ObjectPropertyAssertion.of(PrimitiveWideningDelegate.WideningStackManipulation.class).apply();
 }
