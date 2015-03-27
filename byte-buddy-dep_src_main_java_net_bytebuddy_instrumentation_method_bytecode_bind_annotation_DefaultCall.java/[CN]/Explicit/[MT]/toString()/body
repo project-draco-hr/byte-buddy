@@ -1,3 +1,0 @@
-{
-  return "DefaultCall.Binder.DefaultMethodLocator.Explicit{typeDescription=" + typeDescription + '}';
-}

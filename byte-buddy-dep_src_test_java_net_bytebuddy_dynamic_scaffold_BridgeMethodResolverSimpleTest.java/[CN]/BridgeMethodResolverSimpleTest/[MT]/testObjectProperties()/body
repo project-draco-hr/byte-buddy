@@ -1,0 +1,14 @@
+{
+  ObjectPropertyAssertion.of(BridgeMethodResolver.Simple.class).create(new ObjectPropertyAssertion.Creator<MethodList>(){
+    @Override public MethodList create(){
+      return null;
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(BridgeMethodResolver.Simple.Factory.class).apply();
+  ObjectPropertyAssertion.of(BridgeMethodResolver.Simple.BridgeTarget.Resolved.class).apply();
+  ObjectPropertyAssertion.of(BridgeMethodResolver.Simple.ConflictHandler.Default.class).apply();
+  ObjectPropertyAssertion.of(BridgeMethodResolver.Simple.BridgeTarget.Candidate.class).apply();
+  ObjectPropertyAssertion.of(BridgeMethodResolver.Simple.BridgeTarget.Resolved.class).apply();
+  ObjectPropertyAssertion.of(BridgeMethodResolver.Simple.BridgeTarget.Unknown.class).apply();
+}

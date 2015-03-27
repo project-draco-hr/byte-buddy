@@ -1,0 +1,6 @@
+{
+  ObjectPropertyAssertion.of(SuperMethodCall.class).apply();
+  ObjectPropertyAssertion.of(SuperMethodCall.WithoutReturn.class).apply();
+  ObjectPropertyAssertion.of(SuperMethodCall.Appender.class).apply();
+  ObjectPropertyAssertion.of(SuperMethodCall.Appender.TerminationHandler.class).apply();
+}

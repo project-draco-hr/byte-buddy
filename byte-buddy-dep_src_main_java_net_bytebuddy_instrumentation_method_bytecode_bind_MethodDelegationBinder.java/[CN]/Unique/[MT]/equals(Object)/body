@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Unique<?> unique=(Unique<?>)other;
+  return identificationToken.equals(unique.identificationToken) && delegate.equals(unique.delegate);
+}

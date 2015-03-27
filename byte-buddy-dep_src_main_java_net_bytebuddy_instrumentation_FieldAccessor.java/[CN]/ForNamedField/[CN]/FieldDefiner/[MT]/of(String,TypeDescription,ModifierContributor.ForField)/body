@@ -1,0 +1,3 @@
+{
+  return new FieldDefiner(name,typeDescription,resolveModifierContributors(ByteBuddyCommons.FIELD_MODIFIER_MASK,contributor));
+}

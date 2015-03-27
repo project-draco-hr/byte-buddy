@@ -1,0 +1,3 @@
+{
+  return "InlineDynamicTypeBuilder.TargetHandler.Prepared.ForRedefinitionInstrumentation." + name();
+}

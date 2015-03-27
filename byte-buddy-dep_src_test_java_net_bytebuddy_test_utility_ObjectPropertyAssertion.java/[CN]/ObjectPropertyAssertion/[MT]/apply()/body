@@ -1,4 +1,10 @@
 {
+  if (type.isEnum()) {
+    for (    T instance : type.getEnumConstants()) {
+      assertThat(instance.toString(),is(type.getCanonicalName().substring(type.getPackage().getName().length() + 1) + "." + ((Enum<?>)instance).name()));
+    }
+    return;
+  }
   for (  Constructor<?> constructor : type.getDeclaredConstructors()) {
     if (constructor.isSynthetic() && skipSynthetic) {
       continue;

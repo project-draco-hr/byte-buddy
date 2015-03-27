@@ -1,0 +1,3 @@
+{
+  return "MethodLookupEngine.Default.MethodBucket.DefaultMethodLookup.Enabled{" + "declaredInterfaceTypes=" + declaredInterfaceTypes + ", defaultMethods="+ defaultMethods+ ", methodDeclarations="+ methodDeclarations+ '}';
+}

@@ -1,0 +1,5 @@
+{
+  doReturn(FirstPseudoAnnotation.class).when(firstParameterBinder).getHandledType();
+  doReturn(FirstPseudoAnnotation.class).when(secondParameterBinder).getHandledType();
+  new TargetMethodAnnotationDrivenBinder(Arrays.asList(firstParameterBinder,secondParameterBinder),defaultsProvider,terminationHandler,assigner,methodInvoker);
+}

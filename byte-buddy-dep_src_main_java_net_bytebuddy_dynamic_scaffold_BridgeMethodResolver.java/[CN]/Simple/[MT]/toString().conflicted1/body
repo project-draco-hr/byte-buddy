@@ -1,0 +1,3 @@
+{
+  return "BridgeMethodResolver.Simple.Factory." + name();
+}

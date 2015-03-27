@@ -1,3 +1,3 @@
 {
-  return "MethodDelegationBinder.ParameterBinding.Anonymous{delegate=" + delegate + '}';
+  return "MethodDelegationBinder.ParameterBinding.Anonymous{" + "anonymousToken=" + anonymousToken + ", delegate="+ delegate+ '}';
 }

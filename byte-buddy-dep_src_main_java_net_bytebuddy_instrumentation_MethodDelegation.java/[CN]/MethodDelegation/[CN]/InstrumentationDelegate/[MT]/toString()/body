@@ -1,0 +1,3 @@
+{
+  return "MethodDelegation.InstrumentationDelegate.ForStaticMethod." + name();
+}

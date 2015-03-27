@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(BindingPriority.Resolver.class).apply();
+}

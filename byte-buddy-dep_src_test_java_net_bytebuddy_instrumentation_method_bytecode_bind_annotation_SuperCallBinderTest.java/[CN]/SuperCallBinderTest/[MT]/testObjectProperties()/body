@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(SuperCall.Binder.class).apply();
+}

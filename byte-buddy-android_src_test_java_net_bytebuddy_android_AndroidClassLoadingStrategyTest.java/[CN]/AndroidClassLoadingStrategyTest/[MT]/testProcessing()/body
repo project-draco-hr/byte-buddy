@@ -3,10 +3,10 @@
   ClassLoader classLoader=mock(ClassLoader.class);
   doReturn(Object.class).when(classLoader).loadClass(FOO);
   doReturn(Void.class).when(classLoader).loadClass(BAR);
-  when(dexProcessor.makeClassLoader(any(File.class),eq(directory),any(ClassLoader.class))).thenReturn(classLoader);
+  when(dexProcessor.makeClassLoader(any(File.class),eq(folder),any(ClassLoader.class))).thenReturn(classLoader);
   AndroidClassLoadingStrategy.DexProcessor.Conversion conversion=mock(AndroidClassLoadingStrategy.DexProcessor.Conversion.class);
   when(dexProcessor.create()).thenReturn(conversion);
-  ClassLoadingStrategy classLoadingStrategy=new AndroidClassLoadingStrategy(directory,dexProcessor);
+  ClassLoadingStrategy classLoadingStrategy=new AndroidClassLoadingStrategy(folder,dexProcessor);
   Map<TypeDescription,byte[]> unloaded=new HashMap<TypeDescription,byte[]>();
   unloaded.put(first,QUX);
   unloaded.put(second,BAZ);
@@ -16,7 +16,7 @@
   assertEquals(Object.class,loaded.get(first));
   assertEquals(Void.class,loaded.get(second));
   verify(dexProcessor).create();
-  verify(dexProcessor).makeClassLoader(any(File.class),eq(directory),eq(parentClassLoader));
+  verify(dexProcessor).makeClassLoader(any(File.class),eq(folder),eq(parentClassLoader));
   verifyNoMoreInteractions(dexProcessor);
   verify(conversion).register(FOO,QUX);
   verify(conversion).register(BAR,BAZ);

@@ -3,7 +3,7 @@
   MethodList invokableMethods=new MethodLookupEngine.Default(MethodLookupEngine.Default.DefaultMethodLookup.DISABLED).process(target).getInvokableMethods();
   MethodList relevantMethods=invokableMethods.filter(not(isDeclaredBy(Object.class).or(isConstructor())));
   assertThat(relevantMethods.size(),is(3));
-  BridgeMethodResolver bridgeMethodResolver=new BridgeMethodResolver.Simple(invokableMethods,conflictHandler);
+  BridgeMethodResolver bridgeMethodResolver=BridgeMethodResolver.Simple.of(invokableMethods,conflictHandler);
   for (  MethodDescription methodDescription : relevantMethods.filter(isBridge())) {
     assertThat(bridgeMethodResolver.resolve(methodDescription),is(relevantMethods.filter(not(isBridge())).getOnly()));
   }

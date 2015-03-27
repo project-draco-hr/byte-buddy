@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(BridgeMethodResolver.Simple.BridgeTarget.Candidate.class).apply();
-}

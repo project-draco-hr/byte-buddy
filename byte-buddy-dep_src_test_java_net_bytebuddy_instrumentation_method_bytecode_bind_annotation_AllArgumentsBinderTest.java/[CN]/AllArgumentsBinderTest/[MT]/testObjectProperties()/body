@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(AllArguments.Assignment.class).apply();
+  ObjectPropertyAssertion.of(AllArguments.Binder.class).apply();
+}

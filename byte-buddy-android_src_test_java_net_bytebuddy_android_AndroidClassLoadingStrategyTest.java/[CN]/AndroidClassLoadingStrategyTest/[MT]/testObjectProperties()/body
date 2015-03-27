@@ -1,5 +1,10 @@
 {
-  ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.class).apply(new AndroidClassLoadingStrategy(directory,mock(AndroidClassLoadingStrategy.DexProcessor.class)));
+  ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.class).create(new ObjectPropertyAssertion.Creator<File>(){
+    @Override public File create(){
+      return folder;
+    }
+  }
+).applyMutable();
   ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.DexProcessor.ForSdkCompiler.class).apply();
   ObjectPropertyAssertion.of(AndroidClassLoadingStrategy.DexProcessor.ForSdkCompiler.Conversion.class).create(new ObjectPropertyAssertion.Creator<DexFile>(){
     @Override public DexFile create(){

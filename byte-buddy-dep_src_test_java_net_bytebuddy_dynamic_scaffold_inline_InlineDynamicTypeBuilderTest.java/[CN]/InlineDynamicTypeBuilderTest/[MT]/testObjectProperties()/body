@@ -16,5 +16,8 @@
     }
   }
 ).apply();
+  ObjectPropertyAssertion.of(InlineDynamicTypeBuilder.TargetHandler.ForRedefinitionInstrumentation.class).apply();
+  ObjectPropertyAssertion.of(InlineDynamicTypeBuilder.TargetHandler.ForRebaseInstrumentation.class).apply();
   ObjectPropertyAssertion.of(InlineDynamicTypeBuilder.TargetHandler.Prepared.ForRebaseInstrumentation.MethodRebaseDelegation.class).apply();
+  ObjectPropertyAssertion.of(InlineDynamicTypeBuilder.TargetHandler.Prepared.ForRebaseInstrumentation.MethodRebaseDelegation.Factory.class).apply();
 }

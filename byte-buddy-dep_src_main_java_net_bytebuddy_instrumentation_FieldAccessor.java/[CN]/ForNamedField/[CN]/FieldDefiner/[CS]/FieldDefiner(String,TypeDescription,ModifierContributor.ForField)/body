@@ -1,5 +1,0 @@
-{
-  this.name=name;
-  this.typeDescription=typeDescription;
-  modifiers=resolveModifierContributors(ByteBuddyCommons.FIELD_MODIFIER_MASK,contributor);
-}

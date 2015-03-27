@@ -1,0 +1,29 @@
+{
+  when(assignmentBinding.isValid()).thenReturn(true);
+  when(methodInvocation.isValid()).thenReturn(true);
+  when(termination.isValid()).thenReturn(true);
+  when(targetMethod.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(firstParameter.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(secondParameter.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  MethodDelegationBinder.ParameterBinding<?> firstBinding=prepareArgumentBinder(firstParameterBinder,FirstPseudoAnnotation.class,new Key(FOO),true);
+  MethodDelegationBinder.ParameterBinding<?> secondBinding=prepareArgumentBinder(secondParameterBinder,SecondPseudoAnnotation.class,new Key(BAR),true);
+  Iterator<AnnotationDescription> defaultsIterator=prepareDefaultProvider(defaultsProvider,Collections.singletonList(firstPseudoAnnotation));
+  MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Arrays.asList(firstParameterBinder,secondParameterBinder),defaultsProvider,terminationHandler,assigner,methodInvoker);
+  assertThat(methodDelegationBinder.bind(instrumentationTarget,sourceMethod,targetMethod).isValid(),is(false));
+  verify(firstParameterBinder,atLeast(1)).getHandledType();
+  verify((TargetMethodAnnotationDrivenBinder.ParameterBinder)firstParameterBinder).bind(firstPseudoAnnotation,sourceMethod,firstParameter,instrumentationTarget,assigner);
+  verifyNoMoreInteractions(firstParameterBinder);
+  verify(secondParameterBinder,atLeast(1)).getHandledType();
+  verifyNoMoreInteractions(secondParameterBinder);
+  verify(defaultsIterator,times(2)).hasNext();
+  verify(defaultsIterator,times(1)).next();
+  verifyNoMoreInteractions(defaultsIterator);
+  verifyZeroInteractions(assigner);
+  verify(terminationHandler).resolve(assigner,sourceMethod,targetMethod);
+  verifyNoMoreInteractions(terminationHandler);
+  verifyZeroInteractions(methodInvoker);
+  verify(firstBinding,atLeast(1)).isValid();
+  verify(firstBinding).getIdentificationToken();
+  verifyNoMoreInteractions(firstBinding);
+  verifyZeroInteractions(secondBinding);
+}

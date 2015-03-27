@@ -1,3 +1,4 @@
 {
   ObjectPropertyAssertion.of(ClassInjector.UsingInstrumentation.class).apply();
+  ObjectPropertyAssertion.of(ClassInjector.UsingInstrumentation.Target.class).apply();
 }

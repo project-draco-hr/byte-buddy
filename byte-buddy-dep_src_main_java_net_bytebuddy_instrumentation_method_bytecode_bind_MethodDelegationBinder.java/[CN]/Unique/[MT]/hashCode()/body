@@ -1,0 +1,5 @@
+{
+  int result=identificationToken.hashCode();
+  result=31 * result + delegate.hashCode();
+  return result;
+}

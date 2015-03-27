@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(Super.Binder.class).apply();
+  ObjectPropertyAssertion.of(Super.Instantiation.class).apply();
+}

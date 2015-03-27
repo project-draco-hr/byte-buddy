@@ -6,7 +6,7 @@
   when(conflictHandler.choose(any(MethodDescription.class),any(MethodList.class))).thenReturn(bridgeTarget);
   when(bridgeTarget.isResolved()).thenReturn(true);
   when(bridgeTarget.extract()).thenReturn(methodDescription);
-  BridgeMethodResolver bridgeMethodResolver=new BridgeMethodResolver.Simple(invokableMethods,conflictHandler);
+  BridgeMethodResolver bridgeMethodResolver=BridgeMethodResolver.Simple.of(invokableMethods,conflictHandler);
   assertThat(bridgeMethodResolver.resolve(relevantMethods.filter(isBridge()).getOnly()),is(methodDescription));
   ArgumentCaptor<MethodList> capturedConflictHandlerCandidates=ArgumentCaptor.forClass(MethodList.class);
   verify(conflictHandler).choose(eq(relevantMethods.filter(isBridge()).getOnly()),capturedConflictHandlerCandidates.capture());

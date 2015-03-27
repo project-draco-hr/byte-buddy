@@ -2,7 +2,7 @@
   DynamicType dynamicType=new ByteBuddy(ClassFileVersion.JAVA_V6).subclass(Object.class).method(named(TO_STRING)).intercept(FixedValue.value(FOO)).make();
   ClassLoader classLoader=mock(ClassLoader.class);
   doReturn(Void.class).when(classLoader).loadClass(any(String.class));
-  ClassLoadingStrategy classLoadingStrategy=new AndroidClassLoadingStrategy(directory,new StubbedClassLoaderDexCompilation(classLoader));
+  ClassLoadingStrategy classLoadingStrategy=new AndroidClassLoadingStrategy(folder,new StubbedClassLoaderDexCompilation(classLoader));
   Map<TypeDescription,Class<?>> map=classLoadingStrategy.load(getClass().getClassLoader(),dynamicType.getAllTypes());
   assertThat(map.size(),is(1));
   assertEquals(Void.class,map.get(dynamicType.getTypeDescription()));

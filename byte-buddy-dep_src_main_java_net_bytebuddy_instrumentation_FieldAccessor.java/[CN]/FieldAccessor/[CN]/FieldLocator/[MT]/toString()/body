@@ -1,0 +1,3 @@
+{
+  return "FieldAccessor.FieldLocator.ForInstrumentedType." + name();
+}

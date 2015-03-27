@@ -1,0 +1,3 @@
+{
+  return "SubclassInstrumentationTarget.OriginTypeIdentifier." + name();
+}

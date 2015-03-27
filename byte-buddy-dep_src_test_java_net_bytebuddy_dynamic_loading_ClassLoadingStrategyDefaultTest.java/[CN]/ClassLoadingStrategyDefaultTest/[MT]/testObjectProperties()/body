@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(ClassLoadingStrategy.Default.class);
+}

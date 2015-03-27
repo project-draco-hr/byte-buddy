@@ -1,3 +1,3 @@
 {
-  return "MethodBinding to " + target + " ("+ (isValid() ? "valid" : "invalid")+ ')';
+  return "MethodDelegationBinder.MethodBinding.Builder.Build{" + "target=" + target + ", registeredTargetIndices="+ registeredTargetIndices+ ", methodInvocation="+ methodInvocation+ ", parameterStackManipulations="+ parameterStackManipulations+ ", terminatingStackManipulation="+ terminatingStackManipulation+ '}';
 }

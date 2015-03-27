@@ -1,0 +1,13 @@
+{
+  when(assignmentBinding.isValid()).thenReturn(false);
+  when(methodInvocation.isValid()).thenReturn(true);
+  when(termination.isValid()).thenReturn(false);
+  when(targetMethod.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  MethodDelegationBinder methodDelegationBinder=new TargetMethodAnnotationDrivenBinder(Collections.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>emptyList(),defaultsProvider,terminationHandler,assigner,methodInvoker);
+  assertThat(methodDelegationBinder.bind(instrumentationTarget,sourceMethod,targetMethod).isValid(),is(false));
+  verify(terminationHandler).resolve(assigner,sourceMethod,targetMethod);
+  verifyNoMoreInteractions(terminationHandler);
+  verifyZeroInteractions(assigner);
+  verifyZeroInteractions(methodInvoker);
+  verifyZeroInteractions(defaultsProvider);
+}

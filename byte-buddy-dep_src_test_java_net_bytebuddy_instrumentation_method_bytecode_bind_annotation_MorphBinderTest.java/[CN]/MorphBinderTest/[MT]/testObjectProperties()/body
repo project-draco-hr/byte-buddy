@@ -8,6 +8,7 @@
     }
   }
 ).apply();
+  ObjectPropertyAssertion.of(Morph.Binder.RedirectionProxy.StaticFieldConstructor.class).apply();
   ObjectPropertyAssertion.of(Morph.Binder.RedirectionProxy.InstanceFieldConstructor.class).apply();
   ObjectPropertyAssertion.of(Morph.Binder.RedirectionProxy.InstanceFieldConstructor.Appender.class).refine(new ObjectPropertyAssertion.Refinement<Instrumentation.Target>(){
     @Override public void apply(    Instrumentation.Target mock){
@@ -22,5 +23,6 @@
   }
 ).apply();
   ObjectPropertyAssertion.of(Morph.Binder.PrecomputedFinding.class).apply();
+  ObjectPropertyAssertion.of(Morph.Binder.DefaultMethodLocator.Implicit.class).apply();
   ObjectPropertyAssertion.of(Morph.Binder.DefaultMethodLocator.Explicit.class).apply();
 }

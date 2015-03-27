@@ -15,4 +15,5 @@
     }
   }
 ).apply();
+  ObjectPropertyAssertion.of(SubclassInstrumentationTarget.OriginTypeIdentifier.class).apply();
 }

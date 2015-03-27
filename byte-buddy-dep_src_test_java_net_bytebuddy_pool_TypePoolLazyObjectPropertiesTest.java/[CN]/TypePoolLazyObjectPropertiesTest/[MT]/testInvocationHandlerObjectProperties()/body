@@ -1,3 +1,8 @@
 {
-  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationInvocationHandler.class).apply(new TypePool.LazyTypeDescription.AnnotationInvocationHandler(mock(ClassLoader.class),Annotation.class,mock(Map.class)));
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationInvocationHandler.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
+    @Override public Class<?> create(){
+      return Object.class;
+    }
+  }
+).applyMutable();
 }

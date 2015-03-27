@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.Default.InitializationStrategy.NoOp.INSTANCE.apply(builder),is((DynamicType.Builder)builder));
+}

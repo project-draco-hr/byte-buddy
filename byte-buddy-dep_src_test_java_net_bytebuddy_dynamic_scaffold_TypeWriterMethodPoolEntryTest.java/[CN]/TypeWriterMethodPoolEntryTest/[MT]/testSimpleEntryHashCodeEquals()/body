@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.Simple.class).apply();
-}

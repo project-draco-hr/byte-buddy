@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodAttributeAppender.ForInstrumentedMethod.class).apply();
+}

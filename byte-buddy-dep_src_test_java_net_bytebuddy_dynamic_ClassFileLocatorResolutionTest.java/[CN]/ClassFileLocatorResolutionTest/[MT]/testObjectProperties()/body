@@ -1,3 +1,4 @@
 {
   ObjectPropertyAssertion.of(ClassFileLocator.Resolution.Explicit.class).apply();
+  ObjectPropertyAssertion.of(ClassFileLocator.Resolution.Illegal.class).apply();
 }

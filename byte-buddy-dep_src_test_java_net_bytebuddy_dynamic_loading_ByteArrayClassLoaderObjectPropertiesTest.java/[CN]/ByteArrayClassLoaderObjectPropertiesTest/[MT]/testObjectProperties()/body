@@ -1,4 +1,5 @@
 {
-  ObjectPropertyAssertion.of(ByteArrayClassLoader.class).apply(new ByteArrayClassLoader(mock(ClassLoader.class),Collections.<String,byte[]>emptyMap(),mock(ProtectionDomain.class),mock(ByteArrayClassLoader.PersistenceHandler.class)));
-  ObjectPropertyAssertion.of(ByteArrayClassLoader.ChildFirst.class).apply(new ByteArrayClassLoader.ChildFirst(mock(ClassLoader.class),Collections.<String,byte[]>emptyMap(),mock(ProtectionDomain.class),mock(ByteArrayClassLoader.PersistenceHandler.class)));
+  ObjectPropertyAssertion.of(ByteArrayClassLoader.class).applyMutable();
+  ObjectPropertyAssertion.of(ByteArrayClassLoader.ChildFirst.class).applyMutable();
+  ObjectPropertyAssertion.of(ByteArrayClassLoader.PersistenceHandler.class).apply();
 }

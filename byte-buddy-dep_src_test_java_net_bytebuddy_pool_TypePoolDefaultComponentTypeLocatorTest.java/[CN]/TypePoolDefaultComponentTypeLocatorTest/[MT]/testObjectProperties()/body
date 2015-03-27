@@ -7,15 +7,19 @@
     }
   }
 ).apply();
-  TypePool.Default.TypeExtractor typeExtractor=new TypePool.Default(mock(TypePool.CacheProvider.class),mock(ClassFileLocator.class)).new TypeExtractor();
-  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.OnTypeCollector.class).apply(typeExtractor.new OnTypeCollector(FOO));
-  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.MethodExtractor.class).apply(typeExtractor.new MethodExtractor(0,FOO,"()" + BAR_DESCRIPTOR,BAZ,null));
-  ObjectPropertyAssertion.of(TypePool.Default.ParameterBag.class).apply(new TypePool.Default.ParameterBag(new Type[0]));
-  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.MethodExtractor.OnMethodCollector.class).apply(typeExtractor.new MethodExtractor(0,FOO,"()" + BAR_DESCRIPTOR,BAZ,null).new OnMethodCollector(FOO));
-  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.MethodExtractor.OnMethodParameterCollector.class).apply(typeExtractor.new MethodExtractor(0,FOO,"()" + BAR_DESCRIPTOR,BAZ,null).new OnMethodParameterCollector(FOO,0));
-  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.FieldExtractor.class).apply(typeExtractor.new FieldExtractor(0,FOO,BAR_DESCRIPTOR,BAZ));
-  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.FieldExtractor.OnFieldCollector.class).apply(typeExtractor.new FieldExtractor(0,FOO,BAR_DESCRIPTOR,BAZ).new OnFieldCollector(FOO));
-  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.AnnotationExtractor.class).apply(typeExtractor.new AnnotationExtractor(mock(TypePool.Default.AnnotationRegistrant.class),mock(TypePool.Default.ComponentTypeLocator.class)));
-  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.AnnotationExtractor.ArrayLookup.class).apply(typeExtractor.new AnnotationExtractor(mock(TypePool.Default.AnnotationRegistrant.class),mock(TypePool.Default.ComponentTypeLocator.class)).new ArrayLookup(FOO,mock(TypePool.LazyTypeDescription.AnnotationValue.ForComplexArray.ComponentTypeReference.class)));
-  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.AnnotationExtractor.AnnotationLookup.class).apply(typeExtractor.new AnnotationExtractor(mock(TypePool.Default.AnnotationRegistrant.class),mock(TypePool.Default.ComponentTypeLocator.class)).new AnnotationLookup(FOO,BAR));
+  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.OnTypeCollector.class).applyMutable();
+  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.MethodExtractor.class).create(new ObjectPropertyAssertion.Creator<String>(){
+    @Override public String create(){
+      return "(LFoo;)LBar;";
+    }
+  }
+).applyMutable();
+  ObjectPropertyAssertion.of(TypePool.Default.ParameterBag.class).applyMutable();
+  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.MethodExtractor.OnMethodCollector.class).applyMutable();
+  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.MethodExtractor.OnMethodParameterCollector.class).applyMutable();
+  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.FieldExtractor.class).applyMutable();
+  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.FieldExtractor.OnFieldCollector.class).applyMutable();
+  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.AnnotationExtractor.class).applyMutable();
+  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.AnnotationExtractor.ArrayLookup.class).applyMutable();
+  ObjectPropertyAssertion.of(TypePool.Default.TypeExtractor.AnnotationExtractor.AnnotationLookup.class).applyMutable();
 }

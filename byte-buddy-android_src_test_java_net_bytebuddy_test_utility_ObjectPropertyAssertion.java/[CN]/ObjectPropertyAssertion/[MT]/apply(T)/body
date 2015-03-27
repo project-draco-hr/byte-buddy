@@ -1,6 +1,0 @@
-{
-  checkString(instance);
-  assertThat(instance,is(instance));
-  assertThat(instance,not(is((Object)null)));
-  assertThat(instance,not(is(new Object())));
-}

@@ -1,3 +1,3 @@
 {
-  return "FieldToken{" + "internalName='" + name + '\''+ ", fieldType="+ fieldType+ ", modifiers="+ modifiers+ '}';
+  return "DynamicType.Builder.AbstractBase.FieldToken{" + "name='" + name + '\''+ ", fieldType="+ fieldType+ ", modifiers="+ modifiers+ '}';
 }
