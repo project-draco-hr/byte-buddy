@@ -29,6 +29,9 @@
  else   if (value.getClass() == Double.class) {
     return new ForDoubleConstant((Double)value);
   }
+ else   if (value.getClass() == Class.class) {
+    return new ForClassConstant(new TypeDescription.ForLoadedType((Class<?>)value));
+  }
  else {
     return new ForStaticField(value);
   }

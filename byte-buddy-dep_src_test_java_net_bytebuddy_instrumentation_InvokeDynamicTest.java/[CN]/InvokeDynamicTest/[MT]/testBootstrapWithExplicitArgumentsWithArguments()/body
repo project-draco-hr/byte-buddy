@@ -3,7 +3,7 @@
   Field field=type.getDeclaredField(ARGUMENTS_FIELD_NAME);
   field.set(null,null);
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
-  DynamicType.Loaded<Simple> dynamicType=instrument(Simple.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP_EXPLICIT_ARGUMENTS)).getOnly(),BOOLEAN,BYTE,SHORT,CHARACTER,INTEGER,LONG,FLOAT,DOUBLE,FOO).withoutImplicitArguments(),classLoader,isDeclaredBy(Simple.class));
+  DynamicType.Loaded<Simple> dynamicType=instrument(Simple.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP_EXPLICIT_ARGUMENTS)).getOnly(),BOOLEAN,BYTE,SHORT,CHARACTER,INTEGER,LONG,FLOAT,DOUBLE,FOO,CLASS).withoutImplicitArguments(),classLoader,isDeclaredBy(Simple.class));
   assertThat(dynamicType.getLoaded().newInstance().foo(),is(FOO));
   Object[] arguments=(Object[])field.get(null);
   assertThat(arguments.length,is(9));
@@ -16,4 +16,5 @@
   assertThat(arguments[6],is((Object)FLOAT));
   assertThat(arguments[7],is((Object)DOUBLE));
   assertThat(arguments[8],is((Object)FOO));
+  assertThat(arguments[9],is((Object)CLASS));
 }

@@ -10,3 +10,4 @@ long arg5
 float arg6
 double arg7
 String arg8
+Class<?> arg9

@@ -26,6 +26,9 @@
  else   if (value instanceof String) {
     return new ForStringValue((String)value);
   }
+ else   if (value instanceof Class) {
+    return new ForClassValue(new TypeDescription.ForLoadedType((Class<?>)value));
+  }
  else {
     return new ForStaticField(value);
   }

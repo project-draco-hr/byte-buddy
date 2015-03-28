@@ -7,4 +7,5 @@ long arg5
 float arg6
 double arg7
 String arg8
-Object arg9
+Class<?> arg9
+Object arg10
