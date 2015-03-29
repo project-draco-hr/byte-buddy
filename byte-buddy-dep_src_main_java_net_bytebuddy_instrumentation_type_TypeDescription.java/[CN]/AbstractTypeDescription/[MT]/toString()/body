@@ -1,0 +1,3 @@
+{
+  return (isPrimitive() ? "" : (isInterface() ? "interface" : "class") + " ") + getName();
+}

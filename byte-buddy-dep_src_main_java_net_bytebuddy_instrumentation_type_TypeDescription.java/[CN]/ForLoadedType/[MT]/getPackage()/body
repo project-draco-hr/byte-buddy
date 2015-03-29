@@ -1,0 +1,4 @@
+{
+  Package aPackage=type.getPackage();
+  return aPackage == null ? null : new PackageDescription.ForLoadedPackage(aPackage);
+}

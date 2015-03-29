@@ -1,0 +1,13 @@
+{
+  AnnotationList declaredAnnotations=getDeclaredAnnotations();
+  if (getSupertype() == null) {
+    return declaredAnnotations;
+  }
+ else {
+    Set<TypeDescription> annotationTypes=new HashSet<TypeDescription>(declaredAnnotations.size());
+    for (    AnnotationDescription annotationDescription : declaredAnnotations) {
+      annotationTypes.add(annotationDescription.getAnnotationType());
+    }
+    return new AnnotationList.Explicit(join(declaredAnnotations,getSupertype().getInheritedAnnotations().inherited(annotationTypes)));
+  }
+}

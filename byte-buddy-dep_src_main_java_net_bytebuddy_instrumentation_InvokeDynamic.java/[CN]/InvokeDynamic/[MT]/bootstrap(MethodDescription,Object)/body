@@ -3,5 +3,21 @@
   if (!bootstrapMethod.isBootstrap(arguments)) {
     throw new IllegalArgumentException("Not a valid bootstrap method " + bootstrapMethod + " for "+ arguments);
   }
-  return new WithImplicitTarget(bootstrapMethod,arguments,new InvocationProvider.Default(),TerminationHandler.ForMethodReturn.INSTANCE,defaultAssigner(),defaultDynamicallyTyped());
+  List<Object> wrappedArguments=new ArrayList<Object>(arguments.size());
+  for (  Object anArgument : argument) {
+    if (anArgument instanceof Class) {
+      anArgument=Type.getType((Class<?>)anArgument);
+    }
+ else     if (anArgument instanceof TypeDescription) {
+      anArgument=Type.getType(((TypeDescription)anArgument).getDescriptor());
+    }
+ else     if (anArgument instanceof TypeDescription.MethodTypeToken) {
+      anArgument=((TypeDescription.MethodTypeToken)anArgument).resolve();
+    }
+ else     if (anArgument instanceof TypeDescription.MethodHandleToken) {
+      anArgument=((TypeDescription.MethodHandleToken)anArgument).resolve();
+    }
+    wrappedArguments.add(anArgument);
+  }
+  return new WithImplicitTarget(bootstrapMethod,wrappedArguments,new InvocationProvider.Default(),TerminationHandler.ForMethodReturn.INSTANCE,defaultAssigner(),defaultDynamicallyTyped());
 }

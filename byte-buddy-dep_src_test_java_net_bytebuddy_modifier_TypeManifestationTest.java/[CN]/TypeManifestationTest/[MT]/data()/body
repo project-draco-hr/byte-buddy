@@ -1,3 +1,3 @@
 {
-  return Arrays.asList(new Object[][]{{TypeManifestation.PLAIN,0},{TypeManifestation.ABSTRACT,Opcodes.ACC_ABSTRACT},{TypeManifestation.FINAL,Opcodes.ACC_FINAL},{TypeManifestation.INTERFACE,Opcodes.ACC_INTERFACE | Opcodes.ACC_ABSTRACT}});
+  return Arrays.asList(new Object[][]{{TypeManifestation.PLAIN,0},{TypeManifestation.ABSTRACT,Opcodes.ACC_ABSTRACT},{TypeManifestation.FINAL,Opcodes.ACC_FINAL},{TypeManifestation.INTERFACE,Opcodes.ACC_INTERFACE | Opcodes.ACC_ABSTRACT},{TypeManifestation.ANNOTATION,Opcodes.ACC_ANNOTATION | Opcodes.ACC_INTERFACE | Opcodes.ACC_ABSTRACT}});
 }

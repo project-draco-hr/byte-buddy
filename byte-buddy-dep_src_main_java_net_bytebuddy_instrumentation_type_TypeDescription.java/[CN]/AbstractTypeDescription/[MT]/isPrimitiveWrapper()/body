@@ -1,0 +1,3 @@
+{
+  return represents(Boolean.class) || represents(Byte.class) || represents(Short.class)|| represents(Character.class)|| represents(Integer.class)|| represents(Long.class)|| represents(Float.class)|| represents(Double.class);
+}

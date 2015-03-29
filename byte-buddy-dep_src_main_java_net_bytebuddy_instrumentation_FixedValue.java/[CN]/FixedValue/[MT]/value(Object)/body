@@ -1,10 +1,10 @@
 {
   if (fixedValue == null) {
-    return new ForPoolValue(NullConstant.INSTANCE,new TypeDescription.ForLoadedType(Object.class),defaultAssigner(),true);
+    return new ForPoolValue(NullConstant.INSTANCE,TypeDescription.OBJECT,defaultAssigner(),true);
   }
   Class<?> type=fixedValue.getClass();
   if (type == String.class) {
-    return new ForPoolValue(new TextConstant((String)fixedValue),new TypeDescription.ForLoadedType(String.class),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(new TextConstant((String)fixedValue),TypeDescription.STRING,defaultAssigner(),defaultConsiderRuntimeType());
   }
  else   if (type == Boolean.class) {
     return new ForPoolValue(IntegerConstant.forValue((Boolean)fixedValue),new TypeDescription.ForLoadedType(boolean.class),defaultAssigner(),defaultConsiderRuntimeType());

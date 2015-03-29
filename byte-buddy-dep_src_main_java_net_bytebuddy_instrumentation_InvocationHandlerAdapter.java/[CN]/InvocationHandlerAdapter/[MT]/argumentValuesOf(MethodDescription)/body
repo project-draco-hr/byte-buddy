@@ -1,7 +1,7 @@
 {
   TypeList parameterTypes=instrumentedMethod.getParameters().asTypeList();
   List<StackManipulation> instruction=new ArrayList<StackManipulation>(parameterTypes.size());
-  TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
+  TypeDescription objectType=TypeDescription.OBJECT;
   int currentIndex=1;
   for (  TypeDescription parameterType : parameterTypes) {
     instruction.add(new StackManipulation.Compound(MethodVariableAccess.forType(parameterType).loadOffset(currentIndex),assigner.assign(parameterType,objectType,false)));

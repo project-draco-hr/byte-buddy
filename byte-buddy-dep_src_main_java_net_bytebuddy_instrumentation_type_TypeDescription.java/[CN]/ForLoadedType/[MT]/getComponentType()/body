@@ -1,0 +1,3 @@
+{
+  return type.getComponentType() == null ? null : new TypeDescription.ForLoadedType(type.getComponentType());
+}

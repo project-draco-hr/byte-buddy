@@ -2,8 +2,8 @@
   TypeDescription actualSuperType=isExtendable(superType);
   List<TypeDescription> interfaceTypes=this.interfaceTypes;
   if (nonNull(superType).isInterface()) {
-    actualSuperType=new TypeDescription.ForLoadedType(Object.class);
-    interfaceTypes=join(superType,interfaceTypes);
+    actualSuperType=TypeDescription.OBJECT;
+    interfaceTypes=joinUnique(superType,interfaceTypes);
   }
-  return new SubclassDynamicTypeBuilder<T>(classFileVersion,nonNull(namingStrategy.subclass(superType)),actualSuperType,interfaceTypes,modifiers.resolve(superType.getModifiers() & ~TypeManifestation.INTERFACE.getMask()),typeAttributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(constructorStrategy));
+  return new SubclassDynamicTypeBuilder<T>(classFileVersion,nonNull(namingStrategy.subclass(superType)),actualSuperType,interfaceTypes,modifiers.resolve(superType.getModifiers() & ~TypeManifestation.ANNOTATION.getMask()),typeAttributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(constructorStrategy));
 }

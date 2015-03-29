@@ -2,4 +2,5 @@
   assertThat(((TypeManifestation)modifierContributor).isAbstract(),is((expectedModifier & Opcodes.ACC_ABSTRACT) != 0 && (expectedModifier & Opcodes.ACC_INTERFACE) == 0));
   assertThat(((TypeManifestation)modifierContributor).isFinal(),is((expectedModifier & Opcodes.ACC_FINAL) != 0));
   assertThat(((TypeManifestation)modifierContributor).isInterface(),is((expectedModifier & Opcodes.ACC_INTERFACE) != 0));
+  assertThat(((TypeManifestation)modifierContributor).isAnnotation(),is((expectedModifier & Opcodes.ACC_ANNOTATION) != 0));
 }

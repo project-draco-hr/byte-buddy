@@ -1,5 +1,5 @@
 {
-  StackManipulation stackManipulation=new StackManipulation.Compound(ClassConstant.of(typeDescription),assigner.assign(new TypeDescription.ForLoadedType(Class.class),targetType,dynamicallyTyped));
+  StackManipulation stackManipulation=new StackManipulation.Compound(ClassConstant.of(typeDescription),assigner.assign(TypeDescription.CLASS,targetType,dynamicallyTyped));
   if (!stackManipulation.isValid()) {
     throw new IllegalStateException("Cannot assign Class value to " + targetType);
   }

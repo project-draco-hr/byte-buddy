@@ -1,3 +1,3 @@
 {
-  this.objectTypeDefaultConstructor=new TypeDescription.ForLoadedType(Object.class).getDeclaredMethods().filter(isConstructor()).getOnly();
+  this.objectTypeDefaultConstructor=TypeDescription.OBJECT.getDeclaredMethods().filter(isConstructor()).getOnly();
 }
