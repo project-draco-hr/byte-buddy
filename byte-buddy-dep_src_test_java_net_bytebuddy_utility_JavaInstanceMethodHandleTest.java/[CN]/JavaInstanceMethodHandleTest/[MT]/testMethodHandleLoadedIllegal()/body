@@ -1,0 +1,3 @@
+{
+  JavaInstance.MethodHandle.of(new Object());
+}

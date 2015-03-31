@@ -1,0 +1,4 @@
+{
+  Object lookup=Class.forName("java.lang.invoke.MethodHandles").getDeclaredMethod("lookup").invoke(null);
+  return JavaType.METHOD_HANDLES_LOOKUP.load().getDeclaredMethod("findVirtual",Class.class,String.class,JavaType.METHOD_TYPE.load()).invoke(lookup,Qux.class,BAR,makeMethodType(Object.class));
+}

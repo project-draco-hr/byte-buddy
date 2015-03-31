@@ -33,7 +33,7 @@
  else   if (type == Double.class) {
     return new ForPoolValue(DoubleConstant.forValue((Double)fixedValue),new TypeDescription.ForLoadedType(double.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
- else   if (JavaType.METHOD_HANDLE.getTypeStub().represents(type)) {
+ else   if (JavaType.METHOD_HANDLE.getTypeStub().isAssignableFrom(type)) {
     return new ForPoolValue(MethodHandleConstant.of(JavaInstance.MethodHandle.of(fixedValue)),new TypeDescription.ForLoadedType(type),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else   if (JavaType.METHOD_TYPE.getTypeStub().represents(type)) {
