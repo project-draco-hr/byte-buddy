@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(JavaInstance.MethodHandle.class).apply();
+  ObjectPropertyAssertion.of(JavaInstance.MethodHandle.HandleType.class).apply();
+}

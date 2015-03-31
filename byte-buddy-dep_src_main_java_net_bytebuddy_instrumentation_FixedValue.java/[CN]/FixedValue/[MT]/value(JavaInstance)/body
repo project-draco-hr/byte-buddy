@@ -1,3 +1,3 @@
 {
-  return new ForPoolValue(fixedValue.asStackManipulation(),fixedValue.getTypeDescription(),defaultAssigner(),defaultConsiderRuntimeType());
+  return new ForPoolValue(fixedValue.asStackManipulation(),fixedValue.getInstanceType(),defaultAssigner(),defaultConsiderRuntimeType());
 }

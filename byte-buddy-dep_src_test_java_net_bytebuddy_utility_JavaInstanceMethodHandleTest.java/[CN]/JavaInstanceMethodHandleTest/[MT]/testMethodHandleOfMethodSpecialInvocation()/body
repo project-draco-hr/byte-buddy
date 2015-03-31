@@ -1,0 +1,8 @@
+{
+  JavaInstance.MethodHandle methodHandle=JavaInstance.MethodHandle.ofSpecial(Foo.class.getDeclaredMethod(BAR,Void.class),Foo.class);
+  assertThat(methodHandle.getHandleType(),is(JavaInstance.MethodHandle.HandleType.INVOKE_SPECIAL));
+  assertThat(methodHandle.getName(),is(BAR));
+  assertThat(methodHandle.getOwnerType(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(methodHandle.getReturnType(),is((TypeDescription)new TypeDescription.ForLoadedType(void.class)));
+  assertThat(methodHandle.getParameterTypes(),is((List<TypeDescription>)new TypeList.ForLoadedType(Void.class)));
+}

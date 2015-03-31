@@ -1,0 +1,7 @@
+{
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(methodDescription.isAbstract()).thenReturn(true);
+  when(methodDescription.isSpecializableFor(typeDescription)).thenReturn(true);
+  JavaInstance.MethodHandle.ofSpecial(methodDescription,typeDescription);
+}

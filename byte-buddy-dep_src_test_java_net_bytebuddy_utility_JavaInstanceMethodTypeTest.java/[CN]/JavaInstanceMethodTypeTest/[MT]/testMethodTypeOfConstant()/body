@@ -1,0 +1,5 @@
+{
+  JavaInstance.MethodType methodType=JavaInstance.MethodType.ofConstant(new Foo(null));
+  assertThat(methodType.getReturnType(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(methodType.getParameterTypes(),is(Collections.<TypeDescription>emptyList()));
+}
