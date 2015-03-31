@@ -2,5 +2,6 @@
   if (!typeDescription.isInstance(value)) {
     throw new IllegalArgumentException("Cannot assign " + value + " to "+ typeDescription);
   }
-  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(Collections.<InvocationProvider.ArgumentProvider>singletonList(new InvocationProvider.ArgumentProvider.ForStaticField(value,typeDescription))),terminationHandler,assigner,dynamicallyTyped);
+  InvocationProvider.ArgumentProvider argumentProvider=new InvocationProvider.ArgumentProvider.ForStaticField(value,typeDescription);
+  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(Collections.singletonList(argumentProvider)),terminationHandler,assigner,dynamicallyTyped);
 }

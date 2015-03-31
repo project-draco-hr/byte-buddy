@@ -1,4 +1,0 @@
-MethodHandles.Lookup lookup
-String methodName
-MethodType methodType
-Object arguments

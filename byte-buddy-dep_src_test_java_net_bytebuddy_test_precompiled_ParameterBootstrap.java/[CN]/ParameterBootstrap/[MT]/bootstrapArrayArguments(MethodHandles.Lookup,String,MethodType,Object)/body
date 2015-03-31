@@ -1,4 +1,0 @@
-{
-  ParameterBootstrap.arguments=arguments;
-  return new ConstantCallSite(lookup.findStatic(ParameterBootstrap.class,methodName,methodType));
-}
