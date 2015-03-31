@@ -1,7 +1,6 @@
 {
-  Class<?> type=classLoader.loadClass(ARGUMENT_BOOTSTRAP);
-  TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(classLoader.loadClass(ARGUMENT_BOOTSTRAP));
   Object value=new Object();
-  DynamicType.Loaded<Simple> dynamicType=instrument(Simple.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP)).getOnly()).invoke(FOO,String.class).withoutImplicitArguments().withBooleanValue(BOOLEAN).withByteValue(BYTE).withShortValue(SHORT).withCharacterValue(CHARACTER).withIntegerValue(INTEGER).withLongValue(LONG).withFloatValue(FLOAT).withDoubleValue(DOUBLE).withValue(FOO,CLASS,value),classLoader,isDeclaredBy(Simple.class));
-  assertThat(dynamicType.getLoaded().newInstance().foo(),is("" + BOOLEAN + BYTE+ SHORT+ CHARACTER+ INTEGER+ LONG+ FLOAT+ DOUBLE+ FOO+ CLASS+ value));
+  DynamicType.Loaded<Simple> dynamicType=instrument(Simple.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP)).getOnly()).invoke(FOO,String.class).withoutImplicitArguments().withBooleanValue(BOOLEAN).withByteValue(BYTE).withShortValue(SHORT).withCharacterValue(CHARACTER).withIntegerValue(INTEGER).withLongValue(LONG).withFloatValue(FLOAT).withDoubleValue(DOUBLE).withType(new TypeDescription.ForLoadedType(CLASS)).withInstance(JavaInstance.MethodType.of(makeMethodType(CLASS)),JavaInstance.MethodHandle.of(makeMethodHandle())).withValue(FOO,CLASS,makeMethodType(CLASS),makeMethodHandle(),value),classLoader,isDeclaredBy(Simple.class));
+  assertThat(dynamicType.getLoaded().newInstance().foo(),is("" + BOOLEAN + BYTE+ SHORT+ CHARACTER+ INTEGER+ LONG+ FLOAT+ DOUBLE+ CLASS+ makeMethodType(CLASS)+ makeMethodHandle()+ FOO+ CLASS+ makeMethodType(CLASS)+ makeMethodHandle()+ value));
 }

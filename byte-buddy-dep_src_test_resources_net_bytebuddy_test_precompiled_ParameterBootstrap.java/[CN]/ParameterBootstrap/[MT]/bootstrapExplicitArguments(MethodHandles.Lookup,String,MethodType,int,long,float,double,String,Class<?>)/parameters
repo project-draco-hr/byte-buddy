@@ -1,9 +1,0 @@
-MethodHandles.Lookup lookup
-String methodName
-MethodType methodType
-int arg0
-long arg1
-float arg2
-double arg3
-String arg4
-Class<?> arg5
