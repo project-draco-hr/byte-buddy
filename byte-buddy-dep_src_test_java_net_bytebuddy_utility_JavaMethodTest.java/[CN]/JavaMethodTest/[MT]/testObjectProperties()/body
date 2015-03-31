@@ -1,8 +1,15 @@
 {
-  final Iterator<Method> iterator=Arrays.asList(Object.class.getDeclaredMethods()).iterator();
+  final Iterator<Method> methodIterator=Arrays.asList(Object.class.getDeclaredMethods()).iterator();
   ObjectPropertyAssertion.of(JavaMethod.ForLoadedMethod.class).create(new ObjectPropertyAssertion.Creator<Method>(){
     @Override public Method create(){
-      return iterator.next();
+      return methodIterator.next();
+    }
+  }
+).apply();
+  final Iterator<Constructor<?>> constructorIterator=Arrays.<Constructor<?>>asList(String.class.getDeclaredConstructors()).iterator();
+  ObjectPropertyAssertion.of(JavaMethod.ForLoadedConstructor.class).create(new ObjectPropertyAssertion.Creator<Constructor<?>>(){
+    @Override public Constructor<?> create(){
+      return constructorIterator.next();
     }
   }
 ).apply();
