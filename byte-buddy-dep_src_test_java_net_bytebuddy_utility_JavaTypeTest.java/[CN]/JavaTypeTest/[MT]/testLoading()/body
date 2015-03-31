@@ -1,6 +1,6 @@
 {
-  JavaType.METHOD_HANDLE.load();
-  JavaType.METHOD_TYPE.load();
-  JavaType.METHOD_TYPES_LOOKUP.load();
-  JavaType.CALL_SITE.load();
+  assertThat(JavaType.METHOD_HANDLE.load(),notNullValue(Class.class));
+  assertThat(JavaType.METHOD_TYPE.load(),notNullValue(Class.class));
+  assertThat(JavaType.METHOD_TYPES_LOOKUP.load(),notNullValue(Class.class));
+  assertThat(JavaType.CALL_SITE.load(),notNullValue(Class.class));
 }

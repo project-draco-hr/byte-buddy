@@ -6,6 +6,9 @@
   if (type == String.class) {
     return new ForPoolValue(new TextConstant((String)fixedValue),TypeDescription.STRING,defaultAssigner(),defaultConsiderRuntimeType());
   }
+ else   if (type == Class.class) {
+    return new ForPoolValue(ClassConstant.of(new TypeDescription.ForLoadedType(type)),TypeDescription.CLASS,defaultAssigner(),defaultConsiderRuntimeType());
+  }
  else   if (type == Boolean.class) {
     return new ForPoolValue(IntegerConstant.forValue((Boolean)fixedValue),new TypeDescription.ForLoadedType(boolean.class),defaultAssigner(),defaultConsiderRuntimeType());
   }
@@ -29,6 +32,12 @@
   }
  else   if (type == Double.class) {
     return new ForPoolValue(DoubleConstant.forValue((Double)fixedValue),new TypeDescription.ForLoadedType(double.class),defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else   if (JavaType.METHOD_HANDLE.getTypeStub().represents(type)) {
+    return new ForPoolValue(MethodHandleConstant.of(JavaInstance.MethodHandle.of(fixedValue)),new TypeDescription.ForLoadedType(type),defaultAssigner(),defaultConsiderRuntimeType());
+  }
+ else   if (JavaType.METHOD_TYPE.getTypeStub().represents(type)) {
+    return new ForPoolValue(MethodTypeConstant.of(JavaInstance.MethodType.of(fixedValue)),new TypeDescription.ForLoadedType(type),defaultAssigner(),defaultConsiderRuntimeType());
   }
  else {
     return reference(fixedValue);

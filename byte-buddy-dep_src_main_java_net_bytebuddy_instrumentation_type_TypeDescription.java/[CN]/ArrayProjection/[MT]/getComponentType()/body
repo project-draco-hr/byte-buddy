@@ -1,3 +1,0 @@
-{
-  return arity == 1 ? componentType : new ArrayProjection(componentType,arity - 1);
-}

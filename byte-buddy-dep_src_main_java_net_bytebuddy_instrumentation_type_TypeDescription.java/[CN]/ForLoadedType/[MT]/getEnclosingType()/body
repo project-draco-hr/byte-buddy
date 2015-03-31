@@ -1,4 +1,0 @@
-{
-  Class<?> enclosingType=type.getEnclosingClass();
-  return enclosingType == null ? null : new TypeDescription.ForLoadedType(enclosingType);
-}

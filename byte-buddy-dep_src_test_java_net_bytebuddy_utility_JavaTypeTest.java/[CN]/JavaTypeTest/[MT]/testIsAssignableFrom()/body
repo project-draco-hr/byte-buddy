@@ -1,6 +1,0 @@
-{
-  assertThat(JavaType.METHOD_HANDLE.isAssignableFrom(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(JavaType.METHOD_TYPE.isAssignableFrom(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(JavaType.METHOD_TYPES_LOOKUP.isAssignableFrom(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(JavaType.CALL_SITE.isAssignableFrom(new TypeDescription.ForLoadedType(Object.class)),is(false));
-}

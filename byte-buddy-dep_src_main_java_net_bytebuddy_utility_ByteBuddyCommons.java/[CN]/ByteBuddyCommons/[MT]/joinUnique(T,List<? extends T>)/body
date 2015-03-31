@@ -1,3 +1,15 @@
 {
-  return list.contains(element) ? new ArrayList<T>(list) : join(element,list);
+  if (list.contains(element)) {
+    List<T> result=new ArrayList<T>(list.size() + 1);
+    result.add(element);
+    for (    T item : list) {
+      if (!item.equals(element)) {
+        result.add(item);
+      }
+    }
+    return result;
+  }
+ else {
+    return join(element,list);
+  }
 }

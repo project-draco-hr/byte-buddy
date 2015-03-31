@@ -1,0 +1,7 @@
+{
+  assertThat(new NamingStrategy.SuffixingRandom.BaseNameResolver.ForFixedValue(FOO).resolve(unnamedType),is(FOO));
+  when(typeDescription.getName()).thenReturn(FOO);
+  assertThat(new NamingStrategy.SuffixingRandom.BaseNameResolver.ForGivenType(typeDescription).resolve(unnamedType),is(FOO));
+  when(unnamedType.getSuperClass()).thenReturn(typeDescription);
+  assertThat(NamingStrategy.SuffixingRandom.BaseNameResolver.ForUnnamedType.INSTANCE.resolve(unnamedType),is(FOO));
+}

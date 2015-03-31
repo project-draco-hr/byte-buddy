@@ -1,0 +1,7 @@
+{
+  List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(typeDescription.length);
+  for (  TypeDescription aTypeDescription : typeDescription) {
+    argumentLoaders.add(new ArgumentLoader.ForClassConstant(nonNull(aTypeDescription)));
+  }
+  return new MethodCall(methodLocator,targetHandler,join(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,dynamicallyTyped);
+}

@@ -1,0 +1,7 @@
+{
+  List<InvocationProvider.ArgumentProvider> argumentProviders=new ArrayList<InvocationProvider.ArgumentProvider>(javaInstance.length);
+  for (  JavaInstance aJavaInstance : javaInstance) {
+    argumentProviders.add(new InvocationProvider.ArgumentProvider.ForJavaInstance(nonNull(aJavaInstance)));
+  }
+  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
+}

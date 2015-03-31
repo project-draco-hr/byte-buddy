@@ -1,7 +1,0 @@
-{
-  if (interfaces.add(typeDescription)) {
-    for (    TypeDescription interfaceType : typeDescription.getInterfaces()) {
-      collect(interfaceType,interfaces);
-    }
-  }
-}

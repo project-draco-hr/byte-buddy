@@ -1,3 +1,0 @@
-{
-  methodType=Type.getMethodType(methodDescription.getDescriptor());
-}

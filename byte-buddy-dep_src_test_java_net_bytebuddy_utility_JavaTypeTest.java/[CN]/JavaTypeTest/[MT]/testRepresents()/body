@@ -1,6 +1,0 @@
-{
-  assertThat(JavaType.METHOD_HANDLE.representedBy(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(JavaType.METHOD_TYPE.representedBy(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(JavaType.METHOD_TYPES_LOOKUP.representedBy(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(JavaType.CALL_SITE.representedBy(new TypeDescription.ForLoadedType(Object.class)),is(false));
-}

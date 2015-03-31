@@ -2,7 +2,7 @@
   List<T> result=new ArrayList<T>(leftList.size() + rightList.size());
   result.addAll(leftList);
   Set<T> addedElements=new HashSet<T>(leftList.size() + rightList.size());
-  addedElements.addAll(addedElements);
+  addedElements.addAll(leftList);
   for (  T element : rightList) {
     if (addedElements.add(element)) {
       result.add(element);

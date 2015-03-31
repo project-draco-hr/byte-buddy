@@ -1,3 +1,0 @@
-{
-  return type.getSuperclass() == null ? null : new TypeDescription.ForLoadedType(type.getSuperclass());
-}

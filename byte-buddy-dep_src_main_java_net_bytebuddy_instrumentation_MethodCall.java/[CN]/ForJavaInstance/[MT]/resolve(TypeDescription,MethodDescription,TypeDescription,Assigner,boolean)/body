@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=new StackManipulation.Compound(javaInstance.asStackManipulation(),assigner.assign(javaInstance.getTypeDescription(),targetType,dynamicallyTyped));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign Class value to " + targetType);
+  }
+  return stackManipulation;
+}

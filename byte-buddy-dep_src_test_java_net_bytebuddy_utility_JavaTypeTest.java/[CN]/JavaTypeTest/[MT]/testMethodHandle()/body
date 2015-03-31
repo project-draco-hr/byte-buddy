@@ -1,0 +1,5 @@
+{
+  assertThat(JavaType.METHOD_HANDLE.getTypeStub().getName(),is("java.lang.invoke.MethodHandle"));
+  assertThat(JavaType.METHOD_HANDLE.getTypeStub().getModifiers(),is(Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT));
+  assertThat(JavaType.METHOD_HANDLE.getTypeStub().getSupertype(),is((TypeDescription)new TypeDescription.ForLoadedType(Object.class)));
+}

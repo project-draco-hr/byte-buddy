@@ -1,0 +1,8 @@
+{
+  Type[] parameterType=new Type[methodType.getParameterTypes().size()];
+  int index=0;
+  for (  TypeDescription typeDescription : methodType.getParameterTypes()) {
+    parameterType[index++]=Type.getType(typeDescription.getDescriptor());
+  }
+  return new MethodTypeConstant(Type.getMethodType(Type.getType(methodType.getReturnType().getDescriptor()),parameterType));
+}

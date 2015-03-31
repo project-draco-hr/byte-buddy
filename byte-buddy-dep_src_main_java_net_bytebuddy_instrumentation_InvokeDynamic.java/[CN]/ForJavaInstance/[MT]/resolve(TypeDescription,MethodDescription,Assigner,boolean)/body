@@ -1,0 +1,3 @@
+{
+  return new Resolved.Simple(javaInstance.asStackManipulation(),javaInstance.getTypeDescription());
+}

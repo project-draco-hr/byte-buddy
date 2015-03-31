@@ -1,6 +1,0 @@
-{
-  assertThat(JavaType.METHOD_HANDLE.isAssignableTo(new TypeDescription.ForLoadedType(Serializable.class)),is(false));
-  assertThat(JavaType.METHOD_TYPE.isAssignableTo(new TypeDescription.ForLoadedType(Serializable.class)),is(true));
-  assertThat(JavaType.METHOD_TYPES_LOOKUP.isAssignableTo(new TypeDescription.ForLoadedType(Serializable.class)),is(false));
-  assertThat(JavaType.CALL_SITE.isAssignableTo(new TypeDescription.ForLoadedType(Serializable.class)),is(false));
-}
