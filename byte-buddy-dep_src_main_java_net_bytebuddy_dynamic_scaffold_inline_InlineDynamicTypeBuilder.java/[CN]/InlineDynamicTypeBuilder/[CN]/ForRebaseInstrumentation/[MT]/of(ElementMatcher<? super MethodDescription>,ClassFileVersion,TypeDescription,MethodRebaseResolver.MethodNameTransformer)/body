@@ -1,4 +1,0 @@
-{
-  RandomString randomString=new RandomString();
-  return new ForRebaseInstrumentation(TrivialType.INSTANCE.make(trivialTypeNameFor(instrumentedType,randomString),classFileVersion,AuxiliaryType.MethodAccessorFactory.Illegal.INSTANCE),ignoredMethods,methodNameTransformer);
-}

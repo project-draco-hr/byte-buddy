@@ -1,5 +1,0 @@
-{
-  this.ignoredMethods=ignoredMethods;
-  this.placeholderType=placeholderType;
-  this.methodNameTransformer=methodNameTransformer;
-}

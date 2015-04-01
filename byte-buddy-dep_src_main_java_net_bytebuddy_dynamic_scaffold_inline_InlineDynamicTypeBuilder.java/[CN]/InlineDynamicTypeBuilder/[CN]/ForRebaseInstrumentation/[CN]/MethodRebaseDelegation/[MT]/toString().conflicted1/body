@@ -1,3 +1,0 @@
-{
-  return "InlineDynamicTypeBuilder.TargetHandler.Prepared.ForRebaseInstrumentation.MethodRebaseDelegation.Factory." + name();
-}

@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForAnnotationDefaultValue that=(ForAnnotationDefaultValue)other;
+  return annotationValue.equals(that.annotationValue) && methodAttributeAppender.equals(that.methodAttributeAppender);
+}

@@ -1,0 +1,4 @@
+{
+  this.annotationValue=annotationValue;
+  this.methodAttributeAppender=methodAttributeAppender;
+}

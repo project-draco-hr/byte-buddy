@@ -1,6 +1,0 @@
-{
-  int result=ignoredMethods.hashCode();
-  result=31 * result + placeholderType.hashCode();
-  result=31 * result + methodNameTransformer.hashCode();
-  return result;
-}

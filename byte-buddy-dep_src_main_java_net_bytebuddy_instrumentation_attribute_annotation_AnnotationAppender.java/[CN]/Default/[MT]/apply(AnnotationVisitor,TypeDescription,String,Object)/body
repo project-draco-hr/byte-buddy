@@ -13,7 +13,7 @@
     int length=Array.getLength(value);
     TypeDescription componentType=valueType.getComponentType();
     for (int index=0; index < length; index++) {
-      apply(arrayVisitor,componentType,ASM_IGNORE_NAME,Array.get(value,index));
+      apply(arrayVisitor,componentType,NO_NAME,Array.get(value,index));
     }
     arrayVisitor.visitEnd();
   }

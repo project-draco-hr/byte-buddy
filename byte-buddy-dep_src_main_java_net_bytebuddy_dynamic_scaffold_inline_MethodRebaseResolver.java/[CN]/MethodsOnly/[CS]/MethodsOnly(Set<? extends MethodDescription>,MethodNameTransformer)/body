@@ -1,0 +1,4 @@
+{
+  super(instrumentedMethods);
+  this.methodNameTransformer=methodNameTransformer;
+}

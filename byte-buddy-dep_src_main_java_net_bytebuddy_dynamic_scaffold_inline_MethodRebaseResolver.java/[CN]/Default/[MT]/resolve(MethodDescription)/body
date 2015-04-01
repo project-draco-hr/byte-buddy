@@ -1,3 +1,0 @@
-{
-  return ignoredMethods.matches(methodDescription) ? new Resolution.Preserved(methodDescription) : rebase(methodDescription);
-}

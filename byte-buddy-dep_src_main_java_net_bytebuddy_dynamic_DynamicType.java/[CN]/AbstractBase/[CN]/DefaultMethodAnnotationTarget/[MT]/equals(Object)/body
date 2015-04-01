@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   DefaultMethodAnnotationTarget that=(DefaultMethodAnnotationTarget)other;
-  return attributeAppenderFactory.equals(that.attributeAppenderFactory) && instrumentation.equals(that.instrumentation) && latentMethodMatcher.equals(that.latentMethodMatcher)&& methodTokens.equals(that.methodTokens)&& AbstractBase.this.equals(that.getDynamicTypeBuilder());
+  return attributeAppenderFactory.equals(that.attributeAppenderFactory) && prepareable.equals(that.prepareable) && latentMethodMatcher.equals(that.latentMethodMatcher)&& methodTokens.equals(that.methodTokens)&& AbstractBase.this.equals(that.getDynamicTypeBuilder());
 }

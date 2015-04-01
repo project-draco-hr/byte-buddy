@@ -1,0 +1,3 @@
+{
+  return "TypeWriter.MethodPool.Entry.ForAbstractMethod{" + "methodAttributeAppender=" + methodAttributeAppender + '}';
+}

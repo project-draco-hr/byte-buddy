@@ -1,0 +1,3 @@
+{
+  AnnotationAppender.Default.apply(methodVisitor.visitAnnotationDefault(),methodDescription.getReturnType(),AnnotationAppender.NO_NAME,annotationValue);
+}

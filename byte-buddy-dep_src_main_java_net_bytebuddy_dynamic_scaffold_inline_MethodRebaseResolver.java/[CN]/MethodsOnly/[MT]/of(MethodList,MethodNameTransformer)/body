@@ -1,0 +1,3 @@
+{
+  return new MethodsOnly(new HashSet<MethodDescription>(instrumentedMethods),methodNameTransformer);
+}

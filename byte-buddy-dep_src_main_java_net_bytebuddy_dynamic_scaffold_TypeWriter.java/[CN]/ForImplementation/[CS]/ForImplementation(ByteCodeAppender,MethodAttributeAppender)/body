@@ -1,0 +1,4 @@
+{
+  this.byteCodeAppender=byteCodeAppender;
+  this.methodAttributeAppender=methodAttributeAppender;
+}

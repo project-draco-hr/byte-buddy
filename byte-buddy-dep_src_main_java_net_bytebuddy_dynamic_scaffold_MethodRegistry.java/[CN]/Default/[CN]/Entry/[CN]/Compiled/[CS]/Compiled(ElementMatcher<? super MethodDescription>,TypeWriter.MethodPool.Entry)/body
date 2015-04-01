@@ -1,0 +1,4 @@
+{
+  this.elementMatcher=elementMatcher;
+  this.entry=entry;
+}

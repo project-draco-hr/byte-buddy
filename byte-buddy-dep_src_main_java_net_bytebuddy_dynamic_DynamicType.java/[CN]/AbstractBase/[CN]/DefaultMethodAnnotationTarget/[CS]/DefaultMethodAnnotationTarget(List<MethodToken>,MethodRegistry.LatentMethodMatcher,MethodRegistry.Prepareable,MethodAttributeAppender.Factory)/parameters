@@ -1,0 +1,4 @@
+List<MethodToken> methodTokens
+MethodRegistry.LatentMethodMatcher latentMethodMatcher
+MethodRegistry.Prepareable prepareable
+MethodAttributeAppender.Factory attributeAppenderFactory

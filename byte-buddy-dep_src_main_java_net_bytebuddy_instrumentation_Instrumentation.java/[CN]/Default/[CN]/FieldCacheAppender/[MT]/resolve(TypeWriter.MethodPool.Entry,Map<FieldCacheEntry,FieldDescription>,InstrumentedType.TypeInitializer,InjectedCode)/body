@@ -4,6 +4,5 @@
   }
   StackManipulation manipulation=injectedCode.isDefined() ? injectedCode.getStackManipulation() : StackManipulation.LegalTrivial.INSTANCE;
   manipulation=typeInitializer.isDefined() ? new StackManipulation.Compound(typeInitializer.getStackManipulation(),manipulation) : manipulation;
-  ByteCodeAppender byteCodeAppender=originalEntry.isDefineMethod() ? new Compound(new Simple(manipulation),originalEntry.getByteCodeAppender()) : new Simple(manipulation,MethodReturn.VOID);
-  return new TypeWriter.MethodPool.Entry.Simple(new Compound(new FieldCacheAppender(registeredFieldCacheEntries),byteCodeAppender),originalEntry.isDefineMethod() ? originalEntry.getAttributeAppender() : MethodAttributeAppender.NoOp.INSTANCE);
+  return null;
 }

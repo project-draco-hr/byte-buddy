@@ -1,3 +1,0 @@
-{
-  return "InlineDynamicTypeBuilder.TargetHandler.Prepared.ForRebaseInstrumentation{" + "methodRebaseResolver=" + methodRebaseResolver + ", placeholderType="+ placeholderType+ '}';
-}

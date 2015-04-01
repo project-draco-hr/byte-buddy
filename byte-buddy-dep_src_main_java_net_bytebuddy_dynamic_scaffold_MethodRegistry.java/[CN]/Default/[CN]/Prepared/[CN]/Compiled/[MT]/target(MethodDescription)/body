@@ -1,0 +1,8 @@
+{
+  for (  Default.Entry.Compiled compiledEntry : compiledEntries) {
+    if (compiledEntry.matches(methodDescription)) {
+      return compiledEntry.getEntry();
+    }
+  }
+  throw new IllegalArgumentException("Not an instrumented method: " + methodDescription);
+}

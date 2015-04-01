@@ -1,0 +1,3 @@
+{
+  return new Enabled(new HashSet<MethodDescription>(instrumentedMethods),typeDescription,methodNameTransformer);
+}

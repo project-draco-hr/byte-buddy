@@ -1,0 +1,2 @@
+List<DynamicType> dynamicTypes
+MethodRebaseResolver methodNameTransformer

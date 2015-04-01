@@ -1,3 +1,0 @@
-ElementMatcher<? super MethodDescription> ignoredMethods
-TypeDescription placeholderType
-MethodNameTransformer methodNameTransformer

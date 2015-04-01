@@ -1,5 +1,0 @@
-{
-  int result=methodRebaseResolver.hashCode();
-  result=31 * result + placeholderType.hashCode();
-  return result;
-}

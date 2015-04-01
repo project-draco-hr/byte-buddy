@@ -1,3 +1,0 @@
-{
-  return registeredFieldCacheEntries.size() > 0;
-}

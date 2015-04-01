@@ -1,0 +1,7 @@
+{
+  ElementMatcher.Junction<T> matcher=none();
+  for (  ElementMatcher<? super T> aMatcher : matchers) {
+    matcher=matcher.or(aMatcher);
+  }
+  return matcher;
+}

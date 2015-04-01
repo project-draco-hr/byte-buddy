@@ -1,3 +1,0 @@
-ClassVisitor classVisitor
-Context instrumentationContext
-MethodDescription methodDescription

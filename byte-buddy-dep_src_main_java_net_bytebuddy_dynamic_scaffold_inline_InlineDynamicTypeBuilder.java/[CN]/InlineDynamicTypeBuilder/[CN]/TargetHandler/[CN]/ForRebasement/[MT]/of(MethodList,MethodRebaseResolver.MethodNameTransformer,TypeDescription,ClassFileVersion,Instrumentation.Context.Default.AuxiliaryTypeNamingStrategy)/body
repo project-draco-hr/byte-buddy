@@ -1,0 +1,9 @@
+{
+  if (instrumentedMethods.filter(isConstructor()).isEmpty()) {
+    return new ForRebasement(Collections.<DynamicType>emptyList(),MethodRebaseResolver.MethodsOnly.of(instrumentedMethods,methodNameTransformer));
+  }
+ else {
+    DynamicType placeholderType=TrivialType.INSTANCE.make(auxiliaryTypeNamingStrategy.name(TrivialType.INSTANCE,instrumentedType),classFileVersion,AuxiliaryType.MethodAccessorFactory.Illegal.INSTANCE);
+    return new ForRebasement(Collections.singletonList(placeholderType),MethodRebaseResolver.Enabled.of(instrumentedMethods,placeholderType.getTypeDescription(),methodNameTransformer));
+  }
+}

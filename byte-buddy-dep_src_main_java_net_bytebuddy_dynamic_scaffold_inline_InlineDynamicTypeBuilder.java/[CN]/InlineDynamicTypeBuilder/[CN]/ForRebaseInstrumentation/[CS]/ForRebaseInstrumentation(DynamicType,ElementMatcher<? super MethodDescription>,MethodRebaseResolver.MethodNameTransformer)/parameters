@@ -1,3 +1,0 @@
-DynamicType placeholderType
-ElementMatcher<? super MethodDescription> ignoredMethods
-MethodRebaseResolver.MethodNameTransformer methodNameTransformer

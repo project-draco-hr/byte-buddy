@@ -1,4 +1,0 @@
-ElementMatcher<? super MethodDescription> ignoredMethods
-ClassFileVersion classFileVersion
-TypeDescription instrumentedType
-MethodRebaseResolver.MethodNameTransformer methodNameTransformer

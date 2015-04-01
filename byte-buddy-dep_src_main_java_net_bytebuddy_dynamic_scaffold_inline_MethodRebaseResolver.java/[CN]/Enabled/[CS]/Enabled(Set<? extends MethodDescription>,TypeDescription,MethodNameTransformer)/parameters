@@ -1,0 +1,3 @@
+Set<? extends MethodDescription> instrumentedMethods
+TypeDescription placeholderType
+MethodNameTransformer methodNameTransformer
