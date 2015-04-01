@@ -2,7 +2,7 @@
   Class<?> type=classLoader.loadClass(ARGUMENT_BOOTSTRAP);
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
   Object value=new Object();
-  DynamicType.Loaded<Simple> dynamicType=instrument(Simple.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP)).getOnly()).invoke(BAR,String.class).withoutImplicitArguments().withValue(BOOLEAN,BYTE,SHORT,CHARACTER,INTEGER,LONG,FLOAT,DOUBLE,FOO,CLASS,makeMethodType(CLASS),makeMethodHandle(),value),classLoader,isDeclaredBy(Simple.class));
+  DynamicType.Loaded<Simple> dynamicType=instrument(Simple.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP)).getOnly()).invoke(BAR,String.class).withValue(BOOLEAN,BYTE,SHORT,CHARACTER,INTEGER,LONG,FLOAT,DOUBLE,FOO,CLASS,makeMethodType(CLASS),makeMethodHandle(),value),classLoader,isDeclaredBy(Simple.class));
   assertThat(dynamicType.getLoaded().getDeclaredFields().length,is(1));
   assertThat(dynamicType.getLoaded().newInstance().foo(),is("" + BOOLEAN + BYTE+ SHORT+ CHARACTER+ INTEGER+ LONG+ FLOAT+ DOUBLE+ FOO+ CLASS+ makeMethodType(CLASS)+ makeMethodHandle()+ value));
 }

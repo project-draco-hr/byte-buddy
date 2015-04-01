@@ -1,0 +1,6 @@
+{
+  if (index < 0) {
+    throw new IllegalArgumentException("Method parameter indices cannot be negative: " + index);
+  }
+  return new WithImplicitArgumentType(bootstrapMethod,handleArguments,invocationProvider,terminationHandler,assigner,dynamicallyTyped,index);
+}

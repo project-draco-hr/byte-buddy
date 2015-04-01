@@ -1,3 +1,0 @@
-{
-  return new WithImplicitArguments(bootstrapMethod,handleArguments,invocationProvider.withoutArguments().appendArgument(InvocationProvider.ArgumentProvider.ForInterceptedMethodParameters.INSTANCE),terminationHandler,assigner,dynamicallyTyped);
-}
