@@ -1,0 +1,23 @@
+{
+  Instrumentation.Context.Default instrumentationContext=new Instrumentation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
+  MethodDescription firstFieldGetter=instrumentationContext.registerGetterFor(firstField);
+  assertThat(firstFieldGetter.getParameters(),is((ParameterList)new ParameterList.Empty()));
+  assertThat(firstFieldGetter.getReturnType(),is(firstFieldType));
+  assertThat(firstFieldGetter.getInternalName(),startsWith(FOO));
+  assertThat(firstFieldGetter.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER));
+  assertThat(firstFieldGetter.getExceptionTypes(),is((TypeList)new TypeList.Empty()));
+  assertThat(instrumentationContext.registerGetterFor(firstField),is(firstFieldGetter));
+  when(secondField.isStatic()).thenReturn(true);
+  MethodDescription secondFieldGetter=instrumentationContext.registerGetterFor(secondField);
+  assertThat(secondFieldGetter.getParameters(),is((ParameterList)new ParameterList.Empty()));
+  assertThat(secondFieldGetter.getReturnType(),is(secondFieldType));
+  assertThat(secondFieldGetter.getInternalName(),startsWith(BAR));
+  assertThat(secondFieldGetter.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC));
+  assertThat(secondFieldGetter.getExceptionTypes(),is((TypeList)new TypeList.Empty()));
+  assertThat(instrumentationContext.registerGetterFor(firstField),is(firstFieldGetter));
+  assertThat(instrumentationContext.registerGetterFor(secondField),is(secondFieldGetter));
+  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIP);
+  instrumentationContext.drain(classVisitor,methodPool,injectedCode);
+  verify(classVisitor).visitMethod(eq(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER),Matchers.startsWith(FOO),eq("()" + BAR),isNull(String.class),isNull(String[].class));
+  verify(classVisitor).visitMethod(eq(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("()" + QUX),isNull(String.class),isNull(String[].class));
+}

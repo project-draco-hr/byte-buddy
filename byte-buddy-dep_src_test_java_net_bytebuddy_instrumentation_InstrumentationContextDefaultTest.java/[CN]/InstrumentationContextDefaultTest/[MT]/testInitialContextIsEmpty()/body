@@ -1,0 +1,11 @@
+{
+  Instrumentation.Context.ExtractableView instrumentationContext=new Instrumentation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
+  assertThat(instrumentationContext.getRegisteredAuxiliaryTypes().size(),is(0));
+  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIP);
+  instrumentationContext.drain(classVisitor,methodPool,injectedCode);
+  verifyZeroInteractions(classVisitor);
+  verify(methodPool).target(MethodDescription.Latent.typeInitializerOf(instrumentedType));
+  verifyNoMoreInteractions(methodPool);
+  verify(injectedCode).isDefined();
+  verifyNoMoreInteractions(injectedCode);
+}
