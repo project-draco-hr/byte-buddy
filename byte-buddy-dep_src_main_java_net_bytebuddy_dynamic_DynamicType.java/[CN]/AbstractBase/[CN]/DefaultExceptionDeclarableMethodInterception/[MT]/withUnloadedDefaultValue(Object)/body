@@ -1,0 +1,3 @@
+{
+  return new DefaultMethodAnnotationTarget(join(methodTokens,methodToken),methodToken,MethodRegistry.Handler.ForAnnotationValue.of(value,methodToken.getReturnType()),MethodAttributeAppender.NoOp.INSTANCE);
+}
