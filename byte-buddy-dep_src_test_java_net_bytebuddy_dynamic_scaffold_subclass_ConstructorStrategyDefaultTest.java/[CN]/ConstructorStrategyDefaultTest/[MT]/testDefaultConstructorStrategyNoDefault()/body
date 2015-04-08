@@ -1,0 +1,5 @@
+{
+  when(methodList.filter(isConstructor().and(takesArguments(0)).<MethodDescription>and(isVisibleTo(instrumentedType)))).thenReturn(filteredMethodList);
+  when(filteredMethodList.size()).thenReturn(0);
+  ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(instrumentedType);
+}

@@ -1,0 +1,8 @@
+{
+  when(finding.getInvokableMethods()).thenReturn(new MethodList.Empty());
+  when(finding.getInvokableDefaultMethods()).thenReturn(Collections.<TypeDescription,Set<MethodDescription>>emptyMap());
+  when(finding.getTypeDescription()).thenReturn(instrumentedType);
+  when(instrumentedType.getSupertype()).thenReturn(superType);
+  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Empty());
+  factory=new SubclassInstrumentationTarget.Factory(bridgeMethodResolverFactory,SubclassInstrumentationTarget.OriginTypeIdentifier.SUPER_TYPE);
+}

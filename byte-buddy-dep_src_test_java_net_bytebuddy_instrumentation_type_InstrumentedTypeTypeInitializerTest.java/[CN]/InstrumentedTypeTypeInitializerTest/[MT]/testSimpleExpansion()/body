@@ -1,0 +1,3 @@
+{
+  assertThat(new InstrumentedType.TypeInitializer.Simple(stackManipulation).expandWith(stackManipulation),is((InstrumentedType.TypeInitializer)new InstrumentedType.TypeInitializer.Simple(new StackManipulation.Compound(stackManipulation,stackManipulation))));
+}

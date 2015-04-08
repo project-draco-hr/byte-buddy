@@ -1,0 +1,6 @@
+{
+  assertThat(ConstructorStrategy.Default.NO_CONSTRUCTORS.extractConstructors(instrumentedType).size(),is(0));
+  assertThat(ConstructorStrategy.Default.NO_CONSTRUCTORS.inject(methodRegistry,methodAttributeAppenderFactory),is(methodRegistry));
+  verifyZeroInteractions(methodRegistry);
+  verifyZeroInteractions(instrumentedType);
+}

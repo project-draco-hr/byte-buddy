@@ -13,10 +13,10 @@
     }
   }
   MethodLookupEngine.Finding finding=methodLookupEngine.process(instrumentedType);
-  ElementMatcher<? super MethodDescription> instrumented=not(anyOf(instrumentations.keySet())).and(methodFilter.manifest(instrumentedType));
+  ElementMatcher<? super MethodDescription> instrumented=not(anyOf(instrumentations.keySet())).and(methodFilter.resolve(instrumentedType));
   for (  MethodDescription methodDescription : finding.getInvokableMethods().filter(instrumented)) {
     for (    Entry entry : entries) {
-      if (entry.manifest(instrumentedType).matches(methodDescription)) {
+      if (entry.resolve(instrumentedType).matches(methodDescription)) {
         instrumentations.put(methodDescription,entry);
         break;
       }

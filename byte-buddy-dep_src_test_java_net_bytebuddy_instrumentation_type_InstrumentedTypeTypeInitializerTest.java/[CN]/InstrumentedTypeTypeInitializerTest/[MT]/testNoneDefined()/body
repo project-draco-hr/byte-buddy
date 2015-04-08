@@ -1,0 +1,4 @@
+{
+  assertThat(InstrumentedType.TypeInitializer.None.INSTANCE.isDefined(),is(false));
+  assertThat(InstrumentedType.TypeInitializer.None.INSTANCE.isValid(),is(false));
+}

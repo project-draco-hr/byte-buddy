@@ -1,3 +1,0 @@
-{
-  return isOverridable().and(not(ignoredMethods)).or(isDeclaredBy(typeDescription));
-}
