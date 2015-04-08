@@ -1,3 +1,0 @@
-{
-  assertThat(new InstrumentedType.TypeInitializer.Simple(stackManipulation).getStackManipulation(),is(stackManipulation));
-}

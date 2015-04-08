@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(MethodRebaseResolver.NoOp.class).apply();
-}

@@ -1,9 +1,0 @@
-{
-  when(methodList.filter(isConstructor().<MethodDescription>and(isVisibleTo(instrumentedType)))).thenReturn(filteredMethodList);
-  assertThat(ConstructorStrategy.Default.IMITATE_SUPER_TYPE.extractConstructors(instrumentedType),is(filteredMethodList));
-  assertThat(ConstructorStrategy.Default.IMITATE_SUPER_TYPE.inject(methodRegistry,methodAttributeAppenderFactory),is(methodRegistry));
-  verify(methodRegistry).append(any(MethodRegistry.LatentMethodMatcher.class),any(Instrumentation.class),eq(methodAttributeAppenderFactory));
-  verifyNoMoreInteractions(methodRegistry);
-  verify(instrumentedType,atLeastOnce()).getSupertype();
-  verifyNoMoreInteractions(instrumentedType);
-}

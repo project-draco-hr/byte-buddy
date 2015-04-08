@@ -1,7 +1,7 @@
 {
   int result=methodTokens.hashCode();
   result=31 * result + methodMatcher.hashCode();
-  result=31 * result + prepareable.hashCode();
+  result=31 * result + handler.hashCode();
   result=31 * result + attributeAppenderFactory.hashCode();
   result=31 * result + AbstractBase.this.hashCode();
   return result;

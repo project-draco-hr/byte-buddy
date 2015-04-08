@@ -1,3 +1,0 @@
-{
-  assertThat(TargetType.class.getDeclaredMethods().length,is(0));
-}

@@ -1,17 +1,22 @@
 {
   canRegisterFieldCache=false;
-  MethodDescription typeInitializerMethod=MethodDescription.Latent.typeInitializerOf(instrumentedType);
   InstrumentedType.TypeInitializer typeInitializer=this.typeInitializer;
+  for (  Map.Entry<FieldCacheEntry,FieldDescription> entry : registeredFieldCacheEntries.entrySet()) {
+    classVisitor.visitField(entry.getValue().getModifiers(),entry.getValue().getInternalName(),entry.getValue().getDescriptor(),entry.getValue().getGenericSignature(),NO_DEFAULT_VALUE).visitEnd();
+    typeInitializer=typeInitializer.expandWith(entry.getKey().storeIn(entry.getValue()));
+  }
   if (injectedCode.isDefined()) {
     typeInitializer=typeInitializer.expandWith(injectedCode.getStackManipulation());
   }
-  for (  FieldCacheEntry fieldCacheEntry : registeredFieldCacheEntries.keySet()) {
-    typeInitializer=typeInitializer.expandWith(fieldCacheEntry);
-  }
+  MethodDescription typeInitializerMethod=MethodDescription.Latent.typeInitializerOf(instrumentedType);
   TypeWriter.MethodPool.Entry initializerEntry=methodPool.target(typeInitializerMethod);
-  for (  FieldDescription fieldDescription : registeredFieldCacheEntries.values()) {
-    classVisitor.visitField(fieldDescription.getModifiers(),fieldDescription.getInternalName(),fieldDescription.getDescriptor(),fieldDescription.getGenericSignature(),NO_DEFAULT_VALUE).visitEnd();
+  if (initializerEntry.getSort().isImplemented() && typeInitializer.isDefined()) {
+    initializerEntry=initializerEntry.prepend(new ByteCodeAppender.Simple(typeInitializer));
   }
+ else   if (typeInitializer.isDefined()) {
+    initializerEntry=new TypeWriter.MethodPool.Entry.ForImplementation(new ByteCodeAppender.Simple(typeInitializer.terminate()),MethodAttributeAppender.NoOp.INSTANCE);
+  }
+  initializerEntry.apply(classVisitor,this,typeInitializerMethod);
   for (  Map.Entry<MethodDescription,TypeWriter.MethodPool.Entry> entry : accessorMethodEntries.entrySet()) {
     entry.getValue().apply(classVisitor,this,entry.getKey());
   }

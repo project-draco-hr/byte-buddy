@@ -1,3 +1,0 @@
-{
-  assertThat(compound.appendsCode(),is(false));
-}

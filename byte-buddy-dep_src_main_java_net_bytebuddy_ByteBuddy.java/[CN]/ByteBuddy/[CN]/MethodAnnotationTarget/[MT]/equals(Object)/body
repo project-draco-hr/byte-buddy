@@ -3,5 +3,5 @@
   if (other == null || getClass() != other.getClass())   return false;
   if (!super.equals(other))   return false;
   MethodAnnotationTarget that=(MethodAnnotationTarget)other;
-  return attributeAppenderFactory.equals(that.attributeAppenderFactory) && prepareable.equals(that.prepareable) && methodMatcher.equals(that.methodMatcher);
+  return attributeAppenderFactory.equals(that.attributeAppenderFactory) && handler.equals(that.handler) && methodMatcher.equals(that.methodMatcher);
 }

@@ -1,3 +1,0 @@
-InstrumentedType instrumentedType
-MethodLookupEngine methodLookupEngine
-ElementMatcher<? super MethodDescription> methodFilter

@@ -1,3 +1,0 @@
-{
-  return typeInitializer.isDefined() || userEntry.getSort().isDefined() ? Sort.DEFINE : Sort.SKIP;
-}

@@ -1,7 +1,0 @@
-{
-  this.instrumentations=instrumentations;
-  this.instrumentedType=instrumentedType;
-  this.loadedTypeInitializer=loadedTypeInitializer;
-  this.typeInitializer=typeInitializer;
-  this.finding=finding;
-}

@@ -1,4 +1,0 @@
-{
-  ObjectPropertyAssertion.of(InstrumentedType.TypeInitializer.Simple.class).apply();
-  ObjectPropertyAssertion.of(InstrumentedType.TypeInitializer.None.class).apply();
-}

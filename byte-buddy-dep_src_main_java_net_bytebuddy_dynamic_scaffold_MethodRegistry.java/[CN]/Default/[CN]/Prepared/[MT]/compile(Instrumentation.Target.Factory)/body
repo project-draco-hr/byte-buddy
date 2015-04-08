@@ -1,20 +1,20 @@
 {
-  Map<Prepareable,Prepareable.Compiled> compilationCache=new HashMap<Prepareable,Prepareable.Compiled>(instrumentations.size());
+  Map<Handler,Handler.Compiled> compilationCache=new HashMap<Handler,Handler.Compiled>(instrumentations.size());
   Map<MethodAttributeAppender.Factory,MethodAttributeAppender> attributeAppenderCache=new HashMap<MethodAttributeAppender.Factory,MethodAttributeAppender>(instrumentations.size());
   Map<MethodDescription,TypeWriter.MethodPool.Entry> entries=new HashMap<MethodDescription,TypeWriter.MethodPool.Entry>(instrumentations.size());
   Instrumentation.Target instrumentationTarget=instrumentationTargetFactory.make(finding,getInstrumentedMethods());
   for (  Map.Entry<MethodDescription,Entry> entry : instrumentations.entrySet()) {
-    Prepareable.Compiled cachedEntry=compilationCache.get(entry.getValue().getPrepareable());
+    Handler.Compiled cachedEntry=compilationCache.get(entry.getValue().getHandler());
     if (cachedEntry == null) {
-      cachedEntry=entry.getValue().getPrepareable().compile(instrumentationTarget);
-      compilationCache.put(entry.getValue().getPrepareable(),cachedEntry);
+      cachedEntry=entry.getValue().getHandler().compile(instrumentationTarget);
+      compilationCache.put(entry.getValue().getHandler(),cachedEntry);
     }
     MethodAttributeAppender cachedAttributeAppender=attributeAppenderCache.get(entry.getValue().getAppenderFactory());
     if (cachedAttributeAppender == null) {
-      cachedAttributeAppender=entry.getValue().getAppenderFactory().make(instrumentedType);
+      cachedAttributeAppender=entry.getValue().getAppenderFactory().make(finding.getTypeDescription());
       attributeAppenderCache.put(entry.getValue().getAppenderFactory(),cachedAttributeAppender);
     }
     entries.put(entry.getKey(),cachedEntry.assemble(cachedAttributeAppender));
   }
-  return new Compiled(instrumentedType,loadedTypeInitializer,typeInitializer,entries);
+  return new Compiled(finding.getTypeDescription(),loadedTypeInitializer,typeInitializer,entries);
 }

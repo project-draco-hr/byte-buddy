@@ -1,0 +1,26 @@
+{
+  Map<MethodDescription,Entry> instrumentations=new HashMap<MethodDescription,Entry>();
+  Set<Handler> handlers=new HashSet<Handler>(entries.size());
+  int helperMethodIndex=instrumentedType.getDeclaredMethods().size();
+  for (  Entry entry : entries) {
+    if (handlers.add(entry.getHandler())) {
+      instrumentedType=entry.getHandler().prepare(instrumentedType);
+      MethodList helperMethods=instrumentedType.getDeclaredMethods();
+      for (      MethodDescription helperMethod : helperMethods.subList(helperMethodIndex,helperMethods.size())) {
+        instrumentations.put(helperMethod,entry);
+      }
+      helperMethodIndex=helperMethods.size();
+    }
+  }
+  MethodLookupEngine.Finding finding=methodLookupEngine.process(instrumentedType);
+  ElementMatcher<? super MethodDescription> instrumented=not(anyOf(instrumentations.keySet())).and(methodFilter.manifest(instrumentedType));
+  for (  MethodDescription methodDescription : finding.getInvokableMethods().filter(instrumented)) {
+    for (    Entry entry : entries) {
+      if (entry.manifest(instrumentedType).matches(methodDescription)) {
+        instrumentations.put(methodDescription,entry);
+        break;
+      }
+    }
+  }
+  return new Prepared(instrumentations,instrumentedType.getLoadedTypeInitializer(),instrumentedType.getTypeInitializer(),finding);
+}

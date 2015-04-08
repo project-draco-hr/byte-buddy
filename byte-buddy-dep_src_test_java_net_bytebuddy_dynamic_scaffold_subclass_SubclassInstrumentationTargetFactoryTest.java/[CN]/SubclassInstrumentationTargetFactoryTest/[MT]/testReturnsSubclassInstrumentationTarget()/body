@@ -1,3 +1,0 @@
-{
-  assertThat(factory.make(finding) instanceof SubclassInstrumentationTarget,is(true));
-}

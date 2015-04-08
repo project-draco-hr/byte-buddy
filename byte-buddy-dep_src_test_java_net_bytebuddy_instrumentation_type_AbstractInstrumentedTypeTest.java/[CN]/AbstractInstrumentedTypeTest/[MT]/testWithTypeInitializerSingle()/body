@@ -5,5 +5,4 @@
   instrumentedType=instrumentedType.withInitializer(stackManipulation);
   InstrumentedType.TypeInitializer typeInitializer=instrumentedType.getTypeInitializer();
   assertThat(typeInitializer.isDefined(),is(true));
-  assertThat(typeInitializer.getStackManipulation(),is(stackManipulation));
 }

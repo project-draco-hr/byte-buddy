@@ -1,3 +1,0 @@
-{
-  assertThat(InstrumentedType.TypeInitializer.None.INSTANCE.expandWith(stackManipulation),is((InstrumentedType.TypeInitializer)new InstrumentedType.TypeInitializer.Simple(stackManipulation)));
-}

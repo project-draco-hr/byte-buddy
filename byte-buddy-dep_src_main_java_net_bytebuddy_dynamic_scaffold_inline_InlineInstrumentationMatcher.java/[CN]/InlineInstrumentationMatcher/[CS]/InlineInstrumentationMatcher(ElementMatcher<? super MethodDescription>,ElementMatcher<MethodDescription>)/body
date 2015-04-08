@@ -1,0 +1,4 @@
+{
+  this.ignoredMethods=ignoredMethods;
+  this.predefinedMethodSignatures=predefinedMethodSignatures;
+}

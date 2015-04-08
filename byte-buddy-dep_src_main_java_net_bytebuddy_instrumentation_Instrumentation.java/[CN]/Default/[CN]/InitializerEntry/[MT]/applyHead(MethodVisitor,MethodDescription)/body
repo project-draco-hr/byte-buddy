@@ -1,5 +1,0 @@
-{
-  if (userEntry.getSort().isDefined()) {
-    userEntry.applyHead(methodVisitor,methodDescription);
-  }
-}

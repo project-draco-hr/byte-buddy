@@ -1,8 +1,0 @@
-{
-  when(methodDescription.getDeclaringType()).thenReturn(instrumentedType);
-  when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty());
-  when(methodDescription.getReturnType()).thenReturn(returnType);
-  when(methodDescription.getInternalName()).thenReturn(FOO);
-  when(methodNameTransformer.transform(FOO)).thenReturn(BAR);
-  when(placeholderType.getStackSize()).thenReturn(StackSize.ZERO);
-}

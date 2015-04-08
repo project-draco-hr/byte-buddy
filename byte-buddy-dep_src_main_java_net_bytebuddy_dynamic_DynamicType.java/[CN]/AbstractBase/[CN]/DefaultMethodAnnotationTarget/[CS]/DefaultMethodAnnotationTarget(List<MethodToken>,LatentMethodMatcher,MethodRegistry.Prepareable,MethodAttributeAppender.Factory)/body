@@ -1,6 +1,0 @@
-{
-  this.methodMatcher=methodMatcher;
-  this.methodTokens=methodTokens;
-  this.prepareable=prepareable;
-  this.attributeAppenderFactory=attributeAppenderFactory;
-}

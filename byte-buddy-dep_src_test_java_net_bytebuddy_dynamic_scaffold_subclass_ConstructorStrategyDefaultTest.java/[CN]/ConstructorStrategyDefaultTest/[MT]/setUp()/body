@@ -1,5 +1,0 @@
-{
-  when(methodRegistry.append(any(MethodRegistry.LatentMethodMatcher.class),any(Instrumentation.class),any(MethodAttributeAppender.Factory.class))).thenReturn(methodRegistry);
-  when(instrumentedType.getSupertype()).thenReturn(superType);
-  when(superType.getDeclaredMethods()).thenReturn(methodList);
-}

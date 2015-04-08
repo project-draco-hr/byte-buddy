@@ -1,6 +1,5 @@
 {
   int result=instrumentations.hashCode();
-  result=31 * result + instrumentedType.hashCode();
   result=31 * result + loadedTypeInitializer.hashCode();
   result=31 * result + typeInitializer.hashCode();
   result=31 * result + finding.hashCode();
