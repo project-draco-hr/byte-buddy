@@ -1,3 +1,0 @@
-{
-  assertThat(new MethodRegistry.Default().prepare(basicInstrumentedType).compile(instrumentationTargetFactory,methodLookupEngine,fallbackFactory).target(unknownMethod),is(fallback));
-}

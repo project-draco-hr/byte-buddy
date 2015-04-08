@@ -1,0 +1,3 @@
+{
+  this(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion,DEFAULT_ACCESSOR_METHOD_SUFFIX,DEFAULT_FIELD_CACHE_PREFIX);
+}

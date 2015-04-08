@@ -1,0 +1,7 @@
+{
+  InstrumentedType instrumentedType=new InlineInstrumentedType(classFileVersion,targetType,interfaceTypes,modifiers,namingStrategy);
+  MethodRegistry.Prepared preparedMethodRegistry=methodRegistry.prepare(applyRecordedMembersTo(instrumentedType),methodLookupEngineFactory.make(classFileVersion.isSupportsDefaultMethods()),isOverridable().and(not(ignoredMethods)).or(isDeclaredBy(instrumentedType).and(not(anyOf(targetType.getDeclaredMethods())))));
+  MethodRebaseResolver methodRebaseResolver=MethodRebaseResolver.Enabled.make(preparedMethodRegistry.getInstrumentedMethods(),instrumentedType,classFileVersion,auxiliaryTypeNamingStrategy,methodNameTransformer);
+  MethodRegistry.Compiled compiledMethodRegistry=preparedMethodRegistry.compile(new RebaseInstrumentationTarget.Factory(bridgeMethodResolverFactory,methodRebaseResolver));
+  return TypeWriter.Default.<T>forRebasing(compiledMethodRegistry,fieldRegistry.prepare(compiledMethodRegistry.getInstrumentedType()).compile(TypeWriter.FieldPool.Entry.NoOp.INSTANCE),auxiliaryTypeNamingStrategy,classVisitorWrapperChain,attributeAppender,classFileVersion,classFileLocator,targetType,methodRebaseResolver).make();
+}

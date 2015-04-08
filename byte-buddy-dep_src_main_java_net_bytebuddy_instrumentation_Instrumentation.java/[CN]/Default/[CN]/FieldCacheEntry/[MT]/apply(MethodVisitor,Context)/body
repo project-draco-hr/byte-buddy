@@ -1,0 +1,3 @@
+{
+  return fieldValue.apply(methodVisitor,instrumentationContext);
+}

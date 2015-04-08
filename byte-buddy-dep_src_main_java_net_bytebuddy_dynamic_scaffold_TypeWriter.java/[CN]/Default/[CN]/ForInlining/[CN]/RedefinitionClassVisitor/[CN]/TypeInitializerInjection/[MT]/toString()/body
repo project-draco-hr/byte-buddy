@@ -1,0 +1,3 @@
+{
+  return "TypeWriter.Engine.ForRedefinition.RedefinitionClassVisitor.TypeInitializerInjection{" + "injectorProxyMethod=" + injectorProxyMethod + '}';
+}

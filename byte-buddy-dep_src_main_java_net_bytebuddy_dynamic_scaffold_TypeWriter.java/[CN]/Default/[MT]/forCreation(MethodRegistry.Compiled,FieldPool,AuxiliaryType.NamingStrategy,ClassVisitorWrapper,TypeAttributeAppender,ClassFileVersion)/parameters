@@ -1,0 +1,6 @@
+MethodRegistry.Compiled methodRegistry
+FieldPool fieldPool
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+ClassVisitorWrapper classVisitorWrapper
+TypeAttributeAppender attributeAppender
+ClassFileVersion classFileVersion

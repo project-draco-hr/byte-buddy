@@ -1,3 +1,0 @@
-{
-  assertThat(TypeWriter.MethodPool.Entry.Skip.INSTANCE.isDefineMethod(),is(false));
-}

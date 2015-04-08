@@ -1,3 +1,0 @@
-{
-  return "TypeWriter.Default{" + "instrumentedType=" + instrumentedType + ", loadedTypeInitializer="+ loadedTypeInitializer+ ", typeInitializer="+ typeInitializer+ ", explicitAuxiliaryTypes="+ explicitAuxiliaryTypes+ ", classFileVersion="+ classFileVersion+ ", engine="+ engine+ '}';
-}

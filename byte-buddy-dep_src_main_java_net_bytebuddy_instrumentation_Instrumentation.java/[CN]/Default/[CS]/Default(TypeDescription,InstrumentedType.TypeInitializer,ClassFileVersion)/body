@@ -1,3 +1,0 @@
-{
-  this(instrumentedType,typeInitializer,classFileVersion,DEFAULT_ACCESSOR_METHOD_SUFFIX,DEFAULT_FIELD_CACHE_PREFIX,new AuxiliaryTypeNamingStrategy.SuffixingRandom(DEFAULT_ACCESSOR_METHOD_SUFFIX));
-}

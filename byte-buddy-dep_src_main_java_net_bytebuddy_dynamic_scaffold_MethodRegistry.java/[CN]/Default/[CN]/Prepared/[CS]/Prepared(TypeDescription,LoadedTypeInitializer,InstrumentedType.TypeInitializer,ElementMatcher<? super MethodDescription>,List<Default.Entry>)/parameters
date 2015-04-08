@@ -1,5 +1,0 @@
-TypeDescription instrumentedType
-LoadedTypeInitializer loadedTypeInitializer
-InstrumentedType.TypeInitializer typeInitializer
-ElementMatcher<? super MethodDescription> ignoredMethods
-List<Default.Entry> entries

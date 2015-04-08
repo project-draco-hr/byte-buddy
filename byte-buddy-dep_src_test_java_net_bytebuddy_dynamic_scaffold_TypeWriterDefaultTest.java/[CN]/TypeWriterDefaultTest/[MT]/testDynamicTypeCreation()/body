@@ -1,8 +1,0 @@
-{
-  DynamicType dynamicType=new TypeWriter.Default<Object>(instrumentedType,loadedTypeInitializer,typeInitializer,explicitAuxiliaryTypes,classFileVersion,engine).make();
-  assertThat(dynamicType.getBytes(),is(MAIN));
-  assertThat(dynamicType.getTypeDescription(),is(instrumentedType));
-  assertThat(dynamicType.getLoadedTypeInitializers().get(instrumentedType),is(loadedTypeInitializer));
-  assertThat(dynamicType.getRawAuxiliaryTypes().size(),is(1));
-  assertThat(dynamicType.getRawAuxiliaryTypes().get(otherAuxiliaryDescription),is(FIRST));
-}

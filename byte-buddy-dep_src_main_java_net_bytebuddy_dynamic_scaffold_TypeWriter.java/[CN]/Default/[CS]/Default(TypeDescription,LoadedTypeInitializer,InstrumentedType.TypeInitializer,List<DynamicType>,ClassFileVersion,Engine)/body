@@ -1,8 +1,0 @@
-{
-  this.instrumentedType=instrumentedType;
-  this.loadedTypeInitializer=loadedTypeInitializer;
-  this.typeInitializer=typeInitializer;
-  this.explicitAuxiliaryTypes=explicitAuxiliaryTypes;
-  this.classFileVersion=classFileVersion;
-  this.engine=engine;
-}

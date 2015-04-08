@@ -1,3 +1,0 @@
-{
-  return Compiled.ForRebasement.of(instrumentedMethods,methodNameTransformer,instrumentedType,classFileVersion,auxiliaryTypeNamingStrategy);
-}

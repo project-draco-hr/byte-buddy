@@ -1,0 +1,8 @@
+{
+  super(ASM_API_VERSION,actualMethodVisitor);
+  this.actualMethodVisitor=actualMethodVisitor;
+  this.entry=entry;
+  this.methodDescription=methodDescription;
+  this.resolution=methodRebaseResolver.resolve(methodDescription);
+  entry.applyHead(actualMethodVisitor,methodDescription);
+}

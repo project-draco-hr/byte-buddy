@@ -1,4 +1,0 @@
-MethodList instrumentedMethods
-TypeDescription instrumentedType
-ClassFileVersion classFileVersion
-Instrumentation.Context.Default.AuxiliaryTypeNamingStrategy auxiliaryTypeNamingStrategy

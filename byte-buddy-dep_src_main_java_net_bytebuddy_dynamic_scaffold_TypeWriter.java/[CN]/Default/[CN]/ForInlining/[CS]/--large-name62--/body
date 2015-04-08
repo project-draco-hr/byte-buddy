@@ -1,0 +1,6 @@
+{
+  super(instrumentedType,loadedTypeInitializer,typeInitializer,explicitAuxiliaryTypes,classFileVersion,auxiliaryTypeNamingStrategy,classVisitorWrapper,attributeAppender,fieldPool,methodPool,invokeableMethods);
+  this.classFileLocator=classFileLocator;
+  this.targetType=targetType;
+  this.methodRebaseResolver=methodRebaseResolver;
+}

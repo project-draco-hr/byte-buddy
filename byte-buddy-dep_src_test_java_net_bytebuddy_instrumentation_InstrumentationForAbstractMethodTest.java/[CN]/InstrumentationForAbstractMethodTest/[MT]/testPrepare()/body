@@ -1,3 +1,0 @@
-{
-  assertThat(Instrumentation.ForAbstractMethod.INSTANCE.prepare(instrumentedType),is(instrumentedType));
-}

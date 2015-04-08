@@ -1,3 +1,0 @@
-{
-  return "InlineDynamicTypeBuilder.TargetHandler.ForRebaseInstrumentation{" + "methodNameTransformer=" + methodNameTransformer + '}';
-}

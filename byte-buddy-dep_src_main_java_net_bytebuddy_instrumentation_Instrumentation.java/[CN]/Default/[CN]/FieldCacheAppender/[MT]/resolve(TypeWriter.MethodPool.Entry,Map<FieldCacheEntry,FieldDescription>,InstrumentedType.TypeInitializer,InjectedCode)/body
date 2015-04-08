@@ -1,8 +1,0 @@
-{
-  if (registeredFieldCacheEntries.size() == 0 && !typeInitializer.isDefined() && !injectedCode.isDefined()) {
-    return originalEntry;
-  }
-  StackManipulation manipulation=injectedCode.isDefined() ? injectedCode.getStackManipulation() : StackManipulation.LegalTrivial.INSTANCE;
-  manipulation=typeInitializer.isDefined() ? new StackManipulation.Compound(typeInitializer.getStackManipulation(),manipulation) : manipulation;
-  return null;
-}

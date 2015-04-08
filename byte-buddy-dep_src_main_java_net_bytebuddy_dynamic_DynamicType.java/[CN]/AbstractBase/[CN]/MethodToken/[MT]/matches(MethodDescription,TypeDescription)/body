@@ -1,0 +1,3 @@
+{
+  return (MethodDescription.CONSTRUCTOR_INTERNAL_NAME.equals(internalName) ? isConstructor() : ElementMatchers.<MethodDescription>named(internalName)).and(returns(resolveReturnType(instrumentedType))).<MethodDescription>and(takesArguments(resolveParameterTypes(instrumentedType))).matches(methodDescription);
+}

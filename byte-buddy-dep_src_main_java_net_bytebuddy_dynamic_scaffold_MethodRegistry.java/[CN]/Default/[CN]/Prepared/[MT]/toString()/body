@@ -1,0 +1,3 @@
+{
+  return "MethodRegistry.Default.Prepared{" + "instrumentations=" + instrumentations + ", instrumentedType="+ instrumentedType+ ", loadedTypeInitializer="+ loadedTypeInitializer+ ", typeInitializer="+ typeInitializer+ ", finding="+ finding+ '}';
+}

@@ -1,0 +1,5 @@
+int modifiers
+String internalName
+String descriptor
+String genericSignature
+Object defaultValue

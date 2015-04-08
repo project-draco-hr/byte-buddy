@@ -1,3 +1,0 @@
-{
-  return type.represents(TargetType.class) ? instrumentedType : type;
-}

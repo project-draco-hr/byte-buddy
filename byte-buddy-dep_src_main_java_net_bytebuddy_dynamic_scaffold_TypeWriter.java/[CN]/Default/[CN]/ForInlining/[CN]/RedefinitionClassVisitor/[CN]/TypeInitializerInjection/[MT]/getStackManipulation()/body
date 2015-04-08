@@ -1,0 +1,3 @@
+{
+  return MethodInvocation.invoke(injectorProxyMethod);
+}

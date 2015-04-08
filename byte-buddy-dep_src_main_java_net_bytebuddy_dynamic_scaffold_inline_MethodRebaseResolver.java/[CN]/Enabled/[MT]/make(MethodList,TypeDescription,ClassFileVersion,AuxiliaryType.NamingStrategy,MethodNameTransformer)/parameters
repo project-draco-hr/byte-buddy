@@ -1,0 +1,5 @@
+MethodList instrumentedMethods
+TypeDescription instrumentedType
+ClassFileVersion classFileVersion
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+MethodNameTransformer methodNameTransformer

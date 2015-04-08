@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Entry entry=(Entry)other;
+  return methodMatcher.equals(entry.methodMatcher) && prepareable.equals(entry.prepareable) && attributeAppenderFactory.equals(entry.attributeAppenderFactory);
+}

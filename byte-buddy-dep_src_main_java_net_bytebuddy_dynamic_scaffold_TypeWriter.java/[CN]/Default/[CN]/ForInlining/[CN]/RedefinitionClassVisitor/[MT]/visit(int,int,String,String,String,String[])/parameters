@@ -1,0 +1,6 @@
+int classFileVersionNumber
+int modifiers
+String internalName
+String genericSignature
+String superTypeInternalName
+String[] interfaceTypeInternalName

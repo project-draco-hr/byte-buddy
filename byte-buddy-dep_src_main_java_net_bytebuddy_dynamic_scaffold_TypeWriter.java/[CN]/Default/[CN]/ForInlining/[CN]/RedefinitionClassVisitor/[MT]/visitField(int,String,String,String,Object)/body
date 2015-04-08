@@ -1,0 +1,4 @@
+{
+  declaredFields.remove(internalName);
+  return super.visitField(modifiers,internalName,descriptor,genericSignature,defaultValue);
+}

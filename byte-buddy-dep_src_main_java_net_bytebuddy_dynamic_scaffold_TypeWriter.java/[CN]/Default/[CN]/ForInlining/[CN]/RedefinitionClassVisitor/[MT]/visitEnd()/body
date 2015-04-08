@@ -1,0 +1,10 @@
+{
+  for (  FieldDescription fieldDescription : declaredFields.values()) {
+    fieldPool.target(fieldDescription).apply(cv,fieldDescription);
+  }
+  for (  MethodDescription methodDescription : declarableMethods.values()) {
+    methodPool.target(methodDescription).apply(cv,instrumentationContext,methodDescription);
+  }
+  instrumentationContext.drain(cv,methodPool,injectedCode);
+  super.visitEnd();
+}

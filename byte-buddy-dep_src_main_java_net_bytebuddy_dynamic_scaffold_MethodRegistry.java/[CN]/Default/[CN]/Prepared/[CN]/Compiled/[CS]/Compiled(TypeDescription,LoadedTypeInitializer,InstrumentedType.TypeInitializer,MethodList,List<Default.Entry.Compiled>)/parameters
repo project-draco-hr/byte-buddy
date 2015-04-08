@@ -1,5 +1,0 @@
-TypeDescription instrumentedType
-LoadedTypeInitializer loadedTypeInitializer
-InstrumentedType.TypeInitializer typeInitializer
-MethodList instrumentedMethods
-List<Default.Entry.Compiled> compiledEntries

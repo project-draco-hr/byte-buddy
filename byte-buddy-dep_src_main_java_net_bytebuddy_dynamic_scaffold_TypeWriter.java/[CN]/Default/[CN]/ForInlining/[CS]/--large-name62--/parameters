@@ -1,0 +1,14 @@
+TypeDescription instrumentedType
+LoadedTypeInitializer loadedTypeInitializer
+InstrumentedType.TypeInitializer typeInitializer
+List<DynamicType> explicitAuxiliaryTypes
+ClassFileVersion classFileVersion
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+ClassVisitorWrapper classVisitorWrapper
+TypeAttributeAppender attributeAppender
+FieldPool fieldPool
+MethodPool methodPool
+MethodList invokeableMethods
+ClassFileLocator classFileLocator
+TypeDescription targetType
+MethodRebaseResolver methodRebaseResolver

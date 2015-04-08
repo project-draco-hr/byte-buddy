@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(Instrumentation.ForAbstractMethod.class).apply();
-}

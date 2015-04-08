@@ -1,3 +1,0 @@
-{
-  return new SubclassInstrumentationTarget.Factory(bridgeMethodResolverFactory,SubclassInstrumentationTarget.OriginTypeIdentifier.LEVEL_TYPE);
-}

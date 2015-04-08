@@ -1,0 +1,7 @@
+{
+  int result=instrumentedType.hashCode();
+  result=31 * result + loadedTypeInitializer.hashCode();
+  result=31 * result + typeInitializer.hashCode();
+  result=31 * result + instrumentations.hashCode();
+  return result;
+}

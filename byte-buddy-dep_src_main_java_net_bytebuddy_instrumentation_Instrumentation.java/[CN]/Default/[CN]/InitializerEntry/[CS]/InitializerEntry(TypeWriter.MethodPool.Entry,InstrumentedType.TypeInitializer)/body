@@ -1,0 +1,4 @@
+{
+  this.userEntry=userEntry;
+  this.typeInitializer=typeInitializer;
+}

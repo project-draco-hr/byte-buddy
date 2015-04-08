@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && classFileLocator.equals(((InlineDynamicTypeBuilder<?>)other).classFileLocator)&& targetHandler.equals(((InlineDynamicTypeBuilder<?>)other).targetHandler);
-}

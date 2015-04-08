@@ -1,3 +1,0 @@
-{
-  return Compiled.NoOp.INSTANCE;
-}

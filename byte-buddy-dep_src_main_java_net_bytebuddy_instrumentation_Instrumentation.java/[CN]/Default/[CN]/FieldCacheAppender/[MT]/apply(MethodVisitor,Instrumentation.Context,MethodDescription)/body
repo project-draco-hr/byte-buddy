@@ -1,9 +1,0 @@
-{
-  StackManipulation[] fieldInitialization=new StackManipulation[registeredFieldCacheEntries.size()];
-  int currentIndex=0;
-  for (  Map.Entry<FieldCacheEntry,FieldDescription> entry : registeredFieldCacheEntries.entrySet()) {
-    fieldInitialization[currentIndex++]=new StackManipulation.Compound(entry.getKey().getFieldValue(),FieldAccess.forField(entry.getValue()).putter());
-  }
-  StackManipulation.Size stackSize=new StackManipulation.Compound(fieldInitialization).apply(methodVisitor,instrumentationContext);
-  return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
-}

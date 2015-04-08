@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(InlineDynamicTypeBuilder.TargetHandler.ForRebaseInstrumentation.class).apply();
-}

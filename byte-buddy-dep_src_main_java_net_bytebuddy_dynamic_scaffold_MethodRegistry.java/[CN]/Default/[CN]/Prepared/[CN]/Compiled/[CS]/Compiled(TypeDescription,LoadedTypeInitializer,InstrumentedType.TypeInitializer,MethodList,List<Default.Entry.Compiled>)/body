@@ -1,7 +1,0 @@
-{
-  this.instrumentedType=instrumentedType;
-  this.loadedTypeInitializer=loadedTypeInitializer;
-  this.typeInitializer=typeInitializer;
-  this.instrumentedMethods=instrumentedMethods;
-  this.compiledEntries=compiledEntries;
-}

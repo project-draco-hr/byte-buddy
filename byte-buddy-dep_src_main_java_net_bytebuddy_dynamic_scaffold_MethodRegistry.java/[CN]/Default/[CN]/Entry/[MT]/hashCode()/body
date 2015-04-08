@@ -1,0 +1,6 @@
+{
+  int result=methodMatcher.hashCode();
+  result=31 * result + prepareable.hashCode();
+  result=31 * result + attributeAppenderFactory.hashCode();
+  return result;
+}

@@ -1,3 +1,0 @@
-{
-  Instrumentation.ForAbstractMethod.INSTANCE.appender(instrumentationTarget).apply(methodVisitor,instrumentationContext,methodDescription);
-}

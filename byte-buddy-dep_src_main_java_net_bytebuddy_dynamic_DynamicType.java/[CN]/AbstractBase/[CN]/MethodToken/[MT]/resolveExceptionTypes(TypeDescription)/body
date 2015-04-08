@@ -1,7 +1,7 @@
 {
   List<TypeDescription> exceptionTypes=new ArrayList<TypeDescription>(this.exceptionTypes.size());
   for (  TypeDescription exceptionType : this.exceptionTypes) {
-    exceptionTypes.add(considerSubstitution(exceptionType,instrumentedType));
+    exceptionTypes.add(TargetType.resolve(exceptionType,instrumentedType));
   }
   return exceptionTypes;
 }

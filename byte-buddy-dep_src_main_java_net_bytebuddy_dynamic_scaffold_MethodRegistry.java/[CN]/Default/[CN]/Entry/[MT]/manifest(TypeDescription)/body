@@ -1,3 +1,0 @@
-{
-  return new Manifest(latentMethodMatcher.manifest(instrumentedType),prepareable,attributeAppenderFactory);
-}

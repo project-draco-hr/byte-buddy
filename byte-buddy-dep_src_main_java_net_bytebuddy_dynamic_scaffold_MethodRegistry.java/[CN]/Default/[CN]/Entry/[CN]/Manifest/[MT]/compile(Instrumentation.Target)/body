@@ -1,3 +1,0 @@
-{
-  return new Compiled(methodMatcher,prepareable.toEntry(instrumentationTarget,attributeAppenderFactory.make(instrumentationTarget.getTypeDescription())));
-}

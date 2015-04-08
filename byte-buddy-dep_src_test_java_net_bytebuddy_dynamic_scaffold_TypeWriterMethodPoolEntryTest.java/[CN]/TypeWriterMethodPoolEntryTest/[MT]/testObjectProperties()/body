@@ -1,4 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.Simple.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.Skip.class).apply();
-}

@@ -1,4 +1,0 @@
-{
-  this.dynamicTypes=dynamicTypes;
-  this.methodNameTransformer=methodNameTransformer;
-}

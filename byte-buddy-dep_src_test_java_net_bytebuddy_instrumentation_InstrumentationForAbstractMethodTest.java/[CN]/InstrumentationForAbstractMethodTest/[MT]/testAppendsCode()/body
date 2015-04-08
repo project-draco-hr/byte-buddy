@@ -1,3 +1,0 @@
-{
-  assertThat(Instrumentation.ForAbstractMethod.INSTANCE.appender(instrumentationTarget).appendsCode(),is(false));
-}

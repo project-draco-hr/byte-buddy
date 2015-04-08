@@ -1,0 +1,3 @@
+{
+  return "TypeWriter.Engine.ForRedefinition.RedefinitionClassVisitor.AttributeObtainingMethodVisitor{" + "actualMethodVisitor=" + actualMethodVisitor + ", entry="+ entry+ ", methodDescription="+ methodDescription+ '}';
+}

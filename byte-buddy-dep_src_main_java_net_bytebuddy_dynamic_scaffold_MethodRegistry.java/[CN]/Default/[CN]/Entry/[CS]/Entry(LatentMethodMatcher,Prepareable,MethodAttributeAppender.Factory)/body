@@ -1,5 +1,5 @@
 {
-  this.latentMethodMatcher=latentMethodMatcher;
+  this.methodMatcher=methodMatcher;
   this.prepareable=prepareable;
   this.attributeAppenderFactory=attributeAppenderFactory;
 }

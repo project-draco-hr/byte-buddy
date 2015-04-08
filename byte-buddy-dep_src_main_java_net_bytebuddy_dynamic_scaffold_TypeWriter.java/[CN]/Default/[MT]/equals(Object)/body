@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  Default aDefault=(Default)other;
-  return engine.equals(aDefault.engine) && explicitAuxiliaryTypes.equals(aDefault.explicitAuxiliaryTypes) && instrumentedType.equals(aDefault.instrumentedType)&& classFileVersion.equals(aDefault.classFileVersion)&& loadedTypeInitializer.equals(aDefault.loadedTypeInitializer)&& typeInitializer.equals(aDefault.typeInitializer);
-}

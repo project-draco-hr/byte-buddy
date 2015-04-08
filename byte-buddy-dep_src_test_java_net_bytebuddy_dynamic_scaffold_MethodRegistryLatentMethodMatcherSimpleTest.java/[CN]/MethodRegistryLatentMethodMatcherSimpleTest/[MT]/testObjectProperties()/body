@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(MethodRegistry.LatentMethodMatcher.Simple.class).apply();
-}

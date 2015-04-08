@@ -1,0 +1,6 @@
+{
+  entry.applyBody(actualMethodVisitor,instrumentationContext,methodDescription);
+  actualMethodVisitor.visitEnd();
+  mv=resolution.isRebased() ? cv.visitMethod(resolution.getResolvedMethod().getModifiers(),resolution.getResolvedMethod().getInternalName(),resolution.getResolvedMethod().getDescriptor(),resolution.getResolvedMethod().getGenericSignature(),resolution.getResolvedMethod().getExceptionTypes().toInternalNames()) : IGNORE_METHOD;
+  super.visitCode();
+}
