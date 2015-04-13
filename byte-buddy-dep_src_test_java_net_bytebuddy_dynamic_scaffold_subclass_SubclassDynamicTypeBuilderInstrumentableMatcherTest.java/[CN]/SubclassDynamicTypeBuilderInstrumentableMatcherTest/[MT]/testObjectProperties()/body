@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(SubclassDynamicTypeBuilder.InstrumentableMatcher.class).apply();
+}

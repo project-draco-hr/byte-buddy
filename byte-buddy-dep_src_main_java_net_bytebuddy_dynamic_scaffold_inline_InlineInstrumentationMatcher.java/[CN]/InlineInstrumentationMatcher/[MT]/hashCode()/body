@@ -1,0 +1,3 @@
+{
+  return 31 * ignoredMethods.hashCode() + predefinedMethodSignatures.hashCode();
+}

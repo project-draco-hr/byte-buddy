@@ -1,0 +1,3 @@
+{
+  latentMethodMatcher=new SubclassDynamicTypeBuilder.InstrumentableMatcher(ignoredMethods);
+}

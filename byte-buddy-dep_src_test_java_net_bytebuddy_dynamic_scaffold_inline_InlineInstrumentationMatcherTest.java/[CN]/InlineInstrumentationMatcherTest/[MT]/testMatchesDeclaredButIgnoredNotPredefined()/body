@@ -1,0 +1,7 @@
+{
+  when(methodDescription.isOverridable()).thenReturn(false);
+  when(ignoredMethods.matches(methodDescription)).thenReturn(true);
+  when(predefinedMethods.matches(methodDescription)).thenReturn(false);
+  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
+  assertThat(latentMethodMatcher.resolve(typeDescription).matches(methodDescription),is(true));
+}

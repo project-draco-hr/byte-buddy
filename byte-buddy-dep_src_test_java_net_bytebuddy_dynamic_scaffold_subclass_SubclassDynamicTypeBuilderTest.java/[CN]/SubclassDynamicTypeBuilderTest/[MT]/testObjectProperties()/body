@@ -1,0 +1,8 @@
+{
+  ObjectPropertyAssertion.of(SubclassDynamicTypeBuilder.class).create(new ObjectPropertyAssertion.Creator<List<?>>(){
+    @Override public List<?> create(){
+      return Collections.singletonList(new Object());
+    }
+  }
+).apply();
+}
