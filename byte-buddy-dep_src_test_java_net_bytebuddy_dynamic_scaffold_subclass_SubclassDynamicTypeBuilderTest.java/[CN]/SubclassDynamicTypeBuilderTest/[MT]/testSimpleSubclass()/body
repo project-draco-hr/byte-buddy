@@ -1,0 +1,11 @@
+{
+  Class<?> type=new ByteBuddy().subclass(Object.class).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethods().length,is(0));
+  assertThat(type.getDeclaredConstructors().length,is(1));
+  assertThat(type.getDeclaredConstructor(),notNullValue(Constructor.class));
+  assertThat(Object.class.isAssignableFrom(type),is(true));
+  assertNotEquals(Object.class,type);
+  assertThat(type.newInstance(),notNullValue(Object.class));
+  assertThat(type.isInterface(),is(false));
+  assertThat(type.isAnnotation(),is(false));
+}

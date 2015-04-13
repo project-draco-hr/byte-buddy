@@ -1,0 +1,8 @@
+{
+  Class<?> type=create().defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList(),Visibility.PUBLIC).throwing(Exception.class).intercept(new Instrumentation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Method method=type.getDeclaredMethod(FOO);
+  assertEquals(Object.class,method.getReturnType());
+  assertArrayEquals(new Class<?>[]{Exception.class},method.getExceptionTypes());
+  assertThat(method.getModifiers(),is(Modifier.PUBLIC));
+  assertThat(method.invoke(type.newInstance()),is((Object)FOO));
+}

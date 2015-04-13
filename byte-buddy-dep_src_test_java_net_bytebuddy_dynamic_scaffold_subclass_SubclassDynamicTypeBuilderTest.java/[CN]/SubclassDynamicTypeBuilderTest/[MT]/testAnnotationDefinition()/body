@@ -1,0 +1,12 @@
+{
+  Class<?> type=new ByteBuddy().makeAnnotation().defineMethod(FOO,int.class,Collections.<Class<?>>emptyList(),Visibility.PUBLIC).withoutCode().defineMethod(BAR,String.class,Collections.<Class<?>>emptyList(),Visibility.PUBLIC).withDefaultValue(FOO).defineMethod(QUX,SimpleEnum.class,Collections.<Class<?>>emptyList(),Visibility.PUBLIC).withDefaultValue(SimpleEnum.FIRST,SimpleEnum.class).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethods().length,is(3));
+  assertThat(type.getDeclaredMethod(FOO),notNullValue(Method.class));
+  assertThat(type.getDeclaredMethod(BAR).getDefaultValue(),is((Object)FOO));
+  assertThat(type.getDeclaredMethod(QUX).getDefaultValue(),is((Object)SimpleEnum.FIRST));
+  assertThat(type.getDeclaredConstructors().length,is(0));
+  assertThat(Annotation.class.isAssignableFrom(type),is(true));
+  assertNotEquals(Annotation.class,type);
+  assertThat(type.isInterface(),is(true));
+  assertThat(type.isAnnotation(),is(true));
+}

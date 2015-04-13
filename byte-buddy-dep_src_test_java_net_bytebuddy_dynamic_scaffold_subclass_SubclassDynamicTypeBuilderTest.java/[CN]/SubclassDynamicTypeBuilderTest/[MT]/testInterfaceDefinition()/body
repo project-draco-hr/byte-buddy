@@ -1,0 +1,10 @@
+{
+  Class<? extends SimpleInterface> type=new ByteBuddy().makeInterface(SimpleInterface.class).defineMethod(FOO,void.class,Collections.<Class<?>>singletonList(Void.class),Visibility.PUBLIC).withoutCode().make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethods().length,is(1));
+  assertThat(type.getDeclaredMethod(FOO,Void.class),notNullValue(Method.class));
+  assertThat(type.getDeclaredConstructors().length,is(0));
+  assertThat(SimpleInterface.class.isAssignableFrom(type),is(true));
+  assertNotEquals(SimpleInterface.class,type);
+  assertThat(type.isInterface(),is(true));
+  assertThat(type.isAnnotation(),is(false));
+}

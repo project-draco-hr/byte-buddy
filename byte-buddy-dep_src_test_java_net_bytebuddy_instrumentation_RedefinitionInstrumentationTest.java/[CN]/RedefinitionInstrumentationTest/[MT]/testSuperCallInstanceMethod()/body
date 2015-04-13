@@ -1,8 +1,0 @@
-{
-  Class<?> dynamicType=new ByteBuddy().redefine(Qux.class).method(named(BAR)).intercept(MethodDelegation.to(SuperInterceptor.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
-  assertEquals(Bar.class,dynamicType.getSuperclass());
-  assertNotEquals(Qux.class,dynamicType);
-  assertThat(dynamicType.getName(),is(Qux.class.getName()));
-  Method barMethod=dynamicType.getDeclaredMethod(BAR);
-  assertThat((String)barMethod.invoke(dynamicType.newInstance()),is(FOO + BAR));
-}

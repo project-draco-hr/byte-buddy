@@ -1,0 +1,7 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(nonNull(type));
+  if (!typeDescription.isAnnotationValue()) {
+    throw new IllegalArgumentException("Not an annotation value: " + type);
+  }
+  return withDefaultValue(AnnotationDescription.ForLoadedAnnotation.wrap(value,typeDescription));
+}

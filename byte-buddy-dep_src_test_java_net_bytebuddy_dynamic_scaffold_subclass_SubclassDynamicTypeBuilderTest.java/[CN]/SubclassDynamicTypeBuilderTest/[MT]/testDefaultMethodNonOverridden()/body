@@ -1,0 +1,9 @@
+{
+  Class<?> interfaceType=classLoader.loadClass(DEFAULT_METHOD_INTERFACE);
+  Object interfaceMarker=interfaceType.getDeclaredField(INTERFACE_STATIC_FIELD_NAME).get(STATIC_FIELD);
+  Method interfaceMethod=interfaceType.getDeclaredMethod(FOO);
+  Class<?> dynamicType=new ByteBuddy().subclass(interfaceType).make().load(classLoader,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(dynamicType.getDeclaredFields().length,Is.is(0));
+  assertThat(dynamicType.getDeclaredMethods().length,Is.is(0));
+  assertThat(interfaceMethod.invoke(dynamicType.newInstance()),Is.is(interfaceMarker));
+}

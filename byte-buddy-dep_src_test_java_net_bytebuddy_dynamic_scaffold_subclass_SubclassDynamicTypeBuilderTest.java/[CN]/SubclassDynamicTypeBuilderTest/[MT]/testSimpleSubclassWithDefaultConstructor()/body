@@ -1,0 +1,11 @@
+{
+  Class<? extends DefaultConstructor> type=new ByteBuddy().subclass(DefaultConstructor.class,ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethods().length,is(0));
+  assertThat(type.getDeclaredConstructors().length,is(1));
+  assertThat(type.getDeclaredConstructor(),notNullValue(Constructor.class));
+  assertThat(DefaultConstructor.class.isAssignableFrom(type),is(true));
+  assertNotEquals(DefaultConstructor.class,type);
+  assertThat(type.newInstance(),notNullValue(DefaultConstructor.class));
+  assertThat(type.isInterface(),is(false));
+  assertThat(type.isAnnotation(),is(false));
+}
