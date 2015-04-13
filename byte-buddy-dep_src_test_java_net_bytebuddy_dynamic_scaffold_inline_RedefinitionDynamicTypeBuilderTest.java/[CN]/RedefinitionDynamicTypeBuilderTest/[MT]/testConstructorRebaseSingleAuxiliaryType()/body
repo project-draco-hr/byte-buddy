@@ -1,0 +1,9 @@
+{
+  DynamicType.Unloaded<?> dynamicType=new ByteBuddy().redefine(Bar.class).constructor(any()).intercept(MethodCall.invoke(Object.class.getDeclaredConstructor())).make();
+  assertThat(dynamicType.getRawAuxiliaryTypes().size(),is(0));
+  Class<?> type=dynamicType.load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredConstructors().length,is(1));
+  assertThat(type.getDeclaredMethods().length,is(0));
+  Field field=type.getDeclaredField(BAR);
+  assertThat(field.get(type.getDeclaredConstructor(String.class).newInstance(FOO)),nullValue(Object.class));
+}

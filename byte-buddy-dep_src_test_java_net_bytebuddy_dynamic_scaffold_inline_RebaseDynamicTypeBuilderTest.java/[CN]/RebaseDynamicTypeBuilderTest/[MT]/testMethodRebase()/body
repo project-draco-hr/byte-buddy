@@ -1,0 +1,11 @@
+{
+  DynamicType.Unloaded<?> dynamicType=new ByteBuddy().rebase(Qux.class).method(named(BAR)).intercept(StubMethod.INSTANCE).make();
+  assertThat(dynamicType.getRawAuxiliaryTypes().size(),is(0));
+  Class<?> type=dynamicType.load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredConstructors().length,is(1));
+  assertThat(type.getDeclaredMethods().length,is(3));
+  assertThat(type.getDeclaredMethod(FOO).invoke(null),nullValue(Object.class));
+  assertThat(type.getDeclaredField(FOO).get(null),is((Object)FOO));
+  assertThat(type.getDeclaredMethod(BAR).invoke(null),nullValue(Object.class));
+  assertThat(type.getDeclaredField(FOO).get(null),is((Object)FOO));
+}
