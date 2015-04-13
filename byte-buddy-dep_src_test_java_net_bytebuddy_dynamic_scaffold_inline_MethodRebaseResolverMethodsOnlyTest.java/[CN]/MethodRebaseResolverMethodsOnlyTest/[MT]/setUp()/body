@@ -1,0 +1,13 @@
+{
+  when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
+  Set<MethodDescription> methodDescriptions=new HashSet<MethodDescription>();
+  methodDescriptions.add(method);
+  methodDescriptions.add(constructor);
+  methodRebaseResolver=new MethodRebaseResolver.MethodsOnly(methodDescriptions,methodNameTransformer);
+  when(method.getInternalName()).thenReturn(FOO);
+  when(method.getReturnType()).thenReturn(returnType);
+  ParameterList methodParameterList=ParameterList.Explicit.latent(method,Collections.singletonList(parameterType));
+  when(method.getParameters()).thenReturn(methodParameterList);
+  when(constructor.isConstructor()).thenReturn(true);
+  when(methodNameTransformer.transform(method)).thenReturn(BAR);
+}

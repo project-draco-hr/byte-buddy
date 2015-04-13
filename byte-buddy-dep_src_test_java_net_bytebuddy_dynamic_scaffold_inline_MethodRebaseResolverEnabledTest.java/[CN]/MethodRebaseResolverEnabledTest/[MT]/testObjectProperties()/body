@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodRebaseResolver.Enabled.class).apply();
+}

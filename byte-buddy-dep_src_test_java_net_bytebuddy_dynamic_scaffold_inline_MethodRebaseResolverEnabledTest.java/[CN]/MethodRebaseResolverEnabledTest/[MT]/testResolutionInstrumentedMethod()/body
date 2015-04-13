@@ -1,0 +1,9 @@
+{
+  MethodRebaseResolver.Resolution resolution=methodRebaseResolver.resolve(method);
+  assertThat(resolution.isRebased(),is(true));
+  assertThat(resolution.getAdditionalArguments(),is((StackManipulation)StackManipulation.LegalTrivial.INSTANCE));
+  assertThat(resolution.getResolvedMethod().getInternalName(),is(BAR));
+  assertThat(resolution.getResolvedMethod().getReturnType(),is(returnType));
+  assertThat(resolution.getResolvedMethod().getParameters().asTypeList(),is((TypeList)new TypeList.Explicit(Collections.singletonList(parameterType))));
+  assertThat(resolution.getResolvedMethod().isSynthetic(),is(true));
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(methodRebaseResolver.getAuxiliaryTypes().size(),is(0));
+}

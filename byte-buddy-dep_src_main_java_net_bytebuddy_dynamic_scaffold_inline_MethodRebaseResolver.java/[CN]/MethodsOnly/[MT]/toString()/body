@@ -1,0 +1,3 @@
+{
+  return "MethodRebaseResolver.MethodsOnly{" + "instrumentedMethods=" + instrumentedMethods + ", methodNameTransformer="+ methodNameTransformer+ '}';
+}

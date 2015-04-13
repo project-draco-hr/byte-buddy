@@ -1,5 +1,6 @@
 {
-  String transformed=new MethodRebaseResolver.MethodNameTransformer.Suffixing().transform(FOO);
+  when(methodDescription.getInternalName()).thenReturn(FOO);
+  String transformed=new MethodRebaseResolver.MethodNameTransformer.Suffixing().transform(methodDescription);
   assertThat(transformed,not(FOO));
   assertThat(transformed,startsWith(FOO));
 }

@@ -9,7 +9,7 @@
   }
 ).refine(new ObjectPropertyAssertion.Refinement<MethodRebaseResolver.MethodNameTransformer>(){
     @Override public void apply(    MethodRebaseResolver.MethodNameTransformer mock){
-      when(mock.transform(any(String.class))).thenReturn(FOO + System.identityHashCode(mock));
+      when(mock.transform(any(MethodDescription.class))).thenReturn(FOO + System.identityHashCode(mock));
     }
   }
 ).apply();

@@ -2,10 +2,5 @@
   MethodRebaseResolver.Resolution resolution=new MethodRebaseResolver.Resolution.Preserved(methodDescription);
   assertThat(resolution.isRebased(),is(false));
   assertThat(resolution.getResolvedMethod(),is(methodDescription));
-  try {
-    resolution.getAdditionalArguments();
-    fail();
-  }
- catch (  IllegalStateException ignored) {
-  }
+  assertThat(resolution.getAdditionalArguments(),is((StackManipulation)StackManipulation.LegalTrivial.INSTANCE));
 }
