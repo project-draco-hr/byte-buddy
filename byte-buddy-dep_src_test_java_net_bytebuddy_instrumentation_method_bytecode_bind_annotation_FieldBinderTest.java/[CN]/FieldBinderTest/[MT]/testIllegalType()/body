@@ -1,4 +1,4 @@
 {
   when(target.getTypeDescription()).thenReturn(mock(TypeDescription.class));
-  new Field.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,instrumentationTarget,assigner);
+  new FieldProxy.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,instrumentationTarget,assigner);
 }

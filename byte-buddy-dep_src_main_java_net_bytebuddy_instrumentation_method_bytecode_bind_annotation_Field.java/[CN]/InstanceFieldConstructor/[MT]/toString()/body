@@ -1,3 +1,0 @@
-{
-  return "Field.Binder.InstanceFieldConstructor{" + "instrumentedType=" + instrumentedType + '}';
-}

@@ -1,3 +1,0 @@
-{
-  return "Field.Binder.AccessorProxy{" + "accessedField=" + accessedField + ", instrumentedType="+ instrumentedType+ ", assigner="+ assigner+ ", accessType="+ accessType+ ", serializableProxy="+ serializableProxy+ ", binder="+ Binder.this+ '}';
-}

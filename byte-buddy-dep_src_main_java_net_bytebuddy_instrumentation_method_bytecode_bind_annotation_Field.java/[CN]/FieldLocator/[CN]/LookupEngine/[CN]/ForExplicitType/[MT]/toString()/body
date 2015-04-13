@@ -1,3 +1,0 @@
-{
-  return "Field.Binder.FieldLocator.LookupEngine.ForExplicitType{" + "fieldName='" + fieldName + '\''+ ", typeDescription="+ typeDescription+ '}';
-}

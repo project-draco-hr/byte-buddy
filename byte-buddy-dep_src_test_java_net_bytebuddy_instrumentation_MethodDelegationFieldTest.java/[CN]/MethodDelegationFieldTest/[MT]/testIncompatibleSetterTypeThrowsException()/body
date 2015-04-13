@@ -1,5 +1,5 @@
 {
-  DynamicType.Loaded<Explicit> loaded=instrument(Explicit.class,MethodDelegation.to(SetterIncompatible.class).appendParameterBinder(Field.Binder.install(Get.class,Set.class)));
+  DynamicType.Loaded<Explicit> loaded=instrument(Explicit.class,MethodDelegation.to(SetterIncompatible.class).appendParameterBinder(FieldProxy.Binder.install(Get.class,Set.class)));
   Explicit explicit=loaded.getLoaded().newInstance();
   explicit.swap();
 }

@@ -9,6 +9,6 @@
   when(source.getName()).thenReturn("setFoo");
   when(source.getInternalName()).thenReturn("setFoo");
   when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
-  MethodDelegationBinder.ParameterBinding<?> binding=new Field.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,instrumentationTarget,assigner);
+  MethodDelegationBinder.ParameterBinding<?> binding=new FieldProxy.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,instrumentationTarget,assigner);
   assertThat(binding.isValid(),is(true));
 }

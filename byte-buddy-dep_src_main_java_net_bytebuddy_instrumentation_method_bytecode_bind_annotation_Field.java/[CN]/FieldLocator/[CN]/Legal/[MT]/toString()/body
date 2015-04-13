@@ -1,3 +1,0 @@
-{
-  return "Field.Binder.FieldLocator.Legal{" + "fieldName='" + fieldName + '\''+ '}';
-}

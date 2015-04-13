@@ -1,7 +1,7 @@
 {
   when(target.getTypeDescription()).thenReturn(setterType);
   doReturn(Foo.class).when(annotation).definingType();
-  when(annotation.value()).thenReturn(Field.BEAN_PROPERTY);
+  when(annotation.value()).thenReturn(FieldProxy.BEAN_PROPERTY);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
   when(source.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(void.class));
   ParameterList parameterList=ParameterList.Explicit.latent(source,Collections.singletonList(fieldType));
@@ -10,6 +10,6 @@
   when(source.getSourceCodeName()).thenReturn("setFoo");
   when(source.getInternalName()).thenReturn("setFoo");
   when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
-  MethodDelegationBinder.ParameterBinding<?> binding=new Field.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,instrumentationTarget,assigner);
+  MethodDelegationBinder.ParameterBinding<?> binding=new FieldProxy.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,instrumentationTarget,assigner);
   assertThat(binding.isValid(),is(true));
 }
