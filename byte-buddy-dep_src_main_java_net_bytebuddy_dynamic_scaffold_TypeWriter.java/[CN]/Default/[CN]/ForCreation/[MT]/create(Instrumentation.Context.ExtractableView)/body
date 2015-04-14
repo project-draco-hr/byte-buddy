@@ -6,7 +6,7 @@
   for (  FieldDescription fieldDescription : instrumentedType.getDeclaredFields()) {
     fieldPool.target(fieldDescription).apply(classVisitor,fieldDescription);
   }
-  for (  MethodDescription methodDescription : invokeableMethods) {
+  for (  MethodDescription methodDescription : instrumentedMethods) {
     methodPool.target(methodDescription).apply(classVisitor,instrumentationContext,methodDescription);
   }
   instrumentationContext.drain(classVisitor,methodPool,Instrumentation.Context.ExtractableView.InjectedCode.None.INSTANCE);

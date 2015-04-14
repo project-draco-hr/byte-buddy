@@ -8,7 +8,7 @@ ClassVisitorWrapper classVisitorWrapper
 TypeAttributeAppender attributeAppender
 FieldPool fieldPool
 MethodPool methodPool
-MethodList invokeableMethods
+MethodList instrumentedMethods
 ClassFileLocator classFileLocator
 TypeDescription targetType
 MethodRebaseResolver methodRebaseResolver

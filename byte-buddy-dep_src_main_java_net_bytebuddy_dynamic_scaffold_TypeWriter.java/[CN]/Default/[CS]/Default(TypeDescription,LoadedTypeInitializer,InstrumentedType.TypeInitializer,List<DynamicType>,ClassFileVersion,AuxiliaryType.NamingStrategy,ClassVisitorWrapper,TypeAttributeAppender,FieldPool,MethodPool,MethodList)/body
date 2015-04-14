@@ -9,5 +9,5 @@
   this.attributeAppender=attributeAppender;
   this.fieldPool=fieldPool;
   this.methodPool=methodPool;
-  this.invokeableMethods=instrumentedMethods;
+  this.instrumentedMethods=instrumentedMethods;
 }

@@ -6,8 +6,8 @@
   for (  FieldDescription fieldDescription : fieldDescriptions) {
     declaredFields.put(fieldDescription.getInternalName(),fieldDescription);
   }
-  declarableMethods=new HashMap<String,MethodDescription>(invokeableMethods.size());
-  for (  MethodDescription methodDescription : invokeableMethods) {
+  declarableMethods=new HashMap<String,MethodDescription>(instrumentedMethods.size());
+  for (  MethodDescription methodDescription : instrumentedMethods) {
     declarableMethods.put(methodDescription.getUniqueSignature(),methodDescription);
   }
   injectedCode=Instrumentation.Context.ExtractableView.InjectedCode.None.INSTANCE;

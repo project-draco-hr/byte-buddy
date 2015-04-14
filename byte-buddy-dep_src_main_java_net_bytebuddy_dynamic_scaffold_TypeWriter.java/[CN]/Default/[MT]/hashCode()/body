@@ -9,6 +9,6 @@
   result=31 * result + attributeAppender.hashCode();
   result=31 * result + fieldPool.hashCode();
   result=31 * result + methodPool.hashCode();
-  result=31 * result + invokeableMethods.hashCode();
+  result=31 * result + instrumentedMethods.hashCode();
   return result;
 }
