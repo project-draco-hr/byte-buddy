@@ -3,8 +3,8 @@
     fieldPool.target(fieldDescription).apply(cv,fieldDescription);
   }
   for (  MethodDescription methodDescription : declarableMethods.values()) {
-    methodPool.target(methodDescription).apply(cv,instrumentationContext,methodDescription);
+    methodPool.target(methodDescription).apply(cv,implementationContext,methodDescription);
   }
-  instrumentationContext.drain(cv,methodPool,injectedCode);
+  implementationContext.drain(cv,methodPool,injectedCode);
   super.visitEnd();
 }

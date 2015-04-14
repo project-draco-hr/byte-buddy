@@ -1,4 +1,4 @@
 {
-  StackManipulation.Size stackSize=new StackManipulation.Compound(constructionDelegate.make(),Throw.INSTANCE).apply(methodVisitor,instrumentationContext);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(constructionDelegate.make(),Throw.INSTANCE).apply(methodVisitor,implementationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }

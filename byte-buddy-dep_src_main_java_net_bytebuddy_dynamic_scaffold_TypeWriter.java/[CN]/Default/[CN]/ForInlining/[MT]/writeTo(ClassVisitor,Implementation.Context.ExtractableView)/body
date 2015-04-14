@@ -1,6 +1,6 @@
 {
   String originalName=targetType.getInternalName();
   String targetName=instrumentedType.getInternalName();
-  ClassVisitor targetClassVisitor=new RedefinitionClassVisitor(classVisitor,instrumentationContext);
+  ClassVisitor targetClassVisitor=new RedefinitionClassVisitor(classVisitor,implementationContext);
   return originalName.equals(targetName) ? targetClassVisitor : new RemappingClassAdapter(targetClassVisitor,new SimpleRemapper(originalName,targetName));
 }

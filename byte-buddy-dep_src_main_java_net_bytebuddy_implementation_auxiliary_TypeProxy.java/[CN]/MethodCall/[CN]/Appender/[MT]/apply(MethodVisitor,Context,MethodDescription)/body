@@ -1,4 +1,4 @@
 {
-  StackManipulation.Size stackSize=implement(instrumentedMethod,invocationFactory.invoke(implementationTarget,proxiedType,instrumentedMethod)).apply(methodVisitor,instrumentationContext);
+  StackManipulation.Size stackSize=implement(instrumentedMethod,invocationFactory.invoke(implementationTarget,proxiedType,instrumentedMethod)).apply(methodVisitor,implementationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }

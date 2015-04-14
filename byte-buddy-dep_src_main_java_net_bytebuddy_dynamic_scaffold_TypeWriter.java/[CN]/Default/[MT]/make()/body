@@ -1,4 +1,4 @@
 {
-  Implementation.Context.ExtractableView instrumentationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
-  return new DynamicType.Default.Unloaded<S>(instrumentedType,create(instrumentationContext),loadedTypeInitializer,join(explicitAuxiliaryTypes,instrumentationContext.getRegisteredAuxiliaryTypes()));
+  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
+  return new DynamicType.Default.Unloaded<S>(instrumentedType,create(implementationContext),loadedTypeInitializer,join(explicitAuxiliaryTypes,implementationContext.getRegisteredAuxiliaryTypes()));
 }

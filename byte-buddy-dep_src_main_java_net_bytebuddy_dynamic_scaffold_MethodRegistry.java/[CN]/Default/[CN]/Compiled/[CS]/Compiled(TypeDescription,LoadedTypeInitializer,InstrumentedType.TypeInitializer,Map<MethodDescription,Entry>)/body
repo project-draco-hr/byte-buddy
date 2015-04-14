@@ -2,5 +2,5 @@
   this.instrumentedType=instrumentedType;
   this.loadedTypeInitializer=loadedTypeInitializer;
   this.typeInitializer=typeInitializer;
-  this.instrumentations=instrumentations;
+  this.implementations=implementations;
 }

@@ -1,6 +1,6 @@
 {
   super(ASM_API_VERSION,classVisitor);
-  this.instrumentationContext=instrumentationContext;
+  this.implementationContext=implementationContext;
   List<? extends FieldDescription> fieldDescriptions=instrumentedType.getDeclaredFields();
   declaredFields=new HashMap<String,FieldDescription>(fieldDescriptions.size());
   for (  FieldDescription fieldDescription : fieldDescriptions) {

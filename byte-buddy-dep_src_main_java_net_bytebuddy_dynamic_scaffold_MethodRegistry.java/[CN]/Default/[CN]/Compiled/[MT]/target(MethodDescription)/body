@@ -1,4 +1,4 @@
 {
-  Entry entry=instrumentations.get(methodDescription);
+  Entry entry=implementations.get(methodDescription);
   return entry == null ? Entry.ForSkippedMethod.INSTANCE : entry;
 }

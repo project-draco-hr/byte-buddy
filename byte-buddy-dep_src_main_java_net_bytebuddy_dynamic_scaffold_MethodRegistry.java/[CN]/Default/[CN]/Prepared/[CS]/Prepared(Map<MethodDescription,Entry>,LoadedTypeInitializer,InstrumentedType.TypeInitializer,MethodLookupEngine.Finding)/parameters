@@ -1,4 +1,4 @@
-Map<MethodDescription,Entry> instrumentations
+Map<MethodDescription,Entry> implementations
 LoadedTypeInitializer loadedTypeInitializer
 InstrumentedType.TypeInitializer typeInitializer
 MethodLookupEngine.Finding finding

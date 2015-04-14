@@ -1,5 +1,5 @@
 MethodVisitor methodVisitor
-Context instrumentationContext
+Context implementationContext
 MethodDescription instrumentedMethod
 TypeDescription instrumentedType
 StackManipulation preparingManipulation

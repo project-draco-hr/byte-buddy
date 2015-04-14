@@ -1,4 +1,4 @@
 {
-  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisReferenceAndArguments(instrumentedMethod),accessorMethodInvocation,MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisReferenceAndArguments(instrumentedMethod),accessorMethodInvocation,MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,implementationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }

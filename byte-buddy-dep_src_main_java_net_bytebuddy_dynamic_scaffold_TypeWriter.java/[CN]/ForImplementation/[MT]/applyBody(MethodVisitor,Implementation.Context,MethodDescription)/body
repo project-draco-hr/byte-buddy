@@ -1,6 +1,6 @@
 {
   methodAttributeAppender.apply(methodVisitor,methodDescription);
   methodVisitor.visitCode();
-  ByteCodeAppender.Size size=byteCodeAppender.apply(methodVisitor,instrumentationContext,methodDescription);
+  ByteCodeAppender.Size size=byteCodeAppender.apply(methodVisitor,implementationContext,methodDescription);
   methodVisitor.visitMaxs(size.getOperandStackSize(),size.getLocalVariableSize());
 }

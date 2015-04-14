@@ -1,4 +1,4 @@
 TypeDescription instrumentedType
 LoadedTypeInitializer loadedTypeInitializer
 InstrumentedType.TypeInitializer typeInitializer
-Map<MethodDescription,Entry> instrumentations
+Map<MethodDescription,Entry> implementations

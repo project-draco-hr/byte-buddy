@@ -1,4 +1,4 @@
 {
   methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,wrapperType.getInternalName(),boxingMethodName,boxingMethodDescriptor,false);
-  return size.aggregate(stackManipulation.apply(methodVisitor,instrumentationContext));
+  return size.aggregate(stackManipulation.apply(methodVisitor,implementationContext));
 }

@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   Prepared prepared=(Prepared)other;
-  return instrumentations.equals(prepared.instrumentations) && loadedTypeInitializer.equals(prepared.loadedTypeInitializer) && typeInitializer.equals(prepared.typeInitializer)&& finding.equals(prepared.finding);
+  return implementations.equals(prepared.implementations) && loadedTypeInitializer.equals(prepared.loadedTypeInitializer) && typeInitializer.equals(prepared.typeInitializer)&& finding.equals(prepared.finding);
 }

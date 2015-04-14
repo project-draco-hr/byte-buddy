@@ -3,6 +3,6 @@
   if (!defaultMethodInvocation.isValid()) {
     throw new IllegalStateException("Cannot invoke default method on " + instrumentedMethod);
   }
-  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisReferenceAndArguments(instrumentedMethod),defaultMethodInvocation,MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(MethodVariableAccess.loadThisReferenceAndArguments(instrumentedMethod),defaultMethodInvocation,MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,implementationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }

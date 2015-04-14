@@ -1,4 +1,4 @@
 {
-  entry.applyBody(actualMethodVisitor,instrumentationContext,methodDescription);
+  entry.applyBody(actualMethodVisitor,implementationContext,methodDescription);
   actualMethodVisitor.visitEnd();
 }

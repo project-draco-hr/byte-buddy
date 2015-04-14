@@ -1,3 +1,3 @@
 {
-  return new MethodList.Explicit(new ArrayList<MethodDescription>(instrumentations.keySet())).filter(not(isTypeInitializer()));
+  return new MethodList.Explicit(new ArrayList<MethodDescription>(implementations.keySet())).filter(not(isTypeInitializer()));
 }

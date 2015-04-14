@@ -5,6 +5,6 @@
  else   if (instrumentedMethod.isStatic()) {
     throw new IllegalArgumentException("Cannot forward the static method " + instrumentedMethod);
   }
-  StackManipulation.Size stackSize=new StackManipulation.Compound(delegateLoadingInstruction,MethodVariableAccess.loadArguments(instrumentedMethod),MethodInvocation.invoke(instrumentedMethod).virtual(fieldType),MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,instrumentationContext);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(delegateLoadingInstruction,MethodVariableAccess.loadArguments(instrumentedMethod),MethodInvocation.invoke(instrumentedMethod).virtual(fieldType),MethodReturn.returning(instrumentedMethod.getReturnType())).apply(methodVisitor,implementationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }
