@@ -1,9 +1,0 @@
-{
-  doReturn(annotationType).when(parameterBinder).getHandledType();
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=mock(MethodDelegationBinder.ParameterBinding.class);
-  when(parameterBinding.isValid()).thenReturn(bindingResult);
-  when(parameterBinding.apply(any(MethodVisitor.class),any(Instrumentation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
-  when(parameterBinding.getIdentificationToken()).thenReturn(identificationToken);
-  when(((TargetMethodAnnotationDrivenBinder.ParameterBinder)parameterBinder).bind(any(AnnotationDescription.Loadable.class),any(MethodDescription.class),any(ParameterDescription.class),any(Instrumentation.Target.class),any(Assigner.class))).thenReturn(parameterBinding);
-  return parameterBinding;
-}

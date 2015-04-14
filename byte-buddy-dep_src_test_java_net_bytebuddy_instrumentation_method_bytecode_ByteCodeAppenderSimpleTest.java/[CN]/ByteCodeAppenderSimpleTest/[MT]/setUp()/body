@@ -1,5 +1,0 @@
-{
-  when(first.apply(methodVisitor,instrumentationContext)).thenReturn(new StackManipulation.Size(0,0));
-  when(second.apply(methodVisitor,instrumentationContext)).thenReturn(new StackManipulation.Size(0,0));
-  when(methodDescription.getStackSize()).thenReturn(STACK_SIZE);
-}

@@ -1,0 +1,18 @@
+{
+  Class<?> type=classLoader.loadClass(PARAMETER_BOOTSTRAP);
+  Field field=type.getDeclaredField(ARGUMENTS_FIELD_NAME);
+  field.set(null,null);
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
+  DynamicType.Loaded<Simple> dynamicType=implement(Simple.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP_EXPLICIT_ARGUMENTS)).getOnly(),INTEGER,LONG,FLOAT,DOUBLE,FOO,CLASS,makeMethodType(CLASS),makeMethodHandle()).withoutArguments(),classLoader,isDeclaredBy(Simple.class));
+  assertThat(dynamicType.getLoaded().newInstance().foo(),is(FOO));
+  Object[] arguments=(Object[])field.get(null);
+  assertThat(arguments.length,is(8));
+  assertThat(arguments[0],is((Object)INTEGER));
+  assertThat(arguments[1],is((Object)LONG));
+  assertThat(arguments[2],is((Object)FLOAT));
+  assertThat(arguments[3],is((Object)DOUBLE));
+  assertThat(arguments[4],is((Object)FOO));
+  assertThat(arguments[5],is((Object)CLASS));
+  assertThat(arguments[6],is(makeMethodType(CLASS)));
+  assertThat(JavaInstance.MethodHandle.of(arguments[7]),is(JavaInstance.MethodHandle.of(makeMethodHandle())));
+}

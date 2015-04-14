@@ -1,0 +1,3 @@
+{
+  DefaultCall.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+}

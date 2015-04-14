@@ -1,0 +1,12 @@
+{
+  when(typeDescription.getSupertype()).thenReturn(superType);
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty());
+  when(methodDescription.getReturnType()).thenReturn(returnType);
+  when(methodDescription.getDeclaringType()).thenReturn(declaringType);
+  when(declaringType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(returnType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(superType.getDeclaredMethods()).thenReturn(superTypeMethods);
+  when(superTypeMethods.filter(any(ElementMatcher.class))).thenReturn(superTypeMethods);
+  when(implementationTarget.invokeSuper(eq(methodDescription),any(Implementation.Target.MethodLookup.class))).thenReturn(Implementation.SpecialMethodInvocation.Illegal.INSTANCE);
+  SuperMethodCall.INSTANCE.appender(implementationTarget).apply(methodVisitor,implementationContext,methodDescription);
+}

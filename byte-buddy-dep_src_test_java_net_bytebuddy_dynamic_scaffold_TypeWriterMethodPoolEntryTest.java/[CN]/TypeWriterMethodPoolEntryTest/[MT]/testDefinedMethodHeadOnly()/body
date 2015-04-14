@@ -4,6 +4,6 @@
   TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForAbstractMethod(methodAttributeAppender);
   entry.applyHead(methodVisitor,methodDescription);
   verifyZeroInteractions(methodVisitor);
-  verifyZeroInteractions(instrumentationContext);
+  verifyZeroInteractions(implementationContext);
   verifyZeroInteractions(methodAttributeAppender);
 }

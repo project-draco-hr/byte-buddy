@@ -3,8 +3,8 @@
   when(resolution.resolve()).thenReturn(typeDescription);
   when(rawMatcher.matches(typeDescription,classLoader,REDEFINED,protectionDomain)).thenReturn(false);
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).disableSelfInitialization().withBinaryLocator(binaryLocator).withListener(listener).rebase(rawMatcher).transform(transformer).installOn(instrumentation);
-  assertThat(instrumentations.size(),is(1));
-  assertThat(instrumentations.get(0).transform(classLoader,FOO,REDEFINED,protectionDomain,QUX),nullValue(byte[].class));
+  assertThat(classFileTransformers.size(),is(1));
+  assertThat(classFileTransformers.get(0).transform(classLoader,FOO,REDEFINED,protectionDomain,QUX),nullValue(byte[].class));
   verify(listener).onIgnored(FOO);
   verify(listener).onComplete(FOO);
   verifyNoMoreInteractions(listener);

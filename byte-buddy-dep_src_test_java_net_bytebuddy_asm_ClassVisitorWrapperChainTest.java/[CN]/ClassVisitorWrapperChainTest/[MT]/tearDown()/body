@@ -1,8 +1,0 @@
-{
-  verify(prepend).wrap(classVisitor);
-  verifyNoMoreInteractions(prepend);
-  verify(first).wrap(classVisitor);
-  verifyNoMoreInteractions(first);
-  verify(append).wrap(classVisitor);
-  verifyNoMoreInteractions(append);
-}

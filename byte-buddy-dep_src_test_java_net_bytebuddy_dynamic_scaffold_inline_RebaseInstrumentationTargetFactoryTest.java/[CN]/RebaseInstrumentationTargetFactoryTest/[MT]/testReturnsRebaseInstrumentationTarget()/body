@@ -1,3 +1,0 @@
-{
-  assertThat(factory.make(finding,instrumentedMethods) instanceof RebaseInstrumentationTarget,is(true));
-}

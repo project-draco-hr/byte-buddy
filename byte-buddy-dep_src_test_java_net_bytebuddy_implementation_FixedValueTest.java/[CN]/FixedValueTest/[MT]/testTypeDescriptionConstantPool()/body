@@ -1,0 +1,5 @@
+{
+  Class<? extends Qux> qux=implement(Qux.class,FixedValue.value(new TypeDescription.ForLoadedType(Object.class))).getLoaded();
+  assertThat(qux.getDeclaredFields().length,is(0));
+  assertEquals(Object.class,qux.newInstance().bar());
+}

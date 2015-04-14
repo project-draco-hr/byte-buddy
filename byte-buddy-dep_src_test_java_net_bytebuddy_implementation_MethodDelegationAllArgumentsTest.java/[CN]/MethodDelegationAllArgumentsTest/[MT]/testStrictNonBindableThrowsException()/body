@@ -1,0 +1,3 @@
+{
+  implement(Qux.class,MethodDelegation.to(BazStrict.class));
+}

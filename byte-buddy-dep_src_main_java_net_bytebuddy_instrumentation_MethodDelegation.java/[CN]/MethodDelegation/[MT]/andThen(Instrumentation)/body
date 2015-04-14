@@ -1,3 +1,0 @@
-{
-  return new Compound(new MethodDelegation(instrumentationDelegate,parameterBinders,defaultsProvider,TargetMethodAnnotationDrivenBinder.TerminationHandler.Dropping.INSTANCE,ambiguityResolver,assigner,targetMethodCandidates),nonNull(instrumentation));
-}

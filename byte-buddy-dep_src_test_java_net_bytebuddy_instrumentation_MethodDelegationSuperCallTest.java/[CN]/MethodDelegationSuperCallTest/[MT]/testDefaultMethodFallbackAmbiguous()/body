@@ -1,3 +1,0 @@
-{
-  instrument(Object.class,MethodDelegation.to(NonVoidTarget.class),classLoader,isMethod().and(not(isDeclaredBy(Object.class))),classLoader.loadClass(SINGLE_DEFAULT_METHOD),classLoader.loadClass(CONFLICTING_INTERFACE));
-}

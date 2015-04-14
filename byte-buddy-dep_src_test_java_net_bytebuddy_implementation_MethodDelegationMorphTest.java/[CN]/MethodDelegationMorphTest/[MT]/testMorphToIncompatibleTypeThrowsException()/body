@@ -1,0 +1,5 @@
+{
+  DynamicType.Loaded<Foo> loaded=implement(Foo.class,MethodDelegation.to(new SimpleMorph(new Object())).appendParameterBinder(Morph.Binder.install(Morphing.class)));
+  Foo instance=loaded.getLoaded().newInstance();
+  instance.foo(QUX);
+}

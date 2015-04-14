@@ -1,0 +1,7 @@
+{
+  DynamicType.Loaded<ImplicitSetter> loaded=implement(ImplicitSetter.class,MethodDelegation.to(SetInterceptor.class).appendParameterBinder(FieldProxy.Binder.install(Get.class,Set.class)));
+  ImplicitSetter implicitSetter=loaded.getLoaded().newInstance();
+  assertThat(implicitSetter.foo,is(FOO));
+  implicitSetter.setFoo(BAR);
+  assertThat(implicitSetter.foo,is(FOO + BAR));
+}

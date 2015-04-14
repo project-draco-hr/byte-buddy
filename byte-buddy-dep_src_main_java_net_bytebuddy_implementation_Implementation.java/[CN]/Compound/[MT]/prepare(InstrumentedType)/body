@@ -1,0 +1,6 @@
+{
+  for (  Implementation implementation : this.implementation) {
+    instrumentedType=implementation.prepare(instrumentedType);
+  }
+  return instrumentedType;
+}

@@ -1,0 +1,11 @@
+{
+  defineAssignability(false,false);
+  when(targetTypeDescription.getInternalName()).thenReturn(FOO);
+  StackManipulation stackManipulation=ReferenceTypeAwareAssigner.INSTANCE.assign(sourceTypeDescription,targetTypeDescription,true);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+  verify(methodVisitor).visitTypeInsn(Opcodes.CHECKCAST,FOO);
+  verifyNoMoreInteractions(methodVisitor);
+}

@@ -1,0 +1,3 @@
+{
+  return "RebaseImplementationTarget{" + "typeDescription=" + typeDescription + ", defaultMethods="+ defaultMethods+ ", bridgeMethodResolver="+ bridgeMethodResolver+ ", methodRebaseResolver="+ methodRebaseResolver+ '}';
+}

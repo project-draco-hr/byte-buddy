@@ -1,0 +1,4 @@
+{
+  when(targetType.getName()).thenReturn(FOO);
+  Origin.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+}

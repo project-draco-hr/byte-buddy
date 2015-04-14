@@ -1,0 +1,6 @@
+{
+  int result=proxiedType.hashCode();
+  result=31 * result + implementationTarget.hashCode();
+  result=31 * result + (serializableProxy ? 1 : 0);
+  return result;
+}

@@ -1,3 +1,0 @@
-{
-  assertThat(Instrumentation.Context.ExtractableView.InjectedCode.None.INSTANCE.isDefined(),is(false));
-}

@@ -1,3 +1,0 @@
-{
-  return "Instrumentation.Compound{instrumentation=" + Arrays.toString(instrumentation) + '}';
-}

@@ -1,3 +1,0 @@
-{
-  return resolution.isRebased() ? RebasedMethodSpecialMethodInvocation.of(resolution,typeDescription) : Instrumentation.SpecialMethodInvocation.Simple.of(resolution.getResolvedMethod(),typeDescription);
-}

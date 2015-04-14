@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (!(other instanceof Instrumentation.SpecialMethodInvocation))   return false;
-  Instrumentation.SpecialMethodInvocation specialMethodInvocation=(Instrumentation.SpecialMethodInvocation)other;
-  return isValid() == specialMethodInvocation.isValid() && instrumentedType.equals(specialMethodInvocation.getTypeDescription()) && methodDescription.getInternalName().equals(specialMethodInvocation.getMethodDescription().getInternalName()) && methodDescription.getParameters().asTypeList().equals(specialMethodInvocation.getMethodDescription().getParameters().asTypeList()) && methodDescription.getReturnType().equals(specialMethodInvocation.getMethodDescription().getReturnType());
-}

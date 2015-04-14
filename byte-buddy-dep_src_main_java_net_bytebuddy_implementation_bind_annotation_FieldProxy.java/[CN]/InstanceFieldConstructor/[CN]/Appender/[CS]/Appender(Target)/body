@@ -1,0 +1,3 @@
+{
+  fieldDescription=implementationTarget.getTypeDescription().getDeclaredFields().filter((named(AccessorProxy.FIELD_NAME))).getOnly();
+}

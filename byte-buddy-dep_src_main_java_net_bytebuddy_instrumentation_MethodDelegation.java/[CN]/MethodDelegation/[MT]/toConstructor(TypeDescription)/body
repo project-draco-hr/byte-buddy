@@ -1,3 +1,0 @@
-{
-  return new MethodDelegation(new InstrumentationDelegate.ForConstruction(nonNull(typeDescription)),defaultParameterBinders(),defaultDefaultsProvider(),TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,defaultAmbiguityResolver(),defaultAssigner(),typeDescription.getDeclaredMethods().filter(isConstructor()));
-}

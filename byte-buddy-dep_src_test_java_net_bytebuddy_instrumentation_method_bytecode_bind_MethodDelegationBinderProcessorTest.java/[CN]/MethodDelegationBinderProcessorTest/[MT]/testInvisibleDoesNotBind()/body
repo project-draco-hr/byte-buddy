@@ -1,5 +1,0 @@
-{
-  List<MethodDescription> methodDescriptions=Collections.singletonList(invisibleTarget);
-  MethodDelegationBinder.Processor processor=new MethodDelegationBinder.Processor(methodDelegationBinder,ambiguityResolver);
-  processor.process(instrumentationTarget,source,methodDescriptions);
-}

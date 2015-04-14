@@ -1,3 +1,0 @@
-{
-  return "TypeProxy{" + "proxiedType=" + proxiedType + ", instrumentationTarget="+ instrumentationTarget+ ", invocationFactory="+ invocationFactory+ ", ignoreFinalizer="+ ignoreFinalizer+ ", serializableProxy="+ serializableProxy+ '}';
-}

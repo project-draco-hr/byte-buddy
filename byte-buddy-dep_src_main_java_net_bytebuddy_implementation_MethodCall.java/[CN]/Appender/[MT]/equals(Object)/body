@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Appender appender=(Appender)other;
+  return implementationTarget.equals(appender.implementationTarget) && MethodCall.this.equals(appender.getOuter());
+}

@@ -1,0 +1,3 @@
+{
+  latentMethodMatcher=new InliningImplementationMatcher(ignoredMethods,predefinedMethods);
+}

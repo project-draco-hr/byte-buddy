@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(RebaseInstrumentationTarget.Factory.class).apply();
-}

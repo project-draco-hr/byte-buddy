@@ -1,5 +1,0 @@
-{
-  StackManipulation stackManipulation=PrimitiveWideningDelegate.forPrimitive(sourceTypeDescription).widenTo(targetTypeDescription);
-  assertThat(stackManipulation.isValid(),is(false));
-  stackManipulation.apply(methodVisitor,instrumentationContext);
-}

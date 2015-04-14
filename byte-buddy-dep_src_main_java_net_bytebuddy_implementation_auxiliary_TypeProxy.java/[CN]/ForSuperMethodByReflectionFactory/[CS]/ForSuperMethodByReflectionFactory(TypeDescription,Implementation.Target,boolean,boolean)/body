@@ -1,0 +1,6 @@
+{
+  this.proxiedType=proxiedType;
+  this.implementationTarget=implementationTarget;
+  this.ignoreFinalizer=ignoreFinalizer;
+  this.serializableProxy=serializableProxy;
+}

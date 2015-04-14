@@ -1,0 +1,11 @@
+{
+  StackManipulation stackManipulation=Removal.pop(typeDescription);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(-stackSize.getSize()));
+  assertThat(size.getMaximalSize(),is(0));
+  if (stackSize != StackSize.ZERO) {
+    verify(methodVisitor).visitInsn(opcode);
+  }
+  verifyNoMoreInteractions(methodVisitor);
+}

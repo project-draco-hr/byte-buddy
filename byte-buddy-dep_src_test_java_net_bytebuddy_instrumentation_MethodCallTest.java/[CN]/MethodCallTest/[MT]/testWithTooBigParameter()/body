@@ -1,3 +1,0 @@
-{
-  instrument(MethodCallWithExplicitArgument.class,MethodCall.invokeSuper().withArgument(1));
-}

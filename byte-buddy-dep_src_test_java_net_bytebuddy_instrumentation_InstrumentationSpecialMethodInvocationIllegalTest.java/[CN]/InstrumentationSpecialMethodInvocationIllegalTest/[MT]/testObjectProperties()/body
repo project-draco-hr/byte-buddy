@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(Instrumentation.SpecialMethodInvocation.Illegal.class).apply();
-}

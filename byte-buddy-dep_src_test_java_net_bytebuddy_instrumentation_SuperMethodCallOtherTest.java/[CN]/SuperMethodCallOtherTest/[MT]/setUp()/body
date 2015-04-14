@@ -1,4 +1,0 @@
-{
-  when(instrumentationTarget.getTypeDescription()).thenReturn(typeDescription);
-  classLoader=new PrecompiledTypeClassLoader(getClass().getClassLoader());
-}

@@ -1,3 +1,0 @@
-{
-  assertThat(new ByteBuddy().subclass(SumExample.class).method(named("calculate")).intercept(SumInstrumentation.INSTANCE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance().calculate(),is(60));
-}

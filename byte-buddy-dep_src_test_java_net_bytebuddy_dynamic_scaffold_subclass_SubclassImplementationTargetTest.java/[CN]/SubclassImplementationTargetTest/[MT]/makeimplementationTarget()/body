@@ -1,0 +1,3 @@
+{
+  return new SubclassImplementationTarget(finding,bridgeMethodResolverFactory,SubclassImplementationTarget.OriginTypeIdentifier.SUPER_TYPE);
+}

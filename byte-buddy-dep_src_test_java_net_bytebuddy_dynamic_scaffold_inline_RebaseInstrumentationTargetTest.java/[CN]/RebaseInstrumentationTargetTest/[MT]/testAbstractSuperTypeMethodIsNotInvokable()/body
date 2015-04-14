@@ -1,7 +1,0 @@
-{
-  when(superMethod.isSpecializableFor(superType)).thenReturn(true);
-  when(superMethod.isAbstract()).thenReturn(true);
-  Instrumentation.SpecialMethodInvocation specialMethodInvocation=instrumentationTarget.invokeSuper(superMethod,methodLookup);
-  assertThat(specialMethodInvocation.isValid(),is(false));
-  verifyZeroInteractions(methodRebaseResolver);
-}

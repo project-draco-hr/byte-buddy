@@ -1,0 +1,11 @@
+{
+  when(sourceTypeDescription.represents(void.class)).thenReturn(true);
+  when(targetTypeDescription.represents(void.class)).thenReturn(true);
+  Assigner voidAwareAssigner=new VoidAwareAssigner(chainedAssigner);
+  StackManipulation stackManipulation=voidAwareAssigner.assign(sourceTypeDescription,targetTypeDescription,false);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+  verifyZeroInteractions(chainedAssigner);
+}

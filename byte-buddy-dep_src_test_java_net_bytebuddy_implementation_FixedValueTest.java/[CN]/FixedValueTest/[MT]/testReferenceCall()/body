@@ -1,0 +1,3 @@
+{
+  assertType(implement(Foo.class,FixedValue.reference(bar)));
+}

@@ -1,0 +1,5 @@
+{
+  Class<?> type=classLoader.loadClass(ARGUMENT_BOOTSTRAP);
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
+  implement(SimpleWithFieldInvisible.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP)).getOnly()).invoke(QUX,String.class).withField(FOO),classLoader,isDeclaredBy(SimpleWithFieldInvisible.class));
+}

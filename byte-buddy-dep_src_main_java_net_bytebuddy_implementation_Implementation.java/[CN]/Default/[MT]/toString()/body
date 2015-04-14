@@ -1,0 +1,3 @@
+{
+  return "Implementation.Context.Default{" + "instrumentedType=" + instrumentedType + ", typeInitializer="+ typeInitializer+ ", classFileVersion="+ classFileVersion+ ", auxiliaryTypeNamingStrategy="+ auxiliaryTypeNamingStrategy+ ", registeredAccessorMethods="+ registeredAccessorMethods+ ", registeredGetters="+ registeredGetters+ ", registeredSetters="+ registeredSetters+ ", accessorMethodEntries="+ accessorMethodEntries+ ", auxiliaryTypes="+ auxiliaryTypes+ ", registeredFieldCacheEntries="+ registeredFieldCacheEntries+ ", randomString="+ randomString+ ", canRegisterFieldCache="+ canRegisterFieldCache+ '}';
+}

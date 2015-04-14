@@ -1,3 +1,0 @@
-{
-  return dexCompilerOnClassPath || method.getAnnotation(Enforce.class) == null ? base : new NoOpStatement();
-}

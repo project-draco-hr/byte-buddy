@@ -1,0 +1,3 @@
+{
+  assertThat(factory.make(finding,methodList) instanceof SubclassImplementationTarget,is(true));
+}

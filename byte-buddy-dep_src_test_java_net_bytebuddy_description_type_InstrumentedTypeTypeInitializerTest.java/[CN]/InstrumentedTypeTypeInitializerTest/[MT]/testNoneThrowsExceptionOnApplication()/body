@@ -1,0 +1,3 @@
+{
+  InstrumentedType.TypeInitializer.None.INSTANCE.apply(methodVisitor,implementationContext);
+}

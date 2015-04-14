@@ -1,4 +1,0 @@
-{
-  when(target.getTypeDescription()).thenReturn(mock(TypeDescription.class));
-  new FieldProxy.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,instrumentationTarget,assigner);
-}

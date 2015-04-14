@@ -1,4 +1,0 @@
-{
-  verifyZeroInteractions(methodVisitor);
-  verifyZeroInteractions(instrumentationContext);
-}

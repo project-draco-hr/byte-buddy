@@ -1,6 +1,0 @@
-{
-  MethodRegistry.Handler handler=new MethodRegistry.Handler.ForInstrumentation(instrumentation);
-  assertThat(handler.prepare(instrumentedType),is(preparedInstrumentedType));
-  TypeWriter.MethodPool.Entry entry=handler.compile(instrumentationTarget).assemble(attributeAppender);
-  assertThat(entry.getSort(),is(TypeWriter.MethodPool.Entry.Sort.IMPLEMENT));
-}

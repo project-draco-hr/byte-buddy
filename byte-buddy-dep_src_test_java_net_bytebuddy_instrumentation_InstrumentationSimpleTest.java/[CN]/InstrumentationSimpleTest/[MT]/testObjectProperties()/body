@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(Instrumentation.Simple.class).apply();
-}

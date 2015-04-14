@@ -1,0 +1,11 @@
+{
+  when(firstTargetParameter.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(secondTargetParameter.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  Iterator<AnnotationDescription> iterator=Argument.NextUnboundAsDefaultsProvider.INSTANCE.makeIterator(implementationTarget,source,target);
+  assertThat(iterator.hasNext(),is(true));
+  iterator.remove();
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next().prepare(Argument.class).load().value(),is(1));
+  assertThat(iterator.hasNext(),is(false));
+  iterator.remove();
+}

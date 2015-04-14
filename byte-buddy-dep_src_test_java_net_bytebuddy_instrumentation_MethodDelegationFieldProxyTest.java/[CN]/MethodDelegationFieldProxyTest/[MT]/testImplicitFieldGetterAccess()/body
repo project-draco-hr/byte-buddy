@@ -1,7 +1,0 @@
-{
-  DynamicType.Loaded<ImplicitGetter> loaded=instrument(ImplicitGetter.class,MethodDelegation.to(GetInterceptor.class).appendParameterBinder(FieldProxy.Binder.install(Get.class,Set.class)));
-  ImplicitGetter implicitGetter=loaded.getLoaded().newInstance();
-  assertThat(implicitGetter.foo,is(FOO));
-  assertThat(implicitGetter.getFoo(),is(FOO + BAR));
-  assertThat(implicitGetter.foo,is(FOO + BAR));
-}

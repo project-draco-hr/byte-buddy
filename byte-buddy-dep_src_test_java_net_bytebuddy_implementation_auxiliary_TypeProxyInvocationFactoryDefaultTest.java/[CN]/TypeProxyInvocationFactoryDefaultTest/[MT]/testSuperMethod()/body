@@ -1,0 +1,6 @@
+{
+  when(implementationTarget.invokeSuper(methodDescription,Implementation.Target.MethodLookup.Default.MOST_SPECIFIC)).thenReturn(specialMethodInvocation);
+  assertThat(TypeProxy.InvocationFactory.Default.SUPER_METHOD.invoke(implementationTarget,typeDescription,methodDescription),is(specialMethodInvocation));
+  verify(implementationTarget).invokeSuper(methodDescription,Implementation.Target.MethodLookup.Default.MOST_SPECIFIC);
+  verifyNoMoreInteractions(implementationTarget);
+}

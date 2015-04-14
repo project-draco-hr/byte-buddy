@@ -1,0 +1,5 @@
+Class<T> target
+Implementation implementation
+ClassLoader classLoader
+ElementMatcher<? super MethodDescription> targetMethods
+Class<?> interfaces

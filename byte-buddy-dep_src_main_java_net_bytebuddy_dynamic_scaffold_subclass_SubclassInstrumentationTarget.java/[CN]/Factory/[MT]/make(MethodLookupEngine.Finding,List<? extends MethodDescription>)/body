@@ -1,3 +1,0 @@
-{
-  return new SubclassInstrumentationTarget(finding,bridgeMethodResolverFactory,originTypeIdentifier);
-}

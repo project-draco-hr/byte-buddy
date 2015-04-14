@@ -1,8 +1,0 @@
-{
-  StackManipulation.Size size=NullConstant.INSTANCE.apply(methodVisitor,instrumentationContext);
-  assertThat(size.getSizeImpact(),is(1));
-  assertThat(size.getMaximalSize(),is(1));
-  verify(methodVisitor).visitInsn(Opcodes.ACONST_NULL);
-  verifyNoMoreInteractions(methodVisitor);
-  verifyZeroInteractions(instrumentationContext);
-}

@@ -1,0 +1,3 @@
+{
+  return new MethodDelegation(implementationDelegate,parameterBinders,nonNull(defaultsProvider),terminationHandler,ambiguityResolver,assigner,targetMethodCandidates);
+}

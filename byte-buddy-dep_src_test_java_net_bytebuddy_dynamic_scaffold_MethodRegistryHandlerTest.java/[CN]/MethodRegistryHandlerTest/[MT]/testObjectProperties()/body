@@ -1,6 +1,6 @@
 {
   ObjectPropertyAssertion.of(MethodRegistry.Handler.ForAbstractMethod.class).apply();
-  ObjectPropertyAssertion.of(MethodRegistry.Handler.ForInstrumentation.class).apply();
-  ObjectPropertyAssertion.of(MethodRegistry.Handler.ForInstrumentation.Compiled.class).apply();
+  ObjectPropertyAssertion.of(MethodRegistry.Handler.ForImplementation.class).apply();
+  ObjectPropertyAssertion.of(MethodRegistry.Handler.ForImplementation.Compiled.class).apply();
   ObjectPropertyAssertion.of(MethodRegistry.Handler.ForAnnotationValue.class).apply();
 }

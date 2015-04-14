@@ -1,3 +1,0 @@
-{
-  return methodDescription.getDeclaringType().equals(typeDescription) ? invokeSuper(methodRebaseResolver.resolve(methodDescription)) : Instrumentation.SpecialMethodInvocation.Simple.of(methodDescription,typeDescription.getSupertype());
-}

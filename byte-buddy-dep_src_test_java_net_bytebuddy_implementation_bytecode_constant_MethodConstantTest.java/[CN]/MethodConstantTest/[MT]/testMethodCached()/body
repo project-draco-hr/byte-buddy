@@ -1,0 +1,10 @@
+{
+  when(implementationContext.cache(any(StackManipulation.class),any(TypeDescription.class))).thenReturn(fieldDescription);
+  StackManipulation.Size size=MethodConstant.forMethod(methodDescription).cached().apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(1));
+  verify(methodVisitor).visitFieldInsn(Opcodes.GETSTATIC,BAZ,FOO,QUX);
+  verifyNoMoreInteractions(methodVisitor);
+  verify(implementationContext).cache(MethodConstant.forMethod(methodDescription),new TypeDescription.ForLoadedType(Method.class));
+  verifyNoMoreInteractions(implementationContext);
+}

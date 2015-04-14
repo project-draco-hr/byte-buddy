@@ -1,0 +1,8 @@
+{
+  Iterator<?> iterator=TargetMethodAnnotationDrivenBinder.DefaultsProvider.Empty.INSTANCE.makeIterator(implementationTarget,left,right);
+  assertThat(iterator.hasNext(),is(false));
+  verifyZeroInteractions(implementationTarget);
+  verifyZeroInteractions(left);
+  verifyZeroInteractions(right);
+  iterator.next();
+}

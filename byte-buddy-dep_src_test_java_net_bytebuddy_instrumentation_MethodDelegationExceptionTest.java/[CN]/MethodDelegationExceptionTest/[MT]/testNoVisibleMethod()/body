@@ -1,3 +1,0 @@
-{
-  instrument(Foo.class,MethodDelegation.to(new PackagePrivateMethod()));
-}

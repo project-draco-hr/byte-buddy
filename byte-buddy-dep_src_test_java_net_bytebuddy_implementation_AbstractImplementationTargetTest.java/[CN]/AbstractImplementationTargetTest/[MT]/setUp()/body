@@ -1,0 +1,26 @@
+{
+  when(finding.getTypeDescription()).thenReturn(instrumentedType);
+  when(finding.getInvokableMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(invokableMethod)));
+  when(finding.getInvokableDefaultMethods()).thenReturn(Collections.singletonMap(defaultType,Collections.singleton(defaultMethod)));
+  when(bridgeMethodResolverFactory.make(any(MethodList.class))).thenReturn(bridgeMethodResolver);
+  when(methodLookup.resolve(any(MethodDescription.class),any(Map.class),eq(bridgeMethodResolver))).then(new Answer<MethodDescription>(){
+    @Override public MethodDescription answer(    InvocationOnMock invocation) throws Throwable {
+      return (MethodDescription)invocation.getArguments()[0];
+    }
+  }
+);
+  when(invokableMethod.getDeclaringType()).thenReturn(methodType);
+  when(invokableMethod.getReturnType()).thenReturn(returnType);
+  when(returnType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(invokableMethod.getInternalName()).thenReturn(FOO);
+  when(invokableMethod.getDescriptor()).thenReturn(QUX);
+  when(defaultMethod.getInternalName()).thenReturn(QUXBAZ);
+  when(defaultMethod.getDescriptor()).thenReturn(FOOBAZ);
+  when(defaultMethod.getUniqueSignature()).thenReturn(FOOQUX);
+  when(defaultMethod.getDeclaringType()).thenReturn(defaultType);
+  when(defaultMethod.getReturnType()).thenReturn(returnType);
+  when(defaultType.isInterface()).thenReturn(true);
+  when(defaultMethod.isSpecializableFor(defaultType)).thenReturn(true);
+  when(defaultType.getInternalName()).thenReturn(BAZBAR);
+  implementationTarget=makeimplementationTarget();
+}

@@ -4,5 +4,5 @@
       return builder.method(named("toString")).intercept(FixedValue.value("transformed"));
     }
   }
-).installOn(mock(java.lang.instrument.Instrumentation.class));
+).installOn(mock(Instrumentation.class));
 }

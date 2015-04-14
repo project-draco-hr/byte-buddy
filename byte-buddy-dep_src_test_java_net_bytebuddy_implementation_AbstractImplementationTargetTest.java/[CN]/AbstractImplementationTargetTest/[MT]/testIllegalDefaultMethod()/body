@@ -1,0 +1,3 @@
+{
+  assertThat(implementationTarget.invokeDefault(defaultType,FOOBAZ).isValid(),is(false));
+}

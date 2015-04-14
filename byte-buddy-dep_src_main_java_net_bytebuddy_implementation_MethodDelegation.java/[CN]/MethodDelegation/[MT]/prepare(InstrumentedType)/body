@@ -1,0 +1,3 @@
+{
+  return implementationDelegate.prepare(instrumentedType);
+}

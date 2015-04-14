@@ -1,9 +1,0 @@
-{
-  StackManipulation stackManipulation=PrimitiveWideningDelegate.forPrimitive(sourceTypeDescription).widenTo(targetTypeDescription);
-  assertThat(stackManipulation.isValid(),is(true));
-  StackManipulation.Size size=stackManipulation.apply(methodVisitor,instrumentationContext);
-  assertThat(size.getSizeImpact(),is(sizeChange));
-  assertThat(size.getMaximalSize(),is(Math.max(0,sizeChange)));
-  verify(methodVisitor).visitInsn(opcode);
-  verifyNoMoreInteractions(methodVisitor);
-}

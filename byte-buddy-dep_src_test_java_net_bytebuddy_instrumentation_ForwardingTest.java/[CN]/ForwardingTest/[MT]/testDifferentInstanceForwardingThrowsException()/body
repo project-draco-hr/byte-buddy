@@ -1,3 +1,0 @@
-{
-  instrument(Foo.class,Forwarding.toStaticField(FOO,Qux.class));
-}

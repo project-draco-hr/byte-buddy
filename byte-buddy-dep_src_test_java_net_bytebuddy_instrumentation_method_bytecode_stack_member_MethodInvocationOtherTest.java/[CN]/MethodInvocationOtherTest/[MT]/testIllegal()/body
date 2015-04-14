@@ -1,7 +1,0 @@
-{
-  assertThat(MethodInvocation.IllegalInvocation.INSTANCE.isValid(),is(false));
-  assertThat(MethodInvocation.IllegalInvocation.INSTANCE.special(mock(TypeDescription.class)),is((StackManipulation)StackManipulation.Illegal.INSTANCE));
-  assertThat(MethodInvocation.IllegalInvocation.INSTANCE.virtual(mock(TypeDescription.class)),is((StackManipulation)StackManipulation.Illegal.INSTANCE));
-  assertThat(MethodInvocation.IllegalInvocation.INSTANCE.dynamic(FOO,mock(TypeDescription.class),mock(TypeList.class),mock(List.class)),is((StackManipulation)StackManipulation.Illegal.INSTANCE));
-  MethodInvocation.IllegalInvocation.INSTANCE.apply(mock(MethodVisitor.class),mock(Instrumentation.Context.class));
-}

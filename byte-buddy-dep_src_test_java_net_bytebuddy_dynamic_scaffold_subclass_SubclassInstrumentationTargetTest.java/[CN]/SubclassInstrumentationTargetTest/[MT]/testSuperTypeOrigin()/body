@@ -1,3 +1,0 @@
-{
-  assertThat(new SubclassInstrumentationTarget(finding,bridgeMethodResolverFactory,SubclassInstrumentationTarget.OriginTypeIdentifier.SUPER_TYPE).getOriginType(),is(finding.getTypeDescription().getSupertype()));
-}

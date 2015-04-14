@@ -1,0 +1,11 @@
+{
+  StackManipulation stackManipulation=Duplication.duplicate(typeDescription);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(stackSize.getSize()));
+  assertThat(size.getMaximalSize(),is(stackSize.getSize()));
+  if (stackSize != StackSize.ZERO) {
+    verify(methodVisitor).visitInsn(opcode);
+  }
+  verifyNoMoreInteractions(methodVisitor);
+}

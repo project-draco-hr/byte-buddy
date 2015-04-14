@@ -1,7 +1,0 @@
-{
-  super.setUp();
-  when(target.getTypeDescription()).thenReturn(targetType);
-  when(annotation.strategy()).thenReturn(instantiation);
-  when(instantiation.proxyFor(targetType,instrumentationTarget,annotationDescription)).thenReturn(stackManipulation);
-  when(annotation.constructorParameters()).thenReturn(new Class<?>[0]);
-}

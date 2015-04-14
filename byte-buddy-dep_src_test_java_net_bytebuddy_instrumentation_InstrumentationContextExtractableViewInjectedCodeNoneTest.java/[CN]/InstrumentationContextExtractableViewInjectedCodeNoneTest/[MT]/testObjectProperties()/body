@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(Instrumentation.Context.ExtractableView.InjectedCode.None.class).apply();
-}

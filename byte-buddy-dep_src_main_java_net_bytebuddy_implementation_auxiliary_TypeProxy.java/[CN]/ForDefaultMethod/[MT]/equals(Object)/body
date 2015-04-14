@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForDefaultMethod that=(ForDefaultMethod)other;
+  return serializableProxy == that.serializableProxy && implementationTarget.equals(that.implementationTarget) && proxiedType.equals(that.proxiedType);
+}

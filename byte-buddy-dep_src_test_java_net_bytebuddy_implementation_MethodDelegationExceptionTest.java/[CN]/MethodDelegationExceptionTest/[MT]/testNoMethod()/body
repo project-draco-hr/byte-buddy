@@ -1,0 +1,3 @@
+{
+  implement(Foo.class,MethodDelegation.to(Bar.class));
+}

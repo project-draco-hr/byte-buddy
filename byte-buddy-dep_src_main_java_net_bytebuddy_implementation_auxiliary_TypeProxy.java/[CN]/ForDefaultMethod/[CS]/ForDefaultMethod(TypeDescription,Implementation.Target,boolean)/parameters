@@ -1,0 +1,3 @@
+TypeDescription proxiedType
+Implementation.Target implementationTarget
+boolean serializableProxy

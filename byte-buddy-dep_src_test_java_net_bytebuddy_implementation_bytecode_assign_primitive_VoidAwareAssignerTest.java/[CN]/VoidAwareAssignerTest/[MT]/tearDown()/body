@@ -1,0 +1,4 @@
+{
+  verifyZeroInteractions(implementationContext);
+  verifyZeroInteractions(methodVisitor);
+}

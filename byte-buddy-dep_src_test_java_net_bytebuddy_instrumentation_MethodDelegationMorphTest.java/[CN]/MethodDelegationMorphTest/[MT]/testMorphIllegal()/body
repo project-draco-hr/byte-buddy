@@ -1,3 +1,0 @@
-{
-  instrument(Foo.class,MethodDelegation.to(SimpleMorphIllegal.class).appendParameterBinder(Morph.Binder.install(Morphing.class)));
-}

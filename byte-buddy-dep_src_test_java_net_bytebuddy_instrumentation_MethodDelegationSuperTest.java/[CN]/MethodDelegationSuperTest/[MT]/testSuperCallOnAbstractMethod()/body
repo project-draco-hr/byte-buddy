@@ -1,4 +1,0 @@
-{
-  DynamicType.Loaded<FooBarQuxBaz> loaded=instrument(FooBarQuxBaz.class,MethodDelegation.to(FooBar.class));
-  loaded.getLoaded().newInstance().qux();
-}

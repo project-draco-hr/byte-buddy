@@ -1,9 +1,0 @@
-{
-  this.instrumentationDelegate=instrumentationDelegate;
-  this.parameterBinders=parameterBinders;
-  this.defaultsProvider=defaultsProvider;
-  this.terminationHandler=terminationHandler;
-  this.ambiguityResolver=ambiguityResolver;
-  this.assigner=assigner;
-  this.targetMethodCandidates=isNotEmpty(targetMethodCandidates,NO_METHODS_ERROR_MESSAGE);
-}

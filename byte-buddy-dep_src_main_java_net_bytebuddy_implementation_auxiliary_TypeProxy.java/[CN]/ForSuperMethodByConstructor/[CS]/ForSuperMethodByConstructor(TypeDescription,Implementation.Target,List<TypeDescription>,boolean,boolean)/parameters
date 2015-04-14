@@ -1,0 +1,5 @@
+TypeDescription proxiedType
+Implementation.Target implementationTarget
+List<TypeDescription> constructorParameters
+boolean ignoreFinalizer
+boolean serializableProxy

@@ -1,3 +1,0 @@
-{
-  instrument(Foo.class,MethodDelegation.to(WrongParameterTypeTarget.class).defineParameterBinder(Pipe.Binder.install(ForwardingType.class)));
-}

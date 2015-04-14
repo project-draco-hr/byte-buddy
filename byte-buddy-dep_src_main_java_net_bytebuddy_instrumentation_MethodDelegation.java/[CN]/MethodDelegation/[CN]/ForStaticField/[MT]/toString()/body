@@ -1,3 +1,0 @@
-{
-  return "MethodDelegation.InstrumentationDelegate.ForStaticField{" + "fieldName='" + fieldName + '\''+ ", delegate="+ delegate+ '}';
-}

@@ -1,0 +1,14 @@
+{
+  StackManipulation stackManipulation=DefaultValue.of(typeDescription);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(StackSize.of(type).getSize()));
+  assertThat(size.getMaximalSize(),is(StackSize.of(type).getSize()));
+  if (opcode == -1) {
+    verifyZeroInteractions(methodVisitor);
+  }
+ else {
+    verify(methodVisitor).visitInsn(opcode);
+    verifyNoMoreInteractions(methodVisitor);
+  }
+}

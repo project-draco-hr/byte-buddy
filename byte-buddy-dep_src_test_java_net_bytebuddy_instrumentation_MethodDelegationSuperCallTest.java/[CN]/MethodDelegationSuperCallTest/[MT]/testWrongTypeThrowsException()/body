@@ -1,3 +1,0 @@
-{
-  instrument(Bar.class,MethodDelegation.to(IllegalAnnotation.class));
-}

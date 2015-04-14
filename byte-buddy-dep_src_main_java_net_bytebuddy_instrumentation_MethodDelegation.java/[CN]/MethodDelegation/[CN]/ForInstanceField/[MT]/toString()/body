@@ -1,3 +1,0 @@
-{
-  return "MethodDelegation.InstrumentationDelegate.ForInstanceField{" + "fieldName='" + fieldName + '\''+ ", fieldType="+ fieldType+ '}';
-}

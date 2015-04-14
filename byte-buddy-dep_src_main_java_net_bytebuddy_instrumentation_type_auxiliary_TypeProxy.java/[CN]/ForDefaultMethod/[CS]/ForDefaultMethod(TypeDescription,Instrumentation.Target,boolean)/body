@@ -1,5 +1,0 @@
-{
-  this.proxiedType=proxiedType;
-  this.instrumentationTarget=instrumentationTarget;
-  this.serializableProxy=serializableProxy;
-}

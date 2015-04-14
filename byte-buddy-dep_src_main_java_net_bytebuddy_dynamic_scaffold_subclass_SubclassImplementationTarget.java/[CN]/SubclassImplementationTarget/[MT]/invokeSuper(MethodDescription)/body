@@ -1,0 +1,9 @@
+{
+  if (methodDescription.isConstructor()) {
+    methodDescription=this.superConstructors.get(methodDescription.getParameters().asTypeList());
+    if (methodDescription == null) {
+      return Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
+    }
+  }
+  return Implementation.SpecialMethodInvocation.Simple.of(methodDescription,typeDescription.getSupertype());
+}

@@ -1,4 +1,0 @@
-{
-  when(stackManipulation.apply(methodVisitor,instrumentationContext)).thenReturn(size);
-  when(stackManipulation.isValid()).thenReturn(true);
-}

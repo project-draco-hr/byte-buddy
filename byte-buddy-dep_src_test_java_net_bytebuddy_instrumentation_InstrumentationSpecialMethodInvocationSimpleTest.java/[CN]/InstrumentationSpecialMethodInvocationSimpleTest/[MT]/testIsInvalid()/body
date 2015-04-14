@@ -1,6 +1,0 @@
-{
-  StackManipulation stackManipulation=mock(StackManipulation.class);
-  when(stackManipulation.isValid()).thenReturn(false);
-  Instrumentation.SpecialMethodInvocation specialMethodInvocation=new Instrumentation.SpecialMethodInvocation.Simple(new MethodDescription.Latent(FOO,mock(TypeDescription.class),mock(TypeDescription.class),new TypeList.Empty(),Opcodes.ACC_PUBLIC,Collections.<TypeDescription>emptyList()),mock(TypeDescription.class),stackManipulation);
-  assertThat(specialMethodInvocation.isValid(),is(false));
-}

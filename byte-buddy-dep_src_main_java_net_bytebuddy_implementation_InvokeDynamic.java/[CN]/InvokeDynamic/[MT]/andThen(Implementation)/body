@@ -1,0 +1,3 @@
+{
+  return new Implementation.Compound(new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider,TerminationHandler.ForChainedInvocation.INSTANCE,assigner,dynamicallyTyped),nonNull(implementation));
+}

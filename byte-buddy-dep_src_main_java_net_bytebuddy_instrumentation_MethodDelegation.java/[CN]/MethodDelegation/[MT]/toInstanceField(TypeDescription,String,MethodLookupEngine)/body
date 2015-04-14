@@ -1,3 +1,0 @@
-{
-  return new MethodDelegation(new InstrumentationDelegate.ForInstanceField(nonNull(typeDescription),isValidIdentifier(fieldName)),defaultParameterBinders(),defaultDefaultsProvider(),TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,defaultAmbiguityResolver(),defaultAssigner(),methodLookupEngine.process(typeDescription).getInvokableMethods().filter(not(isStatic().or(isPrivate()).or(isConstructor()))));
-}

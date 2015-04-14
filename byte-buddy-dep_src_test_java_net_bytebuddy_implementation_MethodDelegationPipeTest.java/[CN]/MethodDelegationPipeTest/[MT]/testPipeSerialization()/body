@@ -1,0 +1,5 @@
+{
+  DynamicType.Loaded<Foo> loaded=implement(Foo.class,MethodDelegation.to(new SerializableForwardingInterceptor(new Foo(FOO))).defineParameterBinder(Pipe.Binder.install(ForwardingType.class)));
+  Foo instance=loaded.getLoaded().newInstance();
+  assertThat(instance.foo(QUX),is(FOO + QUX));
+}

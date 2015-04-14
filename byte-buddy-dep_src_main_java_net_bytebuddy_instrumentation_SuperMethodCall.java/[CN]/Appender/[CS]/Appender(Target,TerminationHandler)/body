@@ -1,4 +1,0 @@
-{
-  this.instrumentationTarget=instrumentationTarget;
-  this.terminationHandler=terminationHandler;
-}

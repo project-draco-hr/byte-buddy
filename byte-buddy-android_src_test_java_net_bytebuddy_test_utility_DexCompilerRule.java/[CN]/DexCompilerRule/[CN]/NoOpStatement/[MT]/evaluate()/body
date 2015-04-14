@@ -1,3 +1,0 @@
-{
-  Logger.getAnonymousLogger().warning("Ignored test case that requires dx.jar on class path");
-}

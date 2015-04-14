@@ -1,0 +1,22 @@
+{
+  when(implementationTarget.getTypeDescription()).thenReturn(foo);
+  when(invocationFactory.invoke(eq(implementationTarget),eq(foo),any(MethodDescription.class))).thenReturn(specialMethodInvocation);
+  when(specialMethodInvocation.isValid()).thenReturn(true);
+  when(specialMethodInvocation.apply(any(MethodVisitor.class),any(Implementation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
+  when(methodAccessorFactory.registerAccessorFor(specialMethodInvocation)).thenReturn(proxyMethod);
+  StackManipulation stackManipulation=new TypeProxy.ForSuperMethodByReflectionFactory(foo,implementationTarget,true,false);
+  MethodVisitor methodVisitor=mock(MethodVisitor.class);
+  Implementation.Context implementationContext=mock(Implementation.Context.class);
+  when(implementationContext.register(any(AuxiliaryType.class))).thenReturn(new TypeDescription.ForLoadedType(FooProxyMake.class));
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(3));
+  verify(implementationContext).register(any(AuxiliaryType.class));
+  verifyNoMoreInteractions(implementationContext);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESTATIC,Type.getInternalName(FooProxyMake.class),TypeProxy.REFLECTION_METHOD,Type.getMethodDescriptor(FooProxyMake.class.getDeclaredMethod("make")),false);
+  verify(methodVisitor).visitInsn(Opcodes.DUP);
+  verify(methodVisitor).visitFieldInsn(Opcodes.PUTFIELD,Type.getInternalName(FooProxyMake.class),TypeProxy.INSTANCE_FIELD,Type.getDescriptor(Void.class));
+  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_0);
+  verifyNoMoreInteractions(methodVisitor);
+}

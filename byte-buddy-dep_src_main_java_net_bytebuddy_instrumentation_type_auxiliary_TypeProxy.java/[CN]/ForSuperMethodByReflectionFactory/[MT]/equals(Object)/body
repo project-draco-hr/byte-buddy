@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  ForSuperMethodByReflectionFactory that=(ForSuperMethodByReflectionFactory)other;
-  return ignoreFinalizer == that.ignoreFinalizer && instrumentationTarget.equals(that.instrumentationTarget) && proxiedType.equals(that.proxiedType) && serializableProxy == that.serializableProxy;
-}

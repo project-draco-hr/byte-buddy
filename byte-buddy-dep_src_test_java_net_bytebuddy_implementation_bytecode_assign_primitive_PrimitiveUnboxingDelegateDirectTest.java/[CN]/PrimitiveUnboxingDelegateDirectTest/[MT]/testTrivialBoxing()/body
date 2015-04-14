@@ -1,0 +1,11 @@
+{
+  StackManipulation stackManipulation=PrimitiveUnboxingDelegate.forReferenceType(wrapperTypeDescription).assignUnboxedTo(primitiveTypeDescription,chainedAssigner,false);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(sizeChange));
+  assertThat(size.getMaximalSize(),is(sizeChange));
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,wrapperTypeDescription.getInternalName(),unboxingMethodName,unboxingMethodDescriptor,false);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(chainedAssigner);
+  verifyZeroInteractions(this.stackManipulation);
+}

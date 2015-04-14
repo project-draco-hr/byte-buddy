@@ -1,3 +1,0 @@
-{
-  SuperCall.Binder.INSTANCE.bind(annotationDescription,source,target,instrumentationTarget,assigner);
-}

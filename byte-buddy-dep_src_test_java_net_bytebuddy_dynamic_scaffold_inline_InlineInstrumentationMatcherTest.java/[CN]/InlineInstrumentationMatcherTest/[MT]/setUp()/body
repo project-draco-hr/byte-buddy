@@ -1,3 +1,0 @@
-{
-  latentMethodMatcher=new InlineInstrumentationMatcher(ignoredMethods,predefinedMethods);
-}

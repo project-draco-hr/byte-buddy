@@ -1,3 +1,0 @@
-{
-  return "SubclassInstrumentationTarget.Factory{" + "bridgeMethodResolverFactory=" + bridgeMethodResolverFactory + "originTypeIdentifier="+ originTypeIdentifier+ '}';
-}

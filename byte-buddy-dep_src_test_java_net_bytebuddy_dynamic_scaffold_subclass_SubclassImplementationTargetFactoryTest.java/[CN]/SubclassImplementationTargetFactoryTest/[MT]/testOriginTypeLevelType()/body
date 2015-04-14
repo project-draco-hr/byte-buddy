@@ -1,0 +1,3 @@
+{
+  assertThat(new SubclassImplementationTarget.Factory(bridgeMethodResolverFactory,SubclassImplementationTarget.OriginTypeIdentifier.LEVEL_TYPE).make(finding,methodList).getOriginType(),is(instrumentedType));
+}

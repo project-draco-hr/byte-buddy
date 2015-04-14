@@ -1,0 +1,12 @@
+{
+  Object token=new Object();
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=new MethodDelegationBinder.ParameterBinding.Unique<Object>(stackManipulation,token);
+  assertThat(parameterBinding.isValid(),is(true));
+  assertThat(parameterBinding.getIdentificationToken(),is(token));
+  assertThat(parameterBinding.apply(methodVisitor,implementationContext),is(size));
+  verify(stackManipulation).isValid();
+  verify(stackManipulation).apply(methodVisitor,implementationContext);
+  verifyNoMoreInteractions(stackManipulation);
+  verifyZeroInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+}

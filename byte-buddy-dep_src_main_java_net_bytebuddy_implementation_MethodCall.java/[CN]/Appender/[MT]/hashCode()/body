@@ -1,0 +1,3 @@
+{
+  return implementationTarget.hashCode() + 31 * MethodCall.this.hashCode();
+}

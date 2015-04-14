@@ -1,0 +1,7 @@
+{
+  when(target.getIndex()).thenReturn(0);
+  TypeDescription targetType=mock(TypeDescription.class);
+  when(targetType.isArray()).thenReturn(false);
+  when(target.getTypeDescription()).thenReturn(targetType);
+  AllArguments.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+}

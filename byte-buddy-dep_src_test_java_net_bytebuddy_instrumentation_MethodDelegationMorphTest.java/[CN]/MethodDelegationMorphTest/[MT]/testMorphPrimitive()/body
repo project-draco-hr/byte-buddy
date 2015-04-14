@@ -1,5 +1,0 @@
-{
-  DynamicType.Loaded<Qux> loaded=instrument(Qux.class,MethodDelegation.to(new PrimitiveMorph(BAZ)).appendParameterBinder(Morph.Binder.install(Morphing.class)));
-  Qux instance=loaded.getLoaded().newInstance();
-  assertThat(instance.foo(0),is(BAZ * 2L));
-}

@@ -1,0 +1,8 @@
+{
+  ByteCodeAppender[] byteCodeAppender=new ByteCodeAppender[implementation.length];
+  int index=0;
+  for (  Implementation implementation : this.implementation) {
+    byteCodeAppender[index++]=implementation.appender(implementationTarget);
+  }
+  return new ByteCodeAppender.Compound(byteCodeAppender);
+}

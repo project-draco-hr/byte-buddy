@@ -1,0 +1,5 @@
+{
+  DynamicType.Loaded<Foo> loaded=implement(Foo.class,MethodDelegation.to(SimpleMorphSerializable.class).appendParameterBinder(Morph.Binder.install(Morphing.class)));
+  Foo instance=loaded.getLoaded().newInstance();
+  assertThat(instance.foo(FOO),is(QUX + BAR));
+}

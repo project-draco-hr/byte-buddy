@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  TypeProxy typeProxy=(TypeProxy)other;
-  return ignoreFinalizer == typeProxy.ignoreFinalizer && serializableProxy == typeProxy.serializableProxy && instrumentationTarget.equals(typeProxy.instrumentationTarget) && invocationFactory.equals(typeProxy.invocationFactory) && proxiedType.equals(typeProxy.proxiedType);
-}

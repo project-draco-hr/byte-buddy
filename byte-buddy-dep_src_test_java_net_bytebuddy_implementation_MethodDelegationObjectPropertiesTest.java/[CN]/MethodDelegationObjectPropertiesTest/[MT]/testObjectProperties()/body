@@ -1,0 +1,13 @@
+{
+  ObjectPropertyAssertion.of(MethodDelegation.class).refine(new ObjectPropertyAssertion.Refinement<List<?>>(){
+    @Override public void apply(    List<?> mock){
+      when(mock.size()).thenReturn(1);
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(MethodDelegation.Appender.class).apply();
+  ObjectPropertyAssertion.of(MethodDelegation.ImplementationDelegate.ForStaticField.class).apply();
+  ObjectPropertyAssertion.of(MethodDelegation.ImplementationDelegate.ForInstanceField.class).apply();
+  ObjectPropertyAssertion.of(MethodDelegation.ImplementationDelegate.ForConstruction.class).apply();
+  ObjectPropertyAssertion.of(MethodDelegation.ImplementationDelegate.ForStaticMethod.class).apply();
+}

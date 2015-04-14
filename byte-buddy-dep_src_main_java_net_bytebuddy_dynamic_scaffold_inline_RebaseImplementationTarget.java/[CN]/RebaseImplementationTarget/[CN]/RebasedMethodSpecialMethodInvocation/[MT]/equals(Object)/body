@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (!(other instanceof Implementation.SpecialMethodInvocation))   return false;
+  Implementation.SpecialMethodInvocation specialMethodInvocation=(Implementation.SpecialMethodInvocation)other;
+  return isValid() == specialMethodInvocation.isValid() && instrumentedType.equals(specialMethodInvocation.getTypeDescription()) && methodDescription.getInternalName().equals(specialMethodInvocation.getMethodDescription().getInternalName()) && methodDescription.getParameters().asTypeList().equals(specialMethodInvocation.getMethodDescription().getParameters().asTypeList()) && methodDescription.getReturnType().equals(specialMethodInvocation.getMethodDescription().getReturnType());
+}

@@ -1,0 +1,13 @@
+{
+  when(methodInvoker.invoke(any(MethodDescription.class))).thenReturn(legalStackManipulation);
+  when(methodParameterList.size()).thenReturn(2);
+  MethodDelegationBinder.MethodBinding.Builder builder=new MethodDelegationBinder.MethodBinding.Builder(methodInvoker,methodDescription);
+  assertThat(builder.append(MethodDelegationBinder.ParameterBinding.Unique.of(legalStackManipulation,new Object())),is(true));
+  assertThat(builder.append(MethodDelegationBinder.ParameterBinding.Unique.of(legalStackManipulation,new Object())),is(true));
+  MethodDelegationBinder.MethodBinding methodBinding=builder.build(legalStackManipulation);
+  assertThat(methodBinding.isValid(),is(true));
+  assertThat(methodBinding.getTarget(),is(methodDescription));
+  methodBinding.apply(methodVisitor,implementationContext);
+  verify(legalStackManipulation,times(4)).apply(methodVisitor,implementationContext);
+  verifyZeroInteractions(methodVisitor);
+}

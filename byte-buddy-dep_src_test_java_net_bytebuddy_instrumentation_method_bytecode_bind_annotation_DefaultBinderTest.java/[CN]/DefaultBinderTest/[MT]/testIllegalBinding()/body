@@ -1,5 +1,0 @@
-{
-  when(targetType.isInterface()).thenReturn(true);
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Default.Binder.INSTANCE.bind(annotationDescription,source,target,instrumentationTarget,assigner);
-  assertThat(parameterBinding.isValid(),is(false));
-}

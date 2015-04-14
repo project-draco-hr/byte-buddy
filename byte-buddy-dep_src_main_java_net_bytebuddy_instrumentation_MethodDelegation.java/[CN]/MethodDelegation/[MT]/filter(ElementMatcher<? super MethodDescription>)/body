@@ -1,3 +1,0 @@
-{
-  return new MethodDelegation(instrumentationDelegate,parameterBinders,defaultsProvider,terminationHandler,ambiguityResolver,assigner,isNotEmpty(targetMethodCandidates.filter(nonNull(methodMatcher)),NO_METHODS_ERROR_MESSAGE));
-}

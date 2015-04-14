@@ -1,0 +1,7 @@
+{
+  DynamicType.Loaded<?> loaded=implement(classLoader.loadClass(SINGLE_DEFAULT_METHOD_CLASS),DefaultMethodCall.prioritize(classLoader.loadClass(SINGLE_DEFAULT_METHOD)),classLoader,isMethod().and(not(isDeclaredBy(Object.class))),classLoader.loadClass(SINGLE_DEFAULT_METHOD),classLoader.loadClass(CONFLICTING_INTERFACE));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  Method method=loaded.getLoaded().getDeclaredMethod(FOO);
+  Object instance=loaded.getLoaded().newInstance();
+  assertThat(method.invoke(instance),is((Object)FOO));
+}

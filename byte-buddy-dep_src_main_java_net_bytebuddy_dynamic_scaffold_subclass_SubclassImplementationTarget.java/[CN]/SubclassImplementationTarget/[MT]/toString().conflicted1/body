@@ -1,0 +1,3 @@
+{
+  return "SubclassImplementationTarget.OriginTypeIdentifier." + name();
+}

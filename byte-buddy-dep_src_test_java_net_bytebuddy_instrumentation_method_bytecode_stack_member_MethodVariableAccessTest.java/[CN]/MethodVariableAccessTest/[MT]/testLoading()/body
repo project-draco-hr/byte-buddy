@@ -1,9 +1,0 @@
-{
-  StackManipulation stackManipulation=MethodVariableAccess.forType(typeDescription).loadOffset(4);
-  assertThat(stackManipulation.isValid(),is(true));
-  StackManipulation.Size size=stackManipulation.apply(methodVisitor,instrumentationContext);
-  assertThat(size.getSizeImpact(),is(this.size));
-  assertThat(size.getMaximalSize(),is(this.size));
-  verify(methodVisitor).visitVarInsn(opcode,4);
-  verifyNoMoreInteractions(methodVisitor);
-}

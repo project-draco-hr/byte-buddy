@@ -1,0 +1,3 @@
+{
+  implement(InstanceMethod.class,MethodCall.invoke(StaticIncompatibleExternalMethod.class.getDeclaredMethod("bar",String.class)),InstanceMethod.class.getClassLoader(),named(FOO));
+}

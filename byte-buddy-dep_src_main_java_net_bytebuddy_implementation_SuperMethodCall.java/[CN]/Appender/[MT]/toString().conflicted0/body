@@ -1,0 +1,3 @@
+{
+  return "SuperMethodCall.Appender{" + "implementationTarget=" + implementationTarget + ", terminationHandler="+ terminationHandler+ '}';
+}

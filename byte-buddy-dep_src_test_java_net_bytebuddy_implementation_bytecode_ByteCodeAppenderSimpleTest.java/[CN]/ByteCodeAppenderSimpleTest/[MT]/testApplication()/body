@@ -1,0 +1,10 @@
+{
+  ByteCodeAppender byteCodeAppender=new ByteCodeAppender.Simple(first,second);
+  ByteCodeAppender.Size size=byteCodeAppender.apply(methodVisitor,implementationContext,methodDescription);
+  assertThat(size.getLocalVariableSize(),is(STACK_SIZE));
+  assertThat(size.getOperandStackSize(),is(0));
+  verify(first).apply(methodVisitor,implementationContext);
+  verifyNoMoreInteractions(first);
+  verify(second).apply(methodVisitor,implementationContext);
+  verifyNoMoreInteractions(second);
+}

@@ -1,0 +1,3 @@
+{
+  return "TypeProxy.ForDefaultMethod{" + "proxiedType=" + proxiedType + ", implementationTarget="+ implementationTarget+ ", serializableProxy="+ serializableProxy+ '}';
+}

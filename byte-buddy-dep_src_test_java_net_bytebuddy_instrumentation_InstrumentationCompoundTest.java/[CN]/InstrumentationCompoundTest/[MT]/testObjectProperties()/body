@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(Instrumentation.Compound.class).apply();
-}

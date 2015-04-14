@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  when(target.getTypeDescription()).thenReturn(targetParameterType);
+  when(implementationTarget.invokeSuper(eq(source),any(Implementation.Target.MethodLookup.class))).thenReturn(specialMethodInvocation);
+}

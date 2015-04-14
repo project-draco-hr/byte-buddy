@@ -1,0 +1,21 @@
+{
+  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
+  FieldDescription firstField=implementationContext.cache(firstFieldValue,firstFieldType);
+  assertThat(implementationContext.cache(firstFieldValue,firstFieldType),is(firstField));
+  FieldDescription secondField=implementationContext.cache(secondFieldValue,secondFieldType);
+  assertThat(implementationContext.cache(secondFieldValue,secondFieldType),is(secondField));
+  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIP);
+  when(typeInitializer.expandWith(any(StackManipulation.class))).thenReturn(otherTypeInitializer);
+  when(otherTypeInitializer.expandWith(any(StackManipulation.class))).thenReturn(thirdTypeInitializer);
+  when(thirdTypeInitializer.terminate()).thenReturn(terminationAppender);
+  when(thirdTypeInitializer.isDefined()).thenReturn(true);
+  implementationContext.drain(classVisitor,methodPool,injectedCode);
+  verify(classVisitor).visitField(eq(Implementation.Context.ExtractableView.FIELD_CACHE_MODIFIER),Mockito.startsWith(Implementation.Context.Default.FIELD_CACHE_PREFIX),eq(BAR),Mockito.isNull(String.class),Mockito.isNull(Object.class));
+  verify(classVisitor).visitField(eq(Implementation.Context.ExtractableView.FIELD_CACHE_MODIFIER),Mockito.startsWith(Implementation.Context.Default.FIELD_CACHE_PREFIX),eq(QUX),Mockito.isNull(String.class),Mockito.isNull(Object.class));
+  verify(typeInitializer).expandWith(any(StackManipulation.class));
+  verify(otherTypeInitializer).expandWith(any(StackManipulation.class));
+  verify(thirdTypeInitializer).terminate();
+  verify(thirdTypeInitializer).isDefined();
+  verify(terminationAppender).apply(methodVisitor,implementationContext);
+  verifyNoMoreInteractions(terminationAppender);
+}

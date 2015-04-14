@@ -1,0 +1,6 @@
+{
+  when(target.getTypeDescription()).thenReturn(targetMethodType);
+  when(source.isStatic()).thenReturn(true);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=binder.bind(annotationDescription,source,target,implementationTarget,assigner);
+  assertThat(parameterBinding.isValid(),is(false));
+}

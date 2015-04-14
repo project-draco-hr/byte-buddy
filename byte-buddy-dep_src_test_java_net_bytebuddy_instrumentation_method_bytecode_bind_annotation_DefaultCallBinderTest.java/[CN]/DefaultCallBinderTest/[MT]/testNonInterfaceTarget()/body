@@ -1,5 +1,0 @@
-{
-  when(targetParameterType.represents(any(Class.class))).thenReturn(true);
-  doReturn(NON_INTERFACE_TYPE).when(annotation).targetType();
-  DefaultCall.Binder.INSTANCE.bind(annotationDescription,source,target,instrumentationTarget,assigner);
-}

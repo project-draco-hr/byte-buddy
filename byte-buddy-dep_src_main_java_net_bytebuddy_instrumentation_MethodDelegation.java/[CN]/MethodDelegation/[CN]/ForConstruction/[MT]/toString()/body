@@ -1,3 +1,0 @@
-{
-  return "MethodDelegation.InstrumentationDelegate.ForConstruction{" + "typeDescription=" + typeDescription + '}';
-}

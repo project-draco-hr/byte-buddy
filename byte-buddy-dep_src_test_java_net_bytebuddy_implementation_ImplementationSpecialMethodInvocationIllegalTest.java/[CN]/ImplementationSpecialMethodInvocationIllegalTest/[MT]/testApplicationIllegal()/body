@@ -1,0 +1,3 @@
+{
+  Implementation.SpecialMethodInvocation.Illegal.INSTANCE.apply(methodVisitor,implementationContext);
+}

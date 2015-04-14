@@ -1,3 +1,0 @@
-{
-  return "MethodCall.Appender{" + "methodCall=" + MethodCall.this + ", instrumentationTarget="+ instrumentationTarget+ '}';
-}

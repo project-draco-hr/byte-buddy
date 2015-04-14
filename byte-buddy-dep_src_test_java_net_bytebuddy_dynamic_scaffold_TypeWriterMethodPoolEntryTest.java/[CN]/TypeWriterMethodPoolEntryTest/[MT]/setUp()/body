@@ -10,6 +10,6 @@
   when(parameterDescription.getName()).thenReturn(FOO);
   when(parameterDescription.getModifiers()).thenReturn(MODIFIERS);
   when(methodVisitor.visitAnnotationDefault()).thenReturn(annotationVisitor);
-  when(byteCodeAppender.apply(methodVisitor,instrumentationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(ONE,TWO));
-  when(otherAppender.apply(methodVisitor,instrumentationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(ONE * MULTIPLIER,TWO * MULTIPLIER));
+  when(byteCodeAppender.apply(methodVisitor,implementationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(ONE,TWO));
+  when(otherAppender.apply(methodVisitor,implementationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(ONE * MULTIPLIER,TWO * MULTIPLIER));
 }

@@ -2,4 +2,10 @@
   ClassVisitorWrapper.Chain chain=new ClassVisitorWrapper.Chain();
   chain=chain.append(first).append(append).prepend(prepend);
   chain.wrap(classVisitor);
+  verify(prepend).wrap(classVisitor);
+  verifyNoMoreInteractions(prepend);
+  verify(first).wrap(classVisitor);
+  verifyNoMoreInteractions(first);
+  verify(append).wrap(classVisitor);
+  verifyNoMoreInteractions(append);
 }

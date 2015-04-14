@@ -1,0 +1,3 @@
+{
+  implement(Bar.class,FieldAccessor.ofBeanProperty());
+}

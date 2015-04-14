@@ -1,3 +1,0 @@
-{
-  return new MethodDelegation(instrumentationDelegate,parameterBinders,defaultsProvider,terminationHandler,MethodDelegationBinder.AmbiguityResolver.Chain.of(nonNull(ambiguityResolver)),assigner,targetMethodCandidates);
-}

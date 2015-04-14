@@ -1,0 +1,12 @@
+{
+  DynamicType.Loaded<SuperMethodInvocation> loaded=implement(SuperMethodInvocation.class,MethodCall.invokeSuper(),SuperMethodInvocation.class.getClassLoader(),takesArguments(0).and(named(FOO)));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredMethod(FOO),not(nullValue(Method.class)));
+  assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
+  SuperMethodInvocation instance=loaded.getLoaded().newInstance();
+  assertNotEquals(SuperMethodInvocation.class,instance.getClass());
+  assertThat(instance,instanceOf(SuperMethodInvocation.class));
+  assertThat(instance.foo(),is(FOO));
+}

@@ -1,3 +1,0 @@
-{
-  StackManipulation.Illegal.INSTANCE.apply(methodVisitor,instrumentationContext);
-}

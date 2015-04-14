@@ -1,3 +1,0 @@
-{
-  return new MethodDelegation(instrumentationDelegate,join(parameterBinders,nonNull(parameterBinder)),defaultsProvider,terminationHandler,ambiguityResolver,assigner,targetMethodCandidates);
-}

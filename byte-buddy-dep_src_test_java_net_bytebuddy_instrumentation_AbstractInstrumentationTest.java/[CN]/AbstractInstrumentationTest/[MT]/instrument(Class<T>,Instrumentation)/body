@@ -1,3 +1,0 @@
-{
-  return instrument(target,instrumentation,target.getClassLoader(),isDeclaredBy(target));
-}

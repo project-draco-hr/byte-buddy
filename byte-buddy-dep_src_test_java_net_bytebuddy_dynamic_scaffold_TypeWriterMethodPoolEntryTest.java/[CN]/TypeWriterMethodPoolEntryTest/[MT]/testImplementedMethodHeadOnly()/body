@@ -4,7 +4,7 @@
   TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForImplementation(byteCodeAppender,methodAttributeAppender);
   entry.applyHead(methodVisitor,methodDescription);
   verifyNoMoreInteractions(methodVisitor);
-  verifyZeroInteractions(instrumentationContext);
+  verifyZeroInteractions(implementationContext);
   verifyZeroInteractions(methodAttributeAppender);
   verifyZeroInteractions(byteCodeAppender);
 }

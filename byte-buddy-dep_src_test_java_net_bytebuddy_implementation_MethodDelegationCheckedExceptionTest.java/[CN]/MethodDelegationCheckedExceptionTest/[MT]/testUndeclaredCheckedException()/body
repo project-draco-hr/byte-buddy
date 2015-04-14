@@ -1,0 +1,3 @@
+{
+  implement(Foo.class,MethodDelegation.to(Foo.class)).getLoaded().newInstance().bar();
+}

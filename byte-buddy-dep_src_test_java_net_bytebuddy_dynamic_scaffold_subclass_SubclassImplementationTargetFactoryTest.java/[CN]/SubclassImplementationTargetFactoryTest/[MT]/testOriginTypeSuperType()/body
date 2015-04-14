@@ -1,0 +1,3 @@
+{
+  assertThat(new SubclassImplementationTarget.Factory(bridgeMethodResolverFactory,SubclassImplementationTarget.OriginTypeIdentifier.SUPER_TYPE).make(finding,methodList).getOriginType(),is(superType));
+}

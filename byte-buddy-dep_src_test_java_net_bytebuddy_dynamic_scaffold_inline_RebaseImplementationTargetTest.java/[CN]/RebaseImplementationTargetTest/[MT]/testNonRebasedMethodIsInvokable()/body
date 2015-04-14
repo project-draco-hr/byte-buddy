@@ -1,0 +1,17 @@
+{
+  when(nonRebasedMethod.isSpecializableFor(instrumentedType)).thenReturn(true);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(nonRebasedMethod,methodLookup);
+  verify(methodRebaseResolver).resolve(nonRebasedMethod);
+  verifyNoMoreInteractions(methodRebaseResolver);
+  assertThat(specialMethodInvocation.isValid(),is(true));
+  assertThat(specialMethodInvocation.getMethodDescription(),is(nonRebasedMethod));
+  assertThat(specialMethodInvocation.getTypeDescription(),is(instrumentedType));
+  MethodVisitor methodVisitor=mock(MethodVisitor.class);
+  Implementation.Context implementationContext=mock(Implementation.Context.class);
+  StackManipulation.Size size=specialMethodInvocation.apply(methodVisitor,implementationContext);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,BAR,BAZ,FOOBAR,false);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+}

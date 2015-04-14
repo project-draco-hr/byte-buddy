@@ -1,0 +1,4 @@
+{
+  verifyZeroInteractions(chainedAssigner);
+  verifyZeroInteractions(implementationContext);
+}

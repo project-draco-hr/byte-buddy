@@ -1,0 +1,6 @@
+{
+  MethodRebaseResolver.Resolution resolution=mock(MethodRebaseResolver.Resolution.class);
+  when(resolution.getAdditionalArguments()).thenReturn(StackManipulation.LegalTrivial.INSTANCE);
+  when(resolution.getResolvedMethod()).thenReturn(new MethodDescription.Latent(name,mock(TypeDescription.class),returnType,parameterTypes,Opcodes.ACC_PUBLIC,new TypeList.Empty()));
+  return new RebaseImplementationTarget.RebasedMethodSpecialMethodInvocation(resolution,targetType);
+}

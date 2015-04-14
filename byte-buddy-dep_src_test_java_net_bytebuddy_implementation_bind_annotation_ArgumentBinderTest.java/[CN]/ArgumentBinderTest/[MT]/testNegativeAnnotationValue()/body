@@ -1,0 +1,4 @@
+{
+  when(annotation.value()).thenReturn(-1);
+  Argument.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+}

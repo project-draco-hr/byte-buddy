@@ -1,8 +1,8 @@
 {
-  instrumentations=new LinkedList<ClassFileTransformer>();
+  classFileTransformers=new LinkedList<ClassFileTransformer>();
   doAnswer(new Answer<Object>(){
     @Override public Object answer(    InvocationOnMock invocation) throws Throwable {
-      return instrumentations.add((ClassFileTransformer)invocation.getArguments()[0]);
+      return classFileTransformers.add((ClassFileTransformer)invocation.getArguments()[0]);
     }
   }
 ).when(instrumentation).addTransformer(any(ClassFileTransformer.class),anyBoolean());

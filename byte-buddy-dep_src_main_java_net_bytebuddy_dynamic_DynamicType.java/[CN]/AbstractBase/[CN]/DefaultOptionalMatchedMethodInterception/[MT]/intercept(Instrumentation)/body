@@ -1,3 +1,0 @@
-{
-  return materialize().method(isDeclaredBy(anyOf((Object[])interfaceType))).intercept(nonNull(instrumentation));
-}

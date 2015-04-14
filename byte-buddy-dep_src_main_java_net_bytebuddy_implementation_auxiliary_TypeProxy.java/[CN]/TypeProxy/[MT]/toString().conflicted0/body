@@ -1,0 +1,3 @@
+{
+  return "TypeProxy{" + "proxiedType=" + proxiedType + ", implementationTarget="+ implementationTarget+ ", invocationFactory="+ invocationFactory+ ", ignoreFinalizer="+ ignoreFinalizer+ ", serializableProxy="+ serializableProxy+ '}';
+}

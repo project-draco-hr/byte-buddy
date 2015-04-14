@@ -1,0 +1,3 @@
+{
+  return "Implementation.Compound{implementation=" + Arrays.toString(implementation) + '}';
+}

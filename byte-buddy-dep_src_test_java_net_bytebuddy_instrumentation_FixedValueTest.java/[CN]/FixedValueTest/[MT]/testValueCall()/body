@@ -1,3 +1,0 @@
-{
-  assertType(instrument(Foo.class,FixedValue.value(bar)));
-}

@@ -1,3 +1,0 @@
-Instrumentation.Target instrumentationTarget
-MethodDescription source
-Iterable<? extends MethodDescription> targets

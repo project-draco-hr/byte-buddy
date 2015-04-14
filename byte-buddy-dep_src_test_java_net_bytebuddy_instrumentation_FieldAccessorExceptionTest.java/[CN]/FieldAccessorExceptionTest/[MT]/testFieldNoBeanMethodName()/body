@@ -1,3 +1,0 @@
-{
-  instrument(Qux.class,FieldAccessor.ofBeanProperty());
-}

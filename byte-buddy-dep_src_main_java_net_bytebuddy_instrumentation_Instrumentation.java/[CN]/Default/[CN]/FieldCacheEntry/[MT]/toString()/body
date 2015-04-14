@@ -1,3 +1,0 @@
-{
-  return "Instrumentation.Context.Default.FieldCacheEntry{" + "fieldValue=" + fieldValue + ", fieldType="+ fieldType+ '}';
-}

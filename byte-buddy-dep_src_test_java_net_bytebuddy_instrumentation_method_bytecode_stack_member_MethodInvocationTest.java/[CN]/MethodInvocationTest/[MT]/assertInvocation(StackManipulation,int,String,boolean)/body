@@ -1,8 +1,0 @@
-{
-  assertThat(stackManipulation.isValid(),is(true));
-  StackManipulation.Size size=stackManipulation.apply(methodVisitor,instrumentationContext);
-  assertThat(size.getSizeImpact(),is(expectedSize));
-  assertThat(size.getMaximalSize(),is(Math.max(0,expectedSize)));
-  verify(methodVisitor).visitMethodInsn(opcode,typeName,BAR,QUX,interfaceInvocation);
-  verifyNoMoreInteractions(methodVisitor);
-}

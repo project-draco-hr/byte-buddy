@@ -1,0 +1,7 @@
+{
+  TypeDescription primitiveType=new TypeDescription.ForLoadedType(int.class);
+  TypeDescription otherPrimitiveType=new TypeDescription.ForLoadedType(long.class);
+  StackManipulation stackManipulation=ReferenceTypeAwareAssigner.INSTANCE.assign(primitiveType,otherPrimitiveType,true);
+  assertThat(stackManipulation.isValid(),is(false));
+  stackManipulation.apply(methodVisitor,implementationContext);
+}

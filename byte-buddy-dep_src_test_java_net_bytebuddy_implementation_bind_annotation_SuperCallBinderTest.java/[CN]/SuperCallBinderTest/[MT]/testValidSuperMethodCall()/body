@@ -1,0 +1,8 @@
+{
+  when(targetParameterType.represents(any(Class.class))).thenReturn(true);
+  when(specialMethodInvocation.isValid()).thenReturn(true);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=SuperCall.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+  verify(implementationTarget).invokeSuper(source,Implementation.Target.MethodLookup.Default.EXACT);
+  verifyNoMoreInteractions(implementationTarget);
+  assertThat(parameterBinding.isValid(),is(true));
+}

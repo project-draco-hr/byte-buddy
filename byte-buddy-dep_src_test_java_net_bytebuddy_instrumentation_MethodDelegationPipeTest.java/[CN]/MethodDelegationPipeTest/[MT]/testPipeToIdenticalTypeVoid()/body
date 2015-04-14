@@ -1,6 +1,0 @@
-{
-  DynamicType.Loaded<Qux> loaded=instrument(Qux.class,MethodDelegation.to(new ForwardingInterceptor(new Qux())).defineParameterBinder(Pipe.Binder.install(ForwardingType.class)));
-  Qux instance=loaded.getLoaded().newInstance();
-  instance.foo();
-  instance.assertZeroCalls();
-}

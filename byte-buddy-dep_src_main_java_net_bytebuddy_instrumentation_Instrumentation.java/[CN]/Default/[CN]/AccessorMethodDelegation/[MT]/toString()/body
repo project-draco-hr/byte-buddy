@@ -1,3 +1,0 @@
-{
-  return "Instrumentation.Context.Default.AccessorMethodDelegation{accessorMethodInvocation=" + accessorMethodInvocation + '}';
-}

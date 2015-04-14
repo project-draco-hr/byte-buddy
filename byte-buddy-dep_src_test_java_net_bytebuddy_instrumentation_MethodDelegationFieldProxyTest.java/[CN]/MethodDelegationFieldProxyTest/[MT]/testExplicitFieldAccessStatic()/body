@@ -1,7 +1,0 @@
-{
-  DynamicType.Loaded<ExplicitStatic> loaded=instrument(ExplicitStatic.class,MethodDelegation.to(Swap.class).appendParameterBinder(FieldProxy.Binder.install(Get.class,Set.class)));
-  ExplicitStatic explicit=loaded.getLoaded().newInstance();
-  assertThat(ExplicitStatic.foo,is(FOO));
-  explicit.swap();
-  assertThat(ExplicitStatic.foo,is(FOO + BAR));
-}

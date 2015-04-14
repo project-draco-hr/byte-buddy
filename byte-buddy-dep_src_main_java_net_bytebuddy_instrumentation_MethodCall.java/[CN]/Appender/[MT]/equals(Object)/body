@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  Appender appender=(Appender)other;
-  return instrumentationTarget.equals(appender.instrumentationTarget) && MethodCall.this.equals(appender.getOuter());
-}

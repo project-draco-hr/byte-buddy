@@ -1,6 +1,6 @@
 {
-  MethodRegistry.Prepared preparedMethodRegistry=methodRegistry.prepare(applyRecordedMembersTo(new InlineInstrumentedType(classFileVersion,targetType,interfaceTypes,modifiers,namingStrategy)),methodLookupEngineFactory.make(classFileVersion.isSupportsDefaultMethods()),InlineInstrumentationMatcher.of(ignoredMethods,targetType));
+  MethodRegistry.Prepared preparedMethodRegistry=methodRegistry.prepare(applyRecordedMembersTo(new InlineInstrumentedType(classFileVersion,targetType,interfaceTypes,modifiers,namingStrategy)),methodLookupEngineFactory.make(classFileVersion.isSupportsDefaultMethods()),InliningImplementationMatcher.of(ignoredMethods,targetType));
   MethodRebaseResolver methodRebaseResolver=MethodRebaseResolver.Enabled.make(preparedMethodRegistry.getInstrumentedMethods(),preparedMethodRegistry.getInstrumentedType(),classFileVersion,auxiliaryTypeNamingStrategy,methodNameTransformer);
-  MethodRegistry.Compiled compiledMethodRegistry=preparedMethodRegistry.compile(new RebaseInstrumentationTarget.Factory(bridgeMethodResolverFactory,methodRebaseResolver));
+  MethodRegistry.Compiled compiledMethodRegistry=preparedMethodRegistry.compile(new RebaseImplementationTarget.Factory(bridgeMethodResolverFactory,methodRebaseResolver));
   return TypeWriter.Default.<T>forRebasing(compiledMethodRegistry,fieldRegistry.prepare(compiledMethodRegistry.getInstrumentedType()).compile(TypeWriter.FieldPool.Entry.NoOp.INSTANCE),auxiliaryTypeNamingStrategy,classVisitorWrapperChain,attributeAppender,classFileVersion,classFileLocator,targetType,methodRebaseResolver).make();
 }

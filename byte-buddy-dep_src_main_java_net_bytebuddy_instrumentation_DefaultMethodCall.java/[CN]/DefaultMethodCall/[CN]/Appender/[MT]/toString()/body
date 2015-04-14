@@ -1,3 +1,0 @@
-{
-  return "DefaultMethodCall.Appender{" + "instrumentationTarget=" + instrumentationTarget + ", prioritizedInterfaces="+ prioritizedInterfaces+ ", nonPrioritizedInterfaces="+ nonPrioritizedInterfaces+ '}';
-}

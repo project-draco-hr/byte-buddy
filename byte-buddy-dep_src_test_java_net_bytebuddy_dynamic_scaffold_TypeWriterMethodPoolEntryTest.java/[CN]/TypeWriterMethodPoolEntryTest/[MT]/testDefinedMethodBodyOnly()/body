@@ -2,8 +2,8 @@
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
   TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForAbstractMethod(methodAttributeAppender);
-  entry.applyBody(methodVisitor,instrumentationContext,methodDescription);
+  entry.applyBody(methodVisitor,implementationContext,methodDescription);
   verifyZeroInteractions(methodVisitor);
-  verifyZeroInteractions(instrumentationContext);
+  verifyZeroInteractions(implementationContext);
   verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
 }

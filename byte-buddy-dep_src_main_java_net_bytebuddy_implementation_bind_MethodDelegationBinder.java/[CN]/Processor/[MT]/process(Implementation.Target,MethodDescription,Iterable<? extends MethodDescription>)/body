@@ -1,0 +1,7 @@
+{
+  List<MethodBinding> possibleDelegations=bind(implementationTarget,source,targets);
+  if (possibleDelegations.size() == 0) {
+    throw new IllegalArgumentException("No method can be bound to " + source);
+  }
+  return resolve(source,possibleDelegations);
+}

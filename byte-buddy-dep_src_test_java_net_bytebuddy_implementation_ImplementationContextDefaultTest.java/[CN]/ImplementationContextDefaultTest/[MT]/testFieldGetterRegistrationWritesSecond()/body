@@ -1,0 +1,14 @@
+{
+  when(secondField.isStatic()).thenReturn(true);
+  Implementation.Context.Default implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
+  MethodDescription secondMethodDescription=implementationContext.registerGetterFor(secondField);
+  assertThat(implementationContext.registerGetterFor(secondField),is(secondMethodDescription));
+  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIP);
+  implementationContext.drain(classVisitor,methodPool,injectedCode);
+  verify(classVisitor).visitMethod(eq(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("()" + QUX),isNull(String.class),isNull(String[].class));
+  verify(methodVisitor).visitCode();
+  verify(methodVisitor).visitFieldInsn(Opcodes.GETSTATIC,BAZ,BAR,FOO);
+  verify(methodVisitor).visitInsn(Opcodes.ARETURN);
+  verify(methodVisitor).visitMaxs(0,0);
+  verify(methodVisitor).visitEnd();
+}

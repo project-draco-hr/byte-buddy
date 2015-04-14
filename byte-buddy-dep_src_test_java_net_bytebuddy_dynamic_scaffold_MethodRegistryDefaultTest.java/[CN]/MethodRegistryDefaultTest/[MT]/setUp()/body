@@ -1,8 +1,8 @@
 {
   when(firstHandler.prepare(firstType)).thenReturn(secondType);
   when(secondHandler.prepare(secondType)).thenReturn(thirdType);
-  when(firstHandler.compile(instrumentationTarget)).thenReturn(firstCompiledHandler);
-  when(secondHandler.compile(instrumentationTarget)).thenReturn(secondCompiledHandler);
+  when(firstHandler.compile(implementationTarget)).thenReturn(firstCompiledHandler);
+  when(secondHandler.compile(implementationTarget)).thenReturn(secondCompiledHandler);
   when(thirdType.getTypeInitializer()).thenReturn(typeInitializer);
   when(thirdType.getLoadedTypeInitializer()).thenReturn(loadedTypeInitializer);
   when(methodLookupEngine.process(thirdType)).thenReturn(finding);
@@ -16,7 +16,7 @@
   when(secondMatcher.resolve(thirdType)).thenReturn((ElementMatcher)secondFilter);
   when(firstFactory.make(typeDescription)).thenReturn(firstAppender);
   when(secondFactory.make(typeDescription)).thenReturn(secondAppender);
-  when(instrumentationTargetFactory.make(finding,new MethodList.Explicit(Collections.singletonList(instrumentedMethod)))).thenReturn(instrumentationTarget);
+  when(implementationTargetFactory.make(finding,new MethodList.Explicit(Collections.singletonList(instrumentedMethod)))).thenReturn(implementationTarget);
   when(firstCompiledHandler.assemble(firstAppender)).thenReturn(firstEntry);
   when(secondCompiledHandler.assemble(secondAppender)).thenReturn(secondEntry);
 }

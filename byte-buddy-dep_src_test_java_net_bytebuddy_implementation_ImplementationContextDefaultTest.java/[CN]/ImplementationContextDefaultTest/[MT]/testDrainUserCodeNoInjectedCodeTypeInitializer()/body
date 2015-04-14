@@ -1,0 +1,15 @@
+{
+  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
+  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.IMPLEMENT);
+  when(typeInitializer.isDefined()).thenReturn(true);
+  when(entry.prepend(new ByteCodeAppender.Simple(typeInitializer))).thenReturn(otherEntry);
+  implementationContext.drain(classVisitor,methodPool,injectedCode);
+  verify(entry).getSort();
+  verify(entry).prepend(new ByteCodeAppender.Simple(typeInitializer));
+  verifyNoMoreInteractions(entry);
+  verify(otherEntry).apply(classVisitor,implementationContext,MethodDescription.Latent.typeInitializerOf(instrumentedType));
+  verify(typeInitializer,atLeast(1)).isDefined();
+  verifyNoMoreInteractions(typeInitializer);
+  verify(injectedCode,atLeast(1)).isDefined();
+  verifyNoMoreInteractions(injectedCode);
+}

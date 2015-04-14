@@ -1,0 +1,10 @@
+{
+  ArrayAccess arrayAccess=ArrayAccess.of(typeDescription);
+  assertThat(arrayAccess.load().isValid(),is(true));
+  StackManipulation.Size size=arrayAccess.load().apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(typeDescription.getStackSize().getSize() - 2));
+  assertThat(size.getMaximalSize(),is(typeDescription.getStackSize().getSize()));
+  verify(methodVisitor).visitInsn(loadOpcode);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+}

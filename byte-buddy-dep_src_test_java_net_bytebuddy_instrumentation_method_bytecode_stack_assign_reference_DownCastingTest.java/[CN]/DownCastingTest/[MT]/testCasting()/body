@@ -1,9 +1,0 @@
-{
-  when(typeDescription.getInternalName()).thenReturn(FOO);
-  StackManipulation.Size size=new DownCasting(typeDescription).apply(methodVisitor,instrumentationContext);
-  assertThat(size.getSizeImpact(),is(0));
-  assertThat(size.getMaximalSize(),is(0));
-  verify(methodVisitor).visitTypeInsn(Opcodes.CHECKCAST,FOO);
-  verifyNoMoreInteractions(methodVisitor);
-  verifyZeroInteractions(instrumentationContext);
-}

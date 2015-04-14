@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(InlineInstrumentationMatcher.class).apply();
-}

@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  when(target.getTypeDescription()).thenReturn(targetParameterType);
+  when(implementationTarget.invokeDefault(any(TypeDescription.class),any(String.class))).thenReturn(specialMethodInvocation);
+}

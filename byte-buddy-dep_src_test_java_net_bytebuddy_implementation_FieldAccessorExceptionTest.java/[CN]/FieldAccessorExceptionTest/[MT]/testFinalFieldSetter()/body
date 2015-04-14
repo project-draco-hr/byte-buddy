@@ -1,0 +1,3 @@
+{
+  implement(Foo.class,FieldAccessor.ofBeanProperty());
+}

@@ -1,0 +1,3 @@
+{
+  return implement(target,implementation,target.getClassLoader(),isDeclaredBy(target));
+}

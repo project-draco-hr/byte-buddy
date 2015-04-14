@@ -1,3 +1,0 @@
-{
-  instrument(InstanceMethod.class,MethodCall.invoke(StaticIncompatibleExternalMethod.class.getDeclaredMethod("bar",String.class)).with(FOO,BAR),InstanceMethod.class.getClassLoader(),named(FOO));
-}

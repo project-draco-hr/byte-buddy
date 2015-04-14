@@ -1,0 +1,3 @@
+{
+  return "TypeCasting{targetTypeInternalName='" + targetTypeInternalName + '\''+ '}';
+}

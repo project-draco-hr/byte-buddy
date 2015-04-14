@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(Implementation.Simple.class).apply();
+}

@@ -1,0 +1,3 @@
+{
+  return instrumentedType.withField(INSTANCE_FIELD,TypeProxy.this.implementationTarget.getTypeDescription(),Opcodes.ACC_SYNTHETIC);
+}

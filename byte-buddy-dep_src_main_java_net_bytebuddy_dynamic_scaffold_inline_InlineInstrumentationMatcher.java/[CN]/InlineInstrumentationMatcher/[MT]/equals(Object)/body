@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && ignoredMethods.equals(((InlineInstrumentationMatcher)other).ignoredMethods) && predefinedMethodSignatures.equals(((InlineInstrumentationMatcher)other).predefinedMethodSignatures);
-}

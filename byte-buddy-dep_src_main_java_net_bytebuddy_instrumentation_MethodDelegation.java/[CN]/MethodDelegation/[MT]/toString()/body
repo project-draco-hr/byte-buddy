@@ -1,3 +1,0 @@
-{
-  return "MethodDelegation{" + "instrumentationDelegate=" + instrumentationDelegate + ", parameterBinders="+ parameterBinders+ ", defaultsProvider="+ defaultsProvider+ ", terminationHandler="+ terminationHandler+ ", ambiguityResolver="+ ambiguityResolver+ ", assigner="+ assigner+ ", targetMethodCandidates="+ targetMethodCandidates+ '}';
-}

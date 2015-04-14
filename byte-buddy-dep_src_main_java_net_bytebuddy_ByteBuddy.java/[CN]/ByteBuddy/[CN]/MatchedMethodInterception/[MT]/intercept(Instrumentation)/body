@@ -1,3 +1,0 @@
-{
-  return new MethodAnnotationTarget(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,interfaceTypes,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,methodRegistry,modifiers,typeAttributeAppender,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,methodMatcher,new MethodRegistry.Handler.ForInstrumentation(nonNull(instrumentation)),MethodAttributeAppender.NoOp.INSTANCE);
-}

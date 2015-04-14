@@ -1,6 +1,0 @@
-{
-  Class<?> originMethodType=classLoader.loadClass(ORIGIN_METHOD_TYPE);
-  DynamicType.Loaded<Foo> loaded=instrument(Foo.class,MethodDelegation.to(originMethodType));
-  Foo instance=loaded.getLoaded().newInstance();
-  assertThat(instance.foo(),instanceOf((Class<?>)originMethodType.getDeclaredField(TYPE).get(null)));
-}

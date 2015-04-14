@@ -1,4 +1,0 @@
-{
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=Super.Binder.INSTANCE.bind(annotationDescription,source,target,instrumentationTarget,assigner);
-  assertThat(parameterBinding.isValid(),is(false));
-}

@@ -1,5 +1,0 @@
-{
-  super.setUp();
-  when(target.getTypeDescription()).thenReturn(targetParameterType);
-  when(instrumentationTarget.invokeDefault(any(TypeDescription.class),any(String.class))).thenReturn(specialMethodInvocation);
-}

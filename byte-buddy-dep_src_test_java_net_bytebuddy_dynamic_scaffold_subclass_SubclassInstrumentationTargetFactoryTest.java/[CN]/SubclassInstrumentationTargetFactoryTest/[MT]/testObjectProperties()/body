@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(SubclassInstrumentationTarget.Factory.class).apply();
-}

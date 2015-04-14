@@ -1,3 +1,0 @@
-{
-  return new DefaultMethodAnnotationTarget(methodTokens,methodMatcher,new MethodRegistry.Handler.ForInstrumentation(nonNull(instrumentation)),defaultMethodAttributeAppenderFactory);
-}

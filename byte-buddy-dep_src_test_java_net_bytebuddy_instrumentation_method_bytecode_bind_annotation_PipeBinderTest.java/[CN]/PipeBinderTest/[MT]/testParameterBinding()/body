@@ -1,5 +1,0 @@
-{
-  when(target.getTypeDescription()).thenReturn(targetMethodType);
-  MethodDelegationBinder.ParameterBinding<?> parameterBinding=binder.bind(annotationDescription,source,target,instrumentationTarget,assigner);
-  assertThat(parameterBinding.isValid(),is(true));
-}

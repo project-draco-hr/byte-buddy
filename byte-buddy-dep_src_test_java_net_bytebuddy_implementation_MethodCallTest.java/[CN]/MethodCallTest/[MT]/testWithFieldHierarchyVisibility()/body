@@ -1,0 +1,13 @@
+{
+  DynamicType.Loaded<InvisibleMethodCallWithField> loaded=implement(InvisibleMethodCallWithField.class,MethodCall.invokeSuper().withField(FOO));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredMethod(FOO,String.class),not(nullValue(Method.class)));
+  assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
+  InvisibleMethodCallWithField instance=loaded.getLoaded().newInstance();
+  ((InvisibleBase)instance).foo=FOO;
+  assertNotEquals(InvisibleMethodCallWithField.class,instance.getClass());
+  assertThat(instance,instanceOf(InvisibleMethodCallWithField.class));
+  assertThat(instance.foo(BAR),is(FOO));
+}

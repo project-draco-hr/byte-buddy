@@ -3,7 +3,7 @@
   when(parameterDescription.isNamed()).thenReturn(true);
   TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForImplementation(byteCodeAppender,methodAttributeAppender);
   assertThat(entry.getSort(),is(TypeWriter.MethodPool.Entry.Sort.IMPLEMENT));
-  entry.apply(classVisitor,instrumentationContext,methodDescription);
+  entry.apply(classVisitor,implementationContext,methodDescription);
   verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});
   verifyNoMoreInteractions(classVisitor);
   verify(methodVisitor).visitParameter(FOO,MODIFIERS);
@@ -11,9 +11,9 @@
   verify(methodVisitor).visitMaxs(ONE,TWO);
   verify(methodVisitor).visitEnd();
   verifyNoMoreInteractions(methodVisitor);
-  verifyZeroInteractions(instrumentationContext);
+  verifyZeroInteractions(implementationContext);
   verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
   verifyNoMoreInteractions(methodAttributeAppender);
-  verify(byteCodeAppender).apply(methodVisitor,instrumentationContext,methodDescription);
+  verify(byteCodeAppender).apply(methodVisitor,implementationContext,methodDescription);
   verifyNoMoreInteractions(byteCodeAppender);
 }

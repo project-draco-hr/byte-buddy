@@ -1,5 +1,0 @@
-{
-  DynamicType.Loaded<?> loaded=instrument(Object.class,MethodDelegation.to(classLoader.loadClass(DEFAULT_INTERFACE_TARGET_IMPLICIT)).appendParameterBinder(Morph.Binder.install(Morphing.class)),classLoader,isMethod().and(not(isDeclaredBy(Object.class))),classLoader.loadClass(DEFAULT_INTERFACE));
-  Object instance=loaded.getLoaded().newInstance();
-  assertThat(instance.getClass().getDeclaredMethod(FOO,String.class).invoke(instance,QUX),is((Object)(FOO + BAR)));
-}

@@ -1,6 +1,0 @@
-{
-  this.preparingStackAssignment=preparingStackAssignment;
-  this.instrumentationTarget=instrumentationTarget;
-  this.targetMethods=targetMethods;
-  this.processor=processor;
-}

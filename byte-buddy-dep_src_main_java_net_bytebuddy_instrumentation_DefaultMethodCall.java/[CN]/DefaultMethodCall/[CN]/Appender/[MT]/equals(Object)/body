@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && prioritizedInterfaces.equals(((Appender)other).prioritizedInterfaces) && instrumentationTarget.equals(((Appender)other).instrumentationTarget);
-}

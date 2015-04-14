@@ -1,0 +1,4 @@
+{
+  this.implementationTarget=implementationTarget;
+  this.terminationHandler=terminationHandler;
+}

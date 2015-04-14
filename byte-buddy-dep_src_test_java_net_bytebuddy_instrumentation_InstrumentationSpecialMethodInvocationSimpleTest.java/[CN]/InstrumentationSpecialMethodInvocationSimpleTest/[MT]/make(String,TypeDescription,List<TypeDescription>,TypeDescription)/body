@@ -1,3 +1,0 @@
-{
-  return new Instrumentation.SpecialMethodInvocation.Simple(new MethodDescription.Latent(name,mock(TypeDescription.class),returnType,parameterTypes,Opcodes.ACC_PUBLIC,Collections.<TypeDescription>emptyList()),targetType,mock(StackManipulation.class));
-}

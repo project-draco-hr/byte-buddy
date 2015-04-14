@@ -1,0 +1,9 @@
+{
+  when(first.apply(methodVisitor,implementationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(MINIMUM,MAXIMUM));
+  when(second.apply(methodVisitor,implementationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(MAXIMUM,MINIMUM));
+  ByteCodeAppender.Size size=compound.apply(methodVisitor,implementationContext,methodDescription);
+  assertThat(size.getLocalVariableSize(),is(MAXIMUM));
+  assertThat(size.getOperandStackSize(),is(MAXIMUM));
+  verifyZeroInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+}

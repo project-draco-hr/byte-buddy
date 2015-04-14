@@ -1,0 +1,3 @@
+{
+  return 31 * implementationTarget.hashCode() + prioritizedInterfaces.hashCode();
+}

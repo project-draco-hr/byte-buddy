@@ -1,0 +1,10 @@
+{
+  Class<?> type=classLoader.loadClass(PARAMETER_BOOTSTRAP);
+  Field field=type.getDeclaredField(ARGUMENTS_FIELD_NAME);
+  field.set(null,null);
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
+  DynamicType.Loaded<Simple> dynamicType=implement(Simple.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP_ARRAY_ARGUMENTS)).getOnly()).withoutArguments(),classLoader,isDeclaredBy(Simple.class));
+  assertThat(dynamicType.getLoaded().newInstance().foo(),is(FOO));
+  Object[] arguments=(Object[])field.get(null);
+  assertThat(arguments.length,is(0));
+}

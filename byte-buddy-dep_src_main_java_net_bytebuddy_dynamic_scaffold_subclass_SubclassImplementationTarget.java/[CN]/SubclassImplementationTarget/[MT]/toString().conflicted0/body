@@ -1,0 +1,3 @@
+{
+  return "SubclassImplementationTarget{" + "typeDescription=" + typeDescription + ", defaultMethods="+ defaultMethods+ ", bridgeMethodResolver="+ bridgeMethodResolver+ ", superConstructors="+ superConstructors+ ", originTypeIdentifier="+ originTypeIdentifier+ '}';
+}

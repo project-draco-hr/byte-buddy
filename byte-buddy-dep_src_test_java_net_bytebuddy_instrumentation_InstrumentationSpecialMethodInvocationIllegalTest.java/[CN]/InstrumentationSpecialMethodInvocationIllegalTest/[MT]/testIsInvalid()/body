@@ -1,3 +1,0 @@
-{
-  assertThat(Instrumentation.SpecialMethodInvocation.Illegal.INSTANCE.isValid(),is(false));
-}

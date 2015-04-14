@@ -1,7 +1,0 @@
-{
-  when(methodDescription.isTypeInitializer()).thenReturn(true);
-  MethodConstant.CanCache methodConstant=MethodConstant.forMethod(methodDescription);
-  assertThat(methodConstant.isValid(),is(false));
-  assertThat(methodConstant.cached().isValid(),is(false));
-  methodConstant.apply(methodVisitor,instrumentationContext);
-}

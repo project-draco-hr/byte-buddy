@@ -1,3 +1,0 @@
-{
-  return "SuperMethodCall.Appender{" + "instrumentationTarget=" + instrumentationTarget + ", terminationHandler="+ terminationHandler+ '}';
-}

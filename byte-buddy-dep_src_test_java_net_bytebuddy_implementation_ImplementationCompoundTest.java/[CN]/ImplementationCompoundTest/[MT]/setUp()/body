@@ -1,0 +1,3 @@
+{
+  compound=new Implementation.Compound(first,second);
+}

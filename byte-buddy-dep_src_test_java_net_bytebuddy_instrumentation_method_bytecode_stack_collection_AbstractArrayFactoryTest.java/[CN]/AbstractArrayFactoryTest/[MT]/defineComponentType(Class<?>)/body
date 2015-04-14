@@ -1,7 +1,0 @@
-{
-  when(componentTypeDescription.isPrimitive()).thenReturn(componentType.isPrimitive());
-  when(componentTypeDescription.represents(componentType)).thenReturn(true);
-  when(componentTypeDescription.getInternalName()).thenReturn(Type.getInternalName(componentType));
-  when(componentTypeDescription.getStackSize()).thenReturn(StackSize.of(componentType));
-  when(stackManipulation.apply(any(MethodVisitor.class),any(Instrumentation.Context.class))).thenReturn(StackSize.of(componentType).toIncreasingSize());
-}

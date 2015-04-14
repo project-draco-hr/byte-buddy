@@ -1,9 +1,0 @@
-{
-  StackManipulation stackManipulation=MethodReturn.returning(typeDescription);
-  assertThat(stackManipulation.isValid(),is(true));
-  StackManipulation.Size size=stackManipulation.apply(methodVisitor,instrumentationContext);
-  assertThat(size.getSizeImpact(),is(-1 * sizeChange));
-  assertThat(size.getMaximalSize(),is(0));
-  verify(methodVisitor).visitInsn(opcode);
-  verifyNoMoreInteractions(methodVisitor);
-}

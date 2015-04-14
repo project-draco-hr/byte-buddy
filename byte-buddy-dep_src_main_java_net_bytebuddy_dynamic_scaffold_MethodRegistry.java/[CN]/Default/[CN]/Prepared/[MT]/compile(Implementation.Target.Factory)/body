@@ -1,0 +1,20 @@
+{
+  Map<Handler,Handler.Compiled> compilationCache=new HashMap<Handler,Handler.Compiled>(instrumentations.size());
+  Map<MethodAttributeAppender.Factory,MethodAttributeAppender> attributeAppenderCache=new HashMap<MethodAttributeAppender.Factory,MethodAttributeAppender>(instrumentations.size());
+  Map<MethodDescription,TypeWriter.MethodPool.Entry> entries=new HashMap<MethodDescription,TypeWriter.MethodPool.Entry>(instrumentations.size());
+  Implementation.Target implementationTarget=implementationTargetFactory.make(finding,getInstrumentedMethods());
+  for (  Map.Entry<MethodDescription,Entry> entry : instrumentations.entrySet()) {
+    Handler.Compiled cachedEntry=compilationCache.get(entry.getValue().getHandler());
+    if (cachedEntry == null) {
+      cachedEntry=entry.getValue().getHandler().compile(implementationTarget);
+      compilationCache.put(entry.getValue().getHandler(),cachedEntry);
+    }
+    MethodAttributeAppender cachedAttributeAppender=attributeAppenderCache.get(entry.getValue().getAppenderFactory());
+    if (cachedAttributeAppender == null) {
+      cachedAttributeAppender=entry.getValue().getAppenderFactory().make(finding.getTypeDescription());
+      attributeAppenderCache.put(entry.getValue().getAppenderFactory(),cachedAttributeAppender);
+    }
+    entries.put(entry.getKey(),cachedEntry.assemble(cachedAttributeAppender));
+  }
+  return new Compiled(finding.getTypeDescription(),loadedTypeInitializer,typeInitializer,entries);
+}

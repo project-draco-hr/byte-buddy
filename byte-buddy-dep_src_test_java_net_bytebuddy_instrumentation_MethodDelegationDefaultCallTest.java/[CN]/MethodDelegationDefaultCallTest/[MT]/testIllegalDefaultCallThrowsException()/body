@@ -1,3 +1,0 @@
-{
-  instrument(Object.class,MethodDelegation.to(IllegalAnnotation.class),classLoader,not(isDeclaredBy(Object.class)),classLoader.loadClass(SINGLE_DEFAULT_METHOD));
-}

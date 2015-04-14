@@ -1,0 +1,13 @@
+{
+  DynamicType.Loaded<MethodCallAppending> loaded=implement(MethodCallAppending.class,MethodCall.construct(Object.class.getDeclaredConstructor()).andThen(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredMethod(FOO),not(nullValue(Method.class)));
+  assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
+  MethodCallAppending instance=loaded.getLoaded().newInstance();
+  assertNotEquals(MethodCallAppending.class,instance.getClass());
+  assertThat(instance,instanceOf(MethodCallAppending.class));
+  assertThat(instance.foo(),is((Object)FOO));
+  instance.assertZeroCalls();
+}

@@ -1,0 +1,14 @@
+{
+  this.instrumentedType=instrumentedType;
+  this.auxiliaryTypeNamingStrategy=auxiliaryTypeNamingStrategy;
+  this.typeInitializer=typeInitializer;
+  this.classFileVersion=classFileVersion;
+  registeredAccessorMethods=new HashMap<Implementation.SpecialMethodInvocation,MethodDescription>();
+  registeredGetters=new HashMap<FieldDescription,MethodDescription>();
+  registeredSetters=new HashMap<FieldDescription,MethodDescription>();
+  accessorMethodEntries=new HashMap<MethodDescription,TypeWriter.MethodPool.Entry>();
+  auxiliaryTypes=new HashMap<AuxiliaryType,DynamicType>();
+  registeredFieldCacheEntries=new HashMap<FieldCacheEntry,FieldDescription>();
+  randomString=new RandomString();
+  canRegisterFieldCache=true;
+}

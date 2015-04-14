@@ -1,3 +1,0 @@
-{
-  return "MethodDelegation.Appender{" + "preparingStackAssignment=" + preparingStackAssignment + ", instrumentationTarget="+ instrumentationTarget+ ", targetMethods="+ targetMethods+ ", processor="+ processor+ '}';
-}

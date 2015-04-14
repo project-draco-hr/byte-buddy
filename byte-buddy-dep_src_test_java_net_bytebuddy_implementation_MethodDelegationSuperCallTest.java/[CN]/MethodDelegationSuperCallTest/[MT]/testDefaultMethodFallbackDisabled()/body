@@ -1,0 +1,3 @@
+{
+  implement(Object.class,MethodDelegation.to(NoFallback.class),classLoader,isMethod().and(not(isDeclaredBy(Object.class))),classLoader.loadClass(SINGLE_DEFAULT_METHOD));
+}

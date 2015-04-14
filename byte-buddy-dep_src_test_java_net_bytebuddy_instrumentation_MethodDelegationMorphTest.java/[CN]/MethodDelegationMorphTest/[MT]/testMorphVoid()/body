@@ -1,8 +1,0 @@
-{
-  SimpleMorph simpleMorph=new SimpleMorph(QUX);
-  DynamicType.Loaded<Bar> loaded=instrument(Bar.class,MethodDelegation.to(simpleMorph).appendParameterBinder(Morph.Binder.install(Morphing.class)));
-  Bar instance=loaded.getLoaded().newInstance();
-  instance.foo();
-  instance.assertOnlyCall(FOO);
-  simpleMorph.assertOnlyCall(BAR);
-}

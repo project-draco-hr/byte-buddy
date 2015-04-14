@@ -1,9 +1,0 @@
-{
-  defineAssignability(true,false);
-  StackManipulation stackManipulation=ReferenceTypeAwareAssigner.INSTANCE.assign(sourceTypeDescription,targetTypeDescription,false);
-  assertThat(stackManipulation.isValid(),is(true));
-  StackManipulation.Size size=stackManipulation.apply(methodVisitor,instrumentationContext);
-  assertThat(size.getSizeImpact(),is(0));
-  assertThat(size.getMaximalSize(),is(0));
-  verifyZeroInteractions(methodVisitor);
-}

@@ -1,3 +1,0 @@
-{
-  assertThat(instrumentationTarget.invokeDefault(defaultType,FOOBAZ).isValid(),is(false));
-}

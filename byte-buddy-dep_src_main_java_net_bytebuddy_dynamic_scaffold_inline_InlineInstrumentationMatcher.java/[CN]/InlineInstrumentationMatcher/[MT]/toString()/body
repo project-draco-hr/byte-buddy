@@ -1,3 +1,0 @@
-{
-  return "InlineInstrumentationMatcher{" + "ignoredMethods=" + ignoredMethods + ", predefinedMethodSignatures="+ predefinedMethodSignatures+ '}';
-}

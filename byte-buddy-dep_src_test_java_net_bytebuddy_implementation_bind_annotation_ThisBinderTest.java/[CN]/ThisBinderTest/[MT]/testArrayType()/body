@@ -1,0 +1,5 @@
+{
+  when(parameterType.isArray()).thenReturn(true);
+  when(target.getTypeDescription()).thenReturn(parameterType);
+  This.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+}

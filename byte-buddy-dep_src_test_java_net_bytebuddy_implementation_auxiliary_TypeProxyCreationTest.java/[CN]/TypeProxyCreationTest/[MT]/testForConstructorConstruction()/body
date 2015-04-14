@@ -1,0 +1,24 @@
+{
+  when(implementationTarget.getTypeDescription()).thenReturn(foo);
+  when(invocationFactory.invoke(eq(implementationTarget),eq(foo),any(MethodDescription.class))).thenReturn(specialMethodInvocation);
+  when(specialMethodInvocation.isValid()).thenReturn(true);
+  when(specialMethodInvocation.apply(any(MethodVisitor.class),any(Implementation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
+  when(methodAccessorFactory.registerAccessorFor(specialMethodInvocation)).thenReturn(proxyMethod);
+  StackManipulation stackManipulation=new TypeProxy.ForSuperMethodByConstructor(foo,implementationTarget,Collections.<TypeDescription>singletonList(new TypeDescription.ForLoadedType(Void.class)),true,false);
+  MethodVisitor methodVisitor=mock(MethodVisitor.class);
+  Implementation.Context implementationContext=mock(Implementation.Context.class);
+  when(implementationContext.register(any(AuxiliaryType.class))).thenReturn(foo);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(3));
+  verify(implementationContext).register(any(AuxiliaryType.class));
+  verifyNoMoreInteractions(implementationContext);
+  verify(methodVisitor).visitTypeInsn(Opcodes.NEW,Type.getInternalName(Foo.class));
+  verify(methodVisitor,times(2)).visitInsn(Opcodes.DUP);
+  verify(methodVisitor).visitInsn(Opcodes.ACONST_NULL);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,foo.getInternalName(),MethodDescription.CONSTRUCTOR_INTERNAL_NAME,foo.getDeclaredMethods().filter(isConstructor()).getOnly().getDescriptor(),false);
+  verify(methodVisitor).visitFieldInsn(Opcodes.PUTFIELD,foo.getInternalName(),TypeProxy.INSTANCE_FIELD,Type.getDescriptor(Void.class));
+  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_0);
+  verifyNoMoreInteractions(methodVisitor);
+}

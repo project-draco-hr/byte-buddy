@@ -1,0 +1,7 @@
+{
+  MethodList methodList=this.targetMethodCandidates.filter(isVisibleTo(implementationTarget.getTypeDescription()));
+  if (methodList.size() == 0) {
+    throw new IllegalStateException("No bindable method is visible to " + implementationTarget.getTypeDescription());
+  }
+  return new Appender(implementationDelegate.getPreparingStackAssignment(implementationTarget.getTypeDescription()),implementationTarget,methodList,new MethodDelegationBinder.Processor(new TargetMethodAnnotationDrivenBinder(parameterBinders,defaultsProvider,terminationHandler,assigner,implementationDelegate.getMethodInvoker(implementationTarget.getTypeDescription())),ambiguityResolver));
+}

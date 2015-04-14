@@ -1,5 +1,0 @@
-{
-  Class<? extends Qux> qux=instrument(Qux.class,FixedValue.value(JavaInstance.MethodType.of(void.class,Object.class))).getLoaded();
-  assertThat(qux.getDeclaredFields().length,is(0));
-  assertThat(qux.newInstance().bar(),is(makeMethodType(void.class,Object.class)));
-}

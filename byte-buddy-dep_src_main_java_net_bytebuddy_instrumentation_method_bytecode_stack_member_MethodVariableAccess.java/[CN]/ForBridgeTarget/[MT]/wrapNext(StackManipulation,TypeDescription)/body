@@ -1,4 +1,0 @@
-{
-  TypeDescription targetParameterType=typeIterator.next();
-  return targetParameterType.equals(parameterType) ? variableAccess : new StackManipulation.Compound(variableAccess,new DownCasting(targetParameterType));
-}

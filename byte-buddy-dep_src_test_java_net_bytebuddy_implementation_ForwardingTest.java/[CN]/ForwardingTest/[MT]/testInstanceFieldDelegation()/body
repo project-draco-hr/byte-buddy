@@ -1,0 +1,13 @@
+{
+  DynamicType.Loaded<Foo> loaded=implement(Foo.class,Forwarding.toInstanceField(FOO,Foo.class));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(1));
+  Foo instance=loaded.getLoaded().newInstance();
+  Field field=loaded.getLoaded().getDeclaredField(FOO);
+  field.setAccessible(true);
+  field.set(instance,new Bar());
+  assertThat(instance.foo(),is(BAR));
+  assertNotEquals(Foo.class,instance.getClass());
+  assertThat(instance,instanceOf(Foo.class));
+}
