@@ -1,3 +1,3 @@
 {
-  assertThat(create().method(named(TO_STRING)).intercept(new Instrumentation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)).method(named(TO_STRING)).intercept(new Instrumentation.Simple(new TextConstant(BAR),MethodReturn.REFERENCE)).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance().toString(),is(BAR));
+  assertThat(createPlain().method(named(TO_STRING)).intercept(new Instrumentation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)).method(named(TO_STRING)).intercept(new Instrumentation.Simple(new TextConstant(BAR),MethodReturn.REFERENCE)).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance().toString(),is(BAR));
 }

@@ -1,5 +1,5 @@
 {
-  Class<?> type=create().defineField(FOO,Void.class,Visibility.PUBLIC).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=createPlain().defineField(FOO,Void.class,Visibility.PUBLIC).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   Field field=type.getDeclaredField(FOO);
   assertEquals(Void.class,field.getType());
   assertThat(field.getModifiers(),is(Modifier.PUBLIC));

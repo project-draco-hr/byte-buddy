@@ -1,0 +1,7 @@
+{
+  ClassLoader classLoader=new ByteArrayClassLoader(null,Collections.singletonMap(Bar.class.getName(),ClassFileExtraction.extract(Bar.class)),null,ByteArrayClassLoader.PersistenceHandler.LATENT);
+  Class<?> type=createPlain().invokable(isTypeInitializer()).intercept(MethodCall.invoke(Bar.class.getDeclaredMethod("invoke"))).make().load(classLoader,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.newInstance(),notNullValue(Object.class));
+  Class<?> foo=classLoader.loadClass(Bar.class.getName());
+  assertThat(foo.getDeclaredField(FOO).get(null),is((Object)FOO));
+}

@@ -1,0 +1,7 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  if (!super.equals(other))   return false;
+  ForInlining<?> that=(ForInlining<?>)other;
+  return classFileLocator.equals(that.classFileLocator) && targetType.equals(that.targetType) && methodRebaseResolver.equals(that.methodRebaseResolver);
+}

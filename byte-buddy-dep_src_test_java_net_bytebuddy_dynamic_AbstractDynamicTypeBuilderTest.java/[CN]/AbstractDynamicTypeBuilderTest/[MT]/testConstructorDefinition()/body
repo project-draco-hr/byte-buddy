@@ -1,5 +1,5 @@
 {
-  Class<?> type=create().defineConstructor(Collections.<Class<?>>singletonList(Void.class),Visibility.PUBLIC).throwing(Exception.class).intercept(MethodCall.invoke(Object.class.getDeclaredConstructor())).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=createPlain().defineConstructor(Collections.<Class<?>>singletonList(Void.class),Visibility.PUBLIC).throwing(Exception.class).intercept(MethodCall.invoke(Object.class.getDeclaredConstructor())).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   Constructor<?> constructor=type.getDeclaredConstructor(Void.class);
   assertArrayEquals(new Class<?>[]{Exception.class},constructor.getExceptionTypes());
   assertThat(constructor.getModifiers(),is(Modifier.PUBLIC));

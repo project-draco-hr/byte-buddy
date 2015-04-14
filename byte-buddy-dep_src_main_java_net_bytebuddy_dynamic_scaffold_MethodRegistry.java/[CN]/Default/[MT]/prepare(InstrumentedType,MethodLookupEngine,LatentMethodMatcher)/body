@@ -14,7 +14,8 @@
   }
   MethodLookupEngine.Finding finding=methodLookupEngine.process(instrumentedType);
   ElementMatcher<? super MethodDescription> instrumented=not(anyOf(instrumentations.keySet())).and(methodFilter.resolve(instrumentedType));
-  for (  MethodDescription methodDescription : finding.getInvokableMethods().filter(instrumented)) {
+  List<MethodDescription> methodDescriptions=join(MethodDescription.Latent.typeInitializerOf(instrumentedType),finding.getInvokableMethods().filter(instrumented));
+  for (  MethodDescription methodDescription : methodDescriptions) {
     for (    Entry entry : entries) {
       if (entry.resolve(instrumentedType).matches(methodDescription)) {
         instrumentations.put(methodDescription,entry);
