@@ -1,0 +1,13 @@
+{
+  when(parameterDescription.hasModifiers()).thenReturn(true);
+  when(parameterDescription.isNamed()).thenReturn(true);
+  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForImplementation(byteCodeAppender,methodAttributeAppender);
+  entry.applyBody(methodVisitor,instrumentationContext,methodDescription);
+  verify(methodVisitor).visitCode();
+  verify(methodVisitor).visitMaxs(ONE,TWO);
+  verifyZeroInteractions(instrumentationContext);
+  verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
+  verifyNoMoreInteractions(methodAttributeAppender);
+  verify(byteCodeAppender).apply(methodVisitor,instrumentationContext,methodDescription);
+  verifyNoMoreInteractions(byteCodeAppender);
+}

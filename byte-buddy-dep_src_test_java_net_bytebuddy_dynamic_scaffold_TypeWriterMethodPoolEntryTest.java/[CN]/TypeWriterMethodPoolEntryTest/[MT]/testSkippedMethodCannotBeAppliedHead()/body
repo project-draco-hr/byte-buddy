@@ -1,0 +1,3 @@
+{
+  TypeWriter.MethodPool.Entry.ForSkippedMethod.INSTANCE.applyHead(methodVisitor,methodDescription);
+}

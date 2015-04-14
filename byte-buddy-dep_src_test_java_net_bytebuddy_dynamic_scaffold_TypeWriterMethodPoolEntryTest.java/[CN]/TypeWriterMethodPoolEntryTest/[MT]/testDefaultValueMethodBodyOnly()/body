@@ -1,0 +1,10 @@
+{
+  when(parameterDescription.hasModifiers()).thenReturn(true);
+  when(parameterDescription.isNamed()).thenReturn(true);
+  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForAnnotationDefaultValue(FOO,methodAttributeAppender);
+  entry.applyBody(methodVisitor,instrumentationContext,methodDescription);
+  verifyZeroInteractions(methodVisitor);
+  verifyZeroInteractions(instrumentationContext);
+  verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
+  verifyNoMoreInteractions(methodAttributeAppender);
+}

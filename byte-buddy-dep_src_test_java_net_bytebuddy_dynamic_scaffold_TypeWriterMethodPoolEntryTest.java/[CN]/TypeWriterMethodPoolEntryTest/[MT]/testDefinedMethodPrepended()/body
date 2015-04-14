@@ -1,0 +1,3 @@
+{
+  new TypeWriter.MethodPool.Entry.ForAbstractMethod(methodAttributeAppender).prepend(otherAppender);
+}

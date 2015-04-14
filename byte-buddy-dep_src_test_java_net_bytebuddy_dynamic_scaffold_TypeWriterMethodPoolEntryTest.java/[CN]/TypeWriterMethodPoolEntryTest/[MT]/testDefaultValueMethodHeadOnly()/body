@@ -1,0 +1,14 @@
+{
+  when(methodDescription.getReturnType()).thenReturn(TypeDescription.STRING);
+  when(parameterDescription.hasModifiers()).thenReturn(true);
+  when(parameterDescription.isNamed()).thenReturn(true);
+  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForAnnotationDefaultValue(FOO,methodAttributeAppender);
+  entry.applyHead(methodVisitor,methodDescription);
+  verify(methodVisitor).visitAnnotationDefault();
+  verifyNoMoreInteractions(methodVisitor);
+  verify(annotationVisitor).visit(null,FOO);
+  verify(annotationVisitor).visitEnd();
+  verifyNoMoreInteractions(annotationVisitor);
+  verifyZeroInteractions(instrumentationContext);
+  verifyZeroInteractions(methodAttributeAppender);
+}

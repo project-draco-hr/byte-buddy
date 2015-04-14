@@ -1,0 +1,7 @@
+{
+  assertThat(TypeWriter.MethodPool.Entry.ForSkippedMethod.INSTANCE.getSort(),is(TypeWriter.MethodPool.Entry.Sort.SKIP));
+  TypeWriter.MethodPool.Entry.ForSkippedMethod.INSTANCE.apply(classVisitor,instrumentationContext,methodDescription);
+  verifyZeroInteractions(classVisitor);
+  verifyZeroInteractions(instrumentationContext);
+  verifyZeroInteractions(methodAttributeAppender);
+}

@@ -1,0 +1,10 @@
+{
+  when(parameterDescription.hasModifiers()).thenReturn(true);
+  when(parameterDescription.isNamed()).thenReturn(true);
+  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForImplementation(byteCodeAppender,methodAttributeAppender);
+  entry.applyHead(methodVisitor,methodDescription);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(instrumentationContext);
+  verifyZeroInteractions(methodAttributeAppender);
+  verifyZeroInteractions(byteCodeAppender);
+}
