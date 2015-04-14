@@ -1,3 +1,3 @@
 {
-  return "MethodRegistry.Default.Entry{" + "methodMatcher=" + methodMatcher + ", prepareable="+ handler+ ", attributeAppenderFactory="+ attributeAppenderFactory+ '}';
+  return "MethodRegistry.Default.Entry{" + "methodMatcher=" + methodMatcher + ", handler="+ handler+ ", attributeAppenderFactory="+ attributeAppenderFactory+ '}';
 }

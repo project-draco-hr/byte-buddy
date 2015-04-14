@@ -1,0 +1,3 @@
+{
+  when(instrumentation.prepare(instrumentedType)).thenReturn(preparedInstrumentedType);
+}

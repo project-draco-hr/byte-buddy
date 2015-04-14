@@ -1,0 +1,5 @@
+{
+  assertThat(MethodRegistry.Handler.ForAbstractMethod.INSTANCE.prepare(instrumentedType),is(instrumentedType));
+  TypeWriter.MethodPool.Entry entry=MethodRegistry.Handler.ForAbstractMethod.INSTANCE.compile(instrumentationTarget).assemble(attributeAppender);
+  assertThat(entry.getSort(),is(TypeWriter.MethodPool.Entry.Sort.DEFINE));
+}
