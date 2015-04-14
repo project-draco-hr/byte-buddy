@@ -1,0 +1,4 @@
+{
+  assertThat(TargetType.resolve(leftType,rightType),is(leftType));
+  assertThat(TargetType.resolve(TargetType.DESCRIPTION,rightType),is(rightType));
+}

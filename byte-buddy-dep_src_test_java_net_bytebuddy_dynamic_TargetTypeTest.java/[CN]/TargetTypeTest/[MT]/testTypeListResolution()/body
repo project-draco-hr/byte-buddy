@@ -1,0 +1,4 @@
+{
+  assertThat(TargetType.resolve(new TypeList.Explicit(Collections.singletonList(leftType)),rightType),is((TypeList)new TypeList.Explicit(Collections.singletonList(leftType))));
+  assertThat(TargetType.resolve(new TypeList.Explicit(Arrays.asList(TargetType.DESCRIPTION,leftType)),rightType),is((TypeList)new TypeList.Explicit(Arrays.asList(rightType,leftType))));
+}
