@@ -2,11 +2,15 @@
   when(resolvedMethodFilter.matches(instrumentedMethod)).thenReturn(true);
   when(firstFilter.matches(instrumentedMethod)).thenReturn(true);
   when(secondFilter.matches(instrumentedMethod)).thenReturn(true);
-  MethodRegistry.Prepared methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory).append(firstMatcher,firstHandler,firstFactory).append(secondMatcher,firstHandler,firstFactory).append(secondMatcher,firstHandler,secondFactory).append(secondMatcher,secondHandler,secondFactory).append(firstMatcher,secondHandler,secondFactory).append(firstMatcher,firstHandler,secondFactory).append(firstMatcher,secondHandler,firstFactory).prepare(firstType,methodLookupEngine,methodFilter);
+  when(resolvedMethodFilter.matches(instrumentedMethod)).thenReturn(true);
+  MethodRegistry.Compiled methodRegistry=new MethodRegistry.Default().append(secondMatcher,secondHandler,secondFactory).prepend(firstMatcher,firstHandler,firstFactory).prepare(firstType,methodLookupEngine,methodFilter).compile(instrumentationTargetFactory);
   assertThat(methodRegistry.getInstrumentedType(),is(typeDescription));
   assertThat(methodRegistry.getInstrumentedMethods(),is((MethodList)new MethodList.Explicit(Collections.singletonList(instrumentedMethod))));
   assertThat(methodRegistry.getTypeInitializer(),is(typeInitializer));
   assertThat(methodRegistry.getLoadedTypeInitializer(),is(loadedTypeInitializer));
   verify(firstHandler).prepare(firstType);
   verify(secondHandler).prepare(secondType);
+  verify(firstFactory).make(typeDescription);
+  verifyZeroInteractions(secondFactory);
+  assertThat(methodRegistry.target(instrumentedMethod),is(firstEntry));
 }

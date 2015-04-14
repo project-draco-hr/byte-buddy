@@ -17,4 +17,6 @@
   when(firstFactory.make(typeDescription)).thenReturn(firstAppender);
   when(secondFactory.make(typeDescription)).thenReturn(secondAppender);
   when(instrumentationTargetFactory.make(finding,new MethodList.Explicit(Collections.singletonList(instrumentedMethod)))).thenReturn(instrumentationTarget);
+  when(firstCompiledHandler.assemble(firstAppender)).thenReturn(firstEntry);
+  when(secondCompiledHandler.assemble(secondAppender)).thenReturn(secondEntry);
 }
