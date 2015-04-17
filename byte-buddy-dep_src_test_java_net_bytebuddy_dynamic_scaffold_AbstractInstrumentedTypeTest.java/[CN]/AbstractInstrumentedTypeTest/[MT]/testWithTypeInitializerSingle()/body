@@ -1,10 +1,11 @@
 {
   InstrumentedType instrumentedType=makePlainInstrumentedType();
   assertThat(instrumentedType.getDeclaredFields().size(),is(0));
-  StackManipulation stackManipulation=mock(StackManipulation.class);
-  instrumentedType=instrumentedType.withInitializer(stackManipulation);
+  ByteCodeAppender byteCodeAppender=mock(ByteCodeAppender.class);
+  instrumentedType=instrumentedType.withInitializer(byteCodeAppender);
   InstrumentedType.TypeInitializer typeInitializer=instrumentedType.getTypeInitializer();
   assertThat(typeInitializer.isDefined(),is(true));
-  typeInitializer.apply(methodVisitor,implementationContext);
-  verify(stackManipulation).apply(methodVisitor,implementationContext);
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  typeInitializer.apply(methodVisitor,implementationContext,methodDescription);
+  verify(byteCodeAppender).apply(methodVisitor,implementationContext,methodDescription);
 }

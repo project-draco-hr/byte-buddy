@@ -2,6 +2,7 @@
   when(methodDescription.getReturnType()).thenReturn(TypeDescription.STRING);
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
+  when(methodDescription.isDefaultValue(FOO)).thenReturn(true);
   TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForAnnotationDefaultValue(FOO,methodAttributeAppender);
   entry.applyHead(methodVisitor,methodDescription);
   verify(methodVisitor).visitAnnotationDefault();

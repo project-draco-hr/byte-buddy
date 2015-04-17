@@ -1,9 +1,0 @@
-int modifiers
-String internalName
-String methodDescriptor
-String genericSignature
-String[] exceptionInternalName
-List<AnnotationToken> annotationTokens
-Map<Integer,List<AnnotationToken>> parameterAnnotationTokens
-List<MethodToken.ParameterToken> parameterTokens
-AnnotationValue<?,?> defaultValue

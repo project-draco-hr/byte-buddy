@@ -1,0 +1,3 @@
+{
+  return "TypePool.AbstractBase.RawAnnotationValue{" + "annotationToken=" + annotationToken + '}';
+}

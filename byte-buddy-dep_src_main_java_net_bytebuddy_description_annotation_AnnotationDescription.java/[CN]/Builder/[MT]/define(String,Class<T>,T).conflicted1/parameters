@@ -1,0 +1,3 @@
+String property
+Class<T> annotationType
+T annotation

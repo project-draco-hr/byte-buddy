@@ -1,0 +1,3 @@
+{
+  return define(property,new ForLoadedAnnotation<Annotation>(nonNull(annotation)));
+}

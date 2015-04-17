@@ -1,0 +1,18 @@
+{
+  if (this == other)   return true;
+  if (!(other instanceof AnnotationDescription.AnnotationValue.Loaded<?>))   return false;
+  AnnotationDescription.AnnotationValue.Loaded<?> loadedOther=(AnnotationDescription.AnnotationValue.Loaded<?>)other;
+  if (!loadedOther.getState().isResolved())   return false;
+  Object otherValue=loadedOther.resolve();
+  if (!(otherValue instanceof Object[]))   return false;
+  Object[] otherArrayValue=(Object[])otherValue;
+  if (values.size() != otherArrayValue.length)   return false;
+  Iterator<AnnotationDescription.AnnotationValue.Loaded<?>> iterator=values.iterator();
+  for (  Object value : otherArrayValue) {
+    AnnotationDescription.AnnotationValue.Loaded<?> self=iterator.next();
+    if (!self.getState().isResolved() || !self.resolve().equals(value)) {
+      return false;
+    }
+  }
+  return true;
+}

@@ -1,0 +1,6 @@
+{
+  for (  String aValue : value) {
+    instrumentedType=instrumentedType.withField(aValue,instrumentedType,ENUM_FIELD_MODIFIERS | Opcodes.ACC_ENUM);
+  }
+  return instrumentedType.withField(ENUM_VALUES,TypeDescription.ArrayProjection.of(instrumentedType,1),ENUM_FIELD_MODIFIERS | Opcodes.ACC_SYNTHETIC).withInitializer(new InitializationAppender());
+}

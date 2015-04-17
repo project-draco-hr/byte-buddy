@@ -1,3 +1,0 @@
-{
-  return new SubclassInstrumentedType(classFileVersion,superClass,interfaces,modifiers,name,fieldDescriptions,methodDescriptions,loadedTypeInitializer,typeInitializer.expandWith(stackManipulation));
-}

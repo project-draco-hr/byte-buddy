@@ -1,0 +1,10 @@
+{
+  if (!enumerationType.isEnum()) {
+    throw new IllegalArgumentException("Not an enumeration type: " + enumerationType);
+  }
+  EnumerationDescription[] enumerationDescription=new EnumerationDescription[value.length];
+  for (int i=0; i < value.length; i++) {
+    enumerationDescription[i]=new EnumerationDescription.Latent(nonNull(enumerationType),nonNull(value[i]));
+  }
+  return define(property,enumerationType,enumerationDescription);
+}

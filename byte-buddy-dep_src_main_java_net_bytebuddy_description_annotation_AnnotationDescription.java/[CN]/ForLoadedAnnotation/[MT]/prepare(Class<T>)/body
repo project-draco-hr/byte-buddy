@@ -1,0 +1,6 @@
+{
+  if (!annotation.annotationType().equals(annotationType)) {
+    throw new IllegalArgumentException("Annotation is not of type " + annotationType);
+  }
+  return (Loadable<T>)this;
+}

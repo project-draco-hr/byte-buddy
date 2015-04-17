@@ -1,0 +1,19 @@
+{
+  if (other == this) {
+    return true;
+  }
+  if (!(other instanceof AnnotationDescription)) {
+    return false;
+  }
+  AnnotationDescription annotationDescription=((AnnotationDescription)other);
+  if (!annotationDescription.getAnnotationType().equals(getAnnotationType())) {
+    return false;
+  }
+  for (  MethodDescription methodDescription : getAnnotationType().getDeclaredMethods()) {
+    Object value=getValue(methodDescription);
+    if (!PropertyDispatcher.of(value.getClass()).equals(value,annotationDescription.getValue(methodDescription))) {
+      return false;
+    }
+  }
+  return true;
+}

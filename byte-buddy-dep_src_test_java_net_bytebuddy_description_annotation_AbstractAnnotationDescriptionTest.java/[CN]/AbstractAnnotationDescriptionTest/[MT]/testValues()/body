@@ -21,8 +21,8 @@
   assertValue(second,"classValue",new TypeDescription.ForLoadedType(CLASS),CLASS);
   assertValue(first,"arrayClassValue",new TypeDescription.ForLoadedType(ARRAY_CLASS),ARRAY_CLASS);
   assertValue(second,"arrayClassValue",new TypeDescription.ForLoadedType(ARRAY_CLASS),ARRAY_CLASS);
-  assertValue(first,"enumValue",new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(ENUMERATION),ENUMERATION);
-  assertValue(second,"enumValue",new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(ENUMERATION),ENUMERATION);
+  assertValue(first,"enumValue",new EnumerationDescription.ForLoadedEnumeration(ENUMERATION),ENUMERATION);
+  assertValue(second,"enumValue",new EnumerationDescription.ForLoadedEnumeration(ENUMERATION),ENUMERATION);
   assertValue(first,"annotationValue",AnnotationDescription.ForLoadedAnnotation.of(ANNOTATION),ANNOTATION);
   assertValue(second,"annotationValue",AnnotationDescription.ForLoadedAnnotation.of(ANNOTATION),ANNOTATION);
   assertValue(first,"booleanArrayValue",BOOLEAN_ARRAY,BOOLEAN_ARRAY);
@@ -45,8 +45,8 @@
   assertValue(second,"stringArrayValue",STRING_ARRAY,STRING_ARRAY);
   assertValue(first,"classArrayValue",new TypeDescription[]{new TypeDescription.ForLoadedType(CLASS)},CLASS_ARRAY);
   assertValue(second,"classArrayValue",new TypeDescription[]{new TypeDescription.ForLoadedType(CLASS)},CLASS_ARRAY);
-  assertValue(first,"enumArrayValue",new AnnotationDescription.EnumerationValue[]{new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(ENUMERATION)},ENUMERATION_ARRAY);
-  assertValue(second,"enumArrayValue",new AnnotationDescription.EnumerationValue[]{new AnnotationDescription.EnumerationValue.ForLoadedEnumeration(ENUMERATION)},ENUMERATION_ARRAY);
+  assertValue(first,"enumArrayValue",new EnumerationDescription[]{new EnumerationDescription.ForLoadedEnumeration(ENUMERATION)},ENUMERATION_ARRAY);
+  assertValue(second,"enumArrayValue",new EnumerationDescription[]{new EnumerationDescription.ForLoadedEnumeration(ENUMERATION)},ENUMERATION_ARRAY);
   assertValue(first,"annotationArrayValue",new AnnotationDescription[]{AnnotationDescription.ForLoadedAnnotation.of(ANNOTATION)},ANNOTATION_ARRAY);
   assertValue(second,"annotationArrayValue",new AnnotationDescription[]{AnnotationDescription.ForLoadedAnnotation.of(ANNOTATION)},ANNOTATION_ARRAY);
 }

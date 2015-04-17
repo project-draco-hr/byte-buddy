@@ -1,5 +1,0 @@
-{
-  this.name=name;
-  this.componentTypeReference=componentTypeReference;
-  values=new LinkedList<LazyTypeDescription.AnnotationValue<?,?>>();
-}

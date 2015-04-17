@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (!(other instanceof AnnotationDescription.AnnotationValue.Loaded<?>))   return false;
+  AnnotationDescription.AnnotationValue.Loaded<?> loadedOther=(AnnotationDescription.AnnotationValue.Loaded<?>)other;
+  return loadedOther.getState().isResolved() && type.equals(loadedOther.resolve());
+}

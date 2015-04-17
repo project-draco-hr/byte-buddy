@@ -1,13 +1,13 @@
 {
-  LazyTypeDescription.AnnotationValue<?,?> annotationValue;
+  AnnotationDescription.AnnotationValue<?,?> annotationValue;
   if (value instanceof Type) {
-    annotationValue=new LazyTypeDescription.AnnotationValue.ForType((Type)value);
+    annotationValue=new RawTypeValue(Default.this,(Type)value);
   }
  else   if (value.getClass().isArray()) {
-    annotationValue=new LazyTypeDescription.AnnotationValue.Trivial<Object>(value);
+    annotationValue=new AnnotationDescription.AnnotationValue.Trivial<Object>(value);
   }
  else {
-    annotationValue=new LazyTypeDescription.AnnotationValue.Trivial<Object>(value);
+    annotationValue=new AnnotationDescription.AnnotationValue.Trivial<Object>(value);
   }
   annotationRegistrant.register(name,annotationValue);
 }

@@ -15,9 +15,9 @@
   when(firstFieldType.getDescriptor()).thenReturn(BAR);
   when(secondFieldType.getStackSize()).thenReturn(StackSize.ZERO);
   when(secondFieldType.getDescriptor()).thenReturn(QUX);
-  when(injectedCode.getStackManipulation()).thenReturn(injectedCodeAppender);
-  when(injectedCodeAppender.apply(any(MethodVisitor.class),any(Implementation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
-  when(terminationAppender.apply(any(MethodVisitor.class),any(Implementation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
+  when(injectedCode.getByteCodeAppender()).thenReturn(injectedCodeAppender);
+  when(injectedCodeAppender.apply(any(MethodVisitor.class),any(Implementation.Context.class),any(MethodDescription.class))).thenReturn(new ByteCodeAppender.Size(0,0));
+  when(terminationAppender.apply(any(MethodVisitor.class),any(Implementation.Context.class),any(MethodDescription.class))).thenReturn(new ByteCodeAppender.Size(0,0));
   when(firstSpecialInvocation.getMethodDescription()).thenReturn(firstSpecialMethod);
   when(firstSpecialInvocation.getTypeDescription()).thenReturn(firstSpecialType);
   when(firstSpecialMethod.getReturnType()).thenReturn(firstSpecialReturnType);

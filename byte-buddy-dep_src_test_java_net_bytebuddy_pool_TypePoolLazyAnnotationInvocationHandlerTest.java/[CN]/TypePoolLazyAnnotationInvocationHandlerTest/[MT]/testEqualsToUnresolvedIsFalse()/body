@@ -1,5 +1,0 @@
-{
-  when(loadedAnnotationValue.getState()).thenReturn(TypePool.LazyTypeDescription.AnnotationValue.Loaded.State.NON_RESOLVED);
-  assertThat(new TypePool.LazyTypeDescription.AnnotationInvocationHandler(getClass().getClassLoader(),Foo.class,Collections.<String,TypePool.LazyTypeDescription.AnnotationValue<?,?>>singletonMap(FOO,annotationValue)).invoke(new Object(),Object.class.getDeclaredMethod("equals",Object.class),new Object[]{new ExplicitFoo(FOO)}),is((Object)false));
-  verify(loadedAnnotationValue,never()).resolve();
-}

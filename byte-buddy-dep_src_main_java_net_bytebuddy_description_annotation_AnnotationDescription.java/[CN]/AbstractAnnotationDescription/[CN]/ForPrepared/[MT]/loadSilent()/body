@@ -1,0 +1,8 @@
+{
+  try {
+    return load();
+  }
+ catch (  ClassNotFoundException e) {
+    throw new IllegalStateException(ERROR_MESSAGE,e);
+  }
+}

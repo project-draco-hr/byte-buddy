@@ -1,7 +1,0 @@
-{
-  int result=1;
-  for (  AnnotationValue.Loaded<?> value : values) {
-    result=31 * result + value.hashCode();
-  }
-  return result;
-}

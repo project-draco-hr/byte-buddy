@@ -1,4 +1,0 @@
-{
-  when(annotationValue.load(getClass().getClassLoader())).thenReturn((TypePool.LazyTypeDescription.AnnotationValue.Loaded)loadedAnnotationValue);
-  when(otherAnnotationValue.load(getClass().getClassLoader())).thenReturn((TypePool.LazyTypeDescription.AnnotationValue.Loaded)otherLoadedAnnotationValue);
-}

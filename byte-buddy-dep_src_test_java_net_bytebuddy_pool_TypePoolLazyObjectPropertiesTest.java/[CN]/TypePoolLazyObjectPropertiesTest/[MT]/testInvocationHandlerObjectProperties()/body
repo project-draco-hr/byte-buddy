@@ -1,8 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationInvocationHandler.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
-    @Override public Class<?> create(){
-      return Object.class;
-    }
-  }
-).applyMutable();
-}

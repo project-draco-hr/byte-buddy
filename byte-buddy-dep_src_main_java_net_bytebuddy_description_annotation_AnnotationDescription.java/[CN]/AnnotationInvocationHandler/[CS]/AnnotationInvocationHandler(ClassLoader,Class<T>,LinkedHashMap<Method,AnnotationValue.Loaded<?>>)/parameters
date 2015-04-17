@@ -1,0 +1,3 @@
+ClassLoader classLoader
+Class<T> annotationType
+LinkedHashMap<Method,AnnotationValue.Loaded<?>> values

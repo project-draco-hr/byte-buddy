@@ -1,7 +1,0 @@
-{
-  List<AnnotationValue.Loaded<?>> loadedValues=new ArrayList<AnnotationValue.Loaded<?>>(value.size());
-  for (  AnnotationValue<?,?> value : this.value) {
-    loadedValues.add(value.load(classLoader));
-  }
-  return new Loaded(classLoader.loadClass(componentTypeReference.lookup()),loadedValues);
-}

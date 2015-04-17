@@ -10,11 +10,11 @@
   verify(typeInitializer).expandWith(injectedCodeAppender);
   verifyNoMoreInteractions(typeInitializer);
   verify(injectedCode,atLeast(1)).isDefined();
-  verify(injectedCode).getStackManipulation();
+  verify(injectedCode).getByteCodeAppender();
   verifyNoMoreInteractions(injectedCode);
   verify(otherTypeInitializer,atLeast(1)).isDefined();
   verify(otherTypeInitializer).terminate();
   verifyNoMoreInteractions(otherTypeInitializer);
-  verify(terminationAppender).apply(methodVisitor,implementationContext);
+  verify(terminationAppender).apply(methodVisitor,implementationContext,MethodDescription.Latent.typeInitializerOf(instrumentedType));
   verifyNoMoreInteractions(terminationAppender);
 }

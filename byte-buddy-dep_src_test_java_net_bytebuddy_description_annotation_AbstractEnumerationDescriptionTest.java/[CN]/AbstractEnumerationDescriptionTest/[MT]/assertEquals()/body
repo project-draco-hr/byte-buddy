@@ -1,0 +1,23 @@
+{
+  EnumerationDescription identical=describe(Sample.FIRST);
+  assertThat(identical,equalTo(identical));
+  EnumerationDescription equalFirst=mock(EnumerationDescription.class);
+  when(equalFirst.getValue()).thenReturn(Sample.FIRST.name());
+  when(equalFirst.getEnumerationType()).thenReturn(new TypeDescription.ForLoadedType(Sample.class));
+  assertThat(describe(Sample.FIRST),equalTo(equalFirst));
+  EnumerationDescription equalSecond=mock(EnumerationDescription.class);
+  when(equalSecond.getValue()).thenReturn(Sample.SECOND.name());
+  when(equalSecond.getEnumerationType()).thenReturn(new TypeDescription.ForLoadedType(Sample.class));
+  assertThat(describe(Sample.SECOND),equalTo(equalSecond));
+  EnumerationDescription equalFirstTypeOnly=mock(EnumerationDescription.class);
+  when(equalFirstTypeOnly.getValue()).thenReturn(Sample.SECOND.name());
+  when(equalFirstTypeOnly.getEnumerationType()).thenReturn(new TypeDescription.ForLoadedType(Sample.class));
+  assertThat(describe(Sample.FIRST),not(equalTo(equalFirstTypeOnly)));
+  EnumerationDescription equalFirstNameOnly=mock(EnumerationDescription.class);
+  when(equalFirstNameOnly.getValue()).thenReturn(Sample.FIRST.name());
+  when(equalFirstNameOnly.getEnumerationType()).thenReturn(new TypeDescription.ForLoadedType(Other.class));
+  assertThat(describe(Sample.FIRST),not(equalTo(equalFirstNameOnly)));
+  assertThat(describe(Sample.FIRST),not(equalTo(equalSecond)));
+  assertThat(describe(Sample.FIRST),not(equalTo(new Object())));
+  assertThat(describe(Sample.FIRST),not(equalTo(null)));
+}

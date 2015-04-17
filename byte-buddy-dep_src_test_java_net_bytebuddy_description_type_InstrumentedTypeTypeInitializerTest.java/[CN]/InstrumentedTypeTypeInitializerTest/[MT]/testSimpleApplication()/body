@@ -1,11 +1,8 @@
 {
-  when(stackManipulation.isValid()).thenReturn(true);
-  InstrumentedType.TypeInitializer typeInitializer=new InstrumentedType.TypeInitializer.Simple(stackManipulation);
+  InstrumentedType.TypeInitializer typeInitializer=new InstrumentedType.TypeInitializer.Simple(byteCodeAppender);
   assertThat(typeInitializer.isDefined(),is(true));
-  assertThat(typeInitializer.isValid(),is(true));
-  verify(stackManipulation).isValid();
-  typeInitializer.apply(methodVisitor,implementationContext);
-  verify(stackManipulation).apply(methodVisitor,implementationContext);
-  verifyZeroInteractions(stackManipulation);
+  typeInitializer.apply(methodVisitor,implementationContext,methodDescription);
+  verify(byteCodeAppender).apply(methodVisitor,implementationContext,methodDescription);
+  verifyZeroInteractions(byteCodeAppender);
   verifyZeroInteractions(implementationContext);
 }

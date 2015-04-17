@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (!(other instanceof Loaded<?>))   return false;
-  Loaded<?> loadedOther=(Loaded<?>)other;
-  return loadedOther.getState().isResolved() && value.equals(loadedOther.resolve());
-}

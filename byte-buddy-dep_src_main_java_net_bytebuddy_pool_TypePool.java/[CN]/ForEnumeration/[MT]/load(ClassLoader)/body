@@ -1,9 +1,0 @@
-{
-  Class<?> enumType=classLoader.loadClass(descriptor.substring(1,descriptor.length() - 1).replace('/','.'));
-  try {
-    return enumType.isEnum() ? new LegalRuntimeEnumeration(Enum.valueOf((Class)enumType,value)) : new IncompatibleRuntimeType(enumType);
-  }
- catch (  IllegalArgumentException ignored) {
-    return new UnknownRuntimeEnumeration((Class)enumType,value);
-  }
-}

@@ -1,3 +1,0 @@
-{
-  throw new IncompatibleClassChangeError("Not an annotation type: " + incompatibleType.toString());
-}

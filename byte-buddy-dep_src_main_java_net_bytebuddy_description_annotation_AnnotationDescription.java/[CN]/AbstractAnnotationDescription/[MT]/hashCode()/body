@@ -1,0 +1,8 @@
+{
+  int hashCode=0;
+  for (  MethodDescription methodDescription : getAnnotationType().getDeclaredMethods()) {
+    Object value=getValue(methodDescription);
+    hashCode+=31 * PropertyDispatcher.of(value.getClass()).hashCode(value);
+  }
+  return hashCode;
+}

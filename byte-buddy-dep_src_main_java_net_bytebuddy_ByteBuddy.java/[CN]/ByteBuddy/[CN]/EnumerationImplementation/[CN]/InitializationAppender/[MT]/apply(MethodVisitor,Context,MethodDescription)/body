@@ -1,0 +1,18 @@
+{
+  TypeDescription instrumentedType=instrumentedMethod.getDeclaringType();
+  MethodDescription enumConstructor=instrumentedType.getDeclaredMethods().filter(isConstructor().and(takesArguments(String.class,int.class))).getOnly();
+  int ordinal=0;
+  StackManipulation stackManipulation=StackManipulation.LegalTrivial.INSTANCE;
+  List<FieldDescription> enumerationFields=new ArrayList<FieldDescription>(value.length);
+  for (  String aValue : value) {
+    FieldDescription fieldDescription=instrumentedType.getDeclaredFields().filter(named(aValue)).getOnly();
+    stackManipulation=new StackManipulation.Compound(stackManipulation,TypeCreation.forType(instrumentedType),Duplication.SINGLE,new TextConstant(aValue),IntegerConstant.forValue(ordinal++),MethodInvocation.invoke(enumConstructor),FieldAccess.forField(fieldDescription).putter());
+    enumerationFields.add(fieldDescription);
+  }
+  List<StackManipulation> fieldGetters=new ArrayList<StackManipulation>(value.length);
+  for (  FieldDescription fieldDescription : enumerationFields) {
+    fieldGetters.add(FieldAccess.forField(fieldDescription).getter());
+  }
+  stackManipulation=new StackManipulation.Compound(stackManipulation,ArrayFactory.forType(instrumentedType).withValues(fieldGetters),FieldAccess.forField(instrumentedType.getDeclaredFields().filter(named(ENUM_VALUES)).getOnly()).putter());
+  return new Size(stackManipulation.apply(methodVisitor,implementationContext).getMaximalSize(),instrumentedMethod.getStackSize());
+}

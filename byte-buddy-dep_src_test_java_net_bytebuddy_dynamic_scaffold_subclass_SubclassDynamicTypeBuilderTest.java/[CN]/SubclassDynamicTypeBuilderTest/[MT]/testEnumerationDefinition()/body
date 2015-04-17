@@ -1,0 +1,17 @@
+{
+  Class<? extends Enum<?>> type=new ByteBuddy().makeEnumeration(FOO,BAR).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethods().length,is(2));
+  assertThat(type.getDeclaredConstructors().length,is(1));
+  assertThat(type.getDeclaredFields().length,is(3));
+  assertThat(Enum.class.isAssignableFrom(type),is(true));
+  assertNotEquals(Enum.class,type);
+  assertThat(type.isInterface(),is(false));
+  assertThat(type.isAnnotation(),is(false));
+  assertThat(type.isEnum(),is(true));
+  Enum foo=Enum.valueOf((Class)type,FOO);
+  assertThat(foo.name(),is(FOO));
+  assertThat(foo.ordinal(),is(0));
+  Enum bar=Enum.valueOf((Class)type,BAR);
+  assertThat(bar.name(),is(BAR));
+  assertThat(bar.ordinal(),is(1));
+}

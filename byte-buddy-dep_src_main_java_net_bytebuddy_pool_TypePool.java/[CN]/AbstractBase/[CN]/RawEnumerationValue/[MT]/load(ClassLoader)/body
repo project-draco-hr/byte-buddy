@@ -1,0 +1,9 @@
+{
+  Class<?> type=classLoader.loadClass(descriptor.substring(1,descriptor.length() - 1).replace('/','.'));
+  try {
+    return type.isEnum() ? new ForEnumeration.Loaded(Enum.valueOf((Class)type,value)) : new ForEnumeration.IncompatibleRuntimeType(type);
+  }
+ catch (  IllegalArgumentException ignored) {
+    return new ForEnumeration.UnknownRuntimeEnumeration((Class)type,value);
+  }
+}

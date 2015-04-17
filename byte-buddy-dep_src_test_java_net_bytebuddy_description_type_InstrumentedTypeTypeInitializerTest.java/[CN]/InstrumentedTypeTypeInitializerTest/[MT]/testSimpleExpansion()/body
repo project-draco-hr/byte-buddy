@@ -1,3 +1,3 @@
 {
-  assertThat(new InstrumentedType.TypeInitializer.Simple(stackManipulation).expandWith(stackManipulation),is((InstrumentedType.TypeInitializer)new InstrumentedType.TypeInitializer.Simple(new StackManipulation.Compound(stackManipulation,stackManipulation))));
+  assertThat(new InstrumentedType.TypeInitializer.Simple(byteCodeAppender).expandWith(byteCodeAppender),is((InstrumentedType.TypeInitializer)new InstrumentedType.TypeInitializer.Simple(new ByteCodeAppender.Compound(byteCodeAppender,byteCodeAppender))));
 }

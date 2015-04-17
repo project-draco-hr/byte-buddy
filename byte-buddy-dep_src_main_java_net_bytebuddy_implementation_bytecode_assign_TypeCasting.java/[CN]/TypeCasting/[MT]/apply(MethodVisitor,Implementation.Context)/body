@@ -1,4 +1,4 @@
 {
-  methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,targetTypeInternalName);
+  methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,typeDescription.getInternalName());
   return StackSize.ZERO.toIncreasingSize();
 }

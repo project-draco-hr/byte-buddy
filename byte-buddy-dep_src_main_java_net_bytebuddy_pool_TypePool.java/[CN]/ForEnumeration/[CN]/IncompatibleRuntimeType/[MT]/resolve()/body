@@ -1,3 +1,0 @@
-{
-  throw new IncompatibleClassChangeError("Not an enumeration type: " + type.toString());
-}

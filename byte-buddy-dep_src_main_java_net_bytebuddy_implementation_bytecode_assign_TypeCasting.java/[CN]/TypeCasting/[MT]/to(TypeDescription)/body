@@ -1,0 +1,6 @@
+{
+  if (typeDescription.isPrimitive()) {
+    throw new IllegalArgumentException("Cannot cast to primitive type " + typeDescription);
+  }
+  return new TypeCasting(typeDescription);
+}

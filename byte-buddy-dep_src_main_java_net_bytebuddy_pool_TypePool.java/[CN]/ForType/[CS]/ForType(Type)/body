@@ -1,3 +1,0 @@
-{
-  name=type.getSort() == Type.ARRAY ? type.getInternalName().replace('/','.') : type.getClassName();
-}

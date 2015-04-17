@@ -1,0 +1,3 @@
+{
+  return define(property,AnnotationValue.ForEnumeration.<Enum>of(nonNull(value)));
+}

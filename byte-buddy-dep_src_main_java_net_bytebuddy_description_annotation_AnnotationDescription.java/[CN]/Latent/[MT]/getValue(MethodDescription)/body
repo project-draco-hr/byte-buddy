@@ -1,0 +1,11 @@
+{
+  AnnotationValue<?,?> value=annotationValues.get(methodDescription.getName());
+  if (value != null) {
+    return value.resolve();
+  }
+  Object defaultValue=methodDescription.getDefaultValue();
+  if (defaultValue != null) {
+    return defaultValue;
+  }
+  throw new IllegalStateException("No value defined for: " + methodDescription);
+}

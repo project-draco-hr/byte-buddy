@@ -1,0 +1,3 @@
+{
+  return define(property,new AnnotationValue.Trivial<double[]>(value));
+}

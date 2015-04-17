@@ -1,0 +1,6 @@
+{
+  if (!this.annotationType.represents(annotationType)) {
+    throw new IllegalArgumentException("Not a compatible annotation type: " + annotationType);
+  }
+  return new Loadable<T>(annotationType);
+}
