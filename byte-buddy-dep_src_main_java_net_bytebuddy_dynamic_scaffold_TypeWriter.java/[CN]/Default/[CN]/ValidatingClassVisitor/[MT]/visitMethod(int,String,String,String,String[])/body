@@ -1,4 +1,4 @@
 {
-  constraint.assertMethod(name,(modifiers & Opcodes.ACC_ABSTRACT) != 0,(modifiers & Opcodes.ACC_PUBLIC) != 0,(modifiers & Opcodes.ACC_STATIC) != 0);
+  constraint.assertMethod(name,(modifiers & Opcodes.ACC_ABSTRACT) != 0,(modifiers & Opcodes.ACC_PUBLIC) != 0,(modifiers & Opcodes.ACC_STATIC) != 0,!descriptor.startsWith(NO_PARAMETERS) || descriptor.endsWith(RETURNS_VOID));
   return new ValidatingMethodVisitor(super.visitMethod(modifiers,name,descriptor,signature,exceptions),name);
 }
