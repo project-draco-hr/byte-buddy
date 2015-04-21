@@ -1,0 +1,4 @@
+{
+  this.requiredVersion=requiredVersion;
+  this.type=type;
+}

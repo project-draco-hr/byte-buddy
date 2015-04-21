@@ -1,0 +1,8 @@
+{
+  if (!isPublic && !allowsNonPublic) {
+    throw new IllegalStateException("Cannot define non-public field " + name + " for "+ sortName);
+  }
+ else   if (!isStatic && !allowsNonStaticFields) {
+    throw new IllegalStateException("Cannot define for non-static field " + name + " for "+ sortName);
+  }
+}

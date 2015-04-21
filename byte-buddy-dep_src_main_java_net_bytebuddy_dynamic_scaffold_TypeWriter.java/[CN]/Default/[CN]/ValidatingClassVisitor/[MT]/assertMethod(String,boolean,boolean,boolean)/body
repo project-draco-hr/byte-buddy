@@ -1,0 +1,14 @@
+{
+  if (!isPublic && !allowsNonPublic) {
+    throw new IllegalStateException("Cannot define non-public method " + name + " for "+ sortName);
+  }
+ else   if (isStatic && !allowsStaticMethods) {
+    throw new IllegalStateException("Cannot define static method " + name + " for "+ sortName);
+  }
+ else   if (!isStatic && isAbstract && !allowsAbstract) {
+    throw new IllegalStateException("Cannot define abstract method " + name + " for "+ sortName);
+  }
+ else   if (!isAbstract && !allowsNonAbstract) {
+    throw new IllegalStateException("Cannot define non-abstract method " + name + " + for "+ sortName);
+  }
+}

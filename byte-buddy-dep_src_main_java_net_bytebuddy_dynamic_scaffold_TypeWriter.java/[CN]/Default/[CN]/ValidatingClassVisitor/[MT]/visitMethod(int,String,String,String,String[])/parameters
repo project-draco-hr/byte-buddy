@@ -1,0 +1,5 @@
+int modifiers
+String name
+String descriptor
+String signature
+String[] exceptions

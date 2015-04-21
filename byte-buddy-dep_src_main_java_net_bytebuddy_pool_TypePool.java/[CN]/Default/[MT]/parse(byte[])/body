@@ -1,6 +1,6 @@
 {
   ClassReader classReader=new ClassReader(binaryRepresentation);
   TypeExtractor typeExtractor=new TypeExtractor();
-  classReader.accept(typeExtractor,ASM_MANUAL);
+  classReader.accept(typeExtractor,ASM_MANUAL_FLAG);
   return typeExtractor.toTypeDescription();
 }

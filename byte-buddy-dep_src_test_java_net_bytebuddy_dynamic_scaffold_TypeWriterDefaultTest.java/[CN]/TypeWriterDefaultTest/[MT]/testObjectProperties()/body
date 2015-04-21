@@ -1,4 +1,6 @@
 {
   ObjectPropertyAssertion.of(TypeWriter.Default.ForCreation.class).apply();
   ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.class).applyMutable();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.ValidatingMethodVisitor.class).applyMutable();
 }

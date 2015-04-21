@@ -1,0 +1,6 @@
+{
+  ClassReader classReader=new ClassReader(binaryRepresentation);
+  ClassWriter classWriter=new ClassWriter(classReader,ASM_MANUAL_FLAG);
+  classReader.accept(writeTo(classVisitorWrapper.wrap(new ValidatingClassVisitor(classWriter)),implementationContext),ASM_MANUAL_FLAG);
+  return classWriter.toByteArray();
+}

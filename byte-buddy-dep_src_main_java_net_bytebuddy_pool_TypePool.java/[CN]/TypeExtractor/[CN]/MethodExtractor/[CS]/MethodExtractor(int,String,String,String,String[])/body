@@ -1,5 +1,5 @@
 {
-  super(ASM_VERSION);
+  super(ASM_API_VERSION);
   this.modifiers=modifiers;
   this.internalName=internalName;
   this.descriptor=descriptor;

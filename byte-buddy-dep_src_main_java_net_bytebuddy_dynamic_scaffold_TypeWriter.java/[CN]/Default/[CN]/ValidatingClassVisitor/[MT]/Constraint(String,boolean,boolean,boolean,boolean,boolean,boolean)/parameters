@@ -1,0 +1,7 @@
+String sortName
+boolean allowsNonPublic
+boolean allowsNonStaticFields
+boolean allowsStaticMethods
+boolean allowsAbstract
+boolean allowsNonAbstract
+boolean allowsDefaultValue

@@ -1,5 +1,5 @@
 {
-  super(ASM_VERSION);
+  super(ASM_API_VERSION);
   this.annotationRegistrant=annotationRegistrant;
   this.componentTypeLocator=componentTypeLocator;
 }

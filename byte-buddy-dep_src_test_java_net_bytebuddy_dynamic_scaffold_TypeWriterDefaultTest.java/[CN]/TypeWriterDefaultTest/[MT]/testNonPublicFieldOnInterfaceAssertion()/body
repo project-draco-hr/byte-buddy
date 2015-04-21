@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().makeInterface().defineField(FOO,String.class,Ownership.STATIC).make();
+}

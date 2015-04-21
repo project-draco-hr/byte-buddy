@@ -1,0 +1,5 @@
+{
+  if (!allowsDefaultValue) {
+    throw new IllegalStateException("Cannot define define default value on " + name + " for "+ sortName);
+  }
+}

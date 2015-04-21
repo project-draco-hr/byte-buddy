@@ -1,0 +1,16 @@
+{
+  ClassFileVersion classFileVersion=new ClassFileVersion(version);
+  if ((modifier & Opcodes.ACC_ANNOTATION) != 0) {
+    constraint=classFileVersion.isSupportsDefaultMethods() ? Constraint.JAVA8_ANNOTATION : Constraint.ANNOTATION;
+  }
+ else   if ((modifier & Opcodes.ACC_INTERFACE) != 0) {
+    constraint=classFileVersion.isSupportsDefaultMethods() ? Constraint.JAVA8_INTERFACE : Constraint.INTERFACE;
+  }
+ else   if ((modifier & Opcodes.ACC_ABSTRACT) != 0) {
+    constraint=Constraint.ABSTRACT_CLASS;
+  }
+ else {
+    constraint=Constraint.MANIFEST_CLASS;
+  }
+  super.visit(version,modifier,name,signature,superName,interfaces);
+}
