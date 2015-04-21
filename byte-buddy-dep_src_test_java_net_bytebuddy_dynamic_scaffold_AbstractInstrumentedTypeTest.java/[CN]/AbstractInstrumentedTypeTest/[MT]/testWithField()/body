@@ -9,4 +9,5 @@
   assertThat(fieldDescription.getFieldType(),is(fieldType));
   assertThat(fieldDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
   assertThat(fieldDescription.getName(),is(BAR));
+  assertThat(fieldDescription.getDeclaringType(),sameInstance((TypeDescription)instrumentedType));
 }

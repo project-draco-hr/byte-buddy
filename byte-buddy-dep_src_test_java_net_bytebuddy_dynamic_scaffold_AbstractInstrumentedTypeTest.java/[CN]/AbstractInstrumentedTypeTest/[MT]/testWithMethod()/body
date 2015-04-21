@@ -18,4 +18,5 @@
   assertThat(methodDescription.getExceptionTypes(),is(Collections.singletonList(exceptionType)));
   assertThat(methodDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
   assertThat(methodDescription.getName(),is(BAR));
+  assertThat(methodDescription.getDeclaringType(),sameInstance((TypeDescription)instrumentedType));
 }

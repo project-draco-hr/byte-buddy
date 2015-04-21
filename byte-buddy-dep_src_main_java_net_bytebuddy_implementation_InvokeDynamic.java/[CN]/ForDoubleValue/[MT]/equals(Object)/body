@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && Double.compare(((ForDoubleValue)other).value,value) == 0;
-}

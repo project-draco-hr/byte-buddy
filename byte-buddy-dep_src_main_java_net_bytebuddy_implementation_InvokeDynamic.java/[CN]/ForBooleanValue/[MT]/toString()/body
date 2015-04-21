@@ -1,3 +1,0 @@
-{
-  return "InvokeDynamic.InvocationProvider.ArgumentProvider.ForBooleanValue{" + "value=" + value + '}';
-}

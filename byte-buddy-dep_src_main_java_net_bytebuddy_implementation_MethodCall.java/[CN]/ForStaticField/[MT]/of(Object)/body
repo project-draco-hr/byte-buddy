@@ -38,6 +38,9 @@
  else   if (JavaType.METHOD_TYPE.getTypeStub().isInstance(value)) {
     return new ForJavaInstance(JavaInstance.MethodType.of(value));
   }
+ else   if (value instanceof Enum<?>) {
+    return new ForEnumerationValue(new EnumerationDescription.ForLoadedEnumeration((Enum<?>)value));
+  }
  else {
     return new ForStaticField(value);
   }

@@ -1,7 +1,7 @@
 {
   List<InvocationProvider.ArgumentProvider> argumentProviders=new ArrayList<InvocationProvider.ArgumentProvider>(typeDescription.length);
   for (  TypeDescription aTypeDescription : typeDescription) {
-    argumentProviders.add(new InvocationProvider.ArgumentProvider.ForClassValue(nonNull(aTypeDescription)));
+    argumentProviders.add(new InvocationProvider.ArgumentProvider.ForClassConstant(nonNull(aTypeDescription)));
   }
   return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
 }

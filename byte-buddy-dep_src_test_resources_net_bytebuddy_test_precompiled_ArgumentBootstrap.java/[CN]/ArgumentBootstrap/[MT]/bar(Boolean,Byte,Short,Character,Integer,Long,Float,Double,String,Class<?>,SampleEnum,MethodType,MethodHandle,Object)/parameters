@@ -1,0 +1,14 @@
+Boolean arg0
+Byte arg1
+Short arg2
+Character arg3
+Integer arg4
+Long arg5
+Float arg6
+Double arg7
+String arg8
+Class<?> arg9
+SampleEnum arg10
+MethodType arg11
+MethodHandle arg12
+Object arg13

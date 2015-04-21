@@ -1,3 +1,4 @@
 {
+  assertThat(args.length,is(2));
   return QUX + args[0] + args[1];
 }

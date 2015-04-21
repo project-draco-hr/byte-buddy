@@ -1,6 +1,6 @@
 {
-  if (!typeDescription.isAnnotation()) {
-    throw new IllegalArgumentException("Not an annotation type: " + typeDescription);
+  if (!annotationType.isAnnotation()) {
+    throw new IllegalArgumentException("Not an annotation type: " + annotationType);
   }
-  return new Builder(typeDescription,Collections.<String,AnnotationValue<?,?>>emptyMap());
+  return new Builder(annotationType,Collections.<String,AnnotationValue<?,?>>emptyMap());
 }

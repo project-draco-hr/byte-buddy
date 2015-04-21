@@ -4,7 +4,8 @@
   instrumentedType=instrumentedType.withField(BAR,instrumentedType,Opcodes.ACC_PUBLIC);
   assertThat(instrumentedType.getDeclaredFields().size(),is(1));
   FieldDescription fieldDescription=instrumentedType.getDeclaredFields().get(0);
-  assertThat(fieldDescription.getFieldType(),is((TypeDescription)instrumentedType));
+  assertThat(fieldDescription.getFieldType(),sameInstance((TypeDescription)instrumentedType));
   assertThat(fieldDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
   assertThat(fieldDescription.getName(),is(BAR));
+  assertThat(fieldDescription.getDeclaringType(),sameInstance((TypeDescription)instrumentedType));
 }

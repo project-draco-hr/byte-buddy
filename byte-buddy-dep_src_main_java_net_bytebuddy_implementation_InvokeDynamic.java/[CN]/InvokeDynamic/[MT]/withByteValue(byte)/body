@@ -1,7 +1,7 @@
 {
   List<InvocationProvider.ArgumentProvider> argumentProviders=new ArrayList<InvocationProvider.ArgumentProvider>(value.length);
   for (  byte aValue : value) {
-    argumentProviders.add(new InvocationProvider.ArgumentProvider.ForByteValue(aValue));
+    argumentProviders.add(new InvocationProvider.ArgumentProvider.ForByteConstant(aValue));
   }
   return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
 }

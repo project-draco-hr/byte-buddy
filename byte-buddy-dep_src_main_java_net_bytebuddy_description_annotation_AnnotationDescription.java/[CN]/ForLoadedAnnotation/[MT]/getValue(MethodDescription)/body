@@ -11,7 +11,7 @@
         method.setAccessible(true);
       }
     }
-    return wrap(method.invoke(annotation),methodDescription.getReturnType());
+    return describe(method.invoke(annotation),methodDescription.getReturnType());
   }
  catch (  Exception e) {
     throw new IllegalStateException("Cannot access annotation property " + methodDescription,e);

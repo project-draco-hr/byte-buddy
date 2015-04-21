@@ -1,0 +1,5 @@
+{
+  when(enumerationDescription.getEnumerationType()).thenReturn(typeDescription);
+  when(enumerationDescription.getValue()).thenReturn(FOO);
+  when(typeDescription.getDeclaredFields()).thenReturn(new FieldList.Explicit(Collections.singletonList(fieldDescription)));
+}

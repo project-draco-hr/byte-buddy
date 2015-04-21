@@ -1,3 +1,0 @@
-{
-  return "InvokeDynamic.InvocationProvider.ArgumentProvider.ForClassValue{" + "typeDescription=" + typeDescription + '}';
-}

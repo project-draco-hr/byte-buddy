@@ -1,7 +1,7 @@
 {
   List<InvocationProvider.ArgumentProvider> argumentProviders=new ArrayList<InvocationProvider.ArgumentProvider>(value.length);
   for (  boolean aValue : value) {
-    argumentProviders.add(new InvocationProvider.ArgumentProvider.ForBooleanValue(aValue));
+    argumentProviders.add(new InvocationProvider.ArgumentProvider.ForBooleanConstant(aValue));
   }
   return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
 }

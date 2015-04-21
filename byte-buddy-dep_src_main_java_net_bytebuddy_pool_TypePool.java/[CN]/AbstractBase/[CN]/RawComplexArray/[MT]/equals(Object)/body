@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && componentTypeReference.equals(((RawComplexArray)other).componentTypeReference) && value.equals(((RawComplexArray)other).value);
-}

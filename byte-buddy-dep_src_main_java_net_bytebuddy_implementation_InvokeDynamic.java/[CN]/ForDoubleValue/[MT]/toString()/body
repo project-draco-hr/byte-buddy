@@ -1,3 +1,0 @@
-{
-  return "InvokeDynamic.InvocationProvider.ArgumentProvider.ForDoubleValue{" + "value=" + value + '}';
-}

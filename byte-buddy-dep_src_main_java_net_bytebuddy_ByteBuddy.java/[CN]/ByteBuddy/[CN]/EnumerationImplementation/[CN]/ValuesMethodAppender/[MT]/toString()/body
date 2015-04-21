@@ -1,0 +1,3 @@
+{
+  return "ByteBuddy.EnumerationImplementation.ValuesMethodAppender{" + "instrumentedType=" + instrumentedType + '}';
+}

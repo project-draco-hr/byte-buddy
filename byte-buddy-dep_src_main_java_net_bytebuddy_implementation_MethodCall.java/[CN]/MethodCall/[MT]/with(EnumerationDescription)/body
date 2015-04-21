@@ -1,0 +1,7 @@
+{
+  List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(enumerationDescription.length);
+  for (  EnumerationDescription anEnumerationDescription : enumerationDescription) {
+    argumentLoaders.add(new ArgumentLoader.ForEnumerationValue(nonNull(anEnumerationDescription)));
+  }
+  return new MethodCall(methodLocator,targetHandler,join(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,dynamicallyTyped);
+}

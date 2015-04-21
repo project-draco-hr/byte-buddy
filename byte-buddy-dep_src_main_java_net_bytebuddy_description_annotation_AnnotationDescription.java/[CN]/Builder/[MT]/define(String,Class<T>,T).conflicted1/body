@@ -1,3 +1,0 @@
-{
-  return define(property,new TypeDescription.ForLoadedType(nonNull(annotationType)),new AnnotationList.ForLoadedAnnotation(nonNull(annotation)).toArray(new AnnotationDescription[annotation.length]));
-}

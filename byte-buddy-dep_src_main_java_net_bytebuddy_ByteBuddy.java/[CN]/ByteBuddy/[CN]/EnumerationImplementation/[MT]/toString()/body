@@ -1,0 +1,3 @@
+{
+  return "ByteBuddy.EnumerationImplementation{" + "value=" + Arrays.toString(value) + '}';
+}

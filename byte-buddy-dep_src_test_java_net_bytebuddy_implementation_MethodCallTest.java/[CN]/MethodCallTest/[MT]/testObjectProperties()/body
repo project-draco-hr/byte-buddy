@@ -15,6 +15,7 @@
   ObjectPropertyAssertion.of(MethodCall.TargetHandler.ForConstructingInvocation.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForNullConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForThisReference.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForOwnType.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForBooleanConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForByteConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForCharacterConstant.class).apply();
@@ -29,5 +30,6 @@
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForShortConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForTextConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForClassConstant.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForEnumerationValue.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForJavaInstance.class).apply();
 }

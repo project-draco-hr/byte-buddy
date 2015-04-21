@@ -1,0 +1,5 @@
+{
+  DynamicType.Loaded<Qux> loaded=implement(Qux.class,MethodDelegation.to(IncludeSelf.class));
+  Qux instance=loaded.getLoaded().newInstance();
+  assertThat(instance.foo(QUX,BAZ),is((Object)instance));
+}

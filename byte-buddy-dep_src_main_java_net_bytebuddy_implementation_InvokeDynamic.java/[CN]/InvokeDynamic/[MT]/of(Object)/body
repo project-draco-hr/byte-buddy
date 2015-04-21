@@ -24,10 +24,13 @@
     return DOUBLE.make(value);
   }
  else   if (value instanceof String) {
-    return new ForStringValue((String)value);
+    return new ForStringConstant((String)value);
   }
- else   if (value instanceof Class) {
-    return new ForClassValue(new TypeDescription.ForLoadedType((Class<?>)value));
+ else   if (value instanceof Class<?>) {
+    return new ForClassConstant(new TypeDescription.ForLoadedType((Class<?>)value));
+  }
+ else   if (value instanceof Enum<?>) {
+    return new ForEnumerationValue(new EnumerationDescription.ForLoadedEnumeration((Enum<?>)value));
   }
  else   if (JavaType.METHOD_HANDLE.getTypeStub().isInstance(value)) {
     return new ForJavaInstance(JavaInstance.MethodHandle.of(value));

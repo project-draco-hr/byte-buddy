@@ -1,11 +1,7 @@
 {
   Method[] declaredMethod=annotationType.getDeclaredMethods();
   LinkedHashMap<Method,AnnotationValue.Loaded<?>> loadedValues=new LinkedHashMap<Method,AnnotationValue.Loaded<?>>(declaredMethod.length);
-  TypeDescription thisType=new TypeDescription.ForLoadedType(AnnotationInvocationHandler.class);
   for (  Method method : declaredMethod) {
-    if (!new MethodDescription.ForLoadedMethod(method).isVisibleTo(thisType)) {
-      method.setAccessible(true);
-    }
     AnnotationDescription.AnnotationValue<?,?> annotationValue=values.get(method.getName());
     loadedValues.put(method,annotationValue == null ? DefaultValue.of(method) : annotationValue.load(classLoader));
   }

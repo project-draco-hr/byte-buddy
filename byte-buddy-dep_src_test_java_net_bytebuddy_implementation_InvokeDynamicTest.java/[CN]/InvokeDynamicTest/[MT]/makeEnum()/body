@@ -1,0 +1,4 @@
+{
+  Class type=classLoader.loadClass(SAMPLE_ENUM);
+  return Enum.valueOf(type,INSTANCE);
+}

@@ -7,5 +7,5 @@
   if (defaultValue != null) {
     return defaultValue;
   }
-  throw new IllegalStateException("No value defined for: " + methodDescription);
+  throw new IllegalArgumentException("No value defined for: " + methodDescription);
 }

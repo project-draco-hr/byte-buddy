@@ -1,8 +1,0 @@
-{
-  EnumerationDescription[] enumerationDescription=new EnumerationDescription[value.length];
-  int index=0;
-  for (  T aValue : value) {
-    enumerationDescription[index++]=new EnumerationDescription.ForLoadedEnumeration(nonNull(aValue));
-  }
-  return define(property,new TypeDescription.ForLoadedType(nonNull(enumerationType)),enumerationDescription);
-}

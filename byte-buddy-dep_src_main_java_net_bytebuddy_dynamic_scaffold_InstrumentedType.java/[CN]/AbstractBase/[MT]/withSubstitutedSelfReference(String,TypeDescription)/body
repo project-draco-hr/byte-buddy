@@ -1,3 +1,9 @@
 {
-  return typeDescription.getName().equals(typeName) ? this : typeDescription;
+  int arity=0;
+  TypeDescription componentType=typeDescription;
+  while (componentType.isArray()) {
+    arity++;
+    componentType=componentType.getComponentType();
+  }
+  return componentType.getName().equals(typeName) ? ArrayProjection.of(this,arity) : typeDescription;
 }

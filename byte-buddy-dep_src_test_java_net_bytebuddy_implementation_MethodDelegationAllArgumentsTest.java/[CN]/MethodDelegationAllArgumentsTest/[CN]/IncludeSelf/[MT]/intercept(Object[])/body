@@ -1,0 +1,6 @@
+{
+  assertThat(args.length,is(3));
+  assertThat(args[1],is((Object)QUX));
+  assertThat(args[2],is((Object)BAZ));
+  return args[0];
+}
