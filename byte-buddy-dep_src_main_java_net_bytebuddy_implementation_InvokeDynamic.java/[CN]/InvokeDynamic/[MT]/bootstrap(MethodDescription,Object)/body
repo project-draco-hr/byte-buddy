@@ -25,5 +25,5 @@
     }
     serializedArguments.add(anArgument);
   }
-  return new WithImplicitTarget(bootstrapMethod,serializedArguments,new InvocationProvider.Default(),TerminationHandler.ForMethodReturn.INSTANCE,defaultAssigner(),defaultDynamicallyTyped());
+  return new WithImplicitTarget(bootstrapMethod,serializedArguments,new InvocationProvider.Default(),TerminationHandler.ForMethodReturn.INSTANCE,Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
 }

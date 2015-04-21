@@ -3,7 +3,7 @@
     for (    MethodDescription methodDescription : typeDescription.getDeclaredMethods().filter(methodMatcher)) {
       String uniqueSignature=methodDescription.getUniqueSignature();
       MethodDescription overridingMethod=classMethods.get(uniqueSignature);
-      classMethods.put(uniqueSignature,overridingMethod == null ? methodDescription : OverridenClassMethod.of(overridingMethod,methodDescription));
+      classMethods.put(uniqueSignature,overridingMethod == null ? methodDescription : OverriddenClassMethod.of(overridingMethod,methodDescription));
     }
   }
 }

@@ -1,3 +1,3 @@
 {
-  return new ForPoolValue(ClassConstant.of(fixedValue),TypeDescription.CLASS,defaultAssigner(),defaultConsiderRuntimeType());
+  return new ForPoolValue(ClassConstant.of(fixedValue),TypeDescription.CLASS,Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
 }

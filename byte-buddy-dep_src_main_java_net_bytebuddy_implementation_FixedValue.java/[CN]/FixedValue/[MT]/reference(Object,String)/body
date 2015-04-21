@@ -2,5 +2,5 @@
   if (fixedValue == null) {
     throw new IllegalArgumentException("The fixed value must not be null");
   }
-  return new ForStaticField(isValidIdentifier(fieldName),fixedValue,defaultAssigner(),defaultConsiderRuntimeType());
+  return new ForStaticField(isValidIdentifier(fieldName),fixedValue,Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
 }

@@ -8,5 +8,5 @@
  else   if (typeDescription.isPrimitive()) {
     throw new IllegalArgumentException("Cannot delegate to primitive " + typeDescription);
   }
-  return new MethodDelegation(ImplementationDelegate.ForStaticMethod.INSTANCE,defaultParameterBinders(),defaultDefaultsProvider(),TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,defaultAmbiguityResolver(),defaultAssigner(),typeDescription.getDeclaredMethods().filter(isStatic().and(not(isPrivate()))));
+  return new MethodDelegation(ImplementationDelegate.ForStaticMethod.INSTANCE,defaultParameterBinders(),defaultDefaultsProvider(),TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,defaultAmbiguityResolver(),Assigner.DEFAULT,typeDescription.getDeclaredMethods().filter(isStatic().and(not(isPrivate()))));
 }

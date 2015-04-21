@@ -1,8 +1,8 @@
 {
   when(fieldDescription.isPublic()).thenReturn(true);
   when(fieldDescription.isStatic()).thenReturn(true);
-  when(fieldDescription.isEnum()).thenReturn(true);
+  when(fieldDescription.isEnum()).thenReturn(false);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
   StackManipulation stackManipulation=FieldAccess.forEnumeration(enumerationDescription);
-  assertThat(stackManipulation.isValid(),is(true));
+  assertThat(stackManipulation.isValid(),is(false));
 }

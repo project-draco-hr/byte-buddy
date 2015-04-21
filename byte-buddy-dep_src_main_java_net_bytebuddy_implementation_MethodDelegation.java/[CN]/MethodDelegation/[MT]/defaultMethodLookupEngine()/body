@@ -1,3 +1,0 @@
-{
-  return new MethodLookupEngine.Default(MethodLookupEngine.Default.DefaultMethodLookup.DISABLED);
-}

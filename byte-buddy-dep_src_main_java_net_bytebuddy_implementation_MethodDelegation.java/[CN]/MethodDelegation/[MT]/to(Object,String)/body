@@ -1,3 +1,3 @@
 {
-  return to(delegate,fieldName,defaultMethodLookupEngine());
+  return to(delegate,fieldName,MethodLookupEngine.Default.DEFAULT_LOOKUP_DISABLED);
 }

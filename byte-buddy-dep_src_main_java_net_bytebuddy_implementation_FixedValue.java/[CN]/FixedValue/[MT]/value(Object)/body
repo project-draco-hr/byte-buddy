@@ -1,43 +1,43 @@
 {
   if (fixedValue == null) {
-    return new ForPoolValue(NullConstant.INSTANCE,TypeDescription.OBJECT,defaultAssigner(),true);
+    return new ForPoolValue(NullConstant.INSTANCE,TypeDescription.OBJECT,Assigner.DEFAULT,Assigner.DYNAMICALLY_TYPED);
   }
   Class<?> type=fixedValue.getClass();
   if (type == String.class) {
-    return new ForPoolValue(new TextConstant((String)fixedValue),TypeDescription.STRING,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(new TextConstant((String)fixedValue),TypeDescription.STRING,Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (type == Class.class) {
-    return new ForPoolValue(ClassConstant.of(new TypeDescription.ForLoadedType(type)),TypeDescription.CLASS,defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(ClassConstant.of(new TypeDescription.ForLoadedType(type)),TypeDescription.CLASS,Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (type == Boolean.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Boolean)fixedValue),new TypeDescription.ForLoadedType(boolean.class),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(IntegerConstant.forValue((Boolean)fixedValue),new TypeDescription.ForLoadedType(boolean.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (type == Byte.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Byte)fixedValue),new TypeDescription.ForLoadedType(byte.class),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(IntegerConstant.forValue((Byte)fixedValue),new TypeDescription.ForLoadedType(byte.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (type == Short.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Short)fixedValue),new TypeDescription.ForLoadedType(short.class),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(IntegerConstant.forValue((Short)fixedValue),new TypeDescription.ForLoadedType(short.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (type == Character.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Character)fixedValue),new TypeDescription.ForLoadedType(char.class),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(IntegerConstant.forValue((Character)fixedValue),new TypeDescription.ForLoadedType(char.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (type == Integer.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Integer)fixedValue),new TypeDescription.ForLoadedType(int.class),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(IntegerConstant.forValue((Integer)fixedValue),new TypeDescription.ForLoadedType(int.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (type == Long.class) {
-    return new ForPoolValue(LongConstant.forValue((Long)fixedValue),new TypeDescription.ForLoadedType(long.class),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(LongConstant.forValue((Long)fixedValue),new TypeDescription.ForLoadedType(long.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (type == Float.class) {
-    return new ForPoolValue(FloatConstant.forValue((Float)fixedValue),new TypeDescription.ForLoadedType(float.class),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(FloatConstant.forValue((Float)fixedValue),new TypeDescription.ForLoadedType(float.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (type == Double.class) {
-    return new ForPoolValue(DoubleConstant.forValue((Double)fixedValue),new TypeDescription.ForLoadedType(double.class),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(DoubleConstant.forValue((Double)fixedValue),new TypeDescription.ForLoadedType(double.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (JavaType.METHOD_HANDLE.getTypeStub().isAssignableFrom(type)) {
-    return new ForPoolValue(MethodHandleConstant.of(JavaInstance.MethodHandle.of(fixedValue)),new TypeDescription.ForLoadedType(type),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(MethodHandleConstant.of(JavaInstance.MethodHandle.of(fixedValue)),new TypeDescription.ForLoadedType(type),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else   if (JavaType.METHOD_TYPE.getTypeStub().represents(type)) {
-    return new ForPoolValue(MethodTypeConstant.of(JavaInstance.MethodType.of(fixedValue)),new TypeDescription.ForLoadedType(type),defaultAssigner(),defaultConsiderRuntimeType());
+    return new ForPoolValue(MethodTypeConstant.of(JavaInstance.MethodType.of(fixedValue)),new TypeDescription.ForLoadedType(type),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
   }
  else {
     return reference(fixedValue);
