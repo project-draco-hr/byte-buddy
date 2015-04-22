@@ -3,4 +3,5 @@
   ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.class).apply();
   ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.class).applyMutable();
   ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.ValidatingMethodVisitor.class).applyMutable();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.Constraint.class).apply();
 }

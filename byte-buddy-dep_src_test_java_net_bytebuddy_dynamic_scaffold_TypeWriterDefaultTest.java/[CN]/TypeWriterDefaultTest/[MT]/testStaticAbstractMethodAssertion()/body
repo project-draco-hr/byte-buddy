@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().subclass(Object.class,ConstructorStrategy.Default.NO_CONSTRUCTORS).defineMethod(FOO,void.class,Collections.<Class<?>>emptyList(),Ownership.STATIC).withoutCode().make();
+}

@@ -1,4 +1,5 @@
 String sortName
+boolean allowsConstructor
 boolean allowsNonPublic
 boolean allowsNonStaticFields
 boolean allowsStaticMethods

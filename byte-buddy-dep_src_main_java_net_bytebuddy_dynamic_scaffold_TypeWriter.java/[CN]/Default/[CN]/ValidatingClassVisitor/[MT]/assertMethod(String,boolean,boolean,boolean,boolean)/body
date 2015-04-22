@@ -1,5 +1,14 @@
 {
-  if (!isPublic && !allowsNonPublic) {
+  if (!allowsConstructor && name.equals(MethodDescription.CONSTRUCTOR_INTERNAL_NAME)) {
+    throw new IllegalStateException("Cannot define constructor for " + sortName);
+  }
+ else   if (isStatic && isAbstract) {
+    throw new IllegalStateException("Cannot define static method " + name + " to be abstract");
+  }
+ else   if (isAbstract && name.equals(MethodDescription.CONSTRUCTOR_INTERNAL_NAME)) {
+    throw new IllegalStateException("Cannot define abstract constructor " + name);
+  }
+ else   if (!isPublic && !allowsNonPublic) {
     throw new IllegalStateException("Cannot define non-public method " + name + " for "+ sortName);
   }
  else   if (isStatic && !allowsStaticMethods) {

@@ -1,5 +1,6 @@
 {
   this.sortName=sortName;
+  this.allowsConstructor=allowsConstructor;
   this.allowsNonPublic=allowsNonPublic;
   this.allowsNonStaticFields=allowsNonStaticFields;
   this.allowsStaticMethods=allowsStaticMethods;

@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().makeInterface().defineConstructor(Collections.<Class<?>>emptyList(),Visibility.PUBLIC).intercept(SuperMethodCall.INSTANCE).make();
+}
