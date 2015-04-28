@@ -1,3 +1,8 @@
 {
-  return builder.method(named(FOO)).intercept(MethodDelegation.to(new QuxTransformer.Interceptor()));
+  try {
+    return builder.method(named(FOO)).intercept(MethodDelegation.to(new Interceptor()));
+  }
+ catch (  Exception e) {
+    throw new AssertionError(e);
+  }
 }

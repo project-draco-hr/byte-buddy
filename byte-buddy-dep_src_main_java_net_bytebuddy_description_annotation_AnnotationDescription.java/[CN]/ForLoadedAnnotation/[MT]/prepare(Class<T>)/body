@@ -1,6 +1,6 @@
 {
-  if (!annotation.annotationType().equals(annotationType)) {
-    throw new IllegalArgumentException("Annotation is not of type " + annotationType);
+  if (annotation.annotationType() != annotationType) {
+    throw new IllegalArgumentException(annotation + " type is not of identical to " + annotationType);
   }
   return (Loadable<T>)this;
 }
