@@ -1,8 +1,3 @@
 {
-  TypeDescription[] typeDescription=new TypeDescription[interfaceType.length];
-  int index=0;
-  for (  Class<?> type : interfaceType) {
-    typeDescription[index++]=new TypeDescription.ForLoadedType(type);
-  }
-  return implement(typeDescription);
+  return implement(new TypeList.ForLoadedType(nonNull(interfaceType)));
 }

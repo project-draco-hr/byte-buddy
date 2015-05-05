@@ -1,3 +1,3 @@
 {
-  return attribute(new FieldAttributeAppender.ForAnnotation(new AnnotationList.ForLoadedAnnotation(nonNull(annotation))));
+  return annotateField((new AnnotationList.ForLoadedAnnotation(nonNull(annotation))));
 }

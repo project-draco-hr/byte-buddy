@@ -1,0 +1,3 @@
+{
+  return attribute(new MethodAttributeAppender.ForAnnotation(new ArrayList<AnnotationDescription>(nonNull(annotations))));
+}
