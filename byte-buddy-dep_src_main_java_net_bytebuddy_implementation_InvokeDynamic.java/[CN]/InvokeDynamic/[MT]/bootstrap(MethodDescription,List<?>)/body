@@ -1,0 +1,29 @@
+{
+  List<Object> arguments=new ArrayList<Object>(rawArguments.size());
+  for (  Object argument : rawArguments) {
+    if (argument instanceof Class) {
+      argument=new TypeDescription.ForLoadedType((Class<?>)argument);
+    }
+ else     if (JavaType.METHOD_HANDLE.getTypeStub().isInstance(argument)) {
+      argument=JavaInstance.MethodHandle.of(argument);
+    }
+ else     if (JavaType.METHOD_TYPE.getTypeStub().isInstance(argument)) {
+      argument=JavaInstance.MethodType.of(argument);
+    }
+    arguments.add(argument);
+  }
+  if (!bootstrapMethod.isBootstrap(arguments)) {
+    throw new IllegalArgumentException("Not a valid bootstrap method " + bootstrapMethod + " for "+ arguments);
+  }
+  List<Object> serializedArguments=new ArrayList<Object>(arguments.size());
+  for (  Object anArgument : arguments) {
+    if (anArgument instanceof TypeDescription) {
+      anArgument=Type.getType(((TypeDescription)anArgument).getDescriptor());
+    }
+ else     if (anArgument instanceof JavaInstance) {
+      anArgument=((JavaInstance)anArgument).asConstantPoolValue();
+    }
+    serializedArguments.add(anArgument);
+  }
+  return new WithImplicitTarget(bootstrapMethod,serializedArguments,new InvocationProvider.Default(),TerminationHandler.ForMethodReturn.INSTANCE,Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+}

@@ -1,3 +1,3 @@
 {
-  return new DefaultMethodCall(new TypeList.Explicit(Arrays.asList(nonNull(prioritizedInterface))));
+  return prioritize(Arrays.asList(nonNull(prioritizedInterface)));
 }
