@@ -1,3 +1,0 @@
-{
-  return makeInterface(new TypeList.Explicit(Arrays.asList(typeDescription)));
-}
