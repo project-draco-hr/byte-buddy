@@ -1,7 +1,0 @@
-{
-  List<TypeDescription> list=new LinkedList<TypeDescription>();
-  for (  Class<?> parameterType : parameterTypes) {
-    list.add(new TypeDescription.ForLoadedType(nonNull(parameterType)));
-  }
-  return defineConstructor(list,modifiers);
-}

@@ -1,0 +1,3 @@
+{
+  return annotateParameter(parameterIndex,new AnnotationList.ForLoadedAnnotation(toList(annotations)));
+}

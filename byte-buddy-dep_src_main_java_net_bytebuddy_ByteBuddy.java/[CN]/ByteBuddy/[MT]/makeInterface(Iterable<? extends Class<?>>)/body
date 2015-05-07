@@ -1,0 +1,3 @@
+{
+  return makeInterface(new TypeList.ForLoadedType(toList(types)));
+}

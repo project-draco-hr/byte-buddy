@@ -1,0 +1,3 @@
+{
+  return throwing(new TypeList.ForLoadedType(toList(exceptionTypes)));
+}
