@@ -1,0 +1,26 @@
+{
+  StringBuilder stringBuilder=new StringBuilder(SYMBOL);
+  GenericTypeList bounds=getUpperBounds();
+  if (!bounds.isEmpty()) {
+    if (bounds.size() == 1 && bounds.get(0).equals(TypeDescription.OBJECT)) {
+      return SYMBOL;
+    }
+    stringBuilder.append(" extends ");
+  }
+ else {
+    bounds=getLowerBounds();
+    if (bounds.isEmpty()) {
+      return SYMBOL;
+    }
+    stringBuilder.append(" super ");
+  }
+  boolean multiple=false;
+  for (  GenericType genericType : bounds) {
+    if (multiple) {
+      stringBuilder.append(" & ");
+    }
+    stringBuilder.append(genericType.getTypeName());
+    multiple=true;
+  }
+  return stringBuilder.toString();
+}

@@ -1,0 +1,8 @@
+{
+  int result=1;
+  for (  GenericType genericType : getLowerBounds()) {
+    result=31 * result + genericType.hashCode();
+  }
+  GenericType ownerType=getOwnerType();
+  return result ^ (ownerType == null ? asRawType().hashCode() : ownerType.hashCode());
+}

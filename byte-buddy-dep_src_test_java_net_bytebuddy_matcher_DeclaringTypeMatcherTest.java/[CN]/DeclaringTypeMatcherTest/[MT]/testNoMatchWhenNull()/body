@@ -1,6 +1,6 @@
 {
-  assertThat(new DeclaringTypeMatcher<DeclaredInType>(typeMatcher).matches(declaredInType),is(false));
+  assertThat(new DeclaringTypeMatcher<DeclaredByType>(typeMatcher).matches(declaredByType),is(false));
   verifyZeroInteractions(typeMatcher);
-  verify(declaredInType).getDeclaringType();
-  verifyNoMoreInteractions(declaredInType);
+  verify(declaredByType).getDeclaringType();
+  verifyNoMoreInteractions(declaredByType);
 }

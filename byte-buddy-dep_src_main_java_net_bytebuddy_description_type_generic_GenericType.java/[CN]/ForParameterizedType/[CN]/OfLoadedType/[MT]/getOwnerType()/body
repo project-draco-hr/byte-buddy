@@ -1,0 +1,4 @@
+{
+  Type ownerType=parameterizedType.getOwnerType();
+  return ownerType == null ? null : Sort.describe(ownerType);
+}

@@ -1,0 +1,5 @@
+{
+  if (!(other instanceof GenericType))   return false;
+  GenericType genericType=(GenericType)other;
+  return genericType.getSort().isTypeVariable() && genericType.getSymbol().equals(genericType.getSymbol()) && genericType.getVariableSource().equals(genericType.getVariableSource());
+}
