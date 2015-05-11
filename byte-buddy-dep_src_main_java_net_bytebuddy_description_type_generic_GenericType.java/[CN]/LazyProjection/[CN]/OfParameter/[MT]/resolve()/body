@@ -1,0 +1,3 @@
+{
+  return Sort.describe((Type)GET_GENERIC_TYPE.invoke(parameter));
+}
