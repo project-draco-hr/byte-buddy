@@ -1,0 +1,5 @@
+{
+  if (!(other instanceof GenericType))   return false;
+  GenericType genericType=(GenericType)other;
+  return genericType.getSort().isWildcard() && getUpperBounds().equals(genericType.getUpperBounds()) && getLowerBounds().equals(genericType.getLowerBounds());
+}
