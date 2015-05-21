@@ -1,0 +1,12 @@
+{
+switch (wildcard) {
+case '-':
+    return incompleteToken.appendLowerBound();
+case '+':
+  return incompleteToken.appendUpperBound();
+case '=':
+return incompleteToken.appendDirectBound();
+default :
+throw new IllegalArgumentException("Unknown wildcard: " + wildcard);
+}
+}

@@ -1,0 +1,3 @@
+{
+  genericTypeRegistrant.register(new Token.ForArray(componentTypeToken));
+}

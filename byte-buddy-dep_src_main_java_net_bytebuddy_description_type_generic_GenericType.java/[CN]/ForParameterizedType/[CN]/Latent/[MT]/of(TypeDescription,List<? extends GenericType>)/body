@@ -1,0 +1,3 @@
+{
+  return new Latent(rawType,parameters,rawType.getEnclosingType());
+}
