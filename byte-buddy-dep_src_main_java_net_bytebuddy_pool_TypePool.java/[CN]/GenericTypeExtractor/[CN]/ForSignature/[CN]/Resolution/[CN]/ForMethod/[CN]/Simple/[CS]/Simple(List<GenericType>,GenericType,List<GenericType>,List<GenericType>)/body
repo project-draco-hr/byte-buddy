@@ -1,0 +1,6 @@
+{
+  this.parameterTypes=parameterTypes;
+  this.returnType=returnType;
+  this.exceptionTypes=exceptionTypes;
+  this.typeVariables=typeVariables;
+}

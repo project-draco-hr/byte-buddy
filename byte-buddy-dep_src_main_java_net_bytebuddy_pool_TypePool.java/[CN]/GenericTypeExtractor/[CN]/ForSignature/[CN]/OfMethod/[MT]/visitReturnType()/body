@@ -1,0 +1,4 @@
+{
+  collectTypeParameter();
+  return new GenericTypeExtractor(new ReturnTypeTypeRegistrant());
+}

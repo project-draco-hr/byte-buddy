@@ -1,0 +1,5 @@
+{
+  collectTypeParameter();
+  currentTypeParameter=name;
+  currentBounds=new LinkedList<Token>();
+}

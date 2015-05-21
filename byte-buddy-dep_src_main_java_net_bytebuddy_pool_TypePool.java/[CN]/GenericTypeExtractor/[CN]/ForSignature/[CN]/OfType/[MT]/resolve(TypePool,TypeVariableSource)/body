@@ -1,0 +1,11 @@
+{
+  List<GenericType> interfaceTypes=new ArrayList<GenericType>(interfaceTypeTokens.size());
+  for (  Token token : interfaceTypeTokens) {
+    interfaceTypes.add(token.toGenericType(typePool,typeVariableSource));
+  }
+  List<GenericType> typeVariables=new ArrayList<GenericType>(interfaceTypeTokens.size());
+  for (  Token token : typeVariableTokens) {
+    typeVariables.add(token.toGenericType(typePool,typeVariableSource));
+  }
+  return new Resolution.ForType.Simple(superTypeToken.toGenericType(typePool,typeVariableSource),interfaceTypes,typeVariables);
+}

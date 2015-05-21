@@ -1,0 +1,4 @@
+List<GenericType> parameterTypes
+GenericType returnType
+List<GenericType> exceptionTypes
+List<GenericType> typeVariables

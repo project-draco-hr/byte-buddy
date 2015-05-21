@@ -1,0 +1,15 @@
+{
+  List<GenericType> parameterTypes=new ArrayList<GenericType>(parameterTypeTokens.size());
+  for (  Token token : parameterTypeTokens) {
+    parameterTypes.add(token.toGenericType(typePool,typeVariableSource));
+  }
+  List<GenericType> exceptionTypes=new ArrayList<GenericType>(exceptionTypeTokens.size());
+  for (  Token token : exceptionTypeTokens) {
+    exceptionTypes.add(token.toGenericType(typePool,typeVariableSource));
+  }
+  List<GenericType> typeVariables=new ArrayList<GenericType>(typeVariableTokens.size());
+  for (  Token token : typeVariableTokens) {
+    typeVariables.add(token.toGenericType(typePool,typeVariableSource));
+  }
+  return new Resolution.ForMethod.Simple(parameterTypes,returnTypeToken.toGenericType(typePool,typeVariableSource),exceptionTypes,typeVariables);
+}
