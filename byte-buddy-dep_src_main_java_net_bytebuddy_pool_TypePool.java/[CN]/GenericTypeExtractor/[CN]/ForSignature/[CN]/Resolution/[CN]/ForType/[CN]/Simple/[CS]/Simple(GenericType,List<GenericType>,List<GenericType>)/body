@@ -1,0 +1,5 @@
+{
+  this.superType=superType;
+  this.interfaceTypes=interfaceTypes;
+  this.typeVariables=typeVariables;
+}

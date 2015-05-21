@@ -1,0 +1,4 @@
+{
+  parameterTypeTokens=new LinkedList<Token>();
+  exceptionTypeTokens=new LinkedList<Token>();
+}

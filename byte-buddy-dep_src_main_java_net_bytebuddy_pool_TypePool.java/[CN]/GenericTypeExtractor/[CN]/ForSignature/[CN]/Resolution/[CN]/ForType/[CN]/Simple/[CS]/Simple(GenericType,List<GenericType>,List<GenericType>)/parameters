@@ -1,0 +1,3 @@
+GenericType superType
+List<GenericType> interfaceTypes
+List<GenericType> typeVariables

@@ -1,0 +1,5 @@
+{
+  if (currentTypeParameter != null) {
+    typeVariableTokens.add(new Token.ForTypeVariable.Formal(currentTypeParameter,currentBounds));
+  }
+}
