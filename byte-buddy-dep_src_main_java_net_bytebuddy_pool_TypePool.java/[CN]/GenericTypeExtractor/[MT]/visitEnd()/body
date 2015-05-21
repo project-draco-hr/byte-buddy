@@ -1,0 +1,3 @@
+{
+  genericTypeRegistrant.register(incompleteToken.toToken());
+}

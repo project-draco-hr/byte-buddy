@@ -1,0 +1,3 @@
+{
+  return isParameterized() ? new Token.ForParameterizedType(name,parameters) : new Token.ForRawType(name);
+}

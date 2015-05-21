@@ -1,0 +1,3 @@
+{
+  incompleteToken=new IncompleteToken.ForTopLevelClass(name);
+}
