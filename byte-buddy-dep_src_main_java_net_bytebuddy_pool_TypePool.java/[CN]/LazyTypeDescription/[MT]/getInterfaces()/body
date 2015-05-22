@@ -1,3 +1,3 @@
 {
-  return interfaceInternalName == null ? new TypeList.Empty() : new LazyTypeList(interfaceInternalName);
+  return interfaceInternalName == null ? new TypeList.Empty() : new LazyTypeList(typePool,interfaceInternalName);
 }

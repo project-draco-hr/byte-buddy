@@ -1,0 +1,3 @@
+{
+  parameters.add(new LazyTypeDescription.GenericTypeToken.ForLowerBoundWildcard(token));
+}

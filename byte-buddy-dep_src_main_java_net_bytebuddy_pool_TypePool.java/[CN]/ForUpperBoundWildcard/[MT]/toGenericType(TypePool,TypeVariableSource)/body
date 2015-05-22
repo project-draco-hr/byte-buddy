@@ -1,0 +1,3 @@
+{
+  return GenericType.ForWildcardType.Latent.boundedAbove(baseType.toGenericType(typePool,typeVariableSource));
+}

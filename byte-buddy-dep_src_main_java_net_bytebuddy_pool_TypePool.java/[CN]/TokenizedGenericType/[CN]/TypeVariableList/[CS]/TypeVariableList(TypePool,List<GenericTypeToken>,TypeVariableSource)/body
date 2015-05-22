@@ -1,0 +1,5 @@
+{
+  this.typePool=typePool;
+  this.typeVariables=typeVariables;
+  this.typeVariableSource=typeVariableSource;
+}

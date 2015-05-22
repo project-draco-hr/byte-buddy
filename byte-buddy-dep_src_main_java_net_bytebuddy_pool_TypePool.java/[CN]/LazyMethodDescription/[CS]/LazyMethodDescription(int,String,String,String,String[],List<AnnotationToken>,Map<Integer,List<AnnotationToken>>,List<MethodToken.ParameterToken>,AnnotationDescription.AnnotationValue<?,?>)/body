@@ -3,9 +3,9 @@
   this.internalName=internalName;
   Type returnType=Type.getReturnType(methodDescriptor);
   returnTypeName=returnType.getSort() == Type.ARRAY ? returnType.getDescriptor().replace('/','.') : returnType.getClassName();
-  parameterTypes=new LazyTypeList(methodDescriptor);
+  parameterTypes=new LazyTypeList(typePool,methodDescriptor);
   this.genericSignature=genericSignature;
-  exceptionTypes=exceptionInternalName == null ? new TypeList.Empty() : new LazyTypeList(exceptionInternalName);
+  exceptionTypes=exceptionInternalName == null ? new TypeList.Empty() : new LazyTypeList(typePool,exceptionInternalName);
   declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
   for (  AnnotationToken annotationToken : annotationTokens) {
     declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));

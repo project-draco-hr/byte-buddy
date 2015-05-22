@@ -1,3 +1,3 @@
 {
-  return isParameterized() ? new Token.ForParameterizedType(getName(),parameters) : new Token.ForRawType(getName());
+  return isParameterized() ? new LazyTypeDescription.GenericTypeToken.ForParameterizedType(getName(),parameters) : new LazyTypeDescription.GenericTypeToken.ForRawType(getName());
 }

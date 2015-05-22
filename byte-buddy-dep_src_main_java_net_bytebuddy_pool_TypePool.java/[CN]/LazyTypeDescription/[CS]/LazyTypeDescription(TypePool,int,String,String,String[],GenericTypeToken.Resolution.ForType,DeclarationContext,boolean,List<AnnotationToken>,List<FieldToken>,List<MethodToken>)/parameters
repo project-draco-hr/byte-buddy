@@ -1,0 +1,11 @@
+TypePool typePool
+int modifiers
+String name
+String superTypeInternalName
+String[] interfaceInternalName
+GenericTypeToken.Resolution.ForType signatureResolution
+DeclarationContext declarationContext
+boolean anonymousType
+List<AnnotationToken> annotationTokens
+List<FieldToken> fieldTokens
+List<MethodToken> methodTokens

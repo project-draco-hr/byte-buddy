@@ -1,0 +1,4 @@
+TypePool typePool
+GenericTypeToken genericTypeToken
+String internalName
+TypeVariableSource typeVariableSource
