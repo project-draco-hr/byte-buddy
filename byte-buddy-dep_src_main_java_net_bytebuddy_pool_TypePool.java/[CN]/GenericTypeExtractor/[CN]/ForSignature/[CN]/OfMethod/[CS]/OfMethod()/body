@@ -1,4 +1,4 @@
 {
-  parameterTypeTokens=new LinkedList<Token>();
-  exceptionTypeTokens=new LinkedList<Token>();
+  parameterTypeTokens=new LinkedList<LazyTypeDescription.GenericTypeToken>();
+  exceptionTypeTokens=new LinkedList<LazyTypeDescription.GenericTypeToken>();
 }

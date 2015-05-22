@@ -1,5 +1,5 @@
 {
   collectTypeParameter();
   currentTypeParameter=name;
-  currentBounds=new LinkedList<Token>();
+  currentBounds=new LinkedList<LazyTypeDescription.GenericTypeToken>();
 }

@@ -1,0 +1,7 @@
+{
+  List<TypeDescription> typeDescriptions=new ArrayList<TypeDescription>();
+  for (  GenericType typeVariable : this) {
+    typeDescriptions.add(typeVariable.asRawType());
+  }
+  return new TypeList.Explicit(typeDescriptions);
+}

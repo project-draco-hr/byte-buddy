@@ -1,0 +1,7 @@
+{
+  List<GenericType> genericTypes=new ArrayList<GenericType>(parameters.size());
+  for (  GenericTypeToken parameter : parameters) {
+    genericTypes.add(parameter.toGenericType(typePool,typeVariableSource));
+  }
+  return new GenericTypeList.Explicit(genericTypes);
+}
