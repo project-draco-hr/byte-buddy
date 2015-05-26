@@ -1,0 +1,3 @@
+{
+  return genericSignature == null ? LazyTypeDescription.GenericTypeToken.Resolution.Raw.INSTANCE : ForSignature.extract(genericSignature,new OfType());
+}

@@ -2,7 +2,7 @@
   this.modifiers=modifiers;
   this.name=name;
   this.descriptor=descriptor;
-  this.genericSignature=genericSignature;
+  this.signatureResolution=signatureResolution;
   this.exceptionName=exceptionName;
   this.annotationTokens=annotationTokens;
   this.parameterAnnotationTokens=parameterAnnotationTokens;

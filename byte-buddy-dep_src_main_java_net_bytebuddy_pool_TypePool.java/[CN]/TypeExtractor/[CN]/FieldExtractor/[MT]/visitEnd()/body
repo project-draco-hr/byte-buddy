@@ -1,3 +1,3 @@
 {
-  fieldTokens.add(new LazyTypeDescription.FieldToken(modifiers,internalName,descriptor,genericSignature,annotationTokens));
+  fieldTokens.add(new LazyTypeDescription.FieldToken(modifiers,internalName,descriptor,GenericTypeExtractor.ForSignature.OfField.extract(genericSignature),annotationTokens));
 }
