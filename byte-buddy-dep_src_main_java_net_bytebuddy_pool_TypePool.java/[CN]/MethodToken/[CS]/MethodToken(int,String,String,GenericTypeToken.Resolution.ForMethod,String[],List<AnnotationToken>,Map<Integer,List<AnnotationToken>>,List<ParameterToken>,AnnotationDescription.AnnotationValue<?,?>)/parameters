@@ -1,7 +1,7 @@
 int modifiers
 String name
 String descriptor
-String genericSignature
+GenericTypeToken.Resolution.ForMethod signatureResolution
 String[] exceptionName
 List<AnnotationToken> annotationTokens
 Map<Integer,List<AnnotationToken>> parameterAnnotationTokens

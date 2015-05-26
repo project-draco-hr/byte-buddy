@@ -1,0 +1,11 @@
+{
+  if (genericSignature == null) {
+    return LazyTypeDescription.GenericTypeToken.Resolution.Raw.INSTANCE;
+  }
+ else {
+    SignatureReader signatureReader=new SignatureReader(genericSignature);
+    OfField visitor=new OfField();
+    signatureReader.acceptType(new GenericTypeExtractor(visitor));
+    return visitor.resolve();
+  }
+}

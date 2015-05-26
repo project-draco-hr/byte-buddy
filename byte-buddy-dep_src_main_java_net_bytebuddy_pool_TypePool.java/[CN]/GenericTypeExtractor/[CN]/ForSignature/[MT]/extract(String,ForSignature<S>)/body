@@ -1,0 +1,5 @@
+{
+  SignatureReader signatureReader=new SignatureReader(genericSignature);
+  signatureReader.accept(visitor);
+  return visitor.resolve();
+}

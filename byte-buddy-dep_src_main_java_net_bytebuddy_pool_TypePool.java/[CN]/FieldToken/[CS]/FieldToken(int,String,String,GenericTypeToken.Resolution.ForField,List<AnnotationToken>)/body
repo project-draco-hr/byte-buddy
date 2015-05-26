@@ -2,6 +2,6 @@
   this.modifiers=modifiers;
   this.name=name;
   this.descriptor=descriptor;
-  this.genericSignature=genericSignature;
+  this.signatureResoltion=signatureResoltion;
   this.annotationTokens=annotationTokens;
 }

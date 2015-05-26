@@ -3,7 +3,7 @@
   this.name=name;
   Type fieldType=Type.getType(descriptor);
   fieldTypeName=fieldType.getSort() == Type.ARRAY ? fieldType.getInternalName().replace('/','.') : fieldType.getClassName();
-  this.genericSignature=genericSignature;
+  this.signatureResolution=signatureResolution;
   declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
   for (  AnnotationToken annotationToken : annotationTokens) {
     declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));

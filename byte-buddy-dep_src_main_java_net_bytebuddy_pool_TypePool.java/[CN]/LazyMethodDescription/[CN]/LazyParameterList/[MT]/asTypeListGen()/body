@@ -1,0 +1,3 @@
+{
+  return signatureResolution.resolveParameterTypes(parameterTypeInternalName,typePool,LazyMethodDescription.this);
+}
