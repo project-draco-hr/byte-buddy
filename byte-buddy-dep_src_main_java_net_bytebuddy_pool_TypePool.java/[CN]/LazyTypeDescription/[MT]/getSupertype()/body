@@ -1,3 +1,0 @@
-{
-  return superTypeDescriptor == null || isInterface() ? null : TokenizedGenericType.toRawType(typePool,superTypeDescriptor);
-}
