@@ -1,0 +1,3 @@
+{
+  return typePool.describe(method.getDeclaringClass().getName()).resolve().getDeclaredMethods().filter(is(method)).getOnly().getReturnTypeGen();
+}

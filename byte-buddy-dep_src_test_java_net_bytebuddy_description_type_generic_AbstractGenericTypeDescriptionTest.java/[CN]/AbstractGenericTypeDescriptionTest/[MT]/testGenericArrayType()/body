@@ -1,0 +1,14 @@
+{
+  GenericTypeDescription genericTypeDescription=describe(GenericArrayType.class.getDeclaredField(FOO));
+  assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.GENERIC_ARRAY));
+  assertThat(genericTypeDescription.getComponentType().getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
+  assertThat(genericTypeDescription.getComponentType().getParameters().size(),is(1));
+  assertThat(genericTypeDescription.getComponentType().getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.RAW));
+  assertThat(genericTypeDescription.getComponentType().getParameters().getOnly().asRawType().represents(String.class),is(true));
+  assertThat(genericTypeDescription.getTypeName(),is(GenericArrayType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(genericTypeDescription.getOwnerType(),nullValue(GenericTypeDescription.class));
+  assertThat(genericTypeDescription.getVariableSource(),nullValue(TypeVariableSource.class));
+  assertThat(genericTypeDescription.getSymbol(),nullValue(String.class));
+  assertThat(genericTypeDescription.getLowerBounds().size(),is(0));
+  assertThat(genericTypeDescription.getUpperBounds().size(),is(0));
+}

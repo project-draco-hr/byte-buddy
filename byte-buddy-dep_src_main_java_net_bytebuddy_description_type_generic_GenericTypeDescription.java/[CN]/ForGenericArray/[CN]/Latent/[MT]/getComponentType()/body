@@ -1,3 +1,3 @@
 {
-  return arity == 0 ? componentType : new Latent(componentType,arity - 1);
+  return arity == 1 ? componentType : new Latent(componentType,arity - 1);
 }

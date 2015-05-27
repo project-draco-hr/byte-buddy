@@ -1,0 +1,3 @@
+{
+  return GenericTypeDescription.ForGenericArray.Latent.of(GenericTypeDescription.Sort.describe(method.getGenericReturnType()),0);
+}
