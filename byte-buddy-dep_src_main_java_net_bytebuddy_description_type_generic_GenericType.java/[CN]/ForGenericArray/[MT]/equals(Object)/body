@@ -1,5 +1,0 @@
-{
-  if (!(other instanceof GenericType))   return false;
-  GenericType genericType=(GenericType)other;
-  return genericType.getSort().isGenericArray() && getComponentType().equals(genericType.getComponentType());
-}

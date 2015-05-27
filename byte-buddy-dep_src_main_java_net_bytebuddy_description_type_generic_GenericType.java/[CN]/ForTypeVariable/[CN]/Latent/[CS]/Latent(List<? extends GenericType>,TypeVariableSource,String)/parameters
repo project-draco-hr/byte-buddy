@@ -1,3 +1,0 @@
-List<? extends GenericType> upperBounds
-TypeVariableSource typeVariableSource
-String symbol

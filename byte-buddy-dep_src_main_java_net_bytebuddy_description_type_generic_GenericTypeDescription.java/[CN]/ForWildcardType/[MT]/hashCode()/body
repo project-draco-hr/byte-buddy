@@ -1,0 +1,10 @@
+{
+  int lowerHash=1, upperHash=1;
+  for (  GenericTypeDescription genericTypeDescription : getLowerBounds()) {
+    lowerHash=31 * lowerHash + genericTypeDescription.hashCode();
+  }
+  for (  GenericTypeDescription genericTypeDescription : getUpperBounds()) {
+    upperHash=31 * upperHash + genericTypeDescription.hashCode();
+  }
+  return lowerHash ^ upperHash;
+}
