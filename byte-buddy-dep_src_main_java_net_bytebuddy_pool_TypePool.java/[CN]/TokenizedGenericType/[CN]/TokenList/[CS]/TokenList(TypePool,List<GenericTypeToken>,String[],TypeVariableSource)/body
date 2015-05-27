@@ -1,6 +1,0 @@
-{
-  this.typePool=typePool;
-  this.genericTypeTokens=genericTypeTokens;
-  this.rawTypeInternalName=rawTypeInternalName;
-  this.typeVariableSource=typeVariableSource;
-}

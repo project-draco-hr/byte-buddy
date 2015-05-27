@@ -1,15 +1,24 @@
 {
   this.modifiers=modifiers;
   this.internalName=internalName;
-  Type returnType=Type.getReturnType(methodDescriptor);
-  returnTypeName=returnType.getSort() == Type.ARRAY ? returnType.getDescriptor().replace('/','.') : returnType.getClassName();
-  Type[] parameterType=Type.getArgumentTypes(methodDescriptor);
-  parameterTypeInternalName=new String[parameterType.length];
-  for (int index=0; index < parameterType.length; index++) {
-    parameterTypeInternalName[index]=parameterType[index].getInternalName();
+  Type methodType=Type.getMethodType(methodDescriptor);
+  Type returnType=methodType.getReturnType();
+  Type[] parameterType=methodType.getArgumentTypes();
+  returnTypeDescriptor=returnType.getDescriptor();
+  parameterTypeDescriptors=new ArrayList<String>(parameterType.length);
+  for (  Type type : parameterType) {
+    parameterTypeDescriptors.add(type.getDescriptor());
   }
   this.signatureResolution=signatureResolution;
-  this.exceptionInternalName=exceptionInternalName;
+  if (exceptionTypeInternalName == null) {
+    exceptionTypeDescriptors=Collections.emptyList();
+  }
+ else {
+    exceptionTypeDescriptors=new ArrayList<String>(exceptionTypeInternalName.length);
+    for (    String anExceptionTypeInternalName : exceptionTypeInternalName) {
+      exceptionTypeDescriptors.add(Type.getObjectType(anExceptionTypeInternalName).getDescriptor());
+    }
+  }
   declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
   for (  AnnotationToken annotationToken : annotationTokens) {
     declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));

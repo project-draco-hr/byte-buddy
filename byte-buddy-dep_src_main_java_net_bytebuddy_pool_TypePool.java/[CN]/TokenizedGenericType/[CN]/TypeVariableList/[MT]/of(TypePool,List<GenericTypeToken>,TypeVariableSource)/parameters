@@ -1,0 +1,3 @@
+TypePool typePool
+List<GenericTypeToken> typeVariables
+TypeVariableSource typeVariableSource

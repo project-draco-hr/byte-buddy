@@ -1,4 +1,0 @@
-TypePool typePool
-List<GenericTypeToken> genericTypeTokens
-String[] rawTypeInternalName
-TypeVariableSource typeVariableSource

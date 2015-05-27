@@ -1,3 +1,13 @@
 {
-  return internalName.length == 0 ? null : internalName;
+  if (descriptors.isEmpty()) {
+    return null;
+  }
+ else {
+    String[] internalName=new String[descriptors.size()];
+    int index=0;
+    for (    String descriptor : descriptors) {
+      internalName[index++]=Type.getType(descriptor).getInternalName();
+    }
+    return internalName;
+  }
 }

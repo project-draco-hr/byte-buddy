@@ -1,0 +1,4 @@
+{
+  Type type=Type.getType(descriptor);
+  return typePool.describe(type.getSort() == Type.ARRAY ? type.getInternalName().replace('/','.') : type.getClassName()).resolve();
+}

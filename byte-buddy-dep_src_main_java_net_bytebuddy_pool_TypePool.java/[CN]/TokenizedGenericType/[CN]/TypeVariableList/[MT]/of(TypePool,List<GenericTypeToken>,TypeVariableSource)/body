@@ -1,0 +1,3 @@
+{
+  return typeVariables.isEmpty() ? new GenericTypeList.Empty() : new TypeVariableList(typePool,typeVariables,typeVariableSource);
+}

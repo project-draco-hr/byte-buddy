@@ -2,7 +2,7 @@ int modifiers
 String internalName
 String methodDescriptor
 GenericTypeToken.Resolution.ForMethod signatureResolution
-String[] exceptionInternalName
+String[] exceptionTypeInternalName
 List<AnnotationToken> annotationTokens
 Map<Integer,List<AnnotationToken>> parameterAnnotationTokens
 List<MethodToken.ParameterToken> parameterTokens

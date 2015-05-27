@@ -1,10 +1,18 @@
 {
   this.typePool=typePool;
   this.modifiers=modifiers;
-  this.name=name.replace('/','.');
-  this.superTypeName=superTypeInternalName == null ? null : superTypeInternalName.replace('/','.');
+  this.name=Type.getObjectType(name).getClassName();
+  this.superTypeDescriptor=superTypeInternalName == null ? null : Type.getObjectType(superTypeInternalName).getDescriptor();
   this.signatureResolution=signatureResolution;
-  this.interfaceInternalName=interfaceInternalName;
+  if (interfaceInternalName == null) {
+    interfaceTypeDescriptors=Collections.<String>emptyList();
+  }
+ else {
+    interfaceTypeDescriptors=new ArrayList<String>(interfaceInternalName.length);
+    for (    String internalName : interfaceInternalName) {
+      interfaceTypeDescriptors.add(Type.getObjectType(internalName).getDescriptor());
+    }
+  }
   this.declarationContext=declarationContext;
   this.anonymousType=anonymousType;
   declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
