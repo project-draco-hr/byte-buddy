@@ -1,18 +1,18 @@
 {
   StringBuilder stringBuilder=new StringBuilder(SYMBOL);
-  GenericTypeList bounds=getUpperBounds();
+  GenericTypeList bounds=getLowerBounds();
   if (!bounds.isEmpty()) {
     if (bounds.size() == 1 && bounds.get(0).equals(TypeDescription.OBJECT)) {
       return SYMBOL;
     }
-    stringBuilder.append(" extends ");
+    stringBuilder.append(" super ");
   }
  else {
-    bounds=getLowerBounds();
+    bounds=getUpperBounds();
     if (bounds.isEmpty()) {
       return SYMBOL;
     }
-    stringBuilder.append(" super ");
+    stringBuilder.append(" extends ");
   }
   boolean multiple=false;
   for (  GenericTypeDescription genericTypeDescription : bounds) {
