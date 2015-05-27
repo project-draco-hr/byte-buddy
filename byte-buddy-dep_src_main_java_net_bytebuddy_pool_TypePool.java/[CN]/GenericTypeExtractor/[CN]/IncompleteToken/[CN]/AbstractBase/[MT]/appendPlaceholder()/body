@@ -1,0 +1,3 @@
+{
+  parameters.add(LazyTypeDescription.GenericTypeToken.ForUnboundWildcard.INSTANCE);
+}

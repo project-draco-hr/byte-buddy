@@ -1,0 +1,3 @@
+{
+  return rawTypeDescriptors.isEmpty() ? new GenericTypeList.Empty() : new TokenList(typePool,genericTypeTokens,rawTypeDescriptors,typeVariableSource);
+}

@@ -1,0 +1,3 @@
+{
+  return descriptors.isEmpty() ? new TypeList.Empty() : new LazyTypeList(typePool,descriptors);
+}

@@ -1,3 +1,3 @@
 {
-  return superTypeName == null || isInterface() ? null : signatureResolution.resolveSuperType(superTypeName,typePool,this);
+  return superTypeDescriptor == null || isInterface() ? null : signatureResolution.resolveSuperType(superTypeDescriptor,typePool,this);
 }
