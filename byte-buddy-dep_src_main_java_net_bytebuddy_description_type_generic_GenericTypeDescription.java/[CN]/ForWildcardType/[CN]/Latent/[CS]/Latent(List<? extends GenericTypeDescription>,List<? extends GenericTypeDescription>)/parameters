@@ -1,0 +1,2 @@
+List<? extends GenericTypeDescription> upperBounds
+List<? extends GenericTypeDescription> lowerBounds

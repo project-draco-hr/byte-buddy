@@ -1,0 +1,3 @@
+List<? extends GenericTypeDescription> upperBounds
+TypeVariableSource typeVariableSource
+String symbol

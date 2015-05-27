@@ -1,3 +1,0 @@
-TypeDescription rawType
-List<? extends GenericType> parameters
-GenericType ownerType
