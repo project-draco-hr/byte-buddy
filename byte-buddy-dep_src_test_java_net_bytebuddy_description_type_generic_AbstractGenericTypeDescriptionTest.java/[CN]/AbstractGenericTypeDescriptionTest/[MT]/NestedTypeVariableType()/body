@@ -1,4 +1,0 @@
-{
-  GenericTypeDescription genericTypeDescription=describe(NestedTypeVariableType.class.getDeclaredField(FOO));
-  System.out.println(genericTypeDescription);
-}
