@@ -1,0 +1,3 @@
+{
+  return typePool.describe(field.getDeclaringClass().getName()).resolve().getDeclaredFields().filter(named(field.getName())).getOnly().getFieldTypeGen();
+}
