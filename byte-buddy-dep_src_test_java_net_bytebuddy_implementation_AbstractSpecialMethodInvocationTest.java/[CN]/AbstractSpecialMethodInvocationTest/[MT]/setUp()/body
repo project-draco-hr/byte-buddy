@@ -1,4 +1,5 @@
 {
   when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
   parameterTypes=new TypeList.Explicit(Collections.singletonList(parameterType));
+  when(returnType.asRawType()).thenReturn(returnType);
 }

@@ -11,4 +11,5 @@
   when(typeDescription.getInternalName()).thenReturn(BAR);
   when(placeholderType.getDescriptor()).thenReturn(BAZ);
   when(otherPlaceHolderType.getDescriptor()).thenReturn(FOO);
+  when(returnType.asRawType()).thenReturn(returnType);
 }

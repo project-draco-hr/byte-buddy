@@ -66,4 +66,8 @@
   when(secondField.getDescriptor()).thenReturn(FOO);
   when(secondField.getDeclaringType()).thenReturn(secondFieldDeclaringType);
   when(secondFieldDeclaringType.getInternalName()).thenReturn(BAZ);
+  when(firstSpecialReturnType.asRawType()).thenReturn(firstSpecialReturnType);
+  when(secondSpecialReturnType.asRawType()).thenReturn(secondSpecialReturnType);
+  when(firstSpecialExceptionType.asRawType()).thenReturn(firstSpecialExceptionType);
+  when(secondSpecialExceptionType.asRawType()).thenReturn(secondSpecialExceptionType);
 }
