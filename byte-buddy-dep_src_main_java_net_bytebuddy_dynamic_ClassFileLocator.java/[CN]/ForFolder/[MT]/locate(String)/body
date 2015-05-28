@@ -1,0 +1,15 @@
+{
+  File file=new File(folder,typeName.replace('.',File.separatorChar) + CLASS_FILE_EXTENSION);
+  if (file.exists()) {
+    InputStream inputStream=new BufferedInputStream(new FileInputStream(file));
+    try {
+      return new Resolution.Explicit(new StreamDrainer().drain(inputStream));
+    }
+  finally {
+      inputStream.close();
+    }
+  }
+ else {
+    return Resolution.Illegal.INSTANCE;
+  }
+}
