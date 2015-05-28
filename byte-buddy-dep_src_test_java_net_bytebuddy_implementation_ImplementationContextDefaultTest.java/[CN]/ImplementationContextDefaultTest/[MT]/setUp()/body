@@ -70,4 +70,6 @@
   when(secondSpecialReturnType.asRawType()).thenReturn(secondSpecialReturnType);
   when(firstSpecialExceptionType.asRawType()).thenReturn(firstSpecialExceptionType);
   when(secondSpecialExceptionType.asRawType()).thenReturn(secondSpecialExceptionType);
+  when(firstSpecialParameterType.asRawType()).thenReturn(firstSpecialParameterType);
+  when(secondSpecialParameterType.asRawType()).thenReturn(secondSpecialParameterType);
 }

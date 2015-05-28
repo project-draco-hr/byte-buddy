@@ -2,6 +2,7 @@
   TypeDescription returnType=mock(TypeDescription.class);
   when(returnType.asRawType()).thenReturn(returnType);
   TypeDescription parameterType=mock(TypeDescription.class);
+  when(parameterType.asRawType()).thenReturn(parameterType);
   TypeDescription exceptionType=mock(TypeDescription.class);
   when(exceptionType.asRawType()).thenReturn(exceptionType);
   when(returnType.getName()).thenReturn(FOO);

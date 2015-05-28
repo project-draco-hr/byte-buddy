@@ -3,6 +3,8 @@
   when(declaringType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(firstParameterType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(secondParameterType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(firstParameterType.asRawType()).thenReturn(firstParameterType);
+  when(secondParameterType.asRawType()).thenReturn(secondParameterType);
   ParameterList parameterList=ParameterList.Explicit.latent(methodDescription,Arrays.asList(firstParameterType,secondParameterType));
   when(methodDescription.getParameters()).thenReturn(parameterList);
 }

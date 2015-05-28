@@ -1,3 +1,3 @@
 {
-  return genericTypeTokens.get(index).toGenericType(typePool,typeVariableSource);
+  return new TokenizedGenericType(typePool,genericTypeTokens.get(index),rawTypeDescriptors.get(index),typeVariableSource);
 }
