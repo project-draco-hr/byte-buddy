@@ -1,0 +1,6 @@
+{
+  when(rightType.getDescriptor()).thenReturn(FOO);
+  when(arrayType.isArray()).thenReturn(true);
+  when(arrayType.getComponentType()).thenReturn(TargetType.DESCRIPTION);
+  assertThat(TargetType.resolve(arrayType,rightType),is(TypeDescription.ArrayProjection.of(rightType,1)));
+}
