@@ -1,0 +1,8 @@
+TypeDescription levelType
+String name
+List<GenericTypeDescription> interfaces
+int modifiers
+List<? extends FieldDescription> fieldDescriptions
+List<? extends MethodDescription> methodDescriptions
+LoadedTypeInitializer loadedTypeInitializer
+TypeInitializer typeInitializer

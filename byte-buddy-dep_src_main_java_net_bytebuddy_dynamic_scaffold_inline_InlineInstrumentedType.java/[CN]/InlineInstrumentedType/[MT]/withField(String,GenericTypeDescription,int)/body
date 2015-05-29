@@ -1,0 +1,7 @@
+{
+  FieldDescription additionalField=new FieldDescription.Latent(internalName,this,fieldType,modifiers);
+  if (fieldDescriptions.contains(additionalField)) {
+    throw new IllegalArgumentException("Field " + additionalField + " is already defined on "+ this);
+  }
+  return new InlineInstrumentedType(levelType,name,interfaces,this.modifiers,join(fieldDescriptions,additionalField),methodDescriptions,loadedTypeInitializer,typeInitializer);
+}

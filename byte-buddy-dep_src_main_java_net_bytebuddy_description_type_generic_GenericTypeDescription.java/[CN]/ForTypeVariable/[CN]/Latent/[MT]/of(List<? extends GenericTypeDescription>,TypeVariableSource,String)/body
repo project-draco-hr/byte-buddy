@@ -1,0 +1,6 @@
+{
+  if (bounds.isEmpty()) {
+    bounds=Collections.singletonList(TypeDescription.OBJECT);
+  }
+  return new Latent(bounds,typeVariableSource,symbol);
+}

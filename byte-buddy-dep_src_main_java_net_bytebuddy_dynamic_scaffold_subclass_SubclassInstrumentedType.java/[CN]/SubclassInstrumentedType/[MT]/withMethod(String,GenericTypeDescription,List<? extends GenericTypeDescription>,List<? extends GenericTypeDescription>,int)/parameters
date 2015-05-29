@@ -1,0 +1,5 @@
+String internalName
+GenericTypeDescription returnType
+List<? extends GenericTypeDescription> parameterTypes
+List<? extends GenericTypeDescription> exceptionTypes
+int modifiers

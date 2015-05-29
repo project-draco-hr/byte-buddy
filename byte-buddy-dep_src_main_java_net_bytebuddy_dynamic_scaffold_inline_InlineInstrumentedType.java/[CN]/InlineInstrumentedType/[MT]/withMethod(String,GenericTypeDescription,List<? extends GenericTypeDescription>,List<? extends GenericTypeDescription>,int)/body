@@ -1,0 +1,7 @@
+{
+  MethodDescription additionalMethod=new MethodDescription.Latent(internalName,this,returnType,parameterTypes,modifiers,exceptionTypes);
+  if (methodDescriptions.contains(additionalMethod)) {
+    throw new IllegalArgumentException("Method " + additionalMethod + " is already defined on "+ this);
+  }
+  return new InlineInstrumentedType(levelType,name,interfaces,this.modifiers,fieldDescriptions,join(methodDescriptions,additionalMethod),loadedTypeInitializer,typeInitializer);
+}

@@ -1,9 +1,0 @@
-ClassFileVersion classFileVersion
-TypeDescription superClass
-List<TypeDescription> interfaces
-int modifiers
-String name
-List<? extends FieldDescription> fieldDescriptions
-List<? extends MethodDescription> methodDescriptions
-LoadedTypeInitializer loadedTypeInitializer
-TypeInitializer typeInitializer

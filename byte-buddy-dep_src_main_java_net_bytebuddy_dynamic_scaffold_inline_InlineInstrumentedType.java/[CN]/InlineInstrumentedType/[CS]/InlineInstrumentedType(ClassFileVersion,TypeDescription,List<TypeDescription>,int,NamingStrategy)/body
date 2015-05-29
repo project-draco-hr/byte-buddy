@@ -1,9 +1,0 @@
-{
-  super(LoadedTypeInitializer.NoOp.INSTANCE,TypeInitializer.None.INSTANCE,levelType.getName(),levelType.getDeclaredFields(),levelType.getDeclaredMethods());
-  this.levelType=levelType;
-  this.modifiers=modifiers;
-  Set<TypeDescription> interfaceTypes=new HashSet<TypeDescription>(levelType.getInterfaces());
-  interfaceTypes.addAll(interfaces);
-  this.interfaces=new ArrayList<TypeDescription>(interfaceTypes);
-  this.name=isValidTypeName(namingStrategy.name(new NamingStrategy.UnnamedType.Default(levelType.getSupertype(),interfaces,modifiers,classFileVersion)));
-}
