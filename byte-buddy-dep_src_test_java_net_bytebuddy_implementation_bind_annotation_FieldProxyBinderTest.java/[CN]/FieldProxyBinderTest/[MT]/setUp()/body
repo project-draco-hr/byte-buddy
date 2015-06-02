@@ -5,4 +5,6 @@
   when(instrumentedType.getDeclaredFields()).thenReturn(new FieldList.Explicit(Collections.singletonList(fieldDescription)));
   when(fieldDescription.getFieldType()).thenReturn(fieldType);
   when(fieldType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(fieldType.getSort()).thenReturn(GenericTypeDescription.Sort.RAW);
+  when(fieldType.asRawType()).thenReturn(fieldType);
 }

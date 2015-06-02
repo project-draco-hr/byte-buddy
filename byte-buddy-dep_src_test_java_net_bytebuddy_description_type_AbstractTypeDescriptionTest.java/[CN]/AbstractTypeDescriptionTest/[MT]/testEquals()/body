@@ -2,10 +2,15 @@
   TypeDescription identical=describe(SampleClass.class);
   assertThat(identical,equalTo(identical));
   TypeDescription equalFirst=mock(TypeDescription.class);
-  when(equalFirst.getName()).thenReturn(SampleClass.class.getName());
+  when(equalFirst.getSort()).thenReturn(GenericTypeDescription.Sort.RAW);
+  when(equalFirst.asRawType()).thenReturn(equalFirst);
+  when(equalFirst.getInternalName()).thenReturn(Type.getInternalName(SampleClass.class));
   assertThat(describe(SampleClass.class),equalTo(equalFirst));
   assertThat(describe(SampleClass.class),not(equalTo(describe(SampleInterface.class))));
   assertThat(describe(SampleClass.class),not(equalTo((TypeDescription)new TypeDescription.ForLoadedType(SampleInterface.class))));
+  GenericTypeDescription nonRawType=mock(GenericTypeDescription.class);
+  when(nonRawType.getSort()).thenReturn(GenericTypeDescription.Sort.VARIABLE);
+  assertThat(describe(SampleClass.class),not(equalTo(nonRawType)));
   assertThat(describe(SampleClass.class),not(equalTo(new Object())));
   assertThat(describe(SampleClass.class),not(equalTo(null)));
   assertThat(describe(Object[].class),equalTo((TypeDescription)new TypeDescription.ForLoadedType(Object[].class)));
