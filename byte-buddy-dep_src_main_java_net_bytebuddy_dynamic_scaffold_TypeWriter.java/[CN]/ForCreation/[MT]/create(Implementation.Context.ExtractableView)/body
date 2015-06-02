@@ -1,7 +1,7 @@
 {
   ClassWriter classWriter=new ClassWriter(ASM_MANUAL_FLAG);
   ClassVisitor classVisitor=classVisitorWrapper.wrap(new ValidatingClassVisitor(classWriter));
-  classVisitor.visit(classFileVersion.getVersionNumber(),instrumentedType.getActualModifiers(!instrumentedType.isInterface()),instrumentedType.getInternalName(),instrumentedType.getGenericSignature(),(instrumentedType.getSupertype() == null ? TypeDescription.OBJECT : instrumentedType.getSupertype()).getInternalName(),instrumentedType.getInterfaces().toInternalNames());
+  classVisitor.visit(classFileVersion.getVersionNumber(),instrumentedType.getActualModifiers(!instrumentedType.isInterface()),instrumentedType.getInternalName(),instrumentedType.getGenericSignature(),(instrumentedType.getSuperType() == null ? TypeDescription.OBJECT : instrumentedType.getSuperType()).getInternalName(),instrumentedType.getInterfaces().toInternalNames());
   attributeAppender.apply(classVisitor,instrumentedType);
   for (  FieldDescription fieldDescription : instrumentedType.getDeclaredFields()) {
     fieldPool.target(fieldDescription).apply(classVisitor,fieldDescription);

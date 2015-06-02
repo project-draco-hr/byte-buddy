@@ -6,7 +6,7 @@
     if (fieldList.size() != 0) {
       fieldDescription=fieldList.getOnly();
     }
-    currentType=currentType.getSupertype();
+    currentType=currentType.getSuperType();
   }
  while (currentType != null && (fieldDescription == null || !fieldDescription.isVisibleTo(instrumentedType)));
   if (fieldDescription == null || !fieldDescription.isVisibleTo(instrumentedType)) {

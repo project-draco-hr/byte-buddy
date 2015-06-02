@@ -6,6 +6,6 @@
       return new Resolution.Resolved(fieldList.getOnly());
     }
   }
- while ((currentType=currentType.getSupertype()) != null);
+ while ((currentType=currentType.getSuperType()) != null);
   return new Resolution.Unresolved();
 }

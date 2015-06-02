@@ -5,6 +5,6 @@
   assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.inject(methodRegistry,methodAttributeAppenderFactory),is(methodRegistry));
   verify(methodRegistry).append(any(LatentMethodMatcher.class),any(MethodRegistry.Handler.class),eq(methodAttributeAppenderFactory));
   verifyNoMoreInteractions(methodRegistry);
-  verify(instrumentedType,atLeastOnce()).getSupertype();
+  verify(instrumentedType,atLeastOnce()).getSuperType();
   verifyNoMoreInteractions(instrumentedType);
 }

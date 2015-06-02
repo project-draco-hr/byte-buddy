@@ -1,5 +1,5 @@
 {
-  assertThat(makePlainInstrumentedType().getSupertype(),is((TypeDescription)new TypeDescription.ForLoadedType(Object.class)));
-  assertThat(makePlainInstrumentedType().getSupertype(),not(is((TypeDescription)new TypeDescription.ForLoadedType(Integer.class))));
-  assertThat(makePlainInstrumentedType().getSupertype(),not(is((TypeDescription)new TypeDescription.ForLoadedType(Serializable.class))));
+  assertThat(makePlainInstrumentedType().getSuperType(),is((TypeDescription)new TypeDescription.ForLoadedType(Object.class)));
+  assertThat(makePlainInstrumentedType().getSuperType(),not(is((TypeDescription)new TypeDescription.ForLoadedType(Integer.class))));
+  assertThat(makePlainInstrumentedType().getSuperType(),not(is((TypeDescription)new TypeDescription.ForLoadedType(Serializable.class))));
 }

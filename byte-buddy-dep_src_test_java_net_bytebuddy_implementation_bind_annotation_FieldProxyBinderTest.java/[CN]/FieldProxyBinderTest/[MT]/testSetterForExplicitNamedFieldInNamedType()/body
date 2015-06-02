@@ -1,5 +1,5 @@
 {
-  when(target.getTypeDescription()).thenReturn(setterType);
+  when(target.getType()).thenReturn(setterType);
   doReturn(Foo.class).when(annotation).definingType();
   when(annotation.value()).thenReturn(FOO);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);

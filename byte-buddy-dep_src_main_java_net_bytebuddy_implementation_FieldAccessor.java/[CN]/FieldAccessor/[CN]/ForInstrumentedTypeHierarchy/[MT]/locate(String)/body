@@ -6,6 +6,6 @@
       return fieldList.getOnly();
     }
   }
- while (!(currentType=currentType.getSupertype()).represents(Object.class));
+ while (!(currentType=currentType.getSuperType()).represents(Object.class));
   throw new IllegalArgumentException("There is no field '" + name + " that is visible to "+ instrumentedType);
 }

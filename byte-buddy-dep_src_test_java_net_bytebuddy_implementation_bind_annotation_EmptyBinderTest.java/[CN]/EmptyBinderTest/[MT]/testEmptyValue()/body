@@ -1,5 +1,5 @@
 {
-  when(target.getTypeDescription()).thenReturn(typeDescription);
+  when(target.getType()).thenReturn(typeDescription);
   TargetMethodAnnotationDrivenBinder.ParameterBinding<?> binding=Empty.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(binding.isValid(),is(true));
   StackManipulation.Size size=binding.apply(methodVisitor,implementationContext);

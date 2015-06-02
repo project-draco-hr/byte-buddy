@@ -1,5 +1,5 @@
 {
-  when(target.getTypeDescription()).thenReturn(morphType);
+  when(target.getType()).thenReturn(morphType);
   when(morphMethod.getDeclaringType()).thenReturn(morphType);
   doReturn(void.class).when(annotation).defaultTarget();
   when(implementationTarget.invokeSuper(source,Implementation.Target.MethodLookup.Default.EXACT)).thenReturn(specialMethodInvocation);
