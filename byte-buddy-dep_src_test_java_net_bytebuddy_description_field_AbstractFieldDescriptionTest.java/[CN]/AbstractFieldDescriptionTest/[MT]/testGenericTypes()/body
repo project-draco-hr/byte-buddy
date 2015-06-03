@@ -1,0 +1,3 @@
+{
+  assertThat(describe(genericField).getFieldTypeGen(),is(GenericTypeDescription.Sort.describe(genericField.getGenericType())));
+}
