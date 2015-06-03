@@ -1,0 +1,3 @@
+{
+  assertThat(describe(GenericMethod.class.getDeclaredMethod("foo",Exception.class)).toGenericString(),is(GenericMethod.class.getDeclaredMethod("foo",Exception.class).toGenericString()));
+}
