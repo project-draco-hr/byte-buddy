@@ -5,7 +5,12 @@
  else {
     SignatureReader signatureReader=new SignatureReader(genericSignature);
     OfField visitor=new OfField();
-    signatureReader.acceptType(new GenericTypeExtractor(visitor));
-    return visitor.resolve();
+    try {
+      signatureReader.acceptType(new GenericTypeExtractor(visitor));
+      return visitor.resolve();
+    }
+ catch (    RuntimeException ignored) {
+      return LazyTypeDescription.GenericTypeToken.Resolution.Defective.INSTANCE;
+    }
   }
 }
