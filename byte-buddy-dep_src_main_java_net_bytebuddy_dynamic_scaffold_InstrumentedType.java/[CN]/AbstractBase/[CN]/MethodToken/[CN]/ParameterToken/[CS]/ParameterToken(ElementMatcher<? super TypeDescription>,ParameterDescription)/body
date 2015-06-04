@@ -1,0 +1,7 @@
+{
+  parameterType=TargetType.resolve(parameterDescription.getTypeGen(),InstrumentedType.AbstractBase.this,matcher);
+  index=parameterDescription.getIndex();
+  name=parameterDescription.isNamed() ? parameterDescription.getName() : null;
+  modifiers=parameterDescription.hasModifiers() ? getModifiers() : null;
+  parameterAnnotations=Collections.emptyList();
+}

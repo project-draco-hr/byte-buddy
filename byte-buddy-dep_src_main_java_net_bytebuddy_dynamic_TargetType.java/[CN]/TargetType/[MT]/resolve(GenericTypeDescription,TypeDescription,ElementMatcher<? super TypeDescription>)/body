@@ -1,0 +1,18 @@
+{
+switch (typeDescription.getSort()) {
+case RAW:
+    return resolve(typeDescription.asRawType(),actualTargetType,matcher);
+case GENERIC_ARRAY:
+  return GenericTypeDescription.ForGenericArray.Latent.of(resolve(typeDescription.getComponentType(),actualTargetType,matcher),1);
+case PARAMETERIZED:
+GenericTypeDescription ownerType=typeDescription.getOwnerType();
+return new GenericTypeDescription.ForParameterizedType.Latent(resolveRaw(typeDescription.asRawType(),actualTargetType,matcher),resolve(typeDescription.getParameters(),actualTargetType,matcher),ownerType == null ? null : resolve(ownerType,actualTargetType,matcher));
+case VARIABLE:
+return new GenericTypeDescription.ForTypeVariable.Latent(resolve(typeDescription.getParameters(),actualTargetType,matcher),null,typeDescription.getSymbol());
+case WILDCARD:
+List<GenericTypeDescription> lowerBounds=typeDescription.getLowerBounds();
+return lowerBounds.isEmpty() ? GenericTypeDescription.ForWildcardType.Latent.boundedAbove(resolve(typeDescription.getUpperBounds().get(0),actualTargetType,matcher)) : GenericTypeDescription.ForWildcardType.Latent.boundedBelow(resolve(lowerBounds.get(0),actualTargetType,matcher));
+default :
+throw new AssertionError("Unexpected generic type: " + typeDescription.getSort());
+}
+}

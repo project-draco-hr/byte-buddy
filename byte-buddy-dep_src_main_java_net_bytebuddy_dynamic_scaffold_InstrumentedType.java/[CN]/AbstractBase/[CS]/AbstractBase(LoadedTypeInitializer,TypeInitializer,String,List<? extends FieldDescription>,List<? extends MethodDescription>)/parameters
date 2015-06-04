@@ -1,5 +1,0 @@
-LoadedTypeInitializer loadedTypeInitializer
-TypeInitializer typeInitializer
-String typeName
-List<? extends FieldDescription> fieldDescriptions
-List<? extends MethodDescription> methodDescriptions

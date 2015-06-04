@@ -1,7 +1,3 @@
 {
-  List<TypeDescription> exceptionTypes=new ArrayList<TypeDescription>(this.exceptionTypes.size());
-  for (  TypeDescription exceptionType : this.exceptionTypes) {
-    exceptionTypes.add(TargetType.resolve(exceptionType,instrumentedType));
-  }
-  return exceptionTypes;
+  return TargetType.resolveRaw(this.exceptionTypes,instrumentedType,is(TargetType.DESCRIPTION));
 }

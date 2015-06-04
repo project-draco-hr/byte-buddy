@@ -1,0 +1,12 @@
+{
+  internalName=methodDescription.getInternalName();
+  returnType=TargetType.resolve(methodDescription.getReturnTypeGen(),InstrumentedType.AbstractBase.this,matcher);
+  exceptionTypes=TargetType.resolve(methodDescription.getExceptionTypesGen(),InstrumentedType.AbstractBase.this,matcher);
+  modifiers=methodDescription.getModifiers();
+  declaredAnnotations=methodDescription.getDeclaredAnnotations();
+  parameters=new ArrayList<ParameterDescription>(methodDescription.getParameters().size());
+  for (  ParameterDescription parameterDescription : methodDescription.getParameters()) {
+    parameters.add(new ParameterToken(matcher,parameterDescription));
+  }
+  defaultValue=methodDescription.getDefaultValue();
+}

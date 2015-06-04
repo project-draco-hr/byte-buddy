@@ -1,0 +1,3 @@
+List<? extends GenericTypeDescription> typeList
+TypeDescription actualTargetType
+ElementMatcher<? super TypeDescription> matcher

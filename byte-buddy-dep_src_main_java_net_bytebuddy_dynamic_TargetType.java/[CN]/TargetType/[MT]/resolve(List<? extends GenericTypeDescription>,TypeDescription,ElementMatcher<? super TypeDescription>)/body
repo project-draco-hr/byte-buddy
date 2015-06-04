@@ -1,0 +1,7 @@
+{
+  List<GenericTypeDescription> typeDescriptions=new ArrayList<GenericTypeDescription>(typeList.size());
+  for (  GenericTypeDescription typeDescription : typeList) {
+    typeDescriptions.add(resolve(typeDescription,actualTargetType,matcher));
+  }
+  return new GenericTypeList.Explicit(typeDescriptions);
+}

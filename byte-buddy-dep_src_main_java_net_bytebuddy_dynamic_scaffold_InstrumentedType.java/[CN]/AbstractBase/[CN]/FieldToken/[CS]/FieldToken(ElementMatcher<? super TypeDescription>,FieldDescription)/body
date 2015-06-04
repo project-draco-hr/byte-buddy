@@ -1,0 +1,6 @@
+{
+  name=fieldDescription.getName();
+  fieldType=TargetType.resolve(fieldDescription.getFieldTypeGen(),InstrumentedType.AbstractBase.this,matcher);
+  modifiers=fieldDescription.getModifiers();
+  declaredAnnotations=fieldDescription.getDeclaredAnnotations();
+}

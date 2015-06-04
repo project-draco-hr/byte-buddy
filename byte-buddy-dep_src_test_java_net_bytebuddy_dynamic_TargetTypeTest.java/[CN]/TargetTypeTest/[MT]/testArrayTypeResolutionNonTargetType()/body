@@ -1,5 +1,0 @@
-{
-  when(arrayType.isArray()).thenReturn(true);
-  when(arrayType.getComponentType()).thenReturn(leftType);
-  assertThat(TargetType.resolve(arrayType,rightType),is(arrayType));
-}

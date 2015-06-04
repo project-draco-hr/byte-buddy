@@ -1,5 +1,5 @@
 {
-  super(loadedTypeInitializer,typeInitializer,name,fieldDescriptions,methodDescriptions);
+  super(loadedTypeInitializer,typeInitializer,named(name),fieldDescriptions,methodDescriptions);
   this.classFileVersion=classFileVersion;
   this.superClass=superClass;
   this.interfaces=interfaces;

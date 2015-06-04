@@ -1,5 +1,5 @@
 {
-  this.upperBounds=upperBounds;
+  this.bounds=bounds;
   this.typeVariableSource=typeVariableSource;
   this.symbol=symbol;
 }

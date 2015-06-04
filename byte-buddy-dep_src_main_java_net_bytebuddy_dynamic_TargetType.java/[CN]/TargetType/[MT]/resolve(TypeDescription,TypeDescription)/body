@@ -1,9 +1,0 @@
-{
-  int arity=0;
-  TypeDescription targetType=typeDescription;
-  while (targetType.isArray()) {
-    targetType=targetType.getComponentType();
-    arity++;
-  }
-  return targetType.represents(TargetType.class) ? TypeDescription.ArrayProjection.of(actualTargetType,arity) : typeDescription;
-}

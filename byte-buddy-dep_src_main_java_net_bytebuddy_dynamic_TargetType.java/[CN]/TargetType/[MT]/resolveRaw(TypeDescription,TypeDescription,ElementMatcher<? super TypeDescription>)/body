@@ -1,0 +1,9 @@
+{
+  int arity=0;
+  TypeDescription targetType=typeDescription;
+  while (targetType.isArray()) {
+    targetType=targetType.getComponentType();
+    arity++;
+  }
+  return matcher.matches(typeDescription) ? TypeDescription.ArrayProjection.of(actualTargetType,arity) : typeDescription;
+}
