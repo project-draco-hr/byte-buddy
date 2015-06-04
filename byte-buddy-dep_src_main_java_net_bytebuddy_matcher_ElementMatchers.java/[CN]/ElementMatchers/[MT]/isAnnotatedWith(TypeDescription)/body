@@ -1,3 +1,3 @@
 {
-  return isAnnotatedWith(is(isAnnotation(typeDescription)));
+  return isAnnotatedWith(is(typeDescription));
 }

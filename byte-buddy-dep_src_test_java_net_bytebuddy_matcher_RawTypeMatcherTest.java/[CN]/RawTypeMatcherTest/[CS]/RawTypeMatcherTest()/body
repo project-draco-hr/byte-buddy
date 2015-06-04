@@ -1,0 +1,3 @@
+{
+  super((Class<? extends RawTypeMatcher<?>>)(Object)RawTypeMatcher.class,"asRawType");
+}

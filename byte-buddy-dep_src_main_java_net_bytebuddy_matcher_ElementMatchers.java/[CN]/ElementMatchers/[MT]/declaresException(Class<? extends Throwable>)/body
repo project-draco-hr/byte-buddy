@@ -1,0 +1,3 @@
+{
+  return declaresException(new TypeDescription.ForLoadedType(nonNull(exceptionType)));
+}

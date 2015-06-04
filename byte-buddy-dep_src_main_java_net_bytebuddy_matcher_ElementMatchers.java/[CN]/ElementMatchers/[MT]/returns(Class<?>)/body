@@ -1,3 +1,0 @@
-{
-  return returns(new TypeDescription.ForLoadedType(nonNull(type)));
-}

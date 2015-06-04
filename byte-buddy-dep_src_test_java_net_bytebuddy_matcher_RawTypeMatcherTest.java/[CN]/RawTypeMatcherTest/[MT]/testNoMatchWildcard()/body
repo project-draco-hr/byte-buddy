@@ -1,0 +1,8 @@
+{
+  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.WILDCARD);
+  assertThat(new RawTypeMatcher<GenericTypeDescription>(elementMatcher).matches(genericTypeDescription),is(false));
+  verify(genericTypeDescription).getSort();
+  verifyNoMoreInteractions(genericTypeDescription);
+  verifyZeroInteractions(elementMatcher);
+  verifyZeroInteractions(typeDescriptions);
+}

@@ -1,3 +1,3 @@
 {
-  return classLoader == null ? ElementMatchers.<T>isBootstrapClassLoader() : new ClassLoaderParentMatcher<T>(classLoader);
+  return classLoader == BOOTSTRAP_CLASSLOADER ? ElementMatchers.<T>isBootstrapClassLoader() : new ClassLoaderParentMatcher<T>(classLoader);
 }

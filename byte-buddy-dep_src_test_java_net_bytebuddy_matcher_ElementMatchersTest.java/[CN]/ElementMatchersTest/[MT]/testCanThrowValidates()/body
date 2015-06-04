@@ -1,3 +1,0 @@
-{
-  ElementMatchers.canThrow((Class)Object.class);
-}

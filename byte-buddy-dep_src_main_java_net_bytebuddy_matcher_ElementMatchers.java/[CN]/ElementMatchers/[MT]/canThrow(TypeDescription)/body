@@ -1,8 +1,3 @@
 {
-  if (exceptionType.isAssignableTo(Throwable.class)) {
-    return exceptionType.isAssignableTo(RuntimeException.class) || exceptionType.isAssignableTo(Error.class) ? new BooleanMatcher<T>(true) : ElementMatchers.<T>throwing(new CollectionItemMatcher<TypeDescription>(new SubTypeMatcher<TypeDescription>(exceptionType)));
-  }
- else {
-    throw new IllegalArgumentException(exceptionType + " is not an exception type");
-  }
+  return exceptionType.isAssignableTo(RuntimeException.class) || exceptionType.isAssignableTo(Error.class) ? new BooleanMatcher<T>(true) : ElementMatchers.<T>declaresException(exceptionType);
 }

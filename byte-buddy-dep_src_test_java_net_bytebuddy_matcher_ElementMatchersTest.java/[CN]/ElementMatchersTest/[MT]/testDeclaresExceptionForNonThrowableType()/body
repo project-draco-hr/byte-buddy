@@ -1,0 +1,3 @@
+{
+  assertThat(ElementMatchers.declaresException((Class)Object.class).matches(new Object()),is(false));
+}

@@ -1,3 +1,0 @@
-{
-  return noneOf(new TypeList.ForLoadedType(nonNull(value)));
-}

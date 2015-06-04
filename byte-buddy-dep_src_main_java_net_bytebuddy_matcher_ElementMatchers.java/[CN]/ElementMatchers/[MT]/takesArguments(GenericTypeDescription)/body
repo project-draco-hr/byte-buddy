@@ -1,0 +1,3 @@
+{
+  return takesArguments((Arrays.asList(nonNull(typeDescription))));
+}
