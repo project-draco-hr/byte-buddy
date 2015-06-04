@@ -1,4 +1,4 @@
 {
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(Retention.class);
-  assertThat(isAnnotation(typeDescription),is(typeDescription));
+  assertThat(isAnnotation(typeDescription),sameInstance(typeDescription));
 }

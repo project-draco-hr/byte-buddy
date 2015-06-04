@@ -1,0 +1,7 @@
+{
+  GenericTypeDescription first=mock(GenericTypeDescription.class), second=mock(GenericTypeDescription.class);
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(first.asRawType()).thenReturn(typeDescription);
+  when(second.asRawType()).thenReturn(typeDescription);
+  joinUniqueRaw(Collections.singletonList(first),Collections.singleton(second));
+}

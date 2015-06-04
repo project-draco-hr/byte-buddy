@@ -1,4 +1,0 @@
-{
-  TypeDescription typeDescription=mock(TypeDescription.class);
-  assertThat(nonVoid(typeDescription),sameInstance(typeDescription));
-}

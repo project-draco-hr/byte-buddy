@@ -1,7 +1,7 @@
 {
   List<ElementMatcher<? super TypeDescription>> typeMatchers=new LinkedList<ElementMatcher<? super TypeDescription>>();
   for (  TypeDescription typeDescription : typeDescriptions) {
-    typeMatchers.add(is(nonVoid(typeDescription)));
+    typeMatchers.add(is(isActualType(typeDescription)));
   }
   return takesArguments(new CollectionOneToOneMatcher<TypeDescription>(typeMatchers));
 }

@@ -1,3 +1,0 @@
-{
-  isInterface(Arrays.asList(new TypeDescription.ForLoadedType(Runnable.class),new TypeDescription.ForLoadedType(Object.class)));
-}

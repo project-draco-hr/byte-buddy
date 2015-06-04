@@ -1,6 +1,0 @@
-{
-  for (  TypeDescription typeDescription : typeDescriptions) {
-    isInterface(typeDescription);
-  }
-  return typeDescriptions;
-}

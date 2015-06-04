@@ -1,4 +1,3 @@
 {
-  TypeDescription typeDescription=new TypeDescription.ForLoadedType(Object.class);
-  assertThat(isAnnotation(typeDescription),is(typeDescription));
+  isAnnotation(new TypeDescription.ForLoadedType(Object.class));
 }

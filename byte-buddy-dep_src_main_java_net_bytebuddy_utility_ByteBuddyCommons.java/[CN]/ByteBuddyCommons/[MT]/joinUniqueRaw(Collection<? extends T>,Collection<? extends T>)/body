@@ -1,0 +1,18 @@
+{
+  List<T> result=new ArrayList<T>(left.size() + right.size());
+  Map<TypeDescription,GenericTypeDescription> types=new HashMap<TypeDescription,GenericTypeDescription>();
+  for (  T typeDescription : left) {
+    types.put(typeDescription.asRawType(),typeDescription);
+    result.add(typeDescription);
+  }
+  for (  T typeDescription : right) {
+    GenericTypeDescription conflictingType=types.put(typeDescription.asRawType(),typeDescription);
+    if (conflictingType != null && !conflictingType.equals(typeDescription)) {
+      throw new IllegalArgumentException("Conflicting raw types: " + conflictingType + " and "+ typeDescription);
+    }
+ else     if (conflictingType == null) {
+      result.add(typeDescription);
+    }
+  }
+  return result;
+}

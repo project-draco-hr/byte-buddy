@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(typeDescription.asRawType()).thenReturn(typeDescription);
+  assertThat(joinUniqueRaw(Collections.singleton(typeDescription),Collections.singleton(typeDescription)),is(Collections.singletonList(typeDescription)));
+}

@@ -1,3 +1,0 @@
-{
-  isInterface(new TypeDescription.ForLoadedType(Object.class));
-}

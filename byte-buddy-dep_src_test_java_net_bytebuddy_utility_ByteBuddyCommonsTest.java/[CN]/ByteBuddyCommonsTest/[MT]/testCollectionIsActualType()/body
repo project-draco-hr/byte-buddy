@@ -1,0 +1,7 @@
+{
+  GenericTypeDescription typeDescription=mock(GenericTypeDescription.class);
+  when(typeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.RAW);
+  when(typeDescription.asRawType()).thenReturn(new TypeDescription.ForLoadedType(Object.class));
+  Collection<GenericTypeDescription> typeDescriptions=Collections.singleton(typeDescription);
+  assertThat(isActualType(typeDescriptions),sameInstance(typeDescriptions));
+}

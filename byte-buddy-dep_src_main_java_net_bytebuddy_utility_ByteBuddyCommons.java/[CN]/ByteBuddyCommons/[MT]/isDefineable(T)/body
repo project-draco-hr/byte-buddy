@@ -1,0 +1,9 @@
+{
+  if (typeDescription.isArray()) {
+    throw new IllegalArgumentException("Cannot explicitly define an array type: " + typeDescription);
+  }
+ else   if (typeDescription.isPrimitive()) {
+    throw new IllegalArgumentException("Cannot explicitly define a primitive type: " + typeDescription);
+  }
+  return typeDescription;
+}

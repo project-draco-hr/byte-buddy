@@ -1,0 +1,4 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(Object.class);
+  assertThat(isExtendable(typeDescription),sameInstance(typeDescription));
+}
