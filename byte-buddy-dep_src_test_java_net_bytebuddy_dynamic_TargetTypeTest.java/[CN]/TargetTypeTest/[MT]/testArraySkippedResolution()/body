@@ -1,0 +1,4 @@
+{
+  TypeDescription arrayType=TypeDescription.ArrayProjection.of(originalType,2);
+  assertThat(TargetType.resolve(arrayType,substitute,ElementMatchers.none()),sameInstance(arrayType));
+}

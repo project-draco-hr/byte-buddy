@@ -1,3 +1,0 @@
-TypeDescription typeDescription
-TypeDescription actualTargetType
-ElementMatcher<? super TypeDescription> matcher

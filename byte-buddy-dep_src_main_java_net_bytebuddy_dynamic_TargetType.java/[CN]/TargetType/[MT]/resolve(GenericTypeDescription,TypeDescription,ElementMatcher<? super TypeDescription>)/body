@@ -1,18 +1,18 @@
 {
-switch (typeDescription.getSort()) {
+switch (observed.getSort()) {
 case RAW:
-    return resolve(typeDescription.asRawType(),actualTargetType,matcher);
+    return resolve(observed.asRawType(),substitute,substitutionMatcher);
 case GENERIC_ARRAY:
-  return GenericTypeDescription.ForGenericArray.Latent.of(resolve(typeDescription.getComponentType(),actualTargetType,matcher),1);
+  return GenericTypeDescription.ForGenericArray.Latent.of(resolve(observed.getComponentType(),substitute,substitutionMatcher),1);
 case PARAMETERIZED:
-GenericTypeDescription ownerType=typeDescription.getOwnerType();
-return new GenericTypeDescription.ForParameterizedType.Latent(resolveRaw(typeDescription.asRawType(),actualTargetType,matcher),resolve(typeDescription.getParameters(),actualTargetType,matcher),ownerType == null ? null : resolve(ownerType,actualTargetType,matcher));
-case VARIABLE:
-return new GenericTypeDescription.ForTypeVariable.Latent(resolve(typeDescription.getParameters(),actualTargetType,matcher),null,typeDescription.getSymbol());
+GenericTypeDescription ownerType=observed.getOwnerType();
+return new GenericTypeDescription.ForParameterizedType.Latent(resolve(observed.asRawType(),substitute,substitutionMatcher),resolve(observed.getParameters(),substitute,substitutionMatcher),ownerType == null ? null : resolve(ownerType,substitute,substitutionMatcher));
 case WILDCARD:
-List<GenericTypeDescription> lowerBounds=typeDescription.getLowerBounds();
-return lowerBounds.isEmpty() ? GenericTypeDescription.ForWildcardType.Latent.boundedAbove(resolve(typeDescription.getUpperBounds().get(0),actualTargetType,matcher)) : GenericTypeDescription.ForWildcardType.Latent.boundedBelow(resolve(lowerBounds.get(0),actualTargetType,matcher));
+GenericTypeList lowerBounds=observed.getLowerBounds(), upperBounds=observed.getUpperBounds();
+return lowerBounds.isEmpty() ? GenericTypeDescription.ForWildcardType.Latent.boundedAbove(resolve(upperBounds.getOnly(),substitute,substitutionMatcher)) : GenericTypeDescription.ForWildcardType.Latent.boundedBelow(resolve(lowerBounds.getOnly(),substitute,substitutionMatcher));
+case VARIABLE:
+return observed.getVariableSource().accept(new TypeVariableProxy.Extractor(substitute,substitutionMatcher)).resolve(observed);
 default :
-throw new AssertionError("Unexpected generic type: " + typeDescription.getSort());
+throw new AssertionError("Unexpected generic type: " + observed.getSort());
 }
 }

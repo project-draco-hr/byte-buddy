@@ -1,8 +1,0 @@
-String sortName
-boolean allowsConstructor
-boolean allowsNonPublic
-boolean allowsNonStaticFields
-boolean allowsStaticMethods
-boolean allowsAbstract
-boolean allowsNonAbstract
-boolean allowsDefaultValue

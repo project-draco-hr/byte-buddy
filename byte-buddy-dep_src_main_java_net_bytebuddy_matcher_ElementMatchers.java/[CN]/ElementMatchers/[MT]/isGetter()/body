@@ -1,3 +1,3 @@
 {
-  return takesArguments(0).and(not(returns(void.class))).and(nameStartsWith("get").or(nameStartsWith("is").and(returns(anyOf(boolean.class,Boolean.class)))));
+  return takesArguments(0).and(not(returns(TypeDescription.VOID))).and(nameStartsWith("get").or(nameStartsWith("is").and(returns(anyOf(boolean.class,Boolean.class)))));
 }

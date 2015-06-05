@@ -1,0 +1,6 @@
+LoadedTypeInitializer loadedTypeInitializer
+TypeInitializer typeInitializer
+ElementMatcher<? super TypeDescription> matcher
+List<? extends GenericTypeDescription> typeVariables
+List<? extends FieldDescription> fieldDescriptions
+List<? extends MethodDescription> methodDescriptions

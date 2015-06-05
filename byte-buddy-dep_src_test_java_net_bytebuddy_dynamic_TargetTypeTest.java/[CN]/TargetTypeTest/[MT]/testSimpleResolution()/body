@@ -1,0 +1,3 @@
+{
+  assertThat(TargetType.resolve(originalType,substitute,ElementMatchers.is(originalType)),is(substitute));
+}

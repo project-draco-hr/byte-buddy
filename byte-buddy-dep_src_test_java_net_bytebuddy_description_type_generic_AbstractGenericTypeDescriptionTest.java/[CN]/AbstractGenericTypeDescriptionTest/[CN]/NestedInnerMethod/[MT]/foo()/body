@@ -1,0 +1,17 @@
+{
+class InnerType<U extends S> {
+    <V extends U>T foo(){
+      return null;
+    }
+    <V extends U>S bar(){
+      return null;
+    }
+    <V extends U>U qux(){
+      return null;
+    }
+    <V extends U>V baz(){
+      return null;
+    }
+  }
+  return InnerType.class;
+}

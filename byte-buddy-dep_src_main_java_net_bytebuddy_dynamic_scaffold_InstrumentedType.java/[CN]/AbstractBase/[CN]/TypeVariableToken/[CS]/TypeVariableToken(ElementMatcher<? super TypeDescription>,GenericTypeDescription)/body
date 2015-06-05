@@ -1,0 +1,4 @@
+{
+  symbol=typeVariable.getSymbol();
+  bounds=null;
+}

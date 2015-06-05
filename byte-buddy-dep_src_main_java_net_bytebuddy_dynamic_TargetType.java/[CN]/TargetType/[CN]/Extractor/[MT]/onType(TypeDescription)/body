@@ -1,0 +1,3 @@
+{
+  return substitutionMatcher.matches(typeDescription) ? new TypeVariableProxy.ForType(substitute) : Retaining.INSTANCE;
+}

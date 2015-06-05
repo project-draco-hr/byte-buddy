@@ -1,0 +1,3 @@
+{
+  return rebase(new PackageDescription.ForLoadedPackage(aPackage),classFileLocator);
+}

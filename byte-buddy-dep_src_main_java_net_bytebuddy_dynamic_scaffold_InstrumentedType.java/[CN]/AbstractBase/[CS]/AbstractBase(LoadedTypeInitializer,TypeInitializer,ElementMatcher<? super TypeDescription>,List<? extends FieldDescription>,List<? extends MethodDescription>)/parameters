@@ -1,5 +1,0 @@
-LoadedTypeInitializer loadedTypeInitializer
-TypeInitializer typeInitializer
-ElementMatcher<? super TypeDescription> matcher
-List<? extends FieldDescription> fieldDescriptions
-List<? extends MethodDescription> methodDescriptions

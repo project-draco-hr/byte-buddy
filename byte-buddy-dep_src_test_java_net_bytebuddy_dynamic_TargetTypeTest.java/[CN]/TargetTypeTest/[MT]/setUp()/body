@@ -1,0 +1,4 @@
+{
+  originalType=new TypeDescription.ForLoadedType(OriginalType.class);
+  substitute=new TypeDescription.ForLoadedType(Substitute.class);
+}

@@ -3,5 +3,5 @@
   if (fieldDescriptions.contains(additionalField)) {
     throw new IllegalArgumentException("Field " + additionalField + " is already defined on "+ this);
   }
-  return new InlineInstrumentedType(levelType,name,interfaces,this.modifiers,join(fieldDescriptions,additionalField),methodDescriptions,loadedTypeInitializer,typeInitializer);
+  return new InlineInstrumentedType(levelType,name,interfaces,this.modifiers,typeVariables,join(fieldDescriptions,additionalField),methodDescriptions,loadedTypeInitializer,typeInitializer);
 }

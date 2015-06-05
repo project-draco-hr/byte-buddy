@@ -1,0 +1,21 @@
+{
+  GenericTypeDescription foo=describe(NestedInnerType.InnerType.class.getDeclaredMethod(FOO));
+  assertThat(foo.getSort(),is(GenericTypeDescription.Sort.VARIABLE));
+  assertThat(foo.getSymbol(),is(T));
+  assertThat(foo.getUpperBounds().size(),is(1));
+  assertThat(foo.getUpperBounds().getOnly(),is((GenericTypeDescription)TypeDescription.OBJECT));
+  assertThat(foo.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(NestedInnerType.class)));
+  GenericTypeDescription bar=describe(NestedInnerType.InnerType.class.getDeclaredMethod(BAR));
+  assertThat(bar.getSort(),is(GenericTypeDescription.Sort.VARIABLE));
+  assertThat(bar.getSymbol(),is(S));
+  assertThat(bar.getUpperBounds().size(),is(1));
+  assertThat(bar.getUpperBounds().getOnly(),is(foo));
+  assertThat(bar.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(NestedInnerType.InnerType.class)));
+  GenericTypeDescription qux=describe(NestedInnerType.InnerType.class.getDeclaredMethod(QUX));
+  assertThat(qux.getSort(),is(GenericTypeDescription.Sort.VARIABLE));
+  assertThat(qux.getSymbol(),is(U));
+  assertThat(qux.getUpperBounds().size(),is(1));
+  assertThat(qux.getUpperBounds().getOnly(),is(foo));
+  MethodDescription quxMethod=new MethodDescription.ForLoadedMethod(NestedInnerType.InnerType.class.getDeclaredMethod(QUX));
+  assertThat(qux.getVariableSource(),is((TypeVariableSource)quxMethod));
+}

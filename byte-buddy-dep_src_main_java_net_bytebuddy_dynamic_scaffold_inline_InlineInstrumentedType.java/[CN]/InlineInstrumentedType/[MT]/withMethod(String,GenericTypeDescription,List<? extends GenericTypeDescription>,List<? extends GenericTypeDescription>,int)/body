@@ -3,5 +3,5 @@
   if (methodDescriptions.contains(additionalMethod)) {
     throw new IllegalArgumentException("Method " + additionalMethod + " is already defined on "+ this);
   }
-  return new InlineInstrumentedType(levelType,name,interfaces,this.modifiers,fieldDescriptions,join(methodDescriptions,additionalMethod),loadedTypeInitializer,typeInitializer);
+  return new InlineInstrumentedType(levelType,name,interfaces,this.modifiers,typeVariables,fieldDescriptions,join(methodDescriptions,additionalMethod),loadedTypeInitializer,typeInitializer);
 }

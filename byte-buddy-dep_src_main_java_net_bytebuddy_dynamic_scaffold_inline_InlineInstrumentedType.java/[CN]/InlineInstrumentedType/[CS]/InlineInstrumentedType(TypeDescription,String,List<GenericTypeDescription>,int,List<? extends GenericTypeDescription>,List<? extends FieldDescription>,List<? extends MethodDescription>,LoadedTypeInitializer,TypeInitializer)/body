@@ -1,0 +1,7 @@
+{
+  super(loadedTypeInitializer,typeInitializer,named(name),typeVariables,fieldDescriptions,methodDescriptions);
+  this.levelType=levelType;
+  this.name=name;
+  this.modifiers=modifiers;
+  this.interfaces=interfaces;
+}

@@ -1,3 +1,3 @@
 {
-  return typeDescription.represents(void.class) ? new LookupEngine.ForHierarchy(fieldName) : new LookupEngine.ForExplicitType(fieldName,TargetType.resolveRaw(typeDescription,instrumentedType,is(TargetType.DESCRIPTION)));
+  return typeDescription.represents(void.class) ? new LookupEngine.ForHierarchy(fieldName) : new LookupEngine.ForExplicitType(fieldName,TargetType.resolve(typeDescription,instrumentedType,TargetType.MATCHER));
 }

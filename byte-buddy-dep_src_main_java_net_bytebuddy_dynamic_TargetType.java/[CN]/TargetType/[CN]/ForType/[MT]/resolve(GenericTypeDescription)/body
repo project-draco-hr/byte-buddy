@@ -1,0 +1,7 @@
+{
+  GenericTypeDescription typeVariable=substitute.findVariable(original.getSymbol());
+  if (typeVariable == null) {
+    throw new IllegalStateException("Cannot resolve type variable " + original.getSymbol() + " for "+ substitute);
+  }
+  return typeVariable;
+}

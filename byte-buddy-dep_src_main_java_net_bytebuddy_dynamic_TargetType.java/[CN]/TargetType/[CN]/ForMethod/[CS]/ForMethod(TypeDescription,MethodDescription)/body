@@ -1,0 +1,4 @@
+{
+  this.substitute=substitute;
+  this.methodDescription=methodDescription;
+}

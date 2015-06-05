@@ -1,11 +1,9 @@
 {
-  do {
-    GenericTypeList typeVariables=typeVariableSource.getTypeVariables().filter(named(name));
-    if (!typeVariables.isEmpty()) {
-      return typeVariables.getOnly();
-    }
-    typeVariableSource=typeVariableSource.getEnclosingSource();
+  GenericTypeDescription typeVariable=typeVariableSource.findVariable(symbol);
+  if (typeVariable == null) {
+    throw new IllegalStateException("Cannot resolve type variable " + symbol + " for "+ typeVariableSource);
   }
- while (typeVariableSource != null);
-  throw new IllegalStateException("Cannot resolve type variable: " + name);
+ else {
+    return typeVariable;
+  }
 }
