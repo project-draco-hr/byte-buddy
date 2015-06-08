@@ -2,25 +2,14 @@
   StringBuilder stringBuilder=new StringBuilder(SYMBOL);
   GenericTypeList bounds=getLowerBounds();
   if (!bounds.isEmpty()) {
-    if (bounds.size() == 1 && bounds.get(0).equals(TypeDescription.OBJECT)) {
-      return SYMBOL;
-    }
     stringBuilder.append(" super ");
   }
  else {
     bounds=getUpperBounds();
-    if (bounds.isEmpty()) {
+    if (bounds.getOnly().equals(TypeDescription.OBJECT)) {
       return SYMBOL;
     }
     stringBuilder.append(" extends ");
   }
-  boolean multiple=false;
-  for (  GenericTypeDescription genericTypeDescription : bounds) {
-    if (multiple) {
-      stringBuilder.append(" & ");
-    }
-    stringBuilder.append(genericTypeDescription.getTypeName());
-    multiple=true;
-  }
-  return stringBuilder.toString();
+  return stringBuilder.append(bounds.getOnly().getTypeName()).toString();
 }
