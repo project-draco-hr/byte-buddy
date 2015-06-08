@@ -1,0 +1,3 @@
+{
+  return asRawType().getSuperTypeGen().accept(Visitor.Substitutor.ForTypeVariable.bind(this));
+}

@@ -1,0 +1,3 @@
+{
+  return asRawType().getInterfacesGen().accept(Visitor.Substitutor.ForTypeVariable.bind(this));
+}

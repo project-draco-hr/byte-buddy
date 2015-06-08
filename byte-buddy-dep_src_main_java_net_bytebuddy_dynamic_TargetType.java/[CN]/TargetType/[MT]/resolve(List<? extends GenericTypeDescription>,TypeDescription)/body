@@ -1,0 +1,8 @@
+{
+  List<GenericTypeDescription> substituted=new ArrayList<GenericTypeDescription>(typeDescriptions.size());
+  GenericTypeDescription.Visitor<GenericTypeDescription> visitor=GenericTypeDescription.Visitor.Substitutor.ForRawType.replace(substitute,MATCHER);
+  for (  GenericTypeDescription typeDescription : typeDescriptions) {
+    substituted.add(typeDescription.accept(visitor));
+  }
+  return new GenericTypeList.Explicit(substituted);
+}

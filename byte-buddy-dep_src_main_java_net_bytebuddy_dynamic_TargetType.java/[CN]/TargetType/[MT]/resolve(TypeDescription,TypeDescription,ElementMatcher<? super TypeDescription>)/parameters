@@ -1,3 +1,0 @@
-TypeDescription observed
-TypeDescription substitute
-ElementMatcher<? super TypeDescription> substitutionMatcher

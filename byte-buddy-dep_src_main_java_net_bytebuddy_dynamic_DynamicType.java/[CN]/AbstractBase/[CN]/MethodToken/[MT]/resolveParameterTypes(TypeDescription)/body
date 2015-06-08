@@ -1,3 +1,3 @@
 {
-  return TargetType.resolve(parameterTypes,instrumentedType,TargetType.MATCHER).asRawTypes();
+  return TargetType.resolve(parameterTypes,instrumentedType);
 }

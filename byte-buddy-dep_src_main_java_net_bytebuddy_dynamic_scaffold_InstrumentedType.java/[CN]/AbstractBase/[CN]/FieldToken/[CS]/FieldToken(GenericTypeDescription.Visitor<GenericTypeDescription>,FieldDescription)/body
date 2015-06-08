@@ -1,0 +1,6 @@
+{
+  name=fieldDescription.getName();
+  fieldType=fieldDescription.getFieldTypeGen().accept(substitutor);
+  modifiers=fieldDescription.getModifiers();
+  declaredAnnotations=fieldDescription.getDeclaredAnnotations();
+}

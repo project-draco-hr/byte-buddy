@@ -1,4 +1,0 @@
-{
-  TypeDescription arrayType=TypeDescription.ArrayProjection.of(originalType,2);
-  assertThat(TargetType.resolve(arrayType,substitute,ElementMatchers.is(originalType)),is(TypeDescription.ArrayProjection.of(substitute,2)));
-}

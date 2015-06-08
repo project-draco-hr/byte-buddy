@@ -1,0 +1,2 @@
+List<? extends GenericTypeDescription> typeDescriptions
+TypeDescription substitute

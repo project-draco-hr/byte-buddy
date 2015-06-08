@@ -1,8 +1,8 @@
 {
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,TargetType.DESCRIPTION,parameterTypes,exceptionTypes,QUX).resolveReturnType(singleType),is(singleType));
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,new TypeList.ForLoadedType(TargetType.class),QUX).resolveExceptionTypes(singleType),is((List<TypeDescription>)new TypeList.Explicit(Collections.singletonList(singleType))));
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,new TypeList.ForLoadedType(TargetType.class),exceptionTypes,QUX).resolveParameterTypes(singleType),is((List<TypeDescription>)new TypeList.Explicit(Collections.singletonList(singleType))));
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).resolveReturnType(mock(TypeDescription.class)),is(singleType));
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).resolveExceptionTypes(mock(TypeDescription.class)),is((List<TypeDescription>)exceptionTypes));
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).resolveParameterTypes(mock(TypeDescription.class)),is((List<TypeDescription>)parameterTypes));
+  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,TargetType.DESCRIPTION,parameterTypes,exceptionTypes,QUX).resolveReturnType(singleType),is((GenericTypeDescription)singleType));
+  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,new TypeList.ForLoadedType(TargetType.class),QUX).resolveExceptionTypes(singleType),is((List<GenericTypeDescription>)new GenericTypeList.Explicit(Collections.singletonList(singleType))));
+  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,new TypeList.ForLoadedType(TargetType.class),exceptionTypes,QUX).resolveParameterTypes(singleType),is((List<GenericTypeDescription>)new GenericTypeList.Explicit(Collections.singletonList(singleType))));
+  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).resolveReturnType(mock(TypeDescription.class)),is((GenericTypeDescription)singleType));
+  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).resolveExceptionTypes(mock(TypeDescription.class)),is((List<GenericTypeDescription>)exceptionTypes));
+  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).resolveParameterTypes(mock(TypeDescription.class)),is((List<GenericTypeDescription>)parameterTypes));
 }

@@ -3,12 +3,6 @@
   assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(genericTypeDescription.getParameters().size(),is(1));
   assertThat(genericTypeDescription.getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.WILDCARD));
-  try {
-    genericTypeDescription.getParameters().getOnly().asRawType();
-    fail();
-  }
- catch (  IllegalStateException ignored) {
-  }
   assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().size(),is(1));
   assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().getOnly().getSort(),is(GenericTypeDescription.Sort.RAW));
   assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().getOnly().asRawType().represents(String.class),is(true));

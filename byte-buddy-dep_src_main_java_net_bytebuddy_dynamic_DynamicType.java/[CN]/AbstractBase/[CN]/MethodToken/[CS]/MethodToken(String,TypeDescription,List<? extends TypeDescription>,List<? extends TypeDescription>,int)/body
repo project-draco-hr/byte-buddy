@@ -1,7 +1,0 @@
-{
-  this.internalName=internalName;
-  this.returnType=returnType;
-  this.parameterTypes=Collections.unmodifiableList(new ArrayList<TypeDescription>(parameterTypes));
-  this.exceptionTypes=Collections.unmodifiableList(new ArrayList<TypeDescription>(exceptionTypes));
-  this.modifiers=modifiers;
-}

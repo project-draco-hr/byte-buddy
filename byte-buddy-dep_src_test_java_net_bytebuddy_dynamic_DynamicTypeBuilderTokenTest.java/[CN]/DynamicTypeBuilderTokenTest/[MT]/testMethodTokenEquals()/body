@@ -17,6 +17,6 @@
   DynamicType.Builder.AbstractBase.MethodToken equalButParameterType=mock(DynamicType.Builder.AbstractBase.MethodToken.class);
   when(equalButParameterType.getInternalName()).thenReturn(BAR);
   when(equalButParameterType.getReturnType()).thenReturn(singleType);
-  when(equalButParameterType.getParameterTypes()).thenReturn(new TypeList.Empty());
+  when(equalButParameterType.getParameterTypes()).thenReturn(new GenericTypeList.Empty());
   assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX),not(is(equalButParameterType)));
 }

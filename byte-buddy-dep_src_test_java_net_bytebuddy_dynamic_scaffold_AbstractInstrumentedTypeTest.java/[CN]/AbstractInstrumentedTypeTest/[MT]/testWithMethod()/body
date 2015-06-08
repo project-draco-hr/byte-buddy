@@ -1,10 +1,13 @@
 {
   TypeDescription returnType=mock(TypeDescription.class);
   when(returnType.asRawType()).thenReturn(returnType);
+  when(returnType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(returnType);
   TypeDescription parameterType=mock(TypeDescription.class);
   when(parameterType.asRawType()).thenReturn(parameterType);
+  when(parameterType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
   TypeDescription exceptionType=mock(TypeDescription.class);
   when(exceptionType.asRawType()).thenReturn(exceptionType);
+  when(exceptionType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(exceptionType);
   when(returnType.getName()).thenReturn(FOO);
   when(parameterType.getName()).thenReturn(QUX);
   when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);

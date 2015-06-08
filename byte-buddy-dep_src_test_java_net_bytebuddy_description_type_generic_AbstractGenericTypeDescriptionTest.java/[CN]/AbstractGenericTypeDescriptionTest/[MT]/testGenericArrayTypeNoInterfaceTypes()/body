@@ -1,0 +1,3 @@
+{
+  describe(GenericArrayType.class.getDeclaredField(FOO)).getInterfacesGen();
+}

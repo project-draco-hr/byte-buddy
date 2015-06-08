@@ -1,0 +1,7 @@
+{
+  parameterType=parameterDescription.getTypeGen().accept(substitutor);
+  index=parameterDescription.getIndex();
+  name=parameterDescription.isNamed() ? parameterDescription.getName() : null;
+  modifiers=parameterDescription.hasModifiers() ? getModifiers() : null;
+  parameterAnnotations=parameterDescription.getDeclaredAnnotations();
+}

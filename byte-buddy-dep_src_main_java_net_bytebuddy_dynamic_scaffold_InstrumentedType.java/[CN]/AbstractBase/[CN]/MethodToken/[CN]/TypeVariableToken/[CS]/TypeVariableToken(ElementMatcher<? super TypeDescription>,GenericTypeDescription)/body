@@ -1,4 +1,0 @@
-{
-  symbol=typeVariable.getSymbol();
-  bounds=TargetType.resolve(typeVariable.getUpperBounds(),AbstractBase.this,matcher);
-}

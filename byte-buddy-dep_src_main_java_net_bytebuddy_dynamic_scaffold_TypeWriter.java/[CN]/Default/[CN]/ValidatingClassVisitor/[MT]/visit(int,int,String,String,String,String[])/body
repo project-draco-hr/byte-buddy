@@ -1,6 +1,6 @@
 {
   ClassFileVersion classFileVersion=new ClassFileVersion(version);
-  if (name.endsWith("." + PackageDescription.PACKAGE_CLASS_NAME)) {
+  if (name.endsWith("/" + PackageDescription.PACKAGE_CLASS_NAME)) {
     constraint=Constraint.PACKAGE_CLASS;
   }
  else   if ((modifier & Opcodes.ACC_ANNOTATION) != ModifierReviewable.EMPTY_MASK) {
