@@ -1,0 +1,7 @@
+{
+  Iterator<GenericTypeDescription> iterator=describe(Object.class).iterator();
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is((GenericTypeDescription)TypeDescription.OBJECT));
+  assertThat(iterator.hasNext(),is(false));
+  iterator.next();
+}
