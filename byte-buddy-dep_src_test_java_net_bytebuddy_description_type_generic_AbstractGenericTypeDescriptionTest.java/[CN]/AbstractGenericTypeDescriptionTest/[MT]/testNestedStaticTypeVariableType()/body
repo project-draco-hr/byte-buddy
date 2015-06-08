@@ -2,6 +2,7 @@
   GenericTypeDescription genericTypeDescription=describe(NestedStaticTypeVariableType.class.getDeclaredField(FOO));
   assertThat(genericTypeDescription.getTypeName(),is(NestedStaticTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
+  assertThat(genericTypeDescription.getStackSize(),is(StackSize.SINGLE));
   assertThat(genericTypeDescription.getParameters().size(),is(1));
   assertThat(genericTypeDescription.getParameters().getOnly(),is((GenericTypeDescription)TypeDescription.STRING));
   Type ownerType=((ParameterizedType)NestedStaticTypeVariableType.class.getDeclaredField(FOO).getGenericType()).getOwnerType();

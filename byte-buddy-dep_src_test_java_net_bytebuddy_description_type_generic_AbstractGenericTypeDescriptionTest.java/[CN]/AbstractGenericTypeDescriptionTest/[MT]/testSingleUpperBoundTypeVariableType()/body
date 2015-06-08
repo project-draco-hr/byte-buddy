@@ -4,6 +4,7 @@
   assertThat(genericTypeDescription.getSymbol(),is(T));
   assertThat(genericTypeDescription.getUpperBounds().size(),is(1));
   assertThat(genericTypeDescription.getUpperBounds().getOnly(),is((GenericTypeDescription)TypeDescription.STRING));
+  assertThat(genericTypeDescription.getUpperBounds().getOnly().getStackSize(),is(StackSize.SINGLE));
   assertThat(genericTypeDescription.getTypeName(),is(SingleUpperBoundTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.getComponentType(),nullValue(GenericTypeDescription.class));
   assertThat(genericTypeDescription.getOwnerType(),nullValue(GenericTypeDescription.class));

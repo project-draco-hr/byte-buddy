@@ -4,6 +4,7 @@
   assertThat(genericTypeDescription.getComponentType().getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(genericTypeDescription.getComponentType().getParameters().size(),is(1));
   assertThat(genericTypeDescription.getComponentType().getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.RAW));
+  assertThat(genericTypeDescription.getComponentType().getParameters().getOnly().getStackSize(),is(StackSize.SINGLE));
   assertThat(genericTypeDescription.getComponentType().getParameters().getOnly().asRawType().represents(String.class),is(true));
   assertThat(genericTypeDescription.getTypeName(),is(GenericArrayType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.getOwnerType(),nullValue(GenericTypeDescription.class));
