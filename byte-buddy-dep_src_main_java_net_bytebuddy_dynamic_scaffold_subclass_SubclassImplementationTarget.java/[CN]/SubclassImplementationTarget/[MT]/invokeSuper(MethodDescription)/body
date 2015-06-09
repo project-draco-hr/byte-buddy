@@ -5,5 +5,5 @@
       return Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
     }
   }
-  return Implementation.SpecialMethodInvocation.Simple.of(methodDescription,typeDescription.getSuperType());
+  return Implementation.SpecialMethodInvocation.Simple.of(methodDescription,typeDescription.getSuperType().asRawType());
 }

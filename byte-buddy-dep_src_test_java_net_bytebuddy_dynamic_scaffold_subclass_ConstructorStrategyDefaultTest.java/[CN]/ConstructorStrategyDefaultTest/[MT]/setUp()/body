@@ -2,4 +2,5 @@
   when(methodRegistry.append(any(LatentMethodMatcher.class),any(MethodRegistry.Handler.class),any(MethodAttributeAppender.Factory.class))).thenReturn(methodRegistry);
   when(instrumentedType.getSuperType()).thenReturn(superType);
   when(superType.getDeclaredMethods()).thenReturn(methodList);
+  when(superType.asRawType()).thenReturn(superType);
 }

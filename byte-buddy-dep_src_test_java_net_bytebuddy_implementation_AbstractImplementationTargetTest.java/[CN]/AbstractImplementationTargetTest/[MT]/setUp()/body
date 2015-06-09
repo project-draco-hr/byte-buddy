@@ -22,5 +22,5 @@
   when(defaultType.isInterface()).thenReturn(true);
   when(defaultMethod.isSpecializableFor(defaultType)).thenReturn(true);
   when(defaultType.getInternalName()).thenReturn(BAZBAR);
-  implementationTarget=makeimplementationTarget();
+  implementationTarget=makeImplementationTarget();
 }

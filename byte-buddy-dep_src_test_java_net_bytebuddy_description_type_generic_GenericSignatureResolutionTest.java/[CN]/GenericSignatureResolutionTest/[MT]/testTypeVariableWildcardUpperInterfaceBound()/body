@@ -4,6 +4,6 @@
   TypeDescription createdType=new TypeDescription.ForLoadedType(type);
   TypeDescription originalType=new TypeDescription.ForLoadedType(TypeVariableWildcardUpperInterfaceBound.class);
   assertThat(createdType.getTypeVariables(),is(originalType.getTypeVariables()));
-  assertThat(createdType.getSuperTypeGen(),is(originalType.getSuperTypeGen()));
-  assertThat(createdType.getInterfacesGen(),is(originalType.getInterfacesGen()));
+  assertThat(createdType.getSuperType(),is(originalType.getSuperType()));
+  assertThat(createdType.getInterfaces(),is(originalType.getInterfaces()));
 }

@@ -3,4 +3,6 @@
   when(target.getType()).thenReturn(targetParameterType);
   when(targetParameterType.asRawType()).thenReturn(targetParameterType);
   when(implementationTarget.invokeDefault(any(TypeDescription.class),any(String.class))).thenReturn(specialMethodInvocation);
+  when(firstInterface.asRawType()).thenReturn(firstInterface);
+  when(secondInterface.asRawType()).thenReturn(secondInterface);
 }

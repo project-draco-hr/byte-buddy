@@ -1,3 +1,4 @@
 {
-  return getSuperType() == null ? new AnnotationList.Empty() : getSuperType().getInheritedAnnotations().inherited(Collections.<TypeDescription>emptySet());
+  GenericTypeDescription superType=getSuperType();
+  return superType == null ? new AnnotationList.Empty() : superType.asRawType().getInheritedAnnotations().inherited(Collections.<TypeDescription>emptySet());
 }

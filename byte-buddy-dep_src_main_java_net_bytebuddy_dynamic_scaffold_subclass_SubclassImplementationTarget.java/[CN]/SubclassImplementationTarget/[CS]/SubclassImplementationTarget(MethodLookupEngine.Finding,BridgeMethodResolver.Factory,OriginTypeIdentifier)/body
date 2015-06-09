@@ -1,7 +1,7 @@
 {
   super(finding,bridgeMethodResolverFactory);
-  TypeDescription superType=finding.getTypeDescription().getSuperType();
-  MethodList superConstructors=superType == null ? new MethodList.Empty() : superType.getDeclaredMethods().filter(isConstructor());
+  GenericTypeDescription superType=finding.getTypeDescription().getSuperType();
+  MethodList superConstructors=superType == null ? new MethodList.Empty() : superType.asRawType().getDeclaredMethods().filter(isConstructor());
   this.superConstructors=new HashMap<TypeList,MethodDescription>(superConstructors.size());
   for (  MethodDescription superConstructor : superConstructors) {
     this.superConstructors.put(superConstructor.getParameters().asTypeList().asRawTypes(),superConstructor);

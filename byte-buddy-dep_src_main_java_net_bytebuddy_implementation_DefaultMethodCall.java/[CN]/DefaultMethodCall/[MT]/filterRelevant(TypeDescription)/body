@@ -1,6 +1,6 @@
 {
   List<TypeDescription> filtered=new ArrayList<TypeDescription>(prioritizedInterfaces.size());
-  Set<TypeDescription> relevant=new HashSet<TypeDescription>(typeDescription.getInterfaces());
+  Set<TypeDescription> relevant=new HashSet<TypeDescription>(typeDescription.getInterfaces().asRawTypes());
   for (  TypeDescription prioritizedInterface : prioritizedInterfaces) {
     if (relevant.remove(prioritizedInterface)) {
       filtered.add(prioritizedInterface);

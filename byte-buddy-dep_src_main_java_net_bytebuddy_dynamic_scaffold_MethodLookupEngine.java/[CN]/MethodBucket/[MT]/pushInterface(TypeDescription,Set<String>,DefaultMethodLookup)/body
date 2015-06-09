@@ -14,7 +14,7 @@
       }
       defaultMethodLookup.register(methodDescription);
     }
-    for (    TypeDescription interfaceType : typeDescription.getInterfaces()) {
+    for (    TypeDescription interfaceType : typeDescription.getInterfaces().asRawTypes()) {
       pushInterface(interfaceType,locallyProcessedMethods,defaultMethodLookup);
     }
     defaultMethodLookup.complete(typeDescription);

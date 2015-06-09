@@ -3,6 +3,7 @@
   when(instrumentedType.getSuperType()).thenReturn(superType);
   when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(superMethodConstructor)));
   when(superType.getInternalName()).thenReturn(BAR);
+  when(superType.asRawType()).thenReturn(superType);
   when(superMethod.getDeclaringType()).thenReturn(superType);
   when(superType.getStackSize()).thenReturn(StackSize.ZERO);
   when(superMethod.getReturnType()).thenReturn(returnType);

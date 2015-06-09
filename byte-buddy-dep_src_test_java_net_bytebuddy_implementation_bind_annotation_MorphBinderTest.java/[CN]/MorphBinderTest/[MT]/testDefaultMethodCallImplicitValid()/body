@@ -1,6 +1,6 @@
 {
   when(source.getUniqueSignature()).thenReturn(FOO);
-  when(instrumentedType.getInterfaces()).thenReturn(new TypeList.ForLoadedType(Foo.class));
+  when(instrumentedType.getInterfaces()).thenReturn(new GenericTypeList.ForLoadedType(Foo.class));
   when(target.getType()).thenReturn(morphType);
   when(morphMethod.getDeclaringType()).thenReturn(morphType);
   when(annotation.defaultMethod()).thenReturn(true);

@@ -1,7 +1,7 @@
 {
-  TypeDescription currentType=instrumentedType;
+  GenericTypeDescription currentType=instrumentedType;
   do {
-    FieldList fieldList=currentType.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
+    FieldList fieldList=currentType.asRawType().getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
     if (fieldList.size() == 1) {
       return new Resolution.Resolved(fieldList.getOnly());
     }

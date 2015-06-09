@@ -1,9 +1,0 @@
-{
-  assertThat(describe(Object.class).getInheritedInterfaces(),is((TypeList)new TypeList.Empty()));
-  assertThat(describe(SampleInterface.class).getInheritedInterfaces(),is((TypeList)new TypeList.Empty()));
-  assertThat(describe(SampleAnnotation.class).getInheritedInterfaces(),is((TypeList)new TypeList.ForLoadedType(Annotation.class)));
-  assertThat(describe(SampleInterfaceImplementation.class).getInheritedInterfaces(),is((TypeList)new TypeList.ForLoadedType(SampleInterface.class)));
-  assertThat(describe(SampleTransitiveInterfaceImplementation.class).getInheritedInterfaces().size(),is(2));
-  assertThat(describe(SampleTransitiveInterfaceImplementation.class).getInheritedInterfaces(),hasItems((TypeDescription)new TypeDescription.ForLoadedType(SampleInterface.class)));
-  assertThat(describe(SampleTransitiveInterfaceImplementation.class).getInheritedInterfaces(),hasItems((TypeDescription)new TypeDescription.ForLoadedType(SampleTransitiveInterface.class)));
-}

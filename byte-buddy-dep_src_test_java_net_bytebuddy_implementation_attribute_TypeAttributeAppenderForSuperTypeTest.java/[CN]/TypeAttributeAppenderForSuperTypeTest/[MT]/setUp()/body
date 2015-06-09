@@ -1,0 +1,3 @@
+{
+  when(superType.asRawType()).thenReturn(superType);
+}

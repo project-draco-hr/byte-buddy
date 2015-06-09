@@ -15,6 +15,7 @@
   when(instrumentedType.getSuperType()).thenReturn(superType);
   when(superType.getInternalName()).thenReturn(QUX);
   when(superType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(superType.asRawType()).thenReturn(superType);
   when(superMethod.getDeclaringType()).thenReturn(superType);
   when(superMethod.getReturnType()).thenReturn(returnType);
   when(superMethod.getInternalName()).thenReturn(BAZ);
