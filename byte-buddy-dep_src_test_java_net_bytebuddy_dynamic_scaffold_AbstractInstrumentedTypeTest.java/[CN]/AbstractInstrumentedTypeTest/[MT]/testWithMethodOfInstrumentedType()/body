@@ -4,7 +4,7 @@
   instrumentedType=instrumentedType.withMethod(BAR,instrumentedType,Collections.singletonList(instrumentedType),Collections.<TypeDescription>emptyList(),Opcodes.ACC_PUBLIC);
   assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
   MethodDescription methodDescription=instrumentedType.getDeclaredMethods().get(0);
-  assertThat(methodDescription.getReturnType(),sameInstance((TypeDescription)instrumentedType));
+  assertThat(methodDescription.getReturnType(),sameInstance((GenericTypeDescription)instrumentedType));
   assertThat(methodDescription.getParameters().size(),is(1));
   assertThat(methodDescription.getParameters().asTypeList().get(0),sameInstance((TypeDescription)instrumentedType));
   assertThat(methodDescription.getExceptionTypes().size(),is(0));

@@ -2,7 +2,7 @@
   Implementation.Context.Default implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
   MethodDescription firstMethodDescription=implementationContext.registerAccessorFor(firstSpecialInvocation);
   assertThat(firstMethodDescription.getParameters(),is(ParameterList.Explicit.latent(firstMethodDescription,Collections.singletonList(firstSpecialParameterType))));
-  assertThat(firstMethodDescription.getReturnType(),is(firstSpecialReturnType));
+  assertThat(firstMethodDescription.getReturnType(),is((GenericTypeDescription)firstSpecialReturnType));
   assertThat(firstMethodDescription.getInternalName(),startsWith(FOO));
   assertThat(firstMethodDescription.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER));
   assertThat(firstMethodDescription.getExceptionTypes(),is(firstSpecialExceptionTypes));
@@ -10,7 +10,7 @@
   when(secondSpecialMethod.isStatic()).thenReturn(true);
   MethodDescription secondMethodDescription=implementationContext.registerAccessorFor(secondSpecialInvocation);
   assertThat(secondMethodDescription.getParameters(),is(ParameterList.Explicit.latent(secondMethodDescription,Collections.singletonList(secondSpecialParameterType))));
-  assertThat(secondMethodDescription.getReturnType(),is(secondSpecialReturnType));
+  assertThat(secondMethodDescription.getReturnType(),is((GenericTypeDescription)secondSpecialReturnType));
   assertThat(secondMethodDescription.getInternalName(),startsWith(BAR));
   assertThat(secondMethodDescription.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC));
   assertThat(secondMethodDescription.getExceptionTypes(),is(secondSpecialExceptionTypes));

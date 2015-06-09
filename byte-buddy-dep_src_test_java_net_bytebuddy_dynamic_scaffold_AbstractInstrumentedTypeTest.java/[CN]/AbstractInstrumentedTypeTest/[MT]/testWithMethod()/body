@@ -17,7 +17,7 @@
   instrumentedType=instrumentedType.withMethod(BAR,returnType,Collections.singletonList(parameterType),Collections.singletonList(exceptionType),Opcodes.ACC_PUBLIC);
   assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
   MethodDescription methodDescription=instrumentedType.getDeclaredMethods().get(0);
-  assertThat(methodDescription.getReturnType(),is(returnType));
+  assertThat(methodDescription.getReturnType(),is((GenericTypeDescription)returnType));
   assertThat(methodDescription.getParameters().size(),is(1));
   assertThat(methodDescription.getParameters().asTypeList(),is(Collections.singletonList(parameterType)));
   assertThat(methodDescription.getExceptionTypes().size(),is(1));
