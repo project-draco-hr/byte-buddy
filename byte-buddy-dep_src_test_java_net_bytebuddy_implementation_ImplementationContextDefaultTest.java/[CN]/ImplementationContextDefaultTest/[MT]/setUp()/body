@@ -1,6 +1,6 @@
 {
-  firstSpecialExceptionTypes=new TypeList.Explicit(Collections.singletonList(firstSpecialExceptionType));
-  secondSpecialExceptionTypes=new TypeList.Explicit(Collections.singletonList(secondSpecialExceptionType));
+  firstSpecialExceptionTypes=new GenericTypeList.Explicit(Collections.singletonList(firstSpecialExceptionType));
+  secondSpecialExceptionTypes=new GenericTypeList.Explicit(Collections.singletonList(secondSpecialExceptionType));
   when(instrumentedType.getInternalName()).thenReturn(BAZ);
   when(methodPool.target(any(MethodDescription.class))).thenReturn(entry);
   when(auxiliaryType.make(any(String.class),any(ClassFileVersion.class),any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn(firstDynamicType);

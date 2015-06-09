@@ -5,7 +5,7 @@
   assertThat(firstFieldSetter.getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(void.class)));
   assertThat(firstFieldSetter.getInternalName(),startsWith(FOO));
   assertThat(firstFieldSetter.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER));
-  assertThat(firstFieldSetter.getExceptionTypes(),is((TypeList)new TypeList.Empty()));
+  assertThat(firstFieldSetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
   assertThat(implementationContext.registerSetterFor(firstField),is(firstFieldSetter));
   when(secondField.isStatic()).thenReturn(true);
   MethodDescription secondFieldSetter=implementationContext.registerSetterFor(secondField);
@@ -13,7 +13,7 @@
   assertThat(secondFieldSetter.getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(void.class)));
   assertThat(secondFieldSetter.getInternalName(),startsWith(BAR));
   assertThat(secondFieldSetter.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC));
-  assertThat(secondFieldSetter.getExceptionTypes(),is((TypeList)new TypeList.Empty()));
+  assertThat(secondFieldSetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
   assertThat(implementationContext.registerSetterFor(firstField),is(firstFieldSetter));
   assertThat(implementationContext.registerSetterFor(secondField),is(secondFieldSetter));
   when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIP);

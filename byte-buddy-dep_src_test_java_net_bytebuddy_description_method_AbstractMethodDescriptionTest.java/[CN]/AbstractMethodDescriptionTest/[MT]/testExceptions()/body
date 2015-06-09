@@ -1,7 +1,7 @@
 {
-  assertThat(describe(firstMethod).getExceptionTypes(),is((TypeList)new TypeList.ForLoadedType(firstMethod.getExceptionTypes())));
-  assertThat(describe(secondMethod).getExceptionTypes(),is((TypeList)new TypeList.ForLoadedType(secondMethod.getExceptionTypes())));
-  assertThat(describe(thirdMethod).getExceptionTypes(),is((TypeList)new TypeList.ForLoadedType(thirdMethod.getExceptionTypes())));
-  assertThat(describe(firstConstructor).getExceptionTypes(),is((TypeList)new TypeList.ForLoadedType(firstConstructor.getExceptionTypes())));
-  assertThat(describe(secondConstructor).getExceptionTypes(),is((TypeList)new TypeList.ForLoadedType(secondConstructor.getExceptionTypes())));
+  assertThat(describe(firstMethod).getExceptionTypes(),is((GenericTypeList)new GenericTypeList.ForLoadedType(firstMethod.getExceptionTypes())));
+  assertThat(describe(secondMethod).getExceptionTypes(),is((GenericTypeList)new GenericTypeList.ForLoadedType(secondMethod.getExceptionTypes())));
+  assertThat(describe(thirdMethod).getExceptionTypes(),is((GenericTypeList)new GenericTypeList.ForLoadedType(thirdMethod.getExceptionTypes())));
+  assertThat(describe(firstConstructor).getExceptionTypes(),is((GenericTypeList)new GenericTypeList.ForLoadedType(firstConstructor.getExceptionTypes())));
+  assertThat(describe(secondConstructor).getExceptionTypes(),is((GenericTypeList)new GenericTypeList.ForLoadedType(secondConstructor.getExceptionTypes())));
 }

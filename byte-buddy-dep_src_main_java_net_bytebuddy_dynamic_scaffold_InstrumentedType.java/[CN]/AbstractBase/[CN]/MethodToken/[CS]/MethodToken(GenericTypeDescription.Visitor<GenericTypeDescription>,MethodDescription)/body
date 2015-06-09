@@ -5,7 +5,7 @@
     typeVariables.add(new TypeVariableToken(substitutor,typeVariable));
   }
   returnType=methodDescription.getReturnType().accept(substitutor);
-  exceptionTypes=methodDescription.getExceptionTypesGen().accept(substitutor);
+  exceptionTypes=methodDescription.getExceptionTypes().accept(substitutor);
   modifiers=methodDescription.getModifiers();
   declaredAnnotations=methodDescription.getDeclaredAnnotations();
   parameters=new ArrayList<ParameterDescription>(methodDescription.getParameters().size());

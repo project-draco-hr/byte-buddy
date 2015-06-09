@@ -1,5 +1,5 @@
 {
-  parameterType=parameterDescription.getTypeGen().accept(substitutor);
+  parameterType=parameterDescription.getType().accept(substitutor);
   index=parameterDescription.getIndex();
   name=parameterDescription.isNamed() ? parameterDescription.getName() : null;
   modifiers=parameterDescription.hasModifiers() ? getModifiers() : null;

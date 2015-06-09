@@ -7,4 +7,6 @@
   when(fieldType.getStackSize()).thenReturn(StackSize.ZERO);
   when(fieldType.getSort()).thenReturn(GenericTypeDescription.Sort.RAW);
   when(fieldType.asRawType()).thenReturn(fieldType);
+  when(setterType.asRawType()).thenReturn(setterType);
+  when(getterType.asRawType()).thenReturn(getterType);
 }

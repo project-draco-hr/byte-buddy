@@ -1,4 +1,5 @@
 {
   super.setUp();
   when(sourceType.asRawType()).thenReturn(sourceType);
+  when(targetType.asRawType()).thenReturn(targetType);
 }

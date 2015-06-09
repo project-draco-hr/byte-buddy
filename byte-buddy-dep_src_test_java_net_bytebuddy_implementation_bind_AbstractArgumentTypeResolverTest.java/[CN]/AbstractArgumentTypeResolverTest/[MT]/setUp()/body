@@ -5,4 +5,5 @@
   when(sourceParameter.getType()).thenReturn(sourceType);
   when(leftMethod.getParameters()).thenReturn(leftParameterList);
   when(rightMethod.getParameters()).thenReturn(rightParameterList);
+  when(sourceType.asRawType()).thenReturn(sourceType);
 }
