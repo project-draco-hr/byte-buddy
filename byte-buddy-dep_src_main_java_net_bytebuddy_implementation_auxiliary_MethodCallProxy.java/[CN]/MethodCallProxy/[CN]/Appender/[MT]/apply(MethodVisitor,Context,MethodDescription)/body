@@ -4,7 +4,7 @@
   StackManipulation[] fieldLoading=new StackManipulation[fieldList.size()];
   int index=0;
   for (  FieldDescription fieldDescription : fieldList) {
-    fieldLoading[index]=new StackManipulation.Compound(thisReference,MethodVariableAccess.forType(fieldDescription.getFieldType()).loadOffset(instrumentedMethod.getParameters().get(index).getOffset()),FieldAccess.forField(fieldDescription).putter());
+    fieldLoading[index]=new StackManipulation.Compound(thisReference,MethodVariableAccess.forType(fieldDescription.getType().asRawType()).loadOffset(instrumentedMethod.getParameters().get(index).getOffset()),FieldAccess.forField(fieldDescription).putter());
     index++;
   }
   StackManipulation.Size stackSize=new StackManipulation.Compound(thisReference,MethodInvocation.invoke(ConstructorCall.INSTANCE.objectTypeDefaultConstructor),new StackManipulation.Compound(fieldLoading),MethodReturn.VOID).apply(methodVisitor,implementationContext);

@@ -15,7 +15,7 @@
  else   if (!fieldDescription.isStatic() && interceptedMethod.isStatic()) {
     throw new IllegalStateException("Cannot access non-static " + fieldDescription + " from "+ interceptedMethod);
   }
-  StackManipulation stackManipulation=new StackManipulation.Compound(fieldDescription.isStatic() ? StackManipulation.LegalTrivial.INSTANCE : MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(fieldDescription).getter(),assigner.assign(fieldDescription.getFieldType(),targetType,dynamicallyTyped));
+  StackManipulation stackManipulation=new StackManipulation.Compound(fieldDescription.isStatic() ? StackManipulation.LegalTrivial.INSTANCE : MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(fieldDescription).getter(),assigner.assign(fieldDescription.getType().asRawType(),targetType,dynamicallyTyped));
   if (!stackManipulation.isValid()) {
     throw new IllegalStateException("Cannot assign " + fieldDescription + " to "+ targetType);
   }

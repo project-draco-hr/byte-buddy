@@ -3,5 +3,5 @@
   Class<?> type=unloaded.load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   FieldDescription createdField=new FieldDescription.ForLoadedField(type.getDeclaredField(FOO));
   FieldDescription originalField=new FieldDescription.ForLoadedField(GenericField.class.getDeclaredField(FOO));
-  assertThat(createdField.getFieldTypeGen(),is(originalField.getFieldTypeGen()));
+  assertThat(createdField.getType(),is(originalField.getType()));
 }
