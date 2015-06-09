@@ -1,0 +1,4 @@
+String name
+Type returnType
+Iterable<? extends Type> parameterTypes
+int modifiers

@@ -1,0 +1,3 @@
+{
+  return new DefaultExceptionDeclarableMethodInterception(new MethodToken(isValidIdentifier(name),isActualTypeOrVoid(returnType),isActualType(parameterTypes),Collections.<TypeDescription>emptyList(),legalModifiers(MEMBER_MODIFIER_MASK,modifiers)));
+}

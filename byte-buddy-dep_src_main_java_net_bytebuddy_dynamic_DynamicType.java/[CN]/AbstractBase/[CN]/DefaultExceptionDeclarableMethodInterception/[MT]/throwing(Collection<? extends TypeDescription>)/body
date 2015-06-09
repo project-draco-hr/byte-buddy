@@ -1,3 +1,0 @@
-{
-  return materialize(new MethodToken(methodToken.getInternalName(),methodToken.getReturnType(),methodToken.getParameterTypes(),uniqueRaw(isThrowable(new ArrayList<TypeDescription>(exceptionTypes))),methodToken.getModifiers()));
-}

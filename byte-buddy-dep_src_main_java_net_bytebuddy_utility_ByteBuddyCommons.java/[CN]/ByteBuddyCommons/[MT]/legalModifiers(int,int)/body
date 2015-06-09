@@ -1,0 +1,6 @@
+{
+  if ((modifiers & ~(mask | Opcodes.ACC_SYNTHETIC)) != 0) {
+    throw new IllegalArgumentException("Illegal modifiers: " + modifiers);
+  }
+  return modifiers;
+}

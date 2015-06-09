@@ -1,0 +1,5 @@
+ClassFileVersion classFileVersion
+GenericTypeDescription superClass
+List<GenericTypeDescription> interfaces
+int modifiers
+NamingStrategy namingStrategy

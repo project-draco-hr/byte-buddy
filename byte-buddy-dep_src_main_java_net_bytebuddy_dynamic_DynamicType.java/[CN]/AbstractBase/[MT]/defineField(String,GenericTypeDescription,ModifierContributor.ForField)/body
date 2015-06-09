@@ -1,0 +1,3 @@
+{
+  return defineField(name,fieldType,resolveModifierContributors(FIELD_MODIFIER_MASK,modifier));
+}

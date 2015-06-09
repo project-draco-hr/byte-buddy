@@ -1,5 +1,5 @@
 {
-  if (fieldToken.getFieldType().represents(legalType)) {
+  if (fieldToken.getFieldType().getSort().isRawType() && fieldToken.getFieldType().asRawType().represents(legalType)) {
     return defaultValue;
   }
  else {

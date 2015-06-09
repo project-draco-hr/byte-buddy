@@ -1,0 +1,4 @@
+String name
+GenericTypeDescription returnType
+List<? extends GenericTypeDescription> parameterTypes
+ModifierContributor.ForMethod modifier

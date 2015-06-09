@@ -1,3 +1,0 @@
-{
-  return defineMethod(name,new TypeDescription.ForLoadedType(returnType),new TypeList.ForLoadedType(new ArrayList<Class<?>>(nonNull(parameterTypes))),modifier);
-}

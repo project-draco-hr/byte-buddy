@@ -1,0 +1,3 @@
+{
+  return defineField(name,GenericTypeDescription.Sort.describe(fieldType),modifiers);
+}

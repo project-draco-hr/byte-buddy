@@ -1,0 +1,3 @@
+{
+  return implement(Arrays.asList(nonNull(interfaceType)));
+}
