@@ -1,0 +1,13 @@
+ClassFileVersion classFileVersion
+NamingStrategy.Unbound namingStrategy
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+List<GenericTypeDescription> interfaceTypes
+ElementMatcher<? super MethodDescription> ignoredMethods
+BridgeMethodResolver.Factory bridgeMethodResolverFactory
+ClassVisitorWrapper.Chain classVisitorWrapperChain
+MethodRegistry methodRegistry
+Definable<Integer> modifiers
+TypeAttributeAppender typeAttributeAppender
+MethodLookupEngine.Factory methodLookupEngineFactory
+FieldAttributeAppender.Factory defaultFieldAttributeAppenderFactory
+MethodAttributeAppender.Factory defaultMethodAttributeAppenderFactory

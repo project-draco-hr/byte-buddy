@@ -1,6 +1,6 @@
 {
   TypeDescription actualSuperType=isExtendable(superType);
-  List<TypeDescription> interfaceTypes=this.interfaceTypes;
+  List<GenericTypeDescription> interfaceTypes=this.interfaceTypes;
   if (nonNull(superType).isInterface()) {
     actualSuperType=TypeDescription.OBJECT;
     interfaceTypes=joinUniqueRaw(interfaceTypes,Collections.singleton(superType));

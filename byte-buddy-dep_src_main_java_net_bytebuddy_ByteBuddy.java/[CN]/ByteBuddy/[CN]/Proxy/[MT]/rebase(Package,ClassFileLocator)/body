@@ -1,0 +1,3 @@
+{
+  return super.rebase(aPackage,classFileLocator);
+}
