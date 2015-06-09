@@ -1,0 +1,3 @@
+{
+  return returnsGeneric(rawType(nonNull(type)));
+}

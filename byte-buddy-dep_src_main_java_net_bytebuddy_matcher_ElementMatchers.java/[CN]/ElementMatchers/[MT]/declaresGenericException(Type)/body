@@ -1,0 +1,3 @@
+{
+  return declaresGenericException(GenericTypeDescription.Sort.describe(exceptionType));
+}

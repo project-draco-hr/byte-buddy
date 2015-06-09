@@ -2,7 +2,7 @@
   when(target.getIndex()).thenReturn(1);
   when(annotation.value()).thenReturn(AllArguments.Assignment.SLACK);
   when(stackManipulation.isValid()).thenReturn(false);
-  when(sourceTypeList.iterator()).thenReturn(Arrays.asList(firstSourceType,secondSourceType).iterator());
+  when(rawSourceTypeList.iterator()).thenReturn(Arrays.asList(firstSourceType,secondSourceType).iterator());
   when(source.isStatic()).thenReturn(false);
   when(targetType.isArray()).thenReturn(true);
   when(targetType.getComponentType()).thenReturn(componentType);

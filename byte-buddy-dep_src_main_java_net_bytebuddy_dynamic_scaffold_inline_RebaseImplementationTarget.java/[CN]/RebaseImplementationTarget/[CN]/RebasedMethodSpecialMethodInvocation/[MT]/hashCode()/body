@@ -1,6 +1,6 @@
 {
   int result=methodDescription.getInternalName().hashCode();
-  result=31 * result + methodDescription.getParameters().asTypeList().hashCode();
+  result=31 * result + methodDescription.getParameters().asTypeList().asRawTypes().hashCode();
   result=31 * result + methodDescription.getReturnType().asRawType().hashCode();
   result=31 * result + instrumentedType.hashCode();
   return result;

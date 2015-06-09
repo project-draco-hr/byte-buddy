@@ -19,7 +19,7 @@
   MethodDescription methodDescription=instrumentedType.getDeclaredMethods().get(0);
   assertThat(methodDescription.getReturnType(),is((GenericTypeDescription)returnType));
   assertThat(methodDescription.getParameters().size(),is(1));
-  assertThat(methodDescription.getParameters().asTypeList(),is(Collections.singletonList(parameterType)));
+  assertThat(methodDescription.getParameters().asTypeList(),is(Collections.<GenericTypeDescription>singletonList(parameterType)));
   assertThat(methodDescription.getExceptionTypes().size(),is(1));
   assertThat(methodDescription.getExceptionTypes(),is(Collections.<GenericTypeDescription>singletonList(exceptionType)));
   assertThat(methodDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));

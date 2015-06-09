@@ -1,0 +1,3 @@
+{
+  return takesGenericArguments(rawTypes(nonNull(typeDescription)));
+}

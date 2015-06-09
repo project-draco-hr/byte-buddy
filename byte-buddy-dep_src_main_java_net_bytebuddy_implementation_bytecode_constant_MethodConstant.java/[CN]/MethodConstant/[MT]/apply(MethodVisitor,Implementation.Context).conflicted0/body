@@ -1,5 +1,5 @@
 {
-  Size argumentSize=prepare(methodVisitor).aggregate(ArrayFactory.forType(TypeDescription.CLASS).withValues(typeConstantsFor(methodDescription.getParameters().asTypeList())).apply(methodVisitor,implementationContext));
+  Size argumentSize=prepare(methodVisitor).aggregate(ArrayFactory.forType(TypeDescription.CLASS).withValues(typeConstantsFor(methodDescription.getParameters().asTypeList().asRawTypes())).apply(methodVisitor,implementationContext));
   methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,CLASS_TYPE_INTERNAL_NAME,getMethodName(),getDescriptor(),false);
   return new Size(1,argumentSize.getMaximalSize());
 }

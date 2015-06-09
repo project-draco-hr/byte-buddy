@@ -3,5 +3,5 @@
   for (  GenericTypeDescription typeDescription : typeDescriptions) {
     typeMatchers.add(is(nonNull(typeDescription)));
   }
-  return takesArguments(new CollectionOneToOneMatcher<GenericTypeDescription>(typeMatchers));
+  return takesGenericArguments(new CollectionOneToOneMatcher<GenericTypeDescription>(typeMatchers));
 }

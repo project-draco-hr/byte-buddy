@@ -1,3 +1,0 @@
-{
-  return returns(GenericTypeDescription.Sort.describe(nonNull(type)));
-}
