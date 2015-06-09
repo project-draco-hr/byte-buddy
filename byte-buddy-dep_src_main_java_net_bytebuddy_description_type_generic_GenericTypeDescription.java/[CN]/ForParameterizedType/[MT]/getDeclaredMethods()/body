@@ -1,0 +1,9 @@
+{
+  MethodList declaredMethods=asRawType().getDeclaredMethods();
+  List<MethodDescription> resolved=new ArrayList<MethodDescription>(declaredMethods.size());
+  Visitor<GenericTypeDescription> visitor=Visitor.Substitutor.ForTypeVariable.bind(this);
+  for (  MethodDescription methodDescription : declaredMethods) {
+    resolved.add(new MethodDescription.Latent(methodDescription.getInternalName(),methodDescription.getDeclaringType(),methodDescription.getReturnType().accept(visitor),methodDescription.getParameters().asTypeList().accept(visitor),methodDescription.getModifiers(),methodDescription.getExceptionTypes().accept(visitor),methodDescription.getDeclaredAnnotations()));
+  }
+  return new MethodList.Explicit(resolved);
+}

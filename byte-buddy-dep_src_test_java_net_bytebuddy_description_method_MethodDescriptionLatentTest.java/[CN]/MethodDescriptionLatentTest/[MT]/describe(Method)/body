@@ -1,3 +1,3 @@
 {
-  return new MethodDescription.Latent(method.getName(),new TypeDescription.ForLoadedType(method.getDeclaringClass()),GenericTypeDescription.Sort.describe(method.getGenericReturnType()),new GenericTypeList.ForLoadedType(method.getGenericParameterTypes()),method.getModifiers(),new GenericTypeList.ForLoadedType(method.getGenericExceptionTypes()));
+  return new MethodDescription.Latent(method.getName(),new TypeDescription.ForLoadedType(method.getDeclaringClass()),GenericTypeDescription.Sort.describe(method.getGenericReturnType()),new GenericTypeList.ForLoadedType(method.getGenericParameterTypes()),method.getModifiers(),new GenericTypeList.ForLoadedType(method.getGenericExceptionTypes()),new AnnotationList.ForLoadedAnnotation(method.getDeclaredAnnotations()));
 }

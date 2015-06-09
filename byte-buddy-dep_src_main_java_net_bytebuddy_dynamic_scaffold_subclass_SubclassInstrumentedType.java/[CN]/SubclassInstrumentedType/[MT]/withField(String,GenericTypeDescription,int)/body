@@ -1,5 +1,5 @@
 {
-  FieldDescription additionalField=new FieldDescription.Latent(internalName,this,fieldType,modifiers);
+  FieldDescription additionalField=new FieldDescription.Latent(internalName,this,fieldType,modifiers,Collections.<AnnotationDescription>emptyList());
   if (fieldDescriptions.contains(additionalField)) {
     throw new IllegalArgumentException("Field " + additionalField + " is already defined on "+ this);
   }

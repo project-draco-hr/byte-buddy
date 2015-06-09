@@ -2,7 +2,7 @@
   MethodDescription accessorMethod=registeredSetters.get(fieldDescription);
   if (accessorMethod == null) {
     String name=String.format("%s$%s$%s",fieldDescription.getName(),ACCESSOR_METHOD_SUFFIX,randomString.nextString());
-    accessorMethod=new MethodDescription.Latent(name,instrumentedType,TypeDescription.VOID,Collections.singletonList(fieldDescription.getType().asRawType()),resolveModifier(fieldDescription.isStatic()),Collections.<TypeDescription>emptyList());
+    accessorMethod=new MethodDescription.Latent(name,instrumentedType,TypeDescription.VOID,Collections.singletonList(fieldDescription.getType().asRawType()),resolveModifier(fieldDescription.isStatic()),Collections.<TypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList());
     registerSetter(fieldDescription,accessorMethod);
   }
   return accessorMethod;

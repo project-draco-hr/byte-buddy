@@ -1,3 +1,0 @@
-{
-  assertThat(new FieldDescription.Latent(FOO,mock(TypeDescription.class),mock(TypeDescription.class),0).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
-}
