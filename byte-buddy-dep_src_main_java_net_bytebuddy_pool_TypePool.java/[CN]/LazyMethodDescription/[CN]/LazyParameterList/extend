@@ -1,1 +1,1 @@
-FilterableList.AbstractBase<ParameterDescription,ParameterList>
+ParameterList.AbstractBase
