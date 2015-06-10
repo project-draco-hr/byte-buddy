@@ -1,3 +1,0 @@
-{
-  assertThat(describe(Object.class.getDeclaredMethod("equals",Object.class)).getParameters().getOnly().getName(),is("arg0"));
-}
