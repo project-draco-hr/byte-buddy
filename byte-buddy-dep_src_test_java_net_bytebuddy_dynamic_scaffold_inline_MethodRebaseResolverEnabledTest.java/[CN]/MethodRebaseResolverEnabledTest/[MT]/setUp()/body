@@ -18,5 +18,6 @@
   when(methodNameTransformer.transform(method)).thenReturn(BAR);
   when(returnType.asRawType()).thenReturn(returnType);
   when(parameterType.asRawType()).thenReturn(parameterType);
+  when(parameterType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
   when(placeholderType.asRawType()).thenReturn(placeholderType);
 }

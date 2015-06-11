@@ -3,6 +3,6 @@
     return defaultValue;
   }
  else {
-    throw new IllegalStateException(String.format("The given value %s was not of the required type %s",defaultValue,legalType));
+    throw new IllegalStateException(defaultValue + " is not assignable to the field type " + legalType);
   }
 }

@@ -12,5 +12,6 @@
   when(placeholderType.getDescriptor()).thenReturn(BAZ);
   when(otherPlaceHolderType.getDescriptor()).thenReturn(FOO);
   when(returnType.asRawType()).thenReturn(returnType);
+  when(parameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
   when(parameterType.asRawType()).thenReturn(parameterType);
 }

@@ -72,4 +72,6 @@
   when(secondSpecialExceptionType.asRawType()).thenReturn(secondSpecialExceptionType);
   when(firstSpecialParameterType.asRawType()).thenReturn(firstSpecialParameterType);
   when(secondSpecialParameterType.asRawType()).thenReturn(secondSpecialParameterType);
+  when(firstSpecialParameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(firstSpecialParameterType);
+  when(secondSpecialParameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(secondSpecialParameterType);
 }
