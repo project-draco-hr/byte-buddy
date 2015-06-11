@@ -2,7 +2,7 @@
   MethodDescription accessorMethod=registeredAccessorMethods.get(specialMethodInvocation);
   if (accessorMethod == null) {
     String name=String.format("%s$%s$%s",specialMethodInvocation.getMethodDescription().getInternalName(),ACCESSOR_METHOD_SUFFIX,randomString.nextString());
-    accessorMethod=new MethodDescription.Latent(name,instrumentedType,specialMethodInvocation.getMethodDescription().getReturnType().asRawType(),specialMethodInvocation.getMethodDescription().getParameters().asTypeList().asRawTypes(),resolveModifier(specialMethodInvocation.getMethodDescription().isStatic()),specialMethodInvocation.getMethodDescription().getExceptionTypes().asRawTypes());
+    accessorMethod=new MethodDescription.Latent(instrumentedType,name,specialMethodInvocation.getMethodDescription().getReturnType().asRawType(),specialMethodInvocation.getMethodDescription().getParameters().accept(GenericTypeDescription.Visitor.Erasing.INSTANCE),resolveModifier(specialMethodInvocation.getMethodDescription().isStatic()),specialMethodInvocation.getMethodDescription().getExceptionTypes().asRawTypes(),Collections.<AnnotationDescription>emptyList());
     registerAccessor(specialMethodInvocation,accessorMethod);
   }
   return accessorMethod;

@@ -1,0 +1,11 @@
+{
+  MethodList methodDescriptions=typeDescription.getDeclaredMethods().filter(typeVariableMethodMatcher);
+  if (methodDescriptions.isEmpty()) {
+    throw new IllegalStateException("Cannot resolve method " + typeVariableMethodMatcher + " declared by "+ typeDescription);
+  }
+  GenericTypeDescription genericTypeDescription=methodDescriptions.getOnly().findVariable(symbol);
+  if (genericTypeDescription == null) {
+    throw new IllegalStateException("Cannot resolve type variable '" + symbol + "' for "+ methodDescriptions.getOnly());
+  }
+  return genericTypeDescription;
+}

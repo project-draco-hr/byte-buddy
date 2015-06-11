@@ -2,7 +2,7 @@
   MethodDescription accessorMethod=registeredGetters.get(fieldDescription);
   if (accessorMethod == null) {
     String name=String.format("%s$%s$%s",fieldDescription.getName(),ACCESSOR_METHOD_SUFFIX,randomString.nextString());
-    accessorMethod=new MethodDescription.Latent(name,instrumentedType,fieldDescription.getType().asRawType(),Collections.<ParameterDescription.Token>emptyList(),resolveModifier(fieldDescription.isStatic()),Collections.<GenericTypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList());
+    accessorMethod=new MethodDescription.Latent(instrumentedType,name,fieldDescription.getType().asRawType(),Collections.<ParameterDescription.Token>emptyList(),resolveModifier(fieldDescription.isStatic()),Collections.<GenericTypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList());
     registerGetter(fieldDescription,accessorMethod);
   }
   return accessorMethod;

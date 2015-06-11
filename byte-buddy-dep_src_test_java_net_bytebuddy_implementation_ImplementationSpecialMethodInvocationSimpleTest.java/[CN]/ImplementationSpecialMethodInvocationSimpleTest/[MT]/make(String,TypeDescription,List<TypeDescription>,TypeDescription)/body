@@ -3,5 +3,5 @@
   for (  TypeDescription parameterType : parameterTypes) {
     tokens.add(new ParameterDescription.Token(parameterType));
   }
-  return new Implementation.SpecialMethodInvocation.Simple(new MethodDescription.Latent(name,mock(TypeDescription.class),returnType,tokens,Opcodes.ACC_PUBLIC,Collections.<TypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList()),targetType,mock(StackManipulation.class));
+  return new Implementation.SpecialMethodInvocation.Simple(new MethodDescription.Latent(mock(TypeDescription.class),name,returnType,tokens,Opcodes.ACC_PUBLIC,Collections.<TypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList()),targetType,mock(StackManipulation.class));
 }

@@ -1,0 +1,3 @@
+String symbol
+TypeDescription typeDescription
+ElementMatcher<? super MethodDescription> typeVariableMethodMatcher

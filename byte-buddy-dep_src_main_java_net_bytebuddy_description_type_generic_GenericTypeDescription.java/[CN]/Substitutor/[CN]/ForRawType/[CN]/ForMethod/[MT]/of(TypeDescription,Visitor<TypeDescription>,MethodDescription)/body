@@ -1,0 +1,3 @@
+{
+  return new ForMethod(substitute,returns(methodDescription.getReturnType().asRawType().accept(substitutor)).and(takesArguments(methodDescription.getParameters().asTypeList().asRawTypes().accept(substitutor))).and(methodDescription.isConstructor() ? isConstructor() : ElementMatchers.<MethodDescription>named(methodDescription.getName())));
+}

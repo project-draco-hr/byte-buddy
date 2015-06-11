@@ -5,7 +5,7 @@
     return fieldCache;
   }
   validateFieldCacheAccessibility();
-  fieldCache=new FieldDescription.Latent(String.format("%s$%s",FIELD_CACHE_PREFIX,randomString.nextString()),instrumentedType,fieldType,FIELD_CACHE_MODIFIER,Collections.<AnnotationDescription>emptyList());
+  fieldCache=new FieldDescription.Latent(instrumentedType,String.format("%s$%s",FIELD_CACHE_PREFIX,randomString.nextString()),fieldType,FIELD_CACHE_MODIFIER,Collections.<AnnotationDescription>emptyList());
   registeredFieldCacheEntries.put(fieldCacheEntry,fieldCache);
   return fieldCache;
 }
