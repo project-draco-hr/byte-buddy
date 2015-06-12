@@ -1,0 +1,5 @@
+{
+  if (!(other instanceof GenericTypeDescription))   return false;
+  GenericTypeDescription genericTypeDescription=(GenericTypeDescription)other;
+  return genericTypeDescription.getSort().isTypeVariable() && genericTypeDescription.getSort().isDetachedTypeVariable() && genericTypeDescription.getSymbol().equals(genericTypeDescription.getSymbol());
+}
