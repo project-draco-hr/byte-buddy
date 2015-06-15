@@ -1,0 +1,10 @@
+{
+  if (genericTypeDescription.getSort().isDetachedTypeVariable()) {
+    throw new IllegalStateException("Type variable already detached: " + genericTypeDescription);
+  }
+  GenericTypeDescription typeVariable=detachedVariables.get(genericTypeDescription.getSymbol());
+  if (typeVariable == null) {
+    typeVariable=new DetachedTypeVariable(genericTypeDescription.getSymbol(),genericTypeDescription.getUpperBounds(),this);
+  }
+  return typeVariable;
+}

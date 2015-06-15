@@ -1,0 +1,3 @@
+{
+  detachedVariables.put(symbol,typeVariable);
+}

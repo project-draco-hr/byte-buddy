@@ -1,0 +1,6 @@
+{
+  if (genericTypeDescription.getSort().isTypeVariable()) {
+    throw new IllegalStateException("Type variable is not detached: " + genericTypeDescription);
+  }
+  return new AttachedTypeVariable(genericTypeDescription.getSymbol(),typeVariableSource,genericTypeDescription.getUpperBounds(),typeVariables,ForAttachment.this);
+}

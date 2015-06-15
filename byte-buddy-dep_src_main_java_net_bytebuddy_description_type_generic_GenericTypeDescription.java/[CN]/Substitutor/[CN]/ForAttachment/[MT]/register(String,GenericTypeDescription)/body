@@ -1,0 +1,5 @@
+{
+  if (formalVariables.put(symbol,typeVariable) != null) {
+    throw new IllegalArgumentException("Nominal type variable is already defined: " + symbol);
+  }
+}

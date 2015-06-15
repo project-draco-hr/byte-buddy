@@ -1,5 +1,5 @@
 {
-  MethodDescription additionalMethod=new MethodDescription.Latent(this,internalName,returnType,ParameterDescription.Token.asList(parameterTypes),modifiers,exceptionTypes,Collections.<AnnotationDescription>emptyList());
+  MethodDescription additionalMethod=new MethodDescription.Latent(this,internalName,modifiers,Collections.<GenericTypeDescription>emptyList(),returnType,ParameterDescription.Token.asList(parameterTypes),exceptionTypes,Collections.<AnnotationDescription>emptyList());
   if (methodDescriptions.contains(additionalMethod)) {
     throw new IllegalArgumentException("Method " + additionalMethod + " is already defined on "+ this);
   }

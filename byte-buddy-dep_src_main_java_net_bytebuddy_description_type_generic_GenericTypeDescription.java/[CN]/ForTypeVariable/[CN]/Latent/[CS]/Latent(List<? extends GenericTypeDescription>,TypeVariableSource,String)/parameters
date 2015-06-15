@@ -1,3 +1,0 @@
-List<? extends GenericTypeDescription> bounds
-TypeVariableSource typeVariableSource
-String symbol

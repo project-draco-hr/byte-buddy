@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("A detached type variable cannot be queried for its defining source: " + this);
-}

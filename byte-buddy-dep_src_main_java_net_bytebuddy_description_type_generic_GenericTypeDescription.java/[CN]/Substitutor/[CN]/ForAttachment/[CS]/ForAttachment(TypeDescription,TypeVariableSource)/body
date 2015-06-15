@@ -1,0 +1,5 @@
+{
+  this.declaringType=declaringType;
+  this.typeVariableSource=typeVariableSource;
+  formalVariables=new HashMap<String,GenericTypeDescription>();
+}

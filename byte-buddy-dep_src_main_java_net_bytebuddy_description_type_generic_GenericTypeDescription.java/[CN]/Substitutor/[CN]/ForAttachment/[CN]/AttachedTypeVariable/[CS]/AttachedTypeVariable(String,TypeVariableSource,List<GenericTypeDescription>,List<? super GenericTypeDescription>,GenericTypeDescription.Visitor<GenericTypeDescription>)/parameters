@@ -1,0 +1,5 @@
+String symbol
+TypeVariableSource typeVariableSource
+List<GenericTypeDescription> bounds
+List<? super GenericTypeDescription> typeVariables
+GenericTypeDescription.Visitor<GenericTypeDescription> visitor

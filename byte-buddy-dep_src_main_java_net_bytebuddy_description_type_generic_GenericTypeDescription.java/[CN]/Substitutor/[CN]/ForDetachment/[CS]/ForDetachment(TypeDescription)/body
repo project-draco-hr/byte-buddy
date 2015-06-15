@@ -1,0 +1,4 @@
+{
+  this.declaringType=declaringType;
+  detachedVariables=new HashMap<String,GenericTypeDescription>();
+}

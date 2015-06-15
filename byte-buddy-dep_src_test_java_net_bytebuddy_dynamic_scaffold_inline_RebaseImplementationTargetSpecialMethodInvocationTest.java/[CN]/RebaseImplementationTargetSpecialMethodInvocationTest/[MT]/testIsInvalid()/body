@@ -1,7 +1,7 @@
 {
   MethodRebaseResolver.Resolution resolution=mock(MethodRebaseResolver.Resolution.class);
   when(resolution.getAdditionalArguments()).thenReturn(StackManipulation.Illegal.INSTANCE);
-  when(resolution.getResolvedMethod()).thenReturn(new MethodDescription.Latent(mock(TypeDescription.class),FOO,mock(GenericTypeDescription.class),Collections.<ParameterDescription.Token>emptyList(),Opcodes.ACC_PUBLIC,Collections.<GenericTypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList()));
+  when(resolution.getResolvedMethod()).thenReturn(new MethodDescription.Latent(mock(TypeDescription.class),FOO,Opcodes.ACC_PUBLIC,Collections.<GenericTypeDescription>emptyList(),mock(GenericTypeDescription.class),Collections.<ParameterDescription.Token>emptyList(),Collections.<GenericTypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList()));
   Implementation.SpecialMethodInvocation specialMethodInvocation=new RebaseImplementationTarget.RebasedMethodSpecialMethodInvocation(resolution,mock(TypeDescription.class));
   assertThat(specialMethodInvocation.isValid(),is(false));
 }

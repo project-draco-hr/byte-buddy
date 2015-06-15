@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("A detached type variable cannot be reduced to a raw type: " + this);
-}

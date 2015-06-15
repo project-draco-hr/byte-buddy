@@ -1,8 +1,3 @@
 {
-  List<ParameterDescription.Token> tokens=new ArrayList<ParameterDescription.Token>(constructor.getParameterTypes().length);
-  ParameterList parameterList=ParameterList.ForLoadedExecutable.of(constructor);
-  for (  ParameterDescription parameterDescription : parameterList) {
-    tokens.add(parameterList.hasExplicitMetaData() ? new ParameterDescription.Token(parameterDescription.getType(),parameterDescription.getDeclaredAnnotations(),parameterDescription.getName(),parameterDescription.getModifiers()) : new ParameterDescription.Token(parameterDescription.getType(),parameterDescription.getDeclaredAnnotations()));
-  }
-  return new MethodDescription.Latent(new TypeDescription.ForLoadedType(constructor.getDeclaringClass()),MethodDescription.CONSTRUCTOR_INTERNAL_NAME,TypeDescription.VOID,tokens,constructor.getModifiers(),new GenericTypeList.ForLoadedType(constructor.getGenericExceptionTypes()),new AnnotationList.ForLoadedAnnotation(constructor.getDeclaredAnnotations()));
+  return new MethodDescription.Latent(new TypeDescription.ForLoadedType(constructor.getDeclaringClass()),new MethodDescription.ForLoadedConstructor(constructor).asToken());
 }

@@ -1,7 +1,7 @@
 {
   MethodDescription accessorMethod=registeredSetters.get(fieldDescription);
   if (accessorMethod == null) {
-    accessorMethod=new MethodDescription.Latent(instrumentedType,String.format("%s$%s$%s",fieldDescription.getName(),ACCESSOR_METHOD_SUFFIX,randomString.nextString()),TypeDescription.VOID,Collections.singletonList(new ParameterDescription.Token(fieldDescription.getType().asRawType())),resolveModifier(fieldDescription.isStatic()),Collections.<GenericTypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList());
+    accessorMethod=new MethodDescription.Latent(instrumentedType,String.format("%s$%s$%s",fieldDescription.getName(),ACCESSOR_METHOD_SUFFIX,randomString.nextString()),resolveModifier(fieldDescription.isStatic()),Collections.<GenericTypeDescription>emptyList(),TypeDescription.VOID,Collections.singletonList(new ParameterDescription.Token(fieldDescription.getType().asRawType())),Collections.<GenericTypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList());
     registerSetter(fieldDescription,accessorMethod);
   }
   return accessorMethod;
