@@ -1,0 +1,6 @@
+{
+  Map<String,byte[]> types=new HashMap<String,byte[]>();
+  types.put(PrivateMethod.class.getName(),ClassFileExtraction.extract(PrivateMethod.class));
+  Class<?> type=create(PrivateMethod.class).method(isDeclaredBy(PrivateMethod.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,types,null,ByteArrayClassLoader.PersistenceHandler.LATENT),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethods().length,is(0));
+}
