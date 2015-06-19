@@ -1,0 +1,3 @@
+{
+  implement(SimpleField.class,MethodDelegation.to(NonAssignableInterceptor.class));
+}

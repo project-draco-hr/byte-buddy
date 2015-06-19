@@ -3,10 +3,10 @@
     throw new IllegalArgumentException("Constructors cannot define beans: " + instrumentedMethod);
   }
   if (takesArguments(0).and(not(returns(void.class))).matches(instrumentedMethod)) {
-    return applyGetter(methodVisitor,implementationContext,fieldLocator.locate(getFieldName(instrumentedMethod)),instrumentedMethod);
+    return applyGetter(methodVisitor,implementationContext,fieldLocator.locate(getFieldName(instrumentedMethod),instrumentedMethod.isStatic()),instrumentedMethod);
   }
  else   if (takesArguments(1).and(returns(void.class)).matches(instrumentedMethod)) {
-    return applySetter(methodVisitor,implementationContext,fieldLocator.locate(getFieldName(instrumentedMethod)),instrumentedMethod);
+    return applySetter(methodVisitor,implementationContext,fieldLocator.locate(getFieldName(instrumentedMethod),instrumentedMethod.isStatic()),instrumentedMethod);
   }
  else {
     throw new IllegalArgumentException("Method " + implementationContext + " is no bean property");

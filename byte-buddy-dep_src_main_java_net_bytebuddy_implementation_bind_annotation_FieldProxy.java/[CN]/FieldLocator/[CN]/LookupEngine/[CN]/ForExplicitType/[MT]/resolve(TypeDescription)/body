@@ -1,4 +1,0 @@
-{
-  FieldList fieldList=typeDescription.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
-  return fieldList.size() == 1 ? new Resolution.Resolved(fieldList.getOnly()) : new Resolution.Unresolved();
-}

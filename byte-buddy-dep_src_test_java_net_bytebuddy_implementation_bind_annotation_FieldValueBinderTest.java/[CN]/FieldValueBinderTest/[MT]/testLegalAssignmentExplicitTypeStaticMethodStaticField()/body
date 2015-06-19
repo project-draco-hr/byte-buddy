@@ -1,0 +1,10 @@
+{
+  doReturn(FooStatic.class).when(annotation).definingType();
+  when(annotation.value()).thenReturn(FOO);
+  when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(source.isStatic()).thenReturn(true);
+  when(stackManipulation.isValid()).thenReturn(true);
+  when(instrumentedType.isAssignableTo(new TypeDescription.ForLoadedType(FooStatic.class))).thenReturn(true);
+  MethodDelegationBinder.ParameterBinding<?> binding=FieldValue.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+  assertThat(binding.isValid(),is(true));
+}
