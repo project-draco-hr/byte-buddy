@@ -1,0 +1,5 @@
+{
+  DynamicType.Loaded<VoidMethod> loaded=implement(VoidMethod.class,MethodDelegation.to(new Interceptor(null)));
+  VoidMethod instance=loaded.getLoaded().newInstance();
+  instance.foo();
+}

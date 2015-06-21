@@ -1,0 +1,3 @@
+{
+  assertThat(new MultipleParentClassLoader.Builder().append(first,second,null).build().getResource(BAZ),nullValue(URL.class));
+}

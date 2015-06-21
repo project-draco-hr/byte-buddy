@@ -1,0 +1,5 @@
+{
+  DynamicType.Loaded<LongMethod> loaded=implement(LongMethod.class,MethodDelegation.to(new Interceptor(0L)));
+  LongMethod instance=loaded.getLoaded().newInstance();
+  assertThat(instance.foo(),is(0L));
+}

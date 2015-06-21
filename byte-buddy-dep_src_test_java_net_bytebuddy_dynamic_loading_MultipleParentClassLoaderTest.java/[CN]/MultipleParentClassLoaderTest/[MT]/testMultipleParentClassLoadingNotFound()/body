@@ -1,0 +1,3 @@
+{
+  new MultipleParentClassLoader.Builder().append(first,second,null).build().loadClass(BAZ);
+}

@@ -1,0 +1,12 @@
+{
+  ClassLoader classLoader=new MultipleParentClassLoader.Builder().append(first,second,null).build();
+  assertThat(classLoader.getResource(FOO),is(fooUrl));
+  assertThat(classLoader.getResource(BAR),is(barFirstUrl));
+  assertThat(classLoader.getResource(QUX),is(quxUrl));
+  verify(first).getResource(FOO);
+  verify(first).getResource(BAR);
+  verify(first).getResource(QUX);
+  verifyNoMoreInteractions(first);
+  verify(second).getResource(QUX);
+  verifyNoMoreInteractions(second);
+}

@@ -1,0 +1,5 @@
+{
+  ObjectPropertyAssertion.of(MultipleParentClassLoader.class).applyMutable();
+  ObjectPropertyAssertion.of(MultipleParentClassLoader.CompoundEnumeration.class).applyMutable();
+  ObjectPropertyAssertion.of(MultipleParentClassLoader.Builder.class).apply();
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(new MultipleParentClassLoader.Builder().append(getClass().getClassLoader(),getClass().getClassLoader()).build(),is(getClass().getClassLoader()));
+}

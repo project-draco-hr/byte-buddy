@@ -1,0 +1,9 @@
+{
+  for (  ClassLoader parent : parents) {
+    URL url=parent != null ? parent.getResource(name) : super.getResource(name);
+    if (url != null) {
+      return url;
+    }
+  }
+  return super.getResource(name);
+}

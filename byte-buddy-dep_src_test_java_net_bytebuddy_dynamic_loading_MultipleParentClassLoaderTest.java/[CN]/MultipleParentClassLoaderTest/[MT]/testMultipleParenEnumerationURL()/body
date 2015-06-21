@@ -1,0 +1,17 @@
+{
+  ClassLoader classLoader=new MultipleParentClassLoader.Builder().append(first,second,null).build();
+  Enumeration<URL> foo=classLoader.getResources(FOO);
+  assertThat(foo.hasMoreElements(),is(true));
+  assertThat(foo.nextElement(),is(fooUrl));
+  assertThat(foo.hasMoreElements(),is(false));
+  Enumeration<URL> bar=classLoader.getResources(BAR);
+  assertThat(bar.hasMoreElements(),is(true));
+  assertThat(bar.nextElement(),is(barFirstUrl));
+  assertThat(bar.hasMoreElements(),is(true));
+  assertThat(bar.nextElement(),is(barSecondUrl));
+  assertThat(bar.hasMoreElements(),is(false));
+  Enumeration<URL> qux=classLoader.getResources(QUX);
+  assertThat(qux.hasMoreElements(),is(true));
+  assertThat(qux.nextElement(),is(quxUrl));
+  assertThat(qux.hasMoreElements(),is(false));
+}

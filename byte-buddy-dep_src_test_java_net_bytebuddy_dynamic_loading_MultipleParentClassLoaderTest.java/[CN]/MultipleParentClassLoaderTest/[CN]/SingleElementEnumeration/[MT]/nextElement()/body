@@ -1,0 +1,11 @@
+{
+  if (!hasMoreElements()) {
+    throw new AssertionError();
+  }
+  try {
+    return element;
+  }
+  finally {
+    element=null;
+  }
+}

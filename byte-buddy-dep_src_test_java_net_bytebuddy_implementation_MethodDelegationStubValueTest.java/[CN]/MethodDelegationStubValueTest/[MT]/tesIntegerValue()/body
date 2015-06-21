@@ -1,0 +1,5 @@
+{
+  DynamicType.Loaded<IntegerMethod> loaded=implement(IntegerMethod.class,MethodDelegation.to(new Interceptor(0)));
+  IntegerMethod instance=loaded.getLoaded().newInstance();
+  assertThat(instance.foo(),is(0));
+}

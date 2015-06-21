@@ -1,0 +1,5 @@
+{
+  when(target.getTypeDescription()).thenReturn(TypeDescription.OBJECT);
+  when(source.getReturnType()).thenReturn(TypeDescription.VOID);
+  assertThat(StubValue.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner).isValid(),is(true));
+}

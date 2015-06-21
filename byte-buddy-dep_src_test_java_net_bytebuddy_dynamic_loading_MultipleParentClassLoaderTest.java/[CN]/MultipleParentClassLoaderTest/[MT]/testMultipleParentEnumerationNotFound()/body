@@ -1,0 +1,6 @@
+{
+  ClassLoader classLoader=new MultipleParentClassLoader.Builder().append(first,second,null).build();
+  Enumeration<URL> enumeration=classLoader.getResources(BAZ);
+  assertThat(enumeration.hasMoreElements(),is(false));
+  enumeration.nextElement();
+}

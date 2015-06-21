@@ -1,0 +1,8 @@
+{
+  List<Enumeration<URL>> enumerations=new ArrayList<Enumeration<URL>>(parents.size() + 1);
+  for (  ClassLoader parent : parents) {
+    enumerations.add(parent != null ? parent.getResources(name) : super.getResources(name));
+  }
+  enumerations.add(super.getResources(name));
+  return new CompoundEnumeration(enumerations);
+}

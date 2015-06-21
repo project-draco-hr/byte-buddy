@@ -1,0 +1,21 @@
+{
+  doReturn(Foo.class).when(first).loadClass(FOO);
+  doReturn(BarFirst.class).when(first).loadClass(BAR);
+  when(first.loadClass(QUX)).thenThrow(new ClassNotFoundException());
+  when(first.loadClass(BAZ)).thenThrow(new ClassNotFoundException());
+  doReturn(BarSecond.class).when(second).loadClass(BAR);
+  doReturn(Qux.class).when(second).loadClass(QUX);
+  when(second.loadClass(BAZ)).thenThrow(new ClassNotFoundException());
+  fooUrl=new URL(SCHEME + FOO);
+  barFirstUrl=new URL(SCHEME + BAR);
+  barSecondUrl=new URL(SCHEME + BAZ);
+  quxUrl=new URL(SCHEME + QUX);
+  when(first.getResource(FOO)).thenReturn(fooUrl);
+  when(first.getResource(BAR)).thenReturn(barFirstUrl);
+  when(second.getResource(BAR)).thenReturn(barSecondUrl);
+  when(second.getResource(QUX)).thenReturn(quxUrl);
+  when(first.getResources(FOO)).thenReturn(new SingleElementEnumeration(fooUrl));
+  when(first.getResources(BAR)).thenReturn(new SingleElementEnumeration(barFirstUrl));
+  when(second.getResources(BAR)).thenReturn(new SingleElementEnumeration(barSecondUrl));
+  when(second.getResources(QUX)).thenReturn(new SingleElementEnumeration(quxUrl));
+}

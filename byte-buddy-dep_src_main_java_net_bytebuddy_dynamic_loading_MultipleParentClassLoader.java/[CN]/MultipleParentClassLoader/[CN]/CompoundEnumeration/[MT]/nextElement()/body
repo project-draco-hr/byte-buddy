@@ -1,0 +1,8 @@
+{
+  if (hasMoreElements()) {
+    return currentEnumeration.nextElement();
+  }
+ else {
+    throw new NoSuchElementException();
+  }
+}

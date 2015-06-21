@@ -1,0 +1,12 @@
+{
+  if (currentEnumeration != null && currentEnumeration.hasMoreElements()) {
+    return true;
+  }
+ else   if (!enumerations.isEmpty()) {
+    currentEnumeration=enumerations.remove(FIRST);
+    return hasMoreElements();
+  }
+ else {
+    return false;
+  }
+}

@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(StubValue.Binder.class).apply();
+}

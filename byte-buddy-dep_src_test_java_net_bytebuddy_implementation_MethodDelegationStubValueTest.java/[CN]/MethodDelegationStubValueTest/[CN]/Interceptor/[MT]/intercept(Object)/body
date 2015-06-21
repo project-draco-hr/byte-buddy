@@ -1,0 +1,9 @@
+{
+  if (expectedValue == null) {
+    assertThat(value,nullValue());
+  }
+ else {
+    assertThat(value,is(expectedValue));
+  }
+  return value;
+}
