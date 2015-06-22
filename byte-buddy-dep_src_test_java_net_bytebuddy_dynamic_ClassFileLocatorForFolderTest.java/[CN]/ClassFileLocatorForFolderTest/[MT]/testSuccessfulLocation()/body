@@ -1,0 +1,20 @@
+{
+  File packageFolder=new File(folder,FOO);
+  assertThat(packageFolder.mkdir(),is(true));
+  File file=new File(packageFolder,BAR + ".class");
+  assertThat(file.createNewFile(),is(true));
+  FileOutputStream fileOutputStream=new FileOutputStream(file);
+  try {
+    fileOutputStream.write(VALUE);
+    fileOutputStream.write(VALUE * 2);
+  }
+  finally {
+    fileOutputStream.close();
+  }
+  ClassFileLocator classFileLocator=new ClassFileLocator.ForFolder(folder);
+  ClassFileLocator.Resolution resolution=classFileLocator.locate(FOO + "." + BAR);
+  assertThat(resolution.isResolved(),is(true));
+  assertThat(resolution.resolve(),is(new byte[]{VALUE,VALUE * 2}));
+  assertThat(file.delete(),is(true));
+  assertThat(packageFolder.delete(),is(true));
+}

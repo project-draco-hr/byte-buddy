@@ -1,0 +1,21 @@
+{
+  JarOutputStream jarOutputStream=new JarOutputStream(new FileOutputStream(file));
+  try {
+    JarEntry jarEntry=new JarEntry("noop.class");
+    jarOutputStream.putNextEntry(jarEntry);
+    jarOutputStream.write(VALUE);
+    jarOutputStream.closeEntry();
+  }
+  finally {
+    jarOutputStream.close();
+  }
+  JarFile jarFile=new JarFile(file);
+  try {
+    ClassFileLocator classFileLocator=new ClassFileLocator.ForJarFile(jarFile);
+    ClassFileLocator.Resolution resolution=classFileLocator.locate(FOO + "." + BAR);
+    assertThat(resolution.isResolved(),is(false));
+  }
+  finally {
+    jarFile.close();
+  }
+}

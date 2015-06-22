@@ -1,0 +1,3 @@
+{
+  return this == other || other instanceof ForJarFile && jarFile.equals(((ForJarFile)other).jarFile);
+}

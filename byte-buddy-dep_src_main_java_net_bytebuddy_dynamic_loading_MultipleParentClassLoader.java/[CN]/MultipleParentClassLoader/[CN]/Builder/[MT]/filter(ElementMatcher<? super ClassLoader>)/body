@@ -1,0 +1,9 @@
+{
+  List<ClassLoader> classLoaders=new ArrayList<ClassLoader>(this.classLoaders.size());
+  for (  ClassLoader classLoader : this.classLoaders) {
+    if (!matcher.matches(classLoader)) {
+      classLoaders.add(classLoader);
+    }
+  }
+  return new Builder(classLoaders);
+}

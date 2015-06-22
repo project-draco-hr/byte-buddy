@@ -1,0 +1,5 @@
+{
+  ClassFileLocator classFileLocator=new ClassFileLocator.ForFolder(folder);
+  ClassFileLocator.Resolution resolution=classFileLocator.locate(FOO + "." + BAR);
+  assertThat(resolution.isResolved(),is(false));
+}
