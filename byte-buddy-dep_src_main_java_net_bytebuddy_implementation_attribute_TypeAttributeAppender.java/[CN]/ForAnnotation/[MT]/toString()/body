@@ -1,3 +1,3 @@
 {
-  return "TypeAttributeAppender.ForAnnotation{annotations=" + annotations + '}';
+  return "TypeAttributeAppender.ForAnnotation{" + "annotations=" + annotations + ", defaultProperties="+ defaultProperties+ '}';
 }

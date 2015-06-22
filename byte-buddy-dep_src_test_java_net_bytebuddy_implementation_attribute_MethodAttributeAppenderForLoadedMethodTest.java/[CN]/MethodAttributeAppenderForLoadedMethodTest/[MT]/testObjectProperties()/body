@@ -1,9 +1,0 @@
-{
-  final Iterator<Method> iterator=Arrays.asList(Sample.class.getDeclaredMethod(FOO),Sample.class.getDeclaredMethod(FOO,Void.class)).iterator();
-  ObjectPropertyAssertion.of(MethodAttributeAppender.ForLoadedMethod.class).create(new ObjectPropertyAssertion.Creator<Method>(){
-    @Override public Method create(){
-      return iterator.next();
-    }
-  }
-).apply();
-}

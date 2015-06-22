@@ -1,3 +1,0 @@
-{
-  assertThat(new MethodAttributeAppender.ForLoadedMethod(method).make(mock(TypeDescription.class)),is((MethodAttributeAppender)new MethodAttributeAppender.ForLoadedMethod(method)));
-}

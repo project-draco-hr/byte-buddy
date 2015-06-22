@@ -1,0 +1,3 @@
+int parameterIndex
+List<? extends AnnotationDescription> annotations
+ElementMatcher<? super MethodDescription> defaultProperties

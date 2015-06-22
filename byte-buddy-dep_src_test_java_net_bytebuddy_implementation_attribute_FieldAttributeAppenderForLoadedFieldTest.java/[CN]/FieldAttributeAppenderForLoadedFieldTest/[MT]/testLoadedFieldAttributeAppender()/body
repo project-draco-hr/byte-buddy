@@ -1,7 +1,0 @@
-{
-  FieldAttributeAppender fieldAttributeAppender=new FieldAttributeAppender.ForLoadedField(field);
-  fieldAttributeAppender.apply(fieldVisitor,fieldDescription);
-  verify(fieldVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
-  verifyNoMoreInteractions(fieldVisitor);
-  verifyZeroInteractions(fieldDescription);
-}

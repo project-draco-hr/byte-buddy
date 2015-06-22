@@ -1,6 +1,0 @@
-{
-  method=Foo.class.getDeclaredMethod(BAR,Object.class);
-  ParameterList parameters=mock(ParameterList.class);
-  when(methodDescription.getParameters()).thenReturn(parameters);
-  when(parameters.size()).thenReturn(PARAMETER_INDEX + 1);
-}

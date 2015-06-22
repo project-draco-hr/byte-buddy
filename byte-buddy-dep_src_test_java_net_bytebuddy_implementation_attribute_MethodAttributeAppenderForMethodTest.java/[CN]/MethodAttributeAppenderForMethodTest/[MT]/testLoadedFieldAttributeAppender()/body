@@ -1,0 +1,9 @@
+{
+  MethodAttributeAppender methodAttributeAppender=new MethodAttributeAppender.ForMethod(constructor);
+  methodAttributeAppender.apply(methodVisitor,methodDescription);
+  verify(methodVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
+  verify(methodVisitor).visitParameterAnnotation(PARAMETER_INDEX,Type.getDescriptor(Baz.class),true);
+  verifyNoMoreInteractions(methodVisitor);
+  verify(methodDescription).getParameters();
+  verifyNoMoreInteractions(methodDescription);
+}

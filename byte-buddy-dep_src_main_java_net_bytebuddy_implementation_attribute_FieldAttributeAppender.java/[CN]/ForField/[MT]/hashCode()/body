@@ -1,0 +1,3 @@
+{
+  return fieldDescription.hashCode() + 31 * defaultProperties.hashCode();
+}

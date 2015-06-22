@@ -1,0 +1,3 @@
+{
+  this(new TypeDescription.ForLoadedType(type),defaultProperties);
+}

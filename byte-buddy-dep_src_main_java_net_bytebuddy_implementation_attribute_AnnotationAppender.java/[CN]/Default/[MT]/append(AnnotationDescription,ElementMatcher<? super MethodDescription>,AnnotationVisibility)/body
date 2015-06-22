@@ -1,0 +1,6 @@
+{
+  if (!annotationVisibility.isSuppressed()) {
+    doAppend(annotation,defaultProperties,annotationVisibility.isVisible());
+  }
+  return this;
+}

@@ -1,0 +1,3 @@
+{
+  handle(target.visit(annotation.getAnnotationType().getDescriptor(),visible),annotation,defaultProperties);
+}

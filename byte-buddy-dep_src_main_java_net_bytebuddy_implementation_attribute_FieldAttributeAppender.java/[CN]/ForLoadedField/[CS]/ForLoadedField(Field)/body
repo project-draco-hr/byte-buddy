@@ -1,3 +1,0 @@
-{
-  this.fieldDescription=new FieldDescription.ForLoadedField(field);
-}

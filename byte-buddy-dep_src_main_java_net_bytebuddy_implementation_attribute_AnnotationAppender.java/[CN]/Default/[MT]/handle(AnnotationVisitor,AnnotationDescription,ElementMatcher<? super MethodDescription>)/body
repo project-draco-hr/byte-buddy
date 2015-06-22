@@ -1,0 +1,6 @@
+{
+  for (  MethodDescription methodDescription : annotation.getAnnotationType().getDeclaredMethods().filter(not(defaultProperties))) {
+    apply(annotationVisitor,methodDescription.getReturnType(),methodDescription.getName(),annotation.getValue(methodDescription));
+  }
+  annotationVisitor.visitEnd();
+}

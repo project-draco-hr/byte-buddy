@@ -1,0 +1,3 @@
+{
+  return "MethodAttributeAppender.ForMethod{" + "methodDescription=" + methodDescription + ", defaultProperties="+ defaultProperties+ '}';
+}

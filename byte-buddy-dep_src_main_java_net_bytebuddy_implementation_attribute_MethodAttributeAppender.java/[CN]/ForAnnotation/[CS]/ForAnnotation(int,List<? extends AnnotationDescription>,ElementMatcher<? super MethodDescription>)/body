@@ -1,0 +1,5 @@
+{
+  this.annotations=annotations;
+  this.defaultProperties=defaultProperties;
+  target=new Target.OnMethodParameter(parameterIndex);
+}

@@ -1,4 +1,3 @@
 {
-  this.annotations=annotations;
-  target=Target.OnMethod.INSTANCE;
+  this(annotations,none());
 }
