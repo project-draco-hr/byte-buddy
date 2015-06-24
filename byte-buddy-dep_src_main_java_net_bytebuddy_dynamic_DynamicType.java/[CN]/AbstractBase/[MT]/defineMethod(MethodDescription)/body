@@ -1,6 +1,0 @@
-{
-  if (!methodDescription.isMethod()) {
-    throw new IllegalArgumentException("Not a method: " + methodDescription);
-  }
-  return defineMethod(methodDescription.getName(),methodDescription.getReturnType(),methodDescription.getParameters().asTypeList(),methodDescription.getModifiers()).throwing(methodDescription.getExceptionTypes());
-}

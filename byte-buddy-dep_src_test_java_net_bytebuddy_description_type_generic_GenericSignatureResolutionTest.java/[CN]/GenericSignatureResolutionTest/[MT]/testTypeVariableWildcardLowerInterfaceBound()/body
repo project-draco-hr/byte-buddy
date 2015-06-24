@@ -1,0 +1,9 @@
+{
+  DynamicType.Unloaded<?> unloaded=new ByteBuddy().redefine(TypeVariableWildcardLowerInterfaceBound.class).make();
+  Class<?> type=unloaded.load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  TypeDescription createdType=new TypeDescription.ForLoadedType(type);
+  TypeDescription originalType=new TypeDescription.ForLoadedType(TypeVariableWildcardLowerInterfaceBound.class);
+  assertThat(createdType.getTypeVariables(),is(originalType.getTypeVariables()));
+  assertThat(createdType.getSuperType(),is(originalType.getSuperType()));
+  assertThat(createdType.getInterfaces(),is(originalType.getInterfaces()));
+}

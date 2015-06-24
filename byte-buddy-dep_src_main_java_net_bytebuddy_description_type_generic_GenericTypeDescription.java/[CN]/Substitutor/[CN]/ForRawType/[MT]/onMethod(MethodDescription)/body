@@ -1,3 +1,0 @@
-{
-  return substitutionMatcher.matches(methodDescription.getDeclaringType()) ? TypeVariableProxy.ForMethod.of(substitute,(Visitor<TypeDescription>)(Object)this,methodDescription) : TypeVariableProxy.Retaining.INSTANCE;
-}

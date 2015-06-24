@@ -1,3 +1,0 @@
-{
-  return new DefaultExceptionDeclarableMethodInterception(new MethodToken(isActualType(parameterTypes),Collections.<TypeDescription>emptyList(),modifiers));
-}

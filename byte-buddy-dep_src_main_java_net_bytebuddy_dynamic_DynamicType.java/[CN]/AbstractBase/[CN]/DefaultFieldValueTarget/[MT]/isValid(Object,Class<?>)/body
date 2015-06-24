@@ -1,8 +1,0 @@
-{
-  if (fieldToken.getFieldType().getSort().isRawType() && fieldToken.getFieldType().asRawType().represents(legalType)) {
-    return defaultValue;
-  }
- else {
-    throw new IllegalStateException(defaultValue + " is not assignable to the field type " + legalType);
-  }
-}

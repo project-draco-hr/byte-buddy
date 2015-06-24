@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  AbstractBase that=(AbstractBase)other;
-  return modifiers == that.modifiers && attributeAppender.equals(that.attributeAppender) && bridgeMethodResolverFactory.equals(that.bridgeMethodResolverFactory) && classFileVersion.equals(that.classFileVersion) && classVisitorWrapperChain.equals(that.classVisitorWrapperChain) && defaultFieldAttributeAppenderFactory.equals(that.defaultFieldAttributeAppenderFactory) && defaultMethodAttributeAppenderFactory.equals(that.defaultMethodAttributeAppenderFactory) && fieldRegistry.equals(that.fieldRegistry) && fieldTokens.equals(that.fieldTokens) && ignoredMethods.equals(that.ignoredMethods) && interfaceTypes.equals(that.interfaceTypes) && targetType.equals(that.targetType) && methodLookupEngineFactory.equals(that.methodLookupEngineFactory) && methodRegistry.equals(that.methodRegistry) && methodTokens.equals(that.methodTokens) && namingStrategy.equals(that.namingStrategy) && auxiliaryTypeNamingStrategy.equals(that.auxiliaryTypeNamingStrategy);
-}

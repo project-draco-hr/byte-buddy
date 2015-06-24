@@ -1,3 +1,3 @@
 {
-  return annotateType(new AnnotationList.Explicit(Arrays.asList(annotation)));
+  return annotateType(Arrays.asList(annotation));
 }

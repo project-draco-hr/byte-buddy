@@ -1,3 +1,0 @@
-{
-  return annotateParameter(parameterIndex,Arrays.asList(nonNull(annotation)));
-}

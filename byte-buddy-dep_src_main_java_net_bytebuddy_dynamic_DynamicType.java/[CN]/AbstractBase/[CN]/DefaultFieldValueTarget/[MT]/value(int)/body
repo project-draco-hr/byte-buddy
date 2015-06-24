@@ -1,3 +1,0 @@
-{
-  return makeFieldAnnotationTarget(NumericRangeValidator.of(fieldToken.getFieldType().asRawType()).validate(value));
-}

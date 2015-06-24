@@ -1,2 +1,0 @@
-int parameterIndex
-Iterable<? extends Annotation> annotations

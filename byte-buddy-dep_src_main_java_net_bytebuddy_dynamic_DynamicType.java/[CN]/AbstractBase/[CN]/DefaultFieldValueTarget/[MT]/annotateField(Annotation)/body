@@ -1,3 +1,0 @@
-{
-  return annotateField((new AnnotationList.ForLoadedAnnotation(nonNull(annotation))));
-}

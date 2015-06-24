@@ -1,5 +1,0 @@
-{
-  this.fieldToken=fieldToken;
-  this.attributeAppenderFactory=attributeAppenderFactory;
-  this.defaultValue=defaultValue;
-}

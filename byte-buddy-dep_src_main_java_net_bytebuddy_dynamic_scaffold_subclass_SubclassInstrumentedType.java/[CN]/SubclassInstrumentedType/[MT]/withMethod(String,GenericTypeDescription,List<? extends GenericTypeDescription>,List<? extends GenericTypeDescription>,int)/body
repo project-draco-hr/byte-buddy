@@ -1,7 +1,0 @@
-{
-  MethodDescription additionalMethod=new MethodDescription.Latent(this,internalName,modifiers,Collections.<GenericTypeDescription>emptyList(),returnType,ParameterDescription.Token.asList(parameterTypes),exceptionTypes,Collections.<AnnotationDescription>emptyList());
-  if (methodDescriptions.contains(additionalMethod)) {
-    throw new IllegalArgumentException("Method " + additionalMethod + " is already defined on "+ this);
-  }
-  return new SubclassInstrumentedType(classFileVersion,superClass,interfaces,this.modifiers,name,typeVariables,fieldDescriptions,join(methodDescriptions,additionalMethod),loadedTypeInitializer,typeInitializer);
-}

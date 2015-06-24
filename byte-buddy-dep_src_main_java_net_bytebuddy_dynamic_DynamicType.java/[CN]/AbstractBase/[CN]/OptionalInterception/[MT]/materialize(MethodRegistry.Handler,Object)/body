@@ -1,0 +1,3 @@
+{
+  return Builder.AbstractBase.this.materialize(classFileVersion,modifiers,joinUniqueRaw(Builder.AbstractBase.this.interfaceTypes,interfaceTypes),namingStrategy,auxiliaryTypeNamingStrategy,ignoredMethods,typeAttributeAppender,annotationDescriptions,classVisitorWrapper,bridgeMethodResolverFactory,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldRegistry,methodRegistry.append(new LatentMethodMatcher.Resolved(declarationMatcher),handler,attributeAppenderFactory),fieldTokens,methodTokens);
+}

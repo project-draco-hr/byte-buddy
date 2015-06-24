@@ -1,3 +1,0 @@
-{
-  return annotateParameter(parameterIndex,new AnnotationList.ForLoadedAnnotation(nonNull(annotation)));
-}

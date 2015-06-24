@@ -1,3 +1,0 @@
-{
-  return defineConstructor(parameterTypes,resolveModifierContributors(METHOD_MODIFIER_MASK & ~Opcodes.ACC_STATIC,nonNull(modifier)));
-}

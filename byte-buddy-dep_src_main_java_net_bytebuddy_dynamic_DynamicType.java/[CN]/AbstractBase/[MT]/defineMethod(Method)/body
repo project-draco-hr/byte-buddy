@@ -1,3 +1,0 @@
-{
-  return defineMethod(method.getName(),method.getGenericReturnType(),Arrays.asList(method.getGenericParameterTypes()),method.getModifiers()).throwing(method.getGenericExceptionTypes());
-}

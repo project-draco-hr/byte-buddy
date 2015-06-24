@@ -1,3 +1,0 @@
-{
-  return materialize().defineMethod(name,returnType,parameterTypes,modifiers);
-}

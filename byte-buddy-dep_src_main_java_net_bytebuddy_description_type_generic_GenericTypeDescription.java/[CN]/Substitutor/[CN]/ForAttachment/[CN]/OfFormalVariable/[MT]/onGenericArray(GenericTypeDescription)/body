@@ -1,3 +1,0 @@
-{
-  throw new IllegalArgumentException("Expected type variable: " + genericTypeDescription);
-}

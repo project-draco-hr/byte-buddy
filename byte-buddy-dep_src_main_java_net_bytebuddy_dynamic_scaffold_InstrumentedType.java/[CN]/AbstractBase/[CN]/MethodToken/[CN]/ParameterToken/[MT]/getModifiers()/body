@@ -1,3 +1,0 @@
-{
-  return hasModifiers() ? modifiers : super.getModifiers();
-}

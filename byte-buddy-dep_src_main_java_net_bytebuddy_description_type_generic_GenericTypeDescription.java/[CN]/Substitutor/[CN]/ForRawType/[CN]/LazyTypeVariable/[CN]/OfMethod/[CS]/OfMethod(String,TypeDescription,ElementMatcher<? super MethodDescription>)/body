@@ -1,5 +1,0 @@
-{
-  super(symbol);
-  this.typeDescription=typeDescription;
-  this.typeVariableMethodMatcher=typeVariableMethodMatcher;
-}

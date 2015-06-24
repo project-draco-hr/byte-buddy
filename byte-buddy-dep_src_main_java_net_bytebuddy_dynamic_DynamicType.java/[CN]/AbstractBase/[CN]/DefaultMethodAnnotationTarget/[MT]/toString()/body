@@ -1,3 +1,0 @@
-{
-  return "DynamicType.Builder.AbstractBase.DefaultMethodAnnotationTarget{" + "base=" + AbstractBase.this + ", methodTokens="+ methodTokens+ ", methodMatcher="+ methodMatcher+ ", handler="+ handler+ ", attributeAppenderFactory="+ attributeAppenderFactory+ '}';
-}

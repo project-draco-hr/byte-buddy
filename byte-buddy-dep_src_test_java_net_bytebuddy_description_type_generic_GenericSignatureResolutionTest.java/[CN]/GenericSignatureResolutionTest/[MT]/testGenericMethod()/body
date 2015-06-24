@@ -1,6 +1,6 @@
 {
-  DynamicType.Unloaded<?> unloaded=new ByteBuddy().subclass(GenericMethod.class).method(named("foo")).intercept(FixedValue.nullValue()).make();
-  Class<?> type=unloaded.load(GenericMethod.class.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  DynamicType.Unloaded<?> unloaded=new ByteBuddy().redefine(GenericMethod.class).method(named("foo")).intercept(FixedValue.nullValue()).make();
+  Class<?> type=unloaded.load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   MethodDescription createdMethod=new MethodDescription.ForLoadedMethod(type.getDeclaredMethod(FOO,Exception.class));
   MethodDescription originalMethod=new MethodDescription.ForLoadedMethod(GenericMethod.class.getDeclaredMethod(FOO,Exception.class));
   assertThat(createdMethod.getTypeVariables(),is(originalMethod.getTypeVariables()));

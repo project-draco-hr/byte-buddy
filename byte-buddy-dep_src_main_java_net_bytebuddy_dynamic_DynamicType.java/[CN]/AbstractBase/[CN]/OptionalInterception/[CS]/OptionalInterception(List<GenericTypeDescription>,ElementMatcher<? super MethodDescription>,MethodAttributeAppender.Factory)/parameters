@@ -1,0 +1,3 @@
+List<GenericTypeDescription> interfaceTypes
+ElementMatcher<? super MethodDescription> declarationMatcher
+MethodAttributeAppender.Factory attributeAppenderFactory

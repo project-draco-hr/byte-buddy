@@ -1,3 +1,0 @@
-{
-  return genericTypeDescription.getVariableSource().accept(this).resolve(genericTypeDescription);
-}

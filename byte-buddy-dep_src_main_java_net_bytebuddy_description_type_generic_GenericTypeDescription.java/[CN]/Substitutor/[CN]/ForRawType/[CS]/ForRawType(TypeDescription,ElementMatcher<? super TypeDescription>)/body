@@ -1,4 +1,0 @@
-{
-  this.substitute=substitute;
-  this.substitutionMatcher=substitutionMatcher;
-}

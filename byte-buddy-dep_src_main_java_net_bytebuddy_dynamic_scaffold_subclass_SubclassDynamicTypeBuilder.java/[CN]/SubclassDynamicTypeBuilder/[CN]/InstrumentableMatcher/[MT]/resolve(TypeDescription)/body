@@ -1,3 +1,3 @@
 {
-  return (ElementMatcher<? super MethodDescription>)isOverridable().and(not(ignoredMethods)).or(isDeclaredBy(instrumentedType));
+  return isOverridable().and(not(ignoredMethods)).or(isDeclaredBy(instrumentedType));
 }

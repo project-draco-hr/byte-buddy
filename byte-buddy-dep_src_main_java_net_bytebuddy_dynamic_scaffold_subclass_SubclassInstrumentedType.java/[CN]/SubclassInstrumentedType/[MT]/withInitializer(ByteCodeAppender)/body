@@ -1,3 +1,0 @@
-{
-  return new SubclassInstrumentedType(classFileVersion,superClass,interfaces,modifiers,name,typeVariables,fieldDescriptions,methodDescriptions,loadedTypeInitializer,typeInitializer.expandWith(byteCodeAppender));
-}

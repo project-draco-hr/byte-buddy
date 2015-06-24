@@ -1,7 +1,0 @@
-{
-  loadedTypeInitializer=LoadedTypeInitializer.NoOp.INSTANCE;
-  typeInitializer=TypeInitializer.None.INSTANCE;
-  typeVariables=Collections.emptyList();
-  fieldDescriptions=Collections.emptyList();
-  methodDescriptions=Collections.emptyList();
-}

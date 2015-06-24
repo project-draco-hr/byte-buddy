@@ -1,3 +1,0 @@
-{
-  return new InlineInstrumentedType(levelType,name,interfaces,modifiers,typeVariables,fieldDescriptions,methodDescriptions,loadedTypeInitializer,typeInitializer.expandWith(byteCodeAppender));
-}

@@ -1,3 +1,0 @@
-{
-  return makeFieldAnnotationTarget(isValid(value,String.class));
-}

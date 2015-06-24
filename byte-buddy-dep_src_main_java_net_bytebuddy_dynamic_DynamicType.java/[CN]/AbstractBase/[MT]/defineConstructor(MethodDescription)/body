@@ -1,6 +1,0 @@
-{
-  if (!methodDescription.isConstructor()) {
-    throw new IllegalArgumentException("Not a constructor: " + methodDescription);
-  }
-  return defineConstructor(methodDescription.getParameters().asTypeList(),methodDescription.getModifiers()).throwing(methodDescription.getExceptionTypes());
-}

@@ -1,7 +1,7 @@
 {
   MethodDescription accessorMethod=registeredAccessorMethods.get(specialMethodInvocation);
   if (accessorMethod == null) {
-    accessorMethod=new MethodDescription.Latent(instrumentedType,String.format("%s$%s$%s",specialMethodInvocation.getMethodDescription().getInternalName(),ACCESSOR_METHOD_SUFFIX,randomString.nextString()),resolveModifier(specialMethodInvocation.getMethodDescription().isStatic()),specialMethodInvocation.getMethodDescription().getTypeVariables(),specialMethodInvocation.getMethodDescription().getReturnType().asRawType(),specialMethodInvocation.getMethodDescription().getParameters().asTokens().accept(GenericTypeDescription.Visitor.ForErasure.INSTANCE),specialMethodInvocation.getMethodDescription().getExceptionTypes().asRawTypes(),Collections.<AnnotationDescription>emptyList());
+    accessorMethod=new MethodDescription.Latent(instrumentedType,String.format("%s$%s$%s",specialMethodInvocation.getMethodDescription().getInternalName(),ACCESSOR_METHOD_SUFFIX,randomString.nextString()),resolveModifier(specialMethodInvocation.getMethodDescription().isStatic()),specialMethodInvocation.getMethodDescription().getTypeVariables(),specialMethodInvocation.getMethodDescription().getReturnType().asRawType(),specialMethodInvocation.getMethodDescription().getParameters().asTokens().accept(GenericTypeDescription.Visitor.ForErasure.INSTANCE),specialMethodInvocation.getMethodDescription().getExceptionTypes().asRawTypes(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE);
     registerAccessor(specialMethodInvocation,accessorMethod);
   }
   return accessorMethod;

@@ -1,9 +1,0 @@
-{
-  int arity=0;
-  TypeDescription componentType=typeDescription;
-  while (componentType.isArray()) {
-    componentType=componentType.getComponentType();
-    arity++;
-  }
-  return substitutionMatcher.matches(componentType) ? TypeDescription.ArrayProjection.of(substitute,arity) : typeDescription;
-}

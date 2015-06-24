@@ -1,0 +1,7 @@
+{
+  int arity=0;
+  while (typeDescription.isArray()) {
+    typeDescription=typeDescription.getComponentType();
+  }
+  return TypeDescription.ArrayProjection.of(onComponentType(typeDescription),arity);
+}

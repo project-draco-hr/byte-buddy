@@ -1,0 +1,6 @@
+{
+  if (!fieldToken.getType().asRawType().represents(expectedType)) {
+    throw new IllegalArgumentException("Cannot assign value of type " + fieldToken.getType() + " to "+ expectedType);
+  }
+  return Builder.AbstractBase.this.materialize(classFileVersion,modifiers,interfaceTypes,namingStrategy,auxiliaryTypeNamingStrategy,ignoredMethods,typeAttributeAppender,annotationDescriptions,classVisitorWrapper,bridgeMethodResolverFactory,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldRegistry.include(new FieldRegistry.LatentFieldMatcher.Simple(fieldToken.getName()),attributeAppenderFactory,value),methodRegistry,join(fieldTokens,fieldToken),methodTokens);
+}

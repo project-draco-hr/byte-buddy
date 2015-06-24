@@ -1,5 +1,0 @@
-ClassFileVersion classFileVersion
-TypeDescription levelType
-List<? extends GenericTypeDescription> interfaces
-int modifiers
-NamingStrategy namingStrategy

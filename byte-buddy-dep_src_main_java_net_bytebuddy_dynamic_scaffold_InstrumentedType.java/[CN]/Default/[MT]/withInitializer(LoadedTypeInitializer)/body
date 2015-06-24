@@ -1,0 +1,3 @@
+{
+  return new Default(name,modifiers,typeVariables,superType,interfaceTypes,fieldTokens,methodTokens,annotationDescriptions,typeInitializer,new LoadedTypeInitializer.Compound(this.loadedTypeInitializer,loadedTypeInitializer));
+}

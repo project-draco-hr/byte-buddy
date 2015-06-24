@@ -1,7 +1,0 @@
-{
-  this.classFileVersion=classFileVersion;
-  this.superClass=superClass;
-  this.interfaces=interfaces;
-  this.modifiers=modifiers;
-  this.name=isValidTypeName(namingStrategy.name(new NamingStrategy.UnnamedType.Default(superClass,interfaces,modifiers,classFileVersion)));
-}

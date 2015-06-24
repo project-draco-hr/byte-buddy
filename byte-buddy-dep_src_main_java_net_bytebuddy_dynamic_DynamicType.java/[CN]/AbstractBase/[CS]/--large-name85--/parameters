@@ -1,0 +1,18 @@
+ClassFileVersion classFileVersion
+int modifiers
+List<GenericTypeDescription> typeVariables
+List<GenericTypeDescription> interfaceTypes
+NamingStrategy namingStrategy
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+ElementMatcher<? super MethodDescription> ignoredMethods
+TypeAttributeAppender typeAttributeAppender
+List<AnnotationDescription> annotationDescriptions
+ClassVisitorWrapper classVisitorWrapper
+BridgeMethodResolver.Factory bridgeMethodResolverFactory
+MethodLookupEngine.Factory methodLookupEngineFactory
+FieldAttributeAppender.Factory defaultFieldAttributeAppenderFactory
+MethodAttributeAppender.Factory defaultMethodAttributeAppenderFactory
+FieldRegistry fieldRegistry
+MethodRegistry methodRegistry
+List<FieldDescription.Token> fieldTokens
+List<MethodDescription.Token> methodTokens

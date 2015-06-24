@@ -1,3 +1,0 @@
-{
-  return defineMethod(name,returnType,parameterTypes,resolveModifierContributors(METHOD_MODIFIER_MASK,modifier));
-}

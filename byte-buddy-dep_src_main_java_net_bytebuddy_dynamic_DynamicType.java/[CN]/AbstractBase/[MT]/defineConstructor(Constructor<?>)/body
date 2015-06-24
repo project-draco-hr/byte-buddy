@@ -1,3 +1,0 @@
-{
-  return defineConstructor(Arrays.asList(constructor.getGenericParameterTypes()),constructor.getModifiers()).throwing(constructor.getGenericExceptionTypes());
-}

@@ -1,4 +1,0 @@
-{
-  super(symbol);
-  this.typeDescription=typeDescription;
-}

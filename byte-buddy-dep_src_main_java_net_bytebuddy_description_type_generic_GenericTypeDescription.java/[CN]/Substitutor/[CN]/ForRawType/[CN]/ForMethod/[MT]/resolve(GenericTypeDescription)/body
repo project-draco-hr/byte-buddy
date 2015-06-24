@@ -1,3 +1,0 @@
-{
-  return new LazyTypeVariable.OfMethod(original.getSymbol(),substitute,typeVariableMethodMatcher);
-}

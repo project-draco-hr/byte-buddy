@@ -1,3 +1,0 @@
-{
-  return (this == other || other instanceof MethodToken) && internalName.equals(((MethodToken)other).getInternalName()) && parameterTypes.equals(((MethodToken)other).getParameterTypes())&& returnType.equals(((MethodToken)other).getReturnType());
-}

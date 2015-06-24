@@ -1,3 +1,0 @@
-{
-  return typeDescription.accept(GenericTypeDescription.Visitor.Substitutor.ForRawType.replace(substitute,MATCHER));
-}

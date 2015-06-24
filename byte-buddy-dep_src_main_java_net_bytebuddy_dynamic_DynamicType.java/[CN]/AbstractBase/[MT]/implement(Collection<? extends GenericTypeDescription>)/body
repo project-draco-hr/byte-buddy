@@ -1,3 +1,7 @@
 {
-  return new DefaultOptionalMatchedMethodInterception(new GenericTypeList.Explicit(isImplementable(toList(interfaceTypes))));
+  List<TypeDescription> typeDescriptions=new ArrayList<TypeDescription>(interfaceTypes.size());
+  for (  GenericTypeDescription interfaceType : interfaceTypes) {
+    typeDescriptions.add(interfaceType.asRawType());
+  }
+  return new OptionalInterception(new ArrayList<GenericTypeDescription>(interfaceTypes),isDeclaredBy(anyOf(typeDescriptions)),defaultMethodAttributeAppenderFactory);
 }

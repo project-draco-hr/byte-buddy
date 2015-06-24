@@ -1,11 +1,5 @@
 {
-  if (genericTypeDescription.getSort().isTypeVariable()) {
-    throw new IllegalStateException("Type variable is not detached: " + genericTypeDescription);
-  }
-  GenericTypeDescription typeVariable=formalVariables.get(genericTypeDescription.getSymbol());
-  if (typeVariable == null) {
-    typeVariable=typeVariableSource.findVariable(genericTypeDescription.getSymbol());
-  }
+  GenericTypeDescription typeVariable=typeVariableSource.findVariable(genericTypeDescription.getSymbol());
   if (typeVariable == null) {
     throw new IllegalStateException("Cannot attach undefined type variable: " + genericTypeDescription);
   }
