@@ -1,3 +1,0 @@
-{
-  return new RequiredInterception(methodMatcher,new MethodAttributeAppender.Factory.Compound(this.attributeAppenderFactory,nonNull(attributeAppenderFactory)));
-}

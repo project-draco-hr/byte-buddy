@@ -1,0 +1,3 @@
+{
+  return methodDescription.isMethod() ? defineMethod(methodDescription) : defineConstructor(methodDescription);
+}

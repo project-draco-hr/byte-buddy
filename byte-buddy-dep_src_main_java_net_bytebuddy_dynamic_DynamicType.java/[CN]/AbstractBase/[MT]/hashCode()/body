@@ -1,0 +1,20 @@
+{
+  int result=classFileVersion.hashCode();
+  result=31 * result + namingStrategy.hashCode();
+  result=31 * result + auxiliaryTypeNamingStrategy.hashCode();
+  result=31 * result + targetType.hashCode();
+  result=31 * result + interfaceTypes.hashCode();
+  result=31 * result + modifiers;
+  result=31 * result + attributeAppender.hashCode();
+  result=31 * result + ignoredMethods.hashCode();
+  result=31 * result + bridgeMethodResolverFactory.hashCode();
+  result=31 * result + classVisitorWrapperChain.hashCode();
+  result=31 * result + fieldRegistry.hashCode();
+  result=31 * result + methodRegistry.hashCode();
+  result=31 * result + methodLookupEngineFactory.hashCode();
+  result=31 * result + defaultFieldAttributeAppenderFactory.hashCode();
+  result=31 * result + defaultMethodAttributeAppenderFactory.hashCode();
+  result=31 * result + fieldTokens.hashCode();
+  result=31 * result + methodTokens.hashCode();
+  return result;
+}

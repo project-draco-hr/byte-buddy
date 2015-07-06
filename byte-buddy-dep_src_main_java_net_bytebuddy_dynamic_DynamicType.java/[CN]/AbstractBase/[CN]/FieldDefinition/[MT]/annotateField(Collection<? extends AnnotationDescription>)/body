@@ -1,4 +1,0 @@
-{
-  List<AnnotationDescription> annotationList=new ArrayList<AnnotationDescription>(annotations);
-  return new FieldDefinition(new FieldDescription.Token(fieldToken.getName(),fieldToken.getModifiers(),fieldToken.getType(),uniqueAnnotation(join(fieldToken.getAnnotations(),annotationList))),new FieldAttributeAppender.Factory.Compound(attributeAppenderFactory,new FieldAttributeAppender.ForAnnotation(annotationList)));
-}

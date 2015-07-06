@@ -1,3 +1,3 @@
 {
-  return defineField(new FieldDescription.ForLoadedField(nonNull(field)));
+  return defineField(field.getName(),field.getType(),field.getModifiers());
 }

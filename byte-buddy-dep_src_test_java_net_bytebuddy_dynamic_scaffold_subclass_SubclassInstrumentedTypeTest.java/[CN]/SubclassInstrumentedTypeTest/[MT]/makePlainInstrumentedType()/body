@@ -1,3 +1,0 @@
-{
-  return new SubclassInstrumentedType(ClassFileVersion.forCurrentJavaVersion(),new TypeDescription.ForLoadedType(Object.class),new GenericTypeList.ForLoadedType(Serializable.class),Opcodes.ACC_PUBLIC,new NamingStrategy.Fixed(FOOBAR));
-}

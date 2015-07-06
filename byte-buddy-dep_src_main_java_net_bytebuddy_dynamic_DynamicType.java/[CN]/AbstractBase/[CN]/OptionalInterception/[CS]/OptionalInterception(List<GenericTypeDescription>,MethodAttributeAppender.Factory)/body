@@ -1,4 +1,0 @@
-{
-  this.interfaceTypes=interfaceTypes;
-  this.attributeAppenderFactory=attributeAppenderFactory;
-}

@@ -1,0 +1,3 @@
+{
+  return "DynamicType.Builder.AbstractBase.DefaultOptionalMatchedMethodInterception{" + "base=" + AbstractBase.this + "additionalInterfaceTypes="+ additionalInterfaceTypes+ '}';
+}

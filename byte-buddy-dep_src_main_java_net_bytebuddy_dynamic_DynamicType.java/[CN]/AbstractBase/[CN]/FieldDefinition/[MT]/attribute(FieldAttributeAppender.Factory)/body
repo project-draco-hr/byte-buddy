@@ -1,3 +1,0 @@
-{
-  return new FieldDefinition(fieldToken,new FieldAttributeAppender.Factory.Compound(this.attributeAppenderFactory,nonNull(attributeAppenderFactory)));
-}

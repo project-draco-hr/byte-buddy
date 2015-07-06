@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  DefaultMatchedMethodInterception that=(DefaultMatchedMethodInterception)other;
+  return methodMatcher.equals(that.methodMatcher) && methodTokens.equals(that.methodTokens) && AbstractBase.this.equals(that.getDynamicTypeBuilder());
+}

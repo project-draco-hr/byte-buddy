@@ -1,3 +1,0 @@
-{
-  return withImplementing(new GenericTypeList.ForLoadedType(toList(types)));
-}

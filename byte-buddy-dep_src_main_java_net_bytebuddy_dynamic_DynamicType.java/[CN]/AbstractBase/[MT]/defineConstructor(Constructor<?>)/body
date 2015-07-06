@@ -1,0 +1,3 @@
+{
+  return defineConstructor(Arrays.asList(constructor.getParameterTypes()),constructor.getModifiers());
+}

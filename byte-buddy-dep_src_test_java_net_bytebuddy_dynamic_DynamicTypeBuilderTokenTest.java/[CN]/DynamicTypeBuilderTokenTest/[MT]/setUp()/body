@@ -1,7 +1,0 @@
-{
-  parameterTypes=new GenericTypeList.Explicit(Collections.singletonList(parameterType));
-  exceptionTypes=new GenericTypeList.Explicit(Collections.singletonList(exceptionType));
-  when(singleType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(singleType);
-  when(parameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
-  when(exceptionType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(exceptionType);
-}

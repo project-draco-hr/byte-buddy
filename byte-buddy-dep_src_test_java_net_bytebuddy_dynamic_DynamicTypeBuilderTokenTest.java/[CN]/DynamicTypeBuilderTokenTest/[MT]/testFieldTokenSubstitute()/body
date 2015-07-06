@@ -1,4 +1,0 @@
-{
-  assertThat(new DynamicType.Builder.AbstractBase.FieldToken(FOO,TargetType.DESCRIPTION,QUX).resolveFieldType(singleType),is((GenericTypeDescription)singleType));
-  assertThat(new DynamicType.Builder.AbstractBase.FieldToken(FOO,singleType,QUX).resolveFieldType(mock(TypeDescription.class)),is((GenericTypeDescription)singleType));
-}

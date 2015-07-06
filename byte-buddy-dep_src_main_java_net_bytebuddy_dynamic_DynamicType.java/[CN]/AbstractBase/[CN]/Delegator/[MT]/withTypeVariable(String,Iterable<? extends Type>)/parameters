@@ -1,2 +1,0 @@
-String symbol
-Iterable<? extends Type> bounds

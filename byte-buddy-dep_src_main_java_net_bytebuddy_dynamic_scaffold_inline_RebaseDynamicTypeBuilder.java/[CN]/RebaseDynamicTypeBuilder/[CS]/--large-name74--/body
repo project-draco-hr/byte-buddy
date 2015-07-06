@@ -1,3 +1,0 @@
-{
-  this(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,levelType,new ArrayList<GenericTypeDescription>(interfaceTypes),modifiers,attributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,fieldRegistry,methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,Collections.<FieldToken>emptyList(),Collections.<MethodToken>emptyList(),classFileLocator,methodNameTransformer);
-}

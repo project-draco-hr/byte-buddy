@@ -1,3 +1,0 @@
-{
-  return new OptionalInterception(new ArrayList<GenericTypeDescription>(interfaceTypes),defaultMethodAttributeAppenderFactory);
-}

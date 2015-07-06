@@ -1,3 +1,0 @@
-{
-  return new OptionalInterception(interfaceTypes,new MethodAttributeAppender.Factory.Compound(this.attributeAppenderFactory,nonNull(attributeAppenderFactory)));
-}

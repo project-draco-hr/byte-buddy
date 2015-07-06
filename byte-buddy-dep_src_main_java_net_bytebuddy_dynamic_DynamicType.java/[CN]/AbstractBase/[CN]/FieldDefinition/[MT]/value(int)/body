@@ -1,3 +1,0 @@
-{
-  return value(NumericRangeValidator.of(fieldToken.getType().asRawType()).validate(value),Integer.class);
-}

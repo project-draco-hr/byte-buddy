@@ -1,0 +1,2 @@
+List<? extends TypeDescription> parameterTypes
+ModifierContributor.ForMethod modifier

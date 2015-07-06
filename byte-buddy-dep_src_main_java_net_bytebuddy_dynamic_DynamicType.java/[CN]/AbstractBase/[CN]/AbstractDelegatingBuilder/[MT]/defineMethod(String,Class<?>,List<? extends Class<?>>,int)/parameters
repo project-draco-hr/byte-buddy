@@ -1,0 +1,4 @@
+String name
+Class<?> returnType
+List<? extends Class<?>> parameterTypes
+int modifiers

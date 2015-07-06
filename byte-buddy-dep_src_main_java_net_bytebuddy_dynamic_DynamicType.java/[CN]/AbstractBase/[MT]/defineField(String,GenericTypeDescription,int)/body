@@ -1,3 +1,0 @@
-{
-  return new FieldDefinition(new FieldDescription.Token(isValidIdentifier(name),isLegalModifiers(FIELD_MODIFIER_MASK,modifiers),isActualType(fieldTypeDescription),Collections.<AnnotationDescription>emptyList()),defaultFieldAttributeAppenderFactory);
-}

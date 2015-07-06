@@ -1,3 +1,0 @@
-{
-  return Builder.AbstractBase.this.materialize(classFileVersion,modifiers,interfaceTypes,namingStrategy,auxiliaryTypeNamingStrategy,ignoredMethods,typeAttributeAppender,annotationDescriptions,classVisitorWrapper,bridgeMethodResolverFactory,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldRegistry.include(new FieldRegistry.LatentFieldMatcher.Simple(fieldToken.getName()),attributeAppenderFactory,null),methodRegistry,unique(join(fieldTokens,fieldToken)),methodTokens);
-}

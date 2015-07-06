@@ -1,8 +1,0 @@
-{
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).hashCode(),is(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).hashCode()));
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).hashCode(),not(is(new DynamicType.Builder.AbstractBase.MethodToken(BAR,singleType,parameterTypes,exceptionTypes,QUX).hashCode())));
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).hashCode(),not(is(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,new TypeList.Empty(),exceptionTypes,QUX).hashCode())));
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).hashCode(),not(is(new DynamicType.Builder.AbstractBase.MethodToken(FOO,mock(TypeDescription.class),parameterTypes,exceptionTypes,QUX).hashCode())));
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).hashCode(),is(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,BAZ).hashCode()));
-  assertThat(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,exceptionTypes,QUX).hashCode(),is(new DynamicType.Builder.AbstractBase.MethodToken(FOO,singleType,parameterTypes,new TypeList.Empty(),QUX).hashCode()));
-}

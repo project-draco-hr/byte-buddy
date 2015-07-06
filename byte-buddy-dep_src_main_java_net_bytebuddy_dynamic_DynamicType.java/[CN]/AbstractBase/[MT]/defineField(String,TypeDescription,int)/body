@@ -1,0 +1,3 @@
+{
+  return new DefaultFieldValueTarget(new FieldDescription.Token(isValidIdentifier(name),modifiers,isActualType(fieldTypeDescription),Collections.<AnnotationDescription>emptyList()),defaultFieldAttributeAppenderFactory);
+}

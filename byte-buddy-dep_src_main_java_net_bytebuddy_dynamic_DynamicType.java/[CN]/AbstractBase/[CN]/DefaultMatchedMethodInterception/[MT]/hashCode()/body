@@ -1,0 +1,6 @@
+{
+  int result=methodMatcher.hashCode();
+  result=31 * result + methodTokens.hashCode();
+  result=31 * result + AbstractBase.this.hashCode();
+  return result;
+}
