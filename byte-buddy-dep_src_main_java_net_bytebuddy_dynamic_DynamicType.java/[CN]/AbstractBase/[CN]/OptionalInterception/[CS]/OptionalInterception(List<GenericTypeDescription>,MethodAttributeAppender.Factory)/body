@@ -1,5 +1,4 @@
 {
   this.interfaceTypes=interfaceTypes;
-  this.declarationMatcher=declarationMatcher;
   this.attributeAppenderFactory=attributeAppenderFactory;
 }

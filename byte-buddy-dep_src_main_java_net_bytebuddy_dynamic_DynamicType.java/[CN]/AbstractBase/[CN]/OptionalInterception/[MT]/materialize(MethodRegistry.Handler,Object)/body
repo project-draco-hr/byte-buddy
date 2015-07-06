@@ -1,3 +1,7 @@
 {
-  return Builder.AbstractBase.this.materialize(classFileVersion,modifiers,joinUniqueRaw(Builder.AbstractBase.this.interfaceTypes,interfaceTypes),namingStrategy,auxiliaryTypeNamingStrategy,ignoredMethods,typeAttributeAppender,annotationDescriptions,classVisitorWrapper,bridgeMethodResolverFactory,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldRegistry,methodRegistry.append(new LatentMethodMatcher.Resolved(declarationMatcher),handler,attributeAppenderFactory),fieldTokens,methodTokens);
+  ElementMatcher.Junction<TypeDescription> declaringType=none();
+  for (  GenericTypeDescription interfaceType : interfaceTypes) {
+    declaringType=declaringType.or(is(interfaceType));
+  }
+  return Builder.AbstractBase.this.materialize(classFileVersion,modifiers,joinUniqueRaw(Builder.AbstractBase.this.interfaceTypes,interfaceTypes),namingStrategy,auxiliaryTypeNamingStrategy,ignoredMethods,typeAttributeAppender,annotationDescriptions,classVisitorWrapper,bridgeMethodResolverFactory,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldRegistry,methodRegistry.append(new LatentMethodMatcher.Resolved(isDeclaredBy(declaringType)),handler,attributeAppenderFactory),fieldTokens,methodTokens);
 }
