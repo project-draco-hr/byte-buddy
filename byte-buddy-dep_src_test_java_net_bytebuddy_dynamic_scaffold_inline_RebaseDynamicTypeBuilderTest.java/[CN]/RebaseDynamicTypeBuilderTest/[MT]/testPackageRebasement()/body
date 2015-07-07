@@ -1,0 +1,11 @@
+{
+  Class<?> packageType=new ByteBuddy().rebase(Sample.class.getPackage(),ClassFileLocator.ForClassLoader.of(getClass().getClassLoader())).annotateType(AnnotationDescription.Builder.forType(Baz.class).make()).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
+  assertThat(packageType.getSimpleName(),CoreMatchers.is(PackageDescription.PACKAGE_CLASS_NAME));
+  assertThat(packageType.getName(),CoreMatchers.is(Sample.class.getPackage().getName() + "." + PackageDescription.PACKAGE_CLASS_NAME));
+  assertThat(packageType.getModifiers(),CoreMatchers.is(PackageDescription.PACKAGE_MODIFIERS));
+  assertThat(packageType.getDeclaredFields().length,CoreMatchers.is(0));
+  assertThat(packageType.getDeclaredMethods().length,CoreMatchers.is(0));
+  assertThat(packageType.getDeclaredAnnotations().length,CoreMatchers.is(2));
+  assertThat(packageType.getAnnotation(PkgAnnotation.class),notNullValue(PkgAnnotation.class));
+  assertThat(packageType.getAnnotation(Baz.class),notNullValue(Baz.class));
+}

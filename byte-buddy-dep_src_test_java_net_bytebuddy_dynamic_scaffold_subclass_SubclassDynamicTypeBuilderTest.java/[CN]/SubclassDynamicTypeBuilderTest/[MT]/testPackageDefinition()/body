@@ -1,0 +1,10 @@
+{
+  Class<?> packageType=new ByteBuddy().makePackage(FOO).annotateType(AnnotationDescription.Builder.forType(Foo.class).make()).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded();
+  assertThat(packageType.getSimpleName(),is(PackageDescription.PACKAGE_CLASS_NAME));
+  assertThat(packageType.getName(),is(FOO + "." + PackageDescription.PACKAGE_CLASS_NAME));
+  assertThat(packageType.getModifiers(),is(PackageDescription.PACKAGE_MODIFIERS));
+  assertThat(packageType.getDeclaredFields().length,is(0));
+  assertThat(packageType.getDeclaredMethods().length,is(0));
+  assertThat(packageType.getDeclaredAnnotations().length,is(1));
+  assertThat(packageType.getAnnotation(Foo.class),notNullValue(Foo.class));
+}
