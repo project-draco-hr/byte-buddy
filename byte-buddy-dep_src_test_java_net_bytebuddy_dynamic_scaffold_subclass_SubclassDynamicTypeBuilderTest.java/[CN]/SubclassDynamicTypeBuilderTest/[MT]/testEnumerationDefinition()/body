@@ -1,5 +1,5 @@
 {
-  Class<? extends Enum<?>> type=new ByteBuddy().makeEnumeration(FOO,BAR).classVisitor(DebuggingWrapper.makeDefault()).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<? extends Enum<?>> type=new ByteBuddy().makeEnumeration(FOO,BAR).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethods().length,is(2));
   assertThat(type.getDeclaredConstructors().length,is(1));
   assertThat(type.getDeclaredFields().length,is(3));
