@@ -1,0 +1,3 @@
+{
+  return String.format("%s$%s$%s",fieldDescription.getName(),ACCESSOR_METHOD_SUFFIX,suffix);
+}

@@ -1,7 +1,3 @@
 {
-  assertThat(describe(firstMethod).getDescriptor(),is(Type.getMethodDescriptor(firstMethod)));
-  assertThat(describe(secondMethod).getDescriptor(),is(Type.getMethodDescriptor(secondMethod)));
   assertThat(describe(thirdMethod).getDescriptor(),is(Type.getMethodDescriptor(thirdMethod)));
-  assertThat(describe(firstConstructor).getDescriptor(),is(Type.getConstructorDescriptor(firstConstructor)));
-  assertThat(describe(secondConstructor).getDescriptor(),is(Type.getConstructorDescriptor(secondConstructor)));
 }

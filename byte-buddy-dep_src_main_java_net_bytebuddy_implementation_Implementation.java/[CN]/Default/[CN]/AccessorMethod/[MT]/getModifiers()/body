@@ -1,0 +1,3 @@
+{
+  return methodDescription.isStatic() ? ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC : ACCESSOR_METHOD_MODIFIER;
+}

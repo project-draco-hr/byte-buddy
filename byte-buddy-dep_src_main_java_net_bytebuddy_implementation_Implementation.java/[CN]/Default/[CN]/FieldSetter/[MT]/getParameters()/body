@@ -1,0 +1,3 @@
+{
+  return ParameterList.Explicit.latent(this,Collections.singletonList(fieldDescription.getType().asRawType()));
+}

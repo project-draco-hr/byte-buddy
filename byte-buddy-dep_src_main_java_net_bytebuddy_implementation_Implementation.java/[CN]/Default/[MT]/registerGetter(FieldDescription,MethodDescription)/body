@@ -1,4 +1,0 @@
-{
-  registeredGetters.put(fieldDescription,accessorMethod);
-  accessorMethodEntries.put(accessorMethod,new FieldGetter(fieldDescription));
-}
