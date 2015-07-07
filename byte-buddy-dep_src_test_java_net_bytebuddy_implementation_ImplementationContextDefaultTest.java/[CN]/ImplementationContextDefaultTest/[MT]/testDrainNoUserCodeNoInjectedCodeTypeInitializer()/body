@@ -11,6 +11,6 @@
   verifyNoMoreInteractions(typeInitializer);
   verify(injectedCode,atLeast(1)).isDefined();
   verifyNoMoreInteractions(injectedCode);
-  verify(terminationAppender).apply(methodVisitor,implementationContext,MethodDescription.Latent.typeInitializerOf(instrumentedType));
+  verify(terminationAppender).apply(methodVisitor,implementationContext,new MethodDescription.Latent.TypeInitializer(instrumentedType));
   verifyNoMoreInteractions(terminationAppender);
 }
