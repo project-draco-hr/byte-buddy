@@ -1,8 +1,8 @@
 ClassFileVersion classFileVersion
 NamingStrategy namingStrategy
 AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
-TypeDescription targetType
-List<TypeDescription> interfaceTypes
+TypeDescription levelType
+List<GenericTypeDescription> interfaceTypes
 int modifiers
 TypeAttributeAppender attributeAppender
 ElementMatcher<? super MethodDescription> ignoredMethods

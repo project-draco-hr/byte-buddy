@@ -17,7 +17,9 @@
   when(constructor.getParameters()).thenReturn(constructorParameterList);
   when(methodNameTransformer.transform(method)).thenReturn(BAR);
   when(returnType.asRawType()).thenReturn(returnType);
+  when(returnType.getSort()).thenReturn(GenericTypeDescription.Sort.RAW);
   when(parameterType.asRawType()).thenReturn(parameterType);
-  when(parameterType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
+  when(parameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
   when(placeholderType.asRawType()).thenReturn(placeholderType);
+  when(placeholderType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(placeholderType);
 }

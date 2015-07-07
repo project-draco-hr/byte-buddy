@@ -2,7 +2,7 @@ ClassFileVersion classFileVersion
 NamingStrategy namingStrategy
 AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
 TypeDescription levelType
-List<TypeDescription> interfaceTypes
+List<GenericTypeDescription> interfaceTypes
 int modifiers
 TypeAttributeAppender attributeAppender
 ElementMatcher<? super MethodDescription> ignoredMethods
@@ -15,3 +15,4 @@ FieldAttributeAppender.Factory defaultFieldAttributeAppenderFactory
 MethodAttributeAppender.Factory defaultMethodAttributeAppenderFactory
 List<FieldDescription.Token> fieldTokens
 List<MethodDescription.Token> methodTokens
+ClassFileLocator classFileLocator
