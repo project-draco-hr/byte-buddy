@@ -1,7 +1,7 @@
 {
   Map<Handler,Handler.Compiled> compilationCache=new HashMap<Handler,Handler.Compiled>(implementations.size());
   Map<MethodAttributeAppender.Factory,MethodAttributeAppender> attributeAppenderCache=new HashMap<MethodAttributeAppender.Factory,MethodAttributeAppender>(implementations.size());
-  Map<MethodDescription,TypeWriter.MethodPool.Entry> entries=new HashMap<MethodDescription,TypeWriter.MethodPool.Entry>(implementations.size());
+  LinkedHashMap<MethodDescription,TypeWriter.MethodPool.Entry> entries=new LinkedHashMap<MethodDescription,TypeWriter.MethodPool.Entry>(implementations.size());
   Implementation.Target implementationTarget=implementationTargetFactory.make(finding,getInstrumentedMethods());
   for (  Map.Entry<MethodDescription,Entry> entry : implementations.entrySet()) {
     Handler.Compiled cachedEntry=compilationCache.get(entry.getValue().getHandler());

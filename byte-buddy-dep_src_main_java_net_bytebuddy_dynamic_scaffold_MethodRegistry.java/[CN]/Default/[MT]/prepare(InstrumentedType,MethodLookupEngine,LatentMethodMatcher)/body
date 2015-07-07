@@ -1,5 +1,5 @@
 {
-  Map<MethodDescription,Entry> implementations=new HashMap<MethodDescription,Entry>();
+  LinkedHashMap<MethodDescription,Entry> implementations=new LinkedHashMap<MethodDescription,Entry>();
   Set<Handler> handlers=new HashSet<Handler>(entries.size());
   int helperMethodIndex=instrumentedType.getDeclaredMethods().size();
   for (  Entry entry : entries) {
