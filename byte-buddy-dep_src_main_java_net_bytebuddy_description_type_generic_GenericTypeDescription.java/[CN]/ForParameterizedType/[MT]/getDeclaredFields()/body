@@ -3,7 +3,8 @@
   List<FieldDescription> resolved=new ArrayList<FieldDescription>(declaredFields.size());
   Visitor<GenericTypeDescription> visitor=Visitor.Substitutor.ForTypeVariable.bind(this);
   for (  FieldDescription fieldDescription : declaredFields) {
-    resolved.add(new FieldDescription.Latent(fieldDescription.getDeclaringType(),fieldDescription.asToken().accept(visitor)));
+    TypeDescription declaringType=fieldDescription.getDeclaringType();
+    resolved.add(new FieldDescription.Latent(declaringType,fieldDescription.asToken(is(declaringType)).accept(visitor)));
   }
   return new FieldList.Explicit(resolved);
 }

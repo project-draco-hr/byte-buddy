@@ -3,7 +3,8 @@
   List<MethodDescription> resolved=new ArrayList<MethodDescription>(declaredMethods.size());
   Visitor<GenericTypeDescription> visitor=Visitor.Substitutor.ForTypeVariable.bind(this);
   for (  MethodDescription methodDescription : declaredMethods) {
-    resolved.add(new MethodDescription.Latent(methodDescription.getDeclaringType(),methodDescription.asToken().accept(visitor)));
+    TypeDescription declaringType=methodDescription.getDeclaringType();
+    resolved.add(new MethodDescription.Latent(declaringType,methodDescription.asToken(is(declaringType)).accept(visitor)));
   }
   return new MethodList.Explicit(resolved);
 }
