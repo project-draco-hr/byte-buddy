@@ -1,0 +1,5 @@
+{
+  int result=declaringType.hashCode();
+  result=31 * result + typeVariableSource.hashCode();
+  return result;
+}

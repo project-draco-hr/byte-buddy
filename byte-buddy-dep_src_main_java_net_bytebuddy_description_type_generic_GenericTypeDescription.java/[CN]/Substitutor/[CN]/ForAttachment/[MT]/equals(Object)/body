@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (!(other instanceof ForAttachment))   return false;
+  ForAttachment that=(ForAttachment)other;
+  return declaringType.equals(that.declaringType) && typeVariableSource.equals(that.typeVariableSource);
+}

@@ -1,0 +1,4 @@
+{
+  genericTypeDescription.accept(new ForSignatureVisitor(signatureVisitor.visitTypeArgument(SignatureVisitor.INSTANCEOF)));
+  return signatureVisitor;
+}

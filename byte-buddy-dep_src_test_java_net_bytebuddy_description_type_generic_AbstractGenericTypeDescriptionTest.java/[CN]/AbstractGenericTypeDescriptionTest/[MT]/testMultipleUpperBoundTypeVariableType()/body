@@ -8,10 +8,7 @@
   assertThat(genericTypeDescription.getUpperBounds().get(1),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
   assertThat(genericTypeDescription.getUpperBounds().get(2),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Bar.class)));
   assertThat(genericTypeDescription.getTypeName(),is(MultipleUpperBoundTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
-  assertThat(genericTypeDescription.getComponentType(),nullValue(GenericTypeDescription.class));
-  assertThat(genericTypeDescription.getOwnerType(),nullValue(GenericTypeDescription.class));
   assertThat(genericTypeDescription.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(MultipleUpperBoundTypeVariableType.class)));
-  assertThat(genericTypeDescription.getLowerBounds().size(),is(0));
   assertThat(genericTypeDescription.getVariableSource().getTypeVariables().size(),is(1));
   assertThat(genericTypeDescription.getVariableSource().getTypeVariables().getOnly(),is(genericTypeDescription));
 }

@@ -1,7 +1,4 @@
 {
   GenericTypeDescription typeVariable=typeVariableSource.findVariable(genericTypeDescription.getSymbol());
-  if (typeVariable == null) {
-    throw new IllegalStateException("Cannot attach undefined type variable: " + genericTypeDescription);
-  }
-  return typeVariable;
+  return typeVariable == null ? genericTypeDescription.asRawType() : typeVariable;
 }

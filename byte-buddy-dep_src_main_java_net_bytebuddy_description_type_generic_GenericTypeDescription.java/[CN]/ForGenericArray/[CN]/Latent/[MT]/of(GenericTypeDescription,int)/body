@@ -1,10 +1,13 @@
 {
   if (arity < 0) {
-    throw new IllegalArgumentException("Arity cannot be negative");
+    throw new IllegalArgumentException("Arrays cannot have a negative arity");
+  }
+ else   if (componentType.getSort().isNonGeneric()) {
+    return TypeDescription.ArrayProjection.of(componentType.asRawType(),arity);
   }
   while (componentType.getSort().isGenericArray()) {
-    arity++;
     componentType=componentType.getComponentType();
+    arity++;
   }
   return arity == 0 ? componentType : new Latent(componentType,arity);
 }

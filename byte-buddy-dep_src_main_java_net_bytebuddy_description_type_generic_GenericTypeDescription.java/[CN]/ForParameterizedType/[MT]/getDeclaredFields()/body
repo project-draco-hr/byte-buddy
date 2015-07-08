@@ -1,7 +1,7 @@
 {
   FieldList declaredFields=asRawType().getDeclaredFields();
   List<FieldDescription> resolved=new ArrayList<FieldDescription>(declaredFields.size());
-  Visitor<GenericTypeDescription> visitor=Visitor.Substitutor.ForTypeVariable.bind(this);
+  Visitor<GenericTypeDescription> visitor=Visitor.Substitutor.ForTypeVariableBinding.bind(this);
   for (  FieldDescription fieldDescription : declaredFields) {
     TypeDescription declaringType=fieldDescription.getDeclaringType();
     resolved.add(new FieldDescription.Latent(declaringType,fieldDescription.asToken(is(declaringType)).accept(visitor)));

@@ -17,7 +17,7 @@
   when(constructor.getParameters()).thenReturn(constructorParameterList);
   when(methodNameTransformer.transform(method)).thenReturn(BAR);
   when(returnType.asRawType()).thenReturn(returnType);
-  when(returnType.getSort()).thenReturn(GenericTypeDescription.Sort.RAW);
+  when(returnType.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
   when(parameterType.asRawType()).thenReturn(parameterType);
   when(parameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
   when(placeholderType.asRawType()).thenReturn(placeholderType);

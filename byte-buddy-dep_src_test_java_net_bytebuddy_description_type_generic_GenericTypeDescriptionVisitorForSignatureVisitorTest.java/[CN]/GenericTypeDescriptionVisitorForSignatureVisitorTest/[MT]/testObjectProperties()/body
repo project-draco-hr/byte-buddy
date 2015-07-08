@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.ForSignatureVisitor.class).apply();
+  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.ForSignatureVisitor.OfParameter.class).apply();
+}

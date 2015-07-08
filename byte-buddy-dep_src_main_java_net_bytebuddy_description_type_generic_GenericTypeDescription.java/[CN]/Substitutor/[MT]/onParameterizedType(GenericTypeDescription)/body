@@ -4,5 +4,5 @@
   for (  GenericTypeDescription parameter : genericTypeDescription.getParameters()) {
     parameters.add(parameter.accept(this));
   }
-  return new GenericTypeDescription.ForParameterizedType.Latent(genericTypeDescription.asRawType(),parameters,ownerType == null ? null : ownerType.accept(this));
+  return new GenericTypeDescription.ForParameterizedType.Latent(genericTypeDescription.asRawType().accept(this).asRawType(),parameters,ownerType == null ? null : ownerType.accept(this));
 }

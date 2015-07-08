@@ -1,0 +1,5 @@
+{
+  onOwnableType(genericTypeDescription);
+  signatureVisitor.visitEnd();
+  return signatureVisitor;
+}

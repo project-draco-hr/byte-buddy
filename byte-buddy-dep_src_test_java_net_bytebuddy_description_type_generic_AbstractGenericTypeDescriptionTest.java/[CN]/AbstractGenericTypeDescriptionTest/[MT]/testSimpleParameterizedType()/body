@@ -2,13 +2,8 @@
   GenericTypeDescription genericTypeDescription=describe(SimpleParameterizedType.class.getDeclaredField(FOO));
   assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(genericTypeDescription.getParameters().size(),is(1));
-  assertThat(genericTypeDescription.getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.RAW));
+  assertThat(genericTypeDescription.getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
   assertThat(genericTypeDescription.getParameters().getOnly().asRawType().represents(String.class),is(true));
   assertThat(genericTypeDescription.getTypeName(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
-  assertThat(genericTypeDescription.getComponentType(),nullValue(GenericTypeDescription.class));
   assertThat(genericTypeDescription.getOwnerType(),nullValue(GenericTypeDescription.class));
-  assertThat(genericTypeDescription.getVariableSource(),nullValue(TypeVariableSource.class));
-  assertThat(genericTypeDescription.getSymbol(),nullValue(String.class));
-  assertThat(genericTypeDescription.getLowerBounds().size(),is(0));
-  assertThat(genericTypeDescription.getUpperBounds().size(),is(0));
 }

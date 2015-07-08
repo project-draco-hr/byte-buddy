@@ -7,5 +7,5 @@
   assertThat(genericTypeDescription.getParameters().getOnly(),is((GenericTypeDescription)TypeDescription.STRING));
   Type ownerType=((ParameterizedType)NestedStaticTypeVariableType.class.getDeclaredField(FOO).getGenericType()).getOwnerType();
   assertThat(genericTypeDescription.getOwnerType(),is(GenericTypeDescription.Sort.describe(ownerType)));
-  assertThat(genericTypeDescription.getOwnerType().getSort(),is(GenericTypeDescription.Sort.RAW));
+  assertThat(genericTypeDescription.getOwnerType().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
 }

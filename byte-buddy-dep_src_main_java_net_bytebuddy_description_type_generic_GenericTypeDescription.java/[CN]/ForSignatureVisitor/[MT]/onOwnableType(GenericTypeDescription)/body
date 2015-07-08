@@ -1,0 +1,13 @@
+{
+  GenericTypeDescription ownerType=genericTypeDescription.getOwnerType();
+  if (ownerType != null) {
+    onOwnableType(ownerType);
+    signatureVisitor.visitInnerClassType(genericTypeDescription.asRawType().getSimpleName());
+  }
+ else {
+    signatureVisitor.visitClassType(genericTypeDescription.asRawType().getInternalName());
+  }
+  for (  GenericTypeDescription upperBound : genericTypeDescription.getParameters()) {
+    upperBound.accept(new OfParameter(signatureVisitor));
+  }
+}

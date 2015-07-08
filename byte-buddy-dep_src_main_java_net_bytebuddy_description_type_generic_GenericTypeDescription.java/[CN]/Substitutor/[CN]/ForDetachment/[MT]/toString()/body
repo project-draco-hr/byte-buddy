@@ -1,0 +1,3 @@
+{
+  return "GenericTypeDescription.Visitor.Substitutor.ForDetachment{" + "typeMatcher=" + typeMatcher + ", detachedVariables="+ detachedVariables+ '}';
+}

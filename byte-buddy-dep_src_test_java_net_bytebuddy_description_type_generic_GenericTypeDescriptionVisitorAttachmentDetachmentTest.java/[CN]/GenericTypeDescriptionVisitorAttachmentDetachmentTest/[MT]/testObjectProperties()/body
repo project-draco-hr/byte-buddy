@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.Substitutor.ForAttachment.class).apply();
+  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.Substitutor.ForDetachment.class).applyMutable();
+}

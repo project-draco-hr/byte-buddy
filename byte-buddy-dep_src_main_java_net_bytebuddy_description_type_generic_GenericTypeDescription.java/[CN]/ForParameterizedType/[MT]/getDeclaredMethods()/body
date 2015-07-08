@@ -1,7 +1,7 @@
 {
   MethodList declaredMethods=asRawType().getDeclaredMethods();
   List<MethodDescription> resolved=new ArrayList<MethodDescription>(declaredMethods.size());
-  Visitor<GenericTypeDescription> visitor=Visitor.Substitutor.ForTypeVariable.bind(this);
+  Visitor<GenericTypeDescription> visitor=Visitor.Substitutor.ForTypeVariableBinding.bind(this);
   for (  MethodDescription methodDescription : declaredMethods) {
     TypeDescription declaringType=methodDescription.getDeclaringType();
     resolved.add(new MethodDescription.Latent(declaringType,methodDescription.asToken(is(declaringType)).accept(visitor)));

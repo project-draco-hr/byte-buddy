@@ -1,0 +1,4 @@
+{
+  assertThat(describe(Object.class).getOwnerType(),nullValue(GenericTypeDescription.class));
+  assertThat(describe(Object.class).getParameters().size(),is(0));
+}

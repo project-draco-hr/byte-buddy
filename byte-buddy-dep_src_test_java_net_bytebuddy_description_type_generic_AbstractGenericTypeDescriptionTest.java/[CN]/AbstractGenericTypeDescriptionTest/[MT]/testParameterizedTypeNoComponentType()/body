@@ -1,0 +1,3 @@
+{
+  describe(SimpleParameterizedType.class.getDeclaredField(FOO)).getComponentType();
+}

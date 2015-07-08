@@ -1,3 +1,4 @@
 {
-  return Sort.describe(type.getGenericSuperclass());
+  Type superClass=type.getGenericSuperclass();
+  return superClass == null ? null : Sort.describe(superClass);
 }
