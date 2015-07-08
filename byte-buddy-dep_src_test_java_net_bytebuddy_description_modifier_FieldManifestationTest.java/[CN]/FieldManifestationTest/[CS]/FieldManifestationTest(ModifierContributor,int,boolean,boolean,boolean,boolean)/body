@@ -1,0 +1,6 @@
+{
+  super(modifierContributor,expectedModifier,defaultModifier);
+  this.isFinal=isFinal;
+  this.isVolatile=isVolatile;
+  this.isPlain=isPlain;
+}

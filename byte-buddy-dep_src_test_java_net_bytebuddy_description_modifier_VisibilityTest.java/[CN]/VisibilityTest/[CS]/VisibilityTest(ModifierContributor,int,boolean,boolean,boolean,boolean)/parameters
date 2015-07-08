@@ -1,6 +1,0 @@
-ModifierContributor modifierContributor
-int expectedModifier
-boolean isPublic
-boolean isProtected
-boolean isPackagePrivate
-boolean isPrivate

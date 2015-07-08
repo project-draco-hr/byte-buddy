@@ -1,4 +1,0 @@
-{
-  this.modifierContributor=modifierContributor;
-  this.expectedModifier=expectedModifier;
-}

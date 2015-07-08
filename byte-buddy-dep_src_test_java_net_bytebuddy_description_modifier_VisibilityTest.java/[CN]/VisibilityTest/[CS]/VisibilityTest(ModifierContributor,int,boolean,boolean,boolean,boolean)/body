@@ -1,7 +1,0 @@
-{
-  super(modifierContributor,expectedModifier);
-  this.isPublic=isPublic;
-  this.isProtected=isProtected;
-  this.isPackagePrivate=isPackagePrivate;
-  this.isPrivate=isPrivate;
-}

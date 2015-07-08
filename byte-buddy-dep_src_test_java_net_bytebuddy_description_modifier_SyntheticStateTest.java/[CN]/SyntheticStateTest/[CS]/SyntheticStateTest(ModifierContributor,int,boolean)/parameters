@@ -1,0 +1,3 @@
+ModifierContributor modifierContributor
+int expectedModifier
+boolean defaultModifier
