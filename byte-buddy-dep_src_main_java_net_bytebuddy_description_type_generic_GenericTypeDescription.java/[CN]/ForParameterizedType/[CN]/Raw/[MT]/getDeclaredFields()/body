@@ -1,0 +1,3 @@
+{
+  return new FieldList.TypeSubstituting(rawType.getDeclaredFields(),new Visitor.Substitutor.ForTypeVariableErasure());
+}
