@@ -1,7 +1,7 @@
 {
   GenericTypeDescription substitution=bindings.get(genericTypeDescription);
   if (substitution == null) {
-    throw new IllegalArgumentException("Cannot substitute " + genericTypeDescription + " with "+ bindings);
+    throw new IllegalArgumentException("Cannot substitute " + genericTypeDescription + " using "+ bindings);
   }
   return substitution;
 }

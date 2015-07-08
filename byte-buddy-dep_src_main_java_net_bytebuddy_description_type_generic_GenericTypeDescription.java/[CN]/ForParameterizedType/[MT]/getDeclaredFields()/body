@@ -1,10 +1,3 @@
 {
-  FieldList declaredFields=asRawType().getDeclaredFields();
-  List<FieldDescription> resolved=new ArrayList<FieldDescription>(declaredFields.size());
-  Visitor<GenericTypeDescription> visitor=Visitor.Substitutor.ForTypeVariableBinding.bind(this);
-  for (  FieldDescription fieldDescription : declaredFields) {
-    TypeDescription declaringType=fieldDescription.getDeclaringType();
-    resolved.add(new FieldDescription.Latent(declaringType,fieldDescription.asToken(is(declaringType)).accept(visitor)));
-  }
-  return new FieldList.Explicit(resolved);
+  return new FieldList.TypeSubstituting(asRawType().getDeclaredFields(),Visitor.Substitutor.ForTypeVariableBinding.bind(this));
 }

@@ -1,5 +1,5 @@
 {
   GenericTypeDescription genericTypeDescription=mock(GenericTypeDescription.class);
-  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
+  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.PARAMETERIZED);
   assertThat(GenericTypeDescription.ForGenericArray.Latent.of(genericTypeDescription,0),is(genericTypeDescription));
 }
