@@ -4,7 +4,7 @@
     GenericTypeList parameters=typeDescription.getParameters();
     GenericTypeList typeVariables=typeDescription.asRawType().getTypeVariables();
     if (parameters.size() != typeVariables.size()) {
-      return new ForTypeVariableErasure();
+      return Visitor.Erasing.INSTANCE;
     }
     for (int index=0; index < typeVariables.size(); index++) {
       bindings.put(typeVariables.get(index),parameters.get(index));

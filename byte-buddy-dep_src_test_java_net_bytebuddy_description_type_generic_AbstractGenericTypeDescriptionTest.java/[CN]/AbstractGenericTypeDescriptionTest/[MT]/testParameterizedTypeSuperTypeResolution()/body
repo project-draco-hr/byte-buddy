@@ -3,6 +3,7 @@
   assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(genericTypeDescription.getParameters().size(),is(1));
   GenericTypeDescription superType=genericTypeDescription.getSuperType();
+  assertThat(superType.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(superType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Base.class)));
   assertThat(superType.getParameters().size(),is(2));
   assertThat(superType.getParameters().get(0),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Foo.class)));

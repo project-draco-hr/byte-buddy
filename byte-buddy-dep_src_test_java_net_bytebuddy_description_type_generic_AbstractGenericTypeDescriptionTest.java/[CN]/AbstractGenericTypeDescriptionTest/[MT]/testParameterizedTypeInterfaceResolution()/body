@@ -4,12 +4,14 @@
   assertThat(genericTypeDescription.getParameters().size(),is(1));
   assertThat(genericTypeDescription.getInterfaces().size(),is(1));
   GenericTypeDescription interfaceType=genericTypeDescription.getInterfaces().getOnly();
+  assertThat(interfaceType.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(interfaceType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.BaseInterface.class)));
   assertThat(interfaceType.getParameters().size(),is(2));
   assertThat(interfaceType.getParameters().get(0),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
   assertThat(interfaceType.getParameters().get(1),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Bar.class)));
   assertThat(interfaceType.getDeclaredMethods().filter(isConstructor()).size(),is(0));
   assertThat(interfaceType.getDeclaredMethods().filter(isMethod()).size(),is(1));
+  assertThat(interfaceType.getDeclaredFields().size(),is(0));
   GenericTypeDescription methodReturnType=interfaceType.getDeclaredMethods().filter(isMethod()).getOnly().getReturnType();
   assertThat(methodReturnType.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(methodReturnType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));

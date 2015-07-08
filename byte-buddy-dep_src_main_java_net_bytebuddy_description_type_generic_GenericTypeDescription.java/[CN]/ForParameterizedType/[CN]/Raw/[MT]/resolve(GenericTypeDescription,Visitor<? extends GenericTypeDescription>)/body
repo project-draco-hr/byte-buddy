@@ -1,0 +1,6 @@
+{
+  if (typeDescription == null) {
+    return null;
+  }
+  return typeDescription.getParameters().size() != typeDescription.asRawType().getTypeVariables().size() ? new Raw(typeDescription.asRawType()) : typeDescription.accept(transformer);
+}

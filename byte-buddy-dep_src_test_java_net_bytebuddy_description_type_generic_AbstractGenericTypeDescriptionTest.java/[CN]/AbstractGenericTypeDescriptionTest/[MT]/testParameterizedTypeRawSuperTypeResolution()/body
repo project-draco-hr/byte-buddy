@@ -1,0 +1,22 @@
+{
+  GenericTypeDescription genericTypeDescription=describe(TypeResolution.class.getDeclaredField(BAR));
+  assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
+  assertThat(genericTypeDescription.getParameters().size(),is(1));
+  GenericTypeDescription superType=genericTypeDescription.getSuperType();
+  assertThat(superType.getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(superType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Base.class)));
+  assertThat(superType.getParameters().size(),is(0));
+  assertThat(superType.getDeclaredFields().size(),is(1));
+  GenericTypeDescription fieldType=superType.getDeclaredFields().getOnly().getType();
+  assertThat(fieldType.getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(fieldType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));
+  assertThat(fieldType.getParameters().size(),is(0));
+  GenericTypeDescription methodReturnType=superType.getDeclaredMethods().filter(isMethod()).getOnly().getReturnType();
+  assertThat(methodReturnType.getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(methodReturnType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));
+  assertThat(methodReturnType.getParameters().size(),is(0));
+  GenericTypeDescription methodParameterType=superType.getDeclaredMethods().filter(isMethod()).getOnly().getParameters().asTypeList().getOnly();
+  assertThat(methodParameterType.getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(methodParameterType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));
+  assertThat(methodParameterType.getParameters().size(),is(0));
+}

@@ -1,3 +1,0 @@
-{
-  return typeDescription != null && typeDescription.getSort().isNonGeneric() && !typeDescription.asRawType().getTypeVariables().isEmpty() ? new Raw(typeDescription.asRawType()) : typeDescription;
-}
