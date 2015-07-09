@@ -2,9 +2,6 @@
   if (arity < 0) {
     throw new IllegalArgumentException("Arrays cannot have a negative arity");
   }
- else   if (componentType.getSort().isNonGeneric()) {
-    return TypeDescription.ArrayProjection.of(componentType.asRawType(),arity);
-  }
   while (componentType.getSort().isGenericArray()) {
     componentType=componentType.getComponentType();
     arity++;

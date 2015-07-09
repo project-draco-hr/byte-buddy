@@ -1,3 +1,4 @@
 {
-  return typeDescription.getComponentType();
+  TypeDescription componentType=typeDescription.getComponentType();
+  return componentType == null ? null : new Raw(componentType);
 }

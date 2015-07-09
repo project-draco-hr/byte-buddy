@@ -1,3 +1,4 @@
 {
-  return resolve(typeDescription.getOwnerType(),Visitor.TypeVariableErasing.INSTANCE);
+  TypeDescription ownerType=typeDescription.getOwnerType();
+  return ownerType == null ? null : new Raw(ownerType);
 }
