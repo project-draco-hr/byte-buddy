@@ -1,6 +1,6 @@
 {
   int result=1;
-  for (  GenericTypeDescription genericTypeDescription : getLowerBounds()) {
+  for (  GenericTypeDescription genericTypeDescription : getParameters()) {
     result=31 * result + genericTypeDescription.hashCode();
   }
   GenericTypeDescription ownerType=getOwnerType();
