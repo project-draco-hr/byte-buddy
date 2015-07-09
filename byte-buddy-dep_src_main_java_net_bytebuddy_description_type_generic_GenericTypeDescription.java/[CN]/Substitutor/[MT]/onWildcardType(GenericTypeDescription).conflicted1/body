@@ -1,3 +1,4 @@
 {
-  throw new IllegalStateException("A raw type does not imply an erasure: " + genericTypeDescription);
+  GenericTypeList lowerBounds=genericTypeDescription.getLowerBounds();
+  return lowerBounds.isEmpty() ? GenericTypeDescription.ForWildcardType.Latent.boundedAbove(genericTypeDescription.getUpperBounds().getOnly().accept(this)) : GenericTypeDescription.ForWildcardType.Latent.boundedBelow(lowerBounds.getOnly().accept(this));
 }

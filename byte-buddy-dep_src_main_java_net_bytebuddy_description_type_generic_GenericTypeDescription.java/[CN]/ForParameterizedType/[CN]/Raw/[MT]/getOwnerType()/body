@@ -1,3 +1,3 @@
 {
-  return rawType.getOwnerType();
+  return resolve(typeDescription.getOwnerType(),Visitor.TypeVariableErasing.INSTANCE);
 }

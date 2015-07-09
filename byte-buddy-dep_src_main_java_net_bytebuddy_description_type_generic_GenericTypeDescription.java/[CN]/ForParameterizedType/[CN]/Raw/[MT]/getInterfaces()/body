@@ -1,3 +1,3 @@
 {
-  return rawType.getInterfaces();
+  return typeDescription.getDeclaredInterfaces().accept(Visitor.TypeVariableErasing.INSTANCE);
 }

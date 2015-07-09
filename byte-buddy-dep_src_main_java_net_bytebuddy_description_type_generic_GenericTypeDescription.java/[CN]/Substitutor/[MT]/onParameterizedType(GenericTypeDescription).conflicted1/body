@@ -1,3 +1,18 @@
 {
-  return genericTypeDescription.asRawType();
+  GenericTypeDescription ownerType=genericTypeDescription.getOwnerType();
+  List<GenericTypeDescription> parameters=new ArrayList<GenericTypeDescription>(genericTypeDescription.getParameters().size());
+  for (  GenericTypeDescription parameter : genericTypeDescription.getParameters()) {
+    if (parameter.getSort().isTypeVariable()) {
+      return genericTypeDescription.asRawType();
+    }
+ else     if (parameter.getSort().isWildcard()) {
+      GenericTypeList bounds=parameter.getLowerBounds();
+      bounds=bounds.isEmpty() ? parameter.getUpperBounds() : bounds;
+      if (bounds.getOnly().getSort().isTypeVariable()) {
+        return genericTypeDescription.asRawType();
+      }
+    }
+    parameters.add(parameter.accept(this));
+  }
+  return new GenericTypeDescription.ForParameterizedType.Latent(genericTypeDescription.asRawType(),parameters,ownerType == null ? null : ownerType.accept(this));
 }

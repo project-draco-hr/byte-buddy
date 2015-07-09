@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.Substitutor.ForTypeVariableBinding.class).apply();
+}

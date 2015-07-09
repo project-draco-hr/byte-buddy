@@ -1,3 +1,3 @@
 {
-  return rawType.getStackSize();
+  return typeDescription.getStackSize();
 }
