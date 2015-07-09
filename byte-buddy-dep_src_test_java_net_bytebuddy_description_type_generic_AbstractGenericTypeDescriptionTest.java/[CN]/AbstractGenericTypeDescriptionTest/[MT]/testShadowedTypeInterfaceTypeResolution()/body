@@ -1,0 +1,11 @@
+{
+  GenericTypeDescription genericTypeDescription=describe(TypeResolution.class.getDeclaredField(FOO + BAR));
+  assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
+  assertThat(genericTypeDescription.getParameters().size(),is(2));
+  GenericTypeDescription interfaceType=genericTypeDescription.getInterfaces().getOnly();
+  assertThat(interfaceType.getParameters().size(),is(2));
+  assertThat(interfaceType.getParameters().get(0).getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(interfaceType.getParameters().get(0),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Bar.class)));
+  assertThat(interfaceType.getParameters().get(1).getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(interfaceType.getParameters().get(1),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
+}
