@@ -1,3 +1,3 @@
 {
-  return getComponentType().getSort().isNonGeneric() ? Sort.NON_GENERIC : Sort.GENERIC_ARRAY;
+  return componentType.getSort().isNonGeneric() ? Sort.NON_GENERIC : Sort.GENERIC_ARRAY;
 }
