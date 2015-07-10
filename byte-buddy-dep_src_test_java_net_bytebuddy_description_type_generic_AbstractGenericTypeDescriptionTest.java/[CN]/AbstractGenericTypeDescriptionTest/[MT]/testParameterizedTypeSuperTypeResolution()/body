@@ -9,6 +9,7 @@
   assertThat(superType.getParameters().get(0),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
   assertThat(superType.getParameters().get(1),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Bar.class)));
   assertThat(superType.getDeclaredFields().size(),is(1));
+  assertThat(superType.getDeclaredFields().getOnly().getDeclaringType(),is(superType));
   GenericTypeDescription fieldType=superType.getDeclaredFields().getOnly().getType();
   assertThat(fieldType.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(fieldType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));
@@ -17,6 +18,8 @@
   assertThat(fieldType.getParameters().get(1),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Bar.class)));
   assertThat(superType.getDeclaredMethods().filter(isConstructor()).size(),is(1));
   assertThat(superType.getDeclaredMethods().filter(isMethod()).size(),is(1));
+  assertThat(superType.getDeclaredMethods().filter(isMethod()).getOnly().getDeclaringType(),is((superType)));
+  assertThat(superType.getDeclaredMethods().filter(isConstructor()).getOnly().getDeclaringType(),sameInstance((superType)));
   GenericTypeDescription methodReturnType=superType.getDeclaredMethods().filter(isMethod()).getOnly().getReturnType();
   assertThat(methodReturnType.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(methodReturnType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));
@@ -29,4 +32,6 @@
   assertThat(methodParameterType.getParameters().size(),is(2));
   assertThat(methodParameterType.getParameters().get(0),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
   assertThat(methodParameterType.getParameters().get(1),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Bar.class)));
+  assertThat(superType.getDeclaredMethods().filter(isMethod()).getOnly().getDeclaringType().getDeclaredMethods().filter(isMethod()).getOnly().getReturnType(),is(superType.getDeclaredMethods().filter(isMethod()).getOnly().getReturnType()));
+  assertThat(superType.getDeclaredMethods().filter(isMethod()).getOnly().getDeclaringType().getDeclaredMethods().filter(isMethod()).getOnly().getParameters().getOnly().getType(),is(superType.getDeclaredMethods().filter(isMethod()).getOnly().getParameters().getOnly().getType()));
 }
