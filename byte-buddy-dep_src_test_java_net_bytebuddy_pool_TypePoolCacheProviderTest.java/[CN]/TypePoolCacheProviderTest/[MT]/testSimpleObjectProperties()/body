@@ -1,4 +1,4 @@
 {
   ObjectPropertyAssertion.of(TypePool.CacheProvider.NoOp.class).apply();
-  ObjectPropertyAssertion.of(TypePool.CacheProvider.Simple.class).applyMutable();
+  ObjectPropertyAssertion.of(TypePool.CacheProvider.Simple.class).applyCustom();
 }

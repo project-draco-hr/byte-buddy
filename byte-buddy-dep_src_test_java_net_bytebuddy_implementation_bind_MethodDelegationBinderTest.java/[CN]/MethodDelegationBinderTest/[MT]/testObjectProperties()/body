@@ -12,7 +12,7 @@
       return methodDescription;
     }
   }
-).applyMutable();
+).applyCustom();
   ObjectPropertyAssertion.of(MethodDelegationBinder.MethodBinding.Builder.Build.class).create(new ObjectPropertyAssertion.Creator<Map<?,?>>(){
     @Override public Map<?,?> create(){
       return Collections.singletonMap(new Object(),new Object());
