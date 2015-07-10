@@ -1,4 +1,4 @@
 {
-  GenericTypeList lowerBounds=genericTypeDescription.getLowerBounds();
-  return lowerBounds.isEmpty() ? GenericTypeDescription.ForWildcardType.Latent.boundedAbove(genericTypeDescription.getUpperBounds().getOnly().accept(this)) : GenericTypeDescription.ForWildcardType.Latent.boundedBelow(lowerBounds.getOnly().accept(this));
+  GenericTypeList lowerBounds=wildcardType.getLowerBounds();
+  return lowerBounds.isEmpty() ? GenericTypeDescription.ForWildcardType.Latent.boundedAbove(wildcardType.getUpperBounds().getOnly().accept(this)) : GenericTypeDescription.ForWildcardType.Latent.boundedBelow(lowerBounds.getOnly().accept(this));
 }

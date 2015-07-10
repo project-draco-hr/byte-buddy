@@ -1,6 +1,6 @@
 {
-  GenericTypeList upperBounds=genericTypeDescription.getUpperBounds();
-  GenericTypeList lowerBounds=genericTypeDescription.getLowerBounds();
+  GenericTypeList upperBounds=wildcardType.getUpperBounds();
+  GenericTypeList lowerBounds=wildcardType.getLowerBounds();
   if (lowerBounds.isEmpty() && upperBounds.getOnly().asRawType().represents(Object.class)) {
     signatureVisitor.visitTypeArgument();
   }

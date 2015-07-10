@@ -1,4 +1,4 @@
 {
-  GenericTypeDescription substitution=bindings.get(genericTypeDescription);
-  return substitution == null ? genericTypeDescription.asRawType() : substitution;
+  GenericTypeDescription substitution=bindings.get(typeVariable);
+  return substitution == null ? typeVariable.asRawType() : substitution;
 }

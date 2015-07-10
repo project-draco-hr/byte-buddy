@@ -1,4 +1,4 @@
 {
-  genericTypeDescription.getComponentType().accept(new ForSignatureVisitor(signatureVisitor.visitArrayType()));
+  genericArray.getComponentType().accept(new ForSignatureVisitor(signatureVisitor.visitArrayType()));
   return signatureVisitor;
 }
