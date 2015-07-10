@@ -1,15 +1,15 @@
 {
   bridgeMethodResolver=bridgeMethodResolverFactory.make(finding.getInvokableMethods());
   typeDescription=finding.getTypeDescription();
-  invokableMethods=new HashMap<String,MethodDescription>(finding.getInvokableMethods().size());
+  invokableMethods=new HashMap<MethodDescription.Token,MethodDescription>(finding.getInvokableMethods().size());
   for (  MethodDescription methodDescription : finding.getInvokableMethods()) {
-    invokableMethods.put(methodDescription.getUniqueSignature(),methodDescription);
+    invokableMethods.put(methodDescription.asToken(),methodDescription);
   }
-  defaultMethods=new HashMap<TypeDescription,Map<String,MethodDescription>>(finding.getInvokableDefaultMethods().size());
+  defaultMethods=new HashMap<TypeDescription,Map<MethodDescription.Token,MethodDescription>>(finding.getInvokableDefaultMethods().size());
   for (  Map.Entry<TypeDescription,Set<MethodDescription>> entry : finding.getInvokableDefaultMethods().entrySet()) {
-    Map<String,MethodDescription> defaultMethods=new HashMap<String,MethodDescription>(entry.getValue().size());
+    Map<MethodDescription.Token,MethodDescription> defaultMethods=new HashMap<MethodDescription.Token,MethodDescription>(entry.getValue().size());
     for (    MethodDescription methodDescription : entry.getValue()) {
-      defaultMethods.put(methodDescription.getUniqueSignature(),methodDescription);
+      defaultMethods.put(methodDescription.asToken(),methodDescription);
     }
     this.defaultMethods.put(entry.getKey(),defaultMethods);
   }

@@ -1,9 +1,9 @@
 {
-  Set<String> methodDeclarations=this.methodDeclarations.get(typeDescription);
+  Set<MethodDescription.Token> methodDeclarations=this.methodDeclarations.get(typeDescription);
   Set<MethodDescription> defaultMethods=this.defaultMethods.get(typeDescription);
   for (  TypeDescription interfaceType : typeDescription.getInterfaces().asRawTypes()) {
     for (    MethodDescription methodDescription : this.defaultMethods.get(interfaceType)) {
-      if (!methodDeclarations.contains(methodDescription.getUniqueSignature())) {
+      if (!methodDeclarations.contains(methodDescription.asToken())) {
         defaultMethods.add(methodDescription);
       }
     }

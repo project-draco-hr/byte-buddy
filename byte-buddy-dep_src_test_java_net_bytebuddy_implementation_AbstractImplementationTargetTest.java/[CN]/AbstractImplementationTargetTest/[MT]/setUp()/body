@@ -14,11 +14,12 @@
   when(returnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(invokableMethod.getInternalName()).thenReturn(FOO);
   when(invokableMethod.getDescriptor()).thenReturn(QUX);
+  when(invokableMethod.asToken()).thenReturn(invokableToken);
   when(defaultMethod.getInternalName()).thenReturn(QUXBAZ);
   when(defaultMethod.getDescriptor()).thenReturn(FOOBAZ);
-  when(defaultMethod.getUniqueSignature()).thenReturn(FOOQUX);
   when(defaultMethod.getDeclaringType()).thenReturn(defaultType);
   when(defaultMethod.getReturnType()).thenReturn(returnType);
+  when(defaultMethod.asToken()).thenReturn(defaultToken);
   when(defaultType.isInterface()).thenReturn(true);
   when(defaultMethod.isSpecializableFor(defaultType)).thenReturn(true);
   when(defaultType.getInternalName()).thenReturn(BAZBAR);

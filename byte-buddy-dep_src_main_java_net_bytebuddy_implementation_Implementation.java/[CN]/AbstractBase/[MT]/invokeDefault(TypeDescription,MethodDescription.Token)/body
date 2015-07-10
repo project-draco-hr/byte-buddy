@@ -1,7 +1,7 @@
 {
-  Map<String,MethodDescription> defaultMethods=this.defaultMethods.get(targetType);
+  Map<MethodDescription.Token,MethodDescription> defaultMethods=this.defaultMethods.get(targetType);
   if (defaultMethods != null) {
-    MethodDescription defaultMethod=defaultMethods.get(uniqueMethodSignature);
+    MethodDescription defaultMethod=defaultMethods.get(methodToken);
     if (defaultMethod != null) {
       return SpecialMethodInvocation.Simple.of(defaultMethod,targetType);
     }

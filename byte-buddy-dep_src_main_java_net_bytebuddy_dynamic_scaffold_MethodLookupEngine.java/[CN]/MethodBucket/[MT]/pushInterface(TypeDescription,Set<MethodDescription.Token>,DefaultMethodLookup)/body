@@ -1,16 +1,16 @@
 {
-  Set<String> locallyProcessedMethods=new HashSet<String>(processedMethodsInHierarchy);
+  Set<MethodDescription.Token> locallyProcessedMethods=new HashSet<MethodDescription.Token>(processedMethodsInHierarchy);
   if (processedTypes.add(typeDescription)) {
     defaultMethodLookup.begin(typeDescription);
     for (    MethodDescription methodDescription : typeDescription.getDeclaredMethods().filter(virtualMethodMatcher)) {
-      String uniqueSignature=methodDescription.getUniqueSignature();
-      if (locallyProcessedMethods.add(uniqueSignature)) {
-        MethodDescription conflictingMethod=interfaceMethods.get(uniqueSignature);
+      MethodDescription.Token methodToken=methodDescription.asToken();
+      if (locallyProcessedMethods.add(methodToken)) {
+        MethodDescription conflictingMethod=interfaceMethods.get(methodToken);
         MethodDescription resolvedMethod=methodDescription;
         if (conflictingMethod != null && !conflictingMethod.getDeclaringType().isAssignableFrom(typeDescription)) {
           resolvedMethod=ConflictingInterfaceMethod.of(typeOfInterest,conflictingMethod,methodDescription);
         }
-        interfaceMethods.put(uniqueSignature,resolvedMethod);
+        interfaceMethods.put(methodToken,resolvedMethod);
       }
       defaultMethodLookup.register(methodDescription);
     }

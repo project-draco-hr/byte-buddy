@@ -1,5 +1,5 @@
 {
-  methodDeclarations.get(methodDescription.getDeclaringType()).add(methodDescription.getUniqueSignature());
+  methodDeclarations.get(methodDescription.getDeclaringType()).add(methodDescription.asToken());
   if (methodDescription.isDefaultMethod()) {
     defaultMethods.get(methodDescription.getDeclaringType()).add(methodDescription);
   }
