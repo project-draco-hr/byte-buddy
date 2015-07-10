@@ -1,3 +1,3 @@
 {
-  assertThat(new MethodAttributeAppender.ForMethod(method).make(mock(TypeDescription.class)),is((MethodAttributeAppender)new MethodAttributeAppender.ForMethod(method)));
+  assertThat(new MethodAttributeAppender.ForMethod(method,valueFilter).make(mock(TypeDescription.class)),is((MethodAttributeAppender)new MethodAttributeAppender.ForMethod(method,valueFilter)));
 }

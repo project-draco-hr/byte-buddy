@@ -1,0 +1,15 @@
+{
+  when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.class))).thenReturn(false);
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  TypeDescription annotationType=mock(TypeDescription.class);
+  when(annotationType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(methodDescription)));
+  AnnotationDescription annotationDescription=mock(AnnotationDescription.class);
+  when(annotationDescription.getAnnotationType()).thenReturn(annotationType);
+  AnnotationVisitor annotationVisitor=mock(AnnotationVisitor.class);
+  when(target.visit(anyString(),anyBoolean())).thenReturn(annotationVisitor);
+  annotationAppender.append(annotationDescription,AnnotationAppender.AnnotationVisibility.RUNTIME);
+  verify(valueFilter).isRelevant(annotationDescription,methodDescription);
+  verifyNoMoreInteractions(valueFilter);
+  verify(annotationVisitor).visitEnd();
+  verifyNoMoreInteractions(annotationVisitor);
+}

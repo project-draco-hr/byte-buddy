@@ -1,0 +1,9 @@
+{
+  when(methodDescription.getDefaultValue()).thenReturn(new Object());
+  when(annotationDescription.getValue(methodDescription)).thenReturn(new Object());
+  assertThat(AnnotationAppender.ValueFilter.SkipDefaults.INSTANCE.isRelevant(annotationDescription,methodDescription),is(false));
+  verify(annotationDescription).getValue(methodDescription);
+  verifyNoMoreInteractions(annotationDescription);
+  verify(methodDescription).getDefaultValue();
+  verifyNoMoreInteractions(methodDescription);
+}

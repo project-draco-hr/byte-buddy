@@ -1,3 +1,0 @@
-AnnotationDescription annotation
-ElementMatcher<? super MethodDescription> defaultProperties
-boolean visible

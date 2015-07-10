@@ -1,0 +1,8 @@
+{
+  for (  MethodDescription methodDescription : annotation.getAnnotationType().getDeclaredMethods()) {
+    if (valueFilter.isRelevant(annotation,methodDescription)) {
+      apply(annotationVisitor,methodDescription.getReturnType(),methodDescription.getName(),annotation.getValue(methodDescription));
+    }
+  }
+  annotationVisitor.visitEnd();
+}

@@ -1,3 +1,0 @@
-AnnotationVisitor annotationVisitor
-AnnotationDescription annotation
-ElementMatcher<? super MethodDescription> defaultProperties

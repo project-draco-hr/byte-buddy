@@ -1,4 +1,4 @@
 {
   when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty());
-  new MethodAttributeAppender.ForMethod(method).apply(methodVisitor,methodDescription);
+  new MethodAttributeAppender.ForMethod(method,valueFilter).apply(methodVisitor,methodDescription);
 }

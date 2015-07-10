@@ -1,4 +1,0 @@
-{
-  this.typeDescription=typeDescription;
-  this.defaultProperties=defaultProperties;
-}

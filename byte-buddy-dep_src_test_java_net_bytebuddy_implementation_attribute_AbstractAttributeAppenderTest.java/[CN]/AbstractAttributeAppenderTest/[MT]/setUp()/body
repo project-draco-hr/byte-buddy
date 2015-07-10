@@ -1,0 +1,3 @@
+{
+  when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.class))).thenReturn(true);
+}

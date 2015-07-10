@@ -1,19 +1,21 @@
 {
+  when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.class))).thenReturn(true);
   ClassWriter classWriter=new ClassWriter(ASM_MANUAL);
   classWriter.visit(ClassFileVersion.forCurrentJavaVersion().getVersionNumber(),Opcodes.ACC_PUBLIC,BAR.replace('.','/'),null,Type.getInternalName(Object.class),null);
   AnnotationVisitor annotationVisitor=classWriter.visitAnnotation(Type.getDescriptor(annotation.annotationType()),true);
   when(target.visit(any(String.class),anyBoolean())).thenReturn(annotationVisitor);
   AnnotationDescription annotationDescription=AnnotationDescription.ForLoadedAnnotation.of(annotation);
   AnnotationAppender.AnnotationVisibility annotationVisibility=AnnotationAppender.AnnotationVisibility.of(annotationDescription);
-  annotationAppender.append(annotationDescription,none(),annotationVisibility);
+  annotationAppender.append(annotationDescription,annotationVisibility);
 switch (annotationVisibility) {
 case RUNTIME:
-    verify(target).visit(Type.getDescriptor(annotation.annotationType()),true);
-  verifyNoMoreInteractions(target);
-break;
 case CLASS_FILE:
-verify(target).visit(Type.getDescriptor(annotation.annotationType()),false);
-verifyNoMoreInteractions(target);
+    verify(target).visit(Type.getDescriptor(annotation.annotationType()),annotationVisibility == AnnotationAppender.AnnotationVisibility.RUNTIME);
+  verifyNoMoreInteractions(target);
+for (MethodDescription methodDescription : annotationDescription.getAnnotationType().getDeclaredMethods()) {
+  verify(valueFilter).isRelevant(annotationDescription,methodDescription);
+}
+verifyNoMoreInteractions(valueFilter);
 break;
 case INVISIBLE:
 verifyZeroInteractions(target);

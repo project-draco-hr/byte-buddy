@@ -2,15 +2,15 @@
   if (this.methodDescription.getParameters().size() > methodDescription.getParameters().size()) {
     throw new IllegalArgumentException(this.methodDescription + " has more parameters than the instrumented method " + methodDescription);
   }
-  AnnotationAppender methodAppender=new AnnotationAppender.Default(new AnnotationAppender.Target.OnMethod(methodVisitor));
+  AnnotationAppender methodAppender=new AnnotationAppender.Default(new AnnotationAppender.Target.OnMethod(methodVisitor),valueFilter);
   for (  AnnotationDescription annotation : this.methodDescription.getDeclaredAnnotations()) {
-    methodAppender.append(annotation,defaultProperties,AnnotationAppender.AnnotationVisibility.of(annotation));
+    methodAppender.append(annotation,AnnotationAppender.AnnotationVisibility.of(annotation));
   }
   int index=0;
   for (  ParameterDescription parameterDescription : this.methodDescription.getParameters()) {
-    AnnotationAppender parameterAppender=new AnnotationAppender.Default(new AnnotationAppender.Target.OnMethodParameter(methodVisitor,index++));
+    AnnotationAppender parameterAppender=new AnnotationAppender.Default(new AnnotationAppender.Target.OnMethodParameter(methodVisitor,index++),valueFilter);
     for (    AnnotationDescription annotation : parameterDescription.getDeclaredAnnotations()) {
-      parameterAppender.append(annotation,defaultProperties,AnnotationAppender.AnnotationVisibility.of(annotation));
+      parameterAppender.append(annotation,AnnotationAppender.AnnotationVisibility.of(annotation));
     }
   }
 }

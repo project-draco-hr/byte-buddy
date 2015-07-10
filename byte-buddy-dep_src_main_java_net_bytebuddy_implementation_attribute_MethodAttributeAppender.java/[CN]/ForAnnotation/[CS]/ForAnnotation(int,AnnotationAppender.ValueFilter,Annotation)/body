@@ -1,0 +1,3 @@
+{
+  this(parameterIndex,new AnnotationList.ForLoadedAnnotation(annotation),valueFilter);
+}

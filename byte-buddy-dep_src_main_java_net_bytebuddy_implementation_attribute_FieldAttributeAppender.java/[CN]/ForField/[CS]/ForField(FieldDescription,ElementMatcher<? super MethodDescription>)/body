@@ -1,4 +1,0 @@
-{
-  this.fieldDescription=fieldDescription;
-  this.defaultProperties=defaultProperties;
-}

@@ -1,2 +1,0 @@
-List<? extends AnnotationDescription> annotations
-ElementMatcher<? super MethodDescription> defaultProperties

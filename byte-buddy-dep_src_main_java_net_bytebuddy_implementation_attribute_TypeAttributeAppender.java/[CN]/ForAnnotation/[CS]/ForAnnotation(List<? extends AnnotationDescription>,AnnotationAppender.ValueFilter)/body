@@ -1,0 +1,4 @@
+{
+  this.annotations=annotations;
+  this.valueFilter=valueFilter;
+}

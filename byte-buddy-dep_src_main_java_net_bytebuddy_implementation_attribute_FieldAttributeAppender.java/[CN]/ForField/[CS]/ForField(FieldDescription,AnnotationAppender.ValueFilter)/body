@@ -1,0 +1,4 @@
+{
+  this.fieldDescription=fieldDescription;
+  this.valueFilter=valueFilter;
+}

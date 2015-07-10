@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && fieldDescription.equals(((ForField)other).fieldDescription) && defaultProperties.equals(((ForField)other).defaultProperties);
+  return this == other || !(other == null || getClass() != other.getClass()) && fieldDescription.equals(((ForField)other).fieldDescription) && valueFilter.equals(((ForField)other).valueFilter);
 }

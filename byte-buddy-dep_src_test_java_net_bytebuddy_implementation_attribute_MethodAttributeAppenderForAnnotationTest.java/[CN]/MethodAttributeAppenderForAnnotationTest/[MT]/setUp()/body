@@ -2,4 +2,5 @@
   ParameterList parameterList=mock(ParameterList.class);
   when(parameterList.size()).thenReturn(PARAMETER_INDEX + 1);
   when(methodDescription.getParameters()).thenReturn(parameterList);
+  when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.class))).thenReturn(true);
 }
