@@ -1,0 +1,3 @@
+{
+  assertThat(typeInitializer.getModifiers(),is(MethodDescription.TYPE_INITIALIZER_MODIFIER));
+}

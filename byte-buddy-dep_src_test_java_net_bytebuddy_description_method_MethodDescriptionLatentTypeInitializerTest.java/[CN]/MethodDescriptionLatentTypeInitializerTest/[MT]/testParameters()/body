@@ -1,0 +1,3 @@
+{
+  assertThat(typeInitializer.getParameters().size(),is(0));
+}

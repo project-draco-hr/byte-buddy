@@ -1,0 +1,3 @@
+{
+  assertThat(new ParameterDescription.Token(mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class)),FOO,null),not(new ParameterDescription.Token(mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class)),BAR,null)));
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(typeInitializer.getExceptionTypes().size(),is(0));
+}

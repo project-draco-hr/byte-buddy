@@ -1,0 +1,3 @@
+{
+  assertThat(typeInitializer.getInternalName(),is(MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME));
+}
