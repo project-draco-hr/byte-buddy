@@ -1,4 +1,5 @@
 {
+  when(declaringType.asRawType()).thenReturn(declaringType);
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);
   when(firstType.getStackSize()).thenReturn(StackSize.ZERO);
   when(firstType.getDescriptor()).thenReturn(FOO);

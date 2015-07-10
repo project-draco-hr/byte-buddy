@@ -7,7 +7,7 @@
       if (locallyProcessedMethods.add(methodToken)) {
         MethodDescription conflictingMethod=interfaceMethods.get(methodToken);
         MethodDescription resolvedMethod=methodDescription;
-        if (conflictingMethod != null && !conflictingMethod.getDeclaringType().isAssignableFrom(typeDescription)) {
+        if (conflictingMethod != null && !conflictingMethod.getDeclaringType().asRawType().isAssignableFrom(typeDescription)) {
           resolvedMethod=ConflictingInterfaceMethod.of(typeOfInterest,conflictingMethod,methodDescription);
         }
         interfaceMethods.put(methodToken,resolvedMethod);

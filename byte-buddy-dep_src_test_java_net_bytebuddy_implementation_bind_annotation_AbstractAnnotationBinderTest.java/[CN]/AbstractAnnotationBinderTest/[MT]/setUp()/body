@@ -1,4 +1,7 @@
 {
+  when(sourceDeclaringType.asRawType()).thenReturn(sourceDeclaringType);
+  when(targetDeclaringType.asRawType()).thenReturn(targetDeclaringType);
+  when(source.getDeclaringType()).thenReturn(sourceDeclaringType);
   annotation=mock(annotationType);
   doReturn(annotationType).when(annotation).annotationType();
   annotationDescription=AnnotationDescription.ForLoadedAnnotation.of(annotation);

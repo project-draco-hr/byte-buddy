@@ -1,7 +1,7 @@
 {
-  when(second.isSpecializableFor(firstType)).thenReturn(true);
+  when(second.isSpecializableFor(firstRawType)).thenReturn(true);
   MethodDescription overriddenClassMethod=MethodLookupEngine.OverriddenClassMethod.of(first,second);
-  assertThat(overriddenClassMethod.isSpecializableFor(firstType),is(true));
-  verify(first).isSpecializableFor(firstType);
-  verify(second).isSpecializableFor(firstType);
+  assertThat(overriddenClassMethod.isSpecializableFor(firstRawType),is(true));
+  verify(first).isSpecializableFor(firstRawType);
+  verify(second).isSpecializableFor(firstRawType);
 }

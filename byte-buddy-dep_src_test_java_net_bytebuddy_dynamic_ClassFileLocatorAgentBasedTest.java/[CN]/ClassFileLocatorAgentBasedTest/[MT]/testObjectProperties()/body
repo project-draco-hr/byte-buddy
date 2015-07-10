@@ -22,5 +22,5 @@
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(ClassFileLocator.AgentBased.ExtractionClassFileTransformer.class).applyCustom();
+  ObjectPropertyAssertion.of(ClassFileLocator.AgentBased.ExtractionClassFileTransformer.class).applyBasic();
 }

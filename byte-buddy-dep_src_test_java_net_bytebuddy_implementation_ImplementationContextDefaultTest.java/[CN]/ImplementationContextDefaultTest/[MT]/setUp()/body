@@ -76,4 +76,10 @@
   when(secondSpecialParameterType.asRawType()).thenReturn(secondSpecialParameterType);
   when(firstSpecialParameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(firstSpecialParameterType);
   when(secondSpecialParameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(secondSpecialParameterType);
+  when(firstFieldDeclaringType.asRawType()).thenReturn(firstFieldDeclaringType);
+  when(secondFieldDeclaringType.asRawType()).thenReturn(secondFieldDeclaringType);
+  when(firstSpecialMethod.getDeclaringType()).thenReturn(firstSpecialType);
+  when(firstSpecialType.asRawType()).thenReturn(firstSpecialType);
+  when(secondSpecialMethod.getDeclaringType()).thenReturn(secondSpecialType);
+  when(secondSpecialType.asRawType()).thenReturn(secondSpecialType);
 }

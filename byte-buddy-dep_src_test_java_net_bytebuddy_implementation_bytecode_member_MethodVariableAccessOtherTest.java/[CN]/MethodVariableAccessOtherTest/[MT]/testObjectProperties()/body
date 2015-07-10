@@ -6,6 +6,6 @@
       when(mock.getParameters()).thenReturn(new ParameterList.Empty());
     }
   }
-).applyCustom();
+).applyBasic();
   ObjectPropertyAssertion.of(MethodVariableAccess.TypeCastingHandler.NoOp.class).apply();
 }

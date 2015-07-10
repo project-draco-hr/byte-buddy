@@ -13,4 +13,6 @@
   when(returnType.asRawType()).thenReturn(returnType);
   when(parameterType.asRawType()).thenReturn(parameterType);
   when(parameterType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
+  when(method.getDeclaringType()).thenReturn(declaringType);
+  when(declaringType.asRawType()).thenReturn(declaringType);
 }

@@ -1,4 +1,5 @@
 {
+  when(methodType.asRawType()).thenReturn(methodType);
   when(finding.getTypeDescription()).thenReturn(instrumentedType);
   when(finding.getInvokableMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(invokableMethod)));
   when(finding.getInvokableDefaultMethods()).thenReturn(Collections.singletonMap(defaultType,Collections.singleton(defaultMethod)));
@@ -21,6 +22,7 @@
   when(defaultMethod.getReturnType()).thenReturn(returnType);
   when(defaultMethod.asToken()).thenReturn(defaultToken);
   when(defaultType.isInterface()).thenReturn(true);
+  when(defaultType.asRawType()).thenReturn(defaultType);
   when(defaultMethod.isSpecializableFor(defaultType)).thenReturn(true);
   when(defaultType.getInternalName()).thenReturn(BAZBAR);
   implementationTarget=makeImplementationTarget();

@@ -6,7 +6,9 @@
   when(methodDescription.getReturnType()).thenReturn(returnType);
   ParameterList parameterList=ParameterList.Explicit.latent(methodDescription,parameterTypes);
   when(methodDescription.getParameters()).thenReturn(parameterList);
-  when(methodDescription.getDeclaringType()).thenReturn(mock(TypeDescription.class));
+  TypeDescription declaringType=mock(TypeDescription.class);
+  when(declaringType.asRawType()).thenReturn(declaringType);
+  when(methodDescription.getDeclaringType()).thenReturn(declaringType);
   when(resolution.getResolvedMethod()).thenReturn(methodDescription);
   return new RebaseImplementationTarget.RebasedMethodSpecialMethodInvocation(resolution,targetType);
 }

@@ -1,4 +1,8 @@
 {
+  when(declaringType.asRawType()).thenReturn(declaringType);
+  when(method.getDeclaringType()).thenReturn(declaringType);
+  when(constructor.getDeclaringType()).thenReturn(declaringType);
+  when(other.getDeclaringType()).thenReturn(declaringType);
   when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
   when(placeholderType.getStackSize()).thenReturn(StackSize.ZERO);
   Set<MethodDescription> methodDescriptions=new HashSet<MethodDescription>();

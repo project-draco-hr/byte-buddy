@@ -1,4 +1,5 @@
 {
+  when(genericTypeDescription.asRawType()).thenReturn(typeDescription);
   when(methodDescription.isConstructor()).thenReturn(true);
   when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
   when(methodDescription.getReturnType()).thenReturn(returnType);

@@ -12,5 +12,5 @@
   assertThat(methodDescription.getExceptionTypes().size(),is(0));
   assertThat(methodDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
   assertThat(methodDescription.getName(),is(BAR));
-  assertThat(methodDescription.getDeclaringType(),sameInstance((TypeDescription)instrumentedType));
+  assertThat(methodDescription.getDeclaringType(),sameInstance((GenericTypeDescription)instrumentedType));
 }

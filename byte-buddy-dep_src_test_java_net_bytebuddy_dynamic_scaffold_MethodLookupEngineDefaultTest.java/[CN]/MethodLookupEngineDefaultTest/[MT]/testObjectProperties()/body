@@ -6,7 +6,7 @@
       when(mock.getDeclaredMethods()).thenReturn(new MethodList.Empty());
     }
   }
-).applyCustom();
-  ObjectPropertyAssertion.of(MethodLookupEngine.Default.MethodBucket.DefaultMethodLookup.Enabled.class).applyCustom();
+).applyBasic();
+  ObjectPropertyAssertion.of(MethodLookupEngine.Default.MethodBucket.DefaultMethodLookup.Enabled.class).applyBasic();
   ObjectPropertyAssertion.of(MethodLookupEngine.Default.MethodBucket.DefaultMethodLookup.Disabled.class).apply();
 }

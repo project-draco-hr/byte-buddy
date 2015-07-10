@@ -1,3 +1,3 @@
 {
-  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.Substitutor.ForDetachment.class).applyCustom();
+  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.Substitutor.ForDetachment.class).applyBasic();
 }

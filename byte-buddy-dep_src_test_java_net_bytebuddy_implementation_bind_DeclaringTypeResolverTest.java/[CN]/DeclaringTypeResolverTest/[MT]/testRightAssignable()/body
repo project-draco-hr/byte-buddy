@@ -3,6 +3,8 @@
   assertThat(DeclaringTypeResolver.INSTANCE.resolve(source,left,right),is(MethodDelegationBinder.AmbiguityResolver.Resolution.LEFT));
   verify(leftType).isAssignableFrom(rightType);
   verify(leftType).isAssignableTo(rightType);
+  verify(leftType).asRawType();
   verifyNoMoreInteractions(leftType);
-  verifyZeroInteractions(rightType);
+  verify(rightType).asRawType();
+  verifyNoMoreInteractions(rightType);
 }

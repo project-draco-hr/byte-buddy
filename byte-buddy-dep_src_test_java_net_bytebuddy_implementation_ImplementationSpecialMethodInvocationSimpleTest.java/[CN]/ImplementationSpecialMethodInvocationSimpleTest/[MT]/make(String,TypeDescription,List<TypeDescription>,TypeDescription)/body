@@ -3,5 +3,7 @@
   for (  TypeDescription parameterType : parameterTypes) {
     tokens.add(new ParameterDescription.Token(parameterType));
   }
-  return new Implementation.SpecialMethodInvocation.Simple(new MethodDescription.Latent(mock(TypeDescription.class),name,Opcodes.ACC_PUBLIC,Collections.<GenericTypeDescription>emptyList(),returnType,tokens,Collections.<TypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE),targetType,mock(StackManipulation.class));
+  TypeDescription declaringType=mock(TypeDescription.class);
+  when(declaringType.asRawType()).thenReturn(declaringType);
+  return new Implementation.SpecialMethodInvocation.Simple(new MethodDescription.Latent(declaringType,name,Opcodes.ACC_PUBLIC,Collections.<GenericTypeDescription>emptyList(),returnType,tokens,Collections.<TypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE),targetType,mock(StackManipulation.class));
 }
