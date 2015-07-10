@@ -14,7 +14,7 @@
     initializerEntry=initializerEntry.prepend(typeInitializer);
   }
  else   if (typeInitializer.isDefined()) {
-    initializerEntry=new TypeWriter.MethodPool.Entry.ForImplementation(typeInitializer.withReturn(),MethodAttributeAppender.NoOp.INSTANCE);
+    initializerEntry=new TypeWriter.MethodPool.Entry.ForImplementation(typeInitializer.withReturn());
   }
   initializerEntry.apply(classVisitor,this,typeInitializerMethod);
   for (  Map.Entry<MethodDescription,TypeWriter.MethodPool.Entry> entry : accessorMethodEntries.entrySet()) {

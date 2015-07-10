@@ -1,7 +1,7 @@
 {
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
-  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForImplementation(byteCodeAppender,methodAttributeAppender);
+  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForImplementation(byteCodeAppender,methodAttributeAppender,modifierResolver);
   entry.applyHead(methodVisitor,methodDescription);
   verifyNoMoreInteractions(methodVisitor);
   verifyZeroInteractions(implementationContext);

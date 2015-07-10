@@ -1,3 +1,0 @@
-{
-  return "MethodRegistry.Default.Compiled{" + "instrumentedType=" + instrumentedType + ", loadedTypeInitializer="+ loadedTypeInitializer+ ", typeInitializer="+ typeInitializer+ ", implementations="+ implementations+ '}';
-}

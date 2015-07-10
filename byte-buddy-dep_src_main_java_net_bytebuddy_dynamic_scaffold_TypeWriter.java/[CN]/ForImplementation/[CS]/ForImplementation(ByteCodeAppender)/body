@@ -1,0 +1,3 @@
+{
+  this(byteCodeAppender,MethodAttributeAppender.NoOp.INSTANCE,ModifierResolver.Simple.INSTANCE);
+}

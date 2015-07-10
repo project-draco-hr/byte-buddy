@@ -1,5 +1,5 @@
 {
-  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForAbstractMethod(methodAttributeAppender);
+  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForAbstractMethod(methodAttributeAppender,modifierResolver);
   assertThat(entry.getSort(),is(TypeWriter.MethodPool.Entry.Sort.DEFINE));
   entry.apply(classVisitor,implementationContext,methodDescription);
   verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});

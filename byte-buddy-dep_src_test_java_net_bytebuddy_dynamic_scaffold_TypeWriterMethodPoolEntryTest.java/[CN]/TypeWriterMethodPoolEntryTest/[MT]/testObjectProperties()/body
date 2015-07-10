@@ -1,0 +1,6 @@
+{
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForAbstractMethod.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForAnnotationDefaultValue.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForImplementation.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForSkippedMethod.class).apply();
+}

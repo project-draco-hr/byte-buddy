@@ -1,6 +1,0 @@
-{
-  this.implementations=implementations;
-  this.loadedTypeInitializer=loadedTypeInitializer;
-  this.typeInitializer=typeInitializer;
-  this.finding=finding;
-}

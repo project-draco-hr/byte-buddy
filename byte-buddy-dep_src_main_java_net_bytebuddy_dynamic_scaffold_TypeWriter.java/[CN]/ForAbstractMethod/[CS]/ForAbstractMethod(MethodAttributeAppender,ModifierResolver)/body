@@ -1,0 +1,4 @@
+{
+  this.methodAttributeAppender=methodAttributeAppender;
+  this.modifierResolver=modifierResolver;
+}

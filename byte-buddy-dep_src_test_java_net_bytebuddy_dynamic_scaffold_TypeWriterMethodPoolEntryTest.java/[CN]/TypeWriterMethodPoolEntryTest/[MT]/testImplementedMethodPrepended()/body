@@ -1,5 +1,5 @@
 {
-  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForImplementation(byteCodeAppender,methodAttributeAppender).prepend(otherAppender);
+  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForImplementation(byteCodeAppender,methodAttributeAppender,modifierResolver).prepend(otherAppender);
   assertThat(entry.getSort(),is(TypeWriter.MethodPool.Entry.Sort.IMPLEMENT));
   entry.apply(classVisitor,implementationContext,methodDescription);
   verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});

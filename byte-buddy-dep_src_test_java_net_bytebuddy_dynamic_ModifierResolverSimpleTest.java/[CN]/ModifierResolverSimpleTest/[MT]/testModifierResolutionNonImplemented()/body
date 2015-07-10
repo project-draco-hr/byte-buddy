@@ -1,0 +1,5 @@
+{
+  assertThat(ModifierResolver.Simple.INSTANCE.transform(methodDescription,false),is(MODIFIERS));
+  verify(methodDescription).getAdjustedModifiers(false);
+  verifyNoMoreInteractions(methodDescription);
+}

@@ -1,0 +1,9 @@
+{
+  ModifierResolver modifierResolver=mock(ModifierResolver.class);
+  MethodDescription toString=TypeDescription.OBJECT.getDeclaredMethods().filter(named("toString")).getOnly();
+  when(modifierResolver.transform(toString,true)).thenReturn(Opcodes.ACC_FINAL | Opcodes.ACC_PUBLIC);
+  Class<?> type=createPlain().method(named(TO_STRING)).intercept(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE),modifierResolver).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.newInstance().toString(),is(FOO));
+  assertThat(type.getDeclaredMethod(TO_STRING).getModifiers(),is(Opcodes.ACC_FINAL | Opcodes.ACC_PUBLIC));
+  verify(modifierResolver).transform(toString,true);
+}

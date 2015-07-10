@@ -1,3 +1,0 @@
-{
-  return "MethodRegistry.Default.Entry{" + "methodMatcher=" + methodMatcher + ", handler="+ handler+ ", attributeAppenderFactory="+ attributeAppenderFactory+ '}';
-}

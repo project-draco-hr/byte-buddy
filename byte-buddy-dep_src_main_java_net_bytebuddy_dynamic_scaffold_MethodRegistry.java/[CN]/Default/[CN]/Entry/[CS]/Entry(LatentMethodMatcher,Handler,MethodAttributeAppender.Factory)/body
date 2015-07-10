@@ -1,5 +1,0 @@
-{
-  this.methodMatcher=methodMatcher;
-  this.handler=handler;
-  this.attributeAppenderFactory=attributeAppenderFactory;
-}

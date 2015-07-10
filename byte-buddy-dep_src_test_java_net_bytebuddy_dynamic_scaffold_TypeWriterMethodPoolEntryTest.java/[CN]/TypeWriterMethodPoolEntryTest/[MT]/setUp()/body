@@ -3,7 +3,7 @@
   when(methodDescription.getDescriptor()).thenReturn(BAR);
   when(methodDescription.getGenericSignature()).thenReturn(QUX);
   when(methodDescription.getExceptionTypes()).thenReturn(exceptionTypes);
-  when(methodDescription.getAdjustedModifiers(anyBoolean())).thenReturn(MODIFIERS);
+  when(modifierResolver.transform(eq(methodDescription),anyBoolean())).thenReturn(MODIFIERS);
   when(exceptionTypes.toInternalNames()).thenReturn(new String[]{BAZ});
   when(classVisitor.visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ})).thenReturn(methodVisitor);
   when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit(Collections.singletonList(parameterDescription)));

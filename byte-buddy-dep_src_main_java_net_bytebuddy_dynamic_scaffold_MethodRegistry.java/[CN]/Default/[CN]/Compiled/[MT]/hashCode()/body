@@ -1,7 +1,0 @@
-{
-  int result=instrumentedType.hashCode();
-  result=31 * result + loadedTypeInitializer.hashCode();
-  result=31 * result + typeInitializer.hashCode();
-  result=31 * result + implementations.hashCode();
-  return result;
-}

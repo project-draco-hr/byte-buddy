@@ -1,3 +1,3 @@
 {
-  return methodAttributeAppender.hashCode();
+  return methodAttributeAppender.hashCode() + 31 * modifierResolver.hashCode();
 }

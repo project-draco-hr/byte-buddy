@@ -1,5 +1,6 @@
 {
   int result=annotationValue.hashCode();
   result=31 * result + methodAttributeAppender.hashCode();
+  result=31 * result + modifierResolver.hashCode();
   return result;
 }
