@@ -1,8 +1,0 @@
-{
-  GenericTypeList interfaces=makePlainInstrumentedType().getInterfaces();
-  assertThat(interfaces.size(),is(1));
-  assertThat(interfaces.get(0),is(is((GenericTypeDescription)new TypeDescription.ForLoadedType(Serializable.class))));
-  TypeList rawInterfaces=interfaces.asRawTypes();
-  assertThat(rawInterfaces.size(),is(1));
-  assertThat(rawInterfaces.get(0),is(is((TypeDescription)new TypeDescription.ForLoadedType(Serializable.class))));
-}

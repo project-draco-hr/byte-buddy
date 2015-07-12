@@ -1,3 +1,0 @@
-{
-  return new Default(name,this.modifiers,typeVariables,superType,interfaceTypes,fieldTokens,joinUnique(methodTokens,new MethodDescription.Token(internalName,modifiers,Collections.<GenericTypeDescription>emptyList(),returnType,ParameterDescription.Token.asList(parameterTypes),exceptionTypes,Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE)),annotationDescriptions,typeInitializer,loadedTypeInitializer);
-}

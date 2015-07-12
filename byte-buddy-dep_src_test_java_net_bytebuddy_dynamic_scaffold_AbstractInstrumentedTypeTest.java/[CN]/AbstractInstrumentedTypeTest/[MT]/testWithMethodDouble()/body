@@ -1,7 +1,0 @@
-{
-  TypeDescription returnType=mock(TypeDescription.class);
-  when(returnType.asRawType()).thenReturn(returnType);
-  when(returnType.getName()).thenReturn(FOO);
-  when(returnType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(returnType);
-  makePlainInstrumentedType().withMethod(BAR,returnType,Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),Opcodes.ACC_PUBLIC).withMethod(BAR,returnType,Collections.<TypeDescription>emptyList(),Collections.<TypeDescription>emptyList(),Opcodes.ACC_PUBLIC);
-}
