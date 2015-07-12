@@ -1,0 +1,4 @@
+{
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  assertThat(TypeVariableSource.Visitor.NoOp.INSTANCE.onMethod(methodDescription),is((TypeVariableSource)methodDescription));
+}
