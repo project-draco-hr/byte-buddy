@@ -1,0 +1,8 @@
+{
+  when(tokenMatcher.matches(methodToken)).thenReturn(false);
+  assertThat(new MethodTokenMatcher<MethodDescription>(tokenMatcher).matches(methodDescription),is(false));
+  verify(tokenMatcher).matches(methodToken);
+  verifyNoMoreInteractions(tokenMatcher);
+  verify(methodDescription).asToken();
+  verifyNoMoreInteractions(methodDescription);
+}
