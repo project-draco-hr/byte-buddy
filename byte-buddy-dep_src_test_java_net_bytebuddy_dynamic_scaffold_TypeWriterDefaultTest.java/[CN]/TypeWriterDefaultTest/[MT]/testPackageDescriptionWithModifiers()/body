@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().makePackage(FOO).modifiers(Visibility.PRIVATE).make();
+}

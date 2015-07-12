@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().makePackage(FOO).implement(Serializable.class).make();
+}
