@@ -1,3 +1,3 @@
-TypeDescription typeDescription
+GenericTypeDescription typeDescription
 Set<MethodDescription.Token> processedMethodsInHierarchy
 DefaultMethodLookup defaultMethodLookup

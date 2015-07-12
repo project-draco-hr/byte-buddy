@@ -1,22 +1,22 @@
 {
   Set<MethodDescription.Token> locallyProcessedMethods=new HashSet<MethodDescription.Token>(processedMethodsInHierarchy);
-  if (processedTypes.add(typeDescription)) {
-    defaultMethodLookup.begin(typeDescription);
+  if (processedTypes.add(typeDescription.asRawType())) {
+    defaultMethodLookup.begin(typeDescription.asRawType());
     for (    MethodDescription methodDescription : typeDescription.getDeclaredMethods().filter(virtualMethodMatcher)) {
       MethodDescription.Token methodToken=methodDescription.asToken();
       if (locallyProcessedMethods.add(methodToken)) {
         MethodDescription conflictingMethod=interfaceMethods.get(methodToken);
         MethodDescription resolvedMethod=methodDescription;
-        if (conflictingMethod != null && !conflictingMethod.getDeclaringType().asRawType().isAssignableFrom(typeDescription)) {
+        if (conflictingMethod != null && !conflictingMethod.getDeclaringType().asRawType().isAssignableFrom(typeDescription.asRawType())) {
           resolvedMethod=ConflictingInterfaceMethod.of(typeOfInterest,conflictingMethod,methodDescription);
         }
         interfaceMethods.put(methodToken,resolvedMethod);
       }
       defaultMethodLookup.register(methodDescription);
     }
-    for (    TypeDescription interfaceType : typeDescription.getInterfaces().asRawTypes()) {
+    for (    GenericTypeDescription interfaceType : typeDescription.getInterfaces()) {
       pushInterface(interfaceType,locallyProcessedMethods,defaultMethodLookup);
     }
-    defaultMethodLookup.complete(typeDescription);
+    defaultMethodLookup.complete(typeDescription.asRawType());
   }
 }

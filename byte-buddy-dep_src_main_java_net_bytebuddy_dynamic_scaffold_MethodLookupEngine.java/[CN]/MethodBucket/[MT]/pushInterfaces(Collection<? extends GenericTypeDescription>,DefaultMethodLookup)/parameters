@@ -1,0 +1,2 @@
+Collection<? extends GenericTypeDescription> typeDescriptions
+DefaultMethodLookup defaultMethodLookup

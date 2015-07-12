@@ -1,6 +1,6 @@
 {
   Set<MethodDescription.Token> processedMethods=new HashSet<MethodDescription.Token>(classMethods.keySet());
-  for (  TypeDescription interfaceTypeDescription : typeDescriptions) {
+  for (  GenericTypeDescription interfaceTypeDescription : typeDescriptions) {
     pushInterface(interfaceTypeDescription,processedMethods,defaultMethodLookup);
   }
 }

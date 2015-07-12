@@ -1,2 +1,2 @@
-TypeDescription typeDescription
+GenericTypeDescription typeDescription
 ElementMatcher<? super MethodDescription> methodMatcher
