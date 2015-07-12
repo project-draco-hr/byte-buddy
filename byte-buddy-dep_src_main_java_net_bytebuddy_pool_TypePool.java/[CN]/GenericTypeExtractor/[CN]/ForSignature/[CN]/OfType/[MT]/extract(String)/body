@@ -3,6 +3,6 @@
     return genericSignature == null ? LazyTypeDescription.GenericTypeToken.Resolution.Raw.INSTANCE : ForSignature.extract(genericSignature,new OfType());
   }
  catch (  RuntimeException ignored) {
-    return LazyTypeDescription.GenericTypeToken.Resolution.Defective.INSTANCE;
+    return LazyTypeDescription.GenericTypeToken.Resolution.Malformed.INSTANCE;
   }
 }

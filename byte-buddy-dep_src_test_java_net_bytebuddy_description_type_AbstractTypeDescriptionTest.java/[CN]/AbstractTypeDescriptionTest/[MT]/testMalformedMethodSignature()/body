@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=describe(SignatureMalformer.malform(MalformedBase.class));
+  assertThat(typeDescription.getDeclaredMethods().filter(isMethod()).size(),is(1));
+  typeDescription.getDeclaredMethods().filter(isMethod()).getOnly().getReturnType().getSort();
+}

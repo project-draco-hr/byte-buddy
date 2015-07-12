@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=describe(SignatureMalformer.malform(MalformedBase.class));
+  assertThat(typeDescription.getInterfaces().size(),is(1));
+  typeDescription.getInterfaces().getOnly().getSort();
+}
