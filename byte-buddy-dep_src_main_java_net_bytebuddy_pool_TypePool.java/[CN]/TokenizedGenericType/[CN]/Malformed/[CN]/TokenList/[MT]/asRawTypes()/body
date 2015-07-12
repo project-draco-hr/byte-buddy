@@ -1,3 +1,3 @@
 {
-  return LazyTypeList.of(typePool,rawTypeDescriptors);
+  return new LazyTypeList(typePool,rawTypeDescriptors);
 }
