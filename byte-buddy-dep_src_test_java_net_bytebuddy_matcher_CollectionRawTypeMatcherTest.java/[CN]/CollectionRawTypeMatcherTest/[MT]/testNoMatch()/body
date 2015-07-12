@@ -1,0 +1,9 @@
+{
+  assertThat(new CollectionRawTypeMatcher<Iterable<GenericTypeDescription>>(matcher).matches(Arrays.asList(first,second)),is(false));
+  verify(matcher).matches(Arrays.asList(firstRaw,secondRaw));
+  verifyNoMoreInteractions(matcher);
+  verify(first).asRawType();
+  verifyNoMoreInteractions(first);
+  verify(second).asRawType();
+  verifyNoMoreInteractions(second);
+}
