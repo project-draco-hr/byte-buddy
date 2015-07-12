@@ -32,8 +32,7 @@
   when(firstSpecialParameterType.getStackSize()).thenReturn(StackSize.ZERO);
   when(firstSpecialReturnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(firstSpecialInvocation.apply(any(MethodVisitor.class),any(Implementation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
-  ParameterList firstSpecialMethodParameters=ParameterList.Explicit.latent(firstSpecialMethod,Collections.singletonList(firstSpecialParameterType));
-  when(firstSpecialMethod.getParameters()).thenReturn(firstSpecialMethodParameters);
+  when(firstSpecialMethod.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(firstSpecialMethod,Collections.singletonList(firstSpecialParameterType)));
   when(secondSpecialInvocation.getMethodDescription()).thenReturn(secondSpecialMethod);
   when(secondSpecialInvocation.getTypeDescription()).thenReturn(secondSpecialType);
   when(secondSpecialMethod.getInternalName()).thenReturn(BAR);
@@ -48,8 +47,7 @@
   when(secondSpecialReturnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(secondSpecialReturnType.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
   when(secondSpecialInvocation.apply(any(MethodVisitor.class),any(Implementation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
-  ParameterList secondSpecialMethodParameters=ParameterList.Explicit.latent(secondSpecialMethod,Collections.singletonList(secondSpecialParameterType));
-  when(secondSpecialMethod.getParameters()).thenReturn(secondSpecialMethodParameters);
+  when(secondSpecialMethod.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(secondSpecialMethod,Collections.singletonList(secondSpecialParameterType)));
   when(firstFieldType.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
   when(firstFieldType.asRawType()).thenReturn(firstFieldType);
   when(firstFieldType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(firstFieldType);
