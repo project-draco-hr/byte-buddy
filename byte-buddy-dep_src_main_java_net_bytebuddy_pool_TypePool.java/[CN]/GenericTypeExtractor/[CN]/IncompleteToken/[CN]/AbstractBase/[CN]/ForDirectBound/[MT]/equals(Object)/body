@@ -1,0 +1,3 @@
+{
+  return other != null && getClass() != other.getClass() && (AbstractBase.this.equals(((ForDirectBound)other).getOuter()));
+}

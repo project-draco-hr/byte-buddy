@@ -1,3 +1,3 @@
 {
-  return lazyTypeDescription.new LazyFieldDescription(getModifiers(),getName(),getDescriptor(),getSignatureResolution(),getAnnotationTokens());
+  return lazyTypeDescription.new LazyFieldDescription(getName(),getModifiers(),getDescriptor(),getSignatureResolution(),getAnnotationTokens());
 }

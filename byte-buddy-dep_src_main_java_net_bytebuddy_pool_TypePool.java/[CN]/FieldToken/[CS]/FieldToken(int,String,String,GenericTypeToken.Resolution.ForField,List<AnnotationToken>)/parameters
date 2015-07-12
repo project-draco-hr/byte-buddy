@@ -1,5 +1,0 @@
-int modifiers
-String name
-String descriptor
-GenericTypeToken.Resolution.ForField signatureResoltion
-List<AnnotationToken> annotationTokens

@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.GenericTypeExtractor.IncompleteToken.AbstractBase.ForUpperBound{outer=" + AbstractBase.this + '}';
+}

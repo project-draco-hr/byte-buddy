@@ -1,4 +1,4 @@
 {
   this.internalName=internalName;
-  this.outerClassToken=outerClassToken;
+  this.outerTypeToken=outerTypeToken;
 }
