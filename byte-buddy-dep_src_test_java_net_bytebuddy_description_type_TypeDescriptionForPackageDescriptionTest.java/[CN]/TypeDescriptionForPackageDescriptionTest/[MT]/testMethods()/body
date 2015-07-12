@@ -1,0 +1,3 @@
+{
+  assertThat(typeDescription.getDeclaredMethods().size(),is(0));
+}

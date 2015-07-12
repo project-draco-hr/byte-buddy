@@ -1,0 +1,5 @@
+{
+  AnnotationList annotationList=mock(AnnotationList.class);
+  when(packageDescription.getDeclaredAnnotations()).thenReturn(annotationList);
+  assertThat(typeDescription.getDeclaredAnnotations(),is(annotationList));
+}

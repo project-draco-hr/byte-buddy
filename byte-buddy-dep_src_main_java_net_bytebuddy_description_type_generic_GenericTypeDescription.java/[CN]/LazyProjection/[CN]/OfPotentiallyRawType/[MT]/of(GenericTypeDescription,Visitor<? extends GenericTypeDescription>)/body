@@ -1,0 +1,6 @@
+{
+  if (unresolvedType == null) {
+    return null;
+  }
+  return new OfPotentiallyRawType(unresolvedType,transformer);
+}

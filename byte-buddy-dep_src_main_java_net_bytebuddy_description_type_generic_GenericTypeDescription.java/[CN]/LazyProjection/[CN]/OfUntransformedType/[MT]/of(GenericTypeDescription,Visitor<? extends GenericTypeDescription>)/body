@@ -1,6 +1,0 @@
-{
-  if (unresolvedType == null) {
-    return null;
-  }
-  return new OfUntransformedType(unresolvedType,transformer);
-}

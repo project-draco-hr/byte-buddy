@@ -1,3 +1,0 @@
-{
-  return GenericTypeDescription.ForParameterizedType.Raw.resolve(unresolvedType,transformer);
-}

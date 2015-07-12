@@ -1,0 +1,3 @@
+{
+  assertThat(typeDescription.getDeclaredFields().size(),is(0));
+}
