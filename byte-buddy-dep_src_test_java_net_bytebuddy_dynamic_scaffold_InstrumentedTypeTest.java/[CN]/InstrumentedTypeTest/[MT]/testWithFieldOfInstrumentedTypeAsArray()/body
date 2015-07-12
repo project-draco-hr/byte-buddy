@@ -1,7 +1,7 @@
 {
   InstrumentedType instrumentedType=makePlainInstrumentedType();
   assertThat(instrumentedType.getDeclaredFields().size(),is(0));
-  instrumentedType=instrumentedType.withField(new FieldDescription.Token(BAR,Opcodes.ACC_PUBLIC,TypeDescription.ArrayProjection.of(instrumentedType,1)));
+  instrumentedType=instrumentedType.withField(new FieldDescription.Token(BAR,Opcodes.ACC_PUBLIC,TypeDescription.ArrayProjection.of(TargetType.DESCRIPTION,1)));
   assertThat(instrumentedType.getDeclaredFields().size(),is(1));
   FieldDescription fieldDescription=instrumentedType.getDeclaredFields().get(0);
   assertThat(fieldDescription.getType().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
