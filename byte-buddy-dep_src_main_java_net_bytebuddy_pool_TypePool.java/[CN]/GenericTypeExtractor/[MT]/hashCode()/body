@@ -1,6 +1,0 @@
-{
-  int result=super.hashCode();
-  result=31 * result + genericTypeRegistrant.hashCode();
-  result=31 * result + incompleteToken.hashCode();
-  return result;
-}

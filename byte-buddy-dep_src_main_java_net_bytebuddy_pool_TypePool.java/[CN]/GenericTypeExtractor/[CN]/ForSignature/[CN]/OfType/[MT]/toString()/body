@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.GenericTypeExtractor.ForSignature.OfType{" + "currentTypeParameter='" + currentTypeParameter + '\''+ ", currentBounds="+ currentBounds+ ", typeVariableTokens="+ typeVariableTokens+ ", superTypeToken="+ superTypeToken+ ", interfaceTypeTokens="+ interfaceTypeTokens+ '}';
+}
