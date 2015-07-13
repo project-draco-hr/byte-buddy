@@ -1,5 +1,0 @@
-{
-  assertThat(parameterList.size(),is(2));
-  assertThat(parameterList.get(0),is(firstParameterDescription));
-  assertThat(parameterList.get(1),is(secondParameterDescription));
-}

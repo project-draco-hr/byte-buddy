@@ -1,3 +1,0 @@
-{
-  parameterList=ParameterList.ForLoadedExecutable.of(Foo.class.getDeclaredMethod(FOO,Void.class,Void.class));
-}

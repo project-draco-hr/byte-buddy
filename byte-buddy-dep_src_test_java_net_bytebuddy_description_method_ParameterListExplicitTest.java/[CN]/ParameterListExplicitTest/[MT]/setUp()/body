@@ -1,3 +1,0 @@
-{
-  parameterList=new ParameterList.Explicit(Arrays.asList(firstParameterDescription,secondParameterDescription));
-}

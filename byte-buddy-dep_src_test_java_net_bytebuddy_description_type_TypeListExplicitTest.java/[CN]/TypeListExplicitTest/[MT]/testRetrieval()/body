@@ -1,5 +1,0 @@
-{
-  assertThat(typeList.size(),is(2));
-  assertThat(typeList.get(0),is(firstTypeDescription));
-  assertThat(typeList.get(1),is(secondTypeDescription));
-}

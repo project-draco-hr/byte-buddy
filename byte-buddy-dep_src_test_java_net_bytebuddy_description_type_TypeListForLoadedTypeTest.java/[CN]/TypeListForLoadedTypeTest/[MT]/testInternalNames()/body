@@ -1,6 +1,0 @@
-{
-  String[] internalName=typeList.toInternalNames();
-  assertThat(internalName[0],is(Type.getInternalName(Object.class)));
-  assertThat(internalName[1],is(Type.getInternalName(Integer.class)));
-  assertThat(internalName[2],is(Type.getInternalName(long.class)));
-}

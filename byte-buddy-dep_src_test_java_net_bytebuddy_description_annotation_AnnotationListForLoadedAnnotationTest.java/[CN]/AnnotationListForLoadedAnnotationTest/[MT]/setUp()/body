@@ -1,4 +1,0 @@
-{
-  doReturn(Foo.class).when(foo).annotationType();
-  doReturn(Bar.class).when(bar).annotationType();
-}

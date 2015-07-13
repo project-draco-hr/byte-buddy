@@ -1,3 +1,0 @@
-{
-  assertThat(fieldList.filter(any()),is(fieldList));
-}

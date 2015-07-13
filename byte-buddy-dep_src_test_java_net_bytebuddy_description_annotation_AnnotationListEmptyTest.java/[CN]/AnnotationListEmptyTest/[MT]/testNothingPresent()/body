@@ -1,3 +1,0 @@
-{
-  assertThat(annotationList.isAnnotationPresent(Annotation.class),is(false));
-}

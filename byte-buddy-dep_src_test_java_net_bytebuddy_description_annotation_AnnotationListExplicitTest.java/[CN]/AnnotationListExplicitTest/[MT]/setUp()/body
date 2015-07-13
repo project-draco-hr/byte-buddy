@@ -1,5 +1,0 @@
-{
-  when(foo.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(Foo.class));
-  when(foo.prepare(Foo.class)).thenReturn(fooLoadable);
-  when(bar.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(Bar.class));
-}

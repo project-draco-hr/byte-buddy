@@ -1,3 +1,0 @@
-{
-  assertThat(annotationList.ofType(Annotation.class),nullValue());
-}

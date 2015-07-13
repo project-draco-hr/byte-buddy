@@ -1,5 +1,0 @@
-{
-  fieldList=fieldList.filter(named(FOO));
-  assertThat(fieldList.size(),is(1));
-  assertThat(fieldList.getOnly(),is((FieldDescription)new FieldDescription.ForLoadedField(Foo.class.getDeclaredField(FOO))));
-}

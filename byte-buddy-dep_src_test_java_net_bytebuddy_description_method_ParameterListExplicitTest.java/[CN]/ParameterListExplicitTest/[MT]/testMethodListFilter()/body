@@ -1,7 +1,0 @@
-{
-  @SuppressWarnings("unchecked") ElementMatcher<? super ParameterDescription> methodMatcher=mock(ElementMatcher.class);
-  when(methodMatcher.matches(firstParameterDescription)).thenReturn(true);
-  parameterList=parameterList.filter(methodMatcher);
-  assertThat(parameterList.size(),is(1));
-  assertThat(parameterList.getOnly(),is(firstParameterDescription));
-}

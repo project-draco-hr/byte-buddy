@@ -1,3 +1,0 @@
-{
-  assertThat(fieldList.subList(0,0),is(fieldList));
-}
