@@ -1,0 +1,3 @@
+{
+  super((Class<ParameterTokenMatcher<?>>)(Object)ParameterTokenMatcher.class,"representedBy");
+}

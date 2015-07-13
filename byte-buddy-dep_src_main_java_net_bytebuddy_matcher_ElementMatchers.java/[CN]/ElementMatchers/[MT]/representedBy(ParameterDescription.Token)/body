@@ -1,0 +1,3 @@
+{
+  return new ParameterTokenMatcher<T>(is(nonNull(parameterToken)));
+}

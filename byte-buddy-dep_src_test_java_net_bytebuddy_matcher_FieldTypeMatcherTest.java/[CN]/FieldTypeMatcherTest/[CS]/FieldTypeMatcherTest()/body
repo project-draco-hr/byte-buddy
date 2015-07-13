@@ -1,0 +1,3 @@
+{
+  super((Class<? extends FieldTypeMatcher<?>>)(Object)FieldTypeMatcher.class,"ofType");
+}

@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.returnsGeneric(GenericType.class.getTypeParameters()[0]).matches(new MethodDescription.ForLoadedMethod(GenericType.class.getDeclaredMethod(FOO,Exception.class))),is(true));
+  assertThat(ElementMatchers.returnsGeneric(Exception.class).matches(new MethodDescription.ForLoadedMethod(GenericType.class.getDeclaredMethod(FOO,Exception.class))),is(false));
+  assertThat(ElementMatchers.returns(Exception.class).matches(new MethodDescription.ForLoadedMethod(GenericType.class.getDeclaredMethod(FOO,Exception.class))),is(true));
+}

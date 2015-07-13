@@ -1,0 +1,8 @@
+{
+  when(tokenMatcher.matches(fieldToken)).thenReturn(false);
+  assertThat(new FieldTokenMatcher<FieldDescription>(tokenMatcher).matches(fieldDescription),is(false));
+  verify(tokenMatcher).matches(fieldToken);
+  verifyNoMoreInteractions(tokenMatcher);
+  verify(fieldDescription).asToken();
+  verifyNoMoreInteractions(fieldDescription);
+}

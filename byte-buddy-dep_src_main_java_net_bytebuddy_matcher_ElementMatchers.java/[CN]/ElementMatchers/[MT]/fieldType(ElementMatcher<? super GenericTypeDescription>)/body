@@ -1,0 +1,3 @@
+{
+  return genericFieldType(rawType(nonNull(matcher)));
+}

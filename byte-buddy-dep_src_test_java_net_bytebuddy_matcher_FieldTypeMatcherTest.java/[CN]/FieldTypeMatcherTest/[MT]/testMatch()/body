@@ -1,0 +1,6 @@
+{
+  when(typeMatcher.matches(fieldType)).thenReturn(true);
+  assertThat(new FieldTypeMatcher<FieldDescription>(typeMatcher).matches(fieldDescription),is(true));
+  verify(typeMatcher).matches(fieldType);
+  verifyNoMoreInteractions(typeMatcher);
+}
