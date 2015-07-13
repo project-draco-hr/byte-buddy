@@ -1,10 +1,10 @@
 {
   when(methodList.filter(isConstructor().and(takesArguments(0)).<MethodDescription>and(isVisibleTo(instrumentedType)))).thenReturn(filteredMethodList);
   when(filteredMethodList.size()).thenReturn(1);
-  assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(instrumentedType),is(filteredMethodList));
+  assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(instrumentedType),is((List<MethodDescription.Token>)filteredMethodTokenList));
   assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.inject(methodRegistry,methodAttributeAppenderFactory),is(methodRegistry));
   verify(methodRegistry).append(any(LatentMethodMatcher.class),any(MethodRegistry.Handler.class),eq(methodAttributeAppenderFactory));
   verifyNoMoreInteractions(methodRegistry);
-  verify(instrumentedType,atLeastOnce()).getSupertype();
+  verify(instrumentedType,atLeastOnce()).getSuperType();
   verifyNoMoreInteractions(instrumentedType);
 }

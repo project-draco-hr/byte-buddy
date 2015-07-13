@@ -1,11 +1,10 @@
 {
-  when(target.getTypeDescription()).thenReturn(setterType);
+  when(target.getType()).thenReturn(setterType);
   doReturn(void.class).when(annotation).definingType();
   when(annotation.value()).thenReturn(FOO);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
   when(source.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(void.class));
-  ParameterList parameterList=ParameterList.Explicit.latent(source,Collections.singletonList(fieldType));
-  when(source.getParameters()).thenReturn(parameterList);
+  when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,Collections.singletonList(fieldType)));
   when(source.getName()).thenReturn("setFoo");
   when(source.getInternalName()).thenReturn("setFoo");
   when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);

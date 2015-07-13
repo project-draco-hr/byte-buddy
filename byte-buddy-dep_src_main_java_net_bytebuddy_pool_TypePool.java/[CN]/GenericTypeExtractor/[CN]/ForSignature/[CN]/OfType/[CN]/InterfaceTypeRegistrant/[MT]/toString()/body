@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.GenericTypeExtractor.ForSignature.OfType.InterfaceTypeRegistrant{outer=" + OfType.this + '}';
+}

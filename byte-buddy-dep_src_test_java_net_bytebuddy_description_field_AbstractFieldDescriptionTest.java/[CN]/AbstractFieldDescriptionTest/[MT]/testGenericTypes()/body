@@ -1,0 +1,4 @@
+{
+  assertThat(describe(genericField).getType(),is(GenericTypeDescription.Sort.describe(genericField.getGenericType())));
+  assertThat(describe(genericField).getType().asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(genericField.getType())));
+}

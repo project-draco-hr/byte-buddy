@@ -1,0 +1,3 @@
+{
+  return new SubclassDynamicTypeBuilder<Class<?>>(classFileVersion,new NamingStrategy.Fixed(isValidIdentifier(name) + "." + PackageDescription.PACKAGE_CLASS_NAME),auxiliaryTypeNamingStrategy,TypeDescription.OBJECT,new TypeList.Empty(),PackageDescription.PACKAGE_MODIFIERS,typeAttributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,ConstructorStrategy.Default.NO_CONSTRUCTORS);
+}

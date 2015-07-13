@@ -1,3 +1,0 @@
-{
-  typeList=new TypeList.ForLoadedType(Object.class,Integer.class,long.class);
-}

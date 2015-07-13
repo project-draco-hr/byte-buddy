@@ -1,0 +1,4 @@
+{
+  TypeDescription ownerType=typeDescription.getOwnerType();
+  return ownerType == null ? null : new Raw(ownerType);
+}

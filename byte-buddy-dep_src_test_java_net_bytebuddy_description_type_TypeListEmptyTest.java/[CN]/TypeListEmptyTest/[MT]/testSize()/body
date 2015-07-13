@@ -1,3 +1,0 @@
-{
-  assertThat(typeList.size(),is(0));
-}

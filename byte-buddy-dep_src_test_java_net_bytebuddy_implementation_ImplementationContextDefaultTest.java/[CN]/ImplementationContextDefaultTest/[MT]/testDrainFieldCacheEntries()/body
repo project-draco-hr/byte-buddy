@@ -16,6 +16,6 @@
   verify(otherTypeInitializer).expandWith(any(ByteCodeAppender.class));
   verify(thirdTypeInitializer).withReturn();
   verify(thirdTypeInitializer).isDefined();
-  verify(terminationAppender).apply(methodVisitor,implementationContext,MethodDescription.Latent.typeInitializerOf(instrumentedType));
+  verify(terminationAppender).apply(methodVisitor,implementationContext,new MethodDescription.Latent.TypeInitializer(instrumentedType));
   verifyNoMoreInteractions(terminationAppender);
 }

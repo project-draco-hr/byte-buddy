@@ -1,0 +1,5 @@
+{
+  assertThat(describe(SampleGenericType.class).getTypeVariables(),is(new TypeDescription.ForLoadedType(SampleGenericType.class).getTypeVariables()));
+  assertThat(describe(SampleGenericType.class).getSuperType(),is(new TypeDescription.ForLoadedType(SampleGenericType.class).getSuperType()));
+  assertThat(describe(SampleGenericType.class).getInterfaces(),is(new TypeDescription.ForLoadedType(SampleGenericType.class).getInterfaces()));
+}

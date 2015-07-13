@@ -1,3 +1,0 @@
-{
-  fieldList=new FieldList.Explicit(Arrays.asList(firstFieldDescription,secondFieldDescription));
-}

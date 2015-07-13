@@ -1,0 +1,2 @@
+List<? extends T> left
+List<? extends T> right

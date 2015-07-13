@@ -1,0 +1,7 @@
+{
+  TypeDescription first=mock(TypeDescription.class), second=mock(TypeDescription.class);
+  when(first.asRawType()).thenReturn(first);
+  when(second.asRawType()).thenReturn(second);
+  Collection<TypeDescription> typeDescriptions=Arrays.asList(first,second);
+  assertThat(uniqueRaw(typeDescriptions),sameInstance(typeDescriptions));
+}

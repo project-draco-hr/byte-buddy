@@ -1,4 +1,6 @@
 {
-  when(target.getTypeDescription()).thenReturn(mock(TypeDescription.class));
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(typeDescription.asRawType()).thenReturn(typeDescription);
+  when(target.getType()).thenReturn(typeDescription);
   StubValue.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
 }

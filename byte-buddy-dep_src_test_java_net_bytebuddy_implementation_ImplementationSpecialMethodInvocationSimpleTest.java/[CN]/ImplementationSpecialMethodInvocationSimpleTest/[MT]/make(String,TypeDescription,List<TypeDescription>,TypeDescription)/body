@@ -1,3 +1,9 @@
 {
-  return new Implementation.SpecialMethodInvocation.Simple(new MethodDescription.Latent(name,mock(TypeDescription.class),returnType,parameterTypes,Opcodes.ACC_PUBLIC,Collections.<TypeDescription>emptyList()),targetType,mock(StackManipulation.class));
+  List<ParameterDescription.Token> tokens=new ArrayList<ParameterDescription.Token>(parameterTypes.size());
+  for (  TypeDescription parameterType : parameterTypes) {
+    tokens.add(new ParameterDescription.Token(parameterType));
+  }
+  TypeDescription declaringType=mock(TypeDescription.class);
+  when(declaringType.asRawType()).thenReturn(declaringType);
+  return new Implementation.SpecialMethodInvocation.Simple(new MethodDescription.Latent(declaringType,name,Opcodes.ACC_PUBLIC,Collections.<GenericTypeDescription>emptyList(),returnType,tokens,Collections.<TypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE),targetType,mock(StackManipulation.class));
 }

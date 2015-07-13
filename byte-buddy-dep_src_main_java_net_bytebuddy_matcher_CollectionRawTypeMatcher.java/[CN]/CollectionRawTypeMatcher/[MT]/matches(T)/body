@@ -1,0 +1,7 @@
+{
+  List<TypeDescription> typeDescriptions=new LinkedList<TypeDescription>();
+  for (  GenericTypeDescription typeDescription : target) {
+    typeDescriptions.add(typeDescription.asRawType());
+  }
+  return matcher.matches(typeDescriptions);
+}

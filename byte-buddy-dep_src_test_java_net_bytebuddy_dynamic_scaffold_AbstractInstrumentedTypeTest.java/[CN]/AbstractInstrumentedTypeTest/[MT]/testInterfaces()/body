@@ -1,5 +1,0 @@
-{
-  TypeList interfaces=makePlainInstrumentedType().getInterfaces();
-  assertThat(interfaces.size(),is(1));
-  assertThat(interfaces.get(0),is(is((TypeDescription)new TypeDescription.ForLoadedType(Serializable.class))));
-}

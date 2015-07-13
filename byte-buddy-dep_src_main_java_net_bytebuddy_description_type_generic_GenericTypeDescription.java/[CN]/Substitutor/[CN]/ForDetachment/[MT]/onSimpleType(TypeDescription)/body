@@ -1,0 +1,3 @@
+{
+  return typeMatcher.matches(typeDescription) ? TargetType.DESCRIPTION : typeDescription;
+}

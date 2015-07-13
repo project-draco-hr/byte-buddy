@@ -2,5 +2,5 @@
   if (methodDescription.isConstructor()) {
     throw new IllegalArgumentException();
   }
-  return new Resolution.ForRebasedMethod(methodDescription,methodNameTransformer);
+  return Resolution.ForRebasedMethod.of(methodDescription,methodNameTransformer);
 }

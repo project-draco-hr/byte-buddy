@@ -1,2 +1,0 @@
-List<? extends TypeDescription> typeList
-TypeDescription actualTargetType

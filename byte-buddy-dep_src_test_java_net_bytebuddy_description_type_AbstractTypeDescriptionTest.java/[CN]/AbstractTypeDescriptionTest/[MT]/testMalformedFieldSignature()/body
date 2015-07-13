@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=describe(SignatureMalformer.malform(MalformedBase.class));
+  assertThat(typeDescription.getDeclaredFields().size(),is(1));
+  typeDescription.getDeclaredFields().getOnly().getType().getSort();
+}

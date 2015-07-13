@@ -1,3 +1,0 @@
-{
-  return new InlineInstrumentedType(levelType,name,interfaces,modifiers,fieldDescriptions,methodDescriptions,LoadedTypeInitializer.NoOp.INSTANCE,TypeInitializer.None.INSTANCE);
-}

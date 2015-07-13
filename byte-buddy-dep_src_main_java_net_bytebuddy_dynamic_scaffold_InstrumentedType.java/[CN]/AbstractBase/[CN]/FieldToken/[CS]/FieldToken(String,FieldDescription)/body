@@ -1,6 +1,0 @@
-{
-  name=fieldDescription.getName();
-  fieldType=withSubstitutedSelfReference(typeName,fieldDescription.getFieldType());
-  modifiers=fieldDescription.getModifiers();
-  declaredAnnotations=fieldDescription.getDeclaredAnnotations();
-}

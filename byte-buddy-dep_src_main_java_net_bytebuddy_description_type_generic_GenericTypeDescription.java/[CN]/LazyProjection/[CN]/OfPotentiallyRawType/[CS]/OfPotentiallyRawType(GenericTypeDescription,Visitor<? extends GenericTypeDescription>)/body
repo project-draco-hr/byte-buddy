@@ -1,0 +1,4 @@
+{
+  this.unresolvedType=unresolvedType;
+  this.transformer=transformer;
+}

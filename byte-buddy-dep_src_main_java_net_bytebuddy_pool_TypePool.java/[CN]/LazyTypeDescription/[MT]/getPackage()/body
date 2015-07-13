@@ -1,4 +1,5 @@
 {
-  String packageName=getPackageName();
-  return packageName == null ? null : new LazyPackageDescription(typePool,packageName);
+  String name=getName();
+  int index=name.lastIndexOf('.');
+  return index == -1 ? null : new LazyPackageDescription(typePool,name.substring(0,index));
 }

@@ -1,11 +1,11 @@
 {
-  when(source.getUniqueSignature()).thenReturn(FOO);
-  when(instrumentedType.getInterfaces()).thenReturn(new TypeList.ForLoadedType(Foo.class));
-  when(target.getTypeDescription()).thenReturn(morphType);
+  when(source.asToken()).thenReturn(morphToken);
+  when(instrumentedType.getInterfaces()).thenReturn(new GenericTypeList.ForLoadedType(Foo.class));
+  when(target.getType()).thenReturn(morphType);
   when(morphMethod.getDeclaringType()).thenReturn(morphType);
   when(annotation.defaultMethod()).thenReturn(true);
   doReturn(Foo.class).when(annotation).defaultTarget();
-  when(implementationTarget.invokeDefault(new TypeDescription.ForLoadedType(Foo.class),FOO)).thenReturn(specialMethodInvocation);
+  when(implementationTarget.invokeDefault(new TypeDescription.ForLoadedType(Foo.class),morphToken)).thenReturn(specialMethodInvocation);
   when(specialMethodInvocation.isValid()).thenReturn(true);
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=new Morph.Binder(morphMethod).bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));

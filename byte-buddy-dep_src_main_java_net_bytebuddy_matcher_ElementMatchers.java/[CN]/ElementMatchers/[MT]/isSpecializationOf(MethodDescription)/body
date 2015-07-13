@@ -1,8 +1,8 @@
 {
-  TypeList parameterTypes=methodDescription.getParameters().asTypeList();
-  List<ElementMatcher<TypeDescription>> matchers=new ArrayList<ElementMatcher<TypeDescription>>(parameterTypes.size());
+  TypeList parameterTypes=methodDescription.getParameters().asTypeList().asRawTypes();
+  List<ElementMatcher<GenericTypeDescription>> matchers=new ArrayList<ElementMatcher<GenericTypeDescription>>(parameterTypes.size());
   for (  TypeDescription typeDescription : parameterTypes) {
-    matchers.add(isSubTypeOf(typeDescription));
+    matchers.add(rawType(isSubTypeOf(typeDescription)));
   }
-  return (methodDescription.isStatic() ? ElementMatchers.<T>isStatic() : ElementMatchers.<T>not(isStatic())).<T>and(named(methodDescription.getSourceCodeName())).<T>and(returns(isSubTypeOf(methodDescription.getReturnType()))).and(takesArguments(new CollectionOneToOneMatcher<TypeDescription>(matchers)));
+  return (methodDescription.isStatic() ? ElementMatchers.<T>isStatic() : ElementMatchers.<T>not(isStatic())).<T>and(named(methodDescription.getSourceCodeName())).<T>and(returnsGeneric(rawType(isSubTypeOf(methodDescription.getReturnType().asRawType())))).and(takesGenericArguments(new CollectionOneToOneMatcher<GenericTypeDescription>(matchers)));
 }

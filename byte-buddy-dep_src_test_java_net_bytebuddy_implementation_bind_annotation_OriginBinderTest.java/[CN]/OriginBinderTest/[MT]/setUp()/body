@@ -1,4 +1,5 @@
 {
   super.setUp();
-  when(target.getTypeDescription()).thenReturn(targetType);
+  when(target.getType()).thenReturn(targetType);
+  when(targetType.asRawType()).thenReturn(targetType);
 }

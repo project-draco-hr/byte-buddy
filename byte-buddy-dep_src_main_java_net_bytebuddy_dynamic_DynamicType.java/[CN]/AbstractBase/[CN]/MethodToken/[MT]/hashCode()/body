@@ -1,6 +1,0 @@
-{
-  int result=internalName.hashCode();
-  result=31 * result + returnType.hashCode();
-  result=31 * result + parameterTypes.hashCode();
-  return result;
-}

@@ -1,5 +1,5 @@
 {
   assertThat(ElementMatchers.isTypeInitializer().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(false));
   assertThat(ElementMatchers.isTypeInitializer().matches(new MethodDescription.ForLoadedConstructor(Object.class.getDeclaredConstructor())),is(false));
-  assertThat(ElementMatchers.isTypeInitializer().matches(MethodDescription.Latent.typeInitializerOf(mock(TypeDescription.class))),is(true));
+  assertThat(ElementMatchers.isTypeInitializer().matches(new MethodDescription.Latent.TypeInitializer(mock(TypeDescription.class))),is(true));
 }

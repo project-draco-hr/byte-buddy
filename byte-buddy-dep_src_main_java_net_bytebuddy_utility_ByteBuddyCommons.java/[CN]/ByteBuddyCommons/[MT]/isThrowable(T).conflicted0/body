@@ -1,0 +1,6 @@
+{
+  if (!isActualType(typeDescription).asRawType().isAssignableTo(Throwable.class)) {
+    throw new IllegalArgumentException("Cannot throw instances of: " + typeDescription);
+  }
+  return typeDescription;
+}

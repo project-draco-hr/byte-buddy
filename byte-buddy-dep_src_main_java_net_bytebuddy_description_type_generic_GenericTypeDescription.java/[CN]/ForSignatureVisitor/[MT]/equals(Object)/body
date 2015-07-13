@@ -1,0 +1,3 @@
+{
+  return this == other || other instanceof ForSignatureVisitor && signatureVisitor.equals(((ForSignatureVisitor)other).signatureVisitor);
+}

@@ -1,3 +1,0 @@
-{
-  return "Implementation.Context.Default.FieldSetter{" + "fieldDescription=" + fieldDescription + '}';
-}

@@ -1,5 +1,7 @@
 {
   when(first.getDeclaringType()).thenReturn(firstType);
   when(second.getDeclaringType()).thenReturn(secondType);
+  when(firstType.asRawType()).thenReturn(firstRawType);
+  when(secondType.asRawType()).thenReturn(secondRawType);
   when(first.getModifiers()).thenReturn(MODIFIERS);
 }

@@ -1,0 +1,6 @@
+{
+  if (isActualTypeOrVoid(typeDescription).asRawType().represents(void.class)) {
+    throw new IllegalArgumentException("The void non-type cannot be assigned a value");
+  }
+  return typeDescription;
+}

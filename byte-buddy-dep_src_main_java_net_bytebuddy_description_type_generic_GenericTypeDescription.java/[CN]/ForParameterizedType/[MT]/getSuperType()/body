@@ -1,0 +1,3 @@
+{
+  return LazyProjection.OfPotentiallyRawType.of(asRawType().getSuperType(),Visitor.Substitutor.ForTypeVariableBinding.bind(this));
+}

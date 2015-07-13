@@ -1,3 +1,9 @@
 {
-  return typePool.describe(type.getName()).resolve();
+  TypePool typePool=new TypePool.Default(TypePool.CacheProvider.NoOp.INSTANCE,ClassFileLocator.ForClassLoader.of(type.getClassLoader()));
+  try {
+    return typePool.describe(type.getName()).resolve();
+  }
+  finally {
+    typePool.clear();
+  }
 }

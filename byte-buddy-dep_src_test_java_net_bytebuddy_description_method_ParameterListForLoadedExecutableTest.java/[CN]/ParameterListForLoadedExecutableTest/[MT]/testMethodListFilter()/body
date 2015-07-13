@@ -1,4 +1,0 @@
-{
-  parameterList=parameterList.filter(isAnnotatedWith(Bar.class));
-  assertThat(parameterList.size(),is(1));
-}

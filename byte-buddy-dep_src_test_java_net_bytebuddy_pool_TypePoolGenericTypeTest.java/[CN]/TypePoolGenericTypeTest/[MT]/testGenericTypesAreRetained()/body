@@ -1,6 +1,0 @@
-{
-  TypeDescription typeDescription=typePool.describe(Foo.class.getName()).resolve();
-  assertThat(typeDescription.getGenericSignature(),is("<T:Ljava/lang/Object;>Ljava/lang/Object;"));
-  assertThat(typeDescription.getDeclaredFields().getOnly().getGenericSignature(),is("Ljava/util/List<Ljava/lang/String;>;"));
-  assertThat(typeDescription.getDeclaredMethods().filter(isMethod()).getOnly().getGenericSignature(),is("<S:Ljava/lang/Object;>(Ljava/util/List<TS;>;)TS;"));
-}

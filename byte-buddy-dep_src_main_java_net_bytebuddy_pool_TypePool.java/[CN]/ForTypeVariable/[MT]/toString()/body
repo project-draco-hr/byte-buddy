@@ -1,0 +1,3 @@
+{
+  return "TypePool.LazyTypeDescription.GenericTypeToken.ForTypeVariable{" + "symbol='" + symbol + '\''+ '}';
+}

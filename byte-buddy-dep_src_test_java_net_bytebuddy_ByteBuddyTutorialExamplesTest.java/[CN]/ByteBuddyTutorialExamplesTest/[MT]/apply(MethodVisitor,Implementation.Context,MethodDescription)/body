@@ -1,5 +1,5 @@
 {
-  if (!instrumentedMethod.getReturnType().represents(int.class)) {
+  if (!instrumentedMethod.getReturnType().asRawType().represents(int.class)) {
     throw new IllegalArgumentException(instrumentedMethod + " must return int");
   }
   StackManipulation.Size operandStackSize=new StackManipulation.Compound(IntegerConstant.forValue(10),IntegerConstant.forValue(50),IntegerSum.INSTANCE,MethodReturn.INTEGER).apply(methodVisitor,implementationContext);

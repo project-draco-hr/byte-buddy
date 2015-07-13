@@ -1,0 +1,5 @@
+{
+  GenericTypeDescription genericTypeDescription=mock(GenericTypeDescription.class);
+  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.VARIABLE);
+  isImplementable(genericTypeDescription);
+}

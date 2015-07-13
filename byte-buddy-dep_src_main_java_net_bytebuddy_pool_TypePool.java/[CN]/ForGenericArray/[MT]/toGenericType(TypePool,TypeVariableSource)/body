@@ -1,0 +1,3 @@
+{
+  return GenericTypeDescription.ForGenericArray.Latent.of(componentTypeToken.toGenericType(typePool,typeVariableSource),1);
+}

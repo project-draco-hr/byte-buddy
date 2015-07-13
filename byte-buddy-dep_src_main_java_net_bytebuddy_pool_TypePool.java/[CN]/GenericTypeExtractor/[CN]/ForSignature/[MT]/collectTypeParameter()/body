@@ -1,0 +1,5 @@
+{
+  if (currentTypeParameter != null) {
+    typeVariableTokens.add(new LazyTypeDescription.GenericTypeToken.ForTypeVariable.Formal(currentTypeParameter,currentBounds));
+  }
+}

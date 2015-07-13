@@ -1,0 +1,4 @@
+{
+  when(packageDescription.getName()).thenReturn(FOO);
+  assertThat(typeDescription.getName(),is(FOO + "." + PackageDescription.PACKAGE_CLASS_NAME));
+}

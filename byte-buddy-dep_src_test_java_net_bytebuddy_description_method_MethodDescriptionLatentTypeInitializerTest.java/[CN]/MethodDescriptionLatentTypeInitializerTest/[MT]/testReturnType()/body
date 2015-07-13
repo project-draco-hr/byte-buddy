@@ -1,0 +1,3 @@
+{
+  assertThat(typeInitializer.getReturnType(),is((GenericTypeDescription)TypeDescription.VOID));
+}

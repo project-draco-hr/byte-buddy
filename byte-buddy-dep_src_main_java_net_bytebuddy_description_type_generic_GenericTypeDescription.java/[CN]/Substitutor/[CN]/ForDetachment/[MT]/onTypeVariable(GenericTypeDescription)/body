@@ -1,0 +1,4 @@
+{
+  GenericTypeDescription typeVariable=detachedVariables.get(genericTypeDescription.getSymbol());
+  return typeVariable == null ? new DetachedTypeVariable(genericTypeDescription.getSymbol(),genericTypeDescription.getUpperBounds(),this) : typeVariable;
+}

@@ -1,0 +1,8 @@
+{
+  ObjectPropertyAssertion.of(ParameterDescription.Token.class).create(new ObjectPropertyAssertion.Creator<Integer>(){
+    @Override public Integer create(){
+      return new Random().nextInt();
+    }
+  }
+).applyBasic();
+}

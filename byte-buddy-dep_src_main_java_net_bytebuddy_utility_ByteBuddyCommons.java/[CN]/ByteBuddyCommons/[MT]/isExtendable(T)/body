@@ -1,9 +1,9 @@
 {
-  if (nonNull(typeDescription).isArray() || typeDescription.isPrimitive()) {
-    throw new IllegalArgumentException(typeDescription + " is not implementable");
+  if (!EXTENDABLE_TYPES.contains(typeDescription.getSort())) {
+    throw new IllegalArgumentException("Cannot extend generic type: " + typeDescription);
   }
- else   if (typeDescription.isFinal()) {
-    throw new IllegalArgumentException("Cannot implement a final class such as " + typeDescription);
+ else   if (isDefineable(typeDescription.asRawType()).isFinal()) {
+    throw new IllegalArgumentException("Cannot extend a final type: " + typeDescription);
   }
   return typeDescription;
 }

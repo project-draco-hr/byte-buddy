@@ -1,5 +1,0 @@
-int modifiers
-String name
-String descriptor
-String genericSignature
-List<AnnotationToken> annotationTokens

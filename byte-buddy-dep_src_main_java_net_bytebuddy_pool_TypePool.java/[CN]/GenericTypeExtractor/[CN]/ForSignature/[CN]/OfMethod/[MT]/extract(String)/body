@@ -1,0 +1,8 @@
+{
+  try {
+    return genericSignature == null ? LazyTypeDescription.GenericTypeToken.Resolution.Raw.INSTANCE : ForSignature.extract(genericSignature,new OfMethod());
+  }
+ catch (  RuntimeException ignored) {
+    return LazyTypeDescription.GenericTypeToken.Resolution.Malformed.INSTANCE;
+  }
+}

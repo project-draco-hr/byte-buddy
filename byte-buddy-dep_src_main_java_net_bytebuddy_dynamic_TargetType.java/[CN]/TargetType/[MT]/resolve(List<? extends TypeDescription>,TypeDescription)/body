@@ -1,7 +1,0 @@
-{
-  List<TypeDescription> typeDescriptions=new ArrayList<TypeDescription>(typeList.size());
-  for (  TypeDescription typeDescription : typeList) {
-    typeDescriptions.add(resolve(typeDescription,actualTargetType));
-  }
-  return new TypeList.Explicit(typeDescriptions);
-}

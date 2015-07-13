@@ -1,6 +1,0 @@
-{
-  Set<String> processedMethods=new HashSet<String>(classMethods.keySet());
-  for (  TypeDescription interfaceTypeDescription : typeDescriptions) {
-    pushInterface(interfaceTypeDescription,processedMethods,defaultMethodLookup);
-  }
-}

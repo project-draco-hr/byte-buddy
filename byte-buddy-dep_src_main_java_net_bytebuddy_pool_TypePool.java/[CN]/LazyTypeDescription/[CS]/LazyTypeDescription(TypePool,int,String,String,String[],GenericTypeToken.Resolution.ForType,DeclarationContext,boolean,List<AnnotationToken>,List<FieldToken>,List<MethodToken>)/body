@@ -1,0 +1,30 @@
+{
+  this.typePool=typePool;
+  this.modifiers=modifiers;
+  this.name=Type.getObjectType(name).getClassName();
+  this.superTypeDescriptor=superTypeInternalName == null ? null : Type.getObjectType(superTypeInternalName).getDescriptor();
+  this.signatureResolution=signatureResolution;
+  if (interfaceInternalName == null) {
+    interfaceTypeDescriptors=Collections.<String>emptyList();
+  }
+ else {
+    interfaceTypeDescriptors=new ArrayList<String>(interfaceInternalName.length);
+    for (    String internalName : interfaceInternalName) {
+      interfaceTypeDescriptors.add(Type.getObjectType(internalName).getDescriptor());
+    }
+  }
+  this.declarationContext=declarationContext;
+  this.anonymousType=anonymousType;
+  declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
+  for (  AnnotationToken annotationToken : annotationTokens) {
+    declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));
+  }
+  declaredFields=new ArrayList<FieldDescription>(fieldTokens.size());
+  for (  FieldToken fieldToken : fieldTokens) {
+    declaredFields.add(fieldToken.toFieldDescription(this));
+  }
+  declaredMethods=new ArrayList<MethodDescription>(methodTokens.size());
+  for (  MethodToken methodToken : methodTokens) {
+    declaredMethods.add(methodToken.toMethodDescription(this));
+  }
+}

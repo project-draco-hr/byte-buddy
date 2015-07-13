@@ -1,11 +1,9 @@
 {
-  TypeDescription currentType=instrumentedType;
-  do {
+  for (  GenericTypeDescription currentType : instrumentedType) {
     FieldList fieldList=currentType.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
     if (!fieldList.isEmpty() && (!staticMethod || fieldList.getOnly().isStatic())) {
       return new Resolution.Resolved(fieldList.getOnly());
     }
   }
- while ((currentType=currentType.getSupertype()) != null);
   return new Resolution.Unresolved();
 }

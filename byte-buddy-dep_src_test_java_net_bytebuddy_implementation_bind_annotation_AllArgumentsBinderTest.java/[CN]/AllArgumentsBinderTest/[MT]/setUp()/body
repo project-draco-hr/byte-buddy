@@ -2,4 +2,5 @@
   super.setUp();
   when(firstSourceType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(secondSourceType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(targetType.asRawType()).thenReturn(targetType);
 }

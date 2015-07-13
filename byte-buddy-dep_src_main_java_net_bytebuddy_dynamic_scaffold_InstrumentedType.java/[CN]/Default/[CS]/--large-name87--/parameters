@@ -1,0 +1,10 @@
+String name
+int modifiers
+List<? extends GenericTypeDescription> typeVariables
+GenericTypeDescription superType
+List<? extends GenericTypeDescription> interfaceTypes
+List<? extends FieldDescription.Token> fieldTokens
+List<? extends MethodDescription.Token> methodTokens
+List<? extends AnnotationDescription> annotationDescriptions
+TypeInitializer typeInitializer
+LoadedTypeInitializer loadedTypeInitializer

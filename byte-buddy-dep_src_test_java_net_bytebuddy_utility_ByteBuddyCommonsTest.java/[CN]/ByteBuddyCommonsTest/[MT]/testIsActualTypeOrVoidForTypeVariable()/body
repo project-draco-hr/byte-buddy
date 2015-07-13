@@ -1,0 +1,5 @@
+{
+  GenericTypeDescription typeDescription=mock(GenericTypeDescription.class);
+  when(typeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.VARIABLE);
+  assertThat(isActualTypeOrVoid(typeDescription),sameInstance(typeDescription));
+}

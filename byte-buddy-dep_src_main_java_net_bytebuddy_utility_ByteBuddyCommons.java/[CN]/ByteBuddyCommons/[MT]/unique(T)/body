@@ -1,9 +1,9 @@
 {
-  Set<Object> types=new HashSet<Object>(items.size());
-  for (  Object item : items) {
-    if (!types.add(item)) {
-      throw new IllegalArgumentException("Non-unique item was found: " + item);
+  Set<Object> found=new HashSet<Object>(elements.size());
+  for (  Object element : elements) {
+    if (!found.add(element)) {
+      throw new IllegalArgumentException("Duplicate element: " + element);
     }
   }
-  return items;
+  return elements;
 }

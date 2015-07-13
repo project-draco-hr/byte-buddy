@@ -1,0 +1,6 @@
+{
+  FieldDescription foo=new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField("foo"));
+  FieldDescription bar=new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField("bar"));
+  assertThat(ElementMatchers.representedBy(foo.asToken()).matches(foo),is(true));
+  assertThat(ElementMatchers.representedBy(foo.asToken()).matches(bar),is(false));
+}

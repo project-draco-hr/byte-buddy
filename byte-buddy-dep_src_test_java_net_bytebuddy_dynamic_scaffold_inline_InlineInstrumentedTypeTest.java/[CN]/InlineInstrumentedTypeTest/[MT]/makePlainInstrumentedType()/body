@@ -1,3 +1,0 @@
-{
-  return new InlineInstrumentedType(ClassFileVersion.forCurrentJavaVersion(),targetType,new TypeList.ForLoadedType(Collections.<Class<?>>singletonList(Serializable.class)),Opcodes.ACC_PUBLIC,new NamingStrategy.Fixed(FOOBAR));
-}

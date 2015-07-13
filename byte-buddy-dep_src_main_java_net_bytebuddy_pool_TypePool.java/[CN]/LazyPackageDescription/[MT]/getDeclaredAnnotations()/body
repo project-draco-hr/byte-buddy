@@ -1,4 +1,4 @@
 {
-  Resolution resolution=typePool.describe(name + PACKAGE_INFO);
+  Resolution resolution=typePool.describe(name + "." + PackageDescription.PACKAGE_CLASS_NAME);
   return resolution.isResolved() ? resolution.resolve().getDeclaredAnnotations() : new AnnotationList.Empty();
 }

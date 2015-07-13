@@ -1,0 +1,5 @@
+{
+  this.modifierContributor=modifierContributor;
+  this.expectedModifier=expectedModifier;
+  this.defaultModifier=defaultModifier;
+}

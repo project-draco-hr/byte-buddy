@@ -1,4 +1,0 @@
-{
-  assertThat(joinUnique(Arrays.asList(FOO,BAR),QUX),is(Arrays.asList(FOO,BAR,QUX)));
-  assertThat(joinUnique(Arrays.asList(FOO,BAR),FOO),is(Arrays.asList(FOO,BAR)));
-}

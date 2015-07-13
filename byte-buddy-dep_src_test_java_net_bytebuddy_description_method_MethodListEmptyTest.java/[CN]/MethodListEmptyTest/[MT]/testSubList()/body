@@ -1,3 +1,0 @@
-{
-  assertThat(methodList.subList(0,0),is(methodList));
-}

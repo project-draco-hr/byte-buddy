@@ -1,4 +1,0 @@
-{
-  InstrumentedType instrumentedType=makePlainInstrumentedType();
-  assertThat(instrumentedType.hashCode(),is(instrumentedType.getName().hashCode()));
-}

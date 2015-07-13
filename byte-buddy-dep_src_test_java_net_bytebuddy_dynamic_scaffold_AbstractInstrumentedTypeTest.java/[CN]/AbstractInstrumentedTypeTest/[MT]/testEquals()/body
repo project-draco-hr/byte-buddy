@@ -1,7 +1,0 @@
-{
-  InstrumentedType instrumentedType=makePlainInstrumentedType();
-  TypeDescription other=mock(TypeDescription.class);
-  when(other.getName()).thenReturn(instrumentedType.getName());
-  assertThat(instrumentedType.equals(other),is(true));
-  verify(other,atLeast(1)).getName();
-}

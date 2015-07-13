@@ -1,0 +1,12 @@
+{
+  GenericTypeDescription genericTypeDescription=describe(ShadowingTypeVariableType.class.getDeclaredMethod(FOO));
+  assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.VARIABLE));
+  assertThat(genericTypeDescription.getSymbol(),is(T));
+  assertThat(genericTypeDescription.getStackSize(),is(StackSize.SINGLE));
+  assertThat(genericTypeDescription.getUpperBounds().size(),is(1));
+  assertThat(genericTypeDescription.getUpperBounds().getOnly(),is((GenericTypeDescription)TypeDescription.OBJECT));
+  assertThat(genericTypeDescription.getTypeName(),is(ShadowingTypeVariableType.class.getDeclaredMethod(FOO).getGenericReturnType().toString()));
+  assertThat(genericTypeDescription.getVariableSource(),is((TypeVariableSource)new MethodDescription.ForLoadedMethod(ShadowingTypeVariableType.class.getDeclaredMethod(FOO))));
+  assertThat(genericTypeDescription.getVariableSource().getTypeVariables().size(),is(1));
+  assertThat(genericTypeDescription.getVariableSource().getTypeVariables().getOnly(),is(genericTypeDescription));
+}

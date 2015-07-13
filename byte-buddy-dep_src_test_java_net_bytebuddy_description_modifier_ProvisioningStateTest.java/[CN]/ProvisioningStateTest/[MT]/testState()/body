@@ -1,0 +1,3 @@
+{
+  assertThat(((ProvisioningState)modifierContributor).isMandated(),is(expectedModifier != 0));
+}

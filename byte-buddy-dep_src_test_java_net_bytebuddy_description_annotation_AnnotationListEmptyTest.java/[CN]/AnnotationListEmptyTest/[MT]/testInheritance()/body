@@ -1,3 +1,0 @@
-{
-  assertThat(annotationList.inherited(Collections.<TypeDescription>emptySet()),is(annotationList));
-}

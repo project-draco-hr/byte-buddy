@@ -1,8 +1,3 @@
 {
-  TypeDescription[] typeDescription=new TypeDescription[type.length];
-  int index=0;
-  for (  Class<?> aType : type) {
-    typeDescription[index++]=new TypeDescription.ForLoadedType(nonNull(aType));
-  }
-  return takesArguments(typeDescription);
+  return takesGenericArguments(rawTypes(nonNull(type)));
 }

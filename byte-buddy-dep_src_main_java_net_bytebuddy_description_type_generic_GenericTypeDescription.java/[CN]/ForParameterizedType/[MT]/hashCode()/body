@@ -1,0 +1,8 @@
+{
+  int result=1;
+  for (  GenericTypeDescription genericTypeDescription : getParameters()) {
+    result=31 * result + genericTypeDescription.hashCode();
+  }
+  GenericTypeDescription ownerType=getOwnerType();
+  return result ^ (ownerType == null ? asRawType().hashCode() : ownerType.hashCode());
+}

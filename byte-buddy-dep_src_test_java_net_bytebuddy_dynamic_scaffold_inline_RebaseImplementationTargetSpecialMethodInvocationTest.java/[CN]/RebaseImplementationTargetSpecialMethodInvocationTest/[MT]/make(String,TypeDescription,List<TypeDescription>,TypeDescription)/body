@@ -1,6 +1,13 @@
 {
   MethodRebaseResolver.Resolution resolution=mock(MethodRebaseResolver.Resolution.class);
   when(resolution.getAdditionalArguments()).thenReturn(StackManipulation.LegalTrivial.INSTANCE);
-  when(resolution.getResolvedMethod()).thenReturn(new MethodDescription.Latent(name,mock(TypeDescription.class),returnType,parameterTypes,Opcodes.ACC_PUBLIC,new TypeList.Empty()));
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  when(methodDescription.getInternalName()).thenReturn(name);
+  when(methodDescription.getReturnType()).thenReturn(returnType);
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,parameterTypes));
+  TypeDescription declaringType=mock(TypeDescription.class);
+  when(declaringType.asRawType()).thenReturn(declaringType);
+  when(methodDescription.getDeclaringType()).thenReturn(declaringType);
+  when(resolution.getResolvedMethod()).thenReturn(methodDescription);
   return new RebaseImplementationTarget.RebasedMethodSpecialMethodInvocation(resolution,targetType);
 }

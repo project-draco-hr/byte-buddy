@@ -7,7 +7,7 @@
   verify(entry).getSort();
   verify(entry).prepend(typeInitializer);
   verifyNoMoreInteractions(entry);
-  verify(otherEntry).apply(classVisitor,implementationContext,MethodDescription.Latent.typeInitializerOf(instrumentedType));
+  verify(otherEntry).apply(classVisitor,implementationContext,new MethodDescription.Latent.TypeInitializer(instrumentedType));
   verify(typeInitializer,atLeast(1)).isDefined();
   verifyNoMoreInteractions(typeInitializer);
   verify(injectedCode,atLeast(1)).isDefined();

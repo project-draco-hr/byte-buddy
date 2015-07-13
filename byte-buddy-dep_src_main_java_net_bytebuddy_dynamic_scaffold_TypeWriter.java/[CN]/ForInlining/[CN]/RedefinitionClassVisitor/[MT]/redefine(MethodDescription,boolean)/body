@@ -1,8 +1,8 @@
 {
   TypeWriter.MethodPool.Entry entry=methodPool.target(methodDescription);
   if (!entry.getSort().isDefined()) {
-    return super.visitMethod(methodDescription.getModifiers(),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().toInternalNames());
+    return super.visitMethod(methodDescription.getModifiers(),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().asRawTypes().toInternalNames());
   }
-  MethodVisitor methodVisitor=super.visitMethod(entry.getModifierResolver().transform(methodDescription,entry.getSort().isImplemented()),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().toInternalNames());
+  MethodVisitor methodVisitor=super.visitMethod(entry.getModifierResolver().transform(methodDescription,entry.getSort().isImplemented()),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().asRawTypes().toInternalNames());
   return abstractOrigin ? new AttributeObtainingMethodVisitor(methodVisitor,entry,methodDescription) : new CodePreservingMethodVisitor(methodVisitor,entry,methodDescription);
 }

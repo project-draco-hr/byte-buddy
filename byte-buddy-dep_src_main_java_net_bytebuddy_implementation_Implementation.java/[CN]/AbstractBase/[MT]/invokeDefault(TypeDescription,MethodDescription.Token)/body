@@ -1,0 +1,10 @@
+{
+  Map<MethodDescription.Token,MethodDescription> defaultMethods=this.defaultMethods.get(targetType);
+  if (defaultMethods != null) {
+    MethodDescription defaultMethod=defaultMethods.get(methodToken);
+    if (defaultMethod != null) {
+      return SpecialMethodInvocation.Simple.of(defaultMethod,targetType);
+    }
+  }
+  return Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
+}

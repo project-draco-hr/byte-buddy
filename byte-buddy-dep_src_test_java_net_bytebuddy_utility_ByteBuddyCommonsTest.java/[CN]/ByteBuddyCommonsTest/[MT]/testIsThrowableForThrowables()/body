@@ -1,3 +1,0 @@
-{
-  assertThat(isThrowable(Collections.singletonList(first)),is(Collections.singletonList(first)));
-}

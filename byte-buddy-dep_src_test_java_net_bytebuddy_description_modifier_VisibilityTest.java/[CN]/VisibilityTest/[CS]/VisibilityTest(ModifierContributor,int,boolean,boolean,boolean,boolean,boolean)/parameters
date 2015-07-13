@@ -1,0 +1,7 @@
+ModifierContributor modifierContributor
+int expectedModifier
+boolean defaultModifier
+boolean isPublic
+boolean isProtected
+boolean isPackagePrivate
+boolean isPrivate

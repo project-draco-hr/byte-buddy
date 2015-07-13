@@ -1,0 +1,3 @@
+{
+  assertThat(describe(genericField).toGenericString(),is(genericField.toGenericString()));
+}

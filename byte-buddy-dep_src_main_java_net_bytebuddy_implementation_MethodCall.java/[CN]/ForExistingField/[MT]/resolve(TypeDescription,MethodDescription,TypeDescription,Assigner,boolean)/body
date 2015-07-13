@@ -1,12 +1,12 @@
 {
-  TypeDescription currentType=instrumentedType;
+  GenericTypeDescription currentType=instrumentedType;
   FieldDescription fieldDescription=null;
   do {
-    FieldList fieldList=currentType.getDeclaredFields().filter(named(fieldName));
+    FieldList fieldList=currentType.asRawType().getDeclaredFields().filter(named(fieldName));
     if (fieldList.size() != 0) {
       fieldDescription=fieldList.getOnly();
     }
-    currentType=currentType.getSupertype();
+    currentType=currentType.getSuperType();
   }
  while (currentType != null && (fieldDescription == null || !fieldDescription.isVisibleTo(instrumentedType)));
   if (fieldDescription == null || !fieldDescription.isVisibleTo(instrumentedType)) {
@@ -15,7 +15,7 @@
  else   if (!fieldDescription.isStatic() && interceptedMethod.isStatic()) {
     throw new IllegalStateException("Cannot access non-static " + fieldDescription + " from "+ interceptedMethod);
   }
-  StackManipulation stackManipulation=new StackManipulation.Compound(fieldDescription.isStatic() ? StackManipulation.LegalTrivial.INSTANCE : MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(fieldDescription).getter(),assigner.assign(fieldDescription.getFieldType(),targetType,dynamicallyTyped));
+  StackManipulation stackManipulation=new StackManipulation.Compound(fieldDescription.isStatic() ? StackManipulation.LegalTrivial.INSTANCE : MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(fieldDescription).getter(),assigner.assign(fieldDescription.getType().asRawType(),targetType,dynamicallyTyped));
   if (!stackManipulation.isValid()) {
     throw new IllegalStateException("Cannot assign " + fieldDescription + " to "+ targetType);
   }

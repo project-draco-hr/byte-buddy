@@ -1,16 +1,20 @@
 {
   ClassFileVersion classFileVersion=new ClassFileVersion(version);
-  if ((modifier & Opcodes.ACC_ANNOTATION) != 0) {
+  if (name.endsWith("/" + PackageDescription.PACKAGE_CLASS_NAME)) {
+    constraint=Constraint.PACKAGE_CLASS;
+  }
+ else   if ((modifier & Opcodes.ACC_ANNOTATION) != ModifierReviewable.EMPTY_MASK) {
     constraint=classFileVersion.isSupportsDefaultMethods() ? Constraint.JAVA8_ANNOTATION : Constraint.ANNOTATION;
   }
- else   if ((modifier & Opcodes.ACC_INTERFACE) != 0) {
+ else   if ((modifier & Opcodes.ACC_INTERFACE) != ModifierReviewable.EMPTY_MASK) {
     constraint=classFileVersion.isSupportsDefaultMethods() ? Constraint.JAVA8_INTERFACE : Constraint.INTERFACE;
   }
- else   if ((modifier & Opcodes.ACC_ABSTRACT) != 0) {
+ else   if ((modifier & Opcodes.ACC_ABSTRACT) != ModifierReviewable.EMPTY_MASK) {
     constraint=Constraint.ABSTRACT_CLASS;
   }
  else {
     constraint=Constraint.MANIFEST_CLASS;
   }
+  constraint.assertPackage(modifier,interfaces);
   super.visit(version,modifier,name,signature,superName,interfaces);
 }

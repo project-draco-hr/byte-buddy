@@ -1,0 +1,12 @@
+{
+switch (wildcard) {
+case SignatureVisitor.SUPER:
+    return incompleteToken.appendLowerBound();
+case SignatureVisitor.EXTENDS:
+  return incompleteToken.appendUpperBound();
+case SignatureVisitor.INSTANCEOF:
+return incompleteToken.appendDirectBound();
+default :
+throw new IllegalArgumentException("Unknown wildcard: " + wildcard);
+}
+}

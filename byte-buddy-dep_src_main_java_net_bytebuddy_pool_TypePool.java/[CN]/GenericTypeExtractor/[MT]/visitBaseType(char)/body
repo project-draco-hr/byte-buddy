@@ -1,0 +1,3 @@
+{
+  genericTypeRegistrant.register(LazyTypeDescription.GenericTypeToken.ForPrimitiveType.of(descriptor));
+}

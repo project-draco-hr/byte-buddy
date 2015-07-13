@@ -1,0 +1,4 @@
+{
+  GenericTypeDescription superType=typeDescription.getSuperType();
+  return superType == null ? null : superType.accept(Visitor.TypeVariableErasing.INSTANCE);
+}

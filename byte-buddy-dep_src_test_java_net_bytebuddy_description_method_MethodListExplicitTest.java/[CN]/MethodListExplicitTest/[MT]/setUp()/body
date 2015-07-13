@@ -1,3 +1,0 @@
-{
-  methodList=new MethodList.Explicit(Arrays.asList(firstMethodDescription,secondMethodDescription));
-}

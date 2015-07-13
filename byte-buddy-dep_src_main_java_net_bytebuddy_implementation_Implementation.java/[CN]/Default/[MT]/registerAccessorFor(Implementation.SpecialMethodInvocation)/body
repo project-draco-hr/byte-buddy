@@ -1,9 +1,9 @@
 {
   MethodDescription accessorMethod=registeredAccessorMethods.get(specialMethodInvocation);
   if (accessorMethod == null) {
-    String name=String.format("%s$%s$%s",specialMethodInvocation.getMethodDescription().getInternalName(),ACCESSOR_METHOD_SUFFIX,randomString.nextString());
-    accessorMethod=new MethodDescription.Latent(name,instrumentedType,specialMethodInvocation.getMethodDescription().getReturnType(),specialMethodInvocation.getMethodDescription().getParameters().asTypeList(),resolveModifier(specialMethodInvocation.getMethodDescription().isStatic()),specialMethodInvocation.getMethodDescription().getExceptionTypes());
-    registerAccessor(specialMethodInvocation,accessorMethod);
+    accessorMethod=new AccessorMethod(instrumentedType,specialMethodInvocation.getMethodDescription(),randomString.nextString());
+    registeredAccessorMethods.put(specialMethodInvocation,accessorMethod);
+    accessorMethodEntries.put(accessorMethod,new AccessorMethodDelegation(specialMethodInvocation));
   }
   return accessorMethod;
 }

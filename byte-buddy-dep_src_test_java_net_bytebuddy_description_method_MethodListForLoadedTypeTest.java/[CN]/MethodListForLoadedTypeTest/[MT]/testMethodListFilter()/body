@@ -1,9 +1,0 @@
-{
-  methodList=methodList.filter(isMethod());
-  assertThat(methodList.size(),is(Object.class.getDeclaredMethods().length));
-  for (  Method method : Object.class.getDeclaredMethods()) {
-    MethodList methodList=this.methodList.filter(ElementMatchers.is(method));
-    assertThat(methodList.size(),is(1));
-    assertThat(methodList.getOnly(),CoreMatchers.<MethodDescription>equalTo(new MethodDescription.ForLoadedMethod(method)));
-  }
-}

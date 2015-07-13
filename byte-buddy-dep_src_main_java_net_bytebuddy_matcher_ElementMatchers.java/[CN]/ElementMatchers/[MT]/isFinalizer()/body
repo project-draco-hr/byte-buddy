@@ -1,3 +1,3 @@
 {
-  return named("finalize").and(takesArguments(0)).and(returns(void.class));
+  return named("finalize").and(takesArguments(0)).and(returns(TypeDescription.VOID));
 }

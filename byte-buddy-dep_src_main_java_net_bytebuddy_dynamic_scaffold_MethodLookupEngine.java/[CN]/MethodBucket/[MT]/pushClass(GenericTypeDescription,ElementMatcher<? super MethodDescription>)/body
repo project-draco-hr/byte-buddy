@@ -1,0 +1,9 @@
+{
+  if (processedTypes.add(typeDescription.asRawType())) {
+    for (    MethodDescription methodDescription : typeDescription.getDeclaredMethods().filter(methodMatcher)) {
+      MethodDescription.Token methodToken=methodDescription.asToken();
+      MethodDescription overridingMethod=classMethods.get(methodToken);
+      classMethods.put(methodToken,overridingMethod == null ? methodDescription : OverriddenClassMethod.of(overridingMethod,methodDescription));
+    }
+  }
+}

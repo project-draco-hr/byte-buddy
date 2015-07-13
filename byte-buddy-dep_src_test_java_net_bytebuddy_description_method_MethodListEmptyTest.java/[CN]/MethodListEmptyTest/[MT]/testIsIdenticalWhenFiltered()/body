@@ -1,3 +1,0 @@
-{
-  assertThat(methodList.filter(any()),is(methodList));
-}

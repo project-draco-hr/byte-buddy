@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{EnumerationState.class},{FieldManifestation.class},{MethodArguments.class},{MethodManifestation.class},{Ownership.class},{ParameterManifestation.class},{ProvisioningState.class},{SynchronizationState.class},{SyntheticState.class},{TypeManifestation.class},{Visibility.class}});
+}

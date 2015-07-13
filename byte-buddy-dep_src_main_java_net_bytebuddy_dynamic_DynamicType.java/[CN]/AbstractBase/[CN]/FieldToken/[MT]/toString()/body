@@ -1,3 +1,0 @@
-{
-  return "DynamicType.Builder.AbstractBase.FieldToken{" + "name='" + name + '\''+ ", fieldType="+ fieldType+ ", modifiers="+ modifiers+ '}';
-}

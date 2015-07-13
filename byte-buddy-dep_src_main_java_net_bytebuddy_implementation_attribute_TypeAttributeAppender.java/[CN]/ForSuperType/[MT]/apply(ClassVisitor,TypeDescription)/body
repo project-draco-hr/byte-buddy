@@ -1,6 +1,6 @@
 {
   AnnotationAppender annotationAppender=new AnnotationAppender.Default(new AnnotationAppender.Target.OnType(classVisitor),valueFilter);
-  for (  AnnotationDescription annotation : typeDescription.getSupertype().getDeclaredAnnotations()) {
+  for (  AnnotationDescription annotation : typeDescription.getSuperType().asRawType().getDeclaredAnnotations()) {
     annotationAppender.append(annotation,AnnotationAppender.AnnotationVisibility.of(annotation));
   }
 }

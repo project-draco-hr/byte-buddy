@@ -1,0 +1,7 @@
+{
+  DynamicType.Unloaded<?> unloaded=new ByteBuddy().redefine(GenericField.class).make();
+  Class<?> type=unloaded.load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  FieldDescription createdField=new FieldDescription.ForLoadedField(type.getDeclaredField(FOO));
+  FieldDescription originalField=new FieldDescription.ForLoadedField(GenericField.class.getDeclaredField(FOO));
+  assertThat(createdField.getType(),is(originalField.getType()));
+}

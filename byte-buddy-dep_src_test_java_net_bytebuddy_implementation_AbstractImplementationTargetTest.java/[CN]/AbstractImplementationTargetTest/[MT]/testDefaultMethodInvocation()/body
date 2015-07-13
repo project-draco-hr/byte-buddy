@@ -1,5 +1,5 @@
 {
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeDefault(defaultType,FOOQUX);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeDefault(defaultType,defaultToken);
   assertThat(specialMethodInvocation.isValid(),is(true));
   assertThat(specialMethodInvocation.getMethodDescription(),is(defaultMethod));
   assertThat(specialMethodInvocation.getTypeDescription(),is(defaultType));

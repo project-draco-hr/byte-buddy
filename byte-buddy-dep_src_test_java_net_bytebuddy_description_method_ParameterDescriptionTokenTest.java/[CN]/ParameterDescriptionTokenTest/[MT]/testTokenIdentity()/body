@@ -1,0 +1,4 @@
+{
+  ParameterDescription.Token token=new ParameterDescription.Token(mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class)),null,null);
+  assertThat(token,is(token));
+}

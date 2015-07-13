@@ -1,4 +1,7 @@
 {
   super.setUp();
-  when(fieldDescription.getFieldType()).thenReturn(fieldType);
+  when(fieldDescription.getType()).thenReturn(fieldType);
+  when(fieldType.asRawType()).thenReturn(fieldType);
+  when(targetType.asRawType()).thenReturn(targetType);
+  when(target.getType()).thenReturn(targetType);
 }

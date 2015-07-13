@@ -1,8 +1,6 @@
 {
-  if (fieldToken.getFieldType().represents(legalType)) {
-    return defaultValue;
+  if (!fieldToken.getType().asRawType().represents(legalType)) {
+    throw new IllegalStateException(defaultValue + " is not of the required type " + legalType);
   }
- else {
-    throw new IllegalStateException(String.format("The given value %s was not of the required type %s",defaultValue,legalType));
-  }
+  return defaultValue;
 }

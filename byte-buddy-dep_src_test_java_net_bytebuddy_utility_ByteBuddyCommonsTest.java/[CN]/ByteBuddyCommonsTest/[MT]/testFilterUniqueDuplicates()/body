@@ -1,0 +1,3 @@
+{
+  assertThat(filterUnique(Arrays.asList(FOO,BAR),Arrays.asList(FOO,BAZ)),is(Arrays.asList(FOO,BAR,BAZ)));
+}

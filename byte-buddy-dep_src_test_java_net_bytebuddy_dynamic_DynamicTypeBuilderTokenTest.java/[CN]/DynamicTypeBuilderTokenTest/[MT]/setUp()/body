@@ -1,4 +1,0 @@
-{
-  parameterTypes=new TypeList.Explicit(Collections.singletonList(parameterType));
-  exceptionTypes=new TypeList.Explicit(Collections.singletonList(exceptionType));
-}

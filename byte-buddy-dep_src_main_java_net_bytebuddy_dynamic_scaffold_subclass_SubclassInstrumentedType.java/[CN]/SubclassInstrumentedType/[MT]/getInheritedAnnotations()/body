@@ -1,3 +1,0 @@
-{
-  return getSupertype() == null ? new AnnotationList.Empty() : getSupertype().getInheritedAnnotations().inherited(Collections.<TypeDescription>emptySet());
-}

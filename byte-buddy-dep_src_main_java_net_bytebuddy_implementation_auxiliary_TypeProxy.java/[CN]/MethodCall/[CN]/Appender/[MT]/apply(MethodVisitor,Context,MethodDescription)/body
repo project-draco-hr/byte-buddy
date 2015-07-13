@@ -1,4 +1,5 @@
 {
-  StackManipulation.Size stackSize=implement(instrumentedMethod,invocationFactory.invoke(implementationTarget,proxiedType,instrumentedMethod)).apply(methodVisitor,implementationContext);
-  return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
+  SpecialMethodInvocation specialMethodInvocation=invocationFactory.invoke(implementationTarget,proxiedType,instrumentedMethod);
+  StackManipulation.Size size=(specialMethodInvocation.isValid() ? new AccessorMethodInvocation(instrumentedMethod,specialMethodInvocation) : AbstractMethodErrorThrow.INSTANCE).apply(methodVisitor,implementationContext);
+  return new Size(size.getMaximalSize(),instrumentedMethod.getStackSize());
 }

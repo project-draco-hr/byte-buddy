@@ -1,0 +1,11 @@
+{
+  if (MethodDescription.CONSTRUCTOR_INTERNAL_NAME.equals(internalName)) {
+    return isConstructor();
+  }
+ else   if (MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME.equals(internalName)) {
+    return isTypeInitializer();
+  }
+ else {
+    return named(internalName);
+  }
+}

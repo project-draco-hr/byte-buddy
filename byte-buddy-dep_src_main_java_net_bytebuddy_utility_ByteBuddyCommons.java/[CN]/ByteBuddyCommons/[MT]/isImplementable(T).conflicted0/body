@@ -1,0 +1,6 @@
+{
+  if (!isExtendable(typeDescription).asRawType().isInterface()) {
+    throw new IllegalArgumentException("Not an interface: " + typeDescription);
+  }
+  return typeDescription;
+}

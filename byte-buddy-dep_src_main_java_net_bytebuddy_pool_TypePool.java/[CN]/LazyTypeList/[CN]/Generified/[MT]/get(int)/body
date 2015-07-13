@@ -1,0 +1,3 @@
+{
+  return LazyTypeList.this.get(index);
+}

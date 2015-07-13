@@ -1,7 +1,0 @@
-{
-  assertThat(typeList.size(),is(3));
-  assertThat(typeList.get(0),equalTo((TypeDescription)new TypeDescription.ForLoadedType(Object.class)));
-  assertThat(typeList.get(1),equalTo((TypeDescription)new TypeDescription.ForLoadedType(Integer.class)));
-  assertThat(typeList.get(2),equalTo((TypeDescription)new TypeDescription.ForLoadedType(long.class)));
-  assertThat(typeList.getStackSize(),is(4));
-}

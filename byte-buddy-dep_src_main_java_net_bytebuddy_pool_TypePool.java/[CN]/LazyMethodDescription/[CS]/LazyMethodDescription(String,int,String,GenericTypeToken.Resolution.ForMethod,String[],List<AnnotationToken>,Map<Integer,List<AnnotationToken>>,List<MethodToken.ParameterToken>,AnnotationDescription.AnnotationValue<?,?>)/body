@@ -1,0 +1,47 @@
+{
+  this.modifiers=modifiers;
+  this.internalName=internalName;
+  Type methodType=Type.getMethodType(methodDescriptor);
+  Type returnType=methodType.getReturnType();
+  Type[] parameterType=methodType.getArgumentTypes();
+  returnTypeDescriptor=returnType.getDescriptor();
+  parameterTypeDescriptors=new ArrayList<String>(parameterType.length);
+  for (  Type type : parameterType) {
+    parameterTypeDescriptors.add(type.getDescriptor());
+  }
+  this.signatureResolution=signatureResolution;
+  if (exceptionTypeInternalName == null) {
+    exceptionTypeDescriptors=Collections.emptyList();
+  }
+ else {
+    exceptionTypeDescriptors=new ArrayList<String>(exceptionTypeInternalName.length);
+    for (    String anExceptionTypeInternalName : exceptionTypeInternalName) {
+      exceptionTypeDescriptors.add(Type.getObjectType(anExceptionTypeInternalName).getDescriptor());
+    }
+  }
+  declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
+  for (  AnnotationToken annotationToken : annotationTokens) {
+    declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));
+  }
+  declaredParameterAnnotations=new ArrayList<List<AnnotationDescription>>(parameterType.length);
+  for (int index=0; index < parameterType.length; index++) {
+    List<AnnotationToken> tokens=parameterAnnotationTokens.get(index);
+    List<AnnotationDescription> annotationDescriptions;
+    annotationDescriptions=new ArrayList<AnnotationDescription>(tokens.size());
+    for (    AnnotationToken annotationToken : tokens) {
+      annotationDescriptions.add(annotationToken.toAnnotationDescription(typePool));
+    }
+    declaredParameterAnnotations.add(annotationDescriptions);
+  }
+  parameterNames=new String[parameterType.length];
+  parameterModifiers=new Integer[parameterType.length];
+  if (parameterTokens.size() == parameterType.length) {
+    int index=0;
+    for (    MethodToken.ParameterToken parameterToken : parameterTokens) {
+      parameterNames[index]=parameterToken.getName();
+      parameterModifiers[index]=parameterToken.getModifiers();
+      index++;
+    }
+  }
+  this.defaultValue=defaultValue;
+}

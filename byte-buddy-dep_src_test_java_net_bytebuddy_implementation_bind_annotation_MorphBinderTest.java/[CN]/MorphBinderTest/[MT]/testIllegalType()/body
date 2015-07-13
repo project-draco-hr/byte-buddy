@@ -1,5 +1,5 @@
 {
-  when(target.getTypeDescription()).thenReturn(morphType);
+  when(target.getType()).thenReturn(morphType);
   when(morphMethod.getDeclaringType()).thenReturn(mock(TypeDescription.class));
   new Morph.Binder(morphMethod).bind(annotationDescription,source,target,implementationTarget,assigner);
 }

@@ -1,3 +1,0 @@
-{
-  return new InlineInstrumentedType(levelType,name,interfaces,modifiers,fieldDescriptions,methodDescriptions,new LoadedTypeInitializer.Compound(this.loadedTypeInitializer,loadedTypeInitializer),typeInitializer);
-}

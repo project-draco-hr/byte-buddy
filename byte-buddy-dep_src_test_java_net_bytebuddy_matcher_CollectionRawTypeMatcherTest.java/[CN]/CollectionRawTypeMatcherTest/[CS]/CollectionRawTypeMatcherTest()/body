@@ -1,0 +1,3 @@
+{
+  super((Class<CollectionRawTypeMatcher<?>>)(Object)CollectionRawTypeMatcher.class,"rawTypes");
+}

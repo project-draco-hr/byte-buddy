@@ -1,0 +1,3 @@
+{
+  return isParameterized() || outerTypeToken.isParameterized() ? new LazyTypeDescription.GenericTypeToken.ForParameterizedType.Nested(getName(),parameters,outerTypeToken.toToken()) : new LazyTypeDescription.GenericTypeToken.ForRawType(getName());
+}

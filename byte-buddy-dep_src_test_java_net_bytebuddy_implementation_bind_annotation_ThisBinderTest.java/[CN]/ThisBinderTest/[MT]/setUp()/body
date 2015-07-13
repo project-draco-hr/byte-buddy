@@ -1,4 +1,5 @@
 {
   super.setUp();
   when(stackManipulation.isValid()).thenReturn(true);
+  when(parameterType.asRawType()).thenReturn(parameterType);
 }

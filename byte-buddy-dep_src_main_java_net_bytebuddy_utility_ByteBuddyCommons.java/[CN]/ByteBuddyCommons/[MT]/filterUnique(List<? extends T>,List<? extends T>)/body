@@ -1,0 +1,10 @@
+{
+  List<T> result=new ArrayList<T>(left.size() + right.size());
+  result.addAll(left);
+  for (  T element : right) {
+    if (!result.contains(element)) {
+      result.add(element);
+    }
+  }
+  return result;
+}

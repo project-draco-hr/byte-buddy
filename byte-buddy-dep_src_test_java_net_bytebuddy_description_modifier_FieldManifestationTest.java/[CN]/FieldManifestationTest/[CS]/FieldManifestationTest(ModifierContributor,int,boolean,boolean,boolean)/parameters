@@ -1,5 +1,0 @@
-ModifierContributor modifierContributor
-int expectedModifier
-boolean isFinal
-boolean isVolatile
-boolean isPlain

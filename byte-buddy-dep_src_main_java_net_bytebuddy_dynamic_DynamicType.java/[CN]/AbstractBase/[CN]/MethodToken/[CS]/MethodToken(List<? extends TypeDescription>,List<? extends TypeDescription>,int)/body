@@ -1,3 +1,0 @@
-{
-  this(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,TypeDescription.VOID,parameterTypes,exceptionTypes,modifiers);
-}

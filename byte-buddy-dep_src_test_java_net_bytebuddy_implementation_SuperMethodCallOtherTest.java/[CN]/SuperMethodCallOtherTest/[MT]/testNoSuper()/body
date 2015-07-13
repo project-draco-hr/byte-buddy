@@ -1,5 +1,5 @@
 {
-  when(typeDescription.getSupertype()).thenReturn(superType);
+  when(typeDescription.getSuperType()).thenReturn(superType);
   when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty());
   when(methodDescription.getReturnType()).thenReturn(returnType);
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);

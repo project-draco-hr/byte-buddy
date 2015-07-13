@@ -1,7 +1,0 @@
-{
-  Iterator<Annotation> annotations=Arrays.asList(foo,bar).iterator();
-  for (  AnnotationList annotationList : AnnotationList.ForLoadedAnnotation.asList(new Annotation[][]{{foo},{bar}})) {
-    assertThat(annotationList.size(),is(1));
-    assertThat(annotationList,hasItem(AnnotationDescription.ForLoadedAnnotation.of(annotations.next())));
-  }
-}

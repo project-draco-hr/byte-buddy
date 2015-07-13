@@ -1,3 +1,3 @@
 {
-  return new Builder(joinUnique(this.classLoaders,classLoaders));
+  return new Builder(filterUnique(this.classLoaders,classLoaders));
 }

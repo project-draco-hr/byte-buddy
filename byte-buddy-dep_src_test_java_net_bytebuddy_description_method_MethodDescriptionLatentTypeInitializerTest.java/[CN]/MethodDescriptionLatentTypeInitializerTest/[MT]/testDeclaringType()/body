@@ -1,0 +1,3 @@
+{
+  assertThat(typeInitializer.getDeclaringType(),is(typeDescription));
+}

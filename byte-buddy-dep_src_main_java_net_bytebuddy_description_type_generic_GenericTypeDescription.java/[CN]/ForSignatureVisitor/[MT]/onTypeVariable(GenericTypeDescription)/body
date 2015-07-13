@@ -1,0 +1,4 @@
+{
+  signatureVisitor.visitTypeVariable(typeVariable.getSymbol());
+  return signatureVisitor;
+}

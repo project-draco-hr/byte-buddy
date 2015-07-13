@@ -1,0 +1,9 @@
+String internalName
+int modifiers
+String methodDescriptor
+GenericTypeToken.Resolution.ForMethod signatureResolution
+String[] exceptionTypeInternalName
+List<AnnotationToken> annotationTokens
+Map<Integer,List<AnnotationToken>> parameterAnnotationTokens
+List<MethodToken.ParameterToken> parameterTokens
+AnnotationDescription.AnnotationValue<?,?> defaultValue

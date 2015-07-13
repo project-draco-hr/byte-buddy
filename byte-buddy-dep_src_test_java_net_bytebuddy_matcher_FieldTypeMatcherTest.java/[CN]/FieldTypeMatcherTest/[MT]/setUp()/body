@@ -1,0 +1,3 @@
+{
+  when(fieldDescription.getType()).thenReturn(fieldType);
+}

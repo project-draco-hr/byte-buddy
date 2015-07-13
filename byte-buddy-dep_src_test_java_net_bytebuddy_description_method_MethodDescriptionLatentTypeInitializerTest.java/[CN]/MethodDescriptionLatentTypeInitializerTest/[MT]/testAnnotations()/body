@@ -1,0 +1,3 @@
+{
+  assertThat(typeInitializer.getDeclaredAnnotations().size(),is(0));
+}

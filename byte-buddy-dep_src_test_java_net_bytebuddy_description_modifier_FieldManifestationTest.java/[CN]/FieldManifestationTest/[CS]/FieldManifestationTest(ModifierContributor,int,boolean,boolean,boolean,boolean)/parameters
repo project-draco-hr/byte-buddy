@@ -1,0 +1,6 @@
+ModifierContributor modifierContributor
+int expectedModifier
+boolean defaultModifier
+boolean isFinal
+boolean isVolatile
+boolean isPlain

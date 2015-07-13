@@ -1,7 +1,7 @@
 {
-  List<ElementMatcher<? super TypeDescription>> typeMatchers=new LinkedList<ElementMatcher<? super TypeDescription>>();
+  List<ElementMatcher<? super GenericTypeDescription>> typeMatchers=new LinkedList<ElementMatcher<? super GenericTypeDescription>>();
   for (  TypeDescription typeDescription : typeDescriptions) {
-    typeMatchers.add(is(nonVoid(typeDescription)));
+    typeMatchers.add(rawType(nonNull(typeDescription)));
   }
-  return takesArguments(new CollectionOneToOneMatcher<TypeDescription>(typeMatchers));
+  return takesGenericArguments(new CollectionOneToOneMatcher<GenericTypeDescription>(typeMatchers));
 }

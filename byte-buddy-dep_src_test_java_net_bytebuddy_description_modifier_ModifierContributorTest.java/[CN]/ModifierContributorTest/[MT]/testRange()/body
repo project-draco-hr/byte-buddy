@@ -1,0 +1,10 @@
+{
+  ModifierContributor[] modifierContributor=(ModifierContributor[])type.getDeclaredMethod("values").invoke(null);
+  int mask=0;
+  for (  ModifierContributor contributor : modifierContributor) {
+    mask|=contributor.getMask();
+  }
+  for (  ModifierContributor contributor : modifierContributor) {
+    assertThat(mask,is(contributor.getRange()));
+  }
+}

@@ -1,0 +1,5 @@
+{
+  if (!(other instanceof GenericTypeDescription))   return false;
+  GenericTypeDescription genericTypeDescription=(GenericTypeDescription)other;
+  return genericTypeDescription.getSort().isGenericArray() && getComponentType().equals(genericTypeDescription.getComponentType());
+}

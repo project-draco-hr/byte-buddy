@@ -1,3 +1,0 @@
-{
-  return TargetType.resolve(returnType,instrumentedType);
-}

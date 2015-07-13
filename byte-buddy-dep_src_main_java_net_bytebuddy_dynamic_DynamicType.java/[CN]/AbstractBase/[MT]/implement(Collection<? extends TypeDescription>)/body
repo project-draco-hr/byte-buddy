@@ -1,3 +1,3 @@
 {
-  return new DefaultOptionalMatchedMethodInterception(new ArrayList<TypeDescription>(isInterface(interfaceTypes)));
+  return new DefaultOptionalMatchedMethodInterception(new ArrayList<TypeDescription>(isImplementable(interfaceTypes)));
 }

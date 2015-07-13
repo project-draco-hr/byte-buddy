@@ -1,3 +1,0 @@
-{
-  assertThat(typeList.toInternalNames(),nullValue(String[].class));
-}

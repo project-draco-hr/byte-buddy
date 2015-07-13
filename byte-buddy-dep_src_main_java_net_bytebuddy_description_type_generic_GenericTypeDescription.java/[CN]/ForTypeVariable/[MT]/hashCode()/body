@@ -1,0 +1,3 @@
+{
+  return getVariableSource().hashCode() ^ getSymbol().hashCode();
+}

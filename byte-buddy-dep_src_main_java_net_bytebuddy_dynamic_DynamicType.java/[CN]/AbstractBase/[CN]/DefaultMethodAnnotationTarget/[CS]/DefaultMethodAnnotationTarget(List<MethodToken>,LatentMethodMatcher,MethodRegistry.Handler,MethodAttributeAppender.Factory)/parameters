@@ -1,4 +1,0 @@
-List<MethodToken> methodTokens
-LatentMethodMatcher methodMatcher
-MethodRegistry.Handler handler
-MethodAttributeAppender.Factory attributeAppenderFactory

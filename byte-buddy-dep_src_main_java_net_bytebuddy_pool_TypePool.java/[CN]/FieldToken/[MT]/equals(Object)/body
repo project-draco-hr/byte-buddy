@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   FieldToken that=(FieldToken)other;
-  return modifiers == that.modifiers && annotationTokens.equals(that.annotationTokens) && descriptor.equals(that.descriptor) && !(genericSignature != null ? !genericSignature.equals(that.genericSignature) : that.genericSignature != null) && name.equals(that.name);
+  return modifiers == that.modifiers && annotationTokens.equals(that.annotationTokens) && descriptor.equals(that.descriptor) && signatureResolution.equals(that.signatureResolution) && name.equals(that.name);
 }

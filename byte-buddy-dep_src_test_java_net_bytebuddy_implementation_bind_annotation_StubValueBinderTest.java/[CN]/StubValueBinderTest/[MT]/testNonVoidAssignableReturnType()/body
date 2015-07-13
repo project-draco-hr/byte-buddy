@@ -1,6 +1,8 @@
 {
-  when(target.getTypeDescription()).thenReturn(TypeDescription.OBJECT);
-  when(source.getReturnType()).thenReturn(mock(TypeDescription.class));
+  when(target.getType()).thenReturn(TypeDescription.OBJECT);
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  when(typeDescription.asRawType()).thenReturn(typeDescription);
+  when(source.getReturnType()).thenReturn(typeDescription);
   when(stackManipulation.isValid()).thenReturn(true);
   assertThat(StubValue.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner).isValid(),is(true));
 }

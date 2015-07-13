@@ -1,7 +1,0 @@
-{
-  when(firstParameterDescription.hasModifiers()).thenReturn(true);
-  when(secondParameterDescription.hasModifiers()).thenReturn(true);
-  when(firstParameterDescription.isNamed()).thenReturn(true);
-  when(secondParameterDescription.isNamed()).thenReturn(true);
-  assertThat(parameterList.hasExplicitMetaData(),is(true));
-}

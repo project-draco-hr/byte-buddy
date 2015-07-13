@@ -1,0 +1,5 @@
+{
+  onOwnableType(parameterizedType);
+  signatureVisitor.visitEnd();
+  return signatureVisitor;
+}

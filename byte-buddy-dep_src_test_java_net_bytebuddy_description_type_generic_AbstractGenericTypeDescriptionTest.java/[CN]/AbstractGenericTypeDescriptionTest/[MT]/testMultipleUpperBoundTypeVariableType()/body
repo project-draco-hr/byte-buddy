@@ -1,0 +1,14 @@
+{
+  GenericTypeDescription genericTypeDescription=describe(MultipleUpperBoundTypeVariableType.class.getDeclaredField(FOO));
+  assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.VARIABLE));
+  assertThat(genericTypeDescription.getSymbol(),is(T));
+  assertThat(genericTypeDescription.getStackSize(),is(StackSize.SINGLE));
+  assertThat(genericTypeDescription.getUpperBounds().size(),is(3));
+  assertThat(genericTypeDescription.getUpperBounds().get(0),is((GenericTypeDescription)TypeDescription.STRING));
+  assertThat(genericTypeDescription.getUpperBounds().get(1),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(genericTypeDescription.getUpperBounds().get(2),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Bar.class)));
+  assertThat(genericTypeDescription.getTypeName(),is(MultipleUpperBoundTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(genericTypeDescription.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(MultipleUpperBoundTypeVariableType.class)));
+  assertThat(genericTypeDescription.getVariableSource().getTypeVariables().size(),is(1));
+  assertThat(genericTypeDescription.getVariableSource().getTypeVariables().getOnly(),is(genericTypeDescription));
+}

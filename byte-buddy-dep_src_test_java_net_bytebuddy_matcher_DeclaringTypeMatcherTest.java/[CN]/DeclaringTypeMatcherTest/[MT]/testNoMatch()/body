@@ -1,9 +1,9 @@
 {
-  when(declaredInType.getDeclaringType()).thenReturn(typeDescription);
+  when(declaredByType.getDeclaringType()).thenReturn(typeDescription);
   when(typeMatcher.matches(typeDescription)).thenReturn(false);
-  assertThat(new DeclaringTypeMatcher<DeclaredInType>(typeMatcher).matches(declaredInType),is(false));
+  assertThat(new DeclaringTypeMatcher<DeclaredByType>(typeMatcher).matches(declaredByType),is(false));
   verify(typeMatcher).matches(typeDescription);
   verifyNoMoreInteractions(typeMatcher);
-  verify(declaredInType).getDeclaringType();
-  verifyNoMoreInteractions(declaredInType);
+  verify(declaredByType).getDeclaringType();
+  verifyNoMoreInteractions(declaredByType);
 }

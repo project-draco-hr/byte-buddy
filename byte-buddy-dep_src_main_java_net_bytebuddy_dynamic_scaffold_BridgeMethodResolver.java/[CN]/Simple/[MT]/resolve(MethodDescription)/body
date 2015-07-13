@@ -1,5 +1,5 @@
 {
-  BridgeTarget bridgeTarget=bridges.get(methodDescription.getUniqueSignature());
+  BridgeTarget bridgeTarget=bridges.get(methodDescription.asToken());
   if (bridgeTarget == null) {
     return methodDescription;
   }

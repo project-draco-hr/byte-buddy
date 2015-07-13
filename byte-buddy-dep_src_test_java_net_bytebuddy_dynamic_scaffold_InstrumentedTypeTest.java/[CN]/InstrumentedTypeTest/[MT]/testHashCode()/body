@@ -1,0 +1,4 @@
+{
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.hashCode(),is(instrumentedType.getInternalName().hashCode()));
+}

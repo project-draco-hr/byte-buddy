@@ -1,0 +1,3 @@
+{
+  when(genericSuperType.asRawType()).thenReturn(rawSuperType);
+}

@@ -3,5 +3,5 @@
   if (index >= parameters.size()) {
     throw new IllegalStateException("No parameter " + index + " for "+ instrumentedMethod);
   }
-  return new Resolved.Simple(MethodVariableAccess.forType(parameters.get(index).getTypeDescription()).loadOffset(instrumentedMethod.getParameters().get(index).getOffset()),parameters.get(index).getTypeDescription());
+  return new Resolved.Simple(MethodVariableAccess.forType(parameters.get(index).getType().asRawType()).loadOffset(instrumentedMethod.getParameters().get(index).getOffset()),parameters.get(index).getType().asRawType());
 }

@@ -1,0 +1,3 @@
+{
+  new TypeDescription.AbstractTypeDescription.SuperTypeIterator(typeDescription).remove();
+}

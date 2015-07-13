@@ -1,3 +1,0 @@
-{
-  assertThat(parameterList.subList(0,1).size(),is(1));
-}

@@ -1,0 +1,3 @@
+{
+  interfaceTypeTokens=new LinkedList<LazyTypeDescription.GenericTypeToken>();
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(new ByteBuddy().redefine(Object.class).make(),notNullValue(DynamicType.class));
+}

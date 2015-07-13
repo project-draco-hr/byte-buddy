@@ -1,5 +1,0 @@
-{
-  assertThat(fieldList.size(),is(2));
-  assertThat(fieldList.get(0),is(firstFieldDescription));
-  assertThat(fieldList.get(1),is(secondFieldDescription));
-}

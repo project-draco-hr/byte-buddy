@@ -1,0 +1,6 @@
+{
+  GenericTypeDescription genericTypeDescription=mock(GenericTypeDescription.class);
+  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.PARAMETERIZED);
+  when(genericTypeDescription.asRawType()).thenReturn(new TypeDescription.ForLoadedType(Runnable.class));
+  assertThat(isImplementable(genericTypeDescription),sameInstance(genericTypeDescription));
+}

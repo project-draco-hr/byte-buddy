@@ -1,0 +1,18 @@
+{
+  this.name=name;
+  this.modifiers=modifiers;
+  this.typeVariables=typeVariables;
+  this.superType=superType;
+  this.interfaceTypes=interfaceTypes;
+  this.fieldTokens=fieldTokens;
+  this.methodTokens=methodTokens;
+  this.annotationDescriptions=annotationDescriptions;
+  this.typeInitializer=typeInitializer;
+  this.loadedTypeInitializer=loadedTypeInitializer;
+  this.declaringType=declaringType;
+  this.enclosingMethod=enclosingMethod;
+  this.enclosingType=enclosingType;
+  this.memberClass=memberClass;
+  this.anonymousClass=anonymousClass;
+  this.localClass=localClass;
+}

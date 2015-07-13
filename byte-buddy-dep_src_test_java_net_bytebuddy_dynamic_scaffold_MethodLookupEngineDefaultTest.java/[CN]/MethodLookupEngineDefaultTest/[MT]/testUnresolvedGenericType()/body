@@ -1,0 +1,18 @@
+{
+  TypeDescription unresolvedType=new TypeDescription.ForLoadedType(GenericType.Unresolved.class);
+  MethodLookupEngine.Finding finding=methodLookupEngine.process(unresolvedType);
+  assertThat(finding.getInvokableMethods().filter(named(FOO)).size(),is(1));
+  GenericTypeDescription foo=finding.getInvokableMethods().filter(named(FOO)).getOnly().getReturnType();
+  assertThat(foo.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
+  assertThat(foo.asRawType().represents(List.class),is(true));
+  assertThat(foo.getParameters().size(),is(1));
+  assertThat(foo.getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.VARIABLE));
+  assertThat(foo.getParameters().getOnly(),is(unresolvedType.getTypeVariables().getOnly()));
+  assertThat(finding.getInvokableMethods().filter(named(BAR)).size(),is(1));
+  GenericTypeDescription bar=finding.getInvokableMethods().filter(named(BAR)).getOnly().getReturnType();
+  assertThat(bar.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
+  assertThat(bar.asRawType().represents(List.class),is(true));
+  assertThat(bar.getParameters().size(),is(1));
+  assertThat(bar.getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.VARIABLE));
+  assertThat(bar.getParameters().getOnly(),is(unresolvedType.getTypeVariables().getOnly()));
+}

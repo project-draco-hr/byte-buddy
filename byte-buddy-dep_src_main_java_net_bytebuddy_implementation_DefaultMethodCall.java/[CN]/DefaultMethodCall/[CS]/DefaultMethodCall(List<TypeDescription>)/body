@@ -1,6 +1,3 @@
 {
-  for (  TypeDescription typeDescription : prioritizedInterfaces) {
-    isInterface(typeDescription);
-  }
-  this.prioritizedInterfaces=prioritizedInterfaces;
+  this.prioritizedInterfaces=isImplementable(prioritizedInterfaces);
 }

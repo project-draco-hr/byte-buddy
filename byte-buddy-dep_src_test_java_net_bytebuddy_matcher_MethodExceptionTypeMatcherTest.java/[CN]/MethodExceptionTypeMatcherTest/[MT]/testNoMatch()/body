@@ -1,6 +1,6 @@
 {
-  when(parameterMatcher.matches(typeList)).thenReturn(false);
-  assertThat(new MethodExceptionTypeMatcher<MethodDescription>(parameterMatcher).matches(methodDescription),is(false));
-  verify(parameterMatcher).matches(typeList);
-  verifyNoMoreInteractions(parameterMatcher);
+  when(exceptionMatcher.matches(typeList)).thenReturn(false);
+  assertThat(new MethodExceptionTypeMatcher<MethodDescription>(exceptionMatcher).matches(methodDescription),is(false));
+  verify(exceptionMatcher).matches(typeList);
+  verifyNoMoreInteractions(exceptionMatcher);
 }

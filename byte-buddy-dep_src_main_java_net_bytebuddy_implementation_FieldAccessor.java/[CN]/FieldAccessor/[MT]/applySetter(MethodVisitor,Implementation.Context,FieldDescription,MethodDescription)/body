@@ -1,10 +1,10 @@
 {
-  StackManipulation stackManipulation=assigner.assign(methodDescription.getParameters().get(0).getTypeDescription(),fieldDescription.getFieldType(),dynamicallyTyped);
+  StackManipulation stackManipulation=assigner.assign(methodDescription.getParameters().get(0).getType().asRawType(),fieldDescription.getType().asRawType(),dynamicallyTyped);
   if (!stackManipulation.isValid()) {
     throw new IllegalStateException("Setter type of " + methodDescription + " is not compatible with "+ fieldDescription);
   }
  else   if (fieldDescription.isFinal()) {
     throw new IllegalArgumentException("Cannot apply setter on final field " + fieldDescription);
   }
-  return apply(methodVisitor,implementationContext,fieldDescription,methodDescription,new StackManipulation.Compound(MethodVariableAccess.forType(fieldDescription.getFieldType()).loadOffset(methodDescription.getParameters().get(0).getOffset()),stackManipulation,FieldAccess.forField(fieldDescription).putter()));
+  return apply(methodVisitor,implementationContext,fieldDescription,methodDescription,new StackManipulation.Compound(MethodVariableAccess.forType(fieldDescription.getType().asRawType()).loadOffset(methodDescription.getParameters().get(0).getOffset()),stackManipulation,FieldAccess.forField(fieldDescription).putter()));
 }

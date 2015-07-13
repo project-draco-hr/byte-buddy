@@ -1,0 +1,10 @@
+{
+  this.modifiers=modifiers;
+  this.name=name;
+  fieldTypeDescriptor=descriptor;
+  this.signatureResolution=signatureResolution;
+  declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
+  for (  AnnotationToken annotationToken : annotationTokens) {
+    declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));
+  }
+}

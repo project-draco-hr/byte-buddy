@@ -1,0 +1,3 @@
+{
+  return outerTypeToken.getName() + INNER_CLASS_SEPERATOR + internalName.replace('/','.');
+}

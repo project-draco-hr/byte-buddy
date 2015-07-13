@@ -1,3 +1,3 @@
 {
-  return instrumentedType.withField(name,typeDescription,FIELD_MODIFIER).withInitializer(LoadedTypeInitializer.ForStaticField.nonAccessible(name,value));
+  return instrumentedType.withField(new FieldDescription.Token(name,FIELD_MODIFIER,typeDescription)).withInitializer(LoadedTypeInitializer.ForStaticField.nonAccessible(name,value));
 }

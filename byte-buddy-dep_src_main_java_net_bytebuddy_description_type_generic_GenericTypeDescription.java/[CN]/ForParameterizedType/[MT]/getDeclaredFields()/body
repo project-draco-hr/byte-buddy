@@ -1,0 +1,3 @@
+{
+  return new FieldList.TypeSubstituting(this,asRawType().getDeclaredFields(),Visitor.Substitutor.ForTypeVariableBinding.bind(this));
+}

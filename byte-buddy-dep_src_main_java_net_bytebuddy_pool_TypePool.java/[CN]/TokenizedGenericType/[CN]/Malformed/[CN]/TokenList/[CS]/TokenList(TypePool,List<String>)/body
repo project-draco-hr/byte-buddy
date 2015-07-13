@@ -1,0 +1,4 @@
+{
+  this.typePool=typePool;
+  this.rawTypeDescriptors=rawTypeDescriptors;
+}

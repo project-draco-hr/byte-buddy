@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(Throwable.class);
+  List<TypeDescription> typeDescriptions=Collections.singletonList(typeDescription);
+  assertThat(isThrowable(typeDescriptions),sameInstance(typeDescriptions));
+}

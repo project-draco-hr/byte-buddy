@@ -1,3 +1,0 @@
-{
-  assertThat(describe(Object.class.getDeclaredMethod("equals",Object.class)).getParameters().get(0).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
-}

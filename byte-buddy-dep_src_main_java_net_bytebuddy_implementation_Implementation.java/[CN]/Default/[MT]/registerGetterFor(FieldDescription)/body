@@ -1,9 +1,9 @@
 {
   MethodDescription accessorMethod=registeredGetters.get(fieldDescription);
   if (accessorMethod == null) {
-    String name=String.format("%s$%s$%s",fieldDescription.getName(),ACCESSOR_METHOD_SUFFIX,randomString.nextString());
-    accessorMethod=new MethodDescription.Latent(name,instrumentedType,fieldDescription.getFieldType(),Collections.<TypeDescription>emptyList(),resolveModifier(fieldDescription.isStatic()),Collections.<TypeDescription>emptyList());
-    registerGetter(fieldDescription,accessorMethod);
+    accessorMethod=new FieldGetter(instrumentedType,fieldDescription,randomString.nextString());
+    registeredGetters.put(fieldDescription,accessorMethod);
+    accessorMethodEntries.put(accessorMethod,new FieldGetterDelegation(fieldDescription));
   }
   return accessorMethod;
 }

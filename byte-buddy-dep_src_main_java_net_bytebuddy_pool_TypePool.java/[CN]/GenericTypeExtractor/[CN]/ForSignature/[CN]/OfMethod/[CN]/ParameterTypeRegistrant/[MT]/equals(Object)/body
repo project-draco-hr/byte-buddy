@@ -1,0 +1,3 @@
+{
+  return other != null && getClass() == other.getClass() && OfMethod.this.equals(((ParameterTypeRegistrant)other).getOuter());
+}

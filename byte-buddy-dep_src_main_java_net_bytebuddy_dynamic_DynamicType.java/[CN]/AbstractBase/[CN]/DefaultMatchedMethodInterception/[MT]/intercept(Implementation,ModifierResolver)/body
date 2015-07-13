@@ -1,3 +1,3 @@
 {
-  return new DefaultMethodAnnotationTarget(methodTokens,methodMatcher,new MethodRegistry.Handler.ForImplementation(nonNull(implementation),nonNull(modifierResolver)),defaultMethodAttributeAppenderFactory);
+  return new DefaultMethodAnnotationTarget(methodMatcher,methodTokens,new MethodRegistry.Handler.ForImplementation(nonNull(implementation),nonNull(modifierResolver)),defaultMethodAttributeAppenderFactory);
 }

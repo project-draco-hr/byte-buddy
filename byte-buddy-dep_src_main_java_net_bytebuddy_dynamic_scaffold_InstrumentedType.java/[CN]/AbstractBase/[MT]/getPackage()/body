@@ -1,4 +1,0 @@
-{
-  String packageName=getPackageName();
-  return packageName == null ? null : new PackageDescription.Simple(packageName);
-}

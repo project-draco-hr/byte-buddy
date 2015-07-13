@@ -1,3 +1,0 @@
-{
-  return "DynamicType.Builder.AbstractBase.MethodToken{" + "internalName='" + internalName + '\''+ ", returnType="+ returnType+ ", parameterTypes="+ parameterTypes+ ", exceptionTypes="+ exceptionTypes+ ", modifiers="+ modifiers+ '}';
-}

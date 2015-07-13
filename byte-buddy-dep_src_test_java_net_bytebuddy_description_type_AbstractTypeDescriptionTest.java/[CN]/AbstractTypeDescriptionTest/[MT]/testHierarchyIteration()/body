@@ -1,0 +1,8 @@
+{
+  Iterator<GenericTypeDescription> iterator=describe(Traversal.class).iterator();
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Traversal.class)));
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is((GenericTypeDescription)TypeDescription.OBJECT));
+  assertThat(iterator.hasNext(),is(false));
+}

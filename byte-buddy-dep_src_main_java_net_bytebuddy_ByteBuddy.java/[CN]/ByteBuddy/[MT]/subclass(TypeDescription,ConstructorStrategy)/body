@@ -3,7 +3,7 @@
   List<TypeDescription> interfaceTypes=this.interfaceTypes;
   if (nonNull(superType).isInterface()) {
     actualSuperType=TypeDescription.OBJECT;
-    interfaceTypes=joinUnique(superType,interfaceTypes);
+    interfaceTypes=joinUniqueRaw(interfaceTypes,Collections.singleton(superType));
   }
   return new SubclassDynamicTypeBuilder<T>(classFileVersion,nonNull(namingStrategy.subclass(superType)),auxiliaryTypeNamingStrategy,actualSuperType,interfaceTypes,modifiers.resolve(superType.getModifiers() & ~TypeManifestation.ANNOTATION.getMask()),typeAttributeAppender,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(constructorStrategy));
 }

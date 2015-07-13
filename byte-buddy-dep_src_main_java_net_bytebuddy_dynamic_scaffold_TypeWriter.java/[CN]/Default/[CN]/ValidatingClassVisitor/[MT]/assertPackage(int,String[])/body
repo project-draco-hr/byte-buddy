@@ -1,0 +1,8 @@
+{
+  if (!allowsNonPackage && modifier != PackageDescription.PACKAGE_MODIFIERS) {
+    throw new IllegalStateException("Cannot alter modifier for " + sortName);
+  }
+ else   if (!allowsNonPackage && interfaces != null) {
+    throw new IllegalStateException("Cannot implement interface for " + sortName);
+  }
+}

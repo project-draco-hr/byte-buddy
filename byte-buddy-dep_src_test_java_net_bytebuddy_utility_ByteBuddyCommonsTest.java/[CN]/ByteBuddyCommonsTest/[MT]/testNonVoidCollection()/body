@@ -1,4 +1,0 @@
-{
-  List<TypeDescription> typeDescriptions=Collections.singletonList(mock(TypeDescription.class));
-  assertThat(nonVoid(typeDescriptions),sameInstance(typeDescriptions));
-}

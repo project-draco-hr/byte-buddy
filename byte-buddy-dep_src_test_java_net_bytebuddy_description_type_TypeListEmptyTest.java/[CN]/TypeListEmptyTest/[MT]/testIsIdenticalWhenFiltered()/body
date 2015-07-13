@@ -1,3 +1,0 @@
-{
-  assertThat(typeList.filter(any()),is(typeList));
-}

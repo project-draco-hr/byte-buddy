@@ -1,0 +1,4 @@
+LatentMethodMatcher methodMatcher
+List<MethodDescription.Token> methodTokens
+MethodRegistry.Handler handler
+MethodAttributeAppender.Factory attributeAppenderFactory

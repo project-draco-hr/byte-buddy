@@ -2,7 +2,7 @@
   if (internalName.equals(MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME)) {
     TypeInitializerInjection injectedCode=new TypeInitializerInjection();
     this.injectedCode=injectedCode;
-    return super.visitMethod(injectedCode.getInjectorProxyMethod().getModifiers(),injectedCode.getInjectorProxyMethod().getInternalName(),injectedCode.getInjectorProxyMethod().getDescriptor(),injectedCode.getInjectorProxyMethod().getGenericSignature(),injectedCode.getInjectorProxyMethod().getExceptionTypes().toInternalNames());
+    return super.visitMethod(injectedCode.getInjectorProxyMethod().getModifiers(),injectedCode.getInjectorProxyMethod().getInternalName(),injectedCode.getInjectorProxyMethod().getDescriptor(),injectedCode.getInjectorProxyMethod().getGenericSignature(),injectedCode.getInjectorProxyMethod().getExceptionTypes().asRawTypes().toInternalNames());
   }
   MethodDescription methodDescription=declarableMethods.remove(internalName + descriptor);
   return methodDescription == RETAIN_METHOD ? super.visitMethod(modifiers,internalName,descriptor,genericSignature,exceptionTypeInternalName) : redefine(methodDescription,(modifiers & Opcodes.ACC_ABSTRACT) != 0);
