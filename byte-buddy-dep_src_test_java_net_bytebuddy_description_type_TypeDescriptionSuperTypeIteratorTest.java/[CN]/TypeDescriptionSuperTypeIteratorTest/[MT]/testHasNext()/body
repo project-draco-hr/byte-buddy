@@ -1,0 +1,11 @@
+{
+  Iterator<GenericTypeDescription> iterator=new TypeDescription.AbstractTypeDescription.SuperTypeIterator(typeDescription);
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is((GenericTypeDescription)typeDescription));
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is(superType));
+  assertThat(iterator.hasNext(),is(false));
+  assertThat(iterator.hasNext(),is(false));
+}
