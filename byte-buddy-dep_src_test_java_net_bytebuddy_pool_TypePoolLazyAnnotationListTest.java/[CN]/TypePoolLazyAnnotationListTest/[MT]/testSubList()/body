@@ -1,3 +1,0 @@
-{
-  assertThat(annotationList.subList(0,1),is((AnnotationList)new AnnotationList.Explicit(Collections.singletonList(annotationList.get(0)))));
-}

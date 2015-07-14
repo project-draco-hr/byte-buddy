@@ -1,0 +1,3 @@
+{
+  assertThat(asList(Arrays.asList(getFirst(),getSecond())).filter(ElementMatchers.is(asElement(getFirst()))).getOnly(),is(asElement(getFirst())));
+}

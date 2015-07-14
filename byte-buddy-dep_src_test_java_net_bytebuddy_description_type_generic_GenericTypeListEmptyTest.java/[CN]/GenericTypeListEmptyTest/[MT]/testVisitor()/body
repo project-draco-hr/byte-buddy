@@ -1,0 +1,3 @@
+{
+  assertThat(new GenericTypeList.Empty().accept(GenericTypeDescription.Visitor.NoOp.INSTANCE).size(),is(0));
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(asList(Collections.singletonList(getFirst())).visibility(ElementMatchers.is(RetentionPolicy.RUNTIME)),is(asList(Collections.singletonList(getFirst()))));
+}

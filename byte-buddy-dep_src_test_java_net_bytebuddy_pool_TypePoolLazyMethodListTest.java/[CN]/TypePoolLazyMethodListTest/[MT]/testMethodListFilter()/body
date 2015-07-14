@@ -1,7 +1,0 @@
-{
-  @SuppressWarnings("unchecked") ElementMatcher<? super MethodDescription> methodMatcher=mock(ElementMatcher.class);
-  when(methodMatcher.matches(methodList.get(0))).thenReturn(true);
-  methodList=methodList.filter(methodMatcher);
-  assertThat(methodList.size(),is(1));
-  assertThat(methodList.getOnly(),is(methodList.get(0)));
-}

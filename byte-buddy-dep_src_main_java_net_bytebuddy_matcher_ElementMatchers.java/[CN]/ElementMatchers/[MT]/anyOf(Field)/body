@@ -1,0 +1,3 @@
+{
+  return anyOf(new FieldList.ForLoadedField(nonNull(value)));
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(asList(Collections.singletonList(getFirst())).toInternalNames(),is(new String[]{asElement(getFirst()).getInternalName()}));
+}

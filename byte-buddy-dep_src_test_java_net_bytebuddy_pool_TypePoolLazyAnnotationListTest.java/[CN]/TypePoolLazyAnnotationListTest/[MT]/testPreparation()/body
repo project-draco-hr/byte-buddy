@@ -1,5 +1,0 @@
-{
-  AnnotationList annotationList=this.annotationList.subList(0,1);
-  assertThat(annotationList.ofType(Foo.class),is(this.annotationList.get(0).prepare(Foo.class)));
-  assertThat(annotationList.ofType(Bar.class),nullValue());
-}

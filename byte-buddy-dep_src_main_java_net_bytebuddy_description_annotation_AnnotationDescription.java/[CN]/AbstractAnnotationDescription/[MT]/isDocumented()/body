@@ -1,0 +1,3 @@
+{
+  return getAnnotationType().getDeclaredAnnotations().isAnnotationPresent(Documented.class);
+}

@@ -1,0 +1,3 @@
+{
+  asList(Collections.<U>emptyList()).getOnly();
+}

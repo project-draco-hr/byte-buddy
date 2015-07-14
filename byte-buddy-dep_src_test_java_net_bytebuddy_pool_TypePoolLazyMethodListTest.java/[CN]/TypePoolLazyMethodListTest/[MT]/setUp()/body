@@ -1,4 +1,3 @@
 {
   typePool=TypePool.Default.ofClassPath();
-  methodList=typePool.describe(Sample.class.getName()).resolve().getDeclaredMethods();
 }

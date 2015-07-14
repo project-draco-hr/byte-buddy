@@ -1,4 +1,3 @@
 {
   typePool=TypePool.Default.ofClassPath();
-  typeList=typePool.describe(Sample.class.getName()).resolve().getInterfaces().asRawTypes();
 }

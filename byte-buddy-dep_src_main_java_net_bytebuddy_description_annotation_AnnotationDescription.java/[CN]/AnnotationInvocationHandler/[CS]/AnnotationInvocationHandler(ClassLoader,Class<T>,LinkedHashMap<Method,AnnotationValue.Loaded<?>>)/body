@@ -1,5 +1,0 @@
-{
-  this.classLoader=classLoader;
-  this.annotationType=annotationType;
-  this.values=values;
-}

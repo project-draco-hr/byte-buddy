@@ -1,0 +1,3 @@
+{
+  return new MethodList.ForLoadedType(new Constructor<?>[0],elements.toArray(new Method[elements.size()]));
+}

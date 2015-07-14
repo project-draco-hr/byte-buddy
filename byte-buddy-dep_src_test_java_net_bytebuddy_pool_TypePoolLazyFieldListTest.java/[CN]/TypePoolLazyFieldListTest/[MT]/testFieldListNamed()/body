@@ -1,4 +1,0 @@
-{
-  FieldDescription fieldDescription=fieldList.filter(named("first")).getOnly();
-  assertThat(fieldDescription,is(is((FieldDescription)new FieldDescription.ForLoadedField(Sample.class.getDeclaredField("first")))));
-}

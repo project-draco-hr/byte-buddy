@@ -1,0 +1,3 @@
+{
+  assertThat(asList(Collections.singletonList(getFirst())).isAnnotationPresent(Foo.class),is(true));
+}

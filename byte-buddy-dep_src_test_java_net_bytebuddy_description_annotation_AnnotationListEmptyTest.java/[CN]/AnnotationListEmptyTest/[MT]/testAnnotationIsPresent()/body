@@ -1,0 +1,3 @@
+{
+  assertThat(new AnnotationList.Empty().isAnnotationPresent(Annotation.class),is(false));
+}

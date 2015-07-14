@@ -1,0 +1,3 @@
+{
+  return Holder.class.getGenericInterfaces()[0];
+}

@@ -1,3 +1,0 @@
-{
-  assertThat(typeList.toInternalNames(),is(new String[]{Type.getInternalName(Serializable.class),Type.getInternalName(Runnable.class)}));
-}

@@ -1,0 +1,4 @@
+{
+  assertThat(describe(first).isDocumented(),is(false));
+  assertThat(describe(defaultFirst).isDocumented(),is(true));
+}

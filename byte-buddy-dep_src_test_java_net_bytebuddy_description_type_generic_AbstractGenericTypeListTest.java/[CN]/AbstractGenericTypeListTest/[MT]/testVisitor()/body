@@ -1,0 +1,3 @@
+{
+  assertThat(asList(Collections.singletonList(getFirst())).accept(GenericTypeDescription.Visitor.NoOp.INSTANCE),is(asList(Collections.singletonList(getFirst()))));
+}

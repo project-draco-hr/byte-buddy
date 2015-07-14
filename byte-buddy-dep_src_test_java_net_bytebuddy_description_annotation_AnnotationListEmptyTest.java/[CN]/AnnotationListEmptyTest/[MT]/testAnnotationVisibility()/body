@@ -1,0 +1,3 @@
+{
+  assertThat(new AnnotationList.Empty().visibility(none()).size(),is(0));
+}

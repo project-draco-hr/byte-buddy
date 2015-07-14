@@ -1,0 +1,3 @@
+{
+  assertThat(asList(Collections.singletonList(getFirst())).visibility(ElementMatchers.is(RetentionPolicy.SOURCE)).size(),is(0));
+}

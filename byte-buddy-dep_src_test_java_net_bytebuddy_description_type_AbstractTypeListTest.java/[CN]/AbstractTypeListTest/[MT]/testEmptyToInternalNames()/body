@@ -1,0 +1,3 @@
+{
+  assertThat(asList(Collections.<U>emptyList()).toInternalNames(),nullValue(String[].class));
+}

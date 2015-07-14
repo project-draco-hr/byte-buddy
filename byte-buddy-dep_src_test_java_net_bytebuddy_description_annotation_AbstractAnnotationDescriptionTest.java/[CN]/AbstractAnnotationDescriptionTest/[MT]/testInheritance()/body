@@ -1,0 +1,4 @@
+{
+  assertThat(describe(first).isInherited(),is(false));
+  assertThat(describe(defaultFirst).isInherited(),is(true));
+}

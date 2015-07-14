@@ -1,0 +1,3 @@
+{
+  assertThat(asList(Collections.singletonList(getSecond())).inherited(Collections.<TypeDescription>emptySet()).size(),is(0));
+}

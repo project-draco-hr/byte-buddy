@@ -1,0 +1,3 @@
+{
+  return Holder.class.getAnnotation(Bar.class);
+}

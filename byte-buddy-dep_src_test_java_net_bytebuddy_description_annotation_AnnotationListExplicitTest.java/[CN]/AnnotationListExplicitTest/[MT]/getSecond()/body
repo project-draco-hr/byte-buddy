@@ -1,0 +1,3 @@
+{
+  return new AnnotationDescription.ForLoadedAnnotation<Bar>(Holder.class.getAnnotation(Bar.class));
+}

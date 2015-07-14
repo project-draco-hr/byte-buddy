@@ -1,0 +1,3 @@
+{
+  assertThat(asList(Collections.singletonList(getFirst())).ofType(Foo.class),CoreMatchers.is(AnnotationDescription.ForLoadedAnnotation.of(Holder.class.getAnnotation(Foo.class))));
+}

@@ -1,0 +1,3 @@
+{
+  return typePool.describe(Foo.class.getName()).resolve().getDeclaredMethods().filter(anyOf(elements.toArray(new Method[elements.size()])));
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(asList(Collections.singletonList(getFirst())).getOnly(),is(asElement(getFirst())));
+}

@@ -1,4 +1,3 @@
 {
   typePool=TypePool.Default.ofClassPath();
-  fieldList=typePool.describe(Sample.class.getName()).resolve().getDeclaredFields();
 }

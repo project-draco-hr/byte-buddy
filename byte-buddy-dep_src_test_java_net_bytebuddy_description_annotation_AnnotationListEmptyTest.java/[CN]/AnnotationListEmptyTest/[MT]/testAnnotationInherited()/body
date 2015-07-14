@@ -1,0 +1,3 @@
+{
+  assertThat(new AnnotationList.Empty().inherited(Collections.<TypeDescription>emptySet()).size(),is(0));
+}

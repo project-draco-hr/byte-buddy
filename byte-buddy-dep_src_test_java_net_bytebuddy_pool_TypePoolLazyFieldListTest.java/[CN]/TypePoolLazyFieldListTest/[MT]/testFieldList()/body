@@ -1,5 +1,0 @@
-{
-  assertThat(fieldList.size(),is(2));
-  assertThat(fieldList.get(0),is((FieldDescription)new FieldDescription.ForLoadedField(Sample.class.getDeclaredField("first"))));
-  assertThat(fieldList.get(1),is((FieldDescription)new FieldDescription.ForLoadedField(Sample.class.getDeclaredField("second"))));
-}

@@ -1,0 +1,3 @@
+{
+  asList(Arrays.asList(getFirst(),getSecond())).getOnly();
+}
