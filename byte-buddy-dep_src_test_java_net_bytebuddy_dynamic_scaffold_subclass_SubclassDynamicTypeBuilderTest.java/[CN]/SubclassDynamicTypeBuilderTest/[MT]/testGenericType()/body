@@ -14,7 +14,14 @@
   assertThat(foo.getTypeParameters()[1].getBounds()[0],is((Type)Exception.class));
   assertThat(foo.getGenericReturnType(),instanceOf(ParameterizedType.class));
   assertThat(((ParameterizedType)foo.getGenericReturnType()).getActualTypeArguments().length,is(1));
-  assertThat(((ParameterizedType)foo.getGenericReturnType()).getActualTypeArguments()[0],is((Type)String[].class));
+  Type parameterType=((ParameterizedType)foo.getGenericReturnType()).getActualTypeArguments()[0];
+  if (ClassFileVersion.forCurrentJavaVersion().compareTo(ClassFileVersion.JAVA_V7) < 0) {
+    assertThat(parameterType,instanceOf(GenericArrayType.class));
+    assertThat(((GenericArrayType)parameterType).getGenericComponentType(),is((Type)String.class));
+  }
+ else {
+    assertThat(parameterType,is((Type)String[].class));
+  }
   assertThat(foo.getGenericParameterTypes().length,is(1));
   assertThat(foo.getGenericParameterTypes()[0],is((Type)foo.getTypeParameters()[0]));
   assertThat(foo.getGenericExceptionTypes().length,is(1));

@@ -1,3 +1,0 @@
-{
-  return componentType.getSort().isNonGeneric() ? Sort.NON_GENERIC : Sort.GENERIC_ARRAY;
-}
