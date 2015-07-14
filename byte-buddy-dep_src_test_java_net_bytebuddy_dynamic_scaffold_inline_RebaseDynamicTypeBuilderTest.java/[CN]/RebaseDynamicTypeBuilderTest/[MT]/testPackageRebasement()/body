@@ -6,6 +6,6 @@
   assertThat(packageType.getDeclaredFields().length,CoreMatchers.is(0));
   assertThat(packageType.getDeclaredMethods().length,CoreMatchers.is(0));
   assertThat(packageType.getDeclaredAnnotations().length,CoreMatchers.is(2));
-  assertThat(packageType.getAnnotation(PkgAnnotation.class),notNullValue(PkgAnnotation.class));
+  assertThat(packageType.getAnnotation(PackageAnnotation.class),notNullValue(PackageAnnotation.class));
   assertThat(packageType.getAnnotation(Baz.class),notNullValue(Baz.class));
 }

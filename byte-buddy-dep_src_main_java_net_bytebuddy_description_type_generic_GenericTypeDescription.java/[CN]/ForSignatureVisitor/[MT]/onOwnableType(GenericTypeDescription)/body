@@ -1,6 +1,6 @@
 {
   GenericTypeDescription ownerType=genericTypeDescription.getOwnerType();
-  if (ownerType != null) {
+  if (ownerType != null && ownerType.getSort().isParameterized()) {
     onOwnableType(ownerType);
     signatureVisitor.visitInnerClassType(genericTypeDescription.asRawType().getSimpleName());
   }
