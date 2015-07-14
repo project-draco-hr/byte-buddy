@@ -1,0 +1,4 @@
+{
+  this.virtualHost=virtualHost;
+  this.methodDescriptions=methodDescriptions;
+}

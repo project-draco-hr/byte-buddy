@@ -1,0 +1,3 @@
+{
+  return new GenericTypeList.Explicit(methodChain.get(MOST_SPECIFIC).getExceptionTypes());
+}

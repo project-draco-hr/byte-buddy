@@ -1,0 +1,3 @@
+{
+  return CONFLICTING_INTERFACE_MODIFIER;
+}

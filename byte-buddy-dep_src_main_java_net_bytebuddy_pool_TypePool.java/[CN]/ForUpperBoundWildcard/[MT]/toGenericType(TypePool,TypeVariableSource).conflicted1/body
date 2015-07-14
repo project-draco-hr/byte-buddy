@@ -1,3 +1,0 @@
-{
-  return GenericTypeDescription.ForWildcardType.Latent.unbounded();
-}

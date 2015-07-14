@@ -1,0 +1,3 @@
+{
+  return methodChain.get(MOST_SPECIFIC).getParameters();
+}

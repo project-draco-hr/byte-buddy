@@ -1,0 +1,14 @@
+{
+  MethodDescription invokableMethod=null;
+  for (  MethodDescription methodDescription : methodDescriptions) {
+    if (!methodDescription.isAbstract() && methodDescription.getDeclaringType().asRawType().isAssignableFrom(targetType)) {
+      if (invokableMethod == null) {
+        invokableMethod=methodDescription;
+      }
+ else {
+        return false;
+      }
+    }
+  }
+  return invokableMethod != null;
+}

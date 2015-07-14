@@ -1,0 +1,17 @@
+{
+  List<MethodDescription> methodDescriptions;
+  if (conflictingMethod instanceof ConflictingInterfaceMethod) {
+    List<MethodDescription> known=((ConflictingInterfaceMethod)conflictingMethod).methodDescriptions;
+    methodDescriptions=new ArrayList<MethodDescription>(known.size() + 1);
+    for (    MethodDescription methodDescription : known) {
+      if (!methodDescription.getDeclaringType().asRawType().isAssignableFrom(discoveredMethod.getDeclaringType().asRawType())) {
+        methodDescriptions.add(methodDescription);
+      }
+    }
+    methodDescriptions.add(discoveredMethod);
+  }
+ else {
+    methodDescriptions=Arrays.asList(conflictingMethod,discoveredMethod);
+  }
+  return new ConflictingInterfaceMethod(virtualHost,methodDescriptions);
+}
