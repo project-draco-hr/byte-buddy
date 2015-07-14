@@ -1,0 +1,3 @@
+{
+  assertThat(empty.subList(0,0),is(empty));
+}

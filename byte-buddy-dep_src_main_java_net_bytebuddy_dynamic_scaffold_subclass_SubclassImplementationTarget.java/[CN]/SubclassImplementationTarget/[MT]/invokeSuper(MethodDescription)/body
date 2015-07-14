@@ -1,6 +1,6 @@
 {
   if (methodDescription.isConstructor()) {
-    methodDescription=this.superConstructors.get(methodDescription.getParameters().asTypeList().asRawTypes());
+    methodDescription=this.superConstructors.get(methodDescription.asToken());
     if (methodDescription == null) {
       return Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
     }

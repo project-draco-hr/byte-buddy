@@ -1,0 +1,3 @@
+{
+  assertThat(new TypeDescription.Latent(FOO,MODIFIERS,superType,Collections.singletonList(interfaceType)).getName(),is(FOO));
+}

@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(AnnotationDescription.AnnotationValue.Loaded.State.class);
+}

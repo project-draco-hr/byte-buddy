@@ -1,0 +1,3 @@
+{
+  assertThat(empty.size(),is(0));
+}

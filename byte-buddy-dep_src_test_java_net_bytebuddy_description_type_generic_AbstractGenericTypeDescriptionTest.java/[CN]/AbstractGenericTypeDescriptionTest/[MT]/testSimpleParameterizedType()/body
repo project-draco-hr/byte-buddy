@@ -1,6 +1,14 @@
 {
   GenericTypeDescription genericTypeDescription=describe(SimpleParameterizedType.class.getDeclaredField(FOO));
   assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
+  assertThat(genericTypeDescription.getSourceCodeName(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(genericTypeDescription.getTypeName(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(genericTypeDescription.toString(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(genericTypeDescription.hashCode(),is(GenericTypeDescription.Sort.describe(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType()).hashCode()));
+  assertThat(genericTypeDescription,is(GenericTypeDescription.Sort.describe(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType())));
+  assertThat(genericTypeDescription,CoreMatchers.not(GenericTypeDescription.Sort.describe(GenericArrayType.class.getDeclaredField(FOO).getType())));
+  assertThat(genericTypeDescription,CoreMatchers.not(new Object()));
+  assertThat(genericTypeDescription.equals(null),is(false));
   assertThat(genericTypeDescription.getParameters().size(),is(1));
   assertThat(genericTypeDescription.getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
   assertThat(genericTypeDescription.getParameters().getOnly().asRawType().represents(String.class),is(true));

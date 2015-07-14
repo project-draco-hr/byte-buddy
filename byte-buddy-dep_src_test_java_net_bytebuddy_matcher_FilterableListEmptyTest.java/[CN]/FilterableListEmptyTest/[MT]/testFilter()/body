@@ -1,0 +1,3 @@
+{
+  assertThat(empty.filter(any(ElementMatcher.class)),is(empty));
+}

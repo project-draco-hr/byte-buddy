@@ -1,0 +1,5 @@
+{
+  assertThat(AnnotationDescription.AnnotationValue.Loaded.State.RESOLVED.isDefined(),is(true));
+  assertThat(AnnotationDescription.AnnotationValue.Loaded.State.NON_RESOLVED.isDefined(),is(true));
+  assertThat(AnnotationDescription.AnnotationValue.Loaded.State.NON_DEFINED.isDefined(),is(false));
+}
