@@ -1,0 +1,3 @@
+{
+  assertThat(describe(Sample.FIRST).load(Sample.class),is(Sample.FIRST));
+}
