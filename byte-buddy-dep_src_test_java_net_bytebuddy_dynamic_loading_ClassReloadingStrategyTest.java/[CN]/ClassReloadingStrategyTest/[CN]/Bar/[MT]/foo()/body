@@ -1,0 +1,4 @@
+{
+  Bar bar=new Bar();
+  return Math.random() < 0 ? FOO : FOO;
+}
