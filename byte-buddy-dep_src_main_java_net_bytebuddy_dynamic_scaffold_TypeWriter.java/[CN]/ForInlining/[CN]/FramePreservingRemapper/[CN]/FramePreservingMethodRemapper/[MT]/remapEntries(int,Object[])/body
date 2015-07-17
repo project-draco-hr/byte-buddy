@@ -1,0 +1,17 @@
+{
+  for (int index=0; index < size; index++) {
+    if (entry[index] instanceof String) {
+      Object[] newEntry=new Object[size];
+      if (index > 0) {
+        System.arraycopy(entry,0,newEntry,0,index);
+      }
+      do {
+        Object frame=entry[index];
+        newEntry[index++]=frame instanceof String ? remapper.mapType((String)frame) : frame;
+      }
+ while (index < size);
+      return newEntry;
+    }
+  }
+  return entry;
+}

@@ -1,6 +1,3 @@
 {
-  String originalName=targetType.getInternalName();
-  String targetName=instrumentedType.getInternalName();
-  ClassVisitor targetClassVisitor=new RedefinitionClassVisitor(classVisitor,implementationContext);
-  return originalName.equals(targetName) ? targetClassVisitor : new RemappingClassAdapter(targetClassVisitor,new SimpleRemapper(originalName,targetName));
+  return FramePreservingRemapper.of(targetType.getInternalName(),instrumentedType.getInternalName(),new RedefinitionClassVisitor(classVisitor,implementationContext));
 }

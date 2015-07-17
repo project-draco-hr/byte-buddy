@@ -1,0 +1,3 @@
+{
+  mv.visitFrame(type,sizeLocal,remapEntries(sizeLocal,local),sizeStack,remapEntries(sizeStack,stack));
+}

@@ -1,0 +1,4 @@
+int modifiers
+String descriptor
+MethodVisitor methodVisitor
+Remapper remapper
