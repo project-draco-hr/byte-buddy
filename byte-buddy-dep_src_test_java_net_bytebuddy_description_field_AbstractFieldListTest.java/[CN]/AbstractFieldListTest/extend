@@ -1,1 +1,1 @@
-AbstractFilterableListTest<FieldDescription,FieldList,U>
+AbstractFilterableListTest<V,FieldList<V>,U>

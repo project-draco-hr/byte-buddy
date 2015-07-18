@@ -8,7 +8,7 @@
   ObjectPropertyAssertion.of(MethodDelegationBinder.MethodBinding.Builder.class).create(new ObjectPropertyAssertion.Creator<MethodDescription>(){
     @Override public MethodDescription create(){
       MethodDescription methodDescription=mock(MethodDescription.class);
-      when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty());
+      when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Empty());
       return methodDescription;
     }
   }

@@ -3,7 +3,7 @@
   ObjectPropertyAssertion.of(MethodVariableAccess.ArgumentLoadingStackManipulation.class).apply();
   ObjectPropertyAssertion.of(MethodVariableAccess.TypeCastingHandler.ForBridgeTarget.class).refine(new ObjectPropertyAssertion.Refinement<MethodDescription>(){
     @Override public void apply(    MethodDescription mock){
-      when(mock.getParameters()).thenReturn(new ParameterList.Empty());
+      when(mock.getParameters()).thenReturn((ParameterList)new ParameterList.Empty());
     }
   }
 ).applyBasic();

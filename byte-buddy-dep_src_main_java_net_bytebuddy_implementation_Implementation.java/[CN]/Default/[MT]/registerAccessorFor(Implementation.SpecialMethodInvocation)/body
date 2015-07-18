@@ -1,5 +1,5 @@
 {
-  MethodDescription accessorMethod=registeredAccessorMethods.get(specialMethodInvocation);
+  MethodDescription.InDeclaredForm accessorMethod=registeredAccessorMethods.get(specialMethodInvocation);
   if (accessorMethod == null) {
     accessorMethod=new AccessorMethod(instrumentedType,specialMethodInvocation.getMethodDescription(),randomString.nextString());
     registeredAccessorMethods.put(specialMethodInvocation,accessorMethod);

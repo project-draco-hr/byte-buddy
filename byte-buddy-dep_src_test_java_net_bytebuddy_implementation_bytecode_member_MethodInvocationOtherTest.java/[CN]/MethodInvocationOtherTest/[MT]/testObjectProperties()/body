@@ -11,7 +11,7 @@
       when(mock.getReturnType()).thenReturn(returnType);
       when(returnType.asRawType()).thenReturn(returnType);
       when(mock.getInternalName()).thenReturn(FOO);
-      when(mock.getParameters()).thenReturn(new ParameterList.Empty());
+      when(mock.getParameters()).thenReturn((ParameterList)new ParameterList.Empty());
     }
   }
 ).apply();

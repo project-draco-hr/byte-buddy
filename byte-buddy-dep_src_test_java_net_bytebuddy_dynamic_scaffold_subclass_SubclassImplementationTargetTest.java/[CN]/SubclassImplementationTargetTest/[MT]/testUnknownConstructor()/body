@@ -1,7 +1,7 @@
 {
   MethodDescription constructor=mock(MethodDescription.class);
   when(constructor.isConstructor()).thenReturn(true);
-  when(constructor.getParameters()).thenReturn(new ParameterList.Empty());
+  when(constructor.getParameters()).thenReturn((ParameterList)new ParameterList.Empty());
   TypeDescription declaringType=mock(TypeDescription.class);
   when(declaringType.asRawType()).thenReturn(declaringType);
   when(constructor.getDeclaringType()).thenReturn(declaringType);
