@@ -1,0 +1,4 @@
+{
+  Qux qux=new Qux();
+  return Math.random() < 0 ? BAR : BAR;
+}

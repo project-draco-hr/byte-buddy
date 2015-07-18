@@ -1,0 +1,3 @@
+{
+  return new FramePreservingMethodRemapper(modifiers,adaptedDescriptor,methodVisitor,remapper);
+}

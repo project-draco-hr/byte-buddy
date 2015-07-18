@@ -1,0 +1,3 @@
+String originalName
+String targetName
+ClassVisitor classVisitor
