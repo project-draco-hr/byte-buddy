@@ -1,0 +1,8 @@
+{
+  Class<?> dynamicType=create(BridgeRetention.Inner.class).method(named(FOO)).intercept(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
+  assertEquals(String.class,dynamicType.getDeclaredMethod(FOO).getReturnType());
+  assertThat(dynamicType.getDeclaredMethod(FOO).getGenericReturnType(),is((Type)String.class));
+  SuperCall<String> superCall=(SuperCall<String>)dynamicType.newInstance();
+  assertThat(superCall.foo(FOO),is(FOO));
+  superCall.assertOnlyCall(FOO);
+}
