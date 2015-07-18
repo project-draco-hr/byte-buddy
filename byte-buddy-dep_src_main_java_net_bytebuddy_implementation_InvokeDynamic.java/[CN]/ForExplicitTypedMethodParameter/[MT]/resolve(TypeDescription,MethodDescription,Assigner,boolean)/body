@@ -1,5 +1,5 @@
 {
-  ParameterList parameters=instrumentedMethod.getParameters();
+  ParameterList<?> parameters=instrumentedMethod.getParameters();
   if (index >= parameters.size()) {
     throw new IllegalStateException("No parameter " + index + " for "+ instrumentedMethod);
   }

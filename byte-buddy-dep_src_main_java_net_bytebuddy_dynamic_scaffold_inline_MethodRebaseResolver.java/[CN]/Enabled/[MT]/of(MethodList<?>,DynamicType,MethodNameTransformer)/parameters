@@ -1,3 +1,3 @@
-MethodList instrumentedMethods
+MethodList<?> instrumentedMethods
 DynamicType placeholderType
 MethodNameTransformer methodNameTransformer

@@ -1,4 +1,4 @@
 {
-  FieldList fieldList=typeDescription.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
+  FieldList<?> fieldList=typeDescription.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
   return !fieldList.isEmpty() && (!staticMethod || fieldList.getOnly().isStatic()) ? new Resolution.Resolved(fieldList.getOnly()) : new Resolution.Unresolved();
 }

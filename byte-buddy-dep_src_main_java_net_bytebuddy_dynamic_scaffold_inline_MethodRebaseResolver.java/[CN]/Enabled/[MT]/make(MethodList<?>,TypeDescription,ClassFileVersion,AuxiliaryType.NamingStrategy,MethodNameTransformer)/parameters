@@ -1,4 +1,4 @@
-MethodList instrumentedMethods
+MethodList<?> instrumentedMethods
 TypeDescription instrumentedType
 ClassFileVersion classFileVersion
 AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy

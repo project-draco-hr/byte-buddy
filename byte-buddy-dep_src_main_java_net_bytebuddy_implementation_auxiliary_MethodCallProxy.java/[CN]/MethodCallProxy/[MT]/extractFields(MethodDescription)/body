@@ -1,5 +1,5 @@
 {
-  ParameterList parameters=methodDescription.getParameters();
+  ParameterList<?> parameters=methodDescription.getParameters();
   LinkedHashMap<String,TypeDescription> typeDescriptions=new LinkedHashMap<String,TypeDescription>((methodDescription.isStatic() ? 0 : 1) + parameters.size());
   int currentIndex=0;
   if (!methodDescription.isStatic()) {

@@ -8,4 +8,4 @@ ClassVisitorWrapper classVisitorWrapper
 TypeAttributeAppender attributeAppender
 FieldPool fieldPool
 MethodPool methodPool
-MethodList instrumentedMethods
+MethodList<?> instrumentedMethods

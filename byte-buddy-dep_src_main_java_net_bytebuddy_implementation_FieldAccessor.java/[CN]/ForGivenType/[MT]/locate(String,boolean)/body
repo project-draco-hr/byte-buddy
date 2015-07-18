@@ -1,5 +1,5 @@
 {
-  FieldList fieldList=targetType.getDeclaredFields().filter(named(name).and(isVisibleTo(instrumentedType)));
+  FieldList<?> fieldList=targetType.getDeclaredFields().filter(named(name).and(isVisibleTo(instrumentedType)));
   if (fieldList.isEmpty() || (staticMethod && !fieldList.getOnly().isStatic())) {
     throw new IllegalArgumentException("No field named " + name + " on "+ targetType+ " is visible to "+ instrumentedType);
   }

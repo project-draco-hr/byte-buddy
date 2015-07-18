@@ -1,2 +1,2 @@
-MethodList instrumentedMethods
+MethodList<?> instrumentedMethods
 MethodNameTransformer methodNameTransformer

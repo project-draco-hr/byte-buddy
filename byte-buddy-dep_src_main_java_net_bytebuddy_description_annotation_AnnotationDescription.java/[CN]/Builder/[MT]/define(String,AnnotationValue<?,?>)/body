@@ -1,5 +1,5 @@
 {
-  MethodList methodDescriptions=annotationType.getDeclaredMethods().filter(named(nonNull(property)));
+  MethodList<?> methodDescriptions=annotationType.getDeclaredMethods().filter(named(nonNull(property)));
   if (methodDescriptions.isEmpty()) {
     throw new IllegalArgumentException(annotationType + " does not define a property named " + property);
   }

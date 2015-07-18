@@ -1,6 +1,6 @@
 {
   if (methodDescription.isConstructor()) {
-    throw new IllegalArgumentException();
+    throw new IllegalArgumentException("Cannot rebase constructor without preparation");
   }
   return Resolution.ForRebasedMethod.of(methodDescription,methodNameTransformer);
 }
