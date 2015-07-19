@@ -1,0 +1,3 @@
+{
+  return new StackManipulation.Compound(invocation.virtual(invocationTarget),TypeCasting.to(targetType));
+}

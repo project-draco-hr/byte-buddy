@@ -8,6 +8,7 @@
   TypeDescription declaringType=mock(TypeDescription.class);
   when(declaringType.asRawType()).thenReturn(declaringType);
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);
+  when(methodDescription.asDeclared()).thenReturn(methodDescription);
   when(resolution.getResolvedMethod()).thenReturn(methodDescription);
   return new RebaseImplementationTarget.RebasedMethodSpecialMethodInvocation(resolution,targetType);
 }

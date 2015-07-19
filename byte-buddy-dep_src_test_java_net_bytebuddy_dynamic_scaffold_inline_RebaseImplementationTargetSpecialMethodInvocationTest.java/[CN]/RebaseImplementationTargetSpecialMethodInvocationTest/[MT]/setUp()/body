@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  when(returnType.asRawType()).thenReturn(returnType);
+  when(returnType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(returnType);
+}

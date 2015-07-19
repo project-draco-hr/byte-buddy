@@ -11,6 +11,7 @@
   when(superMethod.getDescriptor()).thenReturn(FOOBAR);
   when(superMethod.getParameters()).thenReturn((ParameterList)parameterList);
   when(superMethod.getDeclaringType()).thenReturn(superType);
+  when(superMethod.asDeclared()).thenReturn(superMethod);
   when(superMethodConstructor.isConstructor()).thenReturn(true);
   when(superMethodConstructor.getParameters()).thenReturn((ParameterList)parameterList);
   when(superMethodConstructor.getReturnType()).thenReturn(returnType);
@@ -18,5 +19,6 @@
   when(superMethodConstructor.getInternalName()).thenReturn(QUXBAZ);
   when(superMethodConstructor.getDescriptor()).thenReturn(BAZBAR);
   when(superMethodConstructor.getDeclaringType()).thenReturn(superType);
+  when(superMethodConstructor.asDeclared()).thenReturn(superMethodConstructor);
   super.setUp();
 }

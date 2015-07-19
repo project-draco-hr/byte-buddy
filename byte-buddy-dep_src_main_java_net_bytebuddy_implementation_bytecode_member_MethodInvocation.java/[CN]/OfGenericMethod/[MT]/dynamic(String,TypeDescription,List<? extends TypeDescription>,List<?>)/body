@@ -1,0 +1,3 @@
+{
+  return invocation.dynamic(methodName,returnType,methodType,arguments);
+}

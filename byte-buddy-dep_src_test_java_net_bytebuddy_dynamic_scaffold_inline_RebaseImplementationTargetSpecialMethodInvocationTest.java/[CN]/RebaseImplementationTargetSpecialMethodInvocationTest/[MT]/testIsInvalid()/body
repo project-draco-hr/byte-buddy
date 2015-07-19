@@ -3,7 +3,7 @@
   when(resolution.getAdditionalArguments()).thenReturn(StackManipulation.Illegal.INSTANCE);
   TypeDescription typeDescription=mock(TypeDescription.class);
   when(typeDescription.asRawType()).thenReturn(typeDescription);
-  when(resolution.getResolvedMethod()).thenReturn(new MethodDescription.Latent(typeDescription,FOO,Opcodes.ACC_PUBLIC,Collections.<GenericTypeDescription>emptyList(),mock(GenericTypeDescription.class),Collections.<ParameterDescription.Token>emptyList(),Collections.<GenericTypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE));
+  when(resolution.getResolvedMethod()).thenReturn(new MethodDescription.Latent(typeDescription,FOO,Opcodes.ACC_PUBLIC,Collections.<GenericTypeDescription>emptyList(),returnType,Collections.<ParameterDescription.Token>emptyList(),Collections.<GenericTypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE));
   Implementation.SpecialMethodInvocation specialMethodInvocation=new RebaseImplementationTarget.RebasedMethodSpecialMethodInvocation(resolution,mock(TypeDescription.class));
   assertThat(specialMethodInvocation.isValid(),is(false));
 }

@@ -1,3 +1,3 @@
 {
-  return new StackManipulation.Compound(defined.getter(),TypeCasting.to(fieldDescription.getType().asRawType()));
+  return new StackManipulation.Compound(defined.getter(),TypeCasting.to(targetType));
 }

@@ -1,5 +1,6 @@
 {
-  MethodDescription methodDescription=mock(MethodDescription.class);
+  MethodDescription.InDeclaredForm methodDescription=mock(MethodDescription.InDeclaredForm.class);
+  when(methodDescription.asDeclared()).thenReturn(methodDescription);
   when(methodDescription.getReturnType()).thenReturn(returnType);
   TypeDescription typeDescription=mock(TypeDescription.class);
   when(typeDescription.asRawType()).thenReturn(typeDescription);

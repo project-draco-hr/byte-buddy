@@ -1,5 +1,5 @@
 {
   int result=targetType.hashCode();
-  result=31 * result + defined.hashCode();
+  result=31 * result + invocation.hashCode();
   return result;
 }
