@@ -1,6 +1,5 @@
 {
   FieldAccess.Defined setter=FieldAccess.forField(fieldDescription);
-  assertThat(setter.getDefinedField(),is(fieldDescription));
   assertThat(setter.putter().isValid(),is(true));
   StackManipulation.Size size=setter.putter().apply(methodVisitor,implementationContext);
   assertThat(size.getSizeImpact(),is(putterChange));

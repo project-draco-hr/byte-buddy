@@ -1,0 +1,5 @@
+{
+  int result=fieldDescription.hashCode();
+  result=31 * result + defined.hashCode();
+  return result;
+}

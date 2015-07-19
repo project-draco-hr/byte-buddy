@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  OfGenericField that=(OfGenericField)other;
+  return fieldDescription.equals(that.fieldDescription) && defined.equals(that.defined);
+}

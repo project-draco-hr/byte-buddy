@@ -1,5 +1,8 @@
 {
-  when(enumerationDescription.getEnumerationType()).thenReturn(typeDescription);
+  when(genericField.asDeclared()).thenReturn(fieldDescription);
+  when(genericField.getType()).thenReturn(genericType);
+  when(fieldDescription.getType()).thenReturn(declaredType);
+  when(enumerationDescription.getEnumerationType()).thenReturn(enumerationType);
   when(enumerationDescription.getValue()).thenReturn(FOO);
-  when(typeDescription.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDeclaredForm>(Collections.singletonList(fieldDescription)));
+  when(enumerationType.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDeclaredForm>(Collections.singletonList(fieldDescription)));
 }

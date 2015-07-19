@@ -1,0 +1,8 @@
+{
+  TypeDescription declaredErasure=mock(TypeDescription.class);
+  when(genericType.asRawType()).thenReturn(declaredErasure);
+  when(declaredType.asRawType()).thenReturn(declaredErasure);
+  StackManipulation stackManipulation=FieldAccess.forField(genericField).getter();
+  assertThat(stackManipulation.isValid(),is(true));
+  assertThat(stackManipulation,is(FieldAccess.forField(fieldDescription).getter()));
+}

@@ -1,0 +1,8 @@
+{
+  TypeDescription genericErasure=mock(TypeDescription.class), declaredErasure=mock(TypeDescription.class);
+  when(genericType.asRawType()).thenReturn(genericErasure);
+  when(declaredType.asRawType()).thenReturn(declaredErasure);
+  StackManipulation stackManipulation=FieldAccess.forField(genericField).getter();
+  assertThat(stackManipulation.isValid(),is(true));
+  assertThat(stackManipulation,is((StackManipulation)new StackManipulation.Compound(FieldAccess.forField(fieldDescription).getter(),TypeCasting.to(genericErasure))));
+}
