@@ -1,5 +1,5 @@
 {
-  when(finding.getInvokableMethods()).thenReturn(new MethodList.Empty());
+  when(finding.getInvokableMethods()).thenReturn((MethodList)new MethodList.Empty());
   when(finding.getInvokableDefaultMethods()).thenReturn(Collections.<TypeDescription,Set<MethodDescription>>emptyMap());
   when(finding.getTypeDescription()).thenReturn(instrumentedType);
   when(instrumentedType.getSuperType()).thenReturn(superType);

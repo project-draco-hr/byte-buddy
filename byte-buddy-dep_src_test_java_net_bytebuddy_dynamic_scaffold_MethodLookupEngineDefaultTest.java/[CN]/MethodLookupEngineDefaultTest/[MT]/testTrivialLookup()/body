@@ -1,8 +1,0 @@
-{
-  TypeDescription objectType=new TypeDescription.ForLoadedType(Object.class);
-  MethodLookupEngine.Finding finding=methodLookupEngine.process(objectType);
-  assertThat(finding.getTypeDescription(),is(objectType));
-  assertThat(finding.getInvokableMethods().size(),is(objectType.getDeclaredMethods().size()));
-  assertThat(finding.getInvokableMethods(),containsAllOf(objectType.getDeclaredMethods()));
-  assertThat(finding.getInvokableDefaultMethods().size(),is(0));
-}

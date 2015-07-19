@@ -1,5 +1,5 @@
 {
-  when(methodDescription.getParameters()).thenReturn(methodParameterList);
+  when(methodDescription.getParameters()).thenReturn((ParameterList)methodParameterList);
   when(methodDescription.isStatic()).thenReturn(false);
   TypeDescription declaringType=mock(TypeDescription.class);
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);

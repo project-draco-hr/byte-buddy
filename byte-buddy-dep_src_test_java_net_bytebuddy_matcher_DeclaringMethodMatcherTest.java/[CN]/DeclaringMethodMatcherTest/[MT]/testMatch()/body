@@ -1,5 +1,5 @@
 {
-  when(typeDescription.getDeclaredMethods()).thenReturn(methodList);
+  when(typeDescription.getDeclaredMethods()).thenReturn((MethodList)methodList);
   when(methodMatcher.matches(methodList)).thenReturn(true);
   assertThat(new DeclaringMethodMatcher<TypeDescription>(methodMatcher).matches(typeDescription),is(true));
   verify(methodMatcher).matches(methodList);

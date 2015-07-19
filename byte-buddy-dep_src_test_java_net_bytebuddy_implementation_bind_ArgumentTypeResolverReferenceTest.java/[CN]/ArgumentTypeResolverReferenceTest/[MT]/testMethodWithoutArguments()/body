@@ -1,5 +1,5 @@
 {
-  when(source.getParameters()).thenReturn(sourceParameterList);
+  when(source.getParameters()).thenReturn((ParameterList)sourceParameterList);
   MethodDelegationBinder.AmbiguityResolver.Resolution resolution=ArgumentTypeResolver.INSTANCE.resolve(source,left,right);
   assertThat(resolution.isUnresolved(),is(true));
   verify(source,atLeast(1)).getParameters();

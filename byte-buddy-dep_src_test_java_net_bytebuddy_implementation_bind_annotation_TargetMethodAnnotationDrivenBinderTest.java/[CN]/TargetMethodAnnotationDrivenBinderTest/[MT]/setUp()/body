@@ -15,8 +15,7 @@
   when(firstParameter.getIndex()).thenReturn(0);
   when(secondParameter.getDeclaringMethod()).thenReturn(targetMethod);
   when(secondParameter.getIndex()).thenReturn(1);
-  ParameterList parameterList=new ParameterList.Explicit(Arrays.asList(firstParameter,secondParameter));
-  when(targetMethod.getParameters()).thenReturn(parameterList);
+  when(targetMethod.getParameters()).thenReturn((ParameterList)new ParameterList.Explicit<ParameterDescription>(Arrays.asList(firstParameter,secondParameter)));
   when(firstPseudoAnnotation.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(FirstPseudoAnnotation.class));
   when(firstPseudoAnnotation.prepare(FirstPseudoAnnotation.class)).thenReturn(firstPseudoAnnotation);
   when(secondPseudoAnnotation.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(SecondPseudoAnnotation.class));
