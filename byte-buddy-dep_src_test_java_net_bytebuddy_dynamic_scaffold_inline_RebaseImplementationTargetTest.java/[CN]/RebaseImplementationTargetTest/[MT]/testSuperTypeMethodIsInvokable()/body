@@ -2,7 +2,7 @@
   when(superMethod.isSpecializableFor(superType)).thenReturn(true);
   Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(superMethod,methodLookup);
   assertThat(specialMethodInvocation.isValid(),is(true));
-  assertThat(specialMethodInvocation.getMethodDescription(),is(superMethod));
+  assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)superMethod));
   assertThat(specialMethodInvocation.getTypeDescription(),is(superType));
   MethodVisitor methodVisitor=mock(MethodVisitor.class);
   Implementation.Context implementationContext=mock(Implementation.Context.class);

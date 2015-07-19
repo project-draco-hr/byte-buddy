@@ -1,3 +1,0 @@
-{
-  return instrumentedMethods.contains(methodDescription) ? rebase(methodDescription.asDeclared()) : new Resolution.Preserved(methodDescription);
-}

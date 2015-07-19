@@ -2,7 +2,7 @@
   ObjectPropertyAssertion.of(RebaseImplementationTarget.class).refine(new ObjectPropertyAssertion.Refinement<MethodLookupEngine.Finding>(){
     @Override public void apply(    MethodLookupEngine.Finding mock){
       when(mock.getTypeDescription()).thenReturn(mock(TypeDescription.class));
-      when(mock.getInvokableMethods()).thenReturn(new MethodList.Empty());
+      when(mock.getInvokableMethods()).thenReturn((MethodList)new MethodList.Empty());
       when(mock.getInvokableDefaultMethods()).thenReturn(Collections.<TypeDescription,Set<MethodDescription>>emptyMap());
     }
   }

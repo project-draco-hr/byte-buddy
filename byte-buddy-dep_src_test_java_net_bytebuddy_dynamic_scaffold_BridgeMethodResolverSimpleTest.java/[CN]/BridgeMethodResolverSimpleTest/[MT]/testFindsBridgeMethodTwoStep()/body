@@ -1,7 +1,7 @@
 {
   TypeDescription target=new TypeDescription.ForLoadedType(Qux.class);
-  MethodList invokableMethods=MethodLookupEngine.Default.DEFAULT_LOOKUP_DISABLED.process(target).getInvokableMethods();
-  MethodList relevantMethods=invokableMethods.filter(not(isDeclaredBy(Object.class).or(isConstructor())));
+  MethodList<?> invokableMethods=MethodLookupEngine.Default.DEFAULT_LOOKUP_DISABLED.process(target).getInvokableMethods();
+  MethodList<?> relevantMethods=invokableMethods.filter(not(isDeclaredBy(Object.class).or(isConstructor())));
   assertThat(relevantMethods.size(),is(3));
   BridgeMethodResolver bridgeMethodResolver=BridgeMethodResolver.Simple.of(invokableMethods,conflictHandler);
   for (  MethodDescription methodDescription : relevantMethods.filter(isBridge())) {

@@ -4,7 +4,7 @@
   verify(methodRebaseResolver).resolve(nonRebasedMethod);
   verifyNoMoreInteractions(methodRebaseResolver);
   assertThat(specialMethodInvocation.isValid(),is(true));
-  assertThat(specialMethodInvocation.getMethodDescription(),is(nonRebasedMethod));
+  assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)nonRebasedMethod));
   assertThat(specialMethodInvocation.getTypeDescription(),is(instrumentedType));
   MethodVisitor methodVisitor=mock(MethodVisitor.class);
   Implementation.Context implementationContext=mock(Implementation.Context.class);

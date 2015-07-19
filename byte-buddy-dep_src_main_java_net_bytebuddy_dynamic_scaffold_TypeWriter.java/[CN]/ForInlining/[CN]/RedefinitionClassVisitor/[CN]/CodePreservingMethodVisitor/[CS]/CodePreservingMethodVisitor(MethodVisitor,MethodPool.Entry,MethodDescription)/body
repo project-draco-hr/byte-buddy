@@ -3,6 +3,6 @@
   this.actualMethodVisitor=actualMethodVisitor;
   this.entry=entry;
   this.methodDescription=methodDescription;
-  this.resolution=methodRebaseResolver.resolve(methodDescription);
+  this.resolution=methodRebaseResolver.resolve(methodDescription.asDeclared());
   entry.applyHead(actualMethodVisitor,methodDescription);
 }
