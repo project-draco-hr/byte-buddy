@@ -2,4 +2,5 @@
   super.setUp();
   when(target.getType()).thenReturn(targetType);
   when(targetType.asRawType()).thenReturn(targetType);
+  when(source.asDeclared()).thenReturn(methodDescription);
 }
