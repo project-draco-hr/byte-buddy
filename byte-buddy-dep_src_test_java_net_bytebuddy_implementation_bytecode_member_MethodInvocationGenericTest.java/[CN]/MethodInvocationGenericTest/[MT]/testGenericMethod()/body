@@ -1,0 +1,7 @@
+{
+  TypeDescription genericErasure=mock(TypeDescription.class);
+  when(methodReturnType.asRawType()).thenReturn(genericErasure);
+  StackManipulation stackManipulation=MethodInvocation.invoke(methodDescription);
+  assertThat(stackManipulation.isValid(),is(true));
+  assertThat(stackManipulation,is((StackManipulation)new MethodInvocation.OfGenericMethod(genericErasure,MethodInvocation.invoke(declaredMethod))));
+}
