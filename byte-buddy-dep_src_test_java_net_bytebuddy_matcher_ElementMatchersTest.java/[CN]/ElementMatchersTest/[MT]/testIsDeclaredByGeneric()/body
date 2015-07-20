@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isDeclaredByGeneric(GenericDeclaredBy.Inner.class.getGenericInterfaces()[0]).matches(new TypeDescription.ForLoadedType(GenericDeclaredBy.Inner.class).getInterfaces().getOnly().getDeclaredMethods().filter(ElementMatchers.isMethod()).getOnly()),is(true));
+  assertThat(ElementMatchers.isDeclaredByGeneric(GenericDeclaredBy.Inner.class.getGenericInterfaces()[0]).matches(new TypeDescription.ForLoadedType(GenericDeclaredBy.class).getDeclaredMethods().filter(ElementMatchers.isMethod()).getOnly()),is(false));
+  assertThat(ElementMatchers.isDeclaredByGeneric(GenericDeclaredBy.class).matches(new TypeDescription.ForLoadedType(GenericDeclaredBy.Inner.class).getInterfaces().getOnly().getDeclaredMethods().filter(ElementMatchers.isMethod()).getOnly()),is(false));
+}

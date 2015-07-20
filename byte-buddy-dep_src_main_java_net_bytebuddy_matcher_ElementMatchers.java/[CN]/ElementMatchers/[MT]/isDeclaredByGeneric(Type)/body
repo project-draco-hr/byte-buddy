@@ -1,0 +1,3 @@
+{
+  return isDeclaredByGeneric(GenericTypeDescription.Sort.describe(nonNull(type)));
+}

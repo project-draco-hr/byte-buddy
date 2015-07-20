@@ -1,0 +1,3 @@
+{
+  return isDeclaredByGeneric(rawType(nonNull(matcher)));
+}
