@@ -1,3 +1,0 @@
-{
-  return "MethodVariableAccess.TypeCastingHandler.ForBridgeTarget{typeIterator=" + typeIterator + '}';
-}

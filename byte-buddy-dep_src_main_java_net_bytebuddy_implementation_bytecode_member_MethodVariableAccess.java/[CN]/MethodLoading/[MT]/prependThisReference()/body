@@ -1,0 +1,3 @@
+{
+  return methodDescription.isStatic() ? this : new Compound(MethodVariableAccess.REFERENCE.loadOffset(0),this);
+}

@@ -1,6 +1,6 @@
 {
   when(methodDescription.isStatic()).thenReturn(true);
-  StackManipulation stackManipulation=MethodVariableAccess.loadThisReferenceAndArguments(methodDescription);
+  StackManipulation stackManipulation=MethodVariableAccess.allArgumentsOf(methodDescription).prependThisReference();
   assertThat(stackManipulation.isValid(),is(true));
   StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
   assertThat(size.getSizeImpact(),is(PARAMETER_STACK_SIZE));

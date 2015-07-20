@@ -1,5 +1,5 @@
 {
-  for (  StackManipulation stackManipulation : this.stackManipulation) {
+  for (  StackManipulation stackManipulation : stackManipulations) {
     if (!stackManipulation.isValid()) {
       return false;
     }

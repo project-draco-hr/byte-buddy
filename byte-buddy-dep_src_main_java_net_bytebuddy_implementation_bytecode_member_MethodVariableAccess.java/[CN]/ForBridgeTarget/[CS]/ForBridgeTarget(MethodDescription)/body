@@ -1,3 +1,0 @@
-{
-  typeIterator=targetMethod.getParameters().asTypeList().asRawTypes().iterator();
-}

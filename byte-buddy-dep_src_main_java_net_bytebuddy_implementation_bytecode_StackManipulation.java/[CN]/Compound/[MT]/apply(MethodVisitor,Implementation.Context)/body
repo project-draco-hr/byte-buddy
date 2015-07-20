@@ -1,6 +1,6 @@
 {
   Size size=new Size(0,0);
-  for (  StackManipulation stackManipulation : this.stackManipulation) {
+  for (  StackManipulation stackManipulation : stackManipulations) {
     size=size.aggregate(stackManipulation.apply(methodVisitor,implementationContext));
   }
   return size;
