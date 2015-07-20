@@ -1,0 +1,7 @@
+{
+  List<ParameterDescription.InDeclaredForm> parameters=new LinkedList<ParameterDescription.InDeclaredForm>();
+  for (  Method method : elements) {
+    parameters.add(new MethodDescription.ForLoadedMethod(method).getParameters().getOnly());
+  }
+  return new ParameterList.Explicit<ParameterDescription.InDeclaredForm>(parameters);
+}
