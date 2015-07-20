@@ -8,4 +8,6 @@
   when(secondParameterType.asRawType()).thenReturn(secondParameterType);
   when(secondParameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(secondParameterType);
   when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,Arrays.asList(firstParameterType,secondParameterType)));
+  when(bridgeMethod.getDeclaringType()).thenReturn(declaringType);
+  when(secondParameterType.getInternalName()).thenReturn(FOO);
 }

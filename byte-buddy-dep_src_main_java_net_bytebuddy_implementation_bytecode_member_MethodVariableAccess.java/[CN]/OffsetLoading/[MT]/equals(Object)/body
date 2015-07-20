@@ -1,0 +1,3 @@
+{
+  return this == other || !(other == null || getClass() != other.getClass()) && MethodVariableAccess.this == ((OffsetLoading)other).getMethodVariableAccess() && offset == ((OffsetLoading)other).offset;
+}

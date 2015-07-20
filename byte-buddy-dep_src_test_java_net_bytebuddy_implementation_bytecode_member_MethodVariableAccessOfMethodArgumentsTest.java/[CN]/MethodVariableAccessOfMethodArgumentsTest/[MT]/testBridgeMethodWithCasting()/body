@@ -1,0 +1,12 @@
+{
+  when(bridgeMethod.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(bridgeMethod,Arrays.asList(secondParameterType,secondParameterType)));
+  StackManipulation stackManipulation=MethodVariableAccess.allArgumentsOf(methodDescription).asBridgeOf(bridgeMethod);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(PARAMETER_STACK_SIZE));
+  assertThat(size.getMaximalSize(),is(PARAMETER_STACK_SIZE));
+  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_1);
+  verify(methodVisitor).visitTypeInsn(Opcodes.CHECKCAST,FOO);
+  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_2);
+  verifyNoMoreInteractions(methodVisitor);
+}

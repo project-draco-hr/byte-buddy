@@ -1,3 +1,0 @@
-{
-  return MethodVariableAccess.this.hashCode() + 31 * variableIndex;
-}

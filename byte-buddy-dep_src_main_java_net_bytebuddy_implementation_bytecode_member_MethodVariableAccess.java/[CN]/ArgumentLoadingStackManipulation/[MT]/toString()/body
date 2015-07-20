@@ -1,3 +1,0 @@
-{
-  return "MethodVariableAccess.ArgumentLoadingStackManipulation{" + "methodVariableAccess=" + MethodVariableAccess.this + " ,variableIndex="+ variableIndex+ '}';
-}
