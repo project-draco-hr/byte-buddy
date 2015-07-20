@@ -1,5 +1,5 @@
 {
-  Class<?> dynamicType=create(SuperCall.Inner.class).method(named(FOO)).intercept(SuperMethodCall.INSTANCE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
+  Class<?> dynamicType=create(SuperCall.Inner.class).method(named(FOO)).intercept(SuperMethodCall.INSTANCE).classVisitor(new MethodCallValidator.ClassWrapper()).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
   assertEquals(String.class,dynamicType.getDeclaredMethod(FOO,String.class).getReturnType());
   assertThat(dynamicType.getDeclaredMethod(FOO,String.class).getGenericReturnType(),is((Type)String.class));
   SuperCall<String> superCall=(SuperCall<String>)dynamicType.newInstance();
