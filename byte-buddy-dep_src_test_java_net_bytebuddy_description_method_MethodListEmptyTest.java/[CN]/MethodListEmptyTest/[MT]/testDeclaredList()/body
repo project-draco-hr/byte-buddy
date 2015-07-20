@@ -1,0 +1,3 @@
+{
+  assertThat(new MethodList.Empty().asDeclared().size(),is(0));
+}

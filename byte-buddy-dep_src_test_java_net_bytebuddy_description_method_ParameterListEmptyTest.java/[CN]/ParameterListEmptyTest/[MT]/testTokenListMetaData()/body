@@ -1,0 +1,3 @@
+{
+  assertThat(new ParameterList.Empty().hasExplicitMetaData(),is(true));
+}

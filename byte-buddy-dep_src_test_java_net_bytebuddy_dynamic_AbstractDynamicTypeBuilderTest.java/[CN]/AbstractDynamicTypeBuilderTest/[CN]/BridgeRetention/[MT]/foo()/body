@@ -1,3 +1,4 @@
 {
+  register(FOO);
   return null;
 }

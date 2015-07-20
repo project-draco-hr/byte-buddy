@@ -1,0 +1,3 @@
+{
+  assertThat(new ParameterList.Empty().asTypeList().size(),is(0));
+}
