@@ -1,0 +1,4 @@
+{
+  MethodDescription methodDescription=superConstructors.get(methodToken);
+  return methodDescription == null ? super.invokeSuper(methodToken) : invokeSuper(methodDescription);
+}

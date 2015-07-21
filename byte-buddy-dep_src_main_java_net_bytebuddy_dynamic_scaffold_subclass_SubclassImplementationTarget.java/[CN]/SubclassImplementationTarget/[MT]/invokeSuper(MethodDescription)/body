@@ -1,9 +1,3 @@
 {
-  if (methodDescription.isConstructor()) {
-    methodDescription=this.superConstructors.get(methodDescription.asToken());
-    if (methodDescription == null) {
-      return Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
-    }
-  }
   return Implementation.SpecialMethodInvocation.Simple.of(methodDescription,typeDescription.getSuperType().asRawType());
 }
