@@ -6,7 +6,7 @@
   assertThat(genericTypeDescription.getParameters().get(0).asRawType().represents(Number.class),is(true));
   assertThat(genericTypeDescription.getParameters().get(1).getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
   assertThat(genericTypeDescription.getParameters().get(1).asRawType().represents(Integer.class),is(true));
-  MethodDescription methodDescription=genericTypeDescription.getDeclaredMethods().filter(named("bar")).getOnly();
+  MethodDescription methodDescription=genericTypeDescription.getDeclaredMethods().filter(named(BAR)).getOnly();
   assertThat(methodDescription.getReturnType().getSort(),is(GenericTypeDescription.Sort.VARIABLE));
   assertThat(methodDescription.getReturnType().getSymbol(),is("T"));
   assertThat(methodDescription.getReturnType().getVariableSource(),is((TypeVariableSource)methodDescription));
