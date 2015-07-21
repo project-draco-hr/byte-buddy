@@ -1,3 +1,14 @@
 {
-  return target.isDefaultMethod();
+  if (target.isBridge() && !target.getDeclaringType().asRawType().isInterface()) {
+    GenericTypeDescription currentType=target.getDeclaringType().getSuperType();
+    while (currentType != null) {
+      for (      MethodDescription methodDescription : currentType.getDeclaredMethods().filter(isOverridable())) {
+        if (target.asToken().equals(methodDescription.asToken())) {
+          return !methodDescription.isBridge();
+        }
+      }
+      currentType=currentType.getSuperType();
+    }
+  }
+  return false;
 }

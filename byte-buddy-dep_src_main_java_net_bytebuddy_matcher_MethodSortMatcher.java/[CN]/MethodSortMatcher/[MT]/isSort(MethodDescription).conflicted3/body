@@ -1,3 +1,3 @@
 {
-  return target.isBridge() && target.getDeclaringType().getDeclaredMethods().filter(isMethod().and(not(is(target))).and(isSpecializationOf(target))).size() == 0;
+  return target.isConstructor();
 }
