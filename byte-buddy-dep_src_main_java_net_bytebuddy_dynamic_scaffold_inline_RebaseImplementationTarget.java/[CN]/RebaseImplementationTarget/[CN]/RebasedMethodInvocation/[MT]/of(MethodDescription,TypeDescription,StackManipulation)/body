@@ -1,0 +1,4 @@
+{
+  StackManipulation stackManipulation=resolvedMethod.isStatic() ? MethodInvocation.invoke(resolvedMethod) : MethodInvocation.invoke(resolvedMethod).special(instrumentedType);
+  return stackManipulation.isValid() ? new RebasedMethodInvocation(resolvedMethod,instrumentedType,new Compound(additionalArguments,stackManipulation)) : Illegal.INSTANCE;
+}

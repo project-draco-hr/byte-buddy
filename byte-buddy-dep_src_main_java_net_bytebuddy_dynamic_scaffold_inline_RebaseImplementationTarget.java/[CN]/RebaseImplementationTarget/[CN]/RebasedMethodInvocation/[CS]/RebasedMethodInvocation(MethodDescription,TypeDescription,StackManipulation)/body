@@ -1,0 +1,5 @@
+{
+  this.methodDescription=methodDescription;
+  this.instrumentedType=instrumentedType;
+  this.stackManipulation=stackManipulation;
+}

@@ -1,0 +1,8 @@
+{
+  ObjectPropertyAssertion.of(Implementation.SpecialMethodInvocation.class).refine(new ObjectPropertyAssertion.Refinement<MethodDescription>(){
+    @Override public void apply(    MethodDescription mock){
+      when(mock.asToken()).thenReturn(mock(MethodDescription.Token.class));
+    }
+  }
+).applyBasic();
+}

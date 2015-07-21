@@ -1,4 +1,0 @@
-String name
-TypeDescription returnType
-List<TypeDescription> parameterTypes
-TypeDescription targetType

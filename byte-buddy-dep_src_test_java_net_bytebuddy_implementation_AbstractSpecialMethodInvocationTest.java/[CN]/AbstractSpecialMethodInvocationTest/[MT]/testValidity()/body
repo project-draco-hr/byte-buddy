@@ -1,0 +1,3 @@
+{
+  assertThat(make(methodDescription,typeDescription).isValid(),is(true));
+}

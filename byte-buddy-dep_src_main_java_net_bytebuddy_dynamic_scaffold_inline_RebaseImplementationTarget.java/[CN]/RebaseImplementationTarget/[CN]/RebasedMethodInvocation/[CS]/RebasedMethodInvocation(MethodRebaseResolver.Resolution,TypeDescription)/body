@@ -1,5 +1,0 @@
-{
-  this.instrumentedType=instrumentedType;
-  methodDescription=resolution.getResolvedMethod();
-  stackManipulation=new Compound(resolution.getAdditionalArguments(),resolution.getResolvedMethod().isStatic() ? MethodInvocation.invoke(methodDescription) : MethodInvocation.invoke(methodDescription).special(instrumentedType));
-}

@@ -1,0 +1,3 @@
+{
+  return new RebaseImplementationTarget.RebasedMethodInvocation(methodDescription,typeDescription,mock(StackManipulation.class));
+}

@@ -1,0 +1,4 @@
+{
+  assertThat(make(methodDescription,typeDescription).hashCode(),is(new Implementation.SpecialMethodInvocation.Simple(methodDescription,typeDescription,stackManipulation).hashCode()));
+  assertThat(make(methodDescription,typeDescription),is((Implementation.SpecialMethodInvocation)new Implementation.SpecialMethodInvocation.Simple(methodDescription,typeDescription,stackManipulation)));
+}

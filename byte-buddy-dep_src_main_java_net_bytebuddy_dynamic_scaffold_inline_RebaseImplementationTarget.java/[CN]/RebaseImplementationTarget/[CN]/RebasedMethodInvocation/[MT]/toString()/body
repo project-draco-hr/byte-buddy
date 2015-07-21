@@ -1,3 +1,3 @@
 {
-  return "RebaseimplementationTarget.RebasedMethodInvocation{" + "instrumentedType=" + instrumentedType + ", methodDescription="+ methodDescription+ '}';
+  return "RebaseImplementationTarget.RebasedMethodInvocation{" + "instrumentedType=" + instrumentedType + ", methodDescription="+ methodDescription+ ", stackManipulation="+ stackManipulation+ '}';
 }
