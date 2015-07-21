@@ -1,6 +1,6 @@
 {
   when(rebasedMethod.isAbstract()).thenReturn(true);
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(targetRebaseMethod,methodLookup);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(targetRebaseMethodToken);
   assertThat(specialMethodInvocation.isValid(),is(false));
   verify(methodRebaseResolver).resolve(targetRebaseMethod);
   verifyNoMoreInteractions(methodRebaseResolver);

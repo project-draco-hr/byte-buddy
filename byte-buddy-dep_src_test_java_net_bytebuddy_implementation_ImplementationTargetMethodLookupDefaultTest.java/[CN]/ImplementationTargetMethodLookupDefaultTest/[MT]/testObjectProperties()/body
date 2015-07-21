@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(Implementation.Target.MethodLookup.Default.class).apply();
-}

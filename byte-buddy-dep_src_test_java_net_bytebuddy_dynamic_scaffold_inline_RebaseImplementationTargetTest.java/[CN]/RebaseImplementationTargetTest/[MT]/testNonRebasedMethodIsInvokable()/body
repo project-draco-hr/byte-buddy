@@ -1,6 +1,6 @@
 {
   when(nonRebasedMethod.isSpecializableFor(instrumentedType)).thenReturn(true);
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(nonRebasedMethod,methodLookup);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(nonRebasedMethodToken);
   verify(methodRebaseResolver).resolve(nonRebasedMethod);
   verifyNoMoreInteractions(methodRebaseResolver);
   assertThat(specialMethodInvocation.isValid(),is(true));

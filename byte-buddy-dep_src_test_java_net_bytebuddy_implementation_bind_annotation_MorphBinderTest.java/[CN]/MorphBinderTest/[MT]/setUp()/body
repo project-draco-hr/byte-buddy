@@ -2,4 +2,5 @@
   super.setUp();
   when(morphType.asRawType()).thenReturn(morphType);
   when(defaultType.asRawType()).thenReturn(defaultType);
+  when(source.asToken()).thenReturn(sourceToken);
 }

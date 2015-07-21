@@ -1,5 +1,5 @@
 {
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(targetRebaseMethod,methodLookup);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(targetRebaseMethodToken);
   verify(methodRebaseResolver).resolve(targetRebaseMethod);
   verifyNoMoreInteractions(methodRebaseResolver);
   assertThat(specialMethodInvocation.isValid(),is(true));

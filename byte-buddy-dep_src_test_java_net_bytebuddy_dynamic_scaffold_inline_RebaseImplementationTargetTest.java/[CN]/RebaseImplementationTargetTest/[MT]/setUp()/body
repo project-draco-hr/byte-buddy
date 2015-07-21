@@ -32,5 +32,8 @@
   when(methodRebaseResolver.resolve(nonRebasedMethod)).thenReturn(nonRebasedResolution);
   when(nonRebasedResolution.isRebased()).thenReturn(false);
   when(nonRebasedResolution.getResolvedMethod()).thenReturn(nonRebasedMethod);
+  when(superMethod.asToken()).thenReturn(superMethodToken);
+  when(targetRebaseMethod.asToken()).thenReturn(targetRebaseMethodToken);
+  when(nonRebasedMethod.asToken()).thenReturn(nonRebasedMethodToken);
   super.setUp();
 }

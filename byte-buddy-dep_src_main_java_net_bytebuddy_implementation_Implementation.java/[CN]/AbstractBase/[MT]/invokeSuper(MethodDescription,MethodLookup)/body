@@ -1,3 +1,0 @@
-{
-  return invokeSuper(methodLookup.resolve(methodDescription,invokableMethods,bridgeMethodResolver));
-}

@@ -6,5 +6,5 @@
   when(declaringType.asRawType()).thenReturn(declaringType);
   when(constructor.getDeclaringType()).thenReturn(declaringType);
   when(constructor.asToken()).thenReturn(mock(MethodDescription.Token.class));
-  assertThat(implementationTarget.invokeSuper(constructor,Implementation.Target.MethodLookup.Default.EXACT).isValid(),is(false));
+  assertThat(((SubclassImplementationTarget)implementationTarget).invokeSuper(constructor).isValid(),is(false));
 }

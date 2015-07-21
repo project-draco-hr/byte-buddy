@@ -1,4 +1,5 @@
 {
   when(implementationTarget.getTypeDescription()).thenReturn(typeDescription);
   classLoader=new PrecompiledTypeClassLoader(getClass().getClassLoader());
+  when(methodDescription.asToken()).thenReturn(methodToken);
 }

@@ -1,6 +1,6 @@
 {
   when(superMethod.isSpecializableFor(superType)).thenReturn(true);
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(superMethod,methodLookup);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(superMethodToken);
   assertThat(specialMethodInvocation.isValid(),is(true));
   assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)superMethod));
   assertThat(specialMethodInvocation.getTypeDescription(),is(superType));

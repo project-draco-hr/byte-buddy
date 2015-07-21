@@ -1,9 +1,3 @@
 {
-  MethodDescription.InDeclaredForm methodDescription=mock(MethodDescription.InDeclaredForm.class);
-  when(methodDescription.asDeclared()).thenReturn(methodDescription);
-  when(methodDescription.getReturnType()).thenReturn(returnType);
-  TypeDescription typeDescription=mock(TypeDescription.class);
-  when(typeDescription.asRawType()).thenReturn(typeDescription);
-  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
-  assertThat(implementationTarget.invokeSuper(methodDescription,methodLookup).isValid(),is(false));
+  assertThat(implementationTarget.invokeSuper(mock(MethodDescription.Token.class)).isValid(),is(false));
 }
