@@ -1,8 +1,8 @@
 {
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeDefault(defaultType,defaultToken);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeDefault(defaultMethodDeclaringType,defaultToken);
   assertThat(specialMethodInvocation.isValid(),is(true));
   assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)defaultMethod));
-  assertThat(specialMethodInvocation.getTypeDescription(),is(defaultType));
+  assertThat(specialMethodInvocation.getTypeDescription(),is(defaultMethodDeclaringType));
   MethodVisitor methodVisitor=mock(MethodVisitor.class);
   Implementation.Context implementationContext=mock(Implementation.Context.class);
   StackManipulation.Size size=specialMethodInvocation.apply(methodVisitor,implementationContext);

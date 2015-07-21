@@ -1,0 +1,3 @@
+{
+  return resolution.getResolvedMethod().isAbstract() ? Illegal.INSTANCE : new RebasedMethodInvocation(resolution,instrumentedType);
+}

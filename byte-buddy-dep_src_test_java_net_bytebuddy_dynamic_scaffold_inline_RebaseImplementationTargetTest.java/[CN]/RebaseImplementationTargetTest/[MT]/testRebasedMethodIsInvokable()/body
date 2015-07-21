@@ -1,15 +1,17 @@
 {
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(targetRebaseMethodToken);
-  verify(methodRebaseResolver).resolve(targetRebaseMethod);
+  when(invokableMethod.getDeclaringType()).thenReturn(instrumentedType);
+  when(methodRebaseResolver.resolve(invokableMethod)).thenReturn(new MethodRebaseResolver.Resolution.ForRebasedMethod(rebasedMethod));
+  when(rebasedMethod.isSpecializableFor(instrumentedType)).thenReturn(true);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(invokableToken);
+  verify(methodRebaseResolver).resolve(invokableMethod);
   verifyNoMoreInteractions(methodRebaseResolver);
   assertThat(specialMethodInvocation.isValid(),is(true));
-  verify(additionalArguments).isValid();
   assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)rebasedMethod));
   assertThat(specialMethodInvocation.getTypeDescription(),is(instrumentedType));
   MethodVisitor methodVisitor=mock(MethodVisitor.class);
   Implementation.Context implementationContext=mock(Implementation.Context.class);
   StackManipulation.Size size=specialMethodInvocation.apply(methodVisitor,implementationContext);
-  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,BAR,BAZ,FOOBAR,false);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,BAZ,QUX,FOO,false);
   verifyNoMoreInteractions(methodVisitor);
   verifyZeroInteractions(implementationContext);
   assertThat(size.getSizeImpact(),is(0));

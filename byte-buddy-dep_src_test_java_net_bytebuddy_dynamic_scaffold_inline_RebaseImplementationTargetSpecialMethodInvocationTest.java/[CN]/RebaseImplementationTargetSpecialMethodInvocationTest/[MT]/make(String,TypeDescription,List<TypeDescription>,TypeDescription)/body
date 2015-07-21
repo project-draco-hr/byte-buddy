@@ -10,5 +10,5 @@
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);
   when(methodDescription.asDeclared()).thenReturn(methodDescription);
   when(resolution.getResolvedMethod()).thenReturn(methodDescription);
-  return new RebaseImplementationTarget.RebasedMethodSpecialMethodInvocation(resolution,targetType);
+  return new RebaseImplementationTarget.RebasedMethodInvocation(resolution,targetType);
 }

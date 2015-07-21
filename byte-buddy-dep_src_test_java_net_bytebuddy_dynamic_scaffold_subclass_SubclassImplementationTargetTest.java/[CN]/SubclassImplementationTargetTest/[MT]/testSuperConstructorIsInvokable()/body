@@ -1,13 +1,14 @@
 {
-  when(superMethod.isConstructor()).thenReturn(true);
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(invokableToken);
+  when(invokableMethod.isConstructor()).thenReturn(true);
+  when(superTypeConstructor.isSpecializableFor(superType)).thenReturn(true);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(superConstructorToken);
   assertThat(specialMethodInvocation.isValid(),is(true));
-  assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)superMethodConstructor));
+  assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)superTypeConstructor));
   assertThat(specialMethodInvocation.getTypeDescription(),is(superType));
   MethodVisitor methodVisitor=mock(MethodVisitor.class);
   Implementation.Context implementationContext=mock(Implementation.Context.class);
   StackManipulation.Size size=specialMethodInvocation.apply(methodVisitor,implementationContext);
-  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,BAR,QUXBAZ,BAZBAR,false);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,BAR,QUX,BAZ,false);
   verifyNoMoreInteractions(methodVisitor);
   verifyZeroInteractions(implementationContext);
   assertThat(size.getSizeImpact(),is(0));

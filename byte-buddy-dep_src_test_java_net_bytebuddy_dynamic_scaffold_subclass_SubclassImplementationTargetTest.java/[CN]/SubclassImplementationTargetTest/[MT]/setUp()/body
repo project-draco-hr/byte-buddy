@@ -1,24 +1,15 @@
 {
-  when(parameterList.asTypeList()).thenReturn(parameterTypes);
   when(instrumentedType.getSuperType()).thenReturn(superType);
-  when(superType.getDeclaredMethods()).thenReturn((MethodList)new MethodList.Explicit<MethodDescription>(Collections.singletonList(superMethodConstructor)));
+  when(superType.asRawType()).thenReturn(superType);
   when(superType.getInternalName()).thenReturn(BAR);
-  when(superType.asRawType()).thenReturn(superType);
-  when(superType.asRawType()).thenReturn(superType);
-  when(superType.getStackSize()).thenReturn(StackSize.ZERO);
-  when(superMethod.getReturnType()).thenReturn(returnType);
-  when(superMethod.getInternalName()).thenReturn(BAZ);
-  when(superMethod.getDescriptor()).thenReturn(FOOBAR);
-  when(superMethod.getParameters()).thenReturn((ParameterList)parameterList);
-  when(superMethod.getDeclaringType()).thenReturn(superType);
-  when(superMethod.asDeclared()).thenReturn(superMethod);
-  when(superMethodConstructor.isConstructor()).thenReturn(true);
-  when(superMethodConstructor.getParameters()).thenReturn((ParameterList)parameterList);
-  when(superMethodConstructor.getReturnType()).thenReturn(returnType);
-  when(superMethodConstructor.isSpecializableFor(superType)).thenReturn(true);
-  when(superMethodConstructor.getInternalName()).thenReturn(QUXBAZ);
-  when(superMethodConstructor.getDescriptor()).thenReturn(BAZBAR);
-  when(superMethodConstructor.getDeclaringType()).thenReturn(superType);
-  when(superMethodConstructor.asDeclared()).thenReturn(superMethodConstructor);
+  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InDeclaredForm>(Collections.singletonList(superTypeConstructor)));
+  when(superTypeConstructor.asToken()).thenReturn(superConstructorToken);
+  when(superTypeConstructor.getInternalName()).thenReturn(QUX);
+  when(superTypeConstructor.getDescriptor()).thenReturn(BAZ);
+  when(superTypeConstructor.asDeclared()).thenReturn(superTypeConstructor);
+  when(superTypeConstructor.isConstructor()).thenReturn(true);
+  when(superTypeConstructor.getDeclaringType()).thenReturn(superType);
+  when(superTypeConstructor.getReturnType()).thenReturn(TypeDescription.VOID);
+  when(superTypeConstructor.getParameters()).thenReturn(new ParameterList.Empty());
   super.setUp();
 }

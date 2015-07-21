@@ -4,6 +4,6 @@
   TypeDescription typeDescription=mock(TypeDescription.class);
   when(typeDescription.asRawType()).thenReturn(typeDescription);
   when(resolution.getResolvedMethod()).thenReturn(new MethodDescription.Latent(typeDescription,FOO,Opcodes.ACC_STATIC,Collections.<GenericTypeDescription>emptyList(),returnType,Collections.<ParameterDescription.Token>emptyList(),Collections.<GenericTypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE));
-  Implementation.SpecialMethodInvocation specialMethodInvocation=new RebaseImplementationTarget.RebasedMethodSpecialMethodInvocation(resolution,mock(TypeDescription.class));
+  Implementation.SpecialMethodInvocation specialMethodInvocation=new RebaseImplementationTarget.RebasedMethodInvocation(resolution,mock(TypeDescription.class));
   assertThat(specialMethodInvocation.isValid(),is(true));
 }
