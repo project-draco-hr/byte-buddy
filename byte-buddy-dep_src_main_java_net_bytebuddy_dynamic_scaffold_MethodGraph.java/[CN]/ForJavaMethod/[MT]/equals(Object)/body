@@ -1,0 +1,15 @@
+{
+  if (other == this)   return true;
+  if (!(other instanceof Key))   return false;
+  Key key=(Key)other;
+  if (!methodToken.getInternalName().equals(key.getToken().getInternalName())) {
+    return false;
+  }
+  int index=0;
+  for (  ParameterDescription.Token parameterToken : methodToken.getParameterTokens()) {
+    if (!parameterToken.getType().asRawType().equals(key.getToken().getParameterTokens().get(index++).getType().asRawType())) {
+      return false;
+    }
+  }
+  return true;
+}

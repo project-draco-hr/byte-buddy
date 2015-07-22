@@ -1,0 +1,4 @@
+TypeDescription typeDescription
+List<MethodDescription> invokeableMethods
+Map<MethodDescription.Token,MethodDescription> superMethods
+Map<TypeDescription,Map<MethodDescription.Token,MethodDescription>> defaultMethods
