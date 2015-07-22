@@ -1,0 +1,4 @@
+{
+  Class<?> type=createPlain().ignoreMethods(named(TO_STRING)).method(named(TO_STRING)).intercept(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.newInstance().toString(),CoreMatchers.not(FOO));
+}
