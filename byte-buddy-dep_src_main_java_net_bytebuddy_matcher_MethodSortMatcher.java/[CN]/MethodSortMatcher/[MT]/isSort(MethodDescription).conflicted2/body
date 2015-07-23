@@ -1,3 +1,3 @@
 {
-  return target.isTypeInitializer();
+  return target.isBridge() && !target.getDeclaringType().getDeclaredMethods().filter(not(is(target)).and(hasMethodName(target.getInternalName())).and(takesArguments(target.getParameters().asTypeList().asRawTypes()))).isEmpty();
 }
