@@ -1,0 +1,9 @@
+{
+  for (  GenericTypeDescription currentType : instrumentedType) {
+    FieldList<?> fieldList=currentType.asRawType().getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
+    if (fieldList.size() != 0) {
+      return fieldList.getOnly();
+    }
+  }
+  throw new IllegalStateException(instrumentedType + " does not define a visible field " + fieldName);
+}

@@ -1,11 +1,9 @@
 {
-  TypeDescription currentType=instrumentedType;
-  do {
+  for (  GenericTypeDescription currentType : instrumentedType) {
     FieldList<?> fieldList=currentType.getDeclaredFields().filter(named(name).and(isVisibleTo(instrumentedType)));
     if (!fieldList.isEmpty() && (!staticMethod || fieldList.getOnly().isStatic())) {
       return fieldList.getOnly();
     }
   }
- while (!(currentType=currentType.getSuperType().asRawType()).represents(Object.class));
   throw new IllegalArgumentException("There is no field '" + name + " that is visible to "+ instrumentedType);
 }
