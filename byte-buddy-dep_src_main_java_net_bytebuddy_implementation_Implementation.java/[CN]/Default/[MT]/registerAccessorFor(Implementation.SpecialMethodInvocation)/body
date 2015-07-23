@@ -1,5 +1,5 @@
 {
-  MethodDescription.inDefinedShape accessorMethod=registeredAccessorMethods.get(specialMethodInvocation);
+  MethodDescription.InDefinedShape accessorMethod=registeredAccessorMethods.get(specialMethodInvocation);
   if (accessorMethod == null) {
     accessorMethod=new AccessorMethod(instrumentedType,specialMethodInvocation.getMethodDescription(),randomString.nextString());
     registeredAccessorMethods.put(specialMethodInvocation,accessorMethod);

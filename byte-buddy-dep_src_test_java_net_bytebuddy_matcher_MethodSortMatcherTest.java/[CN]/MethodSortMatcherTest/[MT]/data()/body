@@ -1,3 +1,3 @@
 {
-  return Arrays.asList(new Object[][]{{MethodSortMatcher.Sort.CONSTRUCTOR,MockEngine.CONSTRUCTOR},{MethodSortMatcher.Sort.DEFAULT_METHOD,MockEngine.DEFAULT_METHOD},{MethodSortMatcher.Sort.METHOD,MockEngine.METHOD},{MethodSortMatcher.Sort.OVERRIDABLE,MockEngine.OVERRIDABLE},{MethodSortMatcher.Sort.TYPE_INITIALIZER,MockEngine.TYPE_INITIALIZER},{MethodSortMatcher.Sort.VISIBILITY_BRIDGE,MockEngine.VISIBILITY_BRIDGE}});
+  return Arrays.asList(new Object[][]{{MethodSortMatcher.Sort.CONSTRUCTOR,MockEngine.CONSTRUCTOR},{MethodSortMatcher.Sort.DEFAULT_METHOD,MockEngine.DEFAULT_METHOD},{MethodSortMatcher.Sort.METHOD,MockEngine.METHOD},{MethodSortMatcher.Sort.OVERRIDABLE,MockEngine.OVERRIDABLE},{MethodSortMatcher.Sort.TYPE_INITIALIZER,MockEngine.TYPE_INITIALIZER},{MethodSortMatcher.Sort.TYPE_BRIDGE,MockEngine.TYPE_BRIDGE},{MethodSortMatcher.Sort.VISIBILITY_BRIDGE,MockEngine.VISIBILITY_BRIDGE}});
 }

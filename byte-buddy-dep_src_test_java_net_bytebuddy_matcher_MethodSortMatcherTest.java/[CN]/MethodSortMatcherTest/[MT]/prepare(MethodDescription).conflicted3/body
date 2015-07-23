@@ -1,3 +1,18 @@
 {
-  when(mock.isOverridable()).thenReturn(true);
+  when(mock.isBridge()).thenReturn(true);
+  when(mock.getInternalName()).thenReturn(FOO);
+  when(mock.getParameters()).thenReturn((ParameterList)new ParameterList.Empty());
+  TypeDescription typeDescription=Mockito.mock(TypeDescription.class);
+  when(typeDescription.asRawType()).thenReturn(typeDescription);
+  when(typeDescription.getDeclaredMethods()).thenReturn(new MethodList.Empty());
+  when(mock.getDeclaringType()).thenReturn(typeDescription);
+  TypeDescription superType=Mockito.mock(TypeDescription.class);
+  when(typeDescription.getSuperType()).thenReturn(superType);
+  when(superType.iterator()).thenReturn(new GenericTypeDescription.SuperTypeIterator(superType));
+  MethodDescription.InDefinedShape bridgeTarget=Mockito.mock(MethodDescription.InDefinedShape.class);
+  when(bridgeTarget.asDefined()).thenReturn(bridgeTarget);
+  MethodDescription.Token methodToken=Mockito.mock(MethodDescription.Token.class);
+  when(bridgeTarget.asToken()).thenReturn(methodToken);
+  when(mock.asToken()).thenReturn(methodToken);
+  when(superType.getDeclaredMethods()).thenReturn((MethodList)new MethodList.Explicit<MethodDescription>(Collections.singletonList(bridgeTarget)));
 }

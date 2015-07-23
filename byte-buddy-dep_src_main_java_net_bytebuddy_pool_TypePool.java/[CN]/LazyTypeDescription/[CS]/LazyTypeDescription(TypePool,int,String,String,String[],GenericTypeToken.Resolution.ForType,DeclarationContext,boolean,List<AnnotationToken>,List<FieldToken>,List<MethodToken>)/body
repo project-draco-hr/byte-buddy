@@ -23,7 +23,7 @@
   for (  FieldToken fieldToken : fieldTokens) {
     declaredFields.add(fieldToken.toFieldDescription(this));
   }
-  declaredMethods=new ArrayList<MethodDescription.inDefinedShape>(methodTokens.size());
+  declaredMethods=new ArrayList<MethodDescription.InDefinedShape>(methodTokens.size());
   for (  MethodToken methodToken : methodTokens) {
     declaredMethods.add(methodToken.toMethodDescription(this));
   }

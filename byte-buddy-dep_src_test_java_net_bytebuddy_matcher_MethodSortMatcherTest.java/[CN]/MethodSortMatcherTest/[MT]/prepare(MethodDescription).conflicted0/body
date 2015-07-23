@@ -1,14 +1,3 @@
 {
-  when(mock.isBridge()).thenReturn(true);
-  MethodDescription.Token methodToken=Mockito.mock(MethodDescription.Token.class);
-  when(mock.asToken()).thenReturn(methodToken);
-  TypeDescription declaringType=Mockito.mock(TypeDescription.class);
-  when(declaringType.asRawType()).thenReturn(declaringType);
-  when(mock.getDeclaringType()).thenReturn(declaringType);
-  TypeDescription superType=Mockito.mock(TypeDescription.class);
-  when(declaringType.getSuperType()).thenReturn(superType);
-  MethodDescription.inDefinedShape methodDescription=Mockito.mock(MethodDescription.inDefinedShape.class);
-  when(methodDescription.isOverridable()).thenReturn(true);
-  when(methodDescription.asToken()).thenReturn(methodToken);
-  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.inDefinedShape>(Collections.singletonList(methodDescription)));
+  when(mock.isConstructor()).thenReturn(true);
 }

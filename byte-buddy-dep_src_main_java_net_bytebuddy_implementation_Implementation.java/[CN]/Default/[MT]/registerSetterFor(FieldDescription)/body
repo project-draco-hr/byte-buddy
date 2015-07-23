@@ -1,5 +1,5 @@
 {
-  MethodDescription.inDefinedShape accessorMethod=registeredSetters.get(fieldDescription);
+  MethodDescription.InDefinedShape accessorMethod=registeredSetters.get(fieldDescription);
   if (accessorMethod == null) {
     accessorMethod=new FieldSetter(instrumentedType,fieldDescription,randomString.nextString());
     registeredSetters.put(fieldDescription,accessorMethod);
