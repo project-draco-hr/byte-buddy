@@ -1,17 +1,3 @@
 {
-  if (target.isBridge() && !RETURN_TYPE_BRIDGE.isSort(target)) {
-    if (target.getDeclaringType().asRawType().isInterface()) {
-      return true;
-    }
-    GenericTypeDescription currentType=target.getDeclaringType().getSuperType();
-    while (currentType != null) {
-      for (      MethodDescription methodDescription : currentType.getDeclaredMethods()) {
-        if (target.asToken().equals(methodDescription.asDefined().asToken())) {
-          return !methodDescription.equals(methodDescription.asDefined());
-        }
-      }
-      currentType=currentType.getSuperType();
-    }
-  }
-  return false;
+  return target.isMethod();
 }

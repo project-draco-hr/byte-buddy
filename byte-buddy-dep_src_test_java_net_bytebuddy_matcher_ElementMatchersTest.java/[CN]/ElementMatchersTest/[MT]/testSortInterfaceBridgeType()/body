@@ -1,0 +1,6 @@
+{
+  assertThat(ElementMatchers.isTypeBridge().matches(new TypeDescription.ForLoadedType(classLoader.loadClass(RETURN_TYPE_INTERFACE_BRIDGE)).getDeclaredMethods().filter(ElementMatchers.named(FOO).and(ElementMatchers.returns(Object.class))).getOnly()),is(true));
+  assertThat(ElementMatchers.isTypeBridge().matches(new MethodDescription.ForLoadedMethod(classLoader.loadClass(TYPE_VARIABLE_INTERFACE_BRIDGE).getDeclaredMethod(FOO,Object.class))),is(true));
+  assertThat(ElementMatchers.isVisibilityBridge().matches(new TypeDescription.ForLoadedType(classLoader.loadClass(RETURN_TYPE_INTERFACE_BRIDGE)).getDeclaredMethods().filter(ElementMatchers.named(FOO).and(ElementMatchers.returns(Object.class))).getOnly()),is(false));
+  assertThat(ElementMatchers.isVisibilityBridge().matches(new MethodDescription.ForLoadedMethod(classLoader.loadClass(TYPE_VARIABLE_INTERFACE_BRIDGE).getDeclaredMethod(FOO,Object.class))),is(false));
+}

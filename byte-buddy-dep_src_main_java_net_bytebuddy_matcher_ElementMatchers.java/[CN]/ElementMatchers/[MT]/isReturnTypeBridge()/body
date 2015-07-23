@@ -1,3 +1,0 @@
-{
-  return new MethodSortMatcher<T>(MethodSortMatcher.Sort.RETURN_TYPE_BRIDGE);
-}

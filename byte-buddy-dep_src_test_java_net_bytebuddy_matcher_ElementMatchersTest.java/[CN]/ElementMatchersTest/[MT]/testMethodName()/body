@@ -1,6 +1,6 @@
 {
   assertThat(ElementMatchers.hasMethodName(MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME),is(ElementMatchers.isTypeInitializer()));
   assertThat(ElementMatchers.hasMethodName(MethodDescription.CONSTRUCTOR_INTERNAL_NAME),is(ElementMatchers.isConstructor()));
-  ElementMatcher<MethodDescription> nameMatcher=ElementMatchers.named(FOO);
+  ElementMatcher<MethodDescription> nameMatcher=named(FOO);
   assertThat(ElementMatchers.hasMethodName(FOO),is(nameMatcher));
 }
