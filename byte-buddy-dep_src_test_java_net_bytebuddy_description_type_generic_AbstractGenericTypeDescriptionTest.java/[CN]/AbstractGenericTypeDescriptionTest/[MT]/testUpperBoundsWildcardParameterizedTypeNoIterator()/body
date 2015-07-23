@@ -1,0 +1,3 @@
+{
+  describe(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO)).getParameters().getOnly().iterator();
+}
