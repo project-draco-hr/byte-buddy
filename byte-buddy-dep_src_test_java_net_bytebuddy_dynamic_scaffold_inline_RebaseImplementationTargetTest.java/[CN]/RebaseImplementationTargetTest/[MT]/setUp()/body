@@ -4,7 +4,7 @@
   when(superType.getInternalName()).thenReturn(BAR);
   when(rebasedMethod.getInternalName()).thenReturn(QUX);
   when(rebasedMethod.getDescriptor()).thenReturn(FOO);
-  when(rebasedMethod.asDeclared()).thenReturn(rebasedMethod);
+  when(rebasedMethod.asDefined()).thenReturn(rebasedMethod);
   when(rebasedMethod.getReturnType()).thenReturn(returnType);
   when(rebasedMethod.getParameters()).thenReturn(new ParameterList.Empty());
   when(rebasedMethod.getDeclaringType()).thenReturn(instrumentedType);

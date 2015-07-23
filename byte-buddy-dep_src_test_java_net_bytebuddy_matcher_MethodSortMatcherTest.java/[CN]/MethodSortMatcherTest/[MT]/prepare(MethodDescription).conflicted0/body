@@ -7,8 +7,8 @@
   when(mock.getDeclaringType()).thenReturn(declaringType);
   TypeDescription superType=Mockito.mock(TypeDescription.class);
   when(declaringType.getSuperType()).thenReturn(superType);
-  MethodDescription.InDeclaredForm methodDescription=Mockito.mock(MethodDescription.InDeclaredForm.class);
+  MethodDescription.inDefinedShape methodDescription=Mockito.mock(MethodDescription.inDefinedShape.class);
   when(methodDescription.isOverridable()).thenReturn(true);
   when(methodDescription.asToken()).thenReturn(methodToken);
-  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InDeclaredForm>(Collections.singletonList(methodDescription)));
+  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.inDefinedShape>(Collections.singletonList(methodDescription)));
 }

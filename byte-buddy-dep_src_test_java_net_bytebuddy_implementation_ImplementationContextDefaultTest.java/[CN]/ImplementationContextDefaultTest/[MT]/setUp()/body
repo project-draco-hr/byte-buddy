@@ -57,7 +57,7 @@
   when(firstField.getInternalName()).thenReturn(FOO);
   when(firstField.getDescriptor()).thenReturn(BAR);
   when(firstField.getDeclaringType()).thenReturn(firstFieldDeclaringType);
-  when(firstField.asDeclared()).thenReturn(firstField);
+  when(firstField.asDefined()).thenReturn(firstField);
   when(firstFieldDeclaringType.getInternalName()).thenReturn(QUX);
   when(secondFieldType.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
   when(secondFieldType.asRawType()).thenReturn(secondFieldType);
@@ -67,7 +67,7 @@
   when(secondField.getInternalName()).thenReturn(BAR);
   when(secondField.getDescriptor()).thenReturn(FOO);
   when(secondField.getDeclaringType()).thenReturn(secondFieldDeclaringType);
-  when(secondField.asDeclared()).thenReturn(secondField);
+  when(secondField.asDefined()).thenReturn(secondField);
   when(secondFieldDeclaringType.getInternalName()).thenReturn(BAZ);
   when(firstSpecialReturnType.asRawType()).thenReturn(firstSpecialReturnType);
   when(secondSpecialReturnType.asRawType()).thenReturn(secondSpecialReturnType);

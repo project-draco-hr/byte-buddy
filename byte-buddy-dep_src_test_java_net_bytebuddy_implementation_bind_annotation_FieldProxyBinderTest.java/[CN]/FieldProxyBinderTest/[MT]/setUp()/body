@@ -2,7 +2,7 @@
   super.setUp();
   when(getterMethod.getDeclaringType()).thenReturn(getterType);
   when(setterMethod.getDeclaringType()).thenReturn(setterType);
-  when(instrumentedType.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDeclaredForm>(Collections.singletonList(fieldDescription)));
+  when(instrumentedType.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDefinedShape>(Collections.singletonList(fieldDescription)));
   when(fieldDescription.getType()).thenReturn(fieldType);
   when(fieldType.getStackSize()).thenReturn(StackSize.ZERO);
   when(fieldType.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);

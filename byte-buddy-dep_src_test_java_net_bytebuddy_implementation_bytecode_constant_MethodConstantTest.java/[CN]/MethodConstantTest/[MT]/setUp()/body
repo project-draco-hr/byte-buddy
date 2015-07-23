@@ -16,5 +16,5 @@
   when(declaringType.getInternalName()).thenReturn(BAZ);
   when(fieldDescription.getInternalName()).thenReturn(FOO);
   when(fieldDescription.getDescriptor()).thenReturn(QUX);
-  when(fieldDescription.asDeclared()).thenReturn(fieldDescription);
+  when(fieldDescription.asDefined()).thenReturn(fieldDescription);
 }

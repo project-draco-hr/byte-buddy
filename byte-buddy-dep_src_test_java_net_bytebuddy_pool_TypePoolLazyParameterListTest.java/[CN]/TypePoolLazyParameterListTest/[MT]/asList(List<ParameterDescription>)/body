@@ -1,7 +1,7 @@
 {
-  List<ParameterDescription.InDeclaredForm> parameterDescriptions=new LinkedList<ParameterDescription.InDeclaredForm>();
+  List<ParameterDescription.InDefinedShape> parameterDescriptions=new LinkedList<ParameterDescription.InDefinedShape>();
   for (  ParameterDescription element : elements) {
     parameterDescriptions.add(typePool.describe(Foo.class.getName()).resolve().getDeclaredMethods().filter(is(element.getDeclaringMethod())).getOnly().getParameters().getOnly());
   }
-  return new ParameterList.Explicit<ParameterDescription.InDeclaredForm>(parameterDescriptions);
+  return new ParameterList.Explicit<ParameterDescription.InDefinedShape>(parameterDescriptions);
 }

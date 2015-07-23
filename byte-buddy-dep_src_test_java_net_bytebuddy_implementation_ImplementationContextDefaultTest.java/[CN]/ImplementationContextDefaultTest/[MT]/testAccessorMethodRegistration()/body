@@ -1,6 +1,6 @@
 {
   Implementation.Context.Default implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
-  MethodDescription.InDeclaredForm firstMethodDescription=implementationContext.registerAccessorFor(firstSpecialInvocation);
+  MethodDescription.inDefinedShape firstMethodDescription=implementationContext.registerAccessorFor(firstSpecialInvocation);
   assertThat(firstMethodDescription.getParameters(),is((ParameterList)new ParameterList.Explicit.ForTypes(firstMethodDescription,Collections.singletonList(firstSpecialParameterType))));
   assertThat(firstMethodDescription.getReturnType(),is((GenericTypeDescription)firstSpecialReturnType));
   assertThat(firstMethodDescription.getInternalName(),startsWith(FOO));
@@ -8,7 +8,7 @@
   assertThat(firstMethodDescription.getExceptionTypes(),is(firstSpecialExceptionTypes));
   assertThat(implementationContext.registerAccessorFor(firstSpecialInvocation),is(firstMethodDescription));
   when(secondSpecialMethod.isStatic()).thenReturn(true);
-  MethodDescription.InDeclaredForm secondMethodDescription=implementationContext.registerAccessorFor(secondSpecialInvocation);
+  MethodDescription.inDefinedShape secondMethodDescription=implementationContext.registerAccessorFor(secondSpecialInvocation);
   assertThat(secondMethodDescription.getParameters(),is((ParameterList)new ParameterList.Explicit.ForTypes(secondMethodDescription,Collections.singletonList(secondSpecialParameterType))));
   assertThat(secondMethodDescription.getReturnType(),is((GenericTypeDescription)secondSpecialReturnType));
   assertThat(secondMethodDescription.getInternalName(),startsWith(BAR));

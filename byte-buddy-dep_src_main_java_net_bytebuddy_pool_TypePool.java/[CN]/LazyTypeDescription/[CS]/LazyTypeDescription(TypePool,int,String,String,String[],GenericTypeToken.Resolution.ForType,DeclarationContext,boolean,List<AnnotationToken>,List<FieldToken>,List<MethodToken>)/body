@@ -19,11 +19,11 @@
   for (  AnnotationToken annotationToken : annotationTokens) {
     declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));
   }
-  declaredFields=new ArrayList<FieldDescription.InDeclaredForm>(fieldTokens.size());
+  declaredFields=new ArrayList<FieldDescription.InDefinedShape>(fieldTokens.size());
   for (  FieldToken fieldToken : fieldTokens) {
     declaredFields.add(fieldToken.toFieldDescription(this));
   }
-  declaredMethods=new ArrayList<MethodDescription.InDeclaredForm>(methodTokens.size());
+  declaredMethods=new ArrayList<MethodDescription.inDefinedShape>(methodTokens.size());
   for (  MethodToken methodToken : methodTokens) {
     declaredMethods.add(methodToken.toMethodDescription(this));
   }

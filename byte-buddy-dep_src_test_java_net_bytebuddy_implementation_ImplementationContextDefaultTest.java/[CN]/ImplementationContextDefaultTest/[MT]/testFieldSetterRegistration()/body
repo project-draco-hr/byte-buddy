@@ -1,6 +1,6 @@
 {
   Implementation.Context.Default implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
-  MethodDescription.InDeclaredForm firstFieldSetter=implementationContext.registerSetterFor(firstField);
+  MethodDescription.inDefinedShape firstFieldSetter=implementationContext.registerSetterFor(firstField);
   assertThat(firstFieldSetter.getParameters(),is((ParameterList)new ParameterList.Explicit.ForTypes(firstFieldSetter,Collections.singletonList(firstFieldType))));
   assertThat(firstFieldSetter.getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(void.class)));
   assertThat(firstFieldSetter.getInternalName(),startsWith(FOO));
@@ -8,7 +8,7 @@
   assertThat(firstFieldSetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
   assertThat(implementationContext.registerSetterFor(firstField),is(firstFieldSetter));
   when(secondField.isStatic()).thenReturn(true);
-  MethodDescription.InDeclaredForm secondFieldSetter=implementationContext.registerSetterFor(secondField);
+  MethodDescription.inDefinedShape secondFieldSetter=implementationContext.registerSetterFor(secondField);
   assertThat(secondFieldSetter.getParameters(),is((ParameterList)new ParameterList.Explicit.ForTypes(secondFieldSetter,Collections.singletonList(secondFieldType))));
   assertThat(secondFieldSetter.getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(void.class)));
   assertThat(secondFieldSetter.getInternalName(),startsWith(BAR));
