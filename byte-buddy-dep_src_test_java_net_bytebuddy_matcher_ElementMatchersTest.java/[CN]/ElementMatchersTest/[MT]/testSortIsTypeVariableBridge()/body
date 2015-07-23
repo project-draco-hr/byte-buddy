@@ -1,0 +1,6 @@
+{
+  assertThat(ElementMatchers.isTypeVariableBridge().matches(new MethodDescription.ForLoadedMethod(IsVisibilityBridge.class.getDeclaredMethod(FOO))),is(false));
+  assertThat(ElementMatchers.isTypeVariableBridge().matches(new MethodDescription.ForLoadedMethod(IsTypeVariableBridge.class.getDeclaredMethod(FOO,Object.class))),is(true));
+  assertThat(ElementMatchers.isTypeVariableBridge().matches(new TypeDescription.ForLoadedType(IsReturnTypeBridge.class).getDeclaredMethods().filter(ElementMatchers.named(FOO).and(ElementMatchers.returns(Object.class))).getOnly()),is(false));
+  assertThat(ElementMatchers.isTypeVariableBridge().matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(false));
+}

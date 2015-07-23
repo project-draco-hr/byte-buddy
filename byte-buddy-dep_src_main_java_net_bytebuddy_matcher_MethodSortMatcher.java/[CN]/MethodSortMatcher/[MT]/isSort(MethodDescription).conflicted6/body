@@ -1,17 +1,3 @@
 {
-  if (target.isBridge() && !target.getDeclaringType().asRawType().isInterface()) {
-    if (RETURN_TYPE_BRIDGE.isSort(target)) {
-      return false;
-    }
-    GenericTypeDescription currentType=target.getDeclaringType().getSuperType();
-    while (currentType != null) {
-      for (      MethodDescription methodDescription : currentType.getDeclaredMethods().filter(isOverridable())) {
-        if (target.asToken().equals(methodDescription.asToken())) {
-          return !methodDescription.isBridge();
-        }
-      }
-      currentType=currentType.getSuperType();
-    }
-  }
-  return false;
+  return target.isBridge() && !target.getDeclaringType().getDeclaredMethods().filter(not(is(target)).and(hasMethodName(target.getInternalName())).and(takesArguments(target.getParameters().asTypeList().asRawTypes()))).isEmpty();
 }
