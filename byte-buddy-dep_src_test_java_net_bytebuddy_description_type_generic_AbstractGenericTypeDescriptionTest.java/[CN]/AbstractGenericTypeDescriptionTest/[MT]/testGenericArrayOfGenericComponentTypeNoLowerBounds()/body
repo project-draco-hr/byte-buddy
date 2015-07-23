@@ -1,0 +1,3 @@
+{
+  describe(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO)).getLowerBounds();
+}

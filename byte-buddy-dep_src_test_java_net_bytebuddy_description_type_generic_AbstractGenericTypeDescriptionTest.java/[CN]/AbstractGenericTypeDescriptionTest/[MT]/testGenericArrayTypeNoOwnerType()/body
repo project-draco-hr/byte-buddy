@@ -1,3 +1,0 @@
-{
-  describe(GenericArrayType.class.getDeclaredField(FOO)).getOwnerType();
-}

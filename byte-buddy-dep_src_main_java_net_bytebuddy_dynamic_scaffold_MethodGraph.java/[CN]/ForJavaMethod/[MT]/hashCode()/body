@@ -1,7 +1,0 @@
-{
-  int hashCode=methodToken.getInternalName().hashCode();
-  for (  ParameterDescription.Token parameterToken : methodToken.getParameterTokens()) {
-    hashCode=hashCode * 31 + parameterToken.getType().asRawType().hashCode();
-  }
-  return hashCode;
-}
