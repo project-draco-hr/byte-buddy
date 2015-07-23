@@ -1,0 +1,8 @@
+{
+  int arity=0;
+  while (typeDescription.isArray()) {
+    typeDescription=typeDescription.getComponentType();
+    arity++;
+  }
+  return ForGenericArray.Latent.of(onSimpleType(typeDescription),arity);
+}

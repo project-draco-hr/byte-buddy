@@ -1,0 +1,13 @@
+{
+  if (typeDescription.isArray()) {
+    typeDescription.getComponentType().accept(new ForSignatureVisitor(signatureVisitor.visitArrayType()));
+  }
+ else   if (typeDescription.isPrimitive()) {
+    signatureVisitor.visitBaseType(typeDescription.asRawType().getDescriptor().charAt(ONLY_CHARACTER));
+  }
+ else {
+    signatureVisitor.visitClassType(typeDescription.asRawType().getInternalName());
+    signatureVisitor.visitEnd();
+  }
+  return signatureVisitor;
+}
