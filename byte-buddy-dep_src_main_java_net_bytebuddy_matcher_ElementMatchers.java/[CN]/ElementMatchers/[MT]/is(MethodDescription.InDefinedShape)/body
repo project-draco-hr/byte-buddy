@@ -1,0 +1,3 @@
+{
+  return definedMethod(new EqualityMatcher<MethodDescription.InDefinedShape>(nonNull(methodDescription)));
+}

@@ -1,0 +1,3 @@
+{
+  return definedMethod(noneOf(new FieldList.ForLoadedField(nonNull(value))));
+}

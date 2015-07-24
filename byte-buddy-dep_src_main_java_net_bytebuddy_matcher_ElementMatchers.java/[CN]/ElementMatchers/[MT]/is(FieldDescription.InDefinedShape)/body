@@ -1,0 +1,3 @@
+{
+  return definedField(new EqualityMatcher<FieldDescription.InDefinedShape>(nonNull(fieldDescription)));
+}
