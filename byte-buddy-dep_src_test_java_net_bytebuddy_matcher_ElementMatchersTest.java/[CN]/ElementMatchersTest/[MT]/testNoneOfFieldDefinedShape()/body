@@ -1,0 +1,9 @@
+{
+  Field field=GenericFieldType.class.getDeclaredField(FOO);
+  FieldDescription fieldDescription=new TypeDescription.ForLoadedType(GenericFieldType.Inner.class).getSuperType().getDeclaredFields().filter(named(FOO)).getOnly();
+  assertThat(ElementMatchers.noneOf(field).matches(fieldDescription),is(false));
+  assertThat(ElementMatchers.definedField(ElementMatchers.noneOf(fieldDescription.asDefined())).matches(fieldDescription),is(false));
+  assertThat(ElementMatchers.noneOf(fieldDescription.asDefined()).matches(fieldDescription.asDefined()),is(false));
+  assertThat(ElementMatchers.noneOf(fieldDescription.asDefined()).matches(fieldDescription),is(true));
+  assertThat(ElementMatchers.noneOf(fieldDescription).matches(fieldDescription.asDefined()),is(true));
+}

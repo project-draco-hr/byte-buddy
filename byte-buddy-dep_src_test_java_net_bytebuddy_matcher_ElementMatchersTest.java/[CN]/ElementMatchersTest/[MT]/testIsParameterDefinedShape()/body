@@ -1,0 +1,7 @@
+{
+  ParameterDescription parameterDescription=new TypeDescription.ForLoadedType(GenericMethodType.Inner.class).getInterfaces().getOnly().getDeclaredMethods().filter(named(FOO)).getOnly().getParameters().getOnly();
+  assertThat(ElementMatchers.definedParameter(ElementMatchers.is(parameterDescription.asDefined())).matches(parameterDescription),is(true));
+  assertThat(ElementMatchers.is(parameterDescription.asDefined()).matches(parameterDescription.asDefined()),is(true));
+  assertThat(ElementMatchers.is(parameterDescription.asDefined()).matches(parameterDescription),is(false));
+  assertThat(ElementMatchers.is(parameterDescription).matches(parameterDescription.asDefined()),is(false));
+}

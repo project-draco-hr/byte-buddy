@@ -1,3 +1,0 @@
-{
-  return definedParameter(new EqualityMatcher<ParameterDescription.InDefinedShape>(parameterDescription));
-}

@@ -1,4 +1,4 @@
 {
-  assertThat(ElementMatchers.fieldType(FieldType.class).matches(new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField(FOO))),is(true));
-  assertThat(ElementMatchers.fieldType(Object.class).matches(new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField(FOO))),is(false));
+  assertThat(ElementMatchers.fieldType(GenericFieldType.class).matches(new FieldDescription.ForLoadedField(GenericFieldType.class.getDeclaredField(FOO))),is(true));
+  assertThat(ElementMatchers.fieldType(Object.class).matches(new FieldDescription.ForLoadedField(GenericFieldType.class.getDeclaredField(FOO))),is(false));
 }

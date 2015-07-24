@@ -1,0 +1,9 @@
+{
+  when(matcher.matches(resolvedDependant)).thenReturn(true);
+  when(dependant.asDefined()).thenReturn((ByteCodeElement.TypeDependant)resolvedDependant);
+  assertThat(new DefinedShapeMatcher(matcher).matches(dependant),is(true));
+  verify(dependant).asDefined();
+  verifyNoMoreInteractions(dependant);
+  verify(matcher).matches(resolvedDependant);
+  verifyNoMoreInteractions(matcher);
+}

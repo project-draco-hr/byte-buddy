@@ -1,4 +1,4 @@
 {
-  assertThat(ElementMatchers.rawTypes(Exception.class).matches(Collections.singletonList(GenericTypeDescription.Sort.describe(GenericType.class.getTypeParameters()[0]))),is(true));
-  assertThat(ElementMatchers.rawTypes(Object.class).matches(Collections.singletonList(GenericTypeDescription.Sort.describe(GenericType.class.getTypeParameters()[0]))),is(false));
+  assertThat(ElementMatchers.rawTypes(Exception.class).matches(Collections.singletonList(GenericTypeDescription.Sort.describe(GenericMethodType.class.getTypeParameters()[0]))),is(true));
+  assertThat(ElementMatchers.rawTypes(Object.class).matches(Collections.singletonList(GenericTypeDescription.Sort.describe(GenericMethodType.class.getTypeParameters()[0]))),is(false));
 }

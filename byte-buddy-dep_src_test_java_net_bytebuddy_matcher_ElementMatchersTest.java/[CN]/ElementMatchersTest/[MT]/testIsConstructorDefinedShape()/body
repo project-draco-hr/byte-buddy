@@ -1,0 +1,9 @@
+{
+  Constructor<?> constructor=GenericConstructorType.class.getDeclaredConstructor(Exception.class);
+  MethodDescription methodDescription=new TypeDescription.ForLoadedType(GenericConstructorType.Inner.class).getSuperType().getDeclaredMethods().filter(isConstructor()).getOnly();
+  assertThat(ElementMatchers.is(constructor).matches(methodDescription),is(true));
+  assertThat(ElementMatchers.definedMethod(ElementMatchers.is(methodDescription.asDefined())).matches(methodDescription),is(true));
+  assertThat(ElementMatchers.is(methodDescription.asDefined()).matches(methodDescription.asDefined()),is(true));
+  assertThat(ElementMatchers.is(methodDescription.asDefined()).matches(methodDescription),is(false));
+  assertThat(ElementMatchers.is(methodDescription).matches(methodDescription.asDefined()),is(false));
+}

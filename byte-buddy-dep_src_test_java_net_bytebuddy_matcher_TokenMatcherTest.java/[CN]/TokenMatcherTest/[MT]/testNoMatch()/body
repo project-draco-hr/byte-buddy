@@ -1,0 +1,9 @@
+{
+  when(matcher.matches(token)).thenReturn(true);
+  when(typeDependant.asToken()).thenReturn((ByteCodeElement.Token)otherToken);
+  assertThat(new TokenMatcher(matcher).matches(typeDependant),is(false));
+  verify(typeDependant).asToken();
+  verifyNoMoreInteractions(typeDependant);
+  verify(matcher).matches(otherToken);
+  verifyNoMoreInteractions(matcher);
+}

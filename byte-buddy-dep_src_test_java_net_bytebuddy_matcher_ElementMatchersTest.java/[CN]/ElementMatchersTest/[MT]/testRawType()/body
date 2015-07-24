@@ -1,4 +1,4 @@
 {
-  assertThat(ElementMatchers.rawType(Exception.class).matches(GenericTypeDescription.Sort.describe(GenericType.class.getTypeParameters()[0])),is(true));
-  assertThat(ElementMatchers.rawType(Object.class).matches(GenericTypeDescription.Sort.describe(GenericType.class.getTypeParameters()[0])),is(false));
+  assertThat(ElementMatchers.rawType(Exception.class).matches(GenericTypeDescription.Sort.describe(GenericMethodType.class.getTypeParameters()[0])),is(true));
+  assertThat(ElementMatchers.rawType(Object.class).matches(GenericTypeDescription.Sort.describe(GenericMethodType.class.getTypeParameters()[0])),is(false));
 }

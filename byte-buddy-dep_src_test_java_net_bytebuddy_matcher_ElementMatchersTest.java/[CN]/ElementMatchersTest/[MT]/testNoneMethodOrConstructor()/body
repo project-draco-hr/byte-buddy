@@ -1,9 +1,0 @@
-{
-  Method toString=Object.class.getDeclaredMethod("toString"), hashCode=Object.class.getDeclaredMethod("hashCode");
-  assertThat(ElementMatchers.noneOf(toString).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(false));
-  assertThat(ElementMatchers.noneOf(toString,hashCode).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("toString"))),is(false));
-  assertThat(ElementMatchers.noneOf(toString).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("hashCode"))),is(true));
-  assertThat(ElementMatchers.noneOf(Object.class.getDeclaredConstructor()).matches(new MethodDescription.ForLoadedConstructor(Object.class.getDeclaredConstructor())),is(false));
-  assertThat(ElementMatchers.noneOf(Object.class.getDeclaredConstructor(),String.class.getDeclaredConstructor(String.class)).matches(new MethodDescription.ForLoadedConstructor(Object.class.getDeclaredConstructor())),is(false));
-  assertThat(ElementMatchers.noneOf(Object.class.getDeclaredConstructor()).matches(new MethodDescription.ForLoadedMethod(Object.class.getDeclaredMethod("hashCode"))),is(true));
-}

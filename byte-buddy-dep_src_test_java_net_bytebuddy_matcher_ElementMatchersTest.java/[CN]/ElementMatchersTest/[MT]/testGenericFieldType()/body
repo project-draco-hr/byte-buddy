@@ -1,5 +1,5 @@
 {
-  assertThat(ElementMatchers.genericFieldType(FieldType.class.getTypeParameters()[0]).matches(new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField(BAR))),is(true));
-  assertThat(ElementMatchers.genericFieldType(Object.class).matches(new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField(BAR))),is(false));
-  assertThat(ElementMatchers.fieldType(Object.class).matches(new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField(BAR))),is(true));
+  assertThat(ElementMatchers.genericFieldType(GenericFieldType.class.getTypeParameters()[0]).matches(new FieldDescription.ForLoadedField(GenericFieldType.class.getDeclaredField(BAR))),is(true));
+  assertThat(ElementMatchers.genericFieldType(Object.class).matches(new FieldDescription.ForLoadedField(GenericFieldType.class.getDeclaredField(BAR))),is(false));
+  assertThat(ElementMatchers.fieldType(Object.class).matches(new FieldDescription.ForLoadedField(GenericFieldType.class.getDeclaredField(BAR))),is(true));
 }

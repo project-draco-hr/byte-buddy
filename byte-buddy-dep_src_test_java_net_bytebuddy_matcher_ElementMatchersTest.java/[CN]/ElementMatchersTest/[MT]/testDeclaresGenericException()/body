@@ -1,5 +1,5 @@
 {
-  assertThat(ElementMatchers.declaresGenericException(GenericType.class.getTypeParameters()[0]).matches(new MethodDescription.ForLoadedMethod(GenericType.class.getDeclaredMethod(FOO,Exception.class))),is(true));
-  assertThat(ElementMatchers.declaresGenericException(Exception.class).matches(new MethodDescription.ForLoadedMethod(GenericType.class.getDeclaredMethod(FOO,Exception.class))),is(false));
-  assertThat(ElementMatchers.declaresException(Exception.class).matches(new MethodDescription.ForLoadedMethod(GenericType.class.getDeclaredMethod(FOO,Exception.class))),is(true));
+  assertThat(ElementMatchers.declaresGenericException(GenericMethodType.class.getTypeParameters()[0]).matches(new MethodDescription.ForLoadedMethod(GenericMethodType.class.getDeclaredMethod(FOO,Exception.class))),is(true));
+  assertThat(ElementMatchers.declaresGenericException(Exception.class).matches(new MethodDescription.ForLoadedMethod(GenericMethodType.class.getDeclaredMethod(FOO,Exception.class))),is(false));
+  assertThat(ElementMatchers.declaresException(Exception.class).matches(new MethodDescription.ForLoadedMethod(GenericMethodType.class.getDeclaredMethod(FOO,Exception.class))),is(true));
 }

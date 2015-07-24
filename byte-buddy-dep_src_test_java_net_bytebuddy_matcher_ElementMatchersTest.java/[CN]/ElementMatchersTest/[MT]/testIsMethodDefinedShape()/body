@@ -1,0 +1,9 @@
+{
+  Method method=GenericMethodType.class.getDeclaredMethod("foo",Exception.class);
+  MethodDescription methodDescription=new TypeDescription.ForLoadedType(GenericMethodType.Inner.class).getInterfaces().getOnly().getDeclaredMethods().filter(named(FOO)).getOnly();
+  assertThat(ElementMatchers.is(method).matches(methodDescription),is(true));
+  assertThat(ElementMatchers.definedMethod(ElementMatchers.is(methodDescription.asDefined())).matches(methodDescription),is(true));
+  assertThat(ElementMatchers.is(methodDescription.asDefined()).matches(methodDescription.asDefined()),is(true));
+  assertThat(ElementMatchers.is(methodDescription.asDefined()).matches(methodDescription),is(false));
+  assertThat(ElementMatchers.is(methodDescription).matches(methodDescription.asDefined()),is(false));
+}
