@@ -1,0 +1,3 @@
+{
+  super((Class<TypeSortMatcher<?>>)(Object)TypeSortMatcher.class,"ofSort");
+}

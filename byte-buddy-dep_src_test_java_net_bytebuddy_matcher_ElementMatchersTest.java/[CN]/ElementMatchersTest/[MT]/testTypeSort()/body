@@ -1,0 +1,4 @@
+{
+  assertThat(ElementMatchers.ofSort(GenericTypeDescription.Sort.NON_GENERIC).matches(new TypeDescription.ForLoadedType(Object.class)),is(true));
+  assertThat(ElementMatchers.ofSort(GenericTypeDescription.Sort.VARIABLE).matches(new TypeDescription.ForLoadedType(Object.class)),is(false));
+}
