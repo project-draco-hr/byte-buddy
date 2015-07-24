@@ -1,4 +1,4 @@
-MethodDescription bootstrapMethod
+MethodDescription.InDefinedShape bootstrapMethod
 List<?> handleArguments
 InvocationProvider invocationProvider
 TerminationHandler terminationHandler
