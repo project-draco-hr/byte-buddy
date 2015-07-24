@@ -1,3 +1,0 @@
-{
-  super((Class<FieldTokenMatcher<?>>)(Object)FieldTokenMatcher.class,"representedBy");
-}

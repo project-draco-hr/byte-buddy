@@ -1,8 +1,0 @@
-{
-  when(tokenMatcher.matches(parameterToken)).thenReturn(false);
-  assertThat(new ParameterTokenMatcher<ParameterDescription>(tokenMatcher).matches(parameterDescription),is(false));
-  verify(tokenMatcher).matches(parameterToken);
-  verifyNoMoreInteractions(tokenMatcher);
-  verify(parameterDescription).asToken();
-  verifyNoMoreInteractions(parameterDescription);
-}

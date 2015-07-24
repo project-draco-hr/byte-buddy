@@ -1,3 +1,0 @@
-{
-  super((Class<MethodTokenMatcher<?>>)(Object)MethodTokenMatcher.class,"representedBy");
-}

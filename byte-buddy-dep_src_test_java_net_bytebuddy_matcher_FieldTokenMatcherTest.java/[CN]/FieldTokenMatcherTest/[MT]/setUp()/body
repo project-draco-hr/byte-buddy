@@ -1,3 +1,0 @@
-{
-  when(fieldDescription.asToken()).thenReturn(fieldToken);
-}

@@ -1,3 +1,0 @@
-{
-  when(parameterDescription.asToken()).thenReturn(parameterToken);
-}
