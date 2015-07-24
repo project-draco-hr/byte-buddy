@@ -1,0 +1,3 @@
+{
+  integration=Boolean.getBoolean(PROPERTY_KEY);
+}

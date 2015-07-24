@@ -1,0 +1,3 @@
+{
+  return !integration && method.getAnnotation(Enforce.class) != null ? new NoOpStatement() : base;
+}
