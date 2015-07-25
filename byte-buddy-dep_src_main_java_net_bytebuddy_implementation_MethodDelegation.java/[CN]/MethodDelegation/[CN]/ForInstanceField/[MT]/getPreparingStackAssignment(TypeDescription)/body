@@ -1,3 +1,3 @@
 {
-  return new StackManipulation.Compound(MethodVariableAccess.forType(instrumentedType).loadOffset(0),FieldAccess.forField(instrumentedType.getDeclaredFields().filter((named(fieldName))).getOnly()).getter());
+  return new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(instrumentedType.getDeclaredFields().filter((named(fieldName))).getOnly()).getter());
 }
