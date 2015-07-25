@@ -1,6 +1,6 @@
 {
   this.preparingStackAssignment=preparingStackAssignment;
   this.implementationTarget=implementationTarget;
-  this.targetMethods=targetMethods;
+  this.targetCandidates=targetCandidates;
   this.processor=processor;
 }

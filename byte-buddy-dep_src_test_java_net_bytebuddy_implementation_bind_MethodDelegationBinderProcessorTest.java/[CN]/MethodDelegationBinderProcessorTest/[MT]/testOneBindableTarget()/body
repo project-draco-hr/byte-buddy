@@ -1,5 +1,5 @@
 {
-  List<MethodDescription> methodDescriptions=Arrays.asList(unbindableTarget,bindableTarget,unbindableTarget);
+  MethodList<?> methodDescriptions=new MethodList.Explicit<MethodDescription>(Arrays.asList(unbindableTarget,bindableTarget,unbindableTarget));
   MethodDelegationBinder.Processor processor=new MethodDelegationBinder.Processor(methodDelegationBinder,ambiguityResolver);
   MethodDelegationBinder.MethodBinding result=processor.process(implementationTarget,source,methodDescriptions);
   assertThat(result,is(boundDelegation));
