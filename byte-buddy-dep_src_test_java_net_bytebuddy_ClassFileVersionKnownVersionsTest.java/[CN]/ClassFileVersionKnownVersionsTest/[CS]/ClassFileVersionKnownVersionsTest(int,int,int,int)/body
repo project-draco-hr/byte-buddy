@@ -1,0 +1,6 @@
+{
+  this.javaVersion=javaVersion;
+  this.minorMajorVersion=minorMajorVersion;
+  this.majorVersion=majorVersion;
+  this.minorVersion=minorVersion;
+}

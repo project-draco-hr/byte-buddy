@@ -1,4 +1,0 @@
-{
-  this.javaVersion=javaVersion;
-  this.byteCodeVersion=byteCodeVersion;
-}
