@@ -16,6 +16,8 @@ case 7:
 return JAVA_V7;
 case 8:
 return JAVA_V8;
+case 9:
+return JAVA_V9;
 default :
 throw new IllegalArgumentException("Unknown Java version: " + javaVersion);
 }

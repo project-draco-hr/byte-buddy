@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().subclass(Baz.class).method(named("foo")).intercept(MethodDelegation.to(new Qux())).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance();
+}
