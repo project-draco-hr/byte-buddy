@@ -1,0 +1,4 @@
+int javaVersion
+int minorMajorVersion
+int majorVersion
+int minorVersion
