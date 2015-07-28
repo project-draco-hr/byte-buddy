@@ -3,7 +3,7 @@
   if (accessorMethod == null) {
     accessorMethod=new FieldGetter(instrumentedType,fieldDescription,randomString.nextString());
     registeredGetters.put(fieldDescription,accessorMethod);
-    accessorMethodEntries.put(accessorMethod,new FieldGetterDelegation(fieldDescription));
+    accessorMethods.add(new FieldGetterDelegation(accessorMethod,fieldDescription));
   }
   return accessorMethod;
 }

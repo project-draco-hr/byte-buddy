@@ -1,3 +1,3 @@
 {
-  TypeWriter.MethodPool.Entry.ForSkippedMethod.INSTANCE.applyBody(methodVisitor,implementationContext,methodDescription);
+  TypeWriter.MethodPool.Entry.ForInheritedMethod.INSTANCE.applyBody(methodVisitor,implementationContext);
 }

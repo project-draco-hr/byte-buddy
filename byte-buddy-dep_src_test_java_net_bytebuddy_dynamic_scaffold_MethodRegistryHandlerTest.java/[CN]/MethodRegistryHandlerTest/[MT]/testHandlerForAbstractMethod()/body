@@ -1,7 +1,7 @@
 {
   MethodRegistry.Handler handler=new MethodRegistry.Handler.ForAbstractMethod(modifierResolver);
   assertThat(handler.prepare(instrumentedType),is(instrumentedType));
-  TypeWriter.MethodPool.Entry entry=handler.compile(implementationTarget).assemble(attributeAppender);
-  assertThat(entry.getSort(),is(TypeWriter.MethodPool.Entry.Sort.DEFINE));
+  TypeWriter.MethodPool.Entry entry=handler.compile(implementationTarget).assemble(attributeAppender,methodDescription);
+  assertThat(entry.getSort(),is(TypeWriter.MethodPool.Entry.Sort.DEFINED));
   assertThat(entry.getModifierResolver(),is(modifierResolver));
 }

@@ -3,7 +3,7 @@
   if (accessorMethod == null) {
     accessorMethod=new AccessorMethod(instrumentedType,specialMethodInvocation.getMethodDescription(),randomString.nextString());
     registeredAccessorMethods.put(specialMethodInvocation,accessorMethod);
-    accessorMethodEntries.put(accessorMethod,new AccessorMethodDelegation(specialMethodInvocation));
+    accessorMethods.add(new AccessorMethodDelegation(accessorMethod,specialMethodInvocation));
   }
   return accessorMethod;
 }

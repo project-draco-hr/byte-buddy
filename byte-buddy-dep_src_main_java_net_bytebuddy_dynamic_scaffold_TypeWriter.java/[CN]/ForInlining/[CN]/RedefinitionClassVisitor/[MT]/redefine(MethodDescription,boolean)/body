@@ -4,5 +4,5 @@
     return super.visitMethod(methodDescription.getModifiers(),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().asRawTypes().toInternalNames());
   }
   MethodVisitor methodVisitor=super.visitMethod(entry.getModifierResolver().transform(methodDescription,entry.getSort().isImplemented()),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().asRawTypes().toInternalNames());
-  return abstractOrigin ? new AttributeObtainingMethodVisitor(methodVisitor,entry,methodDescription) : new CodePreservingMethodVisitor(methodVisitor,entry,methodDescription);
+  return abstractOrigin ? new AttributeObtainingMethodVisitor(methodVisitor,entry) : new CodePreservingMethodVisitor(methodVisitor,entry,methodRebaseResolver.resolve(methodDescription.asDefined()));
 }

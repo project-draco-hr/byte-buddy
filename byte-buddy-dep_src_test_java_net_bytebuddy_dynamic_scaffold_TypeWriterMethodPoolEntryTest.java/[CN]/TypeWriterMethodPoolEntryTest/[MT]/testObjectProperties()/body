@@ -1,6 +1,6 @@
 {
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForAbstractMethod.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForAnnotationDefaultValue.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForImplementation.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForSkippedMethod.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForDeclaredMethod.WithBody.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForDeclaredMethod.WithoutBody.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForDeclaredMethod.WithAnnotationDefaultValue.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForInheritedMethod.class).apply();
 }

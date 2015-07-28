@@ -1,9 +1,9 @@
 {
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
-  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForAbstractMethod(methodAttributeAppender,modifierResolver);
-  assertThat(entry.getSort(),is(TypeWriter.MethodPool.Entry.Sort.DEFINE));
-  entry.apply(classVisitor,implementationContext,methodDescription);
+  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForDeclaredMethod.WithoutBody(methodDescription,methodAttributeAppender,modifierResolver);
+  assertThat(entry.getSort(),is(TypeWriter.MethodPool.Entry.Sort.DEFINED));
+  entry.apply(classVisitor,implementationContext);
   verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});
   verifyNoMoreInteractions(classVisitor);
   verify(methodVisitor).visitParameter(FOO,MODIFIERS);

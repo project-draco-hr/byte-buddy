@@ -3,7 +3,7 @@
   if (accessorMethod == null) {
     accessorMethod=new FieldSetter(instrumentedType,fieldDescription,randomString.nextString());
     registeredSetters.put(fieldDescription,accessorMethod);
-    accessorMethodEntries.put(accessorMethod,new FieldSetterDelegation(fieldDescription));
+    accessorMethods.add(new FieldSetterDelegation(accessorMethod,fieldDescription));
   }
   return accessorMethod;
 }

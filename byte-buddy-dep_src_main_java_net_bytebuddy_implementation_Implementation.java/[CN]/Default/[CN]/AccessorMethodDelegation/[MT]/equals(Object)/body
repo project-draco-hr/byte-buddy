@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && accessorMethodInvocation.equals(((AccessorMethodDelegation)other).accessorMethodInvocation);
+  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && accessorMethodInvocation.equals(((AccessorMethodDelegation)other).accessorMethodInvocation);
 }

@@ -1,3 +1,2 @@
 MethodVisitor actualMethodVisitor
 MethodPool.Entry entry
-MethodDescription methodDescription

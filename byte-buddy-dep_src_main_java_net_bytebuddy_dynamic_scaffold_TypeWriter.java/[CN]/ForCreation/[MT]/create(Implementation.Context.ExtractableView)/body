@@ -7,7 +7,7 @@
     fieldPool.target(fieldDescription).apply(classVisitor);
   }
   for (  MethodDescription methodDescription : instrumentedMethods) {
-    methodPool.target(methodDescription).apply(classVisitor,implementationContext,methodDescription);
+    methodPool.target(methodDescription).apply(classVisitor,implementationContext);
   }
   implementationContext.drain(classVisitor,methodPool,Implementation.Context.ExtractableView.InjectedCode.None.INSTANCE);
   classVisitor.visitEnd();

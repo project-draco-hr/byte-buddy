@@ -1,3 +1,3 @@
 {
-  return accessorMethodInvocation.hashCode();
+  return accessorMethodInvocation.hashCode() + 31 * super.hashCode();
 }

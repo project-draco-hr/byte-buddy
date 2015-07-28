@@ -1,6 +1,6 @@
 {
   Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
-  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIP);
+  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIPPED);
   when(injectedCode.isDefined()).thenReturn(true);
   when(otherTypeInitializer.isDefined()).thenReturn(true);
   when(typeInitializer.expandWith(injectedCodeAppender)).thenReturn(otherTypeInitializer);

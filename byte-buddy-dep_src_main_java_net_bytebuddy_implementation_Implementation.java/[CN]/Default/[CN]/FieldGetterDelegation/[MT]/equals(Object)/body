@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && fieldDescription.equals(((FieldGetterDelegation)other).fieldDescription);
+  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && fieldDescription.equals(((FieldGetterDelegation)other).fieldDescription);
 }
