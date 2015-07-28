@@ -1,0 +1,4 @@
+{
+  this.superGraph=superGraph;
+  this.interfaceGraphs=interfaceGraphs;
+}

@@ -1,4 +1,0 @@
-{
-  MethodDescription methodDescription=superMethods.get(methodToken);
-  return methodDescription == null ? Resolution.Illegal.INSTANCE : new Resolution.ForMethod(methodDescription);
-}

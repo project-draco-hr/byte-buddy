@@ -1,6 +1,0 @@
-{
-  this.typeDescription=typeDescription;
-  this.invokeableMethods=invokeableMethods;
-  this.superMethods=superMethods;
-  this.defaultMethods=defaultMethods;
-}

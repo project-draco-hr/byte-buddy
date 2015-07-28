@@ -1,8 +1,0 @@
-{
-  Map<MethodDescription.Token,MethodDescription> methodDescriptions=defaultMethods.get(typeDescription);
-  if (methodDescriptions == null) {
-    throw new IllegalArgumentException("Not a default method interface: " + typeDescription);
-  }
-  MethodDescription methodDescription=methodDescriptions.get(methodToken);
-  return methodDescription == null ? Resolution.Illegal.INSTANCE : new Resolution.ForMethod(methodDescription);
-}
