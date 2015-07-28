@@ -1,0 +1,5 @@
+{
+  TypeWriter.FieldPool.Entry entry=new TypeWriter.FieldPool.Entry.ForSimpleField(fieldDescription);
+  assertThat(entry.getFieldAppender(),is((FieldAttributeAppender)FieldAttributeAppender.NoOp.INSTANCE));
+  assertThat(entry.getDefaultValue(),is(FieldDescription.NO_DEFAULT_VALUE));
+}

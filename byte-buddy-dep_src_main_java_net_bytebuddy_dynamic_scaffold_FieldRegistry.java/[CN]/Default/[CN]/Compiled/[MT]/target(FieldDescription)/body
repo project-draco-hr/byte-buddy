@@ -1,4 +1,4 @@
 {
-  Entry entry=entries.get(fieldDescription.getInternalName());
-  return entry == null ? fallback : entry;
+  Entry entry=entries.get(fieldDescription.asToken());
+  return entry == null ? new TypeWriter.FieldPool.Entry.ForSimpleField(fieldDescription) : new TypeWriter.FieldPool.Entry.ForRichField(entry.getAttributeAppender(),entry.getDefaultValue(),fieldDescription);
 }

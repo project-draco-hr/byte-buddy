@@ -1,7 +1,0 @@
-{
-  Map<String,Entry> entries=new HashMap<String,Entry>(this.entries);
-  if (entries.put(latentFieldMatcher.getFieldName(),new Entry(attributeAppenderFactory,defaultValue)) != null) {
-    throw new IllegalArgumentException("the field name " + latentFieldMatcher.getFieldName() + " is already registered");
-  }
-  return new Default(entries);
-}

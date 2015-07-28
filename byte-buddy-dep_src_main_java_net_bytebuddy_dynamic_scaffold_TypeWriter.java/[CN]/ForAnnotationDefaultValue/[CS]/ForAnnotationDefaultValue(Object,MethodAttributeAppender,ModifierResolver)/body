@@ -1,5 +1,0 @@
-{
-  this.annotationValue=annotationValue;
-  this.methodAttributeAppender=methodAttributeAppender;
-  this.modifierResolver=modifierResolver;
-}

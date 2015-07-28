@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && byteCodeAppender.equals(((ForImplementation)other).byteCodeAppender) && methodAttributeAppender.equals(((ForImplementation)other).methodAttributeAppender)&& modifierResolver.equals(((ForImplementation)other).modifierResolver);
-}

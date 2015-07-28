@@ -1,6 +1,6 @@
 {
   for (  FieldDescription fieldDescription : declaredFields.values()) {
-    fieldPool.target(fieldDescription).apply(cv,fieldDescription);
+    fieldPool.target(fieldDescription).apply(cv);
   }
   for (  MethodDescription methodDescription : declarableMethods.values()) {
     methodPool.target(methodDescription).apply(cv,implementationContext,methodDescription);

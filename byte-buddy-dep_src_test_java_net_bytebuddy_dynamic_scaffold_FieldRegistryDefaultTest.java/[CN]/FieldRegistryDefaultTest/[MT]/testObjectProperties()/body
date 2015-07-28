@@ -1,4 +1,5 @@
 {
   ObjectPropertyAssertion.of(FieldRegistry.Default.class).apply();
-  ObjectPropertyAssertion.of(FieldRegistry.Compiled.NoOp.class).apply();
+  ObjectPropertyAssertion.of(FieldRegistry.Default.Entry.class).apply();
+  ObjectPropertyAssertion.of(FieldRegistry.Default.Compiled.Entry.class).apply();
 }

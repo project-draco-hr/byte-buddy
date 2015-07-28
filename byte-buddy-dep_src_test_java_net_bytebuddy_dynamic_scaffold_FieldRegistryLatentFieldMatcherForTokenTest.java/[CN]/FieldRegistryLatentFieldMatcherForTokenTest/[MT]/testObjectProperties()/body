@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(FieldRegistry.LatentFieldMatcher.ForToken.class).apply();
-}

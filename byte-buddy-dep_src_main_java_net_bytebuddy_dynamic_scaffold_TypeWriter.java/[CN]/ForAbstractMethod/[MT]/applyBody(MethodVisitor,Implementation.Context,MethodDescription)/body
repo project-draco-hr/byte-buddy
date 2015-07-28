@@ -1,3 +1,0 @@
-{
-  methodAttributeAppender.apply(methodVisitor,methodDescription);
-}

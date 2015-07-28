@@ -1,3 +1,3 @@
 {
-  return "FieldRegistry.Default.Compiled{" + "entries=" + entries + ", fallback="+ fallback+ '}';
+  return "FieldRegistry.Default.Compiled{" + "entries=" + entries + '}';
 }

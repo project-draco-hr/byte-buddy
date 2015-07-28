@@ -1,4 +1,5 @@
 {
-  assertThat(new FieldRegistry.Default().prepare(instrumentedType).compile(fallback).target(knownField),is(fallback));
-  assertThat(new FieldRegistry.Default().prepare(instrumentedType).compile(fallback).target(unknownField),is(fallback));
+  TypeWriter.FieldPool.Entry entry=new FieldRegistry.Default().compile(instrumentedType).target(unknownField);
+  assertThat(entry.getDefaultValue(),is(FieldDescription.NO_DEFAULT_VALUE));
+  assertThat(entry.getFieldAppender(),is((FieldAttributeAppender)FieldAttributeAppender.NoOp.INSTANCE));
 }

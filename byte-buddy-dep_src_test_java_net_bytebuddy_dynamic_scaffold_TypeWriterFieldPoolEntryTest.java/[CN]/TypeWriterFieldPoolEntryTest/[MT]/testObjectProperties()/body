@@ -1,4 +1,4 @@
 {
-  ObjectPropertyAssertion.of(TypeWriter.FieldPool.Entry.Simple.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.FieldPool.Entry.NoOp.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.FieldPool.Entry.ForSimpleField.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.FieldPool.Entry.ForRichField.class).apply();
 }

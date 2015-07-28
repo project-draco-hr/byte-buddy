@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Entry entry=(Entry)other;
+  return attributeAppender.equals(entry.attributeAppender) && !(defaultValue != null ? !defaultValue.equals(entry.defaultValue) : entry.defaultValue != null);
+}

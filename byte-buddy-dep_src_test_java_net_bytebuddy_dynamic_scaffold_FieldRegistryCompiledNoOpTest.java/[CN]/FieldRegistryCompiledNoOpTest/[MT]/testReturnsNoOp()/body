@@ -1,3 +1,5 @@
 {
-  assertThat(FieldRegistry.Compiled.NoOp.INSTANCE.target(fieldDescription),is((TypeWriter.FieldPool.Entry)TypeWriter.FieldPool.Entry.NoOp.INSTANCE));
+  TypeWriter.FieldPool.Entry entry=FieldRegistry.Compiled.NoOp.INSTANCE.target(fieldDescription);
+  assertThat(entry.getDefaultValue(),is(FieldDescription.NO_DEFAULT_VALUE));
+  assertThat(entry.getFieldAppender(),is((FieldAttributeAppender)FieldAttributeAppender.NoOp.INSTANCE));
 }

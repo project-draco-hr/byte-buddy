@@ -1,5 +1,4 @@
 {
   when(distinctFactory.make(instrumentedType)).thenReturn(distinct);
-  when(latentFieldMatcher.getFieldName()).thenReturn(FOO);
-  when(knownField.getInternalName()).thenReturn(FOO);
+  when(knownField.asToken()).thenReturn(knownFieldToken);
 }

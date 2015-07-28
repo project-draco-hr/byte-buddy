@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && methodAttributeAppender.equals(((ForAbstractMethod)other).methodAttributeAppender) && modifierResolver.equals(((ForAbstractMethod)other).modifierResolver);
-}

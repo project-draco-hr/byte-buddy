@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot prepend code to method that defines a default annotation value");
-}

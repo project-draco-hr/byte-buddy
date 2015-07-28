@@ -1,3 +1,0 @@
-{
-  return new ForImplementation(new ByteCodeAppender.Compound(byteCodeAppender,this.byteCodeAppender),methodAttributeAppender,modifierResolver);
-}

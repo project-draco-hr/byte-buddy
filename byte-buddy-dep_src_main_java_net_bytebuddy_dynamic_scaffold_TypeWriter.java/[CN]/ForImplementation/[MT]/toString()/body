@@ -1,3 +1,0 @@
-{
-  return "TypeWriter.MethodPool.Entry.ForImplementation{" + "byteCodeAppender=" + byteCodeAppender + ", methodAttributeAppender="+ methodAttributeAppender+ ", modifierResolver="+ modifierResolver+ '}';
-}

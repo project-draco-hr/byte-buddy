@@ -1,9 +1,0 @@
-{
-  new TypeWriter.FieldPool.Entry.Simple(fieldAttributeAppender,DEFAULT_VALUE).apply(classVisitor,fieldDescription);
-  verify(classVisitor).visitField(MODIFIER,FOO,BAR,QUX,DEFAULT_VALUE);
-  verify(fieldAttributeAppender).apply(fieldVisitor,fieldDescription);
-  verifyNoMoreInteractions(fieldAttributeAppender);
-  verifyNoMoreInteractions(classVisitor);
-  verify(fieldVisitor).visitEnd();
-  verifyNoMoreInteractions(fieldVisitor);
-}

@@ -1,6 +1,0 @@
-{
-  when(fieldToken.getName()).thenReturn(FOO);
-  assertThat(new FieldRegistry.LatentFieldMatcher.ForToken(fieldToken).getFieldName(),is(FOO));
-  verify(fieldToken).getName();
-  verifyNoMoreInteractions(fieldToken);
-}
