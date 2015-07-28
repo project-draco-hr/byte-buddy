@@ -1,5 +1,0 @@
-{
-  TypeWriter.FieldPool.Entry entry=new TypeWriter.FieldPool.Entry.ForRichField(fieldAttributeAppender,DEFAULT_VALUE,fieldDescription);
-  assertThat(entry.getFieldAppender(),is(fieldAttributeAppender));
-  assertThat(entry.getDefaultValue(),is(DEFAULT_VALUE));
-}

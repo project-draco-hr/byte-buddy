@@ -12,5 +12,5 @@
   verify(secondHandler).prepare(secondType);
   verifyZeroInteractions(firstFactory);
   verifyZeroInteractions(secondFactory);
-  assertThat(methodRegistry.target(instrumentedMethod),is((TypeWriter.MethodPool.Entry)TypeWriter.MethodPool.Entry.ForInheritedMethod.INSTANCE));
+  assertThat(methodRegistry.target(instrumentedMethod),is((TypeWriter.MethodPool.Record)TypeWriter.MethodPool.Record.ForInheritedMethod.INSTANCE));
 }

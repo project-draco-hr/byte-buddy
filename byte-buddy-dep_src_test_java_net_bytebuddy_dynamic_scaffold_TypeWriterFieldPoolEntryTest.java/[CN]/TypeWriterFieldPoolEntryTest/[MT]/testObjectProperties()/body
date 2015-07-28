@@ -1,4 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypeWriter.FieldPool.Entry.ForSimpleField.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.FieldPool.Entry.ForRichField.class).apply();
-}

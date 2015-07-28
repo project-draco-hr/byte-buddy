@@ -4,7 +4,7 @@
   assertThat(implementationContext.cache(firstFieldValue,firstFieldType),is(firstField));
   FieldDescription secondField=implementationContext.cache(secondFieldValue,secondFieldType);
   assertThat(implementationContext.cache(secondFieldValue,secondFieldType),is(secondField));
-  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIPPED);
+  when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
   when(typeInitializer.expandWith(any(ByteCodeAppender.class))).thenReturn(otherTypeInitializer);
   when(otherTypeInitializer.expandWith(any(ByteCodeAppender.class))).thenReturn(thirdTypeInitializer);
   when(thirdTypeInitializer.withReturn()).thenReturn(terminationAppender);

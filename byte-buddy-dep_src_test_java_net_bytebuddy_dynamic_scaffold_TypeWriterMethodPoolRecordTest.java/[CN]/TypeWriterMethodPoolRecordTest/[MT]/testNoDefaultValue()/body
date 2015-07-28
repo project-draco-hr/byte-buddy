@@ -1,0 +1,4 @@
+{
+  when(methodDescription.isDefaultValue(FOO)).thenReturn(false);
+  new TypeWriter.MethodPool.Record.ForDeclaredMethod.WithAnnotationDefaultValue(methodDescription,FOO,methodAttributeAppender,modifierResolver).apply(classVisitor,implementationContext);
+}

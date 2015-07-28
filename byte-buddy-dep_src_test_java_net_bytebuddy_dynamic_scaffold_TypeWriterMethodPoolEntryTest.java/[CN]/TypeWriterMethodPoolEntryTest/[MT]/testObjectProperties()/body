@@ -1,6 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForDeclaredMethod.WithBody.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForDeclaredMethod.WithoutBody.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForDeclaredMethod.WithAnnotationDefaultValue.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Entry.ForInheritedMethod.class).apply();
-}

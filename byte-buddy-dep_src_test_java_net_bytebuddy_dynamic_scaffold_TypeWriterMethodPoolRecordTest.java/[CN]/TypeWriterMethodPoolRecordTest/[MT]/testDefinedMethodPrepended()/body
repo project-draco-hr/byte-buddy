@@ -1,0 +1,3 @@
+{
+  new TypeWriter.MethodPool.Record.ForDeclaredMethod.WithoutBody(methodDescription,methodAttributeAppender,modifierResolver).prepend(otherAppender);
+}

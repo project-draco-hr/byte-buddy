@@ -1,3 +1,0 @@
-{
-  TypeWriter.MethodPool.Entry.ForInheritedMethod.INSTANCE.applyHead(methodVisitor);
-}

@@ -1,4 +1,4 @@
 {
   Entry entry=entries.get(fieldDescription.asToken());
-  return entry == null ? new TypeWriter.FieldPool.Entry.ForSimpleField(fieldDescription) : entry.bind(fieldDescription);
+  return entry == null ? new Record.ForSimpleField(fieldDescription) : entry.bind(fieldDescription);
 }

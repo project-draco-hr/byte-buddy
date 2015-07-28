@@ -1,3 +1,3 @@
 {
-  return new TypeWriter.FieldPool.Entry.ForRichField(attributeAppender,defaultValue,fieldDescription);
+  return new Record.ForRichField(attributeAppender,defaultValue,fieldDescription);
 }

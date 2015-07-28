@@ -1,0 +1,10 @@
+{
+  when(parameterDescription.hasModifiers()).thenReturn(true);
+  when(parameterDescription.isNamed()).thenReturn(true);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDeclaredMethod.WithBody(methodDescription,byteCodeAppender,methodAttributeAppender,modifierResolver);
+  record.applyHead(methodVisitor);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+  verifyZeroInteractions(methodAttributeAppender);
+  verifyZeroInteractions(byteCodeAppender);
+}

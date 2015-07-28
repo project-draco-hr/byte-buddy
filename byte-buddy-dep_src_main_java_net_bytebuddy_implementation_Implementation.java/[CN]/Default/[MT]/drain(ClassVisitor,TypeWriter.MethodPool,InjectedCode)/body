@@ -9,15 +9,15 @@
     typeInitializer=typeInitializer.expandWith(injectedCode.getByteCodeAppender());
   }
   MethodDescription typeInitializerMethod=new MethodDescription.Latent.TypeInitializer(instrumentedType);
-  TypeWriter.MethodPool.Entry initializerEntry=methodPool.target(typeInitializerMethod);
-  if (initializerEntry.getSort().isImplemented() && typeInitializer.isDefined()) {
-    initializerEntry=initializerEntry.prepend(typeInitializer);
+  TypeWriter.MethodPool.Record initializerRecord=methodPool.target(typeInitializerMethod);
+  if (initializerRecord.getSort().isImplemented() && typeInitializer.isDefined()) {
+    initializerRecord=initializerRecord.prepend(typeInitializer);
   }
  else   if (typeInitializer.isDefined()) {
-    initializerEntry=new TypeWriter.MethodPool.Entry.ForDeclaredMethod.WithBody(typeInitializerMethod,typeInitializer.withReturn());
+    initializerRecord=new TypeWriter.MethodPool.Record.ForDeclaredMethod.WithBody(typeInitializerMethod,typeInitializer.withReturn());
   }
-  initializerEntry.apply(classVisitor,this);
-  for (  TypeWriter.MethodPool.Entry entry : accessorMethods) {
-    entry.apply(classVisitor,this);
+  initializerRecord.apply(classVisitor,this);
+  for (  TypeWriter.MethodPool.Record record : accessorMethods) {
+    record.apply(classVisitor,this);
   }
 }

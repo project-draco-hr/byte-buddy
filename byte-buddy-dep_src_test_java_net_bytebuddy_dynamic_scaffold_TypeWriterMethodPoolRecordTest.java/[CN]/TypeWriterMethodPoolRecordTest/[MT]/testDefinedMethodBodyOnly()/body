@@ -1,0 +1,9 @@
+{
+  when(parameterDescription.hasModifiers()).thenReturn(true);
+  when(parameterDescription.isNamed()).thenReturn(true);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDeclaredMethod.WithoutBody(methodDescription,methodAttributeAppender,modifierResolver);
+  record.applyBody(methodVisitor,implementationContext);
+  verifyZeroInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+  verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
+}

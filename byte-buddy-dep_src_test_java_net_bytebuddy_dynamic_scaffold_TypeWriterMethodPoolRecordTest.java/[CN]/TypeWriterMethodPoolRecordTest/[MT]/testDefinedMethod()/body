@@ -1,0 +1,12 @@
+{
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDeclaredMethod.WithoutBody(methodDescription,methodAttributeAppender,modifierResolver);
+  assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.DEFINED));
+  record.apply(classVisitor,implementationContext);
+  verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});
+  verifyNoMoreInteractions(classVisitor);
+  verify(methodVisitor).visitEnd();
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+  verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
+  verifyNoMoreInteractions(methodAttributeAppender);
+}

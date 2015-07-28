@@ -2,7 +2,7 @@
   Implementation.Context.Default implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
   MethodDescription firstMethodDescription=implementationContext.registerAccessorFor(firstSpecialInvocation);
   assertThat(implementationContext.registerAccessorFor(firstSpecialInvocation),is(firstMethodDescription));
-  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIPPED);
+  when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
   implementationContext.drain(classVisitor,methodPool,injectedCode);
   verify(classVisitor).visitMethod(eq(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER),Matchers.startsWith(FOO),eq("(" + BAZ + ")"+ QUX),isNull(String.class),aryEq(new String[]{FOO}));
   verify(methodVisitor).visitCode();

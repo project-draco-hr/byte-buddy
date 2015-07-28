@@ -1,7 +1,0 @@
-{
-  assertThat(TypeWriter.MethodPool.Entry.ForInheritedMethod.INSTANCE.getSort(),is(TypeWriter.MethodPool.Entry.Sort.SKIPPED));
-  TypeWriter.MethodPool.Entry.ForInheritedMethod.INSTANCE.apply(classVisitor,implementationContext);
-  verifyZeroInteractions(classVisitor);
-  verifyZeroInteractions(implementationContext);
-  verifyZeroInteractions(methodAttributeAppender);
-}

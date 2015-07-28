@@ -1,0 +1,3 @@
+MethodVisitor actualMethodVisitor
+MethodPool.Record record
+MethodRebaseResolver.Resolution resolution

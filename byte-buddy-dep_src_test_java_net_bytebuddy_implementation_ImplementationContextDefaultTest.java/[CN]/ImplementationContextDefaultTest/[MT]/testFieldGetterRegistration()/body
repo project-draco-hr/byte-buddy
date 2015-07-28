@@ -16,7 +16,7 @@
   assertThat(secondFieldGetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
   assertThat(implementationContext.registerGetterFor(firstField),is(firstFieldGetter));
   assertThat(implementationContext.registerGetterFor(secondField),is(secondFieldGetter));
-  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIPPED);
+  when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
   implementationContext.drain(classVisitor,methodPool,injectedCode);
   verify(classVisitor).visitMethod(eq(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER),Matchers.startsWith(FOO),eq("()" + BAR),isNull(String.class),isNull(String[].class));
   verify(classVisitor).visitMethod(eq(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("()" + QUX),isNull(String.class),isNull(String[].class));

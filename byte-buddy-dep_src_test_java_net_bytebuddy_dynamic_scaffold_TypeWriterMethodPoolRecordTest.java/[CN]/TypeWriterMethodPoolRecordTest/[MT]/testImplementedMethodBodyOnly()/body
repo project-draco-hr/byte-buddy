@@ -1,0 +1,13 @@
+{
+  when(parameterDescription.hasModifiers()).thenReturn(true);
+  when(parameterDescription.isNamed()).thenReturn(true);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDeclaredMethod.WithBody(methodDescription,byteCodeAppender,methodAttributeAppender,modifierResolver);
+  record.applyBody(methodVisitor,implementationContext);
+  verify(methodVisitor).visitCode();
+  verify(methodVisitor).visitMaxs(ONE,TWO);
+  verifyZeroInteractions(implementationContext);
+  verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
+  verifyNoMoreInteractions(methodAttributeAppender);
+  verify(byteCodeAppender).apply(methodVisitor,implementationContext,methodDescription);
+  verifyNoMoreInteractions(byteCodeAppender);
+}

@@ -1,0 +1,3 @@
+{
+  TypeWriter.MethodPool.Record.ForInheritedMethod.INSTANCE.prepend(byteCodeAppender);
+}

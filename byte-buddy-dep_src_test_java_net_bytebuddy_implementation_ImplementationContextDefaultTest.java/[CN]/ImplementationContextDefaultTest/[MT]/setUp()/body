@@ -3,7 +3,7 @@
   secondSpecialExceptionTypes=new GenericTypeList.Explicit(Collections.singletonList(secondSpecialExceptionType));
   when(instrumentedType.getInternalName()).thenReturn(BAZ);
   when(instrumentedType.asRawType()).thenReturn(instrumentedType);
-  when(methodPool.target(any(MethodDescription.class))).thenReturn(entry);
+  when(methodPool.target(any(MethodDescription.class))).thenReturn(record);
   when(auxiliaryType.make(any(String.class),any(ClassFileVersion.class),any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn(firstDynamicType);
   when(firstDynamicType.getTypeDescription()).thenReturn(firstDescription);
   when(otherAuxiliaryType.make(any(String.class),any(ClassFileVersion.class),any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn(secondDynamicType);

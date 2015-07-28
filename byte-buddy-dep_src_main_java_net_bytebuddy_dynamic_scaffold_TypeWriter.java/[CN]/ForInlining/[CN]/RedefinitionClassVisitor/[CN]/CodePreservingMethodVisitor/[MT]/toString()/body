@@ -1,3 +1,3 @@
 {
-  return "TypeWriter.Default.ForInlining.RedefinitionClassVisitor.CodePreservingMethodVisitor{" + "classVisitor=" + TypeWriter.Default.ForInlining.RedefinitionClassVisitor.this + ", actualMethodVisitor="+ actualMethodVisitor+ ", entry="+ entry+ ", resolution="+ resolution+ '}';
+  return "TypeWriter.Default.ForInlining.RedefinitionClassVisitor.CodePreservingMethodVisitor{" + "classVisitor=" + TypeWriter.Default.ForInlining.RedefinitionClassVisitor.this + ", actualMethodVisitor="+ actualMethodVisitor+ ", entry="+ record+ ", resolution="+ resolution+ '}';
 }

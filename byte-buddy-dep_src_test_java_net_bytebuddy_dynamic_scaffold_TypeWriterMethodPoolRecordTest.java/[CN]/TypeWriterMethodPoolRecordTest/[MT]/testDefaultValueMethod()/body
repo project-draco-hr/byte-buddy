@@ -1,0 +1,18 @@
+{
+  when(methodDescription.getReturnType()).thenReturn(TypeDescription.STRING);
+  when(methodDescription.isDefaultValue(FOO)).thenReturn(true);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDeclaredMethod.WithAnnotationDefaultValue(methodDescription,FOO,methodAttributeAppender,modifierResolver);
+  assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.DEFINED));
+  record.apply(classVisitor,implementationContext);
+  verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});
+  verifyNoMoreInteractions(classVisitor);
+  verify(methodVisitor).visitAnnotationDefault();
+  verify(methodVisitor).visitEnd();
+  verifyNoMoreInteractions(methodVisitor);
+  verify(annotationVisitor).visit(null,FOO);
+  verify(annotationVisitor).visitEnd();
+  verifyNoMoreInteractions(annotationVisitor);
+  verifyZeroInteractions(implementationContext);
+  verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
+  verifyNoMoreInteractions(methodAttributeAppender);
+}

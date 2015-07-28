@@ -1,11 +1,11 @@
 {
   Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
-  when(entry.getSort()).thenReturn(TypeWriter.MethodPool.Entry.Sort.SKIPPED);
+  when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
   when(typeInitializer.isDefined()).thenReturn(true);
   when(typeInitializer.withReturn()).thenReturn(terminationAppender);
   implementationContext.drain(classVisitor,methodPool,injectedCode);
-  verify(entry).getSort();
-  verifyNoMoreInteractions(entry);
+  verify(record).getSort();
+  verifyNoMoreInteractions(record);
   verify(typeInitializer,atLeast(1)).isDefined();
   verify(typeInitializer).withReturn();
   verifyNoMoreInteractions(typeInitializer);

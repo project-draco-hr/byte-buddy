@@ -1,0 +1,18 @@
+{
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDeclaredMethod.WithBody(methodDescription,byteCodeAppender,methodAttributeAppender,modifierResolver).prepend(otherAppender);
+  assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.IMPLEMENTED));
+  record.apply(classVisitor,implementationContext);
+  verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});
+  verifyNoMoreInteractions(classVisitor);
+  verify(methodVisitor).visitCode();
+  verify(methodVisitor).visitMaxs(ONE * MULTIPLIER,TWO * MULTIPLIER);
+  verify(methodVisitor).visitEnd();
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+  verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
+  verifyNoMoreInteractions(methodAttributeAppender);
+  verify(byteCodeAppender).apply(methodVisitor,implementationContext,methodDescription);
+  verifyNoMoreInteractions(byteCodeAppender);
+  verify(otherAppender).apply(methodVisitor,implementationContext,methodDescription);
+  verifyNoMoreInteractions(otherAppender);
+}

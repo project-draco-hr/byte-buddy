@@ -1,9 +1,0 @@
-{
-  when(parameterDescription.hasModifiers()).thenReturn(true);
-  when(parameterDescription.isNamed()).thenReturn(true);
-  TypeWriter.MethodPool.Entry entry=new TypeWriter.MethodPool.Entry.ForDeclaredMethod.WithoutBody(methodDescription,methodAttributeAppender,modifierResolver);
-  entry.applyHead(methodVisitor);
-  verifyZeroInteractions(methodVisitor);
-  verifyZeroInteractions(implementationContext);
-  verifyZeroInteractions(methodAttributeAppender);
-}

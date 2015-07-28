@@ -1,8 +1,0 @@
-{
-  TypeWriter.FieldPool.Entry entry=new TypeWriter.FieldPool.Entry.ForSimpleField(fieldDescription);
-  entry.apply(classVisitor);
-  verify(classVisitor).visitField(MODIFIER,FOO,BAR,QUX,null);
-  verifyNoMoreInteractions(classVisitor);
-  verify(fieldVisitor).visitEnd();
-  verifyNoMoreInteractions(fieldVisitor);
-}

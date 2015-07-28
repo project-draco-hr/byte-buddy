@@ -1,3 +1,0 @@
-{
-  new TypeWriter.MethodPool.Entry.ForDeclaredMethod.WithAnnotationDefaultValue(methodDescription,FOO,methodAttributeAppender,modifierResolver).prepend(otherAppender);
-}

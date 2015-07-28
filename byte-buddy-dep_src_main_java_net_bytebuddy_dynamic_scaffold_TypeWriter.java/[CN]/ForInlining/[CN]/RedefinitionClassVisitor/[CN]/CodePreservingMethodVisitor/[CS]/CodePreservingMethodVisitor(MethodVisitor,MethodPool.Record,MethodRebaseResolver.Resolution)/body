@@ -1,0 +1,7 @@
+{
+  super(ASM_API_VERSION,actualMethodVisitor);
+  this.actualMethodVisitor=actualMethodVisitor;
+  this.record=record;
+  this.resolution=resolution;
+  record.applyHead(actualMethodVisitor);
+}
