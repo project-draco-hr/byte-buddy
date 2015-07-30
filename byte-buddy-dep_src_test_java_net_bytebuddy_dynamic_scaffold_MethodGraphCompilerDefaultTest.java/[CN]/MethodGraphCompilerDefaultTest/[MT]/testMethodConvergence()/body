@@ -1,0 +1,5 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(MethodConvergence.Inner.class);
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(typeDescription);
+  assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 2));
+}
