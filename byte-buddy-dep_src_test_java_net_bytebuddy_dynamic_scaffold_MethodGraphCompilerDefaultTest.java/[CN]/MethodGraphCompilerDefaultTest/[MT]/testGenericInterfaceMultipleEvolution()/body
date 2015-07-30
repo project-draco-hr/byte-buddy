@@ -1,5 +1,5 @@
 {
-  TypeDescription typeDescription=new TypeDescription.ForLoadedType(ReturnTypeInterfaceBase.Intermediate.Inner.class);
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(GenericInterfaceBase.Intermediate.Inner.class);
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(1));
 }
