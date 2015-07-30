@@ -1,4 +1,11 @@
 {
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(TypeDescription.OBJECT);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().size()));
+  for (  MethodDescription methodDescription : TypeDescription.OBJECT.getDeclaredMethods()) {
+    MethodGraph.Node node=methodGraph.locate(methodDescription.asToken());
+    assertThat(node.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
+    assertThat(node.isMadeVisible(),is(false));
+    assertThat(node.getBridges().size(),is(0));
+    assertThat(methodGraph.listNodes().contains(node),is(true));
+  }
 }

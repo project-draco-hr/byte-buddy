@@ -1,7 +1,7 @@
 {
-  Key.Identifying<V> key=Key.Identifying.of(methodDescription,factory);
+  Key.Identifying<V> key=Key.Identifying.of(methodDescription.asDefined(),factory);
   Entry<V> currentEntry=entries.get(key);
-  Entry<V> expandedEntry=(currentEntry == null ? new Entry.ForMethod<V>(key,methodDescription) : currentEntry).expandWith(methodDescription,factory);
+  Entry<V> expandedEntry=(currentEntry == null ? new Entry.Initial<V>(key) : currentEntry).expandWith(methodDescription,factory);
   LinkedHashMap<Key.Identifying<V>,Entry<V>> entries=new LinkedHashMap<Key.Identifying<V>,Entry<V>>(this.entries);
   entries.put(expandedEntry.getKey(),expandedEntry);
   return new Store<V>(entries);

@@ -1,7 +1,7 @@
 {
-  LinkedHashMap<Key,Node> entries=new LinkedHashMap<Key,Node>(this.entries.size());
-  for (  Entry entry : this.entries.values()) {
-    entries.put(entry.getKey(),entry.asNode());
+  LinkedHashMap<Key<MethodDescription.Token>,Node> entries=new LinkedHashMap<Key<MethodDescription.Token>,Node>(this.entries.size());
+  for (  Entry<V> entry : this.entries.values()) {
+    entries.put(entry.getKey().asTokenKey(),entry.asNode());
   }
   return new Graph(entries);
 }
