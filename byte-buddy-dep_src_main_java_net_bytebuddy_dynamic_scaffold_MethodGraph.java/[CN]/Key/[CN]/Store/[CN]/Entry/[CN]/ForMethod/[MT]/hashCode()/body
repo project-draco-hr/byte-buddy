@@ -1,0 +1,6 @@
+{
+  int result=key.hashCode();
+  result=31 * result + methodDescription.hashCode();
+  result=31 * result + (madeVisible ? 1 : 0);
+  return result;
+}

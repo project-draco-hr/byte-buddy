@@ -1,0 +1,3 @@
+{
+  return "MethodGraph.Illegal." + name();
+}

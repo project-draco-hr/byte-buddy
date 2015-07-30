@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Node node=(Node)other;
+  return key.equals(node.key) && declaringType.equals(node.declaringType) && methodToken.equals(node.methodToken);
+}

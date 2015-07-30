@@ -1,0 +1,3 @@
+{
+  return "MethodGraph.Compiler.Default.Key.Store.Entry.Ambiguous{" + "key=" + key + ", declaringType="+ declaringType+ ", methodToken="+ methodToken+ '}';
+}

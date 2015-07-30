@@ -1,0 +1,3 @@
+{
+  return "MethodGraph.Compiler.Default.Key.Store.Entry.ForMethod{" + "key=" + key + ", methodDescription="+ methodDescription+ ", madeVisible="+ madeVisible+ '}';
+}
