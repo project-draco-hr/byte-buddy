@@ -1,0 +1,4 @@
+{
+  assertThat(new PseudoKey(FOO,new HashSet<SampleKey>(Arrays.asList(foo,bar))).hashCode(),is(new PseudoKey(FOO,Collections.singleton(bar)).hashCode()));
+  assertThat(new PseudoKey(FOO,new HashSet<SampleKey>(Arrays.asList(foo,bar))),is(new PseudoKey(FOO,Collections.singleton(foo))));
+}

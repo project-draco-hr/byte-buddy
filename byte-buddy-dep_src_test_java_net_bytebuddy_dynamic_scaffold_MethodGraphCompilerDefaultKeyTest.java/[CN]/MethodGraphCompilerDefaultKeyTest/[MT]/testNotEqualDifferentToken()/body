@@ -1,0 +1,4 @@
+{
+  assertThat(new PseudoKey(FOO,Collections.singleton(foo)).hashCode(),is(new PseudoKey(FOO,Collections.singleton(bar)).hashCode()));
+  assertThat(new PseudoKey(FOO,Collections.singleton(foo)),not(new PseudoKey(BAR,Collections.singleton(bar))));
+}
