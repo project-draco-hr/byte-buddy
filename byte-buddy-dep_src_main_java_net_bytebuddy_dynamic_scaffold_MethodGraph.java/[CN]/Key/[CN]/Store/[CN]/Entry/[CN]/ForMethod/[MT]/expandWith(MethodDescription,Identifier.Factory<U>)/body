@@ -1,4 +1,4 @@
 {
-  Key.Identifying<U> key=this.key.expandWith(methodDescription.asDefined(),identifierFactory);
+  Key.Identifying<U> key=this.key.expandWith(methodDescription,identifierFactory);
   return methodDescription.getDeclaringType().equals(this.methodDescription.getDeclaringType()) ? Ambiguous.of(key,methodDescription,this.methodDescription) : new ForMethod<U>(key,methodDescription.isBridge() ? this.methodDescription : methodDescription,true);
 }
