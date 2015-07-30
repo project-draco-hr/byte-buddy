@@ -2,4 +2,21 @@
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(SimpleClass.class);
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 1));
+  assertThat(methodGraph.getSuperGraph().listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size()));
+  assertThat(methodGraph.getInterfaceGraph(mock(TypeDescription.class)).listNodes().size(),is(0));
+  for (  MethodDescription methodDescription : TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual())) {
+    MethodGraph.Node node=methodGraph.locate(methodDescription.asToken());
+    assertThat(node.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
+    assertThat(node.isMadeVisible(),is(false));
+    assertThat(node.getBridges().size(),is(0));
+    assertThat(node.getRepresentative(),is(methodDescription));
+    assertThat(methodGraph.listNodes().contains(node),is(true));
+  }
+  MethodDescription constructor=typeDescription.getDeclaredMethods().filter(isConstructor()).getOnly();
+  MethodGraph.Node constructorNode=methodGraph.locate(constructor.asToken());
+  assertThat(constructorNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
+  assertThat(constructorNode.isMadeVisible(),is(false));
+  assertThat(constructorNode.getBridges().size(),is(0));
+  assertThat(constructorNode.getRepresentative(),is(constructor));
+  assertThat(methodGraph.listNodes().contains(constructorNode),is(true));
 }
