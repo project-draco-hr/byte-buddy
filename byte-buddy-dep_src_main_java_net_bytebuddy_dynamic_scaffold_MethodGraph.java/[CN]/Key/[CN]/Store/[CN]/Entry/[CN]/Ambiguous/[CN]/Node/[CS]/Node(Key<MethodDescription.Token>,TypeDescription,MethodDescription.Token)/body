@@ -1,0 +1,5 @@
+{
+  this.key=key;
+  this.declaringType=declaringType;
+  this.methodToken=methodToken;
+}

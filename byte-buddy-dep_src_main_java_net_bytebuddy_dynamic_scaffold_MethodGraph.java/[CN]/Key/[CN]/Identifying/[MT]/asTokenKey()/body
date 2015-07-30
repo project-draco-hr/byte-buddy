@@ -1,0 +1,7 @@
+{
+  Set<MethodDescription.Token> identifiers=new HashSet<MethodDescription.Token>(this.identifiers.size());
+  for (  V identifier : this.identifiers) {
+    identifiers.add(identifier.getToken());
+  }
+  return new Key<MethodDescription.Token>(internalName,identifiers);
+}

@@ -1,0 +1,3 @@
+{
+  this(new LinkedHashMap<Key.Identifying<V>,Entry<V>>(EMPTY));
+}

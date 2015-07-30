@@ -1,0 +1,3 @@
+{
+  return other == this || (other instanceof Key && !Collections.disjoint(identifiers,((Key)other).identifiers));
+}

@@ -1,0 +1,6 @@
+{
+  for (  Entry<V> entry : keyStore.entries.values()) {
+    keyStore=keyStore.inject(entry);
+  }
+  return keyStore;
+}

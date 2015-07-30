@@ -1,0 +1,3 @@
+{
+  return new Key.Identifying<Q>(methodDescription.getInternalName(),Collections.singleton(factory.wrap(methodDescription.asToken())));
+}

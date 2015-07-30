@@ -1,0 +1,4 @@
+{
+  Node node=entries.get(new Key<MethodDescription.Token>(methodToken.getInternalName(),methodToken));
+  return node == null ? Node.Illegal.INSTANCE : node;
+}

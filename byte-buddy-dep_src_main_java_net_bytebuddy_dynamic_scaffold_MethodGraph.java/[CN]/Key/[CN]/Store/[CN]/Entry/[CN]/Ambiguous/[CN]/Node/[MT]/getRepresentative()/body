@@ -1,0 +1,3 @@
+{
+  return new MethodDescription.Latent(declaringType,methodToken);
+}
