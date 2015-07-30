@@ -1,0 +1,5 @@
+{
+  Set<MethodDescription.Token> tokens=new HashSet<MethodDescription.Token>(identifiers);
+  tokens.remove(excluded);
+  return tokens;
+}

@@ -1,3 +1,0 @@
-{
-  return new Key<MethodDescription.Token>(methodToken.getInternalName(),Collections.singletonMap(methodToken,Collections.singleton(methodToken)));
-}

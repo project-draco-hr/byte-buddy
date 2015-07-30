@@ -1,0 +1,3 @@
+{
+  return "MethodGraph.Compiler.Default.Key.Detached{" + "internalName='" + internalName + '\''+ ", identifiers="+ identifiers+ '}';
+}

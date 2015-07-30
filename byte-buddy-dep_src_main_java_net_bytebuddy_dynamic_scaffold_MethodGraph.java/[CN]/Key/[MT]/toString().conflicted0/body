@@ -1,3 +1,0 @@
-{
-  return "MethodGraph.Compiler.Default.Key{" + "internalName='" + internalName + '\''+ ", identifiers="+ identifiers+ '}';
-}

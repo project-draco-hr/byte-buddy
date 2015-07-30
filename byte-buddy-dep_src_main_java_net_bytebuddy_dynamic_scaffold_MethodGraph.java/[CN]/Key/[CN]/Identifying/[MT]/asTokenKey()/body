@@ -1,9 +1,0 @@
-{
-  Map<MethodDescription.Token,Set<MethodDescription.Token>> identifiers=new HashMap<MethodDescription.Token,Set<MethodDescription.Token>>();
-  for (  Set<MethodDescription.Token> methodTokens : this.identifiers.values()) {
-    for (    MethodDescription.Token methodToken : methodTokens) {
-      identifiers.put(methodToken,Collections.singleton(methodToken));
-    }
-  }
-  return new Key<MethodDescription.Token>(internalName,identifiers);
-}

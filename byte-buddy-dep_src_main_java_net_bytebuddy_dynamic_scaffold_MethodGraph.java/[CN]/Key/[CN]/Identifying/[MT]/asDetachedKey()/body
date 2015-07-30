@@ -1,0 +1,9 @@
+{
+  Set<MethodDescription.Token> identifiers=new HashSet<MethodDescription.Token>();
+  for (  Set<MethodDescription.Token> methodTokens : this.identifiers.values()) {
+    for (    MethodDescription.Token methodToken : methodTokens) {
+      identifiers.add(methodToken);
+    }
+  }
+  return new Key.Detached(internalName,identifiers);
+}

@@ -1,8 +1,0 @@
-{
-  Set<MethodDescription.Token> tokens=new HashSet<MethodDescription.Token>();
-  for (  Set<MethodDescription.Token> methodTokens : identifiers.values()) {
-    tokens.addAll(methodTokens);
-  }
-  tokens.remove(excluded);
-  return tokens;
-}
