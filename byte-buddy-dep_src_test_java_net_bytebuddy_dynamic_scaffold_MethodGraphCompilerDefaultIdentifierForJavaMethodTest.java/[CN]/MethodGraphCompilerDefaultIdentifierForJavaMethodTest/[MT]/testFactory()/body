@@ -1,3 +1,3 @@
 {
-  assertThat(MethodGraph.Compiler.Default.forJavaHierarchy(),is((MethodGraph.Compiler)new MethodGraph.Compiler.Default<MethodGraph.Compiler.Default.Identifier.ForJavaMethod>(MethodGraph.Compiler.Default.Identifier.Factory.ForJavaMethod.INSTANCE)));
+  assertThat(MethodGraph.Compiler.Default.forJavaHierarchy(),is((MethodGraph.Compiler)new MethodGraph.Compiler.Default<MethodGraph.Compiler.Default.Identifier.ForJavaMethod.Token>(MethodGraph.Compiler.Default.Identifier.ForJavaMethod.INSTANCE)));
 }

@@ -1,5 +1,0 @@
-{
-  Set<S> tokens=new HashSet<S>(this.identifiers);
-  tokens.remove(excluded);
-  return tokens;
-}

@@ -1,0 +1,15 @@
+{
+  Map<V,Set<MethodDescription.Token>> identifiers=new HashMap<V,Set<MethodDescription.Token>>(this.identifiers);
+  MethodDescription.Token methodToken=methodDescription.asToken();
+  V identifier=factory.wrap(methodToken);
+  Set<MethodDescription.Token> methodTokens=identifiers.get(identifier);
+  if (methodTokens == null) {
+    identifiers.put(identifier,Collections.singleton(methodToken));
+  }
+ else {
+    methodTokens=new HashSet<MethodDescription.Token>(methodTokens);
+    methodTokens.add(methodToken);
+    identifiers.put(identifier,methodTokens);
+  }
+  return new Key.Identifying<V>(internalName,identifiers);
+}

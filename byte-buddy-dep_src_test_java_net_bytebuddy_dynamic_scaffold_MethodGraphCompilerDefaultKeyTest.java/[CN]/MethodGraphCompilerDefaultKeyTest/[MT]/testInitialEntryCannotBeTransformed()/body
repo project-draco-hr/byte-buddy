@@ -1,3 +1,0 @@
-{
-  new MethodGraph.Compiler.Default.Key.Store.Entry.Initial(new MethodGraph.Compiler.Default.Key.Identifying(FOO,Collections.singleton(mock(SampleKey.class)))).asNode();
-}

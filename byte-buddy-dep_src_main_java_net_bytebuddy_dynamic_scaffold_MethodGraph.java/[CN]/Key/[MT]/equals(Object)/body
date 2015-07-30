@@ -1,3 +1,3 @@
 {
-  return other == this || (other instanceof Key && internalName.equals(((Key)other).internalName) && !Collections.disjoint(identifiers,((Key)other).identifiers));
+  return other == this || (other instanceof Key && internalName.equals(((Key)other).internalName) && !Collections.disjoint(identifiers.keySet(),((Key)other).identifiers.keySet()));
 }

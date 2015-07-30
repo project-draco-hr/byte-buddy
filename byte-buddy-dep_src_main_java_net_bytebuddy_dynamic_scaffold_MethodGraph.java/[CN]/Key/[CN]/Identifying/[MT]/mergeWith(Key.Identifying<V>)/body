@@ -1,5 +1,15 @@
 {
-  Set<V> keys=new HashSet<V>(this.identifiers);
-  keys.addAll(key.identifiers);
-  return new Key.Identifying<V>(internalName,keys);
+  Map<V,Set<MethodDescription.Token>> identifiers=new HashMap<V,Set<MethodDescription.Token>>(this.identifiers);
+  for (  Map.Entry<V,Set<MethodDescription.Token>> entry : key.identifiers.entrySet()) {
+    Set<MethodDescription.Token> methodTokens=identifiers.get(entry.getKey());
+    if (methodTokens == null) {
+      identifiers.put(entry.getKey(),entry.getValue());
+    }
+ else {
+      methodTokens=new HashSet<MethodDescription.Token>(methodTokens);
+      methodTokens.addAll(entry.getValue());
+      identifiers.put(entry.getKey(),methodTokens);
+    }
+  }
+  return new Key.Identifying<V>(internalName,identifiers);
 }

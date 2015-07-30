@@ -1,5 +1,5 @@
 {
-  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Identifier.ForJavaMethod.class).create(new ObjectPropertyAssertion.Creator<MethodDescription.Token>(){
+  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Identifier.ForJavaMethod.Token.class).create(new ObjectPropertyAssertion.Creator<MethodDescription.Token>(){
     @Override public MethodDescription.Token create(){
       MethodDescription.Token methodToken=mock(MethodDescription.Token.class);
       TypeDescription typeDescription=mock(TypeDescription.class);
@@ -11,5 +11,5 @@
     }
   }
 ).applyBasic();
-  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Identifier.Factory.ForJavaMethod.class).apply();
+  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Identifier.ForJavaMethod.class).apply();
 }
