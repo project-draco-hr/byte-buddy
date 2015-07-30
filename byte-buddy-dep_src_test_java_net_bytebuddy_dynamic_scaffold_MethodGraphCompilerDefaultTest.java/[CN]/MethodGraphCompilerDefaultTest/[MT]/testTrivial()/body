@@ -1,0 +1,4 @@
+{
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(TypeDescription.OBJECT);
+  assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().size()));
+}

@@ -1,11 +1,11 @@
 {
-  when(elementMatcher.matches(typeDescriptions)).thenReturn(true);
+  when(elementMatcher.matches(typeDescription)).thenReturn(true);
   when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
   assertThat(new RawTypeMatcher<GenericTypeDescription>(elementMatcher).matches(genericTypeDescription),is(true));
   verify(genericTypeDescription).getSort();
   verify(genericTypeDescription).asRawType();
   verifyNoMoreInteractions(genericTypeDescription);
-  verify(elementMatcher).matches(typeDescriptions);
+  verify(elementMatcher).matches(typeDescription);
   verifyNoMoreInteractions(elementMatcher);
-  verifyZeroInteractions(typeDescriptions);
+  verifyZeroInteractions(typeDescription);
 }

@@ -4,5 +4,5 @@
   verify(genericTypeDescription).getSort();
   verifyNoMoreInteractions(genericTypeDescription);
   verifyZeroInteractions(elementMatcher);
-  verifyZeroInteractions(typeDescriptions);
+  verifyZeroInteractions(typeDescription);
 }
