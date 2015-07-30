@@ -1,4 +1,5 @@
 {
   this.key=key;
   this.methodDescription=methodDescription;
+  this.madeVisible=madeVisible;
 }

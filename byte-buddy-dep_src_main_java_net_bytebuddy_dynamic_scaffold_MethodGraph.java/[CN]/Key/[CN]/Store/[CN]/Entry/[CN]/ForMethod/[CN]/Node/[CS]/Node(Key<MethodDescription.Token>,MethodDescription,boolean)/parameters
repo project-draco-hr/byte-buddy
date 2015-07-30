@@ -1,2 +1,3 @@
 Key<MethodDescription.Token> key
 MethodDescription methodDescription
+boolean madeVisible

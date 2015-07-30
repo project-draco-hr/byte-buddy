@@ -2,6 +2,7 @@
   ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.Store.class).apply();
   ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.Store.class).apply();
   ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.Store.Graph.class).apply();
+  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.Store.Entry.Initial.class).apply();
   ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.Store.Entry.Ambiguous.class).apply();
   ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.Store.Entry.Ambiguous.Node.class).apply();
   ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.Store.Entry.ForMethod.class).apply();
