@@ -1,0 +1,6 @@
+{
+  when(methodDescription.isDefaultMethod()).thenReturn(true);
+  when(methodDescription.isSpecializableFor(declaringType)).thenReturn(true);
+  when(declaringType.isInterface()).thenReturn(true);
+  assertInvocation(MethodInvocation.invoke(methodDescription).special(declaringType),Opcodes.INVOKESPECIAL,FOO,true);
+}
