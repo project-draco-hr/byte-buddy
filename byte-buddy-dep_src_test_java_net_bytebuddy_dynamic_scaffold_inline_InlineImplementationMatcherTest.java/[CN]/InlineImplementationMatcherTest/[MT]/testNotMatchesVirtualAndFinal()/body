@@ -1,7 +1,8 @@
 {
   when(methodDescription.isVirtual()).thenReturn(true);
-  when(methodDescription.getModifiers()).thenReturn(0);
-  when(ignoredMethods.matches(methodDescription)).thenReturn(true);
+  when(methodDescription.getModifiers()).thenReturn(Opcodes.ACC_FINAL);
+  when(ignoredMethods.matches(methodDescription)).thenReturn(false);
+  when(predefinedMethods.matches(methodDescription)).thenReturn(false);
   when(methodDescription.getDeclaringType()).thenReturn(otherType);
   assertThat(latentMethodMatcher.resolve(typeDescription).matches(methodDescription),is(false));
 }

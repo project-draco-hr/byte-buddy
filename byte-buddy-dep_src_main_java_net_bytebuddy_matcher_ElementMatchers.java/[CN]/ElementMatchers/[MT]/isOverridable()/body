@@ -1,3 +1,0 @@
-{
-  return new MethodSortMatcher<T>(MethodSortMatcher.Sort.OVERRIDABLE);
-}

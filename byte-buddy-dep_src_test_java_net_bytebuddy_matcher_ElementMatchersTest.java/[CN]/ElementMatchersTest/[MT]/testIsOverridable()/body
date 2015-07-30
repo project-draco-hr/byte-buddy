@@ -1,7 +1,0 @@
-{
-  assertThat(ElementMatchers.isOverridable().matches(new MethodDescription.ForLoadedMethod(IsOverridable.class.getDeclaredMethod("baz"))),is(true));
-  assertThat(ElementMatchers.isOverridable().matches(new MethodDescription.ForLoadedMethod(IsOverridable.class.getDeclaredMethod("foo"))),is(false));
-  assertThat(ElementMatchers.isOverridable().matches(new MethodDescription.ForLoadedMethod(IsOverridable.class.getDeclaredMethod("bar"))),is(false));
-  assertThat(ElementMatchers.isOverridable().matches(new MethodDescription.ForLoadedMethod(IsOverridable.class.getDeclaredMethod("qux"))),is(false));
-  assertThat(ElementMatchers.isOverridable().matches(new MethodDescription.ForLoadedConstructor(IsOverridable.class.getDeclaredConstructor())),is(false));
-}

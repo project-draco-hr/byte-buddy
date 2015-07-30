@@ -1,7 +1,7 @@
 {
-  when(methodDescription.isOverridable()).thenReturn(true);
+  when(methodDescription.isVirtual()).thenReturn(false);
+  when(methodDescription.getModifiers()).thenReturn(0);
   when(ignoredMethods.matches(methodDescription)).thenReturn(false);
   when(methodDescription.getDeclaringType()).thenReturn(otherType);
-  when(methodDescription.isVisibleTo(typeDescription)).thenReturn(false);
   assertThat(latentMethodMatcher.resolve(typeDescription).matches(methodDescription),is(false));
 }

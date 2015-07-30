@@ -1,0 +1,3 @@
+{
+  return new MethodSortMatcher<T>(MethodSortMatcher.Sort.VIRTUAL);
+}
