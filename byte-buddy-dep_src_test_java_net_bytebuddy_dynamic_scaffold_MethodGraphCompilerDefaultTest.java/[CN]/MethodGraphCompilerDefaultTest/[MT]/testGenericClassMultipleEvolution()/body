@@ -4,7 +4,7 @@
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 2));
   MethodGraph.Node methodNode=methodGraph.locate(typeDescription.getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly().asToken());
   MethodDescription.Token firstBridgeToken=typeDescription.getSuperType().getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly().asDefined().asToken();
-  MethodDescription.Token secondBridgeToken=typeDescription.getSuperType().getSuperType().getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly().asDefined().asToken();
+  MethodDescription.Token secondBridgeToken=typeDescription.getSuperType().getSuperType().getDeclaredMethods().filter(isMethod()).getOnly().asDefined().asToken();
   assertThat(methodNode,is(methodGraph.locate(firstBridgeToken)));
   assertThat(methodNode,is(methodGraph.locate(secondBridgeToken)));
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
