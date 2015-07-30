@@ -1,0 +1,4 @@
+{
+  assertThat(new MethodGraph.Compiler.Default.Key<SampleKey>(FOO,Collections.singleton(foo)).hashCode(),is(new MethodGraph.Compiler.Default.Key<SampleKey>(FOO,Collections.singleton(bar)).hashCode()));
+  assertThat(new MethodGraph.Compiler.Default.Key<SampleKey>(FOO,Collections.singleton(foo)),not(new MethodGraph.Compiler.Default.Key<SampleKey>(BAR,Collections.singleton(bar))));
+}

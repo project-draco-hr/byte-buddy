@@ -1,0 +1,14 @@
+{
+  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.class).create(new ObjectPropertyAssertion.Creator<Set<?>>(){
+    @Override public Set<?> create(){
+      return Collections.singleton(new Object());
+    }
+  }
+).applyBasic();
+  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.Identifying.class).create(new ObjectPropertyAssertion.Creator<Set<?>>(){
+    @Override public Set<?> create(){
+      return Collections.singleton(new Object());
+    }
+  }
+).applyBasic();
+}

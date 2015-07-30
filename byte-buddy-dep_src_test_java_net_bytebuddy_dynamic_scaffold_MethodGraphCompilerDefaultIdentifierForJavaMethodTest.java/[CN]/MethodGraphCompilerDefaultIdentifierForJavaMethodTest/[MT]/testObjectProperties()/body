@@ -1,0 +1,15 @@
+{
+  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Identifier.ForJavaMethod.class).create(new ObjectPropertyAssertion.Creator<MethodDescription.Token>(){
+    @Override public MethodDescription.Token create(){
+      MethodDescription.Token methodToken=mock(MethodDescription.Token.class);
+      TypeDescription typeDescription=mock(TypeDescription.class);
+      when(typeDescription.asRawType()).thenReturn(typeDescription);
+      ParameterDescription.Token parameterToken=mock(ParameterDescription.Token.class);
+      when(parameterToken.getType()).thenReturn(typeDescription);
+      when(methodToken.getParameterTokens()).thenReturn(new ByteCodeElement.Token.TokenList<ParameterDescription.Token>(Collections.singletonList(parameterToken)));
+      return methodToken;
+    }
+  }
+).applyBasic();
+  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Identifier.Factory.ForJavaMethod.class).apply();
+}

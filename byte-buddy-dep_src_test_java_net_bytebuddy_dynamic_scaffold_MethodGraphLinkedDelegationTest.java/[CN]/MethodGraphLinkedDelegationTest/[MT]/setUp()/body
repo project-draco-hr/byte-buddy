@@ -1,0 +1,5 @@
+{
+  when(methodGraph.locate(methodToken)).thenReturn(node);
+  when(methodGraph.listNodes()).thenReturn(nodeList);
+  linkedMethodGraph=new MethodGraph.Linked.Delegation(methodGraph,superGraph,Collections.singletonMap(typeDescription,interfaceGraph));
+}

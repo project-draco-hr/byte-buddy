@@ -1,0 +1,3 @@
+{
+  assertThat(linkedMethodGraph.getInterfaceGraph(mock(TypeDescription.class)),is((MethodGraph)MethodGraph.Empty.INSTANCE));
+}

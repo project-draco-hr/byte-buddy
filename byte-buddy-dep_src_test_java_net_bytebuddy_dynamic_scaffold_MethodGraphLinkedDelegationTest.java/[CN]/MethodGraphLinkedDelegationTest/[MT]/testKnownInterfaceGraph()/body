@@ -1,0 +1,3 @@
+{
+  assertThat(linkedMethodGraph.getInterfaceGraph(typeDescription),is(interfaceGraph));
+}

@@ -1,5 +1,3 @@
 {
-  GenericTypeDescription typeDescription=mock(GenericTypeDescription.class);
-  AnnotationDescription annotationDescription=mock(AnnotationDescription.class);
-  assertThat(new ParameterDescription.Token(typeDescription,Collections.singletonList(annotationDescription),null,null),not(new ParameterDescription.Token(typeDescription,Collections.singletonList(annotationDescription),null,null)));
+  assertThat(new ParameterDescription.Token(mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class)),ParameterDescription.Token.NO_NAME,ParameterDescription.Token.NO_MODIFIERS),not(new ParameterDescription.Token(mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class)),ParameterDescription.Token.NO_NAME,ParameterDescription.Token.NO_MODIFIERS)));
 }

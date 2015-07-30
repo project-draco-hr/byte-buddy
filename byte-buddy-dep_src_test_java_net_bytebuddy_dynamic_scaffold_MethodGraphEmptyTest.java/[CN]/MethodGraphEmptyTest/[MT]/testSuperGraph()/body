@@ -1,0 +1,3 @@
+{
+  assertThat(MethodGraph.Empty.INSTANCE.getSuperGraph(),is((MethodGraph)MethodGraph.Empty.INSTANCE));
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(linkedMethodGraph.getSuperGraph(),is(superGraph));
+}

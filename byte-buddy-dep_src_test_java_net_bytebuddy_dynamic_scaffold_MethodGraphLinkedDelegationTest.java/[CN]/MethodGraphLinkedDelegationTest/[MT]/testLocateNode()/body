@@ -1,0 +1,3 @@
+{
+  assertThat(linkedMethodGraph.locate(methodToken),is(node));
+}

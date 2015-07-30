@@ -1,0 +1,3 @@
+{
+  assertThat(MethodGraph.Empty.INSTANCE.listNodes().size(),is(0));
+}
