@@ -1,4 +1,4 @@
 {
-  Node node=entries.get(Key.Detached.of(methodToken));
+  Node node=entries.get(Detached.of(methodToken));
   return node == null ? Node.Illegal.INSTANCE : node;
 }

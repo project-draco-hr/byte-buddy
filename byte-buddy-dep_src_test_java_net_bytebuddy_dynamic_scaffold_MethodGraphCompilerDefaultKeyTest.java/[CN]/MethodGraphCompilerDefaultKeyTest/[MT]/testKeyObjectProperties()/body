@@ -5,7 +5,7 @@
     }
   }
 ).applyBasic();
-  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.Identifying.class).create(new ObjectPropertyAssertion.Creator<Set<?>>(){
+  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Key.Harmonized.class).create(new ObjectPropertyAssertion.Creator<Set<?>>(){
     @Override public Set<?> create(){
       return Collections.singleton(new Object());
     }

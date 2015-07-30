@@ -1,3 +1,0 @@
-{
-  assertThat(MethodGraph.Compiler.Default.forJVMHierarchy(),is((MethodGraph.Compiler)new MethodGraph.Compiler.Default<MethodGraph.Compiler.Default.Identifier.ForJVMMethod.Token>(MethodGraph.Compiler.Default.Identifier.ForJVMMethod.INSTANCE)));
-}

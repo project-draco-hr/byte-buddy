@@ -1,4 +1,0 @@
-{
-  MethodDescription.Token methodToken=methodDescription.asToken();
-  return new Key.Identifying<Q>(methodDescription.getInternalName(),Collections.singletonMap(factory.wrap(methodToken),Collections.singleton(methodToken)));
-}

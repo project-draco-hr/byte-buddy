@@ -1,3 +1,3 @@
 {
-  return new Node(key.asDetachedKey(),declaringType,methodToken);
+  return new Node(key.detach(),declaringType,methodToken);
 }
