@@ -17,6 +17,6 @@
   assertThat(superNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
   assertThat(superNode.isMadeVisible(),is(false));
   assertThat(superNode.getBridges().size(),is(1));
-  assertThat(superNode.getRepresentative().asToken(),is(genericMethod.asToken()));
-  assertThat(superNode.getRepresentative().asToken(),is(nonGenericMethod.asToken()));
+  assertThat(superNode.getRepresentative(),is(nonGenericMethod));
+  assertThat(superNode.getRepresentative(),is(genericMethod));
 }

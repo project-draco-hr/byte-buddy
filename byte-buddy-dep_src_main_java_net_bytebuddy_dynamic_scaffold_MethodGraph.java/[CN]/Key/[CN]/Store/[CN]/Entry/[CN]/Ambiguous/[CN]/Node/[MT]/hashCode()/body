@@ -1,6 +1,5 @@
 {
   int result=key.hashCode();
-  result=31 * result + declaringType.hashCode();
-  result=31 * result + methodToken.hashCode();
+  result=31 * result + methodDescription.hashCode();
   return result;
 }
