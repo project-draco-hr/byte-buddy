@@ -1,4 +1,3 @@
 Entry<W> left
 Entry<W> right
-Harmonizer<W> harmonizer
 Merger merger

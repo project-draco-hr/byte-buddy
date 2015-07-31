@@ -1,3 +1,2 @@
 Store<V> keyStore
-Harmonizer<V> factory
 Merger merger

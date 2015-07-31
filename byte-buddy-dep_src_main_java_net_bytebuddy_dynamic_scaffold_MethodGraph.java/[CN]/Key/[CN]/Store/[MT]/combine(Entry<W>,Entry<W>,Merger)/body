@@ -11,6 +11,6 @@
     return right;
   }
  else {
-    return Entry.Ambiguous.of(left.getKey().combineWith(right.getKey(),harmonizer),leftMethod,rightMethod,merger);
+    return Entry.Ambiguous.of(left.getKey().combineWith(right.getKey()),leftMethod,rightMethod,merger);
   }
 }

@@ -1,4 +1,4 @@
 {
   MethodDescription.Token methodToken=methodDescription.asToken();
-  return new Harmonized<Q>(methodDescription.getInternalName(),Collections.singletonMap(factory.wrap(methodToken),Collections.singleton(methodToken)));
+  return new Harmonized<Q>(methodDescription.getInternalName(),Collections.singletonMap(harmonizer.wrap(methodToken),Collections.singleton(methodToken)));
 }

@@ -1,2 +1,2 @@
 MethodDescription.InDefinedShape methodDescription
-Harmonizer<V> factory
+Harmonizer<V> harmonizer

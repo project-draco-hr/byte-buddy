@@ -1,7 +1,7 @@
 {
-  Harmonized<V> key=Harmonized.of(methodDescription,factory);
+  Harmonized<V> key=Harmonized.of(methodDescription,harmonizer);
   Entry<V> currentEntry=entries.get(key);
-  Entry<V> extendedEntry=(currentEntry == null ? new Entry.Initial<V>(key) : currentEntry).extendWith(methodDescription,factory,merger);
+  Entry<V> extendedEntry=(currentEntry == null ? new Entry.Initial<V>(key) : currentEntry).extendWith(methodDescription,harmonizer,merger);
   LinkedHashMap<Harmonized<V>,Entry<V>> entries=new LinkedHashMap<Harmonized<V>,Entry<V>>(this.entries);
   entries.remove(key);
   entries.put(extendedEntry.getKey(),extendedEntry);
