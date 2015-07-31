@@ -1,7 +1,7 @@
 {
   Store<V> combinedStore=this;
   for (  Entry<V> entry : keyStore.entries.values()) {
-    combinedStore=combinedStore.inject(entry);
+    combinedStore=combinedStore.combineWith(entry,factory,merger);
   }
   return combinedStore;
 }

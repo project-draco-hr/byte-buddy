@@ -1,3 +1,3 @@
 {
-  throw new IllegalStateException("Cannot extract key without a registered method: " + this);
+  throw new IllegalStateException("Cannot extract key from initial entry:" + this);
 }

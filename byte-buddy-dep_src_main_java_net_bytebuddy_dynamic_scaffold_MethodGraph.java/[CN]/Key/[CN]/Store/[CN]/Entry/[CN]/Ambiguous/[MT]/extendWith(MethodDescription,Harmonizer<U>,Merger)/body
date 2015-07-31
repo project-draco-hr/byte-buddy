@@ -1,5 +1,5 @@
 {
-  Harmonized<U> key=this.key.expandWith(methodDescription.asDefined(),harmonizer);
+  Harmonized<U> key=this.key.extend(methodDescription.asDefined(),harmonizer);
   if (methodDescription.getDeclaringType().equals(this.methodDescription.getDeclaringType())) {
     if (this.methodDescription.isBridge() ^ methodDescription.isBridge()) {
       return this.methodDescription.isBridge() ? new ForMethod<U>(key,methodDescription,false) : new Ambiguous<U>(key,this.methodDescription);
