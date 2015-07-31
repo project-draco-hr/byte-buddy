@@ -7,7 +7,7 @@
   if (leftType.isAssignableTo(rightType)) {
     return left;
   }
- else   if (leftType.isAssignableTo(rightType)) {
+ else   if (rightType.isAssignableTo(leftType)) {
     return right;
   }
  else {
