@@ -1,0 +1,3 @@
+{
+  return "SubclassImplementationTarget{" + "superConstructors=" + superConstructors + ", originTypeIdentifier="+ originTypeIdentifier+ ", instrumentedType="+ instrumentedType+ ", methodGraph="+ methodGraph+ '}';
+}
