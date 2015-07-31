@@ -1,4 +1,3 @@
 {
-  MethodGraph.Node methodNode=methodGraph.getSuperGraph().locate(methodToken);
-  return methodNode.getSort().isUnique() ? Implementation.SpecialMethodInvocation.Simple.of(methodNode.getRepresentative(),instrumentedType.getSuperType().asRawType()) : Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
+  return methodToken.getInternalName().equals(MethodDescription.CONSTRUCTOR_INTERNAL_NAME) ? invokeConstructor(methodToken) : invokeMethod(methodToken);
 }
