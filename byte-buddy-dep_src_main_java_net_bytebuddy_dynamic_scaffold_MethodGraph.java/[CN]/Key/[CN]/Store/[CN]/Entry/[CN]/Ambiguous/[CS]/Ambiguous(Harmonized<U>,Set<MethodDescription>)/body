@@ -1,0 +1,4 @@
+{
+  this.key=key;
+  this.methodDescriptions=methodDescriptions;
+}

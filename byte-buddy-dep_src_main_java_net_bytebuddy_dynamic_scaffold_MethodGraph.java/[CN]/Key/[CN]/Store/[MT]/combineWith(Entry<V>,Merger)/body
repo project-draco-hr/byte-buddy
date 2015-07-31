@@ -1,7 +1,0 @@
-{
-  LinkedHashMap<Harmonized<V>,Entry<V>> entries=new LinkedHashMap<Harmonized<V>,Entry<V>>(this.entries);
-  Entry<V> previousEntry=entries.remove(entry.getKey());
-  Entry<V> injectedEntry=previousEntry == null ? entry : combine(previousEntry,entry,merger);
-  entries.put(injectedEntry.getKey(),injectedEntry);
-  return new Store<V>(entries);
-}

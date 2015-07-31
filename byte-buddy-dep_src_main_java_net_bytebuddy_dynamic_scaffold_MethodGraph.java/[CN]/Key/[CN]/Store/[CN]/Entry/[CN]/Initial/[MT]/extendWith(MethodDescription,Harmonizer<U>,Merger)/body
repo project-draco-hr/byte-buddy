@@ -1,3 +1,0 @@
-{
-  return new ForMethod<U>(key.extend(methodDescription.asDefined(),harmonizer),methodDescription,false);
-}

@@ -1,0 +1,22 @@
+{
+  Set<MethodDescription> leftMethods=left.getCandidates(), rightMethods=right.getCandidates();
+  Set<MethodDescription> combined=new HashSet<MethodDescription>(leftMethods.size() + rightMethods.size());
+  combined.addAll(leftMethods);
+  combined.addAll(rightMethods);
+  for (  MethodDescription leftMethod : leftMethods) {
+    TypeDescription leftType=leftMethod.getDeclaringType().asRawType();
+    for (    MethodDescription rightMethod : rightMethods) {
+      TypeDescription rightType=rightMethod.getDeclaringType().asRawType();
+      if (leftType.isAssignableTo(rightType)) {
+        combined.remove(rightMethod);
+        break;
+      }
+ else       if (leftType.isAssignableFrom(rightType)) {
+        combined.remove(leftMethod);
+        break;
+      }
+    }
+  }
+  Key.Harmonized<W> key=left.getKey().combineWith(right.getKey());
+  return combined.size() == 1 ? new Entry.Resolved<W>(key,combined.iterator().next(),false) : new Entry.Ambiguous<W>(key,combined);
+}

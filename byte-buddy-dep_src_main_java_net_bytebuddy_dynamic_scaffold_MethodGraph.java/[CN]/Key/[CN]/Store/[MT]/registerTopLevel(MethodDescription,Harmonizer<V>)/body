@@ -1,0 +1,8 @@
+{
+  Harmonized<V> key=Harmonized.of(methodDescription,harmonizer);
+  LinkedHashMap<Harmonized<V>,Entry<V>> entries=new LinkedHashMap<Harmonized<V>,Entry<V>>(this.entries);
+  Entry<V> currentEntry=entries.remove(key);
+  Entry<V> extendedEntry=(currentEntry == null ? new Entry.Initial<V>(key) : currentEntry).extendBy(methodDescription,harmonizer);
+  entries.put(extendedEntry.getKey(),extendedEntry);
+  return new Store<V>(entries);
+}

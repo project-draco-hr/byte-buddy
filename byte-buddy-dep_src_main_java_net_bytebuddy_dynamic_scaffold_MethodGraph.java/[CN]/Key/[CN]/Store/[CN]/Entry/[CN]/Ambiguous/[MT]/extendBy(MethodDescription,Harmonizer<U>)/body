@@ -1,0 +1,26 @@
+{
+  Harmonized<U> key=this.key.extend(methodDescription.asDefined(),harmonizer);
+  Set<MethodDescription> methodDescriptions=new HashSet<MethodDescription>(this.methodDescriptions.size() + 1);
+  GenericTypeDescription declaringType=methodDescription.getDeclaringType();
+  boolean bridge=methodDescription.isBridge();
+  for (  MethodDescription extendedMethod : this.methodDescriptions) {
+    if (extendedMethod.getDeclaringType().equals(declaringType)) {
+      if (extendedMethod.isBridge() ^ bridge) {
+        methodDescriptions.add(bridge ? extendedMethod : methodDescription);
+      }
+ else {
+        methodDescriptions.add(methodDescription);
+        methodDescriptions.add(extendedMethod);
+      }
+    }
+  }
+  if (methodDescriptions.isEmpty()) {
+    return new Resolved<U>(key,methodDescription,bridge);
+  }
+ else   if (methodDescriptions.size() == 1) {
+    return new Resolved<U>(key,methodDescriptions.iterator().next(),false);
+  }
+ else {
+    return new Ambiguous<U>(key,methodDescriptions);
+  }
+}
