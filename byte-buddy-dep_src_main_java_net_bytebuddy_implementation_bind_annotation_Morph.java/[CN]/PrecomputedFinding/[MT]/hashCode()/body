@@ -1,3 +1,0 @@
-{
-  return typeDescription.hashCode() + 31 * Binder.this.hashCode();
-}

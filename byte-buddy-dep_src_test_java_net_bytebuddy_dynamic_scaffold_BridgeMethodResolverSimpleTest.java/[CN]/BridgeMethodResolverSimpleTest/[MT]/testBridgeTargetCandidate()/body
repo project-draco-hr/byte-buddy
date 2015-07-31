@@ -1,4 +1,0 @@
-{
-  assertThat(new BridgeMethodResolver.Simple.BridgeTarget.Candidate(methodDescription).isResolved(),is(false));
-  assertThat(new BridgeMethodResolver.Simple.BridgeTarget.Candidate(methodDescription).extract(),is(methodDescription));
-}

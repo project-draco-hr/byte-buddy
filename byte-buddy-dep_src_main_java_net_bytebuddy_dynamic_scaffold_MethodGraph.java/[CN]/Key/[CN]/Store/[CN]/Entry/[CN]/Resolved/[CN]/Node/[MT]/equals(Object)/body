@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   Node node=(Node)other;
-  return madeVisible == node.madeVisible && key.equals(node.key) && methodDescription.equals(node.methodDescription);
+  return visibility == node.visibility && key.equals(node.key) && methodDescription.equals(node.methodDescription);
 }

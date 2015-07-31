@@ -1,3 +1,0 @@
-{
-  return methodChain.get(MOST_SPECIFIC).getTypeVariables();
-}

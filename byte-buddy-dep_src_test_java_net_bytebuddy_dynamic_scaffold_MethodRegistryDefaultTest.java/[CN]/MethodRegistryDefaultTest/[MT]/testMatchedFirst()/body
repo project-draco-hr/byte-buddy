@@ -1,7 +1,7 @@
 {
   when(resolvedMethodFilter.matches(instrumentedMethod)).thenReturn(true);
   when(firstFilter.matches(instrumentedMethod)).thenReturn(true);
-  MethodRegistry.Prepared methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory).append(secondMatcher,secondHandler,secondFactory).prepare(firstType,methodLookupEngine,methodFilter);
+  MethodRegistry.Prepared methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory).append(secondMatcher,secondHandler,secondFactory).prepare(firstType,methodGraphCompiler,methodFilter);
   assertThat(methodRegistry.getInstrumentedType(),is(typeDescription));
   assertThat(methodRegistry.getInstrumentedMethods(),is((MethodList)new MethodList.Explicit(Collections.singletonList(instrumentedMethod))));
   assertThat(methodRegistry.getTypeInitializer(),is(typeInitializer));

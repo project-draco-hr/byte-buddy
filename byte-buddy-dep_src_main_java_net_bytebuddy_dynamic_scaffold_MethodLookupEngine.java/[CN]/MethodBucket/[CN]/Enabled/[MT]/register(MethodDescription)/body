@@ -1,6 +1,0 @@
-{
-  methodDeclarations.get(methodDescription.getDeclaringType().asRawType()).add(methodDescription.asToken());
-  if (methodDescription.isDefaultMethod()) {
-    defaultMethods.get(methodDescription.getDeclaringType().asRawType()).add(methodDescription);
-  }
-}

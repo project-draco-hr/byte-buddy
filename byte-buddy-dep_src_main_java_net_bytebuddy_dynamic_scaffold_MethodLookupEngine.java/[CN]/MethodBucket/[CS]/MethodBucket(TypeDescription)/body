@@ -1,8 +1,0 @@
-{
-  this.typeOfInterest=typeOfInterest;
-  classMethods=new HashMap<MethodDescription.Token,MethodDescription>();
-  interfaceMethods=new HashMap<MethodDescription.Token,MethodDescription>();
-  processedTypes=new HashSet<TypeDescription>();
-  virtualMethodMatcher=isMethod().<MethodDescription>and(not(isPrivate().<MethodDescription>or(isStatic()).<MethodDescription>or(isPackagePrivate().and(not(isVisibleTo(typeOfInterest))))));
-  pushClass(typeOfInterest,any());
-}

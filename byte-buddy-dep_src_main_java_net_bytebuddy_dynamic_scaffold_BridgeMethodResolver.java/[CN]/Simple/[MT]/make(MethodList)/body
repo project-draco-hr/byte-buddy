@@ -1,3 +1,0 @@
-{
-  return Simple.of(methodList,conflictHandler);
-}

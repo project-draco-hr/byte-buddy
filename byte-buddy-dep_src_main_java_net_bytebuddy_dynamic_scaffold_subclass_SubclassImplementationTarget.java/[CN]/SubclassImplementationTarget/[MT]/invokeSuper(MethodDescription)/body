@@ -1,3 +1,0 @@
-{
-  return Implementation.SpecialMethodInvocation.Simple.of(methodDescription,typeDescription.getSuperType().asRawType());
-}

@@ -1,8 +1,0 @@
-{
-  MethodList<?> bridgeMethods=methodList.filter(isBridge());
-  HashMap<MethodDescription.Token,BridgeTarget> bridges=new HashMap<MethodDescription.Token,BridgeTarget>(bridgeMethods.size());
-  for (  MethodDescription bridgeMethod : bridgeMethods) {
-    bridges.put(bridgeMethod.asToken(),findBridgeTargetFor(bridgeMethod,conflictHandler));
-  }
-  return new Simple(bridges);
-}

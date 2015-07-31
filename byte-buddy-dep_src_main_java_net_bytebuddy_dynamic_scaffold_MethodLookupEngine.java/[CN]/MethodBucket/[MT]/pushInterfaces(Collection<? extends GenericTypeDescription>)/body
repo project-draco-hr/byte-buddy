@@ -1,3 +1,0 @@
-{
-  pushInterfaces(typeDescriptions,DefaultMethodLookup.Disabled.INSTANCE);
-}

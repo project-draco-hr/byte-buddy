@@ -1,2 +1,0 @@
-MethodLookupEngine.Finding finding
-List<? extends MethodDescription> instrumentedMethods

@@ -1,6 +1,6 @@
 {
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(MethodClassConvergence.Inner.class);
-  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(typeDescription);
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 2));
   MethodDescription methodDescription=typeDescription.getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly();
   MethodDescription genericMethod=typeDescription.getSuperType().getDeclaredMethods().filter(isMethod().and(definedMethod(takesArguments(Object.class)))).getOnly();
@@ -9,13 +9,13 @@
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(methodNode,is(methodGraph.locate(genericMethod.asDefined().asToken())));
   assertThat(methodNode,is(methodGraph.locate(nonGenericMethod.asDefined().asToken())));
-  assertThat(methodNode.isMadeVisible(),is(false));
+  assertThat(methodNode.isMadeVisible(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(methodNode.getBridges().size(),is(1));
   assertThat(methodNode.getRepresentative(),is(methodDescription));
   MethodGraph superGraph=methodGraph.getSuperGraph();
   MethodGraph.Node superNode=superGraph.locate(methodDescription.asToken());
   assertThat(superNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
-  assertThat(superNode.isMadeVisible(),is(false));
+  assertThat(superNode.isMadeVisible(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(superNode.getBridges().size(),is(1));
   assertThat(superNode.getRepresentative(),is(nonGenericMethod));
   assertThat(superNode.getRepresentative(),is(genericMethod));

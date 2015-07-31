@@ -1,0 +1,9 @@
+{
+  List<Node> nodes=new ArrayList<Node>(size());
+  for (  Node node : this.nodes) {
+    if (matcher.matches(node.getRepresentative())) {
+      nodes.add(node);
+    }
+  }
+  return new NodeList(nodes);
+}

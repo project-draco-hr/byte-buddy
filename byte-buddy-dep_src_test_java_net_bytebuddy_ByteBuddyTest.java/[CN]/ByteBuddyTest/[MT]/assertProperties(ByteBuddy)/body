@@ -4,10 +4,9 @@
   assertThat(byteBuddy.getDefaultFieldAttributeAppenderFactory(),is(fieldAttributeAppenderFactory));
   assertThat(byteBuddy.getDefaultMethodAttributeAppenderFactory(),is(methodAttributeAppenderFactory));
   assertThat(byteBuddy.getIgnoredMethods(),is((ElementMatcher)methodMatcher));
-  assertThat(byteBuddy.getBridgeMethodResolverFactory(),is(bridgeMethodResolverFactory));
   assertThat(byteBuddy.getInterfaceTypes().size(),is(1));
   assertThat(byteBuddy.getInterfaceTypes(),hasItem(typeDescription));
-  assertThat(byteBuddy.getMethodLookupEngineFactory(),is(methodLookupEngineFactory));
+  assertThat(byteBuddy.getMethodGraphCompiler(),is(methodGraphCompiler));
   assertThat(byteBuddy.getModifiers().isDefined(),is(true));
   assertThat(byteBuddy.getModifiers().resolve(0),is(MASK));
   assertThat(byteBuddy.getNamingStrategy(),is(namingStrategy));

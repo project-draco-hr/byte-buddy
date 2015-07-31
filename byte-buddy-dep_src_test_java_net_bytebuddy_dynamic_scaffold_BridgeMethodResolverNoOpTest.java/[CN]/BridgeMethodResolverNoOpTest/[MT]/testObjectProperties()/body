@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(BridgeMethodResolver.NoOp.class).apply();
-}

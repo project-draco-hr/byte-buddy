@@ -1,5 +1,0 @@
-{
-  MethodDescription overriddenClassMethod=MethodLookupEngine.OverriddenClassMethod.of(first,second);
-  assertThat(overriddenClassMethod.getDeclaringType(),is(firstType));
-  assertThat(overriddenClassMethod.getModifiers(),is(MODIFIERS));
-}

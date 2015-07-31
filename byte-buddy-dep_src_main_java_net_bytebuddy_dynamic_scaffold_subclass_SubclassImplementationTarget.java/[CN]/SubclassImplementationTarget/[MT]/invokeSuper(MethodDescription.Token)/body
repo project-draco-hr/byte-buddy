@@ -1,4 +1,4 @@
 {
-  MethodDescription methodDescription=superConstructors.get(methodToken);
-  return methodDescription == null ? super.invokeSuper(methodToken) : invokeSuper(methodDescription);
+  MethodGraph.Node methodNode=methodGraph.getSuperGraph().locate(methodToken);
+  return methodNode.getSort().isUnique() ? Implementation.SpecialMethodInvocation.Simple.of(methodNode.getRepresentative(),instrumentedType.getSuperType().asRawType()) : Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
 }

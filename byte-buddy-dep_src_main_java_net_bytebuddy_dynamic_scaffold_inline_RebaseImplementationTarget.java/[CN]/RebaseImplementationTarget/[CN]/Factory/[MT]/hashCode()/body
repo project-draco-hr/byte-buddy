@@ -1,5 +1,0 @@
-{
-  int result=bridgeMethodResolverFactory.hashCode();
-  result=31 * result + methodRebaseResolver.hashCode();
-  return result;
-}

@@ -1,4 +1,0 @@
-{
-  methodLookupEngine=MethodLookupEngine.Default.Factory.INSTANCE.make(true);
-  classLoader=new PrecompiledTypeClassLoader(getClass().getClassLoader());
-}

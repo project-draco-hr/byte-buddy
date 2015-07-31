@@ -1,6 +1,0 @@
-{
-  List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(2);
-  methodDescriptions.addAll(new MethodList.ForLoadedType(Runnable.class));
-  methodDescriptions.addAll(new MethodList.ForLoadedType(Callable.class));
-  methodList=new MethodList.Explicit<MethodDescription>(methodDescriptions);
-}

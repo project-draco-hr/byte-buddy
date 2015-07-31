@@ -1,20 +1,4 @@
 {
-  ObjectPropertyAssertion.of(SubclassImplementationTarget.class).refine(new ObjectPropertyAssertion.Refinement<MethodLookupEngine.Finding>(){
-    @Override public void apply(    MethodLookupEngine.Finding mock){
-      when(mock.getInvokableMethods()).thenReturn((MethodList)new MethodList.Empty());
-      when(mock.getInvokableDefaultMethods()).thenReturn(Collections.<TypeDescription,Set<MethodDescription>>emptyMap());
-      TypeDescription typeDescription=mock(TypeDescription.class);
-      when(mock.getTypeDescription()).thenReturn(typeDescription);
-      when(typeDescription.asRawType()).thenReturn(typeDescription);
-      when(typeDescription.getSuperType()).thenReturn(typeDescription);
-      when(typeDescription.getDeclaredMethods()).thenReturn(new MethodList.Empty());
-    }
-  }
-).refine(new ObjectPropertyAssertion.Refinement<BridgeMethodResolver.Factory>(){
-    @Override public void apply(    BridgeMethodResolver.Factory mock){
-      when(mock.make(any(MethodList.class))).thenReturn(mock(BridgeMethodResolver.class));
-    }
-  }
-).apply();
+  ObjectPropertyAssertion.of(SubclassImplementationTarget.class).apply();
   ObjectPropertyAssertion.of(SubclassImplementationTarget.OriginTypeIdentifier.class).apply();
 }

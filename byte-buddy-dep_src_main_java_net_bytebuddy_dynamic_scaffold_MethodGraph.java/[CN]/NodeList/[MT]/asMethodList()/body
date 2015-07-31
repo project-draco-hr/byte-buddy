@@ -1,0 +1,7 @@
+{
+  List<MethodDescription> methodDescriptions=new ArrayList<MethodDescription>(size());
+  for (  Node node : nodes) {
+    methodDescriptions.add(node.getRepresentative());
+  }
+  return new MethodList.Explicit<MethodDescription>(methodDescriptions);
+}

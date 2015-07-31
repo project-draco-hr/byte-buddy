@@ -1,4 +1,0 @@
-{
-  defaultMethods.put(typeDescription,new HashSet<MethodDescription>());
-  methodDeclarations.put(typeDescription,new HashSet<MethodDescription.Token>());
-}

@@ -1,11 +1,6 @@
 {
   when(instrumentedType.asRawType()).thenReturn(instrumentedType);
   when(instrumentedType.getInternalName()).thenReturn(BAZ);
-  when(bridgeMethodResolverFactory.make(any(MethodList.class))).thenReturn(bridgeMethodResolver);
-  when(bridgeMethodResolver.resolve(invokableMethod)).thenReturn(invokableMethod);
-  when(finding.getTypeDescription()).thenReturn(instrumentedType);
-  when(finding.getInvokableMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(invokableMethod)));
-  when(finding.getInvokableDefaultMethods()).thenReturn(Collections.singletonMap(defaultMethodDeclaringType,Collections.<MethodDescription>singleton(defaultMethod)));
   when(methodDeclaringType.asRawType()).thenReturn(methodDeclaringType);
   when(invokableMethod.getDeclaringType()).thenReturn(methodDeclaringType);
   when(invokableMethod.getReturnType()).thenReturn(returnType);

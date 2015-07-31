@@ -1,6 +1,0 @@
-{
-  super(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,interfaceTypes,ignoredMethods,bridgeMethodResolverFactory,classVisitorWrapperChain,methodRegistry,modifiers,typeAttributeAppender,methodLookupEngineFactory,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory);
-  this.methodMatcher=methodMatcher;
-  this.handler=handler;
-  this.attributeAppenderFactory=attributeAppenderFactory;
-}

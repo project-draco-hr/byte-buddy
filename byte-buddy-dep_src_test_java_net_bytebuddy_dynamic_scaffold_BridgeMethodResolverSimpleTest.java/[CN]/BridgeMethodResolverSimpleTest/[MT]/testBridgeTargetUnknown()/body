@@ -1,4 +1,0 @@
-{
-  assertThat(BridgeMethodResolver.Simple.BridgeTarget.Unknown.INSTANCE.isResolved(),is(true));
-  BridgeMethodResolver.Simple.BridgeTarget.Unknown.INSTANCE.extract();
-}

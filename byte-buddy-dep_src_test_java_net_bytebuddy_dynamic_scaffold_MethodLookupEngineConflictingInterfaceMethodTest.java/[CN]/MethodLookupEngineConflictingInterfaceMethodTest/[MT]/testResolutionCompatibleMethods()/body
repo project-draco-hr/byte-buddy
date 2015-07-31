@@ -1,8 +1,0 @@
-{
-  when(firstType.isAssignableFrom(thirdType)).thenReturn(true);
-  MethodDescription firstIteration=MethodLookupEngine.ConflictingInterfaceMethod.of(typeDescription,first,second);
-  MethodDescription secondIteration=MethodLookupEngine.ConflictingInterfaceMethod.of(typeDescription,firstIteration,third);
-  List<MethodDescription> methodDescriptions=(List<MethodDescription>)knownMethods.get(secondIteration);
-  assertThat(methodDescriptions.size(),is(2));
-  assertThat(methodDescriptions,hasItems(second,third));
-}

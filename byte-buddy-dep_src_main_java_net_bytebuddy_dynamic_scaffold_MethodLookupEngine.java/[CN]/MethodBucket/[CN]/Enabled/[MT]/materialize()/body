@@ -1,4 +1,0 @@
-{
-  defaultMethods.keySet().retainAll(declaredInterfaceTypes);
-  return Collections.unmodifiableMap(defaultMethods);
-}

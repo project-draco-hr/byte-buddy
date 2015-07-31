@@ -1,12 +1,12 @@
 {
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(ReturnTypeClassBase.Inner.class);
-  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(typeDescription);
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 2));
   MethodGraph.Node methodNode=methodGraph.locate(typeDescription.getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly().asToken());
   MethodDescription.Token bridgeToken=typeDescription.getSuperType().getDeclaredMethods().filter(isMethod()).getOnly().asToken();
   assertThat(methodNode,is(methodGraph.locate(bridgeToken)));
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
-  assertThat(methodNode.isMadeVisible(),is(false));
+  assertThat(methodNode.isMadeVisible(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(methodNode.getBridges().size(),is(1));
   assertThat(methodNode.getBridges().contains(bridgeToken),is(true));
 }

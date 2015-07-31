@@ -1,12 +1,12 @@
 {
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(AmbiguousInterfaceBase.ClassTarget.class);
-  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(typeDescription);
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 2));
   MethodDescription first=typeDescription.getInterfaces().filter(rawType(InterfaceBase.class)).getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
   MethodDescription second=typeDescription.getInterfaces().filter(rawType(AmbiguousInterfaceBase.class)).getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
   MethodGraph.Node methodNode=methodGraph.locate(first.asToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
-  assertThat(methodNode.isMadeVisible(),is(false));
+  assertThat(methodNode.isMadeVisible(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(methodNode.getBridges().size(),is(0));
   assertThat(methodNode.getRepresentative(),is(first));
   assertThat(methodNode.getRepresentative(),not(second));

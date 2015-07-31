@@ -1,0 +1,4 @@
+{
+  MethodGraph.Node node=methodGraph.locate(methodToken);
+  return node.getSort().isUnique() ? invokeSuper(node.getRepresentative()) : Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
+}

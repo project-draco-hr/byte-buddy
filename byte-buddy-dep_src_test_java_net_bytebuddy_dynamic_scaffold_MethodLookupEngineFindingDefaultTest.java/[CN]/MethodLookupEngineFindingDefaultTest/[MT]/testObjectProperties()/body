@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(MethodLookupEngine.Finding.Default.class).apply();
-}

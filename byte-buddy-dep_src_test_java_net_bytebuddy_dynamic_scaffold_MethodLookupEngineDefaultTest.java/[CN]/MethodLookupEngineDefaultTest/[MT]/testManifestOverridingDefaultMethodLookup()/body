@@ -1,9 +1,0 @@
-{
-  TypeDescription singleDefaultMethodManifestOverridingClass=findType(SINGLE_DEFAULT_METHOD_MANIFEST_OVERRIDING_CLASS);
-  TypeDescription singleDefaultMethodManifestOverridingInterface=findType(SINGLE_DEFAULT_METHOD_MANIFEST_OVERRIDING_INTERFACE);
-  MethodLookupEngine.Finding finding=methodLookupEngine.process(singleDefaultMethodManifestOverridingClass);
-  assertThat(finding.getTypeDescription(),is(singleDefaultMethodManifestOverridingClass));
-  assertThat(finding.getInvokableDefaultMethods().size(),is(1));
-  assertThat(finding.getInvokableDefaultMethods().get(singleDefaultMethodManifestOverridingInterface).size(),is(1));
-  assertThat(finding.getInvokableDefaultMethods().get(singleDefaultMethodManifestOverridingInterface),hasItem(singleDefaultMethodManifestOverridingInterface.getDeclaredMethods().getOnly()));
-}

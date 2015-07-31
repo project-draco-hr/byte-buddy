@@ -1,3 +1,0 @@
-{
-  return new TypeDescription.ForLoadedType(Class.forName(name,true,classLoader));
-}

@@ -1,3 +1,0 @@
-{
-  return methodDescriptions.get(ANY).getName();
-}

@@ -1,0 +1,18 @@
+{
+  this.classFileVersion=classFileVersion;
+  this.namingStrategy=namingStrategy;
+  this.auxiliaryTypeNamingStrategy=auxiliaryTypeNamingStrategy;
+  this.targetType=targetType;
+  this.interfaceTypes=interfaceTypes;
+  this.modifiers=modifiers;
+  this.attributeAppender=attributeAppender;
+  this.ignoredMethods=ignoredMethods;
+  this.classVisitorWrapperChain=classVisitorWrapperChain;
+  this.fieldRegistry=fieldRegistry;
+  this.methodRegistry=methodRegistry;
+  this.methodGraphCompiler=methodGraphCompiler;
+  this.defaultFieldAttributeAppenderFactory=defaultFieldAttributeAppenderFactory;
+  this.defaultMethodAttributeAppenderFactory=defaultMethodAttributeAppenderFactory;
+  this.fieldTokens=fieldTokens;
+  this.methodTokens=methodTokens;
+}

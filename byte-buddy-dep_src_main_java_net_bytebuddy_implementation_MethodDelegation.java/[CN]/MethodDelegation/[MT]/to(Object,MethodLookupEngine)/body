@@ -1,3 +1,0 @@
-{
-  return new MethodDelegation(new ImplementationDelegate.ForStaticField(nonNull(delegate)),defaultParameterBinders(),defaultDefaultsProvider(),TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,defaultAmbiguityResolver(),Assigner.DEFAULT,methodLookupEngine.process(new TypeDescription.ForLoadedType(delegate.getClass())).getInvokableMethods().filter(not(isStatic().or(isPrivate()).or(isConstructor()))));
-}

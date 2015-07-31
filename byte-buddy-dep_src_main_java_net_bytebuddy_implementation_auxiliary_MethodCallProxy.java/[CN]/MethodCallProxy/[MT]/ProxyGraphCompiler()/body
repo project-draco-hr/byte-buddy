@@ -1,0 +1,3 @@
+{
+  methodGraph=MethodGraph.Simple.of(join(new MethodList.ForLoadedType(Runnable.class),new MethodList.ForLoadedType(Callable.class)));
+}

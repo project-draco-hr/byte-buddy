@@ -1,0 +1,4 @@
+{
+  super(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,interfaceTypes,ignoredMethods,classVisitorWrapperChain,methodRegistry,modifiers,typeAttributeAppender,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory);
+  this.methodMatcher=methodMatcher;
+}

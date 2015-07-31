@@ -1,0 +1,3 @@
+{
+  return new NodeList(new ArrayList<Node>(nodes.values()));
+}

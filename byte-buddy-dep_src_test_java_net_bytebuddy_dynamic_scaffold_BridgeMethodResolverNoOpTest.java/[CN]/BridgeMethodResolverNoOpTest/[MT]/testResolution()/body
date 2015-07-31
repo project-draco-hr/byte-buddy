@@ -1,3 +1,0 @@
-{
-  assertThat(BridgeMethodResolver.NoOp.INSTANCE.make(new MethodList.Empty()).resolve(methodDescription),is(methodDescription));
-}

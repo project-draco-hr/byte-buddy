@@ -1,10 +1,2 @@
 {
-  MethodDescription sourceMethod=mock(MethodDescription.class);
-  Assigner assigner=mock(Assigner.class);
-  MethodLookupEngine.Factory factory=mock(MethodLookupEngine.Factory.class);
-  Pipe.Binder.Redirection redirection=new Pipe.Binder.Redirection(targetMethodType,sourceMethod,assigner,false,factory);
-  assertThat(redirection.hashCode(),is(new Pipe.Binder.Redirection(targetMethodType,sourceMethod,assigner,false,factory).hashCode()));
-  assertThat(redirection,is(new Pipe.Binder.Redirection(targetMethodType,sourceMethod,assigner,false,factory)));
-  assertThat(redirection.hashCode(),not(is(new Pipe.Binder.Redirection(targetMethodType,sourceMethod,assigner,true,factory).hashCode())));
-  assertThat(redirection,not(is(new Pipe.Binder.Redirection(targetMethodType,sourceMethod,assigner,true,factory))));
 }

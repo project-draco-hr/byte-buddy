@@ -1,3 +1,0 @@
-{
-  return "MethodLookupEngine.Default.MethodBucket{" + "typeOfInterest=" + typeOfInterest + ", classMethods="+ classMethods+ ", interfaceMethods="+ interfaceMethods+ ", processedTypes="+ processedTypes+ ", virtualMethodMatcher="+ virtualMethodMatcher+ '}';
-}
