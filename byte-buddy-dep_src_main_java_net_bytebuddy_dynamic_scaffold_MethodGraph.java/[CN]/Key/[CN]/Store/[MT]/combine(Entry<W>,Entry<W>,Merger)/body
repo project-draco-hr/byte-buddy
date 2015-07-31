@@ -1,5 +1,5 @@
 {
-  Set<MethodDescription> leftMethods=left.getCandidates(), rightMethods=right.getCandidates();
+  MethodDescription leftMethod=left.getRepresentative(), rightMethod=right.getRepresentative();
   if (leftMethod.getDeclaringType().equals(rightMethod.getDeclaringType())) {
     return left;
   }
@@ -11,6 +11,6 @@
     return right;
   }
  else {
-    return Entry.Ambiguous.of(left.getKey().combineWith(right.getKey()),leftMethod,rightMethod);
+    return Entry.Ambiguous.of(left.getKey().combineWith(right.getKey()),leftMethod,rightMethod,merger);
   }
 }

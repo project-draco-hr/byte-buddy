@@ -1,3 +1,14 @@
 {
-  return null;
+  Harmonized<U> key=this.key.extend(methodDescription.asDefined(),harmonizer);
+  if (methodDescription.getDeclaringType().equals(this.methodDescription.getDeclaringType())) {
+    if (this.methodDescription.isBridge() ^ methodDescription.isBridge()) {
+      return this.methodDescription.isBridge() ? new ForMethod<U>(key,methodDescription,false) : new Ambiguous<U>(key,this.methodDescription);
+    }
+ else {
+      return new Ambiguous<U>(key,merger.merge(this.methodDescription,methodDescription));
+    }
+  }
+ else {
+    return methodDescription.isBridge() ? new Ambiguous<U>(key,this.methodDescription) : new ForMethod<U>(key,methodDescription,false);
+  }
 }

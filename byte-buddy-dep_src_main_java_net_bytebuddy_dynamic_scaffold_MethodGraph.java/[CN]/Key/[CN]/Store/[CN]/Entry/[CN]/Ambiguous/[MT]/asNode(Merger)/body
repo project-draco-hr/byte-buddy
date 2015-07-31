@@ -1,8 +1,0 @@
-{
-  Iterator<MethodDescription> iterator=methodDescriptions.iterator();
-  MethodDescription methodDescription=iterator.next();
-  while (iterator.hasNext()) {
-    methodDescription=merger.merge(methodDescription,iterator.next());
-  }
-  return new Node(key.detach(),methodDescription);
-}

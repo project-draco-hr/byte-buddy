@@ -1,3 +1,3 @@
 {
-  return "MethodGraph.Compiler.Default.Key.Store.Entry.Ambiguous{" + "key=" + key + ", methodDescriptions="+ methodDescriptions+ '}';
+  return "MethodGraph.Compiler.Default.Key.Store.Entry.Ambiguous{" + "key=" + key + ", methodDescription="+ methodDescription+ '}';
 }

@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   Ambiguous<?> ambiguous=(Ambiguous<?>)other;
-  return key.equals(ambiguous.key) && methodDescriptions.equals(ambiguous.methodDescriptions);
+  return key.equals(ambiguous.key) && methodDescription.equals(ambiguous.methodDescription);
 }
