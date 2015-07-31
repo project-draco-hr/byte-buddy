@@ -1,0 +1,3 @@
+{
+  return left.isBridge() ^ right.isBridge() ? new ForMethod<Q>(key,left.isBridge() ? right : left,false) : new Ambiguous<Q>(key,new HashSet<MethodDescription>(Arrays.asList(left,right)));
+}

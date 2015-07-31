@@ -1,0 +1,4 @@
+{
+  Set<MethodDescription> leftMethods=left.getCandidates(), rightMethods=right.getCandidates();
+  return null;
+}
