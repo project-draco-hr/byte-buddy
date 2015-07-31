@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot merge initial entry without a registered method: " + this);
-}

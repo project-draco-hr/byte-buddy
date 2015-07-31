@@ -1,3 +1,0 @@
-{
-  new MethodGraph.Compiler.Default.Key.Store.Entry.Initial(new MethodGraph.Compiler.Default.Key.Harmonized(FOO,Collections.emptyMap())).mergeWith(mock(MethodGraph.Compiler.Default.Key.Harmonized.class));
-}

@@ -1,7 +1,0 @@
-{
-  Store<V> mergedStore=this;
-  for (  Entry<V> entry : keyStore.entries.values()) {
-    mergedStore=mergedStore.inject(entry);
-  }
-  return mergedStore;
-}

@@ -1,3 +1,0 @@
-{
-  return new Ambiguous<U>(key.mergeWith(key),methodDescription);
-}

@@ -1,3 +1,0 @@
-{
-  return new Entry.ForMethod<U>(key.mergeWith(key),methodDescription,madeVisible);
-}
