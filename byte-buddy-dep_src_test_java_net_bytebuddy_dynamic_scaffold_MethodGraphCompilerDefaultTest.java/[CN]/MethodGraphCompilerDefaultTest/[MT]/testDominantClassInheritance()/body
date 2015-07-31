@@ -1,10 +1,11 @@
 {
-  TypeDescription typeDescription=new TypeDescription.ForLoadedType(MultipleInterfaceBase.ClassTarget.class);
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(AmbiguousInterfaceBase.DominantClassTarget.class);
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 2));
-  MethodDescription methodDescription=new TypeDescription.ForLoadedType(MultipleInterfaceBase.InterfaceExtension.class).getDeclaredMethods().getOnly();
+  MethodDescription methodDescription=new TypeDescription.ForLoadedType(AmbiguousInterfaceBase.DominantInterfaceIntermediate.class).getDeclaredMethods().getOnly();
   MethodGraph.Node methodNode=methodGraph.locate(methodDescription.asToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
+  assertThat(methodNode.isMadeVisible(),is(false));
   assertThat(methodNode.getBridges().size(),is(0));
   assertThat(methodNode.getRepresentative(),is(methodDescription));
 }
