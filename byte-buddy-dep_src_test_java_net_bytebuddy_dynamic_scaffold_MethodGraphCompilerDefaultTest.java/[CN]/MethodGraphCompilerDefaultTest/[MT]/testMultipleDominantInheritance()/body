@@ -8,7 +8,6 @@
   assertThat(methodNode.isMadeVisible(),is(false));
   assertThat(methodNode.getBridges().size(),is(0));
   assertThat(methodNode.getRepresentative(),is(method));
-  assertThat(methodGraph.listNodes().contains(methodNode),is(true));
   MethodGraph.Node baseNode=methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(InterfaceBase.class)).locate(method.asToken());
   assertThat(methodNode,not(is(baseNode)));
   assertThat(baseNode.getRepresentative(),is(typeDescription.getInterfaces().getOnly().getDeclaredMethods().getOnly()));

@@ -2,4 +2,13 @@
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(MethodConvergenceVisibilityBridgeTarget.class);
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 2));
+  MethodDescription genericMethod=typeDescription.getSuperType().getSuperType().getDeclaredMethods().filter(isMethod().and(definedMethod(takesArguments(Object.class)))).getOnly();
+  MethodDescription nonGenericMethod=typeDescription.getSuperType().getSuperType().getDeclaredMethods().filter(isMethod().and(definedMethod(takesArguments(Void.class)))).getOnly();
+  MethodGraph.Node methodNode=methodGraph.locate(genericMethod.asToken());
+  assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
+  assertThat(methodNode,is(methodGraph.locate(nonGenericMethod.asToken())));
+  assertThat(methodNode.isMadeVisible(),is(true));
+  assertThat(methodNode.getBridges().size(),is(1));
+  assertThat(methodNode.getBridges().contains(genericMethod.asDefined().asToken()),is(true));
+  assertThat(methodNode.getRepresentative(),is(typeDescription.getSuperType().getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly()));
 }

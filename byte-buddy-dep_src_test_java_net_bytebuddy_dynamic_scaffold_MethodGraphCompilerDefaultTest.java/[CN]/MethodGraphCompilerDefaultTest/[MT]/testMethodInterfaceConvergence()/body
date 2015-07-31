@@ -11,7 +11,8 @@
   assertThat(methodNode,is(methodGraph.locate(genericMethod.asDefined().asToken())));
   assertThat(methodNode,is(methodGraph.locate(nonGenericMethod.asDefined().asToken())));
   assertThat(methodNode.isMadeVisible(),is(false));
-  assertThat(methodNode.getBridges().size(),is(0));
+  assertThat(methodNode.getBridges().size(),is(1));
+  assertThat(methodNode.getBridges().contains(genericMethod.asDefined().asToken()),is(true));
   assertThat(methodNode.getRepresentative(),is(genericMethod));
-  assertThat(methodNode.getRepresentative(),is(nonGenericMethod));
+  assertThat(methodNode.getRepresentative(),not(nonGenericMethod));
 }
