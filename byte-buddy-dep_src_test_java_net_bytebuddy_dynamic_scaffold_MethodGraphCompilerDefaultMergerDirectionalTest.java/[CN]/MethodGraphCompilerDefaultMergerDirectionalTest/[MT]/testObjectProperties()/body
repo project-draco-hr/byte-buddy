@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Merger.Directional.class).apply();
+}

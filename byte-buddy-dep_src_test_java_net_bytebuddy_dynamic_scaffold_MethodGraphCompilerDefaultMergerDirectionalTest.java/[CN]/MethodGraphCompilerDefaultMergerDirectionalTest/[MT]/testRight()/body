@@ -1,0 +1,3 @@
+{
+  assertThat(MethodGraph.Compiler.Default.Merger.Directional.RIGHT.merge(left,right),is(right));
+}

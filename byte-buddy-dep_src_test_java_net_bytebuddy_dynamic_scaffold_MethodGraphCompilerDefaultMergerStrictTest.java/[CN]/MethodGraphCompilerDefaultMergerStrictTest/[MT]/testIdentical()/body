@@ -1,0 +1,3 @@
+{
+  assertThat(MethodGraph.Compiler.Default.Merger.Strict.INSTANCE.merge(left,left),is(left));
+}

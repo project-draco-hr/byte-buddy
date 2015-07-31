@@ -1,8 +1,0 @@
-{
-  Harmonized<V> key=Harmonized.of(methodDescription,factory);
-  Entry<V> currentEntry=entries.get(key);
-  Entry<V> expandedEntry=(currentEntry == null ? new Entry.Initial<V>(key) : currentEntry).expandWith(methodDescription,factory);
-  LinkedHashMap<Harmonized<V>,Entry<V>> entries=new LinkedHashMap<Harmonized<V>,Entry<V>>(this.entries);
-  entries.put(expandedEntry.getKey(),expandedEntry);
-  return new Store<V>(entries);
-}

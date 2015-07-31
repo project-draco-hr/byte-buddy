@@ -1,0 +1,17 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(MethodInterfaceConvergenceTarget.class);
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().make(typeDescription);
+  assertThat(methodGraph.listNodes().size(),is(1));
+  MethodDescription genericMethod=typeDescription.getInterfaces().filter(rawType(MethodInterfaceConvergenceFirstBase.class)).getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
+  MethodDescription nonGenericMethod=typeDescription.getInterfaces().filter(rawType(MethodInterfaceConvergenceSecondBase.class)).getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
+  assertThat(methodGraph.getSuperGraph().locate(genericMethod.asToken()).getSort(),is(MethodGraph.Node.Sort.UNRESOLVED));
+  assertThat(methodGraph.getSuperGraph().locate(nonGenericMethod.asToken()).getSort(),is(MethodGraph.Node.Sort.UNRESOLVED));
+  MethodGraph.Node methodNode=methodGraph.locate(genericMethod.asToken());
+  assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
+  assertThat(methodNode,is(methodGraph.locate(genericMethod.asDefined().asToken())));
+  assertThat(methodNode,is(methodGraph.locate(nonGenericMethod.asDefined().asToken())));
+  assertThat(methodNode.isMadeVisible(),is(false));
+  assertThat(methodNode.getBridges().size(),is(0));
+  assertThat(methodNode.getRepresentative().asToken(),is(genericMethod.asToken()));
+  assertThat(methodNode.getRepresentative().asToken(),is(nonGenericMethod.asToken()));
+}

@@ -1,0 +1,3 @@
+{
+  when(left.isIdenticalTo(left)).thenReturn(true);
+}
