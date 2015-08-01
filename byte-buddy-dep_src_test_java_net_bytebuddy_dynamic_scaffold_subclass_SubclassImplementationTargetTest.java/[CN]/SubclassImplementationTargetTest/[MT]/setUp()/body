@@ -1,8 +1,11 @@
 {
+  when(superGraph.locate(Mockito.any(MethodDescription.Token.class))).thenReturn(MethodGraph.Node.Illegal.INSTANCE);
+  when(superGraph.locate(invokableToken)).thenReturn(new MethodGraph.Node.Simple(invokableMethod));
   when(instrumentedType.getSuperType()).thenReturn(superType);
   when(superType.asRawType()).thenReturn(superType);
   when(superType.getInternalName()).thenReturn(BAR);
   when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InDefinedShape>(Collections.singletonList(superTypeConstructor)));
+  when(superTypeConstructor.isVisibleTo(instrumentedType)).thenReturn(true);
   when(superTypeConstructor.asToken()).thenReturn(superConstructorToken);
   when(superTypeConstructor.getInternalName()).thenReturn(QUX);
   when(superTypeConstructor.getDescriptor()).thenReturn(BAZ);
@@ -11,5 +14,7 @@
   when(superTypeConstructor.getDeclaringType()).thenReturn(superType);
   when(superTypeConstructor.getReturnType()).thenReturn(TypeDescription.VOID);
   when(superTypeConstructor.getParameters()).thenReturn(new ParameterList.Empty());
+  when(invokableToken.getInternalName()).thenReturn(FOO);
+  when(superConstructorToken.getInternalName()).thenReturn(MethodDescription.CONSTRUCTOR_INTERNAL_NAME);
   super.setUp();
 }

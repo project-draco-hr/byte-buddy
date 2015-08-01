@@ -1,5 +1,5 @@
 {
   MethodDescription.Token methodToken=mock(MethodDescription.Token.class);
-  when(methodToken.getInternalName()).thenReturn(FOO);
+  when(methodToken.getInternalName()).thenReturn(MethodDescription.CONSTRUCTOR_INTERNAL_NAME);
   assertThat(implementationTarget.invokeSuper(methodToken).isValid(),is(false));
 }

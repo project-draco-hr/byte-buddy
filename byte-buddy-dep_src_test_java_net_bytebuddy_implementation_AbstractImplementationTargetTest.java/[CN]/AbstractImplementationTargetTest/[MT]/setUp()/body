@@ -1,6 +1,12 @@
 {
   when(instrumentedType.asRawType()).thenReturn(instrumentedType);
   when(instrumentedType.getInternalName()).thenReturn(BAZ);
+  when(methodGraph.getSuperGraph()).thenReturn(superGraph);
+  when(superGraph.locate(Mockito.any(MethodDescription.Token.class))).thenReturn(MethodGraph.Node.Illegal.INSTANCE);
+  when(superGraph.locate(invokableToken)).thenReturn(new MethodGraph.Node.Simple(invokableMethod));
+  when(methodGraph.getInterfaceGraph(defaultMethodDeclaringType)).thenReturn(defaultGraph);
+  when(defaultGraph.locate(Mockito.any(MethodDescription.Token.class))).thenReturn(MethodGraph.Node.Illegal.INSTANCE);
+  when(defaultGraph.locate(defaultToken)).thenReturn(new MethodGraph.Node.Simple(defaultMethod));
   when(methodDeclaringType.asRawType()).thenReturn(methodDeclaringType);
   when(invokableMethod.getDeclaringType()).thenReturn(methodDeclaringType);
   when(invokableMethod.getReturnType()).thenReturn(returnType);
