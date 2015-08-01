@@ -1,0 +1,3 @@
+{
+  assertThat(new ParameterDescription.Token(first,Collections.singletonList(firstAnnotation),FOO,MODIFIERS).withModifiers(UPDATE,MASK).getModifiers(),is((MODIFIERS & ~MASK) | UPDATE));
+}
