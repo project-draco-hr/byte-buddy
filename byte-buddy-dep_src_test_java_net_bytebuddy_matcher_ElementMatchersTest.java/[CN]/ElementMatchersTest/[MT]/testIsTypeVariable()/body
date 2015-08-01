@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isVariable("T").matches(new TypeDescription.ForLoadedType(GenericDeclaredBy.class).getTypeVariables().getOnly()),is(true));
+  assertThat(ElementMatchers.isVariable(FOO).matches(new TypeDescription.ForLoadedType(GenericDeclaredBy.class).getTypeVariables().getOnly()),is(false));
+  assertThat(ElementMatchers.isVariable(FOO).matches(TypeDescription.OBJECT),is(false));
+}

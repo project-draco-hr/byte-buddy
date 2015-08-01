@@ -1,3 +1,0 @@
-{
-  return new TypeSymbolMatcher<T>(nonNull(matcher));
-}

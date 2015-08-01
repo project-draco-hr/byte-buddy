@@ -1,0 +1,3 @@
+{
+  return target.getSort().isTypeVariable() && matcher.matches(target);
+}
