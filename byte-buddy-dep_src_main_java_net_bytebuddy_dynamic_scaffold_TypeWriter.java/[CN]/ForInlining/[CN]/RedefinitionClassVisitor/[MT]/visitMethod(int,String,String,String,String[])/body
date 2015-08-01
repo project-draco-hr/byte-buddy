@@ -1,6 +1,6 @@
 {
   if (internalName.equals(MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME)) {
-    TypeInitializerInjection injectedCode=new TypeInitializerInjection();
+    TypeInitializerInjection injectedCode=new TypeInitializerInjection(instrumentedType);
     this.injectedCode=injectedCode;
     return super.visitMethod(injectedCode.getInjectorProxyMethod().getModifiers(),injectedCode.getInjectorProxyMethod().getInternalName(),injectedCode.getInjectorProxyMethod().getDescriptor(),injectedCode.getInjectorProxyMethod().getGenericSignature(),injectedCode.getInjectorProxyMethod().getExceptionTypes().asRawTypes().toInternalNames());
   }

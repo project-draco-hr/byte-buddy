@@ -1,0 +1,4 @@
+{
+  this.instrumentedType=instrumentedType;
+  this.suffix=suffix;
+}
