@@ -1,3 +1,3 @@
 {
-  return "MethodCallProxy.ProxyMethodLookupEngine." + name();
+  return "MethodCallProxy.ConstructorCall." + name();
 }
