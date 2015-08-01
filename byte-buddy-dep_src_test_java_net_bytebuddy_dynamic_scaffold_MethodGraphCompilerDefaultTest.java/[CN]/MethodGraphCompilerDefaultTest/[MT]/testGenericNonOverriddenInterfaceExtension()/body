@@ -1,0 +1,13 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(GenericNonOverriddenInterfaceBase.InnerClass.class);
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
+  assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 2));
+  MethodDescription methodDescription=typeDescription.getInterfaces().getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
+  MethodGraph.Node node=methodGraph.locate(methodDescription.asToken());
+  assertThat(node.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
+  assertThat(node.getRepresentative(),is(methodDescription));
+  assertThat(node.getBridges().size(),is(1));
+  assertThat(node.getBridges().contains(methodDescription.asDefined().asToken()),is(true));
+  assertThat(node.isMadeVisible(),is(MethodGraph.Node.Visibility.PLAIN));
+  assertThat(node,is(methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(GenericNonOverriddenInterfaceBase.class)).locate(methodDescription.asToken())));
+}
