@@ -1,7 +1,0 @@
-{
-  MethodDescription methodDescription=new MethodDescription.ForLoadedMethod(IsSpecialization.class.getDeclaredMethod(FOO,Number.class));
-  assertThat(ElementMatchers.isSpecializationOf(methodDescription).matches(new MethodDescription.ForLoadedMethod(IsSpecialization.class.getDeclaredMethod(FOO,Number.class))),is(true));
-  assertThat(ElementMatchers.isSpecializationOf(methodDescription).matches(new MethodDescription.ForLoadedMethod(IsSpecialization.class.getDeclaredMethod(FOO,Integer.class))),is(true));
-  assertThat(ElementMatchers.isSpecializationOf(methodDescription).matches(new MethodDescription.ForLoadedMethod(IsSpecialization.class.getDeclaredMethod(FOO,String.class))),is(false));
-  assertThat(ElementMatchers.isSpecializationOf(methodDescription).matches(new MethodDescription.ForLoadedMethod(IsSpecialization.class.getDeclaredMethod(BAR,Integer.class))),is(false));
-}
