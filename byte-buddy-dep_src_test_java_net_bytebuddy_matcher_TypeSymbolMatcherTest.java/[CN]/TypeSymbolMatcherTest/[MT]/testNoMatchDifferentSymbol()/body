@@ -1,0 +1,11 @@
+{
+  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.VARIABLE);
+  when(genericTypeDescription.getSymbol()).thenReturn(BAR);
+  when(matcher.matches(FOO)).thenReturn(true);
+  assertThat(new TypeSymbolMatcher<GenericTypeDescription>(matcher).matches(genericTypeDescription),is(false));
+  verify(genericTypeDescription).getSort();
+  verify(genericTypeDescription).getSymbol();
+  verifyNoMoreInteractions(genericTypeDescription);
+  verify(matcher).matches(BAR);
+  verifyNoMoreInteractions(matcher);
+}

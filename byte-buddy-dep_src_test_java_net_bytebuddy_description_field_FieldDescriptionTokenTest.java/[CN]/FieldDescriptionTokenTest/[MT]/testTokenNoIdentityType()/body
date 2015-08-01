@@ -1,0 +1,3 @@
+{
+  assertThat(new FieldDescription.Token(FOO,MODIFIERS,first,Collections.singletonList(firstAnnotation)).isIdenticalTo(new FieldDescription.Token(FOO,MODIFIERS,second,Collections.singletonList(firstAnnotation))),is(false));
+}

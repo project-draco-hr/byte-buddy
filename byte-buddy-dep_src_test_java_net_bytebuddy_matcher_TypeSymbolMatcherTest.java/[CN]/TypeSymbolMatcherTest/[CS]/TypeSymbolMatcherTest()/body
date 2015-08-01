@@ -1,0 +1,3 @@
+{
+  super((Class<TypeSymbolMatcher<?>>)(Object)TypeSymbolMatcher.class,"isVariable");
+}

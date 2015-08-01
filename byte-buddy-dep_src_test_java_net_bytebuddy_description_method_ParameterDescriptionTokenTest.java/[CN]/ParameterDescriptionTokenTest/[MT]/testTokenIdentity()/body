@@ -1,5 +1,3 @@
 {
-  ParameterDescription.Token token=new ParameterDescription.Token(mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class)),ParameterDescription.Token.NO_NAME,ParameterDescription.Token.NO_MODIFIERS);
-  assertThat(token.hashCode(),is(token.hashCode()));
-  assertThat(token,is(token));
+  assertThat(new ParameterDescription.Token(first,Collections.singletonList(firstAnnotation),ParameterDescription.Token.NO_NAME,ParameterDescription.Token.NO_MODIFIERS).isIdenticalTo(new ParameterDescription.Token(first,Collections.singletonList(firstAnnotation),ParameterDescription.Token.NO_NAME,ParameterDescription.Token.NO_MODIFIERS)),is(true));
 }
