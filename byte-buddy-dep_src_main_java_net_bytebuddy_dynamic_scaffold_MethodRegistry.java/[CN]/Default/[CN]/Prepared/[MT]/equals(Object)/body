@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Prepared prepared=(Prepared)other;
+  return implementations.equals(prepared.implementations) && loadedTypeInitializer.equals(prepared.loadedTypeInitializer) && typeInitializer.equals(prepared.typeInitializer)&& instrumentedType.equals(prepared.instrumentedType)&& methodGraph.equals(prepared.methodGraph);
+}

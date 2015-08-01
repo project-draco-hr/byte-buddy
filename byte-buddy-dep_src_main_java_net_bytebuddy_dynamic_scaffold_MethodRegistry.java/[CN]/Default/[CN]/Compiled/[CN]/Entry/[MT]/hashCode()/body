@@ -1,0 +1,5 @@
+{
+  int result=compiledHandler.hashCode();
+  result=31 * result + attributeAppender.hashCode();
+  return result;
+}

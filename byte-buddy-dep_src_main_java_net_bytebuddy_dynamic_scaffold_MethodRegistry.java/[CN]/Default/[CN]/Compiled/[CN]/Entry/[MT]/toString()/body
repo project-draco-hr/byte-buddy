@@ -1,0 +1,3 @@
+{
+  return "MethodRegistry.Default.Compiled.Entry{" + "compiledHandler=" + compiledHandler + ", attributeAppender="+ attributeAppender+ '}';
+}

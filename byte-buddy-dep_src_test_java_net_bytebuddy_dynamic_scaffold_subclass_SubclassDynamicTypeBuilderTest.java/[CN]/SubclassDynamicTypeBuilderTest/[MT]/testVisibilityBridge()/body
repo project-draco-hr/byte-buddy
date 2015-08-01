@@ -1,10 +1,18 @@
 {
-  Class<?> type=new ByteBuddy().subclass(VisibilityBridge.class).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded();
+  Class<?> type=new ByteBuddy().subclass(VisibilityBridge.class).modifiers(Opcodes.ACC_PUBLIC).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded();
   assertThat(type.getDeclaredConstructors().length,is(1));
-  assertThat(type.getDeclaredMethods().length,is(1));
-  Method method=type.getDeclaredMethod(FOO);
-  assertThat(method.isBridge(),is(true));
-  assertThat(method.getDeclaredAnnotations().length,is(1));
-  assertThat(method.getAnnotation(Foo.class),notNullValue(Foo.class));
-  assertThat(method.invoke(type.newInstance()),is((Object)FOO));
+  assertThat(type.getDeclaredMethods().length,is(2));
+  Method foo=type.getDeclaredMethod(FOO,String.class);
+  assertThat(foo.isBridge(),is(true));
+  assertThat(foo.getDeclaredAnnotations().length,is(1));
+  assertThat(foo.getAnnotation(Foo.class),notNullValue(Foo.class));
+  assertThat(foo.invoke(type.newInstance(),BAR),is((Object)(FOO + BAR)));
+  Method bar=type.getDeclaredMethod(BAR,List.class);
+  assertThat(bar.isBridge(),is(true));
+  assertThat(bar.getDeclaredAnnotations().length,is(0));
+  List<?> list=new ArrayList<Object>();
+  assertThat(bar.invoke(type.newInstance(),list),sameInstance((Object)list));
+  assertThat(bar.getGenericReturnType(),instanceOf(Class.class));
+  assertThat(bar.getGenericParameterTypes()[0],instanceOf(Class.class));
+  assertThat(bar.getGenericExceptionTypes()[0],instanceOf(Class.class));
 }

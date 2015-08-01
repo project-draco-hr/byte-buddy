@@ -1,0 +1,7 @@
+{
+  this.implementations=implementations;
+  this.loadedTypeInitializer=loadedTypeInitializer;
+  this.typeInitializer=typeInitializer;
+  this.instrumentedType=instrumentedType;
+  this.methodGraph=methodGraph;
+}

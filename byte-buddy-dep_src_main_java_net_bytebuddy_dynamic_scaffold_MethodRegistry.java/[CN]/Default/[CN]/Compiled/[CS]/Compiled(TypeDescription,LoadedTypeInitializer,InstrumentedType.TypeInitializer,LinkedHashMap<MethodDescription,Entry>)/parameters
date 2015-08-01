@@ -1,0 +1,4 @@
+TypeDescription instrumentedType
+LoadedTypeInitializer loadedTypeInitializer
+InstrumentedType.TypeInitializer typeInitializer
+LinkedHashMap<MethodDescription,Entry> implementations

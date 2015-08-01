@@ -1,0 +1,5 @@
+{
+  Class<?> type=new ByteBuddy().subclass(VisibilityBridge.class).modifiers(0).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded();
+  assertThat(type.getDeclaredConstructors().length,is(1));
+  assertThat(type.getDeclaredMethods().length,is(0));
+}

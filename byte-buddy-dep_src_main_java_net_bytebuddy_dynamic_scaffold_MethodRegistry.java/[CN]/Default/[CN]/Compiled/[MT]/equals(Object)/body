@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Compiled compiled=(Compiled)other;
+  return instrumentedType.equals(compiled.instrumentedType) && loadedTypeInitializer.equals(compiled.loadedTypeInitializer) && typeInitializer.equals(compiled.typeInitializer)&& implementations.equals(compiled.implementations);
+}

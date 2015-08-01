@@ -1,0 +1,4 @@
+{
+  Entry entry=implementations.get(methodDescription);
+  return entry == null ? Record.ForInheritedMethod.INSTANCE : entry.bind(methodDescription);
+}
