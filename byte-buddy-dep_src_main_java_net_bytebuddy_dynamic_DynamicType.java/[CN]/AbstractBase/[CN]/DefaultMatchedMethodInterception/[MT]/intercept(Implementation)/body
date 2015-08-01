@@ -1,3 +1,3 @@
 {
-  return intercept(implementation,ModifierResolver.Simple.INSTANCE);
+  return intercept(implementation,ModifierResolver.Retaining.INSTANCE);
 }

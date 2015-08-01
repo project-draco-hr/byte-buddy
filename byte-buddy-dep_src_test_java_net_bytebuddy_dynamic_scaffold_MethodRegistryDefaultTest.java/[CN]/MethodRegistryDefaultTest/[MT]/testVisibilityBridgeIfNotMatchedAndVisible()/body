@@ -12,5 +12,11 @@
   verify(secondHandler).prepare(secondType);
   verifyZeroInteractions(firstFactory);
   verifyZeroInteractions(secondFactory);
-  assertThat(methodRegistry.target(instrumentedMethod),is((TypeWriter.MethodPool.Record)TypeWriter.MethodPool.Record.ForInheritedMethod.INSTANCE));
+  TypeDescription declaringType=mock(TypeDescription.class);
+  when(declaringType.asRawType()).thenReturn(declaringType);
+  when(instrumentedMethod.getDeclaringType()).thenReturn(declaringType);
+  when(typeDescription.isPublic()).thenReturn(true);
+  when(instrumentedMethod.isPublic()).thenReturn(true);
+  when(declaringType.isPublic()).thenReturn(false);
+  assertThat(methodRegistry.target(instrumentedMethod),is((TypeWriter.MethodPool.Record)new TypeWriter.MethodPool.Record.ForDeclaredMethod.OfVisibilityBridge(instrumentedMethod)));
 }

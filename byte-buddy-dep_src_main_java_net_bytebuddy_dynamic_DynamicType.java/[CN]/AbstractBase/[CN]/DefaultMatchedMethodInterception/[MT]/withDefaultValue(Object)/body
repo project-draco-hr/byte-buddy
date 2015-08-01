@@ -1,3 +1,3 @@
 {
-  return withDefaultValue(value,ModifierResolver.Simple.INSTANCE);
+  return withDefaultValue(value,ModifierResolver.Retaining.INSTANCE);
 }

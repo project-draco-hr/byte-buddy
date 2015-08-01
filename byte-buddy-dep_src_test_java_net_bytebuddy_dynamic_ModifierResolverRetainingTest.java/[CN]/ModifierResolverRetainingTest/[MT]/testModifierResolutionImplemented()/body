@@ -1,5 +1,5 @@
 {
-  assertThat(ModifierResolver.Simple.INSTANCE.transform(methodDescription,true),is(MODIFIERS));
+  assertThat(ModifierResolver.Retaining.INSTANCE.transform(methodDescription,true),is(MODIFIERS));
   verify(methodDescription).getAdjustedModifiers(true);
   verifyNoMoreInteractions(methodDescription);
 }
