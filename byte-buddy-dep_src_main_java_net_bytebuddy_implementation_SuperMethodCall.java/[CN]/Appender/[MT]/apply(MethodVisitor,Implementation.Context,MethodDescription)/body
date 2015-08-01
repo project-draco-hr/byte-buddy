@@ -1,5 +1,5 @@
 {
-  StackManipulation superMethodCall=implementationTarget.invokeAny(instrumentedMethod.asToken());
+  StackManipulation superMethodCall=implementationTarget.invokeDominant(instrumentedMethod.asToken());
   if (!superMethodCall.isValid()) {
     throw new IllegalStateException("Cannot call super (or default) method for " + instrumentedMethod);
   }
