@@ -1,18 +1,21 @@
 {
   when(firstHandler.prepare(firstType)).thenReturn(secondType);
-  when(secondHandler.prepare(secondType)).thenReturn(thirdType);
+  when(secondHandler.prepare(secondType)).thenReturn(typeDescription);
   when(firstHandler.compile(implementationTarget)).thenReturn(firstCompiledHandler);
   when(secondHandler.compile(implementationTarget)).thenReturn(secondCompiledHandler);
-  when(thirdType.getTypeInitializer()).thenReturn(typeInitializer);
-  when(thirdType.getLoadedTypeInitializer()).thenReturn(loadedTypeInitializer);
+  when(typeDescription.getTypeInitializer()).thenReturn(typeInitializer);
+  when(typeDescription.getLoadedTypeInitializer()).thenReturn(loadedTypeInitializer);
+  when(methodGraphCompiler.compile(typeDescription)).thenReturn(methodGraph);
+  when(methodGraph.listNodes()).thenReturn(new MethodGraph.NodeList(Collections.singletonList(new MethodGraph.Node.Simple(instrumentedMethod))));
   when(firstType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(firstMethod)));
   when(secondType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(secondMethod)));
-  when(thirdType.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(thirdMethod)));
-  when(methodFilter.resolve(thirdType)).thenReturn((ElementMatcher)resolvedMethodFilter);
-  when(firstMatcher.resolve(thirdType)).thenReturn((ElementMatcher)firstFilter);
-  when(secondMatcher.resolve(thirdType)).thenReturn((ElementMatcher)secondFilter);
+  when(typeDescription.getDeclaredMethods()).thenReturn(new MethodList.Explicit(Collections.singletonList(thirdMethod)));
+  when(methodFilter.resolve(typeDescription)).thenReturn((ElementMatcher)resolvedMethodFilter);
+  when(firstMatcher.resolve(typeDescription)).thenReturn((ElementMatcher)firstFilter);
+  when(secondMatcher.resolve(typeDescription)).thenReturn((ElementMatcher)secondFilter);
   when(firstFactory.make(typeDescription)).thenReturn(firstAppender);
   when(secondFactory.make(typeDescription)).thenReturn(secondAppender);
+  when(implementationTargetFactory.make(typeDescription,methodGraph)).thenReturn(implementationTarget);
   when(firstCompiledHandler.assemble(firstAppender,instrumentedMethod)).thenReturn(firstRecord);
   when(secondCompiledHandler.assemble(secondAppender,instrumentedMethod)).thenReturn(secondRecord);
 }
