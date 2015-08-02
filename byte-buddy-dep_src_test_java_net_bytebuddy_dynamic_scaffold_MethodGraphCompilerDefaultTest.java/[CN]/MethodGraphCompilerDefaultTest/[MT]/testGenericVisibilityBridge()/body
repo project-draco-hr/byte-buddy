@@ -7,7 +7,7 @@
   MethodGraph.Node methodNode=methodGraph.locate(methodDescription.asToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(methodNode,is(methodGraph.locate(bridgeToken)));
-  assertThat(methodNode.isMadeVisible(),is(MethodGraph.Node.Visibility.BRIDGED));
+  assertThat(methodNode.getVisibility(),is(MethodGraph.Node.Visibility.BRIDGED));
   assertThat(methodNode.getBridges().size(),is(1));
   assertThat(methodNode.getRepresentative(),is(methodDescription));
 }

@@ -6,7 +6,7 @@
   MethodDescription second=typeDescription.getInterfaces().filter(rawType(AmbiguousInterfaceBase.class)).getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
   MethodGraph.Node methodNode=methodGraph.locate(first.asToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
-  assertThat(methodNode.isMadeVisible(),is(MethodGraph.Node.Visibility.PLAIN));
+  assertThat(methodNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(methodNode.getBridges().size(),is(0));
   assertThat(methodNode.getRepresentative(),is(first));
   assertThat(methodNode.getRepresentative(),not(second));

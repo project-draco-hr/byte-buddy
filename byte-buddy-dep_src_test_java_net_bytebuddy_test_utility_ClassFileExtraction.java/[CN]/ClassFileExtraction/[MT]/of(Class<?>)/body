@@ -1,0 +1,7 @@
+{
+  Map<String,byte[]> result=new HashMap<String,byte[]>(type.length);
+  for (  Class<?> aType : type) {
+    result.put(aType.getName(),extract(aType));
+  }
+  return result;
+}

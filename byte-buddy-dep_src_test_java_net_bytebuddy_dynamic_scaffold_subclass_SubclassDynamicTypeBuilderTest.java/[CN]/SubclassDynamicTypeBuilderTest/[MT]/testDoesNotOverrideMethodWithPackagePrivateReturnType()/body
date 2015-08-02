@@ -1,7 +1,4 @@
 {
-  Map<String,byte[]> types=new HashMap<String,byte[]>();
-  types.put(PackagePrivateReturnType.class.getName(),ClassFileExtraction.extract(PackagePrivateReturnType.class));
-  types.put(PackagePrivateReturnType.Argument.class.getName(),ClassFileExtraction.extract(PackagePrivateReturnType.Argument.class));
-  Class<?> type=create(PackagePrivateReturnType.class).name("net.bytebuddy.test.generated." + FOO).method(isDeclaredBy(PackagePrivateReturnType.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,types,null,ByteArrayClassLoader.PersistenceHandler.LATENT),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=create(PackagePrivateReturnType.class).name("net.bytebuddy.test.generated." + FOO).method(isDeclaredBy(PackagePrivateReturnType.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(PackagePrivateReturnType.class,PackagePrivateReturnType.Argument.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethods().length,is(0));
 }

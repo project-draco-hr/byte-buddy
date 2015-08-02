@@ -7,7 +7,7 @@
   MethodDescription.Token secondBridgeToken=typeDescription.getInterfaces().getOnly().getInterfaces().getOnly().getDeclaredMethods().getOnly().asToken();
   assertThat(methodNode,is(methodGraph.locate(firstBridgeToken)));
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
-  assertThat(methodNode.isMadeVisible(),is(MethodGraph.Node.Visibility.PLAIN));
+  assertThat(methodNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(methodNode.getBridges().size(),is(2));
   assertThat(methodNode.getBridges().contains(firstBridgeToken),is(true));
   assertThat(methodNode.getBridges().contains(secondBridgeToken),is(true));
