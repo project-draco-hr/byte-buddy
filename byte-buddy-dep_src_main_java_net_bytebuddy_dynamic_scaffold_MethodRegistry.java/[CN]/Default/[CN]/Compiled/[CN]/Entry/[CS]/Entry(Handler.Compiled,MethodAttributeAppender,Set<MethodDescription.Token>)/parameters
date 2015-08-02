@@ -1,3 +1,0 @@
-Handler.Compiled compiledHandler
-MethodAttributeAppender attributeAppender
-Set<MethodDescription.Token> bridges

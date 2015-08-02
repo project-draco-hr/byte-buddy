@@ -8,5 +8,5 @@
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(methodNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(methodNode.getBridges().size(),is(1));
-  assertThat(methodNode.getBridges().contains(bridgeToken),is(true));
+  assertThat(methodNode.getBridges().contains(bridgeToken.asTypeToken()),is(true));
 }

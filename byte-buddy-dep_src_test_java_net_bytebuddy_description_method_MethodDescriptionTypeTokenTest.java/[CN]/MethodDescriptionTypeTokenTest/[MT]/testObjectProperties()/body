@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodDescription.TypeToken.class).apply();
+}

@@ -1,8 +1,8 @@
 {
-  LinkedHashMap<Key<MethodDescription.Token>,Node> entries=new LinkedHashMap<Key<MethodDescription.Token>,Node>(this.entries.size());
+  LinkedHashMap<Key<MethodDescription.TypeToken>,Node> entries=new LinkedHashMap<Key<MethodDescription.TypeToken>,Node>(this.entries.size());
   for (  Entry<V> entry : this.entries.values()) {
     Node node=entry.asNode(merger);
-    entries.put(entry.getKey().detach(node.getRepresentative().asToken()),node);
+    entries.put(entry.getKey().detach(node.getRepresentative().asTypeToken()),node);
   }
   return new Graph(entries);
 }

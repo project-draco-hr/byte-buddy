@@ -1,0 +1,3 @@
+{
+  assertThat(harmonizer.wrap(new MethodDescription.TypeToken(first,Collections.singletonList(first))),not(harmonizer.wrap(new MethodDescription.TypeToken(first,Collections.singletonList(second)))));
+}

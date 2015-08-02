@@ -8,7 +8,7 @@
       ElementMatcher<? super MethodDescription> handledMethods=noneOf(helperMethods);
       helperMethods=instrumentedType.getDeclaredMethods();
       for (      MethodDescription helperMethod : helperMethods.filter(handledMethods)) {
-        implementations.put(helperMethod,entry.asPreparedEntry(Collections.<MethodDescription.Token>emptySet()));
+        implementations.put(helperMethod,entry.asPreparedEntry(Collections.<MethodDescription.TypeToken>emptySet()));
       }
     }
   }
@@ -33,7 +33,7 @@
   MethodDescription typeInitializer=new MethodDescription.Latent.TypeInitializer(instrumentedType);
   for (  Entry entry : entries) {
     if (entry.resolve(instrumentedType).matches(typeInitializer)) {
-      implementations.put(typeInitializer,entry.asPreparedEntry(Collections.<MethodDescription.Token>emptySet()));
+      implementations.put(typeInitializer,entry.asPreparedEntry(Collections.<MethodDescription.TypeToken>emptySet()));
       break;
     }
   }

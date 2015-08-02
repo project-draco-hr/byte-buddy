@@ -1,6 +1,3 @@
 {
-  when(first.asRawType()).thenReturn(firstRaw);
-  when(second.asRawType()).thenReturn(secondRaw);
-  when(firstParameter.getType()).thenReturn(first);
-  when(secondParameter.getType()).thenReturn(second);
+  harmonizer=MethodGraph.Compiler.Default.Harmonizer.ForJVMMethod.INSTANCE;
 }

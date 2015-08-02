@@ -1,0 +1,8 @@
+{
+  Set<MethodDescription.TypeToken> identifiers=new HashSet<MethodDescription.TypeToken>();
+  for (  Set<MethodDescription.TypeToken> typeTokens : this.identifiers.values()) {
+    identifiers.addAll(typeTokens);
+  }
+  identifiers.add(typeToken);
+  return new Detached(internalName,identifiers);
+}

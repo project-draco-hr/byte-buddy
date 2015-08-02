@@ -1,4 +1,4 @@
 {
-  MethodDescription.Token methodToken=methodDescription.asToken();
-  return new Harmonized<Q>(methodDescription.getInternalName(),Collections.singletonMap(harmonizer.wrap(methodToken),Collections.<MethodDescription.Token>emptySet()));
+  MethodDescription.TypeToken typeToken=methodDescription.asTypeToken();
+  return new Harmonized<Q>(methodDescription.getInternalName(),Collections.singletonMap(harmonizer.wrap(typeToken),Collections.<MethodDescription.TypeToken>emptySet()));
 }

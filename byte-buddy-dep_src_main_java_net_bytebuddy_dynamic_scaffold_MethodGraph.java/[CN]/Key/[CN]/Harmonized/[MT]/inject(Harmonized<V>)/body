@@ -1,14 +1,14 @@
 {
-  Map<V,Set<MethodDescription.Token>> identifiers=new HashMap<V,Set<MethodDescription.Token>>(this.identifiers);
-  for (  Map.Entry<V,Set<MethodDescription.Token>> entry : key.identifiers.entrySet()) {
-    Set<MethodDescription.Token> methodTokens=identifiers.get(entry.getKey());
-    if (methodTokens == null) {
+  Map<V,Set<MethodDescription.TypeToken>> identifiers=new HashMap<V,Set<MethodDescription.TypeToken>>(this.identifiers);
+  for (  Map.Entry<V,Set<MethodDescription.TypeToken>> entry : key.identifiers.entrySet()) {
+    Set<MethodDescription.TypeToken> typeTokens=identifiers.get(entry.getKey());
+    if (typeTokens == null) {
       identifiers.put(entry.getKey(),entry.getValue());
     }
  else {
-      methodTokens=new HashSet<MethodDescription.Token>(methodTokens);
-      methodTokens.addAll(entry.getValue());
-      identifiers.put(entry.getKey(),methodTokens);
+      typeTokens=new HashSet<MethodDescription.TypeToken>(typeTokens);
+      typeTokens.addAll(entry.getValue());
+      identifiers.put(entry.getKey(),typeTokens);
     }
   }
   return new Harmonized<V>(internalName,identifiers);
