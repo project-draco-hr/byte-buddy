@@ -3,6 +3,9 @@
   when(firstFilter.matches(instrumentedMethod)).thenReturn(false);
   when(secondFilter.matches(instrumentedMethod)).thenReturn(false);
   when(resolvedMethodFilter.matches(instrumentedMethod)).thenReturn(true);
+  TypeDescription declaringType=mock(TypeDescription.class);
+  when(declaringType.asRawType()).thenReturn(declaringType);
+  when(instrumentedMethod.getDeclaringType()).thenReturn(declaringType);
   MethodRegistry.Compiled methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory).append(secondMatcher,secondHandler,secondFactory).prepare(firstType,methodGraphCompiler,methodFilter).compile(implementationTargetFactory);
   assertThat(methodRegistry.getInstrumentedType(),is((TypeDescription)typeDescription));
   assertThat(methodRegistry.getInstrumentedMethods().size(),is(0));
@@ -12,8 +15,5 @@
   verify(secondHandler).prepare(secondType);
   verifyZeroInteractions(firstFactory);
   verifyZeroInteractions(secondFactory);
-  TypeDescription declaringType=mock(TypeDescription.class);
-  when(declaringType.asRawType()).thenReturn(declaringType);
-  when(instrumentedMethod.getDeclaringType()).thenReturn(declaringType);
-  assertThat(methodRegistry.target(instrumentedMethod),is((TypeWriter.MethodPool.Record)TypeWriter.MethodPool.Record.ForInheritedMethod.INSTANCE));
+  assertThat(methodRegistry.target(instrumentedMethod),instanceOf(TypeWriter.MethodPool.Record.ForInheritedMethod.class));
 }
