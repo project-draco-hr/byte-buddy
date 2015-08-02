@@ -1,0 +1,5 @@
+{
+  this.compiledHandler=compiledHandler;
+  this.attributeAppender=attributeAppender;
+  this.bridges=bridges;
+}

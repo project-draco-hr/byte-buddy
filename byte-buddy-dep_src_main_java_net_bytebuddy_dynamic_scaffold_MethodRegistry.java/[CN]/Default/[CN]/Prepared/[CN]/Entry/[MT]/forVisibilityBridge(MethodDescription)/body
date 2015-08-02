@@ -1,3 +1,0 @@
-{
-  return new Entry(Handler.ForVisibilityBridge.INSTANCE,new MethodAttributeAppender.ForMethod(bridgeTarget));
-}

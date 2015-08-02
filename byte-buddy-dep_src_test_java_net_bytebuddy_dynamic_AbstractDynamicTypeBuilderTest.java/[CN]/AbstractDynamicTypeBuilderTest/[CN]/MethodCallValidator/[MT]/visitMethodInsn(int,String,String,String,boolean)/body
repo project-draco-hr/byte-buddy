@@ -1,6 +1,0 @@
-{
-  if (!name.equals(MethodDescription.CONSTRUCTOR_INTERNAL_NAME)) {
-    assertThat(desc,is("(Ljava/lang/Object;)Ljava/lang/Object;"));
-  }
-  super.visitMethodInsn(opcode,owner,name,desc,itf);
-}

@@ -1,0 +1,3 @@
+{
+  return Record.AccessBridgeWrapper.of(compiledHandler.assemble(attributeAppender,methodDescription),instrumentedType,methodDescription,bridges,attributeAppender);
+}

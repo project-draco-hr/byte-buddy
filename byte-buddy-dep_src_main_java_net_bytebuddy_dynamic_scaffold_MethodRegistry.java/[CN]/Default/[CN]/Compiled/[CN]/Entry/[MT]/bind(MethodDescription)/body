@@ -1,3 +1,0 @@
-{
-  return compiledHandler.assemble(attributeAppender,methodDescription);
-}

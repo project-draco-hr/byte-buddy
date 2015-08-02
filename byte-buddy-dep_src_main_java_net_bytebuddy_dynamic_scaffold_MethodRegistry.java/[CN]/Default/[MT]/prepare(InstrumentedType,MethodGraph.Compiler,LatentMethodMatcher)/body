@@ -8,7 +8,7 @@
       ElementMatcher<? super MethodDescription> handledMethods=noneOf(helperMethods);
       helperMethods=instrumentedType.getDeclaredMethods();
       for (      MethodDescription helperMethod : helperMethods.filter(handledMethods)) {
-        implementations.put(helperMethod,entry.asPreparedEntry());
+        implementations.put(helperMethod,entry.asPreparedEntry(Collections.<MethodDescription.Token>emptySet()));
       }
     }
   }
@@ -20,22 +20,22 @@
     if (relevanceMatcher.matches(methodDescription)) {
       for (      Entry entry : entries) {
         if (entry.resolve(instrumentedType).matches(methodDescription)) {
-          implementations.put(methodDescription,entry.asPreparedEntry());
+          implementations.put(methodDescription,entry.asPreparedEntry(node.getBridges()));
           visibilityBridge=false;
           break;
         }
       }
     }
     if (visibilityBridge && methodDescription.isPublic() && !node.getVisibility().isVisible()&& methodDescription.getDeclaringType().asRawType().isPackagePrivate()) {
-      implementations.put(methodDescription,Prepared.Entry.forVisibilityBridge(methodDescription));
+      implementations.put(methodDescription,Prepared.Entry.forVisibilityBridge(methodDescription,node.getBridges()));
     }
   }
   MethodDescription typeInitializer=new MethodDescription.Latent.TypeInitializer(instrumentedType);
   for (  Entry entry : entries) {
     if (entry.resolve(instrumentedType).matches(typeInitializer)) {
-      implementations.put(typeInitializer,entry.asPreparedEntry());
+      implementations.put(typeInitializer,entry.asPreparedEntry(Collections.<MethodDescription.Token>emptySet()));
       break;
     }
   }
-  return new Prepared(implementations,instrumentedType.getLoadedTypeInitializer(),instrumentedType.getTypeInitializer(),instrumentedType,methodGraph);
+  return new Prepared(implementations,instrumentedType.getLoadedTypeInitializer(),instrumentedType.getTypeInitializer(),instrumentedType.asRawType(),methodGraph);
 }
