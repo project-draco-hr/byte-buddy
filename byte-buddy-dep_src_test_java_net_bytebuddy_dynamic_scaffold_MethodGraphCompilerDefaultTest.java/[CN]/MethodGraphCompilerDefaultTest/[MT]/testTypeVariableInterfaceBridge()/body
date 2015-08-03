@@ -1,0 +1,12 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(Class.forName(TYPE_VARIABLE_INTERFACE_BRIDGE));
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
+  assertThat(methodGraph.listNodes().size(),is(1));
+  MethodDescription methodDescription=typeDescription.getDeclaredMethods().filter(takesArguments(String.class)).getOnly();
+  MethodGraph.Node node=methodGraph.locate(methodDescription.asToken());
+  assertThat(node.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
+  assertThat(node.getRepresentative(),is(methodDescription));
+  assertThat(node.getBridges().size(),is(1));
+  assertThat(node.getBridges().contains(typeDescription.getDeclaredMethods().filter(takesArguments(Object.class)).getOnly().asTypeToken()),is(true));
+  assertThat(node.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
+}

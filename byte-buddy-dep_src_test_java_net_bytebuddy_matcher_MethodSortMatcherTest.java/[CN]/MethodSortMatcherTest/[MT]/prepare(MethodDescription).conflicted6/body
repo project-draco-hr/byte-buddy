@@ -1,3 +1,0 @@
-{
-  when(target.isDefaultMethod()).thenReturn(true);
-}
