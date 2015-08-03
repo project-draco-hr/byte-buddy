@@ -26,7 +26,7 @@
         }
       }
     }
-    if (visibilityBridge && methodDescription.isPublic() && !node.getVisibility().isVisible()&& methodDescription.getDeclaringType().asRawType().isPackagePrivate()) {
+    if (visibilityBridge && methodDescription.isPublic() && !(methodDescription.isAbstract() || methodDescription.isFinal())&& !node.getVisibility().isVisible()&& methodDescription.getDeclaringType().asRawType().isPackagePrivate()) {
       implementations.put(methodDescription,Prepared.Entry.forVisibilityBridge(methodDescription,node.getBridges()));
     }
   }

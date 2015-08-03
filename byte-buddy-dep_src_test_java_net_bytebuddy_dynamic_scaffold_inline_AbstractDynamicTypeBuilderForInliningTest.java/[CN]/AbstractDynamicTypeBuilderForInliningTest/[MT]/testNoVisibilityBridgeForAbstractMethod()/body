@@ -1,0 +1,6 @@
+{
+  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(PackagePrivateVisibilityBridgeExtensionAbstractMethod.class,VisibilityBridgeAbstractMethod.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT);
+  Class<?> type=create(PackagePrivateVisibilityBridgeExtensionAbstractMethod.class).modifiers(Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT).make().load(classLoader,ClassLoadingStrategy.Default.INJECTION).getLoaded();
+  assertThat(type.getDeclaredConstructors().length,is(1));
+  assertThat(type.getDeclaredMethods().length,is(0));
+}
