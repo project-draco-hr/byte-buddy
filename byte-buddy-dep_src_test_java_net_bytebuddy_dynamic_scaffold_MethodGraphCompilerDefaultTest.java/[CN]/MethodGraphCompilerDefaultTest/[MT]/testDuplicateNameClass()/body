@@ -1,0 +1,17 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(DuplicateNameClass.class);
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
+  assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 3));
+  MethodDescription objectMethod=typeDescription.getDeclaredMethods().filter(takesArguments(Object.class)).getOnly();
+  MethodGraph.Node objectNode=methodGraph.locate(objectMethod.asToken());
+  assertThat(objectNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
+  assertThat(objectNode.getRepresentative(),is(objectMethod));
+  assertThat(objectNode.getBridges().size(),is(0));
+  assertThat(objectNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
+  MethodDescription voidMethod=typeDescription.getDeclaredMethods().filter(takesArguments(Integer.class)).getOnly();
+  MethodGraph.Node voidNode=methodGraph.locate(voidMethod.asToken());
+  assertThat(voidNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
+  assertThat(voidNode.getRepresentative(),is(voidMethod));
+  assertThat(voidNode.getBridges().size(),is(0));
+  assertThat(voidNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
+}
