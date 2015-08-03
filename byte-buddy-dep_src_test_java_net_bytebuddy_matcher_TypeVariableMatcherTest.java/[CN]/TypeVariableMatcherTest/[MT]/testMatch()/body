@@ -1,9 +1,0 @@
-{
-  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.VARIABLE);
-  when(matcher.matches(genericTypeDescription)).thenReturn(true);
-  assertThat(new TypeVariableMatcher<GenericTypeDescription>(matcher).matches(genericTypeDescription),is(true));
-  verify(genericTypeDescription).getSort();
-  verifyNoMoreInteractions(genericTypeDescription);
-  verify(matcher).matches(genericTypeDescription);
-  verifyNoMoreInteractions(matcher);
-}
