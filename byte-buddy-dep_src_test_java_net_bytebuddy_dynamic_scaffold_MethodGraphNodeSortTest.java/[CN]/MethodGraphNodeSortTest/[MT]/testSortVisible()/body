@@ -1,0 +1,5 @@
+{
+  assertThat(MethodGraph.Node.Sort.VISIBLE.isResolved(),is(true));
+  assertThat(MethodGraph.Node.Sort.VISIBLE.isUnique(),is(true));
+  assertThat(MethodGraph.Node.Sort.VISIBLE.isMadeVisible(),is(true));
+}

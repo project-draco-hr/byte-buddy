@@ -1,6 +1,8 @@
 {
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Record.ForDeclaredMethod.WithBody.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Record.ForDeclaredMethod.WithoutBody.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Record.ForDeclaredMethod.WithAnnotationDefaultValue.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Record.ForInheritedMethod.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Record.ForDefinedMethod.OfVisibilityBridge.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Record.ForDefinedMethod.WithoutBody.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Record.ForNonDefinedMethod.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.MethodPool.Record.AccessBridgeWrapper.class).apply();
 }

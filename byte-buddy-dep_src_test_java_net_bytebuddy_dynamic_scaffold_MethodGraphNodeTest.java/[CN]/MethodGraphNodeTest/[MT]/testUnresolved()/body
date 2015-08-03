@@ -1,4 +1,0 @@
-{
-  assertThat(MethodGraph.Node.Sort.UNRESOLVED.isResolved(),is(false));
-  assertThat(MethodGraph.Node.Sort.UNRESOLVED.isUnique(),is(false));
-}

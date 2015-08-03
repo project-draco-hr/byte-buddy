@@ -1,0 +1,3 @@
+{
+  assertThat(new MethodGraph.Node.Simple(methodDescription).getBridges().size(),is(0));
+}

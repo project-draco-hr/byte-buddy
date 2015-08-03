@@ -1,4 +1,3 @@
 {
   when(nonAssigner.assign(Mockito.any(TypeDescription.class),Mockito.any(TypeDescription.class),Mockito.anyBoolean())).thenReturn(StackManipulation.Illegal.INSTANCE);
-  classLoader=new PrecompiledTypeClassLoader(getClass().getClassLoader());
 }

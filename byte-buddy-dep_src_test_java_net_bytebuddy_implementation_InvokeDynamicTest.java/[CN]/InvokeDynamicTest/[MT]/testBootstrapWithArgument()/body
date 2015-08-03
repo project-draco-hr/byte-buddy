@@ -1,7 +1,7 @@
 {
-  Class<?> type=classLoader.loadClass(ARGUMENT_BOOTSTRAP);
+  Class<?> type=Class.forName(ARGUMENT_BOOTSTRAP);
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
-  DynamicType.Loaded<SimpleWithArgument> dynamicType=implement(SimpleWithArgument.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP)).getOnly()).invoke(QUX,String.class).withArgument(0),classLoader,isDeclaredBy(SimpleWithArgument.class));
+  DynamicType.Loaded<SimpleWithArgument> dynamicType=implement(SimpleWithArgument.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP)).getOnly()).invoke(QUX,String.class).withArgument(0),getClass().getClassLoader(),isDeclaredBy(SimpleWithArgument.class));
   assertThat(dynamicType.getLoaded().getDeclaredFields().length,is(0));
   assertThat(dynamicType.getLoaded().newInstance().foo(FOO),is(FOO));
 }

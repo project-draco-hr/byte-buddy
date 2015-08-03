@@ -1,5 +1,5 @@
 {
-  Class<?> dynamicType=new ByteBuddy().subclass(classLoader.loadClass(PARAMETER_NAME_CLASS)).method(named(FOO)).intercept(StubMethod.INSTANCE).make().load(classLoader,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> dynamicType=new ByteBuddy().subclass(Class.forName(PARAMETER_NAME_CLASS)).method(named(FOO)).intercept(StubMethod.INSTANCE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(dynamicType.getDeclaredMethods().length,is(1));
   Class<?> executable=Class.forName("java.lang.reflect.Executable");
   Method getParameters=executable.getDeclaredMethod("getParameters");

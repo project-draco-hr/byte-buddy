@@ -1,4 +1,4 @@
 {
   Node node=nodes.get(methodToken);
-  return node == null ? Node.Illegal.INSTANCE : node;
+  return node == null ? Node.Unresolved.INSTANCE : node;
 }

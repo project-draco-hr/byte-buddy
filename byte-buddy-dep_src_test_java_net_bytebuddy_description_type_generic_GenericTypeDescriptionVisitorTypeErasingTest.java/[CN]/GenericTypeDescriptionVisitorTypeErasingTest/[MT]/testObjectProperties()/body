@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.TypeErasing.class).apply();
+}

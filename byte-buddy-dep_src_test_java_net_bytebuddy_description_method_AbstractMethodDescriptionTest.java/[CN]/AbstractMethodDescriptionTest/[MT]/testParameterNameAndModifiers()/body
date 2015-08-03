@@ -1,5 +1,5 @@
 {
-  Class<?> type=classLoader.loadClass("net.bytebuddy.test.precompiled.ParameterNames");
+  Class<?> type=Class.forName("net.bytebuddy.test.precompiled.ParameterNames");
   assertThat(describe(type.getDeclaredMethod("foo",String.class,long.class,int.class)).getParameters().get(0).isNamed(),is(true));
   assertThat(describe(type.getDeclaredMethod("foo",String.class,long.class,int.class)).getParameters().get(1).isNamed(),is(true));
   assertThat(describe(type.getDeclaredMethod("foo",String.class,long.class,int.class)).getParameters().get(2).isNamed(),is(true));

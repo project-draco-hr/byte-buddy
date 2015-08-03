@@ -1,0 +1,3 @@
+{
+  assertThat(new TypeWriter.MethodPool.Record.AccessBridgeWrapper(delegate,instrumentedType,bridgeTarget,Collections.singleton(typeToken),methodAttributeAppender).prepend(byteCodeAppender),instanceOf(TypeWriter.MethodPool.Record.AccessBridgeWrapper.class));
+}

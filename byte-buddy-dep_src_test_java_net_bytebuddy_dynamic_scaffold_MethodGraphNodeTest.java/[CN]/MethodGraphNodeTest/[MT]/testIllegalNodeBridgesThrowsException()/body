@@ -1,3 +1,0 @@
-{
-  MethodGraph.Node.Illegal.INSTANCE.getBridges();
-}

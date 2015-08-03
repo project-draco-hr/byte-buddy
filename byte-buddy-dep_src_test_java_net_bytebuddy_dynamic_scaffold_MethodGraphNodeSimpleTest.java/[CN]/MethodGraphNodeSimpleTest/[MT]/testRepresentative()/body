@@ -1,0 +1,3 @@
+{
+  assertThat(new MethodGraph.Node.Simple(methodDescription).getRepresentative(),is(methodDescription));
+}

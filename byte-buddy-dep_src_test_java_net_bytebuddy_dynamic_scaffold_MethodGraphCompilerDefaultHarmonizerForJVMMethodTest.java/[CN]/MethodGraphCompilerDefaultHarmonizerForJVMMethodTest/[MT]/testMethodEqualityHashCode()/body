@@ -1,3 +1,3 @@
 {
-  assertThat(harmonizer.wrap(new MethodDescription.TypeToken(first,Collections.singletonList(first))).hashCode(),is(harmonizer.wrap(new MethodDescription.TypeToken(first,Collections.singletonList(first))).hashCode()));
+  assertThat(harmonizer.harmonize(new MethodDescription.TypeToken(first,Collections.singletonList(first))).hashCode(),is(harmonizer.harmonize(new MethodDescription.TypeToken(first,Collections.singletonList(first))).hashCode()));
 }

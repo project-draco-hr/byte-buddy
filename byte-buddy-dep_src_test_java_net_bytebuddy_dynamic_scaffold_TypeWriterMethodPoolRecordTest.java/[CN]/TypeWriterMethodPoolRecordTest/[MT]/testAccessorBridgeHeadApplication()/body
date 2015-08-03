@@ -1,0 +1,6 @@
+{
+  new TypeWriter.MethodPool.Record.AccessBridgeWrapper(delegate,instrumentedType,bridgeTarget,Collections.singleton(typeToken),methodAttributeAppender).applyHead(methodVisitor);
+  verify(delegate).applyHead(methodVisitor);
+  verifyNoMoreInteractions(delegate);
+  verifyZeroInteractions(methodVisitor);
+}

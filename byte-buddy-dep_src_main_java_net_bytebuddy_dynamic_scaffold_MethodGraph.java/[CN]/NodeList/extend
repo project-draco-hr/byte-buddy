@@ -1,1 +1,1 @@
-AbstractList<Node>
+FilterableList.AbstractBase<Node,NodeList>

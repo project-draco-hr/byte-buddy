@@ -1,0 +1,3 @@
+{
+  assertThat(MethodGraph.Node.Unresolved.INSTANCE.getSort(),is(MethodGraph.Node.Sort.UNRESOLVED));
+}

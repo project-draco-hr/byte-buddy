@@ -1,6 +1,6 @@
 {
   Set<MethodDescription> leftMethods=left.getCandidates(), rightMethods=right.getCandidates();
-  Set<MethodDescription> combined=new HashSet<MethodDescription>(leftMethods.size() + rightMethods.size());
+  LinkedHashSet<MethodDescription> combined=new LinkedHashSet<MethodDescription>(leftMethods.size() + rightMethods.size());
   combined.addAll(leftMethods);
   combined.addAll(rightMethods);
   for (  MethodDescription leftMethod : leftMethods) {

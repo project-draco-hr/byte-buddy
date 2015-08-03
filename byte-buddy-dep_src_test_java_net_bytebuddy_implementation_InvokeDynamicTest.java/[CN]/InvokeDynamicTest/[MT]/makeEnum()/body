@@ -1,4 +1,4 @@
 {
-  Class type=classLoader.loadClass(SAMPLE_ENUM);
+  Class type=Class.forName(SAMPLE_ENUM);
   return Enum.valueOf(type,INSTANCE);
 }

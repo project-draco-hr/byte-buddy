@@ -6,7 +6,6 @@
   MethodDescription.Token bridgeToken=typeDescription.getSuperType().getDeclaredMethods().filter(isMethod()).getOnly().asToken();
   assertThat(methodNode,is(methodGraph.locate(bridgeToken)));
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
-  assertThat(methodNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(methodNode.getBridges().size(),is(1));
   assertThat(methodNode.getBridges().contains(bridgeToken.asTypeToken()),is(true));
 }

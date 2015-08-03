@@ -1,5 +1,0 @@
-{
-  this.key=key;
-  this.methodDescription=methodDescription;
-  this.visibility=visibility;
-}

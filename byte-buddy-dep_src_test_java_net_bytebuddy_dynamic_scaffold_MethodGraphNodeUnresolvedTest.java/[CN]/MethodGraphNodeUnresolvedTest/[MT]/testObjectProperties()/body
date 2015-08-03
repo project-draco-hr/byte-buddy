@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodGraph.Node.Unresolved.class).apply();
+}

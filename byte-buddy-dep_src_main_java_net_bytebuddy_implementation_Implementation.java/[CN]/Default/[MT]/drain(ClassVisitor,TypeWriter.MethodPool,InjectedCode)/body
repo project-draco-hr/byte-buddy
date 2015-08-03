@@ -14,7 +14,7 @@
     initializerRecord=initializerRecord.prepend(typeInitializer);
   }
  else   if (typeInitializer.isDefined()) {
-    initializerRecord=new TypeWriter.MethodPool.Record.ForDeclaredMethod.WithBody(typeInitializerMethod,typeInitializer.withReturn());
+    initializerRecord=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody(typeInitializerMethod,typeInitializer.withReturn());
   }
   initializerRecord.apply(classVisitor,this);
   for (  TypeWriter.MethodPool.Record record : accessorMethods) {

@@ -1,0 +1,3 @@
+{
+  assertThat(MethodGraph.Simple.of(Collections.singletonList(methodDescription)).listNodes().getOnly(),is((MethodGraph.Node)new MethodGraph.Node.Simple(methodDescription)));
+}

@@ -9,13 +9,11 @@
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(methodNode,is(methodGraph.locate(genericMethod.asDefined().asToken())));
   assertThat(methodNode,is(methodGraph.locate(nonGenericMethod.asDefined().asToken())));
-  assertThat(methodNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(methodNode.getBridges().size(),is(1));
   assertThat(methodNode.getRepresentative(),is(methodDescription));
   MethodGraph superGraph=methodGraph.getSuperGraph();
   MethodGraph.Node superNode=superGraph.locate(methodDescription.asToken());
   assertThat(superNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
-  assertThat(superNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(superNode.getBridges().size(),is(1));
   assertThat(superNode.getRepresentative(),is(nonGenericMethod));
   assertThat(superNode.getRepresentative(),is(genericMethod));

@@ -1,4 +1,4 @@
 {
-  assertThat(ElementMatchers.is(ElementMatchersTest.class.getDeclaredField("classLoader")).matches(new FieldDescription.ForLoadedField(ElementMatchersTest.class.getDeclaredField("classLoader"))),is(true));
-  assertThat(ElementMatchers.is(ElementMatchersTest.class.getDeclaredField("classLoader")).matches(new FieldDescription.ForLoadedField(ElementMatchersTest.class.getDeclaredField("javaVersionRule"))),is(false));
+  assertThat(ElementMatchers.is(FieldType.class.getDeclaredField("foo")).matches(new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField("foo"))),is(true));
+  assertThat(ElementMatchers.is(FieldType.class.getDeclaredField("bar")).matches(new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField("foo"))),is(false));
 }

@@ -6,7 +6,6 @@
   for (  MethodDescription methodDescription : TypeDescription.OBJECT.getDeclaredMethods()) {
     MethodGraph.Node node=methodGraph.locate(methodDescription.asToken());
     assertThat(node.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
-    assertThat(node.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
     assertThat(node.getBridges().size(),is(0));
     assertThat(node.getRepresentative(),is(methodDescription));
     assertThat(methodGraph.listNodes().contains(node),is(true));

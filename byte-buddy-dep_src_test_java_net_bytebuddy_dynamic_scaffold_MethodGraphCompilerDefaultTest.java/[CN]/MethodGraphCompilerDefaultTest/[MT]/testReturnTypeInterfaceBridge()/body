@@ -8,5 +8,4 @@
   assertThat(node.getRepresentative(),is(methodDescription));
   assertThat(node.getBridges().size(),is(1));
   assertThat(node.getBridges().contains(typeDescription.getDeclaredMethods().filter(returns(Object.class)).getOnly().asTypeToken()),is(true));
-  assertThat(node.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
 }

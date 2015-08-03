@@ -1,3 +1,0 @@
-{
-  assertThat(MethodGraph.Node.Illegal.INSTANCE.getSort(),is(MethodGraph.Node.Sort.UNRESOLVED));
-}

@@ -1,0 +1,3 @@
+{
+  return "MethodGraph.Simple{" + "nodes=" + nodes + '}';
+}

@@ -5,7 +5,6 @@
   MethodDescription method=typeDescription.getSuperType().getDeclaredMethods().filter(isMethod()).getOnly();
   MethodGraph.Node methodNode=methodGraph.locate(method.asToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
-  assertThat(methodNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(methodNode.getBridges().size(),is(0));
   assertThat(methodNode.getRepresentative(),is(method));
   MethodGraph.Node baseNode=methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(InterfaceBase.class)).locate(method.asToken());

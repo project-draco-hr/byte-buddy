@@ -1,9 +1,9 @@
 {
-  for (  Method method : classLoader.loadClass(STANDARD_ARGUMENT_BOOTSTRAP).getDeclaredMethods()) {
+  for (  Method method : Class.forName(STANDARD_ARGUMENT_BOOTSTRAP).getDeclaredMethods()) {
     if (method.getName().equals(FOO)) {
       continue;
     }
-    DynamicType.Loaded<Simple> dynamicType=implement(Simple.class,InvokeDynamic.bootstrap(method).withoutArguments(),classLoader,isDeclaredBy(Simple.class));
+    DynamicType.Loaded<Simple> dynamicType=implement(Simple.class,InvokeDynamic.bootstrap(method).withoutArguments(),getClass().getClassLoader(),isDeclaredBy(Simple.class));
     assertThat(dynamicType.getLoaded().newInstance().foo(),is(FOO));
   }
 }

@@ -1,3 +1,3 @@
 {
-  implement(Object.class,SuperMethodCall.INSTANCE,classLoader,not(isDeclaredBy(Object.class)),classLoader.loadClass(SINGLE_DEFAULT_METHOD),classLoader.loadClass(CONFLICTING_INTERFACE));
+  implement(Object.class,SuperMethodCall.INSTANCE,getClass().getClassLoader(),not(isDeclaredBy(Object.class)),Class.forName(SINGLE_DEFAULT_METHOD),Class.forName(CONFLICTING_INTERFACE));
 }

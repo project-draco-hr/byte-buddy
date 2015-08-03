@@ -1,6 +1,6 @@
 {
   Harmonized<U> key=this.key.extend(methodDescription.asDefined(),harmonizer);
-  Set<MethodDescription> methodDescriptions=new HashSet<MethodDescription>(this.methodDescriptions.size() + 1);
+  LinkedHashSet<MethodDescription> methodDescriptions=new LinkedHashSet<MethodDescription>(this.methodDescriptions.size() + 1);
   GenericTypeDescription declaringType=methodDescription.getDeclaringType();
   boolean bridge=methodDescription.isBridge();
   for (  MethodDescription extendedMethod : this.methodDescriptions) {

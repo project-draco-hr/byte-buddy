@@ -1,0 +1,3 @@
+{
+  MethodGraph.Node.Unresolved.INSTANCE.getBridges();
+}

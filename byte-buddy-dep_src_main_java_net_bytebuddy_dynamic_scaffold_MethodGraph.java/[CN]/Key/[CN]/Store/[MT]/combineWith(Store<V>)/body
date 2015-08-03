@@ -1,6 +1,6 @@
 {
   Store<V> combinedStore=this;
-  for (  Entry<V> entry : keyStore.entries.values()) {
+  for (  Entry<V> entry : store.entries.values()) {
     combinedStore=combinedStore.combineWith(entry);
   }
   return combinedStore;

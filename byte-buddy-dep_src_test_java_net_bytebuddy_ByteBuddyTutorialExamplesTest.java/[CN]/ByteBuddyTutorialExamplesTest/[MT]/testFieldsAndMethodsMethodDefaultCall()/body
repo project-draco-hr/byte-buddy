@@ -1,6 +1,5 @@
 {
-  ClassLoader classLoader=new PrecompiledTypeClassLoader(getClass().getClassLoader());
-  Object instance=new ByteBuddy(ClassFileVersion.JAVA_V8).subclass(Object.class).implement(classLoader.loadClass(DEFAULT_METHOD_INTERFACE)).implement(classLoader.loadClass(CONFLICTING_DEFAULT_METHOD_INTERFACE)).method(named("foo")).intercept(DefaultMethodCall.prioritize(classLoader.loadClass(DEFAULT_METHOD_INTERFACE))).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance();
+  Object instance=new ByteBuddy(ClassFileVersion.JAVA_V8).subclass(Object.class).implement(Class.forName(DEFAULT_METHOD_INTERFACE)).implement(Class.forName(CONFLICTING_DEFAULT_METHOD_INTERFACE)).method(named("foo")).intercept(DefaultMethodCall.prioritize(Class.forName(DEFAULT_METHOD_INTERFACE))).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance();
   Method method=instance.getClass().getMethod("foo");
   assertThat(method.invoke(instance),is((Object)"foo"));
 }

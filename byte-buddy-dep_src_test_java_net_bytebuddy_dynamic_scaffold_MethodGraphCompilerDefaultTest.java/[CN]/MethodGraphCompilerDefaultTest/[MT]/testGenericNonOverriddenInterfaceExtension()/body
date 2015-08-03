@@ -8,6 +8,5 @@
   assertThat(node.getRepresentative(),is(methodDescription));
   assertThat(node.getBridges().size(),is(1));
   assertThat(node.getBridges().contains(methodDescription.asDefined().asTypeToken()),is(true));
-  assertThat(node.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(node,is(methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(GenericNonOverriddenInterfaceBase.class)).locate(methodDescription.asToken())));
 }

@@ -1,7 +1,7 @@
 {
   Map<V,Set<MethodDescription.TypeToken>> identifiers=new HashMap<V,Set<MethodDescription.TypeToken>>(this.identifiers);
   MethodDescription.TypeToken typeToken=methodDescription.asTypeToken();
-  V identifier=harmonizer.wrap(typeToken);
+  V identifier=harmonizer.harmonize(typeToken);
   Set<MethodDescription.TypeToken> typeTokens=identifiers.get(identifier);
   if (typeTokens == null) {
     identifiers.put(identifier,Collections.singleton(typeToken));

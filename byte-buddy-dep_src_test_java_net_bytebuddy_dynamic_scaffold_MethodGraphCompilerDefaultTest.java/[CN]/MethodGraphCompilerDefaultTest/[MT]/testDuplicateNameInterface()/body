@@ -7,11 +7,9 @@
   assertThat(objectNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(objectNode.getRepresentative(),is(objectMethod));
   assertThat(objectNode.getBridges().size(),is(0));
-  assertThat(objectNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
   MethodDescription voidMethod=typeDescription.getDeclaredMethods().filter(takesArguments(Integer.class)).getOnly();
   MethodGraph.Node voidNode=methodGraph.locate(voidMethod.asToken());
   assertThat(voidNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(voidNode.getRepresentative(),is(voidMethod));
   assertThat(voidNode.getBridges().size(),is(0));
-  assertThat(voidNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
 }

@@ -1,6 +1,6 @@
 {
   Store<V> injectedStore=this;
-  for (  Entry<V> entry : keyStore.entries.values()) {
+  for (  Entry<V> entry : store.entries.values()) {
     injectedStore=injectedStore.inject(entry);
   }
   return injectedStore;

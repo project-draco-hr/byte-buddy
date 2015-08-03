@@ -8,7 +8,6 @@
   assertThat(methodNode,is(methodGraph.locate(firstBridgeToken)));
   assertThat(methodNode,is(methodGraph.locate(secondBridgeToken)));
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
-  assertThat(methodNode.getVisibility(),is(MethodGraph.Node.Visibility.PLAIN));
   assertThat(methodNode.getBridges().size(),is(2));
   assertThat(methodNode.getBridges().contains(firstBridgeToken.asTypeToken()),is(true));
   assertThat(methodNode.getBridges().contains(secondBridgeToken.asTypeToken()),is(true));

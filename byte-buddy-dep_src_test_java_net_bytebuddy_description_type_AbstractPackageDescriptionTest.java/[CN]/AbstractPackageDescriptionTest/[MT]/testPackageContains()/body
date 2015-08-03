@@ -1,0 +1,4 @@
+{
+  assertThat(describe(Child.class).contains(new TypeDescription.ForLoadedType(Child.class)),is(true));
+  assertThat(describe(Object.class).contains(new TypeDescription.ForLoadedType(Child.class)),is(false));
+}

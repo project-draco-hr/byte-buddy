@@ -1,4 +1,0 @@
-{
-  ObjectPropertyAssertion.of(MethodGraph.Node.Sort.class).apply();
-  ObjectPropertyAssertion.of(MethodGraph.Node.Illegal.class).apply();
-}
