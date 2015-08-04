@@ -1,4 +1,0 @@
-{
-  MethodAttributeAppender.Factory factory=new MethodAttributeAppender.ForInstrumentedMethod(valueFilter);
-  assertThat(factory.make(mock(TypeDescription.class)),is((MethodAttributeAppender)factory));
-}

@@ -1,4 +1,7 @@
 {
+  if (methodDescription.getDeclaringType().equals(instrumentedType)) {
+    return;
+  }
   AnnotationAppender methodAppender=new AnnotationAppender.Default(new AnnotationAppender.Target.OnMethod(methodVisitor),valueFilter);
   for (  AnnotationDescription annotation : methodDescription.getDeclaredAnnotations()) {
     methodAppender.append(annotation,AnnotationAppender.AnnotationVisibility.of(annotation));

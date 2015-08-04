@@ -2,12 +2,14 @@
   when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.class))).thenReturn(true);
   when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Qux.Instance(),new Baz.Instance(),new QuxBaz.Instance()));
   when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Empty());
-  MethodAttributeAppender methodAttributeAppender=new MethodAttributeAppender.ForInstrumentedMethod(valueFilter);
+  when(methodDescription.getDeclaringType()).thenReturn(mock(GenericTypeDescription.class));
+  MethodAttributeAppender methodAttributeAppender=new MethodAttributeAppender.ForInstrumentedMethod(valueFilter).make(instrumentedType);
   methodAttributeAppender.apply(methodVisitor,methodDescription);
   verify(methodVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
   verify(methodVisitor).visitAnnotation(Type.getDescriptor(QuxBaz.class),false);
   verifyNoMoreInteractions(methodVisitor);
   verify(methodDescription).getDeclaredAnnotations();
   verify(methodDescription).getParameters();
+  verify(methodDescription).getDeclaringType();
   verifyNoMoreInteractions(methodDescription);
 }

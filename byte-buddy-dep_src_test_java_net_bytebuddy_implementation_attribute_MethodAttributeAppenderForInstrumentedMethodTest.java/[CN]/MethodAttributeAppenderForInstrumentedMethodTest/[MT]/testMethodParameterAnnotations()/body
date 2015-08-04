@@ -4,12 +4,14 @@
   ParameterDescription parameterDescription=mock(ParameterDescription.class);
   when(parameterDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Qux.Instance(),new Baz.Instance(),new QuxBaz.Instance()));
   when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Explicit<ParameterDescription>(Collections.singletonList(parameterDescription)));
-  MethodAttributeAppender methodAttributeAppender=new MethodAttributeAppender.ForInstrumentedMethod(valueFilter);
+  when(methodDescription.getDeclaringType()).thenReturn(mock(GenericTypeDescription.class));
+  MethodAttributeAppender methodAttributeAppender=new MethodAttributeAppender.ForInstrumentedMethod(valueFilter).make(instrumentedType);
   methodAttributeAppender.apply(methodVisitor,methodDescription);
   verify(methodVisitor).visitParameterAnnotation(0,Type.getDescriptor(Baz.class),true);
   verify(methodVisitor).visitParameterAnnotation(0,Type.getDescriptor(QuxBaz.class),false);
   verifyNoMoreInteractions(methodVisitor);
   verify(methodDescription).getDeclaredAnnotations();
   verify(methodDescription).getParameters();
+  verify(methodDescription).getDeclaringType();
   verifyNoMoreInteractions(methodDescription);
 }
