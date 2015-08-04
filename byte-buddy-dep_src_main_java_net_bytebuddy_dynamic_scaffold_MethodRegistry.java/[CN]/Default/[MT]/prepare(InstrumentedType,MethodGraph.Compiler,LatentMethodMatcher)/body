@@ -20,14 +20,14 @@
     if (relevanceMatcher.matches(methodDescription)) {
       for (      Entry entry : entries) {
         if (entry.resolve(instrumentedType).matches(methodDescription)) {
-          implementations.put(methodDescription,entry.asPreparedEntry(methodDescription,node.getBridges()));
+          implementations.put(methodDescription,entry.asPreparedEntry(methodDescription,node.getMethodTypes()));
           visibilityBridge=false;
           break;
         }
       }
     }
     if (visibilityBridge && methodDescription.isPublic() && !(methodDescription.isAbstract() || methodDescription.isFinal())&& !node.getSort().isMadeVisible()&& methodDescription.getDeclaringType().asRawType().isPackagePrivate()) {
-      implementations.put(methodDescription,Prepared.Entry.forVisibilityBridge(methodDescription,node.getBridges()));
+      implementations.put(methodDescription,Prepared.Entry.forVisibilityBridge(methodDescription,node.getMethodTypes()));
     }
   }
   MethodDescription typeInitializer=new MethodDescription.Latent.TypeInitializer(instrumentedType);

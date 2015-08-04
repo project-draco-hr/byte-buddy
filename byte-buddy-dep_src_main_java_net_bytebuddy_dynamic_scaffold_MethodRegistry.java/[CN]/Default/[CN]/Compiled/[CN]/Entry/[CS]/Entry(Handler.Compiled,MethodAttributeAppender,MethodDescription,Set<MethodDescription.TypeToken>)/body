@@ -2,5 +2,5 @@
   this.handler=handler;
   this.attributeAppender=attributeAppender;
   this.methodDescription=methodDescription;
-  this.bridges=bridges;
+  this.bridgeTypes=bridgeTypes;
 }

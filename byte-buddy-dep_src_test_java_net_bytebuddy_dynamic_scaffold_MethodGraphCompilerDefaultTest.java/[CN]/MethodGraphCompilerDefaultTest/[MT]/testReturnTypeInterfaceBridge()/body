@@ -6,6 +6,7 @@
   MethodGraph.Node node=methodGraph.locate(methodDescription.asToken());
   assertThat(node.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(node.getRepresentative(),is(methodDescription));
-  assertThat(node.getBridges().size(),is(1));
-  assertThat(node.getBridges().contains(typeDescription.getDeclaredMethods().filter(returns(Object.class)).getOnly().asTypeToken()),is(true));
+  assertThat(node.getMethodTypes().size(),is(2));
+  assertThat(node.getMethodTypes().contains(methodDescription.asTypeToken()),is(true));
+  assertThat(node.getMethodTypes().contains(typeDescription.getDeclaredMethods().filter(returns(Object.class)).getOnly().asTypeToken()),is(true));
 }

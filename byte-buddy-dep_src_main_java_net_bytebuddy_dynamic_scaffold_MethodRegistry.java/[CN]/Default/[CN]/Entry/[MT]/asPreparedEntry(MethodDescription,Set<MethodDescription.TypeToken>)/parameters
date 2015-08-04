@@ -1,2 +1,2 @@
 MethodDescription methodDescription
-Set<MethodDescription.TypeToken> bridges
+Set<MethodDescription.TypeToken> methodTypes

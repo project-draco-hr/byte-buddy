@@ -1,3 +1,3 @@
 {
-  return "MethodRegistry.Default.Compiled.Entry{" + "handler=" + handler + ", attributeAppender="+ attributeAppender+ ", methodDescription="+ methodDescription+ ", bridges="+ bridges+ '}';
+  return "MethodRegistry.Default.Compiled.Entry{" + "handler=" + handler + ", attributeAppender="+ attributeAppender+ ", methodDescription="+ methodDescription+ ", bridgeTypes="+ bridgeTypes+ '}';
 }

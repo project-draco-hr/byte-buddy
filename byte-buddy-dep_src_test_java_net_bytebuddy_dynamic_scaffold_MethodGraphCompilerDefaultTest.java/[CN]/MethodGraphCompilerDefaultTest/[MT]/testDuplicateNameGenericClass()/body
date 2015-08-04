@@ -6,10 +6,12 @@
   MethodGraph.Node objectNode=methodGraph.locate(objectMethod.asToken());
   assertThat(objectNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(objectNode.getRepresentative(),is(objectMethod));
-  assertThat(objectNode.getBridges().size(),is(0));
+  assertThat(objectNode.getMethodTypes().size(),is(1));
+  assertThat(objectNode.getMethodTypes().contains(objectMethod.asTypeToken()),is(true));
   MethodDescription voidMethod=typeDescription.getDeclaredMethods().filter(takesArguments(Integer.class)).getOnly();
   MethodGraph.Node voidNode=methodGraph.locate(voidMethod.asToken());
   assertThat(voidNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(voidNode.getRepresentative(),is(voidMethod));
-  assertThat(voidNode.getBridges().size(),is(0));
+  assertThat(voidNode.getMethodTypes().size(),is(1));
+  assertThat(voidNode.getMethodTypes().contains(voidMethod.asTypeToken()),is(true));
 }

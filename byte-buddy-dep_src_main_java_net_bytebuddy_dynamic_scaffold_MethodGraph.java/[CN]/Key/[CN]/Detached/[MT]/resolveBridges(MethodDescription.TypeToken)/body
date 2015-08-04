@@ -1,5 +1,0 @@
-{
-  Set<MethodDescription.TypeToken> tokens=new HashSet<MethodDescription.TypeToken>(identifiers);
-  tokens.remove(excluded);
-  return tokens;
-}

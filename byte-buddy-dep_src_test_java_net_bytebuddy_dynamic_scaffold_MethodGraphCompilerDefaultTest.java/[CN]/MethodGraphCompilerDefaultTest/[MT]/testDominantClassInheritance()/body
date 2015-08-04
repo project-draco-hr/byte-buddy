@@ -5,6 +5,7 @@
   MethodDescription methodDescription=new TypeDescription.ForLoadedType(AmbiguousInterfaceBase.DominantIntermediate.class).getDeclaredMethods().getOnly();
   MethodGraph.Node methodNode=methodGraph.locate(methodDescription.asToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
-  assertThat(methodNode.getBridges().size(),is(0));
+  assertThat(methodNode.getMethodTypes().size(),is(1));
+  assertThat(methodNode.getMethodTypes().contains(methodDescription.asTypeToken()),is(true));
   assertThat(methodNode.getRepresentative(),is(methodDescription));
 }

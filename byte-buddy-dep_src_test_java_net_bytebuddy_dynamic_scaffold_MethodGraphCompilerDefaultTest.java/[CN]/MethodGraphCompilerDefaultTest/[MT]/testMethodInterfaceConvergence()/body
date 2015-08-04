@@ -10,8 +10,9 @@
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
   assertThat(methodNode,is(methodGraph.locate(genericMethod.asDefined().asToken())));
   assertThat(methodNode,is(methodGraph.locate(nonGenericMethod.asDefined().asToken())));
-  assertThat(methodNode.getBridges().size(),is(1));
-  assertThat(methodNode.getBridges().contains(genericMethod.asDefined().asTypeToken()),is(true));
+  assertThat(methodNode.getMethodTypes().size(),is(2));
+  assertThat(methodNode.getMethodTypes().contains(genericMethod.asTypeToken()),is(true));
+  assertThat(methodNode.getMethodTypes().contains(genericMethod.asDefined().asTypeToken()),is(true));
   assertThat(methodNode.getRepresentative(),is(genericMethod));
   assertThat(methodNode.getRepresentative(),not(nonGenericMethod));
 }

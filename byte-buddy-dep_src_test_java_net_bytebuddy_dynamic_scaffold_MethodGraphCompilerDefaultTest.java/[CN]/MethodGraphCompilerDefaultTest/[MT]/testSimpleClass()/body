@@ -7,14 +7,16 @@
   for (  MethodDescription methodDescription : TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual())) {
     MethodGraph.Node node=methodGraph.locate(methodDescription.asToken());
     assertThat(node.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
-    assertThat(node.getBridges().size(),is(0));
+    assertThat(node.getMethodTypes().size(),is(1));
+    assertThat(node.getMethodTypes().contains(methodDescription.asTypeToken()),is(true));
     assertThat(node.getRepresentative(),is(methodDescription));
     assertThat(methodGraph.listNodes().contains(node),is(true));
   }
   MethodDescription constructor=typeDescription.getDeclaredMethods().filter(isConstructor()).getOnly();
   MethodGraph.Node constructorNode=methodGraph.locate(constructor.asToken());
   assertThat(constructorNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
-  assertThat(constructorNode.getBridges().size(),is(0));
+  assertThat(constructorNode.getMethodTypes().size(),is(1));
+  assertThat(constructorNode.getMethodTypes().contains(constructor.asTypeToken()),is(true));
   assertThat(constructorNode.getRepresentative(),is(constructor));
   assertThat(methodGraph.listNodes().contains(constructorNode),is(true));
 }

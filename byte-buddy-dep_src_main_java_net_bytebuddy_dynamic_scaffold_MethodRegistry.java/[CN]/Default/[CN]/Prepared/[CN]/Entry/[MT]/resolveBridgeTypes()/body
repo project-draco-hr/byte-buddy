@@ -1,0 +1,5 @@
+{
+  HashSet<MethodDescription.TypeToken> typeTokens=new HashSet<MethodDescription.TypeToken>(this.typeTokens);
+  typeTokens.remove(methodDescription.asTypeToken());
+  return typeTokens;
+}
