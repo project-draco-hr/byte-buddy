@@ -1,0 +1,3 @@
+{
+  return "MethodRegistry.Handler.ForImplementation{" + "implementation=" + implementation + '}';
+}

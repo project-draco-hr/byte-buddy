@@ -1,3 +1,0 @@
-{
-  return "MethodGraph.Empty." + name();
-}

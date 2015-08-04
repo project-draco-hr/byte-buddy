@@ -1,0 +1,3 @@
+{
+  return "MethodRegistry.Handler.ForImplementation.Compiled{" + "byteCodeAppender=" + byteCodeAppender + '}';
+}
