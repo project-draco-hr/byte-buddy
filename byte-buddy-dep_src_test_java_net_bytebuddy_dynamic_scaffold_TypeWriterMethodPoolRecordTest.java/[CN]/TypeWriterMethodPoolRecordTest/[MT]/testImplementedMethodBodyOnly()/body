@@ -1,7 +1,7 @@
 {
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
-  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody(methodDescription,byteCodeAppender,methodAttributeAppender,modifierResolver);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody(methodDescription,byteCodeAppender,methodAttributeAppender);
   record.applyBody(methodVisitor,implementationContext);
   verify(methodVisitor).visitCode();
   verify(methodVisitor).visitMaxs(ONE,TWO);

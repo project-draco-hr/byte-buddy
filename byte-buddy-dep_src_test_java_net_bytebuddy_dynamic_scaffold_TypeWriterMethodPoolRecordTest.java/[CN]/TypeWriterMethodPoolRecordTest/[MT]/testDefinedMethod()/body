@@ -1,5 +1,5 @@
 {
-  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithoutBody(methodDescription,methodAttributeAppender,modifierResolver);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithoutBody(methodDescription,methodAttributeAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.DEFINED));
   record.apply(classVisitor,implementationContext);
   verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});

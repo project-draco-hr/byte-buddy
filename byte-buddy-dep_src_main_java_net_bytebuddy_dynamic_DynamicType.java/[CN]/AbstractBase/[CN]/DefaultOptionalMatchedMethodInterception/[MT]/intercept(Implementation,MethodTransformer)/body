@@ -1,0 +1,3 @@
+{
+  return materialize().method(isDeclaredBy(anyOf(additionalInterfaceTypes))).intercept(implementation,methodTransformer);
+}

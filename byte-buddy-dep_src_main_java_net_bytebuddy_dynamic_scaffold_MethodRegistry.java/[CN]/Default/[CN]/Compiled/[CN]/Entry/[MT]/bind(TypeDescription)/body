@@ -1,0 +1,3 @@
+{
+  return TypeWriter.MethodPool.Record.AccessBridgeWrapper.of(handler.assemble(methodDescription,attributeAppender),instrumentedType,methodDescription,bridges,attributeAppender);
+}

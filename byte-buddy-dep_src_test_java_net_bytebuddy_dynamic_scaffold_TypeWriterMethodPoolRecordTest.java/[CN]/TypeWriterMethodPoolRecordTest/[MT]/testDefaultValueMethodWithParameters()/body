@@ -3,7 +3,7 @@
   when(parameterDescription.isNamed()).thenReturn(true);
   when(methodDescription.getReturnType()).thenReturn(TypeDescription.STRING);
   when(methodDescription.isDefaultValue(FOO)).thenReturn(true);
-  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,FOO,methodAttributeAppender,modifierResolver);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,FOO,methodAttributeAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.DEFINED));
   record.apply(classVisitor,implementationContext);
   verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});

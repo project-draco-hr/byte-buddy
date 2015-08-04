@@ -1,6 +1,7 @@
 {
   int result=handler.hashCode();
   result=31 * result + attributeAppenderFactory.hashCode();
+  result=31 * result + methodDescription.hashCode();
   result=31 * result + bridges.hashCode();
   return result;
 }

@@ -3,6 +3,6 @@
   if (!record.getSort().isDefined()) {
     return super.visitMethod(methodDescription.getModifiers(),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().asRawTypes().toInternalNames());
   }
-  MethodVisitor methodVisitor=super.visitMethod(record.getModifierResolver().transform(methodDescription,record.getSort().isImplemented()),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().asRawTypes().toInternalNames());
+  MethodVisitor methodVisitor=super.visitMethod(methodDescription.getAdjustedModifiers(record.getSort().isImplemented()),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().asRawTypes().toInternalNames());
   return abstractOrigin ? new AttributeObtainingMethodVisitor(methodVisitor,record) : new CodePreservingMethodVisitor(methodVisitor,record,methodRebaseResolver.resolve(methodDescription.asDefined()));
 }

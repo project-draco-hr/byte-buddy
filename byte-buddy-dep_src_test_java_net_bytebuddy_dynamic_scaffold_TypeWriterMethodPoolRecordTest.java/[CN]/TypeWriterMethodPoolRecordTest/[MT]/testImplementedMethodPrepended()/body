@@ -1,5 +1,5 @@
 {
-  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody(methodDescription,byteCodeAppender,methodAttributeAppender,modifierResolver).prepend(otherAppender);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody(methodDescription,byteCodeAppender,methodAttributeAppender).prepend(otherAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.IMPLEMENTED));
   record.apply(classVisitor,implementationContext);
   verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});

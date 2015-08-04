@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(ModifierResolver.Desynchronizing.class).apply();
-}

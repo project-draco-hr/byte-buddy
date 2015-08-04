@@ -14,7 +14,7 @@
       cachedAttributeAppender=entry.getValue().getAppenderFactory().make(instrumentedType);
       attributeAppenderCache.put(entry.getValue().getAppenderFactory(),cachedAttributeAppender);
     }
-    entries.put(entry.getKey(),new Compiled.Entry(cachedHandler,cachedAttributeAppender,entry.getValue().getBridges()));
+    entries.put(entry.getKey(),new Compiled.Entry(cachedHandler,cachedAttributeAppender,entry.getValue().getMethodDescription(),entry.getValue().getBridges()));
   }
   return new Compiled(instrumentedType,loadedTypeInitializer,typeInitializer,entries);
 }

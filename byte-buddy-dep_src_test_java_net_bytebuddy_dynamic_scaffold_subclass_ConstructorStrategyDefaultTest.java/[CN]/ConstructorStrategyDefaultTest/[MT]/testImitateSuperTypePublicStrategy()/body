@@ -2,7 +2,7 @@
   when(methodList.filter(isPublic().and(isConstructor()))).thenReturn((MethodList)filteredMethodList);
   assertThat(ConstructorStrategy.Default.IMITATE_SUPER_TYPE_PUBLIC.extractConstructors(instrumentedType),is((List<MethodDescription.Token>)filteredMethodTokenList));
   assertThat(ConstructorStrategy.Default.IMITATE_SUPER_TYPE_PUBLIC.inject(methodRegistry,methodAttributeAppenderFactory),is(methodRegistry));
-  verify(methodRegistry).append(any(LatentMethodMatcher.class),any(MethodRegistry.Handler.class),eq(methodAttributeAppenderFactory));
+  verify(methodRegistry).append(any(LatentMethodMatcher.class),any(MethodRegistry.Handler.class),eq(methodAttributeAppenderFactory),eq(MethodTransformer.Retaining.INSTANCE));
   verifyNoMoreInteractions(methodRegistry);
   verify(instrumentedType,atLeastOnce()).getSuperType();
   verifyNoMoreInteractions(instrumentedType);

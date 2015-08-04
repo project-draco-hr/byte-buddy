@@ -1,7 +1,6 @@
 {
-  MethodRegistry.Handler handler=new MethodRegistry.Handler.ForImplementation(implementation,modifierResolver);
+  MethodRegistry.Handler handler=new MethodRegistry.Handler.ForImplementation(implementation);
   assertThat(handler.prepare(instrumentedType),is(preparedInstrumentedType));
-  TypeWriter.MethodPool.Record record=handler.compile(implementationTarget).assemble(attributeAppender,methodDescription);
+  TypeWriter.MethodPool.Record record=handler.compile(implementationTarget).assemble(methodDescription,attributeAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.IMPLEMENTED));
-  assertThat(record.getModifierResolver(),is(modifierResolver));
 }

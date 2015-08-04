@@ -1,5 +1,0 @@
-{
-  assertThat(ModifierResolver.Desynchronizing.INSTANCE.transform(methodDescription,true),is(MODIFIERS & ~Opcodes.ACC_SYNCHRONIZED));
-  verify(methodDescription).getAdjustedModifiers(true);
-  verifyNoMoreInteractions(methodDescription);
-}

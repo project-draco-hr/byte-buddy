@@ -1,3 +1,0 @@
-{
-  return ModifierResolver.Retaining.INSTANCE;
-}

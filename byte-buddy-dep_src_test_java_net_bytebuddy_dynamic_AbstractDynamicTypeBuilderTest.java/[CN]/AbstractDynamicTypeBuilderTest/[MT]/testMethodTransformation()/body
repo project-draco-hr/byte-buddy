@@ -1,0 +1,5 @@
+{
+  Class<?> type=createPlain().method(named(TO_STRING)).intercept(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE),MethodTransformer.Transforming.modifiers(MethodManifestation.FINAL)).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.newInstance().toString(),is(FOO));
+  assertThat(type.getDeclaredMethod(TO_STRING).getModifiers(),is(Opcodes.ACC_FINAL | Opcodes.ACC_PUBLIC));
+}

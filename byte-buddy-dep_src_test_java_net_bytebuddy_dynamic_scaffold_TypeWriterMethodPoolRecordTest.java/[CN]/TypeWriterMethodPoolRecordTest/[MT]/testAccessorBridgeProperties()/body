@@ -1,7 +1,5 @@
 {
   when(delegate.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.IMPLEMENTED);
-  when(delegate.getModifierResolver()).thenReturn(modifierResolver);
   TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.AccessBridgeWrapper(delegate,instrumentedType,bridgeTarget,Collections.singleton(typeToken),methodAttributeAppender);
   assertThat(record.getSort(),Is.is(TypeWriter.MethodPool.Record.Sort.IMPLEMENTED));
-  assertThat(record.getModifierResolver(),Is.is(modifierResolver));
 }

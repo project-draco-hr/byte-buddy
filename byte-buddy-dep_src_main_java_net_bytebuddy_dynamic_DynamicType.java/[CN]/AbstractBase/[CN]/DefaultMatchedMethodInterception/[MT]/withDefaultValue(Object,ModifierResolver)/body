@@ -1,3 +1,0 @@
-{
-  return new DefaultMethodAnnotationTarget(methodMatcher,methodTokens,MethodRegistry.Handler.ForAnnotationValue.of(value,nonNull(modifierResolver)),MethodAttributeAppender.NoOp.INSTANCE);
-}

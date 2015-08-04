@@ -1,3 +1,0 @@
-{
-  when(methodDescription.getAdjustedModifiers(anyBoolean())).thenReturn(MODIFIERS);
-}

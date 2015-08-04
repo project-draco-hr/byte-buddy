@@ -16,8 +16,9 @@
   when(firstFactory.make(typeDescription)).thenReturn(firstAppender);
   when(secondFactory.make(typeDescription)).thenReturn(secondAppender);
   when(implementationTargetFactory.make(typeDescription,methodGraph)).thenReturn(implementationTarget);
-  when(firstCompiledHandler.assemble(firstAppender,instrumentedMethod)).thenReturn(firstRecord);
-  when(secondCompiledHandler.assemble(secondAppender,instrumentedMethod)).thenReturn(secondRecord);
+  when(firstCompiledHandler.assemble(instrumentedMethod,firstAppender)).thenReturn(firstRecord);
+  when(secondCompiledHandler.assemble(instrumentedMethod,secondAppender)).thenReturn(secondRecord);
   when(typeDescription.asRawType()).thenReturn(typeDescription);
   when(implementationTarget.getTypeDescription()).thenReturn(typeDescription);
+  when(methodTransformer.transform(instrumentedMethod)).thenReturn(instrumentedMethod);
 }

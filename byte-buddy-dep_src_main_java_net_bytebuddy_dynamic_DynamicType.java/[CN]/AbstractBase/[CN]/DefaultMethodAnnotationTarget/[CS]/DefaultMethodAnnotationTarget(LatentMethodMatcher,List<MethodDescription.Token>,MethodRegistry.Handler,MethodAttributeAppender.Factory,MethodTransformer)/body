@@ -1,0 +1,7 @@
+{
+  this.methodMatcher=methodMatcher;
+  this.methodTokens=methodTokens;
+  this.handler=handler;
+  this.attributeAppenderFactory=attributeAppenderFactory;
+  this.methodTransformer=methodTransformer;
+}
