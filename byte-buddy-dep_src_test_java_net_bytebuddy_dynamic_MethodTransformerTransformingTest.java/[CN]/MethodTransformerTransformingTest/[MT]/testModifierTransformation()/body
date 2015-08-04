@@ -1,0 +1,4 @@
+{
+  MethodTransformer.Transforming.Transformer transformer=new MethodTransformer.Transforming.Transformer.ForModifierTransformation(Collections.singletonList(modifierContributor));
+  assertThat(transformer.resolveModifiers(methodDescription),is((MODIFIERS & ~RANGE) | MASK));
+}
