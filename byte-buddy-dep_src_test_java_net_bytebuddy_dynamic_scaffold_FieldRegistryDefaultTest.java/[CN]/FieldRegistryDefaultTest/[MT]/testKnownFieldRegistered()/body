@@ -3,5 +3,5 @@
   assertThat(fieldPool.target(knownField).getFieldAppender(),is(distinct));
   assertThat(fieldPool.target(knownField).getDefaultValue(),is(defaultValue));
   assertThat(fieldPool.target(unknownField).getDefaultValue(),is(FieldDescription.NO_DEFAULT_VALUE));
-  assertThat(fieldPool.target(unknownField).getFieldAppender(),is((FieldAttributeAppender)FieldAttributeAppender.NoOp.INSTANCE));
+  assertThat(fieldPool.target(unknownField).getFieldAppender(),is((FieldAttributeAppender)new FieldAttributeAppender.ForField(unknownField,AnnotationAppender.ValueFilter.AppendDefaults.INSTANCE)));
 }

@@ -1,0 +1,13 @@
+{
+  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(SampleAnnotation.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT);
+  Class<?> type=createPlain().defineMethod(BAR,String.class,Collections.<Class<?>>emptyList(),Visibility.PUBLIC).intercept(new PreparedField()).make().load(classLoader,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredFields().length,is(1));
+  assertThat(type.getDeclaredField(FOO).getName(),is(FOO));
+  assertEquals(Object.class,type.getDeclaredField(FOO).getType());
+  assertThat(type.getDeclaredField(FOO).getModifiers(),is(MODIFIERS));
+  assertThat(type.getDeclaredField(FOO).getAnnotations().length,is(1));
+  Annotation annotation=type.getDeclaredField(FOO).getAnnotations()[0];
+  assertThat(annotation.annotationType().getName(),is(SampleAnnotation.class.getName()));
+  Method foo=annotation.annotationType().getDeclaredMethod(FOO);
+  assertThat(foo.invoke(annotation),is((Object)BAR));
+}

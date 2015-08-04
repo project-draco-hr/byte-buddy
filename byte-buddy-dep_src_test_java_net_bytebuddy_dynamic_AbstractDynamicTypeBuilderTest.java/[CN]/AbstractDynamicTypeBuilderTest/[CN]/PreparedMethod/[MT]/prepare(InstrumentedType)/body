@@ -1,0 +1,3 @@
+{
+  return instrumentedType.withMethod(new MethodDescription.Token(FOO,MODIFIERS,Collections.<GenericTypeDescription>emptyList(),TypeDescription.OBJECT,Collections.singletonList(new ParameterDescription.Token(TypeDescription.OBJECT,Collections.singletonList(AnnotationDescription.Builder.forType(SampleAnnotation.class).define(FOO,QUX).make()))),Collections.singletonList(new TypeDescription.ForLoadedType(Exception.class)),Collections.singletonList(AnnotationDescription.Builder.forType(SampleAnnotation.class).define(FOO,BAR).make()),MethodDescription.NO_DEFAULT_VALUE));
+}

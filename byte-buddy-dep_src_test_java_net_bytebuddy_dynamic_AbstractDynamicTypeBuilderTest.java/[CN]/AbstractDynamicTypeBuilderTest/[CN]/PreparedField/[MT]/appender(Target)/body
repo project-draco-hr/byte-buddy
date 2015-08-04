@@ -1,0 +1,3 @@
+{
+  return new ByteCodeAppender.Simple(NullConstant.INSTANCE,MethodReturn.REFERENCE);
+}

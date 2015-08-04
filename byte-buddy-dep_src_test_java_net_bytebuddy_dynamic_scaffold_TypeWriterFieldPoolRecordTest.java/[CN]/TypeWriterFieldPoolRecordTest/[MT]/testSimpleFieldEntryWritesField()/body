@@ -1,4 +1,5 @@
 {
+  when(fieldDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   TypeWriter.FieldPool.Record record=new TypeWriter.FieldPool.Record.ForSimpleField(fieldDescription);
   record.apply(classVisitor);
   verify(classVisitor).visitField(MODIFIER,FOO,BAR,QUX,null);

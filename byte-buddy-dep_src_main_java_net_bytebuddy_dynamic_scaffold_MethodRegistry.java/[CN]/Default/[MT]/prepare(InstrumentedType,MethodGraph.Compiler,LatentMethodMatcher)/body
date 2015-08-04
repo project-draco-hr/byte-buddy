@@ -8,7 +8,7 @@
       ElementMatcher<? super MethodDescription> handledMethods=noneOf(helperMethods);
       helperMethods=instrumentedType.getDeclaredMethods();
       for (      MethodDescription helperMethod : helperMethods.filter(handledMethods)) {
-        implementations.put(helperMethod,entry.asPreparedEntry(helperMethod,Collections.<MethodDescription.TypeToken>emptySet()));
+        implementations.put(helperMethod,entry.asSupplementaryEntry(helperMethod));
       }
     }
   }

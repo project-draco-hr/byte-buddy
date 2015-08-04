@@ -1,0 +1,3 @@
+{
+  return new Prepared.Entry(handler,new MethodAttributeAppender.ForMethod(methodDescription,AnnotationAppender.ValueFilter.AppendDefaults.INSTANCE),methodDescription,Collections.<MethodDescription.TypeToken>emptySet());
+}
