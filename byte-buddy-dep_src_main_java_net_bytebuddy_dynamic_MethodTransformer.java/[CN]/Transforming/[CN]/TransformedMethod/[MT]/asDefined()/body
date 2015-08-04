@@ -1,0 +1,3 @@
+{
+  return new InDefinedShape(methodDescription.asDefined(),transformer);
+}

@@ -1,0 +1,3 @@
+{
+  return new Transforming(new Transformer.ForModifierTransformation(Arrays.asList(nonNull(modifierTransformer))));
+}

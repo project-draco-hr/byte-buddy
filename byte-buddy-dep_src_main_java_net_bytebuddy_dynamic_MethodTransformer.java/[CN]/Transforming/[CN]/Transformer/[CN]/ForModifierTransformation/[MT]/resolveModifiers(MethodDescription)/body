@@ -1,0 +1,7 @@
+{
+  int modifiers=methodDescription.getModifiers();
+  for (  ModifierContributor.ForMethod modifierContributor : modifierContributors) {
+    modifiers=(modifiers & ~modifierContributor.getRange()) | modifierContributor.getMask();
+  }
+  return modifiers;
+}
