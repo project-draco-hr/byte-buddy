@@ -1,4 +1,4 @@
 {
   ObjectPropertyAssertion.of(SubclassImplementationTarget.class).apply();
-  ObjectPropertyAssertion.of(SubclassImplementationTarget.OriginTypeIdentifier.class).apply();
+  ObjectPropertyAssertion.of(SubclassImplementationTarget.OriginTypeResolver.class).apply();
 }

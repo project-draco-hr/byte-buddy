@@ -6,5 +6,5 @@
   for (  MethodDescription superConstructor : superConstructors) {
     this.superConstructors.put(superConstructor.asToken(),superConstructor);
   }
-  this.originTypeIdentifier=originTypeIdentifier;
+  this.originTypeResolver=originTypeResolver;
 }

@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && originTypeIdentifier == ((Factory)other).originTypeIdentifier;
+  return this == other || !(other == null || getClass() != other.getClass()) && originTypeResolver == ((Factory)other).originTypeResolver;
 }

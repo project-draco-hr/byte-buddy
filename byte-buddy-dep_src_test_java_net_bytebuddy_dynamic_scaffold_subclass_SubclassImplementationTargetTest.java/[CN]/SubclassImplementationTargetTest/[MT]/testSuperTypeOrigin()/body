@@ -1,3 +1,3 @@
 {
-  assertThat(new SubclassImplementationTarget(instrumentedType,methodGraph,SubclassImplementationTarget.OriginTypeIdentifier.SUPER_TYPE).getOriginType(),is(superType));
+  assertThat(new SubclassImplementationTarget(instrumentedType,methodGraph,SubclassImplementationTarget.OriginTypeResolver.SUPER_TYPE).getOriginType(),is(superType));
 }
