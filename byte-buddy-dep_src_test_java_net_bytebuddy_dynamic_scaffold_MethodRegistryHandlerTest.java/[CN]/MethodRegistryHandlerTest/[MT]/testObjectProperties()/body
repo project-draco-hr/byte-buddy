@@ -3,4 +3,6 @@
   ObjectPropertyAssertion.of(MethodRegistry.Handler.ForImplementation.class).apply();
   ObjectPropertyAssertion.of(MethodRegistry.Handler.ForImplementation.Compiled.class).apply();
   ObjectPropertyAssertion.of(MethodRegistry.Handler.ForAnnotationValue.class).apply();
+  ObjectPropertyAssertion.of(MethodRegistry.Handler.ForVisibilityBridge.class).apply();
+  ObjectPropertyAssertion.of(MethodRegistry.Handler.ForVisibilityBridge.Compiled.class).apply();
 }

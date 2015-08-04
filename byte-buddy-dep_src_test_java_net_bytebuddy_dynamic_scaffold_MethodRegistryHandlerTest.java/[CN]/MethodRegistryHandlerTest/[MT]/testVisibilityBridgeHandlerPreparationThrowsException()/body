@@ -1,0 +1,3 @@
+{
+  MethodRegistry.Handler.ForVisibilityBridge.INSTANCE.prepare(mock(InstrumentedType.class));
+}

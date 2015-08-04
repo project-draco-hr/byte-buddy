@@ -1,0 +1,3 @@
+{
+  return "MethodRegistry.Default.Prepared.Entry{" + "handler=" + handler + ", attributeAppenderFactory="+ attributeAppenderFactory+ ", bridges="+ bridges+ '}';
+}
