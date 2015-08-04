@@ -1,0 +1,8 @@
+{
+  MethodAttributeAppender methodAttributeAppender=new MethodAttributeAppender.Factory.Compound(firstFactory,secondFactory).make(instrumentedType);
+  methodAttributeAppender.apply(methodVisitor,methodDescription);
+  verify(first).apply(methodVisitor,methodDescription);
+  verifyNoMoreInteractions(first);
+  verify(second).apply(methodVisitor,methodDescription);
+  verifyNoMoreInteractions(second);
+}

@@ -1,5 +1,6 @@
 {
-  TypeAttributeAppender.NoOp.INSTANCE.apply(classVisitor,typeDescription);
+  TypeAttributeAppender.NoOp.INSTANCE.apply(classVisitor,typeDescription,targetType);
   verifyZeroInteractions(classVisitor);
   verifyZeroInteractions(typeDescription);
+  verifyZeroInteractions(targetType);
 }

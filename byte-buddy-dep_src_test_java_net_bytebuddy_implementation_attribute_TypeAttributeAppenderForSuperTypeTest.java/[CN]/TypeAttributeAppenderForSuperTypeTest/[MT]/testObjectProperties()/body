@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypeAttributeAppender.ForSuperType.class).apply();
-}

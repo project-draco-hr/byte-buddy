@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypeAttributeAppender.ForInstrumentedType.class).apply();
+}

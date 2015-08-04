@@ -1,3 +1,0 @@
-{
-  return "TypeAttributeAppender.ForSuperType{valueFilter=" + valueFilter + "}";
-}

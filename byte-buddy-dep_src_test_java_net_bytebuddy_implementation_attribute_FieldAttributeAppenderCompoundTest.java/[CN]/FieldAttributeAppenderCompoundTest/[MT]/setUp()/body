@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  when(firstFactory.make(instrumentedType)).thenReturn(first);
+  when(secondFactory.make(instrumentedType)).thenReturn(second);
+}

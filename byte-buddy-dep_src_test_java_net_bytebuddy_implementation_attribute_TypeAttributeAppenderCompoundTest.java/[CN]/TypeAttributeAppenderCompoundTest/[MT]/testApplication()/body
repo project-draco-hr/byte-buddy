@@ -1,0 +1,8 @@
+{
+  TypeAttributeAppender typeAttributeAppender=new TypeAttributeAppender.Compound(first,second);
+  typeAttributeAppender.apply(classVisitor,typeDescription,targetType);
+  verify(first).apply(classVisitor,typeDescription,targetType);
+  verifyNoMoreInteractions(first);
+  verify(second).apply(classVisitor,typeDescription,targetType);
+  verifyNoMoreInteractions(second);
+}

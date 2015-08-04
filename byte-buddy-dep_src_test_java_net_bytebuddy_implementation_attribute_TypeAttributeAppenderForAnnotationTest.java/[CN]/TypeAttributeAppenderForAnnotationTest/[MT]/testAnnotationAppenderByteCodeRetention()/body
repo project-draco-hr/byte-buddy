@@ -1,6 +1,7 @@
 {
-  new TypeAttributeAppender.ForAnnotation(new AnnotationList.ForLoadedAnnotation(new QuxBaz.Instance()),valueFilter).apply(classVisitor,typeDescription);
+  new TypeAttributeAppender.ForAnnotation(new AnnotationList.ForLoadedAnnotation(new QuxBaz.Instance()),valueFilter).apply(classVisitor,typeDescription,targetType);
   verify(classVisitor).visitAnnotation(Type.getDescriptor(QuxBaz.class),false);
   verifyNoMoreInteractions(classVisitor);
   verifyZeroInteractions(typeDescription);
+  verifyZeroInteractions(targetType);
 }

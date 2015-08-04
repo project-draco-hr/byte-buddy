@@ -1,0 +1,5 @@
+{
+  for (  TypeAttributeAppender typeAttributeAppender : this.typeAttributeAppender) {
+    typeAttributeAppender.apply(classVisitor,instrumentedType,targetType);
+  }
+}
