@@ -1,9 +1,0 @@
-{
-  this.javaVersion=javaVersion;
-  this.minorMajorVersion=minorMajorVersion;
-  this.majorVersion=majorVersion;
-  this.minorVersion=minorVersion;
-  this.supportsGenerics=supportsGenerics;
-  this.supportsAnnotations=supportsAnnotations;
-  this.supportsDefaultMethods=supportsDefaultMethods;
-}

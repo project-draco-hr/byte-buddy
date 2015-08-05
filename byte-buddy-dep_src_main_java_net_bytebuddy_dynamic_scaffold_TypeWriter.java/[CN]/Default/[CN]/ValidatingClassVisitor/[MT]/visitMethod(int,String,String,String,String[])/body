@@ -1,4 +1,4 @@
 {
-  constraint.assertMethod(name,(modifiers & Opcodes.ACC_ABSTRACT) != 0,(modifiers & Opcodes.ACC_PUBLIC) != 0,(modifiers & Opcodes.ACC_STATIC) != 0,!descriptor.startsWith(NO_PARAMETERS) || descriptor.endsWith(RETURNS_VOID));
+  constraint.assertMethod(name,(modifiers & Opcodes.ACC_ABSTRACT) != 0,(modifiers & Opcodes.ACC_PUBLIC) != 0,(modifiers & Opcodes.ACC_STATIC) != 0,!descriptor.startsWith(NO_PARAMETERS) || descriptor.endsWith(RETURNS_VOID),name.equals(MethodDescription.CONSTRUCTOR_INTERNAL_NAME) || name.equals(MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME) || (modifiers & Opcodes.ACC_PRIVATE) != 0,signature != null);
   return new ValidatingMethodVisitor(super.visitMethod(modifiers,name,descriptor,signature,exceptions),name);
 }

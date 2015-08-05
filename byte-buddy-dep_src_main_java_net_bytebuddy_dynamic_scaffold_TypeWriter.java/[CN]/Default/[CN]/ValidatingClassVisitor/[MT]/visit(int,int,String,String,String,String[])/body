@@ -1,20 +1,26 @@
 {
   ClassFileVersion classFileVersion=new ClassFileVersion(version);
-  if (name.endsWith("/" + PackageDescription.PACKAGE_CLASS_NAME)) {
-    constraint=Constraint.PACKAGE_CLASS;
+  List<Constraint> constraints=new LinkedList<Constraint>();
+  constraints.add(new Constraint.ForClassFileVersion(classFileVersion));
+  if (name.endsWith('/' + PackageDescription.PACKAGE_CLASS_NAME)) {
+    constraints.add(Constraint.ForPackageType.INSTANCE);
   }
- else   if ((modifier & Opcodes.ACC_ANNOTATION) != ModifierReviewable.EMPTY_MASK) {
-    constraint=classFileVersion.isSupportsDefaultMethods() ? Constraint.JAVA8_ANNOTATION : Constraint.ANNOTATION;
+ else   if ((modifiers & Opcodes.ACC_ANNOTATION) != 0) {
+    if (!classFileVersion.isAtLeastJava5()) {
+      throw new IllegalStateException("Cannot define an annotation type for class file version " + classFileVersion);
+    }
+    constraints.add(classFileVersion.isAtLeastJava8() ? Constraint.ForAnnotation.JAVA_8 : Constraint.ForAnnotation.CLASSIC);
   }
- else   if ((modifier & Opcodes.ACC_INTERFACE) != ModifierReviewable.EMPTY_MASK) {
-    constraint=classFileVersion.isSupportsDefaultMethods() ? Constraint.JAVA8_INTERFACE : Constraint.INTERFACE;
+ else   if ((modifiers & Opcodes.ACC_INTERFACE) != 0) {
+    constraints.add(classFileVersion.isAtLeastJava8() ? Constraint.ForInterface.JAVA_8 : Constraint.ForInterface.CLASSIC);
   }
- else   if ((modifier & Opcodes.ACC_ABSTRACT) != ModifierReviewable.EMPTY_MASK) {
-    constraint=Constraint.ABSTRACT_CLASS;
+ else   if ((modifiers & Opcodes.ACC_ABSTRACT) != 0) {
+    constraints.add(Constraint.ForClass.ABSTRACT);
   }
  else {
-    constraint=Constraint.MANIFEST_CLASS;
+    constraints.add(Constraint.ForClass.MANIFEST);
   }
-  constraint.assertPackage(modifier,interfaces);
-  super.visit(version,modifier,name,signature,superName,interfaces);
+  constraint=new Constraint.Compound(constraints);
+  constraint.assertType(modifiers,interfaces != null,signature != null);
+  super.visit(version,modifiers,name,signature,superName,interfaces);
 }

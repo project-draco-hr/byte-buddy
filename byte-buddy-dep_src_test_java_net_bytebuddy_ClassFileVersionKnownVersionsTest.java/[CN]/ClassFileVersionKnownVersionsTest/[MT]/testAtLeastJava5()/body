@@ -1,0 +1,3 @@
+{
+  assertThat(ClassFileVersion.forKnownJavaVersion(javaVersion).isAtLeastJava5(),is(atLeastJava5));
+}

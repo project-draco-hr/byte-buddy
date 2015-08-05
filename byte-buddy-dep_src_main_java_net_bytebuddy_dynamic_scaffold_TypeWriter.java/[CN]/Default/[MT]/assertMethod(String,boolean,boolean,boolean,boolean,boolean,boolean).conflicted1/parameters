@@ -1,0 +1,7 @@
+String name
+boolean isAbstract
+boolean isPublic
+boolean isStatic
+boolean isDefaultValueIncompatible
+boolean isNonStaticNonVirtual
+boolean isGeneric

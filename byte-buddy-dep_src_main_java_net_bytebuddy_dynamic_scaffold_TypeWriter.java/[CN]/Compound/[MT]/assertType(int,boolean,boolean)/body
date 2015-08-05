@@ -1,0 +1,5 @@
+{
+  for (  Constraint constraint : constraints) {
+    constraint.assertType(modifier,definesInterfaces,isGeneric);
+  }
+}

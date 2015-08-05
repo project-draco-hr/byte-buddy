@@ -1,0 +1,3 @@
+{
+  new ByteBuddy(ClassFileVersion.JAVA_V4).makeAnnotation().make();
+}

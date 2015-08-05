@@ -1,3 +1,0 @@
-{
-  return compareTo(ClassFileVersion.JAVA_V5) > -1;
-}

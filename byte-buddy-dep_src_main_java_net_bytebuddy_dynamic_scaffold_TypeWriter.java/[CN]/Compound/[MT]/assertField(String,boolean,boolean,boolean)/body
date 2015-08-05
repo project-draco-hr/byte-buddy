@@ -1,0 +1,5 @@
+{
+  for (  Constraint constraint : constraints) {
+    constraint.assertField(name,isPublic,isStatic,isGeneric);
+  }
+}

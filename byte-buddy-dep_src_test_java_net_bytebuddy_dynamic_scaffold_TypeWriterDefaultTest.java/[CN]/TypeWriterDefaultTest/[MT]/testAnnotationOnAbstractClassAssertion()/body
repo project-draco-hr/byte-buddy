@@ -1,3 +1,0 @@
-{
-  new ByteBuddy().subclass(Object.class).modifiers(TypeManifestation.ABSTRACT).defineMethod(FOO,String.class,Collections.<Class<?>>emptyList()).withDefaultValue(BAR).make();
-}

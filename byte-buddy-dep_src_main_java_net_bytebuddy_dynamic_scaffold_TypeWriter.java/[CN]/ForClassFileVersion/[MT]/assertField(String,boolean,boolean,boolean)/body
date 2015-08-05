@@ -1,0 +1,5 @@
+{
+  if (isGeneric && !classFileVersion.isAtLeastJava5()) {
+    throw new IllegalStateException("Cannot define generic method '" + name + "' for class file version "+ classFileVersion);
+  }
+}

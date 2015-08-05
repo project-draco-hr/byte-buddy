@@ -1,0 +1,5 @@
+{
+  if (!classFileVersion.isAtLeastJava8()) {
+    throw new IllegalStateException("Cannot write type annotations for class file version " + classFileVersion);
+  }
+}

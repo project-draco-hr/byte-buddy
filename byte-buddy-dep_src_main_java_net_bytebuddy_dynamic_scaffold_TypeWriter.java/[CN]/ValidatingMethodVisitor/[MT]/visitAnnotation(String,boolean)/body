@@ -1,0 +1,4 @@
+{
+  constraint.assertAnnotation();
+  return super.visitAnnotation(desc,visible);
+}

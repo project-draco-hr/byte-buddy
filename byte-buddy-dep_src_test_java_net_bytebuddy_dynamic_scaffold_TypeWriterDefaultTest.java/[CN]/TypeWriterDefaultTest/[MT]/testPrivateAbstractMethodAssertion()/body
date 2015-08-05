@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().subclass(Object.class).defineMethod(FOO,void.class,Collections.<Class<?>>emptyList(),Visibility.PRIVATE).withoutCode().make();
+}

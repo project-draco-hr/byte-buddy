@@ -1,0 +1,4 @@
+{
+  constraint.assertDefaultValue(name);
+  return super.visitAnnotationDefault();
+}

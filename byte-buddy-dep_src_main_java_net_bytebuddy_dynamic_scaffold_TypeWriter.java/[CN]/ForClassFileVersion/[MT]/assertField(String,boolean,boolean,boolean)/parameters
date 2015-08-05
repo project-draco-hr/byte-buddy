@@ -1,0 +1,4 @@
+String name
+boolean isPublic
+boolean isStatic
+boolean isGeneric

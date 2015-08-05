@@ -1,4 +1,4 @@
 {
-  constraint.assertField(name,(modifiers & Opcodes.ACC_PUBLIC) != 0,(modifiers & Opcodes.ACC_STATIC) != 0);
-  return super.visitField(modifiers,name,desc,signature,defaultValue);
+  constraint.assertField(name,(modifiers & Opcodes.ACC_PUBLIC) != 0,(modifiers & Opcodes.ACC_STATIC) != 0,signature != null);
+  return new ValidatingFieldVisitor(super.visitField(modifiers,name,descriptor,signature,defaultValue));
 }

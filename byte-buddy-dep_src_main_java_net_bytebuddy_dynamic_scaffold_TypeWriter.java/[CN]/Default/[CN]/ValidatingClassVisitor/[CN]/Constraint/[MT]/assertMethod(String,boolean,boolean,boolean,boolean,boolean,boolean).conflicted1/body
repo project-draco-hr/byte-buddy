@@ -1,0 +1,5 @@
+{
+  if (isAbstract && manifestType) {
+    throw new IllegalStateException("Cannot define abstract method '" + name + "' for non-abstract class");
+  }
+}

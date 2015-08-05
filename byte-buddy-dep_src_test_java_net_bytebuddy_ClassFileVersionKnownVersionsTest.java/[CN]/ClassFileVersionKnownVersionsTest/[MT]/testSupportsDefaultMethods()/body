@@ -1,3 +1,0 @@
-{
-  assertThat(ClassFileVersion.forKnownJavaVersion(javaVersion).isSupportsDefaultMethods(),is(supportsDefaultMethods));
-}

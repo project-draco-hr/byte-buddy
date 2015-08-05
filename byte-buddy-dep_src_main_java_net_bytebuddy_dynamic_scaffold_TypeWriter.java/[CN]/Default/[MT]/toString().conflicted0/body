@@ -1,0 +1,3 @@
+{
+  return "TypeWriter.Default.ValidatingClassVisitor.Constraint.ForInterface." + name();
+}

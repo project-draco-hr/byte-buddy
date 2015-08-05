@@ -1,0 +1,6 @@
+int javaVersion
+int minorMajorVersion
+int majorVersion
+int minorVersion
+boolean atLeastJava5
+boolean atLeastJava8

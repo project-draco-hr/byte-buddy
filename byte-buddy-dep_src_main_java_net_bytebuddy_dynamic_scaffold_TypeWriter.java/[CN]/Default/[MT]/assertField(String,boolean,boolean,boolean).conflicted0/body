@@ -1,0 +1,5 @@
+{
+  if (!isStatic || !isPublic) {
+    throw new IllegalStateException("Cannot define non-static or non-public field '" + name + "' for interface type");
+  }
+}

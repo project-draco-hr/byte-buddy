@@ -1,0 +1,8 @@
+{
+  if (modifier != PackageDescription.PACKAGE_MODIFIERS) {
+    throw new IllegalStateException("A package description type must define " + PackageDescription.PACKAGE_MODIFIERS + " as modifier");
+  }
+ else   if (definesInterfaces) {
+    throw new IllegalStateException("Cannot implement interface for package type");
+  }
+}

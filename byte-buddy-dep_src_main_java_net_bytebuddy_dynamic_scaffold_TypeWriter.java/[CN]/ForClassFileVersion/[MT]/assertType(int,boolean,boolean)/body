@@ -1,0 +1,8 @@
+{
+  if ((modifiers & Opcodes.ACC_ANNOTATION) != 0 && !classFileVersion.isAtLeastJava5()) {
+    throw new IllegalStateException("Cannot define annotation type for class file version " + classFileVersion);
+  }
+ else   if (isGeneric && !classFileVersion.isAtLeastJava5()) {
+    throw new IllegalStateException("Cannot define a generic type for class file version " + classFileVersion);
+  }
+}

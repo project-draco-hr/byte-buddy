@@ -1,0 +1,4 @@
+{
+  constraint.assertTypeAnnotation();
+  return super.visitTypeAnnotation(typeReference,typePath,descriptor,visible);
+}

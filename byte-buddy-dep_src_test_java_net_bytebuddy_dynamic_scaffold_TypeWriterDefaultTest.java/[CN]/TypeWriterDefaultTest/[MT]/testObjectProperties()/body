@@ -9,9 +9,12 @@
   }
 ).applyBasic();
   ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.class).applyBasic();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.ValidatingFieldVisitor.class).applyBasic();
   ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.ValidatingMethodVisitor.class).applyBasic();
-  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.class).applyBasic();
-  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.ValidatingMethodVisitor.class).applyBasic();
-  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.Constraint.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.Constraint.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.Constraint.ForAnnotation.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.Constraint.ForInterface.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.Constraint.ForClass.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.Constraint.ForPackageType.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.Constraint.ForClassFileVersion.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ValidatingClassVisitor.Constraint.Compound.class).apply();
 }

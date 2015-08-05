@@ -1,0 +1,3 @@
+int modifier
+boolean definesInterfaces
+boolean isGeneric

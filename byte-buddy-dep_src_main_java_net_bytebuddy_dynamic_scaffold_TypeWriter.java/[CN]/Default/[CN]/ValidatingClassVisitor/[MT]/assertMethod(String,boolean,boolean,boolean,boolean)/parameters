@@ -1,5 +1,0 @@
-String name
-boolean isAbstract
-boolean isPublic
-boolean isStatic
-boolean isDefaultIncompatible
