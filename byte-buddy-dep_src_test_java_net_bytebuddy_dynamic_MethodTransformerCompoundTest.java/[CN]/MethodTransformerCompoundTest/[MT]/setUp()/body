@@ -1,0 +1,4 @@
+{
+  when(first.transform(firstMethod)).thenReturn(secondMethod);
+  when(second.transform(secondMethod)).thenReturn(finalMethod);
+}

@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodTransformer.Compound.class).apply();
+}
