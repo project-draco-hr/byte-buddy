@@ -1,0 +1,3 @@
+{
+  assertThat(ClassFileVersion.forKnownJavaVersion(javaVersion).isSupportsAnnotations(),is(supportsAnnotations));
+}

@@ -1,0 +1,7 @@
+int javaVersion
+int minorMajorVersion
+int majorVersion
+int minorVersion
+boolean supportsGenerics
+boolean supportsAnnotations
+boolean supportsDefaultMethods
