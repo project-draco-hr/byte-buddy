@@ -1,3 +1,3 @@
 {
-  return new MethodDelegation(new ImplementationDelegate.ForStaticField(nonNull(delegate)),defaultParameterBinders(),defaultDefaultsProvider(),TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,defaultAmbiguityResolver(),Assigner.DEFAULT,methodGraphCompiler.compile(new TypeDescription.ForLoadedType(delegate.getClass())).listNodes().asMethodList().filter(not(isStatic().or(isPrivate()).or(isConstructor()))));
+  return new MethodDelegation(new ImplementationDelegate.ForStaticField(nonNull(delegate)),TargetMethodAnnotationDrivenBinder.ParameterBinder.DEFAULTS,Argument.NextUnboundAsDefaultsProvider.INSTANCE,TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,MethodDelegationBinder.AmbiguityResolver.DEFAULT,Assigner.DEFAULT,methodGraphCompiler.compile(new TypeDescription.ForLoadedType(delegate.getClass())).listNodes().asMethodList().filter(not(isStatic().or(isPrivate()).or(isConstructor()))));
 }

@@ -1,3 +1,3 @@
 {
-  return super.rebase(aPackage,classFileLocator);
+  return materialize().rebase(aPackage,classFileLocator);
 }

@@ -1,3 +1,0 @@
-{
-  return Arrays.<TargetMethodAnnotationDrivenBinder.ParameterBinder<?>>asList(Argument.Binder.INSTANCE,AllArguments.Binder.INSTANCE,Origin.Binder.INSTANCE,This.Binder.INSTANCE,Super.Binder.INSTANCE,Default.Binder.INSTANCE,SuperCall.Binder.INSTANCE,DefaultCall.Binder.INSTANCE,FieldValue.Binder.INSTANCE,StubValue.Binder.INSTANCE,Empty.Binder.INSTANCE);
-}

@@ -1,4 +1,4 @@
 {
   TypeDescription auxiliaryType=implementationContext.register(new MethodCallProxy(specialMethodInvocation,serializable));
-  return new Compound(TypeCreation.forType(auxiliaryType),Duplication.SINGLE,MethodVariableAccess.allArgumentsOf(specialMethodInvocation.getMethodDescription()).prependThisReference(),MethodInvocation.invoke(auxiliaryType.getDeclaredMethods().filter(isConstructor()).getOnly())).apply(methodVisitor,implementationContext);
+  return new Compound(TypeCreation.forType(auxiliaryType),Duplication.SINGLE,MethodVariableAccess.allArgumentsOf(specialMethodInvocation.getMethodDescription().asDefined()).prependThisReference(),MethodInvocation.invoke(auxiliaryType.getDeclaredMethods().filter(isConstructor()).getOnly())).apply(methodVisitor,implementationContext);
 }

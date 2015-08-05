@@ -1,3 +1,0 @@
-{
-  return new MethodDelegationBinder.AmbiguityResolver.Chain(BindingPriority.Resolver.INSTANCE,DeclaringTypeResolver.INSTANCE,ArgumentTypeResolver.INSTANCE,MethodNameEqualityResolver.INSTANCE,ParameterLengthResolver.INSTANCE);
-}
