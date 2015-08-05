@@ -1,4 +1,4 @@
 {
-  StackManipulation stackManipulation=Assigner.EqualTypesOnly.INSTANCE.assign(first,second,dynamicallyTyped);
+  StackManipulation stackManipulation=Assigner.EqualTypesOnly.INSTANCE.assign(first,second,Assigner.Typing.of(dynamicallyTyped));
   assertThat(stackManipulation.isValid(),is(false));
 }

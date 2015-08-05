@@ -1,0 +1,4 @@
+StackManipulation valueLoadInstruction
+TypeDescription loadedType
+Assigner assigner
+Assigner.Typing typing

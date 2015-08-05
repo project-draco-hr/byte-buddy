@@ -1,0 +1,4 @@
+{
+  super(bootstrapMethod,handleArguments,invocationProvider,terminationHandler,assigner,typing);
+  this.index=index;
+}

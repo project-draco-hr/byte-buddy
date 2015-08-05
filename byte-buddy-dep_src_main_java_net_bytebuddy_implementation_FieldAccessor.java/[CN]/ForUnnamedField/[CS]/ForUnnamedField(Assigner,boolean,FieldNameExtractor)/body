@@ -1,3 +1,0 @@
-{
-  this(assigner,dynamicallyTyped,fieldNameExtractor,FieldLocator.ForInstrumentedTypeHierarchy.Factory.INSTANCE);
-}

@@ -1,5 +1,0 @@
-{
-  super(bootstrapMethod,handleArguments,invocationProvider,terminationHandler,assigner,dynamicallyTyped);
-  this.value=value;
-  this.argumentProvider=InvocationProvider.ArgumentProvider.ForStaticField.of(value);
-}

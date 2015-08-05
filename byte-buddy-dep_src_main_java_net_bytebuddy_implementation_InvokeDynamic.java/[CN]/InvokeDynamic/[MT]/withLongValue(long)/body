@@ -3,5 +3,5 @@
   for (  long aValue : value) {
     argumentProviders.add(new InvocationProvider.ArgumentProvider.ForLongConstant(aValue));
   }
-  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
+  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,typing);
 }

@@ -6,5 +6,5 @@
     }
     argumentProviders.add(new InvocationProvider.ArgumentProvider.ForNullValue(aTypeDescription));
   }
-  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
+  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,typing);
 }

@@ -1,3 +1,0 @@
-{
-  return new Resolved.Simple(new StackManipulation.Compound(stackManipulation,assigner.assign(primitiveType,wrapperType,dynamicallyTyped)),wrapperType);
-}

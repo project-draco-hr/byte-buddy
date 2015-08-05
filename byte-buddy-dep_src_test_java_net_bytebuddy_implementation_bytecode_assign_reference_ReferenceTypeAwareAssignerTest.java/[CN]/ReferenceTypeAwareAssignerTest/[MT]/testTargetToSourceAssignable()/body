@@ -1,6 +1,6 @@
 {
   defineAssignability(false,true);
-  StackManipulation stackManipulation=ReferenceTypeAwareAssigner.INSTANCE.assign(sourceTypeDescription,targetTypeDescription,false);
+  StackManipulation stackManipulation=ReferenceTypeAwareAssigner.INSTANCE.assign(sourceTypeDescription,targetTypeDescription,Assigner.Typing.STATIC);
   assertThat(stackManipulation.isValid(),is(false));
   stackManipulation.apply(methodVisitor,implementationContext);
 }

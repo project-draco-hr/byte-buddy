@@ -3,5 +3,5 @@
   for (  boolean aValue : value) {
     argumentProviders.add(new InvocationProvider.ArgumentProvider.ForBooleanConstant(aValue));
   }
-  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
+  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,typing);
 }

@@ -1,0 +1,7 @@
+MethodDescription.InDefinedShape bootstrapMethod
+List<?> handleArguments
+InvocationProvider invocationProvider
+TerminationHandler terminationHandler
+Assigner assigner
+Assigner.Typing typing
+Object value

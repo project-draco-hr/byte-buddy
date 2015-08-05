@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && dynamicallyTyped == ((FieldAccessor)other).dynamicallyTyped && assigner.equals(((FieldAccessor)other).assigner);
+  return this == other || !(other == null || getClass() != other.getClass()) && typing == ((FieldAccessor)other).typing && assigner.equals(((FieldAccessor)other).assigner);
 }

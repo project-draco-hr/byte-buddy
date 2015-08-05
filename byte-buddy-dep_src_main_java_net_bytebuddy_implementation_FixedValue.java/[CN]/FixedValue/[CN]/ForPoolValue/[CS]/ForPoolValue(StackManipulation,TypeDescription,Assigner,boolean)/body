@@ -1,5 +1,0 @@
-{
-  super(assigner,dynamicallyTyped);
-  this.valueLoadInstruction=valueLoadInstruction;
-  this.loadedType=loadedType;
-}

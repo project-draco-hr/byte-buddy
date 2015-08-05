@@ -1,0 +1,4 @@
+{
+  assertThat(Assigner.Typing.of(false),is(Assigner.Typing.STATIC));
+  assertThat(Assigner.Typing.STATIC.isDynamic(),is(false));
+}

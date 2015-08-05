@@ -1,3 +1,0 @@
-{
-  return new ForStaticField(fieldName,fixedValue,nonNull(assigner),dynamicallyTyped);
-}

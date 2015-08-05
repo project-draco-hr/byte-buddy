@@ -1,0 +1,5 @@
+{
+  super(assigner,typing);
+  this.fieldNameExtractor=fieldNameExtractor;
+  this.fieldLocatorFactory=fieldLocatorFactory;
+}

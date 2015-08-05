@@ -1,7 +1,0 @@
-MethodDescription.InDefinedShape bootstrapMethod
-List<?> handleArguments
-InvocationProvider invocationProvider
-TerminationHandler terminationHandler
-Assigner assigner
-boolean dynamicallyTyped
-int index

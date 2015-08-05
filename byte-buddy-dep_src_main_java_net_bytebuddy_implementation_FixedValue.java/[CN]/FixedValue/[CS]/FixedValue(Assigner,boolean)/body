@@ -1,4 +1,0 @@
-{
-  this.assigner=assigner;
-  this.dynamicallyTyped=dynamicallyTyped;
-}

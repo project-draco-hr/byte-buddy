@@ -1,43 +1,43 @@
 {
   if (fixedValue == null) {
-    return new ForPoolValue(NullConstant.INSTANCE,TypeDescription.OBJECT,Assigner.DEFAULT,Assigner.DYNAMICALLY_TYPED);
+    return new ForPoolValue(NullConstant.INSTANCE,TypeDescription.OBJECT,Assigner.DEFAULT,Assigner.Typing.DYNAMIC);
   }
   Class<?> type=fixedValue.getClass();
   if (type == String.class) {
-    return new ForPoolValue(new TextConstant((String)fixedValue),TypeDescription.STRING,Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(new TextConstant((String)fixedValue),TypeDescription.STRING,Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (type == Class.class) {
-    return new ForPoolValue(ClassConstant.of(new TypeDescription.ForLoadedType((Class<?>)fixedValue)),TypeDescription.CLASS,Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(ClassConstant.of(new TypeDescription.ForLoadedType((Class<?>)fixedValue)),TypeDescription.CLASS,Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (type == Boolean.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Boolean)fixedValue),new TypeDescription.ForLoadedType(boolean.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(IntegerConstant.forValue((Boolean)fixedValue),new TypeDescription.ForLoadedType(boolean.class),Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (type == Byte.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Byte)fixedValue),new TypeDescription.ForLoadedType(byte.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(IntegerConstant.forValue((Byte)fixedValue),new TypeDescription.ForLoadedType(byte.class),Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (type == Short.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Short)fixedValue),new TypeDescription.ForLoadedType(short.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(IntegerConstant.forValue((Short)fixedValue),new TypeDescription.ForLoadedType(short.class),Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (type == Character.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Character)fixedValue),new TypeDescription.ForLoadedType(char.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(IntegerConstant.forValue((Character)fixedValue),new TypeDescription.ForLoadedType(char.class),Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (type == Integer.class) {
-    return new ForPoolValue(IntegerConstant.forValue((Integer)fixedValue),new TypeDescription.ForLoadedType(int.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(IntegerConstant.forValue((Integer)fixedValue),new TypeDescription.ForLoadedType(int.class),Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (type == Long.class) {
-    return new ForPoolValue(LongConstant.forValue((Long)fixedValue),new TypeDescription.ForLoadedType(long.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(LongConstant.forValue((Long)fixedValue),new TypeDescription.ForLoadedType(long.class),Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (type == Float.class) {
-    return new ForPoolValue(FloatConstant.forValue((Float)fixedValue),new TypeDescription.ForLoadedType(float.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(FloatConstant.forValue((Float)fixedValue),new TypeDescription.ForLoadedType(float.class),Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (type == Double.class) {
-    return new ForPoolValue(DoubleConstant.forValue((Double)fixedValue),new TypeDescription.ForLoadedType(double.class),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(DoubleConstant.forValue((Double)fixedValue),new TypeDescription.ForLoadedType(double.class),Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (JavaType.METHOD_HANDLE.getTypeStub().isAssignableFrom(type)) {
-    return new ForPoolValue(MethodHandleConstant.of(JavaInstance.MethodHandle.of(fixedValue)),new TypeDescription.ForLoadedType(type),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(MethodHandleConstant.of(JavaInstance.MethodHandle.of(fixedValue)),new TypeDescription.ForLoadedType(type),Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else   if (JavaType.METHOD_TYPE.getTypeStub().represents(type)) {
-    return new ForPoolValue(MethodTypeConstant.of(JavaInstance.MethodType.of(fixedValue)),new TypeDescription.ForLoadedType(type),Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+    return new ForPoolValue(MethodTypeConstant.of(JavaInstance.MethodType.of(fixedValue)),new TypeDescription.ForLoadedType(type),Assigner.DEFAULT,Assigner.Typing.STATIC);
   }
  else {
     return reference(fixedValue);

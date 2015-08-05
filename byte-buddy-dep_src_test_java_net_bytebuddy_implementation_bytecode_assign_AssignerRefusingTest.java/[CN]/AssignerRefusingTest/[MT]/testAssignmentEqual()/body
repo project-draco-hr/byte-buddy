@@ -1,4 +1,4 @@
 {
-  StackManipulation stackManipulation=Assigner.Refusing.INSTANCE.assign(first,first,dynamicallyTyped);
+  StackManipulation stackManipulation=Assigner.Refusing.INSTANCE.assign(first,first,Assigner.Typing.of(dynamicallyTyped));
   assertThat(stackManipulation.isValid(),is(false));
 }

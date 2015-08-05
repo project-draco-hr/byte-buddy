@@ -3,5 +3,5 @@
   for (  TypeDescription aTypeDescription : typeDescription) {
     argumentLoaders.add(new ArgumentLoader.ForClassConstant(nonNull(aTypeDescription)));
   }
-  return new MethodCall(methodLocator,targetHandler,join(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,dynamicallyTyped);
+  return new MethodCall(methodLocator,targetHandler,join(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,typing);
 }

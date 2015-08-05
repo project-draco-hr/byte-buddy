@@ -1,0 +1,4 @@
+TypeDescription instrumentedType
+MethodDescription instrumentedMethod
+Assigner assigner
+Assigner.Typing typing

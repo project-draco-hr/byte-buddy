@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=new StackManipulation.Compound(DoubleConstant.forValue(value),assigner.assign(new TypeDescription.ForLoadedType(double.class),targetType,typing));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign double value to " + targetType);
+  }
+  return stackManipulation;
+}

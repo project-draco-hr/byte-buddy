@@ -1,3 +1,0 @@
-{
-  return new ForPoolValue(valueLoadInstruction,loadedType,nonNull(assigner),dynamicallyTyped);
-}

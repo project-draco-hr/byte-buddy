@@ -1,5 +1,5 @@
 {
-  StackManipulation boxingStackManipulation=PrimitiveBoxingDelegate.forPrimitive(primitiveTypeDescription).assignBoxedTo(targetType,chainedAssigner,false);
+  StackManipulation boxingStackManipulation=PrimitiveBoxingDelegate.forPrimitive(primitiveTypeDescription).assignBoxedTo(targetType,chainedAssigner,Assigner.Typing.STATIC);
   assertThat(boxingStackManipulation.isValid(),is(true));
   StackManipulation.Size size=boxingStackManipulation.apply(methodVisitor,implementationContext);
   assertThat(size.getSizeImpact(),is(sizeChange));
@@ -7,7 +7,7 @@
   verify(primitiveTypeDescription).represents(primitiveType);
   verify(primitiveTypeDescription,atLeast(1)).represents(any(Class.class));
   verifyNoMoreInteractions(primitiveTypeDescription);
-  verify(chainedAssigner).assign(referenceTypeDescription,targetType,false);
+  verify(chainedAssigner).assign(referenceTypeDescription,targetType,Assigner.Typing.STATIC);
   verifyNoMoreInteractions(chainedAssigner);
   verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESTATIC,referenceTypeDescription.getInternalName(),VALUE_OF,boxingMethodDescriptor,false);
   verifyNoMoreInteractions(methodVisitor);

@@ -1,0 +1,3 @@
+{
+  this(String.format("%s$%d",PREFIX,Math.abs(fixedValue.hashCode())),fixedValue,assigner,typing);
+}

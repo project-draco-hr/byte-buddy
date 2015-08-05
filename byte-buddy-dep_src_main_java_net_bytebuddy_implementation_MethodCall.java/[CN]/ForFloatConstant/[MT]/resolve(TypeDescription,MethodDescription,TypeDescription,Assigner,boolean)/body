@@ -1,7 +1,0 @@
-{
-  StackManipulation stackManipulation=new StackManipulation.Compound(FloatConstant.forValue(value),assigner.assign(new TypeDescription.ForLoadedType(float.class),targetType,dynamicallyTyped));
-  if (!stackManipulation.isValid()) {
-    throw new IllegalStateException("Cannot assign float value to " + targetType);
-  }
-  return stackManipulation;
-}

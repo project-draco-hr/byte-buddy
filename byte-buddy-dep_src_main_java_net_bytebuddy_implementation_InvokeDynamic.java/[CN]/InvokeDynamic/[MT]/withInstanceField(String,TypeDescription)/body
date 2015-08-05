@@ -1,3 +1,3 @@
 {
-  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArgument(new InvocationProvider.ArgumentProvider.ForInstanceField(nonNull(fieldName),nonNull(fieldType))),terminationHandler,assigner,dynamicallyTyped);
+  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArgument(new InvocationProvider.ArgumentProvider.ForInstanceField(nonNull(fieldName),nonNull(fieldType))),terminationHandler,assigner,typing);
 }

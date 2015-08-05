@@ -1,6 +1,6 @@
 {
   TypeDescription primitiveType=new TypeDescription.ForLoadedType(int.class);
-  StackManipulation stackManipulation=ReferenceTypeAwareAssigner.INSTANCE.assign(primitiveType,primitiveType,true);
+  StackManipulation stackManipulation=ReferenceTypeAwareAssigner.INSTANCE.assign(primitiveType,primitiveType,Assigner.Typing.DYNAMIC);
   assertThat(stackManipulation.isValid(),is(true));
   StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
   assertThat(size.getSizeImpact(),is(0));

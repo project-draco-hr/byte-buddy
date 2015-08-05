@@ -1,5 +1,5 @@
 {
-  when(chainedAssigner.assign(any(TypeDescription.class),any(TypeDescription.class),anyBoolean())).thenReturn(stackManipulation);
+  when(chainedAssigner.assign(any(TypeDescription.class),any(TypeDescription.class),any(Assigner.Typing.class))).thenReturn(stackManipulation);
   when(stackManipulation.isValid()).thenReturn(true);
   when(stackManipulation.apply(any(MethodVisitor.class),any(Implementation.Context.class))).thenReturn(StackSize.ZERO.toIncreasingSize());
 }

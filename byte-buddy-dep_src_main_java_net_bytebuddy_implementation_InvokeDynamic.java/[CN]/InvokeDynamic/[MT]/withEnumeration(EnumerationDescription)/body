@@ -3,5 +3,5 @@
   for (  EnumerationDescription anEnumerationDescription : enumerationDescription) {
     argumentProviders.add(new InvocationProvider.ArgumentProvider.ForEnumerationValue(nonNull(anEnumerationDescription)));
   }
-  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,dynamicallyTyped);
+  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,typing);
 }

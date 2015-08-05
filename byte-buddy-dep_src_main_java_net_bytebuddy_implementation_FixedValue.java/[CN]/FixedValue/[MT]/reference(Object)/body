@@ -1,3 +1,3 @@
 {
-  return fixedValue == null ? new ForPoolValue(NullConstant.INSTANCE,TypeDescription.OBJECT,Assigner.DEFAULT,Assigner.DYNAMICALLY_TYPED) : new ForStaticField(fixedValue,Assigner.DEFAULT,Assigner.STATICALLY_TYPED);
+  return fixedValue == null ? new ForPoolValue(NullConstant.INSTANCE,TypeDescription.OBJECT,Assigner.DEFAULT,Assigner.Typing.DYNAMIC) : new ForStaticField(fixedValue,Assigner.DEFAULT,Assigner.Typing.STATIC);
 }

@@ -1,3 +1,0 @@
-{
-  return new WithImplicitArguments(bootstrapMethod,handleArguments,invocationProvider,terminationHandler,nonNull(assigner),dynamicallyTyped);
-}

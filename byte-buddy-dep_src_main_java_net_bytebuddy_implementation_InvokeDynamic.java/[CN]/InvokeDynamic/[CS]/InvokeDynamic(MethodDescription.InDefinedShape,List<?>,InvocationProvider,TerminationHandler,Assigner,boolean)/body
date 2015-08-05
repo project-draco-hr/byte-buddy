@@ -1,8 +1,0 @@
-{
-  this.bootstrapMethod=bootstrapMethod;
-  this.handleArguments=handleArguments;
-  this.invocationProvider=invocationProvider;
-  this.terminationHandler=terminationHandler;
-  this.assigner=assigner;
-  this.dynamicallyTyped=dynamicallyTyped;
-}

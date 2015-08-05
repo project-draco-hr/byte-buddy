@@ -1,3 +1,0 @@
-{
-  return new ForNamedField(nonNull(assigner),dynamicallyTyped,fieldName,preparationHandler,fieldLocatorFactory);
-}

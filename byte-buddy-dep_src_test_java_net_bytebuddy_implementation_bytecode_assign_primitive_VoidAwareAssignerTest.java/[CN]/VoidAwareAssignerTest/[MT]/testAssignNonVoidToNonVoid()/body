@@ -1,9 +1,9 @@
 {
   Assigner voidAwareAssigner=new VoidAwareAssigner(chainedAssigner);
   StackManipulation chainedStackManipulation=mock(StackManipulation.class);
-  when(chainedAssigner.assign(sourceTypeDescription,targetTypeDescription,false)).thenReturn(chainedStackManipulation);
-  StackManipulation stackManipulation=voidAwareAssigner.assign(sourceTypeDescription,targetTypeDescription,false);
+  when(chainedAssigner.assign(sourceTypeDescription,targetTypeDescription,Assigner.Typing.STATIC)).thenReturn(chainedStackManipulation);
+  StackManipulation stackManipulation=voidAwareAssigner.assign(sourceTypeDescription,targetTypeDescription,Assigner.Typing.STATIC);
   assertThat(stackManipulation,is(chainedStackManipulation));
-  verify(chainedAssigner).assign(sourceTypeDescription,targetTypeDescription,false);
+  verify(chainedAssigner).assign(sourceTypeDescription,targetTypeDescription,Assigner.Typing.STATIC);
   verifyNoMoreInteractions(chainedAssigner);
 }

@@ -1,3 +1,0 @@
-{
-  return new MethodCall(methodLocator,targetHandler,argumentLoaders,methodInvoker,terminationHandler,nonNull(assigner),dynamicallyTyped);
-}

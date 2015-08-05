@@ -25,7 +25,7 @@
   verify(source,atLeast(1)).isStatic();
   verify(target,atLeast(1)).getType();
   verify(target,atLeast(1)).getDeclaredAnnotations();
-  verify(assigner).assign(firstSourceType,componentType,false);
-  verify(assigner).assign(secondSourceType,componentType,false);
+  verify(assigner).assign(firstSourceType,componentType,Assigner.Typing.STATIC);
+  verify(assigner).assign(secondSourceType,componentType,Assigner.Typing.STATIC);
   verifyNoMoreInteractions(assigner);
 }

@@ -1,3 +1,3 @@
 {
-  implement(Foo.class,MethodCall.invokeSuper().with(value).withAssigner(nonAssigner,false));
+  implement(Foo.class,MethodCall.invokeSuper().with(value).withAssigner(nonAssigner,Assigner.Typing.STATIC));
 }

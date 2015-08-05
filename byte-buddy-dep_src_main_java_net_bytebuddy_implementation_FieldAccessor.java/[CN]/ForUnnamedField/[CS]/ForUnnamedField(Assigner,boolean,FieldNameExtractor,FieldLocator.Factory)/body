@@ -1,5 +1,0 @@
-{
-  super(assigner,dynamicallyTyped);
-  this.fieldNameExtractor=fieldNameExtractor;
-  this.fieldLocatorFactory=fieldLocatorFactory;
-}

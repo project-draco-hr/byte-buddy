@@ -1,6 +1,0 @@
-{
-  super(assigner,dynamicallyTyped);
-  this.fieldName=fieldName;
-  this.preparationHandler=preparationHandler;
-  this.fieldLocatorFactory=fieldLocatorFactory;
-}

@@ -1,4 +1,0 @@
-StackManipulation valueLoadInstruction
-TypeDescription loadedType
-Assigner assigner
-boolean dynamicallyTyped

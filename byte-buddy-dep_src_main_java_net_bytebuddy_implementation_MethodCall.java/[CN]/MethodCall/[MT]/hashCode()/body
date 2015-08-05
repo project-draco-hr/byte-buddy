@@ -5,6 +5,6 @@
   result=31 * result + methodInvoker.hashCode();
   result=31 * result + terminationHandler.hashCode();
   result=31 * result + assigner.hashCode();
-  result=31 * result + (dynamicallyTyped ? 1 : 0);
+  result=31 * result + typing.hashCode();
   return result;
 }

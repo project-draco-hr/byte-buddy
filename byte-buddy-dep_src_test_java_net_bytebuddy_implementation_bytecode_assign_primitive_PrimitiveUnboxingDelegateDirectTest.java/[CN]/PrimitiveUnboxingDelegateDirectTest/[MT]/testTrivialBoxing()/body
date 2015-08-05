@@ -1,5 +1,5 @@
 {
-  StackManipulation stackManipulation=PrimitiveUnboxingDelegate.forReferenceType(wrapperTypeDescription).assignUnboxedTo(primitiveTypeDescription,chainedAssigner,false);
+  StackManipulation stackManipulation=PrimitiveUnboxingDelegate.forReferenceType(wrapperTypeDescription).assignUnboxedTo(primitiveTypeDescription,chainedAssigner,Assigner.Typing.STATIC);
   assertThat(stackManipulation.isValid(),is(true));
   StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
   assertThat(size.getSizeImpact(),is(sizeChange));

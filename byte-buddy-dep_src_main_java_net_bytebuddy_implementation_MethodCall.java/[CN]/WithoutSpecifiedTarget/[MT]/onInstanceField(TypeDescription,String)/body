@@ -1,3 +1,3 @@
 {
-  return new MethodCall(methodLocator,new TargetHandler.ForInstanceField(nonNull(fieldName),isActualType(typeDescription)),argumentLoaders,MethodInvoker.ForStandardInvocation.INSTANCE,TerminationHandler.ForMethodReturn.INSTANCE,assigner,dynamicallyTyped);
+  return new MethodCall(methodLocator,new TargetHandler.ForInstanceField(nonNull(fieldName),isActualType(typeDescription)),argumentLoaders,MethodInvoker.ForStandardInvocation.INSTANCE,TerminationHandler.ForMethodReturn.INSTANCE,assigner,typing);
 }

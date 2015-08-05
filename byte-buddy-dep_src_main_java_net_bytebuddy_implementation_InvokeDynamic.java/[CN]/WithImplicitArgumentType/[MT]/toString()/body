@@ -1,3 +1,3 @@
 {
-  return "InvokeDynamic.WithImplicitArgumentType{" + "bootstrapMethod=" + bootstrapMethod + ", handleArguments="+ handleArguments+ ", invocationProvider="+ invocationProvider+ ", terminationHandler="+ terminationHandler+ ", assigner="+ assigner+ ", dynamicallyTyped="+ dynamicallyTyped+ ", index="+ index+ '}';
+  return "InvokeDynamic.WithImplicitArgumentType{" + "bootstrapMethod=" + bootstrapMethod + ", handleArguments="+ handleArguments+ ", invocationProvider="+ invocationProvider+ ", terminationHandler="+ terminationHandler+ ", assigner="+ assigner+ ", typing="+ typing+ ", index="+ index+ '}';
 }

@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=new StackManipulation.Compound(LongConstant.forValue(value),assigner.assign(new TypeDescription.ForLoadedType(long.class),targetType,typing));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign long value to " + targetType);
+  }
+  return stackManipulation;
+}

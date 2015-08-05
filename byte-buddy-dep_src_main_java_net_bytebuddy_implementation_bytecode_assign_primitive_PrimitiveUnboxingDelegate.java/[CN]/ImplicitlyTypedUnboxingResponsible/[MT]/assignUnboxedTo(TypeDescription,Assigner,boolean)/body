@@ -1,4 +1,0 @@
-{
-  PrimitiveUnboxingDelegate primitiveUnboxingDelegate=PrimitiveUnboxingDelegate.forPrimitive(targetType);
-  return new Compound(assigner.assign(originalType,primitiveUnboxingDelegate.wrapperType,dynamicallyTyped),primitiveUnboxingDelegate);
-}

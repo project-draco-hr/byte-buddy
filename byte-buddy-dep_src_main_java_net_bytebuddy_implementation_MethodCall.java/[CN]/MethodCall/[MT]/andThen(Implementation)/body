@@ -1,3 +1,3 @@
 {
-  return new Implementation.Compound(new MethodCall(methodLocator,targetHandler,argumentLoaders,methodInvoker,TerminationHandler.ForChainedInvocation.INSTANCE,assigner,dynamicallyTyped),nonNull(implementation));
+  return new Implementation.Compound(new MethodCall(methodLocator,targetHandler,argumentLoaders,methodInvoker,TerminationHandler.ForChainedInvocation.INSTANCE,assigner,typing),nonNull(implementation));
 }

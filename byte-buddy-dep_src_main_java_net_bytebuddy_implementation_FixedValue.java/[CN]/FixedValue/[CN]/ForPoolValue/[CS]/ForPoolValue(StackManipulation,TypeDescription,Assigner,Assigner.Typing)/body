@@ -1,0 +1,5 @@
+{
+  super(assigner,typing);
+  this.valueLoadInstruction=valueLoadInstruction;
+  this.loadedType=loadedType;
+}

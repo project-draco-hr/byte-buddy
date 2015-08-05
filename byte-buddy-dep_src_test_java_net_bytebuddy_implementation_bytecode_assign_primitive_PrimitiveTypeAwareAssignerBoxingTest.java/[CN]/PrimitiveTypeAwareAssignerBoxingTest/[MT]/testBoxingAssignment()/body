@@ -1,5 +1,5 @@
 {
-  StackManipulation stackManipulation=primitiveAssigner.assign(sourceTypeDescription,targetTypeDescription,false);
+  StackManipulation stackManipulation=primitiveAssigner.assign(sourceTypeDescription,targetTypeDescription,Assigner.Typing.STATIC);
   assertThat(stackManipulation.isValid(),is(assignable));
   verify(chainedStackManipulation).isValid();
   verifyNoMoreInteractions(chainedStackManipulation);
@@ -9,6 +9,6 @@
   verifyNoMoreInteractions(sourceTypeDescription);
   verify(targetTypeDescription,atLeast(1)).isPrimitive();
   verifyNoMoreInteractions(targetTypeDescription);
-  verify(chainedAssigner).assign(new TypeDescription.ForLoadedType(targetType),targetTypeDescription,false);
+  verify(chainedAssigner).assign(new TypeDescription.ForLoadedType(targetType),targetTypeDescription,Assigner.Typing.STATIC);
   verifyNoMoreInteractions(chainedAssigner);
 }
