@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && codeSourceLocator.equals(((ManifestReading)other).codeSourceLocator);
+  return this == other || !(other == null || getClass() != other.getClass()) && sealBaseLocator.equals(((ManifestReading)other).sealBaseLocator);
 }
