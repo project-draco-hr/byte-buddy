@@ -4,13 +4,24 @@
     return type;
   }
   try {
-    type=findClass(name);
+    try {
+      type=AccessController.doPrivileged(new ClassLoadingAction(name),accessControlContext);
+    }
+ catch (    PrivilegedActionException exception) {
+      Throwable cause=exception.getCause();
+      if (cause instanceof ClassNotFoundException) {
+        throw (ClassNotFoundException)cause;
+      }
+ else {
+        throw new IllegalStateException("Could not load class " + name,cause);
+      }
+    }
     if (resolve) {
       resolveClass(type);
     }
     return type;
   }
- catch (  ClassNotFoundException e) {
+ catch (  ClassNotFoundException exception) {
     return super.loadClass(name,resolve);
   }
 }

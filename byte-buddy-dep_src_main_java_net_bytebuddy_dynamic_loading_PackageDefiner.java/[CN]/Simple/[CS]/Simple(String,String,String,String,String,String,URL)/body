@@ -1,0 +1,9 @@
+{
+  this.specificationTitle=specificationTitle;
+  this.specificationVersion=specificationVersion;
+  this.specificationVendor=specificationVendor;
+  this.implementationTitle=implementationTitle;
+  this.implementationVersion=implementationVersion;
+  this.implementationVendor=implementationVendor;
+  this.sealBase=sealBase;
+}

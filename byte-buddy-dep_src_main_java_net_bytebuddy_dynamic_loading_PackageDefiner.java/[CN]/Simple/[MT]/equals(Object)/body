@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Simple simple=(Simple)other;
+  return !(specificationTitle != null ? !specificationTitle.equals(simple.specificationTitle) : simple.specificationTitle != null) && !(specificationVersion != null ? !specificationVersion.equals(simple.specificationVersion) : simple.specificationVersion != null) && !(specificationVendor != null ? !specificationVendor.equals(simple.specificationVendor) : simple.specificationVendor != null)&& !(implementationTitle != null ? !implementationTitle.equals(simple.implementationTitle) : simple.implementationTitle != null)&& !(implementationVersion != null ? !implementationVersion.equals(simple.implementationVersion) : simple.implementationVersion != null)&& !(implementationVendor != null ? !implementationVendor.equals(simple.implementationVendor) : simple.implementationVendor != null)&& !(sealBase != null ? !sealBase.equals(simple.sealBase) : simple.sealBase != null);
+}

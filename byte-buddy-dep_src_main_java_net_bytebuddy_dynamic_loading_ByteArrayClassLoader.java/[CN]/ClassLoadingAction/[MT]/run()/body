@@ -1,11 +1,15 @@
 {
-  byte[] javaType=persistenceHandler.lookup(name,typeDefinitions);
+  byte[] javaType=persistenceHandler.lookup(typeName,typeDefinitions);
   if (javaType != null) {
-    int packageIndex=name.lastIndexOf('.');
-    if (packageIndex != -1 && getPackage(name.substring(0,packageIndex)) == null) {
-      definePackage(name.substring(0,packageIndex),null,null,null,null,null,null,null);
+    int packageIndex=typeName.lastIndexOf('.');
+    if (packageIndex != -1 && getPackage(typeName.substring(0,packageIndex)) == null) {
+      String packageName=typeName.substring(0,packageIndex);
+      PackageDefiner.Definition definition=packageDefiner.define(packageName,ByteArrayClassLoader.this,typeName.substring(packageIndex + 1));
+      if (definition.isDefined()) {
+        definePackage(packageName,definition.getSpecificationTitle(),definition.getSpecificationVersion(),definition.getSpecificationVendor(),definition.getImplementationTitle(),definition.getImplementationVersion(),definition.getImplementationVendor(),definition.getSealBase());
+      }
     }
-    return defineClass(name,javaType,FROM_BEGINNING,javaType.length,protectionDomain);
+    return defineClass(typeName,javaType,FROM_BEGINNING,javaType.length,protectionDomain);
   }
-  throw new ClassNotFoundException(name);
+  throw new ClassNotFoundException(typeName);
 }

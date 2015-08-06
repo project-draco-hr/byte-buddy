@@ -1,0 +1,3 @@
+{
+  new ClassInjector.UsingReflection.ReflectionStore.Faulty(new Exception()).definePackage(classLoader,null,null,null,null,null,null,null,null);
+}

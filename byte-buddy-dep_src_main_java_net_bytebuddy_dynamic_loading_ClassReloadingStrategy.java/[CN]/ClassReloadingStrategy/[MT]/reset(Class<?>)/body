@@ -11,17 +11,17 @@
       }
     }
   }
- catch (  IOException e) {
-    throw new IllegalStateException("Exception while resetting types " + Arrays.toString(type),e);
+ catch (  IOException exception) {
+    throw new IllegalStateException("Exception while resetting types " + Arrays.toString(type),exception);
   }
   try {
     engine.apply(instrumentation,classDefinitions);
   }
- catch (  ClassNotFoundException e) {
-    throw new IllegalArgumentException("Cannot locate types " + Arrays.toString(type),e);
+ catch (  ClassNotFoundException exception) {
+    throw new IllegalArgumentException("Cannot locate types " + Arrays.toString(type),exception);
   }
-catch (  UnmodifiableClassException e) {
-    throw new IllegalStateException("Cannot reset types " + Arrays.toString(type),e);
+catch (  UnmodifiableClassException exception) {
+    throw new IllegalStateException("Cannot reset types " + Arrays.toString(type),exception);
   }
   return this;
 }

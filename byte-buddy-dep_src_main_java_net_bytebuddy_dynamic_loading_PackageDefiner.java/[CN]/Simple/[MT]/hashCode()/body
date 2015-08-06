@@ -1,0 +1,10 @@
+{
+  int result=specificationTitle != null ? specificationTitle.hashCode() : 0;
+  result=31 * result + (specificationVersion != null ? specificationVersion.hashCode() : 0);
+  result=31 * result + (specificationVendor != null ? specificationVendor.hashCode() : 0);
+  result=31 * result + (implementationTitle != null ? implementationTitle.hashCode() : 0);
+  result=31 * result + (implementationVersion != null ? implementationVersion.hashCode() : 0);
+  result=31 * result + (implementationVendor != null ? implementationVendor.hashCode() : 0);
+  result=31 * result + (sealBase != null ? sealBase.hashCode() : 0);
+  return result;
+}

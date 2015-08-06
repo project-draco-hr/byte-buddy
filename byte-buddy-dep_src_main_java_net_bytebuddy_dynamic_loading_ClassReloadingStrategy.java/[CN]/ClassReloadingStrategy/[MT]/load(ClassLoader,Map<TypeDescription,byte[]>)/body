@@ -17,11 +17,11 @@
     ClassInjector classInjector=classLoader == null ? bootstrapInjection.make(instrumentation) : new ClassInjector.UsingReflection(classLoader);
     loadedClasses.putAll(classInjector.inject(unloadedClasses));
   }
- catch (  ClassNotFoundException e) {
-    throw new IllegalArgumentException("Could not locate classes for redefinition",e);
+ catch (  ClassNotFoundException exception) {
+    throw new IllegalArgumentException("Could not locate classes for redefinition",exception);
   }
-catch (  UnmodifiableClassException e) {
-    throw new IllegalStateException("Cannot redefine specified class",e);
+catch (  UnmodifiableClassException exception) {
+    throw new IllegalStateException("Cannot redefine specified class",exception);
   }
   return loadedClasses;
 }

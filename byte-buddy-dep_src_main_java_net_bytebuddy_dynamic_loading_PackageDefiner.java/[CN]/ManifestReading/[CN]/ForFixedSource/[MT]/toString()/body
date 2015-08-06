@@ -1,0 +1,3 @@
+{
+  return "PackageDefiner.ManifestReading.CodeSourceLocator.ForFixedSource{" + "sealBase=" + sealBase + '}';
+}

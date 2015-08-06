@@ -1,0 +1,7 @@
+String specificationTitle
+String specificationVersion
+String specificationVendor
+String implementationTitle
+String implementationVersion
+String implementationVendor
+URL sealBase

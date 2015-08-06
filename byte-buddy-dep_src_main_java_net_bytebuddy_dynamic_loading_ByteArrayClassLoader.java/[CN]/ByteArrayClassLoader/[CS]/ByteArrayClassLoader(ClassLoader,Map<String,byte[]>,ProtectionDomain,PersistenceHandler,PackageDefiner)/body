@@ -1,0 +1,8 @@
+{
+  super(parent);
+  this.typeDefinitions=new HashMap<String,byte[]>(typeDefinitions);
+  this.protectionDomain=protectionDomain;
+  this.persistenceHandler=persistenceHandler;
+  this.packageDefiner=packageDefiner;
+  accessControlContext=AccessController.getContext();
+}

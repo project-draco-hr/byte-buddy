@@ -1,0 +1,5 @@
+ClassLoader parent
+Map<String,byte[]> typeDefinitions
+ProtectionDomain protectionDomain
+PersistenceHandler persistenceHandler
+PackageDefiner packageDefiner
