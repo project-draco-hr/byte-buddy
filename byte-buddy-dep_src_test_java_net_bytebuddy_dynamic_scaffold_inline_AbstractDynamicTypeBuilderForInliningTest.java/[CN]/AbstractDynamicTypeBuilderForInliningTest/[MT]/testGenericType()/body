@@ -1,5 +1,5 @@
 {
-  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(GenericType.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT);
+  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(GenericType.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefiner.NoOp.INSTANCE);
   Class<?> dynamicType=create(GenericType.Inner.class).method(named(FOO)).intercept(StubMethod.INSTANCE).make().load(classLoader,ClassLoadingStrategy.Default.INJECTION).getLoaded();
   assertThat(dynamicType.getTypeParameters().length,is(2));
   assertThat(dynamicType.getTypeParameters()[0].getName(),is("T"));

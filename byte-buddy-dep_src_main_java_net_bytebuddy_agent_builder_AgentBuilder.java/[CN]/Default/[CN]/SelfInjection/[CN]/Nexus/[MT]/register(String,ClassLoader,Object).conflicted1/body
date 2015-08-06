@@ -2,10 +2,10 @@
   try {
     registration.invoke(STATIC_METHOD,name,classLoader,typeInitializer);
   }
- catch (  IllegalAccessException e) {
-    throw new IllegalStateException("Cannot register type initializer for " + name,e);
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot register type initializer for " + name,exception);
   }
-catch (  InvocationTargetException e) {
-    throw new IllegalStateException("Cannot register type initializer for " + name,e.getCause());
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Cannot register type initializer for " + name,exception.getCause());
   }
 }

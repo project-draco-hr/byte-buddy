@@ -3,7 +3,7 @@
     ClassFileLocator.Resolution resolution=classFileLocator.locate(name);
     return resolution.isResolved() ? new Resolution.Simple(parse(resolution.resolve())) : new Resolution.Illegal(name);
   }
- catch (  IOException e) {
-    throw new IllegalStateException("Error while reading class file",e);
+ catch (  IOException exception) {
+    throw new IllegalStateException("Error while reading class file",exception);
   }
 }

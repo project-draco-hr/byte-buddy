@@ -6,7 +6,7 @@
     }
     return doCreate(implementationContext,resolution.resolve());
   }
- catch (  IOException e) {
-    throw new RuntimeException("The class file could not be written",e);
+ catch (  IOException exception) {
+    throw new RuntimeException("The class file could not be written",exception);
   }
 }

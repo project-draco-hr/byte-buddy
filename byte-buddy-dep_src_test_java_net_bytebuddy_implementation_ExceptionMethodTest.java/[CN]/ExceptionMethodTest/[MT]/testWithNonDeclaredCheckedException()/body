@@ -10,9 +10,9 @@
     instance.foo();
     fail();
   }
- catch (  Exception e) {
-    assertEquals(Exception.class,e.getClass());
-    assertThat(e.getMessage(),nullValue());
+ catch (  Exception exception) {
+    assertEquals(Exception.class,exception.getClass());
+    assertThat(exception.getMessage(),nullValue());
   }
   instance.assertZeroCalls();
 }

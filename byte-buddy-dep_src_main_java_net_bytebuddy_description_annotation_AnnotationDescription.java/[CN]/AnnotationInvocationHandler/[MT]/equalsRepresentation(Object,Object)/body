@@ -19,7 +19,7 @@
             return false;
           }
         }
- catch (        RuntimeException e) {
+ catch (        RuntimeException exception) {
           return false;
         }
       }
@@ -31,8 +31,8 @@
  catch (  InvocationTargetException ignored) {
     return false;
   }
-catch (  IllegalAccessException e) {
-    throw new AssertionError(e);
+catch (  IllegalAccessException exception) {
+    throw new AssertionError(exception);
   }
   return true;
 }

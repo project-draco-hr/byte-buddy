@@ -9,7 +9,7 @@
     getDeclaredMethod=new TypeDescription.ForLoadedType(Class.class).getDeclaredMethods().filter(named("getDeclaredMethod").and(takesArguments(String.class,Class[].class))).getOnly();
     invokeMethod=new TypeDescription.ForLoadedType(Method.class).getDeclaredMethods().filter(named("invoke").and(takesArguments(Object.class,Object[].class))).getOnly();
   }
- catch (  Exception e) {
-    throw new IllegalStateException("Cannot create type initialization accessor",e);
+ catch (  Exception exception) {
+    throw new IllegalStateException("Cannot create type initialization accessor",exception);
   }
 }

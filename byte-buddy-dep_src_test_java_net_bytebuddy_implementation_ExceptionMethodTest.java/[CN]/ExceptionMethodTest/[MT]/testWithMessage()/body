@@ -10,9 +10,9 @@
     instance.foo();
     fail();
   }
- catch (  RuntimeException e) {
-    assertEquals(RuntimeException.class,e.getClass());
-    assertThat(e.getMessage(),is(BAR));
+ catch (  RuntimeException exception) {
+    assertEquals(RuntimeException.class,exception.getClass());
+    assertThat(exception.getMessage(),is(BAR));
   }
   instance.assertZeroCalls();
 }

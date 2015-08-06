@@ -1,4 +1,4 @@
 {
-  Class<?> type=create(PrivateMethod.class).method(isDeclaredBy(PrivateMethod.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(PrivateMethod.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=create(PrivateMethod.class).method(isDeclaredBy(PrivateMethod.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(PrivateMethod.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefiner.NoOp.INSTANCE),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethods().length,is(0));
 }
