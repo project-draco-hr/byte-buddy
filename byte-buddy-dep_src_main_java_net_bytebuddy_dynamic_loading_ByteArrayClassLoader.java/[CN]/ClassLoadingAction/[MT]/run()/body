@@ -10,6 +10,12 @@
         if (definedPackage == null) {
           definePackage(packageName,definition.getSpecificationTitle(),definition.getSpecificationVersion(),definition.getSpecificationVendor(),definition.getImplementationTitle(),definition.getImplementationVersion(),definition.getImplementationVendor(),definition.getSealBase());
         }
+ else {
+          URL sealBase=definition.getSealBase();
+          if ((sealBase == null && definedPackage.isSealed()) || (sealBase != null && !definedPackage.isSealed(sealBase))) {
+            throw new SecurityException("Sealing violation for package " + packageName);
+          }
+        }
       }
     }
     return defineClass(typeName,javaType,FROM_BEGINNING,javaType.length,protectionDomain);
