@@ -1,0 +1,13 @@
+{
+  Map<TypeDescription,Class<?>> loadedTypes=new LinkedHashMap<TypeDescription,Class<?>>(types.size());
+  classLoader=ByteArrayClassLoader.of(classLoader,types,protectionDomain,persistenceHandler,packageDefinitionStrategy,childFirst);
+  for (  TypeDescription typeDescription : types.keySet()) {
+    try {
+      loadedTypes.put(typeDescription,classLoader.loadClass(typeDescription.getName()));
+    }
+ catch (    ClassNotFoundException exception) {
+      throw new IllegalStateException("Cannot load class " + typeDescription,exception);
+    }
+  }
+  return loadedTypes;
+}

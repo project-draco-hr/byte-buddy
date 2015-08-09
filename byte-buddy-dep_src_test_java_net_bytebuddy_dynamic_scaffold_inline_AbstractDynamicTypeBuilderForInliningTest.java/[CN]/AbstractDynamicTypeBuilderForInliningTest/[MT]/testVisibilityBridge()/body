@@ -1,5 +1,5 @@
 {
-  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(PackagePrivateVisibilityBridgeExtension.class,VisibilityBridge.class,FooBar.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefiner.NoOp.INSTANCE);
+  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(PackagePrivateVisibilityBridgeExtension.class,VisibilityBridge.class,FooBar.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
   Class<?> type=create(PackagePrivateVisibilityBridgeExtension.class).modifiers(Opcodes.ACC_PUBLIC).make().load(classLoader,ClassLoadingStrategy.Default.INJECTION).getLoaded();
   assertThat(type.getDeclaredConstructors().length,is(1));
   Constructor<?> constructor=type.getDeclaredConstructor();

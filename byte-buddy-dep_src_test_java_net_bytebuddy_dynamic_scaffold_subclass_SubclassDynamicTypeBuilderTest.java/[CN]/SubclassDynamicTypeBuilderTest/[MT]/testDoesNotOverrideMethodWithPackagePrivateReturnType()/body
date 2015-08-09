@@ -1,4 +1,4 @@
 {
-  Class<?> type=create(PackagePrivateReturnType.class).name("net.bytebuddy.test.generated." + FOO).method(isDeclaredBy(PackagePrivateReturnType.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(PackagePrivateReturnType.class,PackagePrivateReturnType.Argument.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefiner.NoOp.INSTANCE),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=create(PackagePrivateReturnType.class).name("net.bytebuddy.test.generated." + FOO).method(isDeclaredBy(PackagePrivateReturnType.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(PackagePrivateReturnType.class,PackagePrivateReturnType.Argument.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethods().length,is(0));
 }

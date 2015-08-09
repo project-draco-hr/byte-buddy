@@ -2,6 +2,6 @@
   ClassReader classReader=new ClassReader(type.getName());
   ClassWriter classWriter=new ClassWriter(classReader,0);
   classReader.accept(new SignatureMalformer(classWriter),0);
-  ClassLoader classLoader=new ByteArrayClassLoader(null,Collections.singletonMap(type.getName(),classWriter.toByteArray()),null,ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefiner.NoOp.INSTANCE);
+  ClassLoader classLoader=new ByteArrayClassLoader(null,Collections.singletonMap(type.getName(),classWriter.toByteArray()),null,ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
   return classLoader.loadClass(type.getName());
 }

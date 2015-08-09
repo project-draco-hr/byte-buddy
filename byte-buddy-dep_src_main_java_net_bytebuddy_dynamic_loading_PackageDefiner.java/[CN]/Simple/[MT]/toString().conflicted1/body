@@ -1,3 +1,0 @@
-{
-  return "PackageDefiner.Definition.Simple{" + "specificationTitle='" + specificationTitle + '\''+ ", specificationVersion='"+ specificationVersion+ '\''+ ", specificationVendor='"+ specificationVendor+ '\''+ ", implementationTitle='"+ implementationTitle+ '\''+ ", implementationVersion='"+ implementationVersion+ '\''+ ", implementationVendor='"+ implementationVendor+ '\''+ ", sealBase="+ sealBase+ '}';
-}

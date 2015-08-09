@@ -8,12 +8,11 @@
       type=AccessController.doPrivileged(new ClassLoadingAction(name),accessControlContext);
     }
  catch (    PrivilegedActionException exception) {
-      Throwable cause=exception.getCause();
-      if (cause instanceof ClassNotFoundException) {
-        throw (ClassNotFoundException)cause;
+      if (exception.getCause() instanceof ClassNotFoundException) {
+        throw (ClassNotFoundException)exception.getCause();
       }
  else {
-        throw new IllegalStateException("Could not load class " + name,cause);
+        throw new IllegalStateException("Could not load class " + name,exception.getCause());
       }
     }
     if (resolve) {

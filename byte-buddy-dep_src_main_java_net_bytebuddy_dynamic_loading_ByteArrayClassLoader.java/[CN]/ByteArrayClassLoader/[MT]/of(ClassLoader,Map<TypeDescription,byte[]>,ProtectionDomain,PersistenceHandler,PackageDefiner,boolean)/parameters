@@ -1,6 +1,0 @@
-ClassLoader parent
-Map<TypeDescription,byte[]> typeDefinitions
-ProtectionDomain protectionDomain
-PersistenceHandler persistenceHandler
-PackageDefiner packageDefiner
-boolean childFirst

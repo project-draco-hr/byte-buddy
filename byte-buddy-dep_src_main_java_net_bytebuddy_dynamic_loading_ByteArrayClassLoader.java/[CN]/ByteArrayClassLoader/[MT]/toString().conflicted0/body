@@ -1,3 +1,3 @@
 {
-  return "ByteArrayClassLoader{" + "parent=" + getParent() + ", typeDefinitions="+ typeDefinitions+ ", persistenceHandler="+ persistenceHandler+ ", protectionDomain="+ protectionDomain+ ", packageDefiner="+ packageDefiner+ ", accessControlContext="+ accessControlContext+ '}';
+  return "ByteArrayClassLoader{" + "parent=" + getParent() + ", typeDefinitions="+ typeDefinitions+ ", persistenceHandler="+ persistenceHandler+ ", protectionDomain="+ protectionDomain+ ", packageDefinitionStrategy="+ packageDefinitionStrategy+ ", accessControlContext="+ accessControlContext+ '}';
 }

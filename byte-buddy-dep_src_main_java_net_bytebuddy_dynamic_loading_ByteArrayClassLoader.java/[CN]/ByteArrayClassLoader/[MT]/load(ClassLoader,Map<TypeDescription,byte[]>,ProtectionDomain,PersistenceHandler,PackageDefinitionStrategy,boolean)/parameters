@@ -1,0 +1,6 @@
+ClassLoader classLoader
+Map<TypeDescription,byte[]> types
+ProtectionDomain protectionDomain
+PersistenceHandler persistenceHandler
+PackageDefinitionStrategy packageDefinitionStrategy
+boolean childFirst

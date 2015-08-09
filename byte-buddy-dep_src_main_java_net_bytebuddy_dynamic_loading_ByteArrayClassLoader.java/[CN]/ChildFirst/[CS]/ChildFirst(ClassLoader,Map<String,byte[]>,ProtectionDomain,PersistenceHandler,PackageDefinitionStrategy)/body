@@ -1,0 +1,3 @@
+{
+  super(parent,typeDefinitions,protectionDomain,persistenceHandler,packageDefinitionStrategy);
+}

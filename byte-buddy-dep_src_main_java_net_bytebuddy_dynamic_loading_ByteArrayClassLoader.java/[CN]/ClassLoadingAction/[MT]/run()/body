@@ -2,11 +2,14 @@
   byte[] javaType=persistenceHandler.lookup(typeName,typeDefinitions);
   if (javaType != null) {
     int packageIndex=typeName.lastIndexOf('.');
-    if (packageIndex != -1 && getPackage(typeName.substring(0,packageIndex)) == null) {
+    if (packageIndex != -1) {
       String packageName=typeName.substring(0,packageIndex);
-      PackageDefiner.Definition definition=packageDefiner.define(packageName,ByteArrayClassLoader.this,typeName.substring(packageIndex + 1));
+      PackageDefinitionStrategy.Definition definition=packageDefinitionStrategy.define(packageName,ByteArrayClassLoader.this,typeName);
       if (definition.isDefined()) {
-        definePackage(packageName,definition.getSpecificationTitle(),definition.getSpecificationVersion(),definition.getSpecificationVendor(),definition.getImplementationTitle(),definition.getImplementationVersion(),definition.getImplementationVendor(),definition.getSealBase());
+        Package definedPackage=getPackage(packageName);
+        if (definedPackage == null) {
+          definePackage(packageName,definition.getSpecificationTitle(),definition.getSpecificationVersion(),definition.getSpecificationVendor(),definition.getImplementationTitle(),definition.getImplementationVersion(),definition.getImplementationVendor(),definition.getSealBase());
+        }
       }
     }
     return defineClass(typeName,javaType,FROM_BEGINNING,javaType.length,protectionDomain);
