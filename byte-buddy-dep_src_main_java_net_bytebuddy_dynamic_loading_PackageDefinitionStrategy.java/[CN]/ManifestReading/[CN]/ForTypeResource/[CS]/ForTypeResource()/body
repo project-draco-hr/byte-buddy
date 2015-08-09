@@ -1,0 +1,3 @@
+{
+  this(NonSealing.INSTANCE);
+}

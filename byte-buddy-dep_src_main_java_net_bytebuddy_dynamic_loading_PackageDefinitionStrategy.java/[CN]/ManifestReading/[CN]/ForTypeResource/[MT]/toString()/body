@@ -1,0 +1,3 @@
+{
+  return "PackageDefinitionStrategy.ManifestReading.SealBaseLocator.ForTypeResource{" + "fallback=" + fallback + '}';
+}
