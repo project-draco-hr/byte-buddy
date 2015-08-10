@@ -1,5 +1,4 @@
 {
-  when(instrumentedType.asRawType()).thenReturn(instrumentedType);
   when(returnType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(returnType);
   when(typeVariable.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(typeVariable);
   when(parameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
@@ -7,6 +6,8 @@
   when(typeVariable.getSymbol()).thenReturn(QUX);
   when(typeVariable.getSort()).thenReturn(GenericTypeDescription.Sort.VARIABLE);
   when(methodDescription.asToken()).thenReturn(methodToken);
+  when(methodDescription.getDeclaringType()).thenReturn(declaringType);
+  when(methodDescription.asDefined()).thenReturn(definedMethod);
   when(methodToken.getInternalName()).thenReturn(FOO);
   when(methodToken.getModifiers()).thenReturn(MODIFIERS);
   when(methodToken.getReturnType()).thenReturn(returnType);
@@ -20,4 +21,8 @@
   when(parameterToken.getAnnotations()).thenReturn(new AnnotationList.Explicit(Collections.singletonList(parameterAnnotation)));
   when(parameterToken.getName()).thenReturn(BAR);
   when(parameterToken.getModifiers()).thenReturn(MODIFIERS * 2);
+  when(definedMethod.getParameters()).thenReturn(new ParameterList.Explicit<ParameterDescription.InDefinedShape>(Collections.singletonList(definedParameter)));
+  when(declaringType.asRawType()).thenReturn(rawDeclaringType);
+  when(returnType.asRawType()).thenReturn(rawReturnType);
+  when(parameterType.asRawType()).thenReturn(rawParameterType);
 }

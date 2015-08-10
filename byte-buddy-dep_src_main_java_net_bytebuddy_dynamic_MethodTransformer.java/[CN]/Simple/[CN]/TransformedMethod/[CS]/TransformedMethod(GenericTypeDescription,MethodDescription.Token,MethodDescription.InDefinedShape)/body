@@ -1,0 +1,5 @@
+{
+  this.declaringType=declaringType;
+  this.methodToken=methodToken;
+  this.definedShape=definedShape;
+}

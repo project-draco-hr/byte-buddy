@@ -1,0 +1,3 @@
+{
+  return GenericTypeList.ForDetachedTypes.attach(this,methodToken.getExceptionTypes());
+}
