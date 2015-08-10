@@ -19,7 +19,7 @@
           }
         }
       }
-      return new Definition.Simple(values.get(Attributes.Name.SPECIFICATION_TITLE),values.get(Attributes.Name.SPECIFICATION_VERSION),values.get(Attributes.Name.SPECIFICATION_VENDOR),values.get(Attributes.Name.IMPLEMENTATION_TITLE),values.get(Attributes.Name.IMPLEMENTATION_VERSION),values.get(Attributes.Name.IMPLEMENTATION_VENDOR),Boolean.parseBoolean(values.get(Attributes.Name.SEALED)) ? sealBaseLocator.findSealBase(packageName,classLoader,typeName) : NOT_SEALED);
+      return new Definition.Simple(values.get(Attributes.Name.SPECIFICATION_TITLE),values.get(Attributes.Name.SPECIFICATION_VERSION),values.get(Attributes.Name.SPECIFICATION_VENDOR),values.get(Attributes.Name.IMPLEMENTATION_TITLE),values.get(Attributes.Name.IMPLEMENTATION_VERSION),values.get(Attributes.Name.IMPLEMENTATION_VENDOR),Boolean.parseBoolean(values.get(Attributes.Name.SEALED)) ? sealBaseLocator.findSealBase(classLoader,packageName,typeName) : NOT_SEALED);
     }
   finally {
       inputStream.close();
