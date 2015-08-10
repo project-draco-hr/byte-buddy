@@ -1,0 +1,5 @@
+{
+  DexOptions dexOptions=new DexOptions();
+  dexOptions.targetApiLevel=DEX_COMPATIBLE_API_VERSION;
+  return new ForSdkCompiler(dexOptions,new CfOptions());
+}
