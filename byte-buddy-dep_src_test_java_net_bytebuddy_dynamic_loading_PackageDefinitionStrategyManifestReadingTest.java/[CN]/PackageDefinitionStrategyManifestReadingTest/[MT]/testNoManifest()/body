@@ -1,0 +1,14 @@
+{
+  PackageDefinitionStrategy packageDefinitionStrategy=new PackageDefinitionStrategy.ManifestReading(sealBaseLocator);
+  PackageDefinitionStrategy.Definition definition=packageDefinitionStrategy.define(classLoader,FOO,BAR);
+  assertThat(definition.isDefined(),is(true));
+  assertThat(definition.getImplementationTitle(),nullValue(String.class));
+  assertThat(definition.getImplementationVersion(),nullValue(String.class));
+  assertThat(definition.getImplementationVendor(),nullValue(String.class));
+  assertThat(definition.getSpecificationTitle(),nullValue(String.class));
+  assertThat(definition.getSpecificationVersion(),nullValue(String.class));
+  assertThat(definition.getSpecificationVendor(),nullValue(String.class));
+  assertThat(definition.getSealBase(),nullValue(URL.class));
+  assertThat(definition.isCompatibleTo(getClass().getPackage()),is(true));
+  verifyZeroInteractions(sealBaseLocator);
+}

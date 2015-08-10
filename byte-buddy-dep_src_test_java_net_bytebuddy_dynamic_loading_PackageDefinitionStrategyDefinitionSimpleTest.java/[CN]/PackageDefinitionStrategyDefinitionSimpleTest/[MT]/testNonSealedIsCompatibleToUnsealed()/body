@@ -1,0 +1,3 @@
+{
+  assertThat(new PackageDefinitionStrategy.Definition.Simple(FOO,BAR,QUX,BAZ,FOO + BAR,QUX + BAZ,null).isCompatibleTo(getClass().getPackage()),is(true));
+}

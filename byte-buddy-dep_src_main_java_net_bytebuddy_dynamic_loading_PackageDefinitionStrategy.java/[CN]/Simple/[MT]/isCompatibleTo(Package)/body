@@ -1,3 +1,8 @@
 {
-  return (sealBase == null && definedPackage.isSealed()) || (sealBase != null && !definedPackage.isSealed(sealBase));
+  if (sealBase == null) {
+    return !definedPackage.isSealed();
+  }
+ else {
+    return definedPackage.isSealed(sealBase);
+  }
 }

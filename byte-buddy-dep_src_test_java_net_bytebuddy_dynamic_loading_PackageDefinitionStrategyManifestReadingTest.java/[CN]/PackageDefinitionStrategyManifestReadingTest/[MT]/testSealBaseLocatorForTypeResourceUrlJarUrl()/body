@@ -1,0 +1,6 @@
+{
+  URL url=new URL("jar:file:/foo.jar!/bar");
+  when(classLoader.getResource(FOO + "/" + BAR+ ".class")).thenReturn(url);
+  assertThat(new PackageDefinitionStrategy.ManifestReading.SealBaseLocator.ForTypeResourceUrl(sealBaseLocator).findSealBase(classLoader,FOO + "." + BAR),is(new URL("file:/foo.jar")));
+  verifyZeroInteractions(sealBaseLocator);
+}

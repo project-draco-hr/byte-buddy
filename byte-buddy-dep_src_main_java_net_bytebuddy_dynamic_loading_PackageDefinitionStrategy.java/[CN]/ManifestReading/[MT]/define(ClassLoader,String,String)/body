@@ -4,13 +4,13 @@
     try {
       Manifest manifest=new Manifest(inputStream);
       Map<Attributes.Name,String> values=new HashMap<Attributes.Name,String>(ATTRIBUTE_NAMES.length);
-      Attributes attributes=manifest.getMainAttributes();
-      if (attributes != null) {
+      Attributes mainAttributes=manifest.getMainAttributes();
+      if (mainAttributes != null) {
         for (        Attributes.Name attributeName : ATTRIBUTE_NAMES) {
-          values.put(attributeName,attributes.getValue(attributeName));
+          values.put(attributeName,mainAttributes.getValue(attributeName));
         }
       }
-      attributes=manifest.getAttributes(packageName.replace('.','/').concat("/"));
+      Attributes attributes=manifest.getAttributes(packageName.replace('.','/').concat("/"));
       if (attributes != null) {
         for (        Attributes.Name attributeName : ATTRIBUTE_NAMES) {
           String value=attributes.getValue(attributeName);
@@ -19,7 +19,7 @@
           }
         }
       }
-      return new Definition.Simple(values.get(Attributes.Name.SPECIFICATION_TITLE),values.get(Attributes.Name.SPECIFICATION_VERSION),values.get(Attributes.Name.SPECIFICATION_VENDOR),values.get(Attributes.Name.IMPLEMENTATION_TITLE),values.get(Attributes.Name.IMPLEMENTATION_VERSION),values.get(Attributes.Name.IMPLEMENTATION_VENDOR),Boolean.parseBoolean(values.get(Attributes.Name.SEALED)) ? sealBaseLocator.findSealBase(classLoader,packageName,typeName) : NOT_SEALED);
+      return new Definition.Simple(values.get(Attributes.Name.SPECIFICATION_TITLE),values.get(Attributes.Name.SPECIFICATION_VERSION),values.get(Attributes.Name.SPECIFICATION_VENDOR),values.get(Attributes.Name.IMPLEMENTATION_TITLE),values.get(Attributes.Name.IMPLEMENTATION_VERSION),values.get(Attributes.Name.IMPLEMENTATION_VENDOR),Boolean.parseBoolean(values.get(Attributes.Name.SEALED)) ? sealBaseLocator.findSealBase(classLoader,typeName) : NOT_SEALED);
     }
   finally {
       inputStream.close();

@@ -1,0 +1,22 @@
+{
+  URL url=classLoader.getResource(typeName.replace('.','/') + CLASS_FILE_EXTENSION);
+  if (url != null) {
+    try {
+      if (url.getProtocol().equals(JAR_FILE)) {
+        return new URL(url.getPath().substring(0,url.getPath().indexOf('!')));
+      }
+ else       if (url.getProtocol().equals(FILE_SYSTEM)) {
+        return url;
+      }
+ else       if (url.getProtocol().equals(RUNTIME_IMAGE)) {
+        String path=url.getPath();
+        int modulePathIndex=path.indexOf(1,'/');
+        return modulePathIndex == -1 ? url : new URL(RUNTIME_IMAGE + ":" + path.substring(0,modulePathIndex));
+      }
+    }
+ catch (    MalformedURLException exception) {
+      throw new IllegalStateException("Unexpected URL: " + url,exception);
+    }
+  }
+  return fallback.findSealBase(classLoader,typeName);
+}

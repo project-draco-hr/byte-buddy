@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(PackageDefinitionStrategy.Definition.Undefined.class).apply();
+}

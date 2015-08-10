@@ -1,0 +1,6 @@
+{
+  when(sealBaseLocator.findSealBase(classLoader,FOO + "." + BAR)).thenReturn(url);
+  assertThat(new PackageDefinitionStrategy.ManifestReading.SealBaseLocator.ForTypeResourceUrl(sealBaseLocator).findSealBase(classLoader,FOO + "." + BAR),is(url));
+  verify(sealBaseLocator).findSealBase(classLoader,FOO + "." + BAR);
+  verifyNoMoreInteractions(sealBaseLocator);
+}

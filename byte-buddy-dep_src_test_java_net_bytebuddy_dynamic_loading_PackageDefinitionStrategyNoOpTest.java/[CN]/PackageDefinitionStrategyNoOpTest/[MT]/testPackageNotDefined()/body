@@ -1,0 +1,3 @@
+{
+  assertThat(PackageDefinitionStrategy.NoOp.INSTANCE.define(getClass().getClassLoader(),FOO,BAR).isDefined(),is(false));
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(PackageDefinitionStrategy.Definition.Undefined.INSTANCE.isDefined(),is(false));
+}

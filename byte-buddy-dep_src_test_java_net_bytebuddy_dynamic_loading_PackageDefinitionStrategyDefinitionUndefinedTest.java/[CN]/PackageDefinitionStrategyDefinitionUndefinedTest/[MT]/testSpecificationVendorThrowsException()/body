@@ -1,0 +1,3 @@
+{
+  PackageDefinitionStrategy.Definition.Undefined.INSTANCE.getSpecificationVendor();
+}

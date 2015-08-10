@@ -1,0 +1,3 @@
+{
+  assertThat(PackageDefinitionStrategy.Definition.Trivial.INSTANCE.isCompatibleTo(getClass().getPackage()),is(true));
+}

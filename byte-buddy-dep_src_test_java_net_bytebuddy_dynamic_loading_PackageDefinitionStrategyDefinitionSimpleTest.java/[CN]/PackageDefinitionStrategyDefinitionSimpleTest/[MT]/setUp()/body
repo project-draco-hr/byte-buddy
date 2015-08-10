@@ -1,0 +1,4 @@
+{
+  sealBase=new URL("file://foo");
+  definition=new PackageDefinitionStrategy.Definition.Simple(FOO,BAR,QUX,BAZ,FOO + BAR,QUX + BAZ,sealBase);
+}

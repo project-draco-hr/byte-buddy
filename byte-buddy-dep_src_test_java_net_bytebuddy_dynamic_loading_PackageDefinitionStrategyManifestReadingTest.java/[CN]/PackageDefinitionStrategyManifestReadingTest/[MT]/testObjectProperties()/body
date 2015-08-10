@@ -1,0 +1,12 @@
+{
+  ObjectPropertyAssertion.of(PackageDefinitionStrategy.ManifestReading.class).apply();
+  ObjectPropertyAssertion.of(PackageDefinitionStrategy.ManifestReading.SealBaseLocator.NonSealing.class).apply();
+  final Iterator<URL> urls=Arrays.asList(new URL("file://foo"),new URL("file://bar")).iterator();
+  ObjectPropertyAssertion.of(PackageDefinitionStrategy.ManifestReading.SealBaseLocator.ForFixedValue.class).create(new ObjectPropertyAssertion.Creator<URL>(){
+    @Override public URL create(){
+      return urls.next();
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(PackageDefinitionStrategy.ManifestReading.SealBaseLocator.ForTypeResourceUrl.class).apply();
+}

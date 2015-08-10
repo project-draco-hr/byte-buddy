@@ -1,0 +1,3 @@
+{
+  assertThat(PackageDefinitionStrategy.Definition.Trivial.INSTANCE.getImplementationTitle(),nullValue(String.class));
+}

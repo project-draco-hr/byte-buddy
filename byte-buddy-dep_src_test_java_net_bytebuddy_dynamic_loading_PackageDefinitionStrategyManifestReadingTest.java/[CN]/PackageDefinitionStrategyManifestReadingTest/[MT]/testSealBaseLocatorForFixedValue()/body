@@ -1,0 +1,3 @@
+{
+  assertThat(new PackageDefinitionStrategy.ManifestReading.SealBaseLocator.ForFixedValue(url).findSealBase(classLoader,FOO),is(url));
+}

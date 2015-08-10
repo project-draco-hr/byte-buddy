@@ -1,0 +1,3 @@
+{
+  assertThat(PackageDefinitionStrategy.ManifestReading.SealBaseLocator.NonSealing.INSTANCE.findSealBase(classLoader,FOO),nullValue(URL.class));
+}

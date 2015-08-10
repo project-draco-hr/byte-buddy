@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(PackageDefinitionStrategy.Definition.Trivial.class).apply();
+}
