@@ -1,3 +1,0 @@
-{
-  return "PackageDefinitionStrategy.Trivial." + name();
-}
