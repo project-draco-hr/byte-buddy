@@ -1,4 +1,4 @@
 {
   MethodDescription methodDescription=mock(MethodDescription.class);
-  assertThat(MethodTransformer.NoOp.INSTANCE.transform(methodDescription),is(methodDescription));
+  assertThat(MethodTransformer.NoOp.INSTANCE.transform(mock(TypeDescription.class),methodDescription),is(methodDescription));
 }

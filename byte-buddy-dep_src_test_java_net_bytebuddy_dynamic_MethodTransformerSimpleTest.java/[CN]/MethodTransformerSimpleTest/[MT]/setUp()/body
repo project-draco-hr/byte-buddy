@@ -1,0 +1,23 @@
+{
+  when(instrumentedType.asRawType()).thenReturn(instrumentedType);
+  when(returnType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(returnType);
+  when(typeVariable.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(typeVariable);
+  when(parameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
+  when(exceptionType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(exceptionType);
+  when(typeVariable.getSymbol()).thenReturn(QUX);
+  when(typeVariable.getSort()).thenReturn(GenericTypeDescription.Sort.VARIABLE);
+  when(methodDescription.asToken()).thenReturn(methodToken);
+  when(methodToken.getInternalName()).thenReturn(FOO);
+  when(methodToken.getModifiers()).thenReturn(MODIFIERS);
+  when(methodToken.getReturnType()).thenReturn(returnType);
+  when(methodToken.getTypeVariables()).thenReturn(new GenericTypeList.Explicit(Collections.singletonList(typeVariable)));
+  when(methodToken.getExceptionTypes()).thenReturn(new GenericTypeList.Explicit(Collections.singletonList(exceptionType)));
+  when(methodToken.getParameterTokens()).thenReturn(new ByteCodeElement.Token.TokenList<ParameterDescription.Token>(Collections.singletonList(parameterToken)));
+  when(methodToken.getAnnotations()).thenReturn(new AnnotationList.Explicit(Collections.singletonList(methodAnnotation)));
+  when(modifierContributor.getMask()).thenReturn(MASK);
+  when(modifierContributor.getRange()).thenReturn(RANGE);
+  when(parameterToken.getType()).thenReturn(parameterType);
+  when(parameterToken.getAnnotations()).thenReturn(new AnnotationList.Explicit(Collections.singletonList(parameterAnnotation)));
+  when(parameterToken.getName()).thenReturn(BAR);
+  when(parameterToken.getModifiers()).thenReturn(MODIFIERS * 2);
+}

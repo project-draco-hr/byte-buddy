@@ -1,7 +1,0 @@
-{
-  MethodDescription transformed=methodDescription;
-  for (  MethodTransformer methodTransformer : methodTransformers) {
-    transformed=methodTransformer.transform(transformed);
-  }
-  return transformed;
-}

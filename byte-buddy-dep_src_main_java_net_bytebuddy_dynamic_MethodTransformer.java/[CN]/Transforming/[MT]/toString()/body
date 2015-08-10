@@ -1,3 +1,0 @@
-{
-  return "MethodTransformer.Transforming{" + "transformer=" + transformer + '}';
-}

@@ -20,7 +20,7 @@
     if (relevanceMatcher.matches(methodDescription)) {
       for (      Entry entry : entries) {
         if (entry.resolve(instrumentedType).matches(methodDescription)) {
-          implementations.put(methodDescription,entry.asPreparedEntry(methodDescription,node.getMethodTypes()));
+          implementations.put(methodDescription,entry.asPreparedEntry(instrumentedType,methodDescription,node.getMethodTypes()));
           visibilityBridge=false;
           break;
         }
@@ -33,7 +33,7 @@
   MethodDescription typeInitializer=new MethodDescription.Latent.TypeInitializer(instrumentedType);
   for (  Entry entry : entries) {
     if (entry.resolve(instrumentedType).matches(typeInitializer)) {
-      implementations.put(typeInitializer,entry.asPreparedEntry(typeInitializer,Collections.<MethodDescription.TypeToken>emptySet()));
+      implementations.put(typeInitializer,entry.asPreparedEntry(instrumentedType,typeInitializer,Collections.<MethodDescription.TypeToken>emptySet()));
       break;
     }
   }
