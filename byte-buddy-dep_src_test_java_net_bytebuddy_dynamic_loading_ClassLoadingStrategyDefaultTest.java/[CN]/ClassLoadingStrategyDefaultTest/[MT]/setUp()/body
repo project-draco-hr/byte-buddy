@@ -4,4 +4,5 @@
   typeDescription=new TypeDescription.ForLoadedType(Foo.class);
   binaryRepresentations.put(typeDescription,ClassFileExtraction.extract(Foo.class));
   protectionDomain=getClass().getProtectionDomain();
+  when(packageDefinitionStrategy.define(any(ClassLoader.class),any(String.class),any(String.class))).thenReturn(PackageDefinitionStrategy.Definition.Undefined.INSTANCE);
 }
