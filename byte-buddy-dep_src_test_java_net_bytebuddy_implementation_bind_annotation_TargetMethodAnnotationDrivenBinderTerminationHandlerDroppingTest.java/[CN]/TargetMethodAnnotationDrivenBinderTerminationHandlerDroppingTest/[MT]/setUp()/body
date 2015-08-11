@@ -1,5 +1,5 @@
 {
   when(target.getReturnType()).thenReturn(targetType);
-  when(targetType.asRawType()).thenReturn(targetType);
+  when(targetType.asErasure()).thenReturn(targetType);
   when(targetType.getStackSize()).thenReturn(StackSize.SINGLE);
 }

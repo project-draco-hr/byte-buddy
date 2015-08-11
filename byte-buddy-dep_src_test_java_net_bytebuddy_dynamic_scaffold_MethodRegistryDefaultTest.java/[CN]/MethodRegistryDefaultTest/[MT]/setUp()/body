@@ -18,7 +18,7 @@
   when(implementationTargetFactory.make(typeDescription,methodGraph)).thenReturn(implementationTarget);
   when(firstCompiledHandler.assemble(instrumentedMethod,firstAppender)).thenReturn(firstRecord);
   when(secondCompiledHandler.assemble(instrumentedMethod,secondAppender)).thenReturn(secondRecord);
-  when(typeDescription.asRawType()).thenReturn(typeDescription);
+  when(typeDescription.asErasure()).thenReturn(typeDescription);
   when(implementationTarget.getTypeDescription()).thenReturn(typeDescription);
   when(methodTransformer.transform(typeDescription,instrumentedMethod)).thenReturn(instrumentedMethod);
 }

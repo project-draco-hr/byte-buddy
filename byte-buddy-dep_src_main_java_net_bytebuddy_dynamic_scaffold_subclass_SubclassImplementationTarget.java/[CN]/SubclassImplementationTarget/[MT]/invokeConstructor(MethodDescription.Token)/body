@@ -1,4 +1,4 @@
 {
   MethodDescription methodDescription=superConstructors.get(methodToken);
-  return methodDescription == null ? Implementation.SpecialMethodInvocation.Illegal.INSTANCE : Implementation.SpecialMethodInvocation.Simple.of(methodDescription,instrumentedType.getSuperType().asRawType());
+  return methodDescription == null ? Implementation.SpecialMethodInvocation.Illegal.INSTANCE : Implementation.SpecialMethodInvocation.Simple.of(methodDescription,instrumentedType.getSuperType().asErasure());
 }

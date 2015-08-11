@@ -4,7 +4,7 @@
   when(secondFilter.matches(instrumentedMethod)).thenReturn(false);
   when(resolvedMethodFilter.matches(instrumentedMethod)).thenReturn(true);
   TypeDescription declaringType=mock(TypeDescription.class);
-  when(declaringType.asRawType()).thenReturn(declaringType);
+  when(declaringType.asErasure()).thenReturn(declaringType);
   when(instrumentedMethod.getDeclaringType()).thenReturn(declaringType);
   MethodRegistry.Compiled methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory,methodTransformer).append(secondMatcher,secondHandler,secondFactory,methodTransformer).prepare(firstType,methodGraphCompiler,methodFilter).compile(implementationTargetFactory);
   assertThat(methodRegistry.getInstrumentedType(),is((TypeDescription)typeDescription));

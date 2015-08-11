@@ -1,5 +1,5 @@
 {
-  if (!fieldToken.getType().asRawType().represents(legalType)) {
+  if (!fieldToken.getType().asErasure().represents(legalType)) {
     throw new IllegalStateException(defaultValue + " is not of the required type " + legalType);
   }
   return defaultValue;

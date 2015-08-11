@@ -1,3 +1,3 @@
 {
-  when(genericTypeDescription.asRawType()).thenReturn(typeDescription);
+  when(genericTypeDescription.asErasure()).thenReturn(typeDescription);
 }

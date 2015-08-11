@@ -3,5 +3,5 @@
   GenericTypeDescription genericTypeDescription=(GenericTypeDescription)other;
   if (!genericTypeDescription.getSort().isParameterized())   return false;
   GenericTypeDescription ownerType=getOwnerType(), otherOwnerType=genericTypeDescription.getOwnerType();
-  return asRawType().equals(genericTypeDescription.asRawType()) && !(ownerType == null && otherOwnerType != null) && !(ownerType != null && !ownerType.equals(otherOwnerType))&& getParameters().equals(genericTypeDescription.getParameters());
+  return asErasure().equals(genericTypeDescription.asErasure()) && !(ownerType == null && otherOwnerType != null) && !(ownerType != null && !ownerType.equals(otherOwnerType))&& getParameters().equals(genericTypeDescription.getParameters());
 }

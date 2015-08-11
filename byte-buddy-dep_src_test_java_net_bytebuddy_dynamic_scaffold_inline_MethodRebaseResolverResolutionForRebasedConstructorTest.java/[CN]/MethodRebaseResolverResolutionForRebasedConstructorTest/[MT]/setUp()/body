@@ -1,5 +1,5 @@
 {
-  when(genericTypeDescription.asRawType()).thenReturn(typeDescription);
+  when(genericTypeDescription.asErasure()).thenReturn(typeDescription);
   when(methodDescription.isConstructor()).thenReturn(true);
   when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
   when(methodDescription.getReturnType()).thenReturn(returnType);
@@ -11,8 +11,8 @@
   when(typeDescription.getInternalName()).thenReturn(BAR);
   when(placeholderType.getDescriptor()).thenReturn(BAZ);
   when(otherPlaceHolderType.getDescriptor()).thenReturn(FOO);
-  when(returnType.asRawType()).thenReturn(returnType);
+  when(returnType.asErasure()).thenReturn(returnType);
   when(returnType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(returnType);
-  when(parameterType.asRawType()).thenReturn(parameterType);
+  when(parameterType.asErasure()).thenReturn(parameterType);
   when(parameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
 }

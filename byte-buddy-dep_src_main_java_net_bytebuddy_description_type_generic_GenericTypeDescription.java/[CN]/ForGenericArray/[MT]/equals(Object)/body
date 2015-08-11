@@ -1,6 +1,6 @@
 {
   if (getSort().isNonGeneric()) {
-    return asRawType().equals(other);
+    return asErasure().equals(other);
   }
   if (!(other instanceof GenericTypeDescription))   return false;
   GenericTypeDescription genericTypeDescription=(GenericTypeDescription)other;

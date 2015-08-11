@@ -1,5 +1,5 @@
 {
-  when(methodReturnType.asRawType()).thenReturn(declaredErasure);
+  when(methodReturnType.asErasure()).thenReturn(declaredErasure);
   StackManipulation stackManipulation=MethodInvocation.invoke(methodDescription).special(targetType);
   assertThat(stackManipulation.isValid(),is(true));
   assertThat(stackManipulation,is(MethodInvocation.invoke(declaredMethod).special(targetType)));

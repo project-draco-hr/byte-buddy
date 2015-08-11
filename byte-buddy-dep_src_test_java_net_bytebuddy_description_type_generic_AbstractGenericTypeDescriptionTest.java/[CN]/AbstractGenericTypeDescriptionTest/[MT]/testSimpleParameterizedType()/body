@@ -11,7 +11,7 @@
   assertThat(genericTypeDescription.equals(null),is(false));
   assertThat(genericTypeDescription.getParameters().size(),is(1));
   assertThat(genericTypeDescription.getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
-  assertThat(genericTypeDescription.getParameters().getOnly().asRawType().represents(String.class),is(true));
+  assertThat(genericTypeDescription.getParameters().getOnly().asErasure().represents(String.class),is(true));
   assertThat(genericTypeDescription.getTypeName(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.getOwnerType(),nullValue(GenericTypeDescription.class));
 }

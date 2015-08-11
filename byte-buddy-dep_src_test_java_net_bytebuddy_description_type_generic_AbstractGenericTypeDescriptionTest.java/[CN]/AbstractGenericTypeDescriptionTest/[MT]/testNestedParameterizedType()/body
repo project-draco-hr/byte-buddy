@@ -5,5 +5,5 @@
   assertThat(genericTypeDescription.getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(genericTypeDescription.getParameters().getOnly().getParameters().size(),is(1));
   assertThat(genericTypeDescription.getParameters().getOnly().getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
-  assertThat(genericTypeDescription.getParameters().getOnly().getParameters().getOnly().asRawType().represents(Foo.class),is(true));
+  assertThat(genericTypeDescription.getParameters().getOnly().getParameters().getOnly().asErasure().represents(Foo.class),is(true));
 }

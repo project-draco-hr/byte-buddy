@@ -1,5 +1,5 @@
 {
-  TypeList parameterTypes=instrumentedMethod.getParameters().asTypeList().asRawTypes();
+  TypeList parameterTypes=instrumentedMethod.getParameters().asTypeList().asErasures();
   List<StackManipulation> instruction=new ArrayList<StackManipulation>(parameterTypes.size());
   TypeDescription objectType=TypeDescription.OBJECT;
   int currentIndex=1;

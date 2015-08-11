@@ -6,7 +6,7 @@
   when(fieldDescription.getType()).thenReturn(fieldType);
   when(fieldType.getStackSize()).thenReturn(StackSize.ZERO);
   when(fieldType.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
-  when(fieldType.asRawType()).thenReturn(fieldType);
-  when(setterType.asRawType()).thenReturn(setterType);
-  when(getterType.asRawType()).thenReturn(getterType);
+  when(fieldType.asErasure()).thenReturn(fieldType);
+  when(setterType.asErasure()).thenReturn(setterType);
+  when(getterType.asErasure()).thenReturn(getterType);
 }

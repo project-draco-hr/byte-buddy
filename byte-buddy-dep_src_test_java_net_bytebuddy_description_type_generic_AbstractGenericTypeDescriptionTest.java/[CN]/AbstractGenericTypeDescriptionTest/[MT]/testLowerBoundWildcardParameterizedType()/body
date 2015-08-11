@@ -15,6 +15,6 @@
   assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
   assertThat(genericTypeDescription.getParameters().getOnly().getLowerBounds().size(),is(1));
   assertThat(genericTypeDescription.getParameters().getOnly().getLowerBounds().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
-  assertThat(genericTypeDescription.getParameters().getOnly().getLowerBounds().getOnly().asRawType().represents(String.class),is(true));
+  assertThat(genericTypeDescription.getParameters().getOnly().getLowerBounds().getOnly().asErasure().represents(String.class),is(true));
   assertThat(genericTypeDescription.getTypeName(),is(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
 }

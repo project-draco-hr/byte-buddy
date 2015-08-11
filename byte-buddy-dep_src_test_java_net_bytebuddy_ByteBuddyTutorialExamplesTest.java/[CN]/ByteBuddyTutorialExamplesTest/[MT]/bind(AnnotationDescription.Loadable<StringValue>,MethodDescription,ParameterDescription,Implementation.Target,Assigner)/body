@@ -1,5 +1,5 @@
 {
-  if (!target.getType().asRawType().represents(String.class)) {
+  if (!target.getType().asErasure().represents(String.class)) {
     throw new IllegalStateException(target + " makes wrong use of StringValue");
   }
   StackManipulation constant=new TextConstant(annotation.loadSilent().value());

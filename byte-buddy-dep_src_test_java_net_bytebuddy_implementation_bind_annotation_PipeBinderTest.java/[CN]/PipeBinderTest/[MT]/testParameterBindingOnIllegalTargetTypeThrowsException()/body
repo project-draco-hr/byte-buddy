@@ -1,6 +1,6 @@
 {
   TypeDescription targetType=mock(TypeDescription.class);
-  when(targetType.asRawType()).thenReturn(targetType);
+  when(targetType.asErasure()).thenReturn(targetType);
   when(target.getType()).thenReturn(targetType);
   binder.bind(annotationDescription,source,target,implementationTarget,assigner);
 }

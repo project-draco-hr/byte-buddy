@@ -1,5 +1,5 @@
 {
-  StackManipulation stackManipulation=assigner.assign(fieldDescription.getType().asRawType(),methodDescription.getReturnType().asRawType(),typing);
+  StackManipulation stackManipulation=assigner.assign(fieldDescription.getType().asErasure(),methodDescription.getReturnType().asErasure(),typing);
   if (!stackManipulation.isValid()) {
     throw new IllegalStateException("Getter type of " + methodDescription + " is not compatible with "+ fieldDescription);
   }

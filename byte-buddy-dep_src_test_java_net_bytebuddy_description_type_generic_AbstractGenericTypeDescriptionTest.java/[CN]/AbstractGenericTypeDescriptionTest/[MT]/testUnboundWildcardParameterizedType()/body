@@ -13,7 +13,7 @@
   assertThat(genericTypeDescription.getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.WILDCARD));
   assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().size(),is(1));
   assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
-  assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().getOnly().asRawType().represents(Object.class),is(true));
+  assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().getOnly().asErasure().represents(Object.class),is(true));
   assertThat(genericTypeDescription.getParameters().getOnly().getLowerBounds().size(),is(0));
   assertThat(genericTypeDescription.getTypeName(),is(UnboundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
 }

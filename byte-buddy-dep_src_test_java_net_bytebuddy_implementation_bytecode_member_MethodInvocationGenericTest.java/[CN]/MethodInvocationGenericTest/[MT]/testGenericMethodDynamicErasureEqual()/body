@@ -1,5 +1,5 @@
 {
-  when(methodReturnType.asRawType()).thenReturn(declaredErasure);
+  when(methodReturnType.asErasure()).thenReturn(declaredErasure);
   when(declaredMethod.isBootstrap()).thenReturn(true);
   StackManipulation stackManipulation=MethodInvocation.invoke(methodDescription).dynamic(FOO,otherType,Collections.<TypeDescription>emptyList(),Collections.emptyList());
   assertThat(stackManipulation.isValid(),is(true));

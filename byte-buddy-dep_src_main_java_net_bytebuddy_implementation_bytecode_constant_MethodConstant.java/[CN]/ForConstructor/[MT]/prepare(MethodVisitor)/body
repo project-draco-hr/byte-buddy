@@ -1,4 +1,4 @@
 {
-  methodVisitor.visitLdcInsn(Type.getType(methodDescription.getDeclaringType().asRawType().getDescriptor()));
+  methodVisitor.visitLdcInsn(Type.getType(methodDescription.getDeclaringType().asErasure().getDescriptor()));
   return new Size(1,1);
 }

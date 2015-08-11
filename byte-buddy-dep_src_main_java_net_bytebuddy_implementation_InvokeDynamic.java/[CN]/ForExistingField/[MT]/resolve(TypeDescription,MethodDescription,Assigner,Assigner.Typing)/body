@@ -3,5 +3,5 @@
   if (!fieldDescription.isStatic() && instrumentedMethod.isStatic()) {
     throw new IllegalStateException("Cannot access non-static " + fieldDescription + " from "+ instrumentedMethod);
   }
-  return new Resolved.Simple(new StackManipulation.Compound(fieldDescription.isStatic() ? StackManipulation.LegalTrivial.INSTANCE : MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(fieldDescription).getter()),fieldDescription.getType().asRawType());
+  return new Resolved.Simple(new StackManipulation.Compound(fieldDescription.isStatic() ? StackManipulation.LegalTrivial.INSTANCE : MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(fieldDescription).getter()),fieldDescription.getType().asErasure());
 }

@@ -4,7 +4,7 @@
     stringBuilder.append(parameterType.getDescriptor());
   }
   String methodDescriptor=stringBuilder.append(')').append(returnType.getDescriptor()).toString();
-  methodVisitor.visitInvokeDynamicInsn(methodName,methodDescriptor,new Handle(handle,bootstrapMethod.getDeclaringType().asRawType().getInternalName(),bootstrapMethod.getInternalName(),bootstrapMethod.getDescriptor()),arguments.toArray(new Object[arguments.size()]));
+  methodVisitor.visitInvokeDynamicInsn(methodName,methodDescriptor,new Handle(handle,bootstrapMethod.getDeclaringType().asErasure().getInternalName(),bootstrapMethod.getInternalName(),bootstrapMethod.getDescriptor()),arguments.toArray(new Object[arguments.size()]));
   int stackSize=returnType.getStackSize().getSize() - parameterTypes.getStackSize();
   return new Size(stackSize,Math.max(stackSize,0));
 }

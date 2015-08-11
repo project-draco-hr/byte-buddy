@@ -3,6 +3,6 @@
   TypeDescription targetType=mock(TypeDescription.class);
   when(targetType.isArray()).thenReturn(false);
   when(target.getType()).thenReturn(targetType);
-  when(targetType.asRawType()).thenReturn(targetType);
+  when(targetType.asErasure()).thenReturn(targetType);
   AllArguments.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
 }

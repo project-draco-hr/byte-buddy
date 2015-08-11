@@ -2,7 +2,7 @@
   Map<GenericTypeDescription,GenericTypeDescription> bindings=new HashMap<GenericTypeDescription,GenericTypeDescription>();
   do {
     GenericTypeList parameters=typeDescription.getParameters();
-    GenericTypeList typeVariables=typeDescription.asRawType().getTypeVariables();
+    GenericTypeList typeVariables=typeDescription.asErasure().getTypeVariables();
     if (parameters.size() != typeVariables.size()) {
       return TypeVariableErasing.INSTANCE;
     }

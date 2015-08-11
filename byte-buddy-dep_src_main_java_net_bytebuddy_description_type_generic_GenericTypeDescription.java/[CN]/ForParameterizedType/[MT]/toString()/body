@@ -4,10 +4,10 @@
   if (ownerType != null) {
     stringBuilder.append(ownerType.getTypeName());
     stringBuilder.append(".");
-    stringBuilder.append(ownerType.getSort().isParameterized() ? asRawType().getName().replace(ownerType.asRawType().getName() + "$","") : asRawType().getName());
+    stringBuilder.append(ownerType.getSort().isParameterized() ? asErasure().getName().replace(ownerType.asErasure().getName() + "$","") : asErasure().getName());
   }
  else {
-    stringBuilder.append(asRawType().getName());
+    stringBuilder.append(asErasure().getName());
   }
   GenericTypeList actualTypeArguments=getParameters();
   if (!actualTypeArguments.isEmpty()) {

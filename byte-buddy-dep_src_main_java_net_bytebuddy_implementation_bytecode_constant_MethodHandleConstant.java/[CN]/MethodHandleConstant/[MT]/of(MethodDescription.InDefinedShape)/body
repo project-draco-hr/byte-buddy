@@ -1,3 +1,3 @@
 {
-  return methodDescription.isTypeInitializer() ? Illegal.INSTANCE : new MethodHandleConstant(new Handle(tagFor(methodDescription),methodDescription.getDeclaringType().asRawType().getInternalName(),methodDescription.getInternalName(),methodDescription.getDescriptor()));
+  return methodDescription.isTypeInitializer() ? Illegal.INSTANCE : new MethodHandleConstant(new Handle(tagFor(methodDescription),methodDescription.getDeclaringType().asErasure().getInternalName(),methodDescription.getInternalName(),methodDescription.getDescriptor()));
 }

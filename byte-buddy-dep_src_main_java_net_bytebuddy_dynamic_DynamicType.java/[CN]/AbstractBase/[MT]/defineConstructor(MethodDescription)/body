@@ -2,5 +2,5 @@
   if (!methodDescription.isConstructor()) {
     throw new IllegalArgumentException("Not a constructor: " + methodDescription);
   }
-  return defineConstructor(methodDescription.getParameters().asTypeList().asRawTypes(),methodDescription.getModifiers());
+  return defineConstructor(methodDescription.getParameters().asTypeList().asErasures(),methodDescription.getModifiers());
 }

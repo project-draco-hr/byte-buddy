@@ -2,5 +2,5 @@
   if (!methodDescription.isMethod()) {
     throw new IllegalArgumentException("Not a method: " + methodDescription);
   }
-  return defineMethod(methodDescription.getName(),methodDescription.getReturnType().asRawType(),methodDescription.getParameters().asTypeList().asRawTypes(),methodDescription.getModifiers());
+  return defineMethod(methodDescription.getName(),methodDescription.getReturnType().asErasure(),methodDescription.getParameters().asTypeList().asErasures(),methodDescription.getModifiers());
 }

@@ -2,10 +2,10 @@
   GenericTypeDescription ownerType=genericTypeDescription.getOwnerType();
   if (ownerType != null && ownerType.getSort().isParameterized()) {
     onOwnableType(ownerType);
-    signatureVisitor.visitInnerClassType(genericTypeDescription.asRawType().getSimpleName());
+    signatureVisitor.visitInnerClassType(genericTypeDescription.asErasure().getSimpleName());
   }
  else {
-    signatureVisitor.visitClassType(genericTypeDescription.asRawType().getInternalName());
+    signatureVisitor.visitClassType(genericTypeDescription.asErasure().getInternalName());
   }
   for (  GenericTypeDescription upperBound : genericTypeDescription.getParameters()) {
     upperBound.accept(new OfParameter(signatureVisitor));

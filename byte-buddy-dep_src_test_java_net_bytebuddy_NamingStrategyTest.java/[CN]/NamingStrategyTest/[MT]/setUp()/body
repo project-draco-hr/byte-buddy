@@ -1,3 +1,3 @@
 {
-  when(genericSuperType.asRawType()).thenReturn(rawSuperType);
+  when(genericSuperType.asErasure()).thenReturn(rawSuperType);
 }

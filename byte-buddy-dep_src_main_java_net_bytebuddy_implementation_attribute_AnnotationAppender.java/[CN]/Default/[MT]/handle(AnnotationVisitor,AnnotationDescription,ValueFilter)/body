@@ -1,7 +1,7 @@
 {
   for (  MethodDescription methodDescription : annotation.getAnnotationType().getDeclaredMethods()) {
     if (valueFilter.isRelevant(annotation,methodDescription)) {
-      apply(annotationVisitor,methodDescription.getReturnType().asRawType(),methodDescription.getName(),annotation.getValue(methodDescription));
+      apply(annotationVisitor,methodDescription.getReturnType().asErasure(),methodDescription.getName(),annotation.getValue(methodDescription));
     }
   }
   annotationVisitor.visitEnd();

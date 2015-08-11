@@ -5,7 +5,7 @@
       when(mock.getExceptionTypes()).thenReturn(new GenericTypeList.Empty());
       when(mock.getDeclaringType()).thenReturn(mock(TypeDescription.class));
       TypeDescription returnType=mock(TypeDescription.class);
-      when(returnType.asRawType()).thenReturn(returnType);
+      when(returnType.asErasure()).thenReturn(returnType);
       when(mock.getReturnType()).thenReturn(returnType);
     }
   }

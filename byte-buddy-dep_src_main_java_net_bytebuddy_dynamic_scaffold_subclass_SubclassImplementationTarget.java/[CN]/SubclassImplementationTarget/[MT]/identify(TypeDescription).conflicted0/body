@@ -1,3 +1,3 @@
 {
-  return typeDescription.getSuperType().asRawType();
+  return typeDescription.getSuperType().asErasure();
 }

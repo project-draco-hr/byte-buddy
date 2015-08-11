@@ -1,3 +1,3 @@
 {
-  return getSort().isNonGeneric() ? asRawType().getSourceCodeName() : toString();
+  return getSort().isNonGeneric() ? asErasure().getSourceCodeName() : toString();
 }

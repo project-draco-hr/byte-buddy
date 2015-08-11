@@ -1,3 +1,3 @@
 {
-  return new ForAttachment(parameterDescription.getDeclaringMethod().getDeclaringType().asRawType(),parameterDescription.getDeclaringMethod());
+  return new ForAttachment(parameterDescription.getDeclaringMethod().getDeclaringType().asErasure(),parameterDescription.getDeclaringMethod());
 }

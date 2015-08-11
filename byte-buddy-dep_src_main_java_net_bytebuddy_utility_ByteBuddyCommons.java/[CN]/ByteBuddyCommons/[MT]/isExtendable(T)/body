@@ -2,7 +2,7 @@
   if (!EXTENDABLE_TYPES.contains(typeDescription.getSort())) {
     throw new IllegalArgumentException("Cannot extend generic type: " + typeDescription);
   }
- else   if (isDefineable(typeDescription.asRawType()).isFinal()) {
+ else   if (isDefineable(typeDescription.asErasure()).isFinal()) {
     throw new IllegalArgumentException("Cannot extend a final type: " + typeDescription);
   }
   return typeDescription;

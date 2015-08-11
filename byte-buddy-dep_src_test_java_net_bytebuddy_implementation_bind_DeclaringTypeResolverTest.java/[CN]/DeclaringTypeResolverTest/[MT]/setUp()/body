@@ -2,6 +2,6 @@
   super.setUp();
   when(leftMethod.getDeclaringType()).thenReturn(leftType);
   when(rightMethod.getDeclaringType()).thenReturn(rightType);
-  when(leftType.asRawType()).thenReturn(leftType);
-  when(rightType.asRawType()).thenReturn(rightType);
+  when(leftType.asErasure()).thenReturn(leftType);
+  when(rightType.asErasure()).thenReturn(rightType);
 }

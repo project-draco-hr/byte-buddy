@@ -3,8 +3,8 @@
   assertThat(new CollectionRawTypeMatcher<Iterable<GenericTypeDescription>>(matcher).matches(Arrays.asList(first,second)),is(true));
   verify(matcher).matches(Arrays.asList(firstRaw,secondRaw));
   verifyNoMoreInteractions(matcher);
-  verify(first).asRawType();
+  verify(first).asErasure();
   verifyNoMoreInteractions(first);
-  verify(second).asRawType();
+  verify(second).asErasure();
   verifyNoMoreInteractions(second);
 }

@@ -1,5 +1,5 @@
 {
-  if (isActualTypeOrVoid(typeDescription).asRawType().represents(void.class)) {
+  if (isActualTypeOrVoid(typeDescription).asErasure().represents(void.class)) {
     throw new IllegalArgumentException("The void non-type cannot be assigned a value");
   }
   return typeDescription;

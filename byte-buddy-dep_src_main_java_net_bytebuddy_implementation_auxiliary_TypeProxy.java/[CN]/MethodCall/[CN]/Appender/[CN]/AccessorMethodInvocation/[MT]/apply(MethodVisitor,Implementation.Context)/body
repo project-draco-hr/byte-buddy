@@ -1,4 +1,4 @@
 {
   MethodDescription.InDefinedShape proxyMethod=methodAccessorFactory.registerAccessorFor(specialMethodInvocation);
-  return new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadOffset(0),fieldLoadingInstruction,MethodVariableAccess.allArgumentsOf(instrumentedMethod.asDefined()).asBridgeOf(proxyMethod),MethodInvocation.invoke(proxyMethod),MethodReturn.returning(instrumentedMethod.getReturnType().asRawType())).apply(methodVisitor,implementationContext);
+  return new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadOffset(0),fieldLoadingInstruction,MethodVariableAccess.allArgumentsOf(instrumentedMethod).asBridgeOf(proxyMethod),MethodInvocation.invoke(proxyMethod),MethodReturn.returning(instrumentedMethod.getReturnType().asErasure())).apply(methodVisitor,implementationContext);
 }

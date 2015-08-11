@@ -1,4 +1,0 @@
-{
-  GenericTypeList upperBounds=getUpperBounds();
-  return upperBounds.isEmpty() ? TypeDescription.OBJECT : upperBounds.get(0).asRawType();
-}

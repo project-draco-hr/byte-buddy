@@ -4,9 +4,9 @@
   combined.addAll(leftMethods);
   combined.addAll(rightMethods);
   for (  MethodDescription leftMethod : leftMethods) {
-    TypeDescription leftType=leftMethod.getDeclaringType().asRawType();
+    TypeDescription leftType=leftMethod.getDeclaringType().asErasure();
     for (    MethodDescription rightMethod : rightMethods) {
-      TypeDescription rightType=rightMethod.getDeclaringType().asRawType();
+      TypeDescription rightType=rightMethod.getDeclaringType().asErasure();
       if (leftType.isAssignableTo(rightType)) {
         combined.remove(rightMethod);
         break;

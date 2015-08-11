@@ -1,7 +1,7 @@
 {
   List<StackManipulation> stackManipulations=new ArrayList<StackManipulation>(methodDescription.getParameters().size() * 2);
   for (  ParameterDescription parameterDescription : methodDescription.getParameters()) {
-    TypeDescription parameterType=parameterDescription.getType().asRawType();
+    TypeDescription parameterType=parameterDescription.getType().asErasure();
     stackManipulations.add(forType(parameterType).loadOffset(parameterDescription.getOffset()));
     stackManipulations.add(typeCastingHandler.ofIndex(parameterType,parameterDescription.getIndex()));
   }

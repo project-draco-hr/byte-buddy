@@ -1,7 +1,7 @@
 {
   GenericTypeList upperBounds=wildcardType.getUpperBounds();
   GenericTypeList lowerBounds=wildcardType.getLowerBounds();
-  if (lowerBounds.isEmpty() && upperBounds.getOnly().asRawType().represents(Object.class)) {
+  if (lowerBounds.isEmpty() && upperBounds.getOnly().asErasure().represents(Object.class)) {
     signatureVisitor.visitTypeArgument();
   }
  else   if (!lowerBounds.isEmpty()) {

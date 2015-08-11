@@ -19,6 +19,6 @@
   assertThat(genericTypeDescription.getComponentType().getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(genericTypeDescription.getComponentType().getParameters().size(),is(1));
   assertThat(genericTypeDescription.getComponentType().getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.VARIABLE));
-  assertThat(genericTypeDescription.getComponentType().getParameters().getOnly().asRawType().represents(String.class),is(true));
+  assertThat(genericTypeDescription.getComponentType().getParameters().getOnly().asErasure().represents(String.class),is(true));
   assertThat(genericTypeDescription.getTypeName(),is(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO).getGenericType().toString()));
 }

@@ -1,4 +1,4 @@
 {
-  TypeDescription targetType=bridgeTarget.getParameters().get(index).getType().asRawType();
+  TypeDescription targetType=bridgeTarget.getParameters().get(index).getType().asErasure();
   return parameterType.equals(targetType) ? LegalTrivial.INSTANCE : TypeCasting.to(targetType);
 }

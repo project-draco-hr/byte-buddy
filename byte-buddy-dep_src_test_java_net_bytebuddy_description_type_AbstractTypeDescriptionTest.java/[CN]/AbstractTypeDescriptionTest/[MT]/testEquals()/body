@@ -3,7 +3,7 @@
   assertThat(identical,equalTo(identical));
   TypeDescription equalFirst=mock(TypeDescription.class);
   when(equalFirst.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
-  when(equalFirst.asRawType()).thenReturn(equalFirst);
+  when(equalFirst.asErasure()).thenReturn(equalFirst);
   when(equalFirst.getInternalName()).thenReturn(Type.getInternalName(SampleClass.class));
   assertThat(describe(SampleClass.class),equalTo(equalFirst));
   assertThat(describe(SampleClass.class),not(equalTo(describe(SampleInterface.class))));

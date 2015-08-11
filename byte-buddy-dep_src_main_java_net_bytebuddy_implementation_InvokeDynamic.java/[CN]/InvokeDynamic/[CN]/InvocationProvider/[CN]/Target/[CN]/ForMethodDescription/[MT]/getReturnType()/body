@@ -1,3 +1,3 @@
 {
-  return methodDescription.getReturnType().asRawType();
+  return methodDescription.getReturnType().asErasure();
 }

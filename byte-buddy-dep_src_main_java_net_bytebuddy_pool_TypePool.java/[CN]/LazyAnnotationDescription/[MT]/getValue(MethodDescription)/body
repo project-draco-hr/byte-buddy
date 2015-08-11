@@ -1,5 +1,5 @@
 {
-  if (!methodDescription.getDeclaringType().asRawType().getDescriptor().equals(descriptor)) {
+  if (!methodDescription.getDeclaringType().asErasure().getDescriptor().equals(descriptor)) {
     throw new IllegalArgumentException(methodDescription + " is not declared by " + getAnnotationType());
   }
   AnnotationValue<?,?> annotationValue=values.get(methodDescription.getName());

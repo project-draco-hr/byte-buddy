@@ -4,19 +4,19 @@
   assertThat(genericTypeDescription.getParameters().size(),is(1));
   GenericTypeDescription superType=genericTypeDescription.getSuperType();
   assertThat(superType.getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
-  assertThat(superType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.NestedIntermediate.class)));
+  assertThat(superType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.NestedIntermediate.class)));
   GenericTypeDescription superSuperType=superType.getSuperType();
   assertThat(superSuperType.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
-  assertThat(superSuperType.asRawType(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Base.class)));
+  assertThat(superSuperType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Base.class)));
   assertThat(superSuperType.getParameters().size(),is(2));
   assertThat(superSuperType.getParameters().get(0).getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
-  assertThat(superSuperType.getParameters().get(0).asRawType().represents(List.class),is(true));
+  assertThat(superSuperType.getParameters().get(0).asErasure().represents(List.class),is(true));
   assertThat(superSuperType.getParameters().get(0).getParameters().size(),is(1));
   assertThat(superSuperType.getParameters().get(0).getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
-  assertThat(superSuperType.getParameters().get(0).getParameters().getOnly().asRawType().represents(List.class),is(true));
+  assertThat(superSuperType.getParameters().get(0).getParameters().getOnly().asErasure().represents(List.class),is(true));
   assertThat(superSuperType.getParameters().get(1).getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
-  assertThat(superSuperType.getParameters().get(1).asRawType().represents(List.class),is(true));
+  assertThat(superSuperType.getParameters().get(1).asErasure().represents(List.class),is(true));
   assertThat(superSuperType.getParameters().get(1).getParameters().size(),is(1));
   assertThat(superSuperType.getParameters().get(1).getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
-  assertThat(superSuperType.getParameters().get(1).getParameters().getOnly().asRawType().represents(String.class),is(true));
+  assertThat(superSuperType.getParameters().get(1).getParameters().getOnly().asErasure().represents(String.class),is(true));
 }

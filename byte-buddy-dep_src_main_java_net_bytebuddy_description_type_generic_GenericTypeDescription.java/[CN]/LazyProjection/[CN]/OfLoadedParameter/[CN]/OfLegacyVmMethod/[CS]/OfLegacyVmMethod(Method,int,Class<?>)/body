@@ -1,5 +1,5 @@
 {
   this.method=method;
   this.index=index;
-  this.rawType=rawType;
+  this.erasure=erasure;
 }

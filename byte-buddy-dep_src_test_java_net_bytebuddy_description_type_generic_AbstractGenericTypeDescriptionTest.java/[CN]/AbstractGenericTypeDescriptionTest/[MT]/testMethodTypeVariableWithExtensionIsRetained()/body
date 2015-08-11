@@ -3,14 +3,14 @@
   assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
   assertThat(genericTypeDescription.getParameters().size(),is(2));
   assertThat(genericTypeDescription.getParameters().get(0).getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
-  assertThat(genericTypeDescription.getParameters().get(0).asRawType().represents(Number.class),is(true));
+  assertThat(genericTypeDescription.getParameters().get(0).asErasure().represents(Number.class),is(true));
   assertThat(genericTypeDescription.getParameters().get(1).getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
-  assertThat(genericTypeDescription.getParameters().get(1).asRawType().represents(Integer.class),is(true));
+  assertThat(genericTypeDescription.getParameters().get(1).asErasure().represents(Integer.class),is(true));
   MethodDescription methodDescription=genericTypeDescription.getDeclaredMethods().filter(named(QUX)).getOnly();
   assertThat(methodDescription.getReturnType().getSort(),is(GenericTypeDescription.Sort.VARIABLE));
   assertThat(methodDescription.getReturnType().getSymbol(),is("S"));
   assertThat(methodDescription.getReturnType().getVariableSource(),is((TypeVariableSource)methodDescription));
   assertThat(methodDescription.getReturnType().getUpperBounds().size(),is(1));
   assertThat(methodDescription.getReturnType().getUpperBounds().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
-  assertThat(methodDescription.getReturnType().getUpperBounds().getOnly().asRawType().represents(Number.class),is(true));
+  assertThat(methodDescription.getReturnType().getUpperBounds().getOnly().asErasure().represents(Number.class),is(true));
 }

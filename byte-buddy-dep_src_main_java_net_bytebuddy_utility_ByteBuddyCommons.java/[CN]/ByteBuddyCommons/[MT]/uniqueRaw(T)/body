@@ -1,7 +1,7 @@
 {
   Map<TypeDescription,GenericTypeDescription> types=new HashMap<TypeDescription,GenericTypeDescription>(typeDescriptions.size());
   for (  GenericTypeDescription typeDescription : typeDescriptions) {
-    GenericTypeDescription conflictingType=types.put(typeDescription.asRawType(),typeDescription);
+    GenericTypeDescription conflictingType=types.put(typeDescription.asErasure(),typeDescription);
     if (conflictingType != null) {
       throw new IllegalArgumentException("Duplicate types: " + typeDescription + " and "+ conflictingType);
     }

@@ -2,6 +2,6 @@
   StackManipulation stackManipulation=TargetMethodAnnotationDrivenBinder.TerminationHandler.Dropping.INSTANCE.resolve(assigner,source,target);
   assertThat(stackManipulation,is((StackManipulation)Removal.SINGLE));
   verify(targetType).getStackSize();
-  verify(targetType).asRawType();
+  verify(targetType).asErasure();
   verifyNoMoreInteractions(targetType);
 }

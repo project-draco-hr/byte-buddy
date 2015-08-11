@@ -1,6 +1,6 @@
 {
   TypeDescription fieldType=mock(TypeDescription.class);
-  when(fieldType.asRawType()).thenReturn(fieldType);
+  when(fieldType.asErasure()).thenReturn(fieldType);
   when(fieldType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(fieldType);
   when(fieldType.getName()).thenReturn(FOO);
   InstrumentedType instrumentedType=makePlainInstrumentedType();
