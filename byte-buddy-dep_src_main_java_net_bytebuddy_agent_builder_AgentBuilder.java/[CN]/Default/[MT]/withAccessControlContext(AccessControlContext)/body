@@ -1,0 +1,3 @@
+{
+  return new Default(byteBuddy,binaryLocator,listener,nativeMethodPrefix,accessControlContext,disableSelfInitialization,retransformation,bootstrapInjectionStrategy,entries);
+}

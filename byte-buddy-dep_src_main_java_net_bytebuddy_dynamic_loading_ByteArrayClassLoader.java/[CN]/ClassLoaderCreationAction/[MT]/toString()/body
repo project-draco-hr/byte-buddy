@@ -1,0 +1,3 @@
+{
+  return "ByteArrayClassLoader.ClassLoaderCreationAction{" + "parent=" + parent + ", typeDefinitions="+ typeDefinitions+ ", protectionDomain="+ protectionDomain+ ", accessControlContext="+ accessControlContext+ ", persistenceHandler="+ persistenceHandler+ ", packageDefinitionStrategy="+ packageDefinitionStrategy+ ", childFirst="+ childFirst+ '}';
+}

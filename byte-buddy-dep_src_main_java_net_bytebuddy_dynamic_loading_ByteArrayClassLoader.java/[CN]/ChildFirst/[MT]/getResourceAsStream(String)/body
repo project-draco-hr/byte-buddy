@@ -9,7 +9,7 @@
       return url != null ? url.openStream() : null;
     }
  catch (    IOException ignored) {
-      return null;
+      return NO_STREAM;
     }
   }
 }

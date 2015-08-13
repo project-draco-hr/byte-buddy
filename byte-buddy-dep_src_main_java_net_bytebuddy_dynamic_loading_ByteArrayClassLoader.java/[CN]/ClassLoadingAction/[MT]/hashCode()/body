@@ -1,0 +1,3 @@
+{
+  return typeName.hashCode() + 31 * ByteArrayClassLoader.this.hashCode();
+}

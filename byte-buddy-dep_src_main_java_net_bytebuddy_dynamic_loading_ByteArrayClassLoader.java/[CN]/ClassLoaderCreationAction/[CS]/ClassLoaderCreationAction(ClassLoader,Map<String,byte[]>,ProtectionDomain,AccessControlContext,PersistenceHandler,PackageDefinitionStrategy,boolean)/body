@@ -1,0 +1,9 @@
+{
+  this.parent=parent;
+  this.typeDefinitions=typeDefinitions;
+  this.protectionDomain=protectionDomain;
+  this.accessControlContext=accessControlContext;
+  this.persistenceHandler=persistenceHandler;
+  this.packageDefinitionStrategy=packageDefinitionStrategy;
+  this.childFirst=childFirst;
+}

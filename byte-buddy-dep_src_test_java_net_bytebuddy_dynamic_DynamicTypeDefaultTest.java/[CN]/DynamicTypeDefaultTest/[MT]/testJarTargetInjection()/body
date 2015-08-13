@@ -15,6 +15,7 @@
     jarOutputStream.close();
   }
   File file=File.createTempFile(FOO,TEMP);
+  assertThat(file.delete(),is(true));
   boolean fileDeletion;
   try {
     assertThat(dynamicType.inject(sourceFile,file),is(file));

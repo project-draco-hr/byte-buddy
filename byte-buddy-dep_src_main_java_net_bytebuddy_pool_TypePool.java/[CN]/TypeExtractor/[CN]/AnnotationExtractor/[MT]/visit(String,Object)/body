@@ -3,9 +3,6 @@
   if (value instanceof Type) {
     annotationValue=new RawTypeValue(Default.this,(Type)value);
   }
- else   if (value.getClass().isArray()) {
-    annotationValue=new AnnotationDescription.AnnotationValue.Trivial<Object>(value);
-  }
  else {
     annotationValue=new AnnotationDescription.AnnotationValue.Trivial<Object>(value);
   }

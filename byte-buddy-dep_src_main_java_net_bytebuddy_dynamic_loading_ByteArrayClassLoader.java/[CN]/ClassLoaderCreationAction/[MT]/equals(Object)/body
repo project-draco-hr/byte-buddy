@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ClassLoaderCreationAction that=(ClassLoaderCreationAction)other;
+  return childFirst == that.childFirst && parent.equals(that.parent) && typeDefinitions.equals(that.typeDefinitions) && !(protectionDomain != null ? !protectionDomain.equals(that.protectionDomain) : that.protectionDomain != null) && accessControlContext.equals(that.accessControlContext) && persistenceHandler == that.persistenceHandler && packageDefinitionStrategy.equals(that.packageDefinitionStrategy);
+}

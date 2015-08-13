@@ -1,5 +1,6 @@
 {
   File file=File.createTempFile(FOO,TEMP);
+  assertThat(file.delete(),is(true));
   boolean fileDeletion;
   try {
     Manifest manifest=new Manifest();

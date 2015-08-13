@@ -1,5 +1,15 @@
 {
   ObjectPropertyAssertion.of(ClassLoadingStrategy.Default.class).apply();
-  ObjectPropertyAssertion.of(ClassLoadingStrategy.Default.WrappingDispatcher.class).apply();
-  ObjectPropertyAssertion.of(ClassLoadingStrategy.Default.InjectionDispatcher.class).apply();
+  ObjectPropertyAssertion.of(ClassLoadingStrategy.Default.WrappingDispatcher.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
+    @Override public AccessControlContext create(){
+      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(ClassLoadingStrategy.Default.InjectionDispatcher.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
+    @Override public AccessControlContext create(){
+      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
+    }
+  }
+).apply();
 }

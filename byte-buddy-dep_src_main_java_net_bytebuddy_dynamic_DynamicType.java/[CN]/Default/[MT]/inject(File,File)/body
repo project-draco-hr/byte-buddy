@@ -1,7 +1,9 @@
 {
   JarInputStream jarInputStream=new JarInputStream(new BufferedInputStream(new FileInputStream(sourceJar)));
   try {
-    targetJar.createNewFile();
+    if (!targetJar.createNewFile()) {
+      Logger.getAnonymousLogger().info("Overwriting file " + targetJar);
+    }
     JarOutputStream jarOutputStream=new JarOutputStream(new BufferedOutputStream(new FileOutputStream(targetJar)),jarInputStream.getManifest());
     try {
       Map<TypeDescription,byte[]> rawAuxiliaryTypes=getRawAuxiliaryTypes();

@@ -1,5 +1,7 @@
 {
-  file.createNewFile();
+  if (!file.createNewFile()) {
+    Logger.getAnonymousLogger().info("Overwriting existing file: " + file);
+  }
   JarOutputStream outputStream=new JarOutputStream(new BufferedOutputStream(new FileOutputStream(file)),manifest);
   try {
     for (    Map.Entry<TypeDescription,byte[]> entry : getRawAuxiliaryTypes().entrySet()) {

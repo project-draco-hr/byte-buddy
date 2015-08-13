@@ -1,0 +1,7 @@
+{
+  Map<String,byte[]> namedTypeDefinitions=new HashMap<String,byte[]>(typeDefinitions.size());
+  for (  Map.Entry<TypeDescription,byte[]> entry : typeDefinitions.entrySet()) {
+    namedTypeDefinitions.put(entry.getKey().getName(),entry.getValue());
+  }
+  return AccessController.doPrivileged(new ClassLoaderCreationAction(parent,namedTypeDefinitions,protectionDomain,accessControlContext,persistenceHandler,packageDefinitionStrategy,childFirst),accessControlContext);
+}

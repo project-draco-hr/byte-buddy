@@ -1,7 +1,7 @@
 {
   if (!resourceName.endsWith(CLASS_FILE_SUFFIX)) {
-    return null;
+    return NO_STREAM;
   }
   byte[] binaryRepresentation=typeDefinitions.get(resourceName.replace('/','.').substring(0,resourceName.length() - CLASS_FILE_SUFFIX.length()));
-  return binaryRepresentation == null ? null : new ByteArrayInputStream(binaryRepresentation);
+  return binaryRepresentation == null ? NO_STREAM : new ByteArrayInputStream(binaryRepresentation);
 }

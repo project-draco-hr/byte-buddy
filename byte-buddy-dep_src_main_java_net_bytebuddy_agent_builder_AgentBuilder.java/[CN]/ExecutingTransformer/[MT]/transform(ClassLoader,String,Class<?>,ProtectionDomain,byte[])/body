@@ -8,7 +8,7 @@
         DynamicType.Unloaded<?> dynamicType=initializationStrategy.apply(transformation.transform(byteBuddy.rebase(typeDescription,initialized.getClassFileLocator(),methodNameTransformer),typeDescription)).make();
         Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=dynamicType.getLoadedTypeInitializers();
         if (loadedTypeInitializers.size() > 1) {
-          ClassInjector classInjector=classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,PackageDefinitionStrategy.NoOp.INSTANCE);
+          ClassInjector classInjector=classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext,PackageDefinitionStrategy.NoOp.INSTANCE);
           for (          Map.Entry<TypeDescription,Class<?>> auxiliary : classInjector.inject(dynamicType.getRawAuxiliaryTypes()).entrySet()) {
             initializationStrategy.initialize(auxiliary.getValue(),loadedTypeInitializers.get(auxiliary.getKey()));
           }

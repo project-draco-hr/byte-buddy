@@ -1,3 +1,6 @@
 {
+  if (currentBounds == null) {
+    throw new IllegalStateException("Did not expect " + token + " before finding formal parameter");
+  }
   currentBounds.add(token);
 }

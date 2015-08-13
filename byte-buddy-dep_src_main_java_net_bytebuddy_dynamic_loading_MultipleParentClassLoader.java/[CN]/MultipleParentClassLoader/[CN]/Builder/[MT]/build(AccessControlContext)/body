@@ -1,0 +1,3 @@
+{
+  return classLoaders.size() == 1 ? classLoaders.get(ONLY) : AccessController.doPrivileged(new ClassLoaderCreationAction(classLoaders),accessControlContext);
+}

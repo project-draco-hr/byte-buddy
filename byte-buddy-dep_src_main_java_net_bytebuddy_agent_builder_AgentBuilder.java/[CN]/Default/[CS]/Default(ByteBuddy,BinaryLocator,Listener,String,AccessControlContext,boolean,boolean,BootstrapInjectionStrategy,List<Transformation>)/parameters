@@ -1,0 +1,9 @@
+ByteBuddy byteBuddy
+BinaryLocator binaryLocator
+Listener listener
+String nativeMethodPrefix
+AccessControlContext accessControlContext
+boolean disableSelfInitialization
+boolean retransformation
+BootstrapInjectionStrategy bootstrapInjectionStrategy
+List<Transformation> entries

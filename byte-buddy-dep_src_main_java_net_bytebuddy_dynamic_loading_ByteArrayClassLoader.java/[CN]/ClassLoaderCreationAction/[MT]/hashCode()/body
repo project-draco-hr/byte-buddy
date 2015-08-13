@@ -1,0 +1,10 @@
+{
+  int result=parent.hashCode();
+  result=31 * result + typeDefinitions.hashCode();
+  result=31 * result + (protectionDomain != null ? protectionDomain.hashCode() : 0);
+  result=31 * result + accessControlContext.hashCode();
+  result=31 * result + persistenceHandler.hashCode();
+  result=31 * result + packageDefinitionStrategy.hashCode();
+  result=31 * result + (childFirst ? 1 : 0);
+  return result;
+}

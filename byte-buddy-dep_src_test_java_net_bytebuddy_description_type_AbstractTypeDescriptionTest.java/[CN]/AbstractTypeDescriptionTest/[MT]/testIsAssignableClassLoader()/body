@@ -1,5 +1,5 @@
 {
-  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(SampleClass.class),null,ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
+  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(SampleClass.class),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
   Class<?> otherSampleClass=classLoader.loadClass(SampleClass.class.getName());
   assertThat(describe(SampleClass.class).isAssignableFrom(describe(otherSampleClass)),is(true));
   assertThat(describe(SampleClass.class).isAssignableTo(describe(otherSampleClass)),is(true));

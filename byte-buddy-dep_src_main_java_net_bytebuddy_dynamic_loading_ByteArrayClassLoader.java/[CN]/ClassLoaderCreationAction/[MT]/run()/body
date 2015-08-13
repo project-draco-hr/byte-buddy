@@ -1,0 +1,3 @@
+{
+  return childFirst ? new ChildFirst(parent,typeDefinitions,protectionDomain,accessControlContext,persistenceHandler,packageDefinitionStrategy) : new ByteArrayClassLoader(parent,typeDefinitions,protectionDomain,accessControlContext,persistenceHandler,packageDefinitionStrategy);
+}

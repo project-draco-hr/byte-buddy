@@ -1,5 +1,5 @@
 {
-  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(SampleAnnotation.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
+  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(SampleAnnotation.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
   Class<?> type=createPlain().defineMethod(BAR,String.class,Collections.<Class<?>>emptyList(),Visibility.PUBLIC).intercept(new PreparedField()).make().load(classLoader,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredFields().length,is(1));
   assertThat(type.getDeclaredField(FOO).getName(),is(FOO));
