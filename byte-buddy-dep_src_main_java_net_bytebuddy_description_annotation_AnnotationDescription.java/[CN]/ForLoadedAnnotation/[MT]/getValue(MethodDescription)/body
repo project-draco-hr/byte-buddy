@@ -1,5 +1,5 @@
 {
-  if (!methodDescription.getDeclaringType().asErasure().represents(annotation.annotationType())) {
+  if (!methodDescription.getDeclaringType().represents(annotation.annotationType())) {
     throw new IllegalArgumentException(methodDescription + " does not represent " + annotation.annotationType());
   }
   try {
