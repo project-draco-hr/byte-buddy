@@ -1,0 +1,11 @@
+{
+  try {
+    return (Class<?>)returnType.invoke(methodType);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.invoke.MethodType#returnType",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.reflect.MethodType#returnType",exception.getCause());
+  }
+}

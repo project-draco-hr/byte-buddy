@@ -1,3 +1,0 @@
-{
-  JavaMethod.ForUnavailableMethod.INSTANCE.invoke(mock(Object.class));
-}

@@ -1,3 +1,0 @@
-{
-  assertThat(JavaMethod.ForUnavailableMethod.INSTANCE.isInvokable(),is(false));
-}

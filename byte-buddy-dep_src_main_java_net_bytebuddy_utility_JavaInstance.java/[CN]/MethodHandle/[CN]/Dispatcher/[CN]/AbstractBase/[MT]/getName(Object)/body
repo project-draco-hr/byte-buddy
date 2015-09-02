@@ -1,0 +1,11 @@
+{
+  try {
+    return (String)getName.invoke(methodHandleInfo);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.invoke.MethodHandleInfo#getName",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.invoke.MethodHandleInfo#getName",exception.getCause());
+  }
+}

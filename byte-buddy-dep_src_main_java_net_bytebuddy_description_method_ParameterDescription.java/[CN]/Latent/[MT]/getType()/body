@@ -1,0 +1,3 @@
+{
+  return parameterType.accept(GenericTypeDescription.Visitor.Substitutor.ForAttachment.of(this));
+}

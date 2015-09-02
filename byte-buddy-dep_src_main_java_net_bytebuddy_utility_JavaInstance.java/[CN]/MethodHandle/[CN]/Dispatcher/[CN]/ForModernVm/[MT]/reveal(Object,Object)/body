@@ -1,0 +1,11 @@
+{
+  try {
+    return revealDirect.invoke(lookup,methodHandle);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.invoke.MethodHandles.Lookup#revealDirect",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.invoke.MethodHandles.Lookup#revealDirect",exception.getCause());
+  }
+}

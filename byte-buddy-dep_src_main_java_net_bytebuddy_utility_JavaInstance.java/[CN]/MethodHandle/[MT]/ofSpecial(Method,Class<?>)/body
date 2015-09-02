@@ -1,0 +1,3 @@
+{
+  return ofSpecial(new MethodDescription.ForLoadedMethod(nonNull(method)),new TypeDescription.ForLoadedType(nonNull(type)));
+}

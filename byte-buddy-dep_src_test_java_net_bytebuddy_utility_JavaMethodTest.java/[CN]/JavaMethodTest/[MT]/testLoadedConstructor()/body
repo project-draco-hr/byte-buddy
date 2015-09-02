@@ -1,6 +1,0 @@
-{
-  Constructor<?> constructor=Object.class.getDeclaredConstructor();
-  JavaMethod javaMethod=new JavaMethod.ForLoadedConstructor(constructor);
-  assertThat(javaMethod.isInvokable(),is(true));
-  assertThat(javaMethod.invokeStatic(),notNullValue(Object.class));
-}

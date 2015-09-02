@@ -1,0 +1,7 @@
+{
+  int offset=methodDescription.isStatic() ? 0 : 1;
+  for (  GenericTypeDescription typeDescription : typeDescriptions.subList(0,index)) {
+    offset+=typeDescription.getStackSize().getSize();
+  }
+  return new ParameterDescription.Latent(methodDescription,typeDescriptions.get(index),index,offset);
+}

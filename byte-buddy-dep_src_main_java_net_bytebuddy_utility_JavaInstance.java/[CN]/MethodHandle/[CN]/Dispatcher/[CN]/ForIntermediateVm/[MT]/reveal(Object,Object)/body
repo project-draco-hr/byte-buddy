@@ -1,0 +1,14 @@
+{
+  try {
+    return methodInfo.newInstance(lookup,methodHandle);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.invoke.MethodInfo()",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.invoke.MethodInfo()",exception.getCause());
+  }
+catch (  InstantiationException exception) {
+    throw new IllegalStateException("Error constructing java.lang.invoke.MethodInfo",exception);
+  }
+}

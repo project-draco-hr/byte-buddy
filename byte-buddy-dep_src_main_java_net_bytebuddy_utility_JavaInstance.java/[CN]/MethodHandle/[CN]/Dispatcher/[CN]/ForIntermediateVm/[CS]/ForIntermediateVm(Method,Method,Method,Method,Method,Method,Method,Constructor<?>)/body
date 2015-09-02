@@ -1,0 +1,4 @@
+{
+  super(publicLookup,getName,getDeclaringClass,getReferenceKind,getMethodType,returnType,parameterArray);
+  this.methodInfo=methodInfo;
+}

@@ -1,0 +1,3 @@
+{
+  return new Token(getType().accept(visitor),getAnnotations(),getName(),getModifiers());
+}

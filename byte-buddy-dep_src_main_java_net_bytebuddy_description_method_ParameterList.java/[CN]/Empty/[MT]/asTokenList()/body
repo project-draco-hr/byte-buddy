@@ -1,0 +1,3 @@
+{
+  return new ByteCodeElement.Token.TokenList<ParameterDescription.Token>(Collections.<ParameterDescription.Token>emptyList());
+}

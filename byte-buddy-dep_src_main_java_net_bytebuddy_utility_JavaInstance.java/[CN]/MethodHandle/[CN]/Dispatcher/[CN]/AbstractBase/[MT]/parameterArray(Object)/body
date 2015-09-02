@@ -1,0 +1,11 @@
+{
+  try {
+    return Arrays.asList((Class<?>[])parameterArray.invoke(methodType));
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.reflect.MethodType#parameterArray",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.reflect.MethodType#parameterArray",exception.getCause());
+  }
+}

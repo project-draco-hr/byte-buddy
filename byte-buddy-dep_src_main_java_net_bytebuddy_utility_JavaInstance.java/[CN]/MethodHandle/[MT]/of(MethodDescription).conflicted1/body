@@ -1,0 +1,17 @@
+{
+  if (methodDescription.isStatic()) {
+    return INVOKE_STATIC;
+  }
+ else   if (methodDescription.isPrivate()) {
+    return INVOKE_SPECIAL;
+  }
+ else   if (methodDescription.isConstructor()) {
+    return INVOKE_SPECIAL_CONSTRUCTOR;
+  }
+ else   if (methodDescription.getDeclaringType().asErasure().isInterface()) {
+    return INVOKE_INTERFACE;
+  }
+ else {
+    return INVOKE_VIRTUAL;
+  }
+}

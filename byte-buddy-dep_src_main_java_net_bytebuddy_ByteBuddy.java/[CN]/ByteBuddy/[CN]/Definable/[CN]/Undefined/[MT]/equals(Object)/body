@@ -1,3 +1,3 @@
 {
-  return other != null && other.getClass() == Undefined.class;
+  return other != null && other.getClass() == getClass();
 }

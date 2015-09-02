@@ -1,0 +1,3 @@
+{
+  this(declaringMethod,parameterType,Collections.<AnnotationDescription>emptyList(),Token.NO_NAME,Token.NO_MODIFIERS,index,offset);
+}

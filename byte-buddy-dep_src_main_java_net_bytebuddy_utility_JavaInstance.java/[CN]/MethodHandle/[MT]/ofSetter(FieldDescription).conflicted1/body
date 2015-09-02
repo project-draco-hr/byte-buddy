@@ -1,0 +1,3 @@
+{
+  return fieldDescription.isStatic() ? PUT_STATIC_FIELD : PUT_FIELD;
+}

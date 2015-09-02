@@ -1,0 +1,5 @@
+{
+  this.declaringMethod=declaringMethod;
+  this.parameterDescriptions=parameterDescriptions;
+  this.visitor=visitor;
+}

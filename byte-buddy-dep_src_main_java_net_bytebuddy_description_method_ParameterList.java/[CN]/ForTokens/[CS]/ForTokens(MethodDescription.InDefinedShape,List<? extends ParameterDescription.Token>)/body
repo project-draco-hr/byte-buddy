@@ -1,0 +1,4 @@
+{
+  this.declaringMethod=declaringMethod;
+  this.tokens=tokens;
+}

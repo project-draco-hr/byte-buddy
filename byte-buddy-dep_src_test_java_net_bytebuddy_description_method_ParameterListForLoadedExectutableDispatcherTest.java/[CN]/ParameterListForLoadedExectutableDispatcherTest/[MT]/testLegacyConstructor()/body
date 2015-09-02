@@ -1,0 +1,3 @@
+{
+  assertThat(ParameterList.ForLoadedExecutable.Dispatcher.ForLegacyVm.INSTANCE.getParameters(Object.class.getDeclaredConstructor()),CoreMatchers.<ParameterList<ParameterDescription.InDefinedShape>>is(new ParameterList.ForLoadedExecutable.OfLegacyVmConstructor(Object.class.getDeclaredConstructor())));
+}

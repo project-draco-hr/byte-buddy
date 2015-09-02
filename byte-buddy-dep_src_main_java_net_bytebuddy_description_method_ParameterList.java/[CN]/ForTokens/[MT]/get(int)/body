@@ -1,0 +1,7 @@
+{
+  int offset=declaringMethod.isStatic() ? 0 : 1;
+  for (  ParameterDescription.Token token : tokens.subList(0,index)) {
+    offset+=token.getType().getStackSize().getSize();
+  }
+  return new ParameterDescription.Latent(declaringMethod,tokens.get(index),index,offset);
+}

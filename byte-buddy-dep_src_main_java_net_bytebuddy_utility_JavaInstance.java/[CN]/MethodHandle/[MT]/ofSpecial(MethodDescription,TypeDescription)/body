@@ -1,0 +1,6 @@
+{
+  if (!methodDescription.isSpecializableFor(typeDescription)) {
+    throw new IllegalArgumentException("Cannot specialize " + methodDescription + " for "+ typeDescription);
+  }
+  return new MethodHandle(HandleType.ofSpecial(methodDescription),typeDescription,methodDescription.getInternalName(),methodDescription.getReturnType().asErasure(),methodDescription.getParameters().asTypeList().asErasures());
+}

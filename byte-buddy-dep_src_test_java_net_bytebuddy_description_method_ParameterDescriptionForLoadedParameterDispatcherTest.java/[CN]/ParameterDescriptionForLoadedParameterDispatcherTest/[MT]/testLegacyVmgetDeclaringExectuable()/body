@@ -1,0 +1,3 @@
+{
+  ParameterDescription.ForLoadedParameter.Dispatcher.ForLegacyVm.INSTANCE.getDeclaringExecutable(mock(Object.class));
+}

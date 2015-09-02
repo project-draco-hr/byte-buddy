@@ -1,0 +1,3 @@
+{
+  assertThat(ParameterList.ForLoadedExecutable.Dispatcher.ForLegacyVm.INSTANCE.getParameters(Object.class.getDeclaredMethod("toString")),CoreMatchers.<ParameterList<ParameterDescription.InDefinedShape>>is(new ParameterList.ForLoadedExecutable.OfLegacyVmMethod(Object.class.getDeclaredMethod("toString"))));
+}

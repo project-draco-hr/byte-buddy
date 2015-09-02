@@ -1,0 +1,3 @@
+{
+  return new MethodHandle(HandleType.of(methodDescription),methodDescription.getDeclaringType().asErasure(),methodDescription.getInternalName(),methodDescription.getReturnType().asErasure(),methodDescription.getParameters().asTypeList().asErasures());
+}

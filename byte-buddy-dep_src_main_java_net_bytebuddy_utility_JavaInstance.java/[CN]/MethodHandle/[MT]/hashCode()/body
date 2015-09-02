@@ -1,0 +1,8 @@
+{
+  int result=handleType.hashCode();
+  result=31 * result + ownerType.hashCode();
+  result=31 * result + name.hashCode();
+  result=31 * result + returnType.hashCode();
+  result=31 * result + parameterTypes.hashCode();
+  return result;
+}

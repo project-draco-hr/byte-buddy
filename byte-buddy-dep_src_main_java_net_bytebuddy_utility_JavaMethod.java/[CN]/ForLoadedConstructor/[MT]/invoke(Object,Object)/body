@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot invoke constructor on an instance");
-}

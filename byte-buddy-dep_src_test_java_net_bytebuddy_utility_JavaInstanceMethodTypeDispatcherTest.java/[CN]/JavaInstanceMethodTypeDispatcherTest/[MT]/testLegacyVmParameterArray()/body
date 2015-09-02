@@ -1,0 +1,3 @@
+{
+  JavaInstance.MethodType.Dispatcher.ForLegacyVm.INSTANCE.parameterArray(mock(Object.class));
+}

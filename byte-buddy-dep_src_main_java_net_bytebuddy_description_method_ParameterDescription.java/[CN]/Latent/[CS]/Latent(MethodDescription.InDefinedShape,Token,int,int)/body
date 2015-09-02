@@ -1,0 +1,3 @@
+{
+  this(declaringMethod,token.getType(),token.getAnnotations(),token.getName(),token.getModifiers(),index,offset);
+}

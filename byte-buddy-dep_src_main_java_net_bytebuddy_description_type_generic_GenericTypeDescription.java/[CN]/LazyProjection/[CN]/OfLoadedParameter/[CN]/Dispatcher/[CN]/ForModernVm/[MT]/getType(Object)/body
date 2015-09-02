@@ -1,0 +1,11 @@
+{
+  try {
+    return (Class<?>)getType.invoke(parameter);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.reflect.Parameter#getType",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.reflect.Parameter#getType",exception.getCause());
+  }
+}

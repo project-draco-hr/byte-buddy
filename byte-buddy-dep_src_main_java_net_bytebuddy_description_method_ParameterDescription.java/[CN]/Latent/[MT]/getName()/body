@@ -1,0 +1,3 @@
+{
+  return isNamed() ? name : super.getName();
+}

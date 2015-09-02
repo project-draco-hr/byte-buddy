@@ -1,0 +1,8 @@
+{
+  methodInfo.setAccessible(true);
+  getName.setAccessible(true);
+  getDeclaringClass.setAccessible(true);
+  getReferenceKind.setAccessible(true);
+  getMethodType.setAccessible(true);
+  return this;
+}

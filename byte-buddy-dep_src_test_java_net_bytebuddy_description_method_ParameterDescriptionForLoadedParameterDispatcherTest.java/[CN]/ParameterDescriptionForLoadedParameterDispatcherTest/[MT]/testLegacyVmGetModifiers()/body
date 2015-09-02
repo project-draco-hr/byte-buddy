@@ -1,0 +1,3 @@
+{
+  ParameterDescription.ForLoadedParameter.Dispatcher.ForLegacyVm.INSTANCE.getModifiers(mock(Object.class));
+}

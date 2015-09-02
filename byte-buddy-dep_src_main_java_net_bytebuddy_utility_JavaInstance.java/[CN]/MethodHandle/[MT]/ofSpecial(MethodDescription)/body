@@ -1,0 +1,6 @@
+{
+  if (methodDescription.isStatic() || methodDescription.isAbstract()) {
+    throw new IllegalArgumentException("Cannot invoke " + methodDescription + " via invokespecial");
+  }
+  return methodDescription.isConstructor() ? INVOKE_SPECIAL_CONSTRUCTOR : INVOKE_SPECIAL;
+}

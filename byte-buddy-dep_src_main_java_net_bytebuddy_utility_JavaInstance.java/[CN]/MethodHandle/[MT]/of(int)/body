@@ -1,0 +1,8 @@
+{
+  for (  HandleType handleType : HandleType.values()) {
+    if (handleType.getIdentifier() == identifier) {
+      return handleType;
+    }
+  }
+  throw new IllegalArgumentException("Unknown handle type: " + identifier);
+}

@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (!(other instanceof Token))   return false;
+  String name=getName();
+  return name != null && name.equals(((Token)other).getName());
+}

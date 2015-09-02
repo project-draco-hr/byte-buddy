@@ -1,0 +1,9 @@
+{
+  this.declaringMethod=declaringMethod;
+  this.parameterType=parameterType;
+  this.declaredAnnotations=declaredAnnotations;
+  this.name=name;
+  this.modifiers=modifiers;
+  this.index=index;
+  this.offset=offset;
+}

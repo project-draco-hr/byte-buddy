@@ -1,0 +1,11 @@
+{
+  try {
+    return publicLookup.invoke(null);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.invoke.MethodHandles#publicLookup",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.invoke.MethodHandles#publicLookup",exception.getCause());
+  }
+}

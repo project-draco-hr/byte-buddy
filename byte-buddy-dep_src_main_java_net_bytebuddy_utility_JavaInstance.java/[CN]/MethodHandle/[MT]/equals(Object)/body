@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  MethodHandle aDefault=(MethodHandle)other;
+  return handleType == aDefault.handleType && name.equals(aDefault.name) && ownerType.equals(aDefault.ownerType) && parameterTypes.equals(aDefault.parameterTypes) && returnType.equals(aDefault.returnType);
+}

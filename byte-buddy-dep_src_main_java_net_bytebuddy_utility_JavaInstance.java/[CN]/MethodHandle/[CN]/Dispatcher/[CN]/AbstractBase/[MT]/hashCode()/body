@@ -1,0 +1,10 @@
+{
+  int result=publicLookup.hashCode();
+  result=31 * result + getName.hashCode();
+  result=31 * result + getDeclaringClass.hashCode();
+  result=31 * result + getReferenceKind.hashCode();
+  result=31 * result + getMethodType.hashCode();
+  result=31 * result + returnType.hashCode();
+  result=31 * result + parameterArray.hashCode();
+  return result;
+}

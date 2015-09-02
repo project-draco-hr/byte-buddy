@@ -1,0 +1,3 @@
+{
+  return new MethodHandle(HandleType.ofGetter(fieldDescription),fieldDescription.getDeclaringType().asErasure(),fieldDescription.getInternalName(),fieldDescription.getType().asErasure(),Collections.<TypeDescription>emptyList());
+}

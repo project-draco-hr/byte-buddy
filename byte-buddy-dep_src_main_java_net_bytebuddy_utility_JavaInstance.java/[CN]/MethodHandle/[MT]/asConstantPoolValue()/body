@@ -1,0 +1,8 @@
+{
+  StringBuilder stringBuilder=new StringBuilder("(");
+  for (  TypeDescription parameterType : getParameterTypes()) {
+    stringBuilder.append(parameterType.getDescriptor());
+  }
+  String descriptor=stringBuilder.append(")").append(getReturnType().getDescriptor()).toString();
+  return new Handle(getHandleType().getIdentifier(),getOwnerType().getInternalName(),getName(),descriptor);
+}

@@ -1,0 +1,3 @@
+{
+  return "JavaInstance.MethodHandle.Dispatcher.ForIntermediateVm{" + "publicLookup=" + publicLookup + ", getName="+ getName+ ", getDeclaringClass="+ getDeclaringClass+ ", getReferenceKind="+ getReferenceKind+ ", getMethodType="+ getMethodType+ ", returnType="+ returnType+ ", parameterArray="+ parameterArray+ ", methodInfo="+ methodInfo+ '}';
+}
