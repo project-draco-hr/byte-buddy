@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && exception.equals(((ForNonResolvedField)other).exception);
-}

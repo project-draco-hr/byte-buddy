@@ -1,0 +1,3 @@
+{
+  return ForDelegatingClassLoader.isDelegating(classLoader) ? new ForDelegatingClassLoader(classLoader,accessControlContext) : new Default(classLoader);
+}

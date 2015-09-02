@@ -1,0 +1,8 @@
+{
+  try {
+    return (Vector<Class<?>>)field.get(classLoader);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access field",exception);
+  }
+}

@@ -2,7 +2,10 @@
   try {
     return installOn((Instrumentation)ClassLoader.getSystemClassLoader().loadClass(BYTE_BUDDY_AGENT_TYPE).getDeclaredMethod(GET_INSTRUMENTATION_METHOD).invoke(STATIC_METHOD));
   }
- catch (  Exception exception) {
+ catch (  RuntimeException exception) {
+    throw exception;
+  }
+catch (  Exception exception) {
     throw new IllegalStateException("The Byte Buddy agent is not installed or not accessible",exception);
   }
 }

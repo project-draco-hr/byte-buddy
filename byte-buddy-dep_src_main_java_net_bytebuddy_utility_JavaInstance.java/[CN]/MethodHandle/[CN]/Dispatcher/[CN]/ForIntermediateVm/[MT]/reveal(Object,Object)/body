@@ -1,6 +1,6 @@
 {
   try {
-    return methodInfo.newInstance(lookup,methodHandle);
+    return methodInfo.newInstance(methodHandle);
   }
  catch (  IllegalAccessException exception) {
     throw new IllegalStateException("Cannot access java.lang.invoke.MethodInfo()",exception);

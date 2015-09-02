@@ -11,7 +11,10 @@
       instrumentation.removeTransformer(classFileTransformer);
     }
   }
- catch (  Exception ignored) {
+ catch (  RuntimeException exception) {
+    throw exception;
+  }
+catch (  Exception ignored) {
     return Resolution.Illegal.INSTANCE;
   }
 }

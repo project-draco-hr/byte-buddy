@@ -1,9 +1,9 @@
 {
   Vector<Class<?>> classes;
   try {
-    classes=(Vector<Class<?>>)CLASSES_FIELD.readValue(classLoader);
+    classes=DISPATCHER.initialize(accessControlContext).extract(classLoader);
   }
- catch (  Exception ignored) {
+ catch (  RuntimeException ignored) {
     return super.locate(name);
   }
   if (classes.size() != 1) {
