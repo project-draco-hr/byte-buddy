@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && ByteArrayClassLoader.this.equals(((ClassLoadingAction)other).getOuter()) && typeName.equals(((ClassLoadingAction)other).typeName);
-}

@@ -1,0 +1,3 @@
+{
+  new ClassInjector.UsingReflection.Dispatcher.Faulty(new Exception()).initialize(AccessController.getContext());
+}

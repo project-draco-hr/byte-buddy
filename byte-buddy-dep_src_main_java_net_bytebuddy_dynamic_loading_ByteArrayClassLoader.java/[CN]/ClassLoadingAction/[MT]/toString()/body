@@ -1,3 +1,0 @@
-{
-  return "ByteArrayClassLoader.ClassLoadingAction{" + "outer=" + ByteArrayClassLoader.this + ", typeName='"+ typeName+ "'}";
-}

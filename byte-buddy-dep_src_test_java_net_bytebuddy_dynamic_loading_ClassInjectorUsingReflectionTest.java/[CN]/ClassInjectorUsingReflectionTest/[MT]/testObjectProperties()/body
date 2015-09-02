@@ -5,13 +5,12 @@
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(ClassInjector.UsingReflection.ClassInjectionAction.class).ignoreFields("accessControlContext").apply();
   final Iterator<Method> iterator=Arrays.asList(Object.class.getDeclaredMethods()).iterator();
-  ObjectPropertyAssertion.of(ClassInjector.UsingReflection.ReflectionStore.Resolved.class).create(new ObjectPropertyAssertion.Creator<Method>(){
+  ObjectPropertyAssertion.of(ClassInjector.UsingReflection.Dispatcher.Resolved.class).create(new ObjectPropertyAssertion.Creator<Method>(){
     @Override public Method create(){
       return iterator.next();
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(ClassInjector.UsingReflection.ReflectionStore.Faulty.class).apply();
+  ObjectPropertyAssertion.of(ClassInjector.UsingReflection.Dispatcher.Faulty.class).apply();
 }

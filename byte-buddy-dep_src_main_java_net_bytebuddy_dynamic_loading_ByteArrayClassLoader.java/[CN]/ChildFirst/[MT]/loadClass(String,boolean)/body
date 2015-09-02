@@ -4,17 +4,7 @@
     return type;
   }
   try {
-    try {
-      type=AccessController.doPrivileged(new ClassLoadingAction(name),accessControlContext);
-    }
- catch (    PrivilegedActionException exception) {
-      if (exception.getCause() instanceof ClassNotFoundException) {
-        throw (ClassNotFoundException)exception.getCause();
-      }
- else {
-        throw new IllegalStateException("Could not load class " + name,exception.getCause());
-      }
-    }
+    type=findClass(name);
     if (resolve) {
       resolveClass(type);
     }
