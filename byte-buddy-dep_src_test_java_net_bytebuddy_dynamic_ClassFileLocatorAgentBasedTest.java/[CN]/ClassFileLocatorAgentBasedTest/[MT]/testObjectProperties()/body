@@ -6,7 +6,12 @@
   }
 ).apply();
   ObjectPropertyAssertion.of(ClassFileLocator.AgentBased.ClassLoadingDelegate.Default.class).apply();
-  ObjectPropertyAssertion.of(ClassFileLocator.AgentBased.ClassLoadingDelegate.ForDelegatingClassLoader.class).apply();
+  ObjectPropertyAssertion.of(ClassFileLocator.AgentBased.ClassLoadingDelegate.ForDelegatingClassLoader.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
+    @Override public AccessControlContext create(){
+      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
+    }
+  }
+).apply();
   final Iterator<Field> iterator=Arrays.asList(Foo.class.getDeclaredFields()).iterator();
   ObjectPropertyAssertion.of(ClassFileLocator.AgentBased.ClassLoadingDelegate.ForDelegatingClassLoader.Dispatcher.Resolved.class).create(new ObjectPropertyAssertion.Creator<Field>(){
     @Override public Field create(){

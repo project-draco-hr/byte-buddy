@@ -1,3 +1,10 @@
 {
   ObjectPropertyAssertion.of(LoadedTypeInitializer.ForStaticField.class).apply();
+  final Iterator<Field> fields=Arrays.asList(Baz.class.getDeclaredFields()).iterator();
+  ObjectPropertyAssertion.of(LoadedTypeInitializer.ForStaticField.FieldAccessibilityAction.class).create(new ObjectPropertyAssertion.Creator<Field>(){
+    @Override public Field create(){
+      return fields.next();
+    }
+  }
+).apply();
 }

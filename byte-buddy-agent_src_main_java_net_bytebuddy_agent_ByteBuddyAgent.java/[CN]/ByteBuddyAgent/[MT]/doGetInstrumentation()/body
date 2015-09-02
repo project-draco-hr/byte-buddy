@@ -4,7 +4,10 @@
     field.setAccessible(true);
     return (Instrumentation)field.get(STATIC_MEMBER);
   }
- catch (  Exception exception) {
+ catch (  RuntimeException exception) {
+    throw exception;
+  }
+catch (  Exception exception) {
     throw new IllegalStateException("The Byte Buddy agent is not properly initialized",exception);
   }
 }

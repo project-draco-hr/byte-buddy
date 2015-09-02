@@ -2,7 +2,7 @@
   try {
     Field field=type.getDeclaredField(fieldName);
     if (makeAccessible) {
-      field.setAccessible(true);
+      AccessController.doPrivileged(new FieldAccessibilityAction(field));
     }
     field.set(STATIC_FIELD,value);
   }

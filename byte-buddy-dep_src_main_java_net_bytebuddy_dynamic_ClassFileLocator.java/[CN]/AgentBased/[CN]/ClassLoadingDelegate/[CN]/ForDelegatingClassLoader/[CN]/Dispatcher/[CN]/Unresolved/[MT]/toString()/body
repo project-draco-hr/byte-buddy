@@ -1,3 +1,3 @@
 {
-  return "ClassFileLocator.AgentBased.ClassLoadingDelegate.ForDelegatingClassLoader.ClassCollection.Unresolved{" + "exception=" + exception + '}';
+  return "ClassFileLocator.AgentBased.ClassLoadingDelegate.ForDelegatingClassLoader.Dispatcher.Unresolved{" + "exception=" + exception + '}';
 }
