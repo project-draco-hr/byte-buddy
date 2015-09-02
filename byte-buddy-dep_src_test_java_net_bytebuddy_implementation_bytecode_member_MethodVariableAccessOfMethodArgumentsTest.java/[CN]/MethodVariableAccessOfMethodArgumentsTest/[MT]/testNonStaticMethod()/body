@@ -4,7 +4,7 @@
   StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
   assertThat(size.getSizeImpact(),is(PARAMETER_STACK_SIZE));
   assertThat(size.getMaximalSize(),is(PARAMETER_STACK_SIZE));
-  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_1);
-  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_2);
+  verify(methodVisitor).visitVarInsn(Opcodes.ALOAD,1);
+  verify(methodVisitor).visitVarInsn(Opcodes.ALOAD,2);
   verifyNoMoreInteractions(methodVisitor);
 }

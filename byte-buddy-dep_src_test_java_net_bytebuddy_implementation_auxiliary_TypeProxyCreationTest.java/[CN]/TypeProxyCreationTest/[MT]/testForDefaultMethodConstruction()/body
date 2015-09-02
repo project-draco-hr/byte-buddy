@@ -18,6 +18,6 @@
   verify(methodVisitor,times(2)).visitInsn(Opcodes.DUP);
   verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESPECIAL,foo.getInternalName(),MethodDescription.CONSTRUCTOR_INTERNAL_NAME,foo.getDeclaredMethods().filter(isConstructor()).getOnly().getDescriptor(),false);
   verify(methodVisitor).visitFieldInsn(Opcodes.PUTFIELD,foo.getInternalName(),TypeProxy.INSTANCE_FIELD,Type.getDescriptor(Void.class));
-  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_0);
+  verify(methodVisitor).visitVarInsn(Opcodes.ALOAD,0);
   verifyNoMoreInteractions(methodVisitor);
 }

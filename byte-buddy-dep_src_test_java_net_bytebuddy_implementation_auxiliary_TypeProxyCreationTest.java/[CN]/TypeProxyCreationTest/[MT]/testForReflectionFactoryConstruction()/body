@@ -17,6 +17,6 @@
   verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESTATIC,Type.getInternalName(FooProxyMake.class),TypeProxy.REFLECTION_METHOD,Type.getMethodDescriptor(FooProxyMake.class.getDeclaredMethod("make")),false);
   verify(methodVisitor).visitInsn(Opcodes.DUP);
   verify(methodVisitor).visitFieldInsn(Opcodes.PUTFIELD,Type.getInternalName(FooProxyMake.class),TypeProxy.INSTANCE_FIELD,Type.getDescriptor(Void.class));
-  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_0);
+  verify(methodVisitor).visitVarInsn(Opcodes.ALOAD,0);
   verifyNoMoreInteractions(methodVisitor);
 }

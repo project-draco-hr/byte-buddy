@@ -7,7 +7,7 @@
   implementationContext.drain(classVisitor,methodPool,injectedCode);
   verify(classVisitor).visitMethod(eq(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("(" + BAR + ")"+ FOO),isNull(String.class),aryEq(new String[]{BAZ}));
   verify(methodVisitor).visitCode();
-  verify(methodVisitor).visitInsn(MoreOpcodes.ALOAD_0);
+  verify(methodVisitor).visitVarInsn(Opcodes.ALOAD,0);
   verify(secondSpecialInvocation).apply(methodVisitor,implementationContext);
   verify(methodVisitor).visitInsn(Opcodes.ARETURN);
   verify(methodVisitor).visitMaxs(1,0);

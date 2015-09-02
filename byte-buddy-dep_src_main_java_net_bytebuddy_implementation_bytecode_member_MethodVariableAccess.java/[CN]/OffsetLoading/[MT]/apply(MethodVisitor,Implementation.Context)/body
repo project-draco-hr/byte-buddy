@@ -1,20 +1,4 @@
 {
-switch (offset) {
-case 0:
-    methodVisitor.visitInsn(loadOpcode + loadOpcodeShortcutOffset);
-  break;
-case 1:
-methodVisitor.visitInsn(loadOpcode + loadOpcodeShortcutOffset + 1);
-break;
-case 2:
-methodVisitor.visitInsn(loadOpcode + loadOpcodeShortcutOffset + 2);
-break;
-case 3:
-methodVisitor.visitInsn(loadOpcode + loadOpcodeShortcutOffset + 3);
-break;
-default :
-methodVisitor.visitVarInsn(loadOpcode,offset);
-break;
-}
-return size;
+  methodVisitor.visitVarInsn(loadOpcode,offset);
+  return size;
 }
