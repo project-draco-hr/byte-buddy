@@ -1,4 +1,4 @@
 {
-  MethodGraph.Node node=methodGraph.locate(methodToken);
-  return node.getSort().isUnique() ? invokeSuper(node.getRepresentative()) : Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
+  MethodRebaseResolver.Resolution resolution=rebaseableMethods.get(methodToken);
+  return resolution == null ? invokeSuper(methodGraph.getSuperGraph().locate(methodToken)) : invokeSuper(resolution);
 }

@@ -1,0 +1,3 @@
+{
+  return node.getSort().isResolved() ? Implementation.SpecialMethodInvocation.Simple.of(node.getRepresentative(),instrumentedType.getSuperType().asErasure()) : Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
+}

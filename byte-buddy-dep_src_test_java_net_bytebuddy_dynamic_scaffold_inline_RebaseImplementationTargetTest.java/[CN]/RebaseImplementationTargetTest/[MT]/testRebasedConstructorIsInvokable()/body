@@ -1,10 +1,12 @@
 {
   when(rebasedMethod.isConstructor()).thenReturn(true);
   when(invokableMethod.getDeclaringType()).thenReturn(instrumentedType);
-  when(methodRebaseResolver.resolve(invokableMethod)).thenReturn(new MethodRebaseResolver.Resolution.ForRebasedConstructor(rebasedMethod));
+  when(resolution.isRebased()).thenReturn(true);
+  when(resolution.getResolvedMethod()).thenReturn(rebasedMethod);
+  when(resolution.getAdditionalArguments()).thenReturn(NullConstant.INSTANCE);
   when(rebasedMethod.isSpecializableFor(instrumentedType)).thenReturn(true);
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(invokableToken);
-  verify(methodRebaseResolver).resolve(invokableMethod);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(rebasedToken);
+  verify(methodRebaseResolver).resolve(rebasedMethod);
   verifyNoMoreInteractions(methodRebaseResolver);
   assertThat(specialMethodInvocation.isValid(),is(true));
   assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)rebasedMethod));

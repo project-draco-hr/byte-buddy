@@ -1,7 +1,7 @@
 {
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(DuplicateNameClass.class);
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
-  assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 3));
+  assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 2));
   MethodDescription objectMethod=typeDescription.getDeclaredMethods().filter(takesArguments(Object.class)).getOnly();
   MethodGraph.Node objectNode=methodGraph.locate(objectMethod.asToken());
   assertThat(objectNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));

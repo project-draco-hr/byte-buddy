@@ -1,5 +1,5 @@
 {
   int result=super.hashCode();
-  result=31 * result + methodRebaseResolver.hashCode();
+  result=31 * result + rebaseableMethods.hashCode();
   return result;
 }

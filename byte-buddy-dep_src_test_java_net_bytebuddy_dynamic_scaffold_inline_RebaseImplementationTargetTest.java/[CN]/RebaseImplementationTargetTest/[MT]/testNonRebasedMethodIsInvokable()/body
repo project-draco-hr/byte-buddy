@@ -1,9 +1,10 @@
 {
   when(invokableMethod.getDeclaringType()).thenReturn(instrumentedType);
   when(invokableMethod.isSpecializableFor(instrumentedType)).thenReturn(true);
-  when(methodRebaseResolver.resolve(invokableMethod)).thenReturn(new MethodRebaseResolver.Resolution.Preserved(invokableMethod));
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(invokableToken);
-  verify(methodRebaseResolver).resolve(invokableMethod);
+  when(resolution.isRebased()).thenReturn(false);
+  when(resolution.getResolvedMethod()).thenReturn(invokableMethod);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(rebasedToken);
+  verify(methodRebaseResolver).resolve(rebasedMethod);
   verifyNoMoreInteractions(methodRebaseResolver);
   assertThat(specialMethodInvocation.isValid(),is(true));
   assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)invokableMethod));

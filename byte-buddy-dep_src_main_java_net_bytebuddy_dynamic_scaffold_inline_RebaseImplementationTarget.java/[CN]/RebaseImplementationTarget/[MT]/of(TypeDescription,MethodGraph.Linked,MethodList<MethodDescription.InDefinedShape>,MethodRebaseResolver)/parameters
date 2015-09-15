@@ -1,3 +1,4 @@
 TypeDescription instrumentedType
 MethodGraph.Linked methodGraph
+MethodList<MethodDescription.InDefinedShape> rebaseableMethods
 MethodRebaseResolver methodRebaseResolver

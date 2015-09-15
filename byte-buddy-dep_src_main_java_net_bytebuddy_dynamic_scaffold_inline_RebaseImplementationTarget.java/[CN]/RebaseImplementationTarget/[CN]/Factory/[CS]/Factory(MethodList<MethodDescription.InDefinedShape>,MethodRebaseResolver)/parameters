@@ -1,0 +1,2 @@
+MethodList<MethodDescription.InDefinedShape> rebaseableMethods
+MethodRebaseResolver methodRebaseResolver

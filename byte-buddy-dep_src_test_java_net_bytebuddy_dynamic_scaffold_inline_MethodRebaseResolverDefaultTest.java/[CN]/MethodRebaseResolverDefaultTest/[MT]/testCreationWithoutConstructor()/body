@@ -1,5 +1,5 @@
 {
-  MethodRebaseResolver methodRebaseResolver=MethodRebaseResolver.Default.make(new MethodList.Explicit<MethodDescription>(Collections.singletonList(methodDescription)),instrumentedType,classFileVersion,auxiliaryTypeNamingStrategy,methodNameTransformer);
+  MethodRebaseResolver methodRebaseResolver=MethodRebaseResolver.Default.make(instrumentedType,new MethodList.Explicit<MethodDescription.InDefinedShape>(Collections.singletonList(methodDescription)),classFileVersion,auxiliaryTypeNamingStrategy,methodNameTransformer);
   assertThat(methodRebaseResolver.getAuxiliaryTypes().size(),is(0));
   MethodRebaseResolver.Resolution resolution=methodRebaseResolver.resolve(methodDescription);
   assertThat(resolution.isRebased(),is(true));

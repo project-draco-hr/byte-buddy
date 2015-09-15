@@ -1,0 +1,3 @@
+{
+  return asPreparedEntry(instrumentedType,methodDescription,Collections.<MethodDescription.TypeToken>emptySet());
+}

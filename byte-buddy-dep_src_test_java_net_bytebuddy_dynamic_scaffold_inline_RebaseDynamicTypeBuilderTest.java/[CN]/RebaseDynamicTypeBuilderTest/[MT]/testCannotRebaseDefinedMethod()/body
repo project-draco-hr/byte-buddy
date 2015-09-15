@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().rebase(Foo.class).defineMethod(FOO,void.class,Collections.<Class<?>>emptyList()).intercept(SuperMethodCall.INSTANCE).make();
+}
