@@ -1,4 +1,4 @@
 {
-  ObjectPropertyAssertion.of(StackManipulation.LegalTrivial.class).apply();
+  ObjectPropertyAssertion.of(StackManipulation.Trivial.class).apply();
   ObjectPropertyAssertion.of(StackManipulation.Illegal.class).apply();
 }

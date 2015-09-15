@@ -1,4 +1,4 @@
 {
-  StackManipulation.Size stackSize=new StackManipulation.Compound(fieldDescription.isStatic() ? StackManipulation.LegalTrivial.INSTANCE : MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(fieldDescription).getter(),MethodReturn.returning(fieldDescription.getType().asErasure())).apply(methodVisitor,implementationContext);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(fieldDescription.isStatic() ? StackManipulation.Trivial.INSTANCE : MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(fieldDescription).getter(),MethodReturn.returning(fieldDescription.getType().asErasure())).apply(methodVisitor,implementationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }
