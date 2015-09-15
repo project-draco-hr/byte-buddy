@@ -1,4 +1,0 @@
-{
-  assertThat(methodRebaseResolver.getAuxiliaryTypes().size(),is(1));
-  assertThat(methodRebaseResolver.getAuxiliaryTypes().get(0),is(dynamicType));
-}

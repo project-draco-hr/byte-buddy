@@ -1,2 +1,0 @@
-Set<? extends MethodDescription> instrumentedMethods
-MethodNameTransformer methodNameTransformer

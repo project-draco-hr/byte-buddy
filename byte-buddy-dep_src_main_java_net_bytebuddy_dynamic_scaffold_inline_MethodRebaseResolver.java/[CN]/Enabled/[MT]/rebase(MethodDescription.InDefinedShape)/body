@@ -1,3 +1,0 @@
-{
-  return methodDescription.isConstructor() ? Resolution.ForRebasedConstructor.of(methodDescription,placeholderType.getTypeDescription()) : Resolution.ForRebasedMethod.of(methodDescription,methodNameTransformer);
-}

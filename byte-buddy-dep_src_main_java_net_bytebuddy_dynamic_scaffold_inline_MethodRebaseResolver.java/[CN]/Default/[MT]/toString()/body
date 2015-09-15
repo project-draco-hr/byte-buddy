@@ -1,0 +1,3 @@
+{
+  return "MethodRebaseResolver.Default{" + "resolutions=" + resolutions + ", dynamicTypes="+ dynamicTypes+ '}';
+}

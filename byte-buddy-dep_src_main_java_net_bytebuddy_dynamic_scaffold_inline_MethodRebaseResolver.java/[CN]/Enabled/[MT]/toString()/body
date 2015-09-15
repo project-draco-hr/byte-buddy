@@ -1,3 +1,0 @@
-{
-  return "MethodRebaseResolver.Enabled{" + "instrumentedMethods=" + instrumentedMethods + ", placeholderType="+ placeholderType+ ", methodNameTransformer="+ methodNameTransformer+ '}';
-}

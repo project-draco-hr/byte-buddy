@@ -1,0 +1,5 @@
+{
+  MethodRebaseResolver methodRebaseResolver=new MethodRebaseResolver.Default(Collections.singletonMap(methodDescription,resolution),Collections.singletonList(dynamicType));
+  assertThat(methodRebaseResolver.getAuxiliaryTypes().size(),is(1));
+  assertThat(methodRebaseResolver.getAuxiliaryTypes().contains(dynamicType),is(true));
+}

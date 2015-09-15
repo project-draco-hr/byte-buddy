@@ -1,3 +1,0 @@
-Set<? extends MethodDescription> instrumentedMethods
-DynamicType placeholderType
-MethodNameTransformer methodNameTransformer

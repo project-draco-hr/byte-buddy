@@ -1,6 +1,0 @@
-{
-  MethodRebaseResolver.Resolution resolution=methodRebaseResolver.resolve(other);
-  assertThat(resolution.isRebased(),is(false));
-  assertThat(resolution.getAdditionalArguments(),is((StackManipulation)StackManipulation.LegalTrivial.INSTANCE));
-  assertThat(resolution.getResolvedMethod(),is(other));
-}

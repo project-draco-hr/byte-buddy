@@ -1,0 +1,2 @@
+Map<MethodDescription.InDefinedShape,Resolution> resolutions
+List<DynamicType> dynamicTypes

@@ -1,5 +1,0 @@
-{
-  super(instrumentedMethods);
-  this.placeholderType=placeholderType;
-  this.methodNameTransformer=methodNameTransformer;
-}

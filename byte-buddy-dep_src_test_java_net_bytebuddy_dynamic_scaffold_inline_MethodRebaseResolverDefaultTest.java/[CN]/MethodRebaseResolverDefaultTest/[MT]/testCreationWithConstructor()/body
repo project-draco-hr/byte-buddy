@@ -1,0 +1,10 @@
+{
+  when(methodDescription.isConstructor()).thenReturn(true);
+  MethodRebaseResolver methodRebaseResolver=MethodRebaseResolver.Default.make(new MethodList.Explicit<MethodDescription>(Collections.singletonList(methodDescription)),instrumentedType,classFileVersion,auxiliaryTypeNamingStrategy,methodNameTransformer);
+  assertThat(methodRebaseResolver.getAuxiliaryTypes().size(),is(1));
+  assertThat(methodRebaseResolver.getAuxiliaryTypes().get(0).getTypeDescription().getName(),is(QUX));
+  MethodRebaseResolver.Resolution resolution=methodRebaseResolver.resolve(methodDescription);
+  assertThat(resolution.isRebased(),is(true));
+  assertThat(resolution.getResolvedMethod(),not(methodDescription));
+  assertThat(resolution.getResolvedMethod().isConstructor(),is(true));
+}

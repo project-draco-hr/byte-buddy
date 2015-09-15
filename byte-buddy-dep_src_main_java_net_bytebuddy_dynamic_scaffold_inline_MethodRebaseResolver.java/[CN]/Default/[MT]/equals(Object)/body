@@ -1,0 +1,3 @@
+{
+  return this == other || !(other == null || getClass() != other.getClass()) && resolutions.equals(((Default)other).resolutions) && dynamicTypes.equals(((Default)other).dynamicTypes);
+}

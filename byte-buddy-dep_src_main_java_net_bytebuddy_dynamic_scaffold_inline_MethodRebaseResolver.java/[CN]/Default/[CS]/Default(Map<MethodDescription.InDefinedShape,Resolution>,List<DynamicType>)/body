@@ -1,0 +1,4 @@
+{
+  this.resolutions=resolutions;
+  this.dynamicTypes=dynamicTypes;
+}

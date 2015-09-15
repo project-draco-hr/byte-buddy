@@ -1,3 +1,0 @@
-{
-  return instrumentedMethods.filter(isConstructor()).isEmpty() ? MethodsOnly.of(instrumentedMethods,methodNameTransformer) : of(instrumentedMethods,TrivialType.INSTANCE.make(auxiliaryTypeNamingStrategy.name(TrivialType.INSTANCE,instrumentedType),classFileVersion,AuxiliaryType.MethodAccessorFactory.Illegal.INSTANCE),methodNameTransformer);
-}

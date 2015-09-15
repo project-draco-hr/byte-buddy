@@ -1,0 +1,8 @@
+{
+  MethodRebaseResolver methodRebaseResolver=MethodRebaseResolver.Default.make(new MethodList.Explicit<MethodDescription>(Collections.singletonList(methodDescription)),instrumentedType,classFileVersion,auxiliaryTypeNamingStrategy,methodNameTransformer);
+  assertThat(methodRebaseResolver.getAuxiliaryTypes().size(),is(0));
+  MethodRebaseResolver.Resolution resolution=methodRebaseResolver.resolve(methodDescription);
+  assertThat(resolution.isRebased(),is(true));
+  assertThat(resolution.getResolvedMethod(),not(methodDescription));
+  assertThat(resolution.getResolvedMethod().isConstructor(),is(false));
+}

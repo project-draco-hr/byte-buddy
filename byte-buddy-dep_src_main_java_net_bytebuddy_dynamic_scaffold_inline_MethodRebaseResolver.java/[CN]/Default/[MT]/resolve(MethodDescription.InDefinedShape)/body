@@ -1,0 +1,4 @@
+{
+  Resolution resolution=resolutions.get(methodDescription);
+  return resolution == null ? new Resolution.Preserved(methodDescription) : resolution;
+}

@@ -1,0 +1,9 @@
+{
+  when(methodDescription.asDefined()).thenReturn(methodDescription);
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty());
+  when(methodDescription.getReturnType()).thenReturn(TypeDescription.VOID);
+  when(methodDescription.getInternalName()).thenReturn(FOO);
+  when(methodNameTransformer.transform(methodDescription)).thenReturn(BAR);
+  when(auxiliaryTypeNamingStrategy.name(instrumentedType)).thenReturn(QUX);
+  when(classFileVersion.getVersion()).thenReturn(Opcodes.V1_6);
+}

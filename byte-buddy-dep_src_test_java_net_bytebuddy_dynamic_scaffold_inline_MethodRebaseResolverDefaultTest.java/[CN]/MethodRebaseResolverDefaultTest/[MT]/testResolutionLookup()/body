@@ -1,0 +1,6 @@
+{
+  MethodRebaseResolver methodRebaseResolver=new MethodRebaseResolver.Default(Collections.singletonMap(methodDescription,resolution),Collections.singletonList(dynamicType));
+  assertThat(methodRebaseResolver.resolve(methodDescription),is(resolution));
+  assertThat(methodRebaseResolver.resolve(otherMethod).isRebased(),is(false));
+  assertThat(methodRebaseResolver.resolve(otherMethod).getResolvedMethod(),is(otherMethod));
+}
