@@ -12,6 +12,15 @@
   }
 ).applyBasic();
   ObjectPropertyAssertion.of(ByteArrayClassLoader.PersistenceHandler.class).apply();
+  ObjectPropertyAssertion.of(ByteArrayClassLoader.PersistenceHandler.UrlDefinitionAction.class).apply();
+  ObjectPropertyAssertion.of(ByteArrayClassLoader.PersistenceHandler.UrlDefinitionAction.ByteArrayUrlStreamHandler.class).apply();
+  final Iterator<URL> urls=Arrays.asList(new URL("http://foo"),new URL("http://bar")).iterator();
+  ObjectPropertyAssertion.of(ByteArrayClassLoader.PersistenceHandler.UrlDefinitionAction.ByteArrayUrlStreamHandler.ByteArrayUrlConnection.class).create(new ObjectPropertyAssertion.Creator<URL>(){
+    @Override public URL create(){
+      return urls.next();
+    }
+  }
+).applyBasic();
   ObjectPropertyAssertion.of(ByteArrayClassLoader.ClassLoaderCreationAction.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
     @Override public AccessControlContext create(){
       return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});

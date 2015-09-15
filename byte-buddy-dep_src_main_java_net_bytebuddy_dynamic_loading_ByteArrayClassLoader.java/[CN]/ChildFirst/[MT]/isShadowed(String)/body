@@ -1,0 +1,13 @@
+{
+  if (persistenceHandler.isManifest() || !resourceName.endsWith(CLASS_FILE_SUFFIX)) {
+    return false;
+  }
+synchronized (this) {
+    String typeName=resourceName.replace('/','.').substring(0,resourceName.length() - CLASS_FILE_SUFFIX.length());
+    if (typeDefinitions.containsKey(typeName)) {
+      return true;
+    }
+    Class<?> loadedClass=findLoadedClass(typeName);
+    return loadedClass != null && loadedClass.getClassLoader() == this;
+  }
+}

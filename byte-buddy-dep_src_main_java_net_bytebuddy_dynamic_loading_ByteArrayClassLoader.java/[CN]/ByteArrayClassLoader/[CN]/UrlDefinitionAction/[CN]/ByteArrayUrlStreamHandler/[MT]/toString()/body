@@ -1,0 +1,3 @@
+{
+  return "ByteArrayClassLoader.PersistenceHandler.UrlDefinitionAction.ByteArrayUrlStreamHandler{" + "binaryRepresentation=<" + binaryRepresentation.length + " bytes>"+ '}';
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(ByteArrayClassLoader.EmptyEnumeration.INSTANCE.hasMoreElements(),is(false));
+}

@@ -1,2 +1,0 @@
-ByteArrayClassLoader.PersistenceHandler persistenceHandler
-Matcher<InputStream> expectedResourceLookup

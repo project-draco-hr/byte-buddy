@@ -1,0 +1,14 @@
+{
+  Vector<URL> vector=new Vector<URL>();
+  vector.add(second);
+  vector.add(third);
+  vector.add(first);
+  Enumeration<URL> enumeration=new ByteArrayClassLoader.ChildFirst.PrependingEnumeration(first,vector.elements());
+  assertThat(enumeration.hasMoreElements(),is(true));
+  assertThat(enumeration.nextElement(),is(first));
+  assertThat(enumeration.hasMoreElements(),is(true));
+  assertThat(enumeration.nextElement(),is(second));
+  assertThat(enumeration.hasMoreElements(),is(true));
+  assertThat(enumeration.nextElement(),is(third));
+  assertThat(enumeration.hasMoreElements(),is(false));
+}

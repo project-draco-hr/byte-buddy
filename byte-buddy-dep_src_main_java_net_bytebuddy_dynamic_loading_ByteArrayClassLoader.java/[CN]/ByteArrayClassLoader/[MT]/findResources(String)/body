@@ -1,0 +1,4 @@
+{
+  URL url=persistenceHandler.url(name,typeDefinitions,accessControlContext);
+  return url == null ? EmptyEnumeration.INSTANCE : new SingletonEnumeration(url);
+}

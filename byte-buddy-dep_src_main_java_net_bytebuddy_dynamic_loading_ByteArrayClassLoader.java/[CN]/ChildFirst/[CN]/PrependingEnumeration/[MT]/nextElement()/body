@@ -1,0 +1,13 @@
+{
+  if (nextElement != null && enumeration.hasMoreElements()) {
+    try {
+      return nextElement;
+    }
+  finally {
+      nextElement=enumeration.nextElement();
+    }
+  }
+ else {
+    throw new NoSuchElementException();
+  }
+}

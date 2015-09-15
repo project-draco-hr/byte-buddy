@@ -1,0 +1,13 @@
+{
+  if (element == null) {
+    throw new NoSuchElementException();
+  }
+ else {
+    try {
+      return element;
+    }
+  finally {
+      element=null;
+    }
+  }
+}

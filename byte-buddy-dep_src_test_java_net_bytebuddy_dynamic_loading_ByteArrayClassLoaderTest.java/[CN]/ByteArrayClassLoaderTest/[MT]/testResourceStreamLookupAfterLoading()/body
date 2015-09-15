@@ -1,0 +1,12 @@
+{
+  assertThat(classLoader.loadClass(Foo.class.getName()).getClassLoader(),is(classLoader));
+  InputStream inputStream=classLoader.getResourceAsStream(Foo.class.getName().replace('.','/') + CLASS_FILE);
+  try {
+    assertThat(inputStream,expectedResourceLookup ? notNullValue(InputStream.class) : nullValue(InputStream.class));
+  }
+  finally {
+    if (inputStream != null) {
+      inputStream.close();
+    }
+  }
+}

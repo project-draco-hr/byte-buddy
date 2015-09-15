@@ -1,0 +1,3 @@
+String resourceName
+Map<String,byte[]> typeDefinitions
+AccessControlContext accessControlContext

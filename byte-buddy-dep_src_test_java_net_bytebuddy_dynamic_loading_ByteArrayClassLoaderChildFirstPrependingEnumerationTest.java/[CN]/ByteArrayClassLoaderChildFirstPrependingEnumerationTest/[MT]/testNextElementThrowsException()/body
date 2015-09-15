@@ -1,0 +1,11 @@
+{
+  Vector<URL> vector=new Vector<URL>();
+  vector.add(second);
+  vector.add(third);
+  vector.add(first);
+  Enumeration<URL> enumeration=new ByteArrayClassLoader.ChildFirst.PrependingEnumeration(first,vector.elements());
+  enumeration.nextElement();
+  enumeration.nextElement();
+  enumeration.nextElement();
+  enumeration.nextElement();
+}

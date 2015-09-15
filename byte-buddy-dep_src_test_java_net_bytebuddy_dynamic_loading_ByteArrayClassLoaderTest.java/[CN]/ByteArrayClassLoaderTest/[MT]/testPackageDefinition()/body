@@ -1,0 +1,14 @@
+{
+  Class<?> type=classLoader.loadClass(Foo.class.getName());
+  assertThat(type.getPackage(),notNullValue(Package.class));
+  assertThat(type.getPackage(),not(Foo.class.getPackage()));
+  assertThat(type.getPackage().getName(),is(Foo.class.getPackage().getName()));
+  assertThat(type.getPackage().getSpecificationTitle(),is(FOO));
+  assertThat(type.getPackage().getSpecificationVersion(),is(BAR));
+  assertThat(type.getPackage().getSpecificationVendor(),is(QUX));
+  assertThat(type.getPackage().getImplementationTitle(),is(QUX));
+  assertThat(type.getPackage().getImplementationVersion(),is(FOO));
+  assertThat(type.getPackage().getImplementationVendor(),is(BAR));
+  assertThat(type.getPackage().isSealed(),is(true));
+  assertThat(type.getPackage().isSealed(sealBase),is(true));
+}

@@ -1,0 +1,7 @@
+{
+  URL url=new URL("file://foo");
+  Enumeration<URL> enumeration=new ByteArrayClassLoader.SingletonEnumeration(url);
+  assertThat(enumeration.hasMoreElements(),is(true));
+  assertThat(enumeration.nextElement(),is(url));
+  assertThat(enumeration.hasMoreElements(),is(false));
+}

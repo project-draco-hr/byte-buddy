@@ -1,0 +1,5 @@
+{
+  Enumeration<URL> enumeration=new ByteArrayClassLoader.SingletonEnumeration(new URL("file://foo"));
+  enumeration.nextElement();
+  enumeration.nextElement();
+}

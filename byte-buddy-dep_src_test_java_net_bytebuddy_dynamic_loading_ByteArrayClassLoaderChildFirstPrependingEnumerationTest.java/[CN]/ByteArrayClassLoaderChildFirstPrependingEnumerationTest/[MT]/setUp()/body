@@ -1,0 +1,5 @@
+{
+  first=new URL("file://foo");
+  second=new URL("file://bar");
+  third=new URL("file://qux");
+}

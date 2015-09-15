@@ -1,0 +1,8 @@
+{
+  if (!resourceName.endsWith(CLASS_FILE_SUFFIX)) {
+    return NO_URL;
+  }
+  String typeName=resourceName.replace('/','.').substring(FROM_BEGINNING,resourceName.length() - CLASS_FILE_SUFFIX.length());
+  byte[] binaryRepresentation=typeDefinitions.get(typeName);
+  return binaryRepresentation == null ? NO_URL : AccessController.doPrivileged(new UrlDefinitionAction(resourceName,binaryRepresentation),accessControlContext);
+}

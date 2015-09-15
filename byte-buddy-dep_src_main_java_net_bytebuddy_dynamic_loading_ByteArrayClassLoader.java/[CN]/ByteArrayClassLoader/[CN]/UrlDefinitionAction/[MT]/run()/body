@@ -1,0 +1,11 @@
+{
+  try {
+    return new URL(URL_SCHEMA,URLEncoder.encode(typeName.replace('.','/'),ENCODING),NO_PORT,NO_FILE,new ByteArrayUrlStreamHandler(binaryRepresentation));
+  }
+ catch (  MalformedURLException exception) {
+    throw new IllegalStateException("Cannot create URL for " + typeName,exception);
+  }
+catch (  UnsupportedEncodingException exception) {
+    throw new IllegalStateException("Could not find encoding: " + ENCODING,exception);
+  }
+}
