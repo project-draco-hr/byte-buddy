@@ -13,7 +13,7 @@
     }
   }
   MethodGraph.Linked methodGraph=methodGraphCompiler.compile(instrumentedType);
-  ElementMatcher<? super MethodDescription> relevanceMatcher=(ElementMatcher<? super MethodDescription>)not(anyOf(implementations.keySet())).and(methodFilter.resolve(instrumentedType));
+  ElementMatcher<? super MethodDescription> relevanceMatcher=(ElementMatcher<? super MethodDescription>)not(anyOf(implementations.keySet())).and(returns(isVisibleTo(instrumentedType))).and(not(hasParameter(hasType(not(isVisibleTo(instrumentedType)))))).and(methodFilter.resolve(instrumentedType));
   for (  MethodGraph.Node node : methodGraph.listNodes()) {
     MethodDescription methodDescription=node.getRepresentative();
     boolean visibilityBridge=instrumentedType.isPublic() && !instrumentedType.isInterface();

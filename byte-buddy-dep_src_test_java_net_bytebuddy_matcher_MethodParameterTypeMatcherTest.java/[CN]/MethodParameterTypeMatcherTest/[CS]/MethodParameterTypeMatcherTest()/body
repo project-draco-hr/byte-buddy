@@ -1,3 +1,3 @@
 {
-  super((Class<MethodParameterTypeMatcher<?>>)(Object)MethodParameterTypeMatcher.class,"types");
+  super((Class<MethodParameterTypeMatcher<?>>)(Object)MethodParameterTypeMatcher.class,"hasType");
 }

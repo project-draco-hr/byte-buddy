@@ -1,5 +1,5 @@
 {
-  when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.class))).thenReturn(true);
+  when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.InDefinedShape.class))).thenReturn(true);
   ClassWriter classWriter=new ClassWriter(ASM_MANUAL);
   classWriter.visit(ClassFileVersion.forCurrentJavaVersion().getVersion(),Opcodes.ACC_PUBLIC,BAR.replace('.','/'),null,Type.getInternalName(Object.class),null);
   AnnotationVisitor annotationVisitor=classWriter.visitAnnotation(Type.getDescriptor(annotation.annotationType()),true);
@@ -12,7 +12,7 @@ case RUNTIME:
 case CLASS_FILE:
     verify(target).visit(Type.getDescriptor(annotation.annotationType()),annotationVisibility == AnnotationAppender.AnnotationVisibility.RUNTIME);
   verifyNoMoreInteractions(target);
-for (MethodDescription methodDescription : annotationDescription.getAnnotationType().getDeclaredMethods()) {
+for (MethodDescription.InDefinedShape methodDescription : annotationDescription.getAnnotationType().getDeclaredMethods()) {
   verify(valueFilter).isRelevant(annotationDescription,methodDescription);
 }
 verifyNoMoreInteractions(valueFilter);

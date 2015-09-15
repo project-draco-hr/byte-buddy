@@ -1,6 +1,6 @@
 {
   when(parameterListMatcher.matches(parameterList)).thenReturn(true);
-  assertThat(new MethodParameterMatcher<MethodDescription>(parameterListMatcher).matches(methodDescription),is(true));
+  assertThat(new MethodParametersMatcher<MethodDescription>(parameterListMatcher).matches(methodDescription),is(true));
   verify(parameterListMatcher).matches(parameterList);
   verifyNoMoreInteractions(parameterListMatcher);
 }

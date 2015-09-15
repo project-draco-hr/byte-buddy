@@ -1,5 +1,5 @@
 {
-  when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.class))).thenReturn(true);
+  when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.InDefinedShape.class))).thenReturn(true);
   when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   ParameterDescription parameterDescription=mock(ParameterDescription.class);
   when(parameterDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Qux.Instance(),new Baz.Instance(),new QuxBaz.Instance()));

@@ -15,8 +15,12 @@
   assertThat(describe(PublicType.class.getDeclaredMethod("protectedMethod")).isVisibleTo(new TypeDescription.ForLoadedType(VisibilityMethodTestHelper.class)),is(true));
   assertThat(describe(PublicType.class.getDeclaredMethod("packagePrivateMethod")).isVisibleTo(new TypeDescription.ForLoadedType(VisibilityMethodTestHelper.class)),is(false));
   assertThat(describe(PublicType.class.getDeclaredMethod("privateMethod")).isVisibleTo(new TypeDescription.ForLoadedType(VisibilityMethodTestHelper.class)),is(false));
-  assertThat(describe(PackagePrivateType.class.getDeclaredMethod("publicMethod")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PackagePrivateType.class.getDeclaredMethod("publicMethod")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(true));
   assertThat(describe(PackagePrivateType.class.getDeclaredMethod("protectedMethod")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
   assertThat(describe(PackagePrivateType.class.getDeclaredMethod("packagePrivateMethod")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
   assertThat(describe(PackagePrivateType.class.getDeclaredMethod("privateMethod")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PackagePrivateType.class.getDeclaredMethod("staticPublicMethod")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PackagePrivateType.class.getDeclaredMethod("staticProtectedMethod")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PackagePrivateType.class.getDeclaredMethod("staticPackagePrivateMethod")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(PackagePrivateType.class.getDeclaredMethod("staticPrivateMethod")).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
 }

@@ -1,0 +1,22 @@
+{
+  if (!methodDescription.getDeclaringType().represents(annotation.annotationType())) {
+    throw new IllegalArgumentException(methodDescription + " does not represent " + annotation.annotationType());
+  }
+  try {
+    boolean accessible=methodDescription.isAccessibleTo(new TypeDescription.ForLoadedType(getClass()));
+    Method method=methodDescription instanceof MethodDescription.ForLoadedMethod ? ((MethodDescription.ForLoadedMethod)methodDescription).getLoadedMethod() : null;
+    if (method == null || (!accessible && !method.isAccessible())) {
+      method=annotation.annotationType().getDeclaredMethod(methodDescription.getName());
+      if (!accessible) {
+        AccessController.doPrivileged(new MethodAccessibilityAction(method));
+      }
+    }
+    return describe(method.invoke(annotation),methodDescription.getReturnType().asErasure());
+  }
+ catch (  RuntimeException exception) {
+    throw exception;
+  }
+catch (  Exception exception) {
+    throw new IllegalStateException("Cannot access annotation property " + methodDescription,exception);
+  }
+}
