@@ -1,0 +1,3 @@
+{
+  when(parameterList.asTypeList()).thenReturn(typeList);
+}

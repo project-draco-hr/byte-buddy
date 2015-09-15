@@ -1,0 +1,6 @@
+{
+  when(parameterMatcher.matches(typeList)).thenReturn(true);
+  assertThat(new MethodParameterTypesMatcher<ParameterList<?>>(parameterMatcher).matches(parameterList),is(true));
+  verify(parameterMatcher).matches(typeList);
+  verifyNoMoreInteractions(parameterMatcher);
+}

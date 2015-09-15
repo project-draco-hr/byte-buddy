@@ -1,3 +1,0 @@
-{
-  return hasGenericType(is(nonNull(type)));
-}
