@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   MethodDelegation that=(MethodDelegation)other;
-  return ambiguityResolver.equals(that.ambiguityResolver) && assigner.equals(that.assigner) && defaultsProvider.equals(that.defaultsProvider)&& terminationHandler.equals(that.terminationHandler)&& implementationDelegate.equals(that.implementationDelegate)&& targetCandidates.equals(that.targetCandidates)&& parameterBinders.equals(that.parameterBinders);
+  return ambiguityResolver.equals(that.ambiguityResolver) && assigner.equals(that.assigner) && defaultsProvider.equals(that.defaultsProvider)&& terminationHandler.equals(that.terminationHandler)&& implementationDelegate.equals(that.implementationDelegate)&& methodContainer.equals(that.methodContainer)&& parameterBinders.equals(that.parameterBinders);
 }

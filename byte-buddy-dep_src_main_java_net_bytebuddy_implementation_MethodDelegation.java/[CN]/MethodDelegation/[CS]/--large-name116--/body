@@ -5,5 +5,5 @@
   this.terminationHandler=terminationHandler;
   this.ambiguityResolver=ambiguityResolver;
   this.assigner=assigner;
-  this.targetCandidates=isNotEmpty(targetCandidates,NO_METHODS_ERROR_MESSAGE);
+  this.methodContainer=methodContainer;
 }

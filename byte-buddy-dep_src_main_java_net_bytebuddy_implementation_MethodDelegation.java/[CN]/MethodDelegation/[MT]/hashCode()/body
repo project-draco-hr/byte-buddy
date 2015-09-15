@@ -5,6 +5,6 @@
   result=31 * result + terminationHandler.hashCode();
   result=31 * result + ambiguityResolver.hashCode();
   result=31 * result + assigner.hashCode();
-  result=31 * result + targetCandidates.hashCode();
+  result=31 * result + methodContainer.hashCode();
   return result;
 }
