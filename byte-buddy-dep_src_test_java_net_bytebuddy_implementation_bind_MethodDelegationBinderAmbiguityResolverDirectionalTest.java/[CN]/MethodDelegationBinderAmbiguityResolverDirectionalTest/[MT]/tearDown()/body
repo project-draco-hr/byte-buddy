@@ -1,0 +1,5 @@
+{
+  verifyZeroInteractions(source);
+  verifyZeroInteractions(left);
+  verifyZeroInteractions(right);
+}

@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodDelegationBinder.AmbiguityResolver.Directional.class).apply();
+}

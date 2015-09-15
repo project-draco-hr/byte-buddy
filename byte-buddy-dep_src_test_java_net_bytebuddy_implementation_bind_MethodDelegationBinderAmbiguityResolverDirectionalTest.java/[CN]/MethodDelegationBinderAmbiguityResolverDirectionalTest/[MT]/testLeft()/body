@@ -1,0 +1,3 @@
+{
+  assertThat(MethodDelegationBinder.AmbiguityResolver.Directional.LEFT.resolve(source,left,right),is(MethodDelegationBinder.AmbiguityResolver.Resolution.LEFT));
+}
