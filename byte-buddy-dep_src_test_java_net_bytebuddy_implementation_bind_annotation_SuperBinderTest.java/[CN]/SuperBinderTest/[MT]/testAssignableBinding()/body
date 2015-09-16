@@ -1,4 +1,5 @@
 {
+  doReturn(void.class).when(annotation).proxyType();
   when(stackManipulation.isValid()).thenReturn(true);
   when(instrumentedType.isAssignableTo(targetType)).thenReturn(true);
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=Super.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);

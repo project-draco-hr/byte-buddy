@@ -1,0 +1,5 @@
+{
+  assertThat(proxy,instanceOf(Qux.class));
+  assertThat(proxy,not(instanceOf(Foo.class)));
+  return Qux.class.getDeclaredMethod(QUX).invoke(proxy) + QUX;
+}

@@ -1,4 +1,7 @@
 {
   ObjectPropertyAssertion.of(Super.Binder.class).apply();
   ObjectPropertyAssertion.of(Super.Instantiation.class).apply();
+  ObjectPropertyAssertion.of(Super.Binder.TypeLocator.ForInstrumentedType.class).apply();
+  ObjectPropertyAssertion.of(Super.Binder.TypeLocator.ForParameterType.class).apply();
+  ObjectPropertyAssertion.of(Super.Binder.TypeLocator.ForType.class).apply();
 }

@@ -1,4 +1,5 @@
 {
+  doReturn(void.class).when(annotation).proxyType();
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=Super.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(false));
 }
