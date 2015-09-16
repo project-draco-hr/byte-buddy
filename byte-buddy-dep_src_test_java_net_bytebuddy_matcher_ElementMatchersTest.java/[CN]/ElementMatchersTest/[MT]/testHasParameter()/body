@@ -1,5 +1,0 @@
-{
-  MethodDescription methodDescription=new MethodDescription.ForLoadedMethod(Class.forName(PARAMETER_NAMES).getDeclaredMethod(FOO,String.class,long.class,int.class));
-  assertThat(ElementMatchers.hasParameter(named(FOO)).matches(methodDescription),is(false));
-  assertThat(ElementMatchers.hasParameter(named("first")).matches(methodDescription),is(true));
-}

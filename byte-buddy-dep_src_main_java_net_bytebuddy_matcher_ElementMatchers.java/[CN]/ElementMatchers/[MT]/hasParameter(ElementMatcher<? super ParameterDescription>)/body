@@ -1,3 +1,0 @@
-{
-  return hasParameters(new CollectionItemMatcher<ParameterDescription>(nonNull(matcher)));
-}

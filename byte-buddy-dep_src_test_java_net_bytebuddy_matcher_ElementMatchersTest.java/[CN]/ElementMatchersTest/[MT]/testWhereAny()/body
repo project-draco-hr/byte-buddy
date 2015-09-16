@@ -1,0 +1,4 @@
+{
+  assertThat(ElementMatchers.whereAny(ElementMatchers.is(FOO)).matches(Arrays.asList(FOO,BAR)),is(true));
+  assertThat(ElementMatchers.whereAny(ElementMatchers.is(FOO)).matches(Arrays.asList(BAR,QUX)),is(false));
+}
