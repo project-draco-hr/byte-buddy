@@ -1,3 +1,0 @@
-{
-  Logger.getAnonymousLogger().warning("Ignored test case that requires a Java version " + type.toMessageString() + " "+ requiredVersion);
-}
