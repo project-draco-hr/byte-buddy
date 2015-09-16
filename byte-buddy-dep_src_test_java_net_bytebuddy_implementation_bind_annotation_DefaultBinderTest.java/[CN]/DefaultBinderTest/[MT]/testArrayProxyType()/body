@@ -1,0 +1,4 @@
+{
+  doReturn(Object[].class).when(annotation).proxyType();
+  Default.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+}

@@ -1,7 +1,7 @@
 {
-  when(targetType.isInterface()).thenReturn(true);
+  doReturn(void.class).when(annotation).proxyType();
+  when(instrumentedType.isAssignableTo(targetType)).thenReturn(true);
   when(stackManipulation.isValid()).thenReturn(true);
-  when(rawInterfaces.contains(targetType)).thenReturn(true);
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=Default.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
 }

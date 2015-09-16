@@ -1,5 +1,5 @@
 {
-  when(targetType.isInterface()).thenReturn(true);
+  doReturn(void.class).when(annotation).proxyType();
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=Default.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(false));
 }
