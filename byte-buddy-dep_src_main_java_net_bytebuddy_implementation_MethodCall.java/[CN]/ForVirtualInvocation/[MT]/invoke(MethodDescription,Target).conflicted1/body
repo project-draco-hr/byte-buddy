@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=implementationTarget.invokeSuper(methodDescription.asToken());
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot invoke " + methodDescription + " as a super method");
+  }
+  return stackManipulation;
+}

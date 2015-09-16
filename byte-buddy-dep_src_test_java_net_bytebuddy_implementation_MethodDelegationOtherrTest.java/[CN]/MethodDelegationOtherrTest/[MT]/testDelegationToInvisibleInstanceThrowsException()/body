@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().subclass(Object.class).method(isToString()).intercept(MethodDelegation.to(new Qux())).make();
+}

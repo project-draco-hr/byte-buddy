@@ -1,0 +1,3 @@
+{
+  return "MethodCall.MethodInvoker.ForVirtualInvocation{" + "typeDescription=" + typeDescription + '}';
+}

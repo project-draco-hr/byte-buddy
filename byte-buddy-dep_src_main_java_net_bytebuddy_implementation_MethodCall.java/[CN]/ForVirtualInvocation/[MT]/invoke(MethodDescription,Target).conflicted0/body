@@ -1,0 +1,12 @@
+{
+  if (!methodDescription.isVirtual()) {
+    throw new IllegalStateException("Cannot invoke " + methodDescription + " virtually");
+  }
+ else   if (!methodDescription.isInvokableOn(typeDescription)) {
+    throw new IllegalStateException("Cannot invoke " + methodDescription + " on "+ typeDescription);
+  }
+ else   if (!typeDescription.isVisibleTo(implementationTarget.getTypeDescription())) {
+    throw new IllegalStateException(typeDescription + " is not visible to " + implementationTarget.getTypeDescription());
+  }
+  return MethodInvocation.invoke(methodDescription).virtual(typeDescription);
+}

@@ -4,7 +4,8 @@
   ObjectPropertyAssertion.of(MethodCall.Appender.class).apply();
   ObjectPropertyAssertion.of(MethodCall.MethodLocator.ForExplicitMethod.class).apply();
   ObjectPropertyAssertion.of(MethodCall.MethodLocator.ForInterceptedMethod.class).apply();
-  ObjectPropertyAssertion.of(MethodCall.MethodInvoker.ForStandardInvocation.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.MethodInvoker.ForContextualInvocation.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.MethodInvoker.ForVirtualInvocation.class).apply();
   ObjectPropertyAssertion.of(MethodCall.MethodInvoker.ForSuperMethodInvocation.class).apply();
   ObjectPropertyAssertion.of(MethodCall.MethodInvoker.ForDefaultMethodInvocation.class).apply();
   ObjectPropertyAssertion.of(MethodCall.TerminationHandler.ForChainedInvocation.class).apply();
