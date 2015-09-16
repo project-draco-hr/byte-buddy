@@ -1,0 +1,3 @@
+{
+  return available || method.getAnnotation(Enforce.class) == null ? base : new NoOpStatement();
+}
