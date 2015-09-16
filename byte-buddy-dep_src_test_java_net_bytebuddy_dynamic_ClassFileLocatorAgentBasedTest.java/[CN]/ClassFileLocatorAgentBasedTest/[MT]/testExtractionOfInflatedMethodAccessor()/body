@@ -1,5 +1,5 @@
 {
-  assertThat(ByteBuddyAgent.installOnOpenJDK(),instanceOf(Instrumentation.class));
+  assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   Method bar=Foo.class.getDeclaredMethod("bar");
   for (int i=0; i < 20; i++) {
     bar.invoke(new Foo());

@@ -1,0 +1,19 @@
+{
+  Instrumentation instrumentation=doGetInstrumentation();
+  if (instrumentation != null) {
+    return instrumentation;
+  }
+  AttachmentProvider.Accessor accessor=attachmentProvider.attempt();
+  if (accessor.isAvailable()) {
+    try {
+      doInstall(accessor);
+      return doGetInstrumentation();
+    }
+ catch (    Exception exception) {
+      throw new IllegalStateException("Current JVM does not support attachment with " + attachmentProvider);
+    }
+  }
+ else {
+    throw new IllegalStateException("Attachment provider cannot connect on the current JVM: " + attachmentProvider);
+  }
+}

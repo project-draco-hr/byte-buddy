@@ -1,0 +1,8 @@
+{
+  try {
+    return of(classLoader.loadClass(VIRTUAL_MACHINE_TYPE_NAME));
+  }
+ catch (  ClassNotFoundException ignored) {
+    return Unavailable.INSTANCE;
+  }
+}

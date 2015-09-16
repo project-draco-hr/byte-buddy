@@ -1,5 +1,5 @@
 {
-  ClassInjector classInjector=new ClassInjector.UsingInstrumentation(folder,ClassInjector.UsingInstrumentation.Target.SYSTEM,ByteBuddyAgent.installOnOpenJDK());
+  ClassInjector classInjector=new ClassInjector.UsingInstrumentation(folder,ClassInjector.UsingInstrumentation.Target.SYSTEM,ByteBuddyAgent.install());
   String name=BAR + RandomString.make();
   DynamicType dynamicType=new ByteBuddy().subclass(Object.class).name(name).make();
   Map<TypeDescription,Class<?>> types=classInjector.inject(Collections.singletonMap(dynamicType.getTypeDescription(),dynamicType.getBytes()));

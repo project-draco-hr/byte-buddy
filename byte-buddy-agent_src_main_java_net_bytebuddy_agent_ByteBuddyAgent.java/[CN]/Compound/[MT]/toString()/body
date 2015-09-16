@@ -1,0 +1,3 @@
+{
+  return "ByteBuddyAgent.AttachmentProvider.Compound{" + "attachmentProviders=" + attachmentProviders + '}';
+}

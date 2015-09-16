@@ -1,5 +1,5 @@
 {
-  ByteBuddyAgent.installOnOpenJDK();
+  ByteBuddyAgent.install();
   FooReloading foo=new FooReloading();
   new ByteBuddy().redefine(BarReloading.class).name(FooReloading.class.getName()).make().load(FooReloading.class.getClassLoader(),ClassReloadingStrategy.fromInstalledAgent());
   assertThat(foo.m(),is("bar"));

@@ -1,0 +1,8 @@
+{
+  try {
+    return new URLClassLoader(new URL[]{toolsJar.toURI().toURL()},BOOTSTRAP_CLASS_LOADER);
+  }
+ catch (  MalformedURLException exception) {
+    throw new IllegalStateException("Could not represent " + toolsJar + " as URL");
+  }
+}

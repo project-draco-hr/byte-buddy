@@ -1,5 +1,5 @@
 {
-  assertThat(ByteBuddyAgent.installOnOpenJDK(),instanceOf(Instrumentation.class));
+  assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   ClassReloadingStrategy classReloadingStrategy=ClassReloadingStrategy.fromInstalledAgent();
   Bar bar=new Bar();
   new ByteBuddy().redefine(Qux.class).name(Bar.class.getName()).make().load(Bar.class.getClassLoader(),classReloadingStrategy);

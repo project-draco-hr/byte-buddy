@@ -1,5 +1,5 @@
 {
-  assertThat(ByteBuddyAgent.installOnOpenJDK(),instanceOf(Instrumentation.class));
+  assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   Foo foo=new Foo();
   assertThat(foo.foo(),is(FOO));
   ClassReloadingStrategy classReloadingStrategy=new ClassReloadingStrategy(ByteBuddyAgent.getInstrumentation(),ClassReloadingStrategy.Engine.RETRANSFORMATION);

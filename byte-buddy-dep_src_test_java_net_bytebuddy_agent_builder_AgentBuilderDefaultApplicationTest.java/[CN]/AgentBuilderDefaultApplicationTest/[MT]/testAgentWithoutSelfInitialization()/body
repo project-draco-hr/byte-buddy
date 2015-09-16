@@ -1,5 +1,5 @@
 {
-  assertThat(ByteBuddyAgent.installOnOpenJDK(),instanceOf(Instrumentation.class));
+  assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default().disableSelfInitialization().rebase(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new FooTransformer()).installOnByteBuddyAgent();
   try {
     Class<?> type=classLoader.loadClass(Foo.class.getName());

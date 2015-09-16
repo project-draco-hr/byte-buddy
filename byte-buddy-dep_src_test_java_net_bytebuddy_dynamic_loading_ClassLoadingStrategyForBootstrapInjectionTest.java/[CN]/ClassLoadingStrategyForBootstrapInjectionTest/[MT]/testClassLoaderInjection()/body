@@ -1,5 +1,5 @@
 {
-  ClassLoadingStrategy bootstrapStrategy=new ClassLoadingStrategy.ForBootstrapInjection(ByteBuddyAgent.installOnOpenJDK(),file);
+  ClassLoadingStrategy bootstrapStrategy=new ClassLoadingStrategy.ForBootstrapInjection(ByteBuddyAgent.install(),file);
   String name=BAR + RandomString.make();
   ClassLoader classLoader=new URLClassLoader(new URL[0],null);
   DynamicType dynamicType=new ByteBuddy().subclass(Object.class).name(name).make();

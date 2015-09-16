@@ -1,4 +1,4 @@
 {
-  assertThat(ByteBuddyAgent.installOnOpenJDK(),instanceOf(Instrumentation.class));
+  assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   assertThat(ClassReloadingStrategy.fromInstalledAgent(),notNullValue());
 }
