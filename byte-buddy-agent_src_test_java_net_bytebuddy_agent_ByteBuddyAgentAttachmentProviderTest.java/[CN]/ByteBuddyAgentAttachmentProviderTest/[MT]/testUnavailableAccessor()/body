@@ -1,0 +1,3 @@
+{
+  assertThat(ByteBuddyAgent.AttachmentProvider.Accessor.Unavailable.INSTANCE.isAvailable(),is(false));
+}
