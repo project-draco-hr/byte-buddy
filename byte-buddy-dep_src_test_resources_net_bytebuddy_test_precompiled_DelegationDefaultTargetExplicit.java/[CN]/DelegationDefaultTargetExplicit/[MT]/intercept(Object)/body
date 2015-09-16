@@ -1,0 +1,4 @@
+{
+  assertThat(proxy,not(instanceOf(Serializable.class)));
+  return DelegationDefaultInterface.class.getDeclaredMethod(FOO).invoke(proxy) + BAR;
+}

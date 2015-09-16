@@ -1,6 +1,5 @@
 {
   ObjectPropertyAssertion.of(Default.Binder.class).apply();
-  ObjectPropertyAssertion.of(Default.Binder.TypeLocator.ForInstrumentedType.class).apply();
   ObjectPropertyAssertion.of(Default.Binder.TypeLocator.ForParameterType.class).apply();
   ObjectPropertyAssertion.of(Default.Binder.TypeLocator.ForType.class).apply();
 }

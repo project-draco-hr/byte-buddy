@@ -1,0 +1,5 @@
+{
+  doReturn(void.class).when(annotation).proxyType();
+  when(targetType.isInterface()).thenReturn(false);
+  Default.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+}

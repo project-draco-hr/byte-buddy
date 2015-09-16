@@ -1,4 +1,0 @@
-{
-  when(targetType.isArray()).thenReturn(true);
-  Default.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
-}
