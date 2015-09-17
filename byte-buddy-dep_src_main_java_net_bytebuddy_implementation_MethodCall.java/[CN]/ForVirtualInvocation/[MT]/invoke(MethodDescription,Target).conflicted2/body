@@ -1,7 +1,10 @@
 {
+  if (!methodDescription.isInvokableOn(implementationTarget.getTypeDescription())) {
+    throw new IllegalStateException("Cannot invoke " + methodDescription + " as default method of "+ implementationTarget.getTypeDescription());
+  }
   StackManipulation stackManipulation=implementationTarget.invokeDefault(methodDescription.getDeclaringType().asErasure(),methodDescription.asToken());
   if (!stackManipulation.isValid()) {
-    throw new IllegalStateException("Cannot invoke " + methodDescription + " on "+ implementationTarget);
+    throw new IllegalStateException("Cannot invoke " + methodDescription + " on "+ implementationTarget.getTypeDescription());
   }
   return stackManipulation;
 }
