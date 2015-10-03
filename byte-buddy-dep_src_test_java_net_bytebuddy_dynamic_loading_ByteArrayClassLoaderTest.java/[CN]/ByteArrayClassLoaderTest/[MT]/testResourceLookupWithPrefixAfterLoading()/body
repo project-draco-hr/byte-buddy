@@ -1,0 +1,4 @@
+{
+  assertThat(classLoader.loadClass(Foo.class.getName()).getClassLoader(),is(classLoader));
+  assertThat(classLoader.getResource("/" + Foo.class.getName().replace('.','/') + CLASS_FILE),expectedResourceLookup ? notNullValue(URL.class) : nullValue(URL.class));
+}
