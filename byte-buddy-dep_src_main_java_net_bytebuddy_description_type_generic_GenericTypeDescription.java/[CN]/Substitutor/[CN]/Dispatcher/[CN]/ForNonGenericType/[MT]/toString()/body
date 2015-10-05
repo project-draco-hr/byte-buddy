@@ -1,0 +1,3 @@
+{
+  return "GenericTypeDescription.Visitor.Assigner.Dispatcher.ForNonGenericType{" + "typeVariable=" + typeDescription + '}';
+}
