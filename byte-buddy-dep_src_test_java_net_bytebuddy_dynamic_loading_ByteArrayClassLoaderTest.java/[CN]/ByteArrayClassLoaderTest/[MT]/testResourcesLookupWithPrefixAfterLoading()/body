@@ -1,0 +1,9 @@
+{
+  assertThat(classLoader.loadClass(Foo.class.getName()).getClassLoader(),is(classLoader));
+  Enumeration<URL> enumeration=classLoader.getResources("/" + Foo.class.getName().replace('.','/') + CLASS_FILE);
+  assertThat(enumeration.hasMoreElements(),is(expectedResourceLookup));
+  if (expectedResourceLookup) {
+    assertThat(enumeration.nextElement(),notNullValue(URL.class));
+    assertThat(enumeration.hasMoreElements(),is(false));
+  }
+}

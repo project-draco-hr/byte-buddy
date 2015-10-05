@@ -1,0 +1,3 @@
+{
+  MethodDelegationBinder.MethodBinding.Illegal.INSTANCE.apply(mock(MethodVisitor.class),mock(Implementation.Context.class));
+}
