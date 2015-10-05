@@ -1,3 +1,0 @@
-{
-  return this.typeDescription.isAssignableFrom(typeDescription.asErasure());
-}

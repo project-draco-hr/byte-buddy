@@ -1,7 +1,7 @@
 {
   List<MethodBinding> possibleDelegations=bind(implementationTarget,source,targetCandidates);
   if (possibleDelegations.isEmpty()) {
-    throw new IllegalArgumentException("No delegator method can be bound to " + source);
+    throw new IllegalArgumentException("None of " + targetCandidates + " allows for delegation from "+ source);
   }
   return resolve(source,possibleDelegations);
 }
