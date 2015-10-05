@@ -1,0 +1,3 @@
+{
+  return methodDescription.isStatic() ? Opcodes.ACC_STATIC : EMPTY_MASK;
+}

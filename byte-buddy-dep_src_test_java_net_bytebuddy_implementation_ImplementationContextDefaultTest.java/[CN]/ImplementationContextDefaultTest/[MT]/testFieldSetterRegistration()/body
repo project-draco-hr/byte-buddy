@@ -4,7 +4,7 @@
   assertThat(firstFieldSetter.getParameters(),is((ParameterList)new ParameterList.Explicit.ForTypes(firstFieldSetter,Collections.singletonList(firstFieldType))));
   assertThat(firstFieldSetter.getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(void.class)));
   assertThat(firstFieldSetter.getInternalName(),startsWith(FOO));
-  assertThat(firstFieldSetter.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER));
+  assertThat(firstFieldSetter.getModifiers(),is(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL));
   assertThat(firstFieldSetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
   assertThat(implementationContext.registerSetterFor(firstField),is(firstFieldSetter));
   when(secondField.isStatic()).thenReturn(true);
@@ -12,12 +12,12 @@
   assertThat(secondFieldSetter.getParameters(),is((ParameterList)new ParameterList.Explicit.ForTypes(secondFieldSetter,Collections.singletonList(secondFieldType))));
   assertThat(secondFieldSetter.getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(void.class)));
   assertThat(secondFieldSetter.getInternalName(),startsWith(BAR));
-  assertThat(secondFieldSetter.getModifiers(),is(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC));
+  assertThat(secondFieldSetter.getModifiers(),is(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL | Opcodes.ACC_STATIC));
   assertThat(secondFieldSetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
   assertThat(implementationContext.registerSetterFor(firstField),is(firstFieldSetter));
   assertThat(implementationContext.registerSetterFor(secondField),is(secondFieldSetter));
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
   implementationContext.drain(classVisitor,methodPool,injectedCode);
-  verify(classVisitor).visitMethod(eq(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER),Matchers.startsWith(FOO),eq("(" + BAR + ")V"),isNull(String.class),isNull(String[].class));
-  verify(classVisitor).visitMethod(eq(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("(" + QUX + ")V"),isNull(String.class),isNull(String[].class));
+  verify(classVisitor).visitMethod(eq(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL),Matchers.startsWith(FOO),eq("(" + BAR + ")V"),isNull(String.class),isNull(String[].class));
+  verify(classVisitor).visitMethod(eq(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("(" + QUX + ")V"),isNull(String.class),isNull(String[].class));
 }

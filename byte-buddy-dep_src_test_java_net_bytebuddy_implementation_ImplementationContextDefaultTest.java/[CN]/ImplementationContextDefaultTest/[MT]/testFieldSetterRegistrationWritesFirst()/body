@@ -4,7 +4,7 @@
   assertThat(implementationContext.registerSetterFor(firstField),is(firstMethodDescription));
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
   implementationContext.drain(classVisitor,methodPool,injectedCode);
-  verify(classVisitor).visitMethod(eq(AuxiliaryType.MethodAccessorFactory.ACCESSOR_METHOD_MODIFIER),Matchers.startsWith(FOO),eq("(" + BAR + ")V"),isNull(String.class),isNull(String[].class));
+  verify(classVisitor).visitMethod(eq(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL),Matchers.startsWith(FOO),eq("(" + BAR + ")V"),isNull(String.class),isNull(String[].class));
   verify(methodVisitor).visitCode();
   verify(methodVisitor).visitVarInsn(Opcodes.ALOAD,0);
   verify(methodVisitor).visitVarInsn(Opcodes.ALOAD,1);

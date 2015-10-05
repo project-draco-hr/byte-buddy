@@ -1,4 +1,7 @@
 {
+  if (!instrumentedType.isClassType()) {
+    return instrumentedType;
+  }
   for (  MethodDescription.Token methodToken : constructorStrategy.extractConstructors(instrumentedType)) {
     instrumentedType=instrumentedType.withMethod(methodToken);
   }

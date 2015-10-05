@@ -1,5 +1,5 @@
 {
-  Class<?> dynamicType=create(SuperCall.Inner.class).method(named(FOO)).intercept(SuperMethodCall.INSTANCE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
+  Class<?> dynamicType=create(CallSuperMethod.Inner.class).method(named(FOO)).intercept(net.bytebuddy.implementation.SuperMethodCall.INSTANCE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
   assertThat(dynamicType.getDeclaredMethods().length,is(2));
   assertEquals(String.class,dynamicType.getDeclaredMethod(FOO,String.class).getReturnType());
   assertThat(dynamicType.getDeclaredMethod(FOO,String.class).getGenericReturnType(),is((Type)String.class));
@@ -7,7 +7,7 @@
   assertEquals(Object.class,dynamicType.getDeclaredMethod(FOO,Object.class).getReturnType());
   assertThat(dynamicType.getDeclaredMethod(FOO,Object.class).getGenericReturnType(),is((Type)Object.class));
   assertThat(dynamicType.getDeclaredMethod(FOO,Object.class).isBridge(),is(true));
-  SuperCall<String> superCall=(SuperCall<String>)dynamicType.newInstance();
-  assertThat(superCall.foo(FOO),is(FOO));
-  superCall.assertOnlyCall(FOO);
+  CallSuperMethod<String> callSuperMethod=(CallSuperMethod<String>)dynamicType.newInstance();
+  assertThat(callSuperMethod.foo(FOO),is(FOO));
+  callSuperMethod.assertOnlyCall(FOO);
 }

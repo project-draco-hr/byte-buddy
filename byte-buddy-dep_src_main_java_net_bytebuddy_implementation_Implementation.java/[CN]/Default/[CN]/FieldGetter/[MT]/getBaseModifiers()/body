@@ -1,0 +1,3 @@
+{
+  return fieldDescription.isStatic() ? Opcodes.ACC_STATIC : EMPTY_MASK;
+}

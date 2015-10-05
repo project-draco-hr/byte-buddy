@@ -1,0 +1,3 @@
+{
+  return Opcodes.ACC_SYNTHETIC | getBaseModifiers() | (getDeclaringType().isClassType() ? Opcodes.ACC_FINAL : Opcodes.ACC_PUBLIC);
+}
