@@ -3,7 +3,7 @@
   assertThat(resolution.isRebased(),is(true));
   assertThat(resolution.getResolvedMethod().getDeclaringType(),is((GenericTypeDescription)typeDescription));
   assertThat(resolution.getResolvedMethod().getInternalName(),is(QUX));
-  assertThat(resolution.getResolvedMethod().getModifiers(),is(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_PRIVATE));
+  assertThat(resolution.getResolvedMethod().getModifiers(),is(rebasedMethodModifiers));
   assertThat(resolution.getResolvedMethod().getReturnType(),is((GenericTypeDescription)returnType));
   assertThat(resolution.getResolvedMethod().getParameters(),is((ParameterList)new ParameterList.Explicit.ForTypes(resolution.getResolvedMethod(),Collections.singletonList(parameterType))));
   StackManipulation.Size size=resolution.getAdditionalArguments().apply(methodVisitor,implementationContext);

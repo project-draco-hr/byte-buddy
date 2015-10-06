@@ -4,7 +4,7 @@
   assertThat(firstFieldGetter.getParameters(),is((ParameterList)new ParameterList.Empty()));
   assertThat(firstFieldGetter.getReturnType(),is((GenericTypeDescription)firstFieldType));
   assertThat(firstFieldGetter.getInternalName(),startsWith(FOO));
-  assertThat(firstFieldGetter.getModifiers(),is(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL));
+  assertThat(firstFieldGetter.getModifiers(),is(accessorMethodModifiers));
   assertThat(firstFieldGetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
   assertThat(implementationContext.registerGetterFor(firstField),is(firstFieldGetter));
   when(secondField.isStatic()).thenReturn(true);
@@ -12,12 +12,12 @@
   assertThat(secondFieldGetter.getParameters(),is((ParameterList)new ParameterList.Empty()));
   assertThat(secondFieldGetter.getReturnType(),is((GenericTypeDescription)secondFieldType));
   assertThat(secondFieldGetter.getInternalName(),startsWith(BAR));
-  assertThat(secondFieldGetter.getModifiers(),is(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL | Opcodes.ACC_STATIC));
+  assertThat(secondFieldGetter.getModifiers(),is(accessorMethodModifiers | Opcodes.ACC_STATIC));
   assertThat(secondFieldGetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
   assertThat(implementationContext.registerGetterFor(firstField),is(firstFieldGetter));
   assertThat(implementationContext.registerGetterFor(secondField),is(secondFieldGetter));
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
   implementationContext.drain(classVisitor,methodPool,injectedCode);
-  verify(classVisitor).visitMethod(eq(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL),Matchers.startsWith(FOO),eq("()" + BAR),isNull(String.class),isNull(String[].class));
-  verify(classVisitor).visitMethod(eq(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("()" + QUX),isNull(String.class),isNull(String[].class));
+  verify(classVisitor).visitMethod(eq(accessorMethodModifiers),Matchers.startsWith(FOO),eq("()" + BAR),isNull(String.class),isNull(String[].class));
+  verify(classVisitor).visitMethod(eq(accessorMethodModifiers | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("()" + QUX),isNull(String.class),isNull(String[].class));
 }

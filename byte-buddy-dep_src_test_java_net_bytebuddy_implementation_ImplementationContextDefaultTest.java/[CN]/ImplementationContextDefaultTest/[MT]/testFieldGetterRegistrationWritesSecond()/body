@@ -5,7 +5,7 @@
   assertThat(implementationContext.registerGetterFor(secondField),is(secondMethodDescription));
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
   implementationContext.drain(classVisitor,methodPool,injectedCode);
-  verify(classVisitor).visitMethod(eq(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("()" + QUX),isNull(String.class),isNull(String[].class));
+  verify(classVisitor).visitMethod(eq(accessorMethodModifiers | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("()" + QUX),isNull(String.class),isNull(String[].class));
   verify(methodVisitor).visitCode();
   verify(methodVisitor).visitFieldInsn(Opcodes.GETSTATIC,BAZ,BAR,FOO);
   verify(methodVisitor).visitInsn(Opcodes.ARETURN);
