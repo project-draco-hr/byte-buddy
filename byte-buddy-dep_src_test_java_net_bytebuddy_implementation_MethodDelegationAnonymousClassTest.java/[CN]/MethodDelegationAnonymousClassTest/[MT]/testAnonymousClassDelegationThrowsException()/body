@@ -1,0 +1,8 @@
+{
+  implement(Foo.class,MethodDelegation.to(new Object(){
+    @SuppressWarnings("unused") public String intercept(){
+      return BAR;
+    }
+  }
+)).getLoaded().newInstance().foo();
+}
