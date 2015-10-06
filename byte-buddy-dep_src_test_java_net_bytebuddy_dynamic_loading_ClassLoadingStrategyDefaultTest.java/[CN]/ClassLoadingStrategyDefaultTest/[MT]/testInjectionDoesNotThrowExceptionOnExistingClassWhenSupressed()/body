@@ -1,0 +1,5 @@
+{
+  Map<TypeDescription,Class<?>> types=ClassLoadingStrategy.Default.INJECTION.allowExistingTypes().load(ClassLoader.getSystemClassLoader(),Collections.singletonMap(TypeDescription.STRING,new byte[0]));
+  assertThat(types.size(),is(1));
+  assertEquals(String.class,types.get(TypeDescription.STRING));
+}

@@ -1,9 +1,9 @@
 {
-  ClassInjector classInjector=new ClassInjector.UsingInstrumentation(folder,ClassInjector.UsingInstrumentation.Target.BOOTSTRAP,ByteBuddyAgent.install());
-  String name=FOO + RandomString.make();
+  ClassInjector classInjector=ClassInjector.UsingInstrumentation.of(folder,ClassInjector.UsingInstrumentation.Target.SYSTEM,ByteBuddyAgent.install());
+  String name=BAR + RandomString.make();
   DynamicType dynamicType=new ByteBuddy().subclass(Object.class).name(name).make();
   Map<TypeDescription,Class<?>> types=classInjector.inject(Collections.singletonMap(dynamicType.getTypeDescription(),dynamicType.getBytes()));
   assertThat(types.size(),is(1));
   assertThat(types.get(dynamicType.getTypeDescription()).getName(),is(name));
-  assertThat(types.get(dynamicType.getTypeDescription()).getClassLoader(),nullValue(ClassLoader.class));
+  assertThat(types.get(dynamicType.getTypeDescription()).getClassLoader(),is(ClassLoader.getSystemClassLoader()));
 }

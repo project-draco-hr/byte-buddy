@@ -1,4 +1,4 @@
 {
-  ClassInjector classInjector=classLoader == null ? new ClassInjector.UsingInstrumentation(folder,ClassInjector.UsingInstrumentation.Target.BOOTSTRAP,instrumentation) : new ClassInjector.UsingReflection(classLoader);
+  ClassInjector classInjector=classLoader == null ? ClassInjector.UsingInstrumentation.of(folder,ClassInjector.UsingInstrumentation.Target.BOOTSTRAP,instrumentation) : new ClassInjector.UsingReflection(classLoader);
   return classInjector.inject(types);
 }

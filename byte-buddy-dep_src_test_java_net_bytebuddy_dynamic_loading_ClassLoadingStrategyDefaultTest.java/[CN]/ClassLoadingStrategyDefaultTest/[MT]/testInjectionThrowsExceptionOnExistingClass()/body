@@ -1,0 +1,3 @@
+{
+  ClassLoadingStrategy.Default.INJECTION.load(ClassLoader.getSystemClassLoader(),Collections.singletonMap(TypeDescription.STRING,new byte[0]));
+}

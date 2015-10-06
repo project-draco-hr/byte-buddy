@@ -1,3 +1,3 @@
 {
-  return rebase(levelType,classFileLocator,new MethodRebaseResolver.MethodNameTransformer.Suffixing());
+  return rebase(levelType,classFileLocator,MethodRebaseResolver.MethodNameTransformer.Suffixing.withRandomSuffix());
 }

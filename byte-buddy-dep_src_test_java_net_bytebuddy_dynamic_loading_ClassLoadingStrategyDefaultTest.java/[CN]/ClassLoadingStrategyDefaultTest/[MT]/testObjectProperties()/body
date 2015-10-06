@@ -11,5 +11,5 @@
       return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
     }
   }
-).apply();
+).skipSynthetic().apply();
 }

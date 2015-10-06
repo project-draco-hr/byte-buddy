@@ -3,7 +3,11 @@
   classLoader=ByteArrayClassLoader.of(classLoader,types,protectionDomain,accessControlContext,persistenceHandler,packageDefinitionStrategy,childFirst);
   for (  TypeDescription typeDescription : types.keySet()) {
     try {
-      loadedTypes.put(typeDescription,classLoader.loadClass(typeDescription.getName()));
+      Class<?> type=classLoader.loadClass(typeDescription.getName());
+      if (forbidExisting && type.getClassLoader() != classLoader) {
+        throw new IllegalStateException("Class already loaded: " + type);
+      }
+      loadedTypes.put(typeDescription,type);
     }
  catch (    ClassNotFoundException exception) {
       throw new IllegalStateException("Cannot load class " + typeDescription,exception);

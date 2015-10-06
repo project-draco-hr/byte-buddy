@@ -5,3 +5,4 @@ AccessControlContext accessControlContext
 PersistenceHandler persistenceHandler
 PackageDefinitionStrategy packageDefinitionStrategy
 boolean childFirst
+boolean forbidExisting
