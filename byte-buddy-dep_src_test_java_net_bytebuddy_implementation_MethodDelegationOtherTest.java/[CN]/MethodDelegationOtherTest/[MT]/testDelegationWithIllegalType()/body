@@ -1,0 +1,3 @@
+{
+  MethodDelegation.to(new Object(),String.class);
+}

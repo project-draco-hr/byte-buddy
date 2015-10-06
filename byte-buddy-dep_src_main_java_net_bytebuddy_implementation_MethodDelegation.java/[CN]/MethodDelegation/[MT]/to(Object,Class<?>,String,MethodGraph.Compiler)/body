@@ -1,0 +1,6 @@
+{
+  if (!type.isInstance(delegate)) {
+    throw new IllegalArgumentException(delegate + " is not an instance of " + type);
+  }
+  return new MethodDelegation(new ImplementationDelegate.ForStaticField(nonNull(delegate),isValidIdentifier(fieldName)),TargetMethodAnnotationDrivenBinder.ParameterBinder.DEFAULTS,Argument.NextUnboundAsDefaultsProvider.INSTANCE,TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,MethodDelegationBinder.AmbiguityResolver.DEFAULT,Assigner.DEFAULT,new MethodContainer.ForVirtualMethods(methodGraphCompiler,new TypeDescription.ForLoadedType(type)));
+}

@@ -1,0 +1,3 @@
+{
+  return to(delegate,type,String.format("%s$%d",ImplementationDelegate.ForStaticField.PREFIX,delegate.hashCode()),methodGraphCompiler);
+}
