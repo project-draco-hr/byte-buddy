@@ -1,0 +1,8 @@
+{
+  TypePool typePool=new TypePool.LazyFacade(this.typePool);
+  assertThat(typePool.describe(FOO).isResolved(),is(true));
+  verify(this.typePool).describe(FOO);
+  verifyNoMoreInteractions(this.typePool);
+  verify(resolution).isResolved();
+  verifyNoMoreInteractions(resolution);
+}

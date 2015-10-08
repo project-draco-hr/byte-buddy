@@ -1,0 +1,3 @@
+{
+  new TypePool.LazyFacade.LazyResolution.LazyTypeDescription(typePool,FOO).getDeclaredInterfaces();
+}

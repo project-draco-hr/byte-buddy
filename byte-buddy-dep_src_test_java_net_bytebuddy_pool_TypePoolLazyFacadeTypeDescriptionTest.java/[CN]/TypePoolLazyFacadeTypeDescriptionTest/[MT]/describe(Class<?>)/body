@@ -1,0 +1,9 @@
+{
+  TypePool typePool=new TypePool.LazyFacade(new TypePool.Default(TypePool.CacheProvider.NoOp.INSTANCE,ClassFileLocator.ForClassLoader.of(type.getClassLoader())));
+  try {
+    return typePool.describe(type.getName()).resolve();
+  }
+  finally {
+    typePool.clear();
+  }
+}

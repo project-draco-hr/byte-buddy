@@ -1,0 +1,4 @@
+{
+  super(CacheProvider.NoOp.INSTANCE);
+  this.typePool=typePool;
+}

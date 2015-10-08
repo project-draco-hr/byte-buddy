@@ -1,0 +1,6 @@
+{
+  when(typePool.describe(FOO)).thenReturn(resolution);
+  when(resolution.isResolved()).thenReturn(true);
+  when(resolution.resolve()).thenReturn(typeDescription);
+  when(typeDescription.getModifiers()).thenReturn(MODIFIERS);
+}

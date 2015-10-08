@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(TypePool.LazyFacade.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyFacade.LazyResolution.class).apply();
+}
