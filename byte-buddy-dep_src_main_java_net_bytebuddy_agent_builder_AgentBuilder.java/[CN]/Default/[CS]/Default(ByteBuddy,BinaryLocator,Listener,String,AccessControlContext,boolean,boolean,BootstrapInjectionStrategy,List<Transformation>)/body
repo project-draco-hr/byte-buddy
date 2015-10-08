@@ -7,5 +7,5 @@
   this.disableSelfInitialization=disableSelfInitialization;
   this.retransformation=retransformation;
   this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
-  this.entries=entries;
+  this.transformations=transformations;
 }

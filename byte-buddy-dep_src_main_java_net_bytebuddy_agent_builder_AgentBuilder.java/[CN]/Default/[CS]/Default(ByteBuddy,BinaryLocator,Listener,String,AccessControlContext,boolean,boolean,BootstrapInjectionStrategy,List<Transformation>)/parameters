@@ -6,4 +6,4 @@ AccessControlContext accessControlContext
 boolean disableSelfInitialization
 boolean retransformation
 BootstrapInjectionStrategy bootstrapInjectionStrategy
-List<Transformation> entries
+List<Transformation> transformations

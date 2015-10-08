@@ -16,4 +16,5 @@
   when(binaryLocator.initialize(FOO,QUX,classLoader)).thenReturn(initialized);
   when(initialized.getTypePool()).thenReturn(typePool);
   when(typePool.describe(FOO)).thenReturn(resolution);
+  when(instrumentation.getAllLoadedClasses()).thenReturn(new Class<?>[]{REDEFINED});
 }

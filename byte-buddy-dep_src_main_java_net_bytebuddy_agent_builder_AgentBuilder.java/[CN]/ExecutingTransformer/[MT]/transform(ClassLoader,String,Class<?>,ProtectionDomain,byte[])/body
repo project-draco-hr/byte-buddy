@@ -3,7 +3,7 @@
   try {
     BinaryLocator.Initialized initialized=binaryLocator.initialize(binaryTypeName,binaryRepresentation,classLoader);
     TypeDescription typeDescription=initialized.getTypePool().describe(binaryTypeName).resolve();
-    for (    Transformation transformation : entries) {
+    for (    Transformation transformation : transformations) {
       if (transformation.matches(typeDescription,classLoader,classBeingRedefined,protectionDomain)) {
         DynamicType.Unloaded<?> dynamicType=initializationStrategy.apply(transformation.transform(byteBuddy.rebase(typeDescription,initialized.getClassFileLocator(),methodNameTransformer),typeDescription)).make();
         Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=dynamicType.getLoadedTypeInitializers();

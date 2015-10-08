@@ -9,5 +9,7 @@
   verify(listener).onComplete(FOO);
   verifyNoMoreInteractions(listener);
   verify(instrumentation).addTransformer(classFileTransformer,true);
+  verify(instrumentation).retransformClasses();
+  verify(instrumentation).getAllLoadedClasses();
   verifyNoMoreInteractions(instrumentation);
 }
