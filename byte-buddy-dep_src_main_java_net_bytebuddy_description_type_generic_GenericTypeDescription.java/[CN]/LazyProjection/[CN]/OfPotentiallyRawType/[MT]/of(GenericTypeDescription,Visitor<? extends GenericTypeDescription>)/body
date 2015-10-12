@@ -1,3 +1,3 @@
 {
-  return unresolvedType == null ? null : new OfPotentiallyRawType(unresolvedType,transformer);
+  return unresolvedType == null ? TypeDescription.UNDEFINED : new OfPotentiallyRawType(unresolvedType,transformer);
 }

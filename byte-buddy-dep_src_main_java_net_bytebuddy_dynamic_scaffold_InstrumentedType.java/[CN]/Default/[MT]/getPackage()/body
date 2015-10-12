@@ -1,4 +1,4 @@
 {
   int packageIndex=name.lastIndexOf('.');
-  return packageIndex == -1 ? null : new PackageDescription.Simple(name.substring(0,packageIndex));
+  return packageIndex == -1 ? PackageDescription.UNDEFINED : new PackageDescription.Simple(name.substring(0,packageIndex));
 }

@@ -1,5 +1,5 @@
 {
   String name=getName();
   int index=name.lastIndexOf('.');
-  return index == -1 ? null : new LazyPackageDescription(typePool,name.substring(0,index));
+  return index == -1 ? PackageDescription.UNDEFINED : new LazyPackageDescription(typePool,name.substring(0,index));
 }
