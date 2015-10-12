@@ -1,3 +1,3 @@
 {
-  return FIELD_CACHE_MODIFIER;
+  return Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL | (instrumentedType.isClassType() ? Opcodes.ACC_PRIVATE : Opcodes.ACC_PUBLIC);
 }

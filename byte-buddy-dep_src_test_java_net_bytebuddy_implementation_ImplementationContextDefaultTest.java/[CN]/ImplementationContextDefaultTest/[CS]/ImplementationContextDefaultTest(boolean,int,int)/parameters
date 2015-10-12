@@ -1,2 +1,3 @@
 boolean classType
 int accessorMethodModifiers
+int cacheFieldModifiers

@@ -1,4 +1,5 @@
 {
   this.classType=classType;
   this.accessorMethodModifiers=accessorMethodModifiers;
+  this.cacheFieldModifiers=cacheFieldModifiers;
 }

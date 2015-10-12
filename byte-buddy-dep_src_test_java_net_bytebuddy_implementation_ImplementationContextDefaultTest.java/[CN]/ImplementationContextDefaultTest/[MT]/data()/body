@@ -1,3 +1,3 @@
 {
-  return Arrays.asList(new Object[][]{{true,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL},{false,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_PUBLIC}});
+  return Arrays.asList(new Object[][]{{true,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL | Opcodes.ACC_PRIVATE},{false,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_PUBLIC,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_FINAL | Opcodes.ACC_PUBLIC}});
 }
