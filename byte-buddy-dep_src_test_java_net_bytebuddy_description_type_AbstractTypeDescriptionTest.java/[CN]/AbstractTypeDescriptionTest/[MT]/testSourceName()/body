@@ -1,0 +1,10 @@
+{
+  for (  Class<?> type : TYPES) {
+    if (type.isArray()) {
+      assertThat(describe(type).getSourceCodeName(),is(type.getComponentType().getName() + "[]"));
+    }
+ else {
+      assertThat(describe(type).getSourceCodeName(),is(type.getName()));
+    }
+  }
+}
