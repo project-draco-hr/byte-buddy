@@ -5,7 +5,7 @@
     return fieldCache;
   }
   validateFieldCacheAccessibility();
-  fieldCache=new CacheValueField(instrumentedType,fieldType,suffix);
+  fieldCache=new CacheValueField(instrumentedType,fieldType,suffix,fieldValue.hashCode());
   registeredFieldCacheEntries.put(fieldCacheEntry,fieldCache);
   return fieldCache;
 }
