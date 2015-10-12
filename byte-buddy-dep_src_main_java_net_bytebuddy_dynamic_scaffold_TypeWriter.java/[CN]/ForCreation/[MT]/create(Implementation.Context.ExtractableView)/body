@@ -1,5 +1,5 @@
 {
-  ClassWriter classWriter=new ClassWriter(ASM_MANUAL_FLAG);
+  ClassWriter classWriter=new ClassWriter(classVisitorWrapper.wrapWriter(ASM_MANUAL_FLAG));
   ClassVisitor classVisitor=classVisitorWrapper.wrap(new ValidatingClassVisitor(classWriter));
   classVisitor.visit(classFileVersion.getVersion(),instrumentedType.getActualModifiers(!instrumentedType.isInterface()),instrumentedType.getInternalName(),instrumentedType.getGenericSignature(),(instrumentedType.getSuperType() == null ? TypeDescription.OBJECT : instrumentedType.getSuperType().asErasure()).getInternalName(),instrumentedType.getInterfaces().asErasures().toInternalNames());
   attributeAppender.apply(classVisitor,instrumentedType,instrumentedType.getSuperType());

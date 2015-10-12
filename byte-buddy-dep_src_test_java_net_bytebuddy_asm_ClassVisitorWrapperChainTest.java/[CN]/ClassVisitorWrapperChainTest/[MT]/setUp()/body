@@ -1,5 +1,11 @@
 {
-  when(first.wrap(any(ClassVisitor.class))).thenReturn(classVisitor);
-  when(prepend.wrap(any(ClassVisitor.class))).thenReturn(classVisitor);
-  when(append.wrap(any(ClassVisitor.class))).thenReturn(classVisitor);
+  when(prepend.wrap(prependVisitor)).thenReturn(wrapperVisitor);
+  when(wrapper.wrap(wrapperVisitor)).thenReturn(appendVisitor);
+  when(append.wrap(appendVisitor)).thenReturn(resultVisitor);
+  when(prepend.wrapReader(FOO)).thenReturn(BAR);
+  when(wrapper.wrapReader(BAR)).thenReturn(QUX);
+  when(append.wrapReader(QUX)).thenReturn(BAZ);
+  when(prepend.wrapWriter(FOO)).thenReturn(BAR);
+  when(wrapper.wrapWriter(BAR)).thenReturn(QUX);
+  when(append.wrapWriter(QUX)).thenReturn(BAZ);
 }
