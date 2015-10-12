@@ -4,7 +4,7 @@
     if (innerName == null) {
       anonymousType=true;
     }
-    if (declarationContext.isSelfDeclared()) {
+    if (outerName != null && declarationContext.isSelfDeclared()) {
       declarationContext=new LazyTypeDescription.DeclarationContext.DeclaredInType(outerName);
     }
   }
