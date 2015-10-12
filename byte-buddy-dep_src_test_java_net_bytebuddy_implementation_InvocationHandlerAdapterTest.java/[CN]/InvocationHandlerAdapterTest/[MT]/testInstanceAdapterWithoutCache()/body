@@ -4,7 +4,7 @@
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(1));
   Field field=loaded.getLoaded().getDeclaredField(QUX);
-  assertThat(field.getModifiers(),is(Modifier.PUBLIC));
+  assertThat(field.getModifiers(),is(Modifier.PUBLIC | Opcodes.ACC_SYNTHETIC));
   field.setAccessible(true);
   Bar instance=loaded.getLoaded().newInstance();
   Foo foo=new Foo();

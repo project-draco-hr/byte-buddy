@@ -1,0 +1,3 @@
+{
+  FieldAccessor.ofField(FOO).defineAs(String.class,Visibility.PUBLIC).prepare(mock(InstrumentedType.class));
+}

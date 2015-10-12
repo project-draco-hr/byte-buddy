@@ -1,0 +1,3 @@
+{
+  MethodCall.invoke(String.class.getDeclaredMethod("toString")).onInstanceField(String.class,FOO).prepare(mock(InstrumentedType.class));
+}

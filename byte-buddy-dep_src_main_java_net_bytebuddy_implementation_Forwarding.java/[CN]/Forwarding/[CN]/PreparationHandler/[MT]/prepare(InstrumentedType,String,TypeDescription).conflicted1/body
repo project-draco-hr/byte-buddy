@@ -1,3 +1,6 @@
 {
-  return instrumentedType.withField(new FieldDescription.Token(fieldName,Opcodes.ACC_PRIVATE,fieldType));
+  if (!instrumentedType.isClassType()) {
+    throw new IllegalStateException("Cannot define instance field '" + fieldName + "' for "+ instrumentedType);
+  }
+  return instrumentedType.withField(new FieldDescription.Token(fieldName,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_PUBLIC,fieldType));
 }

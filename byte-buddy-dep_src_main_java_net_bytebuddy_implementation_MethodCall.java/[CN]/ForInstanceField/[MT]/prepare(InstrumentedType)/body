@@ -1,3 +1,6 @@
 {
-  return instrumentedType.withField(new FieldDescription.Token(fieldName,MODIFIERS,fieldType));
+  if (!instrumentedType.isClassType()) {
+    throw new IllegalStateException("Cannot define non-static field '" + fieldName + "' for "+ instrumentedType);
+  }
+  return instrumentedType.withField(new FieldDescription.Token(fieldName,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_PUBLIC,fieldType));
 }
