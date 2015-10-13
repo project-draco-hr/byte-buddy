@@ -1,3 +1,3 @@
 {
-  return new FieldList.TypeSubstituting(this,typeDescription.getDeclaredFields(),Visitor.TypeVariableErasing.INSTANCE);
+  return new FieldList.TypeSubstituting(this,asErasure().getDeclaredFields(),Visitor.TypeVariableErasing.INSTANCE);
 }

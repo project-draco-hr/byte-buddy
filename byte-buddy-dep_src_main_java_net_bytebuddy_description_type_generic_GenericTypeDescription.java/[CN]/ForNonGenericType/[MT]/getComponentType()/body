@@ -1,4 +1,4 @@
 {
-  TypeDescription componentType=typeDescription.getComponentType();
-  return componentType == null ? TypeDescription.UNDEFINED : new ForNonGenericType(componentType);
+  TypeDescription componentType=asErasure().getComponentType();
+  return componentType == null ? TypeDescription.UNDEFINED : new ForNonGenericType.Latent(componentType);
 }

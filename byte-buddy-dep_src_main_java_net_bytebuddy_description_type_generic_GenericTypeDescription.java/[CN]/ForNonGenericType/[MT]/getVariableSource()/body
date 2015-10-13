@@ -1,3 +1,3 @@
 {
-  return typeDescription.getVariableSource();
+  return asErasure().getVariableSource();
 }

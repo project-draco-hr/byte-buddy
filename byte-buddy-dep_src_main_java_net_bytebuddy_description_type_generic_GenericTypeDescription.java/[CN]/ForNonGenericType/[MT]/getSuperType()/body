@@ -1,3 +1,4 @@
 {
-  return LazyProjection.OfTransformedType.of(typeDescription.getSuperType(),Visitor.TypeVariableErasing.INSTANCE);
+  GenericTypeDescription superType=asErasure().getSuperType();
+  return superType == null ? TypeDescription.UNDEFINED : superType.accept(Visitor.TypeVariableErasing.INSTANCE);
 }

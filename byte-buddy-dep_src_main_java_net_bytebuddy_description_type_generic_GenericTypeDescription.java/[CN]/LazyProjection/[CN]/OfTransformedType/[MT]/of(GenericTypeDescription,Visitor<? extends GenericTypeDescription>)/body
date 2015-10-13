@@ -1,3 +1,0 @@
-{
-  return unresolvedType == null ? TypeDescription.UNDEFINED : new OfTransformedType(unresolvedType,transformer);
-}

@@ -1,3 +1,0 @@
-{
-  return untransformedType.accept(transformer);
-}

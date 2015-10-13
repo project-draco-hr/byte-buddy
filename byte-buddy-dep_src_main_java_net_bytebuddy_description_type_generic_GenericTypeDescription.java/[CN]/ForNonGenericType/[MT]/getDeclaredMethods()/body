@@ -1,3 +1,3 @@
 {
-  return new MethodList.TypeSubstituting(this,typeDescription.getDeclaredMethods(),Visitor.TypeVariableErasing.INSTANCE);
+  return new MethodList.TypeSubstituting(this,asErasure().getDeclaredMethods(),Visitor.TypeVariableErasing.INSTANCE);
 }

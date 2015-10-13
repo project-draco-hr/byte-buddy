@@ -1,3 +1,3 @@
 {
-  return new GenericTypeList.OfTransformedTypes(asErasure().getInterfaces(),Visitor.Substitutor.ForTypeVariableBinding.bind(this));
+  return new GenericTypeList.ForDetachedTypes(asErasure().getInterfaces(),Visitor.Substitutor.ForTypeVariableBinding.bind(this));
 }
