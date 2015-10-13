@@ -1,3 +1,0 @@
-{
-  return typeDescription.getParameters().size() != typeDescription.asErasure().getTypeVariables().size() ? new Raw(typeDescription.asErasure()) : typeDescription.accept(transformer);
-}

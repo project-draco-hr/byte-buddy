@@ -1,0 +1,3 @@
+{
+  return type.getSuperclass() == null ? TypeDescription.UNDEFINED : new LazyProjection.OfLoadedSuperType(type);
+}

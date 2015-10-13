@@ -1,4 +1,0 @@
-{
-  TypeDescription ownerType=typeDescription.getOwnerType();
-  return ownerType == null ? TypeDescription.UNDEFINED : new Raw(ownerType);
-}

@@ -1,0 +1,2 @@
+GenericTypeDescription untransformedType
+Visitor<? extends GenericTypeDescription> transformer

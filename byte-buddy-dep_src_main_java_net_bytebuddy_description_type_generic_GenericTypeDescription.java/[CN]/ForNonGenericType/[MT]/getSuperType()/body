@@ -1,0 +1,3 @@
+{
+  return LazyProjection.OfTransformedType.of(typeDescription.getSuperType(),Visitor.TypeVariableErasing.INSTANCE);
+}

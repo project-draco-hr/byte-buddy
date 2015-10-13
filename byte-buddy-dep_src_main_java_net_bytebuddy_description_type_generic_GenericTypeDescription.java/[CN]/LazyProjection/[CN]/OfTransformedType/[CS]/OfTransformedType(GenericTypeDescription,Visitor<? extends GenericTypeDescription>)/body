@@ -1,0 +1,4 @@
+{
+  this.untransformedType=untransformedType;
+  this.transformer=transformer;
+}

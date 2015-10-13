@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypeDescription.AbstractBase.RawTypeWrapper.class).apply();
+}
