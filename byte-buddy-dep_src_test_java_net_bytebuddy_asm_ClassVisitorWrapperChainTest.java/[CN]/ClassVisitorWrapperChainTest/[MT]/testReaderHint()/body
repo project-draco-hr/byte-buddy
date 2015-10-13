@@ -1,11 +1,11 @@
 {
   ClassVisitorWrapper.Chain chain=new ClassVisitorWrapper.Chain();
   chain=chain.append(wrapper).append(append).prepend(prepend);
-  assertThat(chain.wrapReader(FOO),is(BAZ));
-  verify(prepend).wrapReader(FOO);
+  assertThat(chain.mergeReader(FOO),is(BAZ));
+  verify(prepend).mergeReader(FOO);
   verifyNoMoreInteractions(prepend);
-  verify(wrapper).wrapReader(BAR);
+  verify(wrapper).mergeReader(BAR);
   verifyNoMoreInteractions(wrapper);
-  verify(append).wrapReader(QUX);
+  verify(append).mergeReader(QUX);
   verifyNoMoreInteractions(append);
 }
