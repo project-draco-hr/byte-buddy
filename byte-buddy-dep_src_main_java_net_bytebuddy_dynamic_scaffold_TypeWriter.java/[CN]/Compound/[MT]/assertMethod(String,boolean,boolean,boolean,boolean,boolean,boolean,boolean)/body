@@ -1,0 +1,5 @@
+{
+  for (  Constraint constraint : constraints) {
+    constraint.assertMethod(name,isAbstract,isPublic,isStatic,isDefaultValueIncompatible,isNonStaticNonVirtual,isGeneric,isTypeInitializer);
+  }
+}

@@ -5,3 +5,4 @@ boolean isStatic
 boolean isDefaultValueIncompatible
 boolean isNonStaticNonVirtual
 boolean isGeneric
+boolean isTypeInitializer
