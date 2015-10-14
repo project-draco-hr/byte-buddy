@@ -4,7 +4,7 @@
   assertThat(classFileTransformers.size(),is(1));
   verifyZeroInteractions(listener);
   verify(instrumentation).addTransformer(classFileTransformer,true);
-  verify(instrumentation).retransformClasses(REDEFINED);
   verify(instrumentation).getAllLoadedClasses();
+  verify(instrumentation).retransformClasses(REDEFINED);
   verifyNoMoreInteractions(instrumentation);
 }
