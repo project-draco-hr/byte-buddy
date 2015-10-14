@@ -1,0 +1,6 @@
+{
+  ModifierReviewable modifierReviewable=mock(ModifierReviewable.class);
+  when(modifierReviewable.getModifiers()).thenReturn(Opcodes.ACC_ABSTRACT);
+  assertThat(ElementMatchers.isAbstract().matches(modifierReviewable),is(true));
+  assertThat(ElementMatchers.isAbstract().matches(mock(ModifierReviewable.class)),is(false));
+}

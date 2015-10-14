@@ -1,0 +1,4 @@
+{
+  assertThat(ElementMatchers.isInterface().matches(new TypeDescription.ForLoadedType(Collection.class)),is(true));
+  assertThat(ElementMatchers.isInterface().matches(new TypeDescription.ForLoadedType(ArrayList.class)),is(false));
+}
