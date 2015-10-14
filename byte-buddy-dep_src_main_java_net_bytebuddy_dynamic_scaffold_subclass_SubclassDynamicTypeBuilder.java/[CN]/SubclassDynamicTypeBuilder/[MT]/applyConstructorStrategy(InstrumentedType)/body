@@ -1,5 +1,5 @@
 {
-  if (!instrumentedType.isClassType()) {
+  if (instrumentedType.isInterface()) {
     return instrumentedType;
   }
   for (  MethodDescription.Token methodToken : constructorStrategy.extractConstructors(instrumentedType)) {

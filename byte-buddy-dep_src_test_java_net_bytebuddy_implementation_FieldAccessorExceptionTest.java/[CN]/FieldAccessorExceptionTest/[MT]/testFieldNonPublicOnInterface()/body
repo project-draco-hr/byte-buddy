@@ -1,3 +1,5 @@
 {
-  FieldAccessor.ofField(FOO).defineAs(String.class,Ownership.STATIC).prepare(mock(InstrumentedType.class));
+  InstrumentedType instrumentedType=mock(InstrumentedType.class);
+  when(instrumentedType.isInterface()).thenReturn(true);
+  FieldAccessor.ofField(FOO).defineAs(String.class,Ownership.STATIC).prepare(instrumentedType);
 }

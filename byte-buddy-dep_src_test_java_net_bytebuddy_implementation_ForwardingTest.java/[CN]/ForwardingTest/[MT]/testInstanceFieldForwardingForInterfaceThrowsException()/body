@@ -1,3 +1,5 @@
 {
-  Forwarding.toInstanceField(FOO,Foo.class).prepare(mock(InstrumentedType.class));
+  InstrumentedType instrumentedType=mock(InstrumentedType.class);
+  when(instrumentedType.isInterface()).thenReturn(true);
+  Forwarding.toInstanceField(FOO,Foo.class).prepare(instrumentedType);
 }

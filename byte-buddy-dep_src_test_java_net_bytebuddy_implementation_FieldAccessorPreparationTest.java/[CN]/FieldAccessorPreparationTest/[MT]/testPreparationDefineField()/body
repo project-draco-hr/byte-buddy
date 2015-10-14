@@ -1,7 +1,6 @@
 {
-  when(instrumentedType.isClassType()).thenReturn(true);
   assertThat(FieldAccessor.ofField(FOO).defineAs(TYPE).prepare(instrumentedType),is(instrumentedType));
   verify(instrumentedType).withField(new FieldDescription.Token(FOO,NO_MODIFIERS,new TypeDescription.ForLoadedType(TYPE)));
-  verify(instrumentedType).isClassType();
+  verify(instrumentedType).isInterface();
   verifyNoMoreInteractions(instrumentedType);
 }

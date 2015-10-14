@@ -1,2 +1,2 @@
-boolean classType
+boolean interfaceType
 int rebasedMethodModifiers

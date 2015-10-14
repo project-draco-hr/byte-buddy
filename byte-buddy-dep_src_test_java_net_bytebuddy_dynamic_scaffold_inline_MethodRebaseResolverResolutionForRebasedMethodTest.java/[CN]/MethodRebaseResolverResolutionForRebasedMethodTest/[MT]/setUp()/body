@@ -5,7 +5,7 @@
   when(methodDescription.getDescriptor()).thenReturn(BAZ);
   when(typeDescription.getInternalName()).thenReturn(BAR);
   when(typeDescription.getDescriptor()).thenReturn(BAR);
-  when(typeDescription.isClassType()).thenReturn(classType);
+  when(typeDescription.isInterface()).thenReturn(interfaceType);
   when(methodNameTransformer.transform(methodDescription)).thenReturn(QUX);
   when(otherMethodNameTransformer.transform(methodDescription)).thenReturn(FOO + BAR);
   when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
