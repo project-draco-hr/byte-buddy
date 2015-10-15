@@ -2,6 +2,7 @@
   int result=byteBuddy.hashCode();
   result=31 * result + binaryLocator.hashCode();
   result=31 * result + listener.hashCode();
+  result=31 * result + definitionHandler.hashCode();
   result=31 * result + nativeMethodPrefix.hashCode();
   result=31 * result + accessControlContext.hashCode();
   result=31 * result + (disableSelfInitialization ? 1 : 0);

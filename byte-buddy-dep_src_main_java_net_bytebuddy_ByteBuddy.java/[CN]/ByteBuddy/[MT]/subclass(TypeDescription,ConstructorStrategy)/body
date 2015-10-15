@@ -5,5 +5,5 @@
     actualSuperType=TypeDescription.OBJECT;
     interfaceTypes=joinUniqueRaw(interfaceTypes,Collections.singleton(superType));
   }
-  return new SubclassDynamicTypeBuilder<T>(classFileVersion,nonNull(namingStrategy.subclass(superType)),auxiliaryTypeNamingStrategy,actualSuperType,interfaceTypes,modifiers.resolve(superType.getModifiers() & ~TypeManifestation.ANNOTATION.getMask()),typeAttributeAppender,ignoredMethods,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(constructorStrategy));
+  return new SubclassDynamicTypeBuilder<T>(classFileVersion,nonNull(namingStrategy.subclass(superType)),auxiliaryTypeNamingStrategy,implementationContextFactory,actualSuperType,interfaceTypes,modifiers.resolve(superType.getModifiers() & ~TypeManifestation.ANNOTATION.getMask()),typeAttributeAppender,ignoredMethods,classVisitorWrapperChain,new FieldRegistry.Default(),methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(constructorStrategy));
 }

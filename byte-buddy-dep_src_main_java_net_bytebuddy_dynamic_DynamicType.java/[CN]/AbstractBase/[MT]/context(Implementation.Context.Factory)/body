@@ -1,0 +1,3 @@
+{
+  return materialize(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,nonNull(implementationContextFactory),targetType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,classVisitorWrapperChain,fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
+}

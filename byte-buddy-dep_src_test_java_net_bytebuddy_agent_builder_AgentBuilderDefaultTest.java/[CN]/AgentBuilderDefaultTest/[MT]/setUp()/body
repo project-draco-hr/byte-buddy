@@ -6,9 +6,9 @@
     }
   }
 ).when(instrumentation).addTransformer(any(ClassFileTransformer.class),anyBoolean());
-  when(byteBuddy.rebase(any(TypeDescription.class),any(ClassFileLocator.class),any(MethodRebaseResolver.MethodNameTransformer.class))).thenReturn((DynamicType.Builder)builder);
   when(builder.make()).thenReturn((DynamicType.Unloaded)unloaded);
   when(unloaded.getTypeDescription()).thenReturn(typeDescription);
+  when(definitionHandler.builder(any(TypeDescription.class),eq(byteBuddy),any(ClassFileLocator.class),any(MethodRebaseResolver.MethodNameTransformer.class))).thenReturn((DynamicType.Builder)builder);
   Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=new HashMap<TypeDescription,LoadedTypeInitializer>();
   loadedTypeInitializers.put(typeDescription,loadedTypeInitializer);
   when(unloaded.getLoadedTypeInitializers()).thenReturn(loadedTypeInitializers);

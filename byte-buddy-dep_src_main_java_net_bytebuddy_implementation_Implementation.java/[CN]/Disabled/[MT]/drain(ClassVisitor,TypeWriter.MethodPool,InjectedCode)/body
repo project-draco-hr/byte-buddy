@@ -1,0 +1,5 @@
+{
+  if (injectedCode.isDefined() || methodPool.target(new MethodDescription.Latent.TypeInitializer(instrumentedType)).getSort().isDefined()) {
+    throw new IllegalStateException("Type initializer definition was explicitly disabled");
+  }
+}

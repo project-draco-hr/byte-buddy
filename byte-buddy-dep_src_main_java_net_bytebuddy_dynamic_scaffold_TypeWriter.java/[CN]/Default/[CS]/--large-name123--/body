@@ -1,0 +1,14 @@
+{
+  this.instrumentedType=instrumentedType;
+  this.loadedTypeInitializer=loadedTypeInitializer;
+  this.typeInitializer=typeInitializer;
+  this.explicitAuxiliaryTypes=explicitAuxiliaryTypes;
+  this.classFileVersion=classFileVersion;
+  this.auxiliaryTypeNamingStrategy=auxiliaryTypeNamingStrategy;
+  this.implementationContextFactory=implementationContextFactory;
+  this.classVisitorWrapper=classVisitorWrapper;
+  this.attributeAppender=attributeAppender;
+  this.fieldPool=fieldPool;
+  this.methodPool=methodPool;
+  this.instrumentedMethods=instrumentedMethods;
+}

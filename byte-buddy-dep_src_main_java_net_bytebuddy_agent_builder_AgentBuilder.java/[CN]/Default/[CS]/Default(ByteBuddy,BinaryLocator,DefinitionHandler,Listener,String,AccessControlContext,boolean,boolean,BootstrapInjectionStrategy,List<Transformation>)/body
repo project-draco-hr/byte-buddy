@@ -1,0 +1,12 @@
+{
+  this.byteBuddy=byteBuddy;
+  this.binaryLocator=binaryLocator;
+  this.definitionHandler=definitionHandler;
+  this.listener=listener;
+  this.nativeMethodPrefix=nativeMethodPrefix;
+  this.accessControlContext=accessControlContext;
+  this.disableSelfInitialization=disableSelfInitialization;
+  this.retransformation=retransformation;
+  this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
+  this.transformations=transformations;
+}

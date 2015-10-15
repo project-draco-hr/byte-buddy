@@ -1,3 +1,0 @@
-{
-  return new RedefinitionDynamicTypeBuilder<T>(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,levelType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,classVisitorWrapperChain,fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens,classFileLocator);
-}

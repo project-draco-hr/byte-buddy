@@ -5,7 +5,7 @@
     TypeDescription typeDescription=initialized.getTypePool().describe(binaryTypeName).resolve();
     for (    Transformation transformation : transformations) {
       if (transformation.matches(typeDescription,classLoader,classBeingRedefined,protectionDomain)) {
-        DynamicType.Unloaded<?> dynamicType=initializationStrategy.apply(transformation.transform(byteBuddy.rebase(typeDescription,initialized.getClassFileLocator(),methodNameTransformer),typeDescription)).make();
+        DynamicType.Unloaded<?> dynamicType=initializationStrategy.apply(transformation.transform(definitionHandler.builder(typeDescription,byteBuddy,initialized.getClassFileLocator(),methodNameTransformer),typeDescription)).make();
         Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=dynamicType.getLoadedTypeInitializers();
         if (loadedTypeInitializers.size() > 1) {
           ClassInjector classInjector=classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext,PackageDefinitionStrategy.NoOp.INSTANCE,true);

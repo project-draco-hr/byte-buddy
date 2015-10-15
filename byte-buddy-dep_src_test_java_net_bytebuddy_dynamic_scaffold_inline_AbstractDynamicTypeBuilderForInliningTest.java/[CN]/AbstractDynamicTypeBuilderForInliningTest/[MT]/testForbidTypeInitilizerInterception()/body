@@ -1,0 +1,3 @@
+{
+  createPlain().context(Implementation.Context.Disabled.Factory.INSTANCE).invokable(isTypeInitializer()).intercept(StubMethod.INSTANCE).make();
+}

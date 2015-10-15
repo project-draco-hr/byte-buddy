@@ -1,0 +1,3 @@
+{
+  assertThat(Implementation.Context.Disabled.Factory.INSTANCE.make(instrumentedType,mock(AuxiliaryType.NamingStrategy.class),mock(InstrumentedType.TypeInitializer.class),mock(ClassFileVersion.class)),is((Implementation.Context.ExtractableView)new Implementation.Context.Disabled(instrumentedType)));
+}

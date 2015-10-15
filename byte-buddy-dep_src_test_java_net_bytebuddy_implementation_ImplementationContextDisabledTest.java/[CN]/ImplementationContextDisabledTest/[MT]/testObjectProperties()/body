@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(Implementation.Context.Disabled.class).apply();
+  ObjectPropertyAssertion.of(Implementation.Context.Disabled.Factory.class).apply();
+}

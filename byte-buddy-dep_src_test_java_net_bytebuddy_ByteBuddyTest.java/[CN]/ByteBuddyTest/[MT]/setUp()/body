@@ -1,6 +1,6 @@
 {
   when(modifierContributorForType.getMask()).thenReturn(MASK);
-  when(typeDescription.isInterface()).thenReturn(true);
-  when(typeDescription.asErasure()).thenReturn(typeDescription);
-  when(typeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
+  when(interfaceTypes.isInterface()).thenReturn(true);
+  when(interfaceTypes.asErasure()).thenReturn(interfaceTypes);
+  when(interfaceTypes.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
 }

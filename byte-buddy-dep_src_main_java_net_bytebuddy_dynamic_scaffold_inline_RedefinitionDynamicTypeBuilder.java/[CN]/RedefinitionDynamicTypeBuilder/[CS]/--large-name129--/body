@@ -1,0 +1,3 @@
+{
+  this(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,levelType,joinUniqueRaw(interfaceTypes,levelType.getInterfaces()),modifiers,attributeAppender,ignoredMethods,classVisitorWrapperChain,fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,levelType.getDeclaredFields().asTokenList(is(levelType)),levelType.getDeclaredMethods().asTokenList(is(levelType)),classFileLocator);
+}

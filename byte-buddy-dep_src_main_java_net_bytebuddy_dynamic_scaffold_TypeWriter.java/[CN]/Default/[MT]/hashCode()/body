@@ -5,6 +5,7 @@
   result=31 * result + explicitAuxiliaryTypes.hashCode();
   result=31 * result + classFileVersion.hashCode();
   result=31 * result + auxiliaryTypeNamingStrategy.hashCode();
+  result=31 * result + implementationContextFactory.hashCode();
   result=31 * result + classVisitorWrapper.hashCode();
   result=31 * result + attributeAppender.hashCode();
   result=31 * result + fieldPool.hashCode();

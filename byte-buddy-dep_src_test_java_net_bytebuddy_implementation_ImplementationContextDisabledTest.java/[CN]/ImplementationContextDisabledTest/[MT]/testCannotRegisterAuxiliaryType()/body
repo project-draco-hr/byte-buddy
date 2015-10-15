@@ -1,0 +1,3 @@
+{
+  new Implementation.Context.Disabled(instrumentedType).register(mock(AuxiliaryType.class));
+}
