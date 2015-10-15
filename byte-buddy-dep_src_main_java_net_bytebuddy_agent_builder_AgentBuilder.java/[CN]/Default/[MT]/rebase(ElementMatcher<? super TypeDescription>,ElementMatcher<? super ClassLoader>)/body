@@ -1,3 +1,0 @@
-{
-  return rebase(new RawMatcher.ForElementMatcherPair(nonNull(typeMatcher),nonNull(classLoaderMatcher)));
-}

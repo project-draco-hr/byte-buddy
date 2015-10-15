@@ -2,7 +2,7 @@
   when(unloaded.getBytes()).thenReturn(BAZ);
   when(resolution.resolve()).thenReturn(typeDescription);
   when(rawMatcher.matches(typeDescription,classLoader,REDEFINED,protectionDomain)).thenReturn(true);
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).disableSelfInitialization().allowRetransformation().withBinaryLocator(binaryLocator).withDefinitionHandler(definitionHandler).withListener(listener).rebase(rawMatcher).transform(transformer).installOn(instrumentation);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).disableSelfInitialization().allowRetransformation().withBinaryLocator(binaryLocator).withDefinitionHandler(definitionHandler).withListener(listener).type(rawMatcher).transform(transformer).installOn(instrumentation);
   assertThat(classFileTransformers.size(),is(1));
   assertThat(classFileTransformers.get(0).transform(classLoader,FOO,REDEFINED,protectionDomain,QUX),is(BAZ));
   verify(listener).onTransformation(typeDescription,unloaded);
