@@ -1,0 +1,3 @@
+{
+  assertThat(new ByteBuddy().makeInterface().invokable(isTypeInitializer()).intercept(StubMethod.INSTANCE).make(),notNullValue(DynamicType.class));
+}
