@@ -1,7 +1,7 @@
 {
   when(methodDescription.getDefaultValue()).thenReturn(new Object());
   when(annotationDescription.getValue(methodDescription)).thenReturn(new Object());
-  assertThat(AnnotationAppender.ValueFilter.SkipDefaults.INSTANCE.isRelevant(annotationDescription,methodDescription),is(false));
+  assertThat(AnnotationAppender.ValueFilter.SkipDefaults.INSTANCE.isRelevant(annotationDescription,methodDescription),is(true));
   verify(annotationDescription).getValue(methodDescription);
   verifyNoMoreInteractions(annotationDescription);
   verify(methodDescription).getDefaultValue();
