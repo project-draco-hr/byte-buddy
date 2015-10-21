@@ -1,5 +1,5 @@
 {
-  if (firstLabel == null) {
+  if (readerMode.isExtended() && firstLabel == null) {
     firstLabel=label;
   }
 }

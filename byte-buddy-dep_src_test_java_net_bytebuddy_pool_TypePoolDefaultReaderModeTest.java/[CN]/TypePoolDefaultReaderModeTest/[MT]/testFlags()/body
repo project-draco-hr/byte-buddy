@@ -1,0 +1,4 @@
+{
+  assertThat(TypePool.Default.ReaderMode.EXTENDED.getFlags(),is(ClassReader.SKIP_FRAMES));
+  assertThat(TypePool.Default.ReaderMode.FAST.getFlags(),is(ClassReader.SKIP_CODE));
+}

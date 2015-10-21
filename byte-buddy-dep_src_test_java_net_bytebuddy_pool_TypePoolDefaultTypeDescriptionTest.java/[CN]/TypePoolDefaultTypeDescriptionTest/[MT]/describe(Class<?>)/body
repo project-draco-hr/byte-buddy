@@ -1,5 +1,5 @@
 {
-  TypePool typePool=new TypePool.Default(TypePool.CacheProvider.NoOp.INSTANCE,ClassFileLocator.ForClassLoader.of(type.getClassLoader()));
+  TypePool typePool=new TypePool.Default(TypePool.CacheProvider.NoOp.INSTANCE,ClassFileLocator.ForClassLoader.of(type.getClassLoader()),TypePool.Default.ReaderMode.EXTENDED);
   try {
     return typePool.describe(type.getName()).resolve();
   }

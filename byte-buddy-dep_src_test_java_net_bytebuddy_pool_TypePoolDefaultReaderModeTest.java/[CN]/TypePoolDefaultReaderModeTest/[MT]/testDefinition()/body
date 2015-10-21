@@ -1,0 +1,4 @@
+{
+  assertThat(TypePool.Default.ReaderMode.EXTENDED.isExtended(),is(true));
+  assertThat(TypePool.Default.ReaderMode.FAST.isExtended(),is(false));
+}

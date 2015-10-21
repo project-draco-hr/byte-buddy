@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.BinaryLocator.Default.FAST.initialize(FOO,QUX,classLoader).getTypePool(),notNullValue(TypePool.class));
+}
