@@ -3,15 +3,7 @@
   try {
     BinaryLocator.Initialized initialized=binaryLocator.initialize(binaryTypeName,binaryRepresentation,classLoader);
     TypeDescription typeDescription=initialized.getTypePool().describe(binaryTypeName).resolve();
-    for (    Transformation transformation : transformations) {
-      if (transformation.matches(typeDescription,classLoader,classBeingRedefined,protectionDomain)) {
-        byte[] transformed=transformation.apply(typeDescription,initialized,classLoader,protectionDomain,initializationStrategy,definitionHandler,byteBuddy,methodNameTransformer,bootstrapInjectionStrategy,accessControlContext);
-        listener.onTransformation(typeDescription,null);
-        return transformed;
-      }
-    }
-    listener.onIgnored(binaryTypeName);
-    return NO_TRANSFORMATION;
+    return transformation.resolve(typeDescription,classLoader,classBeingRedefined,protectionDomain).apply(initializationStrategy,initialized,definitionHandler,byteBuddy,methodNameTransformer,bootstrapInjectionStrategy,accessControlContext,listener);
   }
  catch (  Throwable throwable) {
     listener.onError(binaryTypeName,throwable);

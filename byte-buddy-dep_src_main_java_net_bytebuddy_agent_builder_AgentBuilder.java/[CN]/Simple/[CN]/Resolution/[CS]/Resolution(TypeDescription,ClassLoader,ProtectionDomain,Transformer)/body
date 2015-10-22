@@ -1,0 +1,6 @@
+{
+  this.typeDescription=typeDescription;
+  this.classLoader=classLoader;
+  this.protectionDomain=protectionDomain;
+  this.transformer=transformer;
+}

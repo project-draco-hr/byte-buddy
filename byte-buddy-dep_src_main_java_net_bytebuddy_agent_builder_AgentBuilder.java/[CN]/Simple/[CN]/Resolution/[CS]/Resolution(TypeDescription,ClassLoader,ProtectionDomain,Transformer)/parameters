@@ -1,0 +1,4 @@
+TypeDescription typeDescription
+ClassLoader classLoader
+ProtectionDomain protectionDomain
+Transformer transformer

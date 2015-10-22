@@ -1,0 +1,9 @@
+{
+  for (  Transformation transformation : transformations) {
+    Resolution resolution=transformation.resolve(typeDescription,classLoader,classBeingRedefined,protectionDomain);
+    if (resolution.isResolved()) {
+      return resolution;
+    }
+  }
+  return new Resolution.Unresolved(typeDescription);
+}

@@ -1,3 +1,3 @@
 {
-  return new Default(byteBuddy,binaryLocator,nonNull(definitionHandler),listener,nativeMethodPrefix,accessControlContext,disableSelfInitialization,retransformation,bootstrapInjectionStrategy,transformations);
+  return new Default(byteBuddy,binaryLocator,nonNull(definitionHandler),listener,nativeMethodPrefix,accessControlContext,disableSelfInitialization,retransformation,bootstrapInjectionStrategy,transformation);
 }

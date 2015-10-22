@@ -1,0 +1,8 @@
+InitializationStrategy initializationStrategy
+BinaryLocator.Initialized initialized
+DefinitionHandler definitionHandler
+ByteBuddy byteBuddy
+MethodRebaseResolver.MethodNameTransformer methodNameTransformer
+BootstrapInjectionStrategy bootstrapInjectionStrategy
+AccessControlContext accessControlContext
+Listener listener

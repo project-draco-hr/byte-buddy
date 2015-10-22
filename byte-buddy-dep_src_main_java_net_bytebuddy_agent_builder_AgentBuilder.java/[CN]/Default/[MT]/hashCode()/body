@@ -8,6 +8,6 @@
   result=31 * result + (disableSelfInitialization ? 1 : 0);
   result=31 * result + (retransformation ? 1 : 0);
   result=31 * result + bootstrapInjectionStrategy.hashCode();
-  result=31 * result + transformations.hashCode();
+  result=31 * result + transformation.hashCode();
   return result;
 }

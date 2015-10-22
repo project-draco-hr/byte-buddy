@@ -7,11 +7,9 @@
   if (retransformation) {
     List<Class<?>> retransformedTypes=new LinkedList<Class<?>>();
     for (    Class<?> type : instrumentation.getAllLoadedClasses()) {
-      for (      Transformation transformation : transformations) {
-        if (transformation.matches(new TypeDescription.ForLoadedType(type),type.getClassLoader(),type,type.getProtectionDomain())) {
-          retransformedTypes.add(type);
-          break;
-        }
+      if (transformation.resolve(new TypeDescription.ForLoadedType(type),type.getClassLoader(),type,type.getProtectionDomain()).isResolved()) {
+        retransformedTypes.add(type);
+        break;
       }
     }
     if (!retransformedTypes.isEmpty()) {

@@ -1,3 +1,0 @@
-{
-  return "AgentBuilder.Listener.Compound{" + "listener=" + Arrays.toString(listener) + '}';
-}
