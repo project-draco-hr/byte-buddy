@@ -8,7 +8,7 @@
   result=31 * result + modifiers;
   result=31 * result + attributeAppender.hashCode();
   result=31 * result + ignoredMethods.hashCode();
-  result=31 * result + classVisitorWrapperChain.hashCode();
+  result=31 * result + classVisitorWrapper.hashCode();
   result=31 * result + fieldRegistry.hashCode();
   result=31 * result + methodRegistry.hashCode();
   result=31 * result + methodGraphCompiler.hashCode();

@@ -1,0 +1,10 @@
+{
+  ClassVisitorWrapper.Chain chain=new ClassVisitorWrapper.Chain(prepend,wrapper,append);
+  assertThat(chain.mergeWriter(FOO),is(BAZ));
+  verify(prepend).mergeWriter(FOO);
+  verifyNoMoreInteractions(prepend);
+  verify(wrapper).mergeWriter(BAR);
+  verifyNoMoreInteractions(wrapper);
+  verify(append).mergeWriter(QUX);
+  verifyNoMoreInteractions(append);
+}

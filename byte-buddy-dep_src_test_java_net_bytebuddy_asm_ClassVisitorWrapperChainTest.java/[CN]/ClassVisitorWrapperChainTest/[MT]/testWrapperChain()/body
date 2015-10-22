@@ -1,6 +1,5 @@
 {
-  ClassVisitorWrapper.Chain chain=new ClassVisitorWrapper.Chain();
-  chain=chain.append(wrapper).append(append).prepend(prepend);
+  ClassVisitorWrapper.Chain chain=new ClassVisitorWrapper.Chain(prepend,wrapper,append);
   assertThat(chain.wrap(prependVisitor),is(resultVisitor));
   verify(prepend).wrap(prependVisitor);
   verifyNoMoreInteractions(prepend);

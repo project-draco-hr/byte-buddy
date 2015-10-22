@@ -3,5 +3,5 @@
   MethodList<MethodDescription.InDefinedShape> rebaseableMethods=preparedMethodRegistry.getInstrumentedMethods().asDefined().filter(methodRepresentedBy(anyOf(targetType.getDeclaredMethods().asTokenList())));
   MethodRebaseResolver methodRebaseResolver=MethodRebaseResolver.Default.make(preparedMethodRegistry.getInstrumentedType(),rebaseableMethods,classFileVersion,auxiliaryTypeNamingStrategy,methodNameTransformer);
   MethodRegistry.Compiled compiledMethodRegistry=preparedMethodRegistry.compile(new RebaseImplementationTarget.Factory(rebaseableMethods,methodRebaseResolver));
-  return TypeWriter.Default.<T>forRebasing(compiledMethodRegistry,fieldRegistry.compile(compiledMethodRegistry.getInstrumentedType()),auxiliaryTypeNamingStrategy,implementationContextFactory,classVisitorWrapperChain,attributeAppender,classFileVersion,classFileLocator,targetType,methodRebaseResolver).make();
+  return TypeWriter.Default.<T>forRebasing(compiledMethodRegistry,fieldRegistry.compile(compiledMethodRegistry.getInstrumentedType()),auxiliaryTypeNamingStrategy,implementationContextFactory,classVisitorWrapper,attributeAppender,classFileVersion,classFileLocator,targetType,methodRebaseResolver).make();
 }

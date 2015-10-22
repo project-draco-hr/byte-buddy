@@ -1,0 +1,4 @@
+{
+  super(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,superType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,classVisitorWrapper,fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
+  this.constructorStrategy=constructorStrategy;
+}
