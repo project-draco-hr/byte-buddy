@@ -1,0 +1,13 @@
+{
+  DynamicType.Unloaded<?> dynamicType=initializationStrategy.apply(transformer.transform(typeStrategy.builder(typeDescription,byteBuddy,initialized.getClassFileLocator(),methodNameTransformer),typeDescription)).make();
+  Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=dynamicType.getLoadedTypeInitializers();
+  if (!loadedTypeInitializers.isEmpty()) {
+    ClassInjector classInjector=classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext,PackageDefinitionStrategy.NoOp.INSTANCE,true);
+    for (    Map.Entry<TypeDescription,Class<?>> auxiliary : classInjector.inject(dynamicType.getRawAuxiliaryTypes()).entrySet()) {
+      initializationStrategy.initialize(auxiliary.getValue(),loadedTypeInitializers.get(auxiliary.getKey()));
+    }
+  }
+  initializationStrategy.register(typeDescription.getName(),classLoader,loadedTypeInitializers.get(dynamicType.getTypeDescription()));
+  listener.onTransformation(typeDescription,dynamicType);
+  return dynamicType.getBytes();
+}

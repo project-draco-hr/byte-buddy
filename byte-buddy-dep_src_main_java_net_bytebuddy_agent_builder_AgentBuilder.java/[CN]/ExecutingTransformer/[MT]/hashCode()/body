@@ -1,7 +1,7 @@
 {
   int result=byteBuddy.hashCode();
   result=31 * result + binaryLocator.hashCode();
-  result=31 * result + definitionStrategy.hashCode();
+  result=31 * result + typeStrategy.hashCode();
   result=31 * result + initializationStrategy.hashCode();
   result=31 * result + listener.hashCode();
   result=31 * result + nativeMethodStrategy.hashCode();

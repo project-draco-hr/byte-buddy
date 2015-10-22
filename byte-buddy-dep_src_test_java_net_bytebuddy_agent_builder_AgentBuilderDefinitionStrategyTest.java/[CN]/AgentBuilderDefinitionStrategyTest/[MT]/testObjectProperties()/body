@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(AgentBuilder.DefinitionStrategy.Default.class).apply();
-}

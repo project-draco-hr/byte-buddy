@@ -1,0 +1,11 @@
+{
+  this.binaryLocator=binaryLocator;
+  this.initializationStrategy=initializationStrategy;
+  this.typeStrategy=typeStrategy;
+  this.byteBuddy=byteBuddy;
+  this.nativeMethodStrategy=nativeMethodStrategy;
+  this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
+  this.accessControlContext=accessControlContext;
+  this.listener=listener;
+  this.transformation=transformation;
+}
