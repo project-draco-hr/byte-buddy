@@ -1,3 +1,3 @@
 {
-  classLoader=new ByteArrayClassLoader.ChildFirst(getClass().getClassLoader(),ClassFileExtraction.of(Foo.class,Bar.class,Qux.class,Baz.class,getClass(),ShouldRebase.class,FooTransformer.class,BarTransformer.class,BarTransformer.Interceptor.class,QuxTransformer.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
+  classLoader=new ByteArrayClassLoader.ChildFirst(getClass().getClassLoader(),ClassFileExtraction.of(Foo.class,Bar.class,Qux.class,Baz.class,SimpleType.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
 }
