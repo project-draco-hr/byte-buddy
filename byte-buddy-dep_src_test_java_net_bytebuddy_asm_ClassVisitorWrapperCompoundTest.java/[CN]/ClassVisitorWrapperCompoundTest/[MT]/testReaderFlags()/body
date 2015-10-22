@@ -1,6 +1,6 @@
 {
-  ClassVisitorWrapper.Chain chain=new ClassVisitorWrapper.Chain(prepend,wrapper,append);
-  assertThat(chain.mergeReader(FOO),is(BAZ));
+  ClassVisitorWrapper.Compound compound=new ClassVisitorWrapper.Compound(prepend,wrapper,append);
+  assertThat(compound.mergeReader(FOO),is(BAZ));
   verify(prepend).mergeReader(FOO);
   verifyNoMoreInteractions(prepend);
   verify(wrapper).mergeReader(BAR);

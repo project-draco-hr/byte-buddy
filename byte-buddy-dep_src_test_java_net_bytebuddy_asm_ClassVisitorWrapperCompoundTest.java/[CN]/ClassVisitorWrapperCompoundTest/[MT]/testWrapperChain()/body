@@ -1,6 +1,6 @@
 {
-  ClassVisitorWrapper.Chain chain=new ClassVisitorWrapper.Chain(prepend,wrapper,append);
-  assertThat(chain.wrap(prependVisitor),is(resultVisitor));
+  ClassVisitorWrapper.Compound compound=new ClassVisitorWrapper.Compound(prepend,wrapper,append);
+  assertThat(compound.wrap(prependVisitor),is(resultVisitor));
   verify(prepend).wrap(prependVisitor);
   verifyNoMoreInteractions(prepend);
   verify(wrapper).wrap(wrapperVisitor);

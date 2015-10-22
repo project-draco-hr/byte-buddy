@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(ClassVisitorWrapper.Chain.class).apply();
-}
