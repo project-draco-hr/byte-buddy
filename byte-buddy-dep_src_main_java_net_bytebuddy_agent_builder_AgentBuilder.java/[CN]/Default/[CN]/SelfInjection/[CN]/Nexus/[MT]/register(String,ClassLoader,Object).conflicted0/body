@@ -1,3 +1,0 @@
-{
-  TYPE_INITIALIZERS.put(new Nexus(name,classLoader),typeInitializer);
-}

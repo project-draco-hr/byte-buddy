@@ -1,5 +1,0 @@
-{
-  ObjectPropertyAssertion.of(AgentBuilder.Default.InitializationStrategy.NoOp.class).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.Default.InitializationStrategy.SelfInjection.class).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.Default.InitializationStrategy.SelfInjection.Nexus.Accessor.class).apply();
-}
