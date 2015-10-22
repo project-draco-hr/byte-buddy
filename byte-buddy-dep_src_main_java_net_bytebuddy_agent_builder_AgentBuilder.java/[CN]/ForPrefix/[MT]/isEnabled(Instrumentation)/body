@@ -1,0 +1,6 @@
+{
+  if (!instrumentation.isNativeMethodPrefixSupported()) {
+    throw new IllegalArgumentException("A prefix for native methods is not supported: " + instrumentation);
+  }
+  return true;
+}

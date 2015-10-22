@@ -1,0 +1,3 @@
+{
+  new AgentBuilder.Default.NativeMethodStrategy.ForPrefix(FOO).isEnabled(mock(Instrumentation.class));
+}

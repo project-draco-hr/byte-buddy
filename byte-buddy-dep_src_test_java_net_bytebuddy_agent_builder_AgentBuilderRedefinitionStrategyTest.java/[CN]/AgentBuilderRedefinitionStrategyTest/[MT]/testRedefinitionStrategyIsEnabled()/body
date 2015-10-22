@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.RedefinitionStrategy.REDEFINITION.isEnabled(),is(true));
+}

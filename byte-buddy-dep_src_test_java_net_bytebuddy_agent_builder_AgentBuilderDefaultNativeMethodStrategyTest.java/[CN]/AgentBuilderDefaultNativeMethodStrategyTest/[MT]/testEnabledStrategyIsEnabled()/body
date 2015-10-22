@@ -1,0 +1,5 @@
+{
+  Instrumentation instrumentation=mock(Instrumentation.class);
+  when(instrumentation.isNativeMethodPrefixSupported()).thenReturn(true);
+  assertThat(new AgentBuilder.Default.NativeMethodStrategy.ForPrefix(FOO).isEnabled(instrumentation),is(true));
+}

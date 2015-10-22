@@ -1,3 +1,0 @@
-{
-  assertThat(new AgentBuilder.Default.NativeMethodStrategy.ForPrefix(FOO).isEnabled(),is(true));
-}

@@ -1,7 +1,7 @@
 {
   ClassFileTransformer classFileTransformer=makeRaw();
   instrumentation.addTransformer(classFileTransformer,redefinitionStrategy.isRetransforming(instrumentation));
-  if (nativeMethodStrategy.isEnabled()) {
+  if (nativeMethodStrategy.isEnabled(instrumentation)) {
     instrumentation.setNativeMethodPrefix(classFileTransformer,nativeMethodStrategy.getPrefix());
   }
   if (redefinitionStrategy.isEnabled()) {
