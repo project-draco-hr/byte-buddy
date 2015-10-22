@@ -6,7 +6,7 @@
   loadedTypeInitializers.put(typeDescription,loadedTypeInitializer);
   when(unloaded.getLoadedTypeInitializers()).thenReturn(loadedTypeInitializers);
   when(transformer.transform(builder,typeDescription)).thenReturn((DynamicType.Builder)builder);
-  when(binaryLocator.initialize(FOO,QUX,classLoader)).thenReturn(initialized);
+  when(binaryLocator.initialize(classLoader,FOO,QUX)).thenReturn(initialized);
   when(initialized.getTypePool()).thenReturn(typePool);
   when(typePool.describe(FOO)).thenReturn(resolution);
   when(instrumentation.getAllLoadedClasses()).thenReturn(new Class<?>[]{REDEFINED});

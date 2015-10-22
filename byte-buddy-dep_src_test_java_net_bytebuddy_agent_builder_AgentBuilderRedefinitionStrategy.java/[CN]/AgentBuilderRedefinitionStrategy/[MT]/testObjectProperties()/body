@@ -1,0 +1,12 @@
+{
+  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Collector.ForRedefinition.class).applyBasic();
+  final Iterator<Class<?>> iterator=Arrays.<Class<?>>asList(Object.class,String.class).iterator();
+  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Collector.ForRedefinition.Entry.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
+    @Override public Class<?> create(){
+      return iterator.next();
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Collector.ForRetransformation.class).applyBasic();
+}

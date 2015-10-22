@@ -6,7 +6,7 @@
   result=31 * result + nativeMethodStrategy.hashCode();
   result=31 * result + accessControlContext.hashCode();
   result=31 * result + initializationStrategy.hashCode();
-  result=31 * result + (retransformation ? 1 : 0);
+  result=31 * result + redefinitionStrategy.hashCode();
   result=31 * result + bootstrapInjectionStrategy.hashCode();
   result=31 * result + transformation.hashCode();
   return result;

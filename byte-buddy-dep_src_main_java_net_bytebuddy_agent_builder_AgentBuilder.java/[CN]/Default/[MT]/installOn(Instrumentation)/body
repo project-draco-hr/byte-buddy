@@ -1,23 +1,24 @@
 {
   ClassFileTransformer classFileTransformer=makeRaw();
-  instrumentation.addTransformer(classFileTransformer,retransformation);
+  instrumentation.addTransformer(classFileTransformer,redefinitionStrategy.isRetransforming(instrumentation));
   if (nativeMethodStrategy.isEnabled()) {
     instrumentation.setNativeMethodPrefix(classFileTransformer,nativeMethodStrategy.getPrefix());
   }
-  if (retransformation) {
-    List<Class<?>> retransformedTypes=new LinkedList<Class<?>>();
+  if (redefinitionStrategy.isEnabled()) {
+    RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
     for (    Class<?> type : instrumentation.getAllLoadedClasses()) {
-      if (instrumentation.isModifiableClass(type) && transformation.resolve(new TypeDescription.ForLoadedType(type),type.getClassLoader(),type,type.getProtectionDomain()).isResolved()) {
-        retransformedTypes.add(type);
+      if (instrumentation.isModifiableClass(type)) {
+        collector.consider(type);
       }
     }
-    if (!retransformedTypes.isEmpty()) {
-      try {
-        instrumentation.retransformClasses(retransformedTypes.toArray(new Class<?>[retransformedTypes.size()]));
-      }
- catch (      UnmodifiableClassException exception) {
-        throw new IllegalStateException("Cannot modify classes: " + retransformedTypes,exception);
-      }
+    try {
+      collector.apply(instrumentation,byteBuddy,binaryLocator,typeStrategy,listener,nativeMethodStrategy,accessControlContext,initializationStrategy,bootstrapInjectionStrategy);
+    }
+ catch (    UnmodifiableClassException exception) {
+      throw new IllegalStateException("Cannot modify at least one class: " + collector,exception);
+    }
+catch (    ClassNotFoundException exception) {
+      throw new IllegalStateException("Cannot find at least one class class: " + collector,exception);
     }
   }
   return classFileTransformer;

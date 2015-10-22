@@ -3,11 +3,13 @@
   when(resolution.resolve()).thenReturn(typeDescription);
   when(rawMatcher.matches(typeDescription,classLoader,REDEFINED,protectionDomain)).thenReturn(false);
   when(instrumentation.isModifiableClass(REDEFINED)).thenReturn(true);
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).withInitialization(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).allowRetransformation().withBinaryLocator(binaryLocator).withTypeStrategy(typeStrategy).withListener(listener).withoutNativeMethodPrefix().type(rawMatcher).transform(transformer).installOn(instrumentation);
+  when(instrumentation.isRetransformClassesSupported()).thenReturn(true);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).withInitialization(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).withRedefinitionStrategy(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION).withBinaryLocator(binaryLocator).withTypeStrategy(typeStrategy).withListener(listener).withoutNativeMethodPrefix().type(rawMatcher).transform(transformer).installOn(instrumentation);
   verifyZeroInteractions(listener);
   verify(instrumentation).addTransformer(classFileTransformer,true);
   verify(instrumentation).isModifiableClass(REDEFINED);
   verify(instrumentation).getAllLoadedClasses();
+  verify(instrumentation).isRetransformClassesSupported();
   verifyNoMoreInteractions(instrumentation);
   verify(rawMatcher).matches(TypeDescription.OBJECT,REDEFINED.getClassLoader(),REDEFINED,REDEFINED.getProtectionDomain());
   verifyNoMoreInteractions(rawMatcher);
