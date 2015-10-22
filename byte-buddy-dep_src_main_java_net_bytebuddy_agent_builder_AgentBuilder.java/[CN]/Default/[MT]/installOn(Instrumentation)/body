@@ -16,7 +16,7 @@
         instrumentation.retransformClasses(retransformedTypes.toArray(new Class<?>[retransformedTypes.size()]));
       }
  catch (      UnmodifiableClassException exception) {
-        throw new IllegalStateException("Cannot retransform classes: " + retransformedTypes,exception);
+        throw new IllegalStateException("Cannot modify classes: " + retransformedTypes,exception);
       }
     }
   }

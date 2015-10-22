@@ -1,6 +1,6 @@
 InitializationStrategy initializationStrategy
 BinaryLocator.Initialized initialized
-DefinitionHandler definitionHandler
+DefinitionStrategy definitionStrategy
 ByteBuddy byteBuddy
 MethodRebaseResolver.MethodNameTransformer methodNameTransformer
 BootstrapInjectionStrategy bootstrapInjectionStrategy

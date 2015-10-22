@@ -1,7 +1,7 @@
 {
   this.byteBuddy=byteBuddy;
   this.binaryLocator=binaryLocator;
-  this.definitionHandler=definitionHandler;
+  this.definitionStrategy=definitionStrategy;
   this.listener=listener;
   this.nativeMethodStrategy=nativeMethodStrategy;
   this.accessControlContext=accessControlContext;

@@ -1,0 +1,3 @@
+{
+  return materialize().withDefinitionHandler(definitionStrategy);
+}

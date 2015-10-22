@@ -1,5 +1,5 @@
 {
-  DynamicType.Unloaded<?> dynamicType=initializationStrategy.apply(transformer.transform(definitionHandler.builder(typeDescription,byteBuddy,initialized.getClassFileLocator(),methodNameTransformer),typeDescription)).make();
+  DynamicType.Unloaded<?> dynamicType=initializationStrategy.apply(transformer.transform(definitionStrategy.builder(typeDescription,byteBuddy,initialized.getClassFileLocator(),methodNameTransformer),typeDescription)).make();
   Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=dynamicType.getLoadedTypeInitializers();
   if (!loadedTypeInitializers.isEmpty()) {
     ClassInjector classInjector=classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext,PackageDefinitionStrategy.NoOp.INSTANCE,true);

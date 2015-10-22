@@ -3,7 +3,7 @@
   try {
     BinaryLocator.Initialized initialized=binaryLocator.initialize(binaryTypeName,binaryRepresentation,classLoader);
     TypeDescription typeDescription=initialized.getTypePool().describe(binaryTypeName).resolve();
-    return transformation.resolve(typeDescription,classLoader,classBeingRedefined,protectionDomain).apply(initializationStrategy,initialized,definitionHandler,byteBuddy,nativeMethodStrategy.resolve(),bootstrapInjectionStrategy,accessControlContext,listener);
+    return transformation.resolve(typeDescription,classLoader,classBeingRedefined,protectionDomain).apply(initializationStrategy,initialized,definitionStrategy,byteBuddy,nativeMethodStrategy.resolve(),bootstrapInjectionStrategy,accessControlContext,listener);
   }
  catch (  Throwable throwable) {
     listener.onError(binaryTypeName,throwable);

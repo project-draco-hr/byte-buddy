@@ -1,6 +1,6 @@
 ByteBuddy byteBuddy
 BinaryLocator binaryLocator
-DefinitionHandler definitionHandler
+DefinitionStrategy definitionStrategy
 Listener listener
 NativeMethodStrategy nativeMethodStrategy
 AccessControlContext accessControlContext

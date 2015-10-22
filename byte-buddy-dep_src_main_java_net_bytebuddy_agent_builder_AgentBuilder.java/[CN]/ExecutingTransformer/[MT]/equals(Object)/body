@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ExecutingTransformer that=(ExecutingTransformer)other;
+  return byteBuddy.equals(that.byteBuddy) && binaryLocator.equals(that.binaryLocator) && definitionStrategy.equals(that.definitionStrategy)&& initializationStrategy.equals(that.initializationStrategy)&& listener.equals(that.listener)&& nativeMethodStrategy.equals(that.nativeMethodStrategy)&& bootstrapInjectionStrategy.equals(that.bootstrapInjectionStrategy)&& accessControlContext.equals(that.accessControlContext)&& transformation.equals(that.transformation);
+}

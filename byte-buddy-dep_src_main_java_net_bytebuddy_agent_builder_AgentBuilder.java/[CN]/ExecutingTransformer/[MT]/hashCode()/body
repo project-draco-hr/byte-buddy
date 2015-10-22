@@ -1,13 +1,12 @@
 {
   int result=byteBuddy.hashCode();
   result=31 * result + binaryLocator.hashCode();
-  result=31 * result + listener.hashCode();
   result=31 * result + definitionStrategy.hashCode();
-  result=31 * result + nativeMethodStrategy.hashCode();
-  result=31 * result + accessControlContext.hashCode();
   result=31 * result + initializationStrategy.hashCode();
-  result=31 * result + (retransformation ? 1 : 0);
+  result=31 * result + listener.hashCode();
+  result=31 * result + nativeMethodStrategy.hashCode();
   result=31 * result + bootstrapInjectionStrategy.hashCode();
+  result=31 * result + accessControlContext.hashCode();
   result=31 * result + transformation.hashCode();
   return result;
 }

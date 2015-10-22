@@ -1,0 +1,9 @@
+ByteBuddy byteBuddy
+BinaryLocator binaryLocator
+DefinitionStrategy definitionStrategy
+Listener listener
+NativeMethodStrategy nativeMethodStrategy
+AccessControlContext accessControlContext
+InitializationStrategy initializationStrategy
+BootstrapInjectionStrategy bootstrapInjectionStrategy
+Transformation transformation
