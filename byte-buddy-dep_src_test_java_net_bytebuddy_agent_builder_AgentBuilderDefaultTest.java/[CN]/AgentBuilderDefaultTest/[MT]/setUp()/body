@@ -1,11 +1,4 @@
 {
-  classFileTransformers=new LinkedList<ClassFileTransformer>();
-  doAnswer(new Answer<Object>(){
-    @Override public Object answer(    InvocationOnMock invocation) throws Throwable {
-      return classFileTransformers.add((ClassFileTransformer)invocation.getArguments()[0]);
-    }
-  }
-).when(instrumentation).addTransformer(any(ClassFileTransformer.class),anyBoolean());
   when(builder.make()).thenReturn((DynamicType.Unloaded)unloaded);
   when(unloaded.getTypeDescription()).thenReturn(typeDescription);
   when(definitionHandler.builder(any(TypeDescription.class),eq(byteBuddy),any(ClassFileLocator.class),any(MethodRebaseResolver.MethodNameTransformer.class))).thenReturn((DynamicType.Builder)builder);

@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Resolution that=(Resolution)other;
+  return typeDescription.equals(that.typeDescription) && !(classLoader != null ? !classLoader.equals(that.classLoader) : that.classLoader != null) && !(protectionDomain != null ? !protectionDomain.equals(that.protectionDomain) : that.protectionDomain != null)&& transformer.equals(that.transformer);
+}

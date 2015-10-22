@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Default.Transformation.Simple.Resolution{" + "typeDescription=" + typeDescription + ", classLoader="+ classLoader+ ", protectionDomain="+ protectionDomain+ ", transformer="+ transformer+ '}';
+}

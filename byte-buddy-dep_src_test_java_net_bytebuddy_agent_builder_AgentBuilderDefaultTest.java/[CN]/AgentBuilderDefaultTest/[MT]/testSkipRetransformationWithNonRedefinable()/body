@@ -1,14 +1,13 @@
 {
   when(unloaded.getBytes()).thenReturn(BAZ);
   when(resolution.resolve()).thenReturn(typeDescription);
-  when(rawMatcher.matches(typeDescription,classLoader,REDEFINED,protectionDomain)).thenReturn(false);
-  when(instrumentation.isModifiableClass(REDEFINED)).thenReturn(true);
+  when(rawMatcher.matches(typeDescription,classLoader,REDEFINED,protectionDomain)).thenReturn(true);
+  when(instrumentation.isModifiableClass(REDEFINED)).thenReturn(false);
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).disableSelfInitialization().allowRetransformation().withBinaryLocator(binaryLocator).withDefinitionHandler(definitionHandler).withListener(listener).type(rawMatcher).transform(transformer).installOn(instrumentation);
   verifyZeroInteractions(listener);
   verify(instrumentation).addTransformer(classFileTransformer,true);
   verify(instrumentation).isModifiableClass(REDEFINED);
   verify(instrumentation).getAllLoadedClasses();
   verifyNoMoreInteractions(instrumentation);
-  verify(rawMatcher).matches(TypeDescription.OBJECT,REDEFINED.getClassLoader(),REDEFINED,REDEFINED.getProtectionDomain());
-  verifyNoMoreInteractions(rawMatcher);
+  verifyZeroInteractions(rawMatcher);
 }
