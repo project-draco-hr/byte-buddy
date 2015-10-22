@@ -1,0 +1,6 @@
+{
+  if (prefix.length() == 0) {
+    throw new IllegalArgumentException("A method name prefix must not be the empty string");
+  }
+  return new ForPrefix(prefix);
+}

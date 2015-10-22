@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(AgentBuilder.Default.NativeMethodStrategy.Disabled.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.NativeMethodStrategy.ForPrefix.class).apply();
+}

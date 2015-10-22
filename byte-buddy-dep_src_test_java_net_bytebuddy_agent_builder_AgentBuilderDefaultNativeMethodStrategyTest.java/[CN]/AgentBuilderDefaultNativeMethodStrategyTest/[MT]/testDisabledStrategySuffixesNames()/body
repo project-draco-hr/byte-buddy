@@ -1,0 +1,4 @@
+{
+  assertThat(AgentBuilder.Default.NativeMethodStrategy.Disabled.INSTANCE.resolve().transform(methodDescription),startsWith(BAR));
+  assertThat(AgentBuilder.Default.NativeMethodStrategy.Disabled.INSTANCE.resolve().transform(methodDescription),not(BAR));
+}

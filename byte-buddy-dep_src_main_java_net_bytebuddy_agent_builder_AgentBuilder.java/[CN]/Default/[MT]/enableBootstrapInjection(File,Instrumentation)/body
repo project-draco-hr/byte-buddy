@@ -1,3 +1,3 @@
 {
-  return new Default(byteBuddy,binaryLocator,definitionHandler,listener,nativeMethodPrefix,accessControlContext,InitializationStrategy.SelfInjection.INSTANCE,retransformation,new BootstrapInjectionStrategy.Enabled(nonNull(folder),nonNull(instrumentation)),transformation);
+  return new Default(byteBuddy,binaryLocator,definitionHandler,listener,nativeMethodStrategy,accessControlContext,InitializationStrategy.SelfInjection.INSTANCE,retransformation,new BootstrapInjectionStrategy.Enabled(nonNull(folder),nonNull(instrumentation)),transformation);
 }

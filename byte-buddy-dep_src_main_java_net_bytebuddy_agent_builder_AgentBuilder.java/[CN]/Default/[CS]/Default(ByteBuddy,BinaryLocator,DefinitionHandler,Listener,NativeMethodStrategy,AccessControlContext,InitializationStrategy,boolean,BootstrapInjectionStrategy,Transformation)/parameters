@@ -2,7 +2,7 @@ ByteBuddy byteBuddy
 BinaryLocator binaryLocator
 DefinitionHandler definitionHandler
 Listener listener
-String nativeMethodPrefix
+NativeMethodStrategy nativeMethodStrategy
 AccessControlContext accessControlContext
 InitializationStrategy initializationStrategy
 boolean retransformation

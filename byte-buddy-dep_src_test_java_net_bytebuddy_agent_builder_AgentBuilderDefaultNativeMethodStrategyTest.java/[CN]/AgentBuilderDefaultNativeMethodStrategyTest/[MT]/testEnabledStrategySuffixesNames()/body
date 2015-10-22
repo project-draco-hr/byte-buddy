@@ -1,0 +1,3 @@
+{
+  assertThat(new AgentBuilder.Default.NativeMethodStrategy.ForPrefix(FOO).resolve().transform(methodDescription),is(FOO + BAR));
+}

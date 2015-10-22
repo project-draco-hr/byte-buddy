@@ -3,7 +3,7 @@
   this.binaryLocator=binaryLocator;
   this.definitionHandler=definitionHandler;
   this.listener=listener;
-  this.nativeMethodPrefix=nativeMethodPrefix;
+  this.nativeMethodStrategy=nativeMethodStrategy;
   this.accessControlContext=accessControlContext;
   this.initializationStrategy=initializationStrategy;
   this.retransformation=retransformation;

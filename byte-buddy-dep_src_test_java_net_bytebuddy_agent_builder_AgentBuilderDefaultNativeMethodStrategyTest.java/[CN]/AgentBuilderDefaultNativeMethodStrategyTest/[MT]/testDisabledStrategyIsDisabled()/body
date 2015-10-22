@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.Default.NativeMethodStrategy.Disabled.INSTANCE.isEnabled(),is(false));
+}

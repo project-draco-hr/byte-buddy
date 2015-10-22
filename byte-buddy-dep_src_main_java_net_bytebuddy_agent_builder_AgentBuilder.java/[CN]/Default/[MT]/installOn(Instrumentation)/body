@@ -1,8 +1,8 @@
 {
   ClassFileTransformer classFileTransformer=makeRaw();
   instrumentation.addTransformer(classFileTransformer,retransformation);
-  if (!NO_NATIVE_PREFIX.equals(nativeMethodPrefix)) {
-    instrumentation.setNativeMethodPrefix(classFileTransformer,nativeMethodPrefix);
+  if (nativeMethodStrategy.isEnabled()) {
+    instrumentation.setNativeMethodPrefix(classFileTransformer,nativeMethodStrategy.getPrefix());
   }
   if (retransformation) {
     List<Class<?>> retransformedTypes=new LinkedList<Class<?>>();

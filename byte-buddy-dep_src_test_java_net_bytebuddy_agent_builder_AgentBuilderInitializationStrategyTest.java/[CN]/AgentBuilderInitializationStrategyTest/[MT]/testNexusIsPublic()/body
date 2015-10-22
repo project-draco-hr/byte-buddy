@@ -1,0 +1,7 @@
+{
+  Class<?> type=AgentBuilder.InitializationStrategy.SelfInjection.Nexus.class;
+  while (type != null) {
+    assertThat(Modifier.isPublic(type.getModifiers()),is(true));
+    type=type.getDeclaringClass();
+  }
+}
