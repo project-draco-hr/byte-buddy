@@ -5,17 +5,9 @@
     TypeDescription typeDescription=initialized.getTypePool().describe(binaryTypeName).resolve();
     for (    Transformation transformation : transformations) {
       if (transformation.matches(typeDescription,classLoader,classBeingRedefined,protectionDomain)) {
-        DynamicType.Unloaded<?> dynamicType=initializationStrategy.apply(transformation.transform(definitionHandler.builder(typeDescription,byteBuddy,initialized.getClassFileLocator(),methodNameTransformer),typeDescription)).make();
-        Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=dynamicType.getLoadedTypeInitializers();
-        if (loadedTypeInitializers.size() > 1) {
-          ClassInjector classInjector=classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext,PackageDefinitionStrategy.NoOp.INSTANCE,true);
-          for (          Map.Entry<TypeDescription,Class<?>> auxiliary : classInjector.inject(dynamicType.getRawAuxiliaryTypes()).entrySet()) {
-            initializationStrategy.initialize(auxiliary.getValue(),loadedTypeInitializers.get(auxiliary.getKey()));
-          }
-        }
-        initializationStrategy.register(binaryTypeName,classLoader,loadedTypeInitializers.get(dynamicType.getTypeDescription()));
-        listener.onTransformation(typeDescription,dynamicType);
-        return dynamicType.getBytes();
+        byte[] transformed=transformation.apply(typeDescription,initialized,classLoader,protectionDomain,initializationStrategy,definitionHandler,byteBuddy,methodNameTransformer,bootstrapInjectionStrategy,accessControlContext);
+        listener.onTransformation(typeDescription,null);
+        return transformed;
       }
     }
     listener.onIgnored(binaryTypeName);

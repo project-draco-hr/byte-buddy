@@ -1,4 +1,0 @@
-{
-  this.rawMatcher=rawMatcher;
-  this.transformer=transformer;
-}

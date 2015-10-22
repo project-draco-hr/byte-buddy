@@ -1,5 +1,0 @@
-{
-  int result=rawMatcher.hashCode();
-  result=31 * result + transformer.hashCode();
-  return result;
-}

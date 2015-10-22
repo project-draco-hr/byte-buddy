@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && rawMatcher.equals(((Transformation)other).rawMatcher) && transformer.equals(((Transformation)other).transformer);
-}
