@@ -1,0 +1,3 @@
+{
+  return "MethodCallProxy.ConstructorCall." + name();
+}
