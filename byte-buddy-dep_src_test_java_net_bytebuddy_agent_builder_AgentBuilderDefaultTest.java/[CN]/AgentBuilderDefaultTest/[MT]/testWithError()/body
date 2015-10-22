@@ -3,7 +3,7 @@
   RuntimeException exception=mock(RuntimeException.class);
   when(resolution.resolve()).thenThrow(exception);
   when(rawMatcher.matches(typeDescription,classLoader,REDEFINED,protectionDomain)).thenReturn(true);
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).withInitialization(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).withBinaryLocator(binaryLocator).withDefinitionHandler(definitionStrategy).withListener(listener).withoutNativeMethodPrefix().type(rawMatcher).transform(transformer).installOn(instrumentation);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).withInitialization(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).withBinaryLocator(binaryLocator).withDefinitionStrategy(definitionStrategy).withListener(listener).withoutNativeMethodPrefix().type(rawMatcher).transform(transformer).installOn(instrumentation);
   assertThat(classFileTransformer.transform(classLoader,FOO,REDEFINED,protectionDomain,QUX),nullValue(byte[].class));
   verify(listener).onError(FOO,exception);
   verify(listener).onComplete(FOO);
