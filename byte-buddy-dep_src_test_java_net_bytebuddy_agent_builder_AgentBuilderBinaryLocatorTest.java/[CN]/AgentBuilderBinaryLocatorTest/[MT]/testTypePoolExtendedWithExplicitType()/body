@@ -1,3 +1,0 @@
-{
-  assertThat(AgentBuilder.BinaryLocator.Default.EXTENDED.initialize(classLoader,FOO,QUX).getTypePool(),notNullValue(TypePool.class));
-}

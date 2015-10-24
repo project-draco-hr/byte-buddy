@@ -1,0 +1,6 @@
+{
+  int result=delegate.hashCode();
+  result=31 * result + typeName.hashCode();
+  result=31 * result + Arrays.hashCode(binaryRepresentation);
+  return result;
+}

@@ -7,8 +7,8 @@
   when(unloaded.getLoadedTypeInitializers()).thenReturn(loadedTypeInitializers);
   when(unloaded.getBytes()).thenReturn(BAZ);
   when(transformer.transform(builder,new TypeDescription.ForLoadedType(REDEFINED))).thenReturn((DynamicType.Builder)builder);
-  when(binaryLocator.initialize(REDEFINED.getClassLoader(),REDEFINED.getName(),QUX)).thenReturn(initialized);
-  when(initialized.getTypePool()).thenReturn(typePool);
+  when(binaryLocator.classFileLocator(REDEFINED.getClassLoader())).thenReturn(classFileLocator);
+  when(binaryLocator.typePool(any(ClassFileLocator.class))).thenReturn(typePool);
   when(typePool.describe(REDEFINED.getName())).thenReturn(resolution);
   when(instrumentation.getAllLoadedClasses()).thenReturn(new Class<?>[]{REDEFINED});
 }

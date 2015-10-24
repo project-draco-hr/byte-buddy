@@ -1,6 +1,6 @@
 {
   when(byteBuddy.rebase(typeDescription,classFileLocator,methodNameTransformer)).thenReturn((DynamicType.Builder)dynamicTypeBuilder);
-  assertThat(AgentBuilder.TypeStrategy.REBASE.builder(typeDescription,byteBuddy,classFileLocator,methodNameTransformer),is((DynamicType.Builder)dynamicTypeBuilder));
+  assertThat(AgentBuilder.TypeStrategy.Default.REBASE.builder(typeDescription,byteBuddy,classFileLocator,methodNameTransformer),is((DynamicType.Builder)dynamicTypeBuilder));
   verify(byteBuddy).rebase(typeDescription,classFileLocator,methodNameTransformer);
   verifyNoMoreInteractions(byteBuddy);
 }

@@ -1,3 +1,3 @@
 {
-  this(nonNull(byteBuddy),BinaryLocator.Default.FAST,TypeStrategy.REBASE,Listener.NoOp.INSTANCE,NativeMethodStrategy.Disabled.INSTANCE,AccessController.getContext(),InitializationStrategy.SelfInjection.INSTANCE,RedefinitionStrategy.DISABLED,BootstrapInjectionStrategy.Disabled.INSTANCE,Transformation.Ignored.INSTANCE);
+  this(nonNull(byteBuddy),BinaryLocator.Default.FAST,TypeStrategy.Default.REBASE,Listener.NoOp.INSTANCE,NativeMethodStrategy.Disabled.INSTANCE,AccessController.getContext(),InitializationStrategy.SelfInjection.INSTANCE,RedefinitionStrategy.DISABLED,BootstrapInjectionStrategy.Disabled.INSTANCE,Transformation.Ignored.INSTANCE);
 }

@@ -1,0 +1,11 @@
+{
+  when(unloaded.getBytes()).thenReturn(BAZ);
+  when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),REDEFINED,REDEFINED.getProtectionDomain())).thenReturn(true);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).withInitialization(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).withBinaryLocator(binaryLocator).withTypeStrategy(typeStrategy).withListener(listener).withoutNativeMethodPrefix().type(rawMatcher).transform(transformer).installOn(instrumentation);
+  assertThat(classFileTransformer.transform(REDEFINED.getClassLoader(),REDEFINED.getName(),REDEFINED,REDEFINED.getProtectionDomain(),QUX),is(BAZ));
+  verify(listener).onTransformation(new TypeDescription.ForLoadedType(REDEFINED),unloaded);
+  verify(listener).onComplete(REDEFINED.getName());
+  verifyNoMoreInteractions(listener);
+  verify(instrumentation).addTransformer(classFileTransformer,false);
+  verifyNoMoreInteractions(instrumentation);
+}

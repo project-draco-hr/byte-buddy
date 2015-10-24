@@ -1,20 +1,14 @@
 {
   String binaryTypeName=internalTypeName.replace('/','.');
   try {
-    BinaryLocator.Initialized initialized=binaryLocator.initialize(classLoader,binaryTypeName,binaryRepresentation);
-    try {
-      TypeDescription typeDescription=initialized.getTypePool().describe(binaryTypeName).resolve();
-      return transformation.resolve(typeDescription,classLoader,classBeingRedefined,protectionDomain).apply(initializationStrategy,initialized,typeStrategy,byteBuddy,nativeMethodStrategy.resolve(),bootstrapInjectionStrategy,accessControlContext,listener);
-    }
- catch (    Throwable throwable) {
-      listener.onError(binaryTypeName,throwable);
-      return NO_TRANSFORMATION;
-    }
- finally {
-      initialized.getTypePool().clear();
-    }
+    ClassFileLocator classFileLocator=new InstrumentedTypeLocator(binaryLocator.classFileLocator(classLoader),binaryTypeName,binaryRepresentation);
+    return transformation.resolve(classBeingRedefined == null ? binaryLocator.typePool(classFileLocator).describe(binaryTypeName).resolve() : new TypeDescription.ForLoadedType(classBeingRedefined),classLoader,classBeingRedefined,protectionDomain).apply(initializationStrategy,classFileLocator,typeStrategy,byteBuddy,nativeMethodStrategy.resolve(),bootstrapInjectionStrategy,accessControlContext,listener);
   }
-  finally {
+ catch (  Throwable throwable) {
+    listener.onError(binaryTypeName,throwable);
+    return NO_TRANSFORMATION;
+  }
+ finally {
     listener.onComplete(binaryTypeName);
   }
 }

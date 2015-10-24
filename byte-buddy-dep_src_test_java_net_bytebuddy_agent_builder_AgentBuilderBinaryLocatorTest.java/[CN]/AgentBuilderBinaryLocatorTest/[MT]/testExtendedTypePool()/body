@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.BinaryLocator.Default.EXTENDED.typePool(classFileLocator),notNullValue(TypePool.class));
+}

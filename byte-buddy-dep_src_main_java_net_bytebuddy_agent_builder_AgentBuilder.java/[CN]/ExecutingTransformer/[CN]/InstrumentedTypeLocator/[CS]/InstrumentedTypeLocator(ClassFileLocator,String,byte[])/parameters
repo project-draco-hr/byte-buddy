@@ -1,0 +1,3 @@
+ClassFileLocator delegate
+String typeName
+byte[] binaryRepresentation

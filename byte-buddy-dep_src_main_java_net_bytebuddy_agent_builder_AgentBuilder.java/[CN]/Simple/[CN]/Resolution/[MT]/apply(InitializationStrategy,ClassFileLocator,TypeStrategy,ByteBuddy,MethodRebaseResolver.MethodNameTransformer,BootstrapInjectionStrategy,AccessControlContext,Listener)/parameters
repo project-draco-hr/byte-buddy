@@ -1,5 +1,5 @@
 InitializationStrategy initializationStrategy
-BinaryLocator.Initialized initialized
+ClassFileLocator classFileLocator
 TypeStrategy typeStrategy
 ByteBuddy byteBuddy
 MethodRebaseResolver.MethodNameTransformer methodNameTransformer
