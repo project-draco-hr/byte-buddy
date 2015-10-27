@@ -7,17 +7,30 @@
   if (redefinitionStrategy.isEnabled()) {
     RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
     for (    Class<?> type : instrumentation.getAllLoadedClasses()) {
-      if (instrumentation.isModifiableClass(type)) {
-        try {
-          collector.consider(type);
+      try {
+        if (!instrumentation.isModifiableClass(type) || !collector.consider(type)) {
+          try {
+            try {
+              listener.onIgnored(new TypeDescription.ForLoadedType(type));
+            }
+  finally {
+              listener.onComplete(type.getName());
+            }
+          }
+ catch (          Throwable ignored) {
+          }
         }
- catch (        Throwable throwable) {
+      }
+ catch (      Throwable throwable) {
+        try {
           try {
             listener.onError(type.getName(),throwable);
           }
   finally {
             listener.onComplete(type.getName());
           }
+        }
+ catch (        Throwable ignored) {
         }
       }
     }
