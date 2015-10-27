@@ -8,7 +8,17 @@
     RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
     for (    Class<?> type : instrumentation.getAllLoadedClasses()) {
       if (instrumentation.isModifiableClass(type)) {
-        collector.consider(type);
+        try {
+          collector.consider(type);
+        }
+ catch (        Throwable throwable) {
+          try {
+            listener.onError(type.getName(),throwable);
+          }
+  finally {
+            listener.onComplete(type.getName());
+          }
+        }
       }
     }
     try {
