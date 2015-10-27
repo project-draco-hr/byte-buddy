@@ -11,4 +11,5 @@
   when(binaryLocator.typePool(any(ClassFileLocator.class))).thenReturn(typePool);
   when(typePool.describe(REDEFINED.getName())).thenReturn(resolution);
   when(instrumentation.getAllLoadedClasses()).thenReturn(new Class<?>[]{REDEFINED});
+  when(initializationStrategy.apply(builder)).thenReturn((DynamicType.Builder)builder);
 }

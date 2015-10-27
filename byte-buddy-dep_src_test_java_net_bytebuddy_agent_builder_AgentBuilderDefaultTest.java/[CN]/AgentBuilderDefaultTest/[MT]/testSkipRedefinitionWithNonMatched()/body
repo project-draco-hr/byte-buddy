@@ -4,7 +4,7 @@
   when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),REDEFINED,REDEFINED.getProtectionDomain())).thenReturn(false);
   when(instrumentation.isModifiableClass(REDEFINED)).thenReturn(true);
   when(instrumentation.isRedefineClassesSupported()).thenReturn(true);
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).withInitialization(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).withRedefinitionStrategy(AgentBuilder.RedefinitionStrategy.REDEFINITION).withBinaryLocator(binaryLocator).withTypeStrategy(typeStrategy).withListener(listener).withoutNativeMethodPrefix().type(rawMatcher).transform(transformer).installOn(instrumentation);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).withInitializationStrategy(initializationStrategy).withRedefinitionStrategy(AgentBuilder.RedefinitionStrategy.REDEFINITION).withBinaryLocator(binaryLocator).withTypeStrategy(typeStrategy).withListener(listener).withoutNativeMethodPrefix().type(rawMatcher).transform(transformer).installOn(instrumentation);
   verifyZeroInteractions(listener);
   verify(instrumentation).addTransformer(classFileTransformer,false);
   verify(instrumentation).isModifiableClass(REDEFINED);
@@ -13,4 +13,5 @@
   verifyNoMoreInteractions(instrumentation);
   verify(rawMatcher).matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),REDEFINED,REDEFINED.getProtectionDomain());
   verifyNoMoreInteractions(rawMatcher);
+  verifyZeroInteractions(initializationStrategy);
 }

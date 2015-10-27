@@ -1,3 +1,3 @@
 {
-  new AgentBuilder.Default(byteBuddy).withInitialization(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).withRedefinitionStrategy(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION).withBinaryLocator(binaryLocator).withTypeStrategy(typeStrategy).withListener(listener).withoutNativeMethodPrefix().type(rawMatcher).transform(transformer).installOn(instrumentation);
+  new AgentBuilder.Default(byteBuddy).withInitializationStrategy(initializationStrategy).withRedefinitionStrategy(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION).withBinaryLocator(binaryLocator).withTypeStrategy(typeStrategy).withListener(listener).withoutNativeMethodPrefix().type(rawMatcher).transform(transformer).installOn(instrumentation);
 }

@@ -1,6 +1,6 @@
 {
   assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().withInitialization(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).withNativeMethodPrefix(QUX).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new FooTransformer()).installOnByteBuddyAgent();
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().withInitializationStrategy(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).withNativeMethodPrefix(QUX).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new FooTransformer()).installOnByteBuddyAgent();
   try {
     Class<?> type=classLoader.loadClass(Baz.class.getName());
     assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),is((Object)BAR));

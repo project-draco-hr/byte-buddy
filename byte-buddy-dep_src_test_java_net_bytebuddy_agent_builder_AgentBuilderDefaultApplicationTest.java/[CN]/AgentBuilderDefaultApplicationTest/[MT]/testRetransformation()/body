@@ -1,7 +1,7 @@
 {
   assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   assertThat(classLoader.loadClass(SimpleType.class.getName()).getName(),is(SimpleType.class.getName()));
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().withInitialization(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).withTypeStrategy(AgentBuilder.TypeStrategy.Default.REDEFINE).withRedefinitionStrategy(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new FooTransformer()).installOnByteBuddyAgent();
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().withInitializationStrategy(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).withTypeStrategy(AgentBuilder.TypeStrategy.Default.REDEFINE).withRedefinitionStrategy(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new FooTransformer()).installOnByteBuddyAgent();
   try {
     Class<?> type=classLoader.loadClass(SimpleType.class.getName());
     assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),is((Object)BAR));

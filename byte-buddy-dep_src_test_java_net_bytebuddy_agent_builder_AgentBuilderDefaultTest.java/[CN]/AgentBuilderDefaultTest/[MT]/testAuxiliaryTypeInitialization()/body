@@ -1,4 +1,10 @@
 {
+  when(unloaded.getRawAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>singletonMap(new TypeDescription.ForLoadedType(AUXILIARY),QUX));
+  Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=new HashMap<TypeDescription,LoadedTypeInitializer>();
+  loadedTypeInitializers.put(new TypeDescription.ForLoadedType(REDEFINED),loadedTypeInitializer);
+  LoadedTypeInitializer auxiliaryInitializer=mock(LoadedTypeInitializer.class);
+  loadedTypeInitializers.put(new TypeDescription.ForLoadedType(AUXILIARY),auxiliaryInitializer);
+  when(unloaded.getLoadedTypeInitializers()).thenReturn(loadedTypeInitializers);
   when(unloaded.getBytes()).thenReturn(BAZ);
   when(resolution.resolve()).thenReturn(new TypeDescription.ForLoadedType(REDEFINED));
   when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),null,REDEFINED.getProtectionDomain())).thenReturn(true);
@@ -11,5 +17,6 @@
   verifyNoMoreInteractions(instrumentation);
   verify(initializationStrategy).apply(builder);
   verify(initializationStrategy).register(REDEFINED.getName(),REDEFINED.getClassLoader(),loadedTypeInitializer);
+  verify(initializationStrategy).initialize(AUXILIARY,auxiliaryInitializer);
   verifyNoMoreInteractions(initializationStrategy);
 }
