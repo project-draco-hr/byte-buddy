@@ -2,7 +2,7 @@
   String binaryTypeName=internalTypeName.replace('/','.');
   try {
     ClassFileLocator classFileLocator=new InstrumentedTypeLocator(binaryLocator.classFileLocator(classLoader),binaryTypeName,binaryRepresentation);
-    return transformation.resolve(classBeingRedefined == null ? binaryLocator.typePool(classFileLocator).describe(binaryTypeName).resolve() : new TypeDescription.ForLoadedType(classBeingRedefined),classLoader,classBeingRedefined,protectionDomain).apply(initializationStrategy,classFileLocator,typeStrategy,byteBuddy,nativeMethodStrategy.resolve(),bootstrapInjectionStrategy,accessControlContext,listener);
+    return transformation.resolve(classBeingRedefined == null ? binaryLocator.typePool(classFileLocator).describe(binaryTypeName).resolve() : new TypeDescription.ForLoadedType(classBeingRedefined),classLoader,classBeingRedefined,protectionDomain).apply(initializationStrategy,classFileLocator,typeStrategy,byteBuddy,nativeMethodStrategy,bootstrapInjectionStrategy,accessControlContext,listener);
   }
  catch (  Throwable throwable) {
     listener.onError(binaryTypeName,throwable);

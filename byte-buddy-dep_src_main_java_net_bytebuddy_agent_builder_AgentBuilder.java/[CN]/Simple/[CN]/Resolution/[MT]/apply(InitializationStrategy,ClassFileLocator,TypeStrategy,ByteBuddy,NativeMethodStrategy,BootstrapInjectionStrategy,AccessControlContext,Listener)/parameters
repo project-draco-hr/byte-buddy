@@ -2,7 +2,7 @@ InitializationStrategy initializationStrategy
 ClassFileLocator classFileLocator
 TypeStrategy typeStrategy
 ByteBuddy byteBuddy
-MethodRebaseResolver.MethodNameTransformer methodNameTransformer
+NativeMethodStrategy methodNameTransformer
 BootstrapInjectionStrategy bootstrapInjectionStrategy
 AccessControlContext accessControlContext
 Listener listener
