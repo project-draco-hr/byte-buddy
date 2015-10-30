@@ -1,5 +1,4 @@
 {
   this.fieldName=fieldName;
   this.value=value;
-  this.makeAccessible=makeAccessible;
 }

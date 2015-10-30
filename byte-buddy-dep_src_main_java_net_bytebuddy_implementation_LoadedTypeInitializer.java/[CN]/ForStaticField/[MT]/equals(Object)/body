@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   ForStaticField that=(ForStaticField)other;
-  return makeAccessible == that.makeAccessible && fieldName.equals(that.fieldName) && value.equals(that.value);
+  return fieldName.equals(that.fieldName) && value.equals(that.value);
 }

@@ -1,7 +1,7 @@
 {
   try {
     Field field=type.getDeclaredField(fieldName);
-    if (makeAccessible) {
+    if (!Modifier.isPublic(field.getModifiers()) || !Modifier.isPublic(field.getDeclaringClass().getModifiers())) {
       AccessController.doPrivileged(new FieldAccessibilityAction(field));
     }
     field.set(STATIC_FIELD,value);
