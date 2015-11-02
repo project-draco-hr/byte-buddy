@@ -1,0 +1,7 @@
+{
+  Object object=new Object();
+  LoadedTypeInitializer loadedTypeInitializer=new LoadedTypeInitializer.ForStaticField(FOO,object);
+  assertThat(loadedTypeInitializer.isAlive(),is(true));
+  loadedTypeInitializer.onLoad(Qux.class);
+  assertThat(Qux.foo,is(object));
+}
