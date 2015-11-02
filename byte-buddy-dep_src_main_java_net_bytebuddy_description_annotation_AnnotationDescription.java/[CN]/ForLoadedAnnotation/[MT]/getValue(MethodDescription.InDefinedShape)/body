@@ -3,7 +3,7 @@
     throw new IllegalArgumentException(methodDescription + " does not represent " + annotation.annotationType());
   }
   try {
-    boolean accessible=Modifier.isPublic(methodDescription.getDeclaringType().getModifiers());
+    boolean accessible=methodDescription.getDeclaringType().isPublic();
     Method method=methodDescription instanceof MethodDescription.ForLoadedMethod ? ((MethodDescription.ForLoadedMethod)methodDescription).getLoadedMethod() : null;
     if (method == null || (!accessible && !method.isAccessible())) {
       method=annotation.annotationType().getDeclaredMethod(methodDescription.getName());
