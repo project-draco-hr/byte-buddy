@@ -3,6 +3,7 @@
   this.namingStrategy=namingStrategy;
   this.auxiliaryTypeNamingStrategy=auxiliaryTypeNamingStrategy;
   this.implementationContextFactory=implementationContextFactory;
+  this.typeInitializer=typeInitializer;
   this.targetType=targetType;
   this.interfaceTypes=interfaceTypes;
   this.modifiers=modifiers;

@@ -2,7 +2,8 @@ ClassFileVersion classFileVersion
 NamingStrategy namingStrategy
 AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
 Implementation.Context.Factory implementationContextFactory
-TypeDescription targetType
+InstrumentedType.TypeInitializer typeInitializer
+TypeDescription levelType
 List<GenericTypeDescription> interfaceTypes
 int modifiers
 TypeAttributeAppender attributeAppender
