@@ -14,7 +14,9 @@
   verifyNoMoreInteractions(instrumentation);
   verify(rawMatcher).matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),REDEFINED,REDEFINED.getProtectionDomain());
   verifyNoMoreInteractions(rawMatcher);
-  verify(initializationStrategy).apply(builder);
-  verify(initializationStrategy).register(REDEFINED.getName(),REDEFINED.getClassLoader(),loadedTypeInitializer);
+  verify(initializationStrategy).dispatcher();
   verifyNoMoreInteractions(initializationStrategy);
+  verify(dispatcher).apply(builder);
+  verify(dispatcher).register(REDEFINED.getName(),REDEFINED.getClassLoader(),loadedTypeInitializer);
+  verifyNoMoreInteractions(dispatcher);
 }
