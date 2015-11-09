@@ -1,0 +1,4 @@
+{
+  when(leftType.isAssignableTo(rightType)).thenReturn(true);
+  assertThat(frameComputingClassWriter.getCommonSuperClass(FOO,BAR),is(BAZ));
+}

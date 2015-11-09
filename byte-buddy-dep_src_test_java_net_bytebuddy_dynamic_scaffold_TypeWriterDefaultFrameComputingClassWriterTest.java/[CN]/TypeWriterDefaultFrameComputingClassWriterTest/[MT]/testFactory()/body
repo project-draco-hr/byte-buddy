@@ -1,0 +1,4 @@
+{
+  assertThat(TypeWriter.Default.FrameComputingClassWriter.of(mock(ClassReader.class),0,mock(ClassFileLocator.class)),not(instanceOf(TypeWriter.Default.FrameComputingClassWriter.class)));
+  assertThat(TypeWriter.Default.FrameComputingClassWriter.of(mock(ClassReader.class),ClassWriter.COMPUTE_FRAMES,mock(ClassFileLocator.class)),instanceOf(TypeWriter.Default.FrameComputingClassWriter.class));
+}

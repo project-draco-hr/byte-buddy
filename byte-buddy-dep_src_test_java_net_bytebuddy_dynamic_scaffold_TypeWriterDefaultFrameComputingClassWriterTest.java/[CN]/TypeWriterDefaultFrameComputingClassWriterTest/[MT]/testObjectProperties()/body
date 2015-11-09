@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypeWriter.Default.FrameComputingClassWriter.class).applyBasic();
+}

@@ -1,0 +1,4 @@
+{
+  when(rightType.isInterface()).thenReturn(true);
+  assertThat(frameComputingClassWriter.getCommonSuperClass(FOO,BAR),is(TypeDescription.OBJECT.getInternalName()));
+}

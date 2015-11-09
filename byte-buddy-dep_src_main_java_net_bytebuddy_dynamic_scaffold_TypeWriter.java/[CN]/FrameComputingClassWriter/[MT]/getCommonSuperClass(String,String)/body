@@ -1,0 +1,20 @@
+{
+  TypeDescription leftType=typePool.describe(leftTypeName.replace('/','.')).resolve();
+  TypeDescription rightType=typePool.describe(rightTypeName.replace('/','.')).resolve();
+  if (leftType.isAssignableFrom(rightType)) {
+    return leftType.getInternalName();
+  }
+ else   if (leftType.isAssignableTo(rightType)) {
+    return rightType.getInternalName();
+  }
+ else   if (leftType.isInterface() || rightType.isInterface()) {
+    return TypeDescription.OBJECT.getInternalName();
+  }
+ else {
+    do {
+      leftType=leftType.getSuperType().asErasure();
+    }
+ while (!leftType.isAssignableFrom(rightType));
+    return leftType.getInternalName();
+  }
+}

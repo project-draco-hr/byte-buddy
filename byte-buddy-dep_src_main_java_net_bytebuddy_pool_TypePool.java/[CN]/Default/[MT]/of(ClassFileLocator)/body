@@ -1,0 +1,3 @@
+{
+  return new Default(new CacheProvider.Simple(),classFileLocator,ReaderMode.FAST);
+}
