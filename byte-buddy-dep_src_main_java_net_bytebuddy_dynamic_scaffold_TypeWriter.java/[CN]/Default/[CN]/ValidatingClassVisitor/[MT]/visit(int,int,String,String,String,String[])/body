@@ -1,5 +1,5 @@
 {
-  ClassFileVersion classFileVersion=new ClassFileVersion(version);
+  ClassFileVersion classFileVersion=ClassFileVersion.of(version);
   List<Constraint> constraints=new LinkedList<Constraint>();
   constraints.add(new Constraint.ForClassFileVersion(classFileVersion));
   if (name.endsWith('/' + PackageDescription.PACKAGE_CLASS_NAME)) {

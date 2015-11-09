@@ -1,6 +1,6 @@
 {
-  if (!(versionNumber > 0)) {
+  if (versionNumber < 1) {
     throw new IllegalArgumentException("Class version " + versionNumber + " is not valid");
   }
-  return versionNumber;
+  return new ClassFileVersion(versionNumber);
 }
