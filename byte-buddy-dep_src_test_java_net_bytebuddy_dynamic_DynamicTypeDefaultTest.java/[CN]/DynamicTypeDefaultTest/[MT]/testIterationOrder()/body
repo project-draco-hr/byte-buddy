@@ -1,0 +1,8 @@
+{
+  Iterator<TypeDescription> types=dynamicType.getAllTypes().keySet().iterator();
+  assertThat(types.hasNext(),is(true));
+  assertThat(types.next(),is(typeDescription));
+  assertThat(types.hasNext(),is(true));
+  assertThat(types.next(),is(auxiliaryTypeDescription));
+  assertThat(types.hasNext(),is(false));
+}
