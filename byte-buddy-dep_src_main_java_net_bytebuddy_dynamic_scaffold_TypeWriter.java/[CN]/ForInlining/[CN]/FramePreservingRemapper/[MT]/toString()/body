@@ -1,3 +1,3 @@
 {
-  return "TypeWriter.Default.ForInlining.FramePreservingRemapper{" + "}";
+  return "TypeWriter.Default.ForInlining.FramePreservingRemapper{" + "remapper=" + remapper + ", className="+ className+ "}";
 }

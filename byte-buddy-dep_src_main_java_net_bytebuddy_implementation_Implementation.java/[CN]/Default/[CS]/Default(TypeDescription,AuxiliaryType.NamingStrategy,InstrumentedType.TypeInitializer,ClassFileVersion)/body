@@ -10,5 +10,6 @@
   auxiliaryTypes=new HashMap<AuxiliaryType,DynamicType>();
   registeredFieldCacheEntries=new HashMap<FieldCacheEntry,FieldDescription>();
   suffix=RandomString.make();
-  canRegisterFieldCache=true;
+  fieldCacheCanAppendEntries=true;
+  prohibitTypeInitiailzer=false;
 }

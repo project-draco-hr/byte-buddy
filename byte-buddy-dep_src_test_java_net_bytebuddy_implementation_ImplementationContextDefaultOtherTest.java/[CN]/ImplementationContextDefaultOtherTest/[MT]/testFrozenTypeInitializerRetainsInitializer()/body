@@ -1,0 +1,5 @@
+{
+  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(mock(TypeDescription.class),mock(AuxiliaryType.NamingStrategy.class),mock(InstrumentedType.TypeInitializer.class),mock(ClassFileVersion.class));
+  implementationContext.prohibitTypeInitializer();
+  assertThat(implementationContext.isRetainTypeInitializer(),is(true));
+}

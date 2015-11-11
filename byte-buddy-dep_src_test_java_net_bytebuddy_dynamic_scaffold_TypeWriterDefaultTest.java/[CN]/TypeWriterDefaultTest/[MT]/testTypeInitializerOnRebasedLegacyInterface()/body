@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().rebase(Class.forName(LEGACY_INTERFACE)).invokable(isTypeInitializer()).intercept(StubMethod.INSTANCE).make();
+}

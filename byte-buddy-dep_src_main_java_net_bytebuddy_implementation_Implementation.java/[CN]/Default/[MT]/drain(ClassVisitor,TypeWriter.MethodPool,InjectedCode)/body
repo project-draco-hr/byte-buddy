@@ -1,5 +1,5 @@
 {
-  canRegisterFieldCache=false;
+  fieldCacheCanAppendEntries=false;
   InstrumentedType.TypeInitializer typeInitializer=this.typeInitializer;
   for (  Map.Entry<FieldCacheEntry,FieldDescription> entry : registeredFieldCacheEntries.entrySet()) {
     classVisitor.visitField(entry.getValue().getModifiers(),entry.getValue().getInternalName(),entry.getValue().getDescriptor(),entry.getValue().getGenericSignature(),FieldDescription.NO_DEFAULT_VALUE).visitEnd();
@@ -15,6 +15,9 @@
   }
  else   if (typeInitializer.isDefined()) {
     initializerRecord=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody(typeInitializerMethod,typeInitializer.withReturn());
+  }
+  if (prohibitTypeInitiailzer && initializerRecord.getSort().isDefined()) {
+    throw new IllegalStateException("It is impossible to define a class initializer or cached values for " + instrumentedType);
   }
   initializerRecord.apply(classVisitor,this);
   for (  TypeWriter.MethodPool.Record record : accessorMethods) {

@@ -1,0 +1,3 @@
+{
+  assertThat(new ByteBuddy().rebase(Class.forName(JAVA_8_INTERFACE)).invokable(isTypeInitializer()).intercept(StubMethod.INSTANCE).make(),notNullValue(DynamicType.class));
+}

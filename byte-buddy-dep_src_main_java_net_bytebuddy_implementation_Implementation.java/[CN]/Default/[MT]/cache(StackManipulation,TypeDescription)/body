@@ -4,7 +4,9 @@
   if (fieldCache != null) {
     return fieldCache;
   }
-  validateFieldCacheAccessibility();
+  if (!fieldCacheCanAppendEntries) {
+    throw new IllegalStateException("Cached values cannot be registered after defining the type initiailizer for " + instrumentedType);
+  }
   fieldCache=new CacheValueField(instrumentedType,fieldType,suffix,fieldValue.hashCode());
   registeredFieldCacheEntries.put(fieldCacheEntry,fieldCache);
   return fieldCache;

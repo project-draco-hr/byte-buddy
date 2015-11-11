@@ -1,0 +1,5 @@
+{
+  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Disabled(instrumentedType);
+  implementationContext.prohibitTypeInitializer();
+  assertThat(implementationContext.isRetainTypeInitializer(),is(true));
+}
