@@ -1,0 +1,7 @@
+BootstrapInjectionStrategy bootstrapInjectionStrategy
+TypeDescription instrumentedType
+ClassLoader classLoader
+ProtectionDomain protectionDomain
+AccessControlContext accessControlContext
+Map<TypeDescription,byte[]> rawAuxiliaryTypes
+Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers

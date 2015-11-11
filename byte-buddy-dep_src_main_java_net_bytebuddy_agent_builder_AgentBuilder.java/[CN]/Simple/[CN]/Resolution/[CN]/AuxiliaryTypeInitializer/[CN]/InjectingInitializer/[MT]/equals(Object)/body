@@ -1,0 +1,6 @@
+{
+  if (this == o)   return true;
+  if (o == null || getClass() != o.getClass())   return false;
+  InjectingInitializer that=(InjectingInitializer)o;
+  return classInjector.equals(that.classInjector) && instrumentedType.equals(that.instrumentedType) && rawAuxiliaryTypes.equals(that.rawAuxiliaryTypes)&& loadedTypeInitializers.equals(that.loadedTypeInitializers);
+}

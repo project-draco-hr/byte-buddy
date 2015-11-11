@@ -1,14 +1,7 @@
 {
   InitializationStrategy.Dispatcher dispatcher=initializationStrategy.dispatcher();
   DynamicType.Unloaded<?> dynamicType=dispatcher.apply(transformer.transform(typeStrategy.builder(typeDescription,byteBuddy,classFileLocator,methodNameTransformer.resolve()),typeDescription)).make();
-  Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=dynamicType.getLoadedTypeInitializers();
-  if (loadedTypeInitializers.size() > 1) {
-    ClassInjector classInjector=classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext);
-    for (    Map.Entry<TypeDescription,Class<?>> auxiliary : classInjector.inject(dynamicType.getRawAuxiliaryTypes()).entrySet()) {
-      initializationStrategy.initialize(auxiliary.getValue(),loadedTypeInitializers.get(auxiliary.getKey()));
-    }
-  }
-  dispatcher.register(typeDescription.getName(),classLoader,loadedTypeInitializers.get(dynamicType.getTypeDescription()));
+  dispatcher.register(typeDescription.getName(),classLoader,AuxiliaryTypeInitializer.of(bootstrapInjectionStrategy,dynamicType,classLoader,protectionDomain,accessControlContext));
   listener.onTransformation(typeDescription,dynamicType);
   return dynamicType.getBytes();
 }

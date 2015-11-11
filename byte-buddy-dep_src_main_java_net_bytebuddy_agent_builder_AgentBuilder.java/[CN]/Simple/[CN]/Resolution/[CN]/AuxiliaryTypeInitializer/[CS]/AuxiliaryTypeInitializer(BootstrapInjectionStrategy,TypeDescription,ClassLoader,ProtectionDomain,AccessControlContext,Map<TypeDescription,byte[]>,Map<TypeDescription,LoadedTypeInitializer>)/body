@@ -1,0 +1,9 @@
+{
+  this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
+  this.instrumentedType=instrumentedType;
+  this.classLoader=classLoader;
+  this.protectionDomain=protectionDomain;
+  this.accessControlContext=accessControlContext;
+  this.rawAuxiliaryTypes=rawAuxiliaryTypes;
+  this.loadedTypeInitializers=loadedTypeInitializers;
+}

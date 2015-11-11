@@ -13,4 +13,5 @@
   when(instrumentation.getAllLoadedClasses()).thenReturn(new Class<?>[]{REDEFINED});
   when(initializationStrategy.dispatcher()).thenReturn(dispatcher);
   when(dispatcher.apply(builder)).thenReturn((DynamicType.Builder)builder);
+  accessControlContext=AccessController.getContext();
 }

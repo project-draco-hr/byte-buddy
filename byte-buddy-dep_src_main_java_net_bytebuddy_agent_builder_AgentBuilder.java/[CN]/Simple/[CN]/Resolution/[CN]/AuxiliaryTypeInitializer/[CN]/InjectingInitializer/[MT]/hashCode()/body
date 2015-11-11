@@ -1,0 +1,7 @@
+{
+  int result=instrumentedType.hashCode();
+  result=31 * result + rawAuxiliaryTypes.hashCode();
+  result=31 * result + loadedTypeInitializers.hashCode();
+  result=31 * result + classInjector.hashCode();
+  return result;
+}

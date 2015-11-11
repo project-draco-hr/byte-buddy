@@ -1,0 +1,3 @@
+{
+  return new InjectingInitializer(instrumentedType,rawAuxiliaryTypes,loadedTypeInitializers,classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext));
+}

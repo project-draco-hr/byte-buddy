@@ -1,0 +1,14 @@
+{
+  ObjectPropertyAssertion.of(AgentBuilder.Default.Transformation.Simple.Resolution.AuxiliaryTypeInitializer.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
+    @Override public AccessControlContext create(){
+      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.Transformation.Simple.Resolution.AuxiliaryTypeInitializer.InjectingInitializer.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
+    @Override public AccessControlContext create(){
+      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
+    }
+  }
+).apply();
+}

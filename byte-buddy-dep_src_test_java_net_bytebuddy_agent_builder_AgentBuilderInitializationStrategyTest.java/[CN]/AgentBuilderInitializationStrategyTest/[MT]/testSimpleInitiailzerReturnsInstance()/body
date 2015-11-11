@@ -1,0 +1,3 @@
+{
+  assertThat(new AgentBuilder.InitializationStrategy.Dispatcher.InitializerConstructor.Simple(loadedTypeInitializer).make(),is(loadedTypeInitializer));
+}
