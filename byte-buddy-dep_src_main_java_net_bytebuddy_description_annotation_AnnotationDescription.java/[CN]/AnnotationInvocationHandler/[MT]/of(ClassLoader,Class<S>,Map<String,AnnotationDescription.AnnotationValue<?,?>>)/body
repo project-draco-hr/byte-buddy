@@ -1,6 +1,6 @@
 {
   Method[] declaredMethod=annotationType.getDeclaredMethods();
-  LinkedHashMap<Method,AnnotationValue.Loaded<?>> loadedValues=new LinkedHashMap<Method,AnnotationValue.Loaded<?>>(declaredMethod.length);
+  LinkedHashMap<Method,AnnotationValue.Loaded<?>> loadedValues=new LinkedHashMap<Method,AnnotationValue.Loaded<?>>();
   for (  Method method : declaredMethod) {
     AnnotationDescription.AnnotationValue<?,?> annotationValue=values.get(method.getName());
     loadedValues.put(method,annotationValue == null ? DefaultValue.of(method) : annotationValue.load(classLoader == null ? ClassLoader.getSystemClassLoader() : classLoader));

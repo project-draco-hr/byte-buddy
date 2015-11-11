@@ -1,6 +1,6 @@
 {
   LinkedHashMap<MethodDescription,Prepared.Entry> implementations=new LinkedHashMap<MethodDescription,Prepared.Entry>();
-  Set<Handler> handlers=new HashSet<Handler>(entries.size());
+  Set<Handler> handlers=new HashSet<Handler>();
   MethodList<?> helperMethods=instrumentedType.getDeclaredMethods();
   for (  Entry entry : entries) {
     if (handlers.add(entry.getHandler())) {

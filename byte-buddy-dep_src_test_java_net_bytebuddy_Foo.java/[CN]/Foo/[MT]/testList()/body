@@ -1,0 +1,5 @@
+{
+  Map<String,String> map=new HashMap<String,String>(2);
+  map.put("foo","qux");
+  map.put("bar","baz");
+}

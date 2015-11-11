@@ -1,5 +1,5 @@
 {
-  LinkedHashMap<MethodDescription.Token,MethodGraph.Node> nodes=new LinkedHashMap<MethodDescription.Token,MethodGraph.Node>(2);
+  LinkedHashMap<MethodDescription.Token,MethodGraph.Node> nodes=new LinkedHashMap<MethodDescription.Token,MethodGraph.Node>();
   MethodDescription callMethod=new TypeDescription.ForLoadedType(Callable.class).getDeclaredMethods().filter(named("call")).getOnly();
   nodes.put(callMethod.asToken(),new MethodGraph.Node.Simple(callMethod));
   MethodDescription runMethod=new TypeDescription.ForLoadedType(Runnable.class).getDeclaredMethods().filter(named("run")).getOnly();

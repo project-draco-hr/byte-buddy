@@ -1,6 +1,6 @@
 {
   int modifiers=0;
-  Set<Class<?>> modifierContributorTypes=new HashSet<Class<?>>(modifierContributor.length);
+  Set<Class<?>> modifierContributorTypes=new HashSet<Class<?>>();
   for (  ModifierContributor contributor : modifierContributor) {
     if (!modifierContributorTypes.add(contributor.getClass())) {
       throw new IllegalArgumentException(contributor + " is already registered with a different value");

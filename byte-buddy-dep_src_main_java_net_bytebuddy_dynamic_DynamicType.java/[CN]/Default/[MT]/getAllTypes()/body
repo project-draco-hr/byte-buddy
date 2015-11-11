@@ -1,5 +1,5 @@
 {
-  Map<TypeDescription,byte[]> allTypes=new LinkedHashMap<TypeDescription,byte[]>(auxiliaryTypes.size() + 1);
+  Map<TypeDescription,byte[]> allTypes=new LinkedHashMap<TypeDescription,byte[]>();
   allTypes.put(typeDescription,binaryRepresentation);
   for (  DynamicType auxiliaryType : auxiliaryTypes) {
     allTypes.putAll(auxiliaryType.getAllTypes());

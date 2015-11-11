@@ -1,5 +1,5 @@
 {
-  Set<Object> found=new HashSet<Object>(elements.size());
+  Set<Object> found=new HashSet<Object>();
   for (  Object element : elements) {
     if (!found.add(element)) {
       throw new IllegalArgumentException("Duplicate element: " + element);

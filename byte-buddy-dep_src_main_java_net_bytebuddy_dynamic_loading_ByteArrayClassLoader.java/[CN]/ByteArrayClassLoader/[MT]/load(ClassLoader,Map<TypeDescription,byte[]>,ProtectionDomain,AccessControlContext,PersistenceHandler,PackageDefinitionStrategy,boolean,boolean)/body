@@ -1,5 +1,5 @@
 {
-  Map<TypeDescription,Class<?>> loadedTypes=new LinkedHashMap<TypeDescription,Class<?>>(types.size());
+  Map<TypeDescription,Class<?>> loadedTypes=new LinkedHashMap<TypeDescription,Class<?>>();
   classLoader=ByteArrayClassLoader.of(classLoader,types,protectionDomain,accessControlContext,persistenceHandler,packageDefinitionStrategy,childFirst);
   for (  TypeDescription typeDescription : types.keySet()) {
     try {

@@ -1,5 +1,5 @@
 {
-  Map<String,byte[]> namedTypeDefinitions=new HashMap<String,byte[]>(typeDefinitions.size());
+  Map<String,byte[]> namedTypeDefinitions=new HashMap<String,byte[]>();
   for (  Map.Entry<TypeDescription,byte[]> entry : typeDefinitions.entrySet()) {
     namedTypeDefinitions.put(entry.getKey().getName(),entry.getValue());
   }

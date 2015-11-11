@@ -1,11 +1,10 @@
 {
-  ParameterList<?> parameters=methodDescription.getParameters();
-  LinkedHashMap<String,TypeDescription> typeDescriptions=new LinkedHashMap<String,TypeDescription>((methodDescription.isStatic() ? 0 : 1) + parameters.size());
+  LinkedHashMap<String,TypeDescription> typeDescriptions=new LinkedHashMap<String,TypeDescription>();
   int currentIndex=0;
   if (!methodDescription.isStatic()) {
     typeDescriptions.put(fieldName(currentIndex++),methodDescription.getDeclaringType().asErasure());
   }
-  for (  ParameterDescription parameterDescription : parameters) {
+  for (  ParameterDescription parameterDescription : methodDescription.getParameters()) {
     typeDescriptions.put(fieldName(currentIndex++),parameterDescription.getType().asErasure());
   }
   return typeDescriptions;

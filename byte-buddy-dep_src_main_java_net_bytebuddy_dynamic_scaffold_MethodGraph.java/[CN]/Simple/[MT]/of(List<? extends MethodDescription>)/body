@@ -1,5 +1,5 @@
 {
-  LinkedHashMap<MethodDescription.Token,Node> nodes=new LinkedHashMap<MethodDescription.Token,Node>(methodDescriptions.size());
+  LinkedHashMap<MethodDescription.Token,Node> nodes=new LinkedHashMap<MethodDescription.Token,Node>();
   for (  MethodDescription methodDescription : methodDescriptions) {
     nodes.put(methodDescription.asToken(),new Node.Simple(methodDescription));
   }
