@@ -1,5 +1,3 @@
 {
-  LinkedHashMap<TypeDescription,byte[]> types=new LinkedHashMap<TypeDescription,byte[]>(getRawAuxiliaryTypes());
-  types.put(typeDescription,binaryRepresentation);
-  return new Default.Loaded<T>(typeDescription,binaryRepresentation,loadedTypeInitializer,auxiliaryTypes,initialize(classLoadingStrategy.load(classLoader,types)));
+  return new Default.Loaded<T>(typeDescription,binaryRepresentation,loadedTypeInitializer,auxiliaryTypes,initialize(classLoadingStrategy.load(classLoader,getAllTypes())));
 }
