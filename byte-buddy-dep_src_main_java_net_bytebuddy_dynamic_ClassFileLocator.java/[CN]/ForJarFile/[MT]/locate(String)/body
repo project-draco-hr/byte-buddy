@@ -6,7 +6,7 @@
  else {
     InputStream inputStream=jarFile.getInputStream(zipEntry);
     try {
-      return new Resolution.Explicit(new StreamDrainer().drain(inputStream));
+      return new Resolution.Explicit(StreamDrainer.DEFAULT.drain(inputStream));
     }
   finally {
       inputStream.close();

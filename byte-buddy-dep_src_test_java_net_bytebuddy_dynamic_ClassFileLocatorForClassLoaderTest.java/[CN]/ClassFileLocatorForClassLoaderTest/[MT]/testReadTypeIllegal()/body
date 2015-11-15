@@ -1,6 +1,6 @@
 {
   Class<?> nonClassFileType=new ByteBuddy().subclass(Object.class).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  ClassFileLocator.Resolution resolution=ClassFileLocator.Resolution.Explicit.of(nonClassFileType);
+  ClassFileLocator.Resolution resolution=ClassFileLocator.ForClassLoader.read(nonClassFileType);
   assertThat(resolution.isResolved(),is(false));
   resolution.resolve();
 }
