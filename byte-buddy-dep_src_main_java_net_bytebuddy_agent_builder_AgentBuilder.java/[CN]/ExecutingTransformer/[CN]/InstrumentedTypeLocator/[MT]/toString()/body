@@ -1,3 +1,0 @@
-{
-  return "AgentBuilder.Default.ExecutingTransformer.InstrumentedTypeLocator{" + "delegate=" + delegate + ", typeName='"+ typeName+ '\''+ ", binaryRepresentation=<"+ binaryRepresentation.length+ " bytes>"+ '}';
-}

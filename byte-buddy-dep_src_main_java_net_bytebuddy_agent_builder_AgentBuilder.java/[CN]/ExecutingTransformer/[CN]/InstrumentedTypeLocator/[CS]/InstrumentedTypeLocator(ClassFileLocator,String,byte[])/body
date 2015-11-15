@@ -1,5 +1,0 @@
-{
-  this.delegate=delegate;
-  this.typeName=typeName;
-  this.binaryRepresentation=binaryRepresentation;
-}

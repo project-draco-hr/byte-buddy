@@ -1,0 +1,5 @@
+{
+  ClassFileLocator.Resolution resolution=ClassFileLocator.Simple.of(FOO,QUX).locate(FOO);
+  assertThat(resolution.isResolved(),is(true));
+  assertThat(resolution.resolve(),is(QUX));
+}

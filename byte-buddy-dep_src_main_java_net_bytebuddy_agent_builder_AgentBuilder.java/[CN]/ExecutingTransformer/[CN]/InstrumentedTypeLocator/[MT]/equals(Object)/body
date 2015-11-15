@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  InstrumentedTypeLocator that=(InstrumentedTypeLocator)other;
-  return delegate.equals(that.delegate) && typeName.equals(that.typeName) && Arrays.equals(binaryRepresentation,that.binaryRepresentation);
-}

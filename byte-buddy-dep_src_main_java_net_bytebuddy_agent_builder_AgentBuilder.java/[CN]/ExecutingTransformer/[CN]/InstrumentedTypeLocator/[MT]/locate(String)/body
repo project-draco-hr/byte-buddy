@@ -1,3 +1,0 @@
-{
-  return typeName.equals(this.typeName) ? new Resolution.Explicit(binaryRepresentation) : delegate.locate(typeName);
-}
