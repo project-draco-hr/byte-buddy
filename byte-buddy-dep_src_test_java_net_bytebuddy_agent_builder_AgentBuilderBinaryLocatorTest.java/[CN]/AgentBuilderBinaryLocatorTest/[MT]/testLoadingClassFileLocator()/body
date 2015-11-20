@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.BinaryLocator.ClassLoading.INSTANCE.classFileLocator(classLoader),is(ClassFileLocator.ForClassLoader.of(classLoader)));
+}
