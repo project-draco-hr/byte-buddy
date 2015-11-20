@@ -1,0 +1,8 @@
+{
+  try {
+    return new Resolution.Simple(new TypeDescription.ForLoadedType(Class.forName(name,false,classLoader)));
+  }
+ catch (  ClassNotFoundException ignored) {
+    return new Resolution.Illegal(name);
+  }
+}

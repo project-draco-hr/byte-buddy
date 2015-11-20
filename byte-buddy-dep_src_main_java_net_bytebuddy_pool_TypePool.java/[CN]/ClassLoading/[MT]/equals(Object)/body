@@ -1,0 +1,7 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  if (!super.equals(other))   return false;
+  ClassLoading that=(ClassLoading)other;
+  return !(classLoader != null ? !classLoader.equals(that.classLoader) : that.classLoader != null);
+}
