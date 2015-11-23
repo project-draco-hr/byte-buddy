@@ -1,0 +1,4 @@
+{
+  Field field=Installer.class.getDeclaredField("instrumentation");
+  assertThat(Modifier.isPublic(field.getModifiers()),is(true));
+}

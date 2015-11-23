@@ -1,4 +1,4 @@
 {
-  ByteBuddyAgent.Installer.agentmain(FOO,instrumentation);
+  Installer.agentmain(FOO,instrumentation);
   assertThat(ByteBuddyAgent.getInstrumentation(),is(instrumentation));
 }

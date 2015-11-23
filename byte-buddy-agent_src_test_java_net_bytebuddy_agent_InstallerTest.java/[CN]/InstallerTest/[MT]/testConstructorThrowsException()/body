@@ -1,5 +1,5 @@
 {
-  Constructor<?> constructor=ByteBuddyAgent.Installer.class.getDeclaredConstructor();
+  Constructor<?> constructor=Installer.class.getDeclaredConstructor();
   constructor.setAccessible(true);
   try {
     constructor.newInstance();

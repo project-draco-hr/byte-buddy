@@ -1,4 +1,4 @@
 {
-  ByteBuddyAgent.Installer.premain(FOO,instrumentation);
+  Installer.premain(FOO,instrumentation);
   assertThat(ByteBuddyAgent.getInstrumentation(),is(instrumentation));
 }

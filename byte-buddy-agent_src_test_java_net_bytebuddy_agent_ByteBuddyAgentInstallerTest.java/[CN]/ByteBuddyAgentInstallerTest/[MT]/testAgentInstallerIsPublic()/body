@@ -1,7 +1,0 @@
-{
-  Class<?> type=ByteBuddyAgent.Installer.class;
-  while (type != null) {
-    Assert.assertThat(Modifier.isPublic(type.getModifiers()),is(true));
-    type=type.getDeclaringClass();
-  }
-}

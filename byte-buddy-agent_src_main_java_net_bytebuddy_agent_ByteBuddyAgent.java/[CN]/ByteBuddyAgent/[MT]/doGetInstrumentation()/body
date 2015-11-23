@@ -1,8 +1,6 @@
 {
   try {
-    Field field=ClassLoader.getSystemClassLoader().loadClass(ByteBuddyAgent.Installer.class.getName()).getDeclaredField(INSTRUMENTATION_FIELD_NAME);
-    field.setAccessible(true);
-    return (Instrumentation)field.get(STATIC_MEMBER);
+    return (Instrumentation)ClassLoader.getSystemClassLoader().loadClass(Installer.class.getName()).getDeclaredField(INSTRUMENTATION_FIELD_NAME).get(STATIC_MEMBER);
   }
  catch (  RuntimeException exception) {
     throw exception;
