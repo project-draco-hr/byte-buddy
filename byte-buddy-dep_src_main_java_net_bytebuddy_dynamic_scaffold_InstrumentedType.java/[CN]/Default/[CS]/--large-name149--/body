@@ -12,6 +12,7 @@
   this.declaringType=declaringType;
   this.enclosingMethod=enclosingMethod;
   this.enclosingType=enclosingType;
+  this.declaredTypes=declaredTypes;
   this.memberClass=memberClass;
   this.anonymousClass=anonymousClass;
   this.localClass=localClass;

@@ -5,6 +5,7 @@ String superTypeInternalName
 String[] interfaceInternalName
 GenericTypeToken.Resolution.ForType signatureResolution
 DeclarationContext declarationContext
+List<String> declaredTypes
 boolean anonymousType
 List<AnnotationToken> annotationTokens
 List<FieldToken> fieldTokens

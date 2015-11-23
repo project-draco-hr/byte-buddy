@@ -5,4 +5,5 @@
   methodTokens=new LinkedList<LazyTypeDescription.MethodToken>();
   anonymousType=false;
   declarationContext=LazyTypeDescription.DeclarationContext.SelfDeclared.INSTANCE;
+  declaredTypes=new LinkedList<String>();
 }

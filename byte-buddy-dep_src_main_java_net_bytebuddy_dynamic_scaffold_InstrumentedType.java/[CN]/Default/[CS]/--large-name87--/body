@@ -1,3 +1,3 @@
 {
-  this(name,modifiers,typeVariables,superType,interfaceTypes,fieldTokens,methodTokens,annotationDescriptions,typeInitializer,loadedTypeInitializer,null,null,null,false,false,false);
+  this(name,modifiers,typeVariables,superType,interfaceTypes,fieldTokens,methodTokens,annotationDescriptions,typeInitializer,loadedTypeInitializer,null,null,null,Collections.<TypeDescription>emptyList(),false,false,false);
 }

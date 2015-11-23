@@ -11,6 +11,7 @@ LoadedTypeInitializer loadedTypeInitializer
 TypeDescription declaringType
 MethodDescription enclosingMethod
 TypeDescription enclosingType
+List<? extends TypeDescription> declaredTypes
 boolean memberClass
 boolean anonymousClass
 boolean localClass

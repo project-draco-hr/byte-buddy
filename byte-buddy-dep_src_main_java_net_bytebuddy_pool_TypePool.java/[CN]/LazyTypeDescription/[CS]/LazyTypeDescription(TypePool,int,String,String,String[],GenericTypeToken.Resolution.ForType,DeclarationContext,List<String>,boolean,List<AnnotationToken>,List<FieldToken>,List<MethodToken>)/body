@@ -14,6 +14,7 @@
     }
   }
   this.declarationContext=declarationContext;
+  this.declaredTypes=declaredTypes;
   this.anonymousType=anonymousType;
   declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
   for (  AnnotationToken annotationToken : annotationTokens) {
