@@ -7,5 +7,5 @@
       throw new IllegalStateException("This JVM's version string does not seem to be valid: " + versionString);
     }
   }
-  return ClassFileVersion.forKnownJavaVersion(Integer.parseInt(versionString.substring(versionIndex[1] + 1,versionIndex[2])));
+  return ClassFileVersion.ofJavaVersion(Integer.parseInt(versionString.substring(versionIndex[1] + 1,versionIndex[2])));
 }

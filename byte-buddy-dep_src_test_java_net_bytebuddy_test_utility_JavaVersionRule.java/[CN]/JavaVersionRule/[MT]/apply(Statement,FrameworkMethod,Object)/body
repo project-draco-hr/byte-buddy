@@ -1,7 +1,16 @@
 {
   Enforce enforce=method.getAnnotation(Enforce.class);
-  if (enforce != null && enforce.hotSpot() && !System.getProperty("java.vm.name","").toLowerCase(Locale.US).contains("hotspot")) {
-    return new NoOpHotSpotStatement();
+  if (enforce != null) {
+    if (ClassFileVersion.ofJavaVersion(enforce.value()).compareTo(currentVersion) <= 0) {
+      return new NoOpStatement(enforce.value());
+    }
+ else     if (!hotSpot) {
+      for (      int javaVersion : enforce.hotSpot()) {
+        if (currentVersion.getJavaVersion() == javaVersion) {
+          return new NoOpHotSpotStatement(javaVersion);
+        }
+      }
+    }
   }
-  return enforce == null || ClassFileVersion.forKnownJavaVersion(enforce.value()).compareTo(supportedVersion) <= 0 ? base : new NoOpStatement(enforce.value());
+  return base;
 }

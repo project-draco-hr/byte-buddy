@@ -1,3 +1,4 @@
 {
-  supportedVersion=ClassFileVersion.forCurrentJavaVersion();
+  currentVersion=ClassFileVersion.forCurrentJavaVersion();
+  hotSpot=System.getProperty("java.vm.name","").toLowerCase(Locale.US).contains("hotspot");
 }

@@ -1,0 +1,3 @@
+{
+  return getMajorVersion() - BASE_VERSION;
+}

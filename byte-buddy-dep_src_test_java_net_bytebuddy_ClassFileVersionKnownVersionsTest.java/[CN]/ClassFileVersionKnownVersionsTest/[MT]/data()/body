@@ -1,3 +1,3 @@
 {
-  return Arrays.asList(new Object[][]{{1,Opcodes.V1_1,45,3,false,false},{2,Opcodes.V1_2,46,0,false,false},{3,Opcodes.V1_3,47,0,false,false},{4,Opcodes.V1_4,48,0,false,false},{5,Opcodes.V1_5,49,0,true,false},{6,Opcodes.V1_6,50,0,true,false},{7,Opcodes.V1_7,51,0,true,false},{8,Opcodes.V1_8,52,0,true,true},{9,Opcodes.V1_8,52,0,true,true}});
+  return Arrays.asList(new Object[][]{{1,Opcodes.V1_1,45,3,false,false},{2,Opcodes.V1_2,46,0,false,false},{3,Opcodes.V1_3,47,0,false,false},{4,Opcodes.V1_4,48,0,false,false},{5,Opcodes.V1_5,49,0,true,false},{6,Opcodes.V1_6,50,0,true,false},{7,Opcodes.V1_7,51,0,true,false},{8,Opcodes.V1_8,52,0,true,true}});
 }
