@@ -1,0 +1,6 @@
+{
+  Object typeInitializer=TYPE_INITIALIZERS.remove(new Nexus(type,identification));
+  if (typeInitializer != null) {
+    typeInitializer.getClass().getMethod("onLoad",Class.class).invoke(typeInitializer,type);
+  }
+}

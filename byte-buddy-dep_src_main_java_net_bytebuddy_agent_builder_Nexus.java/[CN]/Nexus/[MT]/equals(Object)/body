@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Nexus nexus=(Nexus)other;
+  return identification == nexus.identification && !(classLoader != null ? !classLoader.equals(nexus.classLoader) : nexus.classLoader != null) && name.equals(nexus.name);
+}

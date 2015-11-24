@@ -1,0 +1,5 @@
+{
+  if (TYPE_INITIALIZERS.put(new Nexus(name,classLoader,identification),typeInitializer) != null) {
+    Logger.getAnonymousLogger().warning("Initializer with id " + identification + " is already registered for "+ name);
+  }
+}

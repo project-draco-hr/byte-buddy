@@ -1,0 +1,3 @@
+{
+  return "Nexus{" + "name='" + name + '\''+ ", classLoader="+ classLoader+ ", identification="+ identification+ '}';
+}

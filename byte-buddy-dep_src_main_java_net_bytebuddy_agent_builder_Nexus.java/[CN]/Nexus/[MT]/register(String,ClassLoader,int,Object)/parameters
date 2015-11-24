@@ -1,0 +1,4 @@
+String name
+ClassLoader classLoader
+int identification
+Object typeInitializer

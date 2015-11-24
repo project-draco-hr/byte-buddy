@@ -1,0 +1,3 @@
+{
+  assertThat(Nexus.class.getDeclaringClass(),nullValue(Class.class));
+}

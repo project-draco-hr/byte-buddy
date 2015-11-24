@@ -3,13 +3,13 @@
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.Dispatcher.class).apply();
   final Iterator<Class<?>> iterator=Arrays.<Class<?>>asList(Object.class,String.class).iterator();
-  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.Nexus.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
+  ObjectPropertyAssertion.of(Nexus.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
     @Override public Class<?> create(){
       return iterator.next();
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.Nexus.Accessor.class).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.Nexus.Accessor.InitializationAppender.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.InitializationAppender.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.Dispatcher.InitializerConstructor.Simple.class).apply();
 }
