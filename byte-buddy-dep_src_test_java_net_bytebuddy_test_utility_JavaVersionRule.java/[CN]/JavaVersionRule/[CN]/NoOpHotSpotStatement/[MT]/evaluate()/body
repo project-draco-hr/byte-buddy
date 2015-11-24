@@ -1,0 +1,3 @@
+{
+  Logger.getAnonymousLogger().warning("Ignoring test case: Only works on HotSpot");
+}

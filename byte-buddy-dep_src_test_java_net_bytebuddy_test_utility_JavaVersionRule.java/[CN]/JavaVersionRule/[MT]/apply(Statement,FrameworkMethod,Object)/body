@@ -1,4 +1,7 @@
 {
   Enforce enforce=method.getAnnotation(Enforce.class);
+  if (enforce != null && enforce.hotSpot() && !System.getProperty("java.vm.name","").toLowerCase(Locale.US).contains("hotspot")) {
+    return new NoOpHotSpotStatement();
+  }
   return enforce == null || ClassFileVersion.forKnownJavaVersion(enforce.value()).compareTo(supportedVersion) <= 0 ? base : new NoOpStatement(enforce.value());
 }
