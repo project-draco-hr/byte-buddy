@@ -1,7 +1,7 @@
 {
   Enforce enforce=method.getAnnotation(Enforce.class);
   if (enforce != null) {
-    if (ClassFileVersion.ofJavaVersion(enforce.value()).compareTo(currentVersion) <= 0) {
+    if (ClassFileVersion.ofJavaVersion(enforce.value()).compareTo(currentVersion) > 0) {
       return new NoOpStatement(enforce.value());
     }
  else     if (!hotSpot) {
