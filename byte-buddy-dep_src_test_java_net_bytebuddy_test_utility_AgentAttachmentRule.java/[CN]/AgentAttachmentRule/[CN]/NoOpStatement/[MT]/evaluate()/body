@@ -1,3 +1,3 @@
 {
-  Logger.getAnonymousLogger().warning("Ignored test case that requires an OpenJDK installation with tools.jar");
+  Logger.getAnonymousLogger().warning("Ignoring test case: " + reason);
 }

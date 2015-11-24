@@ -1,4 +1,7 @@
 {
+  if (!instrumentation.isRedefineClassesSupported()) {
+    throw new IllegalStateException("Classes can only be reset when redefinition is supported");
+  }
   Map<Class<?>,ClassDefinition> classDefinitions=new ConcurrentHashMap<Class<?>,ClassDefinition>(type.length);
   for (  Class<?> aType : type) {
     classDefinitions.put(aType,new ClassDefinition(aType,ClassFileLocator.ForClassLoader.read(aType).resolve()));

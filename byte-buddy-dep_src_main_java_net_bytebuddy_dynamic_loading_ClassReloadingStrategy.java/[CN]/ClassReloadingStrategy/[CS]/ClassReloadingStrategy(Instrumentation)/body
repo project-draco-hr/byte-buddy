@@ -7,7 +7,7 @@
     engine=Engine.RETRANSFORMATION;
   }
  else {
-    throw new IllegalArgumentException("Instrumentation does not support class redefinition: " + instrumentation);
+    throw new IllegalArgumentException("Instrumentation does not support manipulation of loaded classes: " + instrumentation);
   }
   bootstrapInjection=BootstrapInjection.Disabled.INSTANCE;
 }
