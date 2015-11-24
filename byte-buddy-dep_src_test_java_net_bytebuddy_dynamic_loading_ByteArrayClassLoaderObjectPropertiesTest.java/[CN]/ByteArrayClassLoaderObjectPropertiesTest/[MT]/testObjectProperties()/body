@@ -4,10 +4,20 @@
       return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
     }
   }
+).create(new ObjectPropertyAssertion.Creator<ClassLoader>(){
+    @Override public ClassLoader create(){
+      return new URLClassLoader(new URL[0],null);
+    }
+  }
 ).applyBasic();
   ObjectPropertyAssertion.of(ByteArrayClassLoader.ChildFirst.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
     @Override public AccessControlContext create(){
       return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
+    }
+  }
+).create(new ObjectPropertyAssertion.Creator<ClassLoader>(){
+    @Override public ClassLoader create(){
+      return new URLClassLoader(new URL[0],null);
     }
   }
 ).applyBasic();
