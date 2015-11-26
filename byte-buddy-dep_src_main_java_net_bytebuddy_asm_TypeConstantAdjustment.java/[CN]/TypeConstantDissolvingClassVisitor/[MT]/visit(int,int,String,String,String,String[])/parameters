@@ -1,0 +1,6 @@
+int version
+int modifiers
+String name
+String signature
+String superTypeName
+String[] interfaceName

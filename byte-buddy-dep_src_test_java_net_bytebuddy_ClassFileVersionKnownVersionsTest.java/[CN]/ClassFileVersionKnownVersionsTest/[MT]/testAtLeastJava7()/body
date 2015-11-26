@@ -1,3 +1,3 @@
 {
-  assertThat(ClassFileVersion.ofJavaVersion(javaVersion).isAtLeastJava7(),is(atLeastJava7));
+  assertThat(ClassFileVersion.ofJavaVersion(javaVersion).isAtLeast(ClassFileVersion.JAVA_V7),is(atLeastJava7));
 }

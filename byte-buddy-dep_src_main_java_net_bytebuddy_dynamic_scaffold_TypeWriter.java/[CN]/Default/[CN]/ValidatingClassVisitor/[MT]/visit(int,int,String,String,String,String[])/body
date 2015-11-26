@@ -6,13 +6,13 @@
     constraints.add(Constraint.ForPackageType.INSTANCE);
   }
  else   if ((modifiers & Opcodes.ACC_ANNOTATION) != 0) {
-    if (!classFileVersion.isAtLeastJava5()) {
+    if (!classFileVersion.isAtLeast(ClassFileVersion.JAVA_V5)) {
       throw new IllegalStateException("Cannot define an annotation type for class file version " + classFileVersion);
     }
-    constraints.add(classFileVersion.isAtLeastJava8() ? Constraint.ForAnnotation.JAVA_8 : Constraint.ForAnnotation.CLASSIC);
+    constraints.add(classFileVersion.isAtLeast(ClassFileVersion.JAVA_V8) ? Constraint.ForAnnotation.JAVA_8 : Constraint.ForAnnotation.CLASSIC);
   }
  else   if ((modifiers & Opcodes.ACC_INTERFACE) != 0) {
-    constraints.add(classFileVersion.isAtLeastJava8() ? Constraint.ForInterface.JAVA_8 : Constraint.ForInterface.CLASSIC);
+    constraints.add(classFileVersion.isAtLeast(ClassFileVersion.JAVA_V8) ? Constraint.ForInterface.JAVA_8 : Constraint.ForInterface.CLASSIC);
   }
  else   if ((modifiers & Opcodes.ACC_ABSTRACT) != 0) {
     constraints.add(Constraint.ForClass.ABSTRACT);

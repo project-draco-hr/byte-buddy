@@ -1,0 +1,3 @@
+{
+  return "TypeConstantAdjustment.TypeConstantDissolvingClassVisitor{" + "classVisitor=" + cv + ", armed="+ armed+ "}";
+}

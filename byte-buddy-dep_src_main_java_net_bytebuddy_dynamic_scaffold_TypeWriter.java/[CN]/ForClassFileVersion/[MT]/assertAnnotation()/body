@@ -1,5 +1,5 @@
 {
-  if (!classFileVersion.isAtLeastJava5()) {
+  if (!classFileVersion.isAtLeast(ClassFileVersion.JAVA_V5)) {
     throw new IllegalStateException("Cannot write annotations for class file version " + classFileVersion);
   }
 }

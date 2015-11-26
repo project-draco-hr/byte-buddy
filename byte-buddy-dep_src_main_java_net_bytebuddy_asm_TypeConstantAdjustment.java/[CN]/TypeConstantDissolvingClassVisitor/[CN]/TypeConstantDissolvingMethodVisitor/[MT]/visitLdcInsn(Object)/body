@@ -1,0 +1,13 @@
+{
+  if (constant instanceof Type) {
+    Type type=(Type)constant;
+switch (type.getSort()) {
+case Type.OBJECT:
+case Type.ARRAY:
+      super.visitLdcInsn(type.getClassName());
+    super.visitMethodInsn(Opcodes.ACC_STATIC,JAVA_LANG_CLASS,FOR_NAME,DESCRIPTOR,false);
+  break;
+}
+}
+super.visitLdcInsn(constant);
+}
