@@ -1,0 +1,5 @@
+{
+  if (!classFileVersion.isAtLeastJava7()) {
+    throw new IllegalStateException("Cannot write method type to constant pool for class file version " + classFileVersion);
+  }
+}

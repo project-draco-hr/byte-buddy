@@ -4,5 +4,6 @@
   this.majorVersion=majorVersion;
   this.minorVersion=minorVersion;
   this.atLeastJava5=atLeastJava5;
+  this.atLeastJava7=atLeastJava7;
   this.atLeastJava8=atLeastJava8;
 }

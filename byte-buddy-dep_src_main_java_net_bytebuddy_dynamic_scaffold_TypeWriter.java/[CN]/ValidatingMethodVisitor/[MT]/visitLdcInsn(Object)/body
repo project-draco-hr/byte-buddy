@@ -1,0 +1,18 @@
+{
+  if (constant instanceof Type) {
+    Type type=(Type)constant;
+switch (type.getSort()) {
+case Type.OBJECT:
+case Type.ARRAY:
+      constraint.assertTypeInConstantPool();
+    break;
+case Type.METHOD:
+  constraint.assertMethodTypeInConstantPool();
+break;
+}
+}
+ else if (constant instanceof Handle) {
+constraint.assertHandleInConstantPool();
+}
+super.visitLdcInsn(constant);
+}

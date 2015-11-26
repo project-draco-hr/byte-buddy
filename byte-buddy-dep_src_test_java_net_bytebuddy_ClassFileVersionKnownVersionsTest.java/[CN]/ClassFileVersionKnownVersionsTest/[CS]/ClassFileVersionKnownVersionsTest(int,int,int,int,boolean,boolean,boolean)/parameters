@@ -3,4 +3,5 @@ int minorMajorVersion
 int majorVersion
 int minorVersion
 boolean atLeastJava5
+boolean atLeastJava7
 boolean atLeastJava8
