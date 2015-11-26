@@ -5,8 +5,8 @@ switch (type.getSort()) {
 case Type.OBJECT:
 case Type.ARRAY:
       super.visitLdcInsn(type.getClassName());
-    super.visitMethodInsn(Opcodes.ACC_STATIC,JAVA_LANG_CLASS,FOR_NAME,DESCRIPTOR,false);
-  break;
+    super.visitMethodInsn(Opcodes.INVOKESTATIC,JAVA_LANG_CLASS,FOR_NAME,DESCRIPTOR,false);
+  return;
 }
 }
 super.visitLdcInsn(constant);

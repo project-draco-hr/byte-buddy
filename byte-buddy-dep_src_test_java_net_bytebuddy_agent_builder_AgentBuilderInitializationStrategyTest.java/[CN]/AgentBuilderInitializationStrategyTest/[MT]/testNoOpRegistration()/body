@@ -1,0 +1,5 @@
+{
+  AgentBuilder.Default.InitializationStrategy.NoOp.INSTANCE.register(FOO,classLoader,lazyInitializer);
+  verifyZeroInteractions(classLoader);
+  verifyZeroInteractions(lazyInitializer);
+}

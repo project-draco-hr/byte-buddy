@@ -1,0 +1,13 @@
+{
+  ClassVisitor classVisitor=TypeConstantAdjustment.INSTANCE.wrap(this.classVisitor);
+  classVisitor.visit(ClassFileVersion.JAVA_V4.getMinorMajorVersion(),FOOBAR,FOO,BAR,QUX,new String[]{BAZ});
+  MethodVisitor methodVisitor=classVisitor.visitMethod(FOOBAR,FOO,BAR,QUX,new String[]{BAZ});
+  assertThat(methodVisitor,not(this.methodVisitor));
+  methodVisitor.visitLdcInsn(Type.getType(Object[].class));
+  verify(this.classVisitor).visit(ClassFileVersion.JAVA_V4.getMinorMajorVersion(),FOOBAR,FOO,BAR,QUX,new String[]{BAZ});
+  verify(this.classVisitor).visitMethod(FOOBAR,FOO,BAR,QUX,new String[]{BAZ});
+  verifyNoMoreInteractions(this.classVisitor);
+  verify(this.methodVisitor).visitLdcInsn(Type.getType(Object[].class).getClassName());
+  verify(this.methodVisitor).visitMethodInsn(Opcodes.INVOKESTATIC,Type.getType(Class.class).getInternalName(),"forName",Type.getType(Class.class.getDeclaredMethod("forName",String.class)).getDescriptor(),false);
+  verifyNoMoreInteractions(this.methodVisitor);
+}

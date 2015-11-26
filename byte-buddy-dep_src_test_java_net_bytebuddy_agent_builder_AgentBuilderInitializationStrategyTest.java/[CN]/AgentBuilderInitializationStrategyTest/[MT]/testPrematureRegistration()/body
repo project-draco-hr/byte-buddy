@@ -1,0 +1,6 @@
+{
+  AgentBuilder.Default.InitializationStrategy.Premature.INSTANCE.register(FOO,classLoader,lazyInitializer);
+  verifyZeroInteractions(classLoader);
+  verify(lazyInitializer).loadAuxiliaryTypes();
+  verifyNoMoreInteractions(lazyInitializer);
+}

@@ -2,5 +2,5 @@
   when(dynamicType.getTypeDescription()).thenReturn(instrumentedType);
   when(dynamicType.getLoadedTypeInitializers()).thenReturn(Collections.singletonMap(instrumentedType,loadedTypeInitializer));
   when(dynamicType.getRawAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>emptyMap());
-  assertThat(AgentBuilder.Default.Transformation.Simple.Resolution.AuxiliaryTypeInitializer.of(bootstrapInjectionStrategy,dynamicType,classLoader,protectionDomain,accessControlContext),is((AgentBuilder.InitializationStrategy.Dispatcher.InitializerConstructor)new AgentBuilder.InitializationStrategy.Dispatcher.InitializerConstructor.Simple(loadedTypeInitializer)));
+  assertThat(AgentBuilder.Default.Transformation.Simple.Resolution.AuxiliaryTypeInitializer.of(bootstrapInjectionStrategy,dynamicType,classLoader,protectionDomain,accessControlContext),is((AgentBuilder.InitializationStrategy.Dispatcher.LazyInitializer)new AgentBuilder.InitializationStrategy.Dispatcher.LazyInitializer.Simple(loadedTypeInitializer)));
 }

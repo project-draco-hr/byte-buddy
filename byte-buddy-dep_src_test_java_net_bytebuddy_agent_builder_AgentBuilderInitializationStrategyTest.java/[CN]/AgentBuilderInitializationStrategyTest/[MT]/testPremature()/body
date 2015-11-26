@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.Default.InitializationStrategy.Premature.INSTANCE.dispatcher(),is((AgentBuilder.InitializationStrategy.Dispatcher)AgentBuilder.Default.InitializationStrategy.Premature.INSTANCE));
+}

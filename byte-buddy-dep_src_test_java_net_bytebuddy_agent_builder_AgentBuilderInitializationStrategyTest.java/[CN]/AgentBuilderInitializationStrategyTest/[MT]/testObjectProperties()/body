@@ -11,5 +11,6 @@
 ).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.InitializationAppender.class).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.Dispatcher.InitializerConstructor.Simple.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.Dispatcher.LazyInitializer.Simple.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.Premature.class).apply();
 }

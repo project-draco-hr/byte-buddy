@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.Default.InitializationStrategy.Premature.INSTANCE.apply(builder),is((DynamicType.Builder)builder));
+}
