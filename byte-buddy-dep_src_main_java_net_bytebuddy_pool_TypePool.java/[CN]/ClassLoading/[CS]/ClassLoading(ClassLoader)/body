@@ -1,4 +1,0 @@
-{
-  super(CacheProvider.NoOp.INSTANCE);
-  this.classLoader=classLoader;
-}

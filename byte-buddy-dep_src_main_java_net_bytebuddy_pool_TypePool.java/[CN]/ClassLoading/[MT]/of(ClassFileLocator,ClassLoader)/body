@@ -1,0 +1,3 @@
+{
+  return new ClassLoading(new CacheProvider.Simple(),classFileLocator,classLoader);
+}

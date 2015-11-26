@@ -1,7 +1,9 @@
 {
-  TypePool typePool=new TypePool.ClassLoading(null);
-  typePool.clear();
   TypePool.Resolution resolution=typePool.describe(Object.class.getName());
   assertThat(resolution.isResolved(),is(true));
   assertThat(resolution.resolve(),is((TypeDescription)new TypeDescription.ForLoadedType(Object.class)));
+  typePool.clear();
+  TypePool.Resolution otherResolution=typePool.describe(Object.class.getName());
+  assertThat(otherResolution.isResolved(),is(true));
+  assertThat(otherResolution.resolve(),is((TypeDescription)new TypeDescription.ForLoadedType(Object.class)));
 }
