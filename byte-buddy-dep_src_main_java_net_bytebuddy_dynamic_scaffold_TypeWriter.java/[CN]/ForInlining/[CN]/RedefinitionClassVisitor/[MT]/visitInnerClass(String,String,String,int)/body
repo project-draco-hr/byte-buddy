@@ -1,0 +1,6 @@
+{
+  if (internalName.equals(instrumentedType.getInternalName())) {
+    modifiers=instrumentedType.getModifiers();
+  }
+  super.visitInnerClass(internalName,outerName,innerName,modifiers);
+}
