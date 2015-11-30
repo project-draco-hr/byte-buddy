@@ -2,14 +2,22 @@
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.NoOp.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.Dispatcher.class).apply();
-  final Iterator<Class<?>> iterator=Arrays.<Class<?>>asList(Object.class,String.class).iterator();
+  final Iterator<Class<?>> types=Arrays.<Class<?>>asList(Object.class,String.class).iterator();
   ObjectPropertyAssertion.of(Nexus.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
     @Override public Class<?> create(){
-      return iterator.next();
+      return types.next();
     }
   }
 ).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.class).apply();
+  final Iterator<Method> methods=Arrays.asList(Object.class.getDeclaredMethods()).iterator();
+  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.Dispatcher.Available.class).create(new ObjectPropertyAssertion.Creator<Method>(){
+    @Override public Method create(){
+      return methods.next();
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.Dispatcher.Unavailable.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.InitializationAppender.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.Dispatcher.LazyInitializer.Simple.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.Premature.class).apply();
