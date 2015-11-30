@@ -2,10 +2,7 @@
   try {
     return (Instrumentation)ClassLoader.getSystemClassLoader().loadClass(Installer.class.getName()).getDeclaredField(INSTRUMENTATION_FIELD_NAME).get(STATIC_MEMBER);
   }
- catch (  RuntimeException exception) {
-    throw exception;
-  }
-catch (  Exception exception) {
-    throw new IllegalStateException("The Byte Buddy agent is not properly initialized",exception);
+ catch (  Exception ignored) {
+    return UNAVAILABLE;
   }
 }

@@ -7,11 +7,11 @@
   if (accessor.isAvailable()) {
     try {
       doInstall(accessor);
-      return doGetInstrumentation();
     }
  catch (    Exception exception) {
       throw new IllegalStateException("Current JVM does not support attachment with " + attachmentProvider);
     }
+    return getInstrumentation();
   }
  else {
     throw new IllegalStateException("Attachment provider cannot connect on the current JVM: " + attachmentProvider);
