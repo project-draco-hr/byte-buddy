@@ -1,6 +1,6 @@
 {
   try {
-    return new AgentBased((Instrumentation)ClassLoader.getSystemClassLoader().loadClass(BYTE_BUDDY_AGENT_TYPE).getDeclaredMethod(GET_INSTRUMENTATION_METHOD).invoke(STATIC_METHOD),classLoader);
+    return new AgentBased((Instrumentation)ClassLoader.getSystemClassLoader().loadClass(INSTALLER_TYPE).getDeclaredField(INSTRUMENTATION_FIELD).get(STATIC_FIELD),classLoader);
   }
  catch (  RuntimeException exception) {
     throw exception;

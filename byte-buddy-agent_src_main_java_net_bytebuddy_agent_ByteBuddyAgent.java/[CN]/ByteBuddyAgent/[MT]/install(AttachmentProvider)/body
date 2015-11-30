@@ -9,11 +9,11 @@
       doInstall(accessor);
     }
  catch (    Exception exception) {
-      throw new IllegalStateException("Current JVM does not support attachment with " + attachmentProvider);
+      throw new IllegalStateException("Error during attachment using: " + attachmentProvider,exception);
     }
     return getInstrumentation();
   }
  else {
-    throw new IllegalStateException("Attachment provider cannot connect on the current JVM: " + attachmentProvider);
+    throw new IllegalStateException("This JVM does not support attachment using: " + attachmentProvider);
   }
 }

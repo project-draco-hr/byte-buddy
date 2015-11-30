@@ -1,6 +1,6 @@
 {
   try {
-    return installOn((Instrumentation)ClassLoader.getSystemClassLoader().loadClass(BYTE_BUDDY_AGENT_TYPE).getDeclaredMethod(GET_INSTRUMENTATION_METHOD).invoke(STATIC_METHOD));
+    return installOn((Instrumentation)ClassLoader.getSystemClassLoader().loadClass(INSTALLER_TYPE).getDeclaredField(INSTRUMENTATION_FIELD).get(STATIC_FIELD));
   }
  catch (  RuntimeException exception) {
     throw exception;
