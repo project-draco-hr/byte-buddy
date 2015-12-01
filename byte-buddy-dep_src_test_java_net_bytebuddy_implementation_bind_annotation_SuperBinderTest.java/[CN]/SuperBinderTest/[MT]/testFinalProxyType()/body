@@ -1,0 +1,5 @@
+{
+  doReturn(void.class).when(annotation).proxyType();
+  when(targetType.isFinal()).thenReturn(true);
+  Super.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+}
