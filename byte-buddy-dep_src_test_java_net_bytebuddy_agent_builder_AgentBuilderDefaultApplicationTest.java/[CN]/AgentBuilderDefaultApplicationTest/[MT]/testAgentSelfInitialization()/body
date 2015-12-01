@@ -1,6 +1,6 @@
 {
   assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new BarTransformer()).installOnByteBuddyAgent();
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().withBinaryLocator(binaryLocator).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new BarTransformer()).installOnByteBuddyAgent();
   try {
     Class<?> type=classLoader.loadClass(Bar.class.getName());
     assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),is((Object)BAR));
