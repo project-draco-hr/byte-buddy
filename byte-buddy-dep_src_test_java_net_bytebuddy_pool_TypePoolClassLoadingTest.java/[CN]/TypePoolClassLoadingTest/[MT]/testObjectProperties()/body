@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypePool.ClassLoading.class).apply();
-}

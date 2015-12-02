@@ -1,0 +1,5 @@
+{
+  TypePool.Resolution resolution=typePool.describe(int.class.getName());
+  assertThat(resolution.isResolved(),is(true));
+  assertThat(resolution.resolve(),is((TypeDescription)new TypeDescription.ForLoadedType(int.class)));
+}

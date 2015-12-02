@@ -1,3 +1,0 @@
-{
-  return Arrays.asList(new Object[][]{{TypePool.ClassLoading.of((ClassLoader)null)},{TypePool.ClassLoading.of(ClassFileLocator.ForClassLoader.of(null),null)}});
-}
