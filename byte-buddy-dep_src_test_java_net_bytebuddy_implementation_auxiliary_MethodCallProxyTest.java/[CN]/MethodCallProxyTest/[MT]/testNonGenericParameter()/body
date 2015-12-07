@@ -1,0 +1,7 @@
+{
+  Class<?> auxiliaryType=proxyOnlyDeclaredMethodOf(GenericType.class);
+  assertThat(auxiliaryType.getTypeParameters().length,is(0));
+  assertThat(auxiliaryType.getDeclaredMethod("call").getGenericReturnType(),is((Type)Object.class));
+  assertThat(auxiliaryType.getDeclaredFields()[1].getGenericType(),is((Type)Object.class));
+  assertThat(auxiliaryType.getDeclaredFields()[2].getGenericType(),is((Type)Number.class));
+}

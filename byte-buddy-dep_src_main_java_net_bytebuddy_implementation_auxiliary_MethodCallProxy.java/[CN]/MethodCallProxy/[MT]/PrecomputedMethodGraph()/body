@@ -1,8 +1,8 @@
 {
   LinkedHashMap<MethodDescription.Token,MethodGraph.Node> nodes=new LinkedHashMap<MethodDescription.Token,MethodGraph.Node>();
-  MethodDescription callMethod=new TypeDescription.ForLoadedType(Callable.class).getDeclaredMethods().filter(named("call")).getOnly();
+  MethodDescription callMethod=new MethodDescription.Latent(new TypeDescription.ForLoadedType(Callable.class),"call",Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT,Collections.<GenericTypeDescription>emptyList(),TypeDescription.OBJECT,Collections.<ParameterDescription.Token>emptyList(),Collections.singletonList(new TypeDescription.ForLoadedType(Exception.class)),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE);
   nodes.put(callMethod.asToken(),new MethodGraph.Node.Simple(callMethod));
-  MethodDescription runMethod=new TypeDescription.ForLoadedType(Runnable.class).getDeclaredMethods().filter(named("run")).getOnly();
+  MethodDescription runMethod=new MethodDescription.Latent(new TypeDescription.ForLoadedType(Runnable.class),"run",Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT,Collections.<GenericTypeDescription>emptyList(),TypeDescription.VOID,Collections.<ParameterDescription.Token>emptyList(),Collections.<GenericTypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE);
   nodes.put(runMethod.asToken(),new MethodGraph.Node.Simple(runMethod));
   MethodGraph methodGraph=new MethodGraph.Simple(nodes);
   this.methodGraph=new MethodGraph.Linked.Delegation(methodGraph,methodGraph,Collections.<TypeDescription,MethodGraph>emptyMap());
