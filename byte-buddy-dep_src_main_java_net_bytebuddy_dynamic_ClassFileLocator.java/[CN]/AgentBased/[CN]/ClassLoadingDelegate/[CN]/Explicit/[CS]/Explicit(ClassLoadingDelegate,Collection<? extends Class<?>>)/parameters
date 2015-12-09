@@ -1,2 +1,2 @@
 ClassLoadingDelegate fallbackDelegate
-Collection<Class<?>> types
+Collection<? extends Class<?>> types
