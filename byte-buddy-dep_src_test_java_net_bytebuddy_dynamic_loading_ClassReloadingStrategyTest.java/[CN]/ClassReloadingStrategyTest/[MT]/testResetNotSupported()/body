@@ -1,3 +1,5 @@
 {
-  new ClassReloadingStrategy(mock(Instrumentation.class),ClassReloadingStrategy.Engine.RETRANSFORMATION).reset();
+  Instrumentation instrumentation=mock(Instrumentation.class);
+  when(instrumentation.isRetransformClassesSupported()).thenReturn(true);
+  new ClassReloadingStrategy(instrumentation,ClassReloadingStrategy.Engine.RETRANSFORMATION).reset();
 }

@@ -1,0 +1,7 @@
+{
+  Map<String,Class<?>> preregisteredTypes=new HashMap<String,Class<?>>(this.preregisteredTypes);
+  for (  Class<?> aType : type) {
+    preregisteredTypes.put(aType.getName(),aType);
+  }
+  return new ClassReloadingStrategy(instrumentation,engine,bootstrapInjection,preregisteredTypes);
+}

@@ -1,5 +1,5 @@
-ClassLoader loader
-String className
+ClassLoader classLoader
+String internalTypeName
 Class<?> classBeingRedefined
 ProtectionDomain protectionDomain
 byte[] classfileBuffer

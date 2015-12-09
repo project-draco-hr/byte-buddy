@@ -1,5 +1,5 @@
 {
-  this.instrumentation=instrumentation;
+  Engine engine;
   if (instrumentation.isRedefineClassesSupported()) {
     engine=Engine.REDEFINITION;
   }
@@ -9,5 +9,5 @@
  else {
     throw new IllegalArgumentException("Instrumentation does not support manipulation of loaded classes: " + instrumentation);
   }
-  bootstrapInjection=BootstrapInjection.Disabled.INSTANCE;
+  return new ClassReloadingStrategy(instrumentation,engine);
 }

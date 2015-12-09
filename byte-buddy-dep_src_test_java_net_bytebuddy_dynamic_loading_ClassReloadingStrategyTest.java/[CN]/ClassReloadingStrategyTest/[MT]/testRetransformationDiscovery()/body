@@ -1,5 +1,5 @@
 {
   Instrumentation instrumentation=mock(Instrumentation.class);
   when(instrumentation.isRetransformClassesSupported()).thenReturn(true);
-  assertThat(new ClassReloadingStrategy(instrumentation),notNullValue(ClassReloadingStrategy.class));
+  assertThat(ClassReloadingStrategy.of(instrumentation),notNullValue(ClassReloadingStrategy.class));
 }

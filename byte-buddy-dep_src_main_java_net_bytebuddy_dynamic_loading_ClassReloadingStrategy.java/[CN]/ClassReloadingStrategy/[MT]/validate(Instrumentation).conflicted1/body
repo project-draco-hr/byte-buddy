@@ -1,0 +1,6 @@
+{
+  if (!instrumentation.isRetransformClassesSupported()) {
+    throw new IllegalArgumentException("Does not support retransformation: " + instrumentation);
+  }
+  return this;
+}

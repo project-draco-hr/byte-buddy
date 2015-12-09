@@ -1,3 +1,3 @@
 {
-  return "ClassReloadingStrategy{" + "instrumentation=" + instrumentation + ", engine="+ engine+ ", bootstrapInjection="+ bootstrapInjection+ '}';
+  return "ClassReloadingStrategy{" + "instrumentation=" + instrumentation + ", engine="+ engine+ ", bootstrapInjection="+ bootstrapInjection+ ", preregisteredTypes="+ preregisteredTypes+ '}';
 }

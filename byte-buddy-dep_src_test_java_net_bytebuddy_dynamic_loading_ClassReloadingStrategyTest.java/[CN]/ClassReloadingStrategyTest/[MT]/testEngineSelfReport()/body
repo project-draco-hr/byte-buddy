@@ -1,0 +1,4 @@
+{
+  assertThat(ClassReloadingStrategy.Engine.REDEFINITION.isRedefinition(),is(true));
+  assertThat(ClassReloadingStrategy.Engine.RETRANSFORMATION.isRedefinition(),is(false));
+}

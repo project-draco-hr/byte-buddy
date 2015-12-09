@@ -4,7 +4,7 @@
     if (instrumentation == null) {
       throw new IllegalStateException("The Byte Buddy agent is not installed");
     }
-    return new ClassReloadingStrategy(instrumentation);
+    return ClassReloadingStrategy.of(instrumentation);
   }
  catch (  RuntimeException exception) {
     throw exception;

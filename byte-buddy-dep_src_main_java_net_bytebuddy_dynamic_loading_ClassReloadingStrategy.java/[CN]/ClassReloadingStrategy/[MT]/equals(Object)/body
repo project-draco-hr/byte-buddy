@@ -1,3 +1,6 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && engine == ((ClassReloadingStrategy)other).engine && instrumentation.equals(((ClassReloadingStrategy)other).instrumentation) && bootstrapInjection.equals(((ClassReloadingStrategy)other).bootstrapInjection);
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ClassReloadingStrategy that=(ClassReloadingStrategy)other;
+  return instrumentation.equals(that.instrumentation) && engine == that.engine && bootstrapInjection.equals(that.bootstrapInjection) && preregisteredTypes.equals(that.preregisteredTypes);
 }

@@ -1,13 +1,13 @@
 {
-  Map<String,Class<?>> loadedTypes=new HashMap<String,Class<?>>();
+  Map<String,Class<?>> availableTypes=new HashMap<String,Class<?>>(preregisteredTypes);
   for (  Class<?> type : instrumentation.getInitiatedClasses(classLoader)) {
-    loadedTypes.put(type.getName(),type);
+    availableTypes.put(type.getName(),type);
   }
   Map<Class<?>,ClassDefinition> classDefinitions=new ConcurrentHashMap<Class<?>,ClassDefinition>();
   Map<TypeDescription,Class<?>> loadedClasses=new HashMap<TypeDescription,Class<?>>();
   Map<TypeDescription,byte[]> unloadedClasses=new LinkedHashMap<TypeDescription,byte[]>();
   for (  Map.Entry<TypeDescription,byte[]> entry : types.entrySet()) {
-    Class<?> type=loadedTypes.get(entry.getKey().getName());
+    Class<?> type=availableTypes.get(entry.getKey().getName());
     if (type != null) {
       classDefinitions.put(type,new ClassDefinition(type,entry.getValue()));
       loadedClasses.put(entry.getKey(),type);
