@@ -2,6 +2,8 @@
   this.fallbackDelegate=fallbackDelegate;
   this.types=new HashMap<String,Class<?>>();
   for (  Class<?> type : types) {
-    this.types.put(type.getName(),type);
+    String typeName=type.getName();
+    int anonymousLoaderIndex=typeName.indexOf('/');
+    this.types.put(anonymousLoaderIndex == -1 ? typeName : typeName.substring(0,anonymousLoaderIndex),type);
   }
 }
