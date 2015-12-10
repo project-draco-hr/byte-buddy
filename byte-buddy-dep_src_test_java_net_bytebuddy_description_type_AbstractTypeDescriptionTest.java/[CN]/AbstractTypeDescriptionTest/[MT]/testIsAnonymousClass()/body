@@ -1,0 +1,5 @@
+{
+  for (  Class<?> type : standardTypes) {
+    assertThat(describe(type).isAnonymousClass(),is(type.isAnonymousClass()));
+  }
+}

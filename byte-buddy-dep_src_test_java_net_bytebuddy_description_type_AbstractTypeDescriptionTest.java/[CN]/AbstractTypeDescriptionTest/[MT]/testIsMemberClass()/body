@@ -1,0 +1,5 @@
+{
+  for (  Class<?> type : standardTypes) {
+    assertThat(describe(type).isMemberClass(),is(type.isMemberClass()));
+  }
+}

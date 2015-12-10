@@ -1,0 +1,5 @@
+{
+  for (  Class<?> type : standardTypes) {
+    assertThat(describe(type).isLocalClass(),is(type.isLocalClass()));
+  }
+}

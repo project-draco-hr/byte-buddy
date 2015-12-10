@@ -1,3 +1,5 @@
 {
-  return Type.getDescriptor(type);
+  String name=type.getName();
+  int anonymousLoaderIndex=name.indexOf('/');
+  return anonymousLoaderIndex == -1 ? Type.getDescriptor(type) : "L" + name.substring(0,anonymousLoaderIndex).replace('.','/') + ";";
 }

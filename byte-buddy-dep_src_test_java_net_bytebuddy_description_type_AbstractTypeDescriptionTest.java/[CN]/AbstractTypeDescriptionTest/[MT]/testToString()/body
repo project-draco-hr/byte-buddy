@@ -1,5 +1,5 @@
 {
-  for (  Class<?> type : TYPES) {
+  for (  Class<?> type : standardTypes) {
     assertThat(describe(type).toString(),is(type.toString()));
   }
 }

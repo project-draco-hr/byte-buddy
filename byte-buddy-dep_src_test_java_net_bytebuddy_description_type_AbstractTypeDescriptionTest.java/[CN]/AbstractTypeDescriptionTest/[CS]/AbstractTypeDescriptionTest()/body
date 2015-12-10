@@ -1,5 +1,8 @@
 {
-class ConstructorType {
+class MemberType {
   }
-  constructorType=ConstructorType.class;
+  constructorType=MemberType.class;
+  standardTypes=Arrays.asList(Object.class,SampleClass.class,void.class,byte.class,short.class,char.class,int.class,long.class,float.class,double.class,Object[].class,MemberType.class,MemberType[].class,new Object(){
+  }
+.getClass());
 }

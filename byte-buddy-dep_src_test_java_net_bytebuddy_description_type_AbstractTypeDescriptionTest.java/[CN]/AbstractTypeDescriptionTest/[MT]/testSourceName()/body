@@ -1,5 +1,5 @@
 {
-  for (  Class<?> type : TYPES) {
+  for (  Class<?> type : standardTypes) {
     if (type.isArray()) {
       assertThat(describe(type).getSourceCodeName(),is(type.getComponentType().getName() + "[]"));
     }
