@@ -7,14 +7,15 @@
   if (redefinitionStrategy.isEnabled()) {
     RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
     for (    Class<?> type : instrumentation.getAllLoadedClasses()) {
+      TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
       try {
         if (!instrumentation.isModifiableClass(type) || !collector.consider(type)) {
           try {
             try {
-              listener.onIgnored(new TypeDescription.ForLoadedType(type));
+              listener.onIgnored(typeDescription);
             }
   finally {
-              listener.onComplete(type.getName());
+              listener.onComplete(typeDescription.getName());
             }
           }
  catch (          Throwable ignored) {
@@ -24,10 +25,10 @@
  catch (      Throwable throwable) {
         try {
           try {
-            listener.onError(type.getName(),throwable);
+            listener.onError(typeDescription.getName(),throwable);
           }
   finally {
-            listener.onComplete(type.getName());
+            listener.onComplete(typeDescription.getName());
           }
         }
  catch (        Throwable ignored) {
