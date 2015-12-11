@@ -1,6 +1,7 @@
 {
   ObjectPropertyAssertion.of(MethodConstant.ForMethod.class).apply();
   ObjectPropertyAssertion.of(MethodConstant.ForConstructor.class).apply();
-  ObjectPropertyAssertion.of(MethodConstant.Cached.class).apply();
+  ObjectPropertyAssertion.of(MethodConstant.CachedMethod.class).apply();
+  ObjectPropertyAssertion.of(MethodConstant.CachedConstructor.class).apply();
   ObjectPropertyAssertion.of(MethodConstant.CanCacheIllegal.class).apply();
 }

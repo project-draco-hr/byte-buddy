@@ -1,0 +1,3 @@
+{
+  return FieldAccess.forField(implementationContext.cache(constructorConstant,CONSTRUCTOR_TYPE)).getter().apply(methodVisitor,implementationContext);
+}

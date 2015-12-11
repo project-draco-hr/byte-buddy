@@ -6,6 +6,6 @@
   assertThat(size.getMaximalSize(),is(1));
   verify(methodVisitor).visitFieldInsn(Opcodes.GETSTATIC,BAZ,FOO,QUX);
   verifyNoMoreInteractions(methodVisitor);
-  verify(implementationContext).cache(MethodConstant.forMethod(methodDescription),new TypeDescription.ForLoadedType(Method.class));
+  verify(implementationContext).cache(MethodConstant.forMethod(methodDescription),new TypeDescription.ForLoadedType(Constructor.class));
   verifyNoMoreInteractions(implementationContext);
 }

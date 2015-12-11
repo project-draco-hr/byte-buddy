@@ -1,7 +1,6 @@
 {
   when(targetType.getInternalName()).thenReturn(FOO);
   when(targetType.represents(Method.class)).thenReturn(true);
-  when(source.isMethod()).thenReturn(true);
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=Origin.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
-  assertThat(parameterBinding.isValid(),is(true));
+  assertThat(parameterBinding.isValid(),is(false));
 }

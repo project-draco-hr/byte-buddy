@@ -1,0 +1,12 @@
+{
+  OriginConstructor originConstructor=new OriginConstructor();
+  DynamicType.Loaded<Foo> loaded=implement(Foo.class,SuperMethodCall.INSTANCE.andThen(MethodDelegation.to(originConstructor)),getClass().getClassLoader(),isConstructor());
+  loaded.getLoaded().newInstance();
+  assertThat(originConstructor.constructor,instanceOf(Constructor.class));
+  assertThat(originConstructor.constructor,is((Constructor)loaded.getLoaded().getDeclaredConstructor()));
+  Constructor<?> previous=originConstructor.constructor;
+  loaded.getLoaded().newInstance();
+  assertThat(originConstructor.constructor,instanceOf(Constructor.class));
+  assertThat(originConstructor.constructor,is((Constructor)loaded.getLoaded().getDeclaredConstructor()));
+  assertThat(originConstructor.constructor,not(sameInstance((Constructor)previous)));
+}
