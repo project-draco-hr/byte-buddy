@@ -7,5 +7,5 @@
   assertThat(bar.getAnnotation(Baz.class).array(),is(array));
   assertThat(bar.getAnnotation(Baz.class).annotation(),is((Foo)new Foo.Instance()));
   assertThat(bar.getAnnotation(Baz.class).enumeration(),is(Baz.Enum.VALUE));
-  assertEquals(Void.class,bar.getAnnotation(Baz.class).type());
+  assertThat(bar.getAnnotation(Baz.class).type(),CoreMatchers.<Class<?>>is(Void.class));
 }

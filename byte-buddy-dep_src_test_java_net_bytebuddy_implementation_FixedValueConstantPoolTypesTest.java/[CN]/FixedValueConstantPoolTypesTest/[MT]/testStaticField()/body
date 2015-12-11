@@ -4,7 +4,7 @@
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(2));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(fixedValue == null ? 0 : 1));
   T instance=loaded.getLoaded().newInstance();
-  assertNotEquals(StringTarget.class,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(StringTarget.class)));
   assertThat(instance,instanceOf(helperClass));
   assertThat(loaded.getLoaded().getDeclaredMethod(FOO).invoke(instance),is(fixedValue));
   assertThat(loaded.getLoaded().getDeclaredMethod(BAR).invoke(instance),is(fixedValue));

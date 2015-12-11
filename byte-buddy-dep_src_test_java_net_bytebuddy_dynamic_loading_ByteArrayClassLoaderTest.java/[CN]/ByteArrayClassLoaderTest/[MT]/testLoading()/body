@@ -2,5 +2,5 @@
   Class<?> type=classLoader.loadClass(Foo.class.getName());
   assertThat(type.getClassLoader(),is(classLoader));
   assertEquals(classLoader.loadClass(Foo.class.getName()),type);
-  assertNotEquals(Foo.class,type);
+  assertThat(type,not(CoreMatchers.<Class<?>>is(Foo.class)));
 }

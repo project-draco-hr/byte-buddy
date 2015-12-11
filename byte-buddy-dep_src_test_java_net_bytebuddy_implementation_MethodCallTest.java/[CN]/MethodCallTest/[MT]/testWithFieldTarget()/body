@@ -10,7 +10,7 @@
   Field field=loaded.getLoaded().getDeclaredField(FOO);
   field.setAccessible(true);
   field.set(instance,target);
-  assertNotEquals(ExplicitTarget.class,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(ExplicitTarget.class)));
   assertThat(instance,instanceOf(ExplicitTarget.class));
   assertThat(instance.foo(),is(target.toString()));
 }

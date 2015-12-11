@@ -1,6 +1,6 @@
 {
   Class<?> type=Installer.class;
-  Assert.assertThat(Modifier.isPublic(type.getModifiers()),is(true));
+  assertThat(Modifier.isPublic(type.getModifiers()),is(true));
   assertThat(type.getDeclaringClass(),nullValue(Class.class));
   assertThat(type.getDeclaredClasses().length,is(0));
 }

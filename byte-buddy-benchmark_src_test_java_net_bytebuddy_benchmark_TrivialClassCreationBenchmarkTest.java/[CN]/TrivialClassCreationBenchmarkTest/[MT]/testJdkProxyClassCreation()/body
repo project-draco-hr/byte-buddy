@@ -1,6 +1,6 @@
 {
   Class<?> type=trivialClassCreationBenchmark.benchmarkJdkProxy();
-  assertNotEquals(Proxy.class,type);
-  assertEquals(Proxy.class,type.getSuperclass());
-  assertNotEquals(type,trivialClassCreationBenchmark.benchmarkJdkProxy());
+  assertThat(type,not(CoreMatchers.<Class<?>>is(TrivialClassCreationBenchmark.BASE_CLASS)));
+  assertThat(type.getSuperclass(),CoreMatchers.<Class<?>>is(Proxy.class));
+  assertThat(trivialClassCreationBenchmark.benchmarkJdkProxy(),not(CoreMatchers.<Class<?>>is(type)));
 }

@@ -7,7 +7,7 @@
   assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(1));
   ExplicitTarget instance=loaded.getLoaded().newInstance();
-  assertNotEquals(ExplicitTarget.class,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(ExplicitTarget.class)));
   assertThat(instance,instanceOf(ExplicitTarget.class));
   assertThat(instance.foo(),is(target.toString()));
 }

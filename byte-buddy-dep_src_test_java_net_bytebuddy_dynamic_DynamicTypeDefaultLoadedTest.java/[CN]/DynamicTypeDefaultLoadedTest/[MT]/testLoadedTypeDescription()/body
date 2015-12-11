@@ -1,7 +1,7 @@
 {
-  assertEquals(MAIN_TYPE,dynamicType.getLoaded());
+  assertThat(dynamicType.getLoaded(),CoreMatchers.<Class<?>>is(MAIN_TYPE));
   assertThat(dynamicType.getTypeDescription(),is(mainTypeDescription));
   assertThat(dynamicType.getLoadedAuxiliaryTypes().size(),is(1));
   assertThat(dynamicType.getLoadedAuxiliaryTypes().keySet(),hasItem(auxiliaryTypeDescription));
-  assertEquals(AUXILIARY_TYPE,dynamicType.getLoadedAuxiliaryTypes().get(auxiliaryTypeDescription));
+  assertThat(dynamicType.getLoadedAuxiliaryTypes().get(auxiliaryTypeDescription),CoreMatchers.<Class<?>>is(AUXILIARY_TYPE));
 }

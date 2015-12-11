@@ -7,7 +7,7 @@
   if (definesField) {
     initializeField(instance);
   }
-  assertNotEquals(target,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(target)));
   assertThat(instance,instanceOf(target));
   Method getter=loaded.getLoaded().getDeclaredMethod(GET + Character.toUpperCase(FOO.charAt(0)) + FOO.substring(1));
   assertThat(getter.invoke(instance),is(value));

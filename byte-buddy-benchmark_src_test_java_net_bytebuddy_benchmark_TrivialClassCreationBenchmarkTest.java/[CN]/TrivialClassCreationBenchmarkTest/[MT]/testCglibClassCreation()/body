@@ -1,6 +1,6 @@
 {
   Class<?> type=trivialClassCreationBenchmark.benchmarkCglib();
-  assertNotEquals(TrivialClassCreationBenchmark.BASE_CLASS,type);
-  assertEquals(TrivialClassCreationBenchmark.BASE_CLASS,type.getSuperclass());
-  assertNotEquals(type,trivialClassCreationBenchmark.benchmarkCglib());
+  assertThat(type,not(CoreMatchers.<Class<?>>is(TrivialClassCreationBenchmark.BASE_CLASS)));
+  assertThat(type.getSuperclass(),CoreMatchers.<Class<?>>is(TrivialClassCreationBenchmark.BASE_CLASS));
+  assertThat(trivialClassCreationBenchmark.benchmarkCglib(),not(CoreMatchers.<Class<?>>is(type)));
 }

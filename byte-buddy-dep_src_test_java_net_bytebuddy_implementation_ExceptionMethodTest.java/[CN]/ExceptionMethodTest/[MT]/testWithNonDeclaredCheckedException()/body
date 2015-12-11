@@ -4,14 +4,14 @@
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
   Foo instance=loaded.getLoaded().newInstance();
-  assertNotEquals(Foo.class,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(Foo.class)));
   assertThat(instance,instanceOf(Foo.class));
   try {
     instance.foo();
     fail();
   }
  catch (  Exception exception) {
-    assertEquals(Exception.class,exception.getClass());
+    assertThat(exception.getClass(),CoreMatchers.<Class<?>>is(Exception.class));
     assertThat(exception.getMessage(),nullValue());
   }
   instance.assertZeroCalls();

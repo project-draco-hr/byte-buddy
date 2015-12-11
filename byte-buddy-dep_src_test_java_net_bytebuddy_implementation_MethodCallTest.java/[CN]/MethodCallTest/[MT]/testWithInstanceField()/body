@@ -9,7 +9,7 @@
   Field field=instance.getClass().getDeclaredField(FOO);
   field.setAccessible(true);
   field.set(instance,FOO);
-  assertNotEquals(MethodCallWithExplicitArgument.class,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(MethodCallWithExplicitArgument.class)));
   assertThat(instance,instanceOf(MethodCallWithExplicitArgument.class));
   assertThat(instance.foo(BAR),is(FOO));
 }

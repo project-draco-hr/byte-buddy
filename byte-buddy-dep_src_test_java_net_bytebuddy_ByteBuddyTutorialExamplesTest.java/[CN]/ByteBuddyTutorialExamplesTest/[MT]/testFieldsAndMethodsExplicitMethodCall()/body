@@ -1,4 +1,4 @@
 {
   Object object=new ByteBuddy().subclass(Object.class,ConstructorStrategy.Default.NO_CONSTRUCTORS).defineConstructor(Collections.<Class<?>>singletonList(int.class),Visibility.PUBLIC).intercept(MethodCall.invoke(Object.class.getDeclaredConstructor())).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getDeclaredConstructor(int.class).newInstance(42);
-  assertNotEquals(Object.class,object.getClass());
+  assertThat(object.getClass(),CoreMatchers.not(CoreMatchers.<Class<?>>is(Object.class)));
 }

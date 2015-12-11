@@ -1,6 +1,6 @@
 {
   ClassFileLocator.AgentBased.ClassLoadingDelegate classLoadingDelegate=ClassFileLocator.AgentBased.ClassLoadingDelegate.Explicit.of(Object.class);
   assertThat(classLoadingDelegate.getClassLoader(),is(ClassLoader.getSystemClassLoader()));
-  assertEquals(Object.class,classLoadingDelegate.locate(Object.class.getName()));
-  assertEquals(String.class,classLoadingDelegate.locate(String.class.getName()));
+  assertThat(classLoadingDelegate.locate(Object.class.getName()),CoreMatchers.<Class<?>>is(Object.class));
+  assertThat(classLoadingDelegate.locate(String.class.getName()),CoreMatchers.<Class<?>>is(String.class));
 }

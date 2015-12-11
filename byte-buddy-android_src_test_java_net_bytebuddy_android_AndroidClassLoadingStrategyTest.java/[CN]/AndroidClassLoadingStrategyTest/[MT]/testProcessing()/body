@@ -13,8 +13,8 @@
   ClassLoader parentClassLoader=mock(ClassLoader.class);
   Map<TypeDescription,Class<?>> loaded=classLoadingStrategy.load(parentClassLoader,unloaded);
   assertThat(loaded.size(),is(2));
-  assertEquals(Object.class,loaded.get(first));
-  assertEquals(Void.class,loaded.get(second));
+  assertThat(loaded.get(first),CoreMatchers.<Class<?>>is(Object.class));
+  assertThat(loaded.get(second),CoreMatchers.<Class<?>>is(Void.class));
   verify(dexProcessor).create();
   verify(dexProcessor).makeClassLoader(any(File.class),eq(folder),eq(parentClassLoader));
   verifyNoMoreInteractions(dexProcessor);

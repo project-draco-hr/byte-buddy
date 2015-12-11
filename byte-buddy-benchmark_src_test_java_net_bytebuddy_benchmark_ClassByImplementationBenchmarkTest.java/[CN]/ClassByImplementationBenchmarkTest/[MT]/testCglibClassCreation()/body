@@ -1,7 +1,7 @@
 {
   ExampleInterface instance=classByImplementationBenchmark.benchmarkCglib();
   assertThat(Arrays.asList(instance.getClass().getInterfaces()),hasItem(ClassByImplementationBenchmark.BASE_CLASS));
-  assertEquals(Object.class,instance.getClass().getSuperclass());
-  assertNotEquals(instance.getClass(),classByImplementationBenchmark.benchmarkCglib());
+  assertThat(instance.getClass().getSuperclass(),CoreMatchers.<Class<?>>is(Object.class));
+  assertThat(classByImplementationBenchmark.benchmarkCglib().getClass(),not(CoreMatchers.<Class<?>>is(instance.getClass())));
   assertReturnValues(instance);
 }

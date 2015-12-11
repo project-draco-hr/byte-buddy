@@ -4,7 +4,7 @@
   assertThat(type.getDeclaredConstructors().length,is(1));
   assertThat(type.getDeclaredFields().length,is(3));
   assertThat(Enum.class.isAssignableFrom(type),is(true));
-  assertNotEquals(Enum.class,type);
+  assertThat(type,not(CoreMatchers.<Class<?>>is(Enum.class)));
   assertThat(type.isInterface(),is(false));
   assertThat(type.isAnnotation(),is(false));
   assertThat(type.isEnum(),is(true));

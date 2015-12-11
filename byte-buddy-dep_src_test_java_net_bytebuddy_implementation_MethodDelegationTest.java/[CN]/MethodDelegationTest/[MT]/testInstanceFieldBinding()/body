@@ -6,10 +6,10 @@
   T instance=loaded.getLoaded().newInstance();
   Field field=loaded.getLoaded().getDeclaredField(FIELD_NAME);
   assertThat(field.getModifiers(),is(Modifier.PUBLIC));
-  assertEquals(targetType,field.getType());
+  assertThat(field.getType(),CoreMatchers.<Class<?>>is(targetType));
   field.setAccessible(true);
   field.set(instance,targetType.newInstance());
-  assertNotEquals(sourceType,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(sourceType)));
   assertThat(instance,instanceOf(sourceType));
   assertThat(loaded.getLoaded().getDeclaredMethod(FOO,parameterTypes).invoke(instance,arguments),(Matcher)matcher);
   instance.assertZeroCalls();

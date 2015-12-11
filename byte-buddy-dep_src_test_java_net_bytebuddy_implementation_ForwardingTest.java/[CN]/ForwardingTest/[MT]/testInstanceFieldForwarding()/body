@@ -8,6 +8,6 @@
   field.setAccessible(true);
   field.set(instance,new Bar());
   assertThat(instance.foo(),is(BAR));
-  assertNotEquals(Foo.class,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(Foo.class)));
   assertThat(instance,instanceOf(Foo.class));
 }

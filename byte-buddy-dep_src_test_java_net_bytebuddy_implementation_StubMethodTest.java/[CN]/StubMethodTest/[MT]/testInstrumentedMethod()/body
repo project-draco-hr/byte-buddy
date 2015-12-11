@@ -3,7 +3,7 @@
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(11));
   Foo instance=loaded.getLoaded().newInstance();
-  assertNotEquals(Foo.class,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(Foo.class)));
   assertThat(instance,instanceOf(Foo.class));
   assertThat(loaded.getLoaded().getDeclaredMethod(methodName,methodParameterTypes).invoke(instance,methodArguments),(Matcher)matcher);
   instance.assertZeroCalls();

@@ -5,5 +5,5 @@
   ClassLoadingStrategy classLoadingStrategy=new AndroidClassLoadingStrategy(folder,new StubbedClassLoaderDexCompilation(classLoader));
   Map<TypeDescription,Class<?>> map=classLoadingStrategy.load(getClass().getClassLoader(),dynamicType.getAllTypes());
   assertThat(map.size(),is(1));
-  assertEquals(Void.class,map.get(dynamicType.getTypeDescription()));
+  assertThat(map.get(dynamicType.getTypeDescription()),CoreMatchers.<Class<?>>is(Void.class));
 }

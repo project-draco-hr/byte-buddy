@@ -4,7 +4,7 @@
   assertThat(type.getDeclaredConstructors().length,is(1));
   assertThat(type.getDeclaredConstructor(),notNullValue(Constructor.class));
   assertThat(DefaultConstructor.class.isAssignableFrom(type),is(true));
-  assertNotEquals(DefaultConstructor.class,type);
+  assertThat(type,not(CoreMatchers.<Class<?>>is(DefaultConstructor.class)));
   assertThat(type.newInstance(),notNullValue(DefaultConstructor.class));
   assertThat(type.isInterface(),is(false));
   assertThat(type.isAnnotation(),is(false));

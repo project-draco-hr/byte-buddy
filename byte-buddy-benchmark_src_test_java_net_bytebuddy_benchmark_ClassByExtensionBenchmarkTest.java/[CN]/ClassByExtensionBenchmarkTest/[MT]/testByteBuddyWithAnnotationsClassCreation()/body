@@ -1,7 +1,7 @@
 {
   ExampleClass instance=classByExtensionBenchmark.benchmarkByteBuddyWithAnnotations();
-  assertNotEquals(ClassByExtensionBenchmark.BASE_CLASS,instance.getClass());
-  assertEquals(ClassByExtensionBenchmark.BASE_CLASS,instance.getClass().getSuperclass());
-  assertNotEquals(instance.getClass(),classByExtensionBenchmark.benchmarkByteBuddyWithAnnotations());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(ClassByExtensionBenchmark.BASE_CLASS)));
+  assertThat(instance.getClass().getSuperclass(),CoreMatchers.<Class<?>>is(ClassByExtensionBenchmark.BASE_CLASS));
+  assertThat(classByExtensionBenchmark.benchmarkByteBuddyWithAnnotations().getClass(),not(CoreMatchers.<Class<?>>is(instance.getClass())));
   assertReturnValues(instance);
 }

@@ -6,7 +6,7 @@
   assertThat(type.getDeclaredMethod(QUX).getDefaultValue(),is((Object)SimpleEnum.FIRST));
   assertThat(type.getDeclaredConstructors().length,is(0));
   assertThat(Annotation.class.isAssignableFrom(type),is(true));
-  assertNotEquals(Annotation.class,type);
+  assertThat(type,not(CoreMatchers.<Class<?>>is(Annotation.class)));
   assertThat(type.isInterface(),is(true));
   assertThat(type.isAnnotation(),is(true));
 }

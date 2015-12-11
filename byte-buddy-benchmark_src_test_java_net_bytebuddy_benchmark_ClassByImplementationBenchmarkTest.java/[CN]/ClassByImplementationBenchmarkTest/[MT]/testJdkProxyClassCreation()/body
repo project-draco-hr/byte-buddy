@@ -1,7 +1,7 @@
 {
   ExampleInterface instance=classByImplementationBenchmark.benchmarkJdkProxy();
   assertThat(Arrays.asList(instance.getClass().getInterfaces()),hasItem(ClassByImplementationBenchmark.BASE_CLASS));
-  assertEquals(Proxy.class,instance.getClass().getSuperclass());
-  assertNotEquals(instance.getClass(),classByImplementationBenchmark.benchmarkJdkProxy());
+  assertThat(instance.getClass().getSuperclass(),CoreMatchers.<Class<?>>is(Proxy.class));
+  assertThat(classByImplementationBenchmark.benchmarkByteBuddy().getClass(),not(CoreMatchers.<Class<?>>is(instance.getClass())));
   assertReturnValues(instance);
 }

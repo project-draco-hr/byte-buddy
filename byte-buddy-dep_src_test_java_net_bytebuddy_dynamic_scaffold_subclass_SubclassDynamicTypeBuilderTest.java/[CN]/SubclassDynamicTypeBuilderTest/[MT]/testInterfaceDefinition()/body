@@ -4,7 +4,7 @@
   assertThat(type.getDeclaredMethod(FOO,Void.class),notNullValue(Method.class));
   assertThat(type.getDeclaredConstructors().length,is(0));
   assertThat(SimpleInterface.class.isAssignableFrom(type),is(true));
-  assertNotEquals(SimpleInterface.class,type);
+  assertThat(type,not(CoreMatchers.<Class<?>>is(SimpleInterface.class)));
   assertThat(type.isInterface(),is(true));
   assertThat(type.isAnnotation(),is(false));
 }

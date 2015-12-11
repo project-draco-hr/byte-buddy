@@ -5,6 +5,6 @@
   assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
   Object instance=loaded.getLoaded().newInstance();
-  assertNotEquals(Object.class,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(Object.class)));
   assertThat(instance,instanceOf(Object.class));
 }

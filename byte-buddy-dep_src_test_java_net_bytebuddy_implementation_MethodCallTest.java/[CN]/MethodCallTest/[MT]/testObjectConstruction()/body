@@ -6,8 +6,8 @@
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
   SelfReference instance=loaded.getLoaded().newInstance();
   SelfReference created=instance.foo();
-  assertEquals(SelfReference.class,created.getClass());
-  assertNotEquals(SelfReference.class,instance.getClass());
+  assertThat(created.getClass(),CoreMatchers.<Class<?>>is(SelfReference.class));
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(SelfReference.class)));
   assertThat(instance,instanceOf(SelfReference.class));
   assertThat(created,not(instance));
 }

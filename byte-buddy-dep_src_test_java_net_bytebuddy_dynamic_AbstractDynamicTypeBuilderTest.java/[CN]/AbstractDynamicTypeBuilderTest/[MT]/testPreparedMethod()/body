@@ -3,9 +3,9 @@
   Class<?> type=createPlain().defineMethod(BAR,String.class,Collections.<Class<?>>emptyList(),Visibility.PUBLIC).intercept(new PreparedMethod()).make().load(classLoader,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethods().length,is(2));
   assertThat(type.getDeclaredMethod(FOO,Object.class).getName(),is(FOO));
-  assertEquals(Object.class,type.getDeclaredMethod(FOO,Object.class).getReturnType());
+  assertThat(type.getDeclaredMethod(FOO,Object.class).getReturnType(),CoreMatchers.<Class<?>>is(Object.class));
   assertThat(type.getDeclaredMethod(FOO,Object.class).getParameterTypes().length,is(1));
-  assertEquals(Object.class,type.getDeclaredMethod(FOO,Object.class).getParameterTypes()[0]);
+  assertThat(type.getDeclaredMethod(FOO,Object.class).getParameterTypes()[0],CoreMatchers.<Class<?>>is(Object.class));
   assertThat(type.getDeclaredMethod(FOO,Object.class).getModifiers(),is(MODIFIERS));
   assertThat(type.getDeclaredMethod(FOO,Object.class).getAnnotations().length,is(1));
   Annotation methodAnnotation=type.getDeclaredMethod(FOO,Object.class).getAnnotations()[0];

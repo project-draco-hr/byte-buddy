@@ -5,6 +5,6 @@
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
   InstanceMethod instance=loaded.getLoaded().newInstance();
   assertThat(instance.foo(),is(BAR));
-  assertNotEquals(InstanceMethod.class,instance.getClass());
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(InstanceMethod.class)));
   assertThat(instance,instanceOf(InstanceMethod.class));
 }
