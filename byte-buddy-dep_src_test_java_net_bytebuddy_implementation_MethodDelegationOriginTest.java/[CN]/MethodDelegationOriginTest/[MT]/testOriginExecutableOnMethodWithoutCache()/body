@@ -1,0 +1,9 @@
+{
+  Object origin=Class.forName(ORIGIN_EXECUTABLE).newInstance();
+  DynamicType.Loaded<Foo> loaded=implement(Foo.class,MethodDelegation.to(origin));
+  Foo instance=loaded.getLoaded().newInstance();
+  Object method=instance.foo();
+  assertThat(method,instanceOf(Method.class));
+  assertThat(method,is((Object)Foo.class.getDeclaredMethod(FOO)));
+  assertThat(method,not(sameInstance(instance.foo())));
+}
