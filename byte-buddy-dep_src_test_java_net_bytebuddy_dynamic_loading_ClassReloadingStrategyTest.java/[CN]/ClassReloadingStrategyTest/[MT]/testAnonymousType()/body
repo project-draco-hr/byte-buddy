@@ -1,0 +1,3 @@
+{
+  ((Runnable)Class.forName("net.bytebuddy.test.precompiled.AnonymousClassLoaderTest").newInstance()).run();
+}

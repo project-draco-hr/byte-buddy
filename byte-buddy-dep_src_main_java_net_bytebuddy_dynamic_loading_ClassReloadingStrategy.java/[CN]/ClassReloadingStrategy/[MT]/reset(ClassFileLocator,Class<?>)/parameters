@@ -1,0 +1,2 @@
+ClassFileLocator classFileLocator
+Class<?> type

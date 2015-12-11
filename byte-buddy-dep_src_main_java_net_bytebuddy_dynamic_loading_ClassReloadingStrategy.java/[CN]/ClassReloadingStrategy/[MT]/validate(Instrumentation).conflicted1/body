@@ -1,6 +1,6 @@
 {
-  if (!instrumentation.isRedefineClassesSupported()) {
-    throw new IllegalArgumentException("Does not support redefinition: " + instrumentation);
+  if (!instrumentation.isRetransformClassesSupported()) {
+    throw new IllegalArgumentException("Does not support retransformation: " + instrumentation);
   }
   return this;
 }
