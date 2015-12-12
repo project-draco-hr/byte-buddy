@@ -1,0 +1,13 @@
+{
+  Map<TypeDescription,byte[]> independentTypes=new LinkedHashMap<TypeDescription,byte[]>(rawAuxiliaryTypes);
+  for (  TypeDescription auxiliaryType : rawAuxiliaryTypes.keySet()) {
+    if (auxiliaryType.isAssignableTo(instrumentedType)) {
+      independentTypes.remove(auxiliaryType);
+    }
+  }
+  if (!independentTypes.isEmpty()) {
+    for (    Map.Entry<TypeDescription,Class<?>> auxiliary : (classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext)).inject(independentTypes).entrySet()) {
+      loadedTypeInitializers.get(auxiliary.getKey()).onLoad(auxiliary.getValue());
+    }
+  }
+}
