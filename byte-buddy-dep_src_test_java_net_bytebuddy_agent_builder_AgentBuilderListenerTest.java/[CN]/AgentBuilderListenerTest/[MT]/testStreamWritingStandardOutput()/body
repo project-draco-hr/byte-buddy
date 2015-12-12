@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.Listener.StreamWriting.toSystemOut(),is((AgentBuilder.Listener)new AgentBuilder.Listener.StreamWriting(System.out)));
+}
