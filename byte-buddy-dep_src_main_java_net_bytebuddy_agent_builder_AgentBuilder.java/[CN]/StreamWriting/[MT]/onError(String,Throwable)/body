@@ -1,0 +1,4 @@
+{
+  printStream.println(PREFIX + " ERROR " + typeName);
+  throwable.printStackTrace(printStream);
+}
