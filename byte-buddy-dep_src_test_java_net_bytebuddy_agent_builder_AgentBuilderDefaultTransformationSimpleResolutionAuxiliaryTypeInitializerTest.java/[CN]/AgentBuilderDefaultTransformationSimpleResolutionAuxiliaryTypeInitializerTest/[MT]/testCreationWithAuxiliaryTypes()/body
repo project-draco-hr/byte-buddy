@@ -1,9 +1,0 @@
-{
-  Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=new HashMap<TypeDescription,LoadedTypeInitializer>();
-  loadedTypeInitializers.put(instrumentedType,loadedTypeInitializer);
-  loadedTypeInitializers.put(auxiliaryType,auxiliaryInitializer);
-  when(dynamicType.getTypeDescription()).thenReturn(instrumentedType);
-  when(dynamicType.getLoadedTypeInitializers()).thenReturn(loadedTypeInitializers);
-  when(dynamicType.getRawAuxiliaryTypes()).thenReturn(Collections.singletonMap(auxiliaryType,FOO));
-  assertThat(AgentBuilder.Default.Transformation.Simple.Resolution.AuxiliaryTypeInitializer.of(bootstrapInjectionStrategy,dynamicType,classLoader,protectionDomain,accessControlContext),is((AgentBuilder.InitializationStrategy.Dispatcher.LazyInitializer)new AgentBuilder.Default.Transformation.Simple.Resolution.AuxiliaryTypeInitializer(bootstrapInjectionStrategy,instrumentedType,classLoader,protectionDomain,accessControlContext,Collections.singletonMap(auxiliaryType,FOO),loadedTypeInitializers)));
-}

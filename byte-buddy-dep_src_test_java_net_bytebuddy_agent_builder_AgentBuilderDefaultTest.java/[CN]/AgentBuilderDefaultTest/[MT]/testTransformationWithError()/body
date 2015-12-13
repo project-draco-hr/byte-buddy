@@ -1,5 +1,5 @@
 {
-  when(unloaded.getBytes()).thenReturn(BAZ);
+  when(dynamicType.getBytes()).thenReturn(BAZ);
   RuntimeException exception=mock(RuntimeException.class);
   when(resolution.resolve()).thenThrow(exception);
   when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),REDEFINED,REDEFINED.getProtectionDomain())).thenReturn(true);

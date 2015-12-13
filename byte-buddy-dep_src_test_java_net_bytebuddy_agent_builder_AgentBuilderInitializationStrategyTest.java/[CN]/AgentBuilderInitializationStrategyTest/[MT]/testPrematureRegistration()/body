@@ -1,6 +1,3 @@
 {
-  AgentBuilder.InitializationStrategy.Minimal.INSTANCE.register(FOO,classLoader,lazyInitializer);
-  verifyZeroInteractions(classLoader);
-  verify(lazyInitializer).loadIndependentAuxiliaryTypes();
-  verifyNoMoreInteractions(lazyInitializer);
+  AgentBuilder.InitializationStrategy.Minimal.INSTANCE.register(dynamicType,classLoader,injectorFactory);
 }

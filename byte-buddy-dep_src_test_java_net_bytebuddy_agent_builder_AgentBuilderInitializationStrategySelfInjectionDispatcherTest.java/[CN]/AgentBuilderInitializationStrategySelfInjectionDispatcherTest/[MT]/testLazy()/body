@@ -1,0 +1,17 @@
+{
+  AgentBuilder.InitializationStrategy.Dispatcher dispatcher=new AgentBuilder.InitializationStrategy.SelfInjection.Dispatcher.Lazy(IDENTIFIER);
+  dispatcher.register(dynamicType,Qux.class.getClassLoader(),injectorFactory);
+  verifyZeroInteractions(classInjector,dependentInitializer,independentInitializer);
+  Nexus.initialize(Qux.class,IDENTIFIER);
+  Map<TypeDescription,byte[]> injected=new HashMap<TypeDescription,byte[]>();
+  injected.put(independent,BAR);
+  injected.put(dependent,FOO);
+  verify(classInjector).inject(injected);
+  verifyNoMoreInteractions(classInjector);
+  verify(independentInitializer).onLoad(Bar.class);
+  verifyNoMoreInteractions(independentInitializer);
+  verify(dependentInitializer).onLoad(Foo.class);
+  verifyNoMoreInteractions(dependentInitializer);
+  verify(instrumentedInitializer).onLoad(Qux.class);
+  verifyNoMoreInteractions(instrumentedInitializer);
+}

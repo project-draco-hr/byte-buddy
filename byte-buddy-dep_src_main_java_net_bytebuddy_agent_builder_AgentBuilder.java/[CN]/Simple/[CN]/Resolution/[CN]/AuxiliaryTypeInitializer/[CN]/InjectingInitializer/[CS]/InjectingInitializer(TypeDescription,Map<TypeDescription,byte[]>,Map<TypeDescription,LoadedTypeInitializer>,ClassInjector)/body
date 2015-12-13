@@ -1,6 +1,0 @@
-{
-  this.instrumentedType=instrumentedType;
-  this.rawAuxiliaryTypes=rawAuxiliaryTypes;
-  this.loadedTypeInitializers=loadedTypeInitializers;
-  this.classInjector=classInjector;
-}

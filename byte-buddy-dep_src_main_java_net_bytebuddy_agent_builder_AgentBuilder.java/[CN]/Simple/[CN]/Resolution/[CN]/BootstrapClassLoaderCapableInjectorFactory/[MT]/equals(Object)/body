@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  BootstrapClassLoaderCapableInjectorFactory that=(BootstrapClassLoaderCapableInjectorFactory)other;
+  return bootstrapInjectionStrategy.equals(that.bootstrapInjectionStrategy) && !(classLoader != null ? !classLoader.equals(that.classLoader) : that.classLoader != null) && !(protectionDomain != null ? !protectionDomain.equals(that.protectionDomain) : that.protectionDomain != null)&& accessControlContext.equals(that.accessControlContext);
+}

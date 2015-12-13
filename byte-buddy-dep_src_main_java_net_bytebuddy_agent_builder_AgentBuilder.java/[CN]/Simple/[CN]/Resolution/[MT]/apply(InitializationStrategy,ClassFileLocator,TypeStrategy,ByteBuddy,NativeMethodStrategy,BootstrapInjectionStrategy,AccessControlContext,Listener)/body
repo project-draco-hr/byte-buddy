@@ -1,7 +1,7 @@
 {
   InitializationStrategy.Dispatcher dispatcher=initializationStrategy.dispatcher();
   DynamicType.Unloaded<?> dynamicType=dispatcher.apply(transformer.transform(typeStrategy.builder(typeDescription,byteBuddy,classFileLocator,methodNameTransformer.resolve()),typeDescription)).make();
-  dispatcher.register(typeDescription.getName(),classLoader,AuxiliaryTypeInitializer.of(bootstrapInjectionStrategy,dynamicType,classLoader,protectionDomain,accessControlContext));
+  dispatcher.register(dynamicType,classLoader,new BootstrapClassLoaderCapableInjectorFactory(bootstrapInjectionStrategy,classLoader,protectionDomain,accessControlContext));
   listener.onTransformation(typeDescription,dynamicType);
   return dynamicType.getBytes();
 }

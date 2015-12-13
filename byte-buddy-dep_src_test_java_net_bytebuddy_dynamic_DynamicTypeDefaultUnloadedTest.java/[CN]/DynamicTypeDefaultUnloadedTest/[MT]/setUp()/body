@@ -9,5 +9,5 @@
   when(auxiliaryType.getTypeDescription()).thenReturn(auxiliaryTypeDescription);
   when(auxiliaryType.getBytes()).thenReturn(auxiliaryTypeByte);
   when(auxiliaryType.getLoadedTypeInitializers()).thenReturn(Collections.singletonMap(auxiliaryTypeDescription,auxiliaryLoadedTypeInitializer));
-  when(auxiliaryType.getRawAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>emptyMap());
+  when(auxiliaryType.getAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>emptyMap());
 }

@@ -1,0 +1,3 @@
+{
+  AgentBuilder.Default.BootstrapInjectionStrategy.Disabled.INSTANCE.make(mock(ProtectionDomain.class));
+}

@@ -1,16 +1,16 @@
 {
-  when(unloaded.getRawAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>singletonMap(new TypeDescription.ForLoadedType(AUXILIARY),QUX));
+  when(dynamicType.getAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>singletonMap(new TypeDescription.ForLoadedType(AUXILIARY),QUX));
   Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=new HashMap<TypeDescription,LoadedTypeInitializer>();
   loadedTypeInitializers.put(new TypeDescription.ForLoadedType(REDEFINED),loadedTypeInitializer);
   LoadedTypeInitializer auxiliaryInitializer=mock(LoadedTypeInitializer.class);
   loadedTypeInitializers.put(new TypeDescription.ForLoadedType(AUXILIARY),auxiliaryInitializer);
-  when(unloaded.getLoadedTypeInitializers()).thenReturn(loadedTypeInitializers);
-  when(unloaded.getBytes()).thenReturn(BAZ);
+  when(dynamicType.getLoadedTypeInitializers()).thenReturn(loadedTypeInitializers);
+  when(dynamicType.getBytes()).thenReturn(BAZ);
   when(resolution.resolve()).thenReturn(new TypeDescription.ForLoadedType(REDEFINED));
   when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),null,REDEFINED.getProtectionDomain())).thenReturn(true);
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).withInitializationStrategy(initializationStrategy).withBinaryLocator(binaryLocator).withTypeStrategy(typeStrategy).withListener(listener).withoutNativeMethodPrefix().withAccessControlContext(accessControlContext).type(rawMatcher).transform(transformer).installOn(instrumentation);
   assertThat(classFileTransformer.transform(REDEFINED.getClassLoader(),REDEFINED.getName(),null,REDEFINED.getProtectionDomain(),QUX),is(BAZ));
-  verify(listener).onTransformation(new TypeDescription.ForLoadedType(REDEFINED),unloaded);
+  verify(listener).onTransformation(new TypeDescription.ForLoadedType(REDEFINED),dynamicType);
   verify(listener).onComplete(REDEFINED.getName());
   verifyNoMoreInteractions(listener);
   verify(instrumentation).addTransformer(classFileTransformer,false);
@@ -18,6 +18,6 @@
   verify(initializationStrategy).dispatcher();
   verifyNoMoreInteractions(initializationStrategy);
   verify(dispatcher).apply(builder);
-  verify(dispatcher).register(REDEFINED.getName(),REDEFINED.getClassLoader(),new AgentBuilder.Default.Transformation.Simple.Resolution.AuxiliaryTypeInitializer(AgentBuilder.Default.BootstrapInjectionStrategy.Disabled.INSTANCE,new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),REDEFINED.getProtectionDomain(),accessControlContext,Collections.singletonMap((TypeDescription)new TypeDescription.ForLoadedType(AUXILIARY),QUX),loadedTypeInitializers));
+  verify(dispatcher).register(dynamicType,REDEFINED.getClassLoader(),new AgentBuilder.Default.Transformation.Simple.Resolution.BootstrapClassLoaderCapableInjectorFactory(AgentBuilder.Default.BootstrapInjectionStrategy.Disabled.INSTANCE,REDEFINED.getClassLoader(),REDEFINED.getProtectionDomain(),accessControlContext));
   verifyNoMoreInteractions(dispatcher);
 }

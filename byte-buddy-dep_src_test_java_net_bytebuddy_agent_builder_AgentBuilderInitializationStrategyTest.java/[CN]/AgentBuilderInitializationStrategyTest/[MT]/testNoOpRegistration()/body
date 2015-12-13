@@ -1,5 +1,6 @@
 {
-  AgentBuilder.Default.InitializationStrategy.NoOp.INSTANCE.register(FOO,classLoader,lazyInitializer);
+  AgentBuilder.Default.InitializationStrategy.NoOp.INSTANCE.register(dynamicType,classLoader,injectorFactory);
+  verifyZeroInteractions(dynamicType);
   verifyZeroInteractions(classLoader);
-  verifyZeroInteractions(lazyInitializer);
+  verifyZeroInteractions(injectorFactory);
 }
