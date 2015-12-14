@@ -1,16 +1,18 @@
 {
-  Class<?> type=findLoadedClass(name);
-  if (type != null) {
-    return type;
-  }
-  try {
-    type=findClass(name);
-    if (resolve) {
-      resolveClass(type);
+synchronized (SYNCHRONIZATION_ENGINE.classLoadingLock(name,this)) {
+    Class<?> type=findLoadedClass(name);
+    if (type != null) {
+      return type;
     }
-    return type;
-  }
- catch (  ClassNotFoundException exception) {
-    return super.loadClass(name,resolve);
+    try {
+      type=findClass(name);
+      if (resolve) {
+        resolveClass(type);
+      }
+      return type;
+    }
+ catch (    ClassNotFoundException exception) {
+      return super.loadClass(name,resolve);
+    }
   }
 }

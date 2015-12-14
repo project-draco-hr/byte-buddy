@@ -1,3 +1,0 @@
-{
-  return "AnnotationDescription.ForLoadedAnnotation.MethodAccessibilityAction{" + "method=" + method + '}';
-}

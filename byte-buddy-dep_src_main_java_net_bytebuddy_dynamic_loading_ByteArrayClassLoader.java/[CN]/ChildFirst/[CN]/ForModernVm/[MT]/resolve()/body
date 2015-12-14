@@ -1,0 +1,3 @@
+{
+  return AccessController.doPrivileged(new ForModernVm(ClassLoader.class.getDeclaredMethod("getClassLoadingLock",String.class)));
+}

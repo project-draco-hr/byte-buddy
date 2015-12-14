@@ -1,0 +1,4 @@
+{
+  accessibleObject.setAccessible(true);
+  return accessibleObject;
+}

@@ -1,0 +1,5 @@
+{
+  assertThat(AccessAction.of(accessibleObject).run(),is(accessibleObject));
+  verify(accessibleObject).setAccessible(true);
+  verifyNoMoreInteractions(accessibleObject);
+}

@@ -1,0 +1,11 @@
+{
+  try {
+    return method.invoke(classLoader,name);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access class loading lock for " + name + " on "+ classLoader,exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error when getting " + name + " on "+ classLoader,exception);
+  }
+}

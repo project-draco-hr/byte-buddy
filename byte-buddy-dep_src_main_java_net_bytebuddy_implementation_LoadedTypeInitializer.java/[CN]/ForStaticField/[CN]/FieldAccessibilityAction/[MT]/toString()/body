@@ -1,3 +1,0 @@
-{
-  return "LoadedTypeInitializer.ForStaticField.FieldAccessibilityAction{" + "field=" + field + '}';
-}

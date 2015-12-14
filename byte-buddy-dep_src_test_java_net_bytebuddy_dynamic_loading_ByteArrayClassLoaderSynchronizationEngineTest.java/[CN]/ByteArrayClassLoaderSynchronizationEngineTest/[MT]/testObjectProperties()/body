@@ -1,0 +1,10 @@
+{
+  ObjectPropertyAssertion.of(ByteArrayClassLoader.ChildFirst.SynchronizationEngine.ForLegacyVm.class).apply();
+  final Iterator<Method> iterator=Arrays.asList(Object.class.getDeclaredMethods()).iterator();
+  ObjectPropertyAssertion.of(ByteArrayClassLoader.ChildFirst.SynchronizationEngine.ForModernVm.class).create(new ObjectPropertyAssertion.Creator<Method>(){
+    @Override public Method create(){
+      return iterator.next();
+    }
+  }
+).apply();
+}
