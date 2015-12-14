@@ -1,4 +1,0 @@
-TypeDescription instrumentedType
-Map<TypeDescription,byte[]> rawAuxiliaryTypes
-Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers
-ClassInjector classInjector

@@ -1,7 +1,0 @@
-{
-  if (!rawAuxiliaryTypes.isEmpty()) {
-    for (    Map.Entry<TypeDescription,Class<?>> auxiliary : (classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext)).inject(rawAuxiliaryTypes).entrySet()) {
-      loadedTypeInitializers.get(auxiliary.getKey()).onLoad(auxiliary.getValue());
-    }
-  }
-}

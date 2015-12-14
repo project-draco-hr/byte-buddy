@@ -1,11 +1,11 @@
 {
-  when(builder.make()).thenReturn((DynamicType.Unloaded)unloaded);
-  when(unloaded.getTypeDescription()).thenReturn(new TypeDescription.ForLoadedType(REDEFINED));
+  when(builder.make()).thenReturn((DynamicType.Unloaded)dynamicType);
+  when(dynamicType.getTypeDescription()).thenReturn(new TypeDescription.ForLoadedType(REDEFINED));
   when(typeStrategy.builder(any(TypeDescription.class),eq(byteBuddy),any(ClassFileLocator.class),any(MethodRebaseResolver.MethodNameTransformer.class))).thenReturn((DynamicType.Builder)builder);
   Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=new HashMap<TypeDescription,LoadedTypeInitializer>();
   loadedTypeInitializers.put(new TypeDescription.ForLoadedType(REDEFINED),loadedTypeInitializer);
-  when(unloaded.getLoadedTypeInitializers()).thenReturn(loadedTypeInitializers);
-  when(unloaded.getBytes()).thenReturn(BAZ);
+  when(dynamicType.getLoadedTypeInitializers()).thenReturn(loadedTypeInitializers);
+  when(dynamicType.getBytes()).thenReturn(BAZ);
   when(transformer.transform(builder,new TypeDescription.ForLoadedType(REDEFINED))).thenReturn((DynamicType.Builder)builder);
   when(binaryLocator.classFileLocator(REDEFINED.getClassLoader())).thenReturn(classFileLocator);
   when(binaryLocator.typePool(any(ClassFileLocator.class),any(ClassLoader.class))).thenReturn(typePool);

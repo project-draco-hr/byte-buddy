@@ -1,0 +1,6 @@
+{
+  this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
+  this.classLoader=classLoader;
+  this.protectionDomain=protectionDomain;
+  this.accessControlContext=accessControlContext;
+}

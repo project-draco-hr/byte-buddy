@@ -1,0 +1,7 @@
+{
+  int result=bootstrapInjectionStrategy.hashCode();
+  result=31 * result + (protectionDomain != null ? protectionDomain.hashCode() : 0);
+  result=31 * result + (classLoader != null ? classLoader.hashCode() : 0);
+  result=31 * result + accessControlContext.hashCode();
+  return result;
+}

@@ -1,0 +1,3 @@
+{
+  return classLoader == null ? bootstrapInjectionStrategy.make(protectionDomain) : new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext);
+}

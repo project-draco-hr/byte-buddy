@@ -1,0 +1,15 @@
+{
+  AgentBuilder.InitializationStrategy.Dispatcher dispatcher=new AgentBuilder.InitializationStrategy.SelfInjection.Dispatcher.Split(IDENTIFIER);
+  dispatcher.register(dynamicType,Qux.class.getClassLoader(),injectorFactory);
+  verify(classInjector).inject(Collections.singletonMap(independent,BAR));
+  verifyNoMoreInteractions(classInjector);
+  verify(independentInitializer).onLoad(Bar.class);
+  verifyNoMoreInteractions(independentInitializer);
+  Nexus.initialize(Qux.class,IDENTIFIER);
+  verify(classInjector).inject(Collections.singletonMap(dependent,FOO));
+  verifyNoMoreInteractions(classInjector);
+  verify(dependentInitializer).onLoad(Foo.class);
+  verifyNoMoreInteractions(dependentInitializer);
+  verify(instrumentedInitializer).onLoad(Qux.class);
+  verifyNoMoreInteractions(instrumentedInitializer);
+}

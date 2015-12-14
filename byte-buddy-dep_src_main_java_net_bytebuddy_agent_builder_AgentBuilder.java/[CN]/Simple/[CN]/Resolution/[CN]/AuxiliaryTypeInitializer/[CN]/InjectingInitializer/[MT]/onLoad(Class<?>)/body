@@ -1,6 +1,0 @@
-{
-  for (  Map.Entry<TypeDescription,Class<?>> auxiliary : classInjector.inject(rawAuxiliaryTypes).entrySet()) {
-    loadedTypeInitializers.get(auxiliary.getKey()).onLoad(auxiliary.getValue());
-  }
-  loadedTypeInitializers.get(instrumentedType).onLoad(type);
-}

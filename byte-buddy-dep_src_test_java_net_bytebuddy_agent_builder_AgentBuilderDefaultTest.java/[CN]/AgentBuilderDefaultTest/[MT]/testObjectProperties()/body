@@ -19,4 +19,10 @@
     }
   }
 ).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.Transformation.Simple.Resolution.BootstrapClassLoaderCapableInjectorFactory.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
+    @Override public AccessControlContext create(){
+      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
+    }
+  }
+).apply();
 }

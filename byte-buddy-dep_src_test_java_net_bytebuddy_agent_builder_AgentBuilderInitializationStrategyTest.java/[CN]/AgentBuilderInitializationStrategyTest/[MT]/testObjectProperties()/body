@@ -1,7 +1,6 @@
 {
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.NoOp.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.class).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.Dispatcher.class).apply();
   final Iterator<Class<?>> types=Arrays.<Class<?>>asList(Object.class,String.class).iterator();
   ObjectPropertyAssertion.of(Nexus.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
     @Override public Class<?> create(){
@@ -19,6 +18,5 @@
 ).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.Dispatcher.Unavailable.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.InitializationAppender.class).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.Dispatcher.LazyInitializer.Simple.class).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.Premature.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.InitializationStrategy.Minimal.class).apply();
 }

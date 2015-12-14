@@ -1,3 +1,0 @@
-{
-  return "AgentBuilder.Default.Transformation.Simple.Resolution.AuxiliaryTypeInitializer.InjectingInitializer{" + "instrumentedType=" + instrumentedType + ", rawAuxiliaryTypes="+ rawAuxiliaryTypes+ ", loadedTypeInitializers="+ loadedTypeInitializers+ ", classInjector="+ classInjector+ '}';
-}

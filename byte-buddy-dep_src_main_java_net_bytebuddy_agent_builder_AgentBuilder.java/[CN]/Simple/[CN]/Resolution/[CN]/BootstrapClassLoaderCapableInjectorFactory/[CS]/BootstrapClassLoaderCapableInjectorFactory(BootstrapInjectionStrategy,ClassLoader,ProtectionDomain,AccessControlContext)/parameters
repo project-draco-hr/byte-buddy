@@ -1,0 +1,4 @@
+BootstrapInjectionStrategy bootstrapInjectionStrategy
+ClassLoader classLoader
+ProtectionDomain protectionDomain
+AccessControlContext accessControlContext

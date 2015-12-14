@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  AuxiliaryTypeInitializer that=(AuxiliaryTypeInitializer)other;
-  return bootstrapInjectionStrategy.equals(that.bootstrapInjectionStrategy) && instrumentedType.equals(that.instrumentedType) && !(classLoader != null ? !classLoader.equals(that.classLoader) : that.classLoader != null)&& !(protectionDomain != null ? !protectionDomain.equals(that.protectionDomain) : that.protectionDomain != null)&& accessControlContext.equals(that.accessControlContext)&& rawAuxiliaryTypes.equals(that.rawAuxiliaryTypes)&& loadedTypeInitializers.equals(that.loadedTypeInitializers);
-}

@@ -1,5 +1,0 @@
-BootstrapInjectionStrategy bootstrapInjectionStrategy
-DynamicType dynamicType
-ClassLoader classLoader
-ProtectionDomain protectionDomain
-AccessControlContext accessControlContext

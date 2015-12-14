@@ -1,3 +1,0 @@
-{
-  return "AgentBuilder.Default.Transformation.Simple.Resolution.AuxiliaryTypeInitializer{" + "bootstrapInjectionStrategy=" + bootstrapInjectionStrategy + ", instrumentedType="+ instrumentedType+ ", classLoader="+ classLoader+ ", protectionDomain="+ protectionDomain+ ", accessControlContext="+ accessControlContext+ ", rawAuxiliaryTypes="+ rawAuxiliaryTypes+ ", loadedTypeInitializers="+ loadedTypeInitializers+ '}';
-}

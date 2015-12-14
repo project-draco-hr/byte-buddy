@@ -1,0 +1,7 @@
+{
+  PrintStream printStream=mock(PrintStream.class);
+  AgentBuilder.Listener listener=new AgentBuilder.Listener.StreamWriting(printStream);
+  listener.onComplete(FOO);
+  verify(printStream).println("[Byte Buddy] COMPLETE " + FOO);
+  verifyNoMoreInteractions(printStream);
+}

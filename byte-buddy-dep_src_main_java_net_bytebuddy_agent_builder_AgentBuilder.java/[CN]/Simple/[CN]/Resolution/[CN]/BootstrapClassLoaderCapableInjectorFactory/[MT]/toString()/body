@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Default.Transformation.Simple.Resolution.BootstrapClassLoaderCapableInjectorFactory{" + "bootstrapInjectionStrategy=" + bootstrapInjectionStrategy + ", classLoader="+ classLoader+ ", protectionDomain="+ protectionDomain+ ", accessControlContext="+ accessControlContext+ '}';
+}

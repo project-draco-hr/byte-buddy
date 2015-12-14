@@ -1,0 +1,5 @@
+{
+  assertThat(AgentBuilder.InitializationStrategy.SelfInjection.SPLIT.dispatcher(),instanceOf(AgentBuilder.InitializationStrategy.SelfInjection.Dispatcher.Split.class));
+  assertThat(AgentBuilder.InitializationStrategy.SelfInjection.EAGER.dispatcher(),instanceOf(AgentBuilder.InitializationStrategy.SelfInjection.Dispatcher.Eager.class));
+  assertThat(AgentBuilder.InitializationStrategy.SelfInjection.LAZY.dispatcher(),instanceOf(AgentBuilder.InitializationStrategy.SelfInjection.Dispatcher.Lazy.class));
+}

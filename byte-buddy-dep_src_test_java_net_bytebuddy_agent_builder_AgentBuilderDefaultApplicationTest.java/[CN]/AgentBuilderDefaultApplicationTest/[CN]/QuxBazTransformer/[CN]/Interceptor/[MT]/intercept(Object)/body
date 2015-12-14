@@ -1,0 +1,3 @@
+{
+  return zuper.getClass().getClassLoader().loadClass(QuxBaz.class.getName()).getDeclaredMethod("foo").invoke(zuper) + BAR;
+}

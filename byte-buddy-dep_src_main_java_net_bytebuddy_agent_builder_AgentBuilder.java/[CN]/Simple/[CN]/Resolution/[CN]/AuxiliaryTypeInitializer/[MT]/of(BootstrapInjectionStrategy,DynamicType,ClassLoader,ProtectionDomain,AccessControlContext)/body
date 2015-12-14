@@ -1,4 +1,0 @@
-{
-  Map<TypeDescription,LoadedTypeInitializer> loadedTypeInitializers=dynamicType.getLoadedTypeInitializers();
-  return loadedTypeInitializers.size() > 1 ? new AuxiliaryTypeInitializer(bootstrapInjectionStrategy,dynamicType.getTypeDescription(),classLoader,protectionDomain,accessControlContext,dynamicType.getRawAuxiliaryTypes(),dynamicType.getLoadedTypeInitializers()) : new InitializationStrategy.Dispatcher.LazyInitializer.Simple(loadedTypeInitializers.get(dynamicType.getTypeDescription()));
-}

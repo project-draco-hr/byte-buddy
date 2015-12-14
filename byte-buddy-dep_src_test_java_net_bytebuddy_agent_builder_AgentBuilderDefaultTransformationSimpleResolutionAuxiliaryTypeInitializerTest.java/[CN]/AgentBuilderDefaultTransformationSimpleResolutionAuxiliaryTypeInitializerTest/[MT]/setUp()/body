@@ -1,3 +1,0 @@
-{
-  accessControlContext=AccessController.getContext();
-}

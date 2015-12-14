@@ -4,7 +4,7 @@
   }
   JarOutputStream outputStream=new JarOutputStream(new BufferedOutputStream(new FileOutputStream(file)),manifest);
   try {
-    for (    Map.Entry<TypeDescription,byte[]> entry : getRawAuxiliaryTypes().entrySet()) {
+    for (    Map.Entry<TypeDescription,byte[]> entry : getAuxiliaryTypes().entrySet()) {
       outputStream.putNextEntry(new JarEntry(entry.getKey().getInternalName() + CLASS_FILE_EXTENSION));
       outputStream.write(entry.getValue());
       outputStream.closeEntry();
