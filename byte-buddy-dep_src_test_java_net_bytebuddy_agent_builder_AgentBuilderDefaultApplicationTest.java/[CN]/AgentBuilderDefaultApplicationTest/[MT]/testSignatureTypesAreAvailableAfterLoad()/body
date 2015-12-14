@@ -1,0 +1,12 @@
+{
+  assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().withBinaryLocator(binaryLocator).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new ConstructorTransformer()).installOnByteBuddyAgent();
+  try {
+    Class<?> type=classLoader.loadClass(Foo.class.getName());
+    assertThat(type.getDeclaredConstructors().length,is(2));
+    assertThat(type.newInstance(),notNullValue(Object.class));
+  }
+  finally {
+    ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);
+  }
+}
