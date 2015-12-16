@@ -1,6 +1,0 @@
-{
-  Iterator<GenericTypeDescription> iterator=new TypeDescription.AbstractBase.SuperTypeIterator(typeDescription);
-  assertThat(iterator.next(),is((GenericTypeDescription)typeDescription));
-  assertThat(iterator.next(),is(superType));
-  iterator.next();
-}

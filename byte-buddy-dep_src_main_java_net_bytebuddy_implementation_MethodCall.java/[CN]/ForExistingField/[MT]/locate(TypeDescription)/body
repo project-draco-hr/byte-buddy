@@ -1,6 +1,6 @@
 {
-  for (  GenericTypeDescription currentType : instrumentedType) {
-    FieldList<?> fieldList=currentType.asErasure().getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
+  for (  TypeDefinition currentType : instrumentedType) {
+    FieldList<?> fieldList=currentType.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
     if (fieldList.size() != 0) {
       return fieldList.getOnly();
     }
