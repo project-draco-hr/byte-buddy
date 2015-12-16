@@ -1,0 +1,6 @@
+{
+  Traceable traceable=new Traceable();
+  Class<? extends SimpleStringMethod> loaded=implement(SimpleStringMethod.class,MethodCall.call((Callable<?>)traceable)).getLoaded();
+  assertThat(loaded.newInstance().foo(),is(FOO));
+  traceable.assertOnlyCall(FOO);
+}
