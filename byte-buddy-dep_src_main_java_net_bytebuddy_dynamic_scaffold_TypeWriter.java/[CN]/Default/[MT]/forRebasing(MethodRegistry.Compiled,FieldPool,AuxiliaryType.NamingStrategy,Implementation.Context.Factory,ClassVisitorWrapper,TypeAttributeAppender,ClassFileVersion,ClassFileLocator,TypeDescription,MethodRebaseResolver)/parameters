@@ -6,5 +6,5 @@ ClassVisitorWrapper classVisitorWrapper
 TypeAttributeAppender attributeAppender
 ClassFileVersion classFileVersion
 ClassFileLocator classFileLocator
-TypeDescription targetType
+TypeDescription originalType
 MethodRebaseResolver methodRebaseResolver

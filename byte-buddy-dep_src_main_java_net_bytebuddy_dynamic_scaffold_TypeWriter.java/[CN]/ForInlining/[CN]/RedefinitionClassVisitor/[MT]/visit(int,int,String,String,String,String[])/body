@@ -1,6 +1,6 @@
 {
   super.visit(classFileVersionNumber,instrumentedType.getActualModifiers((modifiers & Opcodes.ACC_SUPER) != 0),instrumentedType.getInternalName(),instrumentedType.getGenericSignature(),(instrumentedType.getSuperType() == NO_SUPER_CLASS ? TypeDescription.OBJECT : instrumentedType.getSuperType().asErasure()).getInternalName(),instrumentedType.getInterfaces().asErasures().toInternalNames());
-  attributeAppender.apply(this,instrumentedType,targetType);
+  attributeAppender.apply(this,instrumentedType,originalType);
   if (!ClassFileVersion.ofMinorMajor(classFileVersionNumber).isAtLeast(ClassFileVersion.JAVA_V8) && instrumentedType.isInterface()) {
     implementationContext.prohibitTypeInitializer();
   }

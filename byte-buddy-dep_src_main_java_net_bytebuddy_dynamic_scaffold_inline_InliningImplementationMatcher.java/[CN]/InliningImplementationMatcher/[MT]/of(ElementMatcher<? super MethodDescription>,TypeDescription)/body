@@ -1,6 +1,6 @@
 {
   ElementMatcher.Junction<MethodDescription> predefinedMethodSignatures=none();
-  for (  MethodDescription methodDescription : targetType.getDeclaredMethods()) {
+  for (  MethodDescription methodDescription : originalType.getDeclaredMethods()) {
     ElementMatcher.Junction<MethodDescription> signature=methodDescription.isConstructor() ? isConstructor() : ElementMatchers.<MethodDescription>named(methodDescription.getName());
     signature=signature.and(returns(methodDescription.getReturnType().asErasure()));
     signature=signature.and(takesArguments(methodDescription.getParameters().asTypeList().asErasures()));

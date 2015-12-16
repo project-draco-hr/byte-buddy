@@ -4,7 +4,6 @@
   result=31 * result + auxiliaryTypeNamingStrategy.hashCode();
   result=31 * result + implementationContextFactory.hashCode();
   result=31 * result + typeInitializer.hashCode();
-  result=31 * result + targetType.hashCode();
   result=31 * result + interfaceTypes.hashCode();
   result=31 * result + modifiers;
   result=31 * result + attributeAppender.hashCode();

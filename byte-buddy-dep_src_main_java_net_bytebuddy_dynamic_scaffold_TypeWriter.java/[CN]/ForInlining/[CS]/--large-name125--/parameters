@@ -11,5 +11,5 @@ FieldPool fieldPool
 MethodPool methodPool
 MethodList instrumentedMethods
 ClassFileLocator classFileLocator
-TypeDescription targetType
+TypeDescription originalType
 MethodRebaseResolver methodRebaseResolver
