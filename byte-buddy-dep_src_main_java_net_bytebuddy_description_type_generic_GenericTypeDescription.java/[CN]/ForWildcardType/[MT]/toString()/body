@@ -6,7 +6,7 @@
   }
  else {
     bounds=getUpperBounds();
-    if (bounds.getOnly().equals(TypeDescription.OBJECT)) {
+    if (bounds.getOnly().equals(GenericTypeDescription.OBJECT)) {
       return SYMBOL;
     }
     stringBuilder.append(" extends ");

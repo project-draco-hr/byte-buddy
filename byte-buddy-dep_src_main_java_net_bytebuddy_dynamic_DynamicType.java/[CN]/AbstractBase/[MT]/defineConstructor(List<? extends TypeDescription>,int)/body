@@ -1,3 +1,3 @@
 {
-  return new DefaultExceptionDeclarableMethodInterception(new MethodDescription.Token(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,modifiers,Collections.<GenericTypeDescription>emptyList(),TypeDescription.VOID,new ParameterDescription.Token.TypeList(isActualType(parameterTypes)),Collections.<TypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList(),null));
+  return new DefaultExceptionDeclarableMethodInterception(new MethodDescription.Token(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,modifiers,Collections.<GenericTypeDescription>emptyList(),GenericTypeDescription.VOID,new ParameterDescription.Token.TypeList(isActualType(parameterTypes)),Collections.<TypeDescription>emptyList(),Collections.<AnnotationDescription>emptyList(),null));
 }
