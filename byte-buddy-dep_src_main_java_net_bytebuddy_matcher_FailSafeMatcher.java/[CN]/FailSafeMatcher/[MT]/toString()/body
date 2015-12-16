@@ -1,0 +1,3 @@
+{
+  return "failSafe(try(" + delegate + ") or "+ fallback+ ")";
+}

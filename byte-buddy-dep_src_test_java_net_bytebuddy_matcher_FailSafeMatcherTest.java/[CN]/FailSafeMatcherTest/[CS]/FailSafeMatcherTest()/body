@@ -1,0 +1,3 @@
+{
+  super((Class<FailSafeMatcher<?>>)(Object)FailSafeMatcher.class,"failSafe");
+}

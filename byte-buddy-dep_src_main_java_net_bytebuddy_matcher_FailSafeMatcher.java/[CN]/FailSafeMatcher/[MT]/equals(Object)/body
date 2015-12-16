@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  FailSafeMatcher<?> that=(FailSafeMatcher<?>)other;
+  return fallback == that.fallback && delegate.equals(that.delegate);
+}

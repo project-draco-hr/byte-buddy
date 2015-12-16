@@ -1,0 +1,8 @@
+{
+  try {
+    return delegate.matches(target);
+  }
+ catch (  Exception ignored) {
+    return fallback;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  when(elementMatcher.matches(target)).thenThrow(RuntimeException.class);
+  assertThat(new FailSafeMatcher<Object>(elementMatcher,true).matches(target),is(true));
+  verifyZeroInteractions(target);
+  verify(elementMatcher).matches(target);
+  verifyNoMoreInteractions(elementMatcher);
+}

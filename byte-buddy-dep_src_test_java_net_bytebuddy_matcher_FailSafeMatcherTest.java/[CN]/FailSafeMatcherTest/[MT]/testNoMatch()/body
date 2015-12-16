@@ -1,0 +1,7 @@
+{
+  when(elementMatcher.matches(target)).thenReturn(false);
+  assertThat(new FailSafeMatcher<Object>(elementMatcher,false).matches(target),is(false));
+  verifyZeroInteractions(target);
+  verify(elementMatcher).matches(target);
+  verifyNoMoreInteractions(elementMatcher);
+}
