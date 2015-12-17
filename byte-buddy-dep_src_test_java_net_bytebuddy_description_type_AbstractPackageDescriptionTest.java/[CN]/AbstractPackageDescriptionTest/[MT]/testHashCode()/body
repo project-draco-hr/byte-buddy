@@ -1,8 +1,8 @@
 {
   assertThat(describe(Child.class).hashCode(),is(Child.class.getPackage().hashCode()));
   assertThat(describe(Child.class).hashCode(),is(describe(Child.class).hashCode()));
-  assertThat(describe(Child.class).hashCode(),not(is(describe(Sample.class).hashCode())));
+  assertThat(describe(Child.class).hashCode(),not(describe(Sample.class).hashCode()));
   assertThat(describe(Sample.class).hashCode(),is(Sample.class.getPackage().hashCode()));
   assertThat(describe(Sample.class).hashCode(),is(describe(Sample.class).hashCode()));
-  assertThat(describe(Sample.class).hashCode(),not(is(describe(Child.class).hashCode())));
+  assertThat(describe(Sample.class).hashCode(),not(describe(Child.class).hashCode()));
 }

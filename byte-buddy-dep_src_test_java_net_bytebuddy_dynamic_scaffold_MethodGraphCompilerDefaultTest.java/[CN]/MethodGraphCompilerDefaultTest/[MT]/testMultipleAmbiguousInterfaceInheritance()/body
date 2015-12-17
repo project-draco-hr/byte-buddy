@@ -13,9 +13,9 @@
   assertThat(methodNode.getRepresentative(),not(second));
   assertThat(methodNode,is(methodGraph.locate(second.asToken())));
   MethodGraph.Node firstBaseNode=methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(InterfaceBase.class)).locate(first.asToken());
-  assertThat(methodNode,not(is(firstBaseNode)));
+  assertThat(methodNode,not(firstBaseNode));
   assertThat(firstBaseNode.getRepresentative(),is(first));
   MethodGraph.Node secondBaseNode=methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(InterfaceBase.class)).locate(second.asToken());
-  assertThat(methodNode,not(is(secondBaseNode)));
+  assertThat(methodNode,not(secondBaseNode));
   assertThat(secondBaseNode.getRepresentative(),is(first));
 }

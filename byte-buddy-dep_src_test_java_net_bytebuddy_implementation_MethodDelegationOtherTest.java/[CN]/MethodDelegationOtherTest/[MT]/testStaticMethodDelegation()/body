@@ -1,6 +1,6 @@
 {
   assertThat(MethodDelegation.to(Foo.class).hashCode(),is(MethodDelegation.to(Foo.class).hashCode()));
   assertThat(MethodDelegation.to(Foo.class),is(MethodDelegation.to(Foo.class)));
-  assertThat(MethodDelegation.to(Foo.class).hashCode(),not(is(MethodDelegation.to(Bar.class).hashCode())));
-  assertThat(MethodDelegation.to(Foo.class),not(is(MethodDelegation.to(Bar.class))));
+  assertThat(MethodDelegation.to(Foo.class).hashCode(),not(MethodDelegation.to(Bar.class).hashCode()));
+  assertThat(MethodDelegation.to(Foo.class),not(MethodDelegation.to(Bar.class)));
 }

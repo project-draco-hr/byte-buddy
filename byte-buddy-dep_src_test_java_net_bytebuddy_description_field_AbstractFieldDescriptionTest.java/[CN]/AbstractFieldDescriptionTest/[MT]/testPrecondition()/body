@@ -1,7 +1,7 @@
 {
-  assertThat(describe(first),not(equalTo(describe(second))));
-  assertThat(describe(first),equalTo(describe(first)));
-  assertThat(describe(second),equalTo(describe(second)));
+  assertThat(describe(first),not(describe(second)));
+  assertThat(describe(first),is(describe(first)));
+  assertThat(describe(second),is(describe(second)));
   assertThat(describe(first),is((FieldDescription)new FieldDescription.ForLoadedField(first)));
   assertThat(describe(second),is((FieldDescription)new FieldDescription.ForLoadedField(second)));
 }

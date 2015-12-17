@@ -1,5 +1,5 @@
 {
-  assertThat(describe(first).prepare(Sample.class).load().hashCode(),equalTo(first.hashCode()));
-  assertThat(describe(second).prepare(Sample.class).load().hashCode(),equalTo(second.hashCode()));
-  assertThat(describe(first).prepare(Sample.class).load().hashCode(),not(equalTo(second.hashCode())));
+  assertThat(describe(first).prepare(Sample.class).load().hashCode(),is(first.hashCode()));
+  assertThat(describe(second).prepare(Sample.class).load().hashCode(),is(second.hashCode()));
+  assertThat(describe(first).prepare(Sample.class).load().hashCode(),not(second.hashCode()));
 }

@@ -3,9 +3,9 @@
   assertThat(describe(SampleInterface.class).hashCode(),is(Type.getInternalName(SampleInterface.class).hashCode()));
   assertThat(describe(SampleAnnotation.class).hashCode(),is(Type.getInternalName(SampleAnnotation.class).hashCode()));
   assertThat(describe(SampleClass.class).hashCode(),is(describe(SampleClass.class).hashCode()));
-  assertThat(describe(SampleClass.class).hashCode(),not(is(describe(SampleInterface.class).hashCode())));
-  assertThat(describe(SampleClass.class).hashCode(),not(is(describe(SampleAnnotation.class).hashCode())));
+  assertThat(describe(SampleClass.class).hashCode(),not(describe(SampleInterface.class).hashCode()));
+  assertThat(describe(SampleClass.class).hashCode(),not(describe(SampleAnnotation.class).hashCode()));
   assertThat(describe(Object[].class).hashCode(),is(describe(Object[].class).hashCode()));
-  assertThat(describe(Object[].class).hashCode(),not(is(describe(Object.class).hashCode())));
+  assertThat(describe(Object[].class).hashCode(),not(describe(Object.class).hashCode()));
   assertThat(describe(void.class).hashCode(),is(Type.getInternalName(void.class).hashCode()));
 }
