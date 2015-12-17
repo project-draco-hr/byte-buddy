@@ -1,8 +1,8 @@
 {
   assertThat(InvocationHandlerAdapter.toInstanceField(QUX).hashCode(),is(InvocationHandlerAdapter.toInstanceField(QUX).hashCode()));
   assertThat(InvocationHandlerAdapter.toInstanceField(QUX),is(InvocationHandlerAdapter.toInstanceField(QUX)));
-  assertThat(InvocationHandlerAdapter.toInstanceField(QUX).hashCode(),not(is(InvocationHandlerAdapter.toInstanceField(FOO).hashCode())));
-  assertThat(InvocationHandlerAdapter.toInstanceField(QUX),not(is(InvocationHandlerAdapter.toInstanceField(FOO))));
-  assertThat(InvocationHandlerAdapter.toInstanceField(QUX).hashCode(),not(is(InvocationHandlerAdapter.of(new Foo(BAR),QUX).hashCode())));
-  assertThat(InvocationHandlerAdapter.toInstanceField(QUX),not(is(InvocationHandlerAdapter.of(new Foo(BAR),QUX))));
+  assertThat(InvocationHandlerAdapter.toInstanceField(QUX).hashCode(),not(InvocationHandlerAdapter.toInstanceField(FOO).hashCode()));
+  assertThat(InvocationHandlerAdapter.toInstanceField(QUX),not(InvocationHandlerAdapter.toInstanceField(FOO)));
+  assertThat(InvocationHandlerAdapter.toInstanceField(QUX).hashCode(),not(InvocationHandlerAdapter.of(new Foo(BAR),QUX).hashCode()));
+  assertThat(InvocationHandlerAdapter.toInstanceField(QUX),not(InvocationHandlerAdapter.of(new Foo(BAR),QUX)));
 }

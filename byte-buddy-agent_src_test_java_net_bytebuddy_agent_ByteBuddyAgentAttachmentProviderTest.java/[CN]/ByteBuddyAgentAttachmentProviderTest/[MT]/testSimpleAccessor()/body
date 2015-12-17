@@ -1,6 +1,6 @@
 {
   ByteBuddyAgent.AttachmentProvider.Accessor accessor=new ByteBuddyAgent.AttachmentProvider.Accessor.Simple(Void.class,FOO);
   assertThat(accessor.isAvailable(),is(true));
-  assertThat(accessor.getVirtualMachineType(),isA((Class)Void.class));
+  assertThat(accessor.getVirtualMachineType(),CoreMatchers.<Class<?>>is(Void.class));
   assertThat(accessor.getProcessId(),is(FOO));
 }

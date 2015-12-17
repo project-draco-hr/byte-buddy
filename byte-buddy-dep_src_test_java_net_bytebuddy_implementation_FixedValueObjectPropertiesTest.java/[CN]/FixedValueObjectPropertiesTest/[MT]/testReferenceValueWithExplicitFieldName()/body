@@ -1,6 +1,6 @@
 {
   assertThat(FixedValue.reference(FOO,QUX).hashCode(),is(FixedValue.reference(FOO,QUX).hashCode()));
   assertThat(FixedValue.reference(FOO,QUX),is(FixedValue.reference(FOO,QUX)));
-  assertThat(FixedValue.reference(FOO,QUX).hashCode(),not(is(FixedValue.reference(BAR,QUX).hashCode())));
-  assertThat(FixedValue.reference(FOO,QUX),not(is(FixedValue.reference(BAR,QUX))));
+  assertThat(FixedValue.reference(FOO,QUX).hashCode(),not(FixedValue.reference(BAR,QUX).hashCode()));
+  assertThat(FixedValue.reference(FOO,QUX),not(FixedValue.reference(BAR,QUX)));
 }

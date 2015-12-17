@@ -19,12 +19,12 @@
   assertThat(parameterBinding.isValid(),is(true));
   Object expectedToken=new ArgumentTypeResolver.ParameterIndexToken(sourceIndex);
   if (bindingMechanic == Argument.BindingMechanic.UNIQUE) {
-    assertThat(parameterBinding.getIdentificationToken(),equalTo(expectedToken));
-    assertThat(parameterBinding.getIdentificationToken().hashCode(),equalTo(expectedToken.hashCode()));
+    assertThat(parameterBinding.getIdentificationToken(),is(expectedToken));
+    assertThat(parameterBinding.getIdentificationToken().hashCode(),is(expectedToken.hashCode()));
   }
  else {
-    assertThat(parameterBinding.getIdentificationToken(),not(equalTo(expectedToken)));
-    assertThat(parameterBinding.getIdentificationToken().hashCode(),not(equalTo(expectedToken.hashCode())));
+    assertThat(parameterBinding.getIdentificationToken(),not(expectedToken));
+    assertThat(parameterBinding.getIdentificationToken().hashCode(),not(expectedToken.hashCode()));
   }
   verify(annotation,atLeast(1)).value();
   verify(source,atLeast(1)).getParameters();

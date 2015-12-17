@@ -1,8 +1,8 @@
 {
   assertThat(describe(Child.class).toString(),is(Child.class.getPackage().toString()));
   assertThat(describe(Child.class).toString(),is(describe(Child.class).toString()));
-  assertThat(describe(Child.class).toString(),not(is(describe(Sample.class).toString())));
+  assertThat(describe(Child.class).toString(),not(describe(Sample.class).toString()));
   assertThat(describe(Sample.class).toString(),is(Sample.class.getPackage().toString()));
   assertThat(describe(Sample.class).toString(),is(describe(Sample.class).toString()));
-  assertThat(describe(Sample.class).toString(),not(is(describe(Child.class).toString())));
+  assertThat(describe(Sample.class).toString(),not(describe(Child.class).toString()));
 }

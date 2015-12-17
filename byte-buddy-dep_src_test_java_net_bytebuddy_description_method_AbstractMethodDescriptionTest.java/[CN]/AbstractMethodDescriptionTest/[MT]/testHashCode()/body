@@ -2,14 +2,14 @@
   assertThat(describe(firstMethod).hashCode(),is(hashCode(firstMethod)));
   assertThat(describe(secondMethod).hashCode(),is(hashCode(secondMethod)));
   assertThat(describe(thirdMethod).hashCode(),is(hashCode(thirdMethod)));
-  assertThat(describe(firstMethod).hashCode(),not(is(hashCode(secondMethod))));
-  assertThat(describe(firstMethod).hashCode(),not(is(hashCode(thirdMethod))));
-  assertThat(describe(firstMethod).hashCode(),not(is(hashCode(firstConstructor))));
-  assertThat(describe(firstMethod).hashCode(),not(is(hashCode(secondConstructor))));
+  assertThat(describe(firstMethod).hashCode(),not(hashCode(secondMethod)));
+  assertThat(describe(firstMethod).hashCode(),not(hashCode(thirdMethod)));
+  assertThat(describe(firstMethod).hashCode(),not(hashCode(firstConstructor)));
+  assertThat(describe(firstMethod).hashCode(),not(hashCode(secondConstructor)));
   assertThat(describe(firstConstructor).hashCode(),is(hashCode(firstConstructor)));
   assertThat(describe(secondConstructor).hashCode(),is(hashCode(secondConstructor)));
-  assertThat(describe(firstConstructor).hashCode(),not(is(hashCode(firstMethod))));
-  assertThat(describe(firstConstructor).hashCode(),not(is(hashCode(secondMethod))));
-  assertThat(describe(firstConstructor).hashCode(),not(is(hashCode(thirdMethod))));
-  assertThat(describe(firstConstructor).hashCode(),not(is(hashCode(secondConstructor))));
+  assertThat(describe(firstConstructor).hashCode(),not(hashCode(firstMethod)));
+  assertThat(describe(firstConstructor).hashCode(),not(hashCode(secondMethod)));
+  assertThat(describe(firstConstructor).hashCode(),not(hashCode(thirdMethod)));
+  assertThat(describe(firstConstructor).hashCode(),not(hashCode(secondConstructor)));
 }

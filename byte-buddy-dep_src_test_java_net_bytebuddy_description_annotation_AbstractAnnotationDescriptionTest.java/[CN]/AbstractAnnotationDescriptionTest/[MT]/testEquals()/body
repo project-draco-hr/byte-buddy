@@ -1,6 +1,6 @@
 {
   AnnotationDescription identical=describe(first);
-  assertThat(identical,equalTo(identical));
+  assertThat(identical,is(identical));
   AnnotationDescription equalFirst=mock(AnnotationDescription.class);
   when(equalFirst.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(first.annotationType()));
   when(equalFirst.getValue(Mockito.any(MethodDescription.InDefinedShape.class))).then(new Answer<Object>(){
@@ -10,7 +10,7 @@
     }
   }
 );
-  assertThat(describe(first),equalTo(equalFirst));
+  assertThat(describe(first),is(equalFirst));
   AnnotationDescription equalSecond=mock(AnnotationDescription.class);
   when(equalSecond.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(first.annotationType()));
   when(equalSecond.getValue(Mockito.any(MethodDescription.InDefinedShape.class))).then(new Answer<Object>(){
@@ -20,7 +20,7 @@
     }
   }
 );
-  assertThat(describe(second),equalTo(equalSecond));
+  assertThat(describe(second),is(equalSecond));
   AnnotationDescription equalFirstTypeOnly=mock(AnnotationDescription.class);
   when(equalFirstTypeOnly.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(Other.class));
   when(equalFirstTypeOnly.getValue(Mockito.any(MethodDescription.InDefinedShape.class))).then(new Answer<Object>(){
@@ -30,12 +30,12 @@
     }
   }
 );
-  assertThat(describe(first),not(equalTo(equalFirstTypeOnly)));
+  assertThat(describe(first),not(equalFirstTypeOnly));
   AnnotationDescription equalFirstNameOnly=mock(AnnotationDescription.class);
   when(equalFirstNameOnly.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(first.annotationType()));
   when(equalFirstNameOnly.getValue(Mockito.any(MethodDescription.InDefinedShape.class))).thenReturn(null);
-  assertThat(describe(first),not(equalTo(equalFirstNameOnly)));
-  assertThat(describe(first),not(equalTo(equalSecond)));
-  assertThat(describe(first),not(equalTo(new Object())));
+  assertThat(describe(first),not(equalFirstNameOnly));
+  assertThat(describe(first),not(equalSecond));
+  assertThat(describe(first),not(new Object()));
   assertThat(describe(first),not(equalTo(null)));
 }

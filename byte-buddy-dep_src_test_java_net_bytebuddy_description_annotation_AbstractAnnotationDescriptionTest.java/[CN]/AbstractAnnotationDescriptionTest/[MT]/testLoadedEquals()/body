@@ -1,7 +1,7 @@
 {
-  assertThat(describe(first).prepare(Sample.class).load(),equalTo(first));
-  assertThat(describe(first).prepare(Sample.class).load(),equalTo(describe(first).prepare(Sample.class).load()));
-  assertThat(describe(first).prepare(Sample.class).load(),not(equalTo(describe(second).prepare(Sample.class).load())));
-  assertThat(describe(second).prepare(Sample.class).load(),equalTo(second));
-  assertThat(describe(first).prepare(Sample.class).load(),not(equalTo(second)));
+  assertThat(describe(first).prepare(Sample.class).load(),is(first));
+  assertThat(describe(first).prepare(Sample.class).load(),is(describe(first).prepare(Sample.class).load()));
+  assertThat(describe(first).prepare(Sample.class).load(),not(describe(second).prepare(Sample.class).load()));
+  assertThat(describe(second).prepare(Sample.class).load(),is(second));
+  assertThat(describe(first).prepare(Sample.class).load(),not(second));
 }
