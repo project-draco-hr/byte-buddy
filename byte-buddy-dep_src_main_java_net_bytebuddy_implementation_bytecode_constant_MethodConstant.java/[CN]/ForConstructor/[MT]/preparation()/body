@@ -1,0 +1,3 @@
+{
+  return ClassConstant.of(methodDescription.getDeclaringType());
+}

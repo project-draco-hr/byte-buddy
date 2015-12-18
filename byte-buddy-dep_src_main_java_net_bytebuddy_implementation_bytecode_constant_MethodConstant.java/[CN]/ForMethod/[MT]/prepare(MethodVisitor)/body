@@ -1,5 +1,0 @@
-{
-  methodVisitor.visitLdcInsn(Type.getType(methodDescription.getDeclaringType().asErasure().getDescriptor()));
-  methodVisitor.visitLdcInsn(methodDescription.getInternalName());
-  return new Size(2,2);
-}
