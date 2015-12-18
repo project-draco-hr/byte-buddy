@@ -1,0 +1,15 @@
+{
+  when(declaringType.getInternalName()).thenReturn(FOO);
+  when(fieldDescription.getInternalName()).thenReturn(BAR);
+  when(fieldDescription.getDeclaringType()).thenReturn(declaringType);
+  when(declaringType.getDescriptor()).thenReturn("L" + QUX + ";");
+  when(implementationContext.cache(new FieldConstant(fieldDescription),new TypeDescription.ForLoadedType(Field.class))).thenReturn(cacheField);
+  when(cacheField.getDeclaringType()).thenReturn(cacheDeclaringType);
+  when(cacheField.isStatic()).thenReturn(true);
+  when(cacheDeclaringType.getInternalName()).thenReturn(BAZ);
+  when(cacheField.getName()).thenReturn(FOO + BAR);
+  when(cacheField.getType()).thenReturn(cacheFieldType);
+  when(cacheFieldType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(cacheField.getInternalName()).thenReturn(FOO + BAR);
+  when(cacheField.getDescriptor()).thenReturn(QUX + BAZ);
+}

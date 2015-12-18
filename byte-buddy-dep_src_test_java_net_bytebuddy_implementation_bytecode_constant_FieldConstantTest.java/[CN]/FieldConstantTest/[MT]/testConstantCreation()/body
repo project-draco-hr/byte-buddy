@@ -1,0 +1,10 @@
+{
+  StackManipulation.Size size=new FieldConstant(fieldDescription).apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(2));
+  verify(methodVisitor).visitLdcInsn(Type.getObjectType(QUX));
+  verify(methodVisitor).visitLdcInsn(BAR);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/Class","getDeclaredField","(Ljava/lang/String;)Ljava/lang/reflect/Field;",false);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+}

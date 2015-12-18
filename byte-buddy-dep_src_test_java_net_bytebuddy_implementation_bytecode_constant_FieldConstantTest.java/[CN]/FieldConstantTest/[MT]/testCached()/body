@@ -1,0 +1,9 @@
+{
+  StackManipulation.Size size=new FieldConstant(fieldDescription).cached().apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(1));
+  verify(implementationContext).cache(new FieldConstant(fieldDescription),new TypeDescription.ForLoadedType(Field.class));
+  verifyNoMoreInteractions(implementationContext);
+  verify(methodVisitor).visitFieldInsn(Opcodes.GETSTATIC,BAZ,FOO + BAR,QUX + BAZ);
+  verifyNoMoreInteractions(methodVisitor);
+}
