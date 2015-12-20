@@ -7,8 +7,8 @@
   int index=0;
   StackManipulation[] argumentInstruction=new StackManipulation[argumentLoaders.size()];
   for (  ArgumentLoader argumentLoader : argumentLoaders) {
-    argumentInstruction[index]=argumentLoader.resolve(implementationTarget.getTypeDescription(),instrumentedMethod,methodParameters.get(index++),assigner,typing);
+    argumentInstruction[index]=argumentLoader.resolve(implementationTarget.getInstrumentedType(),instrumentedMethod,methodParameters.get(index++),assigner,typing);
   }
-  StackManipulation.Size size=new StackManipulation.Compound(targetHandler.resolve(invokedMethod,implementationTarget.getTypeDescription()),new StackManipulation.Compound(argumentInstruction),methodInvoker.invoke(invokedMethod,implementationTarget),terminationHandler.resolve(invokedMethod,instrumentedMethod,assigner,typing)).apply(methodVisitor,implementationContext);
+  StackManipulation.Size size=new StackManipulation.Compound(targetHandler.resolve(invokedMethod,implementationTarget.getInstrumentedType()),new StackManipulation.Compound(argumentInstruction),methodInvoker.invoke(invokedMethod,implementationTarget),terminationHandler.resolve(invokedMethod,instrumentedMethod,assigner,typing)).apply(methodVisitor,implementationContext);
   return new Size(size.getMaximalSize(),instrumentedMethod.getStackSize());
 }

@@ -1,3 +1,3 @@
 {
-  return new StaticFieldByteCodeAppender(implementationTarget.getTypeDescription());
+  return new StaticFieldByteCodeAppender(implementationTarget.getInstrumentedType());
 }

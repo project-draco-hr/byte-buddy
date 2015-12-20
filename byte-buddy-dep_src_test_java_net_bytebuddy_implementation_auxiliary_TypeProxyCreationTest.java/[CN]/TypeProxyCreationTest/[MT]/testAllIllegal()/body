@@ -1,5 +1,5 @@
 {
-  when(implementationTarget.getTypeDescription()).thenReturn(foo);
+  when(implementationTarget.getInstrumentedType()).thenReturn(foo);
   when(invocationFactory.invoke(eq(implementationTarget),eq(foo),any(MethodDescription.class))).thenReturn(specialMethodInvocation);
   TypeDescription dynamicType=new TypeProxy(foo,implementationTarget,invocationFactory,true,false).make(BAR,ClassFileVersion.forCurrentJavaVersion(),methodAccessorFactory).getTypeDescription();
   assertThat(dynamicType.getModifiers(),is(modifiers));
