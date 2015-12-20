@@ -1,4 +1,4 @@
 TypeDescription instrumentedType
-TypeDescription fieldType
+GenericTypeDescription fieldType
 String suffix
 int valueHashCode
