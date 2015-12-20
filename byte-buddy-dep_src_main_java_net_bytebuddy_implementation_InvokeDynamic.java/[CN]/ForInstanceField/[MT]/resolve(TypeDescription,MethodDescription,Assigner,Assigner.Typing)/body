@@ -2,5 +2,5 @@
   if (instrumentedMethod.isStatic()) {
     throw new IllegalStateException("Cannot access " + fieldName + " from "+ instrumentedMethod);
   }
-  return new Resolved.Simple(new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(instrumentedType.getDeclaredFields().filter(named(fieldName)).getOnly()).getter()),fieldType);
+  return new Resolved.Simple(new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(instrumentedType.getDeclaredFields().filter(named(fieldName)).getOnly()).getter()),fieldType.asErasure());
 }

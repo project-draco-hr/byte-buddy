@@ -1,5 +1,5 @@
 {
   this.value=value;
-  this.typeDescription=typeDescription;
+  this.fieldType=fieldType;
   name=String.format("%s$%s",FIELD_PREFIX,RandomString.make());
 }

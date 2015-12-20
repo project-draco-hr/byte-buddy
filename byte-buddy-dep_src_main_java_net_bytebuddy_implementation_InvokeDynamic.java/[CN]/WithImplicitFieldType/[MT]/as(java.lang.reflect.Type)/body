@@ -1,0 +1,3 @@
+{
+  return as(TypeDefinition.Sort.describe(nonNull(type)));
+}
