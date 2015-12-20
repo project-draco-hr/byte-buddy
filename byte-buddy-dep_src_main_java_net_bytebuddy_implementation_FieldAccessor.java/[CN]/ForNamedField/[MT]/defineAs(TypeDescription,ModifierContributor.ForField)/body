@@ -1,3 +1,0 @@
-{
-  return new ForNamedField(assigner,typing,fieldName,PreparationHandler.FieldDefiner.of(fieldName,isActualType(typeDescription),nonNull(modifier)),FieldLocator.ForInstrumentedType.INSTANCE);
-}

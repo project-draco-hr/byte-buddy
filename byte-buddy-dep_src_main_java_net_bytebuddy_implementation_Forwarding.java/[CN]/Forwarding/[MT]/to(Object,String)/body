@@ -1,3 +1,3 @@
 {
-  return new Forwarding(isValidIdentifier(fieldName),new TypeDescription.ForLoadedType(nonNull(delegate).getClass()),new PreparationHandler.ForStaticInstance(delegate));
+  return new Forwarding(isValidIdentifier(fieldName),new GenericTypeDescription.ForNonGenericType.OfLoadedType(nonNull(delegate).getClass()),new PreparationHandler.ForStaticInstance(delegate));
 }
