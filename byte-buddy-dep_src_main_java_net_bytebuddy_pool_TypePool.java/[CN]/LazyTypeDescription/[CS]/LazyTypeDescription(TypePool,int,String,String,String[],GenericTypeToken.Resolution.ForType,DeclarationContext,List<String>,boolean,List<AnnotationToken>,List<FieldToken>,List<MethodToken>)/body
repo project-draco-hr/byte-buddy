@@ -5,7 +5,7 @@
   this.superTypeDescriptor=superTypeInternalName == null ? NO_SUPER_TYPE : Type.getObjectType(superTypeInternalName).getDescriptor();
   this.signatureResolution=signatureResolution;
   if (interfaceInternalName == null) {
-    interfaceTypeDescriptors=Collections.<String>emptyList();
+    interfaceTypeDescriptors=Collections.emptyList();
   }
  else {
     interfaceTypeDescriptors=new ArrayList<String>(interfaceInternalName.length);
