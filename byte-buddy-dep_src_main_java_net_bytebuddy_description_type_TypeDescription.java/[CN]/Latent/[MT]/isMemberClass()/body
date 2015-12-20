@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot resolve member class property of a latent type description: " + this);
-}

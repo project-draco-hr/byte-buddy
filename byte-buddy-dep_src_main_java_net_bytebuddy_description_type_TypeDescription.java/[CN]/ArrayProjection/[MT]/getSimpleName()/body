@@ -1,7 +1,0 @@
-{
-  StringBuilder stringBuilder=new StringBuilder(componentType.getSimpleName());
-  for (int i=0; i < arity; i++) {
-    stringBuilder.append("[]");
-  }
-  return stringBuilder.toString();
-}

@@ -1,4 +1,0 @@
-{
-  Class<?> componentType=type.getComponentType();
-  return componentType == null ? TypeDescription.UNDEFINED : new TypeDescription.ForLoadedType(componentType);
-}

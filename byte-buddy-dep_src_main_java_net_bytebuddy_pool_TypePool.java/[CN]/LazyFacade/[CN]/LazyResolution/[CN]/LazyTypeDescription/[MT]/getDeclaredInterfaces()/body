@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot resolve declared interfaces for lazy facade: " + this);
-}

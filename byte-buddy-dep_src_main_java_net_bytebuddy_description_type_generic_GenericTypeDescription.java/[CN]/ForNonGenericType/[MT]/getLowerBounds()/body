@@ -1,3 +1,3 @@
 {
-  return asErasure().getLowerBounds();
+  throw new IllegalStateException();
 }

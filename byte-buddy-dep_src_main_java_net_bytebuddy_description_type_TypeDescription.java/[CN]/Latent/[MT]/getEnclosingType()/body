@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot resolve enclosing type of a latent type description: " + this);
-}

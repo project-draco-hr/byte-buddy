@@ -1,4 +1,0 @@
-{
-  Class<?> declaringType=type.getDeclaringClass();
-  return declaringType == null ? TypeDescription.UNDEFINED : new TypeDescription.ForLoadedType(declaringType);
-}

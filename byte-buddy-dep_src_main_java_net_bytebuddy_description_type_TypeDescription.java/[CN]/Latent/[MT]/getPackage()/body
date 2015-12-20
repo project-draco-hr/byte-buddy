@@ -1,5 +1,0 @@
-{
-  String name=getName();
-  int index=name.lastIndexOf('.');
-  return index == -1 ? PackageDescription.UNDEFINED : new PackageDescription.Simple(name.substring(0,index));
-}

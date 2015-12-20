@@ -1,3 +1,3 @@
 {
-  return Sort.NON_GENERIC;
+  return GenericTypeDescription.Sort.NON_GENERIC;
 }

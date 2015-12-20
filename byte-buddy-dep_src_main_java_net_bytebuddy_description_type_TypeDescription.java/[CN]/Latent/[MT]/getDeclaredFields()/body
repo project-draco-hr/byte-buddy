@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot resolve declared fields of a latent type description: " + this);
-}
