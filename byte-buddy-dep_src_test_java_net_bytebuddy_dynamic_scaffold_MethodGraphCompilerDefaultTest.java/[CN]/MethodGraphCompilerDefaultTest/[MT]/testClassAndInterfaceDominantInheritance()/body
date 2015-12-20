@@ -10,5 +10,5 @@
   assertThat(methodNode.getRepresentative(),is(method));
   MethodGraph.Node baseNode=methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(InterfaceBase.class)).locate(method.asToken());
   assertThat(methodNode,not(baseNode));
-  assertThat(baseNode.getRepresentative(),is(typeDescription.getInterfaces().getOnly().getDeclaredMethods().getOnly()));
+  assertThat(baseNode.getRepresentative(),is((MethodDescription)typeDescription.getInterfaces().getOnly().getDeclaredMethods().getOnly()));
 }

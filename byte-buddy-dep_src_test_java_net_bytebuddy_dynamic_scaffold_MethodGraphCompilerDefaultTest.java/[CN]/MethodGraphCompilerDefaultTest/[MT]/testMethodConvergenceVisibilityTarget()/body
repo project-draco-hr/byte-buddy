@@ -10,5 +10,5 @@
   assertThat(methodNode.getMethodTypes().size(),is(2));
   assertThat(methodNode.getMethodTypes().contains(genericMethod.asTypeToken()),is(true));
   assertThat(methodNode.getMethodTypes().contains(genericMethod.asDefined().asTypeToken()),is(true));
-  assertThat(methodNode.getRepresentative(),is(typeDescription.getSuperType().getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly()));
+  assertThat(methodNode.getRepresentative(),is((MethodDescription)typeDescription.getSuperType().getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly()));
 }

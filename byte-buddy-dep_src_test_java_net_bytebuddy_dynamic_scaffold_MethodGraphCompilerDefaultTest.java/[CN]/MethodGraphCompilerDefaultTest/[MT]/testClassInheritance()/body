@@ -11,5 +11,5 @@
   assertThat(methodGraph.listNodes().contains(methodNode),is(true));
   MethodGraph.Node baseNode=methodGraph.getSuperGraph().locate(method.asToken());
   assertThat(methodNode,not(baseNode));
-  assertThat(baseNode.getRepresentative(),is(typeDescription.getSuperType().getDeclaredMethods().filter(representedBy(method.asToken())).getOnly()));
+  assertThat(baseNode.getRepresentative(),is((MethodDescription)typeDescription.getSuperType().getDeclaredMethods().filter(representedBy(method.asToken())).getOnly()));
 }
