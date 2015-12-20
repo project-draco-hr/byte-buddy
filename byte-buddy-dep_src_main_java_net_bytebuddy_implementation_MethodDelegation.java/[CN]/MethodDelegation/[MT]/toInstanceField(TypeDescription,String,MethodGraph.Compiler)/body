@@ -1,3 +1,0 @@
-{
-  return new MethodDelegation(new ImplementationDelegate.ForInstanceField(nonNull(typeDescription),isValidIdentifier(fieldName)),TargetMethodAnnotationDrivenBinder.ParameterBinder.DEFAULTS,Argument.NextUnboundAsDefaultsProvider.INSTANCE,TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,MethodDelegationBinder.AmbiguityResolver.DEFAULT,Assigner.DEFAULT,new MethodContainer.ForVirtualMethods(methodGraphCompiler,typeDescription));
-}

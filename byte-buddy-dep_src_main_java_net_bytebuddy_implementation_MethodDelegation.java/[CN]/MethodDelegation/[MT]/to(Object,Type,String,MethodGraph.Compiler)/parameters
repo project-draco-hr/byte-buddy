@@ -1,3 +1,4 @@
 Object delegate
-Class<?> type
+Type type
+String fieldName
 MethodGraph.Compiler methodGraphCompiler

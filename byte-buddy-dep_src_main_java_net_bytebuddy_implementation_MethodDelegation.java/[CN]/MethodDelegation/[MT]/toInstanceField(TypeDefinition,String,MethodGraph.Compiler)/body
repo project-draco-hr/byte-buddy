@@ -1,0 +1,3 @@
+{
+  return new MethodDelegation(new ImplementationDelegate.ForInstanceField(typeDefinition.asGenericType(),isValidIdentifier(fieldName)),TargetMethodAnnotationDrivenBinder.ParameterBinder.DEFAULTS,Argument.NextUnboundAsDefaultsProvider.INSTANCE,TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,MethodDelegationBinder.AmbiguityResolver.DEFAULT,Assigner.DEFAULT,new MethodContainer.ForVirtualMethods(methodGraphCompiler,typeDefinition.asGenericType()));
+}
