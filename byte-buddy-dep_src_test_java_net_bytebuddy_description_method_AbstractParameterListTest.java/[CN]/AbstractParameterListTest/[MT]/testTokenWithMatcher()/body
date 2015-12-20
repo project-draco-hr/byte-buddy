@@ -1,4 +1,4 @@
 {
   assertThat(asList(Collections.singletonList(getFirst())).asTokenList(none()).size(),is(1));
-  assertThat(asList(Collections.singletonList(getFirst())).asTokenList(none()).getOnly().getType(),is(GenericTypeDescription.Sort.describe(Void.class)));
+  assertThat(asList(Collections.singletonList(getFirst())).asTokenList(none()).getOnly().getType(),is(TypeDefinition.Sort.describe(Void.class)));
 }

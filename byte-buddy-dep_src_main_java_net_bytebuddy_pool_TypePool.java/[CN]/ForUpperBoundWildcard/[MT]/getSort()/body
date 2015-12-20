@@ -1,3 +1,3 @@
 {
-  return GenericTypeDescription.Sort.WILDCARD;
+  return TypeDefinition.Sort.WILDCARD;
 }

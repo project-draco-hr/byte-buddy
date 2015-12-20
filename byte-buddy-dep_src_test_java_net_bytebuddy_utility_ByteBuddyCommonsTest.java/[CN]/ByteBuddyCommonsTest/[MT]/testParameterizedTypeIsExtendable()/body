@@ -1,6 +1,6 @@
 {
   GenericTypeDescription genericTypeDescription=mock(GenericTypeDescription.class);
-  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.PARAMETERIZED);
+  when(genericTypeDescription.getSort()).thenReturn(TypeDefinition.Sort.PARAMETERIZED);
   when(genericTypeDescription.asErasure()).thenReturn(new TypeDescription.ForLoadedType(Object.class));
   assertThat(isExtendable(genericTypeDescription),sameInstance(genericTypeDescription));
 }

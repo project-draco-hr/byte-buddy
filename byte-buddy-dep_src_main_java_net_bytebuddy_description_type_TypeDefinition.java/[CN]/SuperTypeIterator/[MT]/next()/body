@@ -1,0 +1,11 @@
+{
+  if (!hasNext()) {
+    throw new NoSuchElementException("End of type hierarchy");
+  }
+  try {
+    return nextType;
+  }
+  finally {
+    nextType=nextType.getSuperType();
+  }
+}

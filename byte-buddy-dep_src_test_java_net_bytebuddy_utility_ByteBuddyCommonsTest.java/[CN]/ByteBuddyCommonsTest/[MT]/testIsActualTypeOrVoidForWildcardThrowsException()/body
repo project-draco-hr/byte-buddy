@@ -1,5 +1,5 @@
 {
   GenericTypeDescription typeDescription=mock(GenericTypeDescription.class);
-  when(typeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.WILDCARD);
+  when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.WILDCARD);
   isActualTypeOrVoid(typeDescription);
 }

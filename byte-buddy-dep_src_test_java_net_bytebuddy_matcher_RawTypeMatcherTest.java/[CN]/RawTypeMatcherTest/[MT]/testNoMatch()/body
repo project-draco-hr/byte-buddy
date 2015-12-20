@@ -1,6 +1,6 @@
 {
   when(elementMatcher.matches(typeDescription)).thenReturn(false);
-  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
+  when(genericTypeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   assertThat(new RawTypeMatcher<GenericTypeDescription>(elementMatcher).matches(genericTypeDescription),is(false));
   verify(genericTypeDescription).getSort();
   verify(genericTypeDescription).asErasure();

@@ -1,18 +1,18 @@
 {
   GenericTypeDescription genericTypeDescription=describe(TypeResolution.class.getDeclaredField(BAR));
-  assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
+  assertThat(genericTypeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(genericTypeDescription.getParameters().size(),is(1));
   GenericTypeDescription interfaceType=genericTypeDescription.getInterfaces().getOnly();
-  assertThat(interfaceType.getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(interfaceType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(interfaceType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.BaseInterface.class)));
   assertThat(interfaceType.getParameters().size(),is(0));
   assertThat(interfaceType.getDeclaredFields().size(),is(0));
   GenericTypeDescription methodReturnType=interfaceType.getDeclaredMethods().filter(isMethod()).getOnly().getReturnType();
-  assertThat(methodReturnType.getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(methodReturnType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(methodReturnType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));
   assertThat(methodReturnType.getParameters().size(),is(0));
   GenericTypeDescription methodParameterType=interfaceType.getDeclaredMethods().filter(isMethod()).getOnly().getParameters().asTypeList().getOnly();
-  assertThat(methodParameterType.getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(methodParameterType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(methodParameterType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));
   assertThat(methodParameterType.getParameters().size(),is(0));
   assertThat(interfaceType.getDeclaredMethods().getOnly().getDeclaringType().getDeclaredMethods().getOnly().getReturnType(),is(interfaceType.getDeclaredMethods().getOnly().getReturnType()));

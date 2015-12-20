@@ -1,5 +1,5 @@
 {
   when(targetType.getName()).thenReturn(FOO);
-  when(targetType.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
+  when(targetType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   Origin.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
 }

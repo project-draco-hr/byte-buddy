@@ -1,3 +1,3 @@
 {
-  return new TypeSortMatcher<T>(anyOf(GenericTypeDescription.Sort.VARIABLE,GenericTypeDescription.Sort.VARIABLE_DETACHED,GenericTypeDescription.Sort.VARIABLE_SYMBOLIC)).and(matcher);
+  return new TypeSortMatcher<T>(anyOf(TypeDefinition.Sort.VARIABLE,TypeDefinition.Sort.VARIABLE_DETACHED,TypeDefinition.Sort.VARIABLE_SYMBOLIC)).and(matcher);
 }

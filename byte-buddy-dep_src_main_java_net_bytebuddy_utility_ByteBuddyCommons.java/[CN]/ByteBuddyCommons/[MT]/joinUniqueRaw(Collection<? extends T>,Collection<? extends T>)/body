@@ -1,12 +1,12 @@
 {
   List<T> result=new ArrayList<T>(left.size() + right.size());
-  Map<TypeDescription,GenericTypeDescription> types=new HashMap<TypeDescription,GenericTypeDescription>();
+  Map<TypeDescription,TypeDefinition> types=new HashMap<TypeDescription,TypeDefinition>();
   for (  T typeDescription : left) {
     types.put(typeDescription.asErasure(),typeDescription);
     result.add(typeDescription);
   }
   for (  T typeDescription : right) {
-    GenericTypeDescription conflictingType=types.put(typeDescription.asErasure(),typeDescription);
+    TypeDefinition conflictingType=types.put(typeDescription.asErasure(),typeDescription);
     if (conflictingType != null && !conflictingType.equals(typeDescription)) {
       throw new IllegalArgumentException("Conflicting type erasures: " + conflictingType + " and "+ typeDescription);
     }

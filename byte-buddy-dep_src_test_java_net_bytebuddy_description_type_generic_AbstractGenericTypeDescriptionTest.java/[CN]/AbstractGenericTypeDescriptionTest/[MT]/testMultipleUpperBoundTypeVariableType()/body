@@ -1,6 +1,6 @@
 {
   GenericTypeDescription genericTypeDescription=describe(MultipleUpperBoundTypeVariableType.class.getDeclaredField(FOO));
-  assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.VARIABLE));
+  assertThat(genericTypeDescription.getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(genericTypeDescription.getSymbol(),is(T));
   assertThat(genericTypeDescription.getStackSize(),is(StackSize.SINGLE));
   assertThat(genericTypeDescription.getUpperBounds().size(),is(3));

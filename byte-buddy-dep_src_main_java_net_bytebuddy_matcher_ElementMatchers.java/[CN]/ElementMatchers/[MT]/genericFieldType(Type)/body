@@ -1,3 +1,3 @@
 {
-  return genericFieldType(GenericTypeDescription.Sort.describe(fieldType));
+  return genericFieldType(TypeDefinition.Sort.describe(fieldType));
 }

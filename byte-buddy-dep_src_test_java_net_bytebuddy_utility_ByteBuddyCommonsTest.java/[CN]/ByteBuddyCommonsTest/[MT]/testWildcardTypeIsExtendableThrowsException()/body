@@ -1,5 +1,5 @@
 {
   GenericTypeDescription genericTypeDescription=mock(GenericTypeDescription.class);
-  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.WILDCARD);
+  when(genericTypeDescription.getSort()).thenReturn(TypeDefinition.Sort.WILDCARD);
   isExtendable(genericTypeDescription);
 }

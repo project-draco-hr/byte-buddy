@@ -1,6 +1,6 @@
 {
   GenericTypeDescription typeDescription=mock(GenericTypeDescription.class);
-  when(typeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
+  when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   when(typeDescription.asErasure()).thenReturn(new TypeDescription.ForLoadedType(Object.class));
   assertThat(isActualType(typeDescription),sameInstance(typeDescription));
 }

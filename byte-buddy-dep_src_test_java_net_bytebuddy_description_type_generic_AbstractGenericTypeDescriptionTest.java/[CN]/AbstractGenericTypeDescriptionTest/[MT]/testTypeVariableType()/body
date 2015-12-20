@@ -1,12 +1,12 @@
 {
   GenericTypeDescription genericTypeDescription=describe(SimpleTypeVariableType.class.getDeclaredField(FOO));
-  assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.VARIABLE));
+  assertThat(genericTypeDescription.getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(genericTypeDescription.getSourceCodeName(),is(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.getTypeName(),is(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.toString(),is(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
-  assertThat(genericTypeDescription.hashCode(),is(GenericTypeDescription.Sort.describe(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType()).hashCode()));
-  assertThat(genericTypeDescription,is(GenericTypeDescription.Sort.describe(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType())));
-  assertThat(genericTypeDescription,CoreMatchers.not(GenericTypeDescription.Sort.describe(SimpleTypeVariableType.class.getDeclaredField(FOO).getType())));
+  assertThat(genericTypeDescription.hashCode(),is(TypeDefinition.Sort.describe(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType()).hashCode()));
+  assertThat(genericTypeDescription,is(TypeDefinition.Sort.describe(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType())));
+  assertThat(genericTypeDescription,CoreMatchers.not(TypeDefinition.Sort.describe(SimpleTypeVariableType.class.getDeclaredField(FOO).getType())));
   assertThat(genericTypeDescription,CoreMatchers.not(new Object()));
   assertThat(genericTypeDescription.equals(null),is(false));
   assertThat(genericTypeDescription.getSymbol(),is(T));

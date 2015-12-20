@@ -1,7 +1,7 @@
 {
   when(targetType.getInternalName()).thenReturn(FOO);
   when(targetType.represents(String.class)).thenReturn(true);
-  when(targetType.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
+  when(targetType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=Origin.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
 }

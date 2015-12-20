@@ -1,5 +1,5 @@
 {
-  assertThat(describe(genericMethod).getReturnType(),is(GenericTypeDescription.Sort.describe(genericMethod.getGenericReturnType())));
+  assertThat(describe(genericMethod).getReturnType(),is(TypeDefinition.Sort.describe(genericMethod.getGenericReturnType())));
   assertThat(describe(genericMethod).getParameters().asTypeList(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(genericMethod.getGenericParameterTypes())));
   assertThat(describe(genericMethod).getExceptionTypes(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(genericMethod.getGenericExceptionTypes())));
 }

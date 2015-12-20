@@ -1,8 +1,8 @@
 {
   GenericTypeDescription genericTypeDescription=describe(MemberVariable.class.getDeclaredField(BAR)).getSuperType();
-  assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(genericTypeDescription.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   MethodDescription methodDescription=genericTypeDescription.getDeclaredMethods().filter(named(FOO)).getOnly();
-  assertThat(methodDescription.getReturnType().getSort(),is(GenericTypeDescription.Sort.VARIABLE));
+  assertThat(methodDescription.getReturnType().getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(methodDescription.getReturnType().getSymbol(),is("S"));
   assertThat(methodDescription.getReturnType().getVariableSource(),is((TypeVariableSource)methodDescription));
 }

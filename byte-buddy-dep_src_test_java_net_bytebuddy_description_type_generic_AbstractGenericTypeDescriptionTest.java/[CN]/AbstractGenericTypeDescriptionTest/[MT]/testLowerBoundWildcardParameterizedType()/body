@@ -1,20 +1,20 @@
 {
   GenericTypeDescription genericTypeDescription=describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO));
-  assertThat(genericTypeDescription.getSort(),is(GenericTypeDescription.Sort.PARAMETERIZED));
+  assertThat(genericTypeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(genericTypeDescription.getSourceCodeName(),is(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.getTypeName(),is(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.toString(),is(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
-  assertThat(genericTypeDescription.hashCode(),is(GenericTypeDescription.Sort.describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType()).hashCode()));
-  assertThat(genericTypeDescription,is(GenericTypeDescription.Sort.describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType())));
-  assertThat(genericTypeDescription,CoreMatchers.not(GenericTypeDescription.Sort.describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getType())));
+  assertThat(genericTypeDescription.hashCode(),is(TypeDefinition.Sort.describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType()).hashCode()));
+  assertThat(genericTypeDescription,is(TypeDefinition.Sort.describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType())));
+  assertThat(genericTypeDescription,CoreMatchers.not(TypeDefinition.Sort.describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getType())));
   assertThat(genericTypeDescription,CoreMatchers.not(new Object()));
   assertThat(genericTypeDescription.equals(null),is(false));
   assertThat(genericTypeDescription.getParameters().size(),is(1));
-  assertThat(genericTypeDescription.getParameters().getOnly().getSort(),is(GenericTypeDescription.Sort.WILDCARD));
+  assertThat(genericTypeDescription.getParameters().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
   assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().size(),is(1));
-  assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(genericTypeDescription.getParameters().getOnly().getUpperBounds().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(genericTypeDescription.getParameters().getOnly().getLowerBounds().size(),is(1));
-  assertThat(genericTypeDescription.getParameters().getOnly().getLowerBounds().getOnly().getSort(),is(GenericTypeDescription.Sort.NON_GENERIC));
+  assertThat(genericTypeDescription.getParameters().getOnly().getLowerBounds().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(genericTypeDescription.getParameters().getOnly().getLowerBounds().getOnly().asErasure().represents(String.class),is(true));
   assertThat(genericTypeDescription.getTypeName(),is(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
 }
