@@ -9,5 +9,5 @@
   assertThat(genericTypeDescription.getOwnerType().getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(genericTypeDescription.getOwnerType().getParameters().size(),is(1));
   assertThat(genericTypeDescription.getOwnerType().getParameters().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(genericTypeDescription.getOwnerType().getParameters().getOnly(),is((GenericTypeDescription)new GenericTypeDescription.ForNonGenericType.OfLoadedType(String.class)));
+  assertThat(genericTypeDescription.getOwnerType().getParameters().getOnly(),is((TypeDefinition)new TypeDescription.ForLoadedType(String.class)));
 }

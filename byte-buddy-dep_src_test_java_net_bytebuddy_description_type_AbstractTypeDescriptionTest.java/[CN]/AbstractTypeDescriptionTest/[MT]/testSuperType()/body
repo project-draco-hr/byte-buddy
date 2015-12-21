@@ -4,6 +4,6 @@
   assertThat(describe(SampleAnnotation.class).getSuperType(),nullValue(GenericTypeDescription.class));
   assertThat(describe(void.class).getSuperType(),nullValue(GenericTypeDescription.class));
   assertThat(describe(SampleClass.class).getSuperType(),is(GenericTypeDescription.OBJECT));
-  assertThat(describe(SampleIndirectInterfaceImplementation.class).getSuperType(),is((GenericTypeDescription)new GenericTypeDescription.ForNonGenericType.OfLoadedType(SampleInterfaceImplementation.class)));
+  assertThat(describe(SampleIndirectInterfaceImplementation.class).getSuperType(),is((TypeDefinition)new TypeDescription.ForLoadedType(SampleInterfaceImplementation.class)));
   assertThat(describe(Object[].class).getSuperType(),is(GenericTypeDescription.OBJECT));
 }

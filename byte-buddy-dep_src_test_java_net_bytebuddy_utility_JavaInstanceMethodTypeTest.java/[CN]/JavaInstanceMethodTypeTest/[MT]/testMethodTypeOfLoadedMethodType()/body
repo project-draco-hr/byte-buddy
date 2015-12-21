@@ -1,6 +1,6 @@
 {
   Object loadedMethodType=JavaType.METHOD_TYPE.load().getDeclaredMethod("methodType",Class.class,Class[].class).invoke(null,void.class,new Class<?>[]{Object.class});
   JavaInstance.MethodType methodType=JavaInstance.MethodType.of(loadedMethodType);
-  assertThat(methodType.getReturnType(),is((TypeDescription)TypeDescription.VOID));
+  assertThat(methodType.getReturnType(),is(TypeDescription.VOID));
   assertThat(methodType.getParameterTypes(),is((List<TypeDescription>)new TypeList.ForLoadedTypes(Object.class)));
 }

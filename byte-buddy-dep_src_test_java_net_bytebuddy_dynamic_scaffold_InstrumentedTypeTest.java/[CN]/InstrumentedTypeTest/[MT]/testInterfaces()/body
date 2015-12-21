@@ -1,4 +1,4 @@
 {
   assertThat(makePlainInstrumentedType().getInterfaces().size(),is(1));
-  assertThat(makePlainInstrumentedType().getInterfaces().getOnly(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Serializable.class)));
+  assertThat(makePlainInstrumentedType().getInterfaces().getOnly(),is((TypeDefinition)new TypeDescription.ForLoadedType(Serializable.class)));
 }

@@ -4,8 +4,8 @@
   assertThat(genericTypeDescription.getSymbol(),is(T));
   assertThat(genericTypeDescription.getStackSize(),is(StackSize.SINGLE));
   assertThat(genericTypeDescription.getUpperBounds().size(),is(2));
-  assertThat(genericTypeDescription.getUpperBounds().get(0),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
-  assertThat(genericTypeDescription.getUpperBounds().get(1),is((GenericTypeDescription)new TypeDescription.ForLoadedType(Bar.class)));
+  assertThat(genericTypeDescription.getUpperBounds().get(0),is((TypeDefinition)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(genericTypeDescription.getUpperBounds().get(1),is((TypeDefinition)new TypeDescription.ForLoadedType(Bar.class)));
   assertThat(genericTypeDescription.getTypeName(),is(InterfaceOnlyMultipleUpperBoundTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(InterfaceOnlyMultipleUpperBoundTypeVariableType.class)));
   assertThat(genericTypeDescription.getVariableSource().getTypeVariables().size(),is(1));

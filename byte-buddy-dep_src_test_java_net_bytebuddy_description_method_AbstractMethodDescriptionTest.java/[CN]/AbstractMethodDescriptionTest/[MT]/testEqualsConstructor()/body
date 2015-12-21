@@ -26,12 +26,12 @@
   MethodDescription.InDefinedShape equalMethodButReturnType=mock(MethodDescription.InDefinedShape.class);
   when(equalMethodButReturnType.getInternalName()).thenReturn(MethodDescription.CONSTRUCTOR_INTERNAL_NAME);
   when(equalMethodButReturnType.getDeclaringType()).thenReturn(TypeDescription.OBJECT);
-  when(equalMethodButReturnType.getReturnType()).thenReturn(GenericTypeDescription.VOID);
+  when(equalMethodButReturnType.getReturnType()).thenReturn(GenericTypeDescription.OBJECT);
   when(equalMethodButReturnType.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(equalMethodButReturnType,new TypeList.ForLoadedTypes(firstConstructor.getParameterTypes())));
   assertThat(describe(firstConstructor),not(equalMethodButReturnType));
   MethodDescription.InDefinedShape equalMethodButDeclaringType=mock(MethodDescription.InDefinedShape.class);
   when(equalMethodButDeclaringType.getInternalName()).thenReturn(MethodDescription.CONSTRUCTOR_INTERNAL_NAME);
-  when(equalMethodButDeclaringType.getDeclaringType()).thenReturn(new TypeDescription.ForLoadedType(firstConstructor.getDeclaringClass()));
+  when(equalMethodButDeclaringType.getDeclaringType()).thenReturn(TypeDescription.OBJECT);
   when(equalMethodButDeclaringType.getReturnType()).thenReturn(GenericTypeDescription.VOID);
   when(equalMethodButDeclaringType.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(equalMethodButDeclaringType,new TypeList.ForLoadedTypes(firstConstructor.getParameterTypes())));
   assertThat(describe(firstConstructor),not(equalMethodButDeclaringType));
