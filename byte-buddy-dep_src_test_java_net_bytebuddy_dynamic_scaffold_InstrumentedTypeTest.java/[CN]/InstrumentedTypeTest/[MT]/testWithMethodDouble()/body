@@ -1,7 +1,8 @@
 {
-  TypeDescription returnType=mock(TypeDescription.class);
-  when(returnType.asErasure()).thenReturn(returnType);
-  when(returnType.getName()).thenReturn(FOO);
+  GenericTypeDescription returnType=mock(GenericTypeDescription.class);
   when(returnType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(returnType);
-  makePlainInstrumentedType().withMethod(new MethodDescription.Token(BAR,Opcodes.ACC_PUBLIC,returnType,Collections.<TypeDescription>emptyList())).withMethod(new MethodDescription.Token(BAR,Opcodes.ACC_PUBLIC,returnType,Collections.<TypeDescription>emptyList()));
+  TypeDescription rawReturnType=mock(TypeDescription.class);
+  when(returnType.asErasure()).thenReturn(rawReturnType);
+  when(rawReturnType.getName()).thenReturn(FOO);
+  makePlainInstrumentedType().withMethod(new MethodDescription.Token(BAR,Opcodes.ACC_PUBLIC,returnType,Collections.<GenericTypeDescription>emptyList())).withMethod(new MethodDescription.Token(BAR,Opcodes.ACC_PUBLIC,returnType,Collections.<GenericTypeDescription>emptyList()));
 }

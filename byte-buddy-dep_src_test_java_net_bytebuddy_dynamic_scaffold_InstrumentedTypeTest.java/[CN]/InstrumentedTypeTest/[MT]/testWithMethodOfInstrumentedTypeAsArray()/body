@@ -1,7 +1,7 @@
 {
   InstrumentedType instrumentedType=makePlainInstrumentedType();
   assertThat(instrumentedType.getDeclaredFields().size(),is(0));
-  instrumentedType=instrumentedType.withMethod(new MethodDescription.Token(BAR,Opcodes.ACC_PUBLIC,TypeDescription.ArrayProjection.of(TargetType.DESCRIPTION,1),Collections.singletonList(TypeDescription.ArrayProjection.of(TargetType.DESCRIPTION,1))));
+  instrumentedType=instrumentedType.withMethod(new MethodDescription.Token(BAR,Opcodes.ACC_PUBLIC,GenericTypeDescription.ForGenericArray.Latent.of(TargetType.GENERIC_DESCRIPTION,1),Collections.singletonList(GenericTypeDescription.ForGenericArray.Latent.of(TargetType.GENERIC_DESCRIPTION,1))));
   assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
   MethodDescription.InDefinedShape methodDescription=instrumentedType.getDeclaredMethods().get(0);
   assertThat(methodDescription.getReturnType().asErasure().isArray(),is(true));

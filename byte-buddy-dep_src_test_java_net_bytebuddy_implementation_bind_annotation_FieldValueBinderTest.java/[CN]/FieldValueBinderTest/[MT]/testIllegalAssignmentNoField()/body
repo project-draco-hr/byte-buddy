@@ -1,7 +1,7 @@
 {
   doReturn(void.class).when(annotation).definingType();
   when(annotation.value()).thenReturn(FOO);
-  when(instrumentedType.getDeclaredFields()).thenReturn(new FieldList.Empty());
+  when(instrumentedType.getDeclaredFields()).thenReturn(new FieldList.Empty<FieldDescription.InDefinedShape>());
   MethodDelegationBinder.ParameterBinding<?> binding=FieldValue.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(binding.isValid(),is(false));
 }

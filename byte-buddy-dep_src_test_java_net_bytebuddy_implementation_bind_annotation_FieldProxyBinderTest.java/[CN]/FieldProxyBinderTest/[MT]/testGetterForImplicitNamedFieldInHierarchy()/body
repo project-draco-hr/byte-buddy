@@ -1,10 +1,10 @@
 {
-  when(target.getType()).thenReturn(getterType);
+  when(target.getType()).thenReturn(genericGetterType);
   doReturn(void.class).when(annotation).definingType();
   when(annotation.value()).thenReturn(FieldProxy.BEAN_PROPERTY);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
-  when(source.getReturnType()).thenReturn(fieldType);
-  when(source.getParameters()).thenReturn(new ParameterList.Empty());
+  when(source.getReturnType()).thenReturn(genericFieldType);
+  when(source.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
   when(source.getName()).thenReturn("getFoo");
   when(source.getSourceCodeName()).thenReturn("getFoo");
   when(source.getInternalName()).thenReturn("getFoo");

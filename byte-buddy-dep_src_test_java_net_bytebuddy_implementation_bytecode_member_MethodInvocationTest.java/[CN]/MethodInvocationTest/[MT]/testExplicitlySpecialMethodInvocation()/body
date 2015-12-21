@@ -1,4 +1,4 @@
 {
-  when(methodDescription.isSpecializableFor(otherType)).thenReturn(true);
-  assertInvocation(MethodInvocation.invoke(methodDescription).special(otherType),Opcodes.INVOKESPECIAL,BAZ,false);
+  when(methodDescription.isSpecializableFor(rawOtherType)).thenReturn(true);
+  assertInvocation(MethodInvocation.invoke(methodDescription).special(rawOtherType),Opcodes.INVOKESPECIAL,BAZ,false);
 }

@@ -9,7 +9,7 @@
   when(defaultGraph.locate(defaultToken)).thenReturn(new MethodGraph.Node.Simple(defaultMethod));
   when(methodDeclaringType.asErasure()).thenReturn(methodDeclaringType);
   when(invokableMethod.getDeclaringType()).thenReturn(methodDeclaringType);
-  when(invokableMethod.getReturnType()).thenReturn(returnType);
+  when(invokableMethod.getReturnType()).thenReturn(genericReturnType);
   when(returnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(returnType.asErasure()).thenReturn(returnType);
   when(invokableMethod.getInternalName()).thenReturn(FOO);
@@ -19,12 +19,14 @@
   when(defaultMethod.getInternalName()).thenReturn(QUXBAZ);
   when(defaultMethod.getDescriptor()).thenReturn(FOOBAZ);
   when(defaultMethod.getDeclaringType()).thenReturn(defaultMethodDeclaringType);
-  when(defaultMethod.getReturnType()).thenReturn(returnType);
+  when(defaultMethod.getReturnType()).thenReturn(genericReturnType);
   when(defaultMethod.asToken()).thenReturn(defaultToken);
   when(defaultMethod.asDefined()).thenReturn(defaultMethod);
   when(defaultMethod.isSpecializableFor(defaultMethodDeclaringType)).thenReturn(true);
   when(defaultMethodDeclaringType.isInterface()).thenReturn(true);
   when(defaultMethodDeclaringType.asErasure()).thenReturn(defaultMethodDeclaringType);
   when(defaultMethodDeclaringType.getInternalName()).thenReturn(BAZBAR);
+  when(genericReturnType.asErasure()).thenReturn(returnType);
+  when(instrumentedType.asGenericType()).thenReturn(genericInstrumentedType);
   implementationTarget=makeImplementationTarget();
 }
