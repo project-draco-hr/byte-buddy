@@ -1,3 +1,0 @@
-{
-  return Arrays.asList(new Object[][]{{AllArguments.class},{Argument.class},{BindingPriority.class},{Default.class},{DefaultCall.class},{Empty.class},{FieldProxy.class},{FieldValue.class},{IgnoreForBinding.class},{Morph.class},{Origin.class},{Pipe.class},{RuntimeType.class},{Super.class},{SuperCall.class},{This.class}});
-}
