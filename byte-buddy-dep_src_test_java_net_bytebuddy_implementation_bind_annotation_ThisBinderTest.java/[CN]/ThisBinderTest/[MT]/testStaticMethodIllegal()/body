@@ -1,5 +1,5 @@
 {
-  when(target.getType()).thenReturn(parameterType);
+  when(target.getType()).thenReturn(genericParameterType);
   when(source.isStatic()).thenReturn(true);
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=This.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(false));

@@ -1,3 +1,3 @@
 {
-  assertThat(implementationTarget.getOriginType(),is((GenericTypeDescription)instrumentedType));
+  assertThat(implementationTarget.getOriginType(),is((TypeDefinition)instrumentedType));
 }

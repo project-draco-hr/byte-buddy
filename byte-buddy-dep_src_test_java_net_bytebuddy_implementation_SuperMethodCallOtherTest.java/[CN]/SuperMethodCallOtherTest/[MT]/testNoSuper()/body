@@ -1,7 +1,7 @@
 {
-  when(typeDescription.getSuperType()).thenReturn(superType);
-  when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Empty());
-  when(methodDescription.getReturnType()).thenReturn(returnType);
+  when(typeDescription.getSuperType()).thenReturn(genericSuperType);
+  when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Empty<ParameterDescription>());
+  when(methodDescription.getReturnType()).thenReturn(genericReturnType);
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);
   when(declaringType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(returnType.getStackSize()).thenReturn(StackSize.SINGLE);

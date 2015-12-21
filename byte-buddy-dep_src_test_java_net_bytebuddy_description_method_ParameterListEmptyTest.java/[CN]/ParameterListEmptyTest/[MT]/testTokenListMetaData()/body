@@ -1,3 +1,3 @@
 {
-  assertThat(new ParameterList.Empty().hasExplicitMetaData(),is(true));
+  assertThat(new ParameterList.Empty<ParameterDescription>().hasExplicitMetaData(),is(true));
 }

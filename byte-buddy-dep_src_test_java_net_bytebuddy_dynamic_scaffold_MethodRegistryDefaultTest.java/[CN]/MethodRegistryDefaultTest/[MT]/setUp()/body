@@ -21,13 +21,13 @@
   when(typeDescription.asErasure()).thenReturn(typeDescription);
   when(implementationTarget.getInstrumentedType()).thenReturn(typeDescription);
   when(methodTransformer.transform(typeDescription,instrumentedMethod)).thenReturn(instrumentedMethod);
-  when(returnType.asErasure()).thenReturn(returnType);
+  when(genericReturnType.asErasure()).thenReturn(returnType);
   when(returnType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   when(returnType.isVisibleTo(typeDescription)).thenReturn(true);
-  when(parameterType.asErasure()).thenReturn(parameterType);
+  when(genericParameterType.asErasure()).thenReturn(parameterType);
   when(parameterType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   when(parameterType.isVisibleTo(typeDescription)).thenReturn(true);
-  when(instrumentedMethod.getReturnType()).thenReturn(returnType);
+  when(instrumentedMethod.getReturnType()).thenReturn(genericReturnType);
   when(instrumentedMethod.getParameters()).thenReturn(new ParameterList.Explicit(Collections.singletonList(parameterDescription)));
-  when(parameterDescription.getType()).thenReturn(parameterType);
+  when(parameterDescription.getType()).thenReturn(genericParameterType);
 }

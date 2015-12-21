@@ -5,11 +5,14 @@
   MethodDescription.InDefinedShape methodDescription=mock(MethodDescription.InDefinedShape.class);
   when(typeDescription.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InDefinedShape>(Collections.singletonList(methodDescription)));
   when(methodDescription.getSourceCodeName()).thenReturn(FOO);
-  TypeDescription returnType=mock(TypeDescription.class);
-  when(returnType.asErasure()).thenReturn(returnType);
+  GenericTypeDescription returnType=mock(GenericTypeDescription.class);
+  TypeDescription rawReturnType=mock(TypeDescription.class);
+  when(returnType.asErasure()).thenReturn(rawReturnType);
   when(methodDescription.getReturnType()).thenReturn(returnType);
-  TypeDescription componentType=mock(TypeDescription.class);
+  GenericTypeDescription componentType=mock(GenericTypeDescription.class);
+  TypeDescription rawComponentType=mock(TypeDescription.class);
+  when(componentType.asErasure()).thenReturn(rawComponentType);
+  when(rawComponentType.getName()).thenReturn(QUX);
   when(returnType.getComponentType()).thenReturn(componentType);
-  when(componentType.getName()).thenReturn(QUX);
   assertThat(new TypePool.Default.ComponentTypeLocator.ForAnnotationProperty(typePool,BAR_DESCRIPTOR).bind(FOO).lookup(),is(QUX));
 }

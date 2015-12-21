@@ -1,5 +1,5 @@
 {
-  when(methodDescription.getReturnType()).thenReturn(TypeDescription.STRING);
+  when(methodDescription.getReturnType()).thenReturn(new GenericTypeDescription.ForNonGenericType.OfLoadedType(String.class));
   when(methodDescription.isDefaultValue(FOO)).thenReturn(true);
   TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,FOO,methodAttributeAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.DEFINED));

@@ -1,5 +1,5 @@
 {
   when(parameterType.isPrimitive()).thenReturn(true);
-  when(target.getType()).thenReturn(parameterType);
+  when(target.getType()).thenReturn(genericParameterType);
   This.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
 }

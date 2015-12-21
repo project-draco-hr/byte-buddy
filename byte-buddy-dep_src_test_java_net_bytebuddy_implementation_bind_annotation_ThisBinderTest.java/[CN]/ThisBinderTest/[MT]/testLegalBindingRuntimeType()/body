@@ -1,6 +1,6 @@
 {
   when(stackManipulation.isValid()).thenReturn(true);
-  when(target.getType()).thenReturn(parameterType);
+  when(target.getType()).thenReturn(genericParameterType);
   RuntimeType runtimeType=mock(RuntimeType.class);
   doReturn(RuntimeType.class).when(runtimeType).annotationType();
   when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(runtimeType));

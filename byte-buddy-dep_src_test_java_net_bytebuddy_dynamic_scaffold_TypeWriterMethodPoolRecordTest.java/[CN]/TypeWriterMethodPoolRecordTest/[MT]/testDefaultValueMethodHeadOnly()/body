@@ -1,5 +1,5 @@
 {
-  when(methodDescription.getReturnType()).thenReturn(TypeDescription.STRING);
+  when(methodDescription.getReturnType()).thenReturn(new GenericTypeDescription.ForNonGenericType.OfLoadedType(String.class));
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
   when(methodDescription.isDefaultValue(FOO)).thenReturn(true);

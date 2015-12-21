@@ -1,5 +1,5 @@
 {
-  when(typeDescription.getSuperType()).thenReturn(superType);
+  when(typeDescription.getSuperType()).thenReturn(genericSuperType);
   when(methodDescription.isConstructor()).thenReturn(true);
   when(superType.getDeclaredMethods()).thenReturn(superTypeMethods);
   when(superTypeMethods.filter(any(ElementMatcher.class))).thenReturn(superTypeMethods);
