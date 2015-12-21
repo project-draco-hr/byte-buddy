@@ -3,14 +3,17 @@
   when(methodDescription.isConstructor()).thenReturn(true);
   when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
   when(methodDescription.getReturnType()).thenReturn(genericReturnType);
-  when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
   when(placeholderType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(placeholderType.asErasure()).thenReturn(rawPlaceholderType);
   when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,Collections.singletonList(parameterType)));
+  when(parameterType.asGenericType()).thenReturn(parameterType);
+  when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(parameterType.asErasure()).thenReturn(rawParameterType);
+  when(rawParameterType.asGenericType()).thenReturn(parameterType);
   when(methodDescription.getInternalName()).thenReturn(FOO);
   when(methodDescription.getDescriptor()).thenReturn(QUX);
   when(typeDescription.getInternalName()).thenReturn(BAR);
-  when(placeholderType.getDescriptor()).thenReturn(BAZ);
+  when(rawPlaceholderType.getDescriptor()).thenReturn(BAZ);
   when(otherPlaceHolderType.getDescriptor()).thenReturn(FOO);
   when(genericReturnType.asErasure()).thenReturn(returnType);
-  when(parameterType.asErasure()).thenReturn(parameterType);
 }
