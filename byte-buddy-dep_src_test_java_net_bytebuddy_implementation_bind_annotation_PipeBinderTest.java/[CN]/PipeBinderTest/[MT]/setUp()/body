@@ -1,6 +1,6 @@
 {
   super.setUp();
   when(targetMethod.getDeclaringType()).thenReturn(targetMethodType);
+  when(genericTargetMethodType.asErasure()).thenReturn(targetMethodType);
   binder=new Pipe.Binder(targetMethod);
-  when(targetMethodType.asErasure()).thenReturn(targetMethodType);
 }

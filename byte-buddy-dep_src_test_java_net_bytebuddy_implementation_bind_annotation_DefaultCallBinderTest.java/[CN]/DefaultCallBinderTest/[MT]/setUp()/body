@@ -1,7 +1,7 @@
 {
   super.setUp();
-  when(target.getType()).thenReturn(targetParameterType);
-  when(targetParameterType.asErasure()).thenReturn(targetParameterType);
+  when(target.getType()).thenReturn(genericTargetParameterType);
+  when(genericTargetParameterType.asErasure()).thenReturn(targetParameterType);
   when(implementationTarget.invokeDefault(any(TypeDescription.class),eq(methodToken))).thenReturn(specialMethodInvocation);
   when(firstInterface.asErasure()).thenReturn(firstInterface);
   when(secondInterface.asErasure()).thenReturn(secondInterface);

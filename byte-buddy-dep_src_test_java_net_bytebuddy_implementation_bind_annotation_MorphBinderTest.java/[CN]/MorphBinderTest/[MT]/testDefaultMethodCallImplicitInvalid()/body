@@ -1,7 +1,7 @@
 {
   when(source.asToken()).thenReturn(morphToken);
   when(instrumentedType.getInterfaces()).thenReturn(new GenericTypeList.ForLoadedTypes(Foo.class));
-  when(target.getType()).thenReturn(morphType);
+  when(target.getType()).thenReturn(genericMorphType);
   when(morphMethod.getDeclaringType()).thenReturn(morphType);
   when(annotation.defaultMethod()).thenReturn(true);
   doReturn(void.class).when(annotation).defaultTarget();

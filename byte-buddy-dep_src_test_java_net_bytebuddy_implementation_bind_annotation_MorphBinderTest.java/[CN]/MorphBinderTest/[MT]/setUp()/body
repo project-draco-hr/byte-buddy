@@ -1,6 +1,6 @@
 {
   super.setUp();
-  when(morphType.asErasure()).thenReturn(morphType);
+  when(genericMorphType.asErasure()).thenReturn(morphType);
   when(defaultType.asErasure()).thenReturn(defaultType);
   when(source.asToken()).thenReturn(sourceToken);
 }
