@@ -1,3 +1,3 @@
 {
-  return throwing(new TypeList.ForLoadedType(nonNull(exceptionType)));
+  return throwing(new TypeList.ForLoadedTypes(nonNull(exceptionType)));
 }

@@ -1,0 +1,3 @@
+{
+  return defineField(name,TypeDefinition.Sort.describe(nonNull(fieldType)),modifiers);
+}

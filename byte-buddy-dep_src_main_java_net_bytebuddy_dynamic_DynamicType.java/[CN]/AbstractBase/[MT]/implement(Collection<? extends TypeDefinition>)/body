@@ -1,0 +1,3 @@
+{
+  return new DefaultOptionalMatchedMethodInterception(new GenericTypeList.Explicit(toList(isImplementable(interfaceTypes))));
+}

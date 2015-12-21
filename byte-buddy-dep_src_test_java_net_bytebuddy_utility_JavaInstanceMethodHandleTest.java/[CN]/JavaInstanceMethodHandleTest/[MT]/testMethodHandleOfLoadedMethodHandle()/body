@@ -8,5 +8,5 @@
   assertThat(methodHandle.getName(),is(BAR));
   assertThat(methodHandle.getOwnerType(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
   assertThat(methodHandle.getReturnType(),is((TypeDescription)new TypeDescription.ForLoadedType(void.class)));
-  assertThat(methodHandle.getParameterTypes(),is((List<TypeDescription>)new TypeList.ForLoadedType(Void.class)));
+  assertThat(methodHandle.getParameterTypes(),is((List<TypeDescription>)new TypeList.ForLoadedTypes(Void.class)));
 }

@@ -1,0 +1,3 @@
+{
+  return defineConstructor(new GenericTypeList.ForLoadedTypes(toList(parameterTypes)),modifiers);
+}

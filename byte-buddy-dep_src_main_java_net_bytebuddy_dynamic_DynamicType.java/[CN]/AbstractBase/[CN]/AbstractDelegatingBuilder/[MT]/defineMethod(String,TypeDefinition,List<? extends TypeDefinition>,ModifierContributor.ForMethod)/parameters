@@ -1,0 +1,4 @@
+String name
+TypeDefinition returnType
+List<? extends TypeDefinition> parameterTypes
+ModifierContributor.ForMethod modifier

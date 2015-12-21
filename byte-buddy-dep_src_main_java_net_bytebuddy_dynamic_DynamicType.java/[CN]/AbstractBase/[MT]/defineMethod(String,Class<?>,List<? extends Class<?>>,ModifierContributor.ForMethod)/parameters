@@ -1,4 +1,0 @@
-String name
-Class<?> returnType
-List<? extends Class<?>> parameterTypes
-ModifierContributor.ForMethod modifier

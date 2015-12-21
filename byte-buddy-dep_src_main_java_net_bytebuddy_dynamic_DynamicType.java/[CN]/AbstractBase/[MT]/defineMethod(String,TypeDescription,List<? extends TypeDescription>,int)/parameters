@@ -1,4 +1,0 @@
-String name
-TypeDescription returnType
-List<? extends TypeDescription> parameterTypes
-int modifiers
