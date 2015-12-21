@@ -1,4 +1,4 @@
 {
   assertThat(ElementMatchers.isAnnotatedWith(IsAnnotatedWithAnnotation.class).matches(new TypeDescription.ForLoadedType(IsAnnotatedWith.class)),is(true));
-  assertThat(ElementMatchers.isAnnotatedWith(IsAnnotatedWithAnnotation.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(ElementMatchers.isAnnotatedWith(IsAnnotatedWithAnnotation.class).matches(TypeDescription.OBJECT),is(false));
 }

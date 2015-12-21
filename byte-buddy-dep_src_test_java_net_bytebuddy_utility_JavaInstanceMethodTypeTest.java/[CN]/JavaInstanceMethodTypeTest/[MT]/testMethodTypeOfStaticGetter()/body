@@ -1,5 +1,5 @@
 {
   JavaInstance.MethodType methodType=JavaInstance.MethodType.ofGetter(Foo.class.getDeclaredField(QUX));
-  assertThat(methodType.getReturnType(),is((TypeDescription)new TypeDescription.ForLoadedType(Void.class)));
+  assertThat(methodType.getReturnType(),is((TypeDescription)TypeDescription.VOID));
   assertThat(methodType.getParameterTypes(),is(Collections.<TypeDescription>emptyList()));
 }

@@ -5,6 +5,6 @@
   when(firstPrimitive.represents(firstType)).thenReturn(true);
   when(secondPrimitive.isPrimitive()).thenReturn(true);
   when(secondPrimitive.represents(secondType)).thenReturn(true);
-  when(firstPrimitive.asErasure()).thenReturn(firstPrimitive);
-  when(secondPrimitive.asErasure()).thenReturn(secondPrimitive);
+  when(firstPrimitive.asErasure()).thenReturn(firstRawPrimitive);
+  when(secondPrimitive.asErasure()).thenReturn(secondRawPrimitive);
 }

@@ -7,5 +7,5 @@
   verifyNoMoreInteractions(methodPool);
   verify(injectedCode).isDefined();
   verifyNoMoreInteractions(injectedCode);
-  implementationContext.cache(firstFieldValue,firstFieldType);
+  implementationContext.cache(firstFieldValue,firstRawFieldType);
 }

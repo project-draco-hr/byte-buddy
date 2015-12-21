@@ -5,7 +5,7 @@
   assertThat(genericTypeDescription.getUpperBounds().size(),is(1));
   GenericTypeDescription upperBound=genericTypeDescription.getUpperBounds().getOnly();
   assertThat(upperBound.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
-  assertThat(upperBound.asErasure(),is((GenericTypeDescription)genericTypeDescription.asErasure()));
+  assertThat(upperBound.asErasure(),is(genericTypeDescription.asErasure()));
   assertThat(upperBound.getParameters().size(),is(1));
   assertThat(upperBound.getParameters().getOnly(),is(genericTypeDescription));
 }

@@ -2,6 +2,6 @@
   assertThat(describe(firstMethod).getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(firstMethod.getReturnType())));
   assertThat(describe(secondMethod).getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(secondMethod.getReturnType())));
   assertThat(describe(thirdMethod).getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(thirdMethod.getReturnType())));
-  assertThat(describe(firstConstructor).getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(void.class)));
-  assertThat(describe(secondConstructor).getReturnType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(void.class)));
+  assertThat(describe(firstConstructor).getReturnType(),is((GenericTypeDescription)TypeDescription.VOID));
+  assertThat(describe(secondConstructor).getReturnType(),is((GenericTypeDescription)TypeDescription.VOID));
 }

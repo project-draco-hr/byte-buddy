@@ -1,6 +1,6 @@
 {
-  if (typeDescription.getSort().isWildcard()) {
-    throw new IllegalArgumentException("Not a top-level type: " + typeDescription);
+  if (typeDefinition.getSort().isWildcard()) {
+    throw new IllegalArgumentException("Not a top-level type: " + typeDefinition);
   }
-  return typeDescription;
+  return typeDefinition;
 }

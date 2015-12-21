@@ -1,6 +1,6 @@
 {
-  for (  TypeDefinition typeDescription : typeDescriptions) {
-    isImplementable(typeDescription);
+  for (  TypeDefinition typeDefinition : typeDefinitions) {
+    isImplementable(typeDefinition);
   }
-  return typeDescriptions;
+  return typeDefinitions;
 }

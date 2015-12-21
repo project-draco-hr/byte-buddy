@@ -1,6 +1,6 @@
 {
-  if (!isExtendable(typeDescription).asErasure().isInterface()) {
-    throw new IllegalArgumentException("Not an interface: " + typeDescription);
+  if (!isExtendable(typeDefinition).asErasure().isInterface()) {
+    throw new IllegalArgumentException("Not an interface: " + typeDefinition);
   }
-  return typeDescription;
+  return typeDefinition;
 }

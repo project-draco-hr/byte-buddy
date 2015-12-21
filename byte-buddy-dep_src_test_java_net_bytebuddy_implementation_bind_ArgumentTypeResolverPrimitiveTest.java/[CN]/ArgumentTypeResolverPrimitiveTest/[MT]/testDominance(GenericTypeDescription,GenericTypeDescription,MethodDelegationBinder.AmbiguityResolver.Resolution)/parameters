@@ -1,0 +1,3 @@
+GenericTypeDescription leftPrimitive
+GenericTypeDescription rightPrimitive
+MethodDelegationBinder.AmbiguityResolver.Resolution expected

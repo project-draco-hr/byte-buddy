@@ -8,6 +8,6 @@
   when(proxyMethod.getDeclaringType()).thenReturn(foo);
   when(proxyMethod.getInternalName()).thenReturn(FOO);
   when(proxyMethod.getDescriptor()).thenReturn(FOO);
-  when(proxyMethod.getReturnType()).thenReturn(new TypeDescription.ForLoadedType(Object.class));
+  when(proxyMethod.getReturnType()).thenReturn(TypeDescription.OBJECT);
   when(proxyMethod.asDefined()).thenReturn(proxyMethod);
 }

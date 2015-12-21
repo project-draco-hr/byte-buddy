@@ -1,4 +1,4 @@
 {
-  assertThat(ElementMatchers.is(Object.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(true));
-  assertThat(ElementMatchers.is(String.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(ElementMatchers.is(Object.class).matches(TypeDescription.OBJECT),is(true));
+  assertThat(ElementMatchers.is(String.class).matches(TypeDescription.OBJECT),is(false));
 }

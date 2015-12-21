@@ -1,6 +1,6 @@
 {
-  if (!isActualType(typeDescription).asErasure().isAssignableTo(Throwable.class)) {
-    throw new IllegalArgumentException("Cannot throw instances of: " + typeDescription);
+  if (!isActualType(typeDefinition).asErasure().isAssignableTo(Throwable.class)) {
+    throw new IllegalArgumentException("Cannot throw instances of: " + typeDefinition);
   }
-  return typeDescription;
+  return typeDefinition;
 }

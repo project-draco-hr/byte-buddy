@@ -1,6 +1,6 @@
 {
-  for (  GenericTypeDescription typeDescription : typeDescriptions) {
-    isThrowable(typeDescription);
+  for (  TypeDefinition typeDefinition : typeDefinitions) {
+    isThrowable(typeDefinition);
   }
-  return typeDescriptions;
+  return typeDefinitions;
 }

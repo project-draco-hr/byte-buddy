@@ -1,9 +1,9 @@
 {
   Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
-  FieldDescription firstField=implementationContext.cache(firstFieldValue,firstFieldType);
-  assertThat(implementationContext.cache(firstFieldValue,firstFieldType),is(firstField));
-  FieldDescription secondField=implementationContext.cache(secondFieldValue,secondFieldType);
-  assertThat(implementationContext.cache(secondFieldValue,secondFieldType),is(secondField));
+  FieldDescription firstField=implementationContext.cache(firstFieldValue,firstRawFieldType);
+  assertThat(implementationContext.cache(firstFieldValue,firstRawFieldType),is(firstField));
+  FieldDescription secondField=implementationContext.cache(secondFieldValue,secondRawFieldType);
+  assertThat(implementationContext.cache(secondFieldValue,secondRawFieldType),is(secondField));
   assertThat(firstField.getName(),not(secondField.getName()));
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
   when(typeInitializer.expandWith(any(ByteCodeAppender.class))).thenReturn(otherTypeInitializer);

@@ -1,6 +1,6 @@
 {
   GenericTypeDescription genericTypeDescription=mock(GenericTypeDescription.class);
   when(genericTypeDescription.getSort()).thenReturn(TypeDefinition.Sort.VARIABLE);
-  when(genericTypeDescription.asErasure()).thenReturn(new TypeDescription.ForLoadedType(Object.class));
+  when(genericTypeDescription.asErasure()).thenReturn(TypeDescription.OBJECT);
   isThrowable(genericTypeDescription);
 }

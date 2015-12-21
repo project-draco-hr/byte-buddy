@@ -3,10 +3,10 @@
   assertThat(describe(SamplePackagePrivate.class).isVisibleTo(new TypeDescription.ForLoadedType(SampleClass.class)),is(true));
   assertThat(describe(SampleInterface.class).isVisibleTo(new TypeDescription.ForLoadedType(SampleClass.class)),is(true));
   assertThat(describe(SampleAnnotation.class).isVisibleTo(new TypeDescription.ForLoadedType(SampleClass.class)),is(true));
-  assertThat(describe(SamplePackagePrivate.class).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(describe(SampleInterface.class).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(true));
-  assertThat(describe(SampleAnnotation.class).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(describe(int.class).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(true));
-  assertThat(describe(SampleInterface[].class).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(true));
-  assertThat(describe(SamplePackagePrivate[].class).isVisibleTo(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(describe(SamplePackagePrivate.class).isVisibleTo(TypeDescription.OBJECT),is(false));
+  assertThat(describe(SampleInterface.class).isVisibleTo(TypeDescription.OBJECT),is(true));
+  assertThat(describe(SampleAnnotation.class).isVisibleTo(TypeDescription.OBJECT),is(false));
+  assertThat(describe(int.class).isVisibleTo(TypeDescription.OBJECT),is(true));
+  assertThat(describe(SampleInterface[].class).isVisibleTo(TypeDescription.OBJECT),is(true));
+  assertThat(describe(SamplePackagePrivate[].class).isVisibleTo(TypeDescription.OBJECT),is(false));
 }

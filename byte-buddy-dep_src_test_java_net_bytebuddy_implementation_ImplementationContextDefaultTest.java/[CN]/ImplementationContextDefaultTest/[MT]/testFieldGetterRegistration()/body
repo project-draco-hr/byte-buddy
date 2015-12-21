@@ -2,7 +2,7 @@
   Implementation.Context.Default implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
   MethodDescription firstFieldGetter=implementationContext.registerGetterFor(firstField);
   assertThat(firstFieldGetter.getParameters(),is((ParameterList)new ParameterList.Empty()));
-  assertThat(firstFieldGetter.getReturnType(),is((GenericTypeDescription)firstFieldType));
+  assertThat(firstFieldGetter.getReturnType(),is(firstFieldType));
   assertThat(firstFieldGetter.getInternalName(),startsWith(FOO));
   assertThat(firstFieldGetter.getModifiers(),is(accessorMethodModifiers));
   assertThat(firstFieldGetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
@@ -10,7 +10,7 @@
   when(secondField.isStatic()).thenReturn(true);
   MethodDescription secondFieldGetter=implementationContext.registerGetterFor(secondField);
   assertThat(secondFieldGetter.getParameters(),is((ParameterList)new ParameterList.Empty()));
-  assertThat(secondFieldGetter.getReturnType(),is((GenericTypeDescription)secondFieldType));
+  assertThat(secondFieldGetter.getReturnType(),is(secondFieldType));
   assertThat(secondFieldGetter.getInternalName(),startsWith(BAR));
   assertThat(secondFieldGetter.getModifiers(),is(accessorMethodModifiers | Opcodes.ACC_STATIC));
   assertThat(secondFieldGetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));

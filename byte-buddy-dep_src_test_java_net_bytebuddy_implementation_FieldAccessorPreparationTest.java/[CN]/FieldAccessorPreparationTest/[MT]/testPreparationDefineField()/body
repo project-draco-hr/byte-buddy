@@ -1,6 +1,6 @@
 {
   assertThat(FieldAccessor.ofField(FOO).defineAs(TYPE).prepare(instrumentedType),is(instrumentedType));
-  verify(instrumentedType).withField(new FieldDescription.Token(FOO,NO_MODIFIERS,new TypeDescription.ForLoadedType(TYPE)));
+  verify(instrumentedType).withField(new FieldDescription.Token(FOO,NO_MODIFIERS,new GenericTypeDescription.ForNonGenericType.OfLoadedType(TYPE)));
   verify(instrumentedType).isInterface();
   verifyNoMoreInteractions(instrumentedType);
 }

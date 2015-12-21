@@ -1,6 +1,6 @@
 {
-  for (  TypeDefinition typeDescription : typeDescriptions) {
+  for (  TypeDefinition typeDescription : typeDefinition) {
     isActualTypeOrVoid(typeDescription);
   }
-  return typeDescriptions;
+  return typeDefinition;
 }
