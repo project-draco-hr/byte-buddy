@@ -1,0 +1,4 @@
+{
+  super.setUp();
+  when(genericType.asErasure()).thenReturn(type);
+}

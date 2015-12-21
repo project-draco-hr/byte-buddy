@@ -1,5 +1,5 @@
 {
-  when(target.getType()).thenReturn(TypeDescription.OBJECT);
-  when(source.getReturnType()).thenReturn(TypeDescription.VOID);
+  when(target.getType()).thenReturn(GenericTypeDescription.OBJECT);
+  when(source.getReturnType()).thenReturn(GenericTypeDescription.VOID);
   assertThat(StubValue.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner).isValid(),is(true));
 }

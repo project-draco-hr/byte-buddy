@@ -6,7 +6,7 @@
   when(targetType.isArray()).thenReturn(true);
   when(targetType.getComponentType()).thenReturn(componentType);
   when(componentType.getStackSize()).thenReturn(StackSize.SINGLE);
-  when(target.getType()).thenReturn(targetType);
+  when(target.getType()).thenReturn(genericTargetType);
   when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(targetAnnotation));
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=AllArguments.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));

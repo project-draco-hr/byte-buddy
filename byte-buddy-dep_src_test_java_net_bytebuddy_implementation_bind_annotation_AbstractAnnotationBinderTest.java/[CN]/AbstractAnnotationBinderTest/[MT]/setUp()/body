@@ -12,9 +12,9 @@
   when(implementationTarget.getInstrumentedType()).thenReturn(instrumentedType);
   when(implementationTarget.getOriginType()).thenReturn(instrumentedType);
   when(instrumentedType.asErasure()).thenReturn(instrumentedType);
-  when(instrumentedType.iterator()).then(new Answer<Iterator<GenericTypeDescription>>(){
-    @Override public Iterator<GenericTypeDescription> answer(    InvocationOnMock invocationOnMock) throws Throwable {
-      return Collections.<GenericTypeDescription>singleton(instrumentedType).iterator();
+  when(instrumentedType.iterator()).then(new Answer<Iterator<TypeDefinition>>(){
+    @Override public Iterator<TypeDefinition> answer(    InvocationOnMock invocationOnMock) throws Throwable {
+      return Collections.<TypeDefinition>singleton(instrumentedType).iterator();
     }
   }
 );

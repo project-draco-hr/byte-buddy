@@ -8,10 +8,10 @@
   when(typeList.asErasures()).thenReturn(rawTypeList);
   when(rawTypeList.iterator()).thenReturn(Collections.singletonList(parameterType).iterator());
   when(parameterType.getDescriptor()).thenReturn(QUX);
-  when(fieldDescription.getType()).thenReturn(fieldType);
+  when(fieldDescription.getType()).thenReturn(genericFieldType);
   when(fieldDescription.isStatic()).thenReturn(true);
   when(fieldType.getStackSize()).thenReturn(StackSize.SINGLE);
-  when(fieldType.asErasure()).thenReturn(fieldType);
+  when(genericFieldType.asErasure()).thenReturn(fieldType);
   when(fieldDescription.getDeclaringType()).thenReturn(declaringType);
   when(declaringType.getInternalName()).thenReturn(BAZ);
   when(fieldDescription.getInternalName()).thenReturn(FOO);
