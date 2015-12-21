@@ -5,10 +5,10 @@
   assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
   MethodDescription.InDefinedShape methodDescription=instrumentedType.getDeclaredMethods().get(0);
   assertThat(methodDescription.getReturnType().asErasure().isArray(),is(true));
-  assertThat(methodDescription.getReturnType().getComponentType(),sameInstance((GenericTypeDescription)instrumentedType));
+  assertThat(methodDescription.getReturnType().getComponentType().asErasure(),sameInstance((TypeDescription)instrumentedType));
   assertThat(methodDescription.getParameters().size(),is(1));
   assertThat(methodDescription.getParameters().asTypeList().asErasures().get(0).isArray(),is(true));
-  assertThat(methodDescription.getParameters().asTypeList().get(0).getComponentType(),sameInstance((GenericTypeDescription)instrumentedType));
+  assertThat(methodDescription.getParameters().asTypeList().get(0).getComponentType().asErasure(),sameInstance((TypeDescription)instrumentedType));
   assertThat(methodDescription.getExceptionTypes().size(),is(0));
   assertThat(methodDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
   assertThat(methodDescription.getName(),is(BAR));

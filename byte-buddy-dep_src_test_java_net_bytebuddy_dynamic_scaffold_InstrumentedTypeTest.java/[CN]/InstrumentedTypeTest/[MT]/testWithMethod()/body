@@ -6,6 +6,7 @@
   when(rawReturnType.getName()).thenReturn(FOO);
   GenericTypeDescription parameterType=mock(GenericTypeDescription.class);
   when(parameterType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
+  when(parameterType.asGenericType()).thenReturn(parameterType);
   TypeDescription rawParameterType=mock(TypeDescription.class);
   when(parameterType.asErasure()).thenReturn(rawParameterType);
   when(rawParameterType.getName()).thenReturn(QUX);
