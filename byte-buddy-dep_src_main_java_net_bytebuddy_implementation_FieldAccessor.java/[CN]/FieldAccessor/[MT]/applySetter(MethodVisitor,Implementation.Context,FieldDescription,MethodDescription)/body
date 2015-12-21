@@ -6,5 +6,5 @@
  else   if (fieldDescription.isFinal()) {
     throw new IllegalArgumentException("Cannot apply setter on final field " + fieldDescription);
   }
-  return apply(methodVisitor,implementationContext,fieldDescription,methodDescription,new StackManipulation.Compound(MethodVariableAccess.forType(fieldDescription.getType().asErasure()).loadOffset(methodDescription.getParameters().get(0).getOffset()),stackManipulation,FieldAccess.forField(fieldDescription).putter()));
+  return apply(methodVisitor,implementationContext,fieldDescription,methodDescription,new StackManipulation.Compound(MethodVariableAccess.of(fieldDescription.getType().asErasure()).loadOffset(methodDescription.getParameters().get(0).getOffset()),stackManipulation,FieldAccess.forField(fieldDescription).putter()));
 }

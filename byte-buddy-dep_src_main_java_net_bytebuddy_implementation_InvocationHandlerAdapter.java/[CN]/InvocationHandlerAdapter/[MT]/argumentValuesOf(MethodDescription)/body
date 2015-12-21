@@ -3,7 +3,7 @@
   List<StackManipulation> instruction=new ArrayList<StackManipulation>(parameterTypes.size());
   int currentIndex=1;
   for (  TypeDescription parameterType : parameterTypes) {
-    instruction.add(new StackManipulation.Compound(MethodVariableAccess.forType(parameterType).loadOffset(currentIndex),assigner.assign(parameterType,TypeDescription.OBJECT,Assigner.Typing.STATIC)));
+    instruction.add(new StackManipulation.Compound(MethodVariableAccess.of(parameterType).loadOffset(currentIndex),assigner.assign(parameterType,TypeDescription.OBJECT,Assigner.Typing.STATIC)));
     currentIndex+=parameterType.getStackSize().getSize();
   }
   return instruction;

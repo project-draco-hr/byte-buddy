@@ -3,4 +3,5 @@
   when(fieldDescription.asDefined()).thenReturn(fieldDescription);
   when(fieldDescription.getType()).thenReturn(fieldType);
   when(target.getType()).thenReturn(targetType);
+  when(fieldType.asErasure()).thenReturn(rawFieldType);
 }

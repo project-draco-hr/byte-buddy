@@ -1,6 +1,7 @@
 {
   super.setUp();
   when(target.getType()).thenReturn(genericTargetType);
+  when(targetType.asErasure()).thenReturn(targetType);
   when(genericTargetType.asErasure()).thenReturn(targetType);
   when(source.asDefined()).thenReturn(methodDescription);
 }

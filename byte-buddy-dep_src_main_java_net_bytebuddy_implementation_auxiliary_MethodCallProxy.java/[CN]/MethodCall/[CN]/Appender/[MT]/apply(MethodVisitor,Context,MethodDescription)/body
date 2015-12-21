@@ -1,5 +1,5 @@
 {
-  StackManipulation thisReference=MethodVariableAccess.forType(instrumentedType).loadOffset(0);
+  StackManipulation thisReference=MethodVariableAccess.of(instrumentedType).loadOffset(0);
   FieldList<?> fieldList=instrumentedType.getDeclaredFields();
   StackManipulation[] fieldLoading=new StackManipulation[fieldList.size()];
   int index=0;

@@ -1,4 +1,4 @@
 {
-  when(targetType.isArray()).thenReturn(true);
+  when(genericTargetType.isArray()).thenReturn(true);
   Super.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
 }

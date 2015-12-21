@@ -1,4 +1,4 @@
 {
-  when(targetType.isPrimitive()).thenReturn(true);
+  when(genericTargetType.isPrimitive()).thenReturn(true);
   Super.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
 }
