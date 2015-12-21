@@ -1,3 +1,3 @@
 {
-  assertThat(new MethodList.Empty().asTokenList().size(),is(0));
+  assertThat(new MethodList.Empty<MethodDescription>().asTokenList().size(),is(0));
 }
