@@ -4,8 +4,9 @@
       when(mock.getParameters()).thenReturn((ParameterList)new ParameterList.Empty<ParameterDescription>());
       when(mock.getExceptionTypes()).thenReturn(new GenericTypeList.Empty());
       when(mock.getDeclaringType()).thenReturn(mock(TypeDescription.class));
-      TypeDescription returnType=mock(TypeDescription.class);
-      when(returnType.asErasure()).thenReturn(returnType);
+      GenericTypeDescription returnType=mock(GenericTypeDescription.class);
+      TypeDescription rawReturnType=mock(TypeDescription.class);
+      when(returnType.asErasure()).thenReturn(rawReturnType);
       when(mock.getReturnType()).thenReturn(returnType);
     }
   }

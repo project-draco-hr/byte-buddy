@@ -1,3 +1,0 @@
-{
-  assertThat(new SubclassImplementationTarget(instrumentedType,methodGraph,SubclassImplementationTarget.OriginTypeResolver.LEVEL_TYPE).getOriginType(),is(genericInstrumentedType));
-}

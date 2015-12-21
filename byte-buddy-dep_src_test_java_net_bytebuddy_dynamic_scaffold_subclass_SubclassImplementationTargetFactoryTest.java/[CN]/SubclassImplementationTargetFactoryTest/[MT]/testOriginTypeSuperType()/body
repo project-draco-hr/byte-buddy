@@ -1,3 +1,3 @@
 {
-  assertThat(new SubclassImplementationTarget.Factory(SubclassImplementationTarget.OriginTypeResolver.SUPER_TYPE).make(instrumentedType,methodGraph).getOriginType(),is((GenericTypeDescription)superType));
+  assertThat(new SubclassImplementationTarget.Factory(SubclassImplementationTarget.OriginTypeResolver.SUPER_TYPE).make(instrumentedType,methodGraph).getOriginType(),is((TypeDefinition)genericSuperType));
 }

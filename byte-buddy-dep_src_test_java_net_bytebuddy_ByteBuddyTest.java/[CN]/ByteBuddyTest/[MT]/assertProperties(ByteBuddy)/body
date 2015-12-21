@@ -5,7 +5,7 @@
   assertThat(byteBuddy.defaultMethodAttributeAppenderFactory,is(methodAttributeAppenderFactory));
   assertThat(byteBuddy.ignoredMethods,is((ElementMatcher)methodMatcher));
   assertThat(byteBuddy.interfaceTypes.size(),is(1));
-  assertThat(byteBuddy.interfaceTypes,hasItem(interfaceTypes));
+  assertThat(byteBuddy.interfaceTypes,hasItem(interfaceType));
   assertThat(byteBuddy.methodGraphCompiler,is(methodGraphCompiler));
   assertThat(byteBuddy.modifiers.isDefined(),is(true));
   assertThat(byteBuddy.modifiers.resolve(0),is(MASK));
