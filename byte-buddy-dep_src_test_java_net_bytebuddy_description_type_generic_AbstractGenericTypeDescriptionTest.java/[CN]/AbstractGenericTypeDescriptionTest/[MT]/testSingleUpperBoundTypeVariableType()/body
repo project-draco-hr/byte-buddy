@@ -3,7 +3,7 @@
   assertThat(genericTypeDescription.getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(genericTypeDescription.getSymbol(),is(T));
   assertThat(genericTypeDescription.getUpperBounds().size(),is(1));
-  assertThat(genericTypeDescription.getUpperBounds().getOnly(),is((GenericTypeDescription)TypeDescription.STRING));
+  assertThat(genericTypeDescription.getUpperBounds().getOnly(),is((GenericTypeDescription)new GenericTypeDescription.ForNonGenericType.OfLoadedType(String.class)));
   assertThat(genericTypeDescription.getUpperBounds().getOnly().getStackSize(),is(StackSize.SINGLE));
   assertThat(genericTypeDescription.getTypeName(),is(SingleUpperBoundTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(SingleUpperBoundTypeVariableType.class)));

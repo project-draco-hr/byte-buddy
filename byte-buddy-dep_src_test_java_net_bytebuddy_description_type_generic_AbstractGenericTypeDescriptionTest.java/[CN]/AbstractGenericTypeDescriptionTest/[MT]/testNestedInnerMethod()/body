@@ -4,7 +4,7 @@
   assertThat(foo.getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(foo.getSymbol(),is(T));
   assertThat(foo.getUpperBounds().size(),is(1));
-  assertThat(foo.getUpperBounds().getOnly(),is((GenericTypeDescription)TypeDescription.OBJECT));
+  assertThat(foo.getUpperBounds().getOnly(),is(GenericTypeDescription.OBJECT));
   assertThat(foo.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(NestedInnerMethod.class)));
   GenericTypeDescription bar=describe(innerType.getDeclaredMethod(BAR));
   assertThat(bar.getSort(),is(TypeDefinition.Sort.VARIABLE));

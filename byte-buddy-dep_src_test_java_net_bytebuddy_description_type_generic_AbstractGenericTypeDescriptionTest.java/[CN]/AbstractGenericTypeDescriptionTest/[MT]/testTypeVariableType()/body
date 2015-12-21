@@ -11,7 +11,7 @@
   assertThat(genericTypeDescription.equals(null),is(false));
   assertThat(genericTypeDescription.getSymbol(),is(T));
   assertThat(genericTypeDescription.getUpperBounds().size(),is(1));
-  assertThat(genericTypeDescription.getUpperBounds().getOnly(),is((GenericTypeDescription)TypeDescription.OBJECT));
+  assertThat(genericTypeDescription.getUpperBounds().getOnly(),is(GenericTypeDescription.OBJECT));
   assertThat(genericTypeDescription.getUpperBounds().getOnly().getStackSize(),is(StackSize.SINGLE));
   assertThat(genericTypeDescription.getTypeName(),is(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(SimpleTypeVariableType.class)));

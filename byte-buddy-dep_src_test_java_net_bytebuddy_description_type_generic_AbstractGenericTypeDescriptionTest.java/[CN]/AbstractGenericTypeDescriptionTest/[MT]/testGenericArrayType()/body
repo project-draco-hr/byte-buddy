@@ -6,7 +6,7 @@
   assertThat(genericTypeDescription.getDeclaredMethods().size(),is(0));
   assertThat(genericTypeDescription.getParameters().size(),is(0));
   assertThat(genericTypeDescription.getOwnerType(),nullValue(GenericTypeDescription.class));
-  assertThat(genericTypeDescription.getSuperType(),is((GenericTypeDescription)TypeDescription.OBJECT));
+  assertThat(genericTypeDescription.getSuperType(),is(GenericTypeDescription.OBJECT));
   assertThat(genericTypeDescription.getInterfaces(),is(TypeDescription.ARRAY_INTERFACES));
   assertThat(genericTypeDescription.getSourceCodeName(),is(GenericArrayType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(genericTypeDescription.getTypeName(),is(GenericArrayType.class.getDeclaredField(FOO).getGenericType().toString()));

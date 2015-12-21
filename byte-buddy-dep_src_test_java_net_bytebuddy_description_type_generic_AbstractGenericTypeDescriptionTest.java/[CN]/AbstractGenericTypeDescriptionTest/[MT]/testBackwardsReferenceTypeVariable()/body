@@ -9,5 +9,5 @@
   assertThat(bar.getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(bar.getSymbol(),is(T));
   assertThat(bar.getUpperBounds().size(),is(1));
-  assertThat(bar.getUpperBounds().getOnly(),is((GenericTypeDescription)TypeDescription.OBJECT));
+  assertThat(bar.getUpperBounds().getOnly(),is(GenericTypeDescription.OBJECT));
 }
