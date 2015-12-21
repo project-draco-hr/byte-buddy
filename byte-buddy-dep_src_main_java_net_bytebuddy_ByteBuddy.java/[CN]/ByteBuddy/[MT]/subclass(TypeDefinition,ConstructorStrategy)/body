@@ -1,0 +1,9 @@
+{
+  GenericTypeDescription actualSuperType=isExtendable(superType).asGenericType();
+  List<GenericTypeDescription> interfaceTypes=this.interfaceTypes;
+  if (nonNull(superType).asErasure().isInterface()) {
+    actualSuperType=GenericTypeDescription.OBJECT;
+    interfaceTypes=joinUniqueRaw(interfaceTypes,Collections.singleton(superType.asGenericType()));
+  }
+  return new SubclassDynamicTypeBuilder<T>(classFileVersion,nonNull(namingStrategy.subclass(superType.asErasure())),auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,modifiers.resolve(superType.asErasure().getModifiers() & ~TypeManifestation.ANNOTATION.getMask()),typeAttributeAppender,ignoredMethods,classVisitorWrapper,new FieldRegistry.Default(),methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,actualSuperType,nonNull(constructorStrategy));
+}

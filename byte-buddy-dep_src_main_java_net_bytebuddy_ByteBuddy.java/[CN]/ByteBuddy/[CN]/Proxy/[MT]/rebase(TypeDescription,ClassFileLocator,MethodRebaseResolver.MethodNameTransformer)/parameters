@@ -1,3 +1,3 @@
-TypeDescription levelType
+TypeDescription typeDescription
 ClassFileLocator classFileLocator
 MethodRebaseResolver.MethodNameTransformer methodNameTransformer

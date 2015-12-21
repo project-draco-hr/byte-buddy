@@ -1,0 +1,3 @@
+{
+  return subclass(TypeDefinition.Sort.describe(superType),constructorStrategy);
+}

@@ -1,0 +1,3 @@
+{
+  return makeInterface(new GenericTypeList.ForLoadedTypes(nonNull(type)));
+}

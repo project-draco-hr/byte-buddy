@@ -1,0 +1,3 @@
+{
+  return new OptionalMethodInterception(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,joinUniqueRaw(interfaceTypes,new GenericTypeList.Explicit(toList(isImplementable(typeDefinitions)))),ignoredMethods,classVisitorWrapper,methodRegistry,modifiers,typeAttributeAppender,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,new LatentMethodMatcher.Resolved(isDeclaredBy(anyOf(new GenericTypeList.Explicit(toList(typeDefinitions)).asErasures()))));
+}
