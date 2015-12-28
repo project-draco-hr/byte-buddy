@@ -1,0 +1,3 @@
+{
+  return new Compound(ClassConstant.of(fieldDescription.getDeclaringType()),new TextConstant(fieldDescription.getInternalName()),MethodInvocation.invoke(GET_DECLARED_FIELD)).apply(methodVisitor,implementationContext);
+}

@@ -1,0 +1,3 @@
+{
+  return new Compound(ClassConstant.of(methodDescription.getDeclaringType()),new TextConstant(methodDescription.getInternalName()));
+}

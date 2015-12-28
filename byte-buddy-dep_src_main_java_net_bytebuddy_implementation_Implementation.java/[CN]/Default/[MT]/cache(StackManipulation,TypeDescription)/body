@@ -1,6 +1,6 @@
 {
   FieldCacheEntry fieldCacheEntry=new FieldCacheEntry(fieldValue,fieldType);
-  FieldDescription fieldCache=registeredFieldCacheEntries.get(fieldCacheEntry);
+  FieldDescription.InDefinedShape fieldCache=registeredFieldCacheEntries.get(fieldCacheEntry);
   if (fieldCache != null) {
     return fieldCache;
   }

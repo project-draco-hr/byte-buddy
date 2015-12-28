@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(FieldConstant.class).apply();
+  ObjectPropertyAssertion.of(FieldConstant.Cached.class).apply();
+}

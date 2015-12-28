@@ -1,0 +1,3 @@
+{
+  return FieldAccess.forField(implementationContext.cache(fieldConstant,new TypeDescription.ForLoadedType(Field.class))).getter().apply(methodVisitor,implementationContext);
+}
