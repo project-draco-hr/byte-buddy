@@ -1,0 +1,3 @@
+{
+  assertThat(sort.isNonGeneric(),is(nonGeneric));
+}

@@ -1,0 +1,8 @@
+{
+  this.sort=sort;
+  this.nonGeneric=nonGeneric;
+  this.parameterized=parameterized;
+  this.typeVariable=typeVariable;
+  this.genericArray=genericArray;
+  this.wildcard=wildcard;
+}

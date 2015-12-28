@@ -1,0 +1,6 @@
+TypeDefinition.Sort sort
+boolean nonGeneric
+boolean parameterized
+boolean typeVariable
+boolean genericArray
+boolean wildcard
