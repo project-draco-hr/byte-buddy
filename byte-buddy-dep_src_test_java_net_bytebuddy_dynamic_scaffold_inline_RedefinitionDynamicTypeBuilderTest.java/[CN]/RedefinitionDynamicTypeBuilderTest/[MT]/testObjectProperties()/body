@@ -9,8 +9,10 @@
 ).create(new ObjectPropertyAssertion.Creator<TypeDescription>(){
     @Override public TypeDescription create(){
       TypeDescription typeDescription=mock(TypeDescription.class);
-      when(typeDescription.asErasure()).thenReturn(typeDescription);
-      when(typeDescription.getInterfaces()).thenReturn(new GenericTypeList.Explicit(typeDescription));
+      GenericTypeDescription generictypeDescription=mock(GenericTypeDescription.class);
+      when(generictypeDescription.asErasure()).thenReturn(typeDescription);
+      when(generictypeDescription.asGenericType()).thenReturn(generictypeDescription);
+      when(typeDescription.getInterfaces()).thenReturn(new GenericTypeList.Explicit(generictypeDescription));
       when(typeDescription.getDeclaredFields()).thenReturn(new FieldList.Empty<FieldDescription.InDefinedShape>());
       when(typeDescription.getDeclaredMethods()).thenReturn(new MethodList.Empty<MethodDescription.InDefinedShape>());
       return typeDescription;

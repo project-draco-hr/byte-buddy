@@ -10,7 +10,10 @@
     @Override public TypeDescription create(){
       TypeDescription typeDescription=mock(TypeDescription.class);
       when(typeDescription.asErasure()).thenReturn(typeDescription);
-      when(typeDescription.getInterfaces()).thenReturn(new GenericTypeList.Explicit(typeDescription));
+      GenericTypeDescription genericTypeDescription=mock(GenericTypeDescription.class);
+      when(genericTypeDescription.asGenericType()).thenReturn(genericTypeDescription);
+      when(genericTypeDescription.asErasure()).thenReturn(typeDescription);
+      when(typeDescription.getInterfaces()).thenReturn(new GenericTypeList.Explicit(genericTypeDescription));
       when(typeDescription.getDeclaredFields()).thenReturn(new FieldList.Empty<FieldDescription.InDefinedShape>());
       when(typeDescription.getDeclaredMethods()).thenReturn(new MethodList.Empty<MethodDescription.InDefinedShape>());
       return typeDescription;

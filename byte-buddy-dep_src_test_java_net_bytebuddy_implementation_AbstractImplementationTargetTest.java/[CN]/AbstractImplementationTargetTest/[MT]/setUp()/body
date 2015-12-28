@@ -11,6 +11,7 @@
   when(invokableMethod.getDeclaringType()).thenReturn(methodDeclaringType);
   when(invokableMethod.getReturnType()).thenReturn(genericReturnType);
   when(returnType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(genericReturnType.getStackSize()).thenReturn(StackSize.ZERO);
   when(returnType.asErasure()).thenReturn(returnType);
   when(invokableMethod.getInternalName()).thenReturn(FOO);
   when(invokableMethod.getDescriptor()).thenReturn(QUX);
@@ -27,6 +28,10 @@
   when(defaultMethodDeclaringType.asErasure()).thenReturn(defaultMethodDeclaringType);
   when(defaultMethodDeclaringType.getInternalName()).thenReturn(BAZBAR);
   when(genericReturnType.asErasure()).thenReturn(returnType);
+  when(genericReturnType.asGenericType()).thenReturn(genericReturnType);
+  when(returnType.asGenericType()).thenReturn(genericReturnType);
+  when(genericInstrumentedType.asErasure()).thenReturn(instrumentedType);
+  when(genericInstrumentedType.asGenericType()).thenReturn(genericInstrumentedType);
   when(instrumentedType.asGenericType()).thenReturn(genericInstrumentedType);
   implementationTarget=makeImplementationTarget();
 }

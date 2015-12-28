@@ -9,7 +9,13 @@
   when(methodNameTransformer.transform(methodDescription)).thenReturn(QUX);
   when(otherMethodNameTransformer.transform(methodDescription)).thenReturn(FOO + BAR);
   when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
-  when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,Collections.singletonList(parameterType)));
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,Collections.singletonList(genericParameterType)));
   when(genericReturnType.asErasure()).thenReturn(returnType);
-  when(parameterType.asErasure()).thenReturn(parameterType);
+  when(genericReturnType.asRawType()).thenReturn(genericReturnType);
+  when(genericReturnType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(genericReturnType);
+  when(genericParameterType.asErasure()).thenReturn(parameterType);
+  when(genericParameterType.asGenericType()).thenReturn(genericParameterType);
+  when(parameterType.asGenericType()).thenReturn(genericParameterType);
+  when(genericParameterType.asRawType()).thenReturn(genericParameterType);
+  when(genericParameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(genericParameterType);
 }
