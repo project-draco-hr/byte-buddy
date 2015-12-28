@@ -1,7 +1,7 @@
 {
-  assertThat(describe(firstMethod).getParameters().asTypeList(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(firstMethod.getParameterTypes())));
-  assertThat(describe(secondMethod).getParameters().asTypeList(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(secondMethod.getParameterTypes())));
-  assertThat(describe(thirdMethod).getParameters().asTypeList(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(thirdMethod.getParameterTypes())));
-  assertThat(describe(firstConstructor).getParameters().asTypeList(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(firstConstructor.getParameterTypes())));
-  assertThat(describe(secondConstructor).getParameters().asTypeList(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(secondConstructor.getParameterTypes())));
+  assertThat(describe(firstMethod).getParameters().asTypeList(),is((TypeList.Generic)new TypeList.Generic.ForLoadedTypes(firstMethod.getParameterTypes())));
+  assertThat(describe(secondMethod).getParameters().asTypeList(),is((TypeList.Generic)new TypeList.Generic.ForLoadedTypes(secondMethod.getParameterTypes())));
+  assertThat(describe(thirdMethod).getParameters().asTypeList(),is((TypeList.Generic)new TypeList.Generic.ForLoadedTypes(thirdMethod.getParameterTypes())));
+  assertThat(describe(firstConstructor).getParameters().asTypeList(),is((TypeList.Generic)new TypeList.Generic.ForLoadedTypes(firstConstructor.getParameterTypes())));
+  assertThat(describe(secondConstructor).getParameters().asTypeList(),is((TypeList.Generic)new TypeList.Generic.ForLoadedTypes(secondConstructor.getParameterTypes())));
 }

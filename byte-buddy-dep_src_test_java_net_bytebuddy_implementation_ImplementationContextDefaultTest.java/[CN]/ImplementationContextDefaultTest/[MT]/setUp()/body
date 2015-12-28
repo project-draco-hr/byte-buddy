@@ -1,6 +1,6 @@
 {
-  firstSpecialExceptionTypes=new GenericTypeList.Explicit(firstSpecialExceptionType);
-  secondSpecialExceptionTypes=new GenericTypeList.Explicit(secondSpecialExceptionType);
+  firstSpecialExceptionTypes=new TypeList.Generic.Explicit(firstSpecialExceptionType);
+  secondSpecialExceptionTypes=new TypeList.Generic.Explicit(secondSpecialExceptionType);
   when(instrumentedType.getInternalName()).thenReturn(BAZ);
   when(instrumentedType.asErasure()).thenReturn(instrumentedType);
   when(instrumentedType.isInterface()).thenReturn(interfaceType);
@@ -15,20 +15,20 @@
   when(secondFieldValue.apply(any(MethodVisitor.class),any(Implementation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
   when(firstFieldType.getStackSize()).thenReturn(StackSize.ZERO);
   when(firstFieldType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
-  when(firstFieldType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(firstFieldType);
+  when(firstFieldType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(firstFieldType);
   when(firstFieldType.asErasure()).thenReturn(firstRawFieldType);
   when(firstFieldType.asRawType()).thenReturn(firstFieldType);
   when(firstFieldType.asGenericType()).thenReturn(firstFieldType);
-  when(firstFieldType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(firstFieldType);
+  when(firstFieldType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(firstFieldType);
   when(firstRawFieldType.asGenericType()).thenReturn(firstFieldType);
   when(firstRawFieldType.getDescriptor()).thenReturn(BAR);
   when(secondFieldType.getStackSize()).thenReturn(StackSize.ZERO);
   when(secondFieldType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
-  when(secondFieldType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(secondFieldType);
+  when(secondFieldType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(secondFieldType);
   when(secondFieldType.asErasure()).thenReturn(secondRawFieldType);
   when(secondFieldType.asRawType()).thenReturn(secondFieldType);
   when(secondFieldType.asGenericType()).thenReturn(secondFieldType);
-  when(secondFieldType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(secondFieldType);
+  when(secondFieldType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(secondFieldType);
   when(secondRawFieldType.asGenericType()).thenReturn(secondFieldType);
   when(secondRawFieldType.getDescriptor()).thenReturn(QUX);
   when(injectedCode.getByteCodeAppender()).thenReturn(injectedCodeAppender);
@@ -94,8 +94,8 @@
   when(secondSpecialExceptionType.asErasure()).thenReturn(secondRawSpecialExceptionType);
   when(firstSpecialParameterType.asErasure()).thenReturn(firstRawSpecialParameterType);
   when(secondSpecialParameterType.asErasure()).thenReturn(secondRawSpecialParameterType);
-  when(firstSpecialParameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(firstSpecialParameterType);
-  when(secondSpecialParameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(secondSpecialParameterType);
+  when(firstSpecialParameterType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(firstSpecialParameterType);
+  when(secondSpecialParameterType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(secondSpecialParameterType);
   when(firstFieldDeclaringType.asErasure()).thenReturn(firstFieldDeclaringType);
   when(secondFieldDeclaringType.asErasure()).thenReturn(secondFieldDeclaringType);
   when(firstSpecialMethod.getDeclaringType()).thenReturn(firstSpecialType);

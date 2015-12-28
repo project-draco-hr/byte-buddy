@@ -1,4 +1,4 @@
 {
   super.setUp();
-  when(typeDescription.asGenericType()).thenReturn(genericTypeDescription);
+  when(rawTypeDescription.asGenericType()).thenReturn(typeDescription);
 }

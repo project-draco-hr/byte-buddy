@@ -1,3 +1,3 @@
 {
-  return exceptionType.isAssignableTo(RuntimeException.class) || exceptionType.isAssignableTo(Error.class) ? new BooleanMatcher<T>(true) : ElementMatchers.<T>declaresGenericException(new CollectionItemMatcher<GenericTypeDescription>(rawType(isSuperTypeOf(exceptionType))));
+  return exceptionType.isAssignableTo(RuntimeException.class) || exceptionType.isAssignableTo(Error.class) ? new BooleanMatcher<T>(true) : ElementMatchers.<T>declaresGenericException(new CollectionItemMatcher<TypeDescription.Generic>(rawType(isSuperTypeOf(exceptionType))));
 }

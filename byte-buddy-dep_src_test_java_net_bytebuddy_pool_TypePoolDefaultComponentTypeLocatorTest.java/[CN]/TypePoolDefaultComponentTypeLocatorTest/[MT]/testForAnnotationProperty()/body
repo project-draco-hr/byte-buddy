@@ -5,7 +5,7 @@
   MethodDescription.InDefinedShape methodDescription=mock(MethodDescription.InDefinedShape.class);
   when(typeDescription.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InDefinedShape>(Collections.singletonList(methodDescription)));
   when(methodDescription.getSourceCodeName()).thenReturn(FOO);
-  GenericTypeDescription returnType=mock(GenericTypeDescription.class);
+  TypeDescription.Generic returnType=mock(TypeDescription.Generic.class);
   TypeDescription rawReturnType=mock(TypeDescription.class);
   when(returnType.asErasure()).thenReturn(rawReturnType);
   when(methodDescription.getReturnType()).thenReturn(returnType);

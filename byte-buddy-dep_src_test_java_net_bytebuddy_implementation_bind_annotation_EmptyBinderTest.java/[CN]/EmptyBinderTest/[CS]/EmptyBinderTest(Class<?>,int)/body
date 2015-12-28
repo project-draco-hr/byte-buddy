@@ -1,5 +1,5 @@
 {
   super(Empty.class);
-  typeDescription=new GenericTypeDescription.ForNonGenericType.OfLoadedType(type);
+  typeDescription=new TypeDescription.Generic.ForNonGenericType.OfLoadedType(type);
   this.opcode=opcode;
 }

@@ -8,7 +8,7 @@
   assertThat(describe(SampleClass.class),is(equalFirst));
   assertThat(describe(SampleClass.class),not(describe(SampleInterface.class)));
   assertThat(describe(SampleClass.class),not((TypeDescription)new TypeDescription.ForLoadedType(SampleInterface.class)));
-  TypeDefinition nonRawType=mock(GenericTypeDescription.class);
+  TypeDefinition nonRawType=mock(TypeDescription.Generic.class);
   when(nonRawType.getSort()).thenReturn(TypeDefinition.Sort.VARIABLE);
   assertThat(describe(SampleClass.class),not(nonRawType));
   assertThat(describe(SampleClass.class),not(new Object()));

@@ -1,3 +1,0 @@
-{
-  assertThat(GenericTypeDescription.Visitor.NoOp.INSTANCE.onParameterizedType(typeDescription),is(typeDescription));
-}

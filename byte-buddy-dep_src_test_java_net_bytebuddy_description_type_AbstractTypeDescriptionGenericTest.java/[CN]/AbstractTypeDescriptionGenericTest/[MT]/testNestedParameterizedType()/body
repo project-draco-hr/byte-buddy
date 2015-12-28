@@ -1,0 +1,9 @@
+{
+  TypeDescription.Generic typeDescription=describe(NestedParameterizedType.class.getDeclaredField(FOO));
+  assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(typeDescription.getParameters().size(),is(1));
+  assertThat(typeDescription.getParameters().getOnly().getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(typeDescription.getParameters().getOnly().getParameters().size(),is(1));
+  assertThat(typeDescription.getParameters().getOnly().getParameters().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(typeDescription.getParameters().getOnly().getParameters().getOnly().asErasure().represents(Foo.class),is(true));
+}

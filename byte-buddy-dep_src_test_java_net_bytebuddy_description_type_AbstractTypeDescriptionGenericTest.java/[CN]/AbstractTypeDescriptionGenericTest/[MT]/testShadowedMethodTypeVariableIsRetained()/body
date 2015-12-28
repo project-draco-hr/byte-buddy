@@ -1,0 +1,13 @@
+{
+  TypeDescription.Generic typeDescription=describe(MemberVariable.class.getDeclaredField(FOO));
+  assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(typeDescription.getParameters().size(),is(2));
+  assertThat(typeDescription.getParameters().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(typeDescription.getParameters().get(0).asErasure().represents(Number.class),is(true));
+  assertThat(typeDescription.getParameters().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(typeDescription.getParameters().get(1).asErasure().represents(Integer.class),is(true));
+  MethodDescription methodDescription=typeDescription.getDeclaredMethods().filter(named(BAR)).getOnly();
+  assertThat(methodDescription.getReturnType().getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(methodDescription.getReturnType().getSymbol(),is("T"));
+  assertThat(methodDescription.getReturnType().getVariableSource(),is((TypeVariableSource)methodDescription));
+}

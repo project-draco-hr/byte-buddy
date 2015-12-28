@@ -4,7 +4,7 @@
   doReturn(VOID_TYPE).when(annotation).targetType();
   when(source.asToken()).thenReturn(methodToken);
   when(source.isSpecializableFor(firstInterface)).thenReturn(true);
-  when(instrumentedType.getInterfaces()).thenReturn(new GenericTypeList.Explicit(firstInterface,secondInterface));
+  when(instrumentedType.getInterfaces()).thenReturn(new TypeList.Generic.Explicit(firstInterface,secondInterface));
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=DefaultCall.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
   verify(implementationTarget).getInstrumentedType();

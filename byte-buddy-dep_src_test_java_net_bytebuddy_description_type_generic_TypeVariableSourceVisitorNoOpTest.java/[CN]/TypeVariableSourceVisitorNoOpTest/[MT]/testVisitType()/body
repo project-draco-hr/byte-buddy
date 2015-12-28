@@ -1,4 +1,0 @@
-{
-  TypeDescription typeDescription=mock(TypeDescription.class);
-  assertThat(TypeVariableSource.Visitor.NoOp.INSTANCE.onType(typeDescription),is((TypeVariableSource)typeDescription));
-}

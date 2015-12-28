@@ -4,7 +4,7 @@
   TypeDescription dynamicType=new TypeProxy(foo,implementationTarget,invocationFactory,true,false).make(BAR,ClassFileVersion.forCurrentJavaVersion(),methodAccessorFactory).getTypeDescription();
   assertThat(dynamicType.getModifiers(),is(modifiers));
   assertThat(dynamicType.getSuperType().asErasure(),is(foo));
-  assertThat(dynamicType.getInterfaces(),is((GenericTypeList)new GenericTypeList.Empty()));
+  assertThat(dynamicType.getInterfaces(),is((TypeList.Generic)new TypeList.Generic.Empty()));
   assertThat(dynamicType.getName(),is(BAR));
   assertThat(dynamicType.getDeclaredMethods().size(),is(2));
   assertThat(dynamicType.isAssignableTo(Serializable.class),is(false));

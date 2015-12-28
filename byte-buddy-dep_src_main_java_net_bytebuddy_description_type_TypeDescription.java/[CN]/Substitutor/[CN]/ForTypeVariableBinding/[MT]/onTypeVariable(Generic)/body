@@ -1,0 +1,4 @@
+{
+  Generic substitution=bindings.get(typeVariable);
+  return substitution == null ? typeVariable.asRawType() : substitution;
+}

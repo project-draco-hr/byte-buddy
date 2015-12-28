@@ -1,10 +1,10 @@
 {
   MethodRebaseResolver.Resolution resolution=MethodRebaseResolver.Resolution.ForRebasedConstructor.of(methodDescription,rawPlaceholderType);
   assertThat(resolution.isRebased(),is(true));
-  assertThat(resolution.getResolvedMethod().getDeclaringType(),is(typeDescription));
+  assertThat(resolution.getResolvedMethod().getDeclaringType(),is(rawTypeDescription));
   assertThat(resolution.getResolvedMethod().getInternalName(),is(MethodDescription.CONSTRUCTOR_INTERNAL_NAME));
   assertThat(resolution.getResolvedMethod().getModifiers(),is(Opcodes.ACC_SYNTHETIC | Opcodes.ACC_PRIVATE));
-  assertThat(resolution.getResolvedMethod().getReturnType(),is(GenericTypeDescription.VOID));
+  assertThat(resolution.getResolvedMethod().getReturnType(),is(TypeDescription.Generic.VOID));
   assertThat(resolution.getResolvedMethod().getParameters(),is((ParameterList<ParameterDescription.InDefinedShape>)new ParameterList.Explicit.ForTypes(resolution.getResolvedMethod(),Arrays.asList(parameterType,placeholderType))));
   StackManipulation.Size size=resolution.getAdditionalArguments().apply(methodVisitor,implementationContext);
   assertThat(size.getSizeImpact(),is(1));

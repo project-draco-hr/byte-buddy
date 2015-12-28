@@ -1,0 +1,4 @@
+{
+  Generic typeVariable=typeVariableSource.findVariable(genericTypeDescription.getSymbol());
+  return typeVariable == null ? genericTypeDescription.asRawType() : typeVariable;
+}

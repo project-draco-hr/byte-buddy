@@ -1,0 +1,20 @@
+{
+  TypeDescription.Generic typeDescription=describe(SimpleTypeVariableType.class.getDeclaredField(FOO));
+  assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(typeDescription.getSourceCodeName(),is(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.getTypeName(),is(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.toString(),is(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.hashCode(),is(TypeDefinition.Sort.describe(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType()).hashCode()));
+  assertThat(typeDescription,is(TypeDefinition.Sort.describe(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType())));
+  assertThat(typeDescription,CoreMatchers.not(TypeDefinition.Sort.describe(SimpleTypeVariableType.class.getDeclaredField(FOO).getType())));
+  assertThat(typeDescription,CoreMatchers.not(new Object()));
+  assertThat(typeDescription.equals(null),is(false));
+  assertThat(typeDescription.getSymbol(),is(T));
+  assertThat(typeDescription.getUpperBounds().size(),is(1));
+  assertThat(typeDescription.getUpperBounds().getOnly(),is(TypeDescription.Generic.OBJECT));
+  assertThat(typeDescription.getUpperBounds().getOnly().getStackSize(),is(StackSize.SINGLE));
+  assertThat(typeDescription.getTypeName(),is(SimpleTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
+  MatcherAssert.assertThat(typeDescription.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(SimpleTypeVariableType.class)));
+  assertThat(typeDescription.getVariableSource().getTypeVariables().size(),is(1));
+  assertThat(typeDescription.getVariableSource().getTypeVariables().getOnly(),is(typeDescription));
+}

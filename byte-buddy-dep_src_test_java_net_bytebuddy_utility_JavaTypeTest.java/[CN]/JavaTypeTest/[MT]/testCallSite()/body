@@ -1,6 +1,6 @@
 {
   assertThat(JavaType.CALL_SITE.getTypeStub().getName(),is("java.lang.invoke.CallSite"));
   assertThat(JavaType.CALL_SITE.getTypeStub().getModifiers(),is(Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT));
-  assertThat(JavaType.CALL_SITE.getTypeStub().getSuperType(),is(GenericTypeDescription.OBJECT));
+  assertThat(JavaType.CALL_SITE.getTypeStub().getSuperType(),is(TypeDescription.Generic.OBJECT));
   assertThat(JavaType.CALL_SITE.getTypeStub().getInterfaces().size(),is(0));
 }

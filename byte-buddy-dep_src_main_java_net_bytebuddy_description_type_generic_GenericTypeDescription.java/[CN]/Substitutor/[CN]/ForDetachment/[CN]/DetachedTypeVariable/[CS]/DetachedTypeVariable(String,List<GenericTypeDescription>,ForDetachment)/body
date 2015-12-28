@@ -1,8 +1,0 @@
-{
-  this.symbol=symbol;
-  visitor.register(symbol,this);
-  this.bounds=new ArrayList<GenericTypeDescription>(bounds.size());
-  for (  GenericTypeDescription bound : bounds) {
-    this.bounds.add(bound.accept(visitor));
-  }
-}

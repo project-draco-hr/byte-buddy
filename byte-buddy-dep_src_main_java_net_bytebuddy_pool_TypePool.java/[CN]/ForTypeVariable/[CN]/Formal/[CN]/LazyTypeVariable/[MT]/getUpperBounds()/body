@@ -1,7 +1,7 @@
 {
-  List<GenericTypeDescription> genericTypeDescriptions=new ArrayList<GenericTypeDescription>(bounds.size());
+  List<Generic> boundTypes=new ArrayList<Generic>(bounds.size());
   for (  GenericTypeToken bound : bounds) {
-    genericTypeDescriptions.add(bound.toGenericType(typePool,typeVariableSource));
+    boundTypes.add(bound.toGenericType(typePool,typeVariableSource));
   }
-  return new GenericTypeList.Explicit(genericTypeDescriptions);
+  return new TypeList.Generic.Explicit(boundTypes);
 }

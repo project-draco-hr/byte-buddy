@@ -1,0 +1,24 @@
+{
+  TypeDescription.Generic typeDescription=describe(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO));
+  assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.GENERIC_ARRAY));
+  assertThat(typeDescription.getStackSize(),is(StackSize.SINGLE));
+  assertThat(typeDescription.getDeclaredFields().size(),is(0));
+  assertThat(typeDescription.getDeclaredMethods().size(),is(0));
+  assertThat(typeDescription.getParameters().size(),is(0));
+  assertThat(typeDescription.getOwnerType(),nullValue(TypeDescription.Generic.class));
+  assertThat(typeDescription.getSuperType(),is(TypeDescription.Generic.OBJECT));
+  assertThat(typeDescription.getInterfaces(),is(TypeDescription.ARRAY_INTERFACES));
+  assertThat(typeDescription.getSourceCodeName(),is(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.getTypeName(),is(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.toString(),is(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.hashCode(),is(TypeDefinition.Sort.describe(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO).getGenericType()).hashCode()));
+  assertThat(typeDescription,is(TypeDefinition.Sort.describe(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO).getGenericType())));
+  assertThat(typeDescription,CoreMatchers.not(TypeDefinition.Sort.describe(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO).getType())));
+  assertThat(typeDescription,CoreMatchers.not(new Object()));
+  assertThat(typeDescription.equals(null),is(false));
+  assertThat(typeDescription.getComponentType().getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(typeDescription.getComponentType().getParameters().size(),is(1));
+  assertThat(typeDescription.getComponentType().getParameters().getOnly().getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(typeDescription.getComponentType().getParameters().getOnly().asErasure().represents(String.class),is(true));
+  assertThat(typeDescription.getTypeName(),is(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO).getGenericType().toString()));
+}

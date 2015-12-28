@@ -1,3 +1,0 @@
-{
-  return new GenericTypeList.ForLoadedTypes(parameterizedType.getActualTypeArguments());
-}

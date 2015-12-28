@@ -1,7 +1,7 @@
 {
   assertThat(JavaType.METHOD_TYPE.getTypeStub().getName(),is("java.lang.invoke.MethodType"));
   assertThat(JavaType.METHOD_TYPE.getTypeStub().getModifiers(),is(Opcodes.ACC_PUBLIC | Opcodes.ACC_FINAL));
-  assertThat(JavaType.METHOD_TYPE.getTypeStub().getSuperType(),is(GenericTypeDescription.OBJECT));
+  assertThat(JavaType.METHOD_TYPE.getTypeStub().getSuperType(),is(TypeDescription.Generic.OBJECT));
   assertThat(JavaType.METHOD_TYPE.getTypeStub().getInterfaces().size(),is(1));
-  assertThat(JavaType.METHOD_TYPE.getTypeStub().getInterfaces().contains(new GenericTypeDescription.ForNonGenericType.OfLoadedType(Serializable.class)),is(true));
+  assertThat(JavaType.METHOD_TYPE.getTypeStub().getInterfaces().contains(new TypeDescription.Generic.ForNonGenericType.OfLoadedType(Serializable.class)),is(true));
 }

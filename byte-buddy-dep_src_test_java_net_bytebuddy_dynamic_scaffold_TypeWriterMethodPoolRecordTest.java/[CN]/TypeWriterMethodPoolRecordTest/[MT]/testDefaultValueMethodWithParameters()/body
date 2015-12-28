@@ -1,7 +1,7 @@
 {
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
-  when(methodDescription.getReturnType()).thenReturn(new GenericTypeDescription.ForNonGenericType.OfLoadedType(String.class));
+  when(methodDescription.getReturnType()).thenReturn(new TypeDescription.Generic.ForNonGenericType.OfLoadedType(String.class));
   when(methodDescription.isDefaultValue(FOO)).thenReturn(true);
   TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,FOO,methodAttributeAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.DEFINED));

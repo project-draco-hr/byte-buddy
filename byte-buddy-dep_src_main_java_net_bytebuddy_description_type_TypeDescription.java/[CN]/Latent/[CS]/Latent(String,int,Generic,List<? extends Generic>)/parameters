@@ -1,0 +1,4 @@
+String name
+int modifiers
+Generic superType
+List<? extends Generic> interfaces

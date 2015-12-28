@@ -1,0 +1,3 @@
+{
+  assertThat(TypeDescription.Generic.Visitor.TypeErasing.INSTANCE.onGenericArray(typeDescription),is(rawType));
+}

@@ -1,6 +1,6 @@
 {
   when(target.getIndex()).thenReturn(0);
-  GenericTypeDescription targetType=mock(GenericTypeDescription.class);
+  TypeDescription.Generic targetType=mock(TypeDescription.Generic.class);
   TypeDescription rawTargetType=mock(TypeDescription.class);
   when(targetType.asErasure()).thenReturn(rawTargetType);
   when(targetType.isArray()).thenReturn(false);

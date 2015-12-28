@@ -1,0 +1,4 @@
+{
+  Package aPackage=type.getPackage();
+  return aPackage == null ? PackageDescription.UNDEFINED : new PackageDescription.ForLoadedPackage(aPackage);
+}

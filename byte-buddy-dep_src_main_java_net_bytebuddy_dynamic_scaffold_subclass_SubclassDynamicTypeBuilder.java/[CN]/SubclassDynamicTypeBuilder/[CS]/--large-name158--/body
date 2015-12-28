@@ -1,3 +1,0 @@
-{
-  this(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,InstrumentedType.TypeInitializer.None.INSTANCE,new ArrayList<GenericTypeDescription>(interfaceTypes),modifiers,attributeAppender,ignoredMethods,classVisitorWrapper,fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,Collections.<FieldDescription.Token>emptyList(),Collections.<MethodDescription.Token>emptyList(),superType,constructorStrategy);
-}

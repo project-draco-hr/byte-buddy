@@ -1,0 +1,4 @@
+TypeDescription.Generic typeDescription
+List<? extends AnnotationDescription> annotationDescriptions
+String name
+Integer modifiers

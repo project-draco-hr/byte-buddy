@@ -1,8 +1,8 @@
 {
-  when(genericTypeDescription.asErasure()).thenReturn(typeDescription);
+  when(typeDescription.asErasure()).thenReturn(rawTypeDescription);
   when(methodDescription.isConstructor()).thenReturn(true);
-  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
-  when(methodDescription.getReturnType()).thenReturn(genericReturnType);
+  when(methodDescription.getDeclaringType()).thenReturn(rawTypeDescription);
+  when(methodDescription.getReturnType()).thenReturn(returnType);
   when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,Collections.singletonList(parameterType)));
   when(placeholderType.getStackSize()).thenReturn(StackSize.ZERO);
   when(placeholderType.asErasure()).thenReturn(rawPlaceholderType);
@@ -12,12 +12,12 @@
   when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
   when(rawParameterType.getStackSize()).thenReturn(StackSize.ZERO);
   when(parameterType.asErasure()).thenReturn(rawParameterType);
-  when(parameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
+  when(parameterType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(parameterType);
   when(rawParameterType.asGenericType()).thenReturn(parameterType);
   when(methodDescription.getInternalName()).thenReturn(FOO);
   when(methodDescription.getDescriptor()).thenReturn(QUX);
-  when(typeDescription.getInternalName()).thenReturn(BAR);
+  when(rawTypeDescription.getInternalName()).thenReturn(BAR);
   when(rawPlaceholderType.getDescriptor()).thenReturn(BAZ);
   when(otherPlaceHolderType.getDescriptor()).thenReturn(FOO);
-  when(genericReturnType.asErasure()).thenReturn(returnType);
+  when(returnType.asErasure()).thenReturn(rawReturnType);
 }

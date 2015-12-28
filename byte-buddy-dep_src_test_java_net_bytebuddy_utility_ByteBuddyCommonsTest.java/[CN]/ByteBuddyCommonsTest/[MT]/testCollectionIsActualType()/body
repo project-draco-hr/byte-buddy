@@ -1,7 +1,7 @@
 {
-  GenericTypeDescription typeDescription=mock(GenericTypeDescription.class);
+  TypeDescription.Generic typeDescription=mock(TypeDescription.Generic.class);
   when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   when(typeDescription.asErasure()).thenReturn(TypeDescription.OBJECT);
-  Collection<GenericTypeDescription> typeDescriptions=Collections.singleton(typeDescription);
+  Collection<TypeDescription.Generic> typeDescriptions=Collections.singleton(typeDescription);
   assertThat(isActualType(typeDescriptions),sameInstance(typeDescriptions));
 }

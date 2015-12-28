@@ -1,0 +1,9 @@
+{
+  DynamicType.Unloaded<?> unloaded=new ByteBuddy().redefine(InterfaceType.class).make();
+  Class<?> type=unloaded.load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  TypeDescription createdType=new TypeDescription.ForLoadedType(type);
+  TypeDescription originalType=new TypeDescription.ForLoadedType(InterfaceType.class);
+  assertThat(createdType.getTypeVariables(),is(originalType.getTypeVariables()));
+  assertThat(createdType.getSuperType(),nullValue(TypeDescription.Generic.class));
+  assertThat(createdType.getInterfaces(),is(originalType.getInterfaces()));
+}

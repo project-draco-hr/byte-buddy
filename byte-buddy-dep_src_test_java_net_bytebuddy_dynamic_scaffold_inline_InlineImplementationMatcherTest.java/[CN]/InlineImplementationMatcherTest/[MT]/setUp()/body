@@ -1,10 +1,10 @@
 {
   latentMethodMatcher=new InliningImplementationMatcher(ignoredMethods,predefinedMethods);
+  when(rawTypeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
+  when(rawTypeDescription.asGenericType()).thenReturn(typeDescription);
+  when(typeDescription.asErasure()).thenReturn(rawTypeDescription);
   when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
-  when(typeDescription.asGenericType()).thenReturn(genericTypeDescription);
-  when(genericTypeDescription.asErasure()).thenReturn(typeDescription);
-  when(genericTypeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
-  when(otherGenericType.asErasure()).thenReturn(otherType);
-  when(otherGenericType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
-  when(otherType.asGenericType()).thenReturn(otherGenericType);
+  when(otherType.asErasure()).thenReturn(rawOtherType);
+  when(otherType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
+  when(rawOtherType.asGenericType()).thenReturn(otherType);
 }

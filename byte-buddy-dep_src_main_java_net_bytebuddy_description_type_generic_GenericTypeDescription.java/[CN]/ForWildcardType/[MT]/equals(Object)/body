@@ -1,5 +1,0 @@
-{
-  if (!(other instanceof GenericTypeDescription))   return false;
-  GenericTypeDescription genericTypeDescription=(GenericTypeDescription)other;
-  return genericTypeDescription.getSort().isWildcard() && getUpperBounds().equals(genericTypeDescription.getUpperBounds()) && getLowerBounds().equals(genericTypeDescription.getLowerBounds());
-}

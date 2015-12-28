@@ -1,0 +1,8 @@
+{
+  if (getSort().isNonGeneric()) {
+    return asErasure().equals(other);
+  }
+  if (!(other instanceof Generic))   return false;
+  Generic typeDescription=(Generic)other;
+  return typeDescription.getSort().isGenericArray() && getComponentType().equals(typeDescription.getComponentType());
+}

@@ -1,3 +1,0 @@
-{
-  when(genericTypeDescription.asRawType()).thenReturn(rawType);
-}

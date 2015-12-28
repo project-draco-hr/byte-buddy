@@ -1,5 +1,5 @@
 {
-  GenericTypeDescription typeDescription=TypeDefinition.Sort.describe(type);
+  TypeDescription.Generic typeDescription=TypeDefinition.Sort.describe(type);
   if (!typeDescription.asErasure().isInstance(delegate)) {
     throw new IllegalArgumentException(delegate + " is not an instance of " + type);
   }

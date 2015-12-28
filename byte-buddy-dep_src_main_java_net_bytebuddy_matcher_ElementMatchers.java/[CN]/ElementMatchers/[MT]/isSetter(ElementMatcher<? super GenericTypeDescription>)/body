@@ -1,3 +1,0 @@
-{
-  return isSetter().and(takesGenericArguments(new CollectionOneToOneMatcher<GenericTypeDescription>(Collections.singletonList(nonNull(matcher)))));
-}

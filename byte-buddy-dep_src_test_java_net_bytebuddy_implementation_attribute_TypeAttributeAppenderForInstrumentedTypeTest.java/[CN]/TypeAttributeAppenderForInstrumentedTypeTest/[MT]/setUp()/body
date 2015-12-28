@@ -1,5 +1,5 @@
 {
   super.setUp();
-  when(typeDescription.getSuperType()).thenReturn(targetType);
+  when(rawTypeDescription.getSuperType()).thenReturn(targetType);
   when(targetType.asErasure()).thenReturn(rawSuperType);
 }

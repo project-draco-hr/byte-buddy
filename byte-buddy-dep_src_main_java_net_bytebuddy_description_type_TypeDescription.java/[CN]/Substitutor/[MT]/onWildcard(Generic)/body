@@ -1,0 +1,4 @@
+{
+  TypeList.Generic lowerBounds=wildcard.getLowerBounds();
+  return lowerBounds.isEmpty() ? ForWildcardType.Latent.boundedAbove(wildcard.getUpperBounds().getOnly().accept(this)) : ForWildcardType.Latent.boundedBelow(lowerBounds.getOnly().accept(this));
+}

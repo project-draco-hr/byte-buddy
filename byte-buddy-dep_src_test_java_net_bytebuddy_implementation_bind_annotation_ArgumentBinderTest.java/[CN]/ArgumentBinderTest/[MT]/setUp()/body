@@ -2,8 +2,8 @@
   super.setUp();
   when(genericSourceType.asErasure()).thenReturn(sourceType);
   when(sourceType.asGenericType()).thenReturn(genericSourceType);
-  when(genericSourceType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(genericSourceType);
+  when(genericSourceType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(genericSourceType);
   when(genericTargetType.asErasure()).thenReturn(targetType);
   when(targetType.asGenericType()).thenReturn(genericTargetType);
-  when(genericTargetType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(targetType);
+  when(genericTargetType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(targetType);
 }

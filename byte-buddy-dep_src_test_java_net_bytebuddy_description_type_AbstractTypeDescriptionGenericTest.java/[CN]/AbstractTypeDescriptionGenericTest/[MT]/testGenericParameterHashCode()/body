@@ -1,0 +1,5 @@
+{
+  TypeDescription.Generic typeDescription=describe(MemberVariable.class.getDeclaredField(FOO));
+  assertThat(typeDescription.getDeclaredMethods().filter(named(BAZ)).getOnly().getParameters().getOnly().hashCode(),CoreMatchers.not(new MethodDescription.ForLoadedMethod(MemberVariable.class.getDeclaredMethod(BAZ,Object.class)).getParameters().getOnly().hashCode()));
+  assertThat(typeDescription.getDeclaredMethods().filter(named(BAZ)).getOnly().getParameters().getOnly().asDefined().hashCode(),is(new MethodDescription.ForLoadedMethod(MemberVariable.class.getDeclaredMethod(BAZ,Object.class)).getParameters().getOnly().hashCode()));
+}

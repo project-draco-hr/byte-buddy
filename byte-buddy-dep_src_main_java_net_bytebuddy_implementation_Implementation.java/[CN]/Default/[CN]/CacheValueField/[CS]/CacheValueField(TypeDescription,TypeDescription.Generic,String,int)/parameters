@@ -1,0 +1,4 @@
+TypeDescription instrumentedType
+TypeDescription.Generic fieldType
+String suffix
+int valueHashCode

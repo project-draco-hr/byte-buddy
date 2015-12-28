@@ -1,0 +1,3 @@
+{
+  return isPrimitive() || represents(String.class) || isAssignableTo(TypeDescription.class)|| isAssignableTo(AnnotationDescription.class)|| isAssignableTo(EnumerationDescription.class)|| (isArray() && !getComponentType().isArray() && getComponentType().isAnnotationValue());
+}

@@ -1,3 +1,0 @@
-{
-  return "GenericTypeDescription.Visitor.ForSignatureVisitor{" + "signatureVisitor=" + signatureVisitor + '}';
-}

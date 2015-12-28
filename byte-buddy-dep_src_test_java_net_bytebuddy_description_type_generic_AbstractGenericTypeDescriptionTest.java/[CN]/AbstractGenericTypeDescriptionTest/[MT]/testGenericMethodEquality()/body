@@ -1,5 +1,0 @@
-{
-  GenericTypeDescription genericTypeDescription=describe(MemberVariable.class.getDeclaredField(FOO));
-  assertThat(genericTypeDescription.getDeclaredMethods().filter(named(FOO)).getOnly(),CoreMatchers.not((MethodDescription)new MethodDescription.ForLoadedMethod(MemberVariable.class.getDeclaredMethod(FOO))));
-  assertThat(genericTypeDescription.getDeclaredMethods().filter(named(FOO)).getOnly().asDefined(),is((MethodDescription)new MethodDescription.ForLoadedMethod(MemberVariable.class.getDeclaredMethod(FOO))));
-}

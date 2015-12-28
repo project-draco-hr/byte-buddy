@@ -1,0 +1,3 @@
+{
+  return isArray() ? ARRAY_INTERFACES : new TypeList.Generic.OfLoadedInterfaceTypes(type);
+}

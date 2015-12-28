@@ -1,0 +1,3 @@
+{
+  return other == this || other instanceof TypeDefinition && ((TypeDefinition)other).getSort().isNonGeneric() && getInternalName().equals(((TypeDefinition)other).asErasure().getInternalName());
+}

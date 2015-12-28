@@ -1,7 +1,0 @@
-{
-  GenericTypeDescription genericTypeDescription=describe(SimpleParameterizedType.class.getDeclaredField(FOO));
-  Iterator<TypeDefinition> iterator=genericTypeDescription.iterator();
-  assertThat(iterator.hasNext(),is(true));
-  assertThat(iterator.next(),is((TypeDefinition)genericTypeDescription));
-  assertThat(iterator.hasNext(),is(false));
-}

@@ -1,3 +1,0 @@
-ClassVisitor classVisitor
-TypeDescription instrumentedType
-GenericTypeDescription targetType

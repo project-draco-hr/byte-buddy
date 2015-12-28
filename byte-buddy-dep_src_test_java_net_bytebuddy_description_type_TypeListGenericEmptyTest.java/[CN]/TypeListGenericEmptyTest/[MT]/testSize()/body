@@ -1,0 +1,3 @@
+{
+  assertThat(new TypeList.Generic.Empty().getStackSize(),is(0));
+}

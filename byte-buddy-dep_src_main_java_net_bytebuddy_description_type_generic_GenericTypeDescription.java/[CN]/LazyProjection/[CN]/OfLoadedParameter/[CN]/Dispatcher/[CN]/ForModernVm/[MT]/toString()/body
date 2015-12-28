@@ -1,3 +1,0 @@
-{
-  return "GenericTypeDescription.LazyProjection.OfLoadedParameter.Dispatcher.ForModernVm{" + "getType=" + getType + ", getParameterizedType="+ getParameterizedType+ '}';
-}

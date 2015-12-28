@@ -3,6 +3,6 @@
   when(methodDescription.getModifiers()).thenReturn(Opcodes.ACC_FINAL);
   when(ignoredMethods.matches(methodDescription)).thenReturn(false);
   when(predefinedMethods.matches(methodDescription)).thenReturn(false);
-  when(methodDescription.getDeclaringType()).thenReturn(otherType);
-  assertThat(latentMethodMatcher.resolve(typeDescription).matches(methodDescription),is(false));
+  when(methodDescription.getDeclaringType()).thenReturn(rawOtherType);
+  assertThat(latentMethodMatcher.resolve(rawTypeDescription).matches(methodDescription),is(false));
 }

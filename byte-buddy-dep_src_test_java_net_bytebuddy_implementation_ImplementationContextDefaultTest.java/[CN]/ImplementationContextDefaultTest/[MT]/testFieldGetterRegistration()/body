@@ -5,7 +5,7 @@
   assertThat(firstFieldGetter.getReturnType(),is(firstFieldType));
   assertThat(firstFieldGetter.getInternalName(),startsWith(FOO));
   assertThat(firstFieldGetter.getModifiers(),is(accessorMethodModifiers));
-  assertThat(firstFieldGetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
+  assertThat(firstFieldGetter.getExceptionTypes(),is((TypeList.Generic)new TypeList.Generic.Empty()));
   assertThat(implementationContext.registerGetterFor(firstField),is(firstFieldGetter));
   when(secondField.isStatic()).thenReturn(true);
   MethodDescription secondFieldGetter=implementationContext.registerGetterFor(secondField);
@@ -13,7 +13,7 @@
   assertThat(secondFieldGetter.getReturnType(),is(secondFieldType));
   assertThat(secondFieldGetter.getInternalName(),startsWith(BAR));
   assertThat(secondFieldGetter.getModifiers(),is(accessorMethodModifiers | Opcodes.ACC_STATIC));
-  assertThat(secondFieldGetter.getExceptionTypes(),is((GenericTypeList)new GenericTypeList.Empty()));
+  assertThat(secondFieldGetter.getExceptionTypes(),is((TypeList.Generic)new TypeList.Generic.Empty()));
   assertThat(implementationContext.registerGetterFor(firstField),is(firstFieldGetter));
   assertThat(implementationContext.registerGetterFor(secondField),is(secondFieldGetter));
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);

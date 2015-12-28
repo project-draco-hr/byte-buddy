@@ -1,0 +1,16 @@
+ClassFileVersion classFileVersion
+NamingStrategy namingStrategy
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+Implementation.Context.Factory implementationContextFactory
+List<TypeDescription.Generic> interfaceTypes
+int modifiers
+TypeAttributeAppender attributeAppender
+ElementMatcher<? super MethodDescription> ignoredMethods
+ClassVisitorWrapper classVisitorWrapper
+FieldRegistry fieldRegistry
+MethodRegistry methodRegistry
+MethodGraph.Compiler methodGraphCompiler
+FieldAttributeAppender.Factory defaultFieldAttributeAppenderFactory
+MethodAttributeAppender.Factory defaultMethodAttributeAppenderFactory
+TypeDescription originalType
+ClassFileLocator classFileLocator

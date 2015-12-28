@@ -1,0 +1,4 @@
+{
+  this.typeMatcher=typeMatcher;
+  detachedVariables=new HashMap<String,Generic>();
+}

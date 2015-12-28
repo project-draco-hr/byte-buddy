@@ -1,3 +1,3 @@
 {
-  assertThat(new FieldDescription.Token(FOO,MODIFIERS,mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class))).hashCode(),is(new FieldDescription.Token(FOO,MODIFIERS * 2,mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class))).hashCode()));
+  assertThat(new FieldDescription.Token(FOO,MODIFIERS,mock(TypeDescription.Generic.class),Collections.singletonList(mock(AnnotationDescription.class))).hashCode(),is(new FieldDescription.Token(FOO,MODIFIERS * 2,mock(TypeDescription.Generic.class),Collections.singletonList(mock(AnnotationDescription.class))).hashCode()));
 }

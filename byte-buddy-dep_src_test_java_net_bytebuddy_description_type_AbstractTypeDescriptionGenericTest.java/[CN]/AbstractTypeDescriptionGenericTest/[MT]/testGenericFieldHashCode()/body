@@ -1,0 +1,5 @@
+{
+  TypeDescription.Generic typeDescription=describe(MemberVariable.class.getDeclaredField(FOO));
+  assertThat(typeDescription.getDeclaredFields().filter(named(FOO)).getOnly().hashCode(),CoreMatchers.not(new FieldDescription.ForLoadedField(MemberVariable.class.getDeclaredField(FOO)).hashCode()));
+  assertThat(typeDescription.getDeclaredFields().filter(named(FOO)).getOnly().asDefined().hashCode(),is(new FieldDescription.ForLoadedField(MemberVariable.class.getDeclaredField(FOO)).hashCode()));
+}

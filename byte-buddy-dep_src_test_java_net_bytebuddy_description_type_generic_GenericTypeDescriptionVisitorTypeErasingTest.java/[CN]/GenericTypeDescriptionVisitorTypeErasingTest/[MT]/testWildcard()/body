@@ -1,3 +1,0 @@
-{
-  GenericTypeDescription.Visitor.TypeErasing.INSTANCE.onWildcard(genericTypeDescription);
-}

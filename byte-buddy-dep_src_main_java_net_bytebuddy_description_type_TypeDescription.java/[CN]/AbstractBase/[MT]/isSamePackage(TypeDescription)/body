@@ -1,0 +1,4 @@
+{
+  PackageDescription thisPackage=getPackage(), otherPackage=typeDescription.getPackage();
+  return thisPackage == null || otherPackage == null ? thisPackage == otherPackage : thisPackage.equals(otherPackage);
+}

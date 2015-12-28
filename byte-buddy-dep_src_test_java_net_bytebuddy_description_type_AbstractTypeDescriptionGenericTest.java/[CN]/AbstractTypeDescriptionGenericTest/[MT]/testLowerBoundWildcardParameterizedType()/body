@@ -1,0 +1,20 @@
+{
+  TypeDescription.Generic typeDescription=describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO));
+  assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(typeDescription.getSourceCodeName(),is(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.getTypeName(),is(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.toString(),is(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.hashCode(),is(TypeDefinition.Sort.describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType()).hashCode()));
+  assertThat(typeDescription,is(TypeDefinition.Sort.describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType())));
+  assertThat(typeDescription,CoreMatchers.not(TypeDefinition.Sort.describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getType())));
+  assertThat(typeDescription,CoreMatchers.not(new Object()));
+  assertThat(typeDescription.equals(null),is(false));
+  assertThat(typeDescription.getParameters().size(),is(1));
+  assertThat(typeDescription.getParameters().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
+  assertThat(typeDescription.getParameters().getOnly().getUpperBounds().size(),is(1));
+  assertThat(typeDescription.getParameters().getOnly().getUpperBounds().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(typeDescription.getParameters().getOnly().getLowerBounds().size(),is(1));
+  assertThat(typeDescription.getParameters().getOnly().getLowerBounds().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(typeDescription.getParameters().getOnly().getLowerBounds().getOnly().asErasure().represents(String.class),is(true));
+  assertThat(typeDescription.getTypeName(),is(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
+}

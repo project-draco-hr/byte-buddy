@@ -1,0 +1,3 @@
+{
+  return isPrimitive() || (isArray() ? getComponentType().isVisibleTo(typeDescription) : isPublic() || isProtected() || isSamePackage(typeDescription));
+}

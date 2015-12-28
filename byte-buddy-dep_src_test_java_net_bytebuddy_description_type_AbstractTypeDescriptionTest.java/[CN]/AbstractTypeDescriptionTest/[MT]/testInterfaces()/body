@@ -1,9 +1,9 @@
 {
-  assertThat(describe(Object.class).getInterfaces(),is((GenericTypeList)new GenericTypeList.Empty()));
-  assertThat(describe(SampleInterface.class).getInterfaces(),is((GenericTypeList)new GenericTypeList.Empty()));
-  assertThat(describe(SampleAnnotation.class).getInterfaces(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(Annotation.class)));
-  assertThat(describe(SampleInterfaceImplementation.class).getInterfaces(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(SampleInterface.class)));
-  assertThat(describe(SampleIndirectInterfaceImplementation.class).getInterfaces(),is((GenericTypeList)new GenericTypeList.Empty()));
-  assertThat(describe(SampleTransitiveInterfaceImplementation.class).getInterfaces(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(SampleTransitiveInterface.class)));
-  assertThat(describe(Object[].class).getInterfaces(),is((GenericTypeList)new GenericTypeList.ForLoadedTypes(Cloneable.class,Serializable.class)));
+  assertThat(describe(Object.class).getInterfaces(),is((TypeList.Generic)new TypeList.Generic.Empty()));
+  assertThat(describe(SampleInterface.class).getInterfaces(),is((TypeList.Generic)new TypeList.Generic.Empty()));
+  assertThat(describe(SampleAnnotation.class).getInterfaces(),is((TypeList.Generic)new TypeList.Generic.ForLoadedTypes(Annotation.class)));
+  assertThat(describe(SampleInterfaceImplementation.class).getInterfaces(),is((TypeList.Generic)new TypeList.Generic.ForLoadedTypes(SampleInterface.class)));
+  assertThat(describe(SampleIndirectInterfaceImplementation.class).getInterfaces(),is((TypeList.Generic)new TypeList.Generic.Empty()));
+  assertThat(describe(SampleTransitiveInterfaceImplementation.class).getInterfaces(),is((TypeList.Generic)new TypeList.Generic.ForLoadedTypes(SampleTransitiveInterface.class)));
+  assertThat(describe(Object[].class).getInterfaces(),is((TypeList.Generic)new TypeList.Generic.ForLoadedTypes(Cloneable.class,Serializable.class)));
 }

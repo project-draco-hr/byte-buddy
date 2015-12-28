@@ -1,4 +1,0 @@
-{
-  assertThat(describe(NonGeneric.class.getDeclaredField(FOO)).getOwnerType(),nullValue(GenericTypeDescription.class));
-  assertThat(describe(NonGeneric.class.getDeclaredField(FOO)).getParameters().size(),is(0));
-}

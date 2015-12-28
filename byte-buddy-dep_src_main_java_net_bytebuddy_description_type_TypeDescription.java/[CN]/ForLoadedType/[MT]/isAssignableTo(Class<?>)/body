@@ -1,0 +1,3 @@
+{
+  return type.isAssignableFrom(this.type) || (this.type.getClassLoader() != type.getClassLoader() && super.isAssignableTo(type));
+}

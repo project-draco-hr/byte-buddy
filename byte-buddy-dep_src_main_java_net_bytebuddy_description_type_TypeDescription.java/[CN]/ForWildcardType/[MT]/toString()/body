@@ -1,0 +1,15 @@
+{
+  StringBuilder stringBuilder=new StringBuilder(SYMBOL);
+  TypeList.Generic bounds=getLowerBounds();
+  if (!bounds.isEmpty()) {
+    stringBuilder.append(" super ");
+  }
+ else {
+    bounds=getUpperBounds();
+    if (bounds.getOnly().equals(TypeDescription.Generic.OBJECT)) {
+      return SYMBOL;
+    }
+    stringBuilder.append(" extends ");
+  }
+  return stringBuilder.append(bounds.getOnly().getTypeName()).toString();
+}

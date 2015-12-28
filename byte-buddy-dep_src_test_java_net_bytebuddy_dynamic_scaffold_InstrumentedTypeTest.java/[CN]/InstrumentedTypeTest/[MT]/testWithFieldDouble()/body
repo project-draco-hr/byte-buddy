@@ -1,6 +1,6 @@
 {
-  GenericTypeDescription fieldType=mock(GenericTypeDescription.class);
-  when(fieldType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(fieldType);
+  TypeDescription.Generic fieldType=mock(TypeDescription.Generic.class);
+  when(fieldType.accept(Mockito.any(TypeDescription.Generic.Visitor.class))).thenReturn(fieldType);
   TypeDescription rawFieldType=mock(TypeDescription.class);
   when(fieldType.asErasure()).thenReturn(rawFieldType);
   when(rawFieldType.getName()).thenReturn(FOO);

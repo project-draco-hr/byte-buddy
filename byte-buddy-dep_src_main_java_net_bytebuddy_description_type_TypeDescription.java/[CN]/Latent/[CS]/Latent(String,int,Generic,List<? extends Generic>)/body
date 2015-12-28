@@ -1,0 +1,6 @@
+{
+  this.name=name;
+  this.modifiers=modifiers;
+  this.superType=superType;
+  this.interfaces=interfaces;
+}

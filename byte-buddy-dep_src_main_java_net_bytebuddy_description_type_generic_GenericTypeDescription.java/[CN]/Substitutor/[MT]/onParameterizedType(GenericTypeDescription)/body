@@ -1,8 +1,0 @@
-{
-  GenericTypeDescription ownerType=parameterizedType.getOwnerType();
-  List<GenericTypeDescription> parameters=new ArrayList<GenericTypeDescription>(parameterizedType.getParameters().size());
-  for (  GenericTypeDescription parameter : parameterizedType.getParameters()) {
-    parameters.add(parameter.accept(this));
-  }
-  return new GenericTypeDescription.ForParameterizedType.Latent(parameterizedType.asRawType().accept(this).asErasure(),parameters,ownerType == null ? UNDEFINED : ownerType.accept(this));
-}

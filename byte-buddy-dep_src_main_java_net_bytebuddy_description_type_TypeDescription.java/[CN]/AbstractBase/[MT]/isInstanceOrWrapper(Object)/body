@@ -1,0 +1,3 @@
+{
+  return isInstance(value) || (represents(boolean.class) && value instanceof Boolean) || (represents(byte.class) && value instanceof Byte)|| (represents(short.class) && value instanceof Short)|| (represents(char.class) && value instanceof Character)|| (represents(int.class) && value instanceof Integer)|| (represents(long.class) && value instanceof Long)|| (represents(float.class) && value instanceof Float)|| (represents(double.class) && value instanceof Double);
+}

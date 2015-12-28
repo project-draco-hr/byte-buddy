@@ -1,0 +1,4 @@
+{
+  MethodDescription enclosingMethod=getEnclosingMethod();
+  return enclosingMethod == null ? getEnclosingType() : enclosingMethod;
+}

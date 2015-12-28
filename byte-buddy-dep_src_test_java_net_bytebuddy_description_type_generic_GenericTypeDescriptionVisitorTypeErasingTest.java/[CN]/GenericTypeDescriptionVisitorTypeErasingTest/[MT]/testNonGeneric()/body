@@ -1,3 +1,0 @@
-{
-  assertThat(GenericTypeDescription.Visitor.TypeErasing.INSTANCE.onNonGenericType(genericTypeDescription),is(rawType));
-}

@@ -12,10 +12,10 @@
   when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,Collections.singletonList(genericParameterType)));
   when(genericReturnType.asErasure()).thenReturn(returnType);
   when(genericReturnType.asRawType()).thenReturn(genericReturnType);
-  when(genericReturnType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(genericReturnType);
+  when(genericReturnType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(genericReturnType);
   when(genericParameterType.asErasure()).thenReturn(parameterType);
   when(genericParameterType.asGenericType()).thenReturn(genericParameterType);
   when(parameterType.asGenericType()).thenReturn(genericParameterType);
   when(genericParameterType.asRawType()).thenReturn(genericParameterType);
-  when(genericParameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(genericParameterType);
+  when(genericParameterType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(genericParameterType);
 }

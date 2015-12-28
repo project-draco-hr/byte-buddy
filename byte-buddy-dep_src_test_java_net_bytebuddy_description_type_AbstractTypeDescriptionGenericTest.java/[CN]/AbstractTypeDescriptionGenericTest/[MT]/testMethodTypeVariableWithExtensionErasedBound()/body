@@ -1,0 +1,10 @@
+{
+  TypeDescription.Generic typeDescription=describe(MemberVariable.class.getDeclaredField(BAR)).getSuperType();
+  assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  MethodDescription methodDescription=typeDescription.getDeclaredMethods().filter(named(QUX)).getOnly();
+  assertThat(methodDescription.getReturnType().getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(methodDescription.getReturnType().getSymbol(),is("S"));
+  assertThat(methodDescription.getReturnType().getVariableSource(),is((TypeVariableSource)methodDescription));
+  assertThat(methodDescription.getReturnType().getUpperBounds().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(methodDescription.getReturnType().getUpperBounds().getOnly().asErasure().represents(Object.class),is(true));
+}

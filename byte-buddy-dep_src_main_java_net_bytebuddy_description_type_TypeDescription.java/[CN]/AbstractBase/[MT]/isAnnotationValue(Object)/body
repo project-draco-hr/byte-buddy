@@ -1,0 +1,24 @@
+{
+  if ((represents(Class.class) && value instanceof TypeDescription) || (value instanceof AnnotationDescription && ((AnnotationDescription)value).getAnnotationType().equals(this)) || (value instanceof EnumerationDescription && ((EnumerationDescription)value).getEnumerationType().equals(this))|| (represents(String.class) && value instanceof String)|| (represents(boolean.class) && value instanceof Boolean)|| (represents(byte.class) && value instanceof Byte)|| (represents(short.class) && value instanceof Short)|| (represents(char.class) && value instanceof Character)|| (represents(int.class) && value instanceof Integer)|| (represents(long.class) && value instanceof Long)|| (represents(float.class) && value instanceof Float)|| (represents(double.class) && value instanceof Double)|| (represents(String[].class) && value instanceof String[])|| (represents(boolean[].class) && value instanceof boolean[])|| (represents(byte[].class) && value instanceof byte[])|| (represents(short[].class) && value instanceof short[])|| (represents(char[].class) && value instanceof char[])|| (represents(int[].class) && value instanceof int[])|| (represents(long[].class) && value instanceof long[])|| (represents(float[].class) && value instanceof float[])|| (represents(double[].class) && value instanceof double[])|| (represents(Class[].class) && value instanceof TypeDescription[])) {
+    return true;
+  }
+ else   if (isAssignableTo(Annotation[].class) && value instanceof AnnotationDescription[]) {
+    for (    AnnotationDescription annotationDescription : (AnnotationDescription[])value) {
+      if (!annotationDescription.getAnnotationType().equals(getComponentType())) {
+        return false;
+      }
+    }
+    return true;
+  }
+ else   if (isAssignableTo(Enum[].class) && value instanceof EnumerationDescription[]) {
+    for (    EnumerationDescription enumerationDescription : (EnumerationDescription[])value) {
+      if (!enumerationDescription.getEnumerationType().equals(getComponentType())) {
+        return false;
+      }
+    }
+    return true;
+  }
+ else {
+    return false;
+  }
+}

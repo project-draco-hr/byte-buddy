@@ -1,3 +1,3 @@
 {
-  when(methodToken.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(methodToken);
+  when(methodToken.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(methodToken);
 }

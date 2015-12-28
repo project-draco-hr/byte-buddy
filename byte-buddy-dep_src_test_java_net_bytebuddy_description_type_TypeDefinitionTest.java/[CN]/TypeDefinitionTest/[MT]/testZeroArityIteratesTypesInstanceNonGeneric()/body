@@ -1,10 +1,10 @@
 {
-  GenericTypeDescription typeDescription=mock(GenericTypeDescription.class);
-  GenericTypeDescription componentType=mock(GenericTypeDescription.class);
+  TypeDescription.Generic typeDescription=mock(TypeDescription.Generic.class);
+  TypeDescription.Generic componentType=mock(TypeDescription.Generic.class);
   when(typeDescription.getComponentType()).thenReturn(componentType);
   when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.GENERIC_ARRAY);
   when(componentType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
-  GenericTypeDescription result=GenericTypeDescription.ForGenericArray.Latent.of(typeDescription,1);
+  TypeDescription.Generic result=TypeDescription.Generic.ForGenericArray.Latent.of(typeDescription,1);
   assertThat(result.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(result.getComponentType().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(result.getComponentType().getComponentType(),is(componentType));

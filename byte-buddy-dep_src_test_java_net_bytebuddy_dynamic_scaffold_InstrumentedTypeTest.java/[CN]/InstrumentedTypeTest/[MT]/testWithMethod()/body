@@ -1,11 +1,11 @@
 {
-  GenericTypeDescription returnType=mock(GenericTypeDescription.class);
-  when(returnType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(returnType);
+  TypeDescription.Generic returnType=mock(TypeDescription.Generic.class);
+  when(returnType.accept(Mockito.any(TypeDescription.Generic.Visitor.class))).thenReturn(returnType);
   TypeDescription rawReturnType=mock(TypeDescription.class);
   when(returnType.asErasure()).thenReturn(rawReturnType);
   when(rawReturnType.getName()).thenReturn(FOO);
-  GenericTypeDescription parameterType=mock(GenericTypeDescription.class);
-  when(parameterType.accept(Mockito.any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
+  TypeDescription.Generic parameterType=mock(TypeDescription.Generic.class);
+  when(parameterType.accept(Mockito.any(TypeDescription.Generic.Visitor.class))).thenReturn(parameterType);
   when(parameterType.asGenericType()).thenReturn(parameterType);
   TypeDescription rawParameterType=mock(TypeDescription.class);
   when(parameterType.asErasure()).thenReturn(rawParameterType);
