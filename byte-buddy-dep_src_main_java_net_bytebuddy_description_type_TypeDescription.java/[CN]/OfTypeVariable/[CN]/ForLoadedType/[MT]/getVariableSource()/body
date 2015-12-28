@@ -1,0 +1,15 @@
+{
+  GenericDeclaration genericDeclaration=typeVariable.getGenericDeclaration();
+  if (genericDeclaration instanceof Class) {
+    return new TypeDescription.ForLoadedType((Class<?>)genericDeclaration);
+  }
+ else   if (genericDeclaration instanceof Method) {
+    return new MethodDescription.ForLoadedMethod((Method)genericDeclaration);
+  }
+ else   if (genericDeclaration instanceof Constructor) {
+    return new MethodDescription.ForLoadedConstructor((Constructor<?>)genericDeclaration);
+  }
+ else {
+    throw new IllegalStateException("Unknown declaration: " + genericDeclaration);
+  }
+}

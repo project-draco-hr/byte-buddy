@@ -1,3 +1,3 @@
 {
-  TypeDescription.Generic.LazyProjection.OfLoadedParameter.Dispatcher.ForLegacyVm.INSTANCE.getType(mock(Object.class));
+  TypeDescription.Generic.LazyProjection.ForLoadedParameter.Dispatcher.ForLegacyVm.INSTANCE.getType(mock(Object.class));
 }

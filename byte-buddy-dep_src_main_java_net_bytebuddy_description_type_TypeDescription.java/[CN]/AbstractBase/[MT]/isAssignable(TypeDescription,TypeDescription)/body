@@ -3,7 +3,7 @@
     return true;
   }
   if (targetType.isArray()) {
-    return sourceType.isArray() ? isAssignable(sourceType.getComponentType(),targetType.getComponentType()) : sourceType.represents(Object.class) || TypeDescription.ARRAY_INTERFACES.contains(sourceType);
+    return sourceType.isArray() ? isAssignable(sourceType.getComponentType(),targetType.getComponentType()) : sourceType.represents(Object.class) || ARRAY_INTERFACES.contains(sourceType.asGenericType());
   }
   if (sourceType.represents(Object.class)) {
     return !targetType.isPrimitive();

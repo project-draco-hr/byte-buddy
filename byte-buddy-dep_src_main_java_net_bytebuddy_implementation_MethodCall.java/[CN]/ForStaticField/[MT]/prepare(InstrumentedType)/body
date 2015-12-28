@@ -1,3 +1,3 @@
 {
-  return instrumentedType.withField(new FieldDescription.Token(fieldName,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC,new TypeDescription.Generic.ForNonGenericType.OfLoadedType(value.getClass()))).withInitializer(new LoadedTypeInitializer.ForStaticField(fieldName,value));
+  return instrumentedType.withField(new FieldDescription.Token(fieldName,Opcodes.ACC_SYNTHETIC | Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC,new TypeDescription.Generic.OfNonGenericType.ForLoadedType(value.getClass()))).withInitializer(new LoadedTypeInitializer.ForStaticField(fieldName,value));
 }
