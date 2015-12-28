@@ -8,8 +8,9 @@
   when(cacheField.isStatic()).thenReturn(true);
   when(cacheDeclaringType.getInternalName()).thenReturn(BAZ);
   when(cacheField.getName()).thenReturn(FOO + BAR);
-  when(cacheField.getType()).thenReturn(cacheFieldType);
-  when(cacheFieldType.getStackSize()).thenReturn(StackSize.SINGLE);
+  when(cacheField.getType()).thenReturn(genericCacheFieldType);
+  when(genericCacheFieldType.asErasure()).thenReturn(cacheFieldType);
+  when(genericCacheFieldType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(cacheField.getInternalName()).thenReturn(FOO + BAR);
   when(cacheField.getDescriptor()).thenReturn(QUX + BAZ);
 }
