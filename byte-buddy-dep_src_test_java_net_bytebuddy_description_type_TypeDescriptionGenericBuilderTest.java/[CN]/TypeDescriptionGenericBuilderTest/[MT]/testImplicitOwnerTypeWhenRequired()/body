@@ -1,0 +1,3 @@
+{
+  assertThat(TypeDescription.Generic.Builder.parameterizedType(Foo.class,Object.class).asType().getOwnerType(),is(TypeDefinition.Sort.describe(getClass())));
+}
