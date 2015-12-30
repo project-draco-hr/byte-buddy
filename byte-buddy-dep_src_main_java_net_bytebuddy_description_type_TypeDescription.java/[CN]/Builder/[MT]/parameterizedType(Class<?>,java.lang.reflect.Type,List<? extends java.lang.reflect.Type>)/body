@@ -1,0 +1,3 @@
+{
+  return parameterizedType(new ForLoadedType(rawType),ownerType == null ? null : Sort.describe(ownerType),new TypeList.Generic.ForLoadedTypes(parameters));
+}

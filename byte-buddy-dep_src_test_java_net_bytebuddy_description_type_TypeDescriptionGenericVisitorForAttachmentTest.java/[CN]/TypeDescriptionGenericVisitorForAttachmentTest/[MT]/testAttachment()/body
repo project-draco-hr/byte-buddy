@@ -11,8 +11,9 @@
   assertThat(attached.getParameters().get(0),is(target.getTypeVariables().filter(named("T")).getOnly()));
   assertThat(attached.getParameters().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(attached.getParameters().get(1).asErasure().represents(String.class),is(true));
-  assertThat(attached.getParameters().get(2).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(attached.getParameters().get(2).asErasure().represents(Object.class),is(true));
+  assertThat(attached.getParameters().get(2).getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(attached.getParameters().get(2).getSymbol(),is("U"));
+  assertThat(attached.getParameters().get(2),is(target.getTypeVariables().filter(named("U")).getOnly()));
   assertThat(attached.getParameters().get(3).getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(attached.getParameters().get(3).asErasure().represents(List.class),is(true));
   assertThat(attached.getParameters().get(3).getParameters().size(),is(1));

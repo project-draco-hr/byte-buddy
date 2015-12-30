@@ -1,0 +1,15 @@
+{
+  if (type instanceof Class) {
+    return TypeDescription.Generic.Builder.rawType(((Class<?>)type));
+  }
+ else   if (type instanceof GenericArrayType) {
+    return builder(((GenericArrayType)type).getGenericComponentType()).asArray();
+  }
+ else   if (type instanceof ParameterizedType) {
+    ParameterizedType parameterizedType=(ParameterizedType)type;
+    return TypeDescription.Generic.Builder.parameterizedType((Class<?>)parameterizedType.getRawType(),parameterizedType.getOwnerType(),Arrays.asList(parameterizedType.getActualTypeArguments()));
+  }
+ else {
+    throw new AssertionError("Unexpected type: " + type);
+  }
+}

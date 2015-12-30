@@ -1,4 +1,9 @@
 {
-  Generic typeVariable=typeVariableSource.findVariable(genericTypeDescription.getSymbol());
-  return typeVariable == null ? genericTypeDescription.asRawType() : typeVariable;
+  Generic attachedVariable=typeVariableSource.findVariable(typeVariable.getSymbol());
+  if (attachedVariable == null) {
+    throw new IllegalArgumentException("Cannot attach undefined variable: " + typeVariable);
+  }
+ else {
+    return attachedVariable;
+  }
 }

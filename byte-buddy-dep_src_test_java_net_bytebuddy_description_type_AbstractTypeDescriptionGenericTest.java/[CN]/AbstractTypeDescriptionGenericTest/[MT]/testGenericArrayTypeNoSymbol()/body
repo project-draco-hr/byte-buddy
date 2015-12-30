@@ -1,3 +1,3 @@
 {
-  describe(GenericArrayType.class.getDeclaredField(FOO)).getSymbol();
+  describe(SimpleGenericArrayType.class.getDeclaredField(FOO)).getSymbol();
 }

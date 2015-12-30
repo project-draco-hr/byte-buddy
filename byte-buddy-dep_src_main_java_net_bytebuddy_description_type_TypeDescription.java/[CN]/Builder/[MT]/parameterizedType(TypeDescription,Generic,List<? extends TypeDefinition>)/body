@@ -1,0 +1,3 @@
+{
+  return new Builder(new OfParameterizedType.Latent(rawType,ownerType,new TypeList.Generic.Explicit(parameters)));
+}

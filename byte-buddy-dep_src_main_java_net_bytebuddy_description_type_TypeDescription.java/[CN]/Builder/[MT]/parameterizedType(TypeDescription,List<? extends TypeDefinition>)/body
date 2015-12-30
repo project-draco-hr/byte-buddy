@@ -1,0 +1,3 @@
+{
+  return parameterizedType(rawType,Generic.UNDEFINED,parameters);
+}

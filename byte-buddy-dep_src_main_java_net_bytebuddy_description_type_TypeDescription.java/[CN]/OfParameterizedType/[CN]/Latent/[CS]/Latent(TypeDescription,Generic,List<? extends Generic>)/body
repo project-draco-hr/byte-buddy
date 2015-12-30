@@ -1,5 +1,5 @@
 {
   this.rawType=rawType;
-  this.parameters=parameters;
   this.ownerType=ownerType;
+  this.parameters=parameters;
 }

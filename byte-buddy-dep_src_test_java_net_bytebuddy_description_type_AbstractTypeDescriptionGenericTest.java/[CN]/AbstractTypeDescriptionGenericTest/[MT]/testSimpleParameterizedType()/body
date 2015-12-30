@@ -6,7 +6,7 @@
   assertThat(typeDescription.toString(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.hashCode(),is(TypeDefinition.Sort.describe(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType()).hashCode()));
   assertThat(typeDescription,is(TypeDefinition.Sort.describe(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType())));
-  assertThat(typeDescription,CoreMatchers.not(TypeDefinition.Sort.describe(GenericArrayType.class.getDeclaredField(FOO).getType())));
+  assertThat(typeDescription,CoreMatchers.not(TypeDefinition.Sort.describe(SimpleGenericArrayType.class.getDeclaredField(FOO).getType())));
   assertThat(typeDescription,CoreMatchers.not(new Object()));
   assertThat(typeDescription.equals(null),is(false));
   assertThat(typeDescription.getParameters().size(),is(1));

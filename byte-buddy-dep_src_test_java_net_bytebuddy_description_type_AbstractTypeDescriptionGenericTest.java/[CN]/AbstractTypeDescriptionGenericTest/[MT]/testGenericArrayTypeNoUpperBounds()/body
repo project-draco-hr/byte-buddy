@@ -1,3 +1,3 @@
 {
-  describe(GenericArrayType.class.getDeclaredField(FOO)).getUpperBounds();
+  describe(SimpleGenericArrayType.class.getDeclaredField(FOO)).getUpperBounds();
 }
