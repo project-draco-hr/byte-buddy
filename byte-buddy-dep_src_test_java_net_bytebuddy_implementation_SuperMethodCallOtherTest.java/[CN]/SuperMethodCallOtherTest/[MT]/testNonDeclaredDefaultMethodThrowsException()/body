@@ -1,3 +1,0 @@
-{
-  implement(Class.forName(SINGLE_DEFAULT_METHOD_CLASS),SuperMethodCall.INSTANCE,getClass().getClassLoader(),isMethod().and(not(isDeclaredBy(Object.class))));
-}
