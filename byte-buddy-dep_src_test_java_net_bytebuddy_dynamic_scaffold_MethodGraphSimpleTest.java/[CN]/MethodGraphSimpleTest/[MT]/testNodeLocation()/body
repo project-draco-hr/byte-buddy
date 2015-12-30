@@ -1,3 +1,3 @@
 {
-  assertThat(MethodGraph.Simple.of(Collections.singletonList(methodDescription)).locate(methodToken),is((MethodGraph.Node)new MethodGraph.Node.Simple(methodDescription)));
+  assertThat(MethodGraph.Simple.of(Collections.singletonList(methodDescription)).locate(token),is((MethodGraph.Node)new MethodGraph.Node.Simple(methodDescription)));
 }

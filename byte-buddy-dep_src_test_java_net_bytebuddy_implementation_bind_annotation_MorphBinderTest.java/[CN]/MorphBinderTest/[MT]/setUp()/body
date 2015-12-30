@@ -2,5 +2,5 @@
   super.setUp();
   when(genericMorphType.asErasure()).thenReturn(morphType);
   when(defaultType.asErasure()).thenReturn(defaultType);
-  when(source.asToken()).thenReturn(sourceToken);
+  when(source.asSignatureToken()).thenReturn(sourceToken);
 }

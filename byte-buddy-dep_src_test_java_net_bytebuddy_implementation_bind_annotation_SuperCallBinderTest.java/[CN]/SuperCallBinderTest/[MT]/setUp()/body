@@ -2,6 +2,6 @@
   super.setUp();
   when(target.getType()).thenReturn(genericTargetParameterType);
   when(genericTargetParameterType.asErasure()).thenReturn(targetParameterType);
+  when(source.asSignatureToken()).thenReturn(sourceToken);
   when(implementationTarget.invokeSuper(sourceToken)).thenReturn(specialMethodInvocation);
-  when(source.asToken()).thenReturn(sourceToken);
 }

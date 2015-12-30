@@ -1,3 +1,0 @@
-{
-  assertThat(new FieldDescription.Token(FOO,MODIFIERS,mock(TypeDescription.Generic.class),Collections.singletonList(mock(AnnotationDescription.class))),is(new FieldDescription.Token(FOO,MODIFIERS * 2,mock(TypeDescription.Generic.class),Collections.singletonList(mock(AnnotationDescription.class)))));
-}

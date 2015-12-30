@@ -1,6 +1,6 @@
 {
   MethodDescription.Token transformed=new MethodTransformer.Simple.Transformer.ForModifierTransformation(Collections.singletonList(modifierContributor)).transform(methodToken);
-  assertThat(transformed.getInternalName(),is(FOO));
+  assertThat(transformed.getName(),is(FOO));
   assertThat(transformed.getModifiers(),is((MODIFIERS & ~RANGE) | MASK));
   assertThat(transformed.getReturnType(),is(returnType));
   assertThat(transformed.getTypeVariables().size(),is(1));

@@ -1,3 +1,3 @@
 {
-  return new Default(this.name,this.modifiers,typeVariables,superType,interfaceTypes,CompoundList.of(fieldTokens,fieldToken),methodTokens,annotationDescriptions,typeInitializer,loadedTypeInitializer);
+  return new Default(this.name,this.modifiers,typeVariables,superType,interfaceTypes,CompoundList.of(fieldTokens,token),methodTokens,annotationDescriptions,typeInitializer,loadedTypeInitializer);
 }

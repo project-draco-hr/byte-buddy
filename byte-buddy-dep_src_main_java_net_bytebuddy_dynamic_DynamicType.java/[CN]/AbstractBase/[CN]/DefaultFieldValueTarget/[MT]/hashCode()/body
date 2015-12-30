@@ -1,5 +1,5 @@
 {
-  int result=fieldToken.hashCode();
+  int result=token.hashCode();
   result=31 * result + attributeAppenderFactory.hashCode();
   result=31 * result + (defaultValue != null ? defaultValue.hashCode() : 0);
   result=31 * result + AbstractBase.this.hashCode();

@@ -1,3 +1,0 @@
-{
-  assertThat(new MethodDescription.Token(FOO,MODIFIERS,Collections.singletonList(first),first,Collections.singletonList(firstParameter),Collections.singletonList(first),Collections.singletonList(firstAnnotation),MethodDescription.NO_DEFAULT_VALUE).isIdenticalTo(new MethodDescription.Token(FOO,MODIFIERS,Collections.singletonList(first),first,Collections.singletonList(secondParameter),Collections.singletonList(first),Collections.singletonList(firstAnnotation),MethodDescription.NO_DEFAULT_VALUE)),is(false));
-}

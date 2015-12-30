@@ -1,11 +1,11 @@
 {
-  MethodDescription.Token bridgeMethod=new MethodDescription.Token("foo",Opcodes.ACC_BRIDGE,TypeDescription.Generic.VOID,Collections.<TypeDescription.Generic>emptyList());
-  TypeDescription typeDescription=new InstrumentedType.Default("foo",Opcodes.ACC_PUBLIC,Collections.<TypeDescription.Generic>emptyList(),TypeDescription.Generic.OBJECT,Collections.<TypeDescription.Generic>emptyList(),Collections.<FieldDescription.Token>emptyList(),Collections.singletonList(bridgeMethod),Collections.<AnnotationDescription>emptyList(),InstrumentedType.TypeInitializer.None.INSTANCE,LoadedTypeInitializer.NoOp.INSTANCE);
+  MethodDescription.SignatureToken bridgeMethod=new MethodDescription.SignatureToken("foo",TypeDescription.VOID,Collections.<TypeDescription>emptyList());
+  TypeDescription typeDescription=new InstrumentedType.Default("foo",Opcodes.ACC_PUBLIC,Collections.<TypeDescription.Generic>emptyList(),TypeDescription.Generic.OBJECT,Collections.<TypeDescription.Generic>emptyList(),Collections.<FieldDescription.Token>emptyList(),Collections.singletonList(new MethodDescription.Token("foo",Opcodes.ACC_BRIDGE,TypeDescription.Generic.VOID,Collections.<TypeDescription.Generic>emptyList())),Collections.<AnnotationDescription>emptyList(),InstrumentedType.TypeInitializer.None.INSTANCE,LoadedTypeInitializer.NoOp.INSTANCE);
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(1 + TypeDescription.OBJECT.getDeclaredMethods().filter(ElementMatchers.isVirtual()).size()));
   MethodGraph.Node node=methodGraph.locate(bridgeMethod);
   assertThat(node.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
-  assertThat(node.getRepresentative().asToken(),is(bridgeMethod));
+  assertThat(node.getRepresentative().asSignatureToken(),is(bridgeMethod));
   assertThat(node.getMethodTypes().size(),is(1));
   assertThat(node.getMethodTypes(),hasItem(bridgeMethod.asTypeToken()));
 }

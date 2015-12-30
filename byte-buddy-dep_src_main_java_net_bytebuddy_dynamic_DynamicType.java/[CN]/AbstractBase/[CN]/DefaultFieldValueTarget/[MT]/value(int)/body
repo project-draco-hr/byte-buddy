@@ -1,3 +1,3 @@
 {
-  return makeFieldAnnotationTarget(NumericRangeValidator.of(fieldToken.getType().asErasure()).validate(value));
+  return makeFieldAnnotationTarget(NumericRangeValidator.of(token.getType().asErasure()).validate(value));
 }

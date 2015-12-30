@@ -1,7 +1,7 @@
 {
-  LinkedHashMap<MethodDescription.Token,Node> nodes=new LinkedHashMap<MethodDescription.Token,Node>();
+  LinkedHashMap<MethodDescription.SignatureToken,Node> nodes=new LinkedHashMap<MethodDescription.SignatureToken,Node>();
   for (  MethodDescription methodDescription : methodDescriptions) {
-    nodes.put(methodDescription.asToken(),new Node.Simple(methodDescription));
+    nodes.put(methodDescription.asSignatureToken(),new Node.Simple(methodDescription));
   }
   return new Simple(nodes);
 }

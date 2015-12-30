@@ -1,3 +1,3 @@
 {
-  return materialize(methodToken).withoutCode(methodTransformer);
+  return materialize(token).withoutCode(methodTransformer);
 }

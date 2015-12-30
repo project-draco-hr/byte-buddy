@@ -1,0 +1,4 @@
+{
+  Node node=entries.get(Detached.of(token));
+  return node == null ? Node.Unresolved.INSTANCE : node;
+}

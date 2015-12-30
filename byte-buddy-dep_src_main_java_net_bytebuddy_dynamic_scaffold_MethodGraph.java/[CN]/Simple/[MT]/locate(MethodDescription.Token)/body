@@ -1,4 +1,0 @@
-{
-  Node node=nodes.get(methodToken);
-  return node == null ? Node.Unresolved.INSTANCE : node;
-}

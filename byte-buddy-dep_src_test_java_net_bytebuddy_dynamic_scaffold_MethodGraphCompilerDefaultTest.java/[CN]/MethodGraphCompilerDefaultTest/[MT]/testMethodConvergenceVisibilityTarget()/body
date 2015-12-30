@@ -4,9 +4,9 @@
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 1));
   MethodDescription genericMethod=typeDescription.getSuperType().getSuperType().getDeclaredMethods().filter(isMethod().and(definedMethod(takesArguments(Object.class)))).getOnly();
   MethodDescription nonGenericMethod=typeDescription.getSuperType().getSuperType().getDeclaredMethods().filter(isMethod().and(definedMethod(takesArguments(Void.class)))).getOnly();
-  MethodGraph.Node methodNode=methodGraph.locate(genericMethod.asToken());
+  MethodGraph.Node methodNode=methodGraph.locate(genericMethod.asSignatureToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.VISIBLE));
-  assertThat(methodNode,is(methodGraph.locate(nonGenericMethod.asToken())));
+  assertThat(methodNode,is(methodGraph.locate(nonGenericMethod.asSignatureToken())));
   assertThat(methodNode.getMethodTypes().size(),is(2));
   assertThat(methodNode.getMethodTypes().contains(genericMethod.asTypeToken()),is(true));
   assertThat(methodNode.getMethodTypes().contains(genericMethod.asDefined().asTypeToken()),is(true));

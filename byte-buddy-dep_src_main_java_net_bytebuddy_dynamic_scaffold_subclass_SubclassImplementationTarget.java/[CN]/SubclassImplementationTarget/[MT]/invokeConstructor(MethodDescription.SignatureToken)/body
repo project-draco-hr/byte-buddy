@@ -1,0 +1,4 @@
+{
+  MethodDescription methodDescription=superConstructors.get(token);
+  return methodDescription == null ? Implementation.SpecialMethodInvocation.Illegal.INSTANCE : Implementation.SpecialMethodInvocation.Simple.of(methodDescription,instrumentedType.getSuperType().asErasure());
+}

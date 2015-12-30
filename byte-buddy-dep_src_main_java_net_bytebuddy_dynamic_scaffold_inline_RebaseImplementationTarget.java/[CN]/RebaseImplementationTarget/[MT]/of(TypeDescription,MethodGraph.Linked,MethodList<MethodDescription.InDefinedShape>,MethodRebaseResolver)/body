@@ -1,7 +1,7 @@
 {
-  Map<MethodDescription.Token,MethodRebaseResolver.Resolution> rebasements=new HashMap<MethodDescription.Token,MethodRebaseResolver.Resolution>();
+  Map<MethodDescription.SignatureToken,MethodRebaseResolver.Resolution> rebasements=new HashMap<MethodDescription.SignatureToken,MethodRebaseResolver.Resolution>();
   for (  MethodDescription.InDefinedShape methodDescription : rebaseableMethods) {
-    rebasements.put(methodDescription.asToken(),methodRebaseResolver.resolve(methodDescription));
+    rebasements.put(methodDescription.asSignatureToken(),methodRebaseResolver.resolve(methodDescription));
   }
   return new RebaseImplementationTarget(instrumentedType,methodGraph,rebasements);
 }

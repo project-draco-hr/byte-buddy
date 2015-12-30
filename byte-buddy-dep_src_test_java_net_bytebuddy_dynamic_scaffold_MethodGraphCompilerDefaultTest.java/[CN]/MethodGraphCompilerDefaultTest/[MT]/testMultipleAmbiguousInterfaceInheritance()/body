@@ -4,18 +4,18 @@
   assertThat(methodGraph.listNodes().size(),is(1));
   MethodDescription first=typeDescription.getInterfaces().filter(rawType(InterfaceBase.class)).getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
   MethodDescription second=typeDescription.getInterfaces().filter(rawType(AmbiguousInterfaceBase.class)).getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
-  MethodGraph.Node methodNode=methodGraph.locate(first.asToken());
+  MethodGraph.Node methodNode=methodGraph.locate(first.asSignatureToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
   assertThat(methodNode.getMethodTypes().size(),is(1));
   assertThat(methodNode.getMethodTypes().contains(first.asTypeToken()),is(true));
   assertThat(methodNode.getMethodTypes().contains(second.asTypeToken()),is(true));
   assertThat(methodNode.getRepresentative(),is(first));
   assertThat(methodNode.getRepresentative(),not(second));
-  assertThat(methodNode,is(methodGraph.locate(second.asToken())));
-  MethodGraph.Node firstBaseNode=methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(InterfaceBase.class)).locate(first.asToken());
+  assertThat(methodNode,is(methodGraph.locate(second.asSignatureToken())));
+  MethodGraph.Node firstBaseNode=methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(InterfaceBase.class)).locate(first.asSignatureToken());
   assertThat(methodNode,not(firstBaseNode));
   assertThat(firstBaseNode.getRepresentative(),is(first));
-  MethodGraph.Node secondBaseNode=methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(InterfaceBase.class)).locate(second.asToken());
+  MethodGraph.Node secondBaseNode=methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(InterfaceBase.class)).locate(second.asSignatureToken());
   assertThat(methodNode,not(secondBaseNode));
   assertThat(secondBaseNode.getRepresentative(),is(first));
 }

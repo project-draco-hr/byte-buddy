@@ -1,3 +1,3 @@
 {
-  this(fieldToken,attributeAppenderFactory,null);
+  this(token,attributeAppenderFactory,null);
 }

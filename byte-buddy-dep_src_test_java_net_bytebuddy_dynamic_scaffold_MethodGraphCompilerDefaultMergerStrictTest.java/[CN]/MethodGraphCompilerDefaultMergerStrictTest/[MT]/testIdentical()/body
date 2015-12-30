@@ -1,4 +1,3 @@
 {
-  when(leftToken.isIdenticalTo(rightToken)).thenReturn(true);
-  assertThat(MethodGraph.Compiler.Default.Merger.Strict.INSTANCE.merge(left,right),is(left));
+  assertThat(MethodGraph.Compiler.Default.Merger.Strict.INSTANCE.merge(left,left),is(left));
 }

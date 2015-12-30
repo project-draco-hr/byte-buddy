@@ -3,7 +3,7 @@
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(1));
   MethodDescription methodDescription=typeDescription.getDeclaredMethods().filter(takesArguments(String.class)).getOnly();
-  MethodGraph.Node node=methodGraph.locate(methodDescription.asToken());
+  MethodGraph.Node node=methodGraph.locate(methodDescription.asSignatureToken());
   assertThat(node.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(node.getRepresentative(),is(methodDescription));
   assertThat(node.getMethodTypes().size(),is(2));

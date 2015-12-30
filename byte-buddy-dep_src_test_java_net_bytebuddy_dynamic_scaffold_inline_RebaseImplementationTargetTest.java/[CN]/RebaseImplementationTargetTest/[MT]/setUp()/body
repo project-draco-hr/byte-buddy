@@ -1,5 +1,5 @@
 {
-  when(methodGraph.locate(Mockito.any(MethodDescription.Token.class))).thenReturn(MethodGraph.Node.Unresolved.INSTANCE);
+  when(methodGraph.locate(Mockito.any(MethodDescription.SignatureToken.class))).thenReturn(MethodGraph.Node.Unresolved.INSTANCE);
   when(instrumentedType.getSuperType()).thenReturn(genericSuperType);
   when(genericSuperType.asErasure()).thenReturn(superType);
   when(superType.getInternalName()).thenReturn(BAR);
@@ -9,7 +9,7 @@
   when(rebasedMethod.getReturnType()).thenReturn(genericReturnType);
   when(rebasedMethod.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
   when(rebasedMethod.getDeclaringType()).thenReturn(instrumentedType);
-  when(rebasedMethod.asToken()).thenReturn(rebasedToken);
+  when(rebasedMethod.asSignatureToken()).thenReturn(rebasedToken);
   when(methodRebaseResolver.resolve(rebasedMethod)).thenReturn(resolution);
   super.setUp();
 }

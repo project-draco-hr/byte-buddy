@@ -9,7 +9,7 @@
   when(methodDescription.asToken()).thenReturn(methodToken);
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);
   when(methodDescription.asDefined()).thenReturn(definedMethod);
-  when(methodToken.getInternalName()).thenReturn(FOO);
+  when(methodToken.getName()).thenReturn(FOO);
   when(methodToken.getModifiers()).thenReturn(MODIFIERS);
   when(methodToken.getReturnType()).thenReturn(returnType);
   when(methodToken.getTypeVariables()).thenReturn(new TypeList.Generic.Explicit(typeVariable));

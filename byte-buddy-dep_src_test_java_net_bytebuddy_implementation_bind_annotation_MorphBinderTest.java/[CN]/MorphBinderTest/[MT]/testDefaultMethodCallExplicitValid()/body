@@ -1,5 +1,5 @@
 {
-  when(source.asToken()).thenReturn(morphToken);
+  when(source.asSignatureToken()).thenReturn(morphToken);
   when(instrumentedType.getInterfaces()).thenReturn(new TypeList.Generic.ForLoadedTypes(Foo.class));
   when(target.getType()).thenReturn(genericMorphType);
   when(morphMethod.getDeclaringType()).thenReturn(morphType);

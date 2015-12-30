@@ -1,3 +1,0 @@
-{
-  assertThat(new MethodDescription.Token(FOO,MODIFIERS,Collections.singletonList(mock(TypeDescription.Generic.class)),first,Collections.singletonList(firstParameter),Collections.singletonList(mock(TypeDescription.Generic.class)),Collections.singletonList(mock(AnnotationDescription.class)),MethodDescription.NO_DEFAULT_VALUE),not(new MethodDescription.Token(BAR,MODIFIERS,Collections.singletonList(mock(TypeDescription.Generic.class)),first,Collections.singletonList(firstParameter),Collections.singletonList(mock(TypeDescription.Generic.class)),Collections.singletonList(mock(AnnotationDescription.class)),MethodDescription.NO_DEFAULT_VALUE)));
-}

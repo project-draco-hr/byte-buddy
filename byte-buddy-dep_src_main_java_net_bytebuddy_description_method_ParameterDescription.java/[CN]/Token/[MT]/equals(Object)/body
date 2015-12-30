@@ -1,6 +1,6 @@
 {
   if (this == other)   return true;
-  if (!(other instanceof Token))   return false;
-  String name=getName();
-  return name != null && name.equals(((Token)other).getName());
+  if (other == null || getClass() != other.getClass())   return false;
+  Token token=(Token)other;
+  return typeDescription.equals(token.typeDescription) && annotationDescriptions.equals(token.annotationDescriptions) && (name != null ? name.equals(token.name) : token.name == null)&& (modifiers != null ? modifiers.equals(token.modifiers) : token.modifiers == null);
 }

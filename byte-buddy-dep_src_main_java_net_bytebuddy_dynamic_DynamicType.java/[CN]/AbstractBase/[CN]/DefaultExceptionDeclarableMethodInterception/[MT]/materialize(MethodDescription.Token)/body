@@ -1,3 +1,3 @@
 {
-  return new DefaultMatchedMethodInterception(new LatentMethodMatcher.ForToken(methodToken),CompoundList.of(methodTokens,methodToken));
+  return new DefaultMatchedMethodInterception(new LatentMethodMatcher.ForToken(token),CompoundList.of(methodTokens,token));
 }
