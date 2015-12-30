@@ -1,0 +1,4 @@
+{
+  int leftSize=left.size();
+  return leftSize - index > 0 ? left.get(index) : right.get(index - leftSize);
+}

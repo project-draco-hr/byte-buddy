@@ -1,6 +1,0 @@
-{
-  TypeDescription.Generic typeDescription=mock(TypeDescription.Generic.class);
-  when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.PARAMETERIZED);
-  when(typeDescription.asErasure()).thenReturn(new TypeDescription.ForLoadedType(Runnable.class));
-  assertThat(isImplementable(typeDescription),sameInstance(typeDescription));
-}

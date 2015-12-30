@@ -1,3 +1,3 @@
 {
-  return new ClassLoaderHierarchyMatcher<T>(nonNull(matcher));
+  return new ClassLoaderHierarchyMatcher<T>(matcher);
 }

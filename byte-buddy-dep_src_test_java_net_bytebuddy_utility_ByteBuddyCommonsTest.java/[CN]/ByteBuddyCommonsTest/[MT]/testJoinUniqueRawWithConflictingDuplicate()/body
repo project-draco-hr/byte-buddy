@@ -1,7 +1,0 @@
-{
-  TypeDescription.Generic first=mock(TypeDescription.Generic.class), second=mock(TypeDescription.Generic.class);
-  TypeDescription typeDescription=mock(TypeDescription.class);
-  when(first.asErasure()).thenReturn(typeDescription);
-  when(second.asErasure()).thenReturn(typeDescription);
-  joinUniqueRaw(Collections.singletonList(first),Collections.singleton(second));
-}

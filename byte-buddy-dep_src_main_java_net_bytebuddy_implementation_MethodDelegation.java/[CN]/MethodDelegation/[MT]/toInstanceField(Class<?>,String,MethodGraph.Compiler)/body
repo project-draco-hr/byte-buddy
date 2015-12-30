@@ -1,3 +1,3 @@
 {
-  return toInstanceField(new TypeDescription.ForLoadedType(nonNull(type)),fieldName,methodGraphCompiler);
+  return toInstanceField(new TypeDescription.ForLoadedType(type),fieldName,methodGraphCompiler);
 }

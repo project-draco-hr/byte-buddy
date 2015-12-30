@@ -1,3 +1,3 @@
 {
-  return new MethodParametersMatcher<T>(new MethodParameterTypesMatcher<ParameterList<?>>(nonNull(matchers)));
+  return new MethodParametersMatcher<T>(new MethodParameterTypesMatcher<ParameterList<?>>(matchers));
 }

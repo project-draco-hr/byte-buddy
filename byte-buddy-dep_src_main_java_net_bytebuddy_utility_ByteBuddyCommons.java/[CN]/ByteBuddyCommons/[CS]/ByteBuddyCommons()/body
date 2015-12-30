@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("This type describes a utility and is not supposed to be instantiated");
-}

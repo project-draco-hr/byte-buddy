@@ -1,6 +1,0 @@
-{
-  TypeDescription.Generic typeDescription=mock(TypeDescription.Generic.class);
-  when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.VARIABLE);
-  when(typeDescription.asErasure()).thenReturn(TypeDescription.OBJECT);
-  assertThat(isActualType(typeDescription),sameInstance(typeDescription));
-}

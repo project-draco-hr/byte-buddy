@@ -1,6 +1,0 @@
-{
-  if (!isActualType(typeDefinition).asErasure().isAssignableTo(Throwable.class)) {
-    throw new IllegalArgumentException("Cannot throw instances of: " + typeDefinition);
-  }
-  return typeDefinition;
-}

@@ -1,3 +1,3 @@
 {
-  return invoke(new MethodDescription.ForLoadedMethod(nonNull(method)));
+  return invoke(new MethodDescription.ForLoadedMethod(method));
 }

@@ -1,6 +1,0 @@
-{
-  for (  TypeDefinition typeDefinition : typeDefinitions) {
-    isThrowable(typeDefinition);
-  }
-  return typeDefinitions;
-}

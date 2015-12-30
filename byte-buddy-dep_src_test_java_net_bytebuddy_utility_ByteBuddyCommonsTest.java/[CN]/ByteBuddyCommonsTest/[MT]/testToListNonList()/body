@@ -1,6 +1,0 @@
-{
-  List<String> list=toList(new HashSet<String>(Arrays.asList(FOO,BAR)));
-  assertThat(list.size(),is(2));
-  assertThat(list.contains(FOO),is(true));
-  assertThat(list.contains(BAR),is(true));
-}

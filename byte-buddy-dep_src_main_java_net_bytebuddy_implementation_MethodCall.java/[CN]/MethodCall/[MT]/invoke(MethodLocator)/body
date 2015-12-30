@@ -1,3 +1,3 @@
 {
-  return new WithoutSpecifiedTarget(nonNull(methodLocator));
+  return new WithoutSpecifiedTarget(methodLocator);
 }

@@ -1,3 +1,3 @@
 {
-  return of(new MethodDescription.ForLoadedConstructor(nonNull(constructor)));
+  return of(new MethodDescription.ForLoadedConstructor(constructor));
 }

@@ -1,4 +1,0 @@
-{
-  Collection<TypeDescription> typeDescriptions=Collections.<TypeDescription>singleton(new TypeDescription.ForLoadedType(Runnable.class));
-  assertThat(isImplementable(typeDescriptions),sameInstance(typeDescriptions));
-}

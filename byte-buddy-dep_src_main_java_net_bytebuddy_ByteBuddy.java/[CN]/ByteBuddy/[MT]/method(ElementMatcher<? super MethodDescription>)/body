@@ -1,3 +1,3 @@
 {
-  return invokable(isMethod().and(nonNull(methodMatcher)));
+  return invokable(isMethod().and(methodMatcher));
 }

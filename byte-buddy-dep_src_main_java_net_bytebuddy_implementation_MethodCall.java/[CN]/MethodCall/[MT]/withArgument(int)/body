@@ -6,5 +6,5 @@
     }
     argumentLoaders.add(new ArgumentLoader.ForMethodParameter(anIndex));
   }
-  return new MethodCall(methodLocator,targetHandler,join(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,typing);
+  return new MethodCall(methodLocator,targetHandler,CompoundList.of(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,typing);
 }

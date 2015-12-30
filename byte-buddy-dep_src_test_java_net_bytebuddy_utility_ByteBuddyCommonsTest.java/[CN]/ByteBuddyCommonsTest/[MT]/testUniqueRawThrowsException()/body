@@ -1,6 +1,0 @@
-{
-  TypeDescription typeDescription=mock(TypeDescription.class);
-  when(typeDescription.asErasure()).thenReturn(typeDescription);
-  Collection<TypeDescription> typeDescriptions=Arrays.asList(typeDescription,typeDescription);
-  uniqueRaw(typeDescriptions);
-}

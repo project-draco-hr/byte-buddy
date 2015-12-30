@@ -1,5 +1,0 @@
-{
-  TypeDescription typeDescription=TypeDescription.OBJECT;
-  List<TypeDescription> typeDescriptions=Collections.singletonList(typeDescription);
-  isThrowable(typeDescriptions);
-}

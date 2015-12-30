@@ -1,7 +1,0 @@
-{
-  TypeDescription.Generic typeDescription=mock(TypeDescription.Generic.class);
-  when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
-  when(typeDescription.asErasure()).thenReturn(TypeDescription.VOID);
-  Collection<TypeDescription.Generic> typeDescriptions=Collections.singleton(typeDescription);
-  assertThat(isActualTypeOrVoid(typeDescriptions),sameInstance(typeDescriptions));
-}

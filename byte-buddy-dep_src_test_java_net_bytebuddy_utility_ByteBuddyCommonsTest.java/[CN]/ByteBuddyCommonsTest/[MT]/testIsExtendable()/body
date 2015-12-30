@@ -1,4 +1,0 @@
-{
-  TypeDescription typeDescription=TypeDescription.OBJECT;
-  assertThat(isExtendable(typeDescription),sameInstance(typeDescription));
-}

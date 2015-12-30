@@ -1,3 +1,11 @@
 {
-  return new Builder(filterUnique(this.classLoaders,classLoaders));
+  List<ClassLoader> filtered=new ArrayList<ClassLoader>(this.classLoaders.size() + classLoaders.size());
+  Set<ClassLoader> registered=new HashSet<ClassLoader>(this.classLoaders);
+  filtered.addAll(this.classLoaders);
+  for (  ClassLoader classLoader : classLoaders) {
+    if (registered.add(classLoader)) {
+      filtered.add(classLoader);
+    }
+  }
+  return new Builder(filtered);
 }

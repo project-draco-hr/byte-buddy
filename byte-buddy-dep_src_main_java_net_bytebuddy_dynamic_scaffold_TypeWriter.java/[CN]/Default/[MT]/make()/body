@@ -1,4 +1,4 @@
 {
   Implementation.Context.ExtractableView implementationContext=implementationContextFactory.make(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
-  return new DynamicType.Default.Unloaded<S>(instrumentedType,create(implementationContext),loadedTypeInitializer,join(explicitAuxiliaryTypes,implementationContext.getRegisteredAuxiliaryTypes()));
+  return new DynamicType.Default.Unloaded<S>(instrumentedType,create(implementationContext),loadedTypeInitializer,CompoundList.of(explicitAuxiliaryTypes,implementationContext.getRegisteredAuxiliaryTypes()));
 }

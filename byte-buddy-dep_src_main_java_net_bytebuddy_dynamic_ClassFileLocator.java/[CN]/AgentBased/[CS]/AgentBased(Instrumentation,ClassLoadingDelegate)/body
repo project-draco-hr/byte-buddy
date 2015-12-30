@@ -3,5 +3,5 @@
     throw new IllegalArgumentException(instrumentation + " does not support retransformation");
   }
   this.instrumentation=instrumentation;
-  this.classLoadingDelegate=nonNull(classLoadingDelegate);
+  this.classLoadingDelegate=classLoadingDelegate;
 }

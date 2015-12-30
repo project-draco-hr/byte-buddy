@@ -3,5 +3,5 @@
   if (!typeDescription.asErasure().isInstance(delegate)) {
     throw new IllegalArgumentException(delegate + " is not an instance of " + type);
   }
-  return new MethodDelegation(new ImplementationDelegate.ForStaticField(nonNull(delegate),isValidIdentifier(fieldName)),TargetMethodAnnotationDrivenBinder.ParameterBinder.DEFAULTS,Argument.NextUnboundAsDefaultsProvider.INSTANCE,TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,MethodDelegationBinder.AmbiguityResolver.DEFAULT,Assigner.DEFAULT,new MethodContainer.ForVirtualMethods(methodGraphCompiler,typeDescription));
+  return new MethodDelegation(new ImplementationDelegate.ForStaticField(delegate,fieldName),TargetMethodAnnotationDrivenBinder.ParameterBinder.DEFAULTS,Argument.NextUnboundAsDefaultsProvider.INSTANCE,TargetMethodAnnotationDrivenBinder.TerminationHandler.Returning.INSTANCE,MethodDelegationBinder.AmbiguityResolver.DEFAULT,Assigner.DEFAULT,new MethodContainer.ForVirtualMethods(methodGraphCompiler,typeDescription));
 }

@@ -1,3 +1,3 @@
 {
-  return is(TypeDefinition.Sort.describe(nonNull(type)));
+  return is(TypeDefinition.Sort.describe(type));
 }

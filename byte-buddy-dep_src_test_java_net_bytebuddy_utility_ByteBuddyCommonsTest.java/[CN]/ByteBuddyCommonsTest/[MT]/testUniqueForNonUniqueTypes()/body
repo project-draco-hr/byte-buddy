@@ -1,3 +1,0 @@
-{
-  unique(Arrays.asList(first,second,first));
-}

@@ -1,3 +1,3 @@
 {
-  return annotateMethod(new AnnotationList.Explicit(Arrays.asList(nonNull(annotation))));
+  return annotateMethod(new AnnotationList.Explicit(Arrays.asList(annotation)));
 }

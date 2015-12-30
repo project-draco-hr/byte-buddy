@@ -1,3 +1,0 @@
-{
-  isNotEmpty(Collections.emptyList(),FOO);
-}

@@ -1,3 +1,3 @@
 {
-  return materialize(new MethodDescription.Token(methodToken.getInternalName(),methodToken.getModifiers(),Collections.<TypeDescription.Generic>emptyList(),methodToken.getReturnType(),methodToken.getParameterTokens(),unique(isThrowable(new TypeList.Generic.Explicit(toList(exceptionTypes)))),Collections.<AnnotationDescription>emptyList(),null));
+  return materialize(new MethodDescription.Token(methodToken.getInternalName(),methodToken.getModifiers(),Collections.<TypeDescription.Generic>emptyList(),methodToken.getReturnType(),methodToken.getParameterTokens(),new TypeList.Generic.Explicit(toList(exceptionTypes)),Collections.<AnnotationDescription>emptyList(),null));
 }

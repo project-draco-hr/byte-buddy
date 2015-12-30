@@ -1,3 +1,3 @@
 {
-  return new ForNamedField(Assigner.DEFAULT,Assigner.Typing.STATIC,isValidIdentifier(name));
+  return new ForNamedField(Assigner.DEFAULT,Assigner.Typing.STATIC,name);
 }

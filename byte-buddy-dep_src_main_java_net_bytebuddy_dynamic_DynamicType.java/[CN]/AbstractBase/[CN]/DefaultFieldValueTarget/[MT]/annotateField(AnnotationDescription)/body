@@ -1,3 +1,3 @@
 {
-  return annotateField(Arrays.asList(nonNull(annotation)));
+  return annotateField(Arrays.asList(annotation));
 }

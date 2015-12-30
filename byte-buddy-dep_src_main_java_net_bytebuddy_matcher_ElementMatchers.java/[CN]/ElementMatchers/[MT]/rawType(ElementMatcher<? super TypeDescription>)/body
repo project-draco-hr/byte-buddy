@@ -1,3 +1,3 @@
 {
-  return new RawTypeMatcher<T>(nonNull(matcher));
+  return new RawTypeMatcher<T>(matcher);
 }

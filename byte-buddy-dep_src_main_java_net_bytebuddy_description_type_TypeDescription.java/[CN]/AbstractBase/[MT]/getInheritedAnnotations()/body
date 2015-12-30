@@ -8,6 +8,6 @@
     for (    AnnotationDescription annotationDescription : declaredAnnotations) {
       annotationTypes.add(annotationDescription.getAnnotationType());
     }
-    return new AnnotationList.Explicit(join(declaredAnnotations,getSuperType().asErasure().getInheritedAnnotations().inherited(annotationTypes)));
+    return new AnnotationList.Explicit(CompoundList.of(declaredAnnotations,getSuperType().asErasure().getInheritedAnnotations().inherited(annotationTypes)));
   }
 }

@@ -1,3 +1,3 @@
 {
-  return throwing(Arrays.asList(nonNull(exceptionType)));
+  return throwing(Arrays.asList(exceptionType));
 }

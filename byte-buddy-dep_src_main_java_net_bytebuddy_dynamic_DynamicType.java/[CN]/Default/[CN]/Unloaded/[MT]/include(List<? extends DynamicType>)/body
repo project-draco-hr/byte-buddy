@@ -1,3 +1,3 @@
 {
-  return new Default.Unloaded<T>(typeDescription,binaryRepresentation,loadedTypeInitializer,join(auxiliaryTypes,dynamicType));
+  return new Default.Unloaded<T>(typeDescription,binaryRepresentation,loadedTypeInitializer,CompoundList.of(auxiliaryTypes,dynamicType));
 }

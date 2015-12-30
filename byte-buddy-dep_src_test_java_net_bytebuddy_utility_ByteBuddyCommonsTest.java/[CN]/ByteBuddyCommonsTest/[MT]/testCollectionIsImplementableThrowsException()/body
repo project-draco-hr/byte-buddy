@@ -1,3 +1,0 @@
-{
-  isImplementable(Collections.<TypeDescription>singleton(TypeDescription.OBJECT));
-}

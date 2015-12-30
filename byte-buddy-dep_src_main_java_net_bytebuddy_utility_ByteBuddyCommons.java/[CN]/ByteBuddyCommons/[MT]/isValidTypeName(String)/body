@@ -1,7 +1,0 @@
-{
-  String[] segments=nonNull(typeName).split("\\.");
-  for (  String segment : segments) {
-    isValidIdentifier(segment);
-  }
-  return typeName;
-}

@@ -1,3 +1,3 @@
 {
-  return new TokenMatcher<T,FieldDescription.Token>(nonNull(matcher));
+  return new TokenMatcher<T,FieldDescription.Token>(matcher);
 }

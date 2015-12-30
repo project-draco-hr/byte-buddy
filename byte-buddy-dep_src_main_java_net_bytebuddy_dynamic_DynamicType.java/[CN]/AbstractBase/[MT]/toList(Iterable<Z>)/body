@@ -1,0 +1,7 @@
+{
+  List<Z> list=new ArrayList<Z>();
+  for (  Z z : iterable) {
+    list.add(z);
+  }
+  return list;
+}

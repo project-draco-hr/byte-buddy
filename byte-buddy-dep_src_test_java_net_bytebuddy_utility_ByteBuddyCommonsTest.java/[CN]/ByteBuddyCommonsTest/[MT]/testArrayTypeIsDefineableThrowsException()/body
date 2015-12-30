@@ -1,3 +1,0 @@
-{
-  isDefineable(new TypeDescription.ForLoadedType(Object[].class));
-}

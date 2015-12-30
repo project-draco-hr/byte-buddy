@@ -1,3 +1,7 @@
 {
-  return prioritize(new TypeList.ForLoadedTypes(toList(prioritizedInterface)));
+  List<Class<?>> list=new ArrayList<Class<?>>();
+  for (  Class<?> prioritizedInterface : prioritizedInterfaces) {
+    list.add(prioritizedInterface);
+  }
+  return prioritize(new TypeList.ForLoadedTypes(list));
 }

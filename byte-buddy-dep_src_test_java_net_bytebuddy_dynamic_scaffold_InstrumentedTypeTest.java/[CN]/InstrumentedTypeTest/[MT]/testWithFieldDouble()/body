@@ -1,8 +1,0 @@
-{
-  TypeDescription.Generic fieldType=mock(TypeDescription.Generic.class);
-  when(fieldType.accept(Mockito.any(TypeDescription.Generic.Visitor.class))).thenReturn(fieldType);
-  TypeDescription rawFieldType=mock(TypeDescription.class);
-  when(fieldType.asErasure()).thenReturn(rawFieldType);
-  when(rawFieldType.getName()).thenReturn(FOO);
-  makePlainInstrumentedType().withField(new FieldDescription.Token(BAR,Opcodes.ACC_PUBLIC,fieldType)).withField(new FieldDescription.Token(BAR,Opcodes.ACC_PUBLIC,fieldType));
-}

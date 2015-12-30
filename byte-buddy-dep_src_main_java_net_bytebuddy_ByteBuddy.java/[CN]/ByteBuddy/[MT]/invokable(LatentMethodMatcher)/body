@@ -1,3 +1,3 @@
 {
-  return new MatchedMethodInterception(nonNull(methodMatcher));
+  return new MatchedMethodInterception(methodMatcher);
 }
