@@ -1,4 +1,9 @@
 {
   Generic substitution=bindings.get(typeVariable);
-  return substitution == null ? typeVariable.asRawType() : substitution;
+  if (substitution == null) {
+    throw new IllegalStateException("Unknown type variable: " + typeVariable);
+  }
+ else {
+    return substitution;
+  }
 }

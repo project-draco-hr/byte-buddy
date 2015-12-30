@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (!(other instanceof Generic))   return false;
-  Generic typeVariable=(Generic)other;
-  return typeVariable.getSort().isTypeVariable() && getSymbol().equals(typeVariable.getSymbol());
-}
