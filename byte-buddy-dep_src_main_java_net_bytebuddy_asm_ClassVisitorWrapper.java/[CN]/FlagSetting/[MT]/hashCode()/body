@@ -1,0 +1,5 @@
+{
+  int result=writerFlags;
+  result=31 * result + readerFlags;
+  return result;
+}

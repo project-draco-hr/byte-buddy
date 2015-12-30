@@ -1,0 +1,3 @@
+{
+  return new TransformedMethod(methodDescription.getDeclaringType(),engine.transform(methodDescription.asToken()),methodDescription.asDefined());
+}

@@ -1,0 +1,3 @@
+{
+  return isNamed() ? parameterToken.getName() : super.getName();
+}

@@ -1,0 +1,3 @@
+{
+  return "ClassVisitorWrapper.FlagSetting{" + "writerFlags=" + writerFlags + ", readerFlags="+ readerFlags+ '}';
+}

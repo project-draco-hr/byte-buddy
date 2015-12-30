@@ -1,0 +1,3 @@
+{
+  return new TransformedParameter(index,token.getParameterTokens().get(index));
+}

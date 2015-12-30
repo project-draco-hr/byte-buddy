@@ -1,0 +1,3 @@
+{
+  return new ForMethodDescription(new Engine.ForModifierTransformation(Arrays.asList(modifierTransformer)));
+}

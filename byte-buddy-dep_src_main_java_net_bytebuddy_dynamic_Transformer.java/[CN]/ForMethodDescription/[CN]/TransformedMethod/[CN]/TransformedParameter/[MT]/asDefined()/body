@@ -1,0 +1,3 @@
+{
+  return definedShape.getParameters().get(index);
+}
