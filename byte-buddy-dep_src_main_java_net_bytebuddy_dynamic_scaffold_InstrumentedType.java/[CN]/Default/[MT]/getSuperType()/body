@@ -1,3 +1,3 @@
 {
-  return superType == null ? TypeDescription.Generic.UNDEFINED : superType.accept(TypeDescription.Generic.Visitor.Substitutor.ForAttachment.of(this));
+  return superType == null ? Generic.UNDEFINED : superType.accept(Generic.Visitor.Substitutor.ForAttachment.of(this));
 }
