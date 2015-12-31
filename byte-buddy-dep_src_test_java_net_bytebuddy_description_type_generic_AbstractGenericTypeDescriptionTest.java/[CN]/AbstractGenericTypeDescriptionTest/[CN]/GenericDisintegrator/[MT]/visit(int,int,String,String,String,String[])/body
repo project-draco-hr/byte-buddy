@@ -1,0 +1,3 @@
+{
+  super.visit(version,modifiers,name,signature,superName,new String[]{Callable.class.getName().replace('.','/'),Serializable.class.getName().replace('.','/')});
+}
