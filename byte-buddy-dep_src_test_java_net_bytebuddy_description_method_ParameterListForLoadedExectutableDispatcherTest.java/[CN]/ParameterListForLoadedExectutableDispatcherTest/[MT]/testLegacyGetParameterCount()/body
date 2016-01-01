@@ -1,0 +1,3 @@
+{
+  ParameterList.ForLoadedExecutable.Dispatcher.ForLegacyVm.INSTANCE.getParameterCount(mock(Object.class));
+}

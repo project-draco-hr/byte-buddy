@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot dispatch method for java.lang.reflect.Parameter");
-}
