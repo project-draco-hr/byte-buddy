@@ -1,4 +1,0 @@
-{
-  this.getType=getType;
-  this.getParameterizedType=getParameterizedType;
-}

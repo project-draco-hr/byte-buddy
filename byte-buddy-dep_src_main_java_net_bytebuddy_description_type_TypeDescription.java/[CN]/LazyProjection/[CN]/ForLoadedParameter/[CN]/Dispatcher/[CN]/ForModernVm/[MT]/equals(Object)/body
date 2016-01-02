@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  ForModernVm legal=(ForModernVm)other;
-  return getType.equals(legal.getType) && getParameterizedType.equals(legal.getParameterizedType);
-}

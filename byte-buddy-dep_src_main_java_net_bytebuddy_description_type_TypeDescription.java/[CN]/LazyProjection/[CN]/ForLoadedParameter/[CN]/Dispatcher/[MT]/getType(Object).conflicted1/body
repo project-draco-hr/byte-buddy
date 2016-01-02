@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Unsupported type for current JVM: java,lang.Parameter");
-}

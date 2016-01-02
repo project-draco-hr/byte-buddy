@@ -1,5 +1,0 @@
-{
-  int result=getType.hashCode();
-  result=31 * result + getParameterizedType.hashCode();
-  return result;
-}

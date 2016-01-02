@@ -1,3 +1,0 @@
-{
-  return "TypeDescription.Generic.LazyProjection.ForLoadedParameter.Dispatcher.ForLegacyVm." + name();
-}
