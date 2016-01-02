@@ -1,10 +1,10 @@
 {
   ClassVisitorWrapper.Compound compound=new ClassVisitorWrapper.Compound(prepend,wrapper,append);
-  assertThat(compound.wrap(prependVisitor),is(resultVisitor));
-  verify(prepend).wrap(prependVisitor);
+  assertThat(compound.wrap(instrumentedType,prependVisitor),is(resultVisitor));
+  verify(prepend).wrap(instrumentedType,prependVisitor);
   verifyNoMoreInteractions(prepend);
-  verify(wrapper).wrap(wrapperVisitor);
+  verify(wrapper).wrap(instrumentedType,wrapperVisitor);
   verifyNoMoreInteractions(wrapper);
-  verify(append).wrap(appendVisitor);
+  verify(append).wrap(instrumentedType,appendVisitor);
   verifyNoMoreInteractions(append);
 }

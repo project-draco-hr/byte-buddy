@@ -1,7 +1,7 @@
 {
-  when(prepend.wrap(prependVisitor)).thenReturn(wrapperVisitor);
-  when(wrapper.wrap(wrapperVisitor)).thenReturn(appendVisitor);
-  when(append.wrap(appendVisitor)).thenReturn(resultVisitor);
+  when(prepend.wrap(instrumentedType,prependVisitor)).thenReturn(wrapperVisitor);
+  when(wrapper.wrap(instrumentedType,wrapperVisitor)).thenReturn(appendVisitor);
+  when(append.wrap(instrumentedType,appendVisitor)).thenReturn(resultVisitor);
   when(prepend.mergeReader(FOO)).thenReturn(BAR);
   when(wrapper.mergeReader(BAR)).thenReturn(QUX);
   when(append.mergeReader(QUX)).thenReturn(BAZ);

@@ -1,6 +1,6 @@
 {
   ClassReader classReader=new ClassReader(type.getName());
   ClassWriter classWriter=new ClassWriter(classReader,ASM_MANUAL);
-  classReader.accept(classVisitorWrapper.wrap(classWriter),ASM_MANUAL);
+  classReader.accept(classVisitorWrapper.wrap(new TypeDescription.ForLoadedType(type),classWriter),ASM_MANUAL);
   return classWriter.toByteArray();
 }
