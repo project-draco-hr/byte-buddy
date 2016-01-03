@@ -1,5 +1,5 @@
 {
-  latentMethodMatcher=new SubclassDynamicTypeBuilder.InstrumentableMatcher(ignoredMethods);
+  matcher=new SubclassDynamicTypeBuilder.InstrumentableMatcher(ignoredMethods);
   when(rawTypeDescription.asGenericType()).thenReturn(typeDescription);
   when(rawTypeDescription.asErasure()).thenReturn(rawTypeDescription);
   when(typeDescription.asErasure()).thenReturn(rawTypeDescription);

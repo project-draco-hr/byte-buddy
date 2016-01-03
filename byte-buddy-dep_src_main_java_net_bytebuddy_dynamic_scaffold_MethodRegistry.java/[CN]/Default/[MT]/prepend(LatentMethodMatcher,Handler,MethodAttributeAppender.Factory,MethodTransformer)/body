@@ -1,3 +1,0 @@
-{
-  return new Default(CompoundList.of(new Entry(methodMatcher,handler,attributeAppenderFactory,methodTransformer),entries));
-}

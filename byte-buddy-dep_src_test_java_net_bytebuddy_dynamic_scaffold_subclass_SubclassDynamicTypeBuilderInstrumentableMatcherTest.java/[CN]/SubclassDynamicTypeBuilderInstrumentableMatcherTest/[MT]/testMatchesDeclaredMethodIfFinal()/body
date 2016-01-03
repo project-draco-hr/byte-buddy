@@ -3,5 +3,5 @@
   when(methodDescription.getModifiers()).thenReturn(Opcodes.ACC_FINAL);
   when(ignoredMethods.matches(methodDescription)).thenReturn(false);
   when(methodDescription.getDeclaringType()).thenReturn(rawTypeDescription);
-  assertThat(latentMethodMatcher.resolve(rawTypeDescription).matches(methodDescription),is(true));
+  assertThat(matcher.resolve(rawTypeDescription).matches(methodDescription),is(true));
 }

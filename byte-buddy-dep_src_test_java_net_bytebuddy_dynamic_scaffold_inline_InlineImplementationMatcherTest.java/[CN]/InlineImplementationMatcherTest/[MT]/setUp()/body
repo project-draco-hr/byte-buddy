@@ -1,5 +1,5 @@
 {
-  latentMethodMatcher=new InliningImplementationMatcher(ignoredMethods,predefinedMethods);
+  matcher=new InliningImplementationMatcher(ignoredMethods,predefinedMethods);
   when(rawTypeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   when(rawTypeDescription.asGenericType()).thenReturn(typeDescription);
   when(typeDescription.asErasure()).thenReturn(rawTypeDescription);

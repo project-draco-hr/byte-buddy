@@ -4,5 +4,5 @@
   when(ignoredMethods.matches(methodDescription)).thenReturn(true);
   when(predefinedMethods.matches(methodDescription)).thenReturn(true);
   when(methodDescription.getDeclaringType()).thenReturn(rawTypeDescription);
-  assertThat(latentMethodMatcher.resolve(rawTypeDescription).matches(methodDescription),is(false));
+  assertThat(matcher.resolve(rawTypeDescription).matches(methodDescription),is(false));
 }

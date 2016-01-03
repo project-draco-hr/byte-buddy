@@ -1,0 +1,6 @@
+{
+  LatentMatcher<Object> matcher=new LatentMatcher.Resolved<Object>(this.matcher);
+  assertThat(matcher.resolve(typeDescription),is((ElementMatcher)this.matcher));
+  verifyZeroInteractions(this.matcher);
+  verifyZeroInteractions(typeDescription);
+}
