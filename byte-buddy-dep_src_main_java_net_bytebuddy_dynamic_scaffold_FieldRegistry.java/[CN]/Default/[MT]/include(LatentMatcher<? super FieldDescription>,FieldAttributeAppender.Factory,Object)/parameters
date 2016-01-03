@@ -1,2 +1,3 @@
+LatentMatcher<? super FieldDescription> matcher
 FieldAttributeAppender.Factory attributeAppenderFactory
 Object defaultValue

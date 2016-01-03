@@ -1,4 +1,5 @@
 {
+  this.matcher=matcher;
   this.attributeAppender=attributeAppender;
   this.defaultValue=defaultValue;
 }

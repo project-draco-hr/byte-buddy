@@ -1,4 +1,8 @@
 {
-  Entry entry=entries.get(fieldDescription.asToken());
-  return entry == null ? new Record.ForSimpleField(fieldDescription) : entry.bind(fieldDescription);
+  for (  Entry entry : entries) {
+    if (entry.matches(fieldDescription)) {
+      return entry.bind(fieldDescription);
+    }
+  }
+  return new Record.ForSimpleField(fieldDescription);
 }

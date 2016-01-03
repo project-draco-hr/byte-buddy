@@ -1,13 +1,13 @@
 {
-  Map<FieldDescription.Token,Compiled.Entry> entries=new HashMap<FieldDescription.Token,Compiled.Entry>();
+  List<Compiled.Entry> entries=new ArrayList<Compiled.Entry>(this.entries.size());
   Map<FieldAttributeAppender.Factory,FieldAttributeAppender> attributeAppenders=new HashMap<FieldAttributeAppender.Factory,FieldAttributeAppender>();
-  for (  Map.Entry<FieldDescription.Token,Entry> entry : this.entries.entrySet()) {
-    FieldAttributeAppender attributeAppender=attributeAppenders.get(entry.getValue().getAttributeAppenderFactory());
+  for (  Entry entry : this.entries) {
+    FieldAttributeAppender attributeAppender=attributeAppenders.get(entry.getAttributeAppenderFactory());
     if (attributeAppender == null) {
-      attributeAppender=entry.getValue().getAttributeAppenderFactory().make(instrumentedType);
-      attributeAppenders.put(entry.getValue().getAttributeAppenderFactory(),attributeAppender);
+      attributeAppender=entry.getAttributeAppenderFactory().make(instrumentedType);
+      attributeAppenders.put(entry.getAttributeAppenderFactory(),attributeAppender);
     }
-    entries.put(entry.getKey(),new Compiled.Entry(attributeAppender,entry.getValue().getDefaultValue()));
+    entries.add(new Compiled.Entry(entry.resolve(instrumentedType),attributeAppender,entry.getDefaultValue()));
   }
   return new Compiled(entries);
 }

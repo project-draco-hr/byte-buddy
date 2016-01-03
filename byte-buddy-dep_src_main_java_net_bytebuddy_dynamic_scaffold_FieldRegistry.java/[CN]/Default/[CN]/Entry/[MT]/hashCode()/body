@@ -1,5 +1,6 @@
 {
-  int result=attributeAppenderFactory.hashCode();
+  int result=matcher.hashCode();
+  result=31 * attributeAppenderFactory.hashCode();
   result=31 * result + (defaultValue != null ? defaultValue.hashCode() : 0);
   return result;
 }
