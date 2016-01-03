@@ -10,5 +10,5 @@
     }
   }
   MethodDescription methodDescription=declarableMethods.remove(internalName + descriptor);
-  return methodDescription == RETAIN_METHOD ? super.visitMethod(modifiers,internalName,descriptor,genericSignature,exceptionTypeInternalName) : redefine(methodDescription,(modifiers & Opcodes.ACC_ABSTRACT) != 0);
+  return methodDescription == null ? super.visitMethod(modifiers,internalName,descriptor,genericSignature,exceptionTypeInternalName) : redefine(methodDescription,(modifiers & Opcodes.ACC_ABSTRACT) != 0);
 }

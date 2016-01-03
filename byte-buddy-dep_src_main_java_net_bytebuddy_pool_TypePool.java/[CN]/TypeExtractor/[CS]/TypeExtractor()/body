@@ -1,5 +1,5 @@
 {
-  super(ASM_API_VERSION);
+  super(Opcodes.ASM5);
   annotationTokens=new LinkedList<LazyTypeDescription.AnnotationToken>();
   fieldTokens=new LinkedList<LazyTypeDescription.FieldToken>();
   methodTokens=new LinkedList<LazyTypeDescription.MethodToken>();
