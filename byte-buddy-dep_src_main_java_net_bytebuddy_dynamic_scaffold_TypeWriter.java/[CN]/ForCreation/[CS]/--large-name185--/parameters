@@ -10,6 +10,4 @@ TypeAttributeAppender attributeAppender
 FieldPool fieldPool
 MethodPool methodPool
 MethodList instrumentedMethods
-ClassFileLocator classFileLocator
-TypeDescription originalType
-MethodRebaseResolver methodRebaseResolver
+AnnotationAppender.ValueFilter.Factory valueFilterFactory

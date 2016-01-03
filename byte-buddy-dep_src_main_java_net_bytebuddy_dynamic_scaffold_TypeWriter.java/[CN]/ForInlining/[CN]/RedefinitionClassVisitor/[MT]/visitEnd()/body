@@ -1,10 +1,10 @@
 {
   for (  FieldDescription fieldDescription : declaredFields.values()) {
-    fieldPool.target(fieldDescription).apply(cv);
+    fieldPool.target(fieldDescription).apply(cv,valueFilterFactory);
   }
   for (  MethodDescription methodDescription : declarableMethods.values()) {
-    methodPool.target(methodDescription).apply(cv,implementationContext);
+    methodPool.target(methodDescription).apply(cv,implementationContext,valueFilterFactory);
   }
-  implementationContext.drain(cv,methodPool,injectedCode);
+  implementationContext.drain(cv,methodPool,injectedCode,valueFilterFactory);
   super.visitEnd();
 }

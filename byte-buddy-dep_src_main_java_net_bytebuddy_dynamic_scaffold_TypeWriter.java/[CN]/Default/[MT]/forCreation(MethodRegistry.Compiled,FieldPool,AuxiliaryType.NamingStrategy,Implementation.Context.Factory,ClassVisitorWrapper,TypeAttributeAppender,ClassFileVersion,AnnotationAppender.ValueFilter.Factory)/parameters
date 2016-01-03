@@ -5,5 +5,4 @@ Implementation.Context.Factory implementationContextFactory
 ClassVisitorWrapper classVisitorWrapper
 TypeAttributeAppender attributeAppender
 ClassFileVersion classFileVersion
-ClassFileLocator classFileLocator
-TypeDescription originalType
+AnnotationAppender.ValueFilter.Factory valueFilterFactory

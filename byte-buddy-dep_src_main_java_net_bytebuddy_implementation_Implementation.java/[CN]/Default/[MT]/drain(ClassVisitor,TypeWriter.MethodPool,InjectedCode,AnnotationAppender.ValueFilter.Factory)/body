@@ -19,8 +19,8 @@
   if (prohibitTypeInitiailzer && initializerRecord.getSort().isDefined()) {
     throw new IllegalStateException("It is impossible to define a class initializer or cached values for " + instrumentedType);
   }
-  initializerRecord.apply(classVisitor,this);
+  initializerRecord.apply(classVisitor,this,valueFilterFactory);
   for (  TypeWriter.MethodPool.Record record : accessorMethods) {
-    record.apply(classVisitor,this);
+    record.apply(classVisitor,this,valueFilterFactory);
   }
 }

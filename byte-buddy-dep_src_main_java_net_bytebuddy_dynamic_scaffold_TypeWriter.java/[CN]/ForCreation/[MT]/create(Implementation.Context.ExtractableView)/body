@@ -2,14 +2,14 @@
   ClassWriter classWriter=new ClassWriter(classVisitorWrapper.mergeWriter(ASM_NO_FLAGS));
   ClassVisitor classVisitor=classVisitorWrapper.wrap(instrumentedType,new ValidatingClassVisitor(classWriter));
   classVisitor.visit(classFileVersion.getMinorMajorVersion(),instrumentedType.getActualModifiers(!instrumentedType.isInterface()),instrumentedType.getInternalName(),instrumentedType.getGenericSignature(),(instrumentedType.getSuperType() == null ? TypeDescription.OBJECT : instrumentedType.getSuperType().asErasure()).getInternalName(),instrumentedType.getInterfaces().asErasures().toInternalNames());
-  attributeAppender.apply(classVisitor,instrumentedType);
+  attributeAppender.apply(classVisitor,instrumentedType,valueFilterFactory.on(instrumentedType));
   for (  FieldDescription fieldDescription : instrumentedType.getDeclaredFields()) {
-    fieldPool.target(fieldDescription).apply(classVisitor);
+    fieldPool.target(fieldDescription).apply(classVisitor,valueFilterFactory);
   }
   for (  MethodDescription methodDescription : instrumentedMethods) {
-    methodPool.target(methodDescription).apply(classVisitor,implementationContext);
+    methodPool.target(methodDescription).apply(classVisitor,implementationContext,valueFilterFactory);
   }
-  implementationContext.drain(classVisitor,methodPool,Implementation.Context.ExtractableView.InjectedCode.None.INSTANCE);
+  implementationContext.drain(classVisitor,methodPool,Implementation.Context.ExtractableView.InjectedCode.None.INSTANCE,valueFilterFactory);
   classVisitor.visitEnd();
   return classWriter.toByteArray();
 }

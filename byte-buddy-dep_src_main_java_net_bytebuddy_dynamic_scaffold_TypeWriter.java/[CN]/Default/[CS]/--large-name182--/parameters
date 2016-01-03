@@ -10,3 +10,4 @@ TypeAttributeAppender attributeAppender
 FieldPool fieldPool
 MethodPool methodPool
 MethodList<?> instrumentedMethods
+AnnotationAppender.ValueFilter.Factory valueFilterFactory

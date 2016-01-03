@@ -1,4 +1,4 @@
 {
-  record.apply(fv);
+  record.apply(fv,valueFilterFactory);
   super.visitEnd();
 }

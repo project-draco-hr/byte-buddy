@@ -11,4 +11,5 @@
   this.fieldPool=fieldPool;
   this.methodPool=methodPool;
   this.instrumentedMethods=instrumentedMethods;
+  this.valueFilterFactory=valueFilterFactory;
 }
