@@ -1,5 +1,5 @@
 {
-  TypeWriter.FieldPool.Record record=new TypeWriter.FieldPool.Record.ForSimpleField(fieldDescription);
-  assertThat(record.getFieldAppender(),is((FieldAttributeAppender)new FieldAttributeAppender.ForField(fieldDescription,AnnotationAppender.ValueFilter.AppendDefaults.INSTANCE)));
+  TypeWriter.FieldPool.Record record=new TypeWriter.FieldPool.Record.ForSimpleField(fieldDescription,valueFilter);
+  assertThat(record.getFieldAppender(),is((FieldAttributeAppender)new FieldAttributeAppender.ForInstrumentedField(valueFilter)));
   assertThat(record.resolveDefault(defaultValue),is(defaultValue));
 }

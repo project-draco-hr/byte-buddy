@@ -1,0 +1,3 @@
+{
+  return "FieldAttributeAppender.ForInstrumentedField{" + ", valueFilter=" + valueFilter + '}';
+}

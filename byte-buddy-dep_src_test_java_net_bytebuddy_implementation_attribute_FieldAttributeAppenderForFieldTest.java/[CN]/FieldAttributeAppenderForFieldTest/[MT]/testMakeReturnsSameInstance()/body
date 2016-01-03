@@ -1,4 +1,0 @@
-{
-  FieldAttributeAppender.Factory factory=new FieldAttributeAppender.ForField(field,valueFilter);
-  assertThat(factory.make(mock(TypeDescription.class)),is((FieldAttributeAppender)factory));
-}

@@ -1,0 +1,5 @@
+{
+  new FieldAttributeAppender.ForAnnotations(valueFilter,new AnnotationList.ForLoadedAnnotation(new Qux.Instance())).apply(fieldVisitor,fieldDescription);
+  verifyZeroInteractions(fieldVisitor);
+  verifyZeroInteractions(fieldDescription);
+}

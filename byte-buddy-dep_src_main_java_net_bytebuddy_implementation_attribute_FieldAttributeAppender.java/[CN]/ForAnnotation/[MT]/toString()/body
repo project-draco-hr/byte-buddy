@@ -1,3 +1,0 @@
-{
-  return "FieldAttributeAppender.ForAnnotation{" + "annotations=" + annotations + "valueFilter="+ valueFilter+ '}';
-}

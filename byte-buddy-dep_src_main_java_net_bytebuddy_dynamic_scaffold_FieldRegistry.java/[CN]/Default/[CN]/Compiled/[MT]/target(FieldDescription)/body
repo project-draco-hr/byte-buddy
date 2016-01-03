@@ -4,5 +4,5 @@
       return entry.bind(fieldDescription);
     }
   }
-  return new Record.ForSimpleField(fieldDescription);
+  return new Record.ForSimpleField(fieldDescription,AnnotationAppender.ValueFilter.Default.APPEND_DEFAULTS);
 }
