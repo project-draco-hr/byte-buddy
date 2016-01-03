@@ -1,0 +1,5 @@
+{
+  for (  FieldAttributeAppender fieldAttributeAppender : fieldAttributeAppenders) {
+    fieldAttributeAppender.apply(fieldVisitor,fieldDescription,valueFilter);
+  }
+}

@@ -1,3 +1,0 @@
-{
-  return "TypeAttributeAppender.ForInstrumentedType{valueFilter=" + valueFilter + "}";
-}

@@ -1,3 +1,3 @@
 {
-  return attribute(new MethodAttributeAppender.ForAnnotation(new ArrayList<AnnotationDescription>(annotations),AnnotationAppender.ValueFilter.Default.APPEND_DEFAULTS));
+  return attribute(new MethodAttributeAppender.Explicit(new ArrayList<AnnotationDescription>(annotations)));
 }

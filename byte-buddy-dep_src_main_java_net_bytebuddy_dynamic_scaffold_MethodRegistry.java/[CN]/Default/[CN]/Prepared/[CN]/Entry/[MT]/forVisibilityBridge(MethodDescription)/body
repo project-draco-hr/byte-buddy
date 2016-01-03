@@ -1,3 +1,3 @@
 {
-  return new Entry(Handler.ForVisibilityBridge.INSTANCE,new MethodAttributeAppender.ForMethod(bridgeTarget,AnnotationAppender.ValueFilter.Default.APPEND_DEFAULTS),bridgeTarget,Collections.<MethodDescription.TypeToken>emptySet());
+  return new Entry(Handler.ForVisibilityBridge.INSTANCE,MethodAttributeAppender.Explicit.of(bridgeTarget),bridgeTarget,Collections.<MethodDescription.TypeToken>emptySet());
 }

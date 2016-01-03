@@ -1,4 +1,0 @@
-{
-  this.methodDescription=methodDescription;
-  this.valueFilter=valueFilter;
-}

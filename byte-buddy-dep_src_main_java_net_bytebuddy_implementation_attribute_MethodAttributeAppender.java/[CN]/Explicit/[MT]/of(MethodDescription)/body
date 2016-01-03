@@ -1,0 +1,9 @@
+{
+  ParameterList<?> parameters=methodDescription.getParameters();
+  List<MethodAttributeAppender.Factory> methodAttributeAppenders=new ArrayList<MethodAttributeAppender.Factory>(parameters.size() + 1);
+  methodAttributeAppenders.add(new Explicit(methodDescription.getDeclaredAnnotations()));
+  for (  ParameterDescription parameter : parameters) {
+    methodAttributeAppenders.add(new Explicit(parameter.getIndex(),parameter.getDeclaredAnnotations()));
+  }
+  return new Factory.Compound(methodAttributeAppenders);
+}

@@ -1,3 +1,0 @@
-{
-  return "MethodAttributeAppender.ForAnnotation{" + "annotations=" + annotations + ", valueFilter="+ valueFilter+ ", target="+ target+ '}';
-}

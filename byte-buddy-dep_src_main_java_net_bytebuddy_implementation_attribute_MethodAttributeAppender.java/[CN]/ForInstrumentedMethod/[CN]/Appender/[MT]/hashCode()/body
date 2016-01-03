@@ -1,5 +1,0 @@
-{
-  int result=instrumentedType.hashCode();
-  result=31 * result + valueFilter.hashCode();
-  return result;
-}

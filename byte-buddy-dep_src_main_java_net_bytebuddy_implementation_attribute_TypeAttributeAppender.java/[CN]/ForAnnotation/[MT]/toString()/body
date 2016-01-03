@@ -1,3 +1,0 @@
-{
-  return "TypeAttributeAppender.ForAnnotation{" + "annotations=" + annotations + ", valueFilter="+ valueFilter+ '}';
-}

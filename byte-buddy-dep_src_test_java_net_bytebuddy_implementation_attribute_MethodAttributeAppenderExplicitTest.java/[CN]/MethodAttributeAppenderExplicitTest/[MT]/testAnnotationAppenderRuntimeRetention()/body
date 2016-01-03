@@ -1,0 +1,6 @@
+{
+  new MethodAttributeAppender.Explicit(new AnnotationList.ForLoadedAnnotation(new Baz.Instance()),valueFilter).apply(methodVisitor,methodDescription);
+  verify(methodVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(methodDescription);
+}

@@ -1,3 +1,0 @@
-{
-  return "MethodAttributeAppender.ForInstrumentedMethod.Appender{" + "instrumentedType=" + instrumentedType + ", valueFilter="+ valueFilter+ '}';
-}

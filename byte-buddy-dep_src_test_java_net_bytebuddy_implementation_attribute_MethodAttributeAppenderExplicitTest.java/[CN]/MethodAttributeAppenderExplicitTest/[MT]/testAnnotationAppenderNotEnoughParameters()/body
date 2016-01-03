@@ -1,0 +1,3 @@
+{
+  new MethodAttributeAppender.Explicit(PARAMETER_INDEX + 1,new AnnotationList.ForLoadedAnnotation(new Baz.Instance()),valueFilter).apply(methodVisitor,methodDescription);
+}

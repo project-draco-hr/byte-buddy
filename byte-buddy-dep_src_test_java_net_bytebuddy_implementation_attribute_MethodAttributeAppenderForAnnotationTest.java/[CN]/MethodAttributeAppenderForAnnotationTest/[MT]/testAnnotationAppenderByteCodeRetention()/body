@@ -1,6 +1,0 @@
-{
-  new MethodAttributeAppender.ForAnnotation(new AnnotationList.ForLoadedAnnotation(new QuxBaz.Instance()),valueFilter).apply(methodVisitor,methodDescription);
-  verify(methodVisitor).visitAnnotation(Type.getDescriptor(QuxBaz.class),false);
-  verifyNoMoreInteractions(methodVisitor);
-  verifyZeroInteractions(methodDescription);
-}

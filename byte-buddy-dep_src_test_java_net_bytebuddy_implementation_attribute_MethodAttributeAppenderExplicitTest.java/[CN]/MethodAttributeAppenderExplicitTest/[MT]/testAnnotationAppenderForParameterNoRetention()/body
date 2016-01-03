@@ -1,0 +1,6 @@
+{
+  new MethodAttributeAppender.Explicit(PARAMETER_INDEX,new AnnotationList.ForLoadedAnnotation(new Qux.Instance()),valueFilter).apply(methodVisitor,methodDescription);
+  verifyZeroInteractions(methodVisitor);
+  verify(methodDescription).getParameters();
+  verifyNoMoreInteractions(methodDescription);
+}
