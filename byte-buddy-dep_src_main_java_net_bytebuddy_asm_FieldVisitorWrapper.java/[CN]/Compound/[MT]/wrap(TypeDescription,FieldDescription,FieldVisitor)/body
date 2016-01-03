@@ -1,0 +1,6 @@
+{
+  for (  FieldVisitorWrapper fieldVisitorWrapper : fieldVisitorWrappers) {
+    fieldVisitor=fieldVisitorWrapper.wrap(instrumentedType,fieldDescription,fieldVisitor);
+  }
+  return fieldVisitor;
+}

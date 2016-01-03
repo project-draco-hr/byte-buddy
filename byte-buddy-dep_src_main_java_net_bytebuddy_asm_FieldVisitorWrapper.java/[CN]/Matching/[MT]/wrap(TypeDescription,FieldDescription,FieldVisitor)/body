@@ -1,0 +1,3 @@
+{
+  return fieldDescription != null && matcher.matches(fieldDescription) ? delegate.wrap(instrumentedType,fieldDescription,fieldVisitor) : fieldVisitor;
+}

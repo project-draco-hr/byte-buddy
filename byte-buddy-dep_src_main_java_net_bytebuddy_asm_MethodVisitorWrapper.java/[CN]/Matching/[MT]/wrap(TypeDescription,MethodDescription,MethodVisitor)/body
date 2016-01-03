@@ -1,0 +1,3 @@
+{
+  return methodDescription != null && matcher.matches(methodDescription) ? delegate.wrap(instrumentedType,methodDescription,methodVisitor) : methodVisitor;
+}
