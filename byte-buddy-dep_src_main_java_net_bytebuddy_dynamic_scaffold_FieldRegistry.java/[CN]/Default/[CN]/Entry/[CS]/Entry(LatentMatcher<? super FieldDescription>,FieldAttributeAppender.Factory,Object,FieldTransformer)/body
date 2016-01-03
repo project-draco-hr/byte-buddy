@@ -2,4 +2,5 @@
   this.matcher=matcher;
   this.attributeAppenderFactory=attributeAppenderFactory;
   this.defaultValue=defaultValue;
+  this.fieldTransformer=fieldTransformer;
 }

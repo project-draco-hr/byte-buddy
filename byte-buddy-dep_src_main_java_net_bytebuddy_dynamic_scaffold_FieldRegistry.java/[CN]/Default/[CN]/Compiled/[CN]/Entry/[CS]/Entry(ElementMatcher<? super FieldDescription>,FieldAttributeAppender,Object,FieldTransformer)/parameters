@@ -1,3 +1,4 @@
 ElementMatcher<? super FieldDescription> matcher
 FieldAttributeAppender attributeAppender
 Object defaultValue
+FieldTransformer fieldTransformer

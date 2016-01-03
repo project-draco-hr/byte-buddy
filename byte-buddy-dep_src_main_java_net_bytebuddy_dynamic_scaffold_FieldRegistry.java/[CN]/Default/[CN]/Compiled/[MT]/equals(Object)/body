@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && entries.equals(((Compiled)other).entries);
+  return this == other || !(other == null || getClass() != other.getClass()) && entries.equals(((Compiled)other).entries) && instrumentedType.equals(((Compiled)other).instrumentedType);
 }

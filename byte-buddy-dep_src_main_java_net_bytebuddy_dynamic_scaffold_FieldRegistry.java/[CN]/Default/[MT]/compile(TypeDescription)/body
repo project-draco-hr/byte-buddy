@@ -7,7 +7,7 @@
       attributeAppender=entry.getAttributeAppenderFactory().make(instrumentedType);
       attributeAppenders.put(entry.getAttributeAppenderFactory(),attributeAppender);
     }
-    entries.add(new Compiled.Entry(entry.resolve(instrumentedType),attributeAppender,entry.getDefaultValue()));
+    entries.add(new Compiled.Entry(entry.resolve(instrumentedType),attributeAppender,entry.getDefaultValue(),entry.getTransformer()));
   }
-  return new Compiled(entries);
+  return new Compiled(instrumentedType,entries);
 }

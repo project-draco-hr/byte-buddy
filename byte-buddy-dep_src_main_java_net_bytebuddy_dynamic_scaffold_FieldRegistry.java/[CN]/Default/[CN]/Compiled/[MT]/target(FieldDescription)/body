@@ -1,7 +1,7 @@
 {
   for (  Entry entry : entries) {
     if (entry.matches(fieldDescription)) {
-      return entry.bind(fieldDescription);
+      return entry.bind(instrumentedType,fieldDescription);
     }
   }
   return new Record.ForSimpleField(fieldDescription);
