@@ -1,5 +1,5 @@
 {
-  MethodDescription.Token transformed=new MethodTransformer.Simple.Transformer.ForModifierTransformation(Collections.singletonList(modifierContributor)).transform(methodToken);
+  MethodDescription.Token transformed=new MethodTransformer.Simple.TokenTransformer.ForModifierTransformation(Collections.singletonList(modifierContributor)).transform(methodToken);
   assertThat(transformed.getName(),is(FOO));
   assertThat(transformed.getModifiers(),is((MODIFIERS & ~RANGE) | MASK));
   assertThat(transformed.getReturnType(),is(returnType));

@@ -1,3 +1,0 @@
-{
-  return token.getReturnType().accept(TypeDescription.Generic.Visitor.Substitutor.ForAttachment.of(this));
-}

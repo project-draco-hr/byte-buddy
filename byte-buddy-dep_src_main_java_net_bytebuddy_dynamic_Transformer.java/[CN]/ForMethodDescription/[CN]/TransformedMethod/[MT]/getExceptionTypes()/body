@@ -1,3 +1,0 @@
-{
-  return TypeList.Generic.ForDetachedTypes.attach(this,token.getExceptionTypes());
-}

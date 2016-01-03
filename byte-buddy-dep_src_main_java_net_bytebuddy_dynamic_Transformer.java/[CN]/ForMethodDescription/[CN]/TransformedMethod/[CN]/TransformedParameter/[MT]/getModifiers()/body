@@ -1,3 +1,0 @@
-{
-  return hasModifiers() ? parameterToken.getModifiers() : super.getModifiers();
-}

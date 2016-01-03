@@ -1,3 +1,0 @@
-{
-  return "Transformer.Simple.Engine.ForModifierTransformation{" + "modifierContributors=" + modifierContributors + '}';
-}

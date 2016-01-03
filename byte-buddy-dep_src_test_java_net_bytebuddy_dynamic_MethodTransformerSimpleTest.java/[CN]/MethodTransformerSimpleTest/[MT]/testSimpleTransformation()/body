@@ -1,6 +1,6 @@
 {
-  when(transformer.transform(methodToken)).thenReturn(methodToken);
-  MethodDescription transformed=new MethodTransformer.Simple(transformer).transform(instrumentedType,methodDescription);
+  when(tokenTransformer.transform(methodToken)).thenReturn(methodToken);
+  MethodDescription transformed=new MethodTransformer.Simple(tokenTransformer).transform(instrumentedType,methodDescription);
   assertThat(transformed.getDeclaringType(),is((TypeDefinition)declaringType));
   assertThat(transformed.getInternalName(),is(FOO));
   assertThat(transformed.getModifiers(),is(MODIFIERS));

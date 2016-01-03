@@ -1,7 +1,0 @@
-{
-  S transformed=byteCodeElement;
-  for (  Transformer<S> transformer : methodTransformers) {
-    transformed=transformer.transform(instrumentedType,transformed);
-  }
-  return transformed;
-}
