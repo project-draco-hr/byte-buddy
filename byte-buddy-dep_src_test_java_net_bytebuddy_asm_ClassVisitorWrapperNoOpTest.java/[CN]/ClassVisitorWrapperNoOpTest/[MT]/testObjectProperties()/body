@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(ClassVisitorWrapper.NoOp.class).apply();
-}

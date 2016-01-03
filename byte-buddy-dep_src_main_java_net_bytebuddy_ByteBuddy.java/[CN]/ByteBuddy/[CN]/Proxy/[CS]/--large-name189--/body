@@ -1,0 +1,3 @@
+{
+  super(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,ignoredMethods,asmVisitorWrapper,methodRegistry,modifiers,typeAttributeAppender,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory);
+}

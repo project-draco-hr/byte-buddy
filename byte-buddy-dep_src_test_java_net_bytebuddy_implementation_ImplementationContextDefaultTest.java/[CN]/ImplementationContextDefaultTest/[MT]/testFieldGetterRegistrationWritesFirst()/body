@@ -3,7 +3,7 @@
   MethodDescription firstMethodDescription=implementationContext.registerGetterFor(firstField);
   assertThat(implementationContext.registerGetterFor(firstField),is(firstMethodDescription));
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
-  implementationContext.drain(classVisitor,methodPool,injectedCode);
+  implementationContext.drain(classVisitor,methodPool,injectedCode,valueFilterFactory);
   verify(classVisitor).visitMethod(eq(accessorMethodModifiers),Matchers.startsWith(FOO),eq("()" + BAR),isNull(String.class),isNull(String[].class));
   verify(methodVisitor).visitCode();
   verify(methodVisitor).visitVarInsn(Opcodes.ALOAD,0);

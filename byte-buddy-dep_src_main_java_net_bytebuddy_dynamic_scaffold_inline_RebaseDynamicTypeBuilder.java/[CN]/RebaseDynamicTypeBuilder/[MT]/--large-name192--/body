@@ -1,0 +1,3 @@
+{
+  return new RebaseDynamicTypeBuilder<T>(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,typeInitializer,interfaceTypes,modifiers,attributeAppender,ignoredMethods,asmVisitorWrapper,fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens,originalType,classFileLocator,methodNameTransformer);
+}

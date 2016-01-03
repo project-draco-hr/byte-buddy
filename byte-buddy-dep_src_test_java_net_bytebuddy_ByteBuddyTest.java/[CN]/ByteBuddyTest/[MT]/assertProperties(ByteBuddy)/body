@@ -12,10 +12,10 @@
   assertThat(byteBuddy.namingStrategy,is(namingStrategy));
   assertThat(byteBuddy.auxiliaryTypeNamingStrategy,is(auxiliaryTypeNamingStrategy));
   assertThat(byteBuddy.implementationContextFactory,is(implementationContextFactory));
-  assertThat(byteBuddy.classVisitorWrapper,instanceOf(ClassVisitorWrapper.Compound.class));
+  assertThat(byteBuddy.asmVisitorWrapper,instanceOf(AsmVisitorWrapper.Compound.class));
   ClassVisitor classVisitor=mock(ClassVisitor.class);
   TypeDescription instrumentedType=mock(TypeDescription.class);
-  byteBuddy.classVisitorWrapper.wrap(instrumentedType,classVisitor);
-  verify(classVisitorWrapper).wrap(instrumentedType,classVisitor);
-  verifyNoMoreInteractions(classVisitorWrapper);
+  byteBuddy.asmVisitorWrapper.wrap(instrumentedType,classVisitor);
+  verify(asmVisitorWrapper).wrap(instrumentedType,classVisitor);
+  verifyNoMoreInteractions(asmVisitorWrapper);
 }

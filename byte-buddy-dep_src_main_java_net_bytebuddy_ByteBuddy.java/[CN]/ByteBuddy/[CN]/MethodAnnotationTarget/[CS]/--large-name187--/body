@@ -1,0 +1,7 @@
+{
+  super(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,ignoredMethods,asmVisitorWrapper,methodRegistry,modifiers,typeAttributeAppender,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory);
+  this.methodMatcher=methodMatcher;
+  this.handler=handler;
+  this.attributeAppenderFactory=attributeAppenderFactory;
+  this.methodTransformer=methodTransformer;
+}

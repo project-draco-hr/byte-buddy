@@ -1,5 +1,5 @@
 {
-  new FieldAttributeAppender.ForAnnotations(valueFilter,new AnnotationList.ForLoadedAnnotation(new QuxBaz.Instance())).apply(fieldVisitor,fieldDescription);
+  new FieldAttributeAppender.Explicit(new AnnotationList.ForLoadedAnnotation(new QuxBaz.Instance())).apply(fieldVisitor,fieldDescription,valueFilter);
   verify(fieldVisitor).visitAnnotation(Type.getDescriptor(QuxBaz.class),false);
   verifyNoMoreInteractions(fieldVisitor);
   verifyZeroInteractions(fieldDescription);

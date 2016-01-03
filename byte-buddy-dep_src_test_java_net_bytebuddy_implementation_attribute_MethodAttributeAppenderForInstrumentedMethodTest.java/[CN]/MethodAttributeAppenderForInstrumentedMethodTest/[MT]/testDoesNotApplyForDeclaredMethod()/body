@@ -1,8 +1,0 @@
-{
-  when(methodDescription.getDeclaringType()).thenReturn(instrumentedType);
-  MethodAttributeAppender methodAttributeAppender=new MethodAttributeAppender.ForInstrumentedMethod(valueFilter).make(instrumentedType);
-  methodAttributeAppender.apply(methodVisitor,methodDescription);
-  verifyZeroInteractions(methodVisitor);
-  verify(methodDescription).getDeclaringType();
-  verifyNoMoreInteractions(methodDescription);
-}

@@ -1,5 +1,0 @@
-{
-  FieldAttributeAppender.NoOp.INSTANCE.apply(fieldVisitor,fieldDescription);
-  verifyZeroInteractions(fieldVisitor);
-  verifyZeroInteractions(fieldDescription);
-}

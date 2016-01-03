@@ -6,10 +6,11 @@
   result=31 * result + classFileVersion.hashCode();
   result=31 * result + auxiliaryTypeNamingStrategy.hashCode();
   result=31 * result + implementationContextFactory.hashCode();
-  result=31 * result + classVisitorWrapper.hashCode();
+  result=31 * result + asmVisitorWrapper.hashCode();
   result=31 * result + attributeAppender.hashCode();
   result=31 * result + fieldPool.hashCode();
   result=31 * result + methodPool.hashCode();
   result=31 * result + instrumentedMethods.hashCode();
+  result=31 * result + valueFilterFactory.hashCode();
   return result;
 }

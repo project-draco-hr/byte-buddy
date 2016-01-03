@@ -1,6 +1,5 @@
 {
-  ParameterList<?> parameterList=mock(ParameterList.class);
-  when(parameterList.size()).thenReturn(PARAMETER_INDEX + 1);
-  when(methodDescription.getParameters()).thenReturn((ParameterList)parameterList);
+  super.setUp();
+  when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Explicit<ParameterDescription>(Collections.singletonList(parameterDescription)));
   when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.InDefinedShape.class))).thenReturn(true);
 }

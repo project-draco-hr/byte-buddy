@@ -1,3 +1,0 @@
-{
-  this(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,InstrumentedType.TypeInitializer.None.INSTANCE,CompoundList.of(interfaceTypes,originalType.getInterfaces()),modifiers,attributeAppender,ignoredMethods,classVisitorWrapper,fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,originalType.getDeclaredFields().asTokenList(is(originalType)),originalType.getDeclaredMethods().asTokenList(is(originalType)),originalType,classFileLocator,methodNameTransformer);
-}

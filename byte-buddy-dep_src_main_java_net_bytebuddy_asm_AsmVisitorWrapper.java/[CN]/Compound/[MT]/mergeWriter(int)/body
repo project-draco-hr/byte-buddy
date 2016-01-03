@@ -1,0 +1,6 @@
+{
+  for (  AsmVisitorWrapper asmVisitorWrapper : asmVisitorWrappers) {
+    flags=asmVisitorWrapper.mergeWriter(flags);
+  }
+  return flags;
+}

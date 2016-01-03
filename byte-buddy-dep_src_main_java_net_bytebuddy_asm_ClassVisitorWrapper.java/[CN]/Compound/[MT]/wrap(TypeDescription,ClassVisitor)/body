@@ -1,6 +1,0 @@
-{
-  for (  ClassVisitorWrapper classVisitorWrapper : classVisitorWrappers) {
-    classVisitor=classVisitorWrapper.wrap(instrumentedType,classVisitor);
-  }
-  return classVisitor;
-}

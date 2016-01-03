@@ -1,0 +1,3 @@
+{
+  return new ForDeclaredMethod(CompoundList.of(entries,new Entry(matcher,methodVisitorWrapper)));
+}

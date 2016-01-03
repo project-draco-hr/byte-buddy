@@ -1,0 +1,3 @@
+TypeDescription instrumentedType
+FieldDescription.InDefinedShape fieldDescription
+FieldVisitor fieldVisitor

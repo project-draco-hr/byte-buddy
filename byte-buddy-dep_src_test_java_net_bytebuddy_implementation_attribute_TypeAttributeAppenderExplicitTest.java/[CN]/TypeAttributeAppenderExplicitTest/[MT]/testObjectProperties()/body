@@ -1,5 +1,5 @@
 {
-  ObjectPropertyAssertion.of(TypeAttributeAppender.ForAnnotation.class).generate(new ObjectPropertyAssertion.Generator<Annotation>(){
+  ObjectPropertyAssertion.of(TypeAttributeAppender.Explicit.class).generate(new ObjectPropertyAssertion.Generator<Annotation>(){
     @Override public Class<? extends Annotation> generate(){
       return SimpleAnnotation.class;
     }

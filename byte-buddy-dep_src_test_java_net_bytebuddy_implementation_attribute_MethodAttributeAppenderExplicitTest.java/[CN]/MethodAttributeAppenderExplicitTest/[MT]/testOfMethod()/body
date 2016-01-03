@@ -1,0 +1,16 @@
+{
+  when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Baz.Instance()));
+  when(parameterDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Baz.Instance()));
+  MethodAttributeAppender methodAttributeAppender=MethodAttributeAppender.Explicit.of(methodDescription).make(instrumentedType);
+  methodAttributeAppender.apply(methodVisitor,methodDescription,valueFilter);
+  verify(methodVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
+  verify(methodVisitor).visitParameterAnnotation(PARAMETER_INDEX,Type.getDescriptor(Baz.class),true);
+  verifyNoMoreInteractions(methodVisitor);
+  verify(methodDescription,times(2)).getParameters();
+  verify(methodDescription).getDeclaredAnnotations();
+  verifyNoMoreInteractions(methodDescription);
+  verify(parameterDescription).getIndex();
+  verify(parameterDescription).getDeclaredAnnotations();
+  verifyNoMoreInteractions(parameterDescription);
+  verifyZeroInteractions(instrumentedType);
+}

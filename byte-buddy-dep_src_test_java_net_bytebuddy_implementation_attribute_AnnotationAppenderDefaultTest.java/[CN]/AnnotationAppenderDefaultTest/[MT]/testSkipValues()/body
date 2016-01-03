@@ -7,7 +7,7 @@
   when(annotationDescription.getAnnotationType()).thenReturn(annotationType);
   AnnotationVisitor annotationVisitor=mock(AnnotationVisitor.class);
   when(target.visit(anyString(),anyBoolean())).thenReturn(annotationVisitor);
-  annotationAppender.append(annotationDescription,AnnotationAppender.AnnotationVisibility.RUNTIME);
+  annotationAppender.append(annotationDescription,AnnotationAppender.AnnotationVisibility.RUNTIME,valueFilter);
   verify(valueFilter).isRelevant(annotationDescription,methodDescription);
   verifyNoMoreInteractions(valueFilter);
   verify(annotationVisitor).visitEnd();

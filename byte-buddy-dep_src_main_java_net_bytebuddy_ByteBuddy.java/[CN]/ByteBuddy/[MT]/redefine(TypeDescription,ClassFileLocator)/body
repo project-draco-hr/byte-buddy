@@ -1,3 +1,3 @@
 {
-  return new RedefinitionDynamicTypeBuilder<T>(classFileVersion,namingStrategy.redefine(typeDescription),auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,modifiers.resolve(typeDescription.getModifiers()),typeAttributeAppender,ignoredMethods,classVisitorWrapper,new FieldRegistry.Default(),methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,typeDescription,classFileLocator);
+  return new RedefinitionDynamicTypeBuilder<T>(classFileVersion,namingStrategy.redefine(typeDescription),auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,modifiers.resolve(typeDescription.getModifiers()),typeAttributeAppender,ignoredMethods,asmVisitorWrapper,new FieldRegistry.Default(),methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,typeDescription,classFileLocator);
 }

@@ -3,11 +3,11 @@
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.IMPLEMENTED);
   when(typeInitializer.isDefined()).thenReturn(true);
   when(record.prepend(typeInitializer)).thenReturn(otherRecord);
-  implementationContext.drain(classVisitor,methodPool,injectedCode);
+  implementationContext.drain(classVisitor,methodPool,injectedCode,valueFilterFactory);
   verify(record).getSort();
   verify(record).prepend(typeInitializer);
   verifyNoMoreInteractions(record);
-  verify(otherRecord).apply(classVisitor,implementationContext);
+  verify(otherRecord).apply(classVisitor,implementationContext,valueFilterFactory);
   verify(typeInitializer,atLeast(1)).isDefined();
   verifyNoMoreInteractions(typeInitializer);
   verify(injectedCode,atLeast(1)).isDefined();

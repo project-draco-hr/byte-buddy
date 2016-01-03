@@ -1,3 +1,3 @@
 {
-  return "MethodAttributeAppender.ForAnnotation.Target.OnMethodParameter{parameterIndex=" + parameterIndex + '}';
+  return "MethodAttributeAppender.Explicit.Target.OnMethodParameter{parameterIndex=" + parameterIndex + '}';
 }

@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(AsmVisitorWrapper.Compound.class).apply();
+}

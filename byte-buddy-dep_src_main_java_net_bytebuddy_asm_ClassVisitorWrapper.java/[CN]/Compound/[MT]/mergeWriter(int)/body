@@ -1,6 +1,0 @@
-{
-  for (  ClassVisitorWrapper classVisitorWrapper : classVisitorWrappers) {
-    flags=classVisitorWrapper.mergeWriter(flags);
-  }
-  return flags;
-}

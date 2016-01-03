@@ -1,4 +1,6 @@
 {
+  when(instrumentedMethod.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(parameterDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   when(resolvedMethodFilter.matches(instrumentedMethod)).thenReturn(true);
   when(firstFilter.matches(instrumentedMethod)).thenReturn(false);
   when(secondFilter.matches(instrumentedMethod)).thenReturn(false);

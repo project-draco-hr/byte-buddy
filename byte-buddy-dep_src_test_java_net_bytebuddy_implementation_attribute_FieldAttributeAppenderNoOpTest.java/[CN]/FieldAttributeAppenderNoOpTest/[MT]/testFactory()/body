@@ -1,0 +1,4 @@
+{
+  assertThat(FieldAttributeAppender.NoOp.INSTANCE.make(instrumentedType),sameInstance((FieldAttributeAppender)FieldAttributeAppender.NoOp.INSTANCE));
+  verifyZeroInteractions(instrumentedType);
+}

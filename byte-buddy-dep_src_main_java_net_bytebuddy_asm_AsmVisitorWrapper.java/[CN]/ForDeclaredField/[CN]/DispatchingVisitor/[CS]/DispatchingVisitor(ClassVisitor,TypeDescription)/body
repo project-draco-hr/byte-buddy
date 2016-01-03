@@ -1,0 +1,8 @@
+{
+  super(Opcodes.ASM5,classVisitor);
+  this.instrumentedType=instrumentedType;
+  fieldsByName=new HashMap<String,FieldDescription.InDefinedShape>();
+  for (  FieldDescription.InDefinedShape fieldDescription : instrumentedType.getDeclaredFields()) {
+    fieldsByName.put(fieldDescription.getInternalName(),fieldDescription);
+  }
+}

@@ -2,9 +2,9 @@
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
   TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,FOO,methodAttributeAppender);
-  record.applyBody(methodVisitor,implementationContext);
+  record.applyBody(methodVisitor,implementationContext,valueFilterFactory);
   verifyZeroInteractions(methodVisitor);
   verifyZeroInteractions(implementationContext);
-  verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
+  verify(methodAttributeAppender).apply(methodVisitor,methodDescription,valueFilter);
   verifyNoMoreInteractions(methodAttributeAppender);
 }

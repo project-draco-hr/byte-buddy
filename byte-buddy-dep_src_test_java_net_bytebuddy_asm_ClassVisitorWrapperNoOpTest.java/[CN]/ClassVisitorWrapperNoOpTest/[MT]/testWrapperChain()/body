@@ -1,5 +1,0 @@
-{
-  ClassVisitor classVisitor=mock(ClassVisitor.class);
-  assertThat(ClassVisitorWrapper.NoOp.INSTANCE.wrap(mock(TypeDescription.class),classVisitor),is(classVisitor));
-  verifyZeroInteractions(classVisitor);
-}

@@ -1,0 +1,3 @@
+{
+  return new ForDeclaredField(CompoundList.of(entries,new Entry(matcher,fieldVisitorWrapper)));
+}

@@ -1,8 +1,8 @@
 {
   TypeWriter.FieldPool.Record record=new TypeWriter.FieldPool.Record.ForRichField(fieldAttributeAppender,defaultValue,fieldDescription);
-  record.apply(classVisitor);
+  record.apply(classVisitor,valueFilterFactory);
   verify(classVisitor).visitField(MODIFIER,FOO,BAR,QUX,defaultValue);
-  verify(fieldAttributeAppender).apply(fieldVisitor,fieldDescription);
+  verify(fieldAttributeAppender).apply(fieldVisitor,fieldDescription,valueFilter);
   verifyNoMoreInteractions(fieldAttributeAppender);
   verifyNoMoreInteractions(classVisitor);
   verify(fieldVisitor).visitEnd();

@@ -8,5 +8,5 @@
     actualSuperType=TypeDescription.Generic.OBJECT;
     interfaceTypes=CompoundList.of(interfaceTypes,superType.asGenericType());
   }
-  return new SubclassDynamicTypeBuilder<T>(classFileVersion,namingStrategy.subclass(superType.asErasure()),auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,modifiers.resolve(superType.asErasure().getModifiers() & ~TypeManifestation.ANNOTATION.getMask()),typeAttributeAppender,ignoredMethods,classVisitorWrapper,new FieldRegistry.Default(),methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,actualSuperType,constructorStrategy);
+  return new SubclassDynamicTypeBuilder<T>(classFileVersion,namingStrategy.subclass(superType.asErasure()),auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,modifiers.resolve(superType.asErasure().getModifiers() & ~TypeManifestation.ANNOTATION.getMask()),typeAttributeAppender,ignoredMethods,asmVisitorWrapper,new FieldRegistry.Default(),methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,actualSuperType,constructorStrategy);
 }

@@ -1,6 +1,0 @@
-{
-  for (  MethodVisitorWrapper methodVisitorWrapper : methodVisitorWrappers) {
-    methodVisitor=methodVisitorWrapper.wrap(instrumentedType,methodDescription,methodVisitor);
-  }
-  return methodVisitor;
-}

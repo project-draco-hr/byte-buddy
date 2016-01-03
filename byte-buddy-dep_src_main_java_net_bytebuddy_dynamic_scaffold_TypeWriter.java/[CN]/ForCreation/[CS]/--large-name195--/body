@@ -1,0 +1,3 @@
+{
+  super(instrumentedType,loadedTypeInitializer,typeInitializer,explicitAuxiliaryTypes,classFileVersion,auxiliaryTypeNamingStrategy,implementationContextFactory,asmVisitorWrapper,attributeAppender,fieldPool,methodPool,instrumentedMethods,valueFilterFactory);
+}
