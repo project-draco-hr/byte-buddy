@@ -1,4 +1,4 @@
 {
-  declaredFields.remove(internalName);
-  return super.visitField(modifiers,internalName,descriptor,genericSignature,defaultValue);
+  FieldDescription fieldDescription=declaredFields.remove(internalName);
+  return fieldDescription == null ? super.visitField(modifiers,internalName,descriptor,genericSignature,defaultValue) : redefine(fieldDescription,defaultValue);
 }

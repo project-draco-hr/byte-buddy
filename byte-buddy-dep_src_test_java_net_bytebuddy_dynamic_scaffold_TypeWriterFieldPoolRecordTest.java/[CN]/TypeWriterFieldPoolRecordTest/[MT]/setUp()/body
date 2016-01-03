@@ -3,6 +3,6 @@
   when(fieldDescription.getInternalName()).thenReturn(FOO);
   when(fieldDescription.getDescriptor()).thenReturn(BAR);
   when(fieldDescription.getGenericSignature()).thenReturn(QUX);
-  when(classVisitor.visitField(MODIFIER,FOO,BAR,QUX,DEFAULT_VALUE)).thenReturn(fieldVisitor);
+  when(classVisitor.visitField(MODIFIER,FOO,BAR,QUX,defaultValue)).thenReturn(fieldVisitor);
   when(classVisitor.visitField(MODIFIER,FOO,BAR,QUX,null)).thenReturn(fieldVisitor);
 }

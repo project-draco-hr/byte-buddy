@@ -1,4 +1,4 @@
 {
   TypeWriter.FieldPool.Record record=FieldRegistry.Compiled.NoOp.INSTANCE.target(fieldDescription);
-  assertThat(record.getDefaultValue(),is(FieldDescription.NO_DEFAULT_VALUE));
+  assertThat(record.resolveDefault(defaultValue),is(defaultValue));
 }

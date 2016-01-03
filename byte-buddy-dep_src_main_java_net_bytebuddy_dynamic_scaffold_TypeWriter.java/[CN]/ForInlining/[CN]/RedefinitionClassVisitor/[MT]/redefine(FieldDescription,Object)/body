@@ -1,0 +1,4 @@
+{
+  FieldPool.Record record=fieldPool.target(fieldDescription);
+  return new AttributeObtainingFieldVisitor(super.visitField(fieldDescription.getModifiers(),fieldDescription.getInternalName(),fieldDescription.getDescriptor(),fieldDescription.getGenericSignature(),record.resolveDefault(defaultValue)),record);
+}
