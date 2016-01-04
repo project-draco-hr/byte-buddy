@@ -1,3 +1,21 @@
 {
+  Annotation eagerAnnotation=mock(AuxiliaryType.Eager.class);
+  when(eagerAnnotation.annotationType()).thenReturn((Class)AuxiliaryType.Eager.class);
+  TypeDescription independent=mock(TypeDescription.class), dependent=mock(TypeDescription.class);
+  when(independent.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(eagerAnnotation));
+  when(dependent.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  Map<TypeDescription,byte[]> map=new HashMap<TypeDescription,byte[]>();
+  map.put(independent,QUX);
+  map.put(dependent,BAZ);
+  when(dynamicType.getAuxiliaryTypes()).thenReturn(map);
+  ClassInjector classInjector=mock(ClassInjector.class);
+  when(injectorFactory.resolve()).thenReturn(classInjector);
+  when(classInjector.inject(Collections.singletonMap(independent,QUX))).thenReturn(Collections.<TypeDescription,Class<?>>singletonMap(independent,Foo.class));
+  LoadedTypeInitializer loadedTypeInitializer=mock(LoadedTypeInitializer.class);
+  when(dynamicType.getLoadedTypeInitializers()).thenReturn(Collections.singletonMap(independent,loadedTypeInitializer));
   AgentBuilder.InitializationStrategy.Minimal.INSTANCE.register(dynamicType,classLoader,injectorFactory);
+  verify(classInjector).inject(Collections.singletonMap(independent,QUX));
+  verifyNoMoreInteractions(classInjector);
+  verify(loadedTypeInitializer).onLoad(Foo.class);
+  verifyNoMoreInteractions(loadedTypeInitializer);
 }
