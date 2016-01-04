@@ -1,3 +1,0 @@
-{
-  return new RebaseDynamicTypeBuilder<T>(instrumentedType,fieldRegistry,methodRegistry,ignored,typeAttributeAppender,asmVisitorWrapper,annotationValueFilterFactory,classFileVersion,methodGraphCompiler,auxiliaryTypeNamingStrategy,implementationContextFactory,originalType,classFileLocator,methodNameTransformer);
-}

@@ -1,6 +1,0 @@
-{
-  NamingStrategy.UnnamedType unnamedType=new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,MODIFIERS,classFileVersion);
-  assertThat(unnamedType.getDeclaredInterfaces(),is((Collection<TypeDescription.Generic>)interfaceTypes));
-  assertThat(unnamedType.getClassFileVersion(),is(classFileVersion));
-  assertThat(unnamedType.getSuperClass(),is(superType));
-}

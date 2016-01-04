@@ -1,6 +1,6 @@
 {
   ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(SampleAnnotation.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
-  Class<?> type=createPlain().defineMethod(BAR,String.class,Collections.<Class<?>>emptyList(),Visibility.PUBLIC).intercept(new PreparedMethod()).make().load(classLoader,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=createPlain().defineMethod(BAR,String.class,Visibility.PUBLIC).intercept(new PreparedMethod()).make().load(classLoader,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethods().length,is(2));
   assertThat(type.getDeclaredMethod(FOO,Object.class).getName(),is(FOO));
   assertThat(type.getDeclaredMethod(FOO,Object.class).getReturnType(),CoreMatchers.<Class<?>>is(Object.class));

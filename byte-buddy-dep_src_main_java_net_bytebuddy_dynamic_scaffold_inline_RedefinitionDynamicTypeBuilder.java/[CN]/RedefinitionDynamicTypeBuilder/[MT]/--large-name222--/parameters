@@ -1,0 +1,12 @@
+InstrumentedType.WithFlexibleName instrumentedType
+FieldRegistry fieldRegistry
+MethodRegistry methodRegistry
+TypeAttributeAppender typeAttributeAppender
+AsmVisitorWrapper asmVisitorWrapper
+ClassFileVersion classFileVersion
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+AnnotationValueFilter.Factory annotationValueFilterFactory
+AnnotationRetention annotationRetention
+Implementation.Context.Factory implementationContextFactory
+MethodGraph.Compiler methodGraphCompiler
+ElementMatcher<? super MethodDescription> ignoredMethods

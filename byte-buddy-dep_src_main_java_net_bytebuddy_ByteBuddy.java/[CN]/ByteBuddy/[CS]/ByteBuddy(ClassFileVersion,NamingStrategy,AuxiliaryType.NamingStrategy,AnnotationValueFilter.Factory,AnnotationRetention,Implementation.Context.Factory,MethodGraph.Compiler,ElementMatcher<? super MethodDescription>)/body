@@ -1,0 +1,10 @@
+{
+  this.classFileVersion=classFileVersion;
+  this.namingStrategy=namingStrategy;
+  this.auxiliaryTypeNamingStrategy=auxiliaryTypeNamingStrategy;
+  this.annotationValueFilterFactory=annotationValueFilterFactory;
+  this.annotationRetention=annotationRetention;
+  this.implementationContextFactory=implementationContextFactory;
+  this.ignoredMethods=ignoredMethods;
+  this.methodGraphCompiler=methodGraphCompiler;
+}

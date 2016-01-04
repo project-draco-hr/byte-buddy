@@ -1,4 +1,0 @@
-{
-  assertThat(new ByteBuddy.Definable.Undefined<String>().isDefined(),is(false));
-  assertThat(new ByteBuddy.Definable.Undefined<String>().resolve(BAR),is(BAR));
-}

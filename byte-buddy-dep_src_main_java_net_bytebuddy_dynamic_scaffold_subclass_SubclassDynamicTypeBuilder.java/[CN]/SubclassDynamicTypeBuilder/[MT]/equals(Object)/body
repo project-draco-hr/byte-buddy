@@ -1,3 +1,7 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && constructorStrategy.equals(((SubclassDynamicTypeBuilder<?>)other).constructorStrategy);
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  if (!super.equals(other))   return false;
+  SubclassDynamicTypeBuilder<?> that=(SubclassDynamicTypeBuilder<?>)other;
+  return constructorStrategy.equals(that.constructorStrategy);
 }

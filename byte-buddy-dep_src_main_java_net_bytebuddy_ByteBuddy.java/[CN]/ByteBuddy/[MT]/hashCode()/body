@@ -1,0 +1,11 @@
+{
+  int result=classFileVersion.hashCode();
+  result=31 * result + annotationValueFilterFactory.hashCode();
+  result=31 * result + annotationRetention.hashCode();
+  result=31 * result + namingStrategy.hashCode();
+  result=31 * result + auxiliaryTypeNamingStrategy.hashCode();
+  result=31 * result + implementationContextFactory.hashCode();
+  result=31 * result + methodGraphCompiler.hashCode();
+  result=31 * result + ignoredMethods.hashCode();
+  return result;
+}

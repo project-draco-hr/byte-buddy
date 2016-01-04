@@ -1,0 +1,3 @@
+{
+  return new ForCreation<U>(methodRegistry.getInstrumentedType(),fieldPool,methodRegistry,Collections.<DynamicType>emptyList(),methodRegistry.getInstrumentedMethods(),methodRegistry.getLoadedTypeInitializer(),methodRegistry.getTypeInitializer(),typeAttributeAppender,asmVisitorWrapper,classFileVersion,annotationValueFilterFactory,annotationRetention,auxiliaryTypeNamingStrategy,implementationContextFactory);
+}

@@ -1,3 +1,0 @@
-{
-  assertProperties(new ByteBuddy().method(methodMatcher).intercept(implementation).withAttribute(typeAttributeAppender).withClassFileVersion(classFileVersion).withClassVisitor(asmVisitorWrapper).withDefaultFieldAttributeAppender(fieldAttributeAppenderFactory).withDefaultMethodAttributeAppender(methodAttributeAppenderFactory).withIgnoredMethods(methodMatcher).withImplementing(interfaceType).withMethodGraphCompiler(methodGraphCompiler).withModifiers(modifierContributorForType).withNamingStrategy(namingStrategy).withNamingStrategy(auxiliaryTypeNamingStrategy).withContext(implementationContextFactory));
-}

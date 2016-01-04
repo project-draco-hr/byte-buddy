@@ -1,7 +1,7 @@
 {
   AgentBuilder.InitializationStrategy.Dispatcher dispatcher=new AgentBuilder.InitializationStrategy.SelfInjection.Dispatcher.Split(IDENTIFIER);
   assertThat(dispatcher.apply(builder),is((DynamicType.Builder)appendedBuilder));
-  verify(builder).initialize(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.INSTANCE.identifiedBy(IDENTIFIER));
+  verify(builder).initializer(AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.INSTANCE.identifiedBy(IDENTIFIER));
   verifyNoMoreInteractions(builder);
   verifyZeroInteractions(appendedBuilder);
 }

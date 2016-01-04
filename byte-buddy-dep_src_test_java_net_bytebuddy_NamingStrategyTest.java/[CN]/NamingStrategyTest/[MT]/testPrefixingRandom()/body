@@ -1,7 +1,9 @@
 {
-  when(unnamedType.getSuperClass()).thenReturn(TypeDescription.Generic.OBJECT);
+  when(rawTypeDescription.getName()).thenReturn(BAR);
   NamingStrategy namingStrategy=new NamingStrategy.PrefixingRandom(FOO);
-  assertThat(namingStrategy.name(unnamedType),startsWith(FOO + "." + Object.class.getName()));
-  verify(unnamedType).getSuperClass();
-  verifyNoMoreInteractions(unnamedType);
+  assertThat(namingStrategy.subclass(typeDescription),startsWith(FOO + "." + BAR));
+  verify(typeDescription).asErasure();
+  verifyNoMoreInteractions(typeDescription);
+  verify(rawTypeDescription).getName();
+  verifyNoMoreInteractions(rawTypeDescription);
 }

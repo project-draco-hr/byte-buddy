@@ -1,8 +1,0 @@
-{
-  when(unnamedType.getSuperClass()).thenReturn(genericSuperType);
-  when(rawSuperType.getName()).thenReturn(FOO);
-  NamingStrategy namingStrategy=new NamingStrategy.SuffixingRandom(BAR);
-  assertThat(namingStrategy.name(unnamedType),startsWith(FOO + "$" + BAR+ "$"));
-  verify(unnamedType,atLeast(1)).getSuperClass();
-  verifyNoMoreInteractions(unnamedType);
-}

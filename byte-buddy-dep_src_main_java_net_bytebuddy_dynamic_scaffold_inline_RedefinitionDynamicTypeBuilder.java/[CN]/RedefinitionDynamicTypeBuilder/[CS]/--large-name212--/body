@@ -1,5 +1,0 @@
-{
-  super(instrumentedType,fieldRegistry,methodRegistry,ignored,typeAttributeAppender,asmVisitorWrapper,annotationValueFilterFactory,classFileVersion,methodGraphCompiler,auxiliaryTypeNamingStrategy,implementationContextFactory);
-  this.originalType=originalType;
-  this.classFileLocator=classFileLocator;
-}

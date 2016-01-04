@@ -1,4 +1,0 @@
-{
-  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,Opcodes.ACC_SYNTHETIC,classFileVersion).getSyntheticState(),is(SyntheticState.SYNTHETIC));
-  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,0,classFileVersion).getSyntheticState(),is(SyntheticState.PLAIN));
-}

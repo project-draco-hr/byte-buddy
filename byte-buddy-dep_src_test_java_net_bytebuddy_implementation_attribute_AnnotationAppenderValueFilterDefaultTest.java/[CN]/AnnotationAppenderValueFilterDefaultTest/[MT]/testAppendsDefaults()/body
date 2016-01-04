@@ -1,7 +1,7 @@
 {
   AnnotationDescription annotationDescription=mock(AnnotationDescription.class);
   MethodDescription.InDefinedShape methodDescription=mock(MethodDescription.InDefinedShape.class);
-  assertThat(AnnotationAppender.ValueFilter.Default.APPEND_DEFAULTS.isRelevant(annotationDescription,methodDescription),is(true));
+  assertThat(AnnotationValueFilter.Default.APPEND_DEFAULTS.isRelevant(annotationDescription,methodDescription),is(true));
   verifyZeroInteractions(annotationDescription);
   verifyZeroInteractions(methodDescription);
 }

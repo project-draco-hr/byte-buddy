@@ -1,8 +1,0 @@
-{
-  when(baseNameResolver.resolve(unnamedType)).thenReturn(JAVA_QUX);
-  NamingStrategy namingStrategy=new NamingStrategy.SuffixingRandom(FOO,baseNameResolver,BAR);
-  assertThat(namingStrategy.name(unnamedType),startsWith(BAR + "." + JAVA_QUX+ "$"+ FOO+ "$"));
-  verifyZeroInteractions(unnamedType);
-  verify(baseNameResolver).resolve(unnamedType);
-  verifyNoMoreInteractions(baseNameResolver);
-}

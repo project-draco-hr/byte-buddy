@@ -1,5 +1,5 @@
 {
   when(injectedCode.isDefined()).thenReturn(true);
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
-  new Implementation.Context.Disabled(instrumentedType).drain(mock(ClassVisitor.class),methodPool,injectedCode,mock(AnnotationAppender.ValueFilter.Factory.class));
+  new Implementation.Context.Disabled(instrumentedType).drain(mock(ClassVisitor.class),methodPool,injectedCode,mock(AnnotationValueFilter.Factory.class));
 }

@@ -1,4 +1,4 @@
 {
-  Class<?> type=createPlain().ignoreMethods(named(FOO)).defineMethod(FOO,String.class,Collections.<Class<?>>emptyList(),Visibility.PUBLIC).intercept(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=createPlain().ignore(named(FOO)).defineMethod(FOO,String.class,Visibility.PUBLIC).intercept(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),is((Object)FOO));
 }

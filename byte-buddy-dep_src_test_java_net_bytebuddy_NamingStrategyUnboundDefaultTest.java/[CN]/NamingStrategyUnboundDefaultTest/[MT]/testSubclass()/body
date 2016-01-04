@@ -1,3 +1,0 @@
-{
-  assertThat(new NamingStrategy.Unbound.Default(FOO).subclass(typeDescription),is((NamingStrategy)new NamingStrategy.SuffixingRandom(FOO,new NamingStrategy.SuffixingRandom.BaseNameResolver.ForGivenType(typeDescription))));
-}

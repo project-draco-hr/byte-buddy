@@ -1,3 +1,3 @@
 {
-  return new RebaseDynamicTypeBuilder<T>(InstrumentedType.Default.represent(typeDescription),ignoredMethods,annotationValueFilterFactory,classFileVersion,methodGraphCompiler,auxiliaryTypeNamingStrategy,implementationContextFactory,typeDescription,classFileLocator,methodNameTransformer);
+  return new RebaseDynamicTypeBuilder<T>(InstrumentedType.Default.represent(typeDescription),classFileVersion,auxiliaryTypeNamingStrategy,annotationValueFilterFactory,annotationRetention,implementationContextFactory,methodGraphCompiler,ignoredMethods,typeDescription,classFileLocator,methodNameTransformer);
 }

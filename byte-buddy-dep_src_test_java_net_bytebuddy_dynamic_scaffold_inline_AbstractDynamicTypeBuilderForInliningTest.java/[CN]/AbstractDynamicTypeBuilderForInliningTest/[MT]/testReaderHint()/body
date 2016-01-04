@@ -13,7 +13,7 @@
 );
   when(asmVisitorWrapper.mergeWriter(0)).thenReturn(ClassWriter.COMPUTE_MAXS);
   when(asmVisitorWrapper.mergeReader(0)).thenReturn(ClassReader.EXPAND_FRAMES);
-  Class<?> type=create(StackMapFrames.class).classVisitor(asmVisitorWrapper).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=create(StackMapFrames.class).visit(asmVisitorWrapper).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),is((Object)BAR));
   verify(asmVisitorWrapper).mergeWriter(0);
   verify(asmVisitorWrapper).mergeReader(0);

@@ -9,6 +9,7 @@
 ).create(new ObjectPropertyAssertion.Creator<TypeDescription>(){
     @Override public TypeDescription create(){
       TypeDescription rawTypeDescription=mock(TypeDescription.class);
+      when(rawTypeDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
       TypeDescription.Generic typeDescription=mock(TypeDescription.Generic.class);
       when(typeDescription.asErasure()).thenReturn(rawTypeDescription);
       when(typeDescription.asGenericType()).thenReturn(typeDescription);

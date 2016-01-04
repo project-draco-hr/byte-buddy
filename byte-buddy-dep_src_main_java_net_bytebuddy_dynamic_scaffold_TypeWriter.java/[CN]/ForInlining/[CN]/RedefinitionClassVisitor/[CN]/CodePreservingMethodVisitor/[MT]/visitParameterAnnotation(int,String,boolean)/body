@@ -1,0 +1,3 @@
+{
+  return annotationRetention.isEnabled() ? super.visitParameterAnnotation(index,descriptor,visible) : IGNORE_ANNOTATION;
+}

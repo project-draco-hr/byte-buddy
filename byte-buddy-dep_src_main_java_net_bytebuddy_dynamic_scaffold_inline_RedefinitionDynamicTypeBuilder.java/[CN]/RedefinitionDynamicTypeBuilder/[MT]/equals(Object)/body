@@ -1,0 +1,7 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  if (!super.equals(other))   return false;
+  RedefinitionDynamicTypeBuilder<?> that=(RedefinitionDynamicTypeBuilder<?>)other;
+  return originalType.equals(that.originalType) && classFileLocator.equals(that.classFileLocator);
+}

@@ -1,5 +1,5 @@
 {
-  when(builder.initialize((any(ByteCodeAppender.class)))).thenReturn((DynamicType.Builder)appendedBuilder);
+  when(builder.initializer((any(ByteCodeAppender.class)))).thenReturn((DynamicType.Builder)appendedBuilder);
   when(injectorFactory.resolve()).thenReturn(classInjector);
   when(dynamicType.getTypeDescription()).thenReturn(instrumented);
   Map<TypeDescription,byte[]> auxiliaryTypes=new HashMap<TypeDescription,byte[]>();

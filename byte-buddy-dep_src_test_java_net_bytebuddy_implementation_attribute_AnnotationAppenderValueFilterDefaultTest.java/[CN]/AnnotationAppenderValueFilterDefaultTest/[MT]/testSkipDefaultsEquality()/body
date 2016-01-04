@@ -2,7 +2,7 @@
   Object value=new Object();
   when(methodDescription.getDefaultValue()).thenReturn(value);
   when(annotationDescription.getValue(methodDescription)).thenReturn(value);
-  assertThat(AnnotationAppender.ValueFilter.Default.SKIP_DEFAULTS.isRelevant(annotationDescription,methodDescription),is(false));
+  assertThat(AnnotationValueFilter.Default.SKIP_DEFAULTS.isRelevant(annotationDescription,methodDescription),is(false));
   verify(annotationDescription).getValue(methodDescription);
   verifyNoMoreInteractions(annotationDescription);
   verify(methodDescription).getDefaultValue();
