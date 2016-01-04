@@ -1,0 +1,3 @@
+{
+  assertThat(AuxiliaryType.SignatureRelevant.class.getAnnotation(Target.class).value(),is(new ElementType[]{ElementType.TYPE}));
+}
