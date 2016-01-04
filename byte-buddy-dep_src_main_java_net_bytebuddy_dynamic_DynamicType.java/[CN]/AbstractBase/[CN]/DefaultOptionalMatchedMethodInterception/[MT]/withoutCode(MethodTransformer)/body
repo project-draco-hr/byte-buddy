@@ -1,3 +1,0 @@
-{
-  return materialize().method(isDeclaredBy(anyOf(additionalInterfaceTypes))).withoutCode(methodTransformer);
-}

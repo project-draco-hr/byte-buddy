@@ -1,3 +1,0 @@
-{
-  return annotateParameter(parameterIndex,new AnnotationList.Explicit(Arrays.asList(annotation)));
-}

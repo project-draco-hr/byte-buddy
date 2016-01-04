@@ -1,3 +1,0 @@
-{
-  return defineField(name,fieldType,ModifierContributor.Resolver.of(modifier).resolve());
-}

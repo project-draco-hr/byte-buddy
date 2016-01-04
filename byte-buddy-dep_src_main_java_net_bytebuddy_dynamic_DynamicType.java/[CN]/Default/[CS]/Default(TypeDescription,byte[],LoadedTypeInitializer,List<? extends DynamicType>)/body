@@ -1,6 +1,0 @@
-{
-  this.typeDescription=typeDescription;
-  this.binaryRepresentation=binaryRepresentation;
-  this.loadedTypeInitializer=loadedTypeInitializer;
-  this.auxiliaryTypes=auxiliaryTypes;
-}

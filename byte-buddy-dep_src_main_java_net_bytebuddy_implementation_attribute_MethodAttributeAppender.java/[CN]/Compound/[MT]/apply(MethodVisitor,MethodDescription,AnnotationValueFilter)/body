@@ -1,0 +1,5 @@
+{
+  for (  MethodAttributeAppender methodAttributeAppender : methodAttributeAppenders) {
+    methodAttributeAppender.apply(methodVisitor,methodDescription,annotationValueFilter);
+  }
+}

@@ -1,5 +1,0 @@
-TypeDescription typeDescription
-byte[] typeByte
-LoadedTypeInitializer loadedTypeInitializer
-List<? extends DynamicType> auxiliaryTypes
-Map<TypeDescription,Class<?>> loadedTypes

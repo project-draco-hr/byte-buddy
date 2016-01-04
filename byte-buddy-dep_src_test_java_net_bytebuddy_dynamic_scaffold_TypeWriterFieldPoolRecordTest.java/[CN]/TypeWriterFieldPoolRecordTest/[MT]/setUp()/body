@@ -5,5 +5,5 @@
   when(fieldDescription.getGenericSignature()).thenReturn(QUX);
   when(classVisitor.visitField(MODIFIER,FOO,BAR,QUX,defaultValue)).thenReturn(fieldVisitor);
   when(classVisitor.visitField(MODIFIER,FOO,BAR,QUX,null)).thenReturn(fieldVisitor);
-  when(valueFilterFactory.on(fieldDescription)).thenReturn(valueFilter);
+  when(annotationValueFilterFactory.on(fieldDescription)).thenReturn(valueFilter);
 }

@@ -1,3 +1,0 @@
-{
-  return new ByteBuddy(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,ignoredMethods,asmVisitorWrapper,methodRegistry,new Definable.Defined<Integer>(ModifierContributor.Resolver.of(modifierContributor).resolve()),typeAttributeAppender,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory);
-}

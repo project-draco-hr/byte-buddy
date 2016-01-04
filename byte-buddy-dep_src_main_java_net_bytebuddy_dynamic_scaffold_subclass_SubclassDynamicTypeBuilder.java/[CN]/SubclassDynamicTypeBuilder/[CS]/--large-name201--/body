@@ -1,5 +1,0 @@
-{
-  super(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,typeInitializer,interfaceTypes,modifiers,attributeAppender,ignoredMethods,asmVisitorWrapper,fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
-  this.superType=superType;
-  this.constructorStrategy=constructorStrategy;
-}

@@ -1,3 +1,0 @@
-{
-  return materialize().defineField(name,fieldType,modifiers);
-}

@@ -1,3 +1,0 @@
-{
-  return defineConstructor(parameterTypes,ModifierContributor.Resolver.of(modifier).resolve());
-}

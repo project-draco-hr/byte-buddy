@@ -1,3 +1,0 @@
-{
-  return "ByteBuddy.MatchedMethodInterception{" + "methodMatcher=" + methodMatcher + ", byteBuddy="+ ByteBuddy.this.toString()+ '}';
-}

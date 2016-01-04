@@ -1,3 +1,0 @@
-{
-  return defineMethod(name,TypeDefinition.Sort.describe(returnType),new TypeList.Generic.ForLoadedTypes(parameterTypes),modifiers);
-}

@@ -1,9 +1,8 @@
 {
-  if (instrumentedType.isInterface()) {
-    return instrumentedType;
-  }
-  for (  MethodDescription.Token token : constructorStrategy.extractConstructors(instrumentedType)) {
-    instrumentedType=instrumentedType.withMethod(token);
+  if (!instrumentedType.isInterface()) {
+    for (    MethodDescription.Token token : constructorStrategy.extractConstructors(instrumentedType)) {
+      instrumentedType=instrumentedType.withMethod(token);
+    }
   }
   return instrumentedType;
 }

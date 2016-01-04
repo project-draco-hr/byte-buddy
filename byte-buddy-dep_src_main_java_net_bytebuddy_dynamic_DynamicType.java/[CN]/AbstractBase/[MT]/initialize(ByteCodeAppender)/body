@@ -1,3 +1,0 @@
-{
-  return materialize(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,typeInitializer.expandWith(byteCodeAppender),interfaceTypes,modifiers,attributeAppender,ignoredMethods,asmVisitorWrapper,fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
-}

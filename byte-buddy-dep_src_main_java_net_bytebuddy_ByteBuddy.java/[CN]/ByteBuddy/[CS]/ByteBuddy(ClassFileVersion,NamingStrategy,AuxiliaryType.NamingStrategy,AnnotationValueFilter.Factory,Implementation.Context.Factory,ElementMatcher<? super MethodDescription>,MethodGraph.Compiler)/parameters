@@ -1,0 +1,7 @@
+ClassFileVersion classFileVersion
+NamingStrategy namingStrategy
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+AnnotationValueFilter.Factory annotationValueFilterFactory
+Implementation.Context.Factory implementationContextFactory
+ElementMatcher<? super MethodDescription> ignoredMethods
+MethodGraph.Compiler methodGraphCompiler

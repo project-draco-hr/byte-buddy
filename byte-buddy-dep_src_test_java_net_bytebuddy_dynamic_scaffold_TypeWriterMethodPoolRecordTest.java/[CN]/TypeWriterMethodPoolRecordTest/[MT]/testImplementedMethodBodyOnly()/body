@@ -2,7 +2,7 @@
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
   TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody(methodDescription,byteCodeAppender,methodAttributeAppender);
-  record.applyBody(methodVisitor,implementationContext,valueFilterFactory);
+  record.applyBody(methodVisitor,implementationContext,annotationValueFilterFactory);
   verify(methodVisitor).visitCode();
   verify(methodVisitor).visitMaxs(ONE,TWO);
   verifyZeroInteractions(implementationContext);

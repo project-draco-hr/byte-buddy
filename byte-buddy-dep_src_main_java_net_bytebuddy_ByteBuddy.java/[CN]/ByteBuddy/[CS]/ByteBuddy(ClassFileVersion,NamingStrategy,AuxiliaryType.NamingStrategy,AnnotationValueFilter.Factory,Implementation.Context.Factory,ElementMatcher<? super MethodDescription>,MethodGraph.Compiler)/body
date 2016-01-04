@@ -1,0 +1,9 @@
+{
+  this.ignoredMethods=ignoredMethods;
+  this.classFileVersion=classFileVersion;
+  this.namingStrategy=namingStrategy;
+  this.auxiliaryTypeNamingStrategy=auxiliaryTypeNamingStrategy;
+  this.annotationValueFilterFactory=annotationValueFilterFactory;
+  this.implementationContextFactory=implementationContextFactory;
+  this.methodGraphCompiler=methodGraphCompiler;
+}

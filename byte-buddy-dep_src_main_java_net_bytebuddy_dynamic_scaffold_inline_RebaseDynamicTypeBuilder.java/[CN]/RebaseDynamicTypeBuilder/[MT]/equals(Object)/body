@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && originalType.equals(((RebaseDynamicTypeBuilder<?>)other).originalType)&& classFileLocator.equals(((RebaseDynamicTypeBuilder<?>)other).classFileLocator)&& methodNameTransformer.equals(((RebaseDynamicTypeBuilder<?>)other).methodNameTransformer);
-}

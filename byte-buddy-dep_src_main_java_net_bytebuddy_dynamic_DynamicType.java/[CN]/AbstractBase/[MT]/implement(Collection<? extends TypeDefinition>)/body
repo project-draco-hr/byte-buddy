@@ -1,3 +1,0 @@
-{
-  return new DefaultOptionalMatchedMethodInterception(new TypeList.Generic.Explicit(toList(interfaceTypes)));
-}

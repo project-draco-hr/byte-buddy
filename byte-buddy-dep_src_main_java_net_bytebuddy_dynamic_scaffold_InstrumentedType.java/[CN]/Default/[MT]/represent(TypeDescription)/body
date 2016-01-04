@@ -1,0 +1,4 @@
+{
+  Generic.Visitor<TypeDescription.Generic> visitor=new Generic.Visitor.Substitutor.ForDetachment(named(typeDescription.getName()));
+  return new Default(typeDescription.getName(),typeDescription.getModifiers(),typeDescription.getSuperType(),typeDescription.getTypeVariables().asSymbols(visitor),typeDescription.getInterfaces().accept(visitor),typeDescription.getDeclaredFields().asTokenList(named(typeDescription.getName())),typeDescription.getDeclaredMethods().asTokenList(named(typeDescription.getName())),typeDescription.getDeclaredAnnotations(),TypeInitializer.None.INSTANCE,LoadedTypeInitializer.NoOp.INSTANCE,typeDescription.getDeclaringType(),typeDescription.getEnclosingMethod(),typeDescription.getEnclosingType(),typeDescription.getDeclaredTypes(),typeDescription.isMemberClass(),typeDescription.isAnonymousClass(),typeDescription.isLocalClass());
+}

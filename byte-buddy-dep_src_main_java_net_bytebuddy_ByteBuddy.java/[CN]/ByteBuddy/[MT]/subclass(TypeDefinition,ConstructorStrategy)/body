@@ -1,12 +1,16 @@
 {
-  TypeDescription.Generic actualSuperType=superType.asGenericType();
-  List<TypeDescription.Generic> interfaceTypes=this.interfaceTypes;
+  TypeDescription.Generic actualSuperType;
+  List<TypeDescription.Generic> interfaceTypes;
   if (superType.isPrimitive() || superType.isArray() || superType.asErasure().isFinal()) {
     throw new IllegalArgumentException("Cannot subclass primitive, array or final types: " + superType);
   }
  else   if (superType.asErasure().isInterface()) {
+    interfaceTypes=Collections.singletonList(superType.asGenericType());
     actualSuperType=TypeDescription.Generic.OBJECT;
-    interfaceTypes=CompoundList.of(interfaceTypes,superType.asGenericType());
   }
-  return new SubclassDynamicTypeBuilder<T>(classFileVersion,namingStrategy.subclass(superType.asErasure()),auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,modifiers.resolve(superType.asErasure().getModifiers() & ~TypeManifestation.ANNOTATION.getMask()),typeAttributeAppender,ignoredMethods,asmVisitorWrapper,new FieldRegistry.Default(),methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,actualSuperType,constructorStrategy);
+ else {
+    interfaceTypes=Collections.emptyList();
+    actualSuperType=superType.asGenericType();
+  }
+  return new SubclassDynamicTypeBuilder<T>(InstrumentedType.Default.subclass(namingStrategy.subclass(actualSuperType),interfaceTypes.isEmpty() ? ModifierContributor.Resolver.of(Visibility.PUBLIC,TypeManifestation.INTERFACE).resolve(actualSuperType.asErasure().getModifiers()) : ModifierContributor.Resolver.of(Visibility.PUBLIC).resolve(actualSuperType.asErasure().getModifiers()),actualSuperType).withInterfaces(interfaceTypes),ignoredMethods,annotationValueFilterFactory,classFileVersion,methodGraphCompiler,auxiliaryTypeNamingStrategy,implementationContextFactory,constructorStrategy);
 }

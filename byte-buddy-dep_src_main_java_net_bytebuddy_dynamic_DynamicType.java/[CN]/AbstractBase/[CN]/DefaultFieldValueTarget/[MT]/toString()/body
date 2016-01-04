@@ -1,3 +1,0 @@
-{
-  return "DynamicType.Builder.AbstractBase.DefaultFieldValueTarget{" + "base=" + AbstractBase.this + ", token="+ token+ ", attributeAppenderFactory="+ attributeAppenderFactory+ ", defaultValue="+ defaultValue+ '}';
-}

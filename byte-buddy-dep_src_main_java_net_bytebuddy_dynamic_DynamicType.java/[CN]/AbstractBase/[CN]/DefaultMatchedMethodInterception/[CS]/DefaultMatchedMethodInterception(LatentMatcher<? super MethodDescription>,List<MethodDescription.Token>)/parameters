@@ -1,2 +1,0 @@
-LatentMatcher<? super MethodDescription> methodMatcher
-List<MethodDescription.Token> methodTokens

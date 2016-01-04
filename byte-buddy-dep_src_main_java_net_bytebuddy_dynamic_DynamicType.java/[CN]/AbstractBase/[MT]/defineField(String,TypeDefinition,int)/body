@@ -1,3 +1,0 @@
-{
-  return new DefaultFieldValueTarget(new FieldDescription.Token(name,modifiers,fieldType.asGenericType(),Collections.<AnnotationDescription>emptyList()),defaultFieldAttributeAppenderFactory);
-}

@@ -1,5 +1,5 @@
 {
   Map<String,TypeList.Generic> typeVariables=new LinkedHashMap<String,TypeList.Generic>(this.typeVariables);
   typeVariables.put(symbol,new TypeList.Generic.Explicit(bound));
-  return new Default(name,modifiers,typeVariables,superType,interfaceTypes,fieldTokens,methodTokens,annotationDescriptions,typeInitializer,loadedTypeInitializer);
+  return new Default(name,modifiers,superType,typeVariables,interfaceTypes,fieldTokens,methodTokens,annotationDescriptions,typeInitializer,loadedTypeInitializer,declaringType,enclosingMethod,enclosingType,declaredTypes,memberClass,anonymousClass,localClass);
 }

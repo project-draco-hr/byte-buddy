@@ -1,5 +1,0 @@
-{
-  this.token=token;
-  this.attributeAppenderFactory=attributeAppenderFactory;
-  this.defaultValue=defaultValue;
-}

@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  ByteBuddy byteBuddy=(ByteBuddy)other;
-  return classFileVersion.equals(byteBuddy.classFileVersion) && asmVisitorWrapper.equals(byteBuddy.asmVisitorWrapper) && defaultFieldAttributeAppenderFactory.equals(byteBuddy.defaultFieldAttributeAppenderFactory)&& defaultMethodAttributeAppenderFactory.equals(byteBuddy.defaultMethodAttributeAppenderFactory)&& ignoredMethods.equals(byteBuddy.ignoredMethods)&& interfaceTypes.equals(byteBuddy.interfaceTypes)&& methodGraphCompiler.equals(byteBuddy.methodGraphCompiler)&& methodRegistry.equals(byteBuddy.methodRegistry)&& modifiers.equals(byteBuddy.modifiers)&& namingStrategy.equals(byteBuddy.namingStrategy)&& auxiliaryTypeNamingStrategy.equals(byteBuddy.auxiliaryTypeNamingStrategy)&& implementationContextFactory.equals(byteBuddy.implementationContextFactory)&& typeAttributeAppender.equals(byteBuddy.typeAttributeAppender);
-}

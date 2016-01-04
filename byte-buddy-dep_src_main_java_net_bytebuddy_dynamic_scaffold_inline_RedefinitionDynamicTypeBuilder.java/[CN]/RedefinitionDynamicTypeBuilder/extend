@@ -1,1 +1,1 @@
-DynamicType.Builder.AbstractBase<T>
+DynamicType.Builder.AbstractBase.Adapter<T>

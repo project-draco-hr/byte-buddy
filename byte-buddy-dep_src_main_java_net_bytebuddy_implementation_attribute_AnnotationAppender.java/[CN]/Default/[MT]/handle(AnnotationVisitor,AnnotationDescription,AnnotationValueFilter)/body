@@ -1,0 +1,8 @@
+{
+  for (  MethodDescription.InDefinedShape methodDescription : annotation.getAnnotationType().getDeclaredMethods()) {
+    if (annotationValueFilter.isRelevant(annotation,methodDescription)) {
+      apply(annotationVisitor,methodDescription.getReturnType().asErasure(),methodDescription.getName(),annotation.getValue(methodDescription));
+    }
+  }
+  annotationVisitor.visitEnd();
+}

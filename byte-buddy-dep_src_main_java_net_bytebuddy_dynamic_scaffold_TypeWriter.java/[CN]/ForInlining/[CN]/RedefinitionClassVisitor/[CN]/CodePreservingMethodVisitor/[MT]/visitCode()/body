@@ -1,5 +1,5 @@
 {
-  record.applyBody(actualMethodVisitor,implementationContext,valueFilterFactory);
+  record.applyBody(actualMethodVisitor,implementationContext,annotationValueFilterFactory);
   actualMethodVisitor.visitEnd();
   mv=resolution.isRebased() ? cv.visitMethod(resolution.getResolvedMethod().getModifiers(),resolution.getResolvedMethod().getInternalName(),resolution.getResolvedMethod().getDescriptor(),resolution.getResolvedMethod().getGenericSignature(),resolution.getResolvedMethod().getExceptionTypes().asErasures().toInternalNames()) : IGNORE_METHOD;
   super.visitCode();

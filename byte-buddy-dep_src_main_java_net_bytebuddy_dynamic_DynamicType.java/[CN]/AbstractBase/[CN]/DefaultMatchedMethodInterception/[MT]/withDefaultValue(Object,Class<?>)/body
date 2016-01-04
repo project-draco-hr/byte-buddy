@@ -1,3 +1,0 @@
-{
-  return withDefaultValue(value,type,MethodTransformer.NoOp.INSTANCE);
-}

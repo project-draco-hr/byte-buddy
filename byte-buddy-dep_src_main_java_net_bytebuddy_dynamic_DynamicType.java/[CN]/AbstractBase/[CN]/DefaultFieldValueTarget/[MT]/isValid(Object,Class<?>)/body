@@ -1,6 +1,0 @@
-{
-  if (!token.getType().represents(legalType)) {
-    throw new IllegalStateException(defaultValue + " is not of the required type " + legalType);
-  }
-  return defaultValue;
-}

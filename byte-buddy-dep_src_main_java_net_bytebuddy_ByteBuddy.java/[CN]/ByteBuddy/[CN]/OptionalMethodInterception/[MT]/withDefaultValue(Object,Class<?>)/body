@@ -1,3 +1,0 @@
-{
-  return new MatchedMethodInterception(methodMatcher).withDefaultValue(value,type);
-}

@@ -1,4 +1,0 @@
-{
-  this.methodMatcher=methodMatcher;
-  this.methodTokens=methodTokens;
-}

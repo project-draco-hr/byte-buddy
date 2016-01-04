@@ -1,3 +1,0 @@
-{
-  return 31 * AbstractBase.this.hashCode() + token.hashCode();
-}

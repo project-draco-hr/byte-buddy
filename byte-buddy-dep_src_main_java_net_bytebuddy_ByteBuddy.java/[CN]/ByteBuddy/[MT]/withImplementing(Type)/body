@@ -1,3 +1,0 @@
-{
-  return withImplementing(new TypeList.Generic.ForLoadedTypes(type));
-}

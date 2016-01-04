@@ -1,0 +1,3 @@
+{
+  return new ByteBuddy(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,annotationValueFilterFactory,implementationContextFactory,ignoredMethods,methodGraphCompiler);
+}

@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && originalType.equals(((RedefinitionDynamicTypeBuilder<?>)other).originalType)&& classFileLocator.equals(((RedefinitionDynamicTypeBuilder<?>)other).classFileLocator);
-}

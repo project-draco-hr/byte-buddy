@@ -1,6 +1,6 @@
 {
   if (valueType.isAnnotation()) {
-    handle(annotationVisitor.visitAnnotation(name,valueType.getDescriptor()),(AnnotationDescription)value,ValueFilter.Default.APPEND_DEFAULTS);
+    handle(annotationVisitor.visitAnnotation(name,valueType.getDescriptor()),(AnnotationDescription)value,AnnotationValueFilter.Default.APPEND_DEFAULTS);
   }
  else   if (valueType.isEnum()) {
     annotationVisitor.visitEnum(name,valueType.getDescriptor(),((EnumerationDescription)value).getValue());

@@ -1,3 +1,0 @@
-{
-  return new Default.Loaded<T>(typeDescription,binaryRepresentation,loadedTypeInitializer,auxiliaryTypes,initialize(classLoadingStrategy.load(classLoader,getAllTypes())));
-}

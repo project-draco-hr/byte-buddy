@@ -1,3 +1,0 @@
-{
-  return new ByteBuddy(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,ignoredMethods,new AsmVisitorWrapper.Compound(asmVisitorWrapper,this.asmVisitorWrapper),methodRegistry,modifiers,typeAttributeAppender,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory);
-}

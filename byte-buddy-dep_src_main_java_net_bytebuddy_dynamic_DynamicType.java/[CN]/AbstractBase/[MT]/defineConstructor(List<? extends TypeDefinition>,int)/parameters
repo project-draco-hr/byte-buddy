@@ -1,2 +1,0 @@
-List<? extends TypeDefinition> parameterTypes
-int modifiers

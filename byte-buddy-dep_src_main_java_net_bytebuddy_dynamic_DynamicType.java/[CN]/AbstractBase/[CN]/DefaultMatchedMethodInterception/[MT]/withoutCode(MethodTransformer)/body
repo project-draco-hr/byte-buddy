@@ -1,3 +1,0 @@
-{
-  return new DefaultMethodAnnotationTarget(methodMatcher,methodTokens,MethodRegistry.Handler.ForAbstractMethod.INSTANCE,defaultMethodAttributeAppenderFactory,methodTransformer);
-}

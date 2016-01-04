@@ -1,9 +1,9 @@
 {
   Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion);
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.IMPLEMENTED);
-  implementationContext.drain(classVisitor,methodPool,injectedCode,valueFilterFactory);
+  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory);
   verify(record).getSort();
-  verify(record).apply(classVisitor,implementationContext,valueFilterFactory);
+  verify(record).apply(classVisitor,implementationContext,annotationValueFilterFactory);
   verifyNoMoreInteractions(record);
   verifyZeroInteractions(classVisitor);
   verify(typeInitializer,atLeast(1)).isDefined();

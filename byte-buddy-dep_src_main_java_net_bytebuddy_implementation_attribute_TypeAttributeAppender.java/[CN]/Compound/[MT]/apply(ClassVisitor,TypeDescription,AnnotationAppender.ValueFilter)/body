@@ -1,5 +1,0 @@
-{
-  for (  TypeAttributeAppender typeAttributeAppender : typeAttributeAppenders) {
-    typeAttributeAppender.apply(classVisitor,instrumentedType,valueFilter);
-  }
-}

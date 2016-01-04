@@ -1,3 +1,0 @@
-{
-  return new DefaultFieldValueTarget(token,new FieldAttributeAppender.Factory.Compound(this.attributeAppenderFactory,attributeAppenderFactory));
-}

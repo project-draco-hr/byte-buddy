@@ -1,3 +1,0 @@
-{
-  return new ByteBuddy(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,ignoredMethods,asmVisitorWrapper,methodRegistry,modifiers,new TypeAttributeAppender.Explicit(new ArrayList<AnnotationDescription>(annotations)),methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory);
-}

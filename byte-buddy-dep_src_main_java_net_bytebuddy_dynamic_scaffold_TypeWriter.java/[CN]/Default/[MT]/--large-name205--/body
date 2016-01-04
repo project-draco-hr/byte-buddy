@@ -1,0 +1,3 @@
+{
+  return new ForInlining<U>(methodRegistry.getInstrumentedType(),methodRegistry.getLoadedTypeInitializer(),methodRegistry.getTypeInitializer(),methodRebaseResolver.getAuxiliaryTypes(),classFileVersion,auxiliaryTypeNamingStrategy,implementationContextFactory,asmVisitorWrapper,attributeAppender,fieldPool,methodRegistry,methodRegistry.getInstrumentedMethods(),classFileLocator,originalType,methodRebaseResolver,annotationValueFilterFactory);
+}

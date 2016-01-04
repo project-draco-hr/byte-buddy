@@ -1,6 +1,6 @@
 {
-  new TypeWriter.MethodPool.Record.AccessBridgeWrapper(delegate,instrumentedType,bridgeTarget,Collections.singleton(typeToken),methodAttributeAppender).applyBody(methodVisitor,implementationContext,valueFilterFactory);
-  verify(delegate).applyBody(methodVisitor,implementationContext,valueFilterFactory);
+  new TypeWriter.MethodPool.Record.AccessBridgeWrapper(delegate,instrumentedType,bridgeTarget,Collections.singleton(typeToken),methodAttributeAppender).applyBody(methodVisitor,implementationContext,annotationValueFilterFactory);
+  verify(delegate).applyBody(methodVisitor,implementationContext,annotationValueFilterFactory);
   verifyNoMoreInteractions(delegate);
   verifyZeroInteractions(methodVisitor);
 }

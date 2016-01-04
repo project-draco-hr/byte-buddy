@@ -1,4 +1,0 @@
-{
-  super(typeDescription,typeByte,loadedTypeInitializer,auxiliaryTypes);
-  this.loadedTypes=loadedTypes;
-}

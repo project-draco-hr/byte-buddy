@@ -1,3 +1,0 @@
-{
-  return materialize(new MethodDescription.Token(token.getName(),token.getModifiers(),Collections.<String,TypeList.Generic>emptyMap(),token.getReturnType(),token.getParameterTokens(),new TypeList.Generic.Explicit(toList(exceptionTypes)),Collections.<AnnotationDescription>emptyList(),null));
-}

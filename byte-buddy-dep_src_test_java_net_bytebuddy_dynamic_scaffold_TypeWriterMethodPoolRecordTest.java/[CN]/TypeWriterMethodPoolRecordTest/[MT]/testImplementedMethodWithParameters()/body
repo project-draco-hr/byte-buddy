@@ -3,7 +3,7 @@
   when(parameterDescription.isNamed()).thenReturn(true);
   TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody(methodDescription,byteCodeAppender,methodAttributeAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.IMPLEMENTED));
-  record.apply(classVisitor,implementationContext,valueFilterFactory);
+  record.apply(classVisitor,implementationContext,annotationValueFilterFactory);
   verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});
   verifyNoMoreInteractions(classVisitor);
   verify(methodVisitor).visitParameter(FOO,MODIFIERS);

@@ -1,3 +1,3 @@
 {
-  return new Default(name,modifiers,typeVariables,superType,CompoundList.of(this.interfaceTypes,interfaceTypes),fieldTokens,methodTokens,annotationDescriptions,typeInitializer,loadedTypeInitializer);
+  return new Default(name,modifiers,superType,typeVariables,CompoundList.of(this.interfaceTypes,interfaceTypes),fieldTokens,methodTokens,annotationDescriptions,typeInitializer,loadedTypeInitializer,declaringType,enclosingMethod,enclosingType,declaredTypes,memberClass,anonymousClass,localClass);
 }

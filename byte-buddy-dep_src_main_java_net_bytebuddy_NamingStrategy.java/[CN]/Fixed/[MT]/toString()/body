@@ -1,3 +1,0 @@
-{
-  return "NamingStrategy.Fixed{name='" + name + '\''+ '}';
-}

@@ -1,0 +1,10 @@
+InstrumentedType.WithFlexibleName instrumentedType
+ElementMatcher<? super MethodDescription> ignored
+AnnotationValueFilter.Factory annotationValueFilterFactory
+ClassFileVersion classFileVersion
+MethodGraph.Compiler methodGraphCompiler
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+Implementation.Context.Factory implementationContextFactory
+TypeDescription originalType
+ClassFileLocator classFileLocator
+MethodRebaseResolver.MethodNameTransformer methodNameTransformer

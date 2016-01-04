@@ -1,3 +1,0 @@
-{
-  return "DynamicType.Default.Loaded{" + "typeDescription='" + typeDescription + '\''+ ", binaryRepresentation=<"+ binaryRepresentation.length+ " bytes>"+ ", typeInitializer="+ loadedTypeInitializer+ ", auxiliaryTypes="+ auxiliaryTypes+ ", loadedTypes="+ loadedTypes+ '}';
-}

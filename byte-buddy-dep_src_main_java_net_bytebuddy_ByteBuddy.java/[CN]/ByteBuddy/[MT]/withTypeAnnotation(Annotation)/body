@@ -1,3 +1,0 @@
-{
-  return withTypeAnnotation(new AnnotationList.ForLoadedAnnotation(annotation));
-}

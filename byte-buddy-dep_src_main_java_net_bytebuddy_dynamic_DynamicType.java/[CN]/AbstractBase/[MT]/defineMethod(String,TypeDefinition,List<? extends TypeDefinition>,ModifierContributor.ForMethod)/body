@@ -1,3 +1,0 @@
-{
-  return new DefaultExceptionDeclarableMethodInterception(new MethodDescription.Token(name,ModifierContributor.Resolver.of(modifier).resolve(),Collections.<String,TypeList.Generic>emptyMap(),returnType.asGenericType(),new ParameterDescription.Token.TypeList(parameterTypes),Collections.<TypeDescription.Generic>emptyList(),Collections.<AnnotationDescription>emptyList(),null));
-}
