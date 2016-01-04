@@ -1,0 +1,4 @@
+{
+  assertThat(asList(getFirst()).asErasures().size(),is(1));
+  assertThat(asList(getFirst()).asErasures().getOnly(),is(asElement(getFirst()).asErasure()));
+}
