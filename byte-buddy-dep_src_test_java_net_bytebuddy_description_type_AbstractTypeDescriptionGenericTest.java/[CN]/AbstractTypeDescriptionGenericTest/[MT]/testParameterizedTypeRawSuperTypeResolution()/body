@@ -5,21 +5,17 @@
   TypeDescription.Generic superType=typeDescription.getSuperType();
   assertThat(superType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(superType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Base.class)));
-  assertThat(superType.getParameters().size(),is(0));
   assertThat(superType.getDeclaredFields().size(),is(1));
   assertThat(superType.getDeclaredFields().getOnly().getDeclaringType().getDeclaredFields().getOnly().getType(),is(superType.getDeclaredFields().getOnly().getType()));
   TypeDescription.Generic fieldType=superType.getDeclaredFields().getOnly().getType();
   assertThat(fieldType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(fieldType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));
-  assertThat(fieldType.getParameters().size(),is(0));
   TypeDescription.Generic methodReturnType=superType.getDeclaredMethods().filter(isMethod()).getOnly().getReturnType();
   assertThat(methodReturnType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(methodReturnType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));
-  assertThat(methodReturnType.getParameters().size(),is(0));
   TypeDescription.Generic methodParameterType=superType.getDeclaredMethods().filter(isMethod()).getOnly().getParameters().asTypeList().getOnly();
   assertThat(methodParameterType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(methodParameterType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(Qux.class)));
-  assertThat(methodParameterType.getParameters().size(),is(0));
   assertThat(superType.getDeclaredMethods().filter(isMethod()).getOnly().getDeclaringType().getDeclaredMethods().filter(isMethod()).getOnly().getReturnType(),is(superType.getDeclaredMethods().filter(isMethod()).getOnly().getReturnType()));
   assertThat(superType.getDeclaredMethods().filter(isMethod()).getOnly().getDeclaringType().getDeclaredMethods().filter(isMethod()).getOnly().getParameters().getOnly().getType(),is(superType.getDeclaredMethods().filter(isMethod()).getOnly().getParameters().getOnly().getType()));
 }

@@ -14,5 +14,5 @@
   assertThat(describe(SampleClass.class),not(new Object()));
   assertThat(describe(SampleClass.class),not(equalTo(null)));
   assertThat(describe(Object[].class),is((TypeDescription)new TypeDescription.ForLoadedType(Object[].class)));
-  assertThat(describe(Object[].class),not((TypeDescription)TypeDescription.OBJECT));
+  assertThat(describe(Object[].class),not(TypeDescription.OBJECT));
 }

@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(ByteBuddy.class).apply();
+  ObjectPropertyAssertion.of(ByteBuddy.EnumerationImplementation.class).apply();
+}

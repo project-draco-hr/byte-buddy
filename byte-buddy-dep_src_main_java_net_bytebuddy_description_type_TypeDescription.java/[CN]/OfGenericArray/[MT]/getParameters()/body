@@ -1,3 +1,3 @@
 {
-  return new TypeList.Generic.Empty();
+  throw new IllegalStateException("A generic array type does not imply type parameters: " + this);
 }

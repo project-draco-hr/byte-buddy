@@ -4,8 +4,6 @@
   assertThat(typeDescription.getStackSize(),is(StackSize.SINGLE));
   assertThat(typeDescription.getDeclaredFields().size(),is(0));
   assertThat(typeDescription.getDeclaredMethods().size(),is(0));
-  assertThat(typeDescription.getParameters().size(),is(0));
-  assertThat(typeDescription.getOwnerType(),nullValue(TypeDescription.Generic.class));
   assertThat(typeDescription.getSuperType(),is(TypeDescription.Generic.OBJECT));
   assertThat(typeDescription.getInterfaces(),is(TypeDescription.ARRAY_INTERFACES));
   assertThat(typeDescription.getSourceCodeName(),is(SimpleGenericArrayType.class.getDeclaredField(FOO).getGenericType().toString()));

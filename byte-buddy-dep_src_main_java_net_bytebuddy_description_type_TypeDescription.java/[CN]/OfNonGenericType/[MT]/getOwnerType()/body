@@ -1,4 +1,3 @@
 {
-  TypeDescription ownerType=asErasure().getDeclaringType();
-  return ownerType == null ? UNDEFINED : new OfNonGenericType.Latent(ownerType);
+  throw new IllegalStateException("A non-generic type does not imply an owner type: " + this);
 }

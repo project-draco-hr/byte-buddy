@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypeDescription.AbstractBase.SuperTypeIterator.class).applyBasic();
-}
