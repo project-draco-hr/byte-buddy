@@ -3,7 +3,7 @@
   when(filteredMethodList.size()).thenReturn(1);
   assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(instrumentedType),is((List<MethodDescription.Token>)filteredMethodTokenList));
   assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.inject(methodRegistry),is(methodRegistry));
-  verify(methodRegistry).append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),eq(methodAttributeAppenderFactory),eq(MethodTransformer.NoOp.INSTANCE));
+  verify(methodRegistry).append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),eq(MethodAttributeAppender.NoOp.INSTANCE),eq(MethodTransformer.NoOp.INSTANCE));
   verifyNoMoreInteractions(methodRegistry);
   verify(instrumentedType,atLeastOnce()).getSuperType();
   verifyNoMoreInteractions(instrumentedType);
