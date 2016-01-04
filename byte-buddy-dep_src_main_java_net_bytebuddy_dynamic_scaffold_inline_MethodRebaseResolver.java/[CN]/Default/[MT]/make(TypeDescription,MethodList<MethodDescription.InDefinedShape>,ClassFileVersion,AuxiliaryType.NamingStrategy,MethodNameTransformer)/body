@@ -5,7 +5,7 @@
     Resolution resolution;
     if (instrumentedMethod.isConstructor()) {
       if (placeholderType == null) {
-        placeholderType=TrivialType.INSTANCE.make(auxiliaryTypeNamingStrategy.name(instrumentedType),classFileVersion,AuxiliaryType.MethodAccessorFactory.Illegal.INSTANCE);
+        placeholderType=TrivialType.EAGER.make(auxiliaryTypeNamingStrategy.name(instrumentedType),classFileVersion,AuxiliaryType.MethodAccessorFactory.Illegal.INSTANCE);
       }
       resolution=Resolution.ForRebasedConstructor.of(instrumentedMethod,placeholderType.getTypeDescription());
     }
