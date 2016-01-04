@@ -1,4 +1,4 @@
 {
-  assertThat(asList(Collections.singletonList(getFirst())).asErasures().size(),is(1));
-  assertThat(asList(Collections.singletonList(getFirst())).asErasures().getOnly(),is(asElement(getFirst()).asErasure()));
+  assertThat(asList(getFirst()).asErasures().size(),is(1));
+  assertThat(asList(getFirst()).asErasures().getOnly(),is(asElement(getFirst()).asErasure()));
 }

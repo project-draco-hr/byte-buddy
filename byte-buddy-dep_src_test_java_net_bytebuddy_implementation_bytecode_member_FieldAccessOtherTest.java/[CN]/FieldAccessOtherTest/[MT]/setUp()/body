@@ -4,5 +4,5 @@
   when(fieldDescription.getType()).thenReturn(declaredType);
   when(enumerationDescription.getEnumerationType()).thenReturn(enumerationType);
   when(enumerationDescription.getValue()).thenReturn(FOO);
-  when(enumerationType.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDefinedShape>(Collections.singletonList(fieldDescription)));
+  when(enumerationType.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDefinedShape>(fieldDescription));
 }

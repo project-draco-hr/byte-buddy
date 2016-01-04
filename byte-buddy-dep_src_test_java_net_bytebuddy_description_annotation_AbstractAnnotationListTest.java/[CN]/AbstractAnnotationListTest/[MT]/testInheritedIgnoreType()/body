@@ -1,3 +1,3 @@
 {
-  assertThat(asList(Collections.singletonList(getFirst())).inherited(Collections.<TypeDescription>singleton(new TypeDescription.ForLoadedType(Foo.class))).size(),is(0));
+  assertThat(asList(getFirst()).inherited(Collections.<TypeDescription>singleton(new TypeDescription.ForLoadedType(Foo.class))).size(),is(0));
 }

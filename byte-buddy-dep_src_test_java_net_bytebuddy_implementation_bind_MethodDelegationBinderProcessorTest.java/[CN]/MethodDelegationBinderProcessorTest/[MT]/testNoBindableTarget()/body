@@ -1,5 +1,5 @@
 {
-  MethodList<?> methodDescriptions=new MethodList.Explicit<MethodDescription>(Arrays.asList(unbindableTarget,unbindableTarget,unbindableTarget));
+  MethodList<?> methodDescriptions=new MethodList.Explicit<MethodDescription>(unbindableTarget,unbindableTarget,unbindableTarget);
   MethodDelegationBinder.Processor processor=new MethodDelegationBinder.Processor(methodDelegationBinder,ambiguityResolver);
   processor.process(implementationTarget,source,methodDescriptions);
 }

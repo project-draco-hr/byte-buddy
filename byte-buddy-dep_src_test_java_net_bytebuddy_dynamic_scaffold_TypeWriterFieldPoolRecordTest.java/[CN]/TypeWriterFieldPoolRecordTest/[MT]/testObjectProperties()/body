@@ -1,4 +1,4 @@
 {
-  ObjectPropertyAssertion.of(TypeWriter.FieldPool.Record.ForSimpleField.class).apply();
-  ObjectPropertyAssertion.of(TypeWriter.FieldPool.Record.ForRichField.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.FieldPool.Record.ForImplicitField.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.FieldPool.Record.ForExplicitField.class).apply();
 }

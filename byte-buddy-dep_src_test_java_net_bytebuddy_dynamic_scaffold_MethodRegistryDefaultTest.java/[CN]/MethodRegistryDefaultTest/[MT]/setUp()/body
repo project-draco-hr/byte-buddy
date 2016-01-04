@@ -28,6 +28,6 @@
   when(genericParameterType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   when(parameterType.isVisibleTo(typeDescription)).thenReturn(true);
   when(instrumentedMethod.getReturnType()).thenReturn(genericReturnType);
-  when(instrumentedMethod.getParameters()).thenReturn(new ParameterList.Explicit(Collections.singletonList(parameterDescription)));
+  when(instrumentedMethod.getParameters()).thenReturn((ParameterList)new ParameterList.Explicit<ParameterDescription>(parameterDescription));
   when(parameterDescription.getType()).thenReturn(genericParameterType);
 }

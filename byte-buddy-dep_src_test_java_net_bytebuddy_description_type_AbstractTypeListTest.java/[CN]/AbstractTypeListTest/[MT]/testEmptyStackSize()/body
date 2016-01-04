@@ -1,3 +1,3 @@
 {
-  assertThat(asList(Collections.<U>emptyList()).getStackSize(),is(0));
+  assertThat(emptyList().getStackSize(),is(0));
 }

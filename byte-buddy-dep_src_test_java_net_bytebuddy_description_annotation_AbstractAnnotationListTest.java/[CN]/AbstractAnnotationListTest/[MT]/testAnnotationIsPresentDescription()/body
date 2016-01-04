@@ -1,3 +1,3 @@
 {
-  assertThat(asList(Collections.singletonList(getFirst())).isAnnotationPresent(new TypeDescription.ForLoadedType(Foo.class)),is(true));
+  assertThat(asList(getFirst()).isAnnotationPresent(new TypeDescription.ForLoadedType(Foo.class)),is(true));
 }
