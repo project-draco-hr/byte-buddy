@@ -1,6 +1,6 @@
 {
   int result=matcher.hashCode();
-  result=31 * result + attributeAppender.hashCode();
+  result=31 * result + fieldAttributeAppender.hashCode();
   result=31 * result + (defaultValue != null ? defaultValue.hashCode() : 0);
   result=31 * result + fieldTransformer.hashCode();
   return result;

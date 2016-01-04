@@ -1,6 +1,6 @@
 {
   this.matcher=matcher;
-  this.attributeAppenderFactory=attributeAppenderFactory;
+  this.fieldAttributeAppenderFactory=fieldAttributeAppenderFactory;
   this.defaultValue=defaultValue;
   this.fieldTransformer=fieldTransformer;
 }

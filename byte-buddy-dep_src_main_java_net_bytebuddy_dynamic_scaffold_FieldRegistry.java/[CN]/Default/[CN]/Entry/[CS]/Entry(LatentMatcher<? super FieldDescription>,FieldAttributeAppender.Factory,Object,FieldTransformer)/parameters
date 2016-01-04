@@ -1,4 +1,4 @@
 LatentMatcher<? super FieldDescription> matcher
-FieldAttributeAppender.Factory attributeAppenderFactory
+FieldAttributeAppender.Factory fieldAttributeAppenderFactory
 Object defaultValue
 FieldTransformer fieldTransformer

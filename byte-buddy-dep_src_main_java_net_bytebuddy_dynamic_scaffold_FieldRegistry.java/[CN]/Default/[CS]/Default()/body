@@ -1,3 +1,3 @@
 {
-  entries=Collections.emptyList();
+  this(Collections.<Entry>emptyList());
 }
