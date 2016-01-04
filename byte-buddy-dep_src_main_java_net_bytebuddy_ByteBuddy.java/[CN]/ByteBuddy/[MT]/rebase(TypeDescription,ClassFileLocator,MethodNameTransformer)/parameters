@@ -1,2 +1,3 @@
 TypeDescription type
 ClassFileLocator classFileLocator
+MethodNameTransformer methodNameTransformer

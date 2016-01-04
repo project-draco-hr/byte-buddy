@@ -1,1 +1,1 @@
-Collection<? extends TypeDefinition> typeDefinitions
+Collection<? extends TypeDefinition> interfaceTypes

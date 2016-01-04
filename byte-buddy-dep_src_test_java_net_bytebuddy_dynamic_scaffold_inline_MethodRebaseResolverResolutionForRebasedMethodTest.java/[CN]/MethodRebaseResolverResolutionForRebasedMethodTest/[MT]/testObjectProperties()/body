@@ -10,8 +10,8 @@
       when(mock.getReturnType()).thenReturn(returnType);
     }
   }
-).refine(new ObjectPropertyAssertion.Refinement<MethodRebaseResolver.MethodNameTransformer>(){
-    @Override public void apply(    MethodRebaseResolver.MethodNameTransformer mock){
+).refine(new ObjectPropertyAssertion.Refinement<MethodNameTransformer>(){
+    @Override public void apply(    MethodNameTransformer mock){
       when(mock.transform(any(MethodDescription.class))).thenReturn(FOO + System.identityHashCode(mock));
     }
   }

@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodNameTransformer.Suffixing.class).apply();
+}

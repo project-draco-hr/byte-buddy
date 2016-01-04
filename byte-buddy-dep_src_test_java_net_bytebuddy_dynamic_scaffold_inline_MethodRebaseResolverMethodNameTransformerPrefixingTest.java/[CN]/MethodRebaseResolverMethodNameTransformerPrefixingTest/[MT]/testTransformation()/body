@@ -1,6 +1,0 @@
-{
-  when(methodDescription.getInternalName()).thenReturn(FOO);
-  String transformed=new MethodRebaseResolver.MethodNameTransformer.Prefixing().transform(methodDescription);
-  assertThat(transformed,not(FOO));
-  assertThat(transformed,endsWith(FOO));
-}
