@@ -1,3 +1,3 @@
 {
-  return String.format("%s.%s$%s",prefix,typeDescription.getName(),randomString.nextString());
+  return String.format("%s.%s$%s",prefix,superType.getName(),randomString.nextString());
 }

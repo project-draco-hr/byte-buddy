@@ -1,3 +1,3 @@
 {
-  return "i.love.ByteBuddy." + typeDescription.getSimpleName();
+  return "i.love.ByteBuddy." + superType.getSimpleName();
 }
