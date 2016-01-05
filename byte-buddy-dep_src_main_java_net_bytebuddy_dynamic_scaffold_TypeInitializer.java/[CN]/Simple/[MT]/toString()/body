@@ -1,0 +1,3 @@
+{
+  return "InstrumentedType.TypeInitializer.Simple{" + "byteCodeAppenderFactory=" + byteCodeAppenderFactory + '}';
+}

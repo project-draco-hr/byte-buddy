@@ -1,0 +1,3 @@
+{
+  return byteCodeAppenderFactory.hashCode();
+}

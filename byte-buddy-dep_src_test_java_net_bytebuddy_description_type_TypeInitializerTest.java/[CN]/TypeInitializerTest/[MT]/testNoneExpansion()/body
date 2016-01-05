@@ -1,0 +1,3 @@
+{
+  assertThat(TypeInitializer.None.INSTANCE.expandWith(byteCodeAppender),is((TypeInitializer)new TypeInitializer.Simple(byteCodeAppender)));
+}
