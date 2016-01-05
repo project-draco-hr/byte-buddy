@@ -1,0 +1,5 @@
+{
+  int result=matcher.hashCode();
+  result=31 * result + methodVisitorWrapper.hashCode();
+  return result;
+}

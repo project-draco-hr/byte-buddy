@@ -1,0 +1,5 @@
+{
+  assertThat(new AsmVisitorWrapper.ForDeclaredMethods().method(matcher,methodVisitorWrapper).wrap(instrumentedType,classVisitor).visitMethod(MODIFIERS,FOO + BAR,QUX,BAZ,new String[]{QUX + BAZ}),is(methodVisitor));
+  verifyZeroInteractions(matcher);
+  verifyZeroInteractions(methodVisitorWrapper);
+}

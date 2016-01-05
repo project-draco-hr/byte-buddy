@@ -1,0 +1,10 @@
+{
+  ObjectPropertyAssertion.of(AsmVisitorWrapper.ForDeclaredFields.class).apply();
+  ObjectPropertyAssertion.of(AsmVisitorWrapper.ForDeclaredFields.Entry.class).apply();
+  ObjectPropertyAssertion.of(AsmVisitorWrapper.ForDeclaredFields.DispatchingVisitor.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
+    @Override public void apply(    TypeDescription mock){
+      when(mock.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDefinedShape>(Mockito.mock(FieldDescription.InDefinedShape.class)));
+    }
+  }
+).apply();
+}

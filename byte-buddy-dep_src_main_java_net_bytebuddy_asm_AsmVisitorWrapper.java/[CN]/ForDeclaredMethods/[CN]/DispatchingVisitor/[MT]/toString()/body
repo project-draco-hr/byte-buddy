@@ -1,0 +1,3 @@
+{
+  return "AsmVisitorWrapper.ForDeclaredMethods.DispatchingVisitor{" + "outer=" + getOuter() + ", instrumentedType="+ instrumentedType+ ", methodsByName="+ methodsByName+ '}';
+}

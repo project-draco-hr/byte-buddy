@@ -1,0 +1,8 @@
+{
+  when(instrumentedType.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDefinedShape>(foo,bar));
+  when(foo.getInternalName()).thenReturn(FOO);
+  when(bar.getInternalName()).thenReturn(BAR);
+  when(classVisitor.visitField(eq(MODIFIERS),any(String.class),eq(QUX),eq(BAZ),eq(QUX + BAZ))).thenReturn(fieldVisitor);
+  when(fieldVisitorWrapper.wrap(instrumentedType,foo,fieldVisitor)).thenReturn(wrappedVisitor);
+  when(matcher.matches(foo)).thenReturn(true);
+}

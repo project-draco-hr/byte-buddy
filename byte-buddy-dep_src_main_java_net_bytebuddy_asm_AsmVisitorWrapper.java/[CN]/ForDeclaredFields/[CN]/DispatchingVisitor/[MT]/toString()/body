@@ -1,0 +1,3 @@
+{
+  return "AsmVisitorWrapper.ForDeclaredFields.DispatchingVisitor{" + "outer=" + getOuter() + ", instrumentedType="+ instrumentedType+ ", fieldsByName="+ fieldsByName+ '}';
+}
