@@ -1,7 +1,7 @@
 String name
 int modifiers
 Generic superType
-Map<String,? extends TypeList.Generic> typeVariables
+List<? extends TypeVariableToken> typeVariables
 List<? extends Generic> interfaceTypes
 List<? extends FieldDescription.Token> fieldTokens
 List<? extends MethodDescription.Token> methodTokens

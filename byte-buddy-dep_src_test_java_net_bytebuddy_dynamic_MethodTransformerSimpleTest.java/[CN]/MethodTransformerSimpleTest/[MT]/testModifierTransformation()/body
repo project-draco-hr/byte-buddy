@@ -4,9 +4,7 @@
   assertThat(transformed.getModifiers(),is((MODIFIERS & ~RANGE) | MASK));
   assertThat(transformed.getReturnType(),is(returnType));
   assertThat(transformed.getTypeVariables().size(),is(1));
-  assertThat(transformed.getTypeVariables().containsKey(QUX),is(true));
-  assertThat(transformed.getTypeVariables().get(QUX).size(),is(1));
-  assertThat(transformed.getTypeVariables().get(QUX).contains(typeVariableBound),is(true));
+  assertThat(transformed.getTypeVariables().get(0),is(new TypeVariableToken(QUX,typeVariableBound)));
   assertThat(transformed.getExceptionTypes().size(),is(1));
   assertThat(transformed.getExceptionTypes().getOnly(),is(exceptionType));
   assertThat(transformed.getParameterTokens().size(),is(1));

@@ -1,9 +1,9 @@
 {
   TypeWriter.FieldPool fieldPool=new FieldRegistry.Default().prepend(latentMatcher,distinctFactory,defaultValue,fieldTransformer).compile(instrumentedType);
+  assertThat(fieldPool.target(knownField).isImplicit(),is(false));
   assertThat(fieldPool.target(knownField).getField(),is(instrumentedField));
   assertThat(fieldPool.target(knownField).getFieldAppender(),is(distinct));
   assertThat(fieldPool.target(knownField).resolveDefault(otherDefaultValue),is(defaultValue));
+  assertThat(fieldPool.target(unknownField).isImplicit(),is(true));
   assertThat(fieldPool.target(unknownField).getField(),is(unknownField));
-  assertThat(fieldPool.target(unknownField).resolveDefault(otherDefaultValue),is(otherDefaultValue));
-  assertThat(fieldPool.target(unknownField).getFieldAppender(),is((FieldAttributeAppender)FieldAttributeAppender.ForInstrumentedField.INSTANCE));
 }

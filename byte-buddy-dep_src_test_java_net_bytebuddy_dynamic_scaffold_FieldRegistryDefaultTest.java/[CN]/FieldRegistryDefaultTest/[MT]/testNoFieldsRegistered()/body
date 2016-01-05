@@ -1,5 +1,0 @@
-{
-  TypeWriter.FieldPool.Record record=new FieldRegistry.Default().compile(instrumentedType).target(unknownField);
-  assertThat(record.resolveDefault(defaultValue),is(defaultValue));
-  assertThat(record.getFieldAppender(),is((FieldAttributeAppender)FieldAttributeAppender.ForInstrumentedField.INSTANCE));
-}
