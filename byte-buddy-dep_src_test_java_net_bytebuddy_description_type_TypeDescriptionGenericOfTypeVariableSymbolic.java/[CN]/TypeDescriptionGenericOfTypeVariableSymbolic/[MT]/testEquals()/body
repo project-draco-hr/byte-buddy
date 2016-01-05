@@ -1,0 +1,8 @@
+{
+  assertThat(typeVariable,is(typeVariable));
+  assertThat(typeVariable,is((TypeDescription.Generic)new TypeDescription.Generic.OfTypeVariable.Symbolic(FOO)));
+  assertThat(typeVariable,not((TypeDescription.Generic)new TypeDescription.Generic.OfTypeVariable.Symbolic(BAR)));
+  assertThat(typeVariable,not(TypeDescription.Generic.OBJECT));
+  assertThat(typeVariable,not(new Object()));
+  assertThat(typeVariable,not(equalTo(null)));
+}

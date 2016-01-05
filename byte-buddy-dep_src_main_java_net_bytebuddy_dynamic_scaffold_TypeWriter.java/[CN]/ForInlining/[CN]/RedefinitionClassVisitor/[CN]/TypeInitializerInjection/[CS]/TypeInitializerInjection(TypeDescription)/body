@@ -1,3 +1,0 @@
-{
-  injectorProxyMethod=new TypeInitializerDelegate(instrumentedType,RandomString.make());
-}

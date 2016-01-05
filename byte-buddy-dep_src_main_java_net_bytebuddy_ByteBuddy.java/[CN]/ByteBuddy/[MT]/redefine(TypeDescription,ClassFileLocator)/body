@@ -1,3 +1,3 @@
 {
-  return new RedefinitionDynamicTypeBuilder<T>(InstrumentedType.Default.represent(type),classFileVersion,auxiliaryTypeNamingStrategy,annotationValueFilterFactory,annotationRetention,implementationContextFactory,methodGraphCompiler,ignoredMethods,type,classFileLocator);
+  return new RedefinitionDynamicTypeBuilder<T>(InstrumentedType.Default.of(type),classFileVersion,auxiliaryTypeNamingStrategy,annotationValueFilterFactory,annotationRetention,implementationContextFactory,methodGraphCompiler,ignoredMethods,type,classFileLocator);
 }

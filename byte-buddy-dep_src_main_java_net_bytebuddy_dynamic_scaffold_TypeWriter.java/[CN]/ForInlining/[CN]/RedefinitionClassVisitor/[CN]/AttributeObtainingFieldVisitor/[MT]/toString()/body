@@ -1,0 +1,3 @@
+{
+  return "TypeWriter.Default.ForInlining.RedefinitionClassVisitor.AttributeObtainingFieldVisitor{" + "classVisitor=" + TypeWriter.Default.ForInlining.RedefinitionClassVisitor.this + ", record="+ record+ '}';
+}

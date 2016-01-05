@@ -1,0 +1,3 @@
+{
+  assertThat(new AnnotationList.Empty().asTypeList().size(),is(0));
+}

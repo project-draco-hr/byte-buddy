@@ -1,0 +1,3 @@
+{
+  assertThat(typeVariable.represents(Object.class),is(false));
+}

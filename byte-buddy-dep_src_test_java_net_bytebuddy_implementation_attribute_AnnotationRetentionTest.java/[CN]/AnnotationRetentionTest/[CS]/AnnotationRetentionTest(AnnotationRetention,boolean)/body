@@ -1,0 +1,4 @@
+{
+  this.annotationRetention=annotationRetention;
+  this.enabled=enabled;
+}

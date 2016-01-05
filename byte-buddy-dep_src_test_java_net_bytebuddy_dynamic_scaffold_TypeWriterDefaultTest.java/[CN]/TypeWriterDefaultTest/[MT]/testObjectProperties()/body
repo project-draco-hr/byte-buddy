@@ -1,6 +1,30 @@
 {
   ObjectPropertyAssertion.of(TypeWriter.Default.ForCreation.class).apply();
   ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.RedefinitionClassVisitor.class).create(new ObjectPropertyAssertion.Creator<TypeWriter.Default.ForInlining<?>>(){
+    @Override @SuppressWarnings("unchecked") public TypeWriter.Default.ForInlining<?> create(){
+      TypeWriter.Default.ForInlining<?> inlining=mock(TypeWriter.Default.ForInlining.class);
+      TypeDescription typeDescription=mock(TypeDescription.class);
+      when(typeDescription.getDeclaredFields()).thenReturn(new FieldList.Empty<FieldDescription.InDefinedShape>());
+      try {
+        Field instrumentedMethods=TypeWriter.Default.class.getDeclaredField("instrumentedMethods");
+        Field instrumentedType=TypeWriter.Default.class.getDeclaredField("instrumentedType");
+        instrumentedMethods.setAccessible(true);
+        instrumentedType.setAccessible(true);
+        instrumentedMethods.set(inlining,new MethodList.Empty<MethodDescription>());
+        instrumentedType.set(inlining,typeDescription);
+        return inlining;
+      }
+ catch (      Exception ignored) {
+        throw new AssertionError();
+      }
+    }
+  }
+).applyBasic();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.RedefinitionClassVisitor.AttributeObtainingFieldVisitor.class).applyBasic();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.RedefinitionClassVisitor.AttributeObtainingMethodVisitor.class).applyBasic();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.RedefinitionClassVisitor.CodePreservingMethodVisitor.class).applyBasic();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.RedefinitionClassVisitor.TypeInitializerInjection.class).applyBasic();
   ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.FramePreservingRemapper.class).applyBasic();
   ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.FramePreservingRemapper.FramePreservingMethodRemapper.class).create(new ObjectPropertyAssertion.Creator<String>(){
     @Override public String create(){

@@ -1,0 +1,3 @@
+{
+  assertThat(asList(getFirst()).asTypeList(),is(Collections.singletonList(asElement(getFirst()).getAnnotationType())));
+}

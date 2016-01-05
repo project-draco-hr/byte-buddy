@@ -1,0 +1,8 @@
+{
+  assertThat(AnnotationValueFilter.Default.SKIP_DEFAULTS.on(mock(FieldDescription.class)),is((AnnotationValueFilter)AnnotationValueFilter.Default.SKIP_DEFAULTS));
+  assertThat(AnnotationValueFilter.Default.SKIP_DEFAULTS.on(mock(MethodDescription.class)),is((AnnotationValueFilter)AnnotationValueFilter.Default.SKIP_DEFAULTS));
+  assertThat(AnnotationValueFilter.Default.SKIP_DEFAULTS.on(mock(TypeDescription.class)),is((AnnotationValueFilter)AnnotationValueFilter.Default.SKIP_DEFAULTS));
+  assertThat(AnnotationValueFilter.Default.APPEND_DEFAULTS.on(mock(FieldDescription.class)),is((AnnotationValueFilter)AnnotationValueFilter.Default.APPEND_DEFAULTS));
+  assertThat(AnnotationValueFilter.Default.APPEND_DEFAULTS.on(mock(MethodDescription.class)),is((AnnotationValueFilter)AnnotationValueFilter.Default.APPEND_DEFAULTS));
+  assertThat(AnnotationValueFilter.Default.APPEND_DEFAULTS.on(mock(TypeDescription.class)),is((AnnotationValueFilter)AnnotationValueFilter.Default.APPEND_DEFAULTS));
+}
