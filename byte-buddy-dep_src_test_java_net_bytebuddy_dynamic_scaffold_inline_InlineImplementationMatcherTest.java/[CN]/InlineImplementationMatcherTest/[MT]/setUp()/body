@@ -1,5 +1,5 @@
 {
-  matcher=new InliningImplementationMatcher(ignoredMethods,predefinedMethods);
+  matcher=new InliningImplementationMatcher(latentIgnoredMethods,predefinedMethods);
   when(rawTypeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   when(rawTypeDescription.asGenericType()).thenReturn(typeDescription);
   when(typeDescription.asErasure()).thenReturn(rawTypeDescription);
@@ -7,4 +7,5 @@
   when(otherType.asErasure()).thenReturn(rawOtherType);
   when(otherType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   when(rawOtherType.asGenericType()).thenReturn(otherType);
+  when(latentIgnoredMethods.resolve(Mockito.any(TypeDescription.class))).thenReturn((ElementMatcher)ignoredMethods);
 }

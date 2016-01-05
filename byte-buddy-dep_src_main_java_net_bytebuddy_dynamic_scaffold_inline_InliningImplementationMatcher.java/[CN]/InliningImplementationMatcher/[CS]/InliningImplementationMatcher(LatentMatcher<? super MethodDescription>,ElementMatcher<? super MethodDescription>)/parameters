@@ -1,2 +1,2 @@
-ElementMatcher<? super MethodDescription> ignoredMethods
+LatentMatcher<? super MethodDescription> ignoredMethods
 ElementMatcher<? super MethodDescription> predefinedMethodSignatures

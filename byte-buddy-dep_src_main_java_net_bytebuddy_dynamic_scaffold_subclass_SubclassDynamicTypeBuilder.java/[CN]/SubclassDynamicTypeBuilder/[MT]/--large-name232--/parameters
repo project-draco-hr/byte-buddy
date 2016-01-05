@@ -9,7 +9,4 @@ AnnotationValueFilter.Factory annotationValueFilterFactory
 AnnotationRetention annotationRetention
 Implementation.Context.Factory implementationContextFactory
 MethodGraph.Compiler methodGraphCompiler
-ElementMatcher<? super MethodDescription> ignoredMethods
-TypeDescription originalType
-ClassFileLocator classFileLocator
-MethodNameTransformer methodNameTransformer
+LatentMatcher<? super MethodDescription> ignoredMethods

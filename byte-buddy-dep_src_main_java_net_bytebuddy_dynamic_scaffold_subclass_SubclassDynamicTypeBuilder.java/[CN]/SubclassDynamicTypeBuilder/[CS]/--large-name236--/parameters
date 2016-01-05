@@ -9,4 +9,5 @@ AnnotationValueFilter.Factory annotationValueFilterFactory
 AnnotationRetention annotationRetention
 Implementation.Context.Factory implementationContextFactory
 MethodGraph.Compiler methodGraphCompiler
-ElementMatcher<? super MethodDescription> ignoredMethods
+LatentMatcher<? super MethodDescription> ignoredMethods
+ConstructorStrategy constructorStrategy

@@ -1,5 +1,4 @@
 {
-  matcher=new SubclassDynamicTypeBuilder.InstrumentableMatcher(ignoredMethods);
   when(rawTypeDescription.asGenericType()).thenReturn(typeDescription);
   when(rawTypeDescription.asErasure()).thenReturn(rawTypeDescription);
   when(typeDescription.asErasure()).thenReturn(rawTypeDescription);
@@ -12,4 +11,6 @@
   when(otherType.asGenericType()).thenReturn(otherType);
   when(otherType.asErasure()).thenReturn(rawOtherType);
   when(otherType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
+  when(latentIgnoredMethods.resolve(any(TypeDescription.class))).thenReturn((ElementMatcher)ignoredMethods);
+  matcher=new SubclassDynamicTypeBuilder.InstrumentableMatcher(latentIgnoredMethods);
 }
