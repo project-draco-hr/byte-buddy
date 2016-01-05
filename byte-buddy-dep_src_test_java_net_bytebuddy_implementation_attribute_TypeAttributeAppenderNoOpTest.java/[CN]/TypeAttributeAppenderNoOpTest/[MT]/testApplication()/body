@@ -1,5 +1,5 @@
 {
-  TypeAttributeAppender.NoOp.INSTANCE.apply(classVisitor,instrumentedType,valueFilter);
+  TypeAttributeAppender.NoOp.INSTANCE.apply(classVisitor,instrumentedType,annotationValueFilter);
   verifyZeroInteractions(classVisitor);
   verifyZeroInteractions(instrumentedType);
 }

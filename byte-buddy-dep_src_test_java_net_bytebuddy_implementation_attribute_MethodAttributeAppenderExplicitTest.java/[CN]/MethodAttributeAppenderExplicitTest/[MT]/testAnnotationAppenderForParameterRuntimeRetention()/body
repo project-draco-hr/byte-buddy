@@ -1,5 +1,5 @@
 {
-  new MethodAttributeAppender.Explicit(PARAMETER_INDEX,new AnnotationList.ForLoadedAnnotation(new Baz.Instance())).apply(methodVisitor,methodDescription,valueFilter);
+  new MethodAttributeAppender.Explicit(PARAMETER_INDEX,new AnnotationList.ForLoadedAnnotation(new Baz.Instance())).apply(methodVisitor,methodDescription,annotationValueFilter);
   verify(methodVisitor).visitParameterAnnotation(PARAMETER_INDEX,Type.getDescriptor(Baz.class),true);
   verifyNoMoreInteractions(methodVisitor);
   verify(methodDescription).getParameters();

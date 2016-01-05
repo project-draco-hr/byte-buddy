@@ -1,9 +1,9 @@
 {
   FieldAttributeAppender fieldAttributeAppender=new FieldAttributeAppender.Factory.Compound(firstFactory,secondFactory).make(instrumentedType);
-  fieldAttributeAppender.apply(fieldVisitor,fieldDescription,valueFilter);
-  verify(first).apply(fieldVisitor,fieldDescription,valueFilter);
+  fieldAttributeAppender.apply(fieldVisitor,fieldDescription,annotationValueFilter);
+  verify(first).apply(fieldVisitor,fieldDescription,annotationValueFilter);
   verifyNoMoreInteractions(first);
-  verify(second).apply(fieldVisitor,fieldDescription,valueFilter);
+  verify(second).apply(fieldVisitor,fieldDescription,annotationValueFilter);
   verifyNoMoreInteractions(second);
   verifyZeroInteractions(instrumentedType);
 }

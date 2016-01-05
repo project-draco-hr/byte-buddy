@@ -1,5 +1,5 @@
 {
-  FieldAttributeAppender.NoOp.INSTANCE.apply(fieldVisitor,fieldDescription,valueFilter);
+  FieldAttributeAppender.NoOp.INSTANCE.apply(fieldVisitor,fieldDescription,annotationValueFilter);
   verifyZeroInteractions(fieldVisitor);
   verifyZeroInteractions(fieldDescription);
 }

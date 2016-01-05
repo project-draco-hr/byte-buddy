@@ -1,11 +1,11 @@
 {
-  when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.InDefinedShape.class))).thenReturn(true);
+  when(annotationValueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.InDefinedShape.class))).thenReturn(true);
   when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   ParameterDescription parameterDescription=mock(ParameterDescription.class);
   when(parameterDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Qux.Instance(),new Baz.Instance(),new QuxBaz.Instance()));
   when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Explicit<ParameterDescription>(parameterDescription));
   when(methodDescription.getDeclaringType()).thenReturn(mock(TypeDescription.Generic.class));
-  MethodAttributeAppender.ForInstrumentedMethod.INSTANCE.apply(methodVisitor,methodDescription,valueFilter);
+  MethodAttributeAppender.ForInstrumentedMethod.INSTANCE.apply(methodVisitor,methodDescription,annotationValueFilter);
   verify(methodVisitor).visitParameterAnnotation(0,Type.getDescriptor(Baz.class),true);
   verify(methodVisitor).visitParameterAnnotation(0,Type.getDescriptor(QuxBaz.class),false);
   verifyNoMoreInteractions(methodVisitor);

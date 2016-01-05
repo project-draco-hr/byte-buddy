@@ -1,0 +1,3 @@
+{
+  assertThat(FieldAttributeAppender.ForInstrumentedField.INSTANCE.make(instrumentedType),is((FieldAttributeAppender)FieldAttributeAppender.ForInstrumentedField.INSTANCE));
+}
