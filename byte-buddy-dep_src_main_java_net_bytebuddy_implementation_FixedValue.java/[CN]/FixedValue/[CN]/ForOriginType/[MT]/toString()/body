@@ -1,0 +1,3 @@
+{
+  return "FixedValue.ForOriginType{" + "assigner=" + assigner + ", typing="+ typing+ '}';
+}

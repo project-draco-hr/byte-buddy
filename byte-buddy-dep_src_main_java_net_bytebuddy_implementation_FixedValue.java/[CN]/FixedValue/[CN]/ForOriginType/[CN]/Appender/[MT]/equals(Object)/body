@@ -1,0 +1,6 @@
+{
+  if (this == o)   return true;
+  if (o == null || getClass() != o.getClass())   return false;
+  Appender appender=(Appender)o;
+  return originType.equals(appender.originType) && getOuter().equals(appender.getOuter());
+}

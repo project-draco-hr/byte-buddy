@@ -1,0 +1,7 @@
+{
+  ObjectPropertyAssertion.of(FixedValue.ForPoolValue.class).skipSynthetic().apply();
+  ObjectPropertyAssertion.of(FixedValue.ForStaticField.class).apply();
+  ObjectPropertyAssertion.of(FixedValue.ForOriginType.class).apply();
+  ObjectPropertyAssertion.of(FixedValue.ForOriginType.Appender.class).apply();
+  ObjectPropertyAssertion.of(FixedValue.ForNullValue.class).apply();
+}

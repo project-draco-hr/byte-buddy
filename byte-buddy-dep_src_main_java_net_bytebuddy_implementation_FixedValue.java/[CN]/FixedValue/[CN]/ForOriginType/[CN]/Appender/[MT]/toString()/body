@@ -1,0 +1,3 @@
+{
+  return "FixedValue.ForOriginType.Appender{" + "outer=" + getOuter() + ", originType="+ originType+ '}';
+}
