@@ -1,0 +1,3 @@
+{
+  return typeDescription.represents(TargetType.class) ? this.typeDescription : typeDescription;
+}
