@@ -1,0 +1,3 @@
+{
+  return byteCodeAppender.apply(methodVisitor,implementationContext,instrumentedMethod);
+}
