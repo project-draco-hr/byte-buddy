@@ -1,0 +1,3 @@
+{
+  assertThat(listTypeVariableT.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(TypeDescription.Generic.OBJECT),is(true));
+}
