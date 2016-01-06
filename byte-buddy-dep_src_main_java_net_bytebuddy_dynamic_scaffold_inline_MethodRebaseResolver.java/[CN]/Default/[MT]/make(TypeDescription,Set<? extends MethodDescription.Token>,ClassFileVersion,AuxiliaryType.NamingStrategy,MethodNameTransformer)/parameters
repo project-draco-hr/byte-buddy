@@ -1,5 +1,5 @@
 TypeDescription instrumentedType
-MethodList<MethodDescription.InDefinedShape> rebaseableMethods
+Set<? extends MethodDescription.Token> rebaseableMethods
 ClassFileVersion classFileVersion
 AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
 MethodNameTransformer methodNameTransformer

@@ -1,0 +1,7 @@
+{
+  Map<MethodDescription.SignatureToken,Resolution> tokenMap=new HashMap<MethodDescription.SignatureToken,Resolution>();
+  for (  Map.Entry<MethodDescription.InDefinedShape,Resolution> entry : resolutions.entrySet()) {
+    tokenMap.put(entry.getKey().asSignatureToken(),entry.getValue());
+  }
+  return tokenMap;
+}
