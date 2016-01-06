@@ -15,8 +15,8 @@
   listWildcard=fields.filter(named("listWildcard")).getOnly().getType();
   arrayListTypeVariableT=fields.filter(named("arrayListTypeVariableT")).getOnly().getType();
   arrayListTypeVariableS=fields.filter(named("arrayListTypeVariableS")).getOnly().getType();
-  arrayListTypeVariableU=fields.filter(named("arrayListTypeVariableU")).getOnly().getType();
-  arrayListTypeVariableV=fields.filter(named("arrayListTypeVariableV")).getOnly().getType();
+  TypeDescription.Generic arrayListTypeVariableU=fields.filter(named("arrayListTypeVariableU")).getOnly().getType();
+  TypeDescription.Generic arrayListTypeVariableV=fields.filter(named("arrayListTypeVariableV")).getOnly().getType();
   abstractListRaw=fields.filter(named("abstractListRaw")).getOnly().getType();
   callableWildcard=fields.filter(named("callableWildcard")).getOnly().getType();
   arrayListRaw=fields.filter(named("arrayListRaw")).getOnly().getType();
@@ -33,8 +33,8 @@
   typeVariableS=arrayListTypeVariableS.getParameters().getOnly();
   typeVariableU=arrayListTypeVariableU.getParameters().getOnly();
   typeVariableV=arrayListTypeVariableV.getParameters().getOnly();
-  tArray=fields.filter(named("tArray")).getOnly().getType();
-  sArray=fields.filter(named("sArray")).getOnly().getType();
-  uArray=fields.filter(named("uArray")).getOnly().getType();
-  tNestedArray=fields.filter(named("tNestedArray")).getOnly().getType();
+  arrayTypeVariableT=fields.filter(named("arrayTypeVariableT")).getOnly().getType();
+  arrayTypeVariableS=fields.filter(named("arrayTypeVariableS")).getOnly().getType();
+  arrayTypeVariableU=fields.filter(named("arrayTypeVariableU")).getOnly().getType();
+  arrayNestedTypeVariableT=fields.filter(named("arrayNestedTypeVariableT")).getOnly().getType();
 }

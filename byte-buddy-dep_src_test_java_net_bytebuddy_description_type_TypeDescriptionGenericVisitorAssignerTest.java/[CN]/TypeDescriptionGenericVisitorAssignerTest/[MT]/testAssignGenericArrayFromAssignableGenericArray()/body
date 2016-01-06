@@ -1,3 +1,3 @@
 {
-  assertThat(tArray.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(uArray),is(true));
+  assertThat(arrayTypeVariableT.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(arrayTypeVariableU),is(true));
 }

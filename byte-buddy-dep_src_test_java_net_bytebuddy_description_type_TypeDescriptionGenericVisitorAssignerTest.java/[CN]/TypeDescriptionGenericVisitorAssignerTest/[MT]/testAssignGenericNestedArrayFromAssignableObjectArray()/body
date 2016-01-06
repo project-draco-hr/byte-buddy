@@ -1,0 +1,3 @@
+{
+  assertThat(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(Object[][].class).accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(arrayNestedTypeVariableT),is(true));
+}
