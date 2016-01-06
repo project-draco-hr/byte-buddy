@@ -1,0 +1,7 @@
+{
+  TypeVariableToken token=mock(TypeVariableToken.class);
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.withTypeVariable(token),is(instrumentedType));
+  verify(token).accept(TypeDescription.Generic.Visitor.Substitutor.ForDetachment.of(instrumentedType));
+  verifyNoMoreInteractions(token);
+}

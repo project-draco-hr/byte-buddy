@@ -1,0 +1,10 @@
+{
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getTypeVariables().size(),is(0));
+  instrumentedType=instrumentedType.withTypeVariable(new TypeVariableToken(BAR,TargetType.GENERIC_DESCRIPTION));
+  assertThat(instrumentedType.getTypeVariables().size(),is(1));
+  TypeDescription.Generic typeVariable=instrumentedType.getTypeVariables().get(0);
+  assertThat(typeVariable.getTypeName(),is(BAR));
+  assertThat(typeVariable.getVariableSource(),sameInstance((TypeVariableSource)instrumentedType));
+  assertThat(typeVariable.getUpperBounds(),is(Collections.singletonList(instrumentedType.asGenericType())));
+}

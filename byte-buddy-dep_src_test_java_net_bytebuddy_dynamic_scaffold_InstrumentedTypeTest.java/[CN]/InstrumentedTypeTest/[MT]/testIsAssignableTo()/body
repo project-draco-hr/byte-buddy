@@ -1,9 +1,6 @@
 {
   assertThat(makePlainInstrumentedType().isAssignableTo(Object.class),is(true));
   assertThat(makePlainInstrumentedType().isAssignableTo(makePlainInstrumentedType()),is(true));
-  assertThat(makePlainInstrumentedType().isAssignableTo(Serializable.class),is(true));
   assertThat(makePlainInstrumentedType().isAssignableTo(Integer.class),is(false));
   assertThat(makePlainInstrumentedType().isAssignableTo(TypeDescription.OBJECT),is(true));
-  assertThat(makePlainInstrumentedType().isAssignableTo(new TypeDescription.ForLoadedType(Serializable.class)),is(true));
-  assertThat(makePlainInstrumentedType().isAssignableTo(new TypeDescription.ForLoadedType(Integer.class)),is(false));
 }
