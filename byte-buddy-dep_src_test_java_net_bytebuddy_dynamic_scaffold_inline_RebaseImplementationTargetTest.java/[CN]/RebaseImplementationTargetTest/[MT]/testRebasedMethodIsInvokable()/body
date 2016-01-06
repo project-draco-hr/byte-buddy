@@ -4,7 +4,7 @@
   when(resolution.getResolvedMethod()).thenReturn(rebasedMethod);
   when(resolution.getAdditionalArguments()).thenReturn(StackManipulation.Trivial.INSTANCE);
   when(rebasedMethod.isSpecializableFor(instrumentedType)).thenReturn(true);
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(rebasedToken);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(rebasedSignatureToken);
   verify(methodRebaseResolver).asTokenMap();
   verifyNoMoreInteractions(methodRebaseResolver);
   assertThat(specialMethodInvocation.isValid(),is(true));
