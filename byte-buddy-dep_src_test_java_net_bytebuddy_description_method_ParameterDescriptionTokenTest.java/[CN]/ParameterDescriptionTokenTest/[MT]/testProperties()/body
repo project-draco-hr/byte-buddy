@@ -1,0 +1,7 @@
+{
+  ParameterDescription.Token token=new ParameterDescription.Token(type,Collections.singletonList(annotation),FOO,MODIFIERS);
+  assertThat(token.getType(),is(type));
+  assertThat(token.getAnnotations(),is(Collections.singletonList(annotation)));
+  assertThat(token.getName(),is(FOO));
+  assertThat(token.getModifiers(),is(MODIFIERS));
+}
