@@ -1,3 +1,3 @@
 {
-  return new Default(name,modifiers,superType,CompoundList.of(typeVariables,typeVariable),interfaceTypes,fieldTokens,methodTokens,annotationDescriptions,typeInitializer,loadedTypeInitializer,declaringType,enclosingMethod,enclosingType,declaredTypes,memberClass,anonymousClass,localClass);
+  return new Default(name,modifiers,superType,CompoundList.of(typeVariables,typeVariable.accept(Generic.Visitor.Substitutor.ForDetachment.of(this))),interfaceTypes,fieldTokens,methodTokens,annotationDescriptions,typeInitializer,loadedTypeInitializer,declaringType,enclosingMethod,enclosingType,declaredTypes,memberClass,anonymousClass,localClass);
 }
