@@ -1,0 +1,2 @@
+TypeDescription instrumentedType
+Set<MethodDescription.Token> instrumentedMethods

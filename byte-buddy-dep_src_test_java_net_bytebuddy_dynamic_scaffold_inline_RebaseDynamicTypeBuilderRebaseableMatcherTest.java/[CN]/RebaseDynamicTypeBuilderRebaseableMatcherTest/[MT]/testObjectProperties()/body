@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(RebaseDynamicTypeBuilder.RebaseableMatcher.class).apply();
+}

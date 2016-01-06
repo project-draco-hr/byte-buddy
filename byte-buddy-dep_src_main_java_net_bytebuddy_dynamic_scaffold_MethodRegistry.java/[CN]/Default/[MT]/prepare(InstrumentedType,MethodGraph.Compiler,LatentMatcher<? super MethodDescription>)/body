@@ -38,5 +38,5 @@
       }
     }
   }
-  return new Prepared(implementations,instrumentedType.getLoadedTypeInitializer(),instrumentedType.getTypeInitializer(),instrumentedType.asErasure(),methodGraph);
+  return new Prepared(implementations,instrumentedType.getLoadedTypeInitializer(),instrumentedType.getTypeInitializer(),instrumentedType.validated(),methodGraph);
 }

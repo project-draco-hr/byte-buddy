@@ -1,0 +1,3 @@
+{
+  assertThat(new RebaseDynamicTypeBuilder.RebaseableMatcher(instrumentedType,Collections.singleton(otherToken)).matches(target),is(false));
+}

@@ -1,0 +1,3 @@
+{
+  when(target.asToken(ElementMatchers.is(instrumentedType))).thenReturn(targetToken);
+}

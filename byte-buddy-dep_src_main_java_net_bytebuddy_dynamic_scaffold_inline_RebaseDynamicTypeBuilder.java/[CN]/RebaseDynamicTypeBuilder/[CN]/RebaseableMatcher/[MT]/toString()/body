@@ -1,0 +1,3 @@
+{
+  return "RebaseDynamicTypeBuilder.RebaseableMatcher{" + "instrumentedType=" + instrumentedType + ", instrumentedMethodTokens="+ instrumentedMethodTokens+ '}';
+}

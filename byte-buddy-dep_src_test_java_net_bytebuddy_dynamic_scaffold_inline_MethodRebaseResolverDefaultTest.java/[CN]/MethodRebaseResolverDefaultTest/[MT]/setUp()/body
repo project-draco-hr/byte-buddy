@@ -4,6 +4,7 @@
   when(methodDescription.getReturnType()).thenReturn(TypeDescription.Generic.VOID);
   when(methodDescription.getInternalName()).thenReturn(FOO);
   when(methodDescription.asToken(ElementMatchers.is(instrumentedType))).thenReturn(token);
+  when(methodDescription.asSignatureToken()).thenReturn(signatureToken);
   when(instrumentedType.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InDefinedShape>(methodDescription));
   when(otherMethod.asToken(ElementMatchers.is(instrumentedType))).thenReturn(otherToken);
   when(methodNameTransformer.transform(methodDescription)).thenReturn(BAR);
