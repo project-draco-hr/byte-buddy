@@ -1,0 +1,3 @@
+{
+  assertThat(ClassFileVersion.ofJavaVersion(javaVersion).isLessThan(ClassFileVersion.JAVA_V8),is(!atLeastJava8));
+}
