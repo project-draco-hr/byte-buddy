@@ -1,3 +1,3 @@
 {
-  return typeMatcher.matches(typeDescription.asErasure()) ? TargetType.GENERIC_DESCRIPTION : typeDescription;
+  return typeMatcher.matches(typeDescription) ? TargetType.GENERIC_DESCRIPTION : typeDescription;
 }
