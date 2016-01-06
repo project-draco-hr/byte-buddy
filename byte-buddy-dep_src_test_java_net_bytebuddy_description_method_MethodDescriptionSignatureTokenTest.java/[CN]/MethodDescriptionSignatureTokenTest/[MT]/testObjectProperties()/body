@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodDescription.SignatureToken.class).apply();
+}

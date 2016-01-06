@@ -1,3 +1,0 @@
-{
-  return new ByteCodeElement.Token.TokenList<ParameterDescription.Token>();
-}

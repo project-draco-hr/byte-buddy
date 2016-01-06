@@ -16,7 +16,7 @@
   when(superType.asErasure()).thenReturn(rawSuperType);
   when(typeDescription.getSuperType()).thenReturn(superType);
   MethodDescription.Token methodToken=mock(MethodDescription.Token.class);
-  when(instrumentedMethod.asToken()).thenReturn(methodToken);
+  when(instrumentedMethod.asToken(ElementMatchers.is(typeDescription))).thenReturn(methodToken);
   when(methodToken.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(methodToken);
   MethodRegistry.Compiled methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory,methodTransformer).append(secondMatcher,secondHandler,secondFactory,methodTransformer).prepare(firstType,methodGraphCompiler,methodFilter).compile(implementationTargetFactory);
   assertThat(methodRegistry.getInstrumentedType(),is((TypeDescription)typeDescription));

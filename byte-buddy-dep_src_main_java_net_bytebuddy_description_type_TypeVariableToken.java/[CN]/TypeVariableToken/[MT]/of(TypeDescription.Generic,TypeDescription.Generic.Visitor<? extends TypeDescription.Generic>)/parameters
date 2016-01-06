@@ -1,2 +1,0 @@
-TypeDescription.Generic typeVariable
-TypeDescription.Generic.Visitor<? extends TypeDescription.Generic> visitor

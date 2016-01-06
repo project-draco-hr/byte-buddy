@@ -1,0 +1,6 @@
+{
+  MethodDescription.SignatureToken token=new MethodDescription.SignatureToken(FOO,returnType,Collections.singletonList(parameterType));
+  assertThat(token.getName(),is(FOO));
+  assertThat(token.getReturnType(),is(returnType));
+  assertThat(token.getParameterTypes(),is(Collections.singletonList(parameterType)));
+}

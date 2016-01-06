@@ -1,3 +1,0 @@
-{
-  return new TypeVariableToken(typeVariable.getSymbol(),typeVariable.getUpperBounds().accept(visitor));
-}

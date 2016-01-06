@@ -1,3 +1,0 @@
-{
-  assertThat(new ParameterList.Empty<ParameterDescription>().asTokenList().size(),is(0));
-}

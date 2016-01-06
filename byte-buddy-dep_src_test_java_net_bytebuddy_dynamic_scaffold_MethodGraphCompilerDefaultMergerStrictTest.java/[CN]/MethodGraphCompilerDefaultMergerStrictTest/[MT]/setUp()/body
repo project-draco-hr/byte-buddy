@@ -1,4 +1,0 @@
-{
-  when(left.asToken()).thenReturn(leftToken);
-  when(right.asToken()).thenReturn(rightToken);
-}

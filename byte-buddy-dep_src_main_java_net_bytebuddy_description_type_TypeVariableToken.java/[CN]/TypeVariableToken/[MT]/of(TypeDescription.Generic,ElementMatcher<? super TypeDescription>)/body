@@ -1,0 +1,3 @@
+{
+  return new TypeVariableToken(typeVariable.getSymbol(),typeVariable.getUpperBounds().accept(new TypeDescription.Generic.Visitor.Substitutor.ForDetachment(matcher)));
+}

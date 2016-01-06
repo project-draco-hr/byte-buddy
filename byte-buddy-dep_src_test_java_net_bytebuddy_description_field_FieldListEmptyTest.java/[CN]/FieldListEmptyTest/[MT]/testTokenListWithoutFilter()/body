@@ -1,3 +1,0 @@
-{
-  assertThat(new FieldList.Empty<FieldDescription>().asTokenList().size(),is(0));
-}

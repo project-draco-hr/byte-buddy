@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(MethodGraph.Compiler.Default.Merger.Strict.class).apply();
-}

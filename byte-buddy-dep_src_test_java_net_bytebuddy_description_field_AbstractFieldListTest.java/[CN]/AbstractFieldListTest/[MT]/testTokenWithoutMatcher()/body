@@ -1,3 +1,0 @@
-{
-  assertThat(asList(getFirst()).asTokenList(),is(new ByteCodeElement.Token.TokenList<FieldDescription.Token>(asElement(getFirst()).asToken())));
-}
