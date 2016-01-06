@@ -1,0 +1,3 @@
+{
+  return typeDescription.getSort().isWildcard() || typeDescription.accept(Assigner.INSTANCE).isAssignableFrom(lowerBound);
+}
