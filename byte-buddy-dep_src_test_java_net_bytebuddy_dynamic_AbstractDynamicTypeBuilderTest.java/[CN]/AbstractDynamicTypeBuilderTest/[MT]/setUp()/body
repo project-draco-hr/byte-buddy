@@ -1,0 +1,4 @@
+{
+  list=Holder.class.getDeclaredField("list").getGenericType();
+  fooVariable=((ParameterizedType)Holder.class.getDeclaredField("fooList").getGenericType()).getActualTypeArguments()[0];
+}
