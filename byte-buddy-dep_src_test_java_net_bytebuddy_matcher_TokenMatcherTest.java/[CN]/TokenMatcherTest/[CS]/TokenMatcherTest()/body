@@ -1,3 +1,0 @@
-{
-  super((Class<? extends TokenMatcher<?,?>>)(Object)TokenMatcher.class,"hasToken");
-}

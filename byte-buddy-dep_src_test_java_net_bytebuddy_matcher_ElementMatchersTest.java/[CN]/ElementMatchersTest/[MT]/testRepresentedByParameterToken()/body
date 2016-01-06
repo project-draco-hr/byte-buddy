@@ -1,7 +1,0 @@
-{
-  ParameterDescription parameterDescription=mock(ParameterDescription.class);
-  ParameterDescription.Token parameterToken=mock(ParameterDescription.Token.class);
-  when(parameterDescription.asToken()).thenReturn(parameterToken);
-  assertThat(ElementMatchers.representedBy(parameterToken).matches(parameterDescription),is(true));
-  assertThat(ElementMatchers.representedBy(mock(ParameterDescription.Token.class)).matches(parameterDescription),is(false));
-}

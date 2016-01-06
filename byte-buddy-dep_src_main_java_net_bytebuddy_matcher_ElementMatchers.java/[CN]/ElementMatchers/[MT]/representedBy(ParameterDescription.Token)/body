@@ -1,3 +1,0 @@
-{
-  return parameterRepresentedBy(is(token));
-}
