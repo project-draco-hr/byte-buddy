@@ -1,0 +1,3 @@
+{
+  assertThat(TypeDescription.Generic.OBJECT.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(TypeDescription.STRING.asGenericType()),is(true));
+}

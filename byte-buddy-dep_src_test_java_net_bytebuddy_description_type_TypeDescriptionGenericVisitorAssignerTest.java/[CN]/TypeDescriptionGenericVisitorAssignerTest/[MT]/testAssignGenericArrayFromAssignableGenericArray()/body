@@ -1,0 +1,3 @@
+{
+  assertThat(tArray.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(uArray),is(true));
+}

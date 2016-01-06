@@ -1,0 +1,3 @@
+{
+  assertThat(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(Serializable.class).accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(listWildcardArray),is(true));
+}

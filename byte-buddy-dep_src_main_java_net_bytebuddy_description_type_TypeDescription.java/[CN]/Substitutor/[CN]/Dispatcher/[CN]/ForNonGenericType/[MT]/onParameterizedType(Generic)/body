@@ -1,0 +1,15 @@
+{
+  if (typeDescription.equals(parameterizedType.asErasure())) {
+    return true;
+  }
+  Generic superType=parameterizedType.getSuperType();
+  if (superType != null && isAssignableFrom(superType)) {
+    return true;
+  }
+  for (  Generic interfaceType : parameterizedType.getInterfaces()) {
+    if (isAssignableFrom(interfaceType)) {
+      return true;
+    }
+  }
+  return typeDescription.represents(Object.class);
+}

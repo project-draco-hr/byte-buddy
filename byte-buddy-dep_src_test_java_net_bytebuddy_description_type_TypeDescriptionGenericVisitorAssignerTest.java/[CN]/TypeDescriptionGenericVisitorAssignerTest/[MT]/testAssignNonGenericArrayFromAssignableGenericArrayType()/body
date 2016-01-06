@@ -1,0 +1,3 @@
+{
+  assertThat(objectArray.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(listWildcardArray),is(true));
+}

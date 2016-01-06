@@ -1,0 +1,3 @@
+{
+  return "TypeDescription.Generic.Visitor.Assigner." + name();
+}

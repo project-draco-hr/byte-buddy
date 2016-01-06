@@ -1,0 +1,27 @@
+{
+  FieldList<?> fields=new TypeDescription.ForLoadedType(GenericTypes.class).getDeclaredFields();
+  collectionRaw=fields.filter(named("collectionRaw")).getOnly().getType();
+  listRaw=fields.filter(named("listRaw")).getOnly().getType();
+  listWildcard=fields.filter(named("listWildcard")).getOnly().getType();
+  listTypeVariableT=fields.filter(named("listTypeVariableT")).getOnly().getType();
+  listTypeVariableS=fields.filter(named("listTypeVariableS")).getOnly().getType();
+  listTypeVariableU=fields.filter(named("listTypeVariableU")).getOnly().getType();
+  abstractListRaw=fields.filter(named("abstractListRaw")).getOnly().getType();
+  arrayListRaw=fields.filter(named("arrayListRaw")).getOnly().getType();
+  arrayListWildcard=fields.filter(named("arrayListWildcard")).getOnly().getType();
+  collectionRawArray=fields.filter(named("collectionRawArray")).getOnly().getType();
+  listRawArray=fields.filter(named("listRawArray")).getOnly().getType();
+  listWildcardArray=fields.filter(named("listWildcardArray")).getOnly().getType();
+  arrayListRawArray=fields.filter(named("arrayListRawArray")).getOnly().getType();
+  stringArray=new TypeDescription.Generic.OfNonGenericType.ForLoadedType(String[].class);
+  objectArray=new TypeDescription.Generic.OfNonGenericType.ForLoadedType(Object[].class);
+  objectNestedArray=new TypeDescription.Generic.OfNonGenericType.ForLoadedType(Object[][].class);
+  unboundWildcard=listWildcard.getParameters().getOnly();
+  typeVariableT=listTypeVariableT.getParameters().getOnly();
+  typeVariableS=listTypeVariableS.getParameters().getOnly();
+  typeVariableU=listTypeVariableU.getParameters().getOnly();
+  tArray=fields.filter(named("tArray")).getOnly().getType();
+  sArray=fields.filter(named("sArray")).getOnly().getType();
+  uArray=fields.filter(named("uArray")).getOnly().getType();
+  tNestedArray=fields.filter(named("tNestedArray")).getOnly().getType();
+}

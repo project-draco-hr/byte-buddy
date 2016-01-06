@@ -1,0 +1,30 @@
+{
+  if (this.parameterizedType.asErasure().equals(parameterizedType.asErasure())) {
+    Generic fromOwner=this.parameterizedType.getOwnerType(), toOwner=parameterizedType.getOwnerType();
+    if (fromOwner != null && toOwner != null && !fromOwner.accept(Assigner.INSTANCE).isAssignableFrom(toOwner)) {
+      return false;
+    }
+    TypeList.Generic fromParameters=this.parameterizedType.getParameters(), toParameters=parameterizedType.getParameters();
+    if (fromParameters.size() == toParameters.size()) {
+      for (int index=0; index < fromParameters.size(); index++) {
+        if (!fromParameters.get(index).accept(ParameterAssigner.INSTANCE).isAssignableFrom(toParameters.get(index))) {
+          return false;
+        }
+      }
+      return true;
+    }
+ else {
+      return true;
+    }
+  }
+  Generic superType=parameterizedType.getSuperType();
+  if (superType != null && isAssignableFrom(superType)) {
+    return true;
+  }
+  for (  Generic interfaceType : parameterizedType.getInterfaces()) {
+    if (isAssignableFrom(interfaceType)) {
+      return true;
+    }
+  }
+  return false;
+}
