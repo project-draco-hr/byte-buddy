@@ -1,3 +1,0 @@
-{
-  assertThat(arrayListWildcard.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(arrayListRaw),is(true));
-}

@@ -14,7 +14,7 @@
       return true;
     }
  else {
-      return true;
+      throw new IllegalStateException("Incompatible generic types: " + parameterizedType + " and "+ this.parameterizedType);
     }
   }
   Generic superType=parameterizedType.getSuperType();
