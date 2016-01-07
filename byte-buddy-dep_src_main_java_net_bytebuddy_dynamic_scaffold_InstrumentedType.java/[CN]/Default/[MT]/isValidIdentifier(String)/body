@@ -2,6 +2,9 @@
   if (name.isEmpty() || !Character.isJavaIdentifierStart(name.charAt(0))) {
     return false;
   }
+ else   if (name.equals(PackageDescription.PACKAGE_CLASS_NAME)) {
+    return true;
+  }
   for (int index=1; index < name.length(); index++) {
     if (!Character.isJavaIdentifierPart(name.charAt(index))) {
       return false;

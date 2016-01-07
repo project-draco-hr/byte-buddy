@@ -92,7 +92,7 @@
  else     if (!methodDescription.getReturnType().accept(Generic.Visitor.Validator.METHOD_RETURN)) {
       throw new IllegalStateException("Illegal return type " + methodDescription.getReturnType() + " for "+ methodDescription);
     }
- else     if (isValidIdentifier(methodDescription.getInternalName())) {
+ else     if (!isValidIdentifier(methodDescription.getInternalName())) {
       throw new IllegalStateException("Illegal method name for: " + methodDescription);
     }
     Set<String> parameterNames=new HashSet<String>();
