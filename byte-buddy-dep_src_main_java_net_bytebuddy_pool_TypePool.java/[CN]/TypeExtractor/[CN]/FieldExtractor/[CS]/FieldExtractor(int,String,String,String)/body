@@ -4,5 +4,5 @@
   this.internalName=internalName;
   this.descriptor=descriptor;
   this.genericSignature=genericSignature;
-  annotationTokens=new LinkedList<LazyTypeDescription.AnnotationToken>();
+  annotationTokens=new ArrayList<LazyTypeDescription.AnnotationToken>();
 }

@@ -1,5 +1,5 @@
 {
-  List<ElementMatcher<? super TypeDescription>> typeMatchers=new LinkedList<ElementMatcher<? super TypeDescription>>();
+  List<ElementMatcher<? super TypeDescription>> typeMatchers=new ArrayList<ElementMatcher<? super TypeDescription>>();
   for (  TypeDescription typeDescription : typeDescriptions) {
     typeMatchers.add(is(typeDescription));
   }

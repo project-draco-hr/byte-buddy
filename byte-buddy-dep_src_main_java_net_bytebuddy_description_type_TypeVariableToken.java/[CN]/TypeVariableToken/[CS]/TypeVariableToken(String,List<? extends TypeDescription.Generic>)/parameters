@@ -1,2 +1,2 @@
 String symbol
-List<? extends TypeDescription.Generic> upperBounds
+List<? extends TypeDescription.Generic> bounds

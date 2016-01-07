@@ -1,5 +1,5 @@
 {
-  List<MethodBinding> possibleDelegations=new LinkedList<MethodBinding>();
+  List<MethodBinding> possibleDelegations=new ArrayList<MethodBinding>();
   for (  MethodDescription targetCandidate : targetCandidates.filter(isVisibleTo(implementationTarget.getInstrumentedType()))) {
     MethodBinding methodBinding=methodDelegationBinder.bind(implementationTarget,source,targetCandidate);
     if (methodBinding.isValid()) {

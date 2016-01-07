@@ -1,5 +1,5 @@
 {
-  List<ElementMatcher<? super TypeDescription.Generic>> typeMatchers=new LinkedList<ElementMatcher<? super TypeDescription.Generic>>();
+  List<ElementMatcher<? super TypeDescription.Generic>> typeMatchers=new ArrayList<ElementMatcher<? super TypeDescription.Generic>>();
   for (  TypeDefinition typeDefinition : typeDefinitions) {
     typeMatchers.add(is(typeDefinition));
   }

@@ -1,5 +1,5 @@
 {
-  List<TypeDescription> typeDescriptions=new LinkedList<TypeDescription>();
+  List<TypeDescription> typeDescriptions=new ArrayList<TypeDescription>();
   for (  TypeDefinition typeDefinition : target) {
     typeDescriptions.add(typeDefinition.asErasure());
   }

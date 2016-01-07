@@ -1,3 +1,3 @@
 {
-  parameters=new LinkedList<LazyTypeDescription.GenericTypeToken>();
+  parameters=new ArrayList<LazyTypeDescription.GenericTypeToken>();
 }
