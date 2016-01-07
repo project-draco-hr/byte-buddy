@@ -1,0 +1,11 @@
+{
+  if (name.length == 0) {
+    return false;
+  }
+  for (  String part : name) {
+    if (!isValidIdentifier(part)) {
+      return false;
+    }
+  }
+  return true;
+}

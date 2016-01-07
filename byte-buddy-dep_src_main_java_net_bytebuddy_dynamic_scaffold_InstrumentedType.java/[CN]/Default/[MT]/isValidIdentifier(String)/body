@@ -1,0 +1,11 @@
+{
+  if (name.isEmpty() || !Character.isJavaIdentifierStart(name.charAt(0))) {
+    return false;
+  }
+  for (int index=1; index < name.length(); index++) {
+    if (!Character.isJavaIdentifierPart(name.charAt(index))) {
+      return false;
+    }
+  }
+  return true;
+}

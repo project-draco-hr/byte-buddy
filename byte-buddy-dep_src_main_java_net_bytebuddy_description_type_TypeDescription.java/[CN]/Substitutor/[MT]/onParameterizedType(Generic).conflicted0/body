@@ -1,3 +1,8 @@
 {
-  return !requiresThrowable && parameterizedType.accept(ForType.INSTANCE);
+  Generic ownerType=parameterizedType.getOwnerType();
+  List<Generic> parameters=new ArrayList<Generic>(parameterizedType.getParameters().size());
+  for (  Generic parameter : parameterizedType.getParameters()) {
+    parameters.add(parameter.accept(this));
+  }
+  return new OfParameterizedType.Latent(parameterizedType.asRawType().accept(this).asErasure(),ownerType == null ? UNDEFINED : ownerType.accept(this),parameters);
 }
