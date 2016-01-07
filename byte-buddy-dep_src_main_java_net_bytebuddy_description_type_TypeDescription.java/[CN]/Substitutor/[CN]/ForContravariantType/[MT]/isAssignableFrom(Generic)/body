@@ -1,0 +1,3 @@
+{
+  return typeDescription.accept(Assigner.INSTANCE).isAssignableFrom(this.typeDescription);
+}

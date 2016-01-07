@@ -1,0 +1,4 @@
+{
+  TypeList.Generic lowerBounds=wildcard.getLowerBounds();
+  return lowerBounds.isEmpty() ? wildcard.getUpperBounds().getOnly().accept(this) : lowerBounds.getOnly().accept(this);
+}

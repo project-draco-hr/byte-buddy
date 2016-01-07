@@ -1,3 +1,21 @@
 {
-  return new Dispatcher.ForTypeVariable(typeVariable);
+  if (requiresThrowable) {
+    for (    TypeDescription.Generic bound : typeVariable.getUpperBounds()) {
+      if (!bound.accept(ForType.INSTANCE)) {
+        return false;
+      }
+ else       if (bound.accept(this)) {
+        return true;
+      }
+    }
+    return false;
+  }
+ else {
+    for (    TypeDescription.Generic bound : typeVariable.getUpperBounds()) {
+      if (!bound.accept(ForType.INSTANCE)) {
+        return false;
+      }
+    }
+  }
+  return acceptsVariable;
 }

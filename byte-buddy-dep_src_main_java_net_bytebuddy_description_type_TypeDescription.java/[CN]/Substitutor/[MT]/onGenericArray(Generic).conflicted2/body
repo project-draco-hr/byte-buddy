@@ -1,3 +1,3 @@
 {
-  return acceptsArray;
+  return OfGenericArray.Latent.of(genericArray.getComponentType().accept(this),1);
 }

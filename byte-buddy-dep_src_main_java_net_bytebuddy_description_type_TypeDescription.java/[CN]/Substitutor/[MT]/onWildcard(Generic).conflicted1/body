@@ -1,3 +1,4 @@
 {
-  throw new IllegalArgumentException("A wildcard is not a first-level type: " + wildcard);
+  TypeList.Generic lowerBounds=wildcard.getLowerBounds();
+  return lowerBounds.isEmpty() ? wildcard.getUpperBounds().getOnly().accept(this) : new Dispatcher.ForContravariantType(lowerBounds.getOnly());
 }

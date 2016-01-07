@@ -1,0 +1,3 @@
+{
+  return genericArray.getComponentType().accept(this);
+}
