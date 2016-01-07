@@ -1,8 +1,8 @@
 {
-  if (name.length == 0) {
+  if (identifier.length == 0) {
     return false;
   }
-  for (  String part : name) {
+  for (  String part : identifier) {
     if (!isValidIdentifier(part)) {
       return false;
     }

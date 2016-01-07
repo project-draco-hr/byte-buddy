@@ -24,10 +24,18 @@
  else     if (!isValidIdentifier(variableSymbol)) {
       throw new IllegalStateException("Illegal type variable name of " + typeVariable + " for "+ this);
     }
+    boolean interfaceBound=false;
     for (    TypeDescription.Generic bound : typeVariable.getUpperBounds()) {
       if (!bound.accept(Generic.Visitor.Validator.TYPE_VARIABLE)) {
-        throw new IllegalStateException("Illegal type variable bound " + bound + " of "+ typeVariable+ "for "+ this);
+        throw new IllegalStateException("Illegal type variable bound " + bound + " of "+ typeVariable+ " for "+ this);
       }
+ else       if (interfaceBound && (bound.getSort().isTypeVariable() || !bound.asErasure().isInterface())) {
+        throw new IllegalStateException("Illegal interface bound " + bound + " of "+ typeVariable+ " for "+ this);
+      }
+      interfaceBound=true;
+    }
+    if (!interfaceBound) {
+      throw new IllegalStateException("Type variable " + typeVariable + " for "+ this+ " does not define at least one bound");
     }
   }
   Set<TypeDescription> typeAnnotationTypes=new HashSet<TypeDescription>();
@@ -69,10 +77,18 @@
  else       if (!isValidIdentifier(variableSymbol)) {
         throw new IllegalStateException("Illegal type variable name of " + typeVariable + " for "+ methodDescription);
       }
+      boolean interfaceBound=false;
       for (      TypeDescription.Generic bound : typeVariable.getUpperBounds()) {
         if (!bound.accept(Generic.Visitor.Validator.TYPE_VARIABLE)) {
           throw new IllegalStateException("Illegal type variable bound " + bound + " of "+ typeVariable+ " for "+ methodDescription);
         }
+ else         if (interfaceBound && (bound.getSort().isTypeVariable() || !bound.asErasure().isInterface())) {
+          throw new IllegalStateException("Illegal interface bound " + bound + " of "+ typeVariable+ " for "+ methodDescription);
+        }
+        interfaceBound=true;
+      }
+      if (!interfaceBound) {
+        throw new IllegalStateException("Type variable " + typeVariable + " for "+ methodDescription+ " does not define at least one bound");
       }
     }
     Set<TypeDescription> methodAnnotationTypes=new HashSet<TypeDescription>();

@@ -1,12 +1,12 @@
 {
-  if (name.isEmpty() || !Character.isJavaIdentifierStart(name.charAt(0))) {
+  if (identifier.isEmpty() || !Character.isJavaIdentifierStart(identifier.charAt(0))) {
     return false;
   }
- else   if (name.equals(PackageDescription.PACKAGE_CLASS_NAME)) {
+ else   if (identifier.equals(PackageDescription.PACKAGE_CLASS_NAME)) {
     return true;
   }
-  for (int index=1; index < name.length(); index++) {
-    if (!Character.isJavaIdentifierPart(name.charAt(index))) {
+  for (int index=1; index < identifier.length(); index++) {
+    if (!Character.isJavaIdentifierPart(identifier.charAt(index))) {
       return false;
     }
   }
