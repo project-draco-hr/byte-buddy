@@ -1,0 +1,9 @@
+{
+  if (!source.isPrimitive() && target.represents(String.class)) {
+    MethodDescription toStringMethod=TypeDescription.OBJECT.getDeclaredMethods().filter(named("toString")).getOnly();
+    return MethodInvocation.invoke(toStringMethod).virtual(source.asErasure());
+  }
+ else {
+    return StackManipulation.Illegal.INSTANCE;
+  }
+}

@@ -1,9 +1,12 @@
 {
-  when(sourceTypeDescription.represents(sourceType)).thenReturn(true);
-  when(sourceTypeDescription.getStackSize()).thenReturn(StackSize.of(sourceType));
+  when(source.represents(sourceType)).thenReturn(true);
+  when(source.getStackSize()).thenReturn(StackSize.of(sourceType));
   if (sourceType.isPrimitive()) {
-    when(sourceTypeDescription.isPrimitive()).thenReturn(true);
+    when(source.isPrimitive()).thenReturn(true);
   }
-  when(targetTypeDescription.represents(void.class)).thenReturn(true);
-  when(targetTypeDescription.isPrimitive()).thenReturn(true);
+  when(target.represents(void.class)).thenReturn(true);
+  when(target.isPrimitive()).thenReturn(true);
+  when(source.asErasure()).thenReturn(rawSource);
+  when(rawSource.represents(sourceType)).thenReturn(true);
+  when(rawSource.asErasure()).thenReturn(rawSource);
 }

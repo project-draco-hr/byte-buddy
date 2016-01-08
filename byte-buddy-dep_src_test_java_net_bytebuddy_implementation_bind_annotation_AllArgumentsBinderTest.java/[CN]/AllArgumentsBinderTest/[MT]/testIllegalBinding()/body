@@ -2,7 +2,7 @@
   when(target.getIndex()).thenReturn(1);
   when(annotation.value()).thenReturn(AllArguments.Assignment.STRICT);
   when(stackManipulation.isValid()).thenReturn(false);
-  when(rawSourceTypeList.iterator()).thenReturn(Arrays.asList(firstSourceType,secondSourceType).iterator());
+  when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,firstSourceType,secondSourceType));
   when(source.isStatic()).thenReturn(false);
   when(genericTargetType.isArray()).thenReturn(true);
   when(targetType.getComponentType()).thenReturn(componentType);
@@ -15,6 +15,6 @@
   verify(source,atLeast(1)).isStatic();
   verify(target,atLeast(1)).getType();
   verify(target,atLeast(1)).getDeclaredAnnotations();
-  verify(assigner).assign(firstSourceType,componentType,Assigner.Typing.STATIC);
+  verify(assigner).assign(firstSourceType,genericComponentType,Assigner.Typing.STATIC);
   verifyNoMoreInteractions(assigner);
 }

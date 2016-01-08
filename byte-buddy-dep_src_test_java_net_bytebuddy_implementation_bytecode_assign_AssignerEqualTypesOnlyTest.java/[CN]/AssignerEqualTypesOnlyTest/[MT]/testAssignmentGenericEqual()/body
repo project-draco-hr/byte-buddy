@@ -1,0 +1,8 @@
+{
+  StackManipulation stackManipulation=Assigner.EqualTypesOnly.GENERIC.assign(first,first,Assigner.Typing.of(dynamicallyTyped));
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(0));
+  assertThat(size.getMaximalSize(),is(0));
+  verifyZeroInteractions(first);
+}

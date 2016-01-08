@@ -1,0 +1,8 @@
+{
+  StackManipulation stackManipulation=Assigner.EqualTypesOnly.ERASURE.assign(first,second,Assigner.Typing.of(dynamicallyTyped));
+  assertThat(stackManipulation.isValid(),is(false));
+  verify(first).asErasure();
+  verifyNoMoreInteractions(first);
+  verify(second).asErasure();
+  verifyNoMoreInteractions(second);
+}

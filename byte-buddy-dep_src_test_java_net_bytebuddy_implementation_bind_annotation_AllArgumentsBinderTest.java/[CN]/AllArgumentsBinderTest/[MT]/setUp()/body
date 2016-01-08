@@ -3,4 +3,5 @@
   when(firstSourceType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(secondSourceType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(genericTargetType.asErasure()).thenReturn(targetType);
+  when(genericComponentType.asErasure()).thenReturn(componentType);
 }

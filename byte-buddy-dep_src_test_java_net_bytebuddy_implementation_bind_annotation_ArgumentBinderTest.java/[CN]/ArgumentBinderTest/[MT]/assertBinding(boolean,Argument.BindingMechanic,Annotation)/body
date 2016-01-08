@@ -30,6 +30,6 @@
   verify(source,atLeast(1)).getParameters();
   verify(target,atLeast(1)).getType();
   verify(target,atLeast(1)).getDeclaredAnnotations();
-  verify(assigner).assign(sourceType,targetType,Assigner.Typing.of(dynamicallyTyped));
+  verify(assigner).assign(genericSourceType,genericTargetType,Assigner.Typing.of(dynamicallyTyped));
   verifyNoMoreInteractions(assigner);
 }

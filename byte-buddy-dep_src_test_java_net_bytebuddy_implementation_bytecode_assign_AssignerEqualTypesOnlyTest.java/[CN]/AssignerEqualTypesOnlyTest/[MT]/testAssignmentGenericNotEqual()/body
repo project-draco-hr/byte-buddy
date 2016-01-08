@@ -1,0 +1,6 @@
+{
+  StackManipulation stackManipulation=Assigner.EqualTypesOnly.GENERIC.assign(first,second,Assigner.Typing.of(dynamicallyTyped));
+  assertThat(stackManipulation.isValid(),is(false));
+  verifyZeroInteractions(first);
+  verifyZeroInteractions(second);
+}

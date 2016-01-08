@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=new StackManipulation.Compound(FloatConstant.forValue(value),assigner.assign(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(float.class),target,typing));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign float value to " + target);
+  }
+  return stackManipulation;
+}

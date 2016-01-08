@@ -2,10 +2,10 @@
   when(stackManipulation.isValid()).thenReturn(false);
   when(target.getType()).thenReturn(genericParameterType);
   when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
-  when(assigner.assign(any(TypeDescription.class),any(TypeDescription.class),any(Assigner.Typing.class))).thenReturn(StackManipulation.Illegal.INSTANCE);
+  when(assigner.assign(any(TypeDescription.Generic.class),any(TypeDescription.Generic.class),any(Assigner.Typing.class))).thenReturn(StackManipulation.Illegal.INSTANCE);
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=This.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(false));
-  verify(assigner).assign(instrumentedType,parameterType,Assigner.Typing.STATIC);
+  verify(assigner).assign(genericInstrumentedType,genericParameterType,Assigner.Typing.STATIC);
   verifyNoMoreInteractions(assigner);
   verify(target,atLeast(1)).getType();
   verify(target,atLeast(1)).getDeclaredAnnotations();

@@ -1,14 +1,14 @@
 {
   MethodDescription invokedMethod=methodLocator.resolve(instrumentedMethod);
-  TypeList methodParameters=invokedMethod.getParameters().asTypeList().asErasures();
+  TypeList.Generic methodParameters=invokedMethod.getParameters().asTypeList();
   if (methodParameters.size() != argumentLoaders.size()) {
     throw new IllegalStateException(invokedMethod + " does not take " + argumentLoaders.size()+ " arguments");
   }
-  int index=0;
-  StackManipulation[] argumentInstruction=new StackManipulation[argumentLoaders.size()];
+  Iterator<TypeDescription.Generic> parameterIterator=methodParameters.iterator();
+  List<StackManipulation> argumentInstructions=new ArrayList<StackManipulation>(argumentLoaders.size());
   for (  ArgumentLoader argumentLoader : argumentLoaders) {
-    argumentInstruction[index]=argumentLoader.resolve(implementationTarget.getInstrumentedType(),instrumentedMethod,methodParameters.get(index++),assigner,typing);
+    argumentInstructions.add(argumentLoader.resolve(implementationTarget.getInstrumentedType(),instrumentedMethod,parameterIterator.next(),assigner,typing));
   }
-  StackManipulation.Size size=new StackManipulation.Compound(targetHandler.resolve(invokedMethod,implementationTarget.getInstrumentedType()),new StackManipulation.Compound(argumentInstruction),methodInvoker.invoke(invokedMethod,implementationTarget),terminationHandler.resolve(invokedMethod,instrumentedMethod,assigner,typing)).apply(methodVisitor,implementationContext);
+  StackManipulation.Size size=new StackManipulation.Compound(targetHandler.resolve(invokedMethod,implementationTarget.getInstrumentedType()),new StackManipulation.Compound(argumentInstructions),methodInvoker.invoke(invokedMethod,implementationTarget),terminationHandler.resolve(invokedMethod,instrumentedMethod,assigner,typing)).apply(methodVisitor,implementationContext);
   return new Size(size.getMaximalSize(),instrumentedMethod.getStackSize());
 }

@@ -1,3 +1,3 @@
 {
-  PrimitiveUnboxingDelegate.forReferenceType(new TypeDescription.ForLoadedType(int.class));
+  PrimitiveUnboxingDelegate.forReferenceType(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(int.class));
 }

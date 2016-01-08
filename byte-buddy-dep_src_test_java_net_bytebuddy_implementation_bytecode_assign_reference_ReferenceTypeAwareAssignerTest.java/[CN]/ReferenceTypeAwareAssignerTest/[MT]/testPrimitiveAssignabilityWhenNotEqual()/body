@@ -1,6 +1,6 @@
 {
-  TypeDescription primitiveType=new TypeDescription.ForLoadedType(int.class);
-  TypeDescription otherPrimitiveType=new TypeDescription.ForLoadedType(long.class);
+  TypeDescription.Generic primitiveType=new TypeDescription.Generic.OfNonGenericType.ForLoadedType(int.class);
+  TypeDescription.Generic otherPrimitiveType=new TypeDescription.Generic.OfNonGenericType.ForLoadedType(long.class);
   StackManipulation stackManipulation=ReferenceTypeAwareAssigner.INSTANCE.assign(primitiveType,otherPrimitiveType,Assigner.Typing.DYNAMIC);
   assertThat(stackManipulation.isValid(),is(false));
   stackManipulation.apply(methodVisitor,implementationContext);
