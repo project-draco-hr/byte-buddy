@@ -1,0 +1,17 @@
+{
+  AnnotationRegistrant annotationRegistrant;
+switch (typeReference) {
+case TypeReference.CLASS_EXTENDS:
+    annotationRegistrant=new OnExtensionCollector(descriptor,typePath);
+  break;
+case TypeReference.CLASS_TYPE_PARAMETER:
+annotationRegistrant=new OnTypeParameterCollector(descriptor,typePath);
+break;
+case TypeReference.CLASS_TYPE_PARAMETER_BOUND:
+annotationRegistrant=new OnTypeParameterBoundCollector(descriptor,typePath);
+break;
+default :
+throw new IllegalStateException("Unexpected type reference: " + typeReference);
+}
+return new AnnotationExtractor(annotationRegistrant,new ComponentTypeLocator.ForAnnotationProperty(Default.this,descriptor));
+}
