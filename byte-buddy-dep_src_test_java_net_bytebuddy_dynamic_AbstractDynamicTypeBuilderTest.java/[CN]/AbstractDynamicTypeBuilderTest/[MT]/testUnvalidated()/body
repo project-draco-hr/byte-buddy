@@ -1,0 +1,3 @@
+{
+  createPlainWithoutValidation().defineField(FOO,void.class).make().load(null,ClassLoadingStrategy.Default.WRAPPER);
+}

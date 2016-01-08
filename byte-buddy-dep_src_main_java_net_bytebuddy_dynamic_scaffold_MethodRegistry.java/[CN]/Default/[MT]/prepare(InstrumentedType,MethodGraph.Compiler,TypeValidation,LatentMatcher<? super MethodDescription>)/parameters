@@ -1,0 +1,4 @@
+InstrumentedType instrumentedType
+MethodGraph.Compiler methodGraphCompiler
+TypeValidation typeValidation
+LatentMatcher<? super MethodDescription> ignoredMethods

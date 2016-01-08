@@ -1,0 +1,4 @@
+{
+  this.typeValidation=typeValidation;
+  this.enabled=enabled;
+}

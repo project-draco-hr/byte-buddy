@@ -6,6 +6,7 @@
   result=31 * result + auxiliaryTypeNamingStrategy.hashCode();
   result=31 * result + implementationContextFactory.hashCode();
   result=31 * result + methodGraphCompiler.hashCode();
+  result=31 * result + typeValidation.hashCode();
   result=31 * result + ignoredMethods.hashCode();
   return result;
 }

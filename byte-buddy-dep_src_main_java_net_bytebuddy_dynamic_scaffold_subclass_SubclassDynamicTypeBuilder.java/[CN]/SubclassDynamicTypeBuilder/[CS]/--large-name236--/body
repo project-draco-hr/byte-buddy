@@ -1,4 +1,0 @@
-{
-  super(instrumentedType,fieldRegistry,methodRegistry,typeAttributeAppender,asmVisitorWrapper,classFileVersion,auxiliaryTypeNamingStrategy,annotationValueFilterFactory,annotationRetention,implementationContextFactory,methodGraphCompiler,ignoredMethods);
-  this.constructorStrategy=constructorStrategy;
-}

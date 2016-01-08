@@ -1,0 +1,42 @@
+{
+  LinkedHashMap<MethodDescription,Prepared.Entry> implementations=new LinkedHashMap<MethodDescription,Prepared.Entry>();
+  Set<Handler> handlers=new HashSet<Handler>();
+  MethodList<?> helperMethods=instrumentedType.getDeclaredMethods();
+  for (  Entry entry : entries) {
+    if (handlers.add(entry.getHandler())) {
+      instrumentedType=entry.getHandler().prepare(instrumentedType);
+      ElementMatcher<? super MethodDescription> handledMethods=noneOf(helperMethods);
+      helperMethods=instrumentedType.getDeclaredMethods();
+      for (      MethodDescription helperMethod : helperMethods.filter(handledMethods)) {
+        implementations.put(helperMethod,entry.asSupplementaryEntry(helperMethod));
+      }
+    }
+  }
+  MethodGraph.Linked methodGraph=methodGraphCompiler.compile(instrumentedType);
+  ElementMatcher<? super MethodDescription> relevanceMatcher=(ElementMatcher<? super MethodDescription>)not(anyOf(implementations.keySet())).and(returns(isVisibleTo(instrumentedType))).and(hasParameters(whereNone(hasType(not(isVisibleTo(instrumentedType)))))).and(ignoredMethods.resolve(instrumentedType));
+  for (  MethodGraph.Node node : methodGraph.listNodes()) {
+    MethodDescription methodDescription=node.getRepresentative();
+    boolean visibilityBridge=instrumentedType.isPublic() && !instrumentedType.isInterface();
+    if (relevanceMatcher.matches(methodDescription)) {
+      for (      Entry entry : entries) {
+        if (entry.resolve(instrumentedType).matches(methodDescription)) {
+          implementations.put(methodDescription,entry.asPreparedEntry(instrumentedType,methodDescription,node.getMethodTypes()));
+          visibilityBridge=false;
+          break;
+        }
+      }
+    }
+    if (visibilityBridge && methodDescription.isPublic() && !(methodDescription.isAbstract() || methodDescription.isFinal())&& !node.getSort().isMadeVisible()&& methodDescription.getDeclaringType().asErasure().isPackagePrivate()) {
+      implementations.put(methodDescription,Prepared.Entry.forVisibilityBridge(methodDescription));
+    }
+  }
+  for (  MethodDescription methodDescription : CompoundList.of(instrumentedType.getDeclaredMethods().filter(not(isVirtual()).and(relevanceMatcher)),new MethodDescription.Latent.TypeInitializer(instrumentedType))) {
+    for (    Entry entry : entries) {
+      if (entry.resolve(instrumentedType).matches(methodDescription)) {
+        implementations.put(methodDescription,entry.asPreparedEntry(instrumentedType,methodDescription));
+        break;
+      }
+    }
+  }
+  return new Prepared(implementations,instrumentedType.getLoadedTypeInitializer(),instrumentedType.getTypeInitializer(),typeValidation.isEnabled() ? instrumentedType.validated() : instrumentedType,methodGraph);
+}

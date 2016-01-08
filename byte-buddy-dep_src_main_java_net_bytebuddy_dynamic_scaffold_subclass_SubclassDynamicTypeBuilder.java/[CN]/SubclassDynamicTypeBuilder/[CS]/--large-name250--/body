@@ -1,0 +1,3 @@
+{
+  this(instrumentedType,new FieldRegistry.Default(),new MethodRegistry.Default(),TypeAttributeAppender.ForInstrumentedType.INSTANCE,AsmVisitorWrapper.NoOp.INSTANCE,classFileVersion,auxiliaryTypeNamingStrategy,annotationValueFilterFactory,annotationRetention,implementationContextFactory,methodGraphCompiler,typeValidation,ignoredMethods,constructorStrategy);
+}

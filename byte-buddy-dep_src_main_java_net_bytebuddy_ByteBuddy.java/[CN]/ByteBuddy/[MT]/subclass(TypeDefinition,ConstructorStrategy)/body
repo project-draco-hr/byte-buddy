@@ -12,5 +12,5 @@
     interfaceTypes=new TypeList.Generic.Empty();
     actualSuperType=superType.asGenericType();
   }
-  return new SubclassDynamicTypeBuilder<T>(InstrumentedType.Default.subclass(namingStrategy.subclass(superType.asGenericType()),ModifierContributor.Resolver.of(Visibility.PUBLIC,TypeManifestation.PLAIN).resolve(superType.asErasure().getModifiers()),actualSuperType).withInterfaces(interfaceTypes),classFileVersion,auxiliaryTypeNamingStrategy,annotationValueFilterFactory,annotationRetention,implementationContextFactory,methodGraphCompiler,ignoredMethods,constructorStrategy);
+  return new SubclassDynamicTypeBuilder<T>(InstrumentedType.Default.subclass(namingStrategy.subclass(superType.asGenericType()),ModifierContributor.Resolver.of(Visibility.PUBLIC,TypeManifestation.PLAIN).resolve(superType.asErasure().getModifiers()),actualSuperType).withInterfaces(interfaceTypes),classFileVersion,auxiliaryTypeNamingStrategy,annotationValueFilterFactory,annotationRetention,implementationContextFactory,methodGraphCompiler,typeValidation,ignoredMethods,constructorStrategy);
 }

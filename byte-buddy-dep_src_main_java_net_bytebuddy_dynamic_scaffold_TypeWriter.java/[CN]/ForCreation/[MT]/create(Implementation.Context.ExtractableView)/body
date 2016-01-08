@@ -1,6 +1,6 @@
 {
   ClassWriter classWriter=new ClassWriter(asmVisitorWrapper.mergeWriter(ASM_MANUAL_FLAGS));
-  ClassVisitor classVisitor=asmVisitorWrapper.wrap(instrumentedType,new ValidatingClassVisitor(classWriter));
+  ClassVisitor classVisitor=asmVisitorWrapper.wrap(instrumentedType,ValidatingClassVisitor.of(classWriter,typeValidation));
   classVisitor.visit(classFileVersion.getMinorMajorVersion(),instrumentedType.getActualModifiers(!instrumentedType.isInterface()),instrumentedType.getInternalName(),instrumentedType.getGenericSignature(),(instrumentedType.getSuperType() == null ? TypeDescription.OBJECT : instrumentedType.getSuperType().asErasure()).getInternalName(),instrumentedType.getInterfaces().asErasures().toInternalNames());
   typeAttributeAppender.apply(classVisitor,instrumentedType,annotationValueFilterFactory.on(instrumentedType));
   for (  FieldDescription fieldDescription : instrumentedType.getDeclaredFields()) {

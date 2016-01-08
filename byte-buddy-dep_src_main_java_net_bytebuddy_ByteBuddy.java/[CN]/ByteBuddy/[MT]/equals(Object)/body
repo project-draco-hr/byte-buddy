@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   ByteBuddy byteBuddy=(ByteBuddy)other;
-  return classFileVersion.equals(byteBuddy.classFileVersion) && annotationValueFilterFactory.equals(byteBuddy.annotationValueFilterFactory) && annotationRetention == byteBuddy.annotationRetention && namingStrategy.equals(byteBuddy.namingStrategy) && auxiliaryTypeNamingStrategy.equals(byteBuddy.auxiliaryTypeNamingStrategy) && implementationContextFactory.equals(byteBuddy.implementationContextFactory) && methodGraphCompiler.equals(byteBuddy.methodGraphCompiler) && ignoredMethods.equals(byteBuddy.ignoredMethods);
+  return classFileVersion.equals(byteBuddy.classFileVersion) && annotationValueFilterFactory.equals(byteBuddy.annotationValueFilterFactory) && annotationRetention == byteBuddy.annotationRetention && namingStrategy.equals(byteBuddy.namingStrategy) && auxiliaryTypeNamingStrategy.equals(byteBuddy.auxiliaryTypeNamingStrategy) && implementationContextFactory.equals(byteBuddy.implementationContextFactory) && methodGraphCompiler.equals(byteBuddy.methodGraphCompiler) && typeValidation.equals(byteBuddy.typeValidation) && ignoredMethods.equals(byteBuddy.ignoredMethods);
 }

@@ -1,0 +1,3 @@
+{
+  return typeValidation.isEnabled() ? new ValidatingClassVisitor(classVisitor) : classVisitor;
+}

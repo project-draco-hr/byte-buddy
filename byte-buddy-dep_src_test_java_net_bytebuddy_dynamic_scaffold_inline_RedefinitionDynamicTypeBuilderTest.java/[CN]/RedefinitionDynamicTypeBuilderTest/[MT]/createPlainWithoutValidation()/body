@@ -1,0 +1,3 @@
+{
+  return new ByteBuddy().with(TypeValidation.DISABLED).redefine(Foo.class);
+}
