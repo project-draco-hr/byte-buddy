@@ -1,7 +1,0 @@
-{
-  super(typePool,descriptor,values);
-  if (!Type.getDescriptor(annotationType).equals(descriptor)) {
-    throw new IllegalArgumentException(annotationType + " does not correspond to " + descriptor);
-  }
-  this.annotationType=annotationType;
-}

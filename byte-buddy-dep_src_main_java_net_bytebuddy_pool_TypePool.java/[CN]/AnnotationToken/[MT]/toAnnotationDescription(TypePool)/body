@@ -1,3 +1,4 @@
 {
-  return new LazyAnnotationDescription(typePool,descriptor,values);
+  TypePool.Resolution resolution=typePool.describe(getBinaryName());
+  return resolution.isResolved() ? new Resolution.Simple(new LazyAnnotationDescription(typePool,resolution.resolve(),values)) : Resolution.Illegal.INSTANCE;
 }

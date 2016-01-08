@@ -1,5 +1,5 @@
 {
-  Class<?> type=classLoader.loadClass(annotationToken.getDescriptor().substring(1,annotationToken.getDescriptor().length() - 1).replace('/','.'));
+  Class<?> type=classLoader.loadClass(annotationToken.getBinaryName());
   if (type.isAnnotation()) {
     return new ForAnnotation.Loaded<Annotation>((Annotation)Proxy.newProxyInstance(classLoader,new Class<?>[]{type},AnnotationDescription.AnnotationInvocationHandler.of(classLoader,(Class<? extends Annotation>)type,annotationToken.getValues())));
   }

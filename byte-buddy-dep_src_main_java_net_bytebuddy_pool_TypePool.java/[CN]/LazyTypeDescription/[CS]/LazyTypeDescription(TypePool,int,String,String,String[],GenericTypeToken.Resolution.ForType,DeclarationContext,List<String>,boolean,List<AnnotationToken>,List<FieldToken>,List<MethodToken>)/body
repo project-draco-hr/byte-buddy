@@ -16,10 +16,7 @@
   this.declarationContext=declarationContext;
   this.declaredTypes=declaredTypes;
   this.anonymousType=anonymousType;
-  declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
-  for (  AnnotationToken annotationToken : annotationTokens) {
-    declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));
-  }
+  this.annotationTokens=annotationTokens;
   declaredFields=new ArrayList<FieldDescription.InDefinedShape>(fieldTokens.size());
   for (  FieldToken fieldToken : fieldTokens) {
     declaredFields.add(fieldToken.toFieldDescription(this));

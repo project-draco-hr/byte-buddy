@@ -1,3 +1,6 @@
 {
-  return new Loadable<T>(typePool,descriptor,values,annotationType);
+  if (!this.annotationType.represents(annotationType)) {
+    throw new IllegalArgumentException(annotationType + " does not represent " + this.annotationType);
+  }
+  return new Loadable<T>(typePool,annotationType,values);
 }
