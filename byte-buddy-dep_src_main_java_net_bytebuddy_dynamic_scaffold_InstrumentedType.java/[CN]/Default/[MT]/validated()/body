@@ -3,16 +3,16 @@
     throw new IllegalStateException("Illegal type name: " + getName());
   }
   TypeDescription.Generic superType=getSuperType();
-  if (superType != null && !superType.accept(Generic.Visitor.Validator.SUPER_CLASS)) {
+  if (superType != null && (!superType.accept(Generic.Visitor.Validator.SUPER_CLASS))) {
     throw new IllegalStateException("Illegal super class " + getSuperType() + " for "+ this);
   }
   Set<TypeDescription> interfaceErasures=new HashSet<TypeDescription>();
   for (  TypeDescription.Generic interfaceType : getInterfaces()) {
-    if (!interfaceErasures.add(interfaceType.asErasure())) {
-      throw new IllegalStateException("Already implemented interface " + interfaceType + " for "+ this);
-    }
- else     if (!interfaceType.accept(Generic.Visitor.Validator.INTERFACE)) {
+    if (!interfaceType.accept(Generic.Visitor.Validator.INTERFACE)) {
       throw new IllegalStateException("Illegal interface " + interfaceType + " for "+ this);
+    }
+ else     if (!interfaceErasures.add(interfaceType.asErasure())) {
+      throw new IllegalStateException("Already implemented interface " + interfaceType + " for "+ this);
     }
   }
   TypeList.Generic typeVariables=getTypeVariables();
@@ -29,9 +29,13 @@
       throw new IllegalStateException("Illegal type variable name of " + typeVariable + " for "+ this);
     }
     boolean interfaceBound=false;
+    Set<TypeDescription.Generic> bounds=new HashSet<Generic>();
     for (    TypeDescription.Generic bound : typeVariable.getUpperBounds()) {
       if (!bound.accept(Generic.Visitor.Validator.TYPE_VARIABLE)) {
         throw new IllegalStateException("Illegal type variable bound " + bound + " of "+ typeVariable+ " for "+ this);
+      }
+ else       if (!bounds.add(bound)) {
+        throw new IllegalStateException("Duplicate bound " + bound + " of "+ typeVariable+ " for "+ this);
       }
  else       if (interfaceBound && (bound.getSort().isTypeVariable() || !bound.asErasure().isInterface())) {
         throw new IllegalStateException("Illegal interface bound " + bound + " of "+ typeVariable+ " for "+ this);
@@ -82,9 +86,13 @@
         throw new IllegalStateException("Illegal type variable name of " + typeVariable + " for "+ methodDescription);
       }
       boolean interfaceBound=false;
+      Set<TypeDescription.Generic> bounds=new HashSet<Generic>();
       for (      TypeDescription.Generic bound : typeVariable.getUpperBounds()) {
         if (!bound.accept(Generic.Visitor.Validator.TYPE_VARIABLE)) {
           throw new IllegalStateException("Illegal type variable bound " + bound + " of "+ typeVariable+ " for "+ methodDescription);
+        }
+ else         if (!bounds.add(bound)) {
+          throw new IllegalStateException("Duplicate bound " + bound + " of "+ typeVariable+ " for "+ methodDescription);
         }
  else         if (interfaceBound && (bound.getSort().isTypeVariable() || !bound.asErasure().isInterface())) {
           throw new IllegalStateException("Illegal interface bound " + bound + " of "+ typeVariable+ " for "+ methodDescription);

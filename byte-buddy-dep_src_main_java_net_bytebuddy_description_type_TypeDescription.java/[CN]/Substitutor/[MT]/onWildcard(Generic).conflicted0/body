@@ -1,3 +1,4 @@
 {
-  throw new IllegalArgumentException("A wildcard is not a first level type: " + this);
+  TypeList.Generic lowerBounds=wildcard.getLowerBounds();
+  return lowerBounds.isEmpty() ? OfWildcardType.Latent.boundedAbove(wildcard.getUpperBounds().getOnly().accept(this)) : OfWildcardType.Latent.boundedBelow(lowerBounds.getOnly().accept(this));
 }

@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withName("a" + ILLEGAL_NAME).validated();
+}

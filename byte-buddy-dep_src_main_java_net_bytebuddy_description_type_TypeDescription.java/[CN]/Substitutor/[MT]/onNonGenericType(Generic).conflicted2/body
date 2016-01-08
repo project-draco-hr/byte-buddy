@@ -1,11 +1,3 @@
 {
-  if (typeDescription.isArray()) {
-    return acceptsArray;
-  }
- else   if (typeDescription.isPrimitive()) {
-    return acceptsPrimitive && (acceptsVoid || !typeDescription.represents(void.class));
-  }
- else {
-    return !requiresThrowable || typeDescription.asErasure().isAssignableTo(Throwable.class);
-  }
+  return new Dispatcher.ForNonGenericType(typeDescription.asErasure());
 }

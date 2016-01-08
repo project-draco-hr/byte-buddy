@@ -1,0 +1,3 @@
+{
+  InstrumentedType.Default.subclass(FOO,0,TypeDefinition.Sort.describe(Serializable.class)).validated();
+}

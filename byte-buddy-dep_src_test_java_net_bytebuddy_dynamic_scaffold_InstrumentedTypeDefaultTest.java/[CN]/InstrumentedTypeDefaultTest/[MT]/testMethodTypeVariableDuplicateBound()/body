@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withMethod(new MethodDescription.Token(FOO,0,Collections.singletonList(new TypeVariableToken(FOO,Arrays.asList(TypeDefinition.Sort.describe(Serializable.class),TypeDefinition.Sort.describe(Serializable.class)))),TypeDescription.Generic.OBJECT,Collections.<ParameterDescription.Token>emptyList(),Collections.<TypeDescription.Generic>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE)).validated();
+}

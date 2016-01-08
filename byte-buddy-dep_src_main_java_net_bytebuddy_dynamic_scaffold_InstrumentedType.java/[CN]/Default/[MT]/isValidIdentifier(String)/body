@@ -1,5 +1,5 @@
 {
-  if (identifier.isEmpty() || !Character.isJavaIdentifierStart(identifier.charAt(0))) {
+  if (KEYWORDS.contains(identifier) || identifier.isEmpty() || !Character.isJavaIdentifierStart(identifier.charAt(0))) {
     return false;
   }
  else   if (identifier.equals(PackageDescription.PACKAGE_CLASS_NAME)) {

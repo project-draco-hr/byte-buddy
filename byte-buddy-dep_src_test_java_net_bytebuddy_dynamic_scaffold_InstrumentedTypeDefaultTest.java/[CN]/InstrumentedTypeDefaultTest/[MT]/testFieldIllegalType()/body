@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withField(new FieldDescription.Token(ILLEGAL_NAME,0,TypeDescription.Generic.VOID)).validated();
+}
