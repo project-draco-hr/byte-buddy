@@ -1,4 +1,5 @@
 {
+  when(secondRawParameterType.asErasure()).thenReturn(secondRawParameterType);
   when(bridgeMethod.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(bridgeMethod,Arrays.asList(secondParameterType,secondParameterType)));
   StackManipulation stackManipulation=MethodVariableAccess.allArgumentsOf(methodDescription).asBridgeOf(bridgeMethod);
   assertThat(stackManipulation.isValid(),is(true));

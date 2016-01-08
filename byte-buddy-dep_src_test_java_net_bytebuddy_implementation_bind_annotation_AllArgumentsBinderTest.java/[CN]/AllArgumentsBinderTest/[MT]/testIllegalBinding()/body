@@ -4,10 +4,10 @@
   when(stackManipulation.isValid()).thenReturn(false);
   when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,firstSourceType,secondSourceType));
   when(source.isStatic()).thenReturn(false);
-  when(genericTargetType.isArray()).thenReturn(true);
+  when(targetType.isArray()).thenReturn(true);
   when(targetType.getComponentType()).thenReturn(componentType);
   when(componentType.getStackSize()).thenReturn(StackSize.SINGLE);
-  when(target.getType()).thenReturn(genericTargetType);
+  when(target.getType()).thenReturn(targetType);
   when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=AllArguments.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(false));
@@ -15,6 +15,6 @@
   verify(source,atLeast(1)).isStatic();
   verify(target,atLeast(1)).getType();
   verify(target,atLeast(1)).getDeclaredAnnotations();
-  verify(assigner).assign(firstSourceType,genericComponentType,Assigner.Typing.STATIC);
+  verify(assigner).assign(firstSourceType,componentType,Assigner.Typing.STATIC);
   verifyNoMoreInteractions(assigner);
 }

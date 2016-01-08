@@ -6,7 +6,7 @@
     return typing.isDynamic() ? DefaultValue.of(target) : StackManipulation.Illegal.INSTANCE;
   }
  else   if (target.represents(void.class)) {
-    return Removal.pop(source.asErasure());
+    return Removal.pop(source);
   }
  else {
     return chained.assign(source,target,typing);

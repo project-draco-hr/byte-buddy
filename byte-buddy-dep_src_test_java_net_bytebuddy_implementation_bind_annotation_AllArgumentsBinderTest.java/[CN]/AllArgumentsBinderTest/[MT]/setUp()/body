@@ -2,6 +2,7 @@
   super.setUp();
   when(firstSourceType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(secondSourceType.getStackSize()).thenReturn(StackSize.SINGLE);
-  when(genericTargetType.asErasure()).thenReturn(targetType);
-  when(genericComponentType.asErasure()).thenReturn(componentType);
+  when(componentType.asErasure()).thenReturn(rawComponentType);
+  when(targetType.getComponentType()).thenReturn(componentType);
+  when(targetType.asErasure()).thenReturn(rawTargetType);
 }
