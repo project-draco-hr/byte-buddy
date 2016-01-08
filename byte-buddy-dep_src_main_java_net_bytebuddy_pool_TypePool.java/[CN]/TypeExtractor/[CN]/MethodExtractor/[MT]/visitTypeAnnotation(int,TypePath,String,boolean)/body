@@ -1,0 +1,24 @@
+{
+  AnnotationRegistrant annotationRegistrant;
+  TypeReference typeReference=new TypeReference(rawTypeReference);
+switch (typeReference.getSort()) {
+case TypeReference.METHOD_TYPE_PARAMETER:
+    annotationRegistrant=new TypeAnnotationOnMethodTypeParameterCollector(descriptor,typePath,typeReference.getTypeParameterIndex());
+  break;
+case TypeReference.METHOD_TYPE_PARAMETER_BOUND:
+annotationRegistrant=new TypeAnnotationOnMethodTypeParameterBoundCollector(descriptor,typePath,typeReference.getTypeParameterBoundIndex());
+break;
+case TypeReference.METHOD_RETURN:
+annotationRegistrant=new TypeAnnotationOnMethodReturnCollector(descriptor,typePath);
+break;
+case TypeReference.THROWS:
+annotationRegistrant=new TypeAnnotationOnThrowsCollector(descriptor,typePath,typeReference.getExceptionIndex());
+break;
+case TypeReference.METHOD_RECEIVER:
+case TypeReference.METHOD_FORMAL_PARAMETER:
+return null;
+default :
+throw new IllegalStateException("Unexpected type reference on method: " + typeReference.getSort());
+}
+return new AnnotationExtractor(annotationRegistrant,new ComponentTypeLocator.ForAnnotationProperty(Default.this,descriptor));
+}

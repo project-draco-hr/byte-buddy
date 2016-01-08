@@ -1,0 +1,12 @@
+{
+  AnnotationRegistrant annotationRegistrant;
+  TypeReference typeReference=new TypeReference(rawTypeReference);
+switch (typeReference.getSort()) {
+case TypeReference.FIELD:
+    annotationRegistrant=new TypeAnnotationOnFieldCollector(descriptor,typePath);
+  break;
+default :
+throw new IllegalStateException("Unexpected type reference on field: " + typeReference.getSort());
+}
+return new AnnotationExtractor(annotationRegistrant,new ComponentTypeLocator.ForAnnotationProperty(Default.this,descriptor));
+}
