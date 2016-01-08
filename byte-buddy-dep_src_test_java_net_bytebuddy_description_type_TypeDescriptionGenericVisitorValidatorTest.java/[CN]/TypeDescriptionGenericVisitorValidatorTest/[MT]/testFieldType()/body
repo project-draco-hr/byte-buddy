@@ -1,0 +1,9 @@
+{
+  assertThat(TypeDescription.Generic.Visitor.Validator.FIELD.onNonGenericType(TypeDescription.Generic.OBJECT),is(true));
+  assertThat(TypeDescription.Generic.Visitor.Validator.FIELD.onNonGenericType(TypeDefinition.Sort.describe(Object[].class)),is(true));
+  assertThat(TypeDescription.Generic.Visitor.Validator.FIELD.onNonGenericType(TypeDefinition.Sort.describe(int.class)),is(true));
+  assertThat(TypeDescription.Generic.Visitor.Validator.FIELD.onNonGenericType(TypeDefinition.Sort.describe(void.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.FIELD.onGenericArray(mock(TypeDescription.Generic.class)),is(true));
+  assertThat(TypeDescription.Generic.Visitor.Validator.FIELD.onParameterizedType(mock(TypeDescription.Generic.class)),is(true));
+  assertThat(TypeDescription.Generic.Visitor.Validator.FIELD.onTypeVariable(mock(TypeDescription.Generic.class)),is(true));
+}

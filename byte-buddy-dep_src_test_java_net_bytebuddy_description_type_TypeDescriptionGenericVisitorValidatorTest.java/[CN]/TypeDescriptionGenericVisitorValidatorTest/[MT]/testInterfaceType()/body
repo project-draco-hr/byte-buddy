@@ -1,0 +1,12 @@
+{
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onNonGenericType(TypeDescription.Generic.OBJECT),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onNonGenericType(TypeDefinition.Sort.describe(Serializable.class)),is(true));
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onNonGenericType(TypeDefinition.Sort.describe(void.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onNonGenericType(TypeDefinition.Sort.describe(int.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onNonGenericType(TypeDefinition.Sort.describe(void.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onNonGenericType(TypeDefinition.Sort.describe(Object[].class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onParameterizedType(TypeDescription.Generic.OBJECT),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onParameterizedType(TypeDefinition.Sort.describe(Serializable.class)),is(true));
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onTypeVariable(mock(TypeDescription.Generic.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onGenericArray(mock(TypeDescription.Generic.class)),is(false));
+}

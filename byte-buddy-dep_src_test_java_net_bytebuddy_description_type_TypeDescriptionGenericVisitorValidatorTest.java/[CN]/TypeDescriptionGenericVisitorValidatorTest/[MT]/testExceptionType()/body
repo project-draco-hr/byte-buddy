@@ -1,0 +1,12 @@
+{
+  assertThat(TypeDescription.Generic.Visitor.Validator.EXCEPTION.onNonGenericType(TypeDefinition.Sort.describe(Exception.class)),is(true));
+  TypeDescription.Generic typeVariable=mock(TypeDescription.Generic.class), bound=mock(TypeDescription.Generic.class);
+  when(typeVariable.getUpperBounds()).thenReturn(new TypeList.Generic.Explicit(bound));
+  when(bound.asGenericType()).thenReturn(bound);
+  when(bound.accept(TypeDescription.Generic.Visitor.Validator.EXCEPTION)).thenReturn(false);
+  assertThat(TypeDescription.Generic.Visitor.Validator.EXCEPTION.onTypeVariable(typeVariable),is(false));
+  when(bound.accept(TypeDescription.Generic.Visitor.Validator.EXCEPTION)).thenReturn(true);
+  assertThat(TypeDescription.Generic.Visitor.Validator.EXCEPTION.onTypeVariable(typeVariable),is(true));
+  assertThat(TypeDescription.Generic.Visitor.Validator.EXCEPTION.onGenericArray(mock(TypeDescription.Generic.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.EXCEPTION.onParameterizedType(mock(TypeDescription.Generic.class)),is(false));
+}
