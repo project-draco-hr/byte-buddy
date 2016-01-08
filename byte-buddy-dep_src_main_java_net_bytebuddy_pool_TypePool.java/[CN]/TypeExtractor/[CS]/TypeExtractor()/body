@@ -1,9 +1,6 @@
 {
   super(Opcodes.ASM5);
   annotationTokens=new ArrayList<LazyTypeDescription.AnnotationToken>();
-  typeVariablesTokensForExtensions=null;
-  typeVariableTokenForTypeParameters=null;
-  typeVariableTokenForTypeParameterBounds=null;
   fieldTokens=new ArrayList<LazyTypeDescription.FieldToken>();
   methodTokens=new ArrayList<LazyTypeDescription.MethodToken>();
   anonymousType=false;
