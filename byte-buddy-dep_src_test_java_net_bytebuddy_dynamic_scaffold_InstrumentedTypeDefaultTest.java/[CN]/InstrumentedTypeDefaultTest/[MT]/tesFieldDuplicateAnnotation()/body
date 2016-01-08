@@ -1,3 +1,3 @@
 {
-  makePlainInstrumentedType().withField(new FieldDescription.Token(FOO,0,TypeDescription.Generic.OBJECT,Arrays.asList(AnnotationDescription.Builder.forType(SampleAnnotation.class).make(),AnnotationDescription.Builder.forType(SampleAnnotation.class).make()))).validated();
+  makePlainInstrumentedType().withField(new FieldDescription.Token(FOO,ModifierContributor.EMPTY_MASK,TypeDescription.Generic.OBJECT,Arrays.asList(AnnotationDescription.Builder.forType(SampleAnnotation.class).make(),AnnotationDescription.Builder.forType(SampleAnnotation.class).make()))).validated();
 }

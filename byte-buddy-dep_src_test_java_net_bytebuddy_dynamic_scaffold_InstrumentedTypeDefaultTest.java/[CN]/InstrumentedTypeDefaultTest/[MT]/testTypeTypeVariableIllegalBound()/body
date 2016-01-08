@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withTypeVariable(new TypeVariableToken(FOO,Collections.singletonList(TypeDescription.Generic.VOID))).validated();
+}

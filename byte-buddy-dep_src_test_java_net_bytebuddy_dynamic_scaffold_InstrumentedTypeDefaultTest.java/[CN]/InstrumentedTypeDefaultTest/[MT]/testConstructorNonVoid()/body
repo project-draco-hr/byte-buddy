@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withMethod(new MethodDescription.Token(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,ModifierContributor.EMPTY_MASK,TypeDescription.Generic.OBJECT)).validated();
+}

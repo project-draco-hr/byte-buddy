@@ -1,3 +1,3 @@
 {
-  assertThat(new TypeVariableToken(FOO,bound).accept(visitor),is(new TypeVariableToken(FOO,visitedBound)));
+  assertThat(new TypeVariableToken(FOO,Collections.singletonList(bound)).accept(visitor),is(new TypeVariableToken(FOO,Collections.singletonList(visitedBound))));
 }

@@ -1,0 +1,3 @@
+{
+  assertThat(typePool.describe(Object.class.getName()).resolve().getModifiers() & Opcodes.ACC_SUPER,is(0));
+}

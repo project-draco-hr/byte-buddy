@@ -1,0 +1,17 @@
+TypeDescription instrumentedType
+FieldPool fieldPool
+MethodPool methodPool
+List<DynamicType> explicitAuxiliaryTypes
+MethodList<?> instrumentedMethods
+LoadedTypeInitializer loadedTypeInitializer
+TypeInitializer typeInitializer
+TypeAttributeAppender typeAttributeAppender
+AsmVisitorWrapper asmVisitorWrapper
+ClassFileVersion classFileVersion
+AnnotationValueFilter.Factory annotationValueFilterFactory
+AnnotationRetention annotationRetention
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+Implementation.Context.Factory implementationContextFactory
+TypeDescription originalType
+ClassFileLocator classFileLocator
+MethodRebaseResolver methodRebaseResolver

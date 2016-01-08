@@ -1,0 +1,3 @@
+{
+  InstrumentedType.Default.subclass(FOO,ILLEGAL_MODIFIERS,TypeDefinition.Sort.describe(Serializable.class)).validated();
+}

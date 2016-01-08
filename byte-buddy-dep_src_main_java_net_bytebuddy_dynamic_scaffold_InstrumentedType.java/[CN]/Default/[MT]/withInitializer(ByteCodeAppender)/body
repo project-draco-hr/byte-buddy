@@ -1,3 +1,0 @@
-{
-  return new Default(name,modifiers,superType,typeVariables,interfaceTypes,fieldTokens,methodTokens,annotationDescriptions,typeInitializer.expandWith(byteCodeAppender),loadedTypeInitializer,declaringType,enclosingMethod,enclosingType,declaredTypes,memberClass,anonymousClass,localClass);
-}

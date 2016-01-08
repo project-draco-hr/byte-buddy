@@ -1,3 +1,0 @@
-{
-  return new Default(typeDescription.getName(),typeDescription.getModifiers(),typeDescription.getSuperType(),typeDescription.getTypeVariables().asTokenList(is(typeDescription)),typeDescription.getInterfaces().accept(Generic.Visitor.Substitutor.ForDetachment.of(typeDescription)),typeDescription.getDeclaredFields().asTokenList(is(typeDescription)),typeDescription.getDeclaredMethods().asTokenList(is(typeDescription)),typeDescription.getDeclaredAnnotations(),TypeInitializer.None.INSTANCE,LoadedTypeInitializer.NoOp.INSTANCE,typeDescription.getDeclaringType(),typeDescription.getEnclosingMethod(),typeDescription.getEnclosingType(),typeDescription.getDeclaredTypes(),typeDescription.isMemberClass(),typeDescription.isAnonymousClass(),typeDescription.isLocalClass());
-}

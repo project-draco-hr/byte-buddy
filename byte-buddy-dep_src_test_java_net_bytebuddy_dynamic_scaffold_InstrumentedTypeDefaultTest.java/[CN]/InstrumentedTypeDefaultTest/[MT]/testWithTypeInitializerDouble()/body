@@ -6,7 +6,7 @@
   when(first.apply(methodVisitor,implementationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(0,0));
   when(second.apply(methodVisitor,implementationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(0,0));
   instrumentedType=instrumentedType.withInitializer(first).withInitializer(second);
-  InstrumentedType.TypeInitializer typeInitializer=instrumentedType.getTypeInitializer();
+  TypeInitializer typeInitializer=instrumentedType.getTypeInitializer();
   assertThat(typeInitializer.isDefined(),is(true));
   typeInitializer.apply(methodVisitor,implementationContext,methodDescription);
   verify(first).apply(methodVisitor,implementationContext,methodDescription);

@@ -1,7 +1,7 @@
 {
   InstrumentedType instrumentedType=makePlainInstrumentedType();
   assertThat(instrumentedType.getTypeVariables().size(),is(0));
-  instrumentedType=instrumentedType.withTypeVariable(new TypeVariableToken(BAR,TargetType.GENERIC_DESCRIPTION));
+  instrumentedType=instrumentedType.withTypeVariable(new TypeVariableToken(BAR,Collections.singletonList(TargetType.GENERIC_DESCRIPTION)));
   assertThat(instrumentedType.getTypeVariables().size(),is(1));
   TypeDescription.Generic typeVariable=instrumentedType.getTypeVariables().get(0);
   assertThat(typeVariable.getTypeName(),is(BAR));

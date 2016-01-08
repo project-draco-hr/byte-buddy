@@ -3,7 +3,7 @@
   assertThat(instrumentedType.getDeclaredFields().size(),is(0));
   ByteCodeAppender byteCodeAppender=mock(ByteCodeAppender.class);
   instrumentedType=instrumentedType.withInitializer(byteCodeAppender);
-  InstrumentedType.TypeInitializer typeInitializer=instrumentedType.getTypeInitializer();
+  TypeInitializer typeInitializer=instrumentedType.getTypeInitializer();
   assertThat(typeInitializer.isDefined(),is(true));
   MethodDescription methodDescription=mock(MethodDescription.class);
   typeInitializer.apply(methodVisitor,implementationContext,methodDescription);
