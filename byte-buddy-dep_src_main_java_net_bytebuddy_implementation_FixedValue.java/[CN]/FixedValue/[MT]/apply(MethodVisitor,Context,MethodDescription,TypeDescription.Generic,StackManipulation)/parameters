@@ -1,0 +1,5 @@
+MethodVisitor methodVisitor
+Context implementationContext
+MethodDescription instrumentedMethod
+TypeDescription.Generic fixedValueType
+StackManipulation valueLoadingInstruction

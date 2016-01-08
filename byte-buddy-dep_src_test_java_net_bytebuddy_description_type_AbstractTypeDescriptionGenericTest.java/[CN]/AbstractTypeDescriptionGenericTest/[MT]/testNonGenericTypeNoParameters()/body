@@ -1,0 +1,3 @@
+{
+  describe(NonGeneric.class.getDeclaredField(FOO)).getParameters();
+}

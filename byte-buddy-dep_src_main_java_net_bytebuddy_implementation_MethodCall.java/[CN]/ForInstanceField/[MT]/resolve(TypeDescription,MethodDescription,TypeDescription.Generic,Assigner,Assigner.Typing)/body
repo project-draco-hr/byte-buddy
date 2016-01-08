@@ -1,0 +1,10 @@
+{
+  if (interceptedMethod.isStatic()) {
+    throw new IllegalStateException("Cannot access instance field from static " + interceptedMethod);
+  }
+  StackManipulation stackManipulation=new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(instrumentedType.getDeclaredFields().filter(named(fieldName)).getOnly()).getter(),assigner.assign(fieldType,target,typing));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign field " + fieldName + " of type "+ fieldType+ " to "+ target);
+  }
+  return stackManipulation;
+}

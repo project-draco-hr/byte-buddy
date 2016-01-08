@@ -1,8 +1,0 @@
-{
-  InstrumentedType.TypeInitializer typeInitializer=new InstrumentedType.TypeInitializer.Simple(byteCodeAppender);
-  assertThat(typeInitializer.isDefined(),is(true));
-  typeInitializer.apply(methodVisitor,implementationContext,methodDescription);
-  verify(byteCodeAppender).apply(methodVisitor,implementationContext,methodDescription);
-  verifyZeroInteractions(byteCodeAppender);
-  verifyZeroInteractions(implementationContext);
-}

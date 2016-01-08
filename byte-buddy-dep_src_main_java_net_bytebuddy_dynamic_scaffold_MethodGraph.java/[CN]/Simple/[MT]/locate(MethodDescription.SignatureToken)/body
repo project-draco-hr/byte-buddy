@@ -1,0 +1,4 @@
+{
+  Node node=nodes.get(token);
+  return node == null ? Node.Unresolved.INSTANCE : node;
+}

@@ -1,3 +1,0 @@
-{
-  return defineField(fieldDescription.getName(),fieldDescription.getType().asErasure(),fieldDescription.getModifiers());
-}

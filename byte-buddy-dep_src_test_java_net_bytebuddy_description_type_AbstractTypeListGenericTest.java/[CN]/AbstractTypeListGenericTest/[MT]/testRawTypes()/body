@@ -1,0 +1,4 @@
+{
+  assertThat(asList(getFirst()).asRawTypes().size(),is(1));
+  assertThat(asList(getFirst()).asRawTypes().getOnly(),is(asElement(getFirst()).asRawType()));
+}

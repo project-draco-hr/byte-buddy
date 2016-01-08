@@ -1,0 +1,6 @@
+{
+  assertThat(AnnotationValueFilter.Default.SKIP_DEFAULTS.isRelevant(annotationDescription,methodDescription),is(true));
+  verifyZeroInteractions(annotationDescription);
+  verify(methodDescription).getDefaultValue();
+  verifyNoMoreInteractions(methodDescription);
+}

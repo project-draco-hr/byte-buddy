@@ -1,9 +1,0 @@
-{
-  InstrumentedType instrumentedType=makePlainInstrumentedType();
-  TypeDescription other=mock(TypeDescription.class);
-  when(other.getInternalName()).thenReturn(instrumentedType.getInternalName());
-  when(other.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
-  when(other.asErasure()).thenReturn(other);
-  assertThat(instrumentedType,is(other));
-  verify(other,atLeast(1)).getInternalName();
-}

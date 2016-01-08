@@ -1,3 +1,0 @@
-{
-  return annotateMethod(Arrays.asList(nonNull(annotation)));
-}

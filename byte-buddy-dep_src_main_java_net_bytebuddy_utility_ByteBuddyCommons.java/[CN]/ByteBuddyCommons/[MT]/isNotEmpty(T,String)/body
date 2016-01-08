@@ -1,6 +1,0 @@
-{
-  if (collection.isEmpty()) {
-    throw new IllegalArgumentException(exceptionMessage);
-  }
-  return collection;
-}

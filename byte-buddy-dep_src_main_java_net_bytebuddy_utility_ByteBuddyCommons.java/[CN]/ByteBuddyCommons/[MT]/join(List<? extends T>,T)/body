@@ -1,6 +1,0 @@
-{
-  List<T> result=new ArrayList<T>(list.size() + 1);
-  result.addAll(list);
-  result.add(element);
-  return result;
-}

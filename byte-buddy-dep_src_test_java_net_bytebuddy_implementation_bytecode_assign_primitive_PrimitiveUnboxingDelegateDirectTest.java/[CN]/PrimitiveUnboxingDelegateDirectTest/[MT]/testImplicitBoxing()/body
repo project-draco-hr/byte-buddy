@@ -1,13 +1,14 @@
 {
-  TypeDescription referenceTypeDescription=mock(TypeDescription.class);
+  TypeDescription.Generic referenceTypeDescription=mock(TypeDescription.Generic.class);
+  when(referenceTypeDescription.asGenericType()).thenReturn(referenceTypeDescription);
   StackManipulation primitiveStackManipulation=PrimitiveUnboxingDelegate.forReferenceType(referenceTypeDescription).assignUnboxedTo(primitiveTypeDescription,chainedAssigner,Assigner.Typing.DYNAMIC);
   assertThat(primitiveStackManipulation.isValid(),is(true));
   StackManipulation.Size size=primitiveStackManipulation.apply(methodVisitor,implementationContext);
   assertThat(size.getSizeImpact(),is(sizeChange));
   assertThat(size.getMaximalSize(),is(sizeChange));
-  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,wrapperTypeDescription.getInternalName(),unboxingMethodName,unboxingMethodDescriptor,false);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,Type.getInternalName(wrapperType),unboxingMethodName,unboxingMethodDescriptor,false);
   verifyNoMoreInteractions(methodVisitor);
-  verify(chainedAssigner).assign(referenceTypeDescription,new TypeDescription.ForLoadedType(wrapperType),Assigner.Typing.DYNAMIC);
+  verify(chainedAssigner).assign(referenceTypeDescription,new TypeDescription.Generic.OfNonGenericType.ForLoadedType(wrapperType),Assigner.Typing.DYNAMIC);
   verifyNoMoreInteractions(chainedAssigner);
   verify(stackManipulation,atLeast(1)).isValid();
   verify(stackManipulation).apply(methodVisitor,implementationContext);

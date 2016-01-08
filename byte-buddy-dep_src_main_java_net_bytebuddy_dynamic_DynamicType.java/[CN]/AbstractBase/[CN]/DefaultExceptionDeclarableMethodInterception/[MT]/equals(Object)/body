@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && methodToken.equals(((DefaultExceptionDeclarableMethodInterception)other).methodToken) && AbstractBase.this.equals(((DefaultExceptionDeclarableMethodInterception)other).getDynamicTypeBuilder());
-}

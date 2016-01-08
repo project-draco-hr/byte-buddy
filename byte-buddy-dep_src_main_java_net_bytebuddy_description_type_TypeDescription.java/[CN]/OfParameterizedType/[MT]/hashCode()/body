@@ -1,0 +1,8 @@
+{
+  int result=1;
+  for (  Generic parameterType : getParameters()) {
+    result=31 * result + parameterType.hashCode();
+  }
+  Generic ownerType=getOwnerType();
+  return result ^ (ownerType == null ? asErasure().hashCode() : ownerType.hashCode());
+}

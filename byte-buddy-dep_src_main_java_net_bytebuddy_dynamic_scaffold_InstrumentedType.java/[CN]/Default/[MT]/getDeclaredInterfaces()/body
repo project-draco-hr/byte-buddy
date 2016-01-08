@@ -1,3 +1,0 @@
-{
-  return GenericTypeList.ForDetachedTypes.attach(this,interfaceTypes);
-}

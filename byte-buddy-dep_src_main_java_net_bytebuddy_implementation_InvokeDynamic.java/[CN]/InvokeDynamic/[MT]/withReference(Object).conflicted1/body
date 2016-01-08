@@ -1,7 +1,7 @@
 {
   List<InvocationProvider.ArgumentProvider> argumentProviders=new ArrayList<InvocationProvider.ArgumentProvider>(value.length);
   for (  Object aValue : value) {
-    argumentProviders.add(InvocationProvider.ArgumentProvider.ForStaticField.of(nonNull(aValue)));
+    argumentProviders.add(InvocationProvider.ArgumentProvider.ForStaticField.of(aValue));
   }
   return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,typing);
 }

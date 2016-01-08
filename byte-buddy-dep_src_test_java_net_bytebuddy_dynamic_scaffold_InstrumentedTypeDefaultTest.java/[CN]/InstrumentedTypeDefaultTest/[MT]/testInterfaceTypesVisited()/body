@@ -1,0 +1,9 @@
+{
+  TypeDescription.Generic typeDescription=mock(TypeDescription.Generic.class);
+  when(typeDescription.asGenericType()).thenReturn(typeDescription);
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.withInterfaces(new TypeList.Generic.Explicit(typeDescription)),is(instrumentedType));
+  verify(typeDescription).accept(TypeDescription.Generic.Visitor.Substitutor.ForDetachment.of(instrumentedType));
+  verify(typeDescription).asGenericType();
+  verifyNoMoreInteractions(typeDescription);
+}

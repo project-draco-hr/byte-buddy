@@ -1,0 +1,26 @@
+{
+  TypeDescription.Generic returnType=mock(TypeDescription.Generic.class);
+  when(returnType.accept(Mockito.any(TypeDescription.Generic.Visitor.class))).thenReturn(returnType);
+  TypeDescription rawReturnType=mock(TypeDescription.class);
+  when(returnType.asErasure()).thenReturn(rawReturnType);
+  when(rawReturnType.getName()).thenReturn(FOO);
+  TypeDescription.Generic parameterType=mock(TypeDescription.Generic.class);
+  when(parameterType.accept(Mockito.any(TypeDescription.Generic.Visitor.class))).thenReturn(parameterType);
+  when(parameterType.asGenericType()).thenReturn(parameterType);
+  TypeDescription rawParameterType=mock(TypeDescription.class);
+  when(parameterType.asErasure()).thenReturn(rawParameterType);
+  when(rawParameterType.getName()).thenReturn(QUX);
+  when(rawParameterType.getStackSize()).thenReturn(StackSize.ZERO);
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getDeclaredFields().size(),is(0));
+  instrumentedType=instrumentedType.withMethod(new MethodDescription.Token(BAR,Opcodes.ACC_PUBLIC,returnType,Collections.singletonList(parameterType)));
+  assertThat(instrumentedType.getDeclaredMethods().size(),is(1));
+  MethodDescription.InDefinedShape methodDescription=instrumentedType.getDeclaredMethods().get(0);
+  assertThat(methodDescription.getReturnType(),is(returnType));
+  assertThat(methodDescription.getParameters().size(),is(1));
+  assertThat(methodDescription.getParameters().asTypeList(),is(Collections.singletonList(parameterType)));
+  assertThat(methodDescription.getExceptionTypes().size(),is(0));
+  assertThat(methodDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
+  assertThat(methodDescription.getName(),is(BAR));
+  assertThat(methodDescription.getDeclaringType(),sameInstance((TypeDescription)instrumentedType));
+}

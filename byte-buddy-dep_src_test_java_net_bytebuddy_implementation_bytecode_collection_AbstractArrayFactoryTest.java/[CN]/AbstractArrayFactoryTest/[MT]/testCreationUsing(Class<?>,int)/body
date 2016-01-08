@@ -1,6 +1,6 @@
 {
   defineComponentType(componentType);
-  CollectionFactory arrayFactory=ArrayFactory.forType(componentTypeDescription);
+  CollectionFactory arrayFactory=ArrayFactory.forType(this.componentType);
   StackManipulation arrayStackManipulation=arrayFactory.withValues(Collections.singletonList(stackManipulation));
   assertThat(arrayStackManipulation.isValid(),is(true));
   verify(stackManipulation,atLeast(1)).isValid();

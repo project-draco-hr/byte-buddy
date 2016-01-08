@@ -1,0 +1,3 @@
+MethodDescription.InGenericShape declaringMethod
+ParameterDescription parameterDescription
+TypeDescription.Generic.Visitor<? extends TypeDescription.Generic> visitor

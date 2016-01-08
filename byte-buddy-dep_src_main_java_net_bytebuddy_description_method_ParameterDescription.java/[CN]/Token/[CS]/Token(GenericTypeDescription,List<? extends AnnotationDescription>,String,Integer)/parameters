@@ -1,4 +1,0 @@
-GenericTypeDescription typeDescription
-List<? extends AnnotationDescription> annotationDescriptions
-String name
-Integer modifiers

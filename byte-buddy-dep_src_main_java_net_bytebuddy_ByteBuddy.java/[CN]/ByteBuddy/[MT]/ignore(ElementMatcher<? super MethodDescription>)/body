@@ -1,0 +1,3 @@
+{
+  return ignore(new LatentMatcher.Resolved<MethodDescription>(ignoredMethods));
+}

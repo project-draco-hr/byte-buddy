@@ -13,6 +13,6 @@
   for (  FieldDescription fieldDescription : enumerationFields) {
     fieldGetters.add(FieldAccess.forField(fieldDescription).getter());
   }
-  stackManipulation=new StackManipulation.Compound(stackManipulation,ArrayFactory.forType(instrumentedType).withValues(fieldGetters),FieldAccess.forField(instrumentedType.getDeclaredFields().filter(named(ENUM_VALUES)).getOnly()).putter());
+  stackManipulation=new StackManipulation.Compound(stackManipulation,ArrayFactory.forType(instrumentedType.asGenericType()).withValues(fieldGetters),FieldAccess.forField(instrumentedType.getDeclaredFields().filter(named(ENUM_VALUES)).getOnly()).putter());
   return new Size(stackManipulation.apply(methodVisitor,implementationContext).getMaximalSize(),instrumentedMethod.getStackSize());
 }

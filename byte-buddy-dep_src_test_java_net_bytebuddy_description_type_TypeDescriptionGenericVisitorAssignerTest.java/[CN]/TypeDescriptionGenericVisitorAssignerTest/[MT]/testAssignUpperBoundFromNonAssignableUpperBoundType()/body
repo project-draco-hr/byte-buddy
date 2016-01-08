@@ -1,0 +1,3 @@
+{
+  assertThat(collectionUpperBoundTypeVariableT.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(collectionUpperBoundTypeVariableS),is(false));
+}

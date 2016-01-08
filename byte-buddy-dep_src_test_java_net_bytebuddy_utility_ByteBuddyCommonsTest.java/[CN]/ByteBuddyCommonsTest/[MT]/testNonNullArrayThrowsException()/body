@@ -1,3 +1,0 @@
-{
-  nonNull(new Object[1]);
-}

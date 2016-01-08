@@ -1,0 +1,5 @@
+{
+  super.setUp();
+  when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Explicit<ParameterDescription>(parameterDescription));
+  when(annotationValueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.InDefinedShape.class))).thenReturn(true);
+}

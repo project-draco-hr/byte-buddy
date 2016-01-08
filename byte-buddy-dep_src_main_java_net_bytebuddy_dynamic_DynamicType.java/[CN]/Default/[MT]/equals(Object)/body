@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  Default aDefault=(Default)other;
-  return auxiliaryTypes.equals(aDefault.auxiliaryTypes) && Arrays.equals(binaryRepresentation,aDefault.binaryRepresentation) && typeDescription.equals(aDefault.typeDescription)&& loadedTypeInitializer.equals(aDefault.loadedTypeInitializer);
-}

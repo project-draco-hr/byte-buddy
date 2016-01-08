@@ -1,5 +1,5 @@
 {
-  List<byte[]> previousBytes=new LinkedList<byte[]>();
+  List<byte[]> previousBytes=new ArrayList<byte[]>();
   byte[] currentArray=new byte[bufferSize];
   int currentIndex=0;
   int currentRead;

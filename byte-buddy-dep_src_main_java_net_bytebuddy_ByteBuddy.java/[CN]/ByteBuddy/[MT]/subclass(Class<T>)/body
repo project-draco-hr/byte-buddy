@@ -1,3 +1,3 @@
 {
-  return subclass(new TypeDescription.ForLoadedType(nonNull(superType)));
+  return subclass(new TypeDescription.ForLoadedType(superType));
 }

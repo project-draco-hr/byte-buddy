@@ -1,0 +1,3 @@
+{
+  return isAnonymousClass() || isLocalClass() ? NO_NAME : getName().replace('$','.');
+}

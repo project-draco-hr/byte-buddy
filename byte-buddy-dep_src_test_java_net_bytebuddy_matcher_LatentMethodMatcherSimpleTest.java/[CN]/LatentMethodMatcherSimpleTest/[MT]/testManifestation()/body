@@ -1,6 +1,0 @@
-{
-  LatentMethodMatcher latentMethodMatcher=new LatentMethodMatcher.Resolved(elementMatcher);
-  assertThat(latentMethodMatcher.resolve(typeDescription),is((ElementMatcher)elementMatcher));
-  verifyZeroInteractions(elementMatcher);
-  verifyZeroInteractions(typeDescription);
-}

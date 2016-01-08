@@ -1,0 +1,2 @@
+Class<?> rawType
+List<? extends java.lang.reflect.Type> parameters

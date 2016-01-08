@@ -1,4 +1,0 @@
-{
-  InstrumentedType.TypeInitializer typeInitializer=makePlainInstrumentedType().getTypeInitializer();
-  assertThat(typeInitializer.isDefined(),is(false));
-}

@@ -1,0 +1,6 @@
+{
+  if (instrumentedMethod.getReturnType().isPrimitive()) {
+    throw new IllegalStateException("Cannot return null from " + instrumentedMethod);
+  }
+  return new ByteCodeAppender.Simple(NullConstant.INSTANCE,MethodReturn.REFERENCE).apply(methodVisitor,implementationContext,instrumentedMethod);
+}

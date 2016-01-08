@@ -1,3 +1,0 @@
-{
-  isActualType(Collections.singleton(new TypeDescription.ForLoadedType(void.class)));
-}

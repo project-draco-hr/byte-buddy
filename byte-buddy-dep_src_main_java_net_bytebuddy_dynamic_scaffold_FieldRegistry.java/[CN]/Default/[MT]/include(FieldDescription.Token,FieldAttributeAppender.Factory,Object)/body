@@ -1,7 +1,0 @@
-{
-  Map<FieldDescription.Token,Entry> entries=new HashMap<FieldDescription.Token,Entry>(this.entries);
-  if (entries.put(fieldToken,new Entry(attributeAppenderFactory,defaultValue)) != null) {
-    throw new IllegalArgumentException(fieldToken + " is already registered");
-  }
-  return new Default(entries);
-}

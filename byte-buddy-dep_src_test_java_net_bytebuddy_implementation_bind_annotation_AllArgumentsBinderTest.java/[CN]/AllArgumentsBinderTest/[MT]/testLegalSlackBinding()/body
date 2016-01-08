@@ -2,14 +2,14 @@
   when(target.getIndex()).thenReturn(1);
   when(annotation.value()).thenReturn(AllArguments.Assignment.SLACK);
   when(stackManipulation.isValid()).thenReturn(false);
-  when(rawSourceTypeList.iterator()).thenReturn(Arrays.asList(firstSourceType,secondSourceType).iterator());
+  when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,firstSourceType,secondSourceType));
   when(source.isStatic()).thenReturn(false);
   when(targetType.isArray()).thenReturn(true);
   when(targetType.getComponentType()).thenReturn(componentType);
   when(componentType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(target.getType()).thenReturn(targetType);
   when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
-  when(componentType.getInternalName()).thenReturn(FOO);
+  when(rawComponentType.getInternalName()).thenReturn(FOO);
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=AllArguments.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   MethodVisitor methodVisitor=mock(MethodVisitor.class);
   Implementation.Context implementationContext=mock(Implementation.Context.class);

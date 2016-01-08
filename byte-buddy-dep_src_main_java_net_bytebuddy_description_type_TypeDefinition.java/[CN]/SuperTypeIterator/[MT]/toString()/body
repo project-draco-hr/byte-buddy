@@ -1,0 +1,3 @@
+{
+  return "TypeDefinition.SuperTypeIterator{" + "nextType=" + nextType + '}';
+}

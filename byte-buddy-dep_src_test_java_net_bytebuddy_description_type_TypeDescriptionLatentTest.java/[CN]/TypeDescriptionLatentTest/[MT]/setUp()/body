@@ -1,4 +1,4 @@
 {
-  when(superType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(superType);
-  when(interfaceType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(interfaceType);
+  when(superType.asGenericType()).thenReturn(superType);
+  when(interfaceType.asGenericType()).thenReturn(interfaceType);
 }

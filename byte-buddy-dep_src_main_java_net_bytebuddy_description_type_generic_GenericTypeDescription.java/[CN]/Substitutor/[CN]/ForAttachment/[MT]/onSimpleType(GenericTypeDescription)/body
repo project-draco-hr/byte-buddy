@@ -1,3 +1,0 @@
-{
-  return typeDescription.equals(TargetType.DESCRIPTION) ? declaringType : typeDescription;
-}

@@ -1,5 +1,5 @@
 {
-  String versionString=System.getProperty(JAVA_VERSION_PROPERTY);
+  String versionString=AccessController.doPrivileged(VersionPropertyAction.INSTANCE);
   int[] versionIndex={-1,0,0};
   for (int i=1; i < 3; i++) {
     versionIndex[i]=versionString.indexOf('.',versionIndex[i - 1] + 1);

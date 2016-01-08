@@ -1,4 +1,0 @@
-{
-  GenericTypeDescription typeVariable=typeVariableSource.findVariable(genericTypeDescription.getSymbol());
-  return typeVariable == null ? genericTypeDescription.asErasure() : typeVariable;
-}

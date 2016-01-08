@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(MethodRebaseResolver.MethodNameTransformer.Suffixing.class).apply();
-}

@@ -3,7 +3,7 @@
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(1));
   MethodDescription methodDescription=new TypeDescription.ForLoadedType(AmbiguousInterfaceBase.DominantIntermediate.class).getDeclaredMethods().getOnly();
-  MethodGraph.Node methodNode=methodGraph.locate(methodDescription.asToken());
+  MethodGraph.Node methodNode=methodGraph.locate(methodDescription.asSignatureToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
   assertThat(methodNode.getMethodTypes().size(),is(1));
   assertThat(methodNode.getMethodTypes().contains(methodDescription.asTypeToken()),is(true));

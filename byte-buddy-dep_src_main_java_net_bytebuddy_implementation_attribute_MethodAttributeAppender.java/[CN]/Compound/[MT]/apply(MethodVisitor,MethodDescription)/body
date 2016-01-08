@@ -1,5 +1,0 @@
-{
-  for (  MethodAttributeAppender methodAttributeAppender : this.methodAttributeAppender) {
-    methodAttributeAppender.apply(methodVisitor,methodDescription);
-  }
-}

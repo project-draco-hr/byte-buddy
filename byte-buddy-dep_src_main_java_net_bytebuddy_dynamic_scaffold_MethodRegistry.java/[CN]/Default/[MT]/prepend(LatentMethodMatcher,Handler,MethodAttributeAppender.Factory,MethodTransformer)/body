@@ -1,3 +1,0 @@
-{
-  return new Default(join(new Entry(methodMatcher,handler,attributeAppenderFactory,methodTransformer),entries));
-}

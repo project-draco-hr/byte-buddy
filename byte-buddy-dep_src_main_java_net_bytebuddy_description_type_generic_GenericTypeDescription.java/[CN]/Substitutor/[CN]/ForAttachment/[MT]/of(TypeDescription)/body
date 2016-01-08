@@ -1,3 +1,0 @@
-{
-  return new ForAttachment(typeDescription,typeDescription);
-}

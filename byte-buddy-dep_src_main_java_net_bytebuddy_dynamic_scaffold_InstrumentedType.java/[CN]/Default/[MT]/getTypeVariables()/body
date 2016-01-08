@@ -1,3 +1,0 @@
-{
-  return GenericTypeList.ForDetachedTypes.OfTypeVariable.attach(this,typeVariables);
-}

@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(AnnotationAppender.ValueFilter.SkipDefaults.class).apply();
-}

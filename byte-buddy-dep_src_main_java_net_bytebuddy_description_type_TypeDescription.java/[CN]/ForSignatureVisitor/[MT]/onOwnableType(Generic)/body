@@ -1,0 +1,13 @@
+{
+  Generic ownerType=ownableType.getOwnerType();
+  if (ownerType != null && ownerType.getSort().isParameterized()) {
+    onOwnableType(ownerType);
+    signatureVisitor.visitInnerClassType(ownableType.asErasure().getSimpleName());
+  }
+ else {
+    signatureVisitor.visitClassType(ownableType.asErasure().getInternalName());
+  }
+  for (  Generic upperBound : ownableType.getParameters()) {
+    upperBound.accept(new ForSignatureVisitor.OfParameter(signatureVisitor));
+  }
+}

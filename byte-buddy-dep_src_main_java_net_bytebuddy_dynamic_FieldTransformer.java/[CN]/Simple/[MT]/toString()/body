@@ -1,0 +1,3 @@
+{
+  return "FieldTransformer.Simple{" + "tokenTransformer=" + tokenTransformer + '}';
+}

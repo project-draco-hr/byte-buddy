@@ -1,6 +1,0 @@
-{
-  when(typeDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Qux.Instance(),new Baz.Instance(),new QuxBaz.Instance()));
-  new TypeAttributeAppender.ForInstrumentedType(valueFilter).apply(classVisitor,typeDescription,typeDescription);
-  verify(typeDescription).getSuperType();
-  verifyNoMoreInteractions(typeDescription);
-}

@@ -1,0 +1,3 @@
+{
+  assertThat(ClassFileVersion.VersionPropertyAction.INSTANCE.run(),is(System.getProperty("java.version")));
+}

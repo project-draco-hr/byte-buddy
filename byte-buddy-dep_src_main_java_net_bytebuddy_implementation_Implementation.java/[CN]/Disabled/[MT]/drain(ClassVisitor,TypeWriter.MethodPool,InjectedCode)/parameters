@@ -1,3 +1,0 @@
-ClassVisitor classVisitor
-TypeWriter.MethodPool methodPool
-InjectedCode injectedCode

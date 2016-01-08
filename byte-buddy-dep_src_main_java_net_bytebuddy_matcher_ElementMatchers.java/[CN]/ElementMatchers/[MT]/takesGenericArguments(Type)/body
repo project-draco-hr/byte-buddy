@@ -1,3 +1,3 @@
 {
-  return takesGenericArguments(new GenericTypeList.ForLoadedType(nonNull(type)));
+  return takesGenericArguments(new TypeList.Generic.ForLoadedTypes(type));
 }

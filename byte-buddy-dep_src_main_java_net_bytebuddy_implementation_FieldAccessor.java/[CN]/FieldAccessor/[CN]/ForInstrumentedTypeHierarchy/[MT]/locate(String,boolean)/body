@@ -1,5 +1,5 @@
 {
-  for (  GenericTypeDescription currentType : instrumentedType) {
+  for (  TypeDefinition currentType : instrumentedType) {
     FieldList<?> fieldList=currentType.getDeclaredFields().filter(named(name).and(isVisibleTo(instrumentedType)));
     if (!fieldList.isEmpty() && (!staticMethod || fieldList.getOnly().isStatic())) {
       return fieldList.getOnly();

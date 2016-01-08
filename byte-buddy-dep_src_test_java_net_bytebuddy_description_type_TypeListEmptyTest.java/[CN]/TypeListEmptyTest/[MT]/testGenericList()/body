@@ -1,3 +1,0 @@
-{
-  assertThat(new TypeList.Empty().asGenericTypes().size(),is(0));
-}

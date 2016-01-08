@@ -1,0 +1,10 @@
+{
+  when(instrumentedType.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InDefinedShape>(foo,bar));
+  when(foo.getInternalName()).thenReturn(FOO);
+  when(foo.getDescriptor()).thenReturn(QUX);
+  when(bar.getInternalName()).thenReturn(BAR);
+  when(bar.getDescriptor()).thenReturn(BAZ);
+  when(classVisitor.visitMethod(eq(MODIFIERS),any(String.class),any(String.class),eq(BAZ),eq(new String[]{QUX + BAZ}))).thenReturn(methodVisitor);
+  when(methodVisitorWrapper.wrap(instrumentedType,foo,methodVisitor)).thenReturn(wrappedVisitor);
+  when(matcher.matches(foo)).thenReturn(true);
+}

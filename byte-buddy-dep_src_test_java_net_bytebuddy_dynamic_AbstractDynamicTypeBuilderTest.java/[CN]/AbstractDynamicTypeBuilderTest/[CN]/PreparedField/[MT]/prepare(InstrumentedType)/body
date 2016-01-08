@@ -1,3 +1,3 @@
 {
-  return instrumentedType.withField(new FieldDescription.Token(FOO,MODIFIERS,TypeDescription.OBJECT,Collections.singletonList(AnnotationDescription.Builder.forType(SampleAnnotation.class).define(FOO,BAR).make())));
+  return instrumentedType.withField(new FieldDescription.Token(FOO,MODIFIERS,TypeDescription.Generic.OBJECT,Collections.singletonList(AnnotationDescription.Builder.forType(SampleAnnotation.class).define(FOO,BAR).make())));
 }

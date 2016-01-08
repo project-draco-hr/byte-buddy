@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(ClassVisitorWrapper.Compound.class).apply();
-}

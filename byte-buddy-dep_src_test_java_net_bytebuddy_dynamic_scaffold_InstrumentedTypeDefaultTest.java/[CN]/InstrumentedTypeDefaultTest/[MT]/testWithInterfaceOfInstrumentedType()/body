@@ -1,0 +1,7 @@
+{
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getInterfaces().size(),is(0));
+  instrumentedType=instrumentedType.withInterfaces(new TypeList.Generic.Explicit(TargetType.DESCRIPTION));
+  assertThat(instrumentedType.getInterfaces().size(),is(1));
+  assertThat(instrumentedType.getInterfaces(),is(Collections.singletonList(instrumentedType.asGenericType())));
+}

@@ -1,3 +1,4 @@
 {
   ObjectPropertyAssertion.of(ClassFileVersion.class).apply();
+  ObjectPropertyAssertion.of(ClassFileVersion.VersionPropertyAction.class).apply();
 }

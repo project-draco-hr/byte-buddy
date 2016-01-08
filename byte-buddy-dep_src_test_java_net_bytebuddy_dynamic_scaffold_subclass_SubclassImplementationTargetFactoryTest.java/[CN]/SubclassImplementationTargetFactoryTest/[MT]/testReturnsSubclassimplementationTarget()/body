@@ -1,3 +1,0 @@
-{
-  assertThat(factory.make(instrumentedType,methodGraph) instanceof SubclassImplementationTarget,is(true));
-}

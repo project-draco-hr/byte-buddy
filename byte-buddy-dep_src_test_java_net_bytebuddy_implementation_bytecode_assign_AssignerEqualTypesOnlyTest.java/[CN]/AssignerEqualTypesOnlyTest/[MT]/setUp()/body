@@ -1,0 +1,4 @@
+{
+  when(first.asErasure()).thenReturn(firstRaw);
+  when(second.asErasure()).thenReturn(secondRaw);
+}

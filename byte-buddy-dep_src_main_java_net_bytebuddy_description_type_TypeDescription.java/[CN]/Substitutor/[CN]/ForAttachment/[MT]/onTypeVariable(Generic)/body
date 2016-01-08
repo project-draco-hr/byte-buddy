@@ -1,0 +1,9 @@
+{
+  Generic attachedVariable=typeVariableSource.findVariable(typeVariable.getSymbol());
+  if (attachedVariable == null) {
+    throw new IllegalArgumentException("Cannot attach undefined variable: " + typeVariable);
+  }
+ else {
+    return attachedVariable;
+  }
+}

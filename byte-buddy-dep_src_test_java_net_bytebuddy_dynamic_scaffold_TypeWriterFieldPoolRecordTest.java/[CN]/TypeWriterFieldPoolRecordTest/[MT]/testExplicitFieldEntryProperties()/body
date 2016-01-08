@@ -1,0 +1,6 @@
+{
+  TypeWriter.FieldPool.Record record=new TypeWriter.FieldPool.Record.ForExplicitField(fieldAttributeAppender,defaultValue,fieldDescription);
+  assertThat(record.getFieldAppender(),is(fieldAttributeAppender));
+  assertThat(record.resolveDefault(FieldDescription.NO_DEFAULT_VALUE),is(defaultValue));
+  assertThat(record.isImplicit(),is(false));
+}

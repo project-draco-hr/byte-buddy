@@ -1,5 +1,0 @@
-{
-  this.annotations=annotations;
-  target=Target.OnMethod.INSTANCE;
-  this.valueFilter=valueFilter;
-}

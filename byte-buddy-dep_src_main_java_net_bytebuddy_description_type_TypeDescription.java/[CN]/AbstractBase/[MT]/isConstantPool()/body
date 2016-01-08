@@ -1,0 +1,3 @@
+{
+  return represents(int.class) || represents(long.class) || represents(float.class)|| represents(double.class)|| represents(String.class)|| represents(Class.class)|| JavaType.METHOD_HANDLE.getTypeStub().equals(this)|| JavaType.METHOD_TYPE.getTypeStub().equals(this);
+}

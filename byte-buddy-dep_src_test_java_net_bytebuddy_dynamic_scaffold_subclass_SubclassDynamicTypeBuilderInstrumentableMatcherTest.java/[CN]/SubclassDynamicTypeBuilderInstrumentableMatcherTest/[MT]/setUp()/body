@@ -1,7 +1,16 @@
 {
-  latentMethodMatcher=new SubclassDynamicTypeBuilder.InstrumentableMatcher(ignoredMethods);
-  when(typeDescription.asErasure()).thenReturn(typeDescription);
-  when(typeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
-  when(otherType.asErasure()).thenReturn(otherType);
-  when(otherType.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
+  when(rawTypeDescription.asGenericType()).thenReturn(typeDescription);
+  when(rawTypeDescription.asErasure()).thenReturn(rawTypeDescription);
+  when(typeDescription.asErasure()).thenReturn(rawTypeDescription);
+  when(typeDescription.asGenericType()).thenReturn(typeDescription);
+  when(typeDescription.asErasure()).thenReturn(rawTypeDescription);
+  when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
+  when(rawOtherType.asGenericType()).thenReturn(otherType);
+  when(rawOtherType.asErasure()).thenReturn(rawOtherType);
+  when(otherType.asErasure()).thenReturn(rawOtherType);
+  when(otherType.asGenericType()).thenReturn(otherType);
+  when(otherType.asErasure()).thenReturn(rawOtherType);
+  when(otherType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
+  when(latentIgnoredMethods.resolve(any(TypeDescription.class))).thenReturn((ElementMatcher)ignoredMethods);
+  matcher=new SubclassDynamicTypeBuilder.InstrumentableMatcher(latentIgnoredMethods);
 }

@@ -1,0 +1,4 @@
+{
+  TypeList.Generic lowerBounds=wildcard.getLowerBounds();
+  return lowerBounds.isEmpty() ? new CovariantBinding(wildcard.getUpperBounds().getOnly()) : new ContravariantBinding(lowerBounds.getOnly());
+}

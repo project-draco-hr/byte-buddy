@@ -1,6 +1,6 @@
 {
   assertThat(ElementMatchers.takesGenericArguments(GenericMethodType.class.getTypeParameters()[0]).matches(new MethodDescription.ForLoadedMethod(GenericMethodType.class.getDeclaredMethod(FOO,Exception.class))),is(true));
-  assertThat(ElementMatchers.takesGenericArguments(GenericTypeDescription.Sort.describe(GenericMethodType.class.getTypeParameters()[0])).matches(new MethodDescription.ForLoadedMethod(GenericMethodType.class.getDeclaredMethod(FOO,Exception.class))),is(true));
+  assertThat(ElementMatchers.takesGenericArguments(TypeDefinition.Sort.describe(GenericMethodType.class.getTypeParameters()[0])).matches(new MethodDescription.ForLoadedMethod(GenericMethodType.class.getDeclaredMethod(FOO,Exception.class))),is(true));
   assertThat(ElementMatchers.takesGenericArguments(Exception.class).matches(new MethodDescription.ForLoadedMethod(GenericMethodType.class.getDeclaredMethod(FOO,Exception.class))),is(false));
   assertThat(ElementMatchers.takesGenericArguments(Collections.singletonList(new TypeDescription.ForLoadedType(Exception.class))).matches(new MethodDescription.ForLoadedMethod(GenericMethodType.class.getDeclaredMethod(FOO,Exception.class))),is(false));
   assertThat(ElementMatchers.takesArguments(Exception.class).matches(new MethodDescription.ForLoadedMethod(GenericMethodType.class.getDeclaredMethod(FOO,Exception.class))),is(true));

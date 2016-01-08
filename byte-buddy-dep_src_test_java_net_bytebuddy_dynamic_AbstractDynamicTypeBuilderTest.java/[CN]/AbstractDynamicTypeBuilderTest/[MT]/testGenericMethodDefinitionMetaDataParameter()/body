@@ -1,0 +1,5 @@
+{
+  Class<?> type=createPlain().defineMethod(QUX,list).withParameter(list,BAR,ProvisioningState.MANDATED).throwing(fooVariable).typeVariable(FOO,Exception.class).intercept(StubMethod.INSTANCE).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(TypeDefinition.Sort.describe(type).getDeclaredMethods().filter(named(QUX)).getOnly().getParameters().getOnly().getName(),is(BAR));
+  assertThat(TypeDefinition.Sort.describe(type).getDeclaredMethods().filter(named(QUX)).getOnly().getParameters().getOnly().getModifiers(),is(ProvisioningState.MANDATED.getMask()));
+}

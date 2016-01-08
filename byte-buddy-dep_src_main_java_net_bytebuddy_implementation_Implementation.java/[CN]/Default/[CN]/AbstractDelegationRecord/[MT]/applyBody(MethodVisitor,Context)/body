@@ -1,5 +1,0 @@
-{
-  methodVisitor.visitCode();
-  Size size=apply(methodVisitor,implementationContext,getImplementedMethod());
-  methodVisitor.visitMaxs(size.getOperandStackSize(),size.getLocalVariableSize());
-}

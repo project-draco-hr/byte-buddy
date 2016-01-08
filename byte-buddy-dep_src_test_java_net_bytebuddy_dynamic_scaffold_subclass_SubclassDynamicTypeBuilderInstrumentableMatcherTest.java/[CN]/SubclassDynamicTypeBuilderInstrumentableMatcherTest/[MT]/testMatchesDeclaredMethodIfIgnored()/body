@@ -2,6 +2,6 @@
   when(methodDescription.isVirtual()).thenReturn(true);
   when(methodDescription.getModifiers()).thenReturn(0);
   when(ignoredMethods.matches(methodDescription)).thenReturn(true);
-  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
-  assertThat(latentMethodMatcher.resolve(typeDescription).matches(methodDescription),is(true));
+  when(methodDescription.getDeclaringType()).thenReturn(rawTypeDescription);
+  assertThat(matcher.resolve(rawTypeDescription).matches(methodDescription),is(true));
 }

@@ -1,6 +1,6 @@
 {
-  when(implementationTarget.invokeDefault(typeDescription,methodToken)).thenReturn(specialMethodInvocation);
+  when(implementationTarget.invokeDefault(typeDescription,token)).thenReturn(specialMethodInvocation);
   assertThat(TypeProxy.InvocationFactory.Default.DEFAULT_METHOD.invoke(implementationTarget,typeDescription,methodDescription),is(specialMethodInvocation));
-  verify(implementationTarget).invokeDefault(typeDescription,methodToken);
+  verify(implementationTarget).invokeDefault(typeDescription,token);
   verifyNoMoreInteractions(implementationTarget);
 }

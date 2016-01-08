@@ -1,6 +1,0 @@
-{
-  AnnotationAppender annotationAppender=new AnnotationAppender.Default(new AnnotationAppender.Target.OnField(fieldVisitor),valueFilter);
-  for (  AnnotationDescription annotation : annotations) {
-    annotationAppender.append(annotation,AnnotationAppender.AnnotationVisibility.of(annotation));
-  }
-}

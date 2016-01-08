@@ -1,0 +1,6 @@
+{
+  super(assigner,typing);
+  this.fieldName=fieldName;
+  this.fixedValue=fixedValue;
+  fieldType=new TypeDescription.Generic.OfNonGenericType.ForLoadedType(fixedValue.getClass());
+}

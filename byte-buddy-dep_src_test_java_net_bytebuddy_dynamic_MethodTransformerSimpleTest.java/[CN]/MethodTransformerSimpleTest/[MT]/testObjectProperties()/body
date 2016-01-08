@@ -1,4 +1,4 @@
 {
   ObjectPropertyAssertion.of(MethodTransformer.Simple.class).apply();
-  ObjectPropertyAssertion.of(MethodTransformer.Simple.Transformer.ForModifierTransformation.class).apply();
+  ObjectPropertyAssertion.of(MethodTransformer.Simple.TokenTransformer.ForModifierTransformation.class).apply();
 }

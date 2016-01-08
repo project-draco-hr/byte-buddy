@@ -1,3 +1,0 @@
-{
-  return isDeclaredByGeneric(is(nonNull(type)));
-}

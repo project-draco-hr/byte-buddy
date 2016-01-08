@@ -1,7 +1,6 @@
 {
-  ObjectPropertyAssertion.of(ArrayFactory.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
-    @Override public void apply(    TypeDescription mock){
-      when(mock.getInternalName()).thenReturn("" + System.identityHashCode(mock));
+  ObjectPropertyAssertion.of(ArrayFactory.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription.Generic>(){
+    @Override public void apply(    TypeDescription.Generic mock){
       when(mock.getStackSize()).thenReturn(StackSize.ZERO);
     }
   }

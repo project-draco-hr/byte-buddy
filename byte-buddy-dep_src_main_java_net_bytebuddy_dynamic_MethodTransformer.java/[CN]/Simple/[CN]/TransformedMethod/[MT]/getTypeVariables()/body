@@ -1,3 +1,3 @@
 {
-  return GenericTypeList.ForDetachedTypes.OfTypeVariable.attach(this,methodToken.getTypeVariables());
+  return TypeList.Generic.ForDetachedTypes.attachVariables(this,token.getTypeVariableTokens());
 }

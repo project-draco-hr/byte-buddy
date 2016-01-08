@@ -1,3 +1,0 @@
-{
-  return String.format("%s.%s$%s",prefix,unnamedType.getSuperClass().asErasure().getName(),randomString.nextString());
-}

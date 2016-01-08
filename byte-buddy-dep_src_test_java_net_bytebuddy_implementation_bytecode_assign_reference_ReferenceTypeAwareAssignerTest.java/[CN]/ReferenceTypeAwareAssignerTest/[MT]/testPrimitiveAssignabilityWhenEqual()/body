@@ -1,5 +1,5 @@
 {
-  TypeDescription primitiveType=new TypeDescription.ForLoadedType(int.class);
+  TypeDescription.Generic primitiveType=new TypeDescription.Generic.OfNonGenericType.ForLoadedType(int.class);
   StackManipulation stackManipulation=ReferenceTypeAwareAssigner.INSTANCE.assign(primitiveType,primitiveType,Assigner.Typing.DYNAMIC);
   assertThat(stackManipulation.isValid(),is(true));
   StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);

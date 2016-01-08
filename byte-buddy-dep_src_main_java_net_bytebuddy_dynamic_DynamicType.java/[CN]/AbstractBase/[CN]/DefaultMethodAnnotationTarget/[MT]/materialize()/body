@@ -1,3 +1,0 @@
-{
-  return AbstractBase.this.materialize(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,typeInitializer,targetType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,classVisitorWrapper,fieldRegistry,methodRegistry.prepend(methodMatcher,handler,attributeAppenderFactory,methodTransformer),methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
-}

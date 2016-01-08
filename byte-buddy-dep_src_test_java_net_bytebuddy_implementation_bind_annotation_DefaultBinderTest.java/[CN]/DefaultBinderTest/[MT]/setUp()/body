@@ -1,7 +1,7 @@
 {
   super.setUp();
-  when(target.getType()).thenReturn(targetType);
+  when(target.getType()).thenReturn(typeDescription);
+  when(typeDescription.asErasure()).thenReturn(targetType);
   when(instrumentedType.getInterfaces()).thenReturn(interfaces);
   when(interfaces.asErasures()).thenReturn(rawInterfaces);
-  when(targetType.asErasure()).thenReturn(targetType);
 }

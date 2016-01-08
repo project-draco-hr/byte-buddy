@@ -1,3 +1,0 @@
-{
-  return genericFieldType(is(nonNull(fieldType)));
-}

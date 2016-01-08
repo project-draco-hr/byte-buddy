@@ -1,5 +1,5 @@
 {
-  MethodDescription.Token methodToken=mock(MethodDescription.Token.class);
-  when(methodToken.getInternalName()).thenReturn(FOO);
-  assertThat(implementationTarget.invokeSuper(methodToken).isValid(),is(false));
+  MethodDescription.SignatureToken token=mock(MethodDescription.SignatureToken.class);
+  when(token.getName()).thenReturn(FOO);
+  assertThat(implementationTarget.invokeSuper(token).isValid(),is(false));
 }

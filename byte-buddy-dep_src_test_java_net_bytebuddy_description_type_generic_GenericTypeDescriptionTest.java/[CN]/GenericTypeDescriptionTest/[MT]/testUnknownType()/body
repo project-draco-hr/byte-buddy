@@ -1,3 +1,0 @@
-{
-  GenericTypeDescription.Sort.describe(mock(Type.class));
-}

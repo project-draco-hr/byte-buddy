@@ -1,3 +1,0 @@
-{
-  assertThat(new NamingStrategy.Unbound.Unified(namingStrategy).subclass(typeDescription),is(namingStrategy));
-}

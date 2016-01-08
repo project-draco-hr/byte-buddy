@@ -1,7 +1,7 @@
 {
   when(annotation.value()).thenReturn(AllArguments.Assignment.STRICT);
   when(stackManipulation.isValid()).thenReturn(true);
-  when(rawSourceTypeList.iterator()).thenReturn(Arrays.asList(firstSourceType,secondSourceType).iterator());
+  when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,firstSourceType,secondSourceType));
   when(source.isStatic()).thenReturn(false);
   when(targetType.isArray()).thenReturn(true);
   when(targetType.getComponentType()).thenReturn(componentType);

@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   Entry entry=(Entry)other;
-  return attributeAppenderFactory.equals(entry.attributeAppenderFactory) && !(defaultValue != null ? !defaultValue.equals(entry.defaultValue) : entry.defaultValue != null);
+  return matcher.equals(entry.matcher) && fieldAttributeAppenderFactory.equals(entry.fieldAttributeAppenderFactory) && !(defaultValue != null ? !defaultValue.equals(entry.defaultValue) : entry.defaultValue != null)&& fieldTransformer.equals(entry.fieldTransformer);
 }

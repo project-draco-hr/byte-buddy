@@ -1,3 +1,0 @@
-{
-  return materialize(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,typeInitializer,targetType,interfaceTypes,modifiers,attributeAppender,new ElementMatcher.Junction.Disjunction<MethodDescription>(this.ignoredMethods,nonNull(ignoredMethods)),classVisitorWrapper,fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
-}

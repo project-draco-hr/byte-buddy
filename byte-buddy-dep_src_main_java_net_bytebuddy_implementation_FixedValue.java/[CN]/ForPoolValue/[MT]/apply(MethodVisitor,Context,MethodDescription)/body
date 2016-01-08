@@ -1,0 +1,3 @@
+{
+  return apply(methodVisitor,implementationContext,instrumentedMethod,loadedType.asGenericType(),valueLoadInstruction);
+}

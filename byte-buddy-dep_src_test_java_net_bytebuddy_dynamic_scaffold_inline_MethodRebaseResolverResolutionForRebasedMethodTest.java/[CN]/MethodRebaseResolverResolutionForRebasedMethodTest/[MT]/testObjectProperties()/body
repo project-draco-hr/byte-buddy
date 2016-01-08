@@ -1,16 +1,17 @@
 {
   ObjectPropertyAssertion.of(MethodRebaseResolver.Resolution.ForRebasedMethod.class).refine(new ObjectPropertyAssertion.Refinement<MethodDescription>(){
     @Override public void apply(    MethodDescription mock){
-      when(mock.getParameters()).thenReturn((ParameterList)new ParameterList.Empty());
-      when(mock.getExceptionTypes()).thenReturn(new GenericTypeList.Empty());
+      when(mock.getParameters()).thenReturn((ParameterList)new ParameterList.Empty<ParameterDescription>());
+      when(mock.getExceptionTypes()).thenReturn(new TypeList.Generic.Empty());
       when(mock.getDeclaringType()).thenReturn(mock(TypeDescription.class));
-      TypeDescription returnType=mock(TypeDescription.class);
-      when(returnType.asErasure()).thenReturn(returnType);
+      TypeDescription.Generic returnType=mock(TypeDescription.Generic.class);
+      TypeDescription rawReturnType=mock(TypeDescription.class);
+      when(returnType.asErasure()).thenReturn(rawReturnType);
       when(mock.getReturnType()).thenReturn(returnType);
     }
   }
-).refine(new ObjectPropertyAssertion.Refinement<MethodRebaseResolver.MethodNameTransformer>(){
-    @Override public void apply(    MethodRebaseResolver.MethodNameTransformer mock){
+).refine(new ObjectPropertyAssertion.Refinement<MethodNameTransformer>(){
+    @Override public void apply(    MethodNameTransformer mock){
       when(mock.transform(any(MethodDescription.class))).thenReturn(FOO + System.identityHashCode(mock));
     }
   }

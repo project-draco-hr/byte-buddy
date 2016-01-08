@@ -1,5 +1,6 @@
 {
   TypeDescription genericErasure=mock(TypeDescription.class), declaredErasure=mock(TypeDescription.class);
+  when(genericErasure.asErasure()).thenReturn(genericErasure);
   when(genericType.asErasure()).thenReturn(genericErasure);
   when(declaredType.asErasure()).thenReturn(declaredErasure);
   StackManipulation stackManipulation=FieldAccess.forField(genericField).getter();

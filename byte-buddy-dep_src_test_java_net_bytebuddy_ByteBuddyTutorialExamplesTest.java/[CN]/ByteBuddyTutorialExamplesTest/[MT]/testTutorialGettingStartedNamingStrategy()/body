@@ -1,5 +1,5 @@
 {
-  DynamicType.Unloaded<?> dynamicType=new ByteBuddy().withNamingStrategy(new GettingStartedNamingStrategy()).subclass(Object.class).make();
+  DynamicType.Unloaded<?> dynamicType=new ByteBuddy().with(new GettingStartedNamingStrategy()).subclass(Object.class).make();
   assertThat(dynamicType,notNullValue());
   Class<?> type=dynamicType.load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getName(),is("i.love.ByteBuddy.Object"));

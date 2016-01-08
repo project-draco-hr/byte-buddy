@@ -1,7 +1,0 @@
-{
-  int result=typeDescription.hashCode();
-  result=31 * result + Arrays.hashCode(binaryRepresentation);
-  result=31 * result + loadedTypeInitializer.hashCode();
-  result=31 * result + auxiliaryTypes.hashCode();
-  return result;
-}

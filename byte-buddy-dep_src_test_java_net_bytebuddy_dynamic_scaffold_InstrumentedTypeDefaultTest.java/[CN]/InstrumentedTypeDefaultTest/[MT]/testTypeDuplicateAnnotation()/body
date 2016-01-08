@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withAnnotations(Arrays.asList(AnnotationDescription.Builder.forType(SampleAnnotation.class).make(),AnnotationDescription.Builder.forType(SampleAnnotation.class).make())).validated();
+}

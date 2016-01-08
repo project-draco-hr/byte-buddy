@@ -1,0 +1,5 @@
+{
+  MethodDescription.TypeToken token=new MethodDescription.TypeToken(returnType,Collections.singletonList(parameterType));
+  assertThat(token.getReturnType(),is(returnType));
+  assertThat(token.getParameterTypes(),is(Collections.singletonList(parameterType)));
+}

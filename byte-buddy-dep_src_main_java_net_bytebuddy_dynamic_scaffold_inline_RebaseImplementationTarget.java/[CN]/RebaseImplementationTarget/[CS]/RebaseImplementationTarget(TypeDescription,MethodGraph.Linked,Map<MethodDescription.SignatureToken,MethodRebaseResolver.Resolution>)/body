@@ -1,0 +1,4 @@
+{
+  super(instrumentedType,methodGraph);
+  this.rebaseableMethods=rebaseableMethods;
+}

@@ -1,3 +1,0 @@
-{
-  assertThat(new ParameterDescription.Token(first,Collections.singletonList(firstAnnotation),ParameterDescription.Token.NO_NAME,MODIFIERS).isIdenticalTo(new ParameterDescription.Token(first,Collections.singletonList(firstAnnotation),ParameterDescription.Token.NO_NAME,MODIFIERS * 2)),is(false));
-}

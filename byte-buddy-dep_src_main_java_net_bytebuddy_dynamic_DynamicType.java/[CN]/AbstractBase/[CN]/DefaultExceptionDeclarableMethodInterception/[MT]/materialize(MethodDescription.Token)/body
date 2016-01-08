@@ -1,3 +1,0 @@
-{
-  return new DefaultMatchedMethodInterception(new LatentMethodMatcher.ForToken(methodToken),join(methodTokens,methodToken));
-}

@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withName(void.class.getName()).validated();
+}

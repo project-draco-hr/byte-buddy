@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("A detached type variable does not imply a source: " + this);
-}

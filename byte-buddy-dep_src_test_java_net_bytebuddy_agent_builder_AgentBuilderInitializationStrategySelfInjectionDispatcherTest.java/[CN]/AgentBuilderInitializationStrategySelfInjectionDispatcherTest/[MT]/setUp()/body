@@ -1,5 +1,5 @@
 {
-  when(builder.initialize((any(ByteCodeAppender.class)))).thenReturn((DynamicType.Builder)appendedBuilder);
+  when(builder.initializer((any(ByteCodeAppender.class)))).thenReturn((DynamicType.Builder)appendedBuilder);
   when(injectorFactory.resolve()).thenReturn(classInjector);
   when(dynamicType.getTypeDescription()).thenReturn(instrumented);
   Map<TypeDescription,byte[]> auxiliaryTypes=new HashMap<TypeDescription,byte[]>();
@@ -30,7 +30,9 @@
     }
   }
 );
-  when(dependent.isAssignableTo(instrumented)).thenReturn(true);
-  when(independent.isAssignableTo(instrumented)).thenReturn(false);
+  Annotation eagerAnnotation=mock(AuxiliaryType.SignatureRelevant.class);
+  when(eagerAnnotation.annotationType()).thenReturn((Class)AuxiliaryType.SignatureRelevant.class);
+  when(independent.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(eagerAnnotation));
+  when(dependent.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   when(instrumentedInitializer.isAlive()).thenReturn(true);
 }

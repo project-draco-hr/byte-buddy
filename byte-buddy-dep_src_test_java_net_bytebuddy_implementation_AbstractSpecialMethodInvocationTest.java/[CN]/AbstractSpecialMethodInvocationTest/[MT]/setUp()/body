@@ -1,4 +1,4 @@
 {
-  when(methodDescription.asToken()).thenReturn(methodToken);
-  when(otherMethod.asToken()).thenReturn(otherToken);
+  when(methodDescription.asSignatureToken()).thenReturn(token);
+  when(otherMethod.asSignatureToken()).thenReturn(otherToken);
 }

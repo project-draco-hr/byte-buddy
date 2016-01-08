@@ -1,0 +1,10 @@
+{
+  TypeWriter.FieldPool.Record record=new TypeWriter.FieldPool.Record.ForExplicitField(fieldAttributeAppender,defaultValue,fieldDescription);
+  record.apply(classVisitor,annotationValueFilterFactory);
+  verify(classVisitor).visitField(MODIFIER,FOO,BAR,QUX,defaultValue);
+  verifyNoMoreInteractions(classVisitor);
+  verify(fieldAttributeAppender).apply(fieldVisitor,fieldDescription,valueFilter);
+  verifyNoMoreInteractions(fieldAttributeAppender);
+  verify(fieldVisitor).visitEnd();
+  verifyNoMoreInteractions(fieldVisitor);
+}

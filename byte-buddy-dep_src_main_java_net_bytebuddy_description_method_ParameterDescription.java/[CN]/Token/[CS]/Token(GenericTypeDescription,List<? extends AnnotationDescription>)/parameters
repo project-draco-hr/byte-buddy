@@ -1,2 +1,0 @@
-GenericTypeDescription typeDescription
-List<? extends AnnotationDescription> annotationDescriptions

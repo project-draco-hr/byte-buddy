@@ -1,0 +1,10 @@
+{
+  TypeList.Generic typeVariables=getTypeVariables().filter(named(symbol));
+  if (typeVariables.isEmpty()) {
+    TypeVariableSource enclosingSource=getEnclosingSource();
+    return enclosingSource == null ? TypeDescription.Generic.UNDEFINED : enclosingSource.findVariable(symbol);
+  }
+ else {
+    return typeVariables.getOnly();
+  }
+}

@@ -4,5 +4,5 @@
       return new Random().nextInt();
     }
   }
-).applyBasic();
+).apply();
 }

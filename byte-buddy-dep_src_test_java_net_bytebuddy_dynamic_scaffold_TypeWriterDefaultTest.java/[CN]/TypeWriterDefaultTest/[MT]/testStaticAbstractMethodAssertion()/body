@@ -1,3 +1,3 @@
 {
-  new ByteBuddy().subclass(Object.class).defineMethod(FOO,void.class,Collections.<Class<?>>emptyList(),Ownership.STATIC).withoutCode().make();
+  new ByteBuddy().subclass(Object.class).defineMethod(FOO,void.class,Ownership.STATIC).withoutCode().make();
 }

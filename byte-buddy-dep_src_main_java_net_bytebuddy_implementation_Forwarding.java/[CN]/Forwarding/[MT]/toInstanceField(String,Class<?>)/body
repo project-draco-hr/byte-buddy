@@ -1,3 +1,0 @@
-{
-  return toInstanceField(fieldName,new TypeDescription.ForLoadedType(nonNull(fieldType)));
-}

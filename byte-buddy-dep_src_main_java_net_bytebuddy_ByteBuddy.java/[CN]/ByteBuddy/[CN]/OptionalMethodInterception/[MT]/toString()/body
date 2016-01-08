@@ -1,3 +1,0 @@
-{
-  return "ByteBuddy.OptionalMethodInterception{" + "classFileVersion=" + classFileVersion + ", namingStrategy="+ namingStrategy+ ", auxiliaryTypeNamingStrategy="+ auxiliaryTypeNamingStrategy+ ", implementationContextFactory="+ implementationContextFactory+ ", interfaceTypes="+ interfaceTypes+ ", ignoredMethods="+ ignoredMethods+ ", classVisitorWrapper="+ classVisitorWrapper+ ", methodRegistry="+ methodRegistry+ ", modifiers="+ modifiers+ ", methodGraphCompiler="+ methodGraphCompiler+ ", typeAttributeAppender="+ typeAttributeAppender+ ", defaultFieldAttributeAppenderFactory="+ defaultFieldAttributeAppenderFactory+ ", defaultMethodAttributeAppenderFactory="+ defaultMethodAttributeAppenderFactory+ ", methodMatcher="+ methodMatcher+ '}';
-}

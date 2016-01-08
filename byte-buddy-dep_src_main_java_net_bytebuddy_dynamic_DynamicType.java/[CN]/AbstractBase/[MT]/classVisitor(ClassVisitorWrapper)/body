@@ -1,3 +1,0 @@
-{
-  return materialize(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,typeInitializer,targetType,interfaceTypes,modifiers,attributeAppender,ignoredMethods,new ClassVisitorWrapper.Compound(nonNull(classVisitorWrapper),this.classVisitorWrapper),fieldRegistry,methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,fieldTokens,methodTokens);
-}

@@ -1,0 +1,3 @@
+{
+  assertThat(annotationRetention.isEnabled(),is(enabled));
+}

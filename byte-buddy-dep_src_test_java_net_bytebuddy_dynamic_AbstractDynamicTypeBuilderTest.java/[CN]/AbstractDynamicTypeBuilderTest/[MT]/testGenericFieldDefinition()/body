@@ -1,0 +1,4 @@
+{
+  Class<?> type=createPlain().defineField(QUX,list).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredField(QUX).getGenericType(),is(list));
+}

@@ -1,3 +1,0 @@
-{
-  return new MethodAnnotationTarget(classFileVersion,namingStrategy,auxiliaryTypeNamingStrategy,implementationContextFactory,interfaceTypes,ignoredMethods,classVisitorWrapper,methodRegistry,modifiers,typeAttributeAppender,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,methodMatcher,MethodRegistry.Handler.ForAnnotationValue.of(value),MethodAttributeAppender.NoOp.INSTANCE,MethodTransformer.NoOp.INSTANCE);
-}

@@ -2,5 +2,5 @@
   if (!exceptionType.isAssignableTo(Throwable.class)) {
     throw new IllegalArgumentException(exceptionType + " does not extend throwable");
   }
-  return new ExceptionMethod(nonNull(exceptionType),new ConstructionDelegate.ForDefaultConstructor(exceptionType));
+  return new ExceptionMethod(exceptionType,new ConstructionDelegate.ForDefaultConstructor(exceptionType));
 }

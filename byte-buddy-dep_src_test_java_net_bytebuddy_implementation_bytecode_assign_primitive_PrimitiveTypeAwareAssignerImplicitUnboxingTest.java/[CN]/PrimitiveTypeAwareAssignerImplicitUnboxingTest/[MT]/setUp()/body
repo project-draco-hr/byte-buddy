@@ -1,9 +1,10 @@
 {
-  when(sourceTypeDescription.represents(sourceType)).thenReturn(true);
-  when(sourceTypeDescription.isPrimitive()).thenReturn(false);
-  when(targetTypeDescription.represents(targetType)).thenReturn(true);
-  when(targetTypeDescription.isPrimitive()).thenReturn(true);
+  when(source.represents(sourceType)).thenReturn(true);
+  when(source.isPrimitive()).thenReturn(false);
+  when(source.asGenericType()).thenReturn(source);
+  when(target.represents(targetType)).thenReturn(true);
+  when(target.isPrimitive()).thenReturn(true);
   when(chainedStackManipulation.isValid()).thenReturn(true);
-  when(chainedAssigner.assign(any(TypeDescription.class),any(TypeDescription.class),any(Assigner.Typing.class))).thenReturn(chainedStackManipulation);
+  when(chainedAssigner.assign(any(TypeDescription.Generic.class),any(TypeDescription.Generic.class),any(Assigner.Typing.class))).thenReturn(chainedStackManipulation);
   primitiveAssigner=new PrimitiveTypeAwareAssigner(chainedAssigner);
 }

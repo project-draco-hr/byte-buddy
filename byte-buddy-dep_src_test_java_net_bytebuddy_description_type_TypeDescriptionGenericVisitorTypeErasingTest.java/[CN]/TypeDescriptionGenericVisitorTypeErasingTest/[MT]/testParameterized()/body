@@ -1,0 +1,3 @@
+{
+  assertThat(TypeDescription.Generic.Visitor.TypeErasing.INSTANCE.onParameterizedType(typeDescription),is(rawType));
+}

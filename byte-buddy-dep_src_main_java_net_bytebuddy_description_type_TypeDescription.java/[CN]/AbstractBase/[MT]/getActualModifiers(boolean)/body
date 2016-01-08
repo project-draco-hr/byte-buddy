@@ -1,0 +1,13 @@
+{
+  int actualModifiers;
+  if (isPrivate()) {
+    actualModifiers=getModifiers() & ~(Opcodes.ACC_PRIVATE | Opcodes.ACC_STATIC);
+  }
+ else   if (isProtected()) {
+    actualModifiers=getModifiers() & ~(Opcodes.ACC_PROTECTED | Opcodes.ACC_STATIC) | Opcodes.ACC_PUBLIC;
+  }
+ else {
+    actualModifiers=getModifiers() & ~Opcodes.ACC_STATIC;
+  }
+  return superFlag ? (actualModifiers | Opcodes.ACC_SUPER) : actualModifiers;
+}

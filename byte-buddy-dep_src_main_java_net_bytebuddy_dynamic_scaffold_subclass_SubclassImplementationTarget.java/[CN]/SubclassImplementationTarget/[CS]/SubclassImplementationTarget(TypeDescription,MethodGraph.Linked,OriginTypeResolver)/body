@@ -1,10 +1,10 @@
 {
   super(instrumentedType,methodGraph);
-  GenericTypeDescription superType=instrumentedType.getSuperType();
-  MethodList<?> superConstructors=superType == null ? new MethodList.Empty() : superType.getDeclaredMethods().filter(isConstructor().and(isVisibleTo(instrumentedType)));
-  this.superConstructors=new HashMap<MethodDescription.Token,MethodDescription>();
+  TypeDescription.Generic superType=instrumentedType.getSuperType();
+  MethodList<?> superConstructors=superType == null ? new MethodList.Empty<MethodDescription.InGenericShape>() : superType.getDeclaredMethods().filter(isConstructor().and(isVisibleTo(instrumentedType)));
+  this.superConstructors=new HashMap<MethodDescription.SignatureToken,MethodDescription>();
   for (  MethodDescription superConstructor : superConstructors) {
-    this.superConstructors.put(superConstructor.asToken(),superConstructor);
+    this.superConstructors.put(superConstructor.asSignatureToken(),superConstructor);
   }
   this.originTypeResolver=originTypeResolver;
 }

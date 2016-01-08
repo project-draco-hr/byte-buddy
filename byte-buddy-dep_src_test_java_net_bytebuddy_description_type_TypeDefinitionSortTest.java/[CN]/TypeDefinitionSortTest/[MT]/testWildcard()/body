@@ -1,0 +1,3 @@
+{
+  assertThat(sort.isWildcard(),is(wildcard));
+}

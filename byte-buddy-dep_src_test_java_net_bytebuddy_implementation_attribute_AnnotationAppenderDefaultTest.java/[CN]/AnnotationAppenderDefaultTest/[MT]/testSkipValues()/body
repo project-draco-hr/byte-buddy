@@ -2,12 +2,12 @@
   when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.InDefinedShape.class))).thenReturn(false);
   MethodDescription.InDefinedShape methodDescription=mock(MethodDescription.InDefinedShape.class);
   TypeDescription annotationType=mock(TypeDescription.class);
-  when(annotationType.getDeclaredMethods()).thenReturn((MethodList)new MethodList.Explicit<MethodDescription>(Collections.singletonList(methodDescription)));
+  when(annotationType.getDeclaredMethods()).thenReturn((MethodList)new MethodList.Explicit<MethodDescription>(methodDescription));
   AnnotationDescription annotationDescription=mock(AnnotationDescription.class);
   when(annotationDescription.getAnnotationType()).thenReturn(annotationType);
   AnnotationVisitor annotationVisitor=mock(AnnotationVisitor.class);
   when(target.visit(anyString(),anyBoolean())).thenReturn(annotationVisitor);
-  annotationAppender.append(annotationDescription,AnnotationAppender.AnnotationVisibility.RUNTIME);
+  annotationAppender.append(annotationDescription,AnnotationAppender.AnnotationVisibility.RUNTIME,valueFilter);
   verify(valueFilter).isRelevant(annotationDescription,methodDescription);
   verifyNoMoreInteractions(valueFilter);
   verify(annotationVisitor).visitEnd();

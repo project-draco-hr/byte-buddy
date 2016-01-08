@@ -2,11 +2,14 @@
   super.setUp();
   when(getterMethod.getDeclaringType()).thenReturn(getterType);
   when(setterMethod.getDeclaringType()).thenReturn(setterType);
-  when(instrumentedType.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDefinedShape>(Collections.singletonList(fieldDescription)));
-  when(fieldDescription.getType()).thenReturn(fieldType);
-  when(fieldType.getStackSize()).thenReturn(StackSize.ZERO);
-  when(fieldType.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
+  when(instrumentedType.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDefinedShape>(fieldDescription));
+  when(fieldDescription.getType()).thenReturn(genericFieldType);
+  when(genericFieldType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
+  when(genericFieldType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(genericFieldType.asErasure()).thenReturn(fieldType);
+  when(fieldType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
   when(fieldType.asErasure()).thenReturn(fieldType);
-  when(setterType.asErasure()).thenReturn(setterType);
-  when(getterType.asErasure()).thenReturn(getterType);
+  when(fieldType.getInternalName()).thenReturn(FOO);
+  when(genericSetterType.asErasure()).thenReturn(setterType);
+  when(genericGetterType.asErasure()).thenReturn(getterType);
 }

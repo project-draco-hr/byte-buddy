@@ -1,0 +1,3 @@
+{
+  return new ByteCodeAppender.Compound(byteCodeAppender,new ByteCodeAppender.Simple(MethodReturn.VOID));
+}

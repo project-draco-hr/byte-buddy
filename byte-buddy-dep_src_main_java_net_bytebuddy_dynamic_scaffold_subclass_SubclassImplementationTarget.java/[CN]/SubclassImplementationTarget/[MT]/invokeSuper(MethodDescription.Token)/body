@@ -1,3 +1,0 @@
-{
-  return methodToken.getInternalName().equals(MethodDescription.CONSTRUCTOR_INTERNAL_NAME) ? invokeConstructor(methodToken) : invokeMethod(methodToken);
-}

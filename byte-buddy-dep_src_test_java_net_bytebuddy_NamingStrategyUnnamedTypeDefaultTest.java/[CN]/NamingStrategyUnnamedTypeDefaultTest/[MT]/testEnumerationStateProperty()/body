@@ -1,4 +1,0 @@
-{
-  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,Opcodes.ACC_ENUM,classFileVersion).getEnumerationState(),is(EnumerationState.ENUMERATION));
-  assertThat(new NamingStrategy.UnnamedType.Default(superType,interfaceTypes,0,classFileVersion).getEnumerationState(),is(EnumerationState.PLAIN));
-}

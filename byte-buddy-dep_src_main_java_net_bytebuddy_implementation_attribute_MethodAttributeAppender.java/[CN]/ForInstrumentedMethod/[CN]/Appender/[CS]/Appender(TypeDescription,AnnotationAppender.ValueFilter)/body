@@ -1,4 +1,0 @@
-{
-  this.instrumentedType=instrumentedType;
-  this.valueFilter=valueFilter;
-}

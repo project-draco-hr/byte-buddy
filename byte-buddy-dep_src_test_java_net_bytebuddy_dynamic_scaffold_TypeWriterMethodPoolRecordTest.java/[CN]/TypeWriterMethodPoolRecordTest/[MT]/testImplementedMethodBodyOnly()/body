@@ -2,11 +2,11 @@
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
   TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody(methodDescription,byteCodeAppender,methodAttributeAppender);
-  record.applyBody(methodVisitor,implementationContext);
+  record.applyBody(methodVisitor,implementationContext,annotationValueFilterFactory);
   verify(methodVisitor).visitCode();
   verify(methodVisitor).visitMaxs(ONE,TWO);
   verifyZeroInteractions(implementationContext);
-  verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
+  verify(methodAttributeAppender).apply(methodVisitor,methodDescription,valueFilter);
   verifyNoMoreInteractions(methodAttributeAppender);
   verify(byteCodeAppender).apply(methodVisitor,implementationContext,methodDescription);
   verifyNoMoreInteractions(byteCodeAppender);

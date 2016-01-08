@@ -1,5 +1,0 @@
-{
-  Map<TypeDescription,Class<?>> loadedAuxiliaryTypes=new HashMap<TypeDescription,Class<?>>(loadedTypes);
-  loadedAuxiliaryTypes.remove(typeDescription);
-  return loadedAuxiliaryTypes;
-}

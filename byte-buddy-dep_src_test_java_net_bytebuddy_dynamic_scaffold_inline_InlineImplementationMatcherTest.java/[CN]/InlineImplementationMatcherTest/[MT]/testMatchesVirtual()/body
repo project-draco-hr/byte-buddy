@@ -3,6 +3,6 @@
   when(methodDescription.getModifiers()).thenReturn(0);
   when(ignoredMethods.matches(methodDescription)).thenReturn(false);
   when(predefinedMethods.matches(methodDescription)).thenReturn(false);
-  when(methodDescription.getDeclaringType()).thenReturn(otherType);
-  assertThat(latentMethodMatcher.resolve(typeDescription).matches(methodDescription),is(true));
+  when(methodDescription.getDeclaringType()).thenReturn(rawOtherType);
+  assertThat(matcher.resolve(rawTypeDescription).matches(methodDescription),is(true));
 }

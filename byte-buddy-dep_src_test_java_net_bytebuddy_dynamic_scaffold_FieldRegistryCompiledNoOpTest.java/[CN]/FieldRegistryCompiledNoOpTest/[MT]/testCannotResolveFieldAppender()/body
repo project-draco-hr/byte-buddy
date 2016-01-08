@@ -1,0 +1,3 @@
+{
+  FieldRegistry.Compiled.NoOp.INSTANCE.target(fieldDescription).getFieldAppender();
+}

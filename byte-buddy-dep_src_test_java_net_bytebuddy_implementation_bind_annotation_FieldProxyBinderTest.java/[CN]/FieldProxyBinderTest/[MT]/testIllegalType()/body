@@ -1,6 +1,7 @@
 {
   TypeDescription targetType=mock(TypeDescription.class);
-  when(targetType.asErasure()).thenReturn(targetType);
-  when(target.getType()).thenReturn(targetType);
+  TypeDescription.Generic genericTargetType=mock(TypeDescription.Generic.class);
+  when(genericTargetType.asErasure()).thenReturn(targetType);
+  when(target.getType()).thenReturn(genericTargetType);
   new FieldProxy.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,implementationTarget,assigner);
 }

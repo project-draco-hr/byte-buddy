@@ -8,5 +8,5 @@
   Dispatcher dispatcher=DISPATCHER.initialize(accessControlContext);
   Object methodHandleInfo=dispatcher.reveal(lookup,methodHandle);
   Object methodType=dispatcher.getMethodType(methodHandleInfo);
-  return new MethodHandle(HandleType.of(dispatcher.getReferenceKind(methodHandleInfo)),new TypeDescription.ForLoadedType(dispatcher.getDeclaringClass(methodHandleInfo)),dispatcher.getName(methodHandleInfo),new TypeDescription.ForLoadedType(dispatcher.returnType(methodType)),new TypeList.ForLoadedType(dispatcher.parameterArray(methodType)));
+  return new MethodHandle(HandleType.of(dispatcher.getReferenceKind(methodHandleInfo)),new TypeDescription.ForLoadedType(dispatcher.getDeclaringClass(methodHandleInfo)),dispatcher.getName(methodHandleInfo),new TypeDescription.ForLoadedType(dispatcher.returnType(methodType)),new TypeList.ForLoadedTypes(dispatcher.parameterArray(methodType)));
 }

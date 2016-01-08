@@ -1,0 +1,3 @@
+{
+  assertThat(collectionWildcard.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(collectionRaw),is(true));
+}

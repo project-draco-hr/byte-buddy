@@ -1,0 +1,3 @@
+{
+  assertThat(new ParameterDescription.Token(type,Collections.singletonList(annotation),FOO,MODIFIERS).accept(visitor),is(new ParameterDescription.Token(visitedType,Collections.singletonList(annotation),FOO,MODIFIERS)));
+}

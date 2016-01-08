@@ -2,15 +2,15 @@
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(GenericClassBase.Intermediate.Inner.class);
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 1));
-  MethodDescription.Token methodToken=typeDescription.getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly().asToken();
-  MethodGraph.Node methodNode=methodGraph.locate(methodToken);
-  MethodDescription.Token firstBridgeToken=typeDescription.getSuperType().getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly().asDefined().asToken();
-  MethodDescription.Token secondBridgeToken=typeDescription.getSuperType().getSuperType().getDeclaredMethods().filter(isMethod()).getOnly().asDefined().asToken();
+  MethodDescription.SignatureToken token=typeDescription.getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly().asSignatureToken();
+  MethodGraph.Node methodNode=methodGraph.locate(token);
+  MethodDescription.SignatureToken firstBridgeToken=typeDescription.getSuperType().getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly().asDefined().asSignatureToken();
+  MethodDescription.SignatureToken secondBridgeToken=typeDescription.getSuperType().getSuperType().getDeclaredMethods().filter(isMethod()).getOnly().asDefined().asSignatureToken();
   assertThat(methodNode,is(methodGraph.locate(firstBridgeToken)));
   assertThat(methodNode,is(methodGraph.locate(secondBridgeToken)));
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(methodNode.getMethodTypes().size(),is(3));
-  assertThat(methodNode.getMethodTypes().contains(methodToken.asTypeToken()),is(true));
+  assertThat(methodNode.getMethodTypes().contains(token.asTypeToken()),is(true));
   assertThat(methodNode.getMethodTypes().contains(firstBridgeToken.asTypeToken()),is(true));
   assertThat(methodNode.getMethodTypes().contains(secondBridgeToken.asTypeToken()),is(true));
 }

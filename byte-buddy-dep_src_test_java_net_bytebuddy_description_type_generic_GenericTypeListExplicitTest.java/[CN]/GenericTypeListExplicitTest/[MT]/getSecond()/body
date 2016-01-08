@@ -1,3 +1,0 @@
-{
-  return GenericTypeDescription.Sort.describe(Holder.class.getGenericInterfaces()[1]);
-}

@@ -1,0 +1,4 @@
+{
+  when(source.asErasure()).thenReturn(rawSource);
+  when(target.asErasure()).thenReturn(rawTarget);
+}

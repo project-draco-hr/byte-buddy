@@ -1,0 +1,6 @@
+{
+  InstrumentedType.WithFlexibleName instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getName(),is(FOO + "." + BAZ));
+  instrumentedType=instrumentedType.withName(BAR);
+  assertThat(instrumentedType.getName(),is(BAR));
+}

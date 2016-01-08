@@ -1,0 +1,3 @@
+{
+  assertThat(new MethodDescription.SignatureToken(FOO,returnType,Collections.singletonList(parameterType)).asTypeToken(),is(new MethodDescription.TypeToken(returnType,Collections.singletonList(parameterType))));
+}

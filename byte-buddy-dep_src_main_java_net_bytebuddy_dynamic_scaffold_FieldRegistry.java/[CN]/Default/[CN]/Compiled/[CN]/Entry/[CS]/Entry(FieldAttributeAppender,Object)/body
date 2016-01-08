@@ -1,4 +1,0 @@
-{
-  this.attributeAppender=attributeAppender;
-  this.defaultValue=defaultValue;
-}

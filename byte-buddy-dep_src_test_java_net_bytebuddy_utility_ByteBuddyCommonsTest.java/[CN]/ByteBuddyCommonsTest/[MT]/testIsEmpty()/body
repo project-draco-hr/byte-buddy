@@ -1,4 +1,0 @@
-{
-  List<String> list=Collections.emptyList();
-  assertThat(isEmpty(list,FOO),sameInstance(list));
-}

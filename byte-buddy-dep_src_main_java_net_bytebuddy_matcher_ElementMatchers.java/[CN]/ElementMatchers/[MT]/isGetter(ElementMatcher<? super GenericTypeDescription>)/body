@@ -1,3 +1,0 @@
-{
-  return isGetter().and(returnsGeneric(nonNull(matcher)));
-}

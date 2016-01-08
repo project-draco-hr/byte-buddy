@@ -1,4 +1,10 @@
 {
-  declaredFields.remove(internalName);
+  FieldDescription fieldDescription=declaredFields.remove(internalName);
+  if (fieldDescription != null) {
+    FieldPool.Record record=fieldPool.target(fieldDescription);
+    if (!record.isImplicit()) {
+      return redefine(record,defaultValue);
+    }
+  }
   return super.visitField(modifiers,internalName,descriptor,genericSignature,defaultValue);
 }

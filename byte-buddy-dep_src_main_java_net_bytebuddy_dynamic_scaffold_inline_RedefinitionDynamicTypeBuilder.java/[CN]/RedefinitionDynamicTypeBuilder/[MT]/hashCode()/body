@@ -1,3 +1,6 @@
 {
-  return 31 * super.hashCode() + classFileLocator.hashCode();
+  int result=super.hashCode();
+  result=31 * result + originalType.hashCode();
+  result=31 * result + classFileLocator.hashCode();
+  return result;
 }

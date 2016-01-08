@@ -1,4 +1,0 @@
-{
-  TypeDescription ownerType=asErasure().getOwnerType();
-  return ownerType == null ? TypeDescription.UNDEFINED : new ForNonGenericType.Latent(ownerType);
-}

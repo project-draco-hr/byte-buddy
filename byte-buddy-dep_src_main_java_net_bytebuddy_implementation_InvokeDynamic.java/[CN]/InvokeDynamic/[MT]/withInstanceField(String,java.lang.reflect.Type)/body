@@ -1,0 +1,3 @@
+{
+  return withInstanceField(fieldName,TypeDefinition.Sort.describe(fieldType));
+}

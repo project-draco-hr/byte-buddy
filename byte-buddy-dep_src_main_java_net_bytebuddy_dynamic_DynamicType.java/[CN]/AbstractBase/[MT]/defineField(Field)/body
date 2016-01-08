@@ -1,3 +1,0 @@
-{
-  return defineField(field.getName(),field.getType(),field.getModifiers());
-}

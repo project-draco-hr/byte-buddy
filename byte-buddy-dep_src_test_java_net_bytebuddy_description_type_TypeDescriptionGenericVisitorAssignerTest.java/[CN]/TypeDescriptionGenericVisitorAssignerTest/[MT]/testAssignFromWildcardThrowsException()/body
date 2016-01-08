@@ -1,0 +1,3 @@
+{
+  unboundWildcard.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE);
+}

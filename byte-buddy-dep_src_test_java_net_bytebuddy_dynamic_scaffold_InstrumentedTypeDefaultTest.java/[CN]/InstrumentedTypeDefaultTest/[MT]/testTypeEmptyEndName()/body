@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withName(NamedElement.EMPTY_NAME).validated();
+}

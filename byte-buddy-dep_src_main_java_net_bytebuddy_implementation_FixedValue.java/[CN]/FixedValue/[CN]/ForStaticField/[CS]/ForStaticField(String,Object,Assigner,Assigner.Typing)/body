@@ -1,6 +1,0 @@
-{
-  super(assigner,typing);
-  this.fieldName=fieldName;
-  this.fixedValue=fixedValue;
-  fieldType=new TypeDescription.ForLoadedType(fixedValue.getClass());
-}

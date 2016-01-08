@@ -1,0 +1,16 @@
+{
+  Map<Generic,Generic> bindings=new HashMap<Generic,Generic>();
+  do {
+    TypeList.Generic parameters=typeDescription.getParameters();
+    TypeList.Generic typeVariables=typeDescription.asErasure().getTypeVariables();
+    if (parameters.size() != typeVariables.size()) {
+      return TypeVariableErasing.INSTANCE;
+    }
+    for (int index=0; index < typeVariables.size(); index++) {
+      bindings.put(typeVariables.get(index),parameters.get(index));
+    }
+    typeDescription=typeDescription.getOwnerType();
+  }
+ while (typeDescription != null && typeDescription.getSort().isParameterized());
+  return new ForTypeVariableBinding(bindings);
+}

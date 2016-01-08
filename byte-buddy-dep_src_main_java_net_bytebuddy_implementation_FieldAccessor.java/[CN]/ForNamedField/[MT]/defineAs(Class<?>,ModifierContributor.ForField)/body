@@ -1,3 +1,0 @@
-{
-  return defineAs(new TypeDescription.ForLoadedType(nonNull(type)),modifier);
-}

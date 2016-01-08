@@ -1,0 +1,4 @@
+{
+  mapping=new HashMap<TypeDescription.Generic,TypeDescription.Generic>();
+  mapping.put(source,target);
+}

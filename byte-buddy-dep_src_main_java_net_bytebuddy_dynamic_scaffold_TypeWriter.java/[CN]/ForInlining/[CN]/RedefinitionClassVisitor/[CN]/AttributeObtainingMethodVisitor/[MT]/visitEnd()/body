@@ -1,4 +1,4 @@
 {
-  record.applyBody(actualMethodVisitor,implementationContext);
+  record.applyBody(actualMethodVisitor,implementationContext,annotationValueFilterFactory);
   actualMethodVisitor.visitEnd();
 }

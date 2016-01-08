@@ -1,3 +1,0 @@
-{
-  return 31 * (31 * annotations.hashCode() + valueFilter.hashCode()) + target.hashCode();
-}

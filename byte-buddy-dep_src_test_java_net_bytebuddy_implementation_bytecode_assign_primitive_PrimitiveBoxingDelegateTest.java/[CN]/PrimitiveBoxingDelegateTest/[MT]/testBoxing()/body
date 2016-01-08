@@ -7,7 +7,7 @@
   verify(primitiveTypeDescription).represents(primitiveType);
   verify(primitiveTypeDescription,atLeast(1)).represents(any(Class.class));
   verifyNoMoreInteractions(primitiveTypeDescription);
-  verify(chainedAssigner).assign(referenceTypeDescription,targetType,Assigner.Typing.STATIC);
+  verify(chainedAssigner).assign(referenceTypeDescription.asGenericType(),targetType,Assigner.Typing.STATIC);
   verifyNoMoreInteractions(chainedAssigner);
   verify(methodVisitor).visitMethodInsn(Opcodes.INVOKESTATIC,referenceTypeDescription.getInternalName(),VALUE_OF,boxingMethodDescriptor,false);
   verifyNoMoreInteractions(methodVisitor);

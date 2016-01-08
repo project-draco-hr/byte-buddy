@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withInterfaces(new TypeList.Generic.Explicit(new TypeDescription.ForLoadedType(Serializable.class),new TypeDescription.ForLoadedType(Serializable.class))).validated();
+}

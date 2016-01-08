@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.Substitutor.ForAttachment.class).apply();
-}

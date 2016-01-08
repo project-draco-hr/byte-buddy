@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypeDefinition.Sort.class).apply();
+}

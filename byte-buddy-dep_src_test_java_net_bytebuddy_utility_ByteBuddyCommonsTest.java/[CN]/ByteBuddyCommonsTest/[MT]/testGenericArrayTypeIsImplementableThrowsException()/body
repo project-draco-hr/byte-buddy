@@ -1,5 +1,0 @@
-{
-  GenericTypeDescription genericTypeDescription=mock(GenericTypeDescription.class);
-  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.GENERIC_ARRAY);
-  isImplementable(genericTypeDescription);
-}

@@ -1,6 +1,0 @@
-{
-  for (  GenericTypeDescription typeDescription : typeDescriptions) {
-    isActualTypeOrVoid(typeDescription);
-  }
-  return typeDescriptions;
-}

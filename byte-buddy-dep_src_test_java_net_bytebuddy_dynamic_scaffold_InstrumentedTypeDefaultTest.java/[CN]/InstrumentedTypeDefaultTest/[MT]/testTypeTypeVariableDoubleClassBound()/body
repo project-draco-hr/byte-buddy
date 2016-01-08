@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withTypeVariable(new TypeVariableToken(FOO,Arrays.asList(TypeDescription.Generic.OBJECT,TypeDefinition.Sort.describe(String.class)))).validated();
+}

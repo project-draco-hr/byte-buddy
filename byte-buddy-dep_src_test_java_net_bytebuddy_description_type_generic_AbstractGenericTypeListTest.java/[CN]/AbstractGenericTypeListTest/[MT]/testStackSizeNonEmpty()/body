@@ -1,3 +1,0 @@
-{
-  assertThat(asList(Arrays.asList(getFirst(),getSecond())).getStackSize(),is(2));
-}

@@ -1,8 +1,8 @@
 {
-  assertThat(ElementMatchers.isSubTypeOf(String.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(ElementMatchers.isSubTypeOf(Object.class).matches(new TypeDescription.ForLoadedType(String.class)),is(true));
-  assertThat(ElementMatchers.isSubTypeOf(Serializable.class).matches(new TypeDescription.ForLoadedType(String.class)),is(true));
-  assertThat(ElementMatchers.isSuperTypeOf(Object.class).matches(new TypeDescription.ForLoadedType(String.class)),is(false));
-  assertThat(ElementMatchers.isSuperTypeOf(String.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(true));
+  assertThat(ElementMatchers.isSubTypeOf(String.class).matches(TypeDescription.OBJECT),is(false));
+  assertThat(ElementMatchers.isSubTypeOf(Object.class).matches(TypeDescription.STRING),is(true));
+  assertThat(ElementMatchers.isSubTypeOf(Serializable.class).matches(TypeDescription.STRING),is(true));
+  assertThat(ElementMatchers.isSuperTypeOf(Object.class).matches(TypeDescription.STRING),is(false));
+  assertThat(ElementMatchers.isSuperTypeOf(String.class).matches(TypeDescription.OBJECT),is(true));
   assertThat(ElementMatchers.isSuperTypeOf(String.class).matches(new TypeDescription.ForLoadedType(Serializable.class)),is(true));
 }

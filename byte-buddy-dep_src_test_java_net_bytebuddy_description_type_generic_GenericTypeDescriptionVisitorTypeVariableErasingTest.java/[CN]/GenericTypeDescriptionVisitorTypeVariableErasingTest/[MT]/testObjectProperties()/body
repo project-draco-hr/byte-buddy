@@ -1,4 +1,0 @@
-{
-  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.TypeVariableErasing.class).apply();
-  ObjectPropertyAssertion.of(GenericTypeDescription.Visitor.TypeVariableErasing.PartialErasureReviser.class).apply();
-}

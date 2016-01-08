@@ -1,3 +1,0 @@
-{
-  return "TypeAttributeAppender.ForType{" + "typeDescription=" + typeDescription + ", valueFilter="+ valueFilter+ '}';
-}

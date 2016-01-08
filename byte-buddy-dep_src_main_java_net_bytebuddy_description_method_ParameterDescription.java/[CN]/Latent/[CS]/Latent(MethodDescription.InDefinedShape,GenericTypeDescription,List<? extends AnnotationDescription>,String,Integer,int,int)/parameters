@@ -1,7 +1,0 @@
-MethodDescription.InDefinedShape declaringMethod
-GenericTypeDescription parameterType
-List<? extends AnnotationDescription> declaredAnnotations
-String name
-Integer modifiers
-int index
-int offset

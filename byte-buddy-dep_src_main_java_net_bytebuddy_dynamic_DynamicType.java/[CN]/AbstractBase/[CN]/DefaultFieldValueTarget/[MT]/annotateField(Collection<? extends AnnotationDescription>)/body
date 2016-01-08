@@ -1,3 +1,0 @@
-{
-  return attribute(new FieldAttributeAppender.ForAnnotation(new ArrayList<AnnotationDescription>(nonNull(annotations)),AnnotationAppender.ValueFilter.AppendDefaults.INSTANCE));
-}

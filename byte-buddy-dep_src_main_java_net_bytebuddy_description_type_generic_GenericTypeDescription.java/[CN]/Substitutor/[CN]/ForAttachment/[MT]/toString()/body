@@ -1,3 +1,0 @@
-{
-  return "GenericTypeDescription.Visitor.Substitutor.ForAttachment{" + "declaringType=" + declaringType + ", typeVariableSource="+ typeVariableSource+ '}';
-}

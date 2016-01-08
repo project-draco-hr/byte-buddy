@@ -1,6 +1,6 @@
 {
-  when(implementationTarget.invokeDominant(methodToken)).thenReturn(specialMethodInvocation);
+  when(implementationTarget.invokeDominant(token)).thenReturn(specialMethodInvocation);
   assertThat(TypeProxy.InvocationFactory.Default.SUPER_METHOD.invoke(implementationTarget,typeDescription,methodDescription),is(specialMethodInvocation));
-  verify(implementationTarget).invokeDominant(methodToken);
+  verify(implementationTarget).invokeDominant(token);
   verifyNoMoreInteractions(implementationTarget);
 }

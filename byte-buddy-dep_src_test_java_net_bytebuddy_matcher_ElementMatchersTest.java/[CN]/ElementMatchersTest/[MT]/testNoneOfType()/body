@@ -1,5 +1,5 @@
 {
-  assertThat(ElementMatchers.noneOf(Object.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(ElementMatchers.noneOf(String.class,Object.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(false));
-  assertThat(ElementMatchers.noneOf(String.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(true));
+  assertThat(ElementMatchers.noneOf(Object.class).matches(TypeDescription.OBJECT),is(false));
+  assertThat(ElementMatchers.noneOf(String.class,Object.class).matches(TypeDescription.OBJECT),is(false));
+  assertThat(ElementMatchers.noneOf(String.class).matches(TypeDescription.OBJECT),is(true));
 }

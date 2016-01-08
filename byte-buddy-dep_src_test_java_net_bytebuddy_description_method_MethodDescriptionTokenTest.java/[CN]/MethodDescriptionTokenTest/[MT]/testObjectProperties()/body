@@ -1,3 +1,12 @@
 {
-  ObjectPropertyAssertion.of(MethodDescription.Token.class).applyBasic();
+  ObjectPropertyAssertion.of(MethodDescription.Token.class).create(new ObjectPropertyAssertion.Creator<List<?>>(){
+    @Override public List<?> create(){
+      TypeDescription.Generic typeDescription=mock(TypeDescription.Generic.class);
+      when(typeDescription.asGenericType()).thenReturn(typeDescription);
+      return Collections.singletonList(typeDescription);
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(MethodDescription.SignatureToken.class).apply();
+  ObjectPropertyAssertion.of(MethodDescription.TypeToken.class).apply();
 }

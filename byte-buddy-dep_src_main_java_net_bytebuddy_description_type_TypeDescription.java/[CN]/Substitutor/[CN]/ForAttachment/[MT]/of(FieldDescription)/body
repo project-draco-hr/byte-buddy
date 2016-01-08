@@ -1,0 +1,3 @@
+{
+  return new ForAttachment(fieldDescription.getDeclaringType().asGenericType(),fieldDescription.getDeclaringType().asErasure());
+}

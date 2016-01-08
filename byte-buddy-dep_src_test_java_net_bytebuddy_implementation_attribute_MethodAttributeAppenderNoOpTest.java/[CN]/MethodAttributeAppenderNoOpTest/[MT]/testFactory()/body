@@ -1,0 +1,4 @@
+{
+  assertThat(MethodAttributeAppender.NoOp.INSTANCE.make(instrumentedType),is((MethodAttributeAppender)MethodAttributeAppender.NoOp.INSTANCE));
+  verifyZeroInteractions(instrumentedType);
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(asList(getFirst()).accept(TypeDescription.Generic.Visitor.NoOp.INSTANCE),is(asList(getFirst())));
+}

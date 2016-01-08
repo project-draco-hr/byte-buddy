@@ -1,5 +1,5 @@
 {
-  Class<?> type=create(Transform.class).method(named(FOO)).intercept(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE),MethodTransformer.Simple.withModifiers(MethodManifestation.FINAL)).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=create(Transform.class).method(named(FOO)).intercept(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)).transform(MethodTransformer.Simple.withModifiers(MethodManifestation.FINAL)).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   Method foo=type.getDeclaredMethod(FOO);
   assertThat(foo.invoke(type.newInstance()),is((Object)FOO));
   assertThat(foo.getModifiers(),is(Opcodes.ACC_FINAL | Opcodes.ACC_PUBLIC));

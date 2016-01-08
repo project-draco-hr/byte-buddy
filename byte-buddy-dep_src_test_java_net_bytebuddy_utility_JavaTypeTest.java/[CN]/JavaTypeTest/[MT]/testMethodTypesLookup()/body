@@ -1,6 +1,6 @@
 {
   assertThat(JavaType.METHOD_HANDLES_LOOKUP.getTypeStub().getName(),is("java.lang.invoke.MethodHandles$Lookup"));
   assertThat(JavaType.METHOD_HANDLES_LOOKUP.getTypeStub().getModifiers(),is(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC | Opcodes.ACC_FINAL));
-  assertThat(JavaType.METHOD_HANDLES_LOOKUP.getTypeStub().getSuperType(),is((GenericTypeDescription)TypeDescription.OBJECT));
+  assertThat(JavaType.METHOD_HANDLES_LOOKUP.getTypeStub().getSuperType(),is(TypeDescription.Generic.OBJECT));
   assertThat(JavaType.METHOD_HANDLES_LOOKUP.getTypeStub().getInterfaces().size(),is(0));
 }

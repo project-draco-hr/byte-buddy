@@ -1,6 +1,0 @@
-{
-  for (  GenericTypeDescription typeDescription : typeDescriptions) {
-    isImplementable(typeDescription);
-  }
-  return typeDescriptions;
-}

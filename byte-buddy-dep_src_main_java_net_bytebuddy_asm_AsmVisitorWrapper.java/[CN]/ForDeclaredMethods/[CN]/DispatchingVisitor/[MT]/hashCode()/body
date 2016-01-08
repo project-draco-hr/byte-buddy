@@ -1,0 +1,6 @@
+{
+  int result=getOuter().hashCode();
+  result=31 * result + instrumentedType.hashCode();
+  result=31 * result + cv.hashCode();
+  return result;
+}

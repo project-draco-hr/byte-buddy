@@ -1,0 +1,13 @@
+{
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getDeclaredFields().size(),is(0));
+  instrumentedType=instrumentedType.withField(new FieldDescription.Token(BAR,Opcodes.ACC_PUBLIC,TypeDescription.Generic.OfGenericArray.Latent.of(TargetType.GENERIC_DESCRIPTION,1)));
+  assertThat(instrumentedType.getDeclaredFields().size(),is(1));
+  FieldDescription.InDefinedShape fieldDescription=instrumentedType.getDeclaredFields().get(0);
+  assertThat(fieldDescription.getType().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(fieldDescription.getType().asErasure().isArray(),is(true));
+  assertThat(fieldDescription.getType().asErasure().getComponentType(),sameInstance((TypeDescription)instrumentedType));
+  assertThat(fieldDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
+  assertThat(fieldDescription.getName(),is(BAR));
+  assertThat(fieldDescription.getDeclaringType(),sameInstance((TypeDescription)instrumentedType));
+}

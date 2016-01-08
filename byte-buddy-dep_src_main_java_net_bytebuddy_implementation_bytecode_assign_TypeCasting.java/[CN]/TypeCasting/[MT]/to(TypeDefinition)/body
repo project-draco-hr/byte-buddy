@@ -1,0 +1,6 @@
+{
+  if (typeDefinition.isPrimitive()) {
+    throw new IllegalArgumentException("Cannot cast to primitive type: " + typeDefinition);
+  }
+  return new TypeCasting(typeDefinition.asErasure());
+}

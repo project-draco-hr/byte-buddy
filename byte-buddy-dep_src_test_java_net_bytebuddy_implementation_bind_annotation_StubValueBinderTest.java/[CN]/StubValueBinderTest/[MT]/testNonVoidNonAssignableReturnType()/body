@@ -1,6 +1,6 @@
 {
-  when(target.getType()).thenReturn(TypeDescription.OBJECT);
-  when(source.getReturnType()).thenReturn(TypeDescription.OBJECT);
+  when(target.getType()).thenReturn(TypeDescription.Generic.OBJECT);
+  when(source.getReturnType()).thenReturn(TypeDescription.Generic.OBJECT);
   when(stackManipulation.isValid()).thenReturn(false);
   assertThat(StubValue.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner).isValid(),is(false));
 }

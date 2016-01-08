@@ -1,10 +1,10 @@
 {
   TypeDescription instrumentedType=mock(TypeDescription.class);
-  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,mock(AuxiliaryType.NamingStrategy.class),mock(InstrumentedType.TypeInitializer.class),mock(ClassFileVersion.class));
+  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,mock(AuxiliaryType.NamingStrategy.class),mock(TypeInitializer.class),mock(ClassFileVersion.class));
   implementationContext.prohibitTypeInitializer();
   TypeWriter.MethodPool methodPool=mock(TypeWriter.MethodPool.class);
   TypeWriter.MethodPool.Record record=mock(TypeWriter.MethodPool.Record.class);
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.DEFINED);
   when(methodPool.target(new MethodDescription.Latent.TypeInitializer(instrumentedType))).thenReturn(record);
-  implementationContext.drain(mock(ClassVisitor.class),methodPool,mock(Implementation.Context.ExtractableView.InjectedCode.class));
+  implementationContext.drain(mock(ClassVisitor.class),methodPool,mock(Implementation.Context.ExtractableView.InjectedCode.class),mock(AnnotationValueFilter.Factory.class));
 }

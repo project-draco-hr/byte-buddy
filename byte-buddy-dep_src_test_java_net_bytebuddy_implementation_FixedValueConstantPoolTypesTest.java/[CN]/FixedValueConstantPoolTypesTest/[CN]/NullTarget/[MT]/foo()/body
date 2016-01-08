@@ -1,4 +1,0 @@
-{
-  register(FOO);
-  return mock(Runnable.class);
-}

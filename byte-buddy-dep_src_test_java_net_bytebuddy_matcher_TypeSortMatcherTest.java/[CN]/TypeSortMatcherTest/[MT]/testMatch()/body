@@ -1,9 +1,9 @@
 {
-  when(genericTypeDescription.getSort()).thenReturn(GenericTypeDescription.Sort.NON_GENERIC);
-  when(matcher.matches(GenericTypeDescription.Sort.NON_GENERIC)).thenReturn(true);
-  assertThat(new TypeSortMatcher<GenericTypeDescription>(matcher).matches(genericTypeDescription),is(true));
-  verify(genericTypeDescription).getSort();
-  verifyNoMoreInteractions(genericTypeDescription);
-  verify(matcher).matches(GenericTypeDescription.Sort.NON_GENERIC);
+  when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
+  when(matcher.matches(TypeDefinition.Sort.NON_GENERIC)).thenReturn(true);
+  assertThat(new TypeSortMatcher<TypeDescription.Generic>(matcher).matches(typeDescription),is(true));
+  verify(typeDescription).getSort();
+  verifyNoMoreInteractions(typeDescription);
+  verify(matcher).matches(TypeDefinition.Sort.NON_GENERIC);
   verifyNoMoreInteractions(matcher);
 }

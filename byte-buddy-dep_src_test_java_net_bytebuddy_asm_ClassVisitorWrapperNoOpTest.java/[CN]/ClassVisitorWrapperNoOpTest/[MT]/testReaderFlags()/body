@@ -1,3 +1,0 @@
-{
-  assertThat(ClassVisitorWrapper.NoOp.INSTANCE.mergeReader(FOO),is(FOO));
-}

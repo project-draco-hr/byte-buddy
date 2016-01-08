@@ -1,5 +1,0 @@
-{
-  NamingStrategy namingStrategy=new NamingStrategy.Fixed(FOO);
-  assertThat(namingStrategy.name(unnamedType),is(FOO));
-  verifyZeroInteractions(unnamedType);
-}

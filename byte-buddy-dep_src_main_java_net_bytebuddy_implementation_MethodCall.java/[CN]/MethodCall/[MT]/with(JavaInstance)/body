@@ -1,7 +1,7 @@
 {
   List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(javaInstance.length);
   for (  JavaInstance aJavaInstance : javaInstance) {
-    argumentLoaders.add(new ArgumentLoader.ForJavaInstance(nonNull(aJavaInstance)));
+    argumentLoaders.add(new ArgumentLoader.ForJavaInstance(aJavaInstance));
   }
-  return new MethodCall(methodLocator,targetHandler,join(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,typing);
+  return new MethodCall(methodLocator,targetHandler,CompoundList.of(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,typing);
 }

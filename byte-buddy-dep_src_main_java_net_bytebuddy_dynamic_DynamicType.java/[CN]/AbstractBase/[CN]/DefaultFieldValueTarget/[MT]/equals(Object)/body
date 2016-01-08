@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  DefaultFieldValueTarget that=(DefaultFieldValueTarget)other;
-  return attributeAppenderFactory.equals(that.attributeAppenderFactory) && !(defaultValue != null ? !defaultValue.equals(that.defaultValue) : that.defaultValue != null) && fieldToken.equals(that.fieldToken)&& AbstractBase.this.equals(that.getDynamicTypeBuilder());
-}

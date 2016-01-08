@@ -2,7 +2,6 @@
   super.setUp();
   when(fieldDescription.asDefined()).thenReturn(fieldDescription);
   when(fieldDescription.getType()).thenReturn(fieldType);
-  when(fieldType.asErasure()).thenReturn(fieldType);
-  when(targetType.asErasure()).thenReturn(targetType);
   when(target.getType()).thenReturn(targetType);
+  when(fieldType.asErasure()).thenReturn(rawFieldType);
 }

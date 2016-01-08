@@ -1,0 +1,6 @@
+{
+  new TypeAttributeAppender.Explicit(new AnnotationList.ForLoadedAnnotation(new Baz.Instance())).apply(classVisitor,instrumentedType,annotationValueFilter);
+  verify(classVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
+  verifyZeroInteractions(classVisitor);
+  verifyZeroInteractions(instrumentedType);
+}

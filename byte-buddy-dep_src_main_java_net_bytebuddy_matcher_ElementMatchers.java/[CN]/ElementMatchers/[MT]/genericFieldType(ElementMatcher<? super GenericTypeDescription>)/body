@@ -1,3 +1,0 @@
-{
-  return new FieldTypeMatcher<T>(nonNull(matcher));
-}

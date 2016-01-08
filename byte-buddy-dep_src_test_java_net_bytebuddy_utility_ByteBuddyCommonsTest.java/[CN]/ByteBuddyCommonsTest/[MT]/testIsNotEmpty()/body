@@ -1,4 +1,0 @@
-{
-  List<String> list=Collections.singletonList(FOO);
-  assertThat(isNotEmpty(list,FOO),sameInstance(list));
-}

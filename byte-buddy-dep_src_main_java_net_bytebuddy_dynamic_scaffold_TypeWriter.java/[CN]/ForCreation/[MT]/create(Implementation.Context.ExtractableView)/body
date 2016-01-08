@@ -1,15 +1,15 @@
 {
-  ClassWriter classWriter=new ClassWriter(classVisitorWrapper.mergeWriter(ASM_NO_FLAGS));
-  ClassVisitor classVisitor=classVisitorWrapper.wrap(new ValidatingClassVisitor(classWriter));
+  ClassWriter classWriter=new ClassWriter(asmVisitorWrapper.mergeWriter(ASM_MANUAL_FLAGS));
+  ClassVisitor classVisitor=asmVisitorWrapper.wrap(instrumentedType,ValidatingClassVisitor.of(classWriter,typeValidation));
   classVisitor.visit(classFileVersion.getMinorMajorVersion(),instrumentedType.getActualModifiers(!instrumentedType.isInterface()),instrumentedType.getInternalName(),instrumentedType.getGenericSignature(),(instrumentedType.getSuperType() == null ? TypeDescription.OBJECT : instrumentedType.getSuperType().asErasure()).getInternalName(),instrumentedType.getInterfaces().asErasures().toInternalNames());
-  attributeAppender.apply(classVisitor,instrumentedType,instrumentedType.getSuperType());
+  typeAttributeAppender.apply(classVisitor,instrumentedType,annotationValueFilterFactory.on(instrumentedType));
   for (  FieldDescription fieldDescription : instrumentedType.getDeclaredFields()) {
-    fieldPool.target(fieldDescription).apply(classVisitor);
+    fieldPool.target(fieldDescription).apply(classVisitor,annotationValueFilterFactory);
   }
   for (  MethodDescription methodDescription : instrumentedMethods) {
-    methodPool.target(methodDescription).apply(classVisitor,implementationContext);
+    methodPool.target(methodDescription).apply(classVisitor,implementationContext,annotationValueFilterFactory);
   }
-  implementationContext.drain(classVisitor,methodPool,Implementation.Context.ExtractableView.InjectedCode.None.INSTANCE);
+  implementationContext.drain(classVisitor,methodPool,Implementation.Context.ExtractableView.InjectedCode.None.INSTANCE,annotationValueFilterFactory);
   classVisitor.visitEnd();
   return classWriter.toByteArray();
 }

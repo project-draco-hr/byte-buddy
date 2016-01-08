@@ -1,4 +1,6 @@
 {
+  when(instrumentedMethod.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(parameterDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   when(resolvedMethodFilter.matches(instrumentedMethod)).thenReturn(true);
   when(firstFilter.matches(instrumentedMethod)).thenReturn(false);
   when(secondFilter.matches(instrumentedMethod)).thenReturn(false);
@@ -6,18 +8,18 @@
   TypeDescription declaringType=mock(TypeDescription.class);
   when(declaringType.asErasure()).thenReturn(declaringType);
   when(instrumentedMethod.getDeclaringType()).thenReturn(declaringType);
-  when(typeDescription.isPublic()).thenReturn(true);
+  when(thirdType.isPublic()).thenReturn(true);
   when(instrumentedMethod.isPublic()).thenReturn(true);
   when(declaringType.isPackagePrivate()).thenReturn(true);
-  TypeDescription superType=mock(TypeDescription.class);
-  when(superType.asErasure()).thenReturn(superType);
+  TypeDescription.Generic superType=mock(TypeDescription.Generic.class);
+  TypeDescription rawSuperType=mock(TypeDescription.class);
+  when(superType.asErasure()).thenReturn(rawSuperType);
   when(typeDescription.getSuperType()).thenReturn(superType);
   MethodDescription.Token methodToken=mock(MethodDescription.Token.class);
-  when(instrumentedMethod.asToken()).thenReturn(methodToken);
-  when(methodToken.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(methodToken);
-  when(typeDescription.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(typeDescription);
-  MethodRegistry.Compiled methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory,methodTransformer).append(secondMatcher,secondHandler,secondFactory,methodTransformer).prepare(firstType,methodGraphCompiler,methodFilter).compile(implementationTargetFactory);
-  assertThat(methodRegistry.getInstrumentedType(),is((TypeDescription)typeDescription));
+  when(instrumentedMethod.asToken(ElementMatchers.is(typeDescription))).thenReturn(methodToken);
+  when(methodToken.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(methodToken);
+  MethodRegistry.Compiled methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory,methodTransformer).append(secondMatcher,secondHandler,secondFactory,methodTransformer).prepare(firstType,methodGraphCompiler,TypeValidation.ENABLED,methodFilter).compile(implementationTargetFactory);
+  assertThat(methodRegistry.getInstrumentedType(),is(typeDescription));
   assertThat(methodRegistry.getInstrumentedMethods().size(),is(1));
   assertThat(methodRegistry.getTypeInitializer(),is(typeInitializer));
   assertThat(methodRegistry.getLoadedTypeInitializer(),is(loadedTypeInitializer));

@@ -1,0 +1,3 @@
+{
+  InstrumentedType.Default.of(new TypeDescription.ForLoadedType(Exception.class)).withTypeVariable(new TypeVariableToken(FOO,Collections.singletonList(TypeDescription.Generic.OBJECT))).validated();
+}

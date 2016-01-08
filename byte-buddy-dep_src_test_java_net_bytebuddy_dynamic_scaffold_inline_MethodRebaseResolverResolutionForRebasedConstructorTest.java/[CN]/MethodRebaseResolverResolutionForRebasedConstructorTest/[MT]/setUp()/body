@@ -1,18 +1,23 @@
 {
-  when(genericTypeDescription.asErasure()).thenReturn(typeDescription);
+  when(typeDescription.asErasure()).thenReturn(rawTypeDescription);
   when(methodDescription.isConstructor()).thenReturn(true);
-  when(methodDescription.getDeclaringType()).thenReturn(typeDescription);
+  when(methodDescription.getDeclaringType()).thenReturn(rawTypeDescription);
   when(methodDescription.getReturnType()).thenReturn(returnType);
-  when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,parameterType));
   when(placeholderType.getStackSize()).thenReturn(StackSize.ZERO);
-  when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,Collections.singletonList(parameterType)));
+  when(placeholderType.asErasure()).thenReturn(rawPlaceholderType);
+  when(placeholderType.asGenericType()).thenReturn(placeholderType);
+  when(rawPlaceholderType.asGenericType()).thenReturn(placeholderType);
+  when(parameterType.asGenericType()).thenReturn(parameterType);
+  when(parameterType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(rawParameterType.getStackSize()).thenReturn(StackSize.ZERO);
+  when(parameterType.asErasure()).thenReturn(rawParameterType);
+  when(parameterType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(parameterType);
+  when(rawParameterType.asGenericType()).thenReturn(parameterType);
   when(methodDescription.getInternalName()).thenReturn(FOO);
   when(methodDescription.getDescriptor()).thenReturn(QUX);
-  when(typeDescription.getInternalName()).thenReturn(BAR);
-  when(placeholderType.getDescriptor()).thenReturn(BAZ);
+  when(rawTypeDescription.getInternalName()).thenReturn(BAR);
+  when(rawPlaceholderType.getDescriptor()).thenReturn(BAZ);
   when(otherPlaceHolderType.getDescriptor()).thenReturn(FOO);
-  when(returnType.asErasure()).thenReturn(returnType);
-  when(returnType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(returnType);
-  when(parameterType.asErasure()).thenReturn(parameterType);
-  when(parameterType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(parameterType);
+  when(returnType.asErasure()).thenReturn(rawReturnType);
 }

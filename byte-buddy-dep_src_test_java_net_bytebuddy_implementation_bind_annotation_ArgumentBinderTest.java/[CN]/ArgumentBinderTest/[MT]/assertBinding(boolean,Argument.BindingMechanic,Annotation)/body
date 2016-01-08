@@ -13,7 +13,7 @@
   typeDescriptions.add(sourceIndex,sourceType);
   when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,typeDescriptions));
   when(source.isStatic()).thenReturn(false);
-  when(target.getType()).thenReturn(targetType);
+  when(target.getType()).thenReturn(genericTargetType);
   when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(annotations));
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=Argument.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
@@ -30,6 +30,6 @@
   verify(source,atLeast(1)).getParameters();
   verify(target,atLeast(1)).getType();
   verify(target,atLeast(1)).getDeclaredAnnotations();
-  verify(assigner).assign(sourceType,targetType,Assigner.Typing.of(dynamicallyTyped));
+  verify(assigner).assign(genericSourceType,genericTargetType,Assigner.Typing.of(dynamicallyTyped));
   verifyNoMoreInteractions(assigner);
 }

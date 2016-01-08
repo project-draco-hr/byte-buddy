@@ -1,0 +1,5 @@
+{
+  assertThat(describe(Object.class).represents(Object.class),is(true));
+  assertThat(describe(Object.class).represents(Serializable.class),is(false));
+  assertThat(describe(List.class).represents(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType()),is(false));
+}

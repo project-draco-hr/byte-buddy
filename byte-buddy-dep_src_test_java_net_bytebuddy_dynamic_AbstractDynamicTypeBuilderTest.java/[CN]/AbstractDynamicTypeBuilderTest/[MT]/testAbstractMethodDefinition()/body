@@ -1,5 +1,5 @@
 {
-  Class<?> type=createPlain().modifiers(Visibility.PUBLIC,TypeManifestation.ABSTRACT).defineMethod(FOO,Object.class,Collections.<Class<?>>emptyList(),Visibility.PUBLIC).throwing(Exception.class).withoutCode().make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=createPlain().modifiers(Visibility.PUBLIC,TypeManifestation.ABSTRACT).defineMethod(FOO,Object.class,Visibility.PUBLIC).throwing(Exception.class).withoutCode().make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   Method method=type.getDeclaredMethod(FOO);
   assertThat(method.getReturnType(),CoreMatchers.<Class<?>>is(Object.class));
   assertThat(method.getExceptionTypes(),is(new Class<?>[]{Exception.class}));

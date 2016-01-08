@@ -1,0 +1,3 @@
+{
+  assertThat(collectionTypeVariableT.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(arrayListTypeVariableT),is(true));
+}

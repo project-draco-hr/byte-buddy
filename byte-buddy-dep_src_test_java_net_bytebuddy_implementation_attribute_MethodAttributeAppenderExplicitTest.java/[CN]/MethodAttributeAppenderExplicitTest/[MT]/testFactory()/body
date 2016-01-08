@@ -1,0 +1,5 @@
+{
+  MethodAttributeAppender.Explicit methodAttributeAppender=new MethodAttributeAppender.Explicit(new AnnotationList.ForLoadedAnnotation(new Qux.Instance()));
+  assertThat(methodAttributeAppender.make(instrumentedType),sameInstance((MethodAttributeAppender)methodAttributeAppender));
+  verifyZeroInteractions(instrumentedType);
+}

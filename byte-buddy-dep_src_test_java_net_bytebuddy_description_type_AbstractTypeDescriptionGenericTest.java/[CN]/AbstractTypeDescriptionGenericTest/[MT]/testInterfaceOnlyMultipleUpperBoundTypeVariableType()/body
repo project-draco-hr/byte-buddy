@@ -1,0 +1,13 @@
+{
+  TypeDescription.Generic typeDescription=describe(InterfaceOnlyMultipleUpperBoundTypeVariableType.class.getDeclaredField(FOO));
+  assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(typeDescription.getSymbol(),is(T));
+  assertThat(typeDescription.getStackSize(),is(StackSize.SINGLE));
+  assertThat(typeDescription.getUpperBounds().size(),is(2));
+  assertThat(typeDescription.getUpperBounds().get(0),is((TypeDefinition)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(typeDescription.getUpperBounds().get(1),is((TypeDefinition)new TypeDescription.ForLoadedType(Bar.class)));
+  assertThat(typeDescription.getTypeName(),is(InterfaceOnlyMultipleUpperBoundTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(InterfaceOnlyMultipleUpperBoundTypeVariableType.class)));
+  assertThat(typeDescription.getVariableSource().getTypeVariables().size(),is(1));
+  assertThat(typeDescription.getVariableSource().getTypeVariables().getOnly(),is(typeDescription));
+}

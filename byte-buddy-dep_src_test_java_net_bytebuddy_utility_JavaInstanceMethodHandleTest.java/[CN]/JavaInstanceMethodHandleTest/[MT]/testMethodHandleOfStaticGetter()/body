@@ -3,6 +3,6 @@
   assertThat(methodHandle.getHandleType(),is(JavaInstance.MethodHandle.HandleType.GET_STATIC_FIELD));
   assertThat(methodHandle.getName(),is(QUX));
   assertThat(methodHandle.getOwnerType(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
-  assertThat(methodHandle.getReturnType(),is((TypeDescription)new TypeDescription.ForLoadedType(Void.class)));
+  assertThat(methodHandle.getReturnType(),is((TypeDefinition)new TypeDescription.ForLoadedType(Void.class)));
   assertThat(methodHandle.getParameterTypes(),is(Collections.<TypeDescription>emptyList()));
 }

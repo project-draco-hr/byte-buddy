@@ -1,3 +1,0 @@
-{
-  return makeInterface(Arrays.asList(typeDescription));
-}

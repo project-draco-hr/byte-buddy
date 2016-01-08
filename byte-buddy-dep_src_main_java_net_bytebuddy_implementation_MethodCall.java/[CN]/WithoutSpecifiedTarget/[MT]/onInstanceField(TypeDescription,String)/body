@@ -1,3 +1,0 @@
-{
-  return new MethodCall(methodLocator,new TargetHandler.ForInstanceField(nonNull(fieldName),isActualType(typeDescription)),argumentLoaders,new MethodInvoker.ForVirtualInvocation(typeDescription),TerminationHandler.ForMethodReturn.INSTANCE,assigner,typing);
-}

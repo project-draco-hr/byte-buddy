@@ -1,3 +1,0 @@
-{
-  return withDefaultValue(AnnotationDescription.ForLoadedAnnotation.describe(nonNull(value),new TypeDescription.ForLoadedType(nonNull(type))));
-}

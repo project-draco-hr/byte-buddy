@@ -1,0 +1,4 @@
+{
+  TypeWriter.FieldPool.Record record=new TypeWriter.FieldPool.Record.ForImplicitField(fieldDescription);
+  assertThat(record.isImplicit(),is(true));
+}

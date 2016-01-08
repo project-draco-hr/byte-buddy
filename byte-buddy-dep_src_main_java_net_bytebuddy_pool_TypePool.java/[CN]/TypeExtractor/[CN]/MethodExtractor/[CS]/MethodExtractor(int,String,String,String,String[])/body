@@ -1,15 +1,15 @@
 {
-  super(ASM_API_VERSION);
+  super(Opcodes.ASM5);
   this.modifiers=modifiers;
   this.internalName=internalName;
   this.descriptor=descriptor;
   this.genericSignature=genericSignature;
   this.exceptionName=exceptionName;
-  annotationTokens=new LinkedList<LazyTypeDescription.AnnotationToken>();
+  annotationTokens=new ArrayList<LazyTypeDescription.AnnotationToken>();
   Type[] parameterTypes=Type.getMethodType(descriptor).getArgumentTypes();
   parameterAnnotationTokens=new HashMap<Integer,List<LazyTypeDescription.AnnotationToken>>();
   for (int i=0; i < parameterTypes.length; i++) {
-    parameterAnnotationTokens.put(i,new LinkedList<LazyTypeDescription.AnnotationToken>());
+    parameterAnnotationTokens.put(i,new ArrayList<LazyTypeDescription.AnnotationToken>());
   }
   parameterTokens=new ArrayList<LazyTypeDescription.MethodToken.ParameterToken>(parameterTypes.length);
   legacyParameterBag=new ParameterBag(parameterTypes);

@@ -2,7 +2,7 @@
   final int sourceIndex=0, targetIndex=0;
   when(annotation.value()).thenReturn(sourceIndex);
   when(target.getIndex()).thenReturn(targetIndex);
-  when(source.getParameters()).thenReturn(new ParameterList.Empty());
+  when(source.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=Argument.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(false));
   verify(annotation,atLeast(1)).value();

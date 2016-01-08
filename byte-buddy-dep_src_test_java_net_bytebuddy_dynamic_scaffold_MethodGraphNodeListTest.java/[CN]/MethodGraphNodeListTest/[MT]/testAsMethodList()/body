@@ -1,3 +1,3 @@
 {
-  assertThat(new MethodGraph.NodeList(Arrays.asList(new MethodGraph.Node.Simple(first),new MethodGraph.Node.Simple(second))).asMethodList(),is((MethodList)new MethodList.Explicit<MethodDescription>(Arrays.asList(first,second))));
+  assertThat(new MethodGraph.NodeList(Arrays.asList(new MethodGraph.Node.Simple(first),new MethodGraph.Node.Simple(second))).asMethodList(),is((MethodList)new MethodList.Explicit<MethodDescription>(first,second)));
 }

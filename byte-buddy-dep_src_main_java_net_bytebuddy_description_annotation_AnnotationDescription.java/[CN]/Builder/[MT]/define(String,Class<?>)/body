@@ -1,3 +1,3 @@
 {
-  return define(property,new TypeDescription.ForLoadedType(nonNull(type)));
+  return define(property,new TypeDescription.ForLoadedType(type));
 }

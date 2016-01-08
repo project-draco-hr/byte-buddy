@@ -1,3 +1,0 @@
-{
-  return new TokenMatcher<T,MethodDescription.Token>(nonNull(matcher));
-}

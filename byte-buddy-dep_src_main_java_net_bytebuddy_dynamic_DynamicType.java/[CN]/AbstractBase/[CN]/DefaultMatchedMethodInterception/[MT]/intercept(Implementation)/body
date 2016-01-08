@@ -1,3 +1,0 @@
-{
-  return intercept(implementation,MethodTransformer.NoOp.INSTANCE);
-}

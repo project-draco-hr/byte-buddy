@@ -1,0 +1,4 @@
+{
+  when(fieldDescription.asToken(ElementMatchers.is(instrumentedType))).thenReturn(token);
+  assertThat(new LatentMatcher.ForFieldToken(token).resolve(instrumentedType).matches(fieldDescription),is(true));
+}

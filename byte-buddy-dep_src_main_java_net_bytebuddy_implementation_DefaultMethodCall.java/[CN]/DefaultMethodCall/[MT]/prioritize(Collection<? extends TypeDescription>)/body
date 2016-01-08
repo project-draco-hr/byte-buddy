@@ -1,3 +1,3 @@
 {
-  return new DefaultMethodCall(new ArrayList<TypeDescription>(nonNull(prioritizedInterfaces)));
+  return new DefaultMethodCall(new ArrayList<TypeDescription>(prioritizedInterfaces));
 }

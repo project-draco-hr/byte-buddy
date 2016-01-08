@@ -1,4 +1,4 @@
 {
-  GenericTypeDescription typeDescription=target.getDeclaringType();
-  return typeDescription != null && typeMatcher.matches(typeDescription);
+  TypeDefinition declaringType=target.getDeclaringType();
+  return declaringType != null && typeMatcher.matches(declaringType.asGenericType());
 }

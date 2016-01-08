@@ -1,3 +1,0 @@
-{
-  AgentBuilder.InitializationStrategy.Minimal.INSTANCE.register(dynamicType,classLoader,injectorFactory);
-}

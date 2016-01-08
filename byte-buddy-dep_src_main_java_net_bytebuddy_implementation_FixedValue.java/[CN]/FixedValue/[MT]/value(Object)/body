@@ -1,7 +1,4 @@
 {
-  if (fixedValue == null) {
-    return new ForPoolValue(NullConstant.INSTANCE,TypeDescription.OBJECT,Assigner.DEFAULT,Assigner.Typing.DYNAMIC);
-  }
   Class<?> type=fixedValue.getClass();
   if (type == String.class) {
     return new ForPoolValue(new TextConstant((String)fixedValue),TypeDescription.STRING,Assigner.DEFAULT,Assigner.Typing.STATIC);

@@ -1,3 +1,0 @@
-{
-  assertThat(new MethodList.Empty().asTokenList().size(),is(0));
-}

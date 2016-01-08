@@ -1,5 +1,5 @@
 {
-  List<ParameterDescription.InDefinedShape> parameters=new LinkedList<ParameterDescription.InDefinedShape>();
+  List<ParameterDescription.InDefinedShape> parameters=new ArrayList<ParameterDescription.InDefinedShape>(elements.size());
   for (  Method method : elements) {
     parameters.add(new MethodDescription.ForLoadedMethod(method).getParameters().getOnly());
   }

@@ -1,3 +1,0 @@
-{
-  isValidIdentifier(MethodDescription.CONSTRUCTOR_INTERNAL_NAME);
-}

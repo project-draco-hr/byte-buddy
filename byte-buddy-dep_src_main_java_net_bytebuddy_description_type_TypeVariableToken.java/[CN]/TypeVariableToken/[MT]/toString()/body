@@ -1,0 +1,3 @@
+{
+  return "TypeVariableToken{" + "symbol='" + symbol + '\''+ ", bounds="+ bounds+ '}';
+}

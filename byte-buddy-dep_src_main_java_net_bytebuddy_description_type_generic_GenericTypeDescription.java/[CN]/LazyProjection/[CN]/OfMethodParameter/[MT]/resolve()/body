@@ -1,4 +1,0 @@
-{
-  Type[] type=method.getGenericParameterTypes();
-  return index < type.length ? Sort.describe(type[index]) : new ForNonGenericType.OfLoadedType(erasure);
-}

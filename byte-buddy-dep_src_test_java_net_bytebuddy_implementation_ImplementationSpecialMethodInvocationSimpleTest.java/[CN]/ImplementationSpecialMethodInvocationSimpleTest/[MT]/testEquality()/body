@@ -1,0 +1,10 @@
+{
+  MethodDescription firstMethod=mock(MethodDescription.class), secondMethod=mock(MethodDescription.class);
+  MethodDescription.SignatureToken firstToken=mock(MethodDescription.SignatureToken.class), secondToken=mock(MethodDescription.SignatureToken.class);
+  when(firstMethod.asSignatureToken()).thenReturn(firstToken);
+  when(secondMethod.asSignatureToken()).thenReturn(secondToken);
+  TypeDescription firstType=mock(TypeDescription.class), secondType=mock(TypeDescription.class);
+  assertThat(new Implementation.SpecialMethodInvocation.Simple(firstMethod,firstType,mock(StackManipulation.class)),is(new Implementation.SpecialMethodInvocation.Simple(firstMethod,firstType,mock(StackManipulation.class))));
+  assertThat(new Implementation.SpecialMethodInvocation.Simple(firstMethod,firstType,mock(StackManipulation.class)),not(new Implementation.SpecialMethodInvocation.Simple(secondMethod,firstType,mock(StackManipulation.class))));
+  assertThat(new Implementation.SpecialMethodInvocation.Simple(firstMethod,firstType,mock(StackManipulation.class)),not(new Implementation.SpecialMethodInvocation.Simple(firstMethod,secondType,mock(StackManipulation.class))));
+}

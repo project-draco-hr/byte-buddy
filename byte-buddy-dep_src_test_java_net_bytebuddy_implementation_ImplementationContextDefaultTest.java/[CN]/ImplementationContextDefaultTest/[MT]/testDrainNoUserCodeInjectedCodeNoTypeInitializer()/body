@@ -5,7 +5,7 @@
   when(otherTypeInitializer.isDefined()).thenReturn(true);
   when(typeInitializer.expandWith(injectedCodeAppender)).thenReturn(otherTypeInitializer);
   when(otherTypeInitializer.withReturn()).thenReturn(terminationAppender);
-  implementationContext.drain(classVisitor,methodPool,injectedCode);
+  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory);
   verify(record).getSort();
   verify(typeInitializer).expandWith(injectedCodeAppender);
   verifyNoMoreInteractions(typeInitializer);

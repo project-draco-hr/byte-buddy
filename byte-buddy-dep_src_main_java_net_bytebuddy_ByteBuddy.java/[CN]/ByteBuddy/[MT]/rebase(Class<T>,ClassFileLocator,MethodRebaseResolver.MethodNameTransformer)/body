@@ -1,3 +1,0 @@
-{
-  return rebase(new TypeDescription.ForLoadedType(nonNull(levelType)),classFileLocator,methodNameTransformer);
-}

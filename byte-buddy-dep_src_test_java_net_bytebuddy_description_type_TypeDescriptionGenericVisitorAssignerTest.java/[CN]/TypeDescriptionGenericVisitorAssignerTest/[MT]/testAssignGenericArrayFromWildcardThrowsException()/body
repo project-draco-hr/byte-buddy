@@ -1,0 +1,3 @@
+{
+  arrayTypeVariableT.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(unboundWildcard);
+}

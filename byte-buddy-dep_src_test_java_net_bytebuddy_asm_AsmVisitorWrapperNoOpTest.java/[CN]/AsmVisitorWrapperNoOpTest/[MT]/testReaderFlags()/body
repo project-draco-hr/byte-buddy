@@ -1,0 +1,3 @@
+{
+  assertThat(AsmVisitorWrapper.NoOp.INSTANCE.mergeReader(FOO),is(FOO));
+}

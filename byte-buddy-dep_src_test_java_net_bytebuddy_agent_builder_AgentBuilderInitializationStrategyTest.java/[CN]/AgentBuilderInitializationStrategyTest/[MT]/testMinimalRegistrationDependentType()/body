@@ -1,0 +1,7 @@
+{
+  TypeDescription dependent=mock(TypeDescription.class);
+  when(dependent.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(dynamicType.getAuxiliaryTypes()).thenReturn(Collections.singletonMap(dependent,BAZ));
+  AgentBuilder.InitializationStrategy.Minimal.INSTANCE.register(dynamicType,classLoader,injectorFactory);
+  verifyZeroInteractions(injectorFactory);
+}

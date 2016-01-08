@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(FieldTransformer.Simple.class).apply();
+  ObjectPropertyAssertion.of(FieldTransformer.Simple.TokenTransformer.ForModifierTransformation.class).apply();
+}

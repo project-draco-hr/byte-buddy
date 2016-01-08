@@ -1,3 +1,0 @@
-{
-  joinUnique(Arrays.asList(FOO,BAR),FOO);
-}

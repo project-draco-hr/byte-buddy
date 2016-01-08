@@ -1,0 +1,6 @@
+{
+  TypeDescription typeDescription=describe(new ByteArrayClassLoader(null,ClassFileExtraction.of(MissingAnnotations.class),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE).loadClass(MissingAnnotations.class.getName()));
+  assertThat(typeDescription.getDeclaredAnnotations().isAnnotationPresent(SampleAnnotation.class),is(false));
+  assertThat(typeDescription.getDeclaredFields().getOnly().getDeclaredAnnotations().isAnnotationPresent(SampleAnnotation.class),is(false));
+  assertThat(typeDescription.getDeclaredMethods().filter(isMethod()).getOnly().getDeclaredAnnotations().isAnnotationPresent(SampleAnnotation.class),is(false));
+}

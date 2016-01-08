@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withInterfaces(new TypeList.Generic.Explicit(packagePrivateInterfaceType)).validated();
+}

@@ -1,0 +1,10 @@
+{
+  ObjectPropertyAssertion.of(MethodAttributeAppender.Explicit.class).create(new ObjectPropertyAssertion.Creator<Annotation>(){
+    @Override public Annotation create(){
+      return new SimpleAnnotation.Instance(RandomString.make());
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(MethodAttributeAppender.Explicit.Target.OnMethod.class).apply();
+  ObjectPropertyAssertion.of(MethodAttributeAppender.Explicit.Target.OnMethodParameter.class).apply();
+}

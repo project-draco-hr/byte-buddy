@@ -1,0 +1,10 @@
+{
+  List<AnnotationDescription> annotationDescriptions=new ArrayList<AnnotationDescription>(tokens.size());
+  for (  AnnotationToken token : tokens) {
+    AnnotationToken.Resolution resolution=token.toAnnotationDescription(typePool);
+    if (resolution.isResolved()) {
+      annotationDescriptions.add(resolution.resolve());
+    }
+  }
+  return new AnnotationList.Explicit(annotationDescriptions);
+}

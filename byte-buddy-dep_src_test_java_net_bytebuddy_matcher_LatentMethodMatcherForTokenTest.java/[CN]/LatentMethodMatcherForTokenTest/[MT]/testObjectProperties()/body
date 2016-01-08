@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(LatentMethodMatcher.ForToken.class).apply();
-}

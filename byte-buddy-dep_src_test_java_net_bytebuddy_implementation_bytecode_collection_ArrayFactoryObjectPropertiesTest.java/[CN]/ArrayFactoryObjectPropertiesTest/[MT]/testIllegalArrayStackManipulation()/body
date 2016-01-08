@@ -1,3 +1,3 @@
 {
-  assertThat(ArrayFactory.forType(new TypeDescription.ForLoadedType(Object.class)).new ArrayStackManipulation(Collections.<StackManipulation>singletonList(StackManipulation.Illegal.INSTANCE)).isValid(),is(false));
+  assertThat(ArrayFactory.forType(TypeDescription.Generic.OBJECT).new ArrayStackManipulation(Collections.<StackManipulation>singletonList(StackManipulation.Illegal.INSTANCE)).isValid(),is(false));
 }

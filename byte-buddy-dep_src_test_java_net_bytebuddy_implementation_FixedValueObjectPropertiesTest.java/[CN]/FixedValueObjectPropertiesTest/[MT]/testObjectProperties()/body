@@ -1,4 +1,0 @@
-{
-  ObjectPropertyAssertion.of(FixedValue.ForPoolValue.class).skipSynthetic().apply();
-  ObjectPropertyAssertion.of(FixedValue.ForStaticField.class).apply();
-}

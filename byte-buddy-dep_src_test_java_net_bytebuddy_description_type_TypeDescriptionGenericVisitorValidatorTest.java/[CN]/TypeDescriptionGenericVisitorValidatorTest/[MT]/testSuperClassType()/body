@@ -1,0 +1,12 @@
+{
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onNonGenericType(TypeDescription.Generic.OBJECT),is(true));
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onNonGenericType(TypeDefinition.Sort.describe(Serializable.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onNonGenericType(TypeDefinition.Sort.describe(void.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onNonGenericType(TypeDefinition.Sort.describe(int.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onNonGenericType(TypeDefinition.Sort.describe(void.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onNonGenericType(TypeDefinition.Sort.describe(Object[].class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onParameterizedType(TypeDescription.Generic.OBJECT),is(true));
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onParameterizedType(TypeDefinition.Sort.describe(Serializable.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onTypeVariable(mock(TypeDescription.Generic.class)),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onGenericArray(mock(TypeDescription.Generic.class)),is(false));
+}

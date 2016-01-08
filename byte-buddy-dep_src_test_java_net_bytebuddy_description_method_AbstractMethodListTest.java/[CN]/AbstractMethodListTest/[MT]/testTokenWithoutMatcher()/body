@@ -1,3 +1,0 @@
-{
-  assertThat(asList(Collections.singletonList(getFirst())).asTokenList(),is(new ByteCodeElement.Token.TokenList<MethodDescription.Token>(Collections.singletonList(asElement(getFirst()).asToken()))));
-}

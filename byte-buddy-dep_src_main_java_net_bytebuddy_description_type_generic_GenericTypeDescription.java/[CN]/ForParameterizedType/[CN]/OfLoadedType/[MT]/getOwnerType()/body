@@ -1,4 +1,0 @@
-{
-  Type ownerType=parameterizedType.getOwnerType();
-  return ownerType == null ? TypeDescription.UNDEFINED : Sort.describe(ownerType);
-}

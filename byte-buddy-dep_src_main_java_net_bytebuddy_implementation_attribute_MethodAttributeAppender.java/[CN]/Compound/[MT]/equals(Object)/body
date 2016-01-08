@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && Arrays.equals(methodAttributeAppender,((Compound)other).methodAttributeAppender);
+  return this == other || !(other == null || getClass() != other.getClass()) && methodAttributeAppenders.equals(((Compound)other).methodAttributeAppenders);
 }

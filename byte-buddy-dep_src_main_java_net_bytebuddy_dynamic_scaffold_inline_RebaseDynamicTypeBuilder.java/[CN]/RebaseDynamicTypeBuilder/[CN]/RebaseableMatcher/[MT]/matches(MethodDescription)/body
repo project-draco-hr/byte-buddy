@@ -1,0 +1,3 @@
+{
+  return instrumentedMethodTokens.contains(target.asToken(is(instrumentedType)));
+}

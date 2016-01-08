@@ -1,3 +1,4 @@
 {
-  return typePool.describe(name).resolve().getEnclosingType();
+  TypeDescription ownerType=typePool.describe(name).resolve().getEnclosingType();
+  return ownerType == null ? UNDEFINED : ownerType.asGenericType();
 }

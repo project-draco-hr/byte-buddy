@@ -1,5 +1,5 @@
 {
-  assertThat(ElementMatchers.anyOf(Object.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(true));
-  assertThat(ElementMatchers.anyOf(String.class,Object.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(true));
-  assertThat(ElementMatchers.anyOf(String.class).matches(new TypeDescription.ForLoadedType(Object.class)),is(false));
+  assertThat(ElementMatchers.anyOf(Object.class).matches(TypeDescription.OBJECT),is(true));
+  assertThat(ElementMatchers.anyOf(String.class,Object.class).matches(TypeDescription.OBJECT),is(true));
+  assertThat(ElementMatchers.anyOf(String.class).matches(TypeDescription.OBJECT),is(false));
 }

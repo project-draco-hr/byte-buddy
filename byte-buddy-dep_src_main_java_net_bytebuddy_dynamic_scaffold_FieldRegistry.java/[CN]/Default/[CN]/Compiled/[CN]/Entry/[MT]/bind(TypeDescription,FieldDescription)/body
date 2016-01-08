@@ -1,0 +1,3 @@
+{
+  return new Record.ForExplicitField(fieldAttributeAppender,defaultValue,fieldTransformer.transform(instrumentedType,fieldDescription));
+}

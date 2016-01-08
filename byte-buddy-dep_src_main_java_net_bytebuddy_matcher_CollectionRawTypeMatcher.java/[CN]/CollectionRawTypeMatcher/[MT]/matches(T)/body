@@ -1,7 +1,7 @@
 {
-  List<TypeDescription> typeDescriptions=new LinkedList<TypeDescription>();
-  for (  GenericTypeDescription typeDescription : target) {
-    typeDescriptions.add(typeDescription.asErasure());
+  List<TypeDescription> typeDescriptions=new ArrayList<TypeDescription>();
+  for (  TypeDefinition typeDefinition : target) {
+    typeDescriptions.add(typeDefinition.asErasure());
   }
   return matcher.matches(typeDescriptions);
 }

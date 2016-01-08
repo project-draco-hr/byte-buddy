@@ -1,0 +1,3 @@
+{
+  assertThat(Modifier.isPublic(AuxiliaryType.SignatureRelevant.class.getModifiers()),is(true));
+}

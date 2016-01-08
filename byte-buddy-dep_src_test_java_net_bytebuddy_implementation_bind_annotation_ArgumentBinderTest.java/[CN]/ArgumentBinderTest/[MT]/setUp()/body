@@ -1,7 +1,9 @@
 {
   super.setUp();
-  when(sourceType.asErasure()).thenReturn(sourceType);
-  when(sourceType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(sourceType);
-  when(targetType.asErasure()).thenReturn(targetType);
-  when(targetType.accept(any(GenericTypeDescription.Visitor.class))).thenReturn(targetType);
+  when(genericSourceType.asErasure()).thenReturn(sourceType);
+  when(sourceType.asGenericType()).thenReturn(genericSourceType);
+  when(genericSourceType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(genericSourceType);
+  when(genericTargetType.asErasure()).thenReturn(targetType);
+  when(targetType.asGenericType()).thenReturn(genericTargetType);
+  when(genericTargetType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(targetType);
 }

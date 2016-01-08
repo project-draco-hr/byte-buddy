@@ -1,3 +1,0 @@
-{
-  return new SubclassDynamicTypeBuilder<Object>(classFileVersion,namingStrategy.create(),auxiliaryTypeNamingStrategy,implementationContextFactory,TypeDescription.OBJECT,join(interfaceTypes,toList(nonNull(typeDescriptions))),modifiers.resolve(Opcodes.ACC_PUBLIC) | TypeManifestation.INTERFACE.getMask(),typeAttributeAppender,ignoredMethods,classVisitorWrapper,new FieldRegistry.Default(),methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,ConstructorStrategy.Default.NO_CONSTRUCTORS);
-}

@@ -1,0 +1,5 @@
+{
+  when(methodDescription.getInternalName()).thenReturn(FOO);
+  String transformed=new MethodNameTransformer.Suffixing(BAR).transform(methodDescription);
+  assertThat(transformed,is(FOO + "$" + BAR));
+}

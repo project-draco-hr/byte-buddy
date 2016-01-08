@@ -1,0 +1,3 @@
+{
+  return this == other || !(other == null || getClass() != other.getClass()) && genericArray.equals(((ForGenericArray)other).genericArray);
+}

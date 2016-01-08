@@ -1,3 +1,0 @@
-{
-  assertThat(new FieldDescription.Token(FOO,MODIFIERS,mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class))).hashCode(),not(new FieldDescription.Token(BAR,MODIFIERS * 2,mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class))).hashCode()));
-}

@@ -1,0 +1,5 @@
+{
+  int result=symbol.hashCode();
+  result=31 * result + bounds.hashCode();
+  return result;
+}

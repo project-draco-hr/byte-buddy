@@ -1,3 +1,3 @@
 {
-  return definedShape.getParameters().get(index);
+  return methodDescription.getParameters().get(index);
 }

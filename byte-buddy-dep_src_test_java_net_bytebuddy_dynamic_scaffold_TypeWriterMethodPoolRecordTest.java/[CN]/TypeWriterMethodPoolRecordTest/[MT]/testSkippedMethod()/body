@@ -1,6 +1,6 @@
 {
   assertThat(TypeWriter.MethodPool.Record.ForNonDefinedMethod.INSTANCE.getSort(),is(TypeWriter.MethodPool.Record.Sort.SKIPPED));
-  TypeWriter.MethodPool.Record.ForNonDefinedMethod.INSTANCE.apply(classVisitor,implementationContext);
+  TypeWriter.MethodPool.Record.ForNonDefinedMethod.INSTANCE.apply(classVisitor,implementationContext,annotationValueFilterFactory);
   verifyZeroInteractions(classVisitor);
   verifyZeroInteractions(implementationContext);
   verifyZeroInteractions(methodAttributeAppender);

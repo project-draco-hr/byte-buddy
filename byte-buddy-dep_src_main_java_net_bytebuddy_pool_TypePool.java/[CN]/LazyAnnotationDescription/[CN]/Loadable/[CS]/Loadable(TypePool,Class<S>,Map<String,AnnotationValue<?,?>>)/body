@@ -1,0 +1,4 @@
+{
+  super(typePool,new ForLoadedType(annotationType),values);
+  this.annotationType=annotationType;
+}

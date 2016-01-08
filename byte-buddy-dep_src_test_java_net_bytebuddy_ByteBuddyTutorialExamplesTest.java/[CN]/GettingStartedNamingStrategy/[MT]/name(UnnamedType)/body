@@ -1,3 +1,0 @@
-{
-  return "i.love.ByteBuddy." + unnamedType.getSuperClass().asErasure().getSimpleName();
-}

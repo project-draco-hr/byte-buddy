@@ -4,11 +4,11 @@
       return super.visitMethod(modifiers,internalName,descriptor,genericSignature,exceptionTypeInternalName);
     }
  else {
-      TypeInitializerInjection injectedCode=new TypeInitializerInjection(instrumentedType);
+      TypeInitializerInjection injectedCode=new TypeInitializerInjection(new TypeInitializerDelegate(instrumentedType,RandomString.make()));
       this.injectedCode=injectedCode;
       return super.visitMethod(injectedCode.getInjectorProxyMethod().getModifiers(),injectedCode.getInjectorProxyMethod().getInternalName(),injectedCode.getInjectorProxyMethod().getDescriptor(),injectedCode.getInjectorProxyMethod().getGenericSignature(),injectedCode.getInjectorProxyMethod().getExceptionTypes().asErasures().toInternalNames());
     }
   }
   MethodDescription methodDescription=declarableMethods.remove(internalName + descriptor);
-  return methodDescription == RETAIN_METHOD ? super.visitMethod(modifiers,internalName,descriptor,genericSignature,exceptionTypeInternalName) : redefine(methodDescription,(modifiers & Opcodes.ACC_ABSTRACT) != 0);
+  return methodDescription == null ? super.visitMethod(modifiers,internalName,descriptor,genericSignature,exceptionTypeInternalName) : redefine(methodDescription,(modifiers & Opcodes.ACC_ABSTRACT) != 0);
 }

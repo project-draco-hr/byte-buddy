@@ -6,7 +6,7 @@
   when(target.visit(any(String.class),anyBoolean())).thenReturn(annotationVisitor);
   AnnotationDescription annotationDescription=AnnotationDescription.ForLoadedAnnotation.of(annotation);
   AnnotationAppender.AnnotationVisibility annotationVisibility=AnnotationAppender.AnnotationVisibility.of(annotationDescription);
-  annotationAppender.append(annotationDescription,annotationVisibility);
+  annotationAppender.append(annotationDescription,annotationVisibility,valueFilter);
 switch (annotationVisibility) {
 case RUNTIME:
 case CLASS_FILE:

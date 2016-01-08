@@ -1,3 +1,3 @@
 {
-  return methodDescription.isStatic() ? methodDescription.getParameters().asTypeList().asErasures() : new TypeList.Explicit(join(methodDescription.getDeclaringType().asErasure(),methodDescription.getParameters().asTypeList().asErasures()));
+  return methodDescription.isStatic() ? methodDescription.getParameters().asTypeList().asErasures() : CompoundList.of(methodDescription.getDeclaringType().asErasure(),methodDescription.getParameters().asTypeList().asErasures());
 }

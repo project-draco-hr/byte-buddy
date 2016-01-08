@@ -1,0 +1,14 @@
+{
+  String internalName=getInternalName();
+  int simpleNameIndex=internalName.lastIndexOf('$');
+  simpleNameIndex=simpleNameIndex == -1 ? internalName.lastIndexOf('/') : simpleNameIndex;
+  if (simpleNameIndex == -1) {
+    return internalName;
+  }
+ else {
+    while (simpleNameIndex < internalName.length() && !Character.isLetter(internalName.charAt(simpleNameIndex))) {
+      simpleNameIndex+=1;
+    }
+    return internalName.substring(simpleNameIndex);
+  }
+}

@@ -1,4 +1,0 @@
-{
-  Type superClass=type.getGenericSuperclass();
-  return superClass == null ? TypeDescription.UNDEFINED : Sort.describe(superClass);
-}

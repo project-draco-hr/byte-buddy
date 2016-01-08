@@ -3,13 +3,13 @@
   when(parameterDescription.isNamed()).thenReturn(true);
   TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithoutBody(methodDescription,methodAttributeAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.DEFINED));
-  record.apply(classVisitor,implementationContext);
+  record.apply(classVisitor,implementationContext,annotationValueFilterFactory);
   verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});
   verifyNoMoreInteractions(classVisitor);
   verify(methodVisitor).visitParameter(FOO,MODIFIERS);
   verify(methodVisitor).visitEnd();
   verifyNoMoreInteractions(methodVisitor);
   verifyZeroInteractions(implementationContext);
-  verify(methodAttributeAppender).apply(methodVisitor,methodDescription);
+  verify(methodAttributeAppender).apply(methodVisitor,methodDescription,valueFilter);
   verifyNoMoreInteractions(methodAttributeAppender);
 }

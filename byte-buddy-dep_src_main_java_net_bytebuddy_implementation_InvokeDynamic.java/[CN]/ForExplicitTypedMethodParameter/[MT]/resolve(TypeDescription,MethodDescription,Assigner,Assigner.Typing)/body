@@ -3,9 +3,9 @@
   if (index >= parameters.size()) {
     throw new IllegalStateException("No parameter " + index + " for "+ instrumentedMethod);
   }
-  StackManipulation stackManipulation=assigner.assign(parameters.get(index).getType().asErasure(),typeDescription,typing);
+  StackManipulation stackManipulation=assigner.assign(parameters.get(index).getType(),typeDescription.asGenericType(),typing);
   if (!stackManipulation.isValid()) {
     throw new IllegalArgumentException("Cannot assign " + parameters.get(index) + " to "+ typeDescription);
   }
-  return new Resolved.Simple(new StackManipulation.Compound(MethodVariableAccess.forType(parameters.get(index).getType().asErasure()).loadOffset(parameters.get(index).getOffset()),stackManipulation),typeDescription);
+  return new Resolved.Simple(new StackManipulation.Compound(MethodVariableAccess.of(parameters.get(index).getType().asErasure()).loadOffset(parameters.get(index).getOffset()),stackManipulation),typeDescription);
 }

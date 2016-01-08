@@ -1,7 +1,7 @@
 {
   int result=super.hashCode();
+  result=31 * result + originalType.hashCode();
   result=31 * result + classFileLocator.hashCode();
-  result=31 * result + targetType.hashCode();
   result=31 * result + methodRebaseResolver.hashCode();
   return result;
 }

@@ -1,10 +1,10 @@
 {
-  if (!instrumentedMethod.isInvokableOn(fieldType)) {
+  if (!instrumentedMethod.isInvokableOn(fieldType.asErasure())) {
     throw new IllegalArgumentException("Cannot forward " + instrumentedMethod + " to "+ fieldType);
   }
  else   if (instrumentedMethod.isStatic()) {
     throw new IllegalArgumentException("Cannot forward the static method " + instrumentedMethod);
   }
-  StackManipulation.Size stackSize=new StackManipulation.Compound(delegateLoadingInstruction,MethodVariableAccess.allArgumentsOf(instrumentedMethod),MethodInvocation.invoke(instrumentedMethod).virtual(fieldType),MethodReturn.returning(instrumentedMethod.getReturnType().asErasure())).apply(methodVisitor,implementationContext);
+  StackManipulation.Size stackSize=new StackManipulation.Compound(delegateLoadingInstruction,MethodVariableAccess.allArgumentsOf(instrumentedMethod),MethodInvocation.invoke(instrumentedMethod).virtual(fieldType.asErasure()),MethodReturn.returning(instrumentedMethod.getReturnType().asErasure())).apply(methodVisitor,implementationContext);
   return new Size(stackSize.getMaximalSize(),instrumentedMethod.getStackSize());
 }

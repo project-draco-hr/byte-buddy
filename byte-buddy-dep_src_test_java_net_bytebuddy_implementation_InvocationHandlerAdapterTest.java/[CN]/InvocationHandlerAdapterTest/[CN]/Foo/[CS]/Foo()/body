@@ -1,4 +1,4 @@
 {
   marker=FOO;
-  methods=new LinkedList<Method>();
+  methods=new ArrayList<Method>();
 }

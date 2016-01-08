@@ -1,6 +1,0 @@
-{
-  new FieldAttributeAppender.ForAnnotation(new AnnotationList.ForLoadedAnnotation(new Baz.Instance()),valueFilter).apply(fieldVisitor,fieldDescription);
-  verify(fieldVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
-  verifyNoMoreInteractions(fieldVisitor);
-  verifyZeroInteractions(fieldDescription);
-}

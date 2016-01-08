@@ -1,0 +1,7 @@
+{
+  FieldDescription.Token token=new FieldDescription.Token(FOO,MODIFIERS,type,Collections.singletonList(annotation));
+  assertThat(token.getName(),is(FOO));
+  assertThat(token.getModifiers(),is(MODIFIERS));
+  assertThat(token.getType(),is(type));
+  assertThat(token.getAnnotations(),is(Collections.singletonList(annotation)));
+}

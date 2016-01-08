@@ -1,3 +1,0 @@
-{
-  return attribute(new MethodAttributeAppender.ForAnnotation(parameterIndex,nonNull(new ArrayList<AnnotationDescription>(annotations)),AnnotationAppender.ValueFilter.AppendDefaults.INSTANCE));
-}

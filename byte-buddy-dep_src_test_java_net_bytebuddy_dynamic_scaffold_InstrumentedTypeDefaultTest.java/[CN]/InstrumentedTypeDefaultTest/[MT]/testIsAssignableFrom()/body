@@ -1,0 +1,11 @@
+{
+  assertThat(makePlainInstrumentedType().isAssignableFrom(Object.class),is(false));
+  assertThat(makePlainInstrumentedType().isAssignableFrom(Serializable.class),is(false));
+  assertThat(makePlainInstrumentedType().isAssignableFrom(Integer.class),is(false));
+  TypeDescription objectTypeDescription=TypeDescription.OBJECT;
+  assertThat(makePlainInstrumentedType().isAssignableFrom(objectTypeDescription),is(false));
+  TypeDescription serializableTypeDescription=new TypeDescription.ForLoadedType(Serializable.class);
+  assertThat(makePlainInstrumentedType().isAssignableFrom(serializableTypeDescription),is(false));
+  TypeDescription integerTypeDescription=new TypeDescription.ForLoadedType(Integer.class);
+  assertThat(makePlainInstrumentedType().isAssignableFrom(integerTypeDescription),is(false));
+}

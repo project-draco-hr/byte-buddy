@@ -1,4 +1,4 @@
 {
-  assertThat(describe(first).getType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(first.getType())));
-  assertThat(describe(second).getType(),is((GenericTypeDescription)new TypeDescription.ForLoadedType(second.getType())));
+  assertThat(describe(first).getType(),is((TypeDefinition)new TypeDescription.ForLoadedType(first.getType())));
+  assertThat(describe(second).getType(),is((TypeDefinition)new TypeDescription.ForLoadedType(second.getType())));
 }

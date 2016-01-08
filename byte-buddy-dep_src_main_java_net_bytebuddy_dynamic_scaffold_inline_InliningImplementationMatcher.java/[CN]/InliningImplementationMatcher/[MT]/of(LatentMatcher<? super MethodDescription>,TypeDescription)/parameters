@@ -1,0 +1,2 @@
+LatentMatcher<? super MethodDescription> ignoredMethods
+TypeDescription originalType

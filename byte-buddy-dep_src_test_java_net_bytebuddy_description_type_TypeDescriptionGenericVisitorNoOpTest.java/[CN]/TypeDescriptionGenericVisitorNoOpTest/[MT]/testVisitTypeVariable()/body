@@ -1,0 +1,3 @@
+{
+  assertThat(TypeDescription.Generic.Visitor.NoOp.INSTANCE.onTypeVariable(typeDescription),is(typeDescription));
+}

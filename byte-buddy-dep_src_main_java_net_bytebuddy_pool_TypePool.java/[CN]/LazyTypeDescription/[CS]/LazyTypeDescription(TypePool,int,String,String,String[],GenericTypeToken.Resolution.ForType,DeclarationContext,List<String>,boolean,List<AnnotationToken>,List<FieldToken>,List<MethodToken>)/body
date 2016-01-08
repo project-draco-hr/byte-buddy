@@ -1,11 +1,11 @@
 {
   this.typePool=typePool;
-  this.modifiers=modifiers;
+  this.modifiers=modifiers & ~Opcodes.ACC_SUPER;
   this.name=Type.getObjectType(name).getClassName();
   this.superTypeDescriptor=superTypeInternalName == null ? NO_SUPER_TYPE : Type.getObjectType(superTypeInternalName).getDescriptor();
   this.signatureResolution=signatureResolution;
   if (interfaceInternalName == null) {
-    interfaceTypeDescriptors=Collections.<String>emptyList();
+    interfaceTypeDescriptors=Collections.emptyList();
   }
  else {
     interfaceTypeDescriptors=new ArrayList<String>(interfaceInternalName.length);
@@ -16,10 +16,7 @@
   this.declarationContext=declarationContext;
   this.declaredTypes=declaredTypes;
   this.anonymousType=anonymousType;
-  declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
-  for (  AnnotationToken annotationToken : annotationTokens) {
-    declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));
-  }
+  this.annotationTokens=annotationTokens;
   declaredFields=new ArrayList<FieldDescription.InDefinedShape>(fieldTokens.size());
   for (  FieldToken fieldToken : fieldTokens) {
     declaredFields.add(fieldToken.toFieldDescription(this));

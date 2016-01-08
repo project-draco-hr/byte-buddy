@@ -1,0 +1,14 @@
+{
+  if (source.isPrimitive() && target.isPrimitive()) {
+    return PrimitiveWideningDelegate.forPrimitive(source).widenTo(target);
+  }
+ else   if (source.isPrimitive()) {
+    return PrimitiveBoxingDelegate.forPrimitive(source).assignBoxedTo(target,referenceTypeAwareAssigner,typing);
+  }
+ else   if (target.isPrimitive()) {
+    return PrimitiveUnboxingDelegate.forReferenceType(source).assignUnboxedTo(target,referenceTypeAwareAssigner,typing);
+  }
+ else {
+    return referenceTypeAwareAssigner.assign(source,target,typing);
+  }
+}

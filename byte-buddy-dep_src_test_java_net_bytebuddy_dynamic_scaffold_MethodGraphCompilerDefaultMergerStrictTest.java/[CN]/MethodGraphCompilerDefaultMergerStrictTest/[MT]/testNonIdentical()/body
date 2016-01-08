@@ -1,4 +1,0 @@
-{
-  when(leftToken.isIdenticalTo(rightToken)).thenReturn(false);
-  MethodGraph.Compiler.Default.Merger.Strict.INSTANCE.merge(left,right);
-}

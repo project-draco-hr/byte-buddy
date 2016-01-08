@@ -1,3 +1,3 @@
 {
-  return "MethodTransformer.Simple{" + "transformer=" + transformer + '}';
+  return "MethodTransformer.Simple{" + "tokenTransformer=" + tokenTransformer + '}';
 }

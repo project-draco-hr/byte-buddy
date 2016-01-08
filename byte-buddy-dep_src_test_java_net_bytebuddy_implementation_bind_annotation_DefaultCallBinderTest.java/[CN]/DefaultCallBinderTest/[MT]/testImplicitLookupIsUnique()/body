@@ -2,12 +2,12 @@
   when(targetParameterType.represents(any(Class.class))).thenReturn(true);
   when(specialMethodInvocation.isValid()).thenReturn(true,false);
   doReturn(VOID_TYPE).when(annotation).targetType();
-  when(source.asToken()).thenReturn(methodToken);
+  when(source.asSignatureToken()).thenReturn(token);
   when(source.isSpecializableFor(firstInterface)).thenReturn(true);
-  when(instrumentedType.getInterfaces()).thenReturn(new GenericTypeList.Explicit(Arrays.asList(firstInterface,secondInterface)));
+  when(instrumentedType.getInterfaces()).thenReturn(new TypeList.Generic.Explicit(firstInterface,secondInterface));
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=DefaultCall.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
-  verify(implementationTarget).getTypeDescription();
-  verify(implementationTarget).invokeDefault(firstInterface,methodToken);
+  verify(implementationTarget).getInstrumentedType();
+  verify(implementationTarget).invokeDefault(firstInterface,token);
   verifyNoMoreInteractions(implementationTarget);
 }

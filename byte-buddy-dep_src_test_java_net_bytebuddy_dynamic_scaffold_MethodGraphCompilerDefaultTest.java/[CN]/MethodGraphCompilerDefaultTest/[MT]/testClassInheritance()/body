@@ -3,13 +3,13 @@
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 1));
   MethodDescription method=typeDescription.getDeclaredMethods().filter(isMethod()).getOnly();
-  MethodGraph.Node methodNode=methodGraph.locate(method.asToken());
+  MethodGraph.Node methodNode=methodGraph.locate(method.asSignatureToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(methodNode.getMethodTypes().size(),is(1));
   assertThat(methodNode.getMethodTypes().contains(method.asTypeToken()),is(true));
   assertThat(methodNode.getRepresentative(),is(method));
   assertThat(methodGraph.listNodes().contains(methodNode),is(true));
-  MethodGraph.Node baseNode=methodGraph.getSuperGraph().locate(method.asToken());
+  MethodGraph.Node baseNode=methodGraph.getSuperGraph().locate(method.asSignatureToken());
   assertThat(methodNode,not(baseNode));
-  assertThat(baseNode.getRepresentative(),is(typeDescription.getSuperType().getDeclaredMethods().filter(representedBy(method.asToken())).getOnly()));
+  assertThat(typeDescription.getSuperType().getDeclaredMethods().filter(ElementMatchers.is(baseNode.getRepresentative())).getOnly(),is(baseNode.getRepresentative()));
 }

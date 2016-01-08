@@ -1,7 +1,0 @@
-{
-  int modifiers=methodToken.getModifiers();
-  for (  ModifierContributor.ForMethod modifierContributor : modifierContributors) {
-    modifiers=(modifiers & ~modifierContributor.getRange()) | modifierContributor.getMask();
-  }
-  return new MethodDescription.Token(methodToken.getInternalName(),modifiers,methodToken.getTypeVariables(),methodToken.getReturnType(),methodToken.getParameterTokens(),methodToken.getExceptionTypes(),methodToken.getAnnotations(),methodToken.getDefaultValue());
-}

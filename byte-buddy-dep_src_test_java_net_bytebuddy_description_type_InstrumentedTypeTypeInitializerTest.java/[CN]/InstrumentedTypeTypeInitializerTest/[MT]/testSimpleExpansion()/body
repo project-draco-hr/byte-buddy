@@ -1,3 +1,0 @@
-{
-  assertThat(new InstrumentedType.TypeInitializer.Simple(byteCodeAppender).expandWith(byteCodeAppender),is((InstrumentedType.TypeInitializer)new InstrumentedType.TypeInitializer.Simple(new ByteCodeAppender.Compound(byteCodeAppender,byteCodeAppender))));
-}

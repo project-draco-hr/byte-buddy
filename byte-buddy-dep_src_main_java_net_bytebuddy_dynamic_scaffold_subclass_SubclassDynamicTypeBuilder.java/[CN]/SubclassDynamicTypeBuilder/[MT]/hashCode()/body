@@ -1,3 +1,5 @@
 {
-  return 31 * super.hashCode() + constructorStrategy.hashCode();
+  int result=super.hashCode();
+  result=31 * result + constructorStrategy.hashCode();
+  return result;
 }

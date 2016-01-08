@@ -1,6 +1,0 @@
-{
-  for (  T object : value) {
-    nonNull(object);
-  }
-  return value;
-}

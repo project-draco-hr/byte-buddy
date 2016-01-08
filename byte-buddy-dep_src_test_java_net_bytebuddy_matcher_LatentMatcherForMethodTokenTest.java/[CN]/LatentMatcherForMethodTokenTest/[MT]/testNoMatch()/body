@@ -1,0 +1,4 @@
+{
+  when(methodDescription.asToken(ElementMatchers.is(instrumentedType))).thenReturn(otherToken);
+  assertThat(new LatentMatcher.ForMethodToken(token).resolve(instrumentedType).matches(methodDescription),is(false));
+}

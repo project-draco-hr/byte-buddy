@@ -1,6 +1,0 @@
-{
-  for (  GenericTypeDescription typeDescription : typeDescriptions) {
-    isThrowable(typeDescription);
-  }
-  return typeDescriptions;
-}

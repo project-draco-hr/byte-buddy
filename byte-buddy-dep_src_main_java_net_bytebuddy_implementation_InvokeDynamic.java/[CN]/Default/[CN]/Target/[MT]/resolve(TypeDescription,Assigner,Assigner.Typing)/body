@@ -1,6 +1,6 @@
 {
   StackManipulation[] stackManipulation=new StackManipulation[argumentProviders.size()];
-  List<TypeDescription> parameterTypes=new LinkedList<TypeDescription>();
+  List<TypeDescription> parameterTypes=new ArrayList<TypeDescription>();
   int index=0;
   for (  ArgumentProvider argumentProvider : argumentProviders) {
     ArgumentProvider.Resolved resolved=argumentProvider.resolve(instrumentedType,instrumentedMethod,assigner,typing);

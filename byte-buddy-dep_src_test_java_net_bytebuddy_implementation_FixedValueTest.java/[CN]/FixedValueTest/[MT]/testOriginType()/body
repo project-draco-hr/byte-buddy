@@ -1,0 +1,6 @@
+{
+  Class<?> type=implement(Baz.class,FixedValue.originType()).getLoaded();
+  assertThat(type.getDeclaredFields().length,is(0));
+  assertThat(type.getDeclaredMethods().length,is(1));
+  assertThat(type.getDeclaredMethod(BAR).invoke(type.newInstance()),is((Object)Baz.class));
+}

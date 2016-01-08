@@ -1,0 +1,6 @@
+{
+  FieldDescription.Token transformed=new FieldTransformer.Simple.TokenTransformer.ForModifierTransformation(Collections.singletonList(modifierContributor)).transform(fieldToken);
+  assertThat(transformed.getName(),is(FOO));
+  assertThat(transformed.getModifiers(),is((MODIFIERS & ~RANGE) | MASK));
+  assertThat(transformed.getType(),is(fieldType));
+}

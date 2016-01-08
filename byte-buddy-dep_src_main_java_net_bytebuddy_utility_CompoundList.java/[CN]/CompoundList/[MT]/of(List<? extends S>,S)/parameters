@@ -1,0 +1,2 @@
+List<? extends S> left
+S right

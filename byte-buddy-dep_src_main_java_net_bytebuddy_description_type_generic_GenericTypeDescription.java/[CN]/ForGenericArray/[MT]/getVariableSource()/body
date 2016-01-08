@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("An array type does not imply a type variable source: " + this);
-}

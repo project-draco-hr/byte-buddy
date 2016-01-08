@@ -1,3 +1,3 @@
 {
-  return TypeDescription.VOID;
+  return TypeDescription.Generic.VOID;
 }

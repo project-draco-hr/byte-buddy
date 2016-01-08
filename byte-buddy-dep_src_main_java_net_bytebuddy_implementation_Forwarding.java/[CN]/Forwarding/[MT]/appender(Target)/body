@@ -1,3 +1,3 @@
 {
-  return new Appender(loadDelegate(implementationTarget.getTypeDescription()));
+  return new Appender(loadDelegate(implementationTarget.getInstrumentedType()));
 }

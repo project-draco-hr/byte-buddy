@@ -1,0 +1,3 @@
+{
+  assertThat(new TypeDescription.Generic.Visitor.Substitutor.ForTypeVariableBinding(mapping).onNonGenericType(source),is(source));
+}

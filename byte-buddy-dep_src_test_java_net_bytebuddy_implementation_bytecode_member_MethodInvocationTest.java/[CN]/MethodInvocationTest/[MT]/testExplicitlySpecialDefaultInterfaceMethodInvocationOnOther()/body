@@ -1,5 +1,5 @@
 {
   when(methodDescription.isDefaultMethod()).thenReturn(true);
-  when(methodDescription.isSpecializableFor(otherType)).thenReturn(false);
-  assertThat(MethodInvocation.invoke(methodDescription).special(otherType).isValid(),is(false));
+  when(methodDescription.isSpecializableFor(rawOtherType)).thenReturn(false);
+  assertThat(MethodInvocation.invoke(methodDescription).special(rawOtherType).isValid(),is(false));
 }

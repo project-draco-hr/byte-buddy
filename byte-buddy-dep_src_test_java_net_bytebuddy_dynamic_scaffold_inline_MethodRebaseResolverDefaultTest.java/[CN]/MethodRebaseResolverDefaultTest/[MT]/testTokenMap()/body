@@ -1,0 +1,5 @@
+{
+  MethodRebaseResolver methodRebaseResolver=new MethodRebaseResolver.Default(Collections.singletonMap(methodDescription,resolution),Collections.singletonList(dynamicType));
+  assertThat(methodRebaseResolver.asTokenMap().size(),is(1));
+  assertThat(methodRebaseResolver.asTokenMap().get(signatureToken),is(resolution));
+}

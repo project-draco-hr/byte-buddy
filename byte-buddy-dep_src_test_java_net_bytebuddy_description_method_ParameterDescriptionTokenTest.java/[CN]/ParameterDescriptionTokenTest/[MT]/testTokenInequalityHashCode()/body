@@ -1,3 +1,0 @@
-{
-  assertThat(new ParameterDescription.Token(mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class)),ParameterDescription.Token.NO_NAME,ParameterDescription.Token.NO_MODIFIERS).hashCode(),not(new ParameterDescription.Token(mock(GenericTypeDescription.class),Collections.singletonList(mock(AnnotationDescription.class)),ParameterDescription.Token.NO_NAME,ParameterDescription.Token.NO_MODIFIERS).hashCode()));
-}

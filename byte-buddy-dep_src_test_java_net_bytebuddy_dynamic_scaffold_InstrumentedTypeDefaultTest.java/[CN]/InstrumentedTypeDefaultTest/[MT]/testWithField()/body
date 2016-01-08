@@ -1,0 +1,16 @@
+{
+  TypeDescription.Generic fieldType=mock(TypeDescription.Generic.class);
+  when(fieldType.accept(Mockito.any(TypeDescription.Generic.Visitor.class))).thenReturn(fieldType);
+  TypeDescription rawFieldType=mock(TypeDescription.class);
+  when(fieldType.asErasure()).thenReturn(rawFieldType);
+  when(rawFieldType.getName()).thenReturn(FOO);
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getDeclaredFields().size(),is(0));
+  instrumentedType=instrumentedType.withField(new FieldDescription.Token(BAR,Opcodes.ACC_PUBLIC,fieldType));
+  assertThat(instrumentedType.getDeclaredFields().size(),is(1));
+  FieldDescription.InDefinedShape fieldDescription=instrumentedType.getDeclaredFields().get(0);
+  assertThat(fieldDescription.getType(),is(fieldType));
+  assertThat(fieldDescription.getModifiers(),is(Opcodes.ACC_PUBLIC));
+  assertThat(fieldDescription.getName(),is(BAR));
+  assertThat(fieldDescription.getDeclaringType(),sameInstance((TypeDescription)instrumentedType));
+}

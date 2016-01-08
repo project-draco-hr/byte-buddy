@@ -1,0 +1,9 @@
+{
+  assertThat(TypeDescription.Generic.Visitor.Validator.SUPER_CLASS.onWildcard(typeDescription),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.INTERFACE.onWildcard(typeDescription),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.TYPE_VARIABLE.onWildcard(typeDescription),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.FIELD.onWildcard(typeDescription),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.METHOD_RETURN.onWildcard(typeDescription),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.METHOD_PARAMETER.onWildcard(typeDescription),is(false));
+  assertThat(TypeDescription.Generic.Visitor.Validator.EXCEPTION.onWildcard(typeDescription),is(false));
+}

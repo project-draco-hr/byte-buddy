@@ -1,3 +1,0 @@
-{
-  return materialize().makeInterface(typeDescription);
-}

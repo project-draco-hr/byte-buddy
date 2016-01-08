@@ -1,4 +1,0 @@
-{
-  MethodRebaseResolver.Resolution resolution=rebaseableMethods.get(methodToken);
-  return resolution == null ? invokeSuper(methodGraph.getSuperGraph().locate(methodToken)) : invokeSuper(resolution);
-}

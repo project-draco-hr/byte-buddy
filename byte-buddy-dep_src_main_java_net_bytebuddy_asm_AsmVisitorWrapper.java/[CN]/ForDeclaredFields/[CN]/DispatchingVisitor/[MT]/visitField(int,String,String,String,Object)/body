@@ -1,0 +1,10 @@
+{
+  FieldVisitor fieldVisitor=super.visitField(modifiers,internalName,descriptor,signature,defaultValue);
+  FieldDescription.InDefinedShape fieldDescription=fieldsByName.get(internalName);
+  for (  Entry entry : entries) {
+    if (entry.matches(fieldDescription)) {
+      fieldVisitor=entry.wrap(instrumentedType,fieldDescription,fieldVisitor);
+    }
+  }
+  return fieldVisitor;
+}

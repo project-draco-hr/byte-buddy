@@ -1,0 +1,5 @@
+{
+  assertThat(ModifierContributor.Resolver.of(ProvisioningState.MANDATED,ParameterManifestation.FINAL).resolve(),is(Opcodes.ACC_MANDATED | Opcodes.ACC_FINAL));
+  assertThat(ModifierContributor.Resolver.of(ProvisioningState.MANDATED,ParameterManifestation.PLAIN,ParameterManifestation.FINAL).resolve(),is(Opcodes.ACC_MANDATED | Opcodes.ACC_FINAL));
+  assertThat(ModifierContributor.Resolver.of(ProvisioningState.MANDATED,ParameterManifestation.FINAL).resolve(1),is(Opcodes.ACC_MANDATED | Opcodes.ACC_FINAL | 1));
+}

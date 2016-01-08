@@ -1,6 +1,5 @@
 {
-  targetType=new TypeDescription.ForLoadedType(JavaType.METHOD_HANDLE.load());
-  when(target.getType()).thenReturn(targetType);
+  when(genericTargetType.asErasure()).thenReturn(new TypeDescription.ForLoadedType(JavaType.METHOD_HANDLE.load()));
   TypeDescription typeDescription=mock(TypeDescription.class);
   when(typeDescription.asErasure()).thenReturn(typeDescription);
   when(methodDescription.getDeclaringType()).thenReturn(typeDescription);

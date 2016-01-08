@@ -1,3 +1,0 @@
-{
-  return "ClassVisitorWrapper.Compound{classVisitorWrappers=" + classVisitorWrappers + '}';
-}

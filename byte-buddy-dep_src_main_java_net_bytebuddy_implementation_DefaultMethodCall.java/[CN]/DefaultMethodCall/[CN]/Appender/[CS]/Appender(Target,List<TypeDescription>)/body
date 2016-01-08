@@ -1,6 +1,6 @@
 {
   this.implementationTarget=implementationTarget;
   this.prioritizedInterfaces=prioritizedInterfaces;
-  this.nonPrioritizedInterfaces=new HashSet<TypeDescription>(implementationTarget.getTypeDescription().getInterfaces().asErasures());
+  this.nonPrioritizedInterfaces=new HashSet<TypeDescription>(implementationTarget.getInstrumentedType().getInterfaces().asErasures());
   nonPrioritizedInterfaces.removeAll(prioritizedInterfaces);
 }

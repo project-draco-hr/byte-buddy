@@ -1,3 +1,4 @@
 {
-  return new AnnotationList.Explicit(declaredParameterAnnotations.get(index));
+  List<AnnotationToken> annotationTokens=parameterAnnotationTokens.get(index);
+  return annotationTokens == null ? new AnnotationList.Empty() : LazyAnnotationDescription.asList(typePool,annotationTokens);
 }

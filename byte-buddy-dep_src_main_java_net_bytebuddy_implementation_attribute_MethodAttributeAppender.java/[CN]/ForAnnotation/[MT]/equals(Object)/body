@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && annotations.equals(((ForAnnotation)other).annotations) && valueFilter.equals(((ForAnnotation)other).valueFilter)&& target.equals(((ForAnnotation)other).target);
-}

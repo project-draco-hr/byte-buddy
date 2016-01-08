@@ -1,0 +1,3 @@
+TypeDefinition declaringType
+MethodDescription.Token token
+MethodDescription.InDefinedShape methodDescription

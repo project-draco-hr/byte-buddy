@@ -1,0 +1,3 @@
+{
+  new FieldRegistry.Default().compile(instrumentedType).target(unknownField).apply(mock(FieldVisitor.class),mock(AnnotationValueFilter.Factory.class));
+}

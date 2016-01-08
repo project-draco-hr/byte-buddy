@@ -1,3 +1,0 @@
-{
-  return "MethodAttributeAppender.ForMethod{" + "methodDescription=" + methodDescription + ", valueFilter="+ valueFilter+ '}';
-}

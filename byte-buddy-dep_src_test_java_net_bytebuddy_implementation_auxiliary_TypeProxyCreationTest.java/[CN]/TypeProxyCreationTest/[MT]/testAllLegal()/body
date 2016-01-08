@@ -1,13 +1,13 @@
 {
-  when(implementationTarget.getTypeDescription()).thenReturn(foo);
+  when(implementationTarget.getInstrumentedType()).thenReturn(foo);
   when(invocationFactory.invoke(eq(implementationTarget),eq(foo),any(MethodDescription.class))).thenReturn(specialMethodInvocation);
   when(specialMethodInvocation.isValid()).thenReturn(true);
   when(specialMethodInvocation.apply(any(MethodVisitor.class),any(Implementation.Context.class))).thenReturn(new StackManipulation.Size(0,0));
   when(methodAccessorFactory.registerAccessorFor(specialMethodInvocation)).thenReturn(proxyMethod);
   TypeDescription dynamicType=new TypeProxy(foo,implementationTarget,invocationFactory,true,false).make(BAR,ClassFileVersion.forCurrentJavaVersion(),methodAccessorFactory).getTypeDescription();
   assertThat(dynamicType.getModifiers(),is(modifiers));
-  assertThat(dynamicType.getSuperType(),is((GenericTypeDescription)foo));
-  assertThat(dynamicType.getInterfaces(),is((GenericTypeList)new GenericTypeList.Empty()));
+  assertThat(dynamicType.getSuperType().asErasure(),is(foo));
+  assertThat(dynamicType.getInterfaces(),is((TypeList.Generic)new TypeList.Generic.Empty()));
   assertThat(dynamicType.getName(),is(BAR));
   assertThat(dynamicType.getDeclaredMethods().size(),is(2));
   assertThat(dynamicType.isAssignableTo(Serializable.class),is(false));

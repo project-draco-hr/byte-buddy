@@ -3,8 +3,8 @@
   when(invokableMethod.isSpecializableFor(instrumentedType)).thenReturn(true);
   when(resolution.isRebased()).thenReturn(false);
   when(resolution.getResolvedMethod()).thenReturn(invokableMethod);
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(rebasedToken);
-  verify(methodRebaseResolver).resolve(rebasedMethod);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(rebasedSignatureToken);
+  verify(methodRebaseResolver).asTokenMap();
   verifyNoMoreInteractions(methodRebaseResolver);
   assertThat(specialMethodInvocation.isValid(),is(true));
   assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)invokableMethod));

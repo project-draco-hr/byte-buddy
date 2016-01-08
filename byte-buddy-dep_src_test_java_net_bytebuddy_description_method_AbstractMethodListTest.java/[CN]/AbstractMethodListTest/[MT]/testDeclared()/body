@@ -1,3 +1,0 @@
-{
-  assertThat(asList(Collections.singletonList(getFirst())).asDefined(),is(Collections.singletonList(asElement(getFirst()).asDefined())));
-}

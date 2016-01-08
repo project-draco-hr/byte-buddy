@@ -1,0 +1,3 @@
+{
+  return new ForAttachment(typeDescription.asGenericType(),typeDescription);
+}

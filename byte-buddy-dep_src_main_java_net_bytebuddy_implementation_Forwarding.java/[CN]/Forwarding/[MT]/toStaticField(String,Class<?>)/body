@@ -1,3 +1,0 @@
-{
-  return toStaticField(fieldName,new TypeDescription.ForLoadedType(nonNull(fieldType)));
-}

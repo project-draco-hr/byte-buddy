@@ -1,3 +1,0 @@
-{
-  isImplementable(new TypeDescription.ForLoadedType(Object.class));
-}

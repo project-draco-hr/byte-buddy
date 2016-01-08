@@ -1,0 +1,9 @@
+{
+  TypeDescription.Generic source=mock(TypeDescription.Generic.class), target=mock(TypeDescription.Generic.class);
+  TypeDescription erasure=mock(TypeDescription.class);
+  when(source.asErasure()).thenReturn(erasure);
+  when(target.asErasure()).thenReturn(erasure);
+  when(source.getParameters()).thenReturn(new TypeList.Generic.Empty());
+  when(target.getParameters()).thenReturn(new TypeList.Generic.Explicit(mock(TypeDescription.Generic.class)));
+  new TypeDescription.Generic.Visitor.Assigner.Dispatcher.ForParameterizedType(target).onParameterizedType(source);
+}

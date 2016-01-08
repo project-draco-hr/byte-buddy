@@ -1,0 +1,11 @@
+{
+  Class<?> type=createPlain().defineMethod(QUX,list).withParameter(list,BAR,ProvisioningState.MANDATED).throwing(fooVariable).typeVariable(FOO,Exception.class).intercept(StubMethod.INSTANCE).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethod(QUX,List.class).getTypeParameters().length,is(1));
+  assertThat(type.getDeclaredMethod(QUX,List.class).getTypeParameters()[0].getName(),is(FOO));
+  assertThat(type.getDeclaredMethod(QUX,List.class).getTypeParameters()[0].getBounds().length,is(1));
+  assertThat(type.getDeclaredMethod(QUX,List.class).getTypeParameters()[0].getBounds()[0],is((Object)Exception.class));
+  assertThat(type.getDeclaredMethod(QUX,List.class).getGenericReturnType(),is(list));
+  assertThat(type.getDeclaredMethod(QUX,List.class).getGenericExceptionTypes()[0],is((Type)type.getDeclaredMethod(QUX,List.class).getTypeParameters()[0]));
+  assertThat(type.getDeclaredMethod(QUX,List.class).getGenericParameterTypes().length,is(1));
+  assertThat(type.getDeclaredMethod(QUX,List.class).getGenericParameterTypes()[0],is(list));
+}

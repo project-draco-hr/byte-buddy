@@ -1,0 +1,3 @@
+{
+  return describe(field.getGenericType()).accept(TypeDescription.Generic.Visitor.Substitutor.ForAttachment.of(new FieldDescription.ForLoadedField(field)));
+}

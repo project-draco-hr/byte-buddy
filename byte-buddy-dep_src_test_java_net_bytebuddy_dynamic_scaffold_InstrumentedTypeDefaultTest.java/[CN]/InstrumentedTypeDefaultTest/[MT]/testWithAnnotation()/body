@@ -1,0 +1,7 @@
+{
+  AnnotationDescription annotationDescription=mock(AnnotationDescription.class);
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getDeclaredAnnotations().size(),is(0));
+  instrumentedType=instrumentedType.withAnnotations(Collections.singletonList(annotationDescription));
+  assertThat(instrumentedType.getDeclaredAnnotations(),is(Collections.singletonList(annotationDescription)));
+}

@@ -1,9 +1,9 @@
 {
-  super(ASM_API_VERSION);
-  annotationTokens=new LinkedList<LazyTypeDescription.AnnotationToken>();
-  fieldTokens=new LinkedList<LazyTypeDescription.FieldToken>();
-  methodTokens=new LinkedList<LazyTypeDescription.MethodToken>();
+  super(Opcodes.ASM5);
+  annotationTokens=new ArrayList<LazyTypeDescription.AnnotationToken>();
+  fieldTokens=new ArrayList<LazyTypeDescription.FieldToken>();
+  methodTokens=new ArrayList<LazyTypeDescription.MethodToken>();
   anonymousType=false;
   declarationContext=LazyTypeDescription.DeclarationContext.SelfDeclared.INSTANCE;
-  declaredTypes=new LinkedList<String>();
+  declaredTypes=new ArrayList<String>();
 }

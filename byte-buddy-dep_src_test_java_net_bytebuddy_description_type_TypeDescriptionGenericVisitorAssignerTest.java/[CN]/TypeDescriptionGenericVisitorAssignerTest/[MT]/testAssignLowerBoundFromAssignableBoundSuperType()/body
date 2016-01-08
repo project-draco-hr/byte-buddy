@@ -1,0 +1,3 @@
+{
+  assertThat(collectionLowerBoundTypeVariableU.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(collectionTypeVariableT),is(true));
+}

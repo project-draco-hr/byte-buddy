@@ -1,3 +1,3 @@
 {
-  return throwing(new TypeDescription.ForLoadedType(nonNull(exceptionType)),message);
+  return throwing(new TypeDescription.ForLoadedType(exceptionType),message);
 }

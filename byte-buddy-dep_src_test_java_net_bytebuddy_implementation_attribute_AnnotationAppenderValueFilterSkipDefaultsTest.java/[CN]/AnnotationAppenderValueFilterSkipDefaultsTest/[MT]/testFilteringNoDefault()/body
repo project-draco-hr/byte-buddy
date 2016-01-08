@@ -1,6 +1,0 @@
-{
-  assertThat(AnnotationAppender.ValueFilter.SkipDefaults.INSTANCE.isRelevant(annotationDescription,methodDescription),is(true));
-  verifyZeroInteractions(annotationDescription);
-  verify(methodDescription).getDefaultValue();
-  verifyNoMoreInteractions(methodDescription);
-}

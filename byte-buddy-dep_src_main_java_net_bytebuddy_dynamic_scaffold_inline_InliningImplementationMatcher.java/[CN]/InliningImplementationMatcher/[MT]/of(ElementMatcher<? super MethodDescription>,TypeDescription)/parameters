@@ -1,2 +1,0 @@
-ElementMatcher<? super MethodDescription> ignoredMethods
-TypeDescription targetType

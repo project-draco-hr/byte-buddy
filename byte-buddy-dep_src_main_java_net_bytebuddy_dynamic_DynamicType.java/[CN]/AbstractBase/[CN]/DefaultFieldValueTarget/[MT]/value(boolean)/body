@@ -1,3 +1,0 @@
-{
-  return value(value ? NUMERIC_BOOLEAN_TRUE : NUMERIC_BOOLEAN_FALSE);
-}

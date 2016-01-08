@@ -1,3 +1,0 @@
-{
-  return new RebaseDynamicTypeBuilder<T>(classFileVersion,nonNull(namingStrategy.rebase(isDefineable(levelType))),auxiliaryTypeNamingStrategy,implementationContextFactory,levelType,interfaceTypes,modifiers.resolve(levelType.getModifiers()),TypeAttributeAppender.NoOp.INSTANCE,ignoredMethods,classVisitorWrapper,new FieldRegistry.Default(),methodRegistry,methodGraphCompiler,defaultFieldAttributeAppenderFactory,defaultMethodAttributeAppenderFactory,nonNull(classFileLocator),nonNull(methodNameTransformer));
-}

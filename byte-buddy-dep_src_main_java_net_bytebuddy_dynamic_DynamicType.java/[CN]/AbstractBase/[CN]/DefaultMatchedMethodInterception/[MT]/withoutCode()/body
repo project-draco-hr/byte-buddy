@@ -1,3 +1,0 @@
-{
-  return withoutCode(MethodTransformer.NoOp.INSTANCE);
-}

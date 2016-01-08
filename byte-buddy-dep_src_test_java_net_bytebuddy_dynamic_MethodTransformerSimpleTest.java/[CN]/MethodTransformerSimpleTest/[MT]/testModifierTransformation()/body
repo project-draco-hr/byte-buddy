@@ -1,10 +1,10 @@
 {
-  MethodDescription.Token transformed=new MethodTransformer.Simple.Transformer.ForModifierTransformation(Collections.singletonList(modifierContributor)).transform(methodToken);
-  assertThat(transformed.getInternalName(),is(FOO));
+  MethodDescription.Token transformed=new MethodTransformer.Simple.TokenTransformer.ForModifierTransformation(Collections.singletonList(modifierContributor)).transform(methodToken);
+  assertThat(transformed.getName(),is(FOO));
   assertThat(transformed.getModifiers(),is((MODIFIERS & ~RANGE) | MASK));
   assertThat(transformed.getReturnType(),is(returnType));
-  assertThat(transformed.getTypeVariables().size(),is(1));
-  assertThat(transformed.getTypeVariables().getOnly(),is(typeVariable));
+  assertThat(transformed.getTypeVariableTokens().size(),is(1));
+  assertThat(transformed.getTypeVariableTokens().get(0),is(new TypeVariableToken(QUX,Collections.singletonList(typeVariableBound))));
   assertThat(transformed.getExceptionTypes().size(),is(1));
   assertThat(transformed.getExceptionTypes().getOnly(),is(exceptionType));
   assertThat(transformed.getParameterTokens().size(),is(1));

@@ -1,0 +1,9 @@
+{
+  when(byteCodeAppender.apply(methodVisitor,implementationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(0,0));
+  ByteCodeAppender terminated=new TypeInitializer.Simple(byteCodeAppender).withReturn();
+  terminated.apply(methodVisitor,implementationContext,methodDescription);
+  verify(byteCodeAppender).apply(methodVisitor,implementationContext,methodDescription);
+  verify(methodVisitor).visitInsn(Opcodes.RETURN);
+  verifyNoMoreInteractions(byteCodeAppender);
+  verifyZeroInteractions(implementationContext);
+}

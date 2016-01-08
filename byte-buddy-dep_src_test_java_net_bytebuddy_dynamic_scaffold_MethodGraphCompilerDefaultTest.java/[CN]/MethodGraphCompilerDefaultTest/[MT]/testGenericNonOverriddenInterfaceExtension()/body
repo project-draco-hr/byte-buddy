@@ -3,11 +3,11 @@
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 1));
   MethodDescription methodDescription=typeDescription.getInterfaces().getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
-  MethodGraph.Node node=methodGraph.locate(methodDescription.asToken());
+  MethodGraph.Node node=methodGraph.locate(methodDescription.asSignatureToken());
   assertThat(node.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(node.getRepresentative(),is(methodDescription));
   assertThat(node.getMethodTypes().size(),is(2));
   assertThat(node.getMethodTypes().contains(methodDescription.asTypeToken()),is(true));
   assertThat(node.getMethodTypes().contains(methodDescription.asDefined().asTypeToken()),is(true));
-  assertThat(node,is(methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(GenericNonOverriddenInterfaceBase.class)).locate(methodDescription.asToken())));
+  assertThat(node,is(methodGraph.getInterfaceGraph(new TypeDescription.ForLoadedType(GenericNonOverriddenInterfaceBase.class)).locate(methodDescription.asSignatureToken())));
 }

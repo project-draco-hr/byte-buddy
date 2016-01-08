@@ -1,0 +1,14 @@
+{
+  InstrumentedType instrumentedType=makePlainInstrumentedType();
+  assertThat(instrumentedType.getDeclaredFields().size(),is(0));
+  ByteCodeAppender first=mock(ByteCodeAppender.class), second=mock(ByteCodeAppender.class);
+  MethodDescription methodDescription=mock(MethodDescription.class);
+  when(first.apply(methodVisitor,implementationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(0,0));
+  when(second.apply(methodVisitor,implementationContext,methodDescription)).thenReturn(new ByteCodeAppender.Size(0,0));
+  instrumentedType=instrumentedType.withInitializer(first).withInitializer(second);
+  TypeInitializer typeInitializer=instrumentedType.getTypeInitializer();
+  assertThat(typeInitializer.isDefined(),is(true));
+  typeInitializer.apply(methodVisitor,implementationContext,methodDescription);
+  verify(first).apply(methodVisitor,implementationContext,methodDescription);
+  verify(second).apply(methodVisitor,implementationContext,methodDescription);
+}

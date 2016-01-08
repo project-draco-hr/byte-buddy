@@ -1,0 +1,7 @@
+{
+  if (!(other instanceof Generic))   return false;
+  Generic typeDescription=(Generic)other;
+  if (!typeDescription.getSort().isParameterized())   return false;
+  Generic ownerType=getOwnerType(), otherOwnerType=typeDescription.getOwnerType();
+  return asErasure().equals(typeDescription.asErasure()) && !(ownerType == null && otherOwnerType != null) && !(ownerType != null && !ownerType.equals(otherOwnerType))&& getParameters().equals(typeDescription.getParameters());
+}

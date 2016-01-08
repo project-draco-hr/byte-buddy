@@ -2,9 +2,9 @@
   when(targetParameterType.represents(any(Class.class))).thenReturn(true);
   when(specialMethodInvocation.isValid()).thenReturn(true);
   doReturn(INTERFACE_TYPE).when(annotation).targetType();
-  when(source.asToken()).thenReturn(methodToken);
+  when(source.asSignatureToken()).thenReturn(token);
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=DefaultCall.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
-  verify(implementationTarget).invokeDefault(new TypeDescription.ForLoadedType(INTERFACE_TYPE),methodToken);
+  verify(implementationTarget).invokeDefault(new TypeDescription.ForLoadedType(INTERFACE_TYPE),token);
   verifyNoMoreInteractions(implementationTarget);
 }

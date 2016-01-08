@@ -1,4 +1,6 @@
 {
   when(distinctFactory.make(instrumentedType)).thenReturn(distinct);
-  when(knownField.asToken()).thenReturn(knownFieldToken);
+  when(latentMatcher.resolve(instrumentedType)).thenReturn((ElementMatcher)matcher);
+  when(matcher.matches(knownField)).thenReturn(true);
+  when(fieldTransformer.transform(instrumentedType,knownField)).thenReturn(instrumentedField);
 }

@@ -1,5 +1,5 @@
 {
   this.name=name;
   this.componentTypeReference=componentTypeReference;
-  values=new LinkedList<AnnotationDescription.AnnotationValue<?,?>>();
+  values=new ArrayList<AnnotationDescription.AnnotationValue<?,?>>();
 }

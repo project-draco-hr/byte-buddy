@@ -1,5 +1,0 @@
-{
-  Manifest manifest=new Manifest();
-  manifest.getMainAttributes().put(Attributes.Name.MANIFEST_VERSION,MANIFEST_VERSION);
-  return toJar(file,manifest);
-}

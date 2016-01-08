@@ -1,3 +1,0 @@
-{
-  return withNamingStrategy(new NamingStrategy.Unbound.Unified(nonNull(namingStrategy)));
-}

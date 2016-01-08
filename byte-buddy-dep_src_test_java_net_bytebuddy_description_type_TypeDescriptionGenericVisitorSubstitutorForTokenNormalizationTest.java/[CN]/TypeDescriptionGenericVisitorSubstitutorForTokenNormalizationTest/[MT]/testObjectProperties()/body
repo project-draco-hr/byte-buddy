@@ -1,0 +1,8 @@
+{
+  ObjectPropertyAssertion.of(TypeDescription.Generic.Visitor.Substitutor.ForTokenNormalization.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
+    @Override public void apply(    TypeDescription mock){
+      when(mock.asGenericType()).thenReturn(Mockito.mock(TypeDescription.Generic.class));
+    }
+  }
+).apply();
+}

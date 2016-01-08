@@ -1,0 +1,3 @@
+{
+  return isPrimitive() || represents(String.class) || (isAssignableTo(Enum.class) && !represents(Enum.class))|| (isAssignableTo(Annotation.class) && !represents(Annotation.class))|| represents(Class.class)|| (isArray() && !getComponentType().isArray() && getComponentType().isAnnotationReturnType());
+}

@@ -19,20 +19,8 @@
       exceptionTypeDescriptors.add(Type.getObjectType(anExceptionTypeInternalName).getDescriptor());
     }
   }
-  declaredAnnotations=new ArrayList<AnnotationDescription>(annotationTokens.size());
-  for (  AnnotationToken annotationToken : annotationTokens) {
-    declaredAnnotations.add(annotationToken.toAnnotationDescription(typePool));
-  }
-  declaredParameterAnnotations=new ArrayList<List<AnnotationDescription>>(parameterType.length);
-  for (int index=0; index < parameterType.length; index++) {
-    List<AnnotationToken> tokens=parameterAnnotationTokens.get(index);
-    List<AnnotationDescription> annotationDescriptions;
-    annotationDescriptions=new ArrayList<AnnotationDescription>(tokens.size());
-    for (    AnnotationToken annotationToken : tokens) {
-      annotationDescriptions.add(annotationToken.toAnnotationDescription(typePool));
-    }
-    declaredParameterAnnotations.add(annotationDescriptions);
-  }
+  this.annotationTokens=annotationTokens;
+  this.parameterAnnotationTokens=parameterAnnotationTokens;
   parameterNames=new String[parameterType.length];
   parameterModifiers=new Integer[parameterType.length];
   if (parameterTokens.size() == parameterType.length) {

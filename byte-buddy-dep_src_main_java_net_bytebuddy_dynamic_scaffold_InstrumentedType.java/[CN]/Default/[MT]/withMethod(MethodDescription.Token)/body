@@ -1,3 +1,0 @@
-{
-  return new Default(name,this.modifiers,typeVariables,superType,interfaceTypes,fieldTokens,joinUnique(methodTokens,methodToken),annotationDescriptions,typeInitializer,loadedTypeInitializer);
-}

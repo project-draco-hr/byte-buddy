@@ -1,0 +1,5 @@
+{
+  assertThat(ModifierContributor.Resolver.of(Visibility.PUBLIC,TypeManifestation.FINAL).resolve(),is(Opcodes.ACC_PUBLIC | Opcodes.ACC_FINAL));
+  assertThat(ModifierContributor.Resolver.of(Visibility.PUBLIC,TypeManifestation.INTERFACE,TypeManifestation.FINAL).resolve(),is(Opcodes.ACC_PUBLIC | Opcodes.ACC_FINAL));
+  assertThat(ModifierContributor.Resolver.of(Visibility.PUBLIC,TypeManifestation.FINAL).resolve(1),is(Opcodes.ACC_PUBLIC | Opcodes.ACC_FINAL | 1));
+}

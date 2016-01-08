@@ -1,0 +1,4 @@
+{
+  assertThat(SubclassImplementationTarget.Factory.SUPER_TYPE.make(instrumentedType,methodGraph),instanceOf(SubclassImplementationTarget.class));
+  assertThat(SubclassImplementationTarget.Factory.LEVEL_TYPE.make(instrumentedType,methodGraph),instanceOf(SubclassImplementationTarget.class));
+}

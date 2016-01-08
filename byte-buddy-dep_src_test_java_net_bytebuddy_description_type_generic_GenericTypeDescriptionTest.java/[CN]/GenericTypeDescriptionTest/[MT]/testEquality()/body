@@ -1,9 +1,0 @@
-{
-  assertThat(GenericTypeDescription.Sort.NON_GENERIC.isNonGeneric(),is(true));
-  assertThat(GenericTypeDescription.Sort.WILDCARD.isWildcard(),is(true));
-  assertThat(GenericTypeDescription.Sort.PARAMETERIZED.isParameterized(),is(true));
-  assertThat(GenericTypeDescription.Sort.VARIABLE_DETACHED.isDetachedTypeVariable(),is(true));
-  assertThat(GenericTypeDescription.Sort.VARIABLE.isTypeVariable(),is(true));
-  assertThat(GenericTypeDescription.Sort.VARIABLE_SYMBOLIC.isSymbolicTypeVariable(),is(true));
-  assertThat(GenericTypeDescription.Sort.GENERIC_ARRAY.isGenericArray(),is(true));
-}

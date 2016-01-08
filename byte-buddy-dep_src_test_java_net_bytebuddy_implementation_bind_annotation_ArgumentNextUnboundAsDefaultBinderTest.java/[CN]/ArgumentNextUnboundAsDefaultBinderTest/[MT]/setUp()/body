@@ -1,8 +1,8 @@
 {
   when(firstParameter.getStackSize()).thenReturn(StackSize.ZERO);
   when(secondParameter.getStackSize()).thenReturn(StackSize.ZERO);
-  sourceParameters=new ParameterList.Explicit.ForTypes(source,Arrays.asList(firstParameter,secondParameter));
-  ParameterList<ParameterDescription.InDefinedShape> targetParameters=new ParameterList.Explicit<ParameterDescription.InDefinedShape>(Arrays.asList(firstTargetParameter,secondTargetParameter));
+  sourceParameters=new ParameterList.Explicit.ForTypes(source,firstParameter,secondParameter);
+  ParameterList<ParameterDescription.InDefinedShape> targetParameters=new ParameterList.Explicit<ParameterDescription.InDefinedShape>(firstTargetParameter,secondTargetParameter);
   when(source.getParameters()).thenReturn(sourceParameters);
   when(target.getParameters()).thenReturn(targetParameters);
 }

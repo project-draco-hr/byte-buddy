@@ -1,0 +1,3 @@
+{
+  assertThat(arrayTypeVariableT.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(arrayTypeVariableS),is(false));
+}

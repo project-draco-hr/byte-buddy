@@ -1,3 +1,0 @@
-MethodDescription declaringMethod
-ParameterDescription parameterDescription
-GenericTypeDescription.Visitor<? extends GenericTypeDescription> visitor

@@ -1,3 +1,3 @@
 {
-  return isAnnotatedWith(new TypeDescription.ForLoadedType(nonNull(type)));
+  return isAnnotatedWith(new TypeDescription.ForLoadedType(type));
 }

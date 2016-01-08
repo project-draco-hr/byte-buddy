@@ -1,6 +1,0 @@
-{
-  for (  GenericTypeDescription typeDescription : typeDescriptions) {
-    isActualType(typeDescription);
-  }
-  return typeDescriptions;
-}

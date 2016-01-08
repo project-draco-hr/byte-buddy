@@ -1,0 +1,11 @@
+InstrumentedType.WithFlexibleName instrumentedType
+ClassFileVersion classFileVersion
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+AnnotationValueFilter.Factory annotationValueFilterFactory
+AnnotationRetention annotationRetention
+Implementation.Context.Factory implementationContextFactory
+MethodGraph.Compiler methodGraphCompiler
+TypeValidation typeValidation
+LatentMatcher<? super MethodDescription> ignoredMethods
+TypeDescription originalType
+ClassFileLocator classFileLocator

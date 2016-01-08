@@ -4,7 +4,7 @@
   MethodDescription secondMethodDescription=implementationContext.registerAccessorFor(secondSpecialInvocation);
   assertThat(implementationContext.registerAccessorFor(secondSpecialInvocation),is(secondMethodDescription));
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
-  implementationContext.drain(classVisitor,methodPool,injectedCode);
+  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory);
   verify(classVisitor).visitMethod(eq(accessorMethodModifiers | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("(" + BAR + ")"+ FOO),isNull(String.class),aryEq(new String[]{BAZ}));
   verify(methodVisitor).visitCode();
   verify(methodVisitor).visitVarInsn(Opcodes.ALOAD,0);

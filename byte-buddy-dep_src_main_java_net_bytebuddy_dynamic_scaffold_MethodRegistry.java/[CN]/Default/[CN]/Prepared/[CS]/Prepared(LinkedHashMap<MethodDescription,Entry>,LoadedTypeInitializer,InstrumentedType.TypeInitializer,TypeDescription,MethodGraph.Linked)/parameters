@@ -1,5 +1,0 @@
-LinkedHashMap<MethodDescription,Entry> implementations
-LoadedTypeInitializer loadedTypeInitializer
-InstrumentedType.TypeInitializer typeInitializer
-TypeDescription instrumentedType
-MethodGraph.Linked methodGraph

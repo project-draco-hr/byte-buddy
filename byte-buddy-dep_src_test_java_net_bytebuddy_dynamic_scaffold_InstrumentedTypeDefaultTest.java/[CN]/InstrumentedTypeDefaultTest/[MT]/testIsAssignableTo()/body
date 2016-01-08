@@ -1,0 +1,6 @@
+{
+  assertThat(makePlainInstrumentedType().isAssignableTo(Object.class),is(true));
+  assertThat(makePlainInstrumentedType().isAssignableTo(makePlainInstrumentedType()),is(true));
+  assertThat(makePlainInstrumentedType().isAssignableTo(Integer.class),is(false));
+  assertThat(makePlainInstrumentedType().isAssignableTo(TypeDescription.OBJECT),is(true));
+}

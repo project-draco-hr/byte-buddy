@@ -1,0 +1,5 @@
+{
+  when(bound.asGenericType()).thenReturn(bound);
+  when(visitedBound.asGenericType()).thenReturn(visitedBound);
+  when(bound.accept(visitor)).thenReturn(visitedBound);
+}

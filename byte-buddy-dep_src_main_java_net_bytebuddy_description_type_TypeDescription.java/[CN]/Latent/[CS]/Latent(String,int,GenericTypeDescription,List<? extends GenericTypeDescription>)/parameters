@@ -1,4 +1,0 @@
-String name
-int modifiers
-GenericTypeDescription superType
-List<? extends GenericTypeDescription> interfaces

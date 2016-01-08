@@ -1,5 +1,0 @@
-{
-  List<String> original=Arrays.asList(FOO,BAR);
-  List<String> list=toList((Iterable<String>)original);
-  assertThat(list,sameInstance(original));
-}

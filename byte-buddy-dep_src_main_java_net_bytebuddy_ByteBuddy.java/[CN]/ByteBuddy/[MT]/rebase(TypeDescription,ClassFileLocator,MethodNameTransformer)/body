@@ -1,0 +1,3 @@
+{
+  return new RebaseDynamicTypeBuilder<T>(InstrumentedType.Default.of(type),classFileVersion,auxiliaryTypeNamingStrategy,annotationValueFilterFactory,annotationRetention,implementationContextFactory,methodGraphCompiler,typeValidation,ignoredMethods,type,classFileLocator,methodNameTransformer);
+}

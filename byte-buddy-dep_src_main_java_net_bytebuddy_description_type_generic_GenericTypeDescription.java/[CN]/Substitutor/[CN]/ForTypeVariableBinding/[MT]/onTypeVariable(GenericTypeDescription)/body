@@ -1,4 +1,0 @@
-{
-  GenericTypeDescription substitution=bindings.get(typeVariable);
-  return substitution == null ? typeVariable.asErasure() : substitution;
-}

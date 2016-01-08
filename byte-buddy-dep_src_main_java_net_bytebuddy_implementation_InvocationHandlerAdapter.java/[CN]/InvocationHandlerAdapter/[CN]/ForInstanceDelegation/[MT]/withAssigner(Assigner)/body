@@ -1,3 +1,3 @@
 {
-  return new ForInstanceDelegation(fieldName,cacheMethods,nonNull(assigner));
+  return new ForInstanceDelegation(fieldName,cacheMethods,assigner);
 }

@@ -1,0 +1,7 @@
+{
+  when(fieldDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Qux.Instance()));
+  FieldAttributeAppender.ForInstrumentedField.INSTANCE.apply(fieldVisitor,fieldDescription,annotationValueFilter);
+  verifyZeroInteractions(fieldVisitor);
+  verify(fieldDescription).getDeclaredAnnotations();
+  verifyNoMoreInteractions(fieldDescription);
+}

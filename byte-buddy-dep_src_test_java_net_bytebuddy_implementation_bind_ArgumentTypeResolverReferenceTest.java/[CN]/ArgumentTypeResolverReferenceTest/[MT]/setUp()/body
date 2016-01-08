@@ -4,8 +4,8 @@
   when(weakTargetType.isAssignableFrom(weakTargetType)).thenReturn(true);
   when(weakTargetType.isAssignableTo(weakTargetType)).thenReturn(true);
   when(dominantTargetType.isAssignableTo(weakTargetType)).thenReturn(true);
-  when(weakTargetParameter.getType()).thenReturn(weakTargetType);
-  when(dominantTargetParameter.getType()).thenReturn(dominantTargetType);
-  when(weakTargetType.asErasure()).thenReturn(weakTargetType);
-  when(dominantTargetType.asErasure()).thenReturn(dominantTargetType);
+  when(weakTargetParameter.getType()).thenReturn(genericWeakTargetType);
+  when(dominantTargetParameter.getType()).thenReturn(genericDominantTargetType);
+  when(genericWeakTargetType.asErasure()).thenReturn(weakTargetType);
+  when(genericDominantTargetType.asErasure()).thenReturn(dominantTargetType);
 }

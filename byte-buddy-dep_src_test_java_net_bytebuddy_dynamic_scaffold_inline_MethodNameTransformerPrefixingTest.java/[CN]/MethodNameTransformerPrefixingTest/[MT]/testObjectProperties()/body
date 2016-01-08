@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(MethodNameTransformer.Prefixing.class).apply();
+}

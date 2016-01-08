@@ -1,3 +1,0 @@
-{
-  assertThat(resolveModifierContributors(ByteBuddyCommons.FIELD_MODIFIER_MASK,FieldManifestation.FINAL,Ownership.STATIC,Visibility.PRIVATE),is(Opcodes.ACC_FINAL | Opcodes.ACC_STATIC | Opcodes.ACC_PRIVATE));
-}

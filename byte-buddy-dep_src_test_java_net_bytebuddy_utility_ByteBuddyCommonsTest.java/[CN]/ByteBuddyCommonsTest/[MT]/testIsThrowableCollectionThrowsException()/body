@@ -1,5 +1,0 @@
-{
-  TypeDescription typeDescription=new TypeDescription.ForLoadedType(Object.class);
-  List<TypeDescription> typeDescriptions=Collections.singletonList(typeDescription);
-  isThrowable(typeDescriptions);
-}

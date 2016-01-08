@@ -1,3 +1,3 @@
 {
-  new ByteBuddy().makeAnnotation().defineMethod(FOO,String.class,Collections.<Class<?>>singletonList(Void.class),Visibility.PUBLIC).withoutCode().make();
+  new ByteBuddy().makeAnnotation().defineMethod(FOO,String.class,Visibility.PUBLIC).withParameters(Void.class).withoutCode().make();
 }

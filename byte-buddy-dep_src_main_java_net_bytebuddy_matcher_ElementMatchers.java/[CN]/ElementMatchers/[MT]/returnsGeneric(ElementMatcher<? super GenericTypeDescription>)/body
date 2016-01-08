@@ -1,3 +1,0 @@
-{
-  return new MethodReturnTypeMatcher<T>(nonNull(matcher));
-}

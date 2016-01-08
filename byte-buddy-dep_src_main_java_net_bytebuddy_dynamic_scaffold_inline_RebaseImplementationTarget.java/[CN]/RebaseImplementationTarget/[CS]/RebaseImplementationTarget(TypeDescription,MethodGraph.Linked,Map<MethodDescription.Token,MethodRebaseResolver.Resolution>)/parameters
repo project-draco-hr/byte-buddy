@@ -1,3 +1,0 @@
-TypeDescription instrumentedType
-MethodGraph.Linked methodGraph
-Map<MethodDescription.Token,MethodRebaseResolver.Resolution> rebasements

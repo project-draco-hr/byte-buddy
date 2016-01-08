@@ -1,3 +1,0 @@
-{
-  return !exceptionType.getSort().isWildcard() && exceptionType.asErasure().isAssignableTo(Throwable.class) ? ElementMatchers.<T>declaresGenericException(new CollectionItemMatcher<GenericTypeDescription>(is(exceptionType))) : new BooleanMatcher<T>(false);
-}

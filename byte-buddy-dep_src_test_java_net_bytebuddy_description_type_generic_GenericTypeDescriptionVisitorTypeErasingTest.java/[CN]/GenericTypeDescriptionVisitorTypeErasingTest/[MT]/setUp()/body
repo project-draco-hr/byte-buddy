@@ -1,3 +1,0 @@
-{
-  when(genericTypeDescription.asErasure()).thenReturn(typeDescription);
-}

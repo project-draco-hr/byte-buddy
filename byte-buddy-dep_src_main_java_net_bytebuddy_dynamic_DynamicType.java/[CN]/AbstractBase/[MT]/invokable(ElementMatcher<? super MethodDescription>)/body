@@ -1,3 +1,0 @@
-{
-  return invokable(new LatentMethodMatcher.Resolved(nonNull(methodMatcher)));
-}

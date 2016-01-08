@@ -1,4 +1,6 @@
 {
-  when(implementationTarget.getTypeDescription()).thenReturn(typeDescription);
-  when(methodDescription.asToken()).thenReturn(methodToken);
+  when(implementationTarget.getInstrumentedType()).thenReturn(typeDescription);
+  when(methodDescription.asSignatureToken()).thenReturn(token);
+  when(genericReturnType.asErasure()).thenReturn(returnType);
+  when(genericSuperType.asErasure()).thenReturn(superType);
 }

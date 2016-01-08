@@ -1,8 +1,8 @@
 {
   FieldDescription fieldDescription=instrumentedType.getDeclaredFields().filter(named(name)).getOnly();
-  StackManipulation stackManipulation=assigner.assign(fieldDescription.getType().asErasure(),typeDescription,typing);
+  StackManipulation stackManipulation=assigner.assign(fieldDescription.getType(),fieldType,typing);
   if (!stackManipulation.isValid()) {
-    throw new IllegalStateException("Cannot assign " + fieldDescription + " to "+ typeDescription);
+    throw new IllegalStateException("Cannot assign " + fieldDescription + " to "+ fieldType);
   }
   return new Resolved.Simple(new StackManipulation.Compound(FieldAccess.forField(fieldDescription).getter(),stackManipulation),fieldDescription.getType().asErasure());
 }

@@ -1,3 +1,0 @@
-{
-  return materialize().rebase(levelType,classFileLocator,methodNameTransformer);
-}

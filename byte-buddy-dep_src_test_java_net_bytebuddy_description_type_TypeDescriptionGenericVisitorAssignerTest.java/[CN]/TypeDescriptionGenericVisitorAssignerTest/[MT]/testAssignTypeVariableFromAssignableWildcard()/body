@@ -1,0 +1,3 @@
+{
+  assertThat(typeVariableT.accept(TypeDescription.Generic.Visitor.Assigner.INSTANCE).isAssignableFrom(typeVariableU),is(true));
+}

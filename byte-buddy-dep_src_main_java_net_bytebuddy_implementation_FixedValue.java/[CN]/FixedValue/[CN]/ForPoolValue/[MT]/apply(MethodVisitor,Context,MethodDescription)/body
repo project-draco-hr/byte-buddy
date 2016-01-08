@@ -1,3 +1,0 @@
-{
-  return apply(methodVisitor,implementationContext,instrumentedMethod,loadedType,valueLoadInstruction);
-}

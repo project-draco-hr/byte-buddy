@@ -1,0 +1,3 @@
+{
+  assertThat(TypeInitializer.None.INSTANCE.isDefined(),is(false));
+}
