@@ -1,2 +1,3 @@
 {
+  LazyTypeDescription.AnnotationToken annotationToken=new LazyTypeDescription.AnnotationToken(descriptor,values);
 }
