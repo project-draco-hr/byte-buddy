@@ -1,4 +1,4 @@
-int typeReference
+int rawTypeReference
 TypePath typePath
 String descriptor
 boolean visible

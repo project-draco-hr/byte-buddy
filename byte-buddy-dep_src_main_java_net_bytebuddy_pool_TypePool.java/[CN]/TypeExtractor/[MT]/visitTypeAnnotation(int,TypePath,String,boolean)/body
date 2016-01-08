@@ -1,8 +1,9 @@
 {
   AnnotationRegistrant annotationRegistrant;
-switch (typeReference) {
+  TypeReference typeReference=new TypeReference(rawTypeReference);
+switch (typeReference.getSort()) {
 case TypeReference.CLASS_EXTENDS:
-    annotationRegistrant=new OnExtensionCollector(descriptor,typePath);
+    annotationRegistrant=new OnExtensionCollector(descriptor,typePath,typeReference.getSuperTypeIndex());
   break;
 case TypeReference.CLASS_TYPE_PARAMETER:
 annotationRegistrant=new OnTypeParameterCollector(descriptor,typePath);
