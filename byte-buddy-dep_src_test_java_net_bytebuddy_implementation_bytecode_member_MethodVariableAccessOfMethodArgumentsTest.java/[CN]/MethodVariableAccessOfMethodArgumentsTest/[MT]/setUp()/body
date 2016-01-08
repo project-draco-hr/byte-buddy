@@ -7,7 +7,7 @@
   when(secondParameterType.asErasure()).thenReturn(secondRawParameterType);
   when(secondParameterType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(secondParameterType.asGenericType()).thenReturn(secondParameterType);
-  when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,Arrays.asList(firstParameterType,secondParameterType)));
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,firstParameterType,secondParameterType));
   when(bridgeMethod.getDeclaringType()).thenReturn(declaringType);
   when(secondRawParameterType.getInternalName()).thenReturn(FOO);
   when(firstParameterType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(firstParameterType);

@@ -1,6 +1,5 @@
 {
   super.setUp();
   when(stackManipulation.isValid()).thenReturn(true);
-  when(genericParameterType.asErasure()).thenReturn(parameterType);
   when(instrumentedType.asGenericType()).thenReturn(genericInstrumentedType);
 }

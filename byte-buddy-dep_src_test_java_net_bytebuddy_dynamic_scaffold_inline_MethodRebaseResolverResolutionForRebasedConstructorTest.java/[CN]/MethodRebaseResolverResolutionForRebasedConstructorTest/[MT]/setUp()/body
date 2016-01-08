@@ -3,7 +3,7 @@
   when(methodDescription.isConstructor()).thenReturn(true);
   when(methodDescription.getDeclaringType()).thenReturn(rawTypeDescription);
   when(methodDescription.getReturnType()).thenReturn(returnType);
-  when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,Collections.singletonList(parameterType)));
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(methodDescription,parameterType));
   when(placeholderType.getStackSize()).thenReturn(StackSize.ZERO);
   when(placeholderType.asErasure()).thenReturn(rawPlaceholderType);
   when(placeholderType.asGenericType()).thenReturn(placeholderType);

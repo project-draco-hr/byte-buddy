@@ -1,5 +1,5 @@
 {
-  when(genericParameterType.isArray()).thenReturn(true);
-  when(target.getType()).thenReturn(genericParameterType);
+  when(parameterType.isArray()).thenReturn(true);
+  when(target.getType()).thenReturn(parameterType);
   This.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
 }

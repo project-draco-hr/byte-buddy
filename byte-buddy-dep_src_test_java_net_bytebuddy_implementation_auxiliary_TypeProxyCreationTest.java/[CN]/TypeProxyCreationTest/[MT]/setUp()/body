@@ -4,7 +4,7 @@
   }
   foo=new TypeDescription.ForLoadedType(Foo.class);
   fooMethods=MethodGraph.Compiler.DEFAULT.compile(foo).listNodes().asMethodList().filter(isVirtual().and(not(isFinal())).and(not(isDefaultFinalizer())));
-  when(proxyMethod.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(proxyMethod,Arrays.asList(foo,foo,foo)));
+  when(proxyMethod.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(proxyMethod,foo,foo,foo));
   when(proxyMethod.getDeclaringType()).thenReturn(foo);
   when(proxyMethod.getInternalName()).thenReturn(FOO);
   when(proxyMethod.getDescriptor()).thenReturn(FOO);

@@ -4,7 +4,7 @@
   when(annotation.value()).thenReturn(FieldProxy.BEAN_PROPERTY);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
   when(source.getReturnType()).thenReturn(TypeDescription.Generic.VOID);
-  when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,Collections.singletonList(fieldType)));
+  when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,fieldType));
   when(source.getSourceCodeName()).thenReturn("setFoo");
   when(source.getInternalName()).thenReturn("setFoo");
   when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
