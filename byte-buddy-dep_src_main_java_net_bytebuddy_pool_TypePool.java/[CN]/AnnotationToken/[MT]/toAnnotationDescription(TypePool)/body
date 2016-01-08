@@ -1,4 +1,4 @@
 {
   TypePool.Resolution resolution=typePool.describe(getBinaryName());
-  return resolution.isResolved() ? new Resolution.Simple(new LazyAnnotationDescription(typePool,resolution.resolve(),values)) : Resolution.Illegal.INSTANCE;
+  return resolution.isResolved() ? new Resolution.Simple(new LazyAnnotationDescription(typePool,resolution.resolve(),values)) : new Resolution.Illegal(getBinaryName());
 }

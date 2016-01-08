@@ -9,4 +9,6 @@
   }
 ).apply();
   ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationToken.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationToken.Resolution.Simple.class).apply();
+  ObjectPropertyAssertion.of(TypePool.LazyTypeDescription.AnnotationToken.Resolution.Illegal.class).apply();
 }
