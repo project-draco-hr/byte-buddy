@@ -16,6 +16,9 @@
   this.declarationContext=declarationContext;
   this.declaredTypes=declaredTypes;
   this.anonymousType=anonymousType;
+  this.superTypeAnnotationTokens=superTypeAnnotationTokens;
+  this.typeVariableAnnotationTokens=typeVariableAnnotationTokens;
+  this.typeVariableBoundsAnnotationTokens=typeVariableBoundsAnnotationTokens;
   this.annotationTokens=annotationTokens;
   declaredFields=new ArrayList<FieldDescription.InDefinedShape>(fieldTokens.size());
   for (  FieldToken fieldToken : fieldTokens) {

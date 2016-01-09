@@ -19,6 +19,11 @@
       exceptionTypeDescriptors.add(Type.getObjectType(anExceptionTypeInternalName).getDescriptor());
     }
   }
+  this.typeVariableAnnotationTokens=typeVariableAnnotationTokens;
+  this.typeVariableBoundAnnotationTokens=typeVariableBoundAnnotationTokens;
+  this.returnTypeAnnotationTokens=returnTypeAnnotationTokens;
+  this.parameterTypeAnnotationTokens=parameterTypeAnnotationTokens;
+  this.exceptionTypeAnnotationTokens=exceptionTypeAnnotationTokens;
   this.annotationTokens=annotationTokens;
   this.parameterAnnotationTokens=parameterAnnotationTokens;
   parameterNames=new String[parameterType.length];
