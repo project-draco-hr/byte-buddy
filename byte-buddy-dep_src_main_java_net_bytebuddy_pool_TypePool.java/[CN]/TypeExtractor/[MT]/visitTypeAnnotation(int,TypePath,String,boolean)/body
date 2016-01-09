@@ -3,16 +3,16 @@
   TypeReference typeReference=new TypeReference(rawTypeReference);
 switch (typeReference.getSort()) {
 case TypeReference.CLASS_EXTENDS:
-    annotationRegistrant=new TypeAnnotationOnExtensionCollector(descriptor,typePath,typeReference.getSuperTypeIndex());
+    annotationRegistrant=new AnnotationRegistrant.AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getSuperTypeIndex(),superTypeAnnotationTokens);
   break;
 case TypeReference.CLASS_TYPE_PARAMETER:
-annotationRegistrant=new TypeAnnotationOnTypeParameterCollector(descriptor,typePath,typeReference.getTypeParameterIndex());
+annotationRegistrant=new AnnotationRegistrant.AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getTypeParameterIndex(),typeVariableAnnotationTokens);
 break;
 case TypeReference.CLASS_TYPE_PARAMETER_BOUND:
-annotationRegistrant=new TypeAnnotationOnTypeParameterBoundCollector(descriptor,typePath,typeReference.getTypeParameterBoundIndex());
+annotationRegistrant=new AnnotationRegistrant.AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getTypeParameterBoundIndex(),typeVariableBoundsAnnotationTokens);
 break;
 default :
-throw new IllegalStateException("Unexpected type reference: " + typeReference.getSort());
+throw new IllegalArgumentException("Unexpected type reference: " + typeReference.getSort());
 }
 return new AnnotationExtractor(annotationRegistrant,new ComponentTypeLocator.ForAnnotationProperty(Default.this,descriptor));
 }

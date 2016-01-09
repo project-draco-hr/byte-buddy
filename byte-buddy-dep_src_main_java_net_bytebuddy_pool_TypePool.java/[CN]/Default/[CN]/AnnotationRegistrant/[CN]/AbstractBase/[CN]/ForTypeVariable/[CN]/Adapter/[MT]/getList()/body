@@ -1,0 +1,8 @@
+{
+  List<LazyTypeDescription.AnnotationToken> list=annotationTokens.get(typePath);
+  if (list == null) {
+    list=new ArrayList<>();
+    annotationTokens.put(typePath,list);
+  }
+  return list;
+}

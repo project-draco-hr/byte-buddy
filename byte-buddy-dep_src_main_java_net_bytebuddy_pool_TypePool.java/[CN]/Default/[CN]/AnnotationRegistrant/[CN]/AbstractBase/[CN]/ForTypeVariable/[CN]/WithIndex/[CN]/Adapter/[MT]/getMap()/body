@@ -1,0 +1,8 @@
+{
+  Map<String,List<LazyTypeDescription.AnnotationToken>> map=annotationTokens.get(index);
+  if (map == null) {
+    map=new HashMap<String,List<LazyTypeDescription.AnnotationToken>>();
+    annotationTokens.put(index,map);
+  }
+  return map;
+}

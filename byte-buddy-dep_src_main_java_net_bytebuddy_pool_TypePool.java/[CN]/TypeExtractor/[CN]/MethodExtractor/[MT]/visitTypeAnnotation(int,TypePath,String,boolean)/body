@@ -3,19 +3,21 @@
   TypeReference typeReference=new TypeReference(rawTypeReference);
 switch (typeReference.getSort()) {
 case TypeReference.METHOD_TYPE_PARAMETER:
-    annotationRegistrant=new TypeAnnotationOnMethodTypeParameterCollector(descriptor,typePath,typeReference.getTypeParameterIndex());
+    annotationRegistrant=new AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getTypeParameterIndex(),typeVariableAnnotationTokens);
   break;
 case TypeReference.METHOD_TYPE_PARAMETER_BOUND:
-annotationRegistrant=new TypeAnnotationOnMethodTypeParameterBoundCollector(descriptor,typePath,typeReference.getTypeParameterBoundIndex());
+annotationRegistrant=new AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getTypeParameterBoundIndex(),typeVariableBoundAnnotationTokens);
 break;
 case TypeReference.METHOD_RETURN:
-annotationRegistrant=new TypeAnnotationOnMethodReturnCollector(descriptor,typePath);
+annotationRegistrant=new AbstractBase.ForTypeVariable.Adapter(descriptor,typePath,returnTypeAnnotationTokens);
+break;
+case TypeReference.METHOD_FORMAL_PARAMETER:
+annotationRegistrant=new AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getFormalParameterIndex(),parameterTypeAnnotationTokens);
 break;
 case TypeReference.THROWS:
-annotationRegistrant=new TypeAnnotationOnThrowsCollector(descriptor,typePath,typeReference.getExceptionIndex());
+annotationRegistrant=new AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getExceptionIndex(),exceptionTypeAnnotationTokens);
 break;
 case TypeReference.METHOD_RECEIVER:
-case TypeReference.METHOD_FORMAL_PARAMETER:
 return null;
 default :
 throw new IllegalStateException("Unexpected type reference on method: " + typeReference.getSort());

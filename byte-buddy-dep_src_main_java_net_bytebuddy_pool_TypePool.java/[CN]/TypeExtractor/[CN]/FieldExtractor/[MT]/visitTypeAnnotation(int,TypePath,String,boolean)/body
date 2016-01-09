@@ -3,7 +3,7 @@
   TypeReference typeReference=new TypeReference(rawTypeReference);
 switch (typeReference.getSort()) {
 case TypeReference.FIELD:
-    annotationRegistrant=new TypeAnnotationOnFieldCollector(descriptor,typePath);
+    annotationRegistrant=new AnnotationRegistrant.AbstractBase.ForTypeVariable.Adapter(descriptor,typePath,typeAnnotationTokens);
   break;
 default :
 throw new IllegalStateException("Unexpected type reference on field: " + typeReference.getSort());

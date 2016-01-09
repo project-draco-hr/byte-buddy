@@ -1,0 +1,3 @@
+String descriptor
+TypePath typePath
+Map<String,List<LazyTypeDescription.AnnotationToken>> annotationTokens
