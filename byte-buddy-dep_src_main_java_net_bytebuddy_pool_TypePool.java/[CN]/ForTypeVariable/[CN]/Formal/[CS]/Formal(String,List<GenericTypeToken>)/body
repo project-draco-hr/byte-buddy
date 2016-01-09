@@ -1,4 +1,4 @@
 {
   this.symbol=symbol;
-  this.bounds=bounds;
+  this.boundTypeTokens=boundTypeTokens;
 }

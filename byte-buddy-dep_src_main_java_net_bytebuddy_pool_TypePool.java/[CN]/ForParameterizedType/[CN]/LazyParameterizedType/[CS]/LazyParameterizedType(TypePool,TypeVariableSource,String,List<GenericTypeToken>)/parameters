@@ -1,0 +1,4 @@
+TypePool typePool
+TypeVariableSource typeVariableSource
+String name
+List<GenericTypeToken> parameterTypeTokens

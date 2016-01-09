@@ -1,7 +1,3 @@
 {
-  List<Generic> boundTypes=new ArrayList<Generic>(bounds.size());
-  for (  GenericTypeToken bound : bounds) {
-    boundTypes.add(bound.toGenericType(typePool,typeVariableSource));
-  }
-  return new TypeList.Generic.Explicit(boundTypes);
+  return new LazyTokenList(typePool,typeVariableSource,boundTypeTokens);
 }

@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && name.equals(((Nested)other).name) && ownerType.equals(((Nested)other).ownerType)&& parameters.equals(((Nested)other).parameters);
-}

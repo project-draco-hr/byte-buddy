@@ -1,0 +1,5 @@
+{
+  this.typePool=typePool;
+  this.typeVariableSource=typeVariableSource;
+  this.boundTypeToken=boundTypeToken;
+}
