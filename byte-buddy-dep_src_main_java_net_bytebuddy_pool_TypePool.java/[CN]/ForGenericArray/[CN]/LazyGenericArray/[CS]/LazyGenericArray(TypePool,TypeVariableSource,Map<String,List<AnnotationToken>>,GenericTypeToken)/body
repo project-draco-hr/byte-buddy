@@ -1,6 +1,0 @@
-{
-  this.typePool=typePool;
-  this.typeVariableSource=typeVariableSource;
-  this.annotationTokens=annotationTokens;
-  this.componentTypeToken=componentTypeToken;
-}

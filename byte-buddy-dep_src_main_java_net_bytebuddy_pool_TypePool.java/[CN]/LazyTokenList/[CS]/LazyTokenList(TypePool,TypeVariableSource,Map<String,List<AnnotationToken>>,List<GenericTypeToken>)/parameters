@@ -1,4 +1,0 @@
-TypePool typePool
-TypeVariableSource typeVariableSource
-Map<String,List<AnnotationToken>> annotationTokens
-List<GenericTypeToken> genericTypeTokens

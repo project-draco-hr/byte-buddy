@@ -1,0 +1,3 @@
+{
+  return LazyAnnotationDescription.asList(typePool,annotationTokens.get(typePath));
+}

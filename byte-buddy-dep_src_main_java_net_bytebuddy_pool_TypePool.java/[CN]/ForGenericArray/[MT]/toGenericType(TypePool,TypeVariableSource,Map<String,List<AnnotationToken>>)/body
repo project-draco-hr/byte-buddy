@@ -1,3 +1,0 @@
-{
-  return new LazyGenericArray(typePool,typeVariableSource,annotationTokens,componentTypeToken);
-}

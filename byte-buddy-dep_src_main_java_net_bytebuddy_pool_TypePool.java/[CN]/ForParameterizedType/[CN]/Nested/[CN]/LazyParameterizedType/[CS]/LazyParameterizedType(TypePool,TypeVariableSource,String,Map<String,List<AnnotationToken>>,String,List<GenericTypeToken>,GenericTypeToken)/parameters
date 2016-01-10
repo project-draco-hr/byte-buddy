@@ -1,0 +1,7 @@
+TypePool typePool
+TypeVariableSource typeVariableSource
+String typePath
+Map<String,List<AnnotationToken>> annotationTokens
+String name
+List<GenericTypeToken> parameterTypeTokens
+GenericTypeToken ownerTypeToken

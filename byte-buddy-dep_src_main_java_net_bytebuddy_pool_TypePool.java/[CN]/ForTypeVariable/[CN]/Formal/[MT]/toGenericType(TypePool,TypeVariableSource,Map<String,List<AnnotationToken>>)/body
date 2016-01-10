@@ -1,3 +1,0 @@
-{
-  return new LazyTypeVariable(typePool,typeVariableSource,annotationTokens,symbol,boundTypeTokens);
-}

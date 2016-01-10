@@ -1,3 +1,0 @@
-{
-  return new LazyLowerBoundWildcard(typePool,typeVariableSource,annotationTokens,boundTypeToken);
-}
