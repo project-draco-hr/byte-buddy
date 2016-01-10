@@ -3,6 +3,6 @@
   this.genericTypeToken=genericTypeToken;
   this.rawTypeDescriptor=rawTypeDescriptor;
   this.typePath="";
-  this.annotationTokens=annotationTokens;
+  this.annotationTokens=annotationTokens == null ? Collections.<String,List<AnnotationToken>>emptyMap() : annotationTokens;
   this.typeVariableSource=typeVariableSource;
 }

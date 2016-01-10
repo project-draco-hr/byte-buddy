@@ -1,0 +1,8 @@
+{
+  List<LazyTypeDescription.AnnotationToken> annotationTokens=this.annotationTokens.get(index);
+  if (annotationTokens == null) {
+    annotationTokens=new ArrayList<LazyTypeDescription.AnnotationToken>();
+    this.annotationTokens.put(index,annotationTokens);
+  }
+  annotationTokens.add(new LazyTypeDescription.AnnotationToken(descriptor,values));
+}

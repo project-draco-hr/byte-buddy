@@ -1,0 +1,3 @@
+{
+  return tokens == null ? new AnnotationList.Empty() : asList(typePool,tokens);
+}

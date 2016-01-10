@@ -1,0 +1,3 @@
+{
+  this(new AnnotationRegistrant.AbstractBase.IndexedAdapter(descriptor,index,annotationTokens),componentTypeLocator);
+}
