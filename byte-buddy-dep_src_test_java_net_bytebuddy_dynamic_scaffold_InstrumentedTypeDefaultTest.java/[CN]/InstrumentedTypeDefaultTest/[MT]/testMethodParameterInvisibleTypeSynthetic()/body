@@ -1,0 +1,3 @@
+{
+  assertThat(makePlainInstrumentedType().withMethod(new MethodDescription.Token(FOO,Opcodes.ACC_SYNTHETIC,Collections.<TypeVariableToken>emptyList(),TypeDescription.Generic.OBJECT,Collections.singletonList(new ParameterDescription.Token(packagePrivateType)),Collections.<TypeDescription.Generic>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE)).validated(),notNullValue(TypeDescription.class));
+}

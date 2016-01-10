@@ -1,0 +1,3 @@
+{
+  assertThat(makePlainInstrumentedType().withMethod(new MethodDescription.Token(FOO,Opcodes.ACC_SYNTHETIC,packagePrivateType)).validated(),is(TypeDescription.class));
+}
