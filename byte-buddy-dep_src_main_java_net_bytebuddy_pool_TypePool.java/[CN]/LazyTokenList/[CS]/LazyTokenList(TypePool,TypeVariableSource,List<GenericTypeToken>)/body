@@ -1,5 +1,0 @@
-{
-  this.typePool=typePool;
-  this.typeVariableSource=typeVariableSource;
-  this.genericTypeTokens=genericTypeTokens;
-}

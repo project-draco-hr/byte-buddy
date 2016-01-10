@@ -1,4 +1,0 @@
-TypePool typePool
-TypeVariableSource typeVariableSource
-String symbol
-List<GenericTypeToken> boundTypeTokens

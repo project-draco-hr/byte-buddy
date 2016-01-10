@@ -1,6 +1,0 @@
-{
-  this.typePool=typePool;
-  this.typeVariableSource=typeVariableSource;
-  this.name=name;
-  this.parameterTypeTokens=parameterTypeTokens;
-}
