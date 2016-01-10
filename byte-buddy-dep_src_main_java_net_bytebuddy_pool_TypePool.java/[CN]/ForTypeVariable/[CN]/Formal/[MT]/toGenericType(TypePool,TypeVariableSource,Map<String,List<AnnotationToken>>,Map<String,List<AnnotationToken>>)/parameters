@@ -1,4 +1,4 @@
 TypePool typePool
 TypeVariableSource typeVariableSource
-String typePath
 Map<String,List<AnnotationToken>> annotationTokens
+Map<String,List<AnnotationToken>> boundaryAnnotationTokens

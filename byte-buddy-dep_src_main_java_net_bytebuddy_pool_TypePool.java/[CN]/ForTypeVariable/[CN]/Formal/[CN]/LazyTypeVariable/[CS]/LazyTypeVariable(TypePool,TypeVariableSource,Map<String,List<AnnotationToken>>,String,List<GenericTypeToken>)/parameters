@@ -1,6 +1,5 @@
 TypePool typePool
 TypeVariableSource typeVariableSource
-String typePath
 Map<String,List<AnnotationToken>> annotationTokens
 String symbol
 List<GenericTypeToken> boundTypeTokens

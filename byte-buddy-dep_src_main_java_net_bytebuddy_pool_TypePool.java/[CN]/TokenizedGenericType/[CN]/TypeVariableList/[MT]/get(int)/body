@@ -1,3 +1,3 @@
 {
-  return typeVariables.get(index).toGenericType(typePool,typeVariableSource,"",boundAnnotationTokens.get(index));
+  return typeVariables.get(index).toGenericType(typePool,typeVariableSource,annotationTokens.get(index),boundAnnotationTokens.get(index));
 }
