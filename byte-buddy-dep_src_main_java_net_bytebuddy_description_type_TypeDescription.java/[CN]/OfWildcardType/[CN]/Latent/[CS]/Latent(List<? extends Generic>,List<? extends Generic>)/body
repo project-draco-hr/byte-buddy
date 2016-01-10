@@ -1,4 +1,0 @@
-{
-  this.upperBounds=upperBounds;
-  this.lowerBounds=lowerBounds;
-}

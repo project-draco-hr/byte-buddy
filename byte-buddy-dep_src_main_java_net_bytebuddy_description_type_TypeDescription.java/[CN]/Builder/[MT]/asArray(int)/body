@@ -1,3 +1,3 @@
 {
-  return new Builder(OfGenericArray.Latent.of(typeDescription,arity));
+  return new Builder(OfGenericArray.Latent.of(typeDescription,arity,Collections.<AnnotationDescription>emptyList()));
 }

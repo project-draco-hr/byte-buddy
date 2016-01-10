@@ -1,0 +1,6 @@
+{
+  if (arity < 0) {
+    throw new IllegalArgumentException("Arrays cannot have a negative arity");
+  }
+  return arity == 0 ? componentType : new Latent(componentType,arity,declaredAnnotations);
+}

@@ -15,5 +15,5 @@
  else   if (rawType.getTypeVariables().size() != parameters.size()) {
     throw new IllegalArgumentException(parameters + " does not contain number of required parameters for " + rawType);
   }
-  return new Builder(new OfParameterizedType.Latent(rawType,ownerType,new TypeList.Generic.Explicit(parameters)));
+  return new Builder(new OfParameterizedType.Latent(rawType,ownerType,new TypeList.Generic.Explicit(parameters),Collections.<AnnotationDescription>emptyList()));
 }

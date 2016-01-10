@@ -4,5 +4,5 @@
     typeDescription=typeDescription.getComponentType();
     arity++;
   }
-  return OfGenericArray.Latent.of(onSimpleType(typeDescription),arity);
+  return OfGenericArray.Latent.of(onSimpleType(typeDescription),arity,typeDescription.getDeclaredAnnotations());
 }

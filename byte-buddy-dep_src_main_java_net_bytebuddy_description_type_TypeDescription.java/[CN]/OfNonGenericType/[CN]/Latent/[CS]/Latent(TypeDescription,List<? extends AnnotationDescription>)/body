@@ -1,0 +1,4 @@
+{
+  this.typeDescription=typeDescription;
+  this.declaredAnnotations=declaredAnnotations;
+}

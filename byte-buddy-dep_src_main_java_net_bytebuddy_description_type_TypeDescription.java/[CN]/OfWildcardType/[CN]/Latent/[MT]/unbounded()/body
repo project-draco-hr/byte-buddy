@@ -1,3 +1,0 @@
-{
-  return new Latent(Collections.singletonList(TypeDescription.Generic.OBJECT),Collections.<Generic>emptyList());
-}

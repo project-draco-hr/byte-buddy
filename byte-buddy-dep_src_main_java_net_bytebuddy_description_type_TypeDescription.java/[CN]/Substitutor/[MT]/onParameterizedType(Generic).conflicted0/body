@@ -4,5 +4,5 @@
   for (  Generic parameter : parameterizedType.getParameters()) {
     parameters.add(parameter.accept(this));
   }
-  return new OfParameterizedType.Latent(parameterizedType.asRawType().accept(this).asErasure(),ownerType == null ? UNDEFINED : ownerType.accept(this),parameters);
+  return new OfParameterizedType.Latent(parameterizedType.asRawType().accept(this).asErasure(),ownerType == null ? UNDEFINED : ownerType.accept(this),parameters,parameterizedType.getDeclaredAnnotations());
 }

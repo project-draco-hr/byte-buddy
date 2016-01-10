@@ -1,4 +1,4 @@
 {
   TypeDescription componentType=asErasure().getComponentType();
-  return componentType == null ? UNDEFINED : new OfNonGenericType.Latent(componentType);
+  return componentType == null ? UNDEFINED : new OfNonGenericType.Latent(componentType,Collections.<AnnotationDescription>emptyList());
 }
