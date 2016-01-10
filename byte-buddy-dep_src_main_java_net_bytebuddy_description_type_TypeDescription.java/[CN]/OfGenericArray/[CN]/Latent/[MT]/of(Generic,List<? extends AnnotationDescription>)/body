@@ -1,3 +1,0 @@
-{
-  return of(componentType,1,declaredAnnotations);
-}

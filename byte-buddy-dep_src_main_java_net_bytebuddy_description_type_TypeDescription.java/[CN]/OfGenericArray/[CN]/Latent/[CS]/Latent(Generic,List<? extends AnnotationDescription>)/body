@@ -1,5 +1,4 @@
 {
   this.componentType=componentType;
-  this.arity=arity;
   this.declaredAnnotations=declaredAnnotations;
 }

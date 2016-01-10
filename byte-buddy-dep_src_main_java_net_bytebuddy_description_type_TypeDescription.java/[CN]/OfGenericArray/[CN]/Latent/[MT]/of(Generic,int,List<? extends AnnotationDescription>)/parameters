@@ -1,3 +1,0 @@
-Generic componentType
-int arity
-List<? extends AnnotationDescription> declaredAnnotations

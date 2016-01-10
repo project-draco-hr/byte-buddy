@@ -1,8 +1,3 @@
 {
-  int arity=0;
-  while (typeDescription.isArray()) {
-    typeDescription=typeDescription.getComponentType();
-    arity++;
-  }
-  return OfGenericArray.Latent.of(onSimpleType(typeDescription),arity,typeDescription.getDeclaredAnnotations());
+  return new Dispatcher.ForNonGenericType(typeDescription.asErasure());
 }
