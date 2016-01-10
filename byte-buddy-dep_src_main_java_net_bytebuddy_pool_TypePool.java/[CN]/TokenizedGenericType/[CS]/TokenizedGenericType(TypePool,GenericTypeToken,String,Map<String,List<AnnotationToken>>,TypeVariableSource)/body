@@ -2,7 +2,6 @@
   this.typePool=typePool;
   this.genericTypeToken=genericTypeToken;
   this.rawTypeDescriptor=rawTypeDescriptor;
-  this.typePath="";
   this.annotationTokens=annotationTokens == null ? Collections.<String,List<AnnotationToken>>emptyMap() : annotationTokens;
   this.typeVariableSource=typeVariableSource;
 }
