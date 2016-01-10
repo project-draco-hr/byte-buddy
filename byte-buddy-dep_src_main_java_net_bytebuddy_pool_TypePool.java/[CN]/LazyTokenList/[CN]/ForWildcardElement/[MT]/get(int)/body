@@ -1,0 +1,8 @@
+{
+  if (index == 0) {
+    return genericTypeToken.toGenericType(typePool,typeVariableSource,typePath + index + PATH_ELEMENT,annotationTokens);
+  }
+ else {
+    throw new IndexOutOfBoundsException();
+  }
+}

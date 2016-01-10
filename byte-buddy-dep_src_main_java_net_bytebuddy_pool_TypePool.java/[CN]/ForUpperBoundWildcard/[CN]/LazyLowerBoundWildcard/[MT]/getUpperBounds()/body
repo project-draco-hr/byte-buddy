@@ -1,3 +1,3 @@
 {
-  return new LazyTokenList(typePool,typeVariableSource,typePath + PATH_ELEMENT,annotationTokens,Collections.singletonList(boundTypeToken));
+  return new LazyTokenList.ForWildcardElement(typePool,typeVariableSource,typePath + PATH_ELEMENT,annotationTokens,boundTypeToken);
 }
