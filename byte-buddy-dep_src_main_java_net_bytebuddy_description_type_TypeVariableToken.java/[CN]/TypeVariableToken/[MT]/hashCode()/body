@@ -1,5 +1,6 @@
 {
   int result=symbol.hashCode();
   result=31 * result + bounds.hashCode();
+  result=31 * result + annotations.hashCode();
   return result;
 }

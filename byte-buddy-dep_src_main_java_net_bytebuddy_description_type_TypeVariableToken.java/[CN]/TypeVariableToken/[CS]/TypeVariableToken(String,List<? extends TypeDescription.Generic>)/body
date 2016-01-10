@@ -1,4 +1,3 @@
 {
-  this.symbol=symbol;
-  this.bounds=bounds;
+  this(symbol,bounds,Collections.<AnnotationDescription>emptyList());
 }
