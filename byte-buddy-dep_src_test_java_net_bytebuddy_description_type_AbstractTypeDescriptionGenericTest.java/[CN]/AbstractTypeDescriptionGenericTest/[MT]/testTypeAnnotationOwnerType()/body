@@ -1,0 +1,23 @@
+{
+  Class<? extends Annotation> typeAnnotation=(Class<? extends Annotation>)Class.forName(TYPE_ANNOTATION);
+  MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotation).getDeclaredMethods().getOnly();
+  Class<?> samples=Class.forName(TYPE_ANNOTATION_OTHER_SAMPLES);
+  TypeDescription.Generic fieldType=describeType(samples.getDeclaredField(BAR));
+  assertThat(fieldType.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(fieldType.getDeclaredAnnotations().size(),is(1));
+  assertThat(fieldType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(fieldType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(1));
+  assertThat(fieldType.getParameters().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(fieldType.getParameters().getOnly().getDeclaredAnnotations().size(),is(1));
+  assertThat(fieldType.getParameters().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(fieldType.getParameters().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(2));
+  assertThat(fieldType.getOwnerType().getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(fieldType.getOwnerType().getDeclaredAnnotations().size(),is(1));
+  assertThat(fieldType.getOwnerType().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(fieldType.getOwnerType().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(3));
+  ;
+  assertThat(fieldType.getOwnerType().getParameters().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(fieldType.getOwnerType().getParameters().getOnly().getDeclaredAnnotations().size(),is(1));
+  assertThat(fieldType.getOwnerType().getParameters().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(fieldType.getOwnerType().getParameters().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(4));
+}
