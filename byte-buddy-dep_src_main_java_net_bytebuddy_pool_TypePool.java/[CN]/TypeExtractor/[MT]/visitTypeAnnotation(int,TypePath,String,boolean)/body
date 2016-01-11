@@ -9,7 +9,7 @@ case TypeReference.CLASS_TYPE_PARAMETER:
 annotationRegistrant=new AnnotationRegistrant.ForTypeVariable.WithIndex(descriptor,typePath,typeReference.getTypeParameterIndex(),typeVariableAnnotationTokens);
 break;
 case TypeReference.CLASS_TYPE_PARAMETER_BOUND:
-annotationRegistrant=new AnnotationRegistrant.ForTypeVariable.WithIndex.DoubleIndexed(descriptor,typePath,typeReference.getTypeParameterIndex(),typeReference.getTypeParameterBoundIndex(),typeVariableBoundsAnnotationTokens);
+annotationRegistrant=new AnnotationRegistrant.ForTypeVariable.WithIndex.DoubleIndexed(descriptor,typePath,typeReference.getTypeParameterBoundIndex() - 1,typeReference.getTypeParameterIndex(),typeVariableBoundsAnnotationTokens);
 break;
 default :
 throw new IllegalArgumentException("Unexpected type reference: " + typeReference.getSort());

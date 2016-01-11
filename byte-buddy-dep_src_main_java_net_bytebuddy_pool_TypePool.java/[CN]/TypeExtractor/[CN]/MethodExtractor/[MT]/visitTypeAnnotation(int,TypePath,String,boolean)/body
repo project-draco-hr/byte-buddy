@@ -6,7 +6,7 @@ case TypeReference.METHOD_TYPE_PARAMETER:
     annotationRegistrant=new ForTypeVariable.WithIndex(descriptor,typePath,typeReference.getTypeParameterIndex(),typeVariableAnnotationTokens);
   break;
 case TypeReference.METHOD_TYPE_PARAMETER_BOUND:
-annotationRegistrant=new ForTypeVariable.WithIndex.DoubleIndexed(descriptor,typePath,typeReference.getTypeParameterIndex(),typeReference.getTypeParameterBoundIndex(),typeVariableBoundAnnotationTokens);
+annotationRegistrant=new ForTypeVariable.WithIndex.DoubleIndexed(descriptor,typePath,typeReference.getTypeParameterBoundIndex(),typeReference.getTypeParameterIndex(),typeVariableBoundAnnotationTokens);
 break;
 case TypeReference.METHOD_RETURN:
 annotationRegistrant=new ForTypeVariable(descriptor,typePath,returnTypeAnnotationTokens);
