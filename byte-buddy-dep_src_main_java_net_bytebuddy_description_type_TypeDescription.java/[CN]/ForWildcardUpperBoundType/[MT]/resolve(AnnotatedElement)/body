@@ -1,11 +1,16 @@
 {
   try {
-    return (AnnotatedElement)Array.get(GET_ANNOTATED_UPPER_BOUNDS.invoke(annotatedElement),index);
+    Object annotatedUpperBounds=GET_ANNOTATED_UPPER_BOUNDS.invoke(annotatedElement);
+    return Array.getLength(annotatedUpperBounds) == 0 ? NoOp.INSTANCE : (AnnotatedElement)Array.get(annotatedUpperBounds,index);
   }
  catch (  IllegalAccessException exception) {
     throw new IllegalStateException("Cannot access java.lang.reflect.AnnotatedWildcardType#getAnnotatedUpperBounds",exception);
   }
 catch (  InvocationTargetException exception) {
     throw new IllegalStateException("Error invoking java.lang.reflect.AnnotatedWildcardType#getAnnotatedUpperBounds",exception.getCause());
+  }
+catch (  ArrayIndexOutOfBoundsException e) {
+    System.out.println(((AnnotatedType)annotatedElement).getType().getTypeName() + " has no upper bounds");
+    throw e;
   }
 }
