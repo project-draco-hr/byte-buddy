@@ -1,3 +1,3 @@
 {
-  return Sort.describe(lowerBound[index],annotationReader.ofWildcardLowerBound(index));
+  return Sort.describe(lowerBound[index],annotationReader.ofWildcardLowerBoundType(index));
 }

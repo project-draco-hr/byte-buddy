@@ -2,10 +2,10 @@
   try {
     return (AnnotatedElement)Array.get(GET_ANNOTATED_ACTUAL_TYPE_ARGUMENTS.invoke(annotatedElement),index);
   }
- catch (  InvocationTargetException e) {
-    throw new UnsupportedOperationException("Not yet implemented");
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.reflect.AnnotatedParameterizedType#getAnnotatedActualTypeArguments",exception);
   }
-catch (  IllegalAccessException e) {
-    throw new UnsupportedOperationException("Not yet implemented");
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.reflect.AnnotatedParameterizedType#getAnnotatedActualTypeArguments",exception.getCause());
   }
 }

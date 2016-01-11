@@ -2,10 +2,10 @@
   try {
     return (AnnotatedElement)GET_ANNOTATED_GENERIC_COMPONENT_TYPE.invoke(annotatedElement);
   }
- catch (  InvocationTargetException e) {
-    throw new UnsupportedOperationException("Not yet implemented");
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.reflect.AnnotatedArrayType#getAnnotatedGenericComponentType",exception);
   }
-catch (  IllegalAccessException e) {
-    throw new UnsupportedOperationException("Not yet implemented");
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.reflect.AnnotatedArrayType#getAnnotatedGenericComponentType",exception.getCause());
   }
 }
