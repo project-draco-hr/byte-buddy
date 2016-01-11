@@ -6,5 +6,5 @@
   assertThat(returnType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(returnType.getDeclaredAnnotations().size(),is(1));
   assertThat(returnType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(returnType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(22));
+  assertThat(returnType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(25));
 }

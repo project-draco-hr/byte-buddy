@@ -29,8 +29,10 @@
   assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getDeclaredAnnotations().size(),is(1));
   assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
   assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(12));
-  assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getUpperBounds().get(0).getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
-  assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getUpperBounds().get(0).getDeclaredAnnotations().size(),is(1));
-  assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getUpperBounds().get(0).getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getUpperBounds().get(0).getDeclaredAnnotations().getOnly().prepare(typeAnnotation).getValue(value,Integer.class),is(3));
+  assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getUpperBounds().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getUpperBounds().get(0).getDeclaredAnnotations().size(),is(0));
+  assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getUpperBounds().get(1).getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getUpperBounds().get(1).getDeclaredAnnotations().size(),is(1));
+  assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getUpperBounds().get(1).getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(v.getUpperBounds().get(0).getParameters().get(1).getParameters().getOnly().getLowerBounds().getOnly().getUpperBounds().get(1).getDeclaredAnnotations().getOnly().prepare(typeAnnotation).getValue(value,Integer.class),is(3));
 }
