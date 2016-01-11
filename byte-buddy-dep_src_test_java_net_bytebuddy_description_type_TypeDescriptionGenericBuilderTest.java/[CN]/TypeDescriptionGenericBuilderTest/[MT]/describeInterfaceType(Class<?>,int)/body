@@ -1,0 +1,3 @@
+{
+  return describe(type.getGenericInterfaces()[0]).accept(TypeDescription.Generic.Visitor.Substitutor.ForAttachment.of(new TypeDescription.ForLoadedType(type)));
+}

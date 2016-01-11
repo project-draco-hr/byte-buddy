@@ -2,7 +2,7 @@
   Class<? extends Annotation> typeAnnotation=(Class<? extends Annotation>)Class.forName(TYPE_ANNOTATION);
   MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotation).getDeclaredMethods().getOnly();
   Class<?> samples=Class.forName(TYPE_ANNOTATION_SAMPLES);
-  TypeDescription.Generic parameterType=describeParameterType(samples.getDeclaredMethod(FOO,Exception[][].class));
+  TypeDescription.Generic parameterType=describeParameterType(samples.getDeclaredMethod(FOO,Exception[][].class),0);
   assertThat(parameterType.getSort(),is(TypeDefinition.Sort.GENERIC_ARRAY));
   assertThat(parameterType.getDeclaredAnnotations().size(),is(1));
   assertThat(parameterType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));

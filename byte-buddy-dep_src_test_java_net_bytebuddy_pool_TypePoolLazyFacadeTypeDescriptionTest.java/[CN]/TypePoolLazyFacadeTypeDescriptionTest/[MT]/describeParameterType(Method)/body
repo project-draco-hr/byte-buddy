@@ -1,3 +1,0 @@
-{
-  return describe(method.getDeclaringClass()).getDeclaredMethods().filter(is(method)).getOnly().getParameters().getOnly().getType();
-}

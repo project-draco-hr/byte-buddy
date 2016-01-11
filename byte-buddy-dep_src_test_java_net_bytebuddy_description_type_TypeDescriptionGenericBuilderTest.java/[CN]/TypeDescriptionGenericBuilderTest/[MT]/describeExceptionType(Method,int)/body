@@ -1,0 +1,3 @@
+{
+  return describe(method.getExceptionTypes()[index]).accept(TypeDescription.Generic.Visitor.Substitutor.ForAttachment.of(new MethodDescription.ForLoadedMethod(method)));
+}

@@ -1,3 +1,0 @@
-{
-  return new MethodDescription.ForLoadedMethod(method).getParameters().getOnly().getType();
-}

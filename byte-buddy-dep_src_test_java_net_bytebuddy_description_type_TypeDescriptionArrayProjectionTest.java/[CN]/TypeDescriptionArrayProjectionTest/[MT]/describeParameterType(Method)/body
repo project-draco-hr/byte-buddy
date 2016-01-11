@@ -1,3 +1,0 @@
-{
-  return TypeDefinition.Sort.describe(method.getGenericParameterTypes()[0]);
-}
