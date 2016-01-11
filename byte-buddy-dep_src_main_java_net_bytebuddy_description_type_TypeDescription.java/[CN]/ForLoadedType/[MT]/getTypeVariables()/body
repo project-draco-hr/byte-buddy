@@ -1,3 +1,3 @@
 {
-  return new TypeList.Generic.ForLoadedTypes(type.getTypeParameters());
+  return TypeList.Generic.ForLoadedTypes.OfTypeVariables.of(type);
 }
