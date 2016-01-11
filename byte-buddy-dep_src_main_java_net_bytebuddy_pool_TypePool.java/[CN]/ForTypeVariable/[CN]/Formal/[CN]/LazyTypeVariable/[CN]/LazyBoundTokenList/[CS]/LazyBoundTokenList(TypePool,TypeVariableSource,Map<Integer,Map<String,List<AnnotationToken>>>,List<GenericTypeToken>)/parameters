@@ -1,0 +1,4 @@
+TypePool typePool
+TypeVariableSource typeVariableSource
+Map<Integer,Map<String,List<AnnotationToken>>> annotationTokens
+List<GenericTypeToken> boundTypeTokens

@@ -1,4 +1,4 @@
 {
   super(descriptor);
-  this.typePath=typePath == null ? EMPTY_TYPE_PATH : typePath.toString();
+  this.typePath=typePath == null ? "" : typePath.toString();
 }

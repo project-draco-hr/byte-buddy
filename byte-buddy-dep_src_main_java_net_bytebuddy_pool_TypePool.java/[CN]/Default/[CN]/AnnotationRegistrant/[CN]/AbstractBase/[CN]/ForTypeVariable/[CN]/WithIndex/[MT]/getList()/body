@@ -1,9 +1,0 @@
-{
-  Map<String,List<LazyTypeDescription.AnnotationToken>> map=getMap();
-  List<LazyTypeDescription.AnnotationToken> list=map.get(typePath);
-  if (list == null) {
-    list=new ArrayList<LazyTypeDescription.AnnotationToken>();
-    map.put(typePath,list);
-  }
-  return list;
-}

@@ -1,3 +1,3 @@
 {
-  return genericTypeTokens.get(index).toGenericType(typePool,typeVariableSource,typePath + index + PATH_ELEMENT,annotationTokens);
+  return genericTypeTokens.get(index).toGenericType(typePool,typeVariableSource,typePath + index + INDEX_DELIMITER,annotationTokens);
 }

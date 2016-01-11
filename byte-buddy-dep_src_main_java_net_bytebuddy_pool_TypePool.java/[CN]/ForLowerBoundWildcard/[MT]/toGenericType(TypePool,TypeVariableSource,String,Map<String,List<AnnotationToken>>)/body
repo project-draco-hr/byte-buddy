@@ -1,3 +1,3 @@
 {
-  return new LazyLowerBoundWildcard(typePool,typeVariableSource,typePath + PATH_ELEMENT,annotationTokens,boundTypeToken);
+  return new LazyLowerBoundWildcard(typePool,typeVariableSource,typePath,annotationTokens == null ? Collections.emptyMap() : annotationTokens,boundTypeToken);
 }

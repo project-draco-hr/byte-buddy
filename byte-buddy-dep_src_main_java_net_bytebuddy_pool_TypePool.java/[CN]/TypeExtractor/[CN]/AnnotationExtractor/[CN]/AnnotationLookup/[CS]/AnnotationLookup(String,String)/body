@@ -1,4 +1,5 @@
 {
-  super(descriptor);
+  this.descriptor=descriptor;
+  values=new HashMap<>();
   this.name=name;
 }

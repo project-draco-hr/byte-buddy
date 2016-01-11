@@ -3,19 +3,19 @@
   TypeReference typeReference=new TypeReference(rawTypeReference);
 switch (typeReference.getSort()) {
 case TypeReference.METHOD_TYPE_PARAMETER:
-    annotationRegistrant=new AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getTypeParameterIndex(),typeVariableAnnotationTokens);
+    annotationRegistrant=new ForTypeVariable.WithIndex(descriptor,typePath,typeReference.getTypeParameterIndex(),typeVariableAnnotationTokens);
   break;
 case TypeReference.METHOD_TYPE_PARAMETER_BOUND:
-annotationRegistrant=new AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getTypeParameterBoundIndex(),typeVariableBoundAnnotationTokens);
+annotationRegistrant=new ForTypeVariable.WithIndex.DoubleIndexed(descriptor,typePath,typeReference.getTypeParameterIndex(),typeReference.getTypeParameterBoundIndex(),typeVariableBoundAnnotationTokens);
 break;
 case TypeReference.METHOD_RETURN:
-annotationRegistrant=new AbstractBase.ForTypeVariable.Adapter(descriptor,typePath,returnTypeAnnotationTokens);
+annotationRegistrant=new ForTypeVariable(descriptor,typePath,returnTypeAnnotationTokens);
 break;
 case TypeReference.METHOD_FORMAL_PARAMETER:
-annotationRegistrant=new AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getFormalParameterIndex(),parameterTypeAnnotationTokens);
+annotationRegistrant=new ForTypeVariable.WithIndex(descriptor,typePath,typeReference.getFormalParameterIndex(),parameterTypeAnnotationTokens);
 break;
 case TypeReference.THROWS:
-annotationRegistrant=new AbstractBase.ForTypeVariable.WithIndex.Adapter(descriptor,typePath,typeReference.getExceptionIndex(),exceptionTypeAnnotationTokens);
+annotationRegistrant=new ForTypeVariable.WithIndex(descriptor,typePath,typeReference.getExceptionIndex(),exceptionTypeAnnotationTokens);
 break;
 case TypeReference.METHOD_RECEIVER:
 return null;

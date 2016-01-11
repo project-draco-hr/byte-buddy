@@ -1,3 +1,0 @@
-{
-  return "TypePool.Default.TypeExtractor.AnnotationExtractor.AnnotationLookup{" + "annotationExtractor=" + AnnotationExtractor.this + ", name='"+ name+ '\''+ ", descriptor='"+ descriptor+ '\''+ ", values="+ values+ '}';
-}

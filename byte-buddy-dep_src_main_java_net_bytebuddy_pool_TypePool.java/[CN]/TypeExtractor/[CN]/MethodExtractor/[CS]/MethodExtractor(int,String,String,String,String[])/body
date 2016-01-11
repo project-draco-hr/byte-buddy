@@ -7,7 +7,7 @@
   this.exceptionName=exceptionName;
   annotationTokens=new ArrayList<LazyTypeDescription.AnnotationToken>();
   typeVariableAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();
-  typeVariableBoundAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();
+  typeVariableBoundAnnotationTokens=new HashMap<Integer,Map<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>>();
   returnTypeAnnotationTokens=new HashMap<String,List<LazyTypeDescription.AnnotationToken>>();
   parameterTypeAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();
   exceptionTypeAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();

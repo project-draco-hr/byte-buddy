@@ -1,0 +1,9 @@
+{
+  Map<Integer,Map<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>> doubleIndexPathMap=getDoubleIndexedPathMap();
+  Map<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>> indexedPathMap=doubleIndexPathMap.get(secondIndex);
+  if (indexedPathMap == null) {
+    indexedPathMap=new HashMap<>();
+    doubleIndexPathMap.put(secondIndex,indexedPathMap);
+  }
+  return indexedPathMap;
+}

@@ -1,3 +1,0 @@
-{
-  getList().add(new LazyTypeDescription.AnnotationToken(descriptor,values));
-}

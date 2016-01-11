@@ -1,0 +1,5 @@
+TypePool typePool
+List<GenericTypeToken.OfFormalTypeVariable> typeVariables
+TypeVariableSource typeVariableSource
+Map<Integer,Map<String,List<AnnotationToken>>> annotationTokens
+Map<Integer,Map<Integer,Map<String,List<AnnotationToken>>>> boundAnnotationTokens

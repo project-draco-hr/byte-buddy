@@ -1,0 +1,26 @@
+{
+  Class<? extends Annotation> typeAnnotation=(Class<? extends Annotation>)Class.forName(TYPE_ANNOTATION);
+  MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotation).getDeclaredMethods().getOnly();
+  TypeDescription typeDescription=describe(Class.forName(TYPE_ANNOTATION_SAMPLES));
+  TypeDescription.Generic u=typeDescription.getTypeVariables().filter(named(U)).getOnly();
+  assertThat(u.getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(u.getDeclaredAnnotations().size(),is(1));
+  assertThat(u.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(u.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(2));
+  assertThat(u.getUpperBounds().get(0).getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(u.getUpperBounds().get(0).getDeclaredAnnotations().size(),is(1));
+  assertThat(u.getUpperBounds().get(0).getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(u.getUpperBounds().get(0).getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(3));
+  assertThat(u.getUpperBounds().get(0).getUpperBounds().get(0).getSort(),is(TypeDefinition.Sort.WILDCARD));
+  assertThat(u.getUpperBounds().get(0).getUpperBounds().get(0).getDeclaredAnnotations().size(),is(1));
+  assertThat(u.getUpperBounds().get(0).getUpperBounds().get(0).getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(u.getUpperBounds().get(0).getUpperBounds().get(0).getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(4));
+  assertThat(u.getUpperBounds().get(1).getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(u.getUpperBounds().get(1).getDeclaredAnnotations().size(),is(1));
+  assertThat(u.getUpperBounds().get(1).getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(u.getUpperBounds().get(1).getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(5));
+  assertThat(u.getUpperBounds().get(1).getUpperBounds().get(0).getSort(),is(TypeDefinition.Sort.WILDCARD));
+  assertThat(u.getUpperBounds().get(1).getUpperBounds().get(0).getDeclaredAnnotations().size(),is(1));
+  assertThat(u.getUpperBounds().get(1).getUpperBounds().get(0).getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(u.getUpperBounds().get(1).getUpperBounds().get(0).getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(6));
+}
