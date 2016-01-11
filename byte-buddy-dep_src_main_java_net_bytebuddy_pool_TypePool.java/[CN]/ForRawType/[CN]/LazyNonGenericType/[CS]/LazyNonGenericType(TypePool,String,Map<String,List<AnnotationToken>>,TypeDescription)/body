@@ -2,5 +2,5 @@
   this.typePool=typePool;
   this.typePath=typePath;
   this.annotationTokens=annotationTokens;
-  this.name=name;
+  this.typeDescription=typeDescription;
 }

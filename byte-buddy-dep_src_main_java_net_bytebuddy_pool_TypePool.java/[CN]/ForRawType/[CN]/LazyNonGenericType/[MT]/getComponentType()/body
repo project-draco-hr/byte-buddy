@@ -1,0 +1,4 @@
+{
+  TypeDescription componentType=typeDescription.getComponentType();
+  return componentType == null ? UNDEFINED : new LazyNonGenericType(typePool,typePath + '[',annotationTokens,componentType);
+}
