@@ -1,0 +1,4 @@
+{
+  this.upperBound=upperBound;
+  this.annotationReader=annotationReader;
+}
