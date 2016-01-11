@@ -1,3 +1,4 @@
 {
-  return boundTypeTokens.get(index).toGenericType(typePool,typeVariableSource,"",annotationTokens.get(index));
+  Map<String,List<AnnotationToken>> annotationTokens=this.annotationTokens.get(index);
+  return boundTypeTokens.get(index).toGenericType(typePool,typeVariableSource,EMPTY_TYPE_PATH,annotationTokens == null ? Collections.emptyMap() : annotationTokens);
 }
