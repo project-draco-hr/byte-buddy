@@ -1,0 +1,11 @@
+{
+  try {
+    return (AnnotatedElement)GET_ANNOTATED_GENERIC_COMPONENT_TYPE.invoke(annotatedElement);
+  }
+ catch (  InvocationTargetException e) {
+    throw new UnsupportedOperationException("Not yet implemented");
+  }
+catch (  IllegalAccessException e) {
+    throw new UnsupportedOperationException("Not yet implemented");
+  }
+}

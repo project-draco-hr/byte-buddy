@@ -1,0 +1,4 @@
+{
+  this.wildcardType=wildcardType;
+  this.annotationReader=annotationReader;
+}

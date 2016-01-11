@@ -1,0 +1,11 @@
+{
+  try {
+    return (AnnotatedElement)Array.get(GET_ANNOTATED_ACTUAL_TYPE_ARGUMENTS.invoke(annotatedElement),index);
+  }
+ catch (  InvocationTargetException e) {
+    throw new UnsupportedOperationException("Not yet implemented");
+  }
+catch (  IllegalAccessException e) {
+    throw new UnsupportedOperationException("Not yet implemented");
+  }
+}
