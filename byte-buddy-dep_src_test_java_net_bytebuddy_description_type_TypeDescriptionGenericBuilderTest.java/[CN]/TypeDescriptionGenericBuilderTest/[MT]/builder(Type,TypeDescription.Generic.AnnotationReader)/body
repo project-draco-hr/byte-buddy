@@ -3,7 +3,7 @@
     return TypeDescription.Generic.Builder.rawType(((Class<?>)type));
   }
  else   if (type instanceof GenericArrayType) {
-    return builder(((GenericArrayType)type).getGenericComponentType()).asArray();
+    return builder(((GenericArrayType)type).getGenericComponentType(),annotationReader.ofComponentType()).asArray(annotationReader.asList());
   }
  else   if (type instanceof ParameterizedType) {
     ParameterizedType parameterizedType=(ParameterizedType)type;

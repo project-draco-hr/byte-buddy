@@ -1,0 +1,29 @@
+{
+  if (type instanceof Class) {
+    return builder(type,annotationReader).build(annotationReader.asList());
+  }
+ else   if (type instanceof TypeVariable) {
+    return TypeDescription.Generic.Builder.typeVariable(((TypeVariable)type).getName(),annotationReader.asList());
+  }
+ else   if (type instanceof WildcardType) {
+    WildcardType wildcardType=(WildcardType)type;
+    if (wildcardType.getLowerBounds().length > 0) {
+      return builder(wildcardType.getLowerBounds()[0],annotationReader.ofWildcardLowerBound(0)).asWildcardLowerBound(annotationReader.asList());
+    }
+ else     if (wildcardType.getUpperBounds().length > 0) {
+      return builder(wildcardType.getUpperBounds()[0],annotationReader.ofWildcardUpperBound(0)).asWildcardUpperBound(annotationReader.asList());
+    }
+ else {
+      return TypeDescription.Generic.Builder.unboundWildcard(annotationReader.asList());
+    }
+  }
+ else   if (type instanceof GenericArrayType) {
+    return builder(type,annotationReader.ofComponentType()).build(annotationReader.asList());
+  }
+ else   if (type instanceof ParameterizedType) {
+    return builder(type,annotationReader).build(annotationReader.asList());
+  }
+ else {
+    throw new AssertionError("Unknown type: " + type);
+  }
+}
