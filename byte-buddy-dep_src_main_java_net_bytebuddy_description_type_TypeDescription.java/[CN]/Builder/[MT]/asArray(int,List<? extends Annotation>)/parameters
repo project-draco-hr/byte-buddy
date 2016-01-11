@@ -1,0 +1,2 @@
+int arity
+List<? extends Annotation> annotations

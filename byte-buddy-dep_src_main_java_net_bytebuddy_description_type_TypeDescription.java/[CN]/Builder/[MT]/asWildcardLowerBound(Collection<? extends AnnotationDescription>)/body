@@ -1,0 +1,3 @@
+{
+  return OfWildcardType.Latent.boundedBelow(build(),new ArrayList<>(annotations));
+}

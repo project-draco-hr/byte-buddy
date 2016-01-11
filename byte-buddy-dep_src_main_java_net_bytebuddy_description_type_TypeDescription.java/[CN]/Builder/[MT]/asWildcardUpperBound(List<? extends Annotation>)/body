@@ -1,0 +1,3 @@
+{
+  return asWildcardUpperBound(new AnnotationList.ForLoadedAnnotations(annotations));
+}

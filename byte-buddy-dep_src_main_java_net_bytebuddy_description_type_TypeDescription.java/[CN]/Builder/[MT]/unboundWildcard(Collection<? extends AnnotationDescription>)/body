@@ -1,0 +1,3 @@
+{
+  return OfWildcardType.Latent.unbounded(new ArrayList<AnnotationDescription>(annotations));
+}

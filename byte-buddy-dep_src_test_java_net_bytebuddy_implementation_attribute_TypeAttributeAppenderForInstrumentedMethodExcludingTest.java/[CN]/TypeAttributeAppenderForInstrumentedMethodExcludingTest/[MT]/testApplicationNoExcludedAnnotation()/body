@@ -1,5 +1,5 @@
 {
-  when(instrumentedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Qux.Instance(),new Baz.Instance(),new QuxBaz.Instance()));
+  when(instrumentedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new Qux.Instance(),new Baz.Instance(),new QuxBaz.Instance()));
   new TypeAttributeAppender.ForInstrumentedType.Excluding(Collections.<AnnotationDescription>emptySet()).apply(classVisitor,instrumentedType,annotationValueFilter);
   verify(classVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
   verify(classVisitor).visitAnnotation(Type.getDescriptor(QuxBaz.class),false);

@@ -1,0 +1,2 @@
+String symbol
+Collection<? extends AnnotationDescription> annotations

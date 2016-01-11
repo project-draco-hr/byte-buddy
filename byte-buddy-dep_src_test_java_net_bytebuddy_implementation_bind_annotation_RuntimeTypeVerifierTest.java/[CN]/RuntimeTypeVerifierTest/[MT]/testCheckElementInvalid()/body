@@ -1,5 +1,5 @@
 {
-  when(annotatedCodeElement.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation());
+  when(annotatedCodeElement.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations());
   assertThat(RuntimeType.Verifier.check(annotatedCodeElement),is(Assigner.Typing.STATIC));
   verify(annotatedCodeElement).getDeclaredAnnotations();
   verifyNoMoreInteractions(annotatedCodeElement);

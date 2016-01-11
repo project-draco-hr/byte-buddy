@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  Builder builder=(Builder)other;
-  return typeDescription.equals(builder.typeDescription);
-}
