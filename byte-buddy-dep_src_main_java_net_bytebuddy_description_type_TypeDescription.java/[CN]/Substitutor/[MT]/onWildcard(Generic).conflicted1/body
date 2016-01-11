@@ -1,3 +1,3 @@
 {
-  return new OfWildcardType.Latent(wildcard.getUpperBounds().accept(this),wildcard.getLowerBounds().accept(this),wildcard.getDeclaredAnnotations());
+  throw new IllegalArgumentException("A wildcard is not a first level type: " + this);
 }

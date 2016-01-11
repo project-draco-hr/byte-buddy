@@ -1,4 +1,0 @@
-{
-  TypeDescription.Generic returnType=new TypeDescription.ForLoadedType(GenericType.Inner.class).getDeclaredMethods().filter(named("call").and(ElementMatchers.not(ElementMatchers.isSynthetic()))).getOnly().getReturnType();
-  System.out.println(returnType);
-}

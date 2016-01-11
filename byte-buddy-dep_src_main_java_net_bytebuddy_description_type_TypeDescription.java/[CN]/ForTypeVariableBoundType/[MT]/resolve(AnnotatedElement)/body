@@ -3,9 +3,9 @@
     return (AnnotatedElement)Array.get(GET_ANNOTATED_BOUNDS.invoke(annotatedElement),index);
   }
  catch (  IllegalAccessException exception) {
-    throw new IllegalStateException("Cannot access java.lang.reflect.TypeVariable#getAnnotatedBounds",exception);
+    throw new IllegalStateException("Cannot access java.lang.reflect.AnnotatedTypeVariable#getAnnotatedBounds",exception);
   }
 catch (  InvocationTargetException exception) {
-    throw new IllegalStateException("Error invoking java.lang.reflect.TypeVariable#getAnnotatedBounds",exception.getCause());
+    throw new IllegalStateException("Error invoking java.lang.reflect.AnnotatedTypeVariable#getAnnotatedBounds",exception.getCause());
   }
 }

@@ -1,0 +1,11 @@
+{
+  try {
+    return (AnnotatedElement)Array.get(GET_ANNOTATED_BOUNDS.invoke(typeVariable),index);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.reflect.TypeVariable#getAnnotatedBounds",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.reflect.TypeVariable#getAnnotatedBounds",exception.getCause());
+  }
+}
