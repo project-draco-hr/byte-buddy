@@ -1,5 +1,5 @@
 {
-  TypeDescription.Generic typeDescription=describe(TypeResolution.class.getDeclaredField(FOO + BAR));
+  TypeDescription.Generic typeDescription=describeType(TypeResolution.class.getDeclaredField(FOO + BAR));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(typeDescription.getParameters().size(),is(2));
   TypeDescription.Generic superType=typeDescription.getSuperType();

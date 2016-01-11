@@ -1,5 +1,5 @@
 {
-  TypeDescription.Generic typeDescription=describe(NestedTypeVariableType.class.getDeclaredField(FOO));
+  TypeDescription.Generic typeDescription=describeType(NestedTypeVariableType.class.getDeclaredField(FOO));
   assertThat(typeDescription.getTypeName(),is(NestedTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(typeDescription.getStackSize(),is(StackSize.SINGLE));

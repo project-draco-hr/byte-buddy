@@ -1,3 +1,3 @@
 {
-  describe(SimpleTypeVariableType.class.getDeclaredField(FOO)).getComponentType();
+  describeType(SimpleTypeVariableType.class.getDeclaredField(FOO)).getComponentType();
 }

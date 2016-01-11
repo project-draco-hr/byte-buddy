@@ -1,0 +1,22 @@
+{
+  Class<? extends Annotation> typeAnnotation=(Class<? extends Annotation>)Class.forName(TYPE_ANNOTATION);
+  MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotation).getDeclaredMethods().getOnly();
+  Class<?> samples=Class.forName(TYPE_ANNOTATION_SAMPLES);
+  TypeDescription.Generic fieldType=describeType(samples.getDeclaredField(FOO));
+  assertThat(fieldType.getSort(),is(TypeDefinition.Sort.GENERIC_ARRAY));
+  assertThat(fieldType.getDeclaredAnnotations().size(),is(1));
+  assertThat(fieldType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(fieldType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(13));
+  assertThat(fieldType.getComponentType().getSort(),is(TypeDefinition.Sort.GENERIC_ARRAY));
+  assertThat(fieldType.getComponentType().getDeclaredAnnotations().size(),is(1));
+  assertThat(fieldType.getComponentType().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(fieldType.getComponentType().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(14));
+  assertThat(fieldType.getComponentType().getComponentType().getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(fieldType.getComponentType().getComponentType().getDeclaredAnnotations().size(),is(1));
+  assertThat(fieldType.getComponentType().getComponentType().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(fieldType.getComponentType().getComponentType().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(11));
+  assertThat(fieldType.getComponentType().getComponentType().getParameters().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
+  assertThat(fieldType.getComponentType().getComponentType().getParameters().getOnly().getDeclaredAnnotations().size(),is(1));
+  assertThat(fieldType.getComponentType().getComponentType().getParameters().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(fieldType.getComponentType().getComponentType().getParameters().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(12));
+}

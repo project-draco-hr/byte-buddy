@@ -1,5 +1,5 @@
 {
-  TypeDescription.Generic typeDescription=describe(SimpleGenericArrayType.class.getDeclaredField(FOO));
+  TypeDescription.Generic typeDescription=describeType(SimpleGenericArrayType.class.getDeclaredField(FOO));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.GENERIC_ARRAY));
   assertThat(typeDescription.getStackSize(),is(StackSize.SINGLE));
   assertThat(typeDescription.getDeclaredFields().size(),is(0));

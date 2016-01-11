@@ -1,3 +1,3 @@
 {
-  describe(SimpleGenericArrayType.class.getDeclaredField(FOO)).getVariableSource();
+  describeType(SimpleGenericArrayType.class.getDeclaredField(FOO)).getVariableSource();
 }

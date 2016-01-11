@@ -4,6 +4,6 @@
     throw new IllegalStateException("Cannot resolve type variable '" + symbol + "' for "+ typeVariableSource);
   }
  else {
-    return typeVariable;
+    return new AnnotatedTypeVariable(typePool,annotationTokens.get(typePath),typeVariable);
   }
 }
