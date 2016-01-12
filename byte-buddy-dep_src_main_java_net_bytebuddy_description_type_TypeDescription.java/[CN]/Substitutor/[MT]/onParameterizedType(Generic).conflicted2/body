@@ -1,8 +1,3 @@
 {
-  Generic ownerType=parameterizedType.getOwnerType();
-  List<Generic> parameters=new ArrayList<Generic>(parameterizedType.getTypeArguments().size());
-  for (  Generic parameter : parameterizedType.getTypeArguments()) {
-    parameters.add(parameter.accept(this));
-  }
-  return new OfParameterizedType.Latent(parameterizedType.asRawType().accept(this).asErasure(),ownerType == null ? UNDEFINED : ownerType.accept(this),parameters,parameterizedType.getDeclaredAnnotations());
+  return parameterizedType.asErasure().isInterface();
 }
