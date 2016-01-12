@@ -1,8 +1,8 @@
 {
   if (index == 0) {
-    return genericTypeToken.toGenericType(typePool,typeVariableSource,typePath + WILDCARD_BOUND,annotationTokens);
+    return genericTypeToken.toGenericType(typePool,typeVariableSource,typePath + WILDCARD_TYPE_PATH,annotationTokens);
   }
  else {
-    throw new IndexOutOfBoundsException();
+    throw new IndexOutOfBoundsException("index = " + index);
   }
 }

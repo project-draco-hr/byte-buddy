@@ -1,4 +1,4 @@
 {
   super(descriptor);
-  this.typePath=typePath == null ? "" : typePath.toString();
+  this.typePath=typePath == null ? LazyTypeDescription.GenericTypeToken.EMPTY_TYPE_PATH : typePath.toString();
 }

@@ -1,3 +1,3 @@
 {
-  return genericTypeToken.toGenericType(typePool,typeVariableSource,EMPTY_TYPE_PATH,annotationTokens);
+  return genericTypeToken.toGenericType(typePool,typeVariableSource,GenericTypeToken.EMPTY_TYPE_PATH,annotationTokens);
 }
