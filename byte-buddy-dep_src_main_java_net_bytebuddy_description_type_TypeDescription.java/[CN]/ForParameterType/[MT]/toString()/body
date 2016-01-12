@@ -1,3 +1,0 @@
-{
-  return "TypeDescription.Generic.AnnotationReader.ForParameterType{" + "annotationReader=" + annotationReader + ", index="+ index+ +'}';
-}
