@@ -1,4 +1,4 @@
 {
   java.lang.reflect.Type ownerType=parameterizedType.getOwnerType();
-  return ownerType == null ? UNDEFINED : Sort.describe(ownerType);
+  return ownerType == null ? UNDEFINED : Sort.describe(ownerType,annotationReader.ofOwnerType());
 }

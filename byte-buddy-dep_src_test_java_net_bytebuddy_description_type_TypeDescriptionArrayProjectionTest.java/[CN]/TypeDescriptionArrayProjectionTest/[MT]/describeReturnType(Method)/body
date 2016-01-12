@@ -1,0 +1,3 @@
+{
+  return TypeDefinition.Sort.describe(method.getGenericReturnType(),TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveReturnType(method));
+}

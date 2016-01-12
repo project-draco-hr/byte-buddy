@@ -1,7 +1,3 @@
 {
-  List<Generic> parameterTypes=new ArrayList<Generic>(parameters.size());
-  for (  GenericTypeToken parameter : parameters) {
-    parameterTypes.add(parameter.toGenericType(typePool,typeVariableSource));
-  }
-  return new TypeList.Generic.Explicit(parameterTypes);
+  return new LazyTokenList(typePool,typeVariableSource,typePath,annotationTokens,parameterTypeTokens);
 }

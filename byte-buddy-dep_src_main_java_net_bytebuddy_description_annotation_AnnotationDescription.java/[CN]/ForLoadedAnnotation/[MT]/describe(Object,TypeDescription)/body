@@ -15,7 +15,7 @@
     value=ForLoadedAnnotation.of((Annotation)value);
   }
  else   if (typeDescription.isAssignableTo(Annotation[].class)) {
-    value=new AnnotationList.ForLoadedAnnotation((Annotation[])value).toArray(new AnnotationDescription[((Annotation[])value).length]);
+    value=new AnnotationList.ForLoadedAnnotations((Annotation[])value).toArray(new AnnotationDescription[((Annotation[])value).length]);
   }
   return value;
 }

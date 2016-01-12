@@ -1,0 +1,2 @@
+Generic componentType
+List<? extends AnnotationDescription> declaredAnnotations

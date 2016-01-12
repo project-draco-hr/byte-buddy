@@ -1,0 +1,3 @@
+{
+  typeVariable=new TypeDescription.Generic.OfTypeVariable.Symbolic(FOO,Collections.singletonList(annotationDescription));
+}

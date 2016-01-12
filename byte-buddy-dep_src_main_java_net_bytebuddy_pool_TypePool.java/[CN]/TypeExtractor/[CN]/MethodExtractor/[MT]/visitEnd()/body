@@ -1,3 +1,3 @@
 {
-  methodTokens.add(new LazyTypeDescription.MethodToken(internalName,modifiers,descriptor,GenericTypeExtractor.ForSignature.OfMethod.extract(genericSignature),exceptionName,annotationTokens,parameterAnnotationTokens,parameterTokens.isEmpty() ? legacyParameterBag.resolve((modifiers & Opcodes.ACC_STATIC) != 0) : parameterTokens,defaultValue));
+  methodTokens.add(new LazyTypeDescription.MethodToken(internalName,modifiers,descriptor,GenericTypeExtractor.ForSignature.OfMethod.extract(genericSignature),exceptionName,typeVariableAnnotationTokens,typeVariableBoundAnnotationTokens,returnTypeAnnotationTokens,parameterTypeAnnotationTokens,exceptionTypeAnnotationTokens,annotationTokens,parameterAnnotationTokens,parameterTokens.isEmpty() ? legacyParameterBag.resolve((modifiers & Opcodes.ACC_STATIC) != 0) : parameterTokens,defaultValue));
 }

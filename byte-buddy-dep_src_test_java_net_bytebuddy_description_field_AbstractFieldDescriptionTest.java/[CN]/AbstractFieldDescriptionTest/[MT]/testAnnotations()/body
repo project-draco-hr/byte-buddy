@@ -1,4 +1,4 @@
 {
   assertThat(describe(first).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.Empty()));
-  assertThat(describe(second).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.ForLoadedAnnotation(second.getDeclaredAnnotations())));
+  assertThat(describe(second).getDeclaredAnnotations(),is((AnnotationList)new AnnotationList.ForLoadedAnnotations(second.getDeclaredAnnotations())));
 }

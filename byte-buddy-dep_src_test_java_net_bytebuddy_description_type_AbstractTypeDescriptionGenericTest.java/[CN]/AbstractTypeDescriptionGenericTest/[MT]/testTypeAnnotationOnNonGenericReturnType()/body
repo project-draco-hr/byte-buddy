@@ -1,0 +1,10 @@
+{
+  Class<? extends Annotation> typeAnnotation=(Class<? extends Annotation>)Class.forName(TYPE_ANNOTATION);
+  MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotation).getDeclaredMethods().getOnly();
+  Class<?> samples=Class.forName(TYPE_ANNOTATION_OTHER_SAMPLES);
+  TypeDescription.Generic returnType=describeReturnType(samples.getDeclaredMethod(FOO,Void.class));
+  assertThat(returnType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(returnType.getDeclaredAnnotations().size(),is(1));
+  assertThat(returnType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(returnType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(7));
+}

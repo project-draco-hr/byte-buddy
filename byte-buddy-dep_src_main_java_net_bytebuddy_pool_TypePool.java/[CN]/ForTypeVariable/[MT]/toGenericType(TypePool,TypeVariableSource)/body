@@ -1,9 +1,0 @@
-{
-  Generic typeVariable=typeVariableSource.findVariable(symbol);
-  if (typeVariable == null) {
-    throw new IllegalStateException("Cannot resolve type variable '" + symbol + "' for "+ typeVariableSource);
-  }
- else {
-    return typeVariable;
-  }
-}

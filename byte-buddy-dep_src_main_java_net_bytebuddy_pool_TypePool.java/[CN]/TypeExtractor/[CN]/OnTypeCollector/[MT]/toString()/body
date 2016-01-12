@@ -1,3 +1,0 @@
-{
-  return "TypePool.Default.TypeExtractor.OnTypeCollector{" + "typeExtractor=" + TypeExtractor.this + ", descriptor='"+ descriptor+ '\''+ ", values="+ values+ '}';
-}

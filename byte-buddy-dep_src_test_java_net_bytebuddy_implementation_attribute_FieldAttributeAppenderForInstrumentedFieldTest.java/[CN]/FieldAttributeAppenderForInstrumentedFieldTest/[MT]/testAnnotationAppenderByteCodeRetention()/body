@@ -1,5 +1,5 @@
 {
-  when(fieldDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new QuxBaz.Instance()));
+  when(fieldDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new QuxBaz.Instance()));
   FieldAttributeAppender.ForInstrumentedField.INSTANCE.apply(fieldVisitor,fieldDescription,annotationValueFilter);
   verify(fieldVisitor).visitAnnotation(Type.getDescriptor(QuxBaz.class),false);
   verifyNoMoreInteractions(fieldVisitor);

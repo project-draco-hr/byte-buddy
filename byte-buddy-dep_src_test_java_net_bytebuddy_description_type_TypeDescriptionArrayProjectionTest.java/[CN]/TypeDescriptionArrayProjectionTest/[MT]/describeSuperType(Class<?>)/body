@@ -1,0 +1,3 @@
+{
+  return TypeDefinition.Sort.describe(type.getGenericSuperclass(),TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperType(type));
+}

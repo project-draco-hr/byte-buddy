@@ -1,5 +1,0 @@
-{
-  TypeDescription.Generic typeDescription=mock(TypeDescription.Generic.class);
-  when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.PARAMETERIZED);
-  assertThat(TypeDescription.Generic.OfGenericArray.Latent.of(typeDescription,0),sameInstance(typeDescription));
-}

@@ -1,0 +1,4 @@
+TypePool typePool
+String typePath
+Map<String,List<AnnotationToken>> annotationTokens
+TypeDescription typeDescription

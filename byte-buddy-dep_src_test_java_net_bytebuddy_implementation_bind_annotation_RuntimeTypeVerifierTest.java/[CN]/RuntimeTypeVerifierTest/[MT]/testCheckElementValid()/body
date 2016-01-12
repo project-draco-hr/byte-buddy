@@ -1,5 +1,5 @@
 {
-  when(annotatedCodeElement.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(runtimeType));
+  when(annotatedCodeElement.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(runtimeType));
   assertThat(RuntimeType.Verifier.check(annotatedCodeElement),is(Assigner.Typing.DYNAMIC));
   verify(annotatedCodeElement).getDeclaredAnnotations();
   verifyNoMoreInteractions(annotatedCodeElement);

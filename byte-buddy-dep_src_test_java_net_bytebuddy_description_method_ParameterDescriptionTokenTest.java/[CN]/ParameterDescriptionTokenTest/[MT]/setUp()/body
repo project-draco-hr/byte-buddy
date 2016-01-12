@@ -1,5 +1,5 @@
 {
   when(type.asGenericType()).thenReturn(type);
   when(visitedType.asGenericType()).thenReturn(visitedType);
-  when(type.accept(visitor)).thenReturn(visitedType);
+  when(type.accept((TypeDescription.Generic.Visitor)visitor)).thenReturn(visitedType);
 }

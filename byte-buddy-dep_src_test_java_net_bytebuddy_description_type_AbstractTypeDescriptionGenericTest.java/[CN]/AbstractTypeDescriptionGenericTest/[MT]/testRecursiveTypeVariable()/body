@@ -1,5 +1,5 @@
 {
-  TypeDescription.Generic typeDescription=describe(RecursiveTypeVariable.class.getDeclaredField(FOO));
+  TypeDescription.Generic typeDescription=describeType(RecursiveTypeVariable.class.getDeclaredField(FOO));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(typeDescription.getSymbol(),is(T));
   assertThat(typeDescription.getUpperBounds().size(),is(1));

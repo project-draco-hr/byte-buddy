@@ -1,3 +1,3 @@
 {
-  return "TypePool.LazyTypeDescription.AnnotationToken.Resolution.Illegal{" + "annotationType=" + annotationType + '}';
+  return "TypePool.Default.LazyTypeDescription.AnnotationToken.Resolution.Illegal{" + "annotationType=" + annotationType + '}';
 }

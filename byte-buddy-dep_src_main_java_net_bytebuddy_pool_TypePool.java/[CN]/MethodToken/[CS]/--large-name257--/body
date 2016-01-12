@@ -1,0 +1,16 @@
+{
+  this.modifiers=modifiers;
+  this.name=name;
+  this.descriptor=descriptor;
+  this.signatureResolution=signatureResolution;
+  this.exceptionName=exceptionName;
+  this.typeVariableAnnotationTokens=typeVariableAnnotationTokens;
+  this.typeVariableBoundAnnotationTokens=typeVariableBoundAnnotationTokens;
+  this.returnTypeAnnotationTokens=returnTypeAnnotationTokens;
+  this.parameterTypeAnnotationTokens=parameterTypeAnnotationTokens;
+  this.exceptionTypeAnnotationTokens=exceptionTypeAnnotationTokens;
+  this.annotationTokens=annotationTokens;
+  this.parameterAnnotationTokens=parameterAnnotationTokens;
+  this.parameterTokens=parameterTokens;
+  this.defaultValue=defaultValue;
+}

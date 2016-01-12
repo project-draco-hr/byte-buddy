@@ -1,3 +1,6 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && name.equals(((Nested)other).name) && ownerType.equals(((Nested)other).ownerType)&& parameters.equals(((Nested)other).parameters);
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Nested nested=(Nested)other;
+  return name.equals(nested.name) && parameterTypeTokens.equals(nested.parameterTypeTokens) && ownerTypeToken.equals(nested.ownerTypeToken);
 }

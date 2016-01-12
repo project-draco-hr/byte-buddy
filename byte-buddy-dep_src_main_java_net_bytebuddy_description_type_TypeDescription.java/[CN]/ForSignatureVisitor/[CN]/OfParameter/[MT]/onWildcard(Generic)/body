@@ -1,6 +1,5 @@
 {
-  TypeList.Generic upperBounds=wildcard.getUpperBounds();
-  TypeList.Generic lowerBounds=wildcard.getLowerBounds();
+  TypeList.Generic upperBounds=wildcard.getUpperBounds(), lowerBounds=wildcard.getLowerBounds();
   if (lowerBounds.isEmpty() && upperBounds.getOnly().represents(Object.class)) {
     signatureVisitor.visitTypeArgument();
   }

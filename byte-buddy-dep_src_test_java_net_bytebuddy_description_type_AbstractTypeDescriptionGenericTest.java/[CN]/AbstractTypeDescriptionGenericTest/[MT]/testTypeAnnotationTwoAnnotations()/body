@@ -1,0 +1,14 @@
+{
+  Class<? extends Annotation> typeAnnotation=(Class<? extends Annotation>)Class.forName(TYPE_ANNOTATION);
+  MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotation).getDeclaredMethods().getOnly();
+  Class<? extends Annotation> otherTypeAnnotation=(Class<? extends Annotation>)Class.forName(OTHER_TYPE_ANNOTATION);
+  MethodDescription.InDefinedShape otherValue=new TypeDescription.ForLoadedType(otherTypeAnnotation).getDeclaredMethods().getOnly();
+  Class<?> samples=Class.forName(TYPE_ANNOTATION_OTHER_SAMPLES);
+  TypeDescription.Generic fieldType=describeType(samples.getDeclaredField(QUX));
+  assertThat(fieldType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(fieldType.getDeclaredAnnotations().size(),is(2));
+  assertThat(fieldType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(fieldType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(5));
+  assertThat(fieldType.getDeclaredAnnotations().isAnnotationPresent(otherTypeAnnotation),is(true));
+  assertThat(fieldType.getDeclaredAnnotations().ofType(otherTypeAnnotation).getValue(otherValue,Integer.class),is(6));
+}

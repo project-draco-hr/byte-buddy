@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.AnnotationRegistrant.ForByteCodeElement.WithIndex{" + "index=" + index + ", annotationTokens="+ annotationTokens+ '}';
+}

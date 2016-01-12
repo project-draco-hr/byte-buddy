@@ -1,5 +1,5 @@
 {
-  TypeDescription.Generic typeDescription=describe(GenericDisintegrator.make());
+  TypeDescription.Generic typeDescription=describeType(GenericDisintegrator.make());
   assertThat(typeDescription.getInterfaces().size(),is(2));
   assertThat(typeDescription.getInterfaces().get(0).getSort(),is(TypeDescription.Generic.Sort.PARAMETERIZED));
   assertThat(typeDescription.getInterfaces().get(0).asErasure().represents(Callable.class),is(true));

@@ -1,6 +1,3 @@
 {
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  Builder builder=(Builder)other;
-  return typeDescription.equals(builder.typeDescription);
+  return this == other || !(other == null || getClass() != other.getClass()) && annotations.equals(((Builder)other).annotations);
 }

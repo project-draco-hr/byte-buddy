@@ -1,4 +1,3 @@
 {
-  TypeList.Generic lowerBounds=wildcard.getLowerBounds();
-  return lowerBounds.isEmpty() ? OfWildcardType.Latent.boundedAbove(wildcard.getUpperBounds().getOnly().accept(this)) : OfWildcardType.Latent.boundedBelow(lowerBounds.getOnly().accept(this));
+  return new OfWildcardType.Latent(wildcard.getUpperBounds().accept(this),wildcard.getLowerBounds().accept(this),wildcard.getDeclaredAnnotations());
 }

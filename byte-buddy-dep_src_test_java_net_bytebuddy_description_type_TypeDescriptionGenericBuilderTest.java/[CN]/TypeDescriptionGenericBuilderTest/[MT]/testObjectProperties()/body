@@ -1,3 +1,6 @@
 {
-  ObjectPropertyAssertion.of(TypeDescription.Generic.Builder.class).apply();
+  ObjectPropertyAssertion.of(TypeDescription.Generic.Builder.OfGenericArrayType.class).apply();
+  ObjectPropertyAssertion.of(TypeDescription.Generic.Builder.OfNonGenericType.class).apply();
+  ObjectPropertyAssertion.of(TypeDescription.Generic.Builder.OfParameterizedType.class).apply();
+  ObjectPropertyAssertion.of(TypeDescription.Generic.Builder.OfTypeVariable.class).apply();
 }

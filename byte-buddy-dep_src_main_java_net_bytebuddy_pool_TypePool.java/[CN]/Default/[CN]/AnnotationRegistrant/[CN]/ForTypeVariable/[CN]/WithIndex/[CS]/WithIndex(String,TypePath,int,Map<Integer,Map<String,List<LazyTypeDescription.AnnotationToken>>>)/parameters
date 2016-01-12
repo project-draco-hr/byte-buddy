@@ -1,0 +1,4 @@
+String descriptor
+TypePath typePath
+int index
+Map<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>> indexedPathMap

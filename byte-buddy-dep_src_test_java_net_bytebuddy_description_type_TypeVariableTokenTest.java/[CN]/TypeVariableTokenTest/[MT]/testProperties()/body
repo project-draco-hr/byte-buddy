@@ -1,4 +1,5 @@
 {
-  assertThat(new TypeVariableToken(FOO,Collections.singletonList(bound)).getSymbol(),is(FOO));
-  assertThat(new TypeVariableToken(FOO,Collections.singletonList(bound)).getBounds(),is(Collections.singletonList(bound)));
+  assertThat(new TypeVariableToken(FOO,Collections.singletonList(bound),Collections.singletonList(annotation)).getSymbol(),is(FOO));
+  assertThat(new TypeVariableToken(FOO,Collections.singletonList(bound),Collections.singletonList(annotation)).getBounds(),is(Collections.singletonList(bound)));
+  assertThat(new TypeVariableToken(FOO,Collections.singletonList(bound),Collections.singletonList(annotation)).getAnnotations(),is(Collections.singletonList(annotation)));
 }

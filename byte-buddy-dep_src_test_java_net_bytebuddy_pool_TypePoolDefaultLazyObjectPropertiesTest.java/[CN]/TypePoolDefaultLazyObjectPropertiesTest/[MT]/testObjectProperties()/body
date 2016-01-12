@@ -1,0 +1,14 @@
+{
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.FieldToken.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.MethodToken.class).apply();
+  final Iterator<Integer> iterator=Arrays.asList(1,2).iterator();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.MethodToken.ParameterToken.class).create(new ObjectPropertyAssertion.Creator<Integer>(){
+    @Override public Integer create(){
+      return iterator.next();
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.AnnotationToken.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.AnnotationToken.Resolution.Simple.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.AnnotationToken.Resolution.Illegal.class).apply();
+}

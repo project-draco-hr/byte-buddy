@@ -1,0 +1,4 @@
+{
+  assertThat(typeVariable.getDeclaredAnnotations().size(),is(1));
+  assertThat(typeVariable.getDeclaredAnnotations().contains(annotationDescription),is(true));
+}

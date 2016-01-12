@@ -1,0 +1,7 @@
+{
+  this.typePool=typePool;
+  this.genericTypeToken=genericTypeToken;
+  this.rawTypeDescriptor=rawTypeDescriptor;
+  this.annotationTokens=annotationTokens;
+  this.typeVariableSource=typeVariableSource;
+}

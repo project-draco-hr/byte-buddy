@@ -1,6 +1,6 @@
 {
   InstrumentedType instrumentedType=makePlainInstrumentedType();
-  assertThat(instrumentedType.getModifiers(),is(MODIFIERS));
-  instrumentedType=instrumentedType.withModifiers(MODIFIERS);
-  assertThat(instrumentedType.getModifiers(),is(MODIFIERS));
+  assertThat(instrumentedType.getModifiers(),is(ModifierContributor.EMPTY_MASK));
+  instrumentedType=instrumentedType.withModifiers(OTHER_MODIFIERS);
+  assertThat(instrumentedType.getModifiers(),is(OTHER_MODIFIERS));
 }

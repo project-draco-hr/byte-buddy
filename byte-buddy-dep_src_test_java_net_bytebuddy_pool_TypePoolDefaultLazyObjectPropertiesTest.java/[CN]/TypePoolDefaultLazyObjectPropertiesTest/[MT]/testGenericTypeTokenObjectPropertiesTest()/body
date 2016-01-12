@@ -1,0 +1,17 @@
+{
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.ForPrimitiveType.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.ForRawType.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.ForTypeVariable.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.ForTypeVariable.Formal.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.ForGenericArray.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.ForUnboundWildcard.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.ForLowerBoundWildcard.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.ForUpperBoundWildcard.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.ForParameterizedType.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.ForParameterizedType.Nested.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.Resolution.ForType.Tokenized.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.Resolution.ForMethod.Tokenized.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.Resolution.ForField.Tokenized.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.Resolution.Raw.class).apply();
+  ObjectPropertyAssertion.of(TypePool.Default.LazyTypeDescription.GenericTypeToken.Resolution.Malformed.class).apply();
+}

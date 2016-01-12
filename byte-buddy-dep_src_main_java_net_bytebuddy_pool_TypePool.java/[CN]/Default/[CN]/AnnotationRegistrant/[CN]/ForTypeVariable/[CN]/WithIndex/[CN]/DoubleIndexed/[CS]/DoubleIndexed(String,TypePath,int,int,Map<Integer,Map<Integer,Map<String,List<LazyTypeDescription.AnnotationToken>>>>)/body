@@ -1,0 +1,4 @@
+{
+  super(descriptor,typePath,index,preIndex);
+  this.doubleIndexedPathMap=doubleIndexedPathMap;
+}

@@ -1,0 +1,4 @@
+TypeDescription rawType
+Generic ownerType
+List<? extends Generic> parameterTypes
+List<? extends AnnotationDescription> annotations

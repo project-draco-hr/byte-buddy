@@ -1,0 +1,3 @@
+{
+  return LazyAnnotationDescription.asListOfNullable(typePool,annotationTokens.get(EMPTY_TYPE_PATH));
+}

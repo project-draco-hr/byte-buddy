@@ -1,3 +1,6 @@
 {
-  return name.hashCode() + 31 * parameters.hashCode();
+  int result=name.hashCode();
+  result=31 * result + parameterTypeTokens.hashCode();
+  result=31 * result + ownerTypeToken.hashCode();
+  return result;
 }

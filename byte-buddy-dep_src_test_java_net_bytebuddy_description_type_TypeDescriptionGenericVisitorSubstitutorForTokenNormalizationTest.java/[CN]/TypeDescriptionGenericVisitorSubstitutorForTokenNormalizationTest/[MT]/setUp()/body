@@ -1,3 +1,4 @@
 {
   when(source.getSymbol()).thenReturn(FOO);
+  when(source.getDeclaredAnnotations()).thenReturn(new AnnotationList.Explicit(annotationDescription));
 }

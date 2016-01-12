@@ -1,5 +1,5 @@
 {
-  new MethodAttributeAppender.Explicit(PARAMETER_INDEX,new AnnotationList.ForLoadedAnnotation(new QuxBaz.Instance())).apply(methodVisitor,methodDescription,annotationValueFilter);
+  new MethodAttributeAppender.Explicit(PARAMETER_INDEX,new AnnotationList.ForLoadedAnnotations(new QuxBaz.Instance())).apply(methodVisitor,methodDescription,annotationValueFilter);
   verify(methodVisitor).visitParameterAnnotation(PARAMETER_INDEX,Type.getDescriptor(QuxBaz.class),false);
   verifyNoMoreInteractions(methodVisitor);
   verify(methodDescription).getParameters();

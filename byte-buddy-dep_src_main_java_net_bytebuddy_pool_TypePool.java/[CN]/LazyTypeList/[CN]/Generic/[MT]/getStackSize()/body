@@ -1,7 +1,0 @@
-{
-  int stackSize=0;
-  for (  String descriptor : descriptors) {
-    stackSize+=Type.getType(descriptor).getSize();
-  }
-  return stackSize;
-}

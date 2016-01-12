@@ -1,4 +1,4 @@
 {
-  FieldAttributeAppender.Explicit fieldAttributeAppender=new FieldAttributeAppender.Explicit(new AnnotationList.ForLoadedAnnotation(new QuxBaz.Instance()));
+  FieldAttributeAppender.Explicit fieldAttributeAppender=new FieldAttributeAppender.Explicit(new AnnotationList.ForLoadedAnnotations(new QuxBaz.Instance()));
   assertThat(fieldAttributeAppender.make(instrumentedType),sameInstance((FieldAttributeAppender)fieldAttributeAppender));
 }

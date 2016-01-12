@@ -1,0 +1,3 @@
+TypePool typePool
+List<AnnotationToken> annotationTokens
+Generic typeVariable

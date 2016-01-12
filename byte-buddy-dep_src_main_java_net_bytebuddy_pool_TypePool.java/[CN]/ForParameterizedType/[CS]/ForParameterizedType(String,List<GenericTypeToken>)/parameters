@@ -1,2 +1,2 @@
 String name
-List<GenericTypeToken> parameters
+List<GenericTypeToken> parameterTypeTokens

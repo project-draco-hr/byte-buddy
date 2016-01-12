@@ -1,0 +1,3 @@
+{
+  return "TypeDescription.Generic.Builder.OfTypeVariable{" + "annotations=" + annotations + ", symbol="+ symbol+ '}';
+}

@@ -1,5 +1,0 @@
-{
-  packagePrivateType=TypeDefinition.Sort.describe(Class.forName("net.bytebuddy.test.packaging.PackagePrivateType"));
-  packagePrivateInterfaceType=TypeDefinition.Sort.describe(Class.forName("net.bytebuddy.test.packaging.PackagePrivateInterfaceType"));
-  packagePrivateExceptionType=TypeDefinition.Sort.describe(Class.forName("net.bytebuddy.test.packaging.PackagePrivateExceptionType"));
-}

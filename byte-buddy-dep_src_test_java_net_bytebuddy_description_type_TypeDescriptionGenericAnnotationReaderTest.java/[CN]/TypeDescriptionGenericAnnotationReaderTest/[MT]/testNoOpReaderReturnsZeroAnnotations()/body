@@ -1,0 +1,3 @@
+{
+  assertThat(TypeDescription.Generic.AnnotationReader.NoOp.INSTANCE.getDeclaredAnnotations().length,is(0));
+}

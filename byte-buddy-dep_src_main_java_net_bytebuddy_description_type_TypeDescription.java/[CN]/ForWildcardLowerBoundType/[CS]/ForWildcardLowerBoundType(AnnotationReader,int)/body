@@ -1,0 +1,4 @@
+{
+  super(annotationReader);
+  this.index=index;
+}

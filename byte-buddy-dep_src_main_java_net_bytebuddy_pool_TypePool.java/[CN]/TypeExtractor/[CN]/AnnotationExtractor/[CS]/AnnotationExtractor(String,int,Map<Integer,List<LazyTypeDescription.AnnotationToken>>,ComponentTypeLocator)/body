@@ -1,0 +1,3 @@
+{
+  this(new AnnotationRegistrant.ForByteCodeElement.WithIndex(descriptor,index,annotationTokens),componentTypeLocator);
+}

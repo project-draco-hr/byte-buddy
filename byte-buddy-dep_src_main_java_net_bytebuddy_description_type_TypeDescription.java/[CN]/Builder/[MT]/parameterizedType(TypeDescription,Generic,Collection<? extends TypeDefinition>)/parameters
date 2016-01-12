@@ -1,0 +1,3 @@
+TypeDescription rawType
+Generic ownerType
+Collection<? extends TypeDefinition> parameters

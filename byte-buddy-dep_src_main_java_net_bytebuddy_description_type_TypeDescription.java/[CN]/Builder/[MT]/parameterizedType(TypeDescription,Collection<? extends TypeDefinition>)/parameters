@@ -1,0 +1,2 @@
+TypeDescription rawType
+Collection<? extends TypeDefinition> parameters

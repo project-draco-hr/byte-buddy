@@ -1,0 +1,6 @@
+{
+  TypeDescription typeDescription=describe(Class.forName(TYPE_ANNOTATION_SAMPLES));
+  TypeDescription.Generic t=typeDescription.getTypeVariables().filter(named(S)).getOnly();
+  assertThat(t.getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(t.getDeclaredAnnotations().size(),is(0));
+}

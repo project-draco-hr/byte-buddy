@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   TypeVariableToken that=(TypeVariableToken)other;
-  return symbol.equals(that.symbol) && bounds.equals(that.bounds);
+  return symbol.equals(that.symbol) && bounds.equals(that.bounds) && annotations.equals(that.annotations);
 }
