@@ -1,2 +1,2 @@
-java.lang.reflect.Type[] parameterType
+java.lang.reflect.Type[] argumentType
 AnnotationReader annotationReader

@@ -1,0 +1,7 @@
+{
+  int result=super.hashCode();
+  result=31 * result + rawType.hashCode();
+  result=31 * result + ownerType.hashCode();
+  result=31 * result + parameterTypes.hashCode();
+  return result;
+}

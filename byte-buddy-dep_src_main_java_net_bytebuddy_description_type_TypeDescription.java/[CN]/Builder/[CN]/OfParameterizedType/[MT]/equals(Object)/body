@@ -1,0 +1,3 @@
+{
+  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && rawType.equals(((OfParameterizedType)other).rawType)&& ownerType.equals(((OfParameterizedType)other).ownerType)&& parameterTypes.equals(((OfParameterizedType)other).parameterTypes);
+}
