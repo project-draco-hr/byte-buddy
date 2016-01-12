@@ -1,10 +1,10 @@
 {
   if (arity < 1) {
-    throw new IllegalArgumentException();
+    throw new IllegalArgumentException("Cannot define an array of a non-positive arity: " + arity);
   }
   TypeDescription.Generic typeDescription=build();
   while (--arity > 0) {
-    typeDescription=new OfGenericArray.Latent(typeDescription,Collections.emptyList());
+    typeDescription=new OfGenericArray.Latent(typeDescription,Collections.<AnnotationDescription>emptyList());
   }
   return new Builder.OfGenericArrayType(typeDescription);
 }

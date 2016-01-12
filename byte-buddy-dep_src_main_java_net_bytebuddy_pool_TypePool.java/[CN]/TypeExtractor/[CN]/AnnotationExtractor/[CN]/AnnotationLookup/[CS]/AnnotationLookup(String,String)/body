@@ -1,5 +1,5 @@
 {
   this.descriptor=descriptor;
   this.name=name;
-  values=new HashMap<>();
+  values=new HashMap<String,AnnotationDescription.AnnotationValue<?,?>>();
 }

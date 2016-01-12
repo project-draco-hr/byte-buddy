@@ -21,7 +21,7 @@
     }
   }
 ).apply();
-  final Iterator<Class<?>> types=Arrays.asList(Object.class,String.class,Integer.class,Number.class).iterator();
+  final Iterator<Class<?>> types=Arrays.<Class<?>>asList(Object.class,String.class,Integer.class,Number.class).iterator();
   ObjectPropertyAssertion.of(TypeDescription.Generic.AnnotationReader.Dispatcher.ForModernVm.AnnotatedInterfaceType.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
     @Override public Class<?> create(){
       return types.next();
@@ -36,7 +36,7 @@
     }
   }
 ).apply();
-  final Iterator<Class<?>> types2=Arrays.asList(Object.class,String.class,Integer.class,Number.class).iterator();
+  final Iterator<Class<?>> types2=Arrays.<Class<?>>asList(Object.class,String.class,Integer.class,Number.class).iterator();
   ObjectPropertyAssertion.of(TypeDescription.Generic.AnnotationReader.Dispatcher.ForModernVm.AnnotatedSuperType.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
     @Override public Class<?> create(){
       return types2.next();
