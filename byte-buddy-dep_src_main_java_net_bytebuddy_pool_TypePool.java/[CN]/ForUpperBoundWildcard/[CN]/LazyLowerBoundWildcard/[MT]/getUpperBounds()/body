@@ -1,3 +1,0 @@
-{
-  return new LazyTokenList.ForWildcardElement(typePool,typeVariableSource,typePath,annotationTokens,boundTypeToken);
-}

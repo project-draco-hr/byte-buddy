@@ -1,3 +1,3 @@
 {
-  return lazyTypeDescription.new LazyMethodDescription(getName(),getModifiers(),getDescriptor(),getSignatureResolution(),getExceptionName(),getTypeVariableAnnotationTokens(),getTypeVariableBoundAnnotationTokens(),getReturnTypeAnnotationTokens(),getParameterTypeAnnotationTokens(),getExceptionTypeAnnotationTokens(),getAnnotationTokens(),getParameterAnnotationTokens(),getParameterTokens(),getDefaultValue());
+  return lazyTypeDescription.new LazyMethodDescription(name,modifiers,descriptor,signatureResolution,exceptionName,typeVariableAnnotationTokens,typeVariableBoundAnnotationTokens,returnTypeAnnotationTokens,parameterTypeAnnotationTokens,exceptionTypeAnnotationTokens,annotationTokens,parameterAnnotationTokens,parameterTokens,defaultValue);
 }
