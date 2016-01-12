@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && index == ((ForWildcardLowerBoundType)other).index;
+  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && index == ((ForWildcardUpperBoundType)other).index;
 }
