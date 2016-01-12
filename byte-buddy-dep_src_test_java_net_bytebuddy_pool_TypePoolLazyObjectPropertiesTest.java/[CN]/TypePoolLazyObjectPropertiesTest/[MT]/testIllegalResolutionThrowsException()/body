@@ -1,3 +1,0 @@
-{
-  new TypePool.LazyTypeDescription.AnnotationToken.Resolution.Illegal("foo").resolve();
-}

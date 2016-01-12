@@ -1,3 +1,3 @@
 {
-  return "TypePool.LazyTypeDescription.GenericTypeToken.ForTypeVariable.Formal{" + "symbol='" + symbol + '\''+ "boundTypeTokens='"+ boundTypeTokens+ '\''+ '}';
+  return "TypePool.Default.LazyTypeDescription.GenericTypeToken.ForTypeVariable.Formal{" + "symbol='" + symbol + '\''+ "boundTypeTokens='"+ boundTypeTokens+ '\''+ '}';
 }

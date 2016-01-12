@@ -4,6 +4,11 @@
   result=31 * result + descriptor.hashCode();
   result=31 * result + signatureResolution.hashCode();
   result=31 * result + Arrays.hashCode(exceptionName);
+  result=31 * result + typeVariableAnnotationTokens.hashCode();
+  result=31 * result + typeVariableBoundAnnotationTokens.hashCode();
+  result=31 * result + returnTypeAnnotationTokens.hashCode();
+  result=31 * result + parameterTypeAnnotationTokens.hashCode();
+  result=31 * result + exceptionTypeAnnotationTokens.hashCode();
   result=31 * result + annotationTokens.hashCode();
   result=31 * result + parameterAnnotationTokens.hashCode();
   result=31 * result + parameterTokens.hashCode();

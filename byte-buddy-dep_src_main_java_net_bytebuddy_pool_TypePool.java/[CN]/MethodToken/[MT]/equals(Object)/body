@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   MethodToken that=(MethodToken)other;
-  return modifiers == that.modifiers && annotationTokens.equals(that.annotationTokens) && defaultValue.equals(that.defaultValue) && descriptor.equals(that.descriptor) && parameterTokens.equals(that.parameterTokens) && signatureResolution.equals(that.signatureResolution) && Arrays.equals(exceptionName,that.exceptionName) && name.equals(that.name) && parameterAnnotationTokens.equals(that.parameterAnnotationTokens);
+  return modifiers == that.modifiers && typeVariableAnnotationTokens.equals(that.typeVariableAnnotationTokens) && typeVariableBoundAnnotationTokens.equals(that.typeVariableBoundAnnotationTokens) && returnTypeAnnotationTokens.equals(that.returnTypeAnnotationTokens) && parameterTypeAnnotationTokens.equals(that.parameterTypeAnnotationTokens) && exceptionTypeAnnotationTokens.equals(that.exceptionTypeAnnotationTokens) && annotationTokens.equals(that.annotationTokens) && defaultValue.equals(that.defaultValue) && descriptor.equals(that.descriptor) && parameterTokens.equals(that.parameterTokens) && signatureResolution.equals(that.signatureResolution) && Arrays.equals(exceptionName,that.exceptionName) && name.equals(that.name) && parameterAnnotationTokens.equals(that.parameterAnnotationTokens);
 }
