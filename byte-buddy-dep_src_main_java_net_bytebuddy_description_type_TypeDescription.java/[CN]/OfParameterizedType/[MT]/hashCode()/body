@@ -1,6 +1,6 @@
 {
   int result=1;
-  for (  Generic parameterType : getParameters()) {
+  for (  Generic parameterType : getTypeArguments()) {
     result=31 * result + parameterType.hashCode();
   }
   Generic ownerType=getOwnerType();

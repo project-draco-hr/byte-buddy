@@ -4,7 +4,7 @@
     if (fromOwner != null && toOwner != null && !fromOwner.accept(Assigner.INSTANCE).isAssignableFrom(toOwner)) {
       return false;
     }
-    TypeList.Generic fromParameters=this.parameterizedType.getParameters(), toParameters=parameterizedType.getParameters();
+    TypeList.Generic fromParameters=this.parameterizedType.getTypeArguments(), toParameters=parameterizedType.getTypeArguments();
     if (fromParameters.size() == toParameters.size()) {
       for (int index=0; index < fromParameters.size(); index++) {
         if (!fromParameters.get(index).accept(ParameterAssigner.INSTANCE).isAssignableFrom(toParameters.get(index))) {

@@ -7,7 +7,7 @@
  else {
     signatureVisitor.visitClassType(ownableType.asErasure().getInternalName());
   }
-  for (  Generic upperBound : ownableType.getParameters()) {
+  for (  Generic upperBound : ownableType.getTypeArguments()) {
     upperBound.accept(new ForSignatureVisitor.OfParameter(signatureVisitor));
   }
 }

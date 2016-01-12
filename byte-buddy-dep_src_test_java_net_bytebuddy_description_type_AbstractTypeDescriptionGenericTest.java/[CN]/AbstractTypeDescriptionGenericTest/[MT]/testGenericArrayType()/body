@@ -15,8 +15,8 @@
   assertThat(typeDescription,CoreMatchers.not(new Object()));
   assertThat(typeDescription.equals(null),is(false));
   assertThat(typeDescription.getComponentType().getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
-  assertThat(typeDescription.getComponentType().getParameters().size(),is(1));
-  assertThat(typeDescription.getComponentType().getParameters().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(typeDescription.getComponentType().getParameters().getOnly().asErasure().represents(String.class),is(true));
+  assertThat(typeDescription.getComponentType().getTypeArguments().size(),is(1));
+  assertThat(typeDescription.getComponentType().getTypeArguments().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(typeDescription.getComponentType().getTypeArguments().getOnly().asErasure().represents(String.class),is(true));
   assertThat(typeDescription.getTypeName(),is(SimpleGenericArrayType.class.getDeclaredField(FOO).getGenericType().toString()));
 }

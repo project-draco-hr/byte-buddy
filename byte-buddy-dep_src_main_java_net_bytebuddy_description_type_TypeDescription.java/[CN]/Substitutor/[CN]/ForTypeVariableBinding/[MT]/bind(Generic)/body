@@ -1,7 +1,7 @@
 {
   Map<Generic,Generic> bindings=new HashMap<Generic,Generic>();
   do {
-    TypeList.Generic parameters=typeDescription.getParameters();
+    TypeList.Generic parameters=typeDescription.getTypeArguments();
     TypeList.Generic typeVariables=typeDescription.asErasure().getTypeVariables();
     if (parameters.size() != typeVariables.size()) {
       return TypeVariableErasing.INSTANCE;

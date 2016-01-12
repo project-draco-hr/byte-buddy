@@ -1,3 +1,3 @@
 {
-  describeType(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO)).getParameters().getOnly().getSuperType();
+  describeType(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO)).getTypeArguments().getOnly().getSuperType();
 }

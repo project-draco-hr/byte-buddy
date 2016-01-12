@@ -1,3 +1,3 @@
 {
-  describeType(NonGeneric.class.getDeclaredField(FOO)).getParameters();
+  describeType(NonGeneric.class.getDeclaredField(FOO)).getTypeArguments();
 }

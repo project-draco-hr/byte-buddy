@@ -15,8 +15,8 @@
   assertThat(fieldType.getComponentType().getComponentType().getDeclaredAnnotations().size(),is(1));
   assertThat(fieldType.getComponentType().getComponentType().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
   assertThat(fieldType.getComponentType().getComponentType().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(22));
-  assertThat(fieldType.getComponentType().getComponentType().getParameters().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
-  assertThat(fieldType.getComponentType().getComponentType().getParameters().getOnly().getDeclaredAnnotations().size(),is(1));
-  assertThat(fieldType.getComponentType().getComponentType().getParameters().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(fieldType.getComponentType().getComponentType().getParameters().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(23));
+  assertThat(fieldType.getComponentType().getComponentType().getTypeArguments().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
+  assertThat(fieldType.getComponentType().getComponentType().getTypeArguments().getOnly().getDeclaredAnnotations().size(),is(1));
+  assertThat(fieldType.getComponentType().getComponentType().getTypeArguments().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(fieldType.getComponentType().getComponentType().getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(23));
 }
