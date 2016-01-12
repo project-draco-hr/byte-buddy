@@ -1,13 +1,12 @@
 {
   Map<Generic,Generic> bindings=new HashMap<Generic,Generic>();
   do {
-    TypeList.Generic parameters=typeDescription.getParameters();
-    TypeList.Generic typeVariables=typeDescription.asErasure().getTypeVariables();
-    if (parameters.size() != typeVariables.size()) {
+    TypeList.Generic typeArguments=typeDescription.getTypeArguments(), typeVariables=typeDescription.asErasure().getTypeVariables();
+    if (typeArguments.size() != typeVariables.size()) {
       return TypeVariableErasing.INSTANCE;
     }
     for (int index=0; index < typeVariables.size(); index++) {
-      bindings.put(typeVariables.get(index),parameters.get(index));
+      bindings.put(typeVariables.get(index),typeArguments.get(index));
     }
     typeDescription=typeDescription.getOwnerType();
   }

@@ -4,10 +4,10 @@
     if (fromOwner != null && toOwner != null && !fromOwner.accept(Assigner.INSTANCE).isAssignableFrom(toOwner)) {
       return false;
     }
-    TypeList.Generic fromParameters=this.parameterizedType.getParameters(), toParameters=parameterizedType.getParameters();
-    if (fromParameters.size() == toParameters.size()) {
-      for (int index=0; index < fromParameters.size(); index++) {
-        if (!fromParameters.get(index).accept(ParameterAssigner.INSTANCE).isAssignableFrom(toParameters.get(index))) {
+    TypeList.Generic fromArguments=this.parameterizedType.getTypeArguments(), toArguments=parameterizedType.getTypeArguments();
+    if (fromArguments.size() == toArguments.size()) {
+      for (int index=0; index < fromArguments.size(); index++) {
+        if (!fromArguments.get(index).accept(ParameterAssigner.INSTANCE).isAssignableFrom(toArguments.get(index))) {
           return false;
         }
       }

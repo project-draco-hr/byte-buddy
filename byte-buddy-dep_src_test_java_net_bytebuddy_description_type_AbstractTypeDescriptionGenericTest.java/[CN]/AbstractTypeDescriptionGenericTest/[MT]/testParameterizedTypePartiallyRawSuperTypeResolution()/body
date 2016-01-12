@@ -1,16 +1,16 @@
 {
   TypeDescription.Generic typeDescription=describeType(TypeResolution.class.getDeclaredField(QUX));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
-  assertThat(typeDescription.getParameters().size(),is(1));
+  assertThat(typeDescription.getTypeArguments().size(),is(1));
   TypeDescription.Generic superType=typeDescription.getSuperType();
   assertThat(superType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(superType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Intermediate.class)));
   TypeDescription.Generic superSuperType=superType.getSuperType();
   assertThat(superSuperType.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(superSuperType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Base.class)));
-  assertThat(superSuperType.getParameters().size(),is(2));
-  assertThat(superSuperType.getParameters().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(superSuperType.getParameters().get(0).asErasure().represents(List.class),is(true));
-  assertThat(superSuperType.getParameters().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(superSuperType.getParameters().get(1).asErasure().represents(List.class),is(true));
+  assertThat(superSuperType.getTypeArguments().size(),is(2));
+  assertThat(superSuperType.getTypeArguments().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superSuperType.getTypeArguments().get(0).asErasure().represents(List.class),is(true));
+  assertThat(superSuperType.getTypeArguments().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superSuperType.getTypeArguments().get(1).asErasure().represents(List.class),is(true));
 }

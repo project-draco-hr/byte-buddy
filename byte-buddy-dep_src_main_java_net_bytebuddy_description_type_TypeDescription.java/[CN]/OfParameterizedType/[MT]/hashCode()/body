@@ -1,7 +1,7 @@
 {
   int result=1;
-  for (  Generic parameterType : getParameters()) {
-    result=31 * result + parameterType.hashCode();
+  for (  Generic typeArgument : getTypeArguments()) {
+    result=31 * result + typeArgument.hashCode();
   }
   Generic ownerType=getOwnerType();
   return result ^ (ownerType == null ? asErasure().hashCode() : ownerType.hashCode());

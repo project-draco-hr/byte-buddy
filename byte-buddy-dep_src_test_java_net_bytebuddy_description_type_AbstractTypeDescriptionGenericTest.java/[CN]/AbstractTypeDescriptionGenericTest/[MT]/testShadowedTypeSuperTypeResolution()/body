@@ -1,11 +1,11 @@
 {
   TypeDescription.Generic typeDescription=describeType(TypeResolution.class.getDeclaredField(FOO + BAR));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
-  assertThat(typeDescription.getParameters().size(),is(2));
+  assertThat(typeDescription.getTypeArguments().size(),is(2));
   TypeDescription.Generic superType=typeDescription.getSuperType();
-  assertThat(superType.getParameters().size(),is(2));
-  assertThat(superType.getParameters().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(superType.getParameters().get(0),is((TypeDefinition)new TypeDescription.ForLoadedType(Bar.class)));
-  assertThat(superType.getParameters().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(superType.getParameters().get(1),is((TypeDefinition)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(superType.getTypeArguments().size(),is(2));
+  assertThat(superType.getTypeArguments().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superType.getTypeArguments().get(0),is((TypeDefinition)new TypeDescription.ForLoadedType(Bar.class)));
+  assertThat(superType.getTypeArguments().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superType.getTypeArguments().get(1),is((TypeDefinition)new TypeDescription.ForLoadedType(Foo.class)));
 }

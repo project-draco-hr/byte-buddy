@@ -12,8 +12,8 @@
   assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().size(),is(1));
   assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
   assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(16));
-  assertThat(t.getUpperBounds().getOnly().getParameters().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
-  assertThat(t.getUpperBounds().getOnly().getParameters().getOnly().getDeclaredAnnotations().size(),is(1));
-  assertThat(t.getUpperBounds().getOnly().getParameters().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(t.getUpperBounds().getOnly().getParameters().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(17));
+  assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
+  assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getDeclaredAnnotations().size(),is(1));
+  assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(17));
 }
