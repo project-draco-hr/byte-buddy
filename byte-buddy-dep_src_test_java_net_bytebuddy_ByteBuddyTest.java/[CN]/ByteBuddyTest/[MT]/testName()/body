@@ -1,3 +1,0 @@
-{
-  TypePool.Default.ofClassPath().describe(Foo.class.getName()).resolve();
-}

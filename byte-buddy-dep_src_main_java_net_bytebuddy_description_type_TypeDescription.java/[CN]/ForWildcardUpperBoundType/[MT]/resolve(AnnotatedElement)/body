@@ -9,8 +9,4 @@
 catch (  InvocationTargetException exception) {
     throw new IllegalStateException("Error invoking java.lang.reflect.AnnotatedWildcardType#getAnnotatedUpperBounds",exception.getCause());
   }
-catch (  ArrayIndexOutOfBoundsException e) {
-    System.out.println(((AnnotatedType)annotatedElement).getType().getTypeName() + " has no upper bounds");
-    throw e;
-  }
 }
