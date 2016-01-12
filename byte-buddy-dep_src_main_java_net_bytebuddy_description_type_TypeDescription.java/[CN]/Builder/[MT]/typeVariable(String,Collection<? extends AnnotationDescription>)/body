@@ -1,3 +1,0 @@
-{
-  return new OfTypeVariable.Symbolic(symbol,new ArrayList<AnnotationDescription>(annotations));
-}

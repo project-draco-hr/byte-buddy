@@ -1,3 +1,0 @@
-{
-  return asArray(arity,Arrays.asList(annotation));
-}

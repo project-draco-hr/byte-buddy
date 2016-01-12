@@ -1,3 +1,3 @@
 {
-  return describe(type.getGenericInterfaces()[0],TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveInterface(type,index)).accept(TypeDescription.Generic.Visitor.Substitutor.ForAttachment.of(new TypeDescription.ForLoadedType(type)));
+  return describe(type.getGenericInterfaces()[index],TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveInterface(type,index)).accept(TypeDescription.Generic.Visitor.Substitutor.ForAttachment.of(new TypeDescription.ForLoadedType(type)));
 }

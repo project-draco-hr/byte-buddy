@@ -1,3 +1,0 @@
-{
-  return asArray(Arrays.asList(annotation));
-}

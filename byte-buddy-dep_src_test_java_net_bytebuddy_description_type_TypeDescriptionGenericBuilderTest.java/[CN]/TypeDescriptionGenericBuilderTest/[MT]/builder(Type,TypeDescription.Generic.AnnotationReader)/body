@@ -1,13 +1,21 @@
 {
-  if (type instanceof Class) {
-    return TypeDescription.Generic.Builder.rawType(((Class<?>)type));
+  if (type instanceof TypeVariable) {
+    return TypeDescription.Generic.Builder.typeVariable(((TypeVariable<?>)type).getName()).annotate(annotationReader.asList());
+  }
+ else   if (type instanceof Class) {
+    return TypeDescription.Generic.Builder.rawType((Class<?>)type).annotate(annotationReader.asList());
   }
  else   if (type instanceof GenericArrayType) {
-    return builder(((GenericArrayType)type).getGenericComponentType(),annotationReader.ofComponentType()).asArray(annotationReader.asList());
+    return builder(((GenericArrayType)type).getGenericComponentType(),annotationReader.ofComponentType()).asArray().annotate(annotationReader.asList());
   }
  else   if (type instanceof ParameterizedType) {
     ParameterizedType parameterizedType=(ParameterizedType)type;
-    return TypeDescription.Generic.Builder.parameterizedType((Class<?>)parameterizedType.getRawType(),parameterizedType.getOwnerType(),Arrays.asList(parameterizedType.getActualTypeArguments()));
+    List<TypeDescription.Generic> parameters=new ArrayList<>(parameterizedType.getActualTypeArguments().length);
+    int index=0;
+    for (    Type parameter : parameterizedType.getActualTypeArguments()) {
+      parameters.add(describe(parameter,annotationReader.ofParameterType(index)));
+    }
+    return TypeDescription.Generic.Builder.parameterizedType(new TypeDescription.ForLoadedType((Class<?>)parameterizedType.getRawType()),parameterizedType.getOwnerType() == null ? null : describe(parameterizedType.getOwnerType(),annotationReader.ofOwnerType()),parameters).annotate(annotationReader.asList());
   }
  else {
     throw new AssertionError("Unexpected type: " + type);

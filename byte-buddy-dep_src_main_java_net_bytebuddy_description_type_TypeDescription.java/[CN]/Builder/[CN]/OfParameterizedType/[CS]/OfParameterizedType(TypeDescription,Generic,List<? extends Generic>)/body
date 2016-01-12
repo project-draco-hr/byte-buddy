@@ -1,5 +1,3 @@
 {
-  this.rawType=rawType;
-  this.ownerType=ownerType;
-  this.parameterTypes=parameterTypes;
+  this(rawType,ownerType,parameterTypes,Collections.emptyList());
 }

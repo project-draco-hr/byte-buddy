@@ -1,3 +1,10 @@
 {
-  return asArray(arity,Collections.emptySet());
+  if (arity < 1) {
+    throw new IllegalArgumentException();
+  }
+  TypeDescription.Generic typeDescription=build();
+  while (--arity > 0) {
+    typeDescription=new OfGenericArray.Latent(typeDescription,Collections.emptyList());
+  }
+  return new Builder.OfGenericArrayType(typeDescription);
 }

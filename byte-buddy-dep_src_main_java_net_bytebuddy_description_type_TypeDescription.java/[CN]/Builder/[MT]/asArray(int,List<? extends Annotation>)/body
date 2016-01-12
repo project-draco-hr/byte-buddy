@@ -1,3 +1,0 @@
-{
-  return asArray(arity,new AnnotationList.ForLoadedAnnotations(annotations));
-}

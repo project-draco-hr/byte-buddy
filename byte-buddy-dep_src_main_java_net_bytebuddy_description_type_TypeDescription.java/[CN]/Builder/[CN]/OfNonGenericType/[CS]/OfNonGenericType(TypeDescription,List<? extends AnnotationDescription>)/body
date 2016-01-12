@@ -1,0 +1,4 @@
+{
+  super(annotations);
+  this.typeDescription=typeDescription;
+}

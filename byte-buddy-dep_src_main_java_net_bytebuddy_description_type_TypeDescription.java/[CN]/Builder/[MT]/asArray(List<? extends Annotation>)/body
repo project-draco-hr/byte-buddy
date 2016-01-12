@@ -1,3 +1,0 @@
-{
-  return asArray(new AnnotationList.ForLoadedAnnotations(annotations));
-}

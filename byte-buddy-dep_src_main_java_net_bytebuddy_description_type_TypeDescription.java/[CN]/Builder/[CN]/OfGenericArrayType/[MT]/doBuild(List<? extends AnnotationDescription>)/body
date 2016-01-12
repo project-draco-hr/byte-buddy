@@ -1,3 +1,0 @@
-{
-  return new Generic.OfGenericArray.Latent(componentType,CompoundList.of(this.annotations,annotations));
-}
