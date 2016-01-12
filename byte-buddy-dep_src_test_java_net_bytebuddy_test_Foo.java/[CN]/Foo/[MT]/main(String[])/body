@@ -1,0 +1,6 @@
+{
+  System.out.println(Foo.class.getDeclaredField("field").getAnnotatedType().isAnnotationPresent(Sample.class));
+  System.out.println(Foo.class.getDeclaredField("field").getAnnotatedType() instanceof AnnotatedParameterizedType);
+  AnnotatedParameterizedType annotatedParameterizedType=(AnnotatedParameterizedType)Foo.class.getDeclaredField("field").getAnnotatedType();
+  annotatedParameterizedType.getAnnotatedActualTypeArguments();
+}

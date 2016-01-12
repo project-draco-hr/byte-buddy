@@ -6,13 +6,13 @@
   assertThat(parameterType.getSort(),is(TypeDefinition.Sort.GENERIC_ARRAY));
   assertThat(parameterType.getDeclaredAnnotations().size(),is(1));
   assertThat(parameterType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(parameterType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(27));
+  assertThat(parameterType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(30));
   assertThat(parameterType.getComponentType().getSort(),is(TypeDefinition.Sort.GENERIC_ARRAY));
   assertThat(parameterType.getComponentType().getDeclaredAnnotations().size(),is(1));
   assertThat(parameterType.getComponentType().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(parameterType.getComponentType().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(28));
+  assertThat(parameterType.getComponentType().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(31));
   assertThat(parameterType.getComponentType().getComponentType().getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(parameterType.getComponentType().getComponentType().getDeclaredAnnotations().size(),is(1));
   assertThat(parameterType.getComponentType().getComponentType().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(parameterType.getComponentType().getComponentType().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(26));
+  assertThat(parameterType.getComponentType().getComponentType().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(29));
 }
