@@ -1,4 +1,4 @@
 {
-  assertThat(new TypeDescription.Latent(FOO,MODIFIERS,superType,Collections.singletonList(interfaceType)).getInterfaces().size(),is(1));
-  assertThat(new TypeDescription.Latent(FOO,MODIFIERS,superType,Collections.singletonList(interfaceType)).getInterfaces().getOnly(),is(interfaceType));
+  assertThat(new TypeDescription.Latent(FOO,MODIFIERS,superClass,Collections.singletonList(interfaceType)).getInterfaces().size(),is(1));
+  assertThat(new TypeDescription.Latent(FOO,MODIFIERS,superClass,Collections.singletonList(interfaceType)).getInterfaces().getOnly(),is(interfaceType));
 }

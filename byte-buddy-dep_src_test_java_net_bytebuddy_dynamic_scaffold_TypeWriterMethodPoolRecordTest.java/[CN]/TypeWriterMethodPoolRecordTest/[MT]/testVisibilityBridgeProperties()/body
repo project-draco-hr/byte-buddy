@@ -1,4 +1,4 @@
 {
-  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.OfVisibilityBridge(methodDescription,bridgeTarget,superType,methodAttributeAppender);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.OfVisibilityBridge(methodDescription,bridgeTarget,superClass,methodAttributeAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.IMPLEMENTED));
 }

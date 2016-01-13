@@ -1,3 +1,3 @@
 {
-  assertThat(new TypeWriter.MethodPool.Record.ForDefinedMethod.OfVisibilityBridge(methodDescription,bridgeTarget,superType,methodAttributeAppender).prepend(byteCodeAppender),instanceOf(TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody.class));
+  assertThat(new TypeWriter.MethodPool.Record.ForDefinedMethod.OfVisibilityBridge(methodDescription,bridgeTarget,superClass,methodAttributeAppender).prepend(byteCodeAppender),instanceOf(TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody.class));
 }

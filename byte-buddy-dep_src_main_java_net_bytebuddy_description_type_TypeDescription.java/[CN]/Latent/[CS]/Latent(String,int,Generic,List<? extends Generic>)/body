@@ -1,6 +1,6 @@
 {
   this.name=name;
   this.modifiers=modifiers;
-  this.superType=superType;
+  this.superClass=superClass;
   this.interfaces=interfaces;
 }

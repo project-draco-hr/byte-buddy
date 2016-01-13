@@ -1,3 +1,3 @@
 {
-  return new LazyTypeDescription.GenericTypeToken.Resolution.ForType.Tokenized(superTypeToken,interfaceTypeTokens,typeVariableTokens);
+  return new LazyTypeDescription.GenericTypeToken.Resolution.ForType.Tokenized(superClassToken,interfaceTypeTokens,typeVariableTokens);
 }

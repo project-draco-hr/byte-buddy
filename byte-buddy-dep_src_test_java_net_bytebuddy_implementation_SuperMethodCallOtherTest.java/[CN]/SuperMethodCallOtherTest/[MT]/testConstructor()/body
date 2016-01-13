@@ -1,8 +1,8 @@
 {
   when(typeDescription.getSuperClass()).thenReturn(genericSuperType);
   when(methodDescription.isConstructor()).thenReturn(true);
-  when(superType.getDeclaredMethods()).thenReturn(superTypeMethods);
-  when(superTypeMethods.filter(any(ElementMatcher.class))).thenReturn(superTypeMethods);
+  when(superClass.getDeclaredMethods()).thenReturn(superClassMethods);
+  when(superClassMethods.filter(any(ElementMatcher.class))).thenReturn(superClassMethods);
   when(implementationTarget.invokeDominant(token)).thenReturn(Implementation.SpecialMethodInvocation.Illegal.INSTANCE);
   SuperMethodCall.INSTANCE.appender(implementationTarget).apply(methodVisitor,implementationContext,methodDescription);
 }

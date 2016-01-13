@@ -1,7 +1,7 @@
 TypePool typePool
 int modifiers
 String name
-String superTypeInternalName
+String superClassInternalName
 String[] interfaceInternalName
 GenericTypeToken.Resolution.ForType signatureResolution
 DeclarationContext declarationContext

@@ -3,6 +3,6 @@
   assertThat(iterator.hasNext(),is(true));
   assertThat(iterator.next(),is((TypeDefinition)typeDescription));
   assertThat(iterator.hasNext(),is(true));
-  assertThat(iterator.next(),is((TypeDefinition)superType));
+  assertThat(iterator.next(),is((TypeDefinition)superClass));
   assertThat(iterator.hasNext(),is(false));
 }

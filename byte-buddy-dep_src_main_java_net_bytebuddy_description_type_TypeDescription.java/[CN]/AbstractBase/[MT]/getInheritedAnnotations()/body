@@ -1,6 +1,7 @@
 {
+  Generic superClass=getSuperClass();
   AnnotationList declaredAnnotations=getDeclaredAnnotations();
-  if (getSuperClass() == null) {
+  if (superClass == null) {
     return declaredAnnotations;
   }
  else {
@@ -8,6 +9,6 @@
     for (    AnnotationDescription annotationDescription : declaredAnnotations) {
       annotationTypes.add(annotationDescription.getAnnotationType());
     }
-    return new AnnotationList.Explicit(CompoundList.of(declaredAnnotations,getSuperClass().asErasure().getInheritedAnnotations().inherited(annotationTypes)));
+    return new AnnotationList.Explicit(CompoundList.of(declaredAnnotations,superClass.asErasure().getInheritedAnnotations().inherited(annotationTypes)));
   }
 }

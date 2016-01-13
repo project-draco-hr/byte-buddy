@@ -1,4 +1,4 @@
 {
-  when(superType.isAssignableFrom(rightType)).thenReturn(true);
+  when(superClass.isAssignableFrom(rightType)).thenReturn(true);
   assertThat(frameComputingClassWriter.getCommonSuperClass(FOO,BAR),is(FOOBAR));
 }

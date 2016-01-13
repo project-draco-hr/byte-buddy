@@ -2,10 +2,10 @@
   TypeDescription.Generic typeDescription=describeType(TypeResolution.class.getDeclaredField(BAZ));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(typeDescription.getTypeArguments().size(),is(1));
-  TypeDescription.Generic superType=typeDescription.getSuperClass();
-  assertThat(superType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(superType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.NestedIntermediate.class)));
-  TypeDescription.Generic superSuperType=superType.getSuperClass();
+  TypeDescription.Generic superClass=typeDescription.getSuperClass();
+  assertThat(superClass.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superClass.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.NestedIntermediate.class)));
+  TypeDescription.Generic superSuperType=superClass.getSuperClass();
   assertThat(superSuperType.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(superSuperType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Base.class)));
   assertThat(superSuperType.getTypeArguments().size(),is(2));

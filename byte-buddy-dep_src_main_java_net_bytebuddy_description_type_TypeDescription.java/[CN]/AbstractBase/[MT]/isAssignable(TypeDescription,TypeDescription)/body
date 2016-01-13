@@ -8,8 +8,8 @@
   if (sourceType.represents(Object.class)) {
     return !targetType.isPrimitive();
   }
-  Generic superType=targetType.getSuperClass();
-  if (superType != null && sourceType.isAssignableFrom(superType.asErasure())) {
+  Generic superClass=targetType.getSuperClass();
+  if (superClass != null && sourceType.isAssignableFrom(superClass.asErasure())) {
     return true;
   }
   if (sourceType.isInterface()) {

@@ -4,7 +4,7 @@
   when(typePool.describe(BAR.replace('/','.'))).thenReturn(new TypePool.Resolution.Simple(rightType));
   when(leftType.getInternalName()).thenReturn(QUX);
   when(rightType.getInternalName()).thenReturn(BAZ);
-  when(leftType.getSuperClass()).thenReturn(genericSuperType);
-  when(genericSuperType.asErasure()).thenReturn(superType);
-  when(superType.getInternalName()).thenReturn(FOOBAR);
+  when(leftType.getSuperClass()).thenReturn(genericSuperClass);
+  when(genericSuperClass.asErasure()).thenReturn(superClass);
+  when(superClass.getInternalName()).thenReturn(FOOBAR);
 }

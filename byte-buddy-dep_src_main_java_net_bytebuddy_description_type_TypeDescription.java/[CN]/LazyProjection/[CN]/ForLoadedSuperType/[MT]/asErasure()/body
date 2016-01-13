@@ -1,4 +1,4 @@
 {
-  Class<?> superType=type.getSuperclass();
-  return superType == null ? TypeDescription.UNDEFINED : new ForLoadedType(superType);
+  Class<?> superClass=type.getSuperclass();
+  return superClass == null ? TypeDescription.UNDEFINED : new ForLoadedType(superClass);
 }
