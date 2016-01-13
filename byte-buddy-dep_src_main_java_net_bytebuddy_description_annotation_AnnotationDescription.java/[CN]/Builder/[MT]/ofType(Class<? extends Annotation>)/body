@@ -1,0 +1,3 @@
+{
+  return ofType(new TypeDescription.ForLoadedType(annotationType));
+}

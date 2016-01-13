@@ -1,5 +1,5 @@
 {
-  Class<?> dynamicType=create(CallSuperMethod.Inner.class).method(named(FOO)).intercept(net.bytebuddy.implementation.SuperMethodCall.INSTANCE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
+  Class<?> dynamicType=new ByteBuddy().subclass(CallSuperMethod.Inner.class).method(named(FOO)).intercept(net.bytebuddy.implementation.SuperMethodCall.INSTANCE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
   assertThat(dynamicType.getDeclaredMethods().length,is(2));
   assertEquals(String.class,dynamicType.getDeclaredMethod(FOO,String.class).getReturnType());
   assertThat(dynamicType.getDeclaredMethod(FOO,String.class).getGenericReturnType(),is((Type)String.class));
