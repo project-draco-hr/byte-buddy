@@ -1,6 +1,5 @@
 {
-  Method setString=Pojo.class.getDeclaredMethod("setString",String.class);
-  DynamicType.Loaded<Setters> loaded=implement(Setters.class,MethodCall.invoke(setString).onArgument(0).withArgument(1),Setters.class.getClassLoader(),named("set"));
+  DynamicType.Loaded<Setters> loaded=implement(Setters.class,MethodCall.invoke(Pojo.class.getDeclaredMethod("setString",String.class)).onArgument(0).withArgument(1),Setters.class.getClassLoader(),named("set"));
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));

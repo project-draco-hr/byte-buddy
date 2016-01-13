@@ -1,6 +1,5 @@
 {
-  Method getInt=Pojo.class.getDeclaredMethod("getInt");
-  DynamicType.Loaded<Getters> loaded=implement(Getters.class,MethodCall.invoke(getInt).onArgument(0),Getters.class.getClassLoader(),named("getInt"));
+  DynamicType.Loaded<Getters> loaded=implement(Getters.class,MethodCall.invoke(Pojo.class.getDeclaredMethod("getInt")).onArgument(0),Getters.class.getClassLoader(),named("getInt"));
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
