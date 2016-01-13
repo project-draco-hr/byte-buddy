@@ -1,0 +1,5 @@
+{
+  new AnnotationAppender.Target.OnMethod(methodVisitor).visit(FOO,true,BAR,QUX);
+  verify(methodVisitor).visitTypeAnnotation(eq(BAR),any(TypePath.class),eq(FOO),eq(true));
+  verifyNoMoreInteractions(methodVisitor);
+}
