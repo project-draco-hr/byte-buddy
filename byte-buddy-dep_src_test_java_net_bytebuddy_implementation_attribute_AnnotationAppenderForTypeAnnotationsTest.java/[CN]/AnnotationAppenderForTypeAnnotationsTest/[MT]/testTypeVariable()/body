@@ -1,0 +1,5 @@
+{
+  assertThat(visitor.onTypeVariable(typeDescription),is(result));
+  verify(annotationAppender).append(annotationDescription,annotationValueFilter,BAR,FOO);
+  verifyNoMoreInteractions(annotationAppender);
+}

@@ -1,0 +1,7 @@
+{
+  when(typeDescription.getComponentType()).thenReturn(second);
+  assertThat(visitor.onGenericArray(typeDescription),is(result));
+  verify(annotationAppender).append(annotationDescription,annotationValueFilter,BAR,FOO);
+  verifyNoMoreInteractions(annotationAppender);
+  verify(second).accept(new AnnotationAppender.ForTypeAnnotations(result,annotationValueFilter,BAR,FOO + "["));
+}

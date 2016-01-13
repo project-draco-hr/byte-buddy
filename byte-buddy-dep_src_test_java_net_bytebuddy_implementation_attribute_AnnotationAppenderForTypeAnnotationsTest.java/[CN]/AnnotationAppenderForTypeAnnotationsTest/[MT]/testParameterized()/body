@@ -1,0 +1,9 @@
+{
+  when(typeDescription.getTypeArguments()).thenReturn(new TypeList.Generic.Explicit(second));
+  when(typeDescription.getOwnerType()).thenReturn(third);
+  assertThat(visitor.onParameterizedType(typeDescription),is(result));
+  verify(annotationAppender).append(annotationDescription,annotationValueFilter,BAR,FOO);
+  verifyNoMoreInteractions(annotationAppender);
+  verify(second).accept(new AnnotationAppender.ForTypeAnnotations(result,annotationValueFilter,BAR,FOO + "0;"));
+  verify(third).accept(new AnnotationAppender.ForTypeAnnotations(result,annotationValueFilter,BAR,FOO + "."));
+}
