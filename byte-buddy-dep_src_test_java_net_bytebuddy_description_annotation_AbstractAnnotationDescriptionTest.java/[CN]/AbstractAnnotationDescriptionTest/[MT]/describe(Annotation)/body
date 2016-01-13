@@ -12,6 +12,9 @@
  else   if (annotation == defaultSecond) {
     carrier=NonDefaultSample.class;
   }
+ else   if (annotation == explicitTarget) {
+    carrier=ExplicitTarget.Carrier.class;
+  }
  else {
     throw new AssertionError();
   }
