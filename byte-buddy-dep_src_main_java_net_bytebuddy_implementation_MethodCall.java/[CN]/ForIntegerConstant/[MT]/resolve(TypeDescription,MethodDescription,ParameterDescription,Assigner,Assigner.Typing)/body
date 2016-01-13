@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=new StackManipulation.Compound(IntegerConstant.forValue(value),assigner.assign(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(int.class),target.getType(),typing));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign integer value to " + target);
+  }
+  return stackManipulation;
+}

@@ -1,0 +1,3 @@
+{
+  return onArgument(index,new TypeDescription.ForLoadedType(type));
+}

@@ -1,7 +1,0 @@
-{
-  StackManipulation stackManipulation=new StackManipulation.Compound(IntegerConstant.forValue(value),assigner.assign(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(boolean.class),target,typing));
-  if (!stackManipulation.isValid()) {
-    throw new IllegalStateException("Cannot assign boolean value to " + target);
-  }
-  return stackManipulation;
-}

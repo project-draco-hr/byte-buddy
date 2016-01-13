@@ -1,7 +1,0 @@
-{
-  StackManipulation stackManipulation=new StackManipulation.Compound(new TextConstant(value),assigner.assign(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(String.class),target,typing));
-  if (!stackManipulation.isValid()) {
-    throw new IllegalStateException("Cannot assign String value to " + target);
-  }
-  return stackManipulation;
-}

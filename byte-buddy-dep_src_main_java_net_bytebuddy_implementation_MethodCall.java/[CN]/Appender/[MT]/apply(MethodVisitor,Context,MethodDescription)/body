@@ -1,14 +1,14 @@
 {
   MethodDescription invokedMethod=methodLocator.resolve(instrumentedMethod);
-  TypeList.Generic methodParameters=invokedMethod.getParameters().asTypeList();
-  if (methodParameters.size() != argumentLoaders.size()) {
+  ParameterList<?> parameters=invokedMethod.getParameters();
+  if (parameters.size() != argumentLoaders.size()) {
     throw new IllegalStateException(invokedMethod + " does not take " + argumentLoaders.size()+ " arguments");
   }
-  Iterator<TypeDescription.Generic> parameterIterator=methodParameters.iterator();
+  Iterator<? extends ParameterDescription> parameterIterator=parameters.iterator();
   List<StackManipulation> argumentInstructions=new ArrayList<StackManipulation>(argumentLoaders.size());
   for (  ArgumentLoader argumentLoader : argumentLoaders) {
     argumentInstructions.add(argumentLoader.resolve(implementationTarget.getInstrumentedType(),instrumentedMethod,parameterIterator.next(),assigner,typing));
   }
-  StackManipulation.Size size=new StackManipulation.Compound(targetHandler.resolve(invokedMethod,implementationTarget.getInstrumentedType()),new StackManipulation.Compound(argumentInstructions),methodInvoker.invoke(invokedMethod,implementationTarget),terminationHandler.resolve(invokedMethod,instrumentedMethod,assigner,typing)).apply(methodVisitor,implementationContext);
+  StackManipulation.Size size=new StackManipulation.Compound(targetHandler.resolve(invokedMethod,instrumentedMethod,implementationTarget.getInstrumentedType()),new StackManipulation.Compound(argumentInstructions),methodInvoker.invoke(invokedMethod,implementationTarget),terminationHandler.resolve(invokedMethod,instrumentedMethod,assigner,typing)).apply(methodVisitor,implementationContext);
   return new Size(size.getMaximalSize(),instrumentedMethod.getStackSize());
 }

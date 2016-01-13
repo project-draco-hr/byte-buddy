@@ -1,7 +1,0 @@
-{
-  StackManipulation stackManipulation=new StackManipulation.Compound(FieldAccess.forField(instrumentedType.getDeclaredFields().filter(named(fieldName)).getOnly()).getter(),assigner.assign(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(value.getClass()),target,typing));
-  if (!stackManipulation.isValid()) {
-    throw new IllegalStateException("Cannot assign " + value.getClass() + " to "+ target);
-  }
-  return stackManipulation;
-}

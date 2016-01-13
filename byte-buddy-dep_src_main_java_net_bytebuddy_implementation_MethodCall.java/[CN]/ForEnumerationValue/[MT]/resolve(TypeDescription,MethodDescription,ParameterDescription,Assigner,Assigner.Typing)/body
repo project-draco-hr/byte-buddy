@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=new StackManipulation.Compound(FieldAccess.forEnumeration(enumerationDescription),assigner.assign(enumerationDescription.getEnumerationType().asGenericType(),target.getType(),typing));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign " + enumerationDescription.getEnumerationType() + " value to "+ target);
+  }
+  return stackManipulation;
+}
