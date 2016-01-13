@@ -1,0 +1,4 @@
+{
+  assertThat(describe(Class.forName(Sample.class.getPackage().getName() + "." + PackageDescription.PACKAGE_CLASS_NAME)).isPackageDescription(),is(true));
+  assertThat(describe(Object.class).isPackageDescription(),is(false));
+}
