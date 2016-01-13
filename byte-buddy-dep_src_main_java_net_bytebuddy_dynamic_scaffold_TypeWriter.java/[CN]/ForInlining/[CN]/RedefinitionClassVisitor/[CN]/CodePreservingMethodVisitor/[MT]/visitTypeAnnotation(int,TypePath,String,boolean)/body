@@ -1,0 +1,3 @@
+{
+  return annotationRetention.isEnabled() ? super.visitTypeAnnotation(typeReference,typePath,descriptor,visible) : IGNORE_ANNOTATION;
+}
