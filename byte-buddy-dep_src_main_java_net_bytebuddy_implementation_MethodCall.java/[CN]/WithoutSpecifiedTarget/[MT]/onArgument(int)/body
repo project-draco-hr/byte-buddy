@@ -3,5 +3,5 @@
     throw new IllegalStateException("Only explicit methods supported for onArgument, called on " + methodLocator);
   }
   TypeDescription.Generic type=methodLocator.resolve(null).getDeclaringType().asGenericType();
-  return new MethodCall(methodLocator,new TargetHandler.ForMethodParameter(offset),argumentLoaders,new MethodInvoker.ForVirtualInvocation(type),TerminationHandler.ForMethodReturn.INSTANCE,assigner,typing);
+  return new MethodCall(methodLocator,new TargetHandler.ForMethodParameter(offset),argumentLoaders,new MethodInvoker.ForVirtualInvocation(type.asErasure()),TerminationHandler.ForMethodReturn.INSTANCE,assigner,typing);
 }
