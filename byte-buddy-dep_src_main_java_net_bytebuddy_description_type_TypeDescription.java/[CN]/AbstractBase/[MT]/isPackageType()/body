@@ -1,0 +1,3 @@
+{
+  return getSimpleName().equals(PackageDescription.PACKAGE_CLASS_NAME);
+}

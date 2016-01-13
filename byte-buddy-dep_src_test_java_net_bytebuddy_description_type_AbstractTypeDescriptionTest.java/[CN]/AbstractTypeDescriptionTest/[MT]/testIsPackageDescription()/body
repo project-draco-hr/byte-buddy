@@ -1,0 +1,4 @@
+{
+  assertThat(describe(Class.forName(Sample.class.getPackage().getName() + "." + PackageDescription.PACKAGE_CLASS_NAME)).isPackageType(),is(true));
+  assertThat(describe(Object.class).isPackageType(),is(false));
+}

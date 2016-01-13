@@ -1,0 +1,19 @@
+{
+  Class<? extends Annotation> typeAnnotation=(Class<? extends Annotation>)Class.forName(TYPE_ANNOTATION);
+  MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotation).getDeclaredMethods().getOnly();
+  TypeDescription typeDescription=describe(Class.forName(TYPE_ANNOTATION_SAMPLES));
+  TypeDescription.Generic t=typeDescription.getTypeVariables().filter(named(X)).getOnly();
+  assertThat(t.getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(t.getDeclaredAnnotations().size(),is(1));
+  assertThat(t.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(t.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(15));
+  assertThat(t.getUpperBounds().size(),is(1));
+  assertThat(t.getUpperBounds().getOnly().getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().size(),is(1));
+  assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(16));
+  assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
+  assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getDeclaredAnnotations().size(),is(1));
+  assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(17));
+}

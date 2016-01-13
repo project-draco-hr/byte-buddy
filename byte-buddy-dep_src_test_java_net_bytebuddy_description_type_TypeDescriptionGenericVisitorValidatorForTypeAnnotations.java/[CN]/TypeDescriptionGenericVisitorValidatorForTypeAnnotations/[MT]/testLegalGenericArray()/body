@@ -1,0 +1,5 @@
+{
+  when(legal.getComponentType()).thenReturn(otherLegal);
+  assertThat(TypeDescription.Generic.Visitor.Validator.ForTypeAnnotations.INSTANCE.onGenericArray(legal),is(true));
+  verify(otherLegal).accept(TypeDescription.Generic.Visitor.Validator.ForTypeAnnotations.INSTANCE);
+}

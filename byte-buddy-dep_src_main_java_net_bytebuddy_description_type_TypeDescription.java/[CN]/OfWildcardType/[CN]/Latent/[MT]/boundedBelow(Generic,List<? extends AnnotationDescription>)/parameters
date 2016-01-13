@@ -1,0 +1,2 @@
+Generic lowerBound
+List<? extends AnnotationDescription> declaredAnnotations

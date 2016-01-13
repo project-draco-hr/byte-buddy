@@ -1,3 +1,3 @@
 {
-  new ByteBuddy(ClassFileVersion.JAVA_V4).subclass(Object.class).defineField(FOO,Void.class).annotateField(AnnotationDescription.Builder.forType(Foo.class).make()).make();
+  new ByteBuddy(ClassFileVersion.JAVA_V4).subclass(Object.class).defineField(FOO,Void.class).annotateField(AnnotationDescription.Builder.ofType(Foo.class).build()).make();
 }

@@ -1,3 +1,3 @@
 {
-  new ByteBuddy(ClassFileVersion.JAVA_V4).subclass(Object.class).annotateType(AnnotationDescription.Builder.forType(Foo.class).make()).make();
+  new ByteBuddy(ClassFileVersion.JAVA_V4).subclass(Object.class).annotateType(AnnotationDescription.Builder.ofType(Foo.class).build()).make();
 }

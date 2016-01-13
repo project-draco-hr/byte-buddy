@@ -1,0 +1,18 @@
+{
+  AnnotationRegistrant annotationRegistrant;
+  TypeReference typeReference=new TypeReference(rawTypeReference);
+switch (typeReference.getSort()) {
+case TypeReference.CLASS_EXTENDS:
+    annotationRegistrant=new AnnotationRegistrant.ForTypeVariable.WithIndex(descriptor,typePath,typeReference.getSuperTypeIndex(),superTypeAnnotationTokens);
+  break;
+case TypeReference.CLASS_TYPE_PARAMETER:
+annotationRegistrant=new AnnotationRegistrant.ForTypeVariable.WithIndex(descriptor,typePath,typeReference.getTypeParameterIndex(),typeVariableAnnotationTokens);
+break;
+case TypeReference.CLASS_TYPE_PARAMETER_BOUND:
+annotationRegistrant=new AnnotationRegistrant.ForTypeVariable.WithIndex.DoubleIndexed(descriptor,typePath,typeReference.getTypeParameterBoundIndex(),typeReference.getTypeParameterIndex(),typeVariableBoundsAnnotationTokens);
+break;
+default :
+throw new IllegalArgumentException("Unexpected type reference: " + typeReference.getSort());
+}
+return new AnnotationExtractor(annotationRegistrant,new ComponentTypeLocator.ForAnnotationProperty(Default.this,descriptor));
+}

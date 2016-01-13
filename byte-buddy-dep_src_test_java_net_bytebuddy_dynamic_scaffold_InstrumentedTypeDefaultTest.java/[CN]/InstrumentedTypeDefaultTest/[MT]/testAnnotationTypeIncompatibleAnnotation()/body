@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withModifiers(Opcodes.ACC_ANNOTATION | Opcodes.ACC_ABSTRACT).withAnnotations(Collections.singletonList(AnnotationDescription.Builder.ofType(IncompatibleAnnotation.class).build())).validated();
+}

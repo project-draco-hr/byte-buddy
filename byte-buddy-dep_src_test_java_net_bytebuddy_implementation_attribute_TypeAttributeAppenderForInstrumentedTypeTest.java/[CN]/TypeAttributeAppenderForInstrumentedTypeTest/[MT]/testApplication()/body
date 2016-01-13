@@ -1,8 +1,0 @@
-{
-  when(instrumentedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Qux.Instance(),new Baz.Instance(),new QuxBaz.Instance()));
-  TypeAttributeAppender.ForInstrumentedType.INSTANCE.apply(classVisitor,instrumentedType,annotationValueFilter);
-  verify(classVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
-  verify(classVisitor).visitAnnotation(Type.getDescriptor(QuxBaz.class),false);
-  verifyNoMoreInteractions(classVisitor);
-  verify(instrumentedType).getDeclaredAnnotations();
-}

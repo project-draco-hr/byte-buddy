@@ -1,0 +1,5 @@
+{
+  Class<?> bar=makeTypeWithSuperClassAnnotation(new FooSourceCodeRetention.Instance());
+  TypeDescription.Generic.AnnotationReader annotationReader=TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperClass(bar);
+  assertThat(annotationReader.asList().size(),is(0));
+}

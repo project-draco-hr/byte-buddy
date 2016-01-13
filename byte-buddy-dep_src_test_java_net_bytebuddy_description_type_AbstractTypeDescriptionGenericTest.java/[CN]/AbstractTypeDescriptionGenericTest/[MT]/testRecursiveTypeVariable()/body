@@ -1,11 +1,11 @@
 {
-  TypeDescription.Generic typeDescription=describe(RecursiveTypeVariable.class.getDeclaredField(FOO));
+  TypeDescription.Generic typeDescription=describeType(RecursiveTypeVariable.class.getDeclaredField(FOO));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(typeDescription.getSymbol(),is(T));
   assertThat(typeDescription.getUpperBounds().size(),is(1));
   TypeDescription.Generic upperBound=typeDescription.getUpperBounds().getOnly();
   assertThat(upperBound.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(upperBound.asErasure(),is(typeDescription.asErasure()));
-  assertThat(upperBound.getParameters().size(),is(1));
-  assertThat(upperBound.getParameters().getOnly(),is(typeDescription));
+  assertThat(upperBound.getTypeArguments().size(),is(1));
+  assertThat(upperBound.getTypeArguments().getOnly(),is(typeDescription));
 }

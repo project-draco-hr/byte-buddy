@@ -1,3 +1,0 @@
-{
-  return typeDescription.isArray() ? genericArray.getComponentType().accept(new ForNonGenericType(typeDescription.getComponentType())) : typeDescription.represents(Object.class) || TypeDescription.ARRAY_INTERFACES.contains(typeDescription.asGenericType());
-}

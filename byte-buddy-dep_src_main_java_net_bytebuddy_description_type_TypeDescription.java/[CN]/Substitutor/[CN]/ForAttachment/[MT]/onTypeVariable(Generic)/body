@@ -4,6 +4,6 @@
     throw new IllegalArgumentException("Cannot attach undefined variable: " + typeVariable);
   }
  else {
-    return attachedVariable;
+    return new AnnotatedTypeVariable(attachedVariable,typeVariable.getDeclaredAnnotations());
   }
 }

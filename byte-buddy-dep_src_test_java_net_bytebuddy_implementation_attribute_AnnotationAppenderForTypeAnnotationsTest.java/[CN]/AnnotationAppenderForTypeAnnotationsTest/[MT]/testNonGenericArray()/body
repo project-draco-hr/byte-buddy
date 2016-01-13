@@ -1,0 +1,8 @@
+{
+  when(typeDescription.isArray()).thenReturn(true);
+  when(typeDescription.getComponentType()).thenReturn(second);
+  assertThat(visitor.onNonGenericType(typeDescription),is(result));
+  verify(annotationAppender).append(annotationDescription,annotationValueFilter,BAR,FOO);
+  verifyNoMoreInteractions(annotationAppender);
+  verify(second).accept(new AnnotationAppender.ForTypeAnnotations(result,annotationValueFilter,BAR,FOO + "["));
+}

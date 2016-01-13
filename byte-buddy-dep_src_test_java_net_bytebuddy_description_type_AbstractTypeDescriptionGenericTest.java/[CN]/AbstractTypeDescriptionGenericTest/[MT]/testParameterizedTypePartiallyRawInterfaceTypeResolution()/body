@@ -1,16 +1,16 @@
 {
-  TypeDescription.Generic typeDescription=describe(TypeResolution.class.getDeclaredField(QUX));
+  TypeDescription.Generic typeDescription=describeType(TypeResolution.class.getDeclaredField(QUX));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
-  assertThat(typeDescription.getParameters().size(),is(1));
-  TypeDescription.Generic superType=typeDescription.getSuperType();
-  assertThat(superType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(superType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Intermediate.class)));
-  TypeDescription.Generic superInterfaceType=superType.getInterfaces().getOnly();
+  assertThat(typeDescription.getTypeArguments().size(),is(1));
+  TypeDescription.Generic superClass=typeDescription.getSuperClass();
+  assertThat(superClass.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superClass.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Intermediate.class)));
+  TypeDescription.Generic superInterfaceType=superClass.getInterfaces().getOnly();
   assertThat(superInterfaceType.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(superInterfaceType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.BaseInterface.class)));
-  assertThat(superInterfaceType.getParameters().size(),is(2));
-  assertThat(superInterfaceType.getParameters().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(superInterfaceType.getParameters().get(0).asErasure().represents(List.class),is(true));
-  assertThat(superInterfaceType.getParameters().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(superInterfaceType.getParameters().get(1).asErasure().represents(List.class),is(true));
+  assertThat(superInterfaceType.getTypeArguments().size(),is(2));
+  assertThat(superInterfaceType.getTypeArguments().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superInterfaceType.getTypeArguments().get(0).asErasure().represents(List.class),is(true));
+  assertThat(superInterfaceType.getTypeArguments().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superInterfaceType.getTypeArguments().get(1).asErasure().represents(List.class),is(true));
 }

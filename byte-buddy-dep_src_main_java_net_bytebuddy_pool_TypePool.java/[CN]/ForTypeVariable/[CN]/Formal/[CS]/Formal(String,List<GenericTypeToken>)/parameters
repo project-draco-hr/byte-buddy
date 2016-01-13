@@ -1,2 +1,2 @@
 String symbol
-List<GenericTypeToken> bounds
+List<GenericTypeToken> boundTypeTokens

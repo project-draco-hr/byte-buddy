@@ -1,0 +1,3 @@
+{
+  return new LazyUpperBoundWildcard(typePool,typeVariableSource,typePath,annotationTokens,boundTypeToken);
+}

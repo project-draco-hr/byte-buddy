@@ -1,0 +1,9 @@
+{
+  assertThat(TypeDescription.Generic.AnnotationReader.Dispatcher.ForLegacyVm.INSTANCE.resolve(null),is((TypeDescription.Generic.AnnotationReader)TypeDescription.Generic.AnnotationReader.NoOp.INSTANCE));
+  assertThat(TypeDescription.Generic.AnnotationReader.Dispatcher.ForLegacyVm.INSTANCE.resolveSuperClass(null),is((TypeDescription.Generic.AnnotationReader)TypeDescription.Generic.AnnotationReader.NoOp.INSTANCE));
+  assertThat(TypeDescription.Generic.AnnotationReader.Dispatcher.ForLegacyVm.INSTANCE.resolveInterface(null,0),is((TypeDescription.Generic.AnnotationReader)TypeDescription.Generic.AnnotationReader.NoOp.INSTANCE));
+  assertThat(TypeDescription.Generic.AnnotationReader.Dispatcher.ForLegacyVm.INSTANCE.resolveReturnType(null),is((TypeDescription.Generic.AnnotationReader)TypeDescription.Generic.AnnotationReader.NoOp.INSTANCE));
+  assertThat(TypeDescription.Generic.AnnotationReader.Dispatcher.ForLegacyVm.INSTANCE.resolveParameterType(null,0),is((TypeDescription.Generic.AnnotationReader)TypeDescription.Generic.AnnotationReader.NoOp.INSTANCE));
+  assertThat(TypeDescription.Generic.AnnotationReader.Dispatcher.ForLegacyVm.INSTANCE.resolveExceptionType(null,0),is((TypeDescription.Generic.AnnotationReader)TypeDescription.Generic.AnnotationReader.NoOp.INSTANCE));
+  assertThat(TypeDescription.Generic.AnnotationReader.Dispatcher.ForLegacyVm.INSTANCE.resolveTypeVariable(null),is((TypeDescription.Generic.AnnotationReader)TypeDescription.Generic.AnnotationReader.NoOp.INSTANCE));
+}

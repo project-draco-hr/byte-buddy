@@ -1,0 +1,3 @@
+{
+  return componentTypeToken.toGenericType(typePool,typeVariableSource,typePath + COMPONENT_TYPE_PATH,annotationTokens);
+}

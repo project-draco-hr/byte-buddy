@@ -1,2 +1,2 @@
-Class<T> superType
+Class<T> superClass
 ConstructorStrategy constructorStrategy

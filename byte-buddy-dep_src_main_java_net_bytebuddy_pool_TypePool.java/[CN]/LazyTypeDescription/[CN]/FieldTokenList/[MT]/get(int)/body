@@ -1,0 +1,3 @@
+{
+  return fieldTokens.get(index).toFieldDescription(LazyTypeDescription.this);
+}

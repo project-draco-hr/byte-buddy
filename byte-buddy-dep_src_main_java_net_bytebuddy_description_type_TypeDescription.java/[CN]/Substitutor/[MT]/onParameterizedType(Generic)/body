@@ -1,0 +1,8 @@
+{
+  Generic ownerType=parameterizedType.getOwnerType();
+  List<Generic> typeArguments=new ArrayList<Generic>(parameterizedType.getTypeArguments().size());
+  for (  Generic typeArgument : parameterizedType.getTypeArguments()) {
+    typeArguments.add(typeArgument.accept(this));
+  }
+  return new OfParameterizedType.Latent(parameterizedType.asRawType().accept(this).asErasure(),ownerType == null ? UNDEFINED : ownerType.accept(this),typeArguments,parameterizedType.getDeclaredAnnotations());
+}

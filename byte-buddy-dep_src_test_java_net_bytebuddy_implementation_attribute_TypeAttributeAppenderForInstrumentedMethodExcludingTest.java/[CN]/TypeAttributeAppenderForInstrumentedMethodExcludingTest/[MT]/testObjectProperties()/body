@@ -1,8 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypeAttributeAppender.ForInstrumentedType.Excluding.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
-    @Override public void apply(    TypeDescription mock){
-      when(mock.getDeclaredAnnotations()).thenReturn(new AnnotationList.Explicit(mock(AnnotationDescription.class)));
-    }
-  }
-).apply();
-}

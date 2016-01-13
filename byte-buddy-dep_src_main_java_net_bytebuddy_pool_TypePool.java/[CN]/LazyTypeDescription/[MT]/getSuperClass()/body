@@ -1,0 +1,3 @@
+{
+  return superClassDescriptor == null || isInterface() ? Generic.UNDEFINED : signatureResolution.resolveSuperClass(superClassDescriptor,typePool,superTypeAnnotationTokens.get(SUPER_CLASS_INDEX),this);
+}

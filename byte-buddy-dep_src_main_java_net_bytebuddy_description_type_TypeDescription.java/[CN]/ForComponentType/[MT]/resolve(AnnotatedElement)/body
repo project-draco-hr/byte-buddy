@@ -1,0 +1,11 @@
+{
+  try {
+    return (AnnotatedElement)GET_ANNOTATED_GENERIC_COMPONENT_TYPE.invoke(annotatedElement);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.reflect.AnnotatedArrayType#getAnnotatedGenericComponentType",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.reflect.AnnotatedArrayType#getAnnotatedGenericComponentType",exception.getCause());
+  }
+}

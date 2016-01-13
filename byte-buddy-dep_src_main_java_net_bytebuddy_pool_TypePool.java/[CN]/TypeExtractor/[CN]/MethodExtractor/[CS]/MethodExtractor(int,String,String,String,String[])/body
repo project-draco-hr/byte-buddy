@@ -5,12 +5,13 @@
   this.descriptor=descriptor;
   this.genericSignature=genericSignature;
   this.exceptionName=exceptionName;
+  typeVariableAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();
+  typeVariableBoundAnnotationTokens=new HashMap<Integer,Map<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>>();
+  returnTypeAnnotationTokens=new HashMap<String,List<LazyTypeDescription.AnnotationToken>>();
+  parameterTypeAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();
+  exceptionTypeAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();
   annotationTokens=new ArrayList<LazyTypeDescription.AnnotationToken>();
-  Type[] parameterTypes=Type.getMethodType(descriptor).getArgumentTypes();
   parameterAnnotationTokens=new HashMap<Integer,List<LazyTypeDescription.AnnotationToken>>();
-  for (int i=0; i < parameterTypes.length; i++) {
-    parameterAnnotationTokens.put(i,new ArrayList<LazyTypeDescription.AnnotationToken>());
-  }
-  parameterTokens=new ArrayList<LazyTypeDescription.MethodToken.ParameterToken>(parameterTypes.length);
-  legacyParameterBag=new ParameterBag(parameterTypes);
+  parameterTokens=new ArrayList<LazyTypeDescription.MethodToken.ParameterToken>();
+  legacyParameterBag=new ParameterBag(Type.getMethodType(descriptor).getArgumentTypes());
 }

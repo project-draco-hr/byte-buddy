@@ -1,3 +1,0 @@
-{
-  return (acceptsArray || !typeDescription.isArray()) && (acceptsPrimitive || !typeDescription.isPrimitive()) && (acceptsVoid || !typeDescription.represents(void.class));
-}

@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withMethod(new MethodDescription.Token(FOO,ModifierContributor.EMPTY_MASK,Collections.<TypeVariableToken>emptyList(),TypeDescription.Generic.OBJECT,Collections.singletonList(new ParameterDescription.Token(TypeDescription.Generic.OBJECT,Collections.singletonList(AnnotationDescription.Builder.ofType(IncompatibleAnnotation.class).build()))),Collections.<TypeDescription.Generic>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE)).validated();
+}

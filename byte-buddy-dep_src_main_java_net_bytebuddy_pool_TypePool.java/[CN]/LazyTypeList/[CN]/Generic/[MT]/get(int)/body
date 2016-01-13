@@ -1,3 +1,0 @@
-{
-  return TokenizedGenericType.toErasure(typePool,descriptors.get(index)).asGenericType();
-}

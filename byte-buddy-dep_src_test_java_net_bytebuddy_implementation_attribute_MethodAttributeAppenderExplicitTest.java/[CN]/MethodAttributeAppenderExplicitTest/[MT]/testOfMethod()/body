@@ -1,6 +1,6 @@
 {
-  when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Baz.Instance()));
-  when(parameterDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Baz.Instance()));
+  when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new Baz.Instance()));
+  when(parameterDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new Baz.Instance()));
   MethodAttributeAppender methodAttributeAppender=MethodAttributeAppender.Explicit.of(methodDescription).make(instrumentedType);
   methodAttributeAppender.apply(methodVisitor,methodDescription,annotationValueFilter);
   verify(methodVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);

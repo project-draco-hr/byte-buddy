@@ -1,0 +1,3 @@
+{
+  this(rawType,ownerType,parameterTypes,Collections.<AnnotationDescription>emptyList());
+}

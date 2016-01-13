@@ -1,7 +1,7 @@
 {
-  TypeDescription.Generic typeDescription=describe(TypeResolution.class.getDeclaredField(BAR));
+  TypeDescription.Generic typeDescription=describeType(TypeResolution.class.getDeclaredField(BAR));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
-  assertThat(typeDescription.getParameters().size(),is(1));
+  assertThat(typeDescription.getTypeArguments().size(),is(1));
   TypeDescription.Generic interfaceType=typeDescription.getInterfaces().getOnly();
   assertThat(interfaceType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(interfaceType.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.BaseInterface.class)));

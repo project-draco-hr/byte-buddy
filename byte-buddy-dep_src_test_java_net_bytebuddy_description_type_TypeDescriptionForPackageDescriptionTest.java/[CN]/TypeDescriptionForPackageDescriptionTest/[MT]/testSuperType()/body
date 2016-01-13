@@ -1,3 +1,0 @@
-{
-  assertThat(typeDescription.getSuperType(),is(TypeDescription.Generic.OBJECT));
-}

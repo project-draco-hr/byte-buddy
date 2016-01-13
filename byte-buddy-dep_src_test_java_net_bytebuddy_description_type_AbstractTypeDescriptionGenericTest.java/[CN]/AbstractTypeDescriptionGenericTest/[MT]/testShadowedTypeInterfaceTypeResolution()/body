@@ -1,11 +1,11 @@
 {
-  TypeDescription.Generic typeDescription=describe(TypeResolution.class.getDeclaredField(FOO + BAR));
+  TypeDescription.Generic typeDescription=describeType(TypeResolution.class.getDeclaredField(FOO + BAR));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
-  assertThat(typeDescription.getParameters().size(),is(2));
+  assertThat(typeDescription.getTypeArguments().size(),is(2));
   TypeDescription.Generic interfaceType=typeDescription.getInterfaces().getOnly();
-  assertThat(interfaceType.getParameters().size(),is(2));
-  assertThat(interfaceType.getParameters().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(interfaceType.getParameters().get(0),is((TypeDefinition)new TypeDescription.ForLoadedType(Bar.class)));
-  assertThat(interfaceType.getParameters().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(interfaceType.getParameters().get(1),is((TypeDefinition)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(interfaceType.getTypeArguments().size(),is(2));
+  assertThat(interfaceType.getTypeArguments().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(interfaceType.getTypeArguments().get(0),is((TypeDefinition)new TypeDescription.ForLoadedType(Bar.class)));
+  assertThat(interfaceType.getTypeArguments().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(interfaceType.getTypeArguments().get(1),is((TypeDefinition)new TypeDescription.ForLoadedType(Foo.class)));
 }

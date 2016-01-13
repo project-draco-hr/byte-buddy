@@ -1,0 +1,5 @@
+TypePool typePool
+GenericTypeToken genericTypeToken
+String rawTypeDescriptor
+Map<String,List<AnnotationToken>> annotationTokens
+TypeVariableSource typeVariableSource

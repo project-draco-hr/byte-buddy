@@ -1,5 +1,5 @@
 {
-  Class<?> type=create(VisibilityBridgeAbstractMethod.class).modifiers(Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded();
+  Class<?> type=new ByteBuddy().subclass(VisibilityBridgeAbstractMethod.class).modifiers(Opcodes.ACC_PUBLIC | Opcodes.ACC_ABSTRACT).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded();
   assertThat(type.getDeclaredConstructors().length,is(1));
   assertThat(type.getDeclaredMethods().length,is(0));
 }

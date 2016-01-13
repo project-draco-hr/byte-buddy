@@ -1,3 +1,0 @@
-{
-  parameterAnnotationTokens.get(index).add(new LazyTypeDescription.AnnotationToken(descriptor,values));
-}

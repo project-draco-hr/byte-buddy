@@ -1,0 +1,7 @@
+{
+  this.typePool=typePool;
+  this.typeVariables=typeVariables;
+  this.typeVariableSource=typeVariableSource;
+  this.annotationTokens=annotationTokens;
+  this.boundAnnotationTokens=boundAnnotationTokens;
+}

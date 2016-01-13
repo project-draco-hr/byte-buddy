@@ -1,0 +1,3 @@
+{
+  return new OfParameterizedType(rawType,ownerType,parameterTypes,CompoundList.of(this.annotations,annotations));
+}

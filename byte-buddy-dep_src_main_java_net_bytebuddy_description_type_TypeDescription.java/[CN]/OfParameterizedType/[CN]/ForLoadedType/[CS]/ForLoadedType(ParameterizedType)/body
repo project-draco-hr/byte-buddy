@@ -1,3 +1,3 @@
 {
-  this.parameterizedType=parameterizedType;
+  this(parameterizedType,AnnotationReader.NoOp.INSTANCE);
 }

@@ -1,0 +1,9 @@
+{
+  AnnotationVisitor annotationVisitor=mock(AnnotationVisitor.class);
+  when(target.visit(anyString(),anyBoolean())).thenReturn(annotationVisitor);
+  AnnotationDescription annotationDescription=mock(AnnotationDescription.class);
+  when(annotationDescription.getRetention()).thenReturn(RetentionPolicy.SOURCE);
+  annotationAppender.append(annotationDescription,valueFilter);
+  verifyZeroInteractions(valueFilter);
+  verifyZeroInteractions(annotationVisitor);
+}

@@ -1,4 +1,0 @@
-TypePool typePool
-List<GenericTypeToken> genericTypeTokens
-List<String> rawTypeDescriptors
-TypeVariableSource typeVariableSource

@@ -1,0 +1,11 @@
+{
+  try {
+    return (AnnotatedElement)Array.get(GET_ANNOTATED_LOWER_BOUNDS.invoke(annotatedElement),index);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.reflect.AnnotatedWildcardType#getAnnotatedLowerBounds",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.reflect.AnnotatedWildcardType#getAnnotatedLowerBounds",exception.getCause());
+  }
+}

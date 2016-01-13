@@ -1,8 +1,10 @@
 {
-  when(fieldDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotation(new Baz.Instance()));
+  when(fieldDescription.getType()).thenReturn(TypeDescription.Generic.OBJECT);
+  when(fieldDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new Baz.Instance()));
   FieldAttributeAppender.ForInstrumentedField.INSTANCE.apply(fieldVisitor,fieldDescription,annotationValueFilter);
   verify(fieldVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
   verifyNoMoreInteractions(fieldVisitor);
   verify(fieldDescription).getDeclaredAnnotations();
+  verify(fieldDescription).getType();
   verifyNoMoreInteractions(fieldDescription);
 }

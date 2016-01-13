@@ -1,3 +1,3 @@
 {
-  return index < genericTypeTokens.size() ? new TokenizedGenericType(typePool,genericTypeTokens.get(index),rawTypeDescriptors.get(index),typeVariableSource) : TokenizedGenericType.toErasure(typePool,rawTypeDescriptors.get(index)).asGenericType();
+  return rawTypeDescriptors.size() == genericTypeTokens.size() ? TokenizedGenericType.of(typePool,genericTypeTokens.get(index),rawTypeDescriptors.get(index),annotationTokens.get(index),typeVariableSource) : TokenizedGenericType.toErasure(typePool,rawTypeDescriptors.get(index)).asGenericType();
 }

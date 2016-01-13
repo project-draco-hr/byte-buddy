@@ -1,3 +1,0 @@
-{
-  return typeDescription.asErasure().isAssignableTo(Throwable.class);
-}

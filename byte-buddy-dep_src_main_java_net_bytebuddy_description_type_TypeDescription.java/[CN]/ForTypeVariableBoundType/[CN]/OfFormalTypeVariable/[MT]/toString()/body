@@ -1,0 +1,3 @@
+{
+  return "TypeDescription.Generic.AnnotationReader.OfFormalTypeVariable{" + "typeVariable=" + typeVariable + ", index="+ index+ '}';
+}

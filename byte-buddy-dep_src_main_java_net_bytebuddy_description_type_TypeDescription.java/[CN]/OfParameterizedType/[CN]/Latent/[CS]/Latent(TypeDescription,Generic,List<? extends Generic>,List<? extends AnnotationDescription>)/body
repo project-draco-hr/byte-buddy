@@ -1,0 +1,6 @@
+{
+  this.rawType=rawType;
+  this.ownerType=ownerType;
+  this.parameters=parameters;
+  this.declaredAnnotations=declaredAnnotations;
+}

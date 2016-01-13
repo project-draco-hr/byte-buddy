@@ -1,3 +1,0 @@
-{
-  return superTypeDescriptor == null || isInterface() ? TypeDescription.Generic.UNDEFINED : signatureResolution.resolveSuperType(superTypeDescriptor,typePool,this);
-}

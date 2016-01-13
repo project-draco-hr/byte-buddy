@@ -9,12 +9,12 @@
       }
       generic=true;
     }
-    Generic superType=getSuperType();
-    if (superType == null) {
-      superType=TypeDescription.Generic.OBJECT;
+    Generic superClass=getSuperClass();
+    if (superClass == null) {
+      superClass=TypeDescription.Generic.OBJECT;
     }
-    superType.accept(new Generic.Visitor.ForSignatureVisitor(signatureWriter.visitSuperclass()));
-    generic=generic || !superType.getSort().isNonGeneric();
+    superClass.accept(new Generic.Visitor.ForSignatureVisitor(signatureWriter.visitSuperclass()));
+    generic=generic || !superClass.getSort().isNonGeneric();
     for (    Generic interfaceType : getInterfaces()) {
       interfaceType.accept(new Generic.Visitor.ForSignatureVisitor(signatureWriter.visitInterface()));
       generic=generic || !interfaceType.getSort().isNonGeneric();

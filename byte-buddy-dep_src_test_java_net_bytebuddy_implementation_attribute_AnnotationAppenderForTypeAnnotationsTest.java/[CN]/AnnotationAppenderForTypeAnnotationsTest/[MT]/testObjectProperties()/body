@@ -1,0 +1,8 @@
+{
+  ObjectPropertyAssertion.of(AnnotationAppender.ForTypeAnnotations.class).refine(new ObjectPropertyAssertion.Refinement<TypeReference>(){
+    @Override public void apply(    TypeReference mock){
+      when(mock.getValue()).thenReturn(new Random().nextInt());
+    }
+  }
+).apply();
+}

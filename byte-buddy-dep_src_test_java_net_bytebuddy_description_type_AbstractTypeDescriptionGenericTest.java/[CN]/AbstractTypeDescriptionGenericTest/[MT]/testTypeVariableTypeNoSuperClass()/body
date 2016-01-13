@@ -1,0 +1,3 @@
+{
+  describeType(SimpleTypeVariableType.class.getDeclaredField(FOO)).getSuperClass();
+}

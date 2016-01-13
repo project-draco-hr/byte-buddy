@@ -1,6 +1,0 @@
-{
-  TypeDescription.Generic typeDescription=mock(TypeDescription.Generic.class);
-  when(typeDescription.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
-  assertThat(TypeDescription.Generic.OfGenericArray.Latent.of(typeDescription,1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(TypeDescription.Generic.OfGenericArray.Latent.of(typeDescription,1).getComponentType(),is(typeDescription));
-}

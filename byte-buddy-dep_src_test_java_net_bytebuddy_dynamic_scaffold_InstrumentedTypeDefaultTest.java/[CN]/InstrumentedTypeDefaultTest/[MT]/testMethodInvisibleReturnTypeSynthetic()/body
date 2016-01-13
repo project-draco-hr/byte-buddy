@@ -1,0 +1,3 @@
+{
+  assertThat(makePlainInstrumentedType().withMethod(new MethodDescription.Token(FOO,Opcodes.ACC_SYNTHETIC,TypeDefinition.Sort.describe(PackagePrivateType.TYPE))).validated(),instanceOf(TypeDescription.class));
+}

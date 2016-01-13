@@ -4,6 +4,6 @@
   TypeDescription createdType=new TypeDescription.ForLoadedType(type);
   TypeDescription originalType=new TypeDescription.ForLoadedType(InterfaceType.class);
   assertThat(createdType.getTypeVariables(),is(originalType.getTypeVariables()));
-  assertThat(createdType.getSuperType(),nullValue(TypeDescription.Generic.class));
+  assertThat(createdType.getSuperClass(),nullValue(TypeDescription.Generic.class));
   assertThat(createdType.getInterfaces(),is(originalType.getInterfaces()));
 }

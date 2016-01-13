@@ -1,0 +1,5 @@
+{
+  when(invokableMethod.isSpecializableFor(rawSuperClass)).thenReturn(false);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(invokableToken);
+  assertThat(specialMethodInvocation.isValid(),is(false));
+}

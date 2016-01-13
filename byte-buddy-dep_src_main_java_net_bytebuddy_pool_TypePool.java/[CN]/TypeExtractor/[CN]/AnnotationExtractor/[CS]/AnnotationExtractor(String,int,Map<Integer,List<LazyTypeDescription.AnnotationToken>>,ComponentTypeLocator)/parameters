@@ -1,0 +1,4 @@
+String descriptor
+int index
+Map<Integer,List<LazyTypeDescription.AnnotationToken>> annotationTokens
+ComponentTypeLocator componentTypeLocator

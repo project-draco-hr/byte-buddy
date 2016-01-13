@@ -1,4 +1,0 @@
-{
-  this.typePool=typePool;
-  this.descriptors=descriptors;
-}

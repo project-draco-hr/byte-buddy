@@ -1,3 +1,0 @@
-{
-  assertThat(TypePool.LazyTypeDescription.DeclarationContext.SelfDeclared.INSTANCE.getEnclosingType(mock(TypePool.class)),nullValue(TypeDescription.class));
-}

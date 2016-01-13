@@ -1,3 +1,0 @@
-{
-  return typeDescription.equals(this.typeDescription);
-}

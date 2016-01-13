@@ -1,0 +1,23 @@
+{
+  Class<? extends Annotation> typeAnnotation=(Class<? extends Annotation>)Class.forName(TYPE_ANNOTATION);
+  MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotation).getDeclaredMethods().getOnly();
+  Class<?> samples=Class.forName(TYPE_ANNOTATION_SAMPLES);
+  TypeDescription.Generic firstInterfaceType=describeInterfaceType(samples,0);
+  assertThat(firstInterfaceType.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(firstInterfaceType.getDeclaredAnnotations().size(),is(1));
+  assertThat(firstInterfaceType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(firstInterfaceType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(19));
+  assertThat(firstInterfaceType.getTypeArguments().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(firstInterfaceType.getTypeArguments().getOnly().getDeclaredAnnotations().size(),is(1));
+  assertThat(firstInterfaceType.getTypeArguments().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(firstInterfaceType.getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(20));
+  TypeDescription.Generic secondInterfaceType=describeInterfaceType(samples,1);
+  assertThat(secondInterfaceType.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(secondInterfaceType.getDeclaredAnnotations().size(),is(0));
+  assertThat(secondInterfaceType.getTypeArguments().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(secondInterfaceType.getTypeArguments().get(0).getDeclaredAnnotations().size(),is(1));
+  assertThat(secondInterfaceType.getTypeArguments().get(0).getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(secondInterfaceType.getTypeArguments().get(0).getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(21));
+  assertThat(secondInterfaceType.getTypeArguments().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(secondInterfaceType.getTypeArguments().get(1).getDeclaredAnnotations().size(),is(0));
+}

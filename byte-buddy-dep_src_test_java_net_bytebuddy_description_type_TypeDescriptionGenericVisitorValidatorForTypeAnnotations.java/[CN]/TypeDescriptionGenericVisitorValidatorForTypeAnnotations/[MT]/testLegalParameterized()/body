@@ -1,0 +1,7 @@
+{
+  when(legal.isArray()).thenReturn(true);
+  when(legal.getTypeArguments()).thenReturn(new TypeList.Generic.Explicit(otherLegal));
+  when(legal.getOwnerType()).thenReturn(otherLegal);
+  assertThat(TypeDescription.Generic.Visitor.Validator.ForTypeAnnotations.INSTANCE.onParameterizedType(legal),is(true));
+  verify(otherLegal,times(2)).accept(TypeDescription.Generic.Visitor.Validator.ForTypeAnnotations.INSTANCE);
+}

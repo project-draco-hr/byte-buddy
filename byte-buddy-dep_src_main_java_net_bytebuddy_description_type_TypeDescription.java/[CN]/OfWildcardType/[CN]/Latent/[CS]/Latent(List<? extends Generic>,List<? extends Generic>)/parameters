@@ -1,2 +1,0 @@
-List<? extends Generic> upperBounds
-List<? extends Generic> lowerBounds

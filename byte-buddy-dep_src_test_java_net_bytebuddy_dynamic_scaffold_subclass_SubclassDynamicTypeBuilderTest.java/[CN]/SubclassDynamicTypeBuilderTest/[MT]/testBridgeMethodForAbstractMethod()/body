@@ -1,5 +1,5 @@
 {
-  Class<?> dynamicType=create(AbstractGenericType.Inner.class).modifiers(Opcodes.ACC_ABSTRACT | Opcodes.ACC_PUBLIC).method(named(FOO)).withoutCode().make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
+  Class<?> dynamicType=new ByteBuddy().subclass(AbstractGenericType.Inner.class).modifiers(Opcodes.ACC_ABSTRACT | Opcodes.ACC_PUBLIC).method(named(FOO)).withoutCode().make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
   assertThat(dynamicType.getDeclaredMethods().length,is(2));
   assertEquals(Void.class,dynamicType.getDeclaredMethod(FOO,Void.class).getReturnType());
   assertThat(dynamicType.getDeclaredMethod(FOO,Void.class).getGenericReturnType(),is((Type)Void.class));

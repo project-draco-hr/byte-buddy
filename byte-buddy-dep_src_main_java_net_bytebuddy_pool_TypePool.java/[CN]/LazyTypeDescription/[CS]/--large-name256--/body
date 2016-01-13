@@ -1,0 +1,25 @@
+{
+  this.typePool=typePool;
+  this.modifiers=modifiers & ~Opcodes.ACC_SUPER;
+  this.name=Type.getObjectType(name).getClassName();
+  this.superClassDescriptor=superClassInternalName == null ? NO_SUPER_CLASS : Type.getObjectType(superClassInternalName).getDescriptor();
+  this.signatureResolution=signatureResolution;
+  if (interfaceInternalName == null) {
+    interfaceTypeDescriptors=Collections.emptyList();
+  }
+ else {
+    interfaceTypeDescriptors=new ArrayList<String>(interfaceInternalName.length);
+    for (    String internalName : interfaceInternalName) {
+      interfaceTypeDescriptors.add(Type.getObjectType(internalName).getDescriptor());
+    }
+  }
+  this.declarationContext=declarationContext;
+  this.declaredTypes=declaredTypes;
+  this.anonymousType=anonymousType;
+  this.superTypeAnnotationTokens=superTypeAnnotationTokens;
+  this.typeVariableAnnotationTokens=typeVariableAnnotationTokens;
+  this.typeVariableBoundsAnnotationTokens=typeVariableBoundsAnnotationTokens;
+  this.annotationTokens=annotationTokens;
+  this.fieldTokens=fieldTokens;
+  this.methodTokens=methodTokens;
+}

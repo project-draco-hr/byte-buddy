@@ -1,12 +1,13 @@
 {
-  if (!methodDescription.isVirtual()) {
-    throw new IllegalStateException("Cannot invoke " + methodDescription + " virtually");
+  if (implementationTarget.getInstrumentedType().getSuperClass() == null) {
+    throw new IllegalStateException("Cannot invoke super method for " + implementationTarget.getInstrumentedType());
   }
- else   if (!methodDescription.isInvokableOn(typeDescription.asErasure())) {
-    throw new IllegalStateException("Cannot invoke " + methodDescription + " on "+ typeDescription);
+ else   if (!methodDescription.isInvokableOn(implementationTarget.getOriginType().asErasure())) {
+    throw new IllegalStateException("Cannot invoke " + methodDescription + " as super method of "+ implementationTarget.getInstrumentedType());
   }
- else   if (!typeDescription.asErasure().isVisibleTo(implementationTarget.getInstrumentedType())) {
-    throw new IllegalStateException(typeDescription + " is not visible to " + implementationTarget.getInstrumentedType());
+  StackManipulation stackManipulation=implementationTarget.invokeDominant(methodDescription.asSignatureToken());
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot invoke " + methodDescription + " as a super method");
   }
-  return MethodInvocation.invoke(methodDescription).virtual(typeDescription.asErasure());
+  return stackManipulation;
 }

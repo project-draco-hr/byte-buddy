@@ -1,0 +1,3 @@
+{
+  return new LazyTypeVariable(typePool,typeVariableSource,annotationTokens == null ? Collections.<String,List<AnnotationToken>>emptyMap() : annotationTokens,boundaryAnnotationTokens == null ? Collections.<Integer,Map<String,List<AnnotationToken>>>emptyMap() : boundaryAnnotationTokens,symbol,boundTypeTokens);
+}

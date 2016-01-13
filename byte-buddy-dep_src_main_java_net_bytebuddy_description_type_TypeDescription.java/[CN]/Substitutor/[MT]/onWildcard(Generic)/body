@@ -1,0 +1,3 @@
+{
+  return new OfWildcardType.Latent(wildcard.getUpperBounds().accept(this),wildcard.getLowerBounds().accept(this),wildcard.getDeclaredAnnotations());
+}

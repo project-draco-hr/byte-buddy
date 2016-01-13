@@ -1,3 +1,0 @@
-{
-  return Generic.OfGenericArray.Latent.of(componentTypeToken.toGenericType(typePool,typeVariableSource),1);
-}

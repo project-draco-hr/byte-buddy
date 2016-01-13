@@ -1,0 +1,3 @@
+{
+  describeType(UnboundWildcardParameterizedType.class.getDeclaredField(FOO)).getTypeArguments().getOnly().getSuperClass();
+}

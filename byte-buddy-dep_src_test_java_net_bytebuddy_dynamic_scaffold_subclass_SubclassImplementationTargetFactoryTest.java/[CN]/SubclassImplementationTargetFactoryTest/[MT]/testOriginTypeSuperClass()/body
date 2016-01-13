@@ -1,0 +1,3 @@
+{
+  assertThat(SubclassImplementationTarget.Factory.SUPER_CLASS.make(instrumentedType,methodGraph).getOriginType(),is((TypeDefinition)superClass));
+}

@@ -1,0 +1,3 @@
+{
+  return new OfGenericArray.Latent(genericArray.getComponentType().accept(this),genericArray.getDeclaredAnnotations());
+}

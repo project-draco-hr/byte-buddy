@@ -1,5 +1,5 @@
 {
-  TypeDescription.Generic typeDescription=describe(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO));
+  TypeDescription.Generic typeDescription=describeType(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(typeDescription.getSourceCodeName(),is(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.getTypeName(),is(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
@@ -9,11 +9,11 @@
   assertThat(typeDescription,CoreMatchers.not(TypeDefinition.Sort.describe(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO).getType())));
   assertThat(typeDescription,CoreMatchers.not(new Object()));
   assertThat(typeDescription.equals(null),is(false));
-  assertThat(typeDescription.getParameters().size(),is(1));
-  assertThat(typeDescription.getParameters().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
-  assertThat(typeDescription.getParameters().getOnly().getUpperBounds().size(),is(1));
-  assertThat(typeDescription.getParameters().getOnly().getUpperBounds().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(typeDescription.getParameters().getOnly().getUpperBounds().getOnly().asErasure().represents(String.class),is(true));
-  assertThat(typeDescription.getParameters().getOnly().getLowerBounds().size(),is(0));
+  assertThat(typeDescription.getTypeArguments().size(),is(1));
+  assertThat(typeDescription.getTypeArguments().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
+  assertThat(typeDescription.getTypeArguments().getOnly().getUpperBounds().size(),is(1));
+  assertThat(typeDescription.getTypeArguments().getOnly().getUpperBounds().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(typeDescription.getTypeArguments().getOnly().getUpperBounds().getOnly().asErasure().represents(String.class),is(true));
+  assertThat(typeDescription.getTypeArguments().getOnly().getLowerBounds().size(),is(0));
   assertThat(typeDescription.getTypeName(),is(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
 }

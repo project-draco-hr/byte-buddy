@@ -1,5 +1,5 @@
 {
-  TypeDescription.Generic typeDescription=describe(SimpleParameterizedType.class.getDeclaredField(FOO));
+  TypeDescription.Generic typeDescription=describeType(SimpleParameterizedType.class.getDeclaredField(FOO));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(typeDescription.getSourceCodeName(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.getTypeName(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
@@ -9,9 +9,9 @@
   assertThat(typeDescription,CoreMatchers.not(TypeDefinition.Sort.describe(SimpleGenericArrayType.class.getDeclaredField(FOO).getType())));
   assertThat(typeDescription,CoreMatchers.not(new Object()));
   assertThat(typeDescription.equals(null),is(false));
-  assertThat(typeDescription.getParameters().size(),is(1));
-  assertThat(typeDescription.getParameters().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(typeDescription.getParameters().getOnly().asErasure().represents(String.class),is(true));
+  assertThat(typeDescription.getTypeArguments().size(),is(1));
+  assertThat(typeDescription.getTypeArguments().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(typeDescription.getTypeArguments().getOnly().asErasure().represents(String.class),is(true));
   assertThat(typeDescription.getTypeName(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.getOwnerType(),nullValue(TypeDescription.Generic.class));
 }

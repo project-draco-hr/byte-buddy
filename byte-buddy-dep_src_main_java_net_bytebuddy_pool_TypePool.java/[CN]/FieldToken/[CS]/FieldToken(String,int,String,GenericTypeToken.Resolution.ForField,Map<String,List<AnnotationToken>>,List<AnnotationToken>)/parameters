@@ -1,0 +1,6 @@
+String name
+int modifiers
+String descriptor
+GenericTypeToken.Resolution.ForField signatureResolution
+Map<String,List<AnnotationToken>> typeAnnotationTokens
+List<AnnotationToken> annotationTokens

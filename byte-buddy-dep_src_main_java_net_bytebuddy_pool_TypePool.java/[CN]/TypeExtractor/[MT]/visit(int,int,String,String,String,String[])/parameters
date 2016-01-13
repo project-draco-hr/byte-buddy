@@ -2,5 +2,5 @@ int classFileVersion
 int modifiers
 String internalName
 String genericSignature
-String superTypeName
+String superClassName
 String[] interfaceName

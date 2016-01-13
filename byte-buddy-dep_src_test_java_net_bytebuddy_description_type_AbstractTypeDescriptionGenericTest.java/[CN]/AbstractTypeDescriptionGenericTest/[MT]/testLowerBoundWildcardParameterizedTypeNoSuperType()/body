@@ -1,3 +1,0 @@
-{
-  describe(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO)).getParameters().getOnly().getSuperType();
-}

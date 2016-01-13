@@ -1,0 +1,5 @@
+{
+  super(descriptor);
+  this.index=index;
+  this.annotationTokens=annotationTokens;
+}

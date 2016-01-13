@@ -1,0 +1,4 @@
+{
+  when(legal.getTypeArguments()).thenReturn(new TypeList.Generic.Explicit(otherIllegal));
+  assertThat(TypeDescription.Generic.Visitor.Validator.ForTypeAnnotations.INSTANCE.onParameterizedType(legal),is(false));
+}

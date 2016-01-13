@@ -1,3 +1,0 @@
-{
-  assertThat(new TypePool.LazyTypeDescription.AnnotationToken.Resolution.Illegal("foo").isResolved(),is(false));
-}

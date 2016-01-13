@@ -1,0 +1,3 @@
+{
+  return typeDescription.isArray() ? new OfGenericArray.Latent(typeDescription.getComponentType().accept(this),typeDescription.getDeclaredAnnotations()) : onSimpleType(typeDescription);
+}

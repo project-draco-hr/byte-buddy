@@ -1,3 +1,0 @@
-{
-  return "TypeDescription.Generic.Visitor.Assigner.Dispatcher.ForParameterizedType.ParameterAssigner.InvariantBinding{" + "typeDescription=" + typeDescription + '}';
-}

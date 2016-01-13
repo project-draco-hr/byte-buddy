@@ -1,4 +1,4 @@
 {
-  assertThat(describe(SimpleParameterizedType.class.getDeclaredField(FOO)).represents(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType()),is(true));
-  assertThat(describe(SimpleParameterizedType.class.getDeclaredField(FOO)).represents(List.class),is(false));
+  assertThat(describeType(SimpleParameterizedType.class.getDeclaredField(FOO)).represents(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType()),is(true));
+  assertThat(describeType(SimpleParameterizedType.class.getDeclaredField(FOO)).represents(List.class),is(false));
 }

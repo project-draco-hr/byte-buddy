@@ -1,0 +1,3 @@
+{
+  assertThat(TypeDescription.Generic.Builder.rawType(Foo.class).asArray(2).build().getComponentType().getComponentType().represents(Foo.class),is(true));
+}

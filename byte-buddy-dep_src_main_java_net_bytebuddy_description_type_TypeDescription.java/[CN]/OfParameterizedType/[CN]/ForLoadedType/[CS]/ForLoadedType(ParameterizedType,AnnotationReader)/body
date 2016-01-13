@@ -1,0 +1,4 @@
+{
+  this.parameterizedType=parameterizedType;
+  this.annotationReader=annotationReader;
+}

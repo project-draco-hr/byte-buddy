@@ -1,10 +1,10 @@
 {
-  TypeDescription.Generic typeDescription=describe(NestedStaticTypeVariableType.class.getDeclaredField(FOO));
+  TypeDescription.Generic typeDescription=describeType(NestedStaticTypeVariableType.class.getDeclaredField(FOO));
   assertThat(typeDescription.getTypeName(),is(NestedStaticTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(typeDescription.getStackSize(),is(StackSize.SINGLE));
-  assertThat(typeDescription.getParameters().size(),is(1));
-  assertThat(typeDescription.getParameters().getOnly(),is((TypeDefinition)new TypeDescription.ForLoadedType(String.class)));
+  assertThat(typeDescription.getTypeArguments().size(),is(1));
+  assertThat(typeDescription.getTypeArguments().getOnly(),is((TypeDefinition)new TypeDescription.ForLoadedType(String.class)));
   Type ownerType=((ParameterizedType)NestedStaticTypeVariableType.class.getDeclaredField(FOO).getGenericType()).getOwnerType();
   assertThat(typeDescription.getOwnerType(),is(TypeDefinition.Sort.describe(ownerType)));
   assertThat(typeDescription.getOwnerType().getSort(),is(TypeDefinition.Sort.NON_GENERIC));

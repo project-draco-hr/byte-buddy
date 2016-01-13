@@ -1,5 +1,8 @@
 {
   super(Opcodes.ASM5);
+  superTypeAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();
+  typeVariableAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();
+  typeVariableBoundsAnnotationTokens=new HashMap<Integer,Map<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>>();
   annotationTokens=new ArrayList<LazyTypeDescription.AnnotationToken>();
   fieldTokens=new ArrayList<LazyTypeDescription.FieldToken>();
   methodTokens=new ArrayList<LazyTypeDescription.MethodToken>();

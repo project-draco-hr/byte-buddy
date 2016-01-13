@@ -1,0 +1,3 @@
+{
+  TypeDescription.Generic.Builder.rawType(void.class).annotate(mock(AnnotationDescription.class)).build();
+}

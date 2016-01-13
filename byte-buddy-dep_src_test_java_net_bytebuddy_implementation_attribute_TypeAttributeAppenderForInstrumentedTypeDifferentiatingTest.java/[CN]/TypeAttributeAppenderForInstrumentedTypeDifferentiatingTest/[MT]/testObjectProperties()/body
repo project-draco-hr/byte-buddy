@@ -1,0 +1,11 @@
+{
+  ObjectPropertyAssertion.of(TypeAttributeAppender.ForInstrumentedType.Differentiating.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
+    @Override public void apply(    TypeDescription mock){
+      AnnotationDescription[] annotationDescription=new AnnotationDescription[new Random().nextInt(10000)];
+      when(mock.getDeclaredAnnotations()).thenReturn(new AnnotationList.Explicit(Arrays.asList(annotationDescription)));
+      when(mock.getTypeVariables()).thenReturn(new TypeList.Generic.Empty());
+      when(mock.getInterfaces()).thenReturn(new TypeList.Generic.Empty());
+    }
+  }
+).apply();
+}
