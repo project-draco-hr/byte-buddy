@@ -1,0 +1,6 @@
+{
+  TypeDescription.Generic typeDescription=TypeDescription.Generic.Builder.rawType(Object.class).annotate(annotationDescription).asArray().annotate(annotationDescription).build();
+  assertThat(TypeDescription.Generic.Visitor.AnnotationStripper.INSTANCE.onGenericArray(typeDescription),is(typeDescription));
+  assertThat(TypeDescription.Generic.Visitor.AnnotationStripper.INSTANCE.onGenericArray(typeDescription).getDeclaredAnnotations().size(),is(0));
+  assertThat(TypeDescription.Generic.Visitor.AnnotationStripper.INSTANCE.onGenericArray(typeDescription).getComponentType().getDeclaredAnnotations().size(),is(0));
+}

@@ -1,0 +1,3 @@
+{
+  annotationDescription=AnnotationDescription.Builder.ofType(Foo.class).build();
+}

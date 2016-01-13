@@ -1,0 +1,5 @@
+{
+  TypeDescription.Generic typeDescription=TypeDescription.Generic.Builder.typeVariable(FOO).annotate(annotationDescription).build();
+  assertThat(TypeDescription.Generic.Visitor.AnnotationStripper.INSTANCE.onTypeVariable(typeDescription).getSymbol(),is(FOO));
+  assertThat(TypeDescription.Generic.Visitor.AnnotationStripper.INSTANCE.onTypeVariable(typeDescription).getDeclaredAnnotations().size(),is(0));
+}
