@@ -12,7 +12,7 @@
   }
  else {
     do {
-      leftType=leftType.getSuperType().asErasure();
+      leftType=leftType.getSuperClass().asErasure();
     }
  while (!leftType.isAssignableFrom(rightType));
     return leftType.getInternalName();

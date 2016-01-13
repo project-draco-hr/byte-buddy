@@ -9,7 +9,7 @@
       }
       generic=true;
     }
-    Generic superType=getSuperType();
+    Generic superType=getSuperClass();
     if (superType == null) {
       superType=TypeDescription.Generic.OBJECT;
     }

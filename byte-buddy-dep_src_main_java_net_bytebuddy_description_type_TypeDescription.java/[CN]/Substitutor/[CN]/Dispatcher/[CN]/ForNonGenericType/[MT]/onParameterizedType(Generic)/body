@@ -2,7 +2,7 @@
   if (typeDescription.equals(parameterizedType.asErasure())) {
     return true;
   }
-  Generic superType=parameterizedType.getSuperType();
+  Generic superType=parameterizedType.getSuperClass();
   if (superType != null && isAssignableFrom(superType)) {
     return true;
   }

@@ -1,4 +1,4 @@
 {
-  Generic superType=asErasure().getSuperType();
+  Generic superType=asErasure().getSuperClass();
   return superType == null ? UNDEFINED : superType.accept(Visitor.Substitutor.ForTypeVariableBinding.bind(this));
 }

@@ -1,9 +1,9 @@
 {
-  assertThat(describe(Object.class).getSuperType(),nullValue(TypeDescription.Generic.class));
-  assertThat(describe(SampleInterface.class).getSuperType(),nullValue(TypeDescription.Generic.class));
-  assertThat(describe(SampleAnnotation.class).getSuperType(),nullValue(TypeDescription.Generic.class));
-  assertThat(describe(void.class).getSuperType(),nullValue(TypeDescription.Generic.class));
-  assertThat(describe(SampleClass.class).getSuperType(),is(TypeDescription.Generic.OBJECT));
-  assertThat(describe(SampleIndirectInterfaceImplementation.class).getSuperType(),is((TypeDefinition)new TypeDescription.ForLoadedType(SampleInterfaceImplementation.class)));
-  assertThat(describe(Object[].class).getSuperType(),is(TypeDescription.Generic.OBJECT));
+  assertThat(describe(Object.class).getSuperClass(),nullValue(TypeDescription.Generic.class));
+  assertThat(describe(SampleInterface.class).getSuperClass(),nullValue(TypeDescription.Generic.class));
+  assertThat(describe(SampleAnnotation.class).getSuperClass(),nullValue(TypeDescription.Generic.class));
+  assertThat(describe(void.class).getSuperClass(),nullValue(TypeDescription.Generic.class));
+  assertThat(describe(SampleClass.class).getSuperClass(),is(TypeDescription.Generic.OBJECT));
+  assertThat(describe(SampleIndirectInterfaceImplementation.class).getSuperClass(),is((TypeDefinition)new TypeDescription.ForLoadedType(SampleInterfaceImplementation.class)));
+  assertThat(describe(Object[].class).getSuperClass(),is(TypeDescription.Generic.OBJECT));
 }

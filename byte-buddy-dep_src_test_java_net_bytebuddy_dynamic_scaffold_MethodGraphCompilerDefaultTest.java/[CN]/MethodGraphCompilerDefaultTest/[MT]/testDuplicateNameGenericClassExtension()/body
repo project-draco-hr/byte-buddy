@@ -2,14 +2,14 @@
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(DuplicateNameGenericClass.Inner.class);
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 3));
-  MethodDescription objectMethod=typeDescription.getSuperType().getDeclaredMethods().filter(takesArguments(String.class)).getOnly();
+  MethodDescription objectMethod=typeDescription.getSuperClass().getDeclaredMethods().filter(takesArguments(String.class)).getOnly();
   MethodGraph.Node objectNode=methodGraph.locate(objectMethod.asSignatureToken());
   assertThat(objectNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(objectNode.getRepresentative(),is(objectMethod));
   assertThat(objectNode.getMethodTypes().size(),is(2));
   assertThat(objectNode.getMethodTypes().contains(objectMethod.asTypeToken()),is(true));
   assertThat(objectNode.getMethodTypes().contains(objectMethod.asDefined().asTypeToken()),is(true));
-  MethodDescription integerMethod=typeDescription.getSuperType().getDeclaredMethods().filter(takesArguments(Integer.class)).getOnly();
+  MethodDescription integerMethod=typeDescription.getSuperClass().getDeclaredMethods().filter(takesArguments(Integer.class)).getOnly();
   MethodGraph.Node integerNode=methodGraph.locate(integerMethod.asSignatureToken());
   assertThat(integerNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(integerNode.getRepresentative(),is(integerMethod));

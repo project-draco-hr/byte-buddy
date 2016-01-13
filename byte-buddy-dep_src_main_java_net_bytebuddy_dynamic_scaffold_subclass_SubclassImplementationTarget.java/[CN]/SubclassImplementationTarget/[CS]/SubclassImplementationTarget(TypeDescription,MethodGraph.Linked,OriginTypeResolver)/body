@@ -1,6 +1,6 @@
 {
   super(instrumentedType,methodGraph);
-  TypeDescription.Generic superType=instrumentedType.getSuperType();
+  TypeDescription.Generic superType=instrumentedType.getSuperClass();
   MethodList<?> superConstructors=superType == null ? new MethodList.Empty<MethodDescription.InGenericShape>() : superType.getDeclaredMethods().filter(isConstructor().and(isVisibleTo(instrumentedType)));
   this.superConstructors=new HashMap<MethodDescription.SignatureToken,MethodDescription>();
   for (  MethodDescription superConstructor : superConstructors) {

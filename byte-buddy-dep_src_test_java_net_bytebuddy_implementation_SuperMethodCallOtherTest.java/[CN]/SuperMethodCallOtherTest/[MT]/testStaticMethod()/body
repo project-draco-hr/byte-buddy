@@ -1,5 +1,5 @@
 {
-  when(typeDescription.getSuperType()).thenReturn(genericSuperType);
+  when(typeDescription.getSuperClass()).thenReturn(genericSuperType);
   when(methodDescription.isStatic()).thenReturn(true);
   when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Empty<ParameterDescription>());
   when(methodDescription.getReturnType()).thenReturn(genericReturnType);

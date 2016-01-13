@@ -1,7 +1,7 @@
 {
   when(superGraph.locate(Mockito.any(MethodDescription.SignatureToken.class))).thenReturn(MethodGraph.Node.Unresolved.INSTANCE);
   when(superGraph.locate(invokableToken)).thenReturn(new MethodGraph.Node.Simple(invokableMethod));
-  when(instrumentedType.getSuperType()).thenReturn(superType);
+  when(instrumentedType.getSuperClass()).thenReturn(superType);
   when(superType.asErasure()).thenReturn(rawSuperType);
   when(superType.asGenericType()).thenReturn(superType);
   when(rawSuperType.asGenericType()).thenReturn(superType);

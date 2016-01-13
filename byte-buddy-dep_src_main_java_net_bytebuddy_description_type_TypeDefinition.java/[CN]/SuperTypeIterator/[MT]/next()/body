@@ -6,6 +6,6 @@
     return nextType;
   }
   finally {
-    nextType=nextType.getSuperType();
+    nextType=nextType.getSuperClass();
   }
 }

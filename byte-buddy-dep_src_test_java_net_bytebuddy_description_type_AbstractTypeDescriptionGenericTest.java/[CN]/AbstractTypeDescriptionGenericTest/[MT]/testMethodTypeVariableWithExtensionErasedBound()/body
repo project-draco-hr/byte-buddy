@@ -1,5 +1,5 @@
 {
-  TypeDescription.Generic typeDescription=describeType(MemberVariable.class.getDeclaredField(BAR)).getSuperType();
+  TypeDescription.Generic typeDescription=describeType(MemberVariable.class.getDeclaredField(BAR)).getSuperClass();
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   MethodDescription methodDescription=typeDescription.getDeclaredMethods().filter(named(QUX)).getOnly();
   assertThat(methodDescription.getReturnType().getSort(),is(TypeDefinition.Sort.VARIABLE));

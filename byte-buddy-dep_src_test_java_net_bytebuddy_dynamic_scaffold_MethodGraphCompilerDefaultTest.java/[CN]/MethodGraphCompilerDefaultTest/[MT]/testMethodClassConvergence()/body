@@ -3,8 +3,8 @@
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 1));
   MethodDescription methodDescription=typeDescription.getDeclaredMethods().filter(isMethod().and(ElementMatchers.not(isBridge()))).getOnly();
-  MethodDescription genericMethod=typeDescription.getSuperType().getDeclaredMethods().filter(isMethod().and(definedMethod(takesArguments(Object.class)))).getOnly();
-  MethodDescription nonGenericMethod=typeDescription.getSuperType().getDeclaredMethods().filter(isMethod().and(definedMethod(takesArguments(Void.class)))).getOnly();
+  MethodDescription genericMethod=typeDescription.getSuperClass().getDeclaredMethods().filter(isMethod().and(definedMethod(takesArguments(Object.class)))).getOnly();
+  MethodDescription nonGenericMethod=typeDescription.getSuperClass().getDeclaredMethods().filter(isMethod().and(definedMethod(takesArguments(Void.class)))).getOnly();
   MethodGraph.Node methodNode=methodGraph.locate(methodDescription.asSignatureToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.RESOLVED));
   assertThat(methodNode,is(methodGraph.locate(genericMethod.asDefined().asSignatureToken())));
