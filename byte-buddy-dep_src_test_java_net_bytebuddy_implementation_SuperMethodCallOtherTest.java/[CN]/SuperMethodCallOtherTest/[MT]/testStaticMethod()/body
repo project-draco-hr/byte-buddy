@@ -1,10 +1,10 @@
 {
-  when(typeDescription.getSuperClass()).thenReturn(genericSuperType);
+  when(typeDescription.getSuperClass()).thenReturn(superClass);
   when(methodDescription.isStatic()).thenReturn(true);
   when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Empty<ParameterDescription>());
   when(methodDescription.getReturnType()).thenReturn(genericReturnType);
   when(returnType.getStackSize()).thenReturn(StackSize.SINGLE);
-  when(superClass.getDeclaredMethods()).thenReturn(superClassMethods);
+  when(rawSuperClass.getDeclaredMethods()).thenReturn(superClassMethods);
   when(superClassMethods.filter(any(ElementMatcher.class))).thenReturn(superClassMethods);
   when(implementationTarget.invokeDominant(token)).thenReturn(Implementation.SpecialMethodInvocation.Illegal.INSTANCE);
   SuperMethodCall.INSTANCE.appender(implementationTarget).apply(methodVisitor,implementationContext,methodDescription);

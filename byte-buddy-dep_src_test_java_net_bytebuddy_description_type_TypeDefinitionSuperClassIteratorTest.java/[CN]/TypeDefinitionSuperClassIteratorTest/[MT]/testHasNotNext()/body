@@ -1,0 +1,6 @@
+{
+  Iterator<TypeDefinition> iterator=new TypeDefinition.SuperClassIterator(typeDescription);
+  assertThat(iterator.next(),is((TypeDefinition)typeDescription));
+  assertThat(iterator.next(),is((TypeDefinition)superClass));
+  iterator.next();
+}

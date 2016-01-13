@@ -13,7 +13,7 @@
   assertThat(methodNode.getMethodTypes().contains(methodDescription.asTypeToken()),is(true));
   assertThat(methodNode.getMethodTypes().contains(methodDescription.asDefined().asTypeToken()),is(true));
   assertThat(methodNode.getRepresentative(),is(methodDescription));
-  MethodGraph superGraph=methodGraph.getSuperGraph();
+  MethodGraph superGraph=methodGraph.getSuperClassGraph();
   MethodGraph.Node superNode=superGraph.locate(methodDescription.asSignatureToken());
   assertThat(superNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
   assertThat(superNode.getMethodTypes().size(),is(2));

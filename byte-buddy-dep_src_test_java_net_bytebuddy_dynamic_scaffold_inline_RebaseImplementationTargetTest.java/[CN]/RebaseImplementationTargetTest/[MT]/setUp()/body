@@ -1,8 +1,8 @@
 {
   when(methodGraph.locate(Mockito.any(MethodDescription.SignatureToken.class))).thenReturn(MethodGraph.Node.Unresolved.INSTANCE);
-  when(instrumentedType.getSuperClass()).thenReturn(genericSuperType);
-  when(genericSuperType.asErasure()).thenReturn(superClass);
-  when(superClass.getInternalName()).thenReturn(BAR);
+  when(instrumentedType.getSuperClass()).thenReturn(superClass);
+  when(superClass.asErasure()).thenReturn(rawSuperClass);
+  when(rawSuperClass.getInternalName()).thenReturn(BAR);
   when(rebasedMethod.getInternalName()).thenReturn(QUX);
   when(rebasedMethod.asToken(ElementMatchers.is(instrumentedType))).thenReturn(rebasedToken);
   when(rebasedMethod.getDescriptor()).thenReturn(FOO);

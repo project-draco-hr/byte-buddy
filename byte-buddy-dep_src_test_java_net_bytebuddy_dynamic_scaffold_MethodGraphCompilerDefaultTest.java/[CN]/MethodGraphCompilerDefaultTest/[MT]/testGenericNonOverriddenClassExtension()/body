@@ -9,5 +9,5 @@
   assertThat(node.getMethodTypes().size(),is(2));
   assertThat(node.getMethodTypes().contains(methodDescription.asTypeToken()),is(true));
   assertThat(node.getMethodTypes().contains(methodDescription.asDefined().asTypeToken()),is(true));
-  assertThat(node,is(methodGraph.getSuperGraph().locate(methodDescription.asSignatureToken())));
+  assertThat(node,is(methodGraph.getSuperClassGraph().locate(methodDescription.asSignatureToken())));
 }

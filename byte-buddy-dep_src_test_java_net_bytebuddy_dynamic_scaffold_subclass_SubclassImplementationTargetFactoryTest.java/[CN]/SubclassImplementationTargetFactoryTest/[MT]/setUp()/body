@@ -1,5 +1,5 @@
 {
-  when(instrumentedType.getSuperClass()).thenReturn(genericSuperType);
-  when(genericSuperType.asErasure()).thenReturn(superClass);
-  when(genericSuperType.getDeclaredMethods()).thenReturn(new MethodList.Empty<MethodDescription.InGenericShape>());
+  when(instrumentedType.getSuperClass()).thenReturn(superClass);
+  when(superClass.asErasure()).thenReturn(rawSuperClass);
+  when(superClass.getDeclaredMethods()).thenReturn(new MethodList.Empty<MethodDescription.InGenericShape>());
 }

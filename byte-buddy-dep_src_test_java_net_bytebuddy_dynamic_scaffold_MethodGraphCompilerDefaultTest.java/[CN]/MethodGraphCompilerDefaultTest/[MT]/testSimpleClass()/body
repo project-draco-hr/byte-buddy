@@ -2,7 +2,7 @@
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(SimpleClass.class);
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size()));
-  assertThat(methodGraph.getSuperGraph().listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size()));
+  assertThat(methodGraph.getSuperClassGraph().listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size()));
   assertThat(methodGraph.getInterfaceGraph(mock(TypeDescription.class)).listNodes().size(),is(0));
   for (  MethodDescription methodDescription : TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual())) {
     MethodGraph.Node node=methodGraph.locate(methodDescription.asSignatureToken());

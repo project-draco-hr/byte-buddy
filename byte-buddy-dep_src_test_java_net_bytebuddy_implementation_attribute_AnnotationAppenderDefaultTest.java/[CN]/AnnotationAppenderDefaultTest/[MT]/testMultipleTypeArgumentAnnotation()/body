@@ -1,6 +1,6 @@
 {
   int[] array={2,3,4};
-  Class<?> bar=makeTypeWithSuperTypeAnnotation(new Baz.Instance(FOOBAR,array,new Foo.Instance(),Baz.Enum.VALUE,Void.class));
+  Class<?> bar=makeTypeWithSuperClassAnnotation(new Baz.Instance(FOOBAR,array,new Foo.Instance(),Baz.Enum.VALUE,Void.class));
   TypeDescription.Generic.AnnotationReader annotationReader=TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperClass(bar);
   assertThat(annotationReader.asList().size(),is(1));
   assertThat(annotationReader.asList().isAnnotationPresent(Baz.class),is(true));

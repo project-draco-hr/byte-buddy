@@ -9,7 +9,7 @@
   assertThat(methodNode.getMethodTypes().contains(method.asTypeToken()),is(true));
   assertThat(methodNode.getRepresentative(),is(method));
   assertThat(methodGraph.listNodes().contains(methodNode),is(true));
-  MethodGraph.Node baseNode=methodGraph.getSuperGraph().locate(method.asSignatureToken());
+  MethodGraph.Node baseNode=methodGraph.getSuperClassGraph().locate(method.asSignatureToken());
   assertThat(methodNode,not(baseNode));
   assertThat(typeDescription.getSuperClass().getDeclaredMethods().filter(ElementMatchers.is(baseNode.getRepresentative())).getOnly(),is(baseNode.getRepresentative()));
 }

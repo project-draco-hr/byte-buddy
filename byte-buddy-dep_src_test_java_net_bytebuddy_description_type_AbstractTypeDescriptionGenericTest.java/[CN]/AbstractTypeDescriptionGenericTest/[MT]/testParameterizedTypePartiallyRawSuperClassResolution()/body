@@ -1,0 +1,16 @@
+{
+  TypeDescription.Generic typeDescription=describeType(TypeResolution.class.getDeclaredField(QUX));
+  assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(typeDescription.getTypeArguments().size(),is(1));
+  TypeDescription.Generic superClass=typeDescription.getSuperClass();
+  assertThat(superClass.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superClass.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Intermediate.class)));
+  TypeDescription.Generic superSuperClass=superClass.getSuperClass();
+  assertThat(superSuperClass.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(superSuperClass.asErasure(),is((TypeDescription)new TypeDescription.ForLoadedType(TypeResolution.Base.class)));
+  assertThat(superSuperClass.getTypeArguments().size(),is(2));
+  assertThat(superSuperClass.getTypeArguments().get(0).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superSuperClass.getTypeArguments().get(0).asErasure().represents(List.class),is(true));
+  assertThat(superSuperClass.getTypeArguments().get(1).getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superSuperClass.getTypeArguments().get(1).asErasure().represents(List.class),is(true));
+}
