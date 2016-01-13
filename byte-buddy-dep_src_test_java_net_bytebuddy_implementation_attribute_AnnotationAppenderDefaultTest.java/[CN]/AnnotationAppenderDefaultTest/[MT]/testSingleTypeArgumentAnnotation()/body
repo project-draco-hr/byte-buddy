@@ -1,0 +1,7 @@
+{
+  Class<?> bar=makeTypeWithSuperTypeAnnotation(new Qux.Instance(FOOBAR));
+  TypeDescription.Generic.AnnotationReader annotationReader=TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperClass(bar);
+  assertThat(annotationReader.asList().size(),is(1));
+  assertThat(annotationReader.asList().isAnnotationPresent(Qux.class),is(true));
+  assertThat(annotationReader.asList().ofType(Qux.class).load().value(),is(FOOBAR));
+}
