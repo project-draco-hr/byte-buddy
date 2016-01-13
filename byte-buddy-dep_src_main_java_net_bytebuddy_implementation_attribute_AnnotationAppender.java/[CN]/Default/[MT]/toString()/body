@@ -1,3 +1,0 @@
-{
-  return "AnnotationAppender.Default{target=" + target + '}';
-}
