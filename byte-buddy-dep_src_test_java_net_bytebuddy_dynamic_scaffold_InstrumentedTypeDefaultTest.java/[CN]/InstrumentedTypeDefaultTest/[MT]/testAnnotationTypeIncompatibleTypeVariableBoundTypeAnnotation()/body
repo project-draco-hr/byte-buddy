@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withTypeVariable(new TypeVariableToken(FOO,Collections.singletonList(TypeDescription.Generic.Builder.rawType(Object.class).build(AnnotationDescription.Builder.ofType(IncompatibleAnnotation.class).build())))).validated();
+}

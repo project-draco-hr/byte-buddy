@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withInterfaces(new TypeList.Generic.Explicit(TypeDescription.Generic.Builder.rawType(Runnable.class).build(AnnotationDescription.Builder.ofType(IncompatibleAnnotation.class).build()))).validated();
+}
