@@ -1,0 +1,12 @@
+{
+  when(instrumentedType.getTypeVariables()).thenReturn(new TypeList.Generic.Empty());
+  when(instrumentedType.getInterfaces()).thenReturn(new TypeList.Generic.Empty());
+  when(instrumentedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new QuxBaz.Instance(),new Baz.Instance()));
+  new TypeAttributeAppender.ForInstrumentedType.Differentiating(1,0,0).apply(classVisitor,instrumentedType,annotationValueFilter);
+  verify(classVisitor).visitAnnotation(Type.getDescriptor(Baz.class),true);
+  verifyZeroInteractions(classVisitor);
+  verify(instrumentedType).getDeclaredAnnotations();
+  verify(instrumentedType).getInterfaces();
+  verify(instrumentedType).getTypeVariables();
+  verifyNoMoreInteractions(instrumentedType);
+}
