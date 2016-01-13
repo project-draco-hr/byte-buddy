@@ -1,0 +1,4 @@
+{
+  when(legal.getOwnerType()).thenReturn(otherIllegal);
+  assertThat(TypeDescription.Generic.Visitor.Validator.ForTypeAnnotations.INSTANCE.onParameterizedType(legal),is(false));
+}

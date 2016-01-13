@@ -1,0 +1,21 @@
+{
+  when(otherLegal.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(true);
+  when(otherIllegal.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(false);
+  when(illegal.getDeclaredAnnotations()).thenReturn(new AnnotationList.Explicit(illegalAnnotation));
+  when(illegalAnnotation.getElementTypes()).thenReturn(new HashSet<ElementType>());
+  when(illegalAnnotation.getAnnotationType()).thenReturn(illegalType);
+  when(otherLegal.asGenericType()).thenReturn(otherLegal);
+  when(otherIllegal.asGenericType()).thenReturn(otherIllegal);
+  try {
+    Enum<?> typeUse=Enum.valueOf(ElementType.class,"TYPE_USE");
+    Enum<?> typeParameter=Enum.valueOf(ElementType.class,"TYPE_PARAMETER");
+    when(legalAnnotation.getElementTypes()).thenReturn(new HashSet(Arrays.asList(typeUse,typeParameter)));
+    when(legal.getDeclaredAnnotations()).thenReturn(new AnnotationList.Explicit(legalAnnotation));
+    when(duplicate.getDeclaredAnnotations()).thenReturn(new AnnotationList.Explicit(legalAnnotation,duplicateAnnotation));
+    when(duplicateAnnotation.getElementTypes()).thenReturn(new HashSet(Arrays.asList(typeUse,typeParameter)));
+    when(legalAnnotation.getAnnotationType()).thenReturn(legalType);
+    when(duplicateAnnotation.getAnnotationType()).thenReturn(legalType);
+  }
+ catch (  IllegalArgumentException ignored) {
+  }
+}
