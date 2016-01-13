@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withAnnotations(Collections.singletonList(AnnotationDescription.Builder.ofType(IncompatibleAnnotation.class).build())).validated();
+}

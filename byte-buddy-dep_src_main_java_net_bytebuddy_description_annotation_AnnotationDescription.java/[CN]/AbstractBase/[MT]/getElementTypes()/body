@@ -1,4 +1,4 @@
 {
   AnnotationDescription.Loadable<Target> target=getAnnotationType().getDeclaredAnnotations().ofType(Target.class);
-  return EnumSet.copyOf(Arrays.asList(target == null ? DEFAULT_TARGET : target.loadSilent().value()));
+  return new HashSet<ElementType>(Arrays.asList(target == null ? DEFAULT_TARGET : target.loadSilent().value()));
 }
