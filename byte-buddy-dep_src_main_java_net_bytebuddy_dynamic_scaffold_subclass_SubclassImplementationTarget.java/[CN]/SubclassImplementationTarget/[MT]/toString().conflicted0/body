@@ -1,3 +1,3 @@
 {
-  return "SubclassImplementationTarget.OriginTypeResolver." + name();
+  return "SubclassImplementationTarget{" + "superConstructors=" + superConstructors + ", originTypeResolver="+ originTypeResolver+ ", instrumentedType="+ instrumentedType+ ", methodGraph="+ methodGraph+ '}';
 }

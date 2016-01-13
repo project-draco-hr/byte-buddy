@@ -1,4 +1,4 @@
 {
   AnnotationDescription.Loadable<Retention> retention=getAnnotationType().getDeclaredAnnotations().ofType(Retention.class);
-  return retention == null ? RetentionPolicy.SOURCE : retention.loadSilent().value();
+  return retention == null ? RetentionPolicy.CLASS : retention.loadSilent().value();
 }

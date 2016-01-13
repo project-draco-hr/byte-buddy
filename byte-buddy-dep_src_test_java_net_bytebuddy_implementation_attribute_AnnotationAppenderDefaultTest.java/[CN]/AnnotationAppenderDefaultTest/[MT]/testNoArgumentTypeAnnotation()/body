@@ -1,0 +1,6 @@
+{
+  Class<?> bar=makeTypeWithSuperClassAnnotation(new Foo.Instance());
+  TypeDescription.Generic.AnnotationReader annotationReader=TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperClass(bar);
+  assertThat(annotationReader.asList().size(),is(1));
+  assertThat(annotationReader.asList().isAnnotationPresent(Foo.class),is(true));
+}

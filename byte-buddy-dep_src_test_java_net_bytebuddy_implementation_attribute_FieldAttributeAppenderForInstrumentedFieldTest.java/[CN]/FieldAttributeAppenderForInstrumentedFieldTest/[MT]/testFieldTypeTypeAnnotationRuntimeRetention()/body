@@ -1,0 +1,11 @@
+{
+  when(fieldDescription.getType()).thenReturn(simpleAnnotatedType);
+  when(simpleAnnotatedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new Baz.Instance()));
+  when(fieldDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  FieldAttributeAppender.ForInstrumentedField.INSTANCE.apply(fieldVisitor,fieldDescription,annotationValueFilter);
+  verify(fieldVisitor).visitTypeAnnotation(TypeReference.newTypeReference(TypeReference.FIELD).getValue(),null,Type.getDescriptor(Baz.class),true);
+  verifyNoMoreInteractions(fieldVisitor);
+  verify(fieldDescription).getDeclaredAnnotations();
+  verify(fieldDescription).getType();
+  verifyNoMoreInteractions(fieldDescription);
+}

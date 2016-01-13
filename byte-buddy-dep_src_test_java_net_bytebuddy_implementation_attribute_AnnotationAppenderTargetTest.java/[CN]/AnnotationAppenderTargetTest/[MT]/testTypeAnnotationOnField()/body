@@ -1,0 +1,5 @@
+{
+  new AnnotationAppender.Target.OnField(fieldVisitor).visit(FOO,true,BAR,QUX);
+  verify(fieldVisitor).visitTypeAnnotation(eq(BAR),any(TypePath.class),eq(FOO),eq(true));
+  verifyNoMoreInteractions(fieldVisitor);
+}

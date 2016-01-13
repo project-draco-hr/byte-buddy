@@ -1,0 +1,3 @@
+{
+  assertThat(TypeDescription.Generic.Visitor.Validator.ForTypeAnnotations.INSTANCE.onWildcard(duplicate),is(false));
+}

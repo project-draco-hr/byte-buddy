@@ -1,3 +1,3 @@
 {
-  return "TypePool.Default.TypeExtractor{" + "typePool=" + Default.this + ", annotationTokens="+ annotationTokens+ ", fieldTokens="+ fieldTokens+ ", methodTokens="+ methodTokens+ ", modifiers="+ modifiers+ ", internalName='"+ internalName+ '\''+ ", superTypeName='"+ superTypeName+ '\''+ ", genericSignature='"+ genericSignature+ '\''+ ", interfaceName="+ Arrays.toString(interfaceName)+ ", anonymousType="+ anonymousType+ ", declarationContext="+ declarationContext+ '}';
+  return "TypePool.Default.TypeExtractor{" + "typePool=" + Default.this + ", annotationTokens="+ annotationTokens+ ", fieldTokens="+ fieldTokens+ ", methodTokens="+ methodTokens+ ", modifiers="+ modifiers+ ", internalName='"+ internalName+ '\''+ ", superClassName='"+ superClassName+ '\''+ ", genericSignature='"+ genericSignature+ '\''+ ", interfaceName="+ Arrays.toString(interfaceName)+ ", anonymousType="+ anonymousType+ ", declarationContext="+ declarationContext+ '}';
 }

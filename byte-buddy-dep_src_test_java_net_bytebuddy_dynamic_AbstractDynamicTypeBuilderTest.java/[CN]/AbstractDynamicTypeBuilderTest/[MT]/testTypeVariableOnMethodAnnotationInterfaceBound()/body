@@ -1,0 +1,12 @@
+{
+  Class<? extends Annotation> typeAnnotationType=(Class<? extends Annotation>)Class.forName(TYPE_VARIABLE_NAME);
+  MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotationType).getDeclaredMethods().filter(named(VALUE)).getOnly();
+  Method method=createPlain().merge(TypeManifestation.ABSTRACT).defineMethod(FOO,void.class).typeVariable(FOO,TypeDescription.Generic.Builder.rawType(Runnable.class).build(AnnotationDescription.Builder.ofType(typeAnnotationType).define(VALUE,INTEGER_VALUE * 2).build())).annotateTypeVariable(AnnotationDescription.Builder.ofType(typeAnnotationType).define(VALUE,INTEGER_VALUE).build()).withoutCode().make().load(typeAnnotationType.getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded().getDeclaredMethod(FOO);
+  assertThat(method.getTypeParameters().length,is(1));
+  assertThat(method.getTypeParameters()[0].getBounds().length,is(1));
+  assertThat(method.getTypeParameters()[0].getBounds()[0],is((Object)Runnable.class));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveTypeVariable(method.getTypeParameters()[0]).asList().size(),is(1));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveTypeVariable(method.getTypeParameters()[0]).asList().ofType(typeAnnotationType).getValue(value,Integer.class),is(INTEGER_VALUE));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveTypeVariable(method.getTypeParameters()[0]).ofTypeVariableBoundType(0).asList().size(),is(1));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveTypeVariable(method.getTypeParameters()[0]).ofTypeVariableBoundType(0).asList().ofType(typeAnnotationType).getValue(value,Integer.class),is(INTEGER_VALUE * 2));
+}

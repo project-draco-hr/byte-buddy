@@ -1,4 +1,4 @@
 {
-  Class<?> type=create(PrivateMethod.class).method(isDeclaredBy(PrivateMethod.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(PrivateMethod.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=new ByteBuddy().subclass(PrivateMethod.class).method(isDeclaredBy(PrivateMethod.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(PrivateMethod.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethods().length,is(0));
 }

@@ -1,7 +1,7 @@
 {
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJVMHierarchy().compile(TypeDescription.OBJECT);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size()));
-  assertThat(methodGraph.getSuperGraph().listNodes().size(),is(0));
+  assertThat(methodGraph.getSuperClassGraph().listNodes().size(),is(0));
   assertThat(methodGraph.getInterfaceGraph(mock(TypeDescription.class)).listNodes().size(),is(0));
   for (  MethodDescription methodDescription : TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual())) {
     MethodGraph.Node node=methodGraph.locate(methodDescription.asSignatureToken());

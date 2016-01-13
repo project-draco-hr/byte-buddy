@@ -4,8 +4,8 @@
   assertThat(methodGraph.listNodes().size(),is(1));
   MethodDescription genericMethod=typeDescription.getInterfaces().filter(rawType(MethodInterfaceConvergenceFirstBase.class)).getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
   MethodDescription nonGenericMethod=typeDescription.getInterfaces().filter(rawType(MethodInterfaceConvergenceSecondBase.class)).getOnly().getDeclaredMethods().filter(isMethod()).getOnly();
-  assertThat(methodGraph.getSuperGraph().locate(genericMethod.asSignatureToken()).getSort(),is(MethodGraph.Node.Sort.UNRESOLVED));
-  assertThat(methodGraph.getSuperGraph().locate(nonGenericMethod.asSignatureToken()).getSort(),is(MethodGraph.Node.Sort.UNRESOLVED));
+  assertThat(methodGraph.getSuperClassGraph().locate(genericMethod.asSignatureToken()).getSort(),is(MethodGraph.Node.Sort.UNRESOLVED));
+  assertThat(methodGraph.getSuperClassGraph().locate(nonGenericMethod.asSignatureToken()).getSort(),is(MethodGraph.Node.Sort.UNRESOLVED));
   MethodGraph.Node methodNode=methodGraph.locate(genericMethod.asSignatureToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
   assertThat(methodNode,is(methodGraph.locate(genericMethod.asDefined().asSignatureToken())));

@@ -1,5 +1,5 @@
 {
-  when(instrumentedType.getSuperType()).thenReturn(superType);
-  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Empty<MethodDescription.InGenericShape>());
+  when(instrumentedType.getSuperClass()).thenReturn(superClass);
+  when(superClass.getDeclaredMethods()).thenReturn(new MethodList.Empty<MethodDescription.InGenericShape>());
   factory=new RebaseImplementationTarget.Factory(methodRebaseResolver);
 }

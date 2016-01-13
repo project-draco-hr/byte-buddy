@@ -1,3 +1,0 @@
-{
-  return AnnotationReader.DISPATCHER.resolveSuperType(type);
-}

@@ -1,3 +1,0 @@
-{
-  when(typeDescription.getSuperType()).thenReturn(superType);
-}

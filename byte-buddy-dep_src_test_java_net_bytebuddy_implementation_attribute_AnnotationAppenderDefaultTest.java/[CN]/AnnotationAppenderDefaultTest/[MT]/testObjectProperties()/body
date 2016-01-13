@@ -1,4 +1,3 @@
 {
   ObjectPropertyAssertion.of(AnnotationAppender.Default.class).apply();
-  ObjectPropertyAssertion.of(AnnotationAppender.AnnotationVisibility.class).apply();
 }

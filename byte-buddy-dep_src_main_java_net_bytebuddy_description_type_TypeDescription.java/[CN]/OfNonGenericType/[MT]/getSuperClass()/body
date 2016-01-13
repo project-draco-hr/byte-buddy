@@ -1,0 +1,4 @@
+{
+  Generic superClass=asErasure().getSuperClass();
+  return superClass == null ? UNDEFINED : superClass.accept(Visitor.TypeVariableErasing.INSTANCE);
+}

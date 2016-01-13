@@ -1,0 +1,3 @@
+{
+  makePlainInstrumentedType().withName(FOO + "." + PackageDescription.PACKAGE_CLASS_NAME).withAnnotations(Collections.singletonList(AnnotationDescription.Builder.ofType(IncompatibleAnnotation.class).build())).validated();
+}

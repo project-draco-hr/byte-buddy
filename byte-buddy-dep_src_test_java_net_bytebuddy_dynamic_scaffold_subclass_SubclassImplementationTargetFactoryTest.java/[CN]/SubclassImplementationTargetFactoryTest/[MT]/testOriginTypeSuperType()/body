@@ -1,3 +1,0 @@
-{
-  assertThat(SubclassImplementationTarget.Factory.SUPER_TYPE.make(instrumentedType,methodGraph).getOriginType(),is((TypeDefinition)genericSuperType));
-}

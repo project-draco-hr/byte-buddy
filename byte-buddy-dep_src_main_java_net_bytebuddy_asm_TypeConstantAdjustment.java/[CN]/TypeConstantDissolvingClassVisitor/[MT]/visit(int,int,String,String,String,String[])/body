@@ -1,4 +1,4 @@
 {
   supportsTypeConstants=ClassFileVersion.ofMinorMajor(version).isAtLeast(ClassFileVersion.JAVA_V5);
-  super.visit(version,modifiers,name,signature,superTypeName,interfaceName);
+  super.visit(version,modifiers,name,signature,superClassName,interfaceName);
 }

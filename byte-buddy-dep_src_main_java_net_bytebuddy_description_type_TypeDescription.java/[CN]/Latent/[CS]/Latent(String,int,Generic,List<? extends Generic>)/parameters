@@ -1,4 +1,4 @@
 String name
 int modifiers
-Generic superType
+Generic superClass
 List<? extends Generic> interfaces

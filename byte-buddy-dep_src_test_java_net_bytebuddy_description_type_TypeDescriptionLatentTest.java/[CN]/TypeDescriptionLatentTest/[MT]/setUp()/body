@@ -1,4 +1,4 @@
 {
-  when(superType.asGenericType()).thenReturn(superType);
+  when(superClass.asGenericType()).thenReturn(superClass);
   when(interfaceType.asGenericType()).thenReturn(interfaceType);
 }

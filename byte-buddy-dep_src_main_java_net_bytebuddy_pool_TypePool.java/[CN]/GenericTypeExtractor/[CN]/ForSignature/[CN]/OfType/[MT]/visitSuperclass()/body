@@ -1,4 +1,4 @@
 {
   collectTypeParameter();
-  return new GenericTypeExtractor(new SuperTypeRegistrant());
+  return new GenericTypeExtractor(new SuperClassRegistrant());
 }

@@ -2,9 +2,9 @@
   Class<? extends Annotation> typeAnnotation=(Class<? extends Annotation>)Class.forName(TYPE_ANNOTATION);
   MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotation).getDeclaredMethods().getOnly();
   Class<?> samples=Class.forName(TYPE_ANNOTATION_SAMPLES);
-  TypeDescription.Generic superType=describeSuperType(samples);
-  assertThat(superType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
-  assertThat(superType.getDeclaredAnnotations().size(),is(1));
-  assertThat(superType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(superType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(18));
+  TypeDescription.Generic superClass=describeSuperClass(samples);
+  assertThat(superClass.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(superClass.getDeclaredAnnotations().size(),is(1));
+  assertThat(superClass.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
+  assertThat(superClass.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(18));
 }

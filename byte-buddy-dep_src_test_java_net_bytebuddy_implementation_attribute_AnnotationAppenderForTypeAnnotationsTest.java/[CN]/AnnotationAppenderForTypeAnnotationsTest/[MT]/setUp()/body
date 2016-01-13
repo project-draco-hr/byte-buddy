@@ -1,0 +1,9 @@
+{
+  when(annotationAppender.append(annotationDescription,annotationValueFilter,BAR,FOO)).thenReturn(result);
+  when(typeDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Explicit(annotationDescription));
+  when(second.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(result);
+  when(third.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(result);
+  when(second.asGenericType()).thenReturn(second);
+  when(third.asGenericType()).thenReturn(third);
+  visitor=new AnnotationAppender.ForTypeAnnotations(annotationAppender,annotationValueFilter,BAR,FOO);
+}

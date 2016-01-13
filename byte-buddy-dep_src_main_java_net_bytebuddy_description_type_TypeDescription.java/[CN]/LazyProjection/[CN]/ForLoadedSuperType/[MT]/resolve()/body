@@ -1,4 +1,0 @@
-{
-  java.lang.reflect.Type superType=type.getGenericSuperclass();
-  return superType == null ? UNDEFINED : Sort.describe(superType,getAnnotationReader());
-}

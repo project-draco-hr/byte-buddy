@@ -2,7 +2,7 @@
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(VisibilityBridgeTarget.class);
   MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
   assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 1));
-  MethodDescription methodDescription=typeDescription.getSuperType().getDeclaredMethods().filter(isMethod()).getOnly();
+  MethodDescription methodDescription=typeDescription.getSuperClass().getDeclaredMethods().filter(isMethod()).getOnly();
   MethodGraph.Node methodNode=methodGraph.locate(methodDescription.asSignatureToken());
   assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.VISIBLE));
   assertThat(methodNode.getMethodTypes().size(),is(1));

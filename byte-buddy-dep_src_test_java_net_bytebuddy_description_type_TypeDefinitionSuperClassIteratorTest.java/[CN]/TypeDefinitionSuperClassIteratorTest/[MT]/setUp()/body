@@ -1,0 +1,3 @@
+{
+  when(typeDescription.getSuperClass()).thenReturn(superClass);
+}

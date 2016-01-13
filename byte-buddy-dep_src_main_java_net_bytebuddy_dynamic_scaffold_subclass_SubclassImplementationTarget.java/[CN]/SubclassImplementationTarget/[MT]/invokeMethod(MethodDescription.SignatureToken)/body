@@ -1,4 +1,4 @@
 {
-  MethodGraph.Node methodNode=methodGraph.getSuperGraph().locate(token);
-  return methodNode.getSort().isUnique() ? Implementation.SpecialMethodInvocation.Simple.of(methodNode.getRepresentative(),instrumentedType.getSuperType().asErasure()) : Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
+  MethodGraph.Node methodNode=methodGraph.getSuperClassGraph().locate(token);
+  return methodNode.getSort().isUnique() ? Implementation.SpecialMethodInvocation.Simple.of(methodNode.getRepresentative(),instrumentedType.getSuperClass().asErasure()) : Implementation.SpecialMethodInvocation.Illegal.INSTANCE;
 }

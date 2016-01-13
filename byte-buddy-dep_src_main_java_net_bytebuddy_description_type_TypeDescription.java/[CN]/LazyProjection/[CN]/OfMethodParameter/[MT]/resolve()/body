@@ -1,4 +1,4 @@
 {
   java.lang.reflect.Type[] type=method.getGenericParameterTypes();
-  return index < type.length ? Sort.describe(type[index],getAnnotationReader()) : new OfNonGenericType.ForLoadedType(erasure);
+  return erasure.length == type.length ? Sort.describe(type[index],getAnnotationReader()) : new OfNonGenericType.ForLoadedType(erasure[index]);
 }

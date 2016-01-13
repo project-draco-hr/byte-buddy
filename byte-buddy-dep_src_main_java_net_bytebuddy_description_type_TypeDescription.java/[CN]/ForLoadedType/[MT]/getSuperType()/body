@@ -1,3 +1,0 @@
-{
-  return type.getSuperclass() == null ? TypeDescription.Generic.UNDEFINED : new Generic.LazyProjection.ForLoadedSuperType(type);
-}

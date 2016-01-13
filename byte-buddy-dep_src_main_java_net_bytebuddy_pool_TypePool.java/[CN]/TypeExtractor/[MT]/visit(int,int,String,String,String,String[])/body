@@ -2,6 +2,6 @@
   this.modifiers=modifiers;
   this.internalName=internalName;
   this.genericSignature=genericSignature;
-  this.superTypeName=superTypeName;
+  this.superClassName=superClassName;
   this.interfaceName=interfaceName;
 }

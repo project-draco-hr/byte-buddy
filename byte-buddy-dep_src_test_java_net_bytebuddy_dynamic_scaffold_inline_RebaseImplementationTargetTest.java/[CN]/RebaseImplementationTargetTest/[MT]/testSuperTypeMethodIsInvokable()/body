@@ -1,9 +1,9 @@
 {
-  when(invokableMethod.isSpecializableFor(superType)).thenReturn(true);
+  when(invokableMethod.isSpecializableFor(rawSuperClass)).thenReturn(true);
   Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(invokableToken);
   assertThat(specialMethodInvocation.isValid(),is(true));
   assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)invokableMethod));
-  assertThat(specialMethodInvocation.getTypeDescription(),is(superType));
+  assertThat(specialMethodInvocation.getTypeDescription(),is(rawSuperClass));
   MethodVisitor methodVisitor=mock(MethodVisitor.class);
   Implementation.Context implementationContext=mock(Implementation.Context.class);
   StackManipulation.Size size=specialMethodInvocation.apply(methodVisitor,implementationContext);

@@ -1,0 +1,12 @@
+{
+  int[] array={2,3,4};
+  Class<?> bar=makeTypeWithSuperClassAnnotation(new Baz.Instance(FOOBAR,array,new Foo.Instance(),Baz.Enum.VALUE,Void.class));
+  TypeDescription.Generic.AnnotationReader annotationReader=TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperClass(bar);
+  assertThat(annotationReader.asList().size(),is(1));
+  assertThat(annotationReader.asList().isAnnotationPresent(Baz.class),is(true));
+  assertThat(annotationReader.asList().ofType(Baz.class).load().value(),is(FOOBAR));
+  assertThat(annotationReader.asList().ofType(Baz.class).load().array(),is(array));
+  assertThat(annotationReader.asList().ofType(Baz.class).load().annotation(),is((Foo)new Foo.Instance()));
+  assertThat(annotationReader.asList().ofType(Baz.class).load().enumeration(),is(Baz.Enum.VALUE));
+  assertThat(annotationReader.asList().ofType(Baz.class).load().type(),CoreMatchers.<Class<?>>is(Void.class));
+}

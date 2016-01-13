@@ -1,0 +1,3 @@
+{
+  InstrumentedType.Default.subclass(FOO + "." + PackageDescription.PACKAGE_CLASS_NAME,ModifierContributor.EMPTY_MASK,TypeDefinition.Sort.describe(Object.class)).validated();
+}

@@ -1,0 +1,5 @@
+{
+  when(legal.getUpperBounds()).thenReturn(new TypeList.Generic.Explicit(TypeDescription.Generic.OBJECT));
+  when(legal.getLowerBounds()).thenReturn(new TypeList.Generic.Explicit(otherIllegal));
+  assertThat(TypeDescription.Generic.Visitor.Validator.ForTypeAnnotations.INSTANCE.onWildcard(legal),is(false));
+}

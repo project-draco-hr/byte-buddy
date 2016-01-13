@@ -1,3 +1,3 @@
 {
-  AnnotationDescription.Builder.forType(Foo.class).defineEnumerationArray(BAR,(Class)Bar.class,Bar.FIRST,FooBar.SECOND);
+  AnnotationDescription.Builder.ofType(Foo.class).defineEnumerationArray(BAR,(Class)Bar.class,Bar.FIRST,FooBar.SECOND);
 }

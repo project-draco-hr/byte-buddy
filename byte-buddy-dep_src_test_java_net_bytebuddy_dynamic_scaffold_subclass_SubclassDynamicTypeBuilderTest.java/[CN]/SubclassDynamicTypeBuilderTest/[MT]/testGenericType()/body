@@ -1,5 +1,5 @@
 {
-  Class<?> dynamicType=create(GenericType.Inner.class).method(named(FOO).or(named("call"))).intercept(StubMethod.INSTANCE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded();
+  Class<?> dynamicType=new ByteBuddy().subclass(GenericType.Inner.class).method(named(FOO).or(named("call"))).intercept(StubMethod.INSTANCE).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded();
   assertThat(dynamicType.getTypeParameters().length,is(0));
   assertThat(dynamicType.getGenericSuperclass(),instanceOf(Class.class));
   assertThat(dynamicType.getGenericSuperclass(),is((Type)GenericType.Inner.class));
