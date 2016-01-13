@@ -1,3 +1,11 @@
 {
   when(annotationValueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.InDefinedShape.class))).thenReturn(true);
+  when(annotatedTypeVariable.accept(any(TypeDescription.Generic.Visitor.class))).thenCallRealMethod();
+  when(annotatedTypeVariable.getUpperBounds()).thenReturn(new TypeList.Generic.Explicit(annotatedTypeVariableBound));
+  when(annotatedTypeVariable.asGenericType()).thenReturn(annotatedTypeVariable);
+  when(annotatedTypeVariableBound.accept(any(TypeDescription.Generic.Visitor.class))).thenCallRealMethod();
+  when(annotatedTypeVariableBound.getSort()).thenReturn(TypeDefinition.Sort.VARIABLE);
+  when(annotatedTypeVariableBound.asGenericType()).thenReturn(annotatedTypeVariableBound);
+  when(simpleAnnotatedType.accept(any(TypeDescription.Generic.Visitor.class))).thenCallRealMethod();
+  when(simpleAnnotatedType.asGenericType()).thenReturn(simpleAnnotatedType);
 }

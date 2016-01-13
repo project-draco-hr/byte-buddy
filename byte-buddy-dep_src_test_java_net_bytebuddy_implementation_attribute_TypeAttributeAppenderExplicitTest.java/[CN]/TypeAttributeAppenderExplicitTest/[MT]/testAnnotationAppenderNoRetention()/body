@@ -1,5 +1,0 @@
-{
-  new TypeAttributeAppender.Explicit(new AnnotationList.ForLoadedAnnotations(new Qux.Instance())).apply(classVisitor,instrumentedType,annotationValueFilter);
-  verifyZeroInteractions(classVisitor);
-  verifyZeroInteractions(instrumentedType);
-}

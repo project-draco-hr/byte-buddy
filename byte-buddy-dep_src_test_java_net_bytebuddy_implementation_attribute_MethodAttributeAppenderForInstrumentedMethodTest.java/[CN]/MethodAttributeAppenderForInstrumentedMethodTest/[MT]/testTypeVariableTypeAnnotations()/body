@@ -1,0 +1,20 @@
+{
+  when(methodDescription.getTypeVariables()).thenReturn(new TypeList.Generic.Explicit(annotatedTypeVariable));
+  when(annotatedTypeVariable.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new QuxBaz.Instance()));
+  when(annotatedTypeVariableBound.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new QuxBaz.Instance()));
+  when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Empty<ParameterDescription>());
+  when(methodDescription.getReturnType()).thenReturn(TypeDescription.Generic.VOID);
+  when(methodDescription.getTypeVariables()).thenReturn(new TypeList.Generic.Explicit(annotatedTypeVariable));
+  when(methodDescription.getExceptionTypes()).thenReturn(new TypeList.Generic.Empty());
+  when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  MethodAttributeAppender.ForInstrumentedMethod.INSTANCE.apply(methodVisitor,methodDescription,annotationValueFilter);
+  verify(methodVisitor).visitTypeAnnotation(TypeReference.newTypeParameterReference(TypeReference.METHOD_TYPE_PARAMETER,0).getValue(),null,Type.getDescriptor(QuxBaz.class),false);
+  verify(methodVisitor).visitTypeAnnotation(TypeReference.newTypeParameterBoundReference(TypeReference.METHOD_TYPE_PARAMETER_BOUND,0,0).getValue(),null,Type.getDescriptor(QuxBaz.class),false);
+  verifyZeroInteractions(methodVisitor);
+  verify(methodDescription).getDeclaredAnnotations();
+  verify(methodDescription).getParameters();
+  verify(methodDescription).getReturnType();
+  verify(methodDescription).getExceptionTypes();
+  verify(methodDescription).getTypeVariables();
+  verifyNoMoreInteractions(methodDescription);
+}

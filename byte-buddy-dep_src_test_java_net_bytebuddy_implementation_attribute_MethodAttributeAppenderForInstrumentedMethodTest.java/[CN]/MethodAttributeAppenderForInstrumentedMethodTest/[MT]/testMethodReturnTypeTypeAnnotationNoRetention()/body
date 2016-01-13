@@ -1,0 +1,17 @@
+{
+  when(annotationValueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.InDefinedShape.class))).thenReturn(true);
+  when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Empty<ParameterDescription>());
+  when(methodDescription.getReturnType()).thenReturn(simpleAnnotatedType);
+  when(simpleAnnotatedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new Qux.Instance()));
+  when(methodDescription.getTypeVariables()).thenReturn(new TypeList.Generic.Empty());
+  when(methodDescription.getExceptionTypes()).thenReturn(new TypeList.Generic.Empty());
+  MethodAttributeAppender.ForInstrumentedMethod.INSTANCE.apply(methodVisitor,methodDescription,annotationValueFilter);
+  verifyZeroInteractions(methodVisitor);
+  verify(methodDescription).getDeclaredAnnotations();
+  verify(methodDescription).getParameters();
+  verify(methodDescription).getReturnType();
+  verify(methodDescription).getExceptionTypes();
+  verify(methodDescription).getTypeVariables();
+  verifyNoMoreInteractions(methodDescription);
+}
