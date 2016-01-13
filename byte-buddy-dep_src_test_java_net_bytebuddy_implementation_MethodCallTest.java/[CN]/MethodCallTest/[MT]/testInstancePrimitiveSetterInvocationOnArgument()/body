@@ -1,0 +1,13 @@
+{
+  Method setInt=Pojo.class.getDeclaredMethod("setInt",int.class);
+  DynamicType.Loaded<Setters> loaded=implement(Setters.class,MethodCall.invoke(setInt).onArgument(0).withArgument(1),Setters.class.getClassLoader(),named("setInt"));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
+  Setters instance=loaded.getLoaded().newInstance();
+  Pojo pojo=new Pojo();
+  instance.setInt(pojo,42);
+  assertThat(pojo.anInt,is(42));
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(Setters.class)));
+  assertThat(instance,instanceOf(Setters.class));
+}
