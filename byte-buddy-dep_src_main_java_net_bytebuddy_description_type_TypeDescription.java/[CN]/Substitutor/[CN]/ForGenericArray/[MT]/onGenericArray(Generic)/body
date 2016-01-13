@@ -1,3 +1,0 @@
-{
-  return this.genericArray.getComponentType().accept(Assigner.INSTANCE).isAssignableFrom(genericArray.getComponentType());
-}

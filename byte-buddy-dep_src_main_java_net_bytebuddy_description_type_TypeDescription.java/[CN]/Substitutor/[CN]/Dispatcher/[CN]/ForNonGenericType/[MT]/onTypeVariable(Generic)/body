@@ -1,8 +1,0 @@
-{
-  for (  Generic upperBound : typeVariable.getUpperBounds()) {
-    if (isAssignableFrom(upperBound)) {
-      return true;
-    }
-  }
-  return false;
-}

@@ -1,6 +1,0 @@
-{
-  this.acceptsArray=acceptsArray;
-  this.acceptsPrimitive=acceptsPrimitive;
-  this.acceptsVariable=acceptsVariable;
-  this.acceptsVoid=acceptsVoid;
-}

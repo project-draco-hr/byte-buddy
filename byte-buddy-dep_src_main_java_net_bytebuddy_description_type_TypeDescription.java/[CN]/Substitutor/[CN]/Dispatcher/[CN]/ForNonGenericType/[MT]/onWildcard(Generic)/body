@@ -1,3 +1,0 @@
-{
-  throw new IllegalArgumentException("A wildcard is not a first-level type: " + wildcard);
-}
