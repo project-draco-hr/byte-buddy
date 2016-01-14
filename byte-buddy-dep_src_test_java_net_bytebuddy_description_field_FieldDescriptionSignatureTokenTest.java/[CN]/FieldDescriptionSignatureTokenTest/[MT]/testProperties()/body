@@ -1,0 +1,5 @@
+{
+  FieldDescription.SignatureToken token=new FieldDescription.SignatureToken(FOO,type);
+  assertThat(token.getName(),is(FOO));
+  assertThat(token.getType(),is(type));
+}

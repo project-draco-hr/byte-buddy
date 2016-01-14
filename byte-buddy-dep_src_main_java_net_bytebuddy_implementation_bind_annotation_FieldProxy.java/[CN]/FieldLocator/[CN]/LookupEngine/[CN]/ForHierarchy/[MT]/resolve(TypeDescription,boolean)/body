@@ -1,7 +1,10 @@
 {
   for (  TypeDefinition currentType : instrumentedType) {
     FieldList<?> fieldList=currentType.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
-    if (!fieldList.isEmpty() && (!staticMethod || fieldList.getOnly().isStatic())) {
+    if (fieldList.size() > 1) {
+      throw new IllegalStateException("Ambiguous fields: " + fieldList);
+    }
+ else     if (!fieldList.isEmpty() && (!staticMethod || fieldList.getOnly().isStatic())) {
       return new Resolution.Resolved(fieldList.getOnly());
     }
   }
