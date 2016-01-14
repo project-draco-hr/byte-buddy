@@ -1,3 +1,6 @@
 {
-  return new MethodCall(methodLocator,new TargetHandler.ForMethodParameter(index),argumentLoaders,new MethodInvoker.ForVirtualInvocation.OnMethodArgument(index),TerminationHandler.ForMethodReturn.INSTANCE,assigner,typing);
+  if (index < 0) {
+    throw new IllegalArgumentException("An argument index cannot be negative: " + index);
+  }
+  return new MethodCall(methodLocator,new TargetHandler.ForMethodParameter(index),argumentLoaders,MethodInvoker.ForVirtualInvocation.WithImplicitType.INSTANCE,TerminationHandler.ForMethodReturn.INSTANCE,assigner,typing);
 }

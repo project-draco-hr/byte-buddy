@@ -1,0 +1,3 @@
+{
+  DynamicType.Loaded<ArgumentCallDynamic> loaded=implement(ArgumentCallDynamic.class,MethodCall.invoke(ArgumentCallDynamic.Target.class.getDeclaredMethod("foo")).onArgument(0));
+}

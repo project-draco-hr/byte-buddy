@@ -1,10 +1,6 @@
 {
-  if (!invokedMethod.isInvokableOn(implementationTarget.getInstrumentedType())) {
-    throw new IllegalStateException("Cannot invoke " + invokedMethod + " as default method of "+ implementationTarget.getInstrumentedType());
+  if (!invokedMethod.isVirtual()) {
+    throw new IllegalStateException("Cannot invoke " + invokedMethod + " virtually");
   }
-  StackManipulation stackManipulation=implementationTarget.invokeDefault(invokedMethod.getDeclaringType().asErasure(),invokedMethod.asSignatureToken());
-  if (!stackManipulation.isValid()) {
-    throw new IllegalStateException("Cannot invoke " + invokedMethod + " on "+ implementationTarget.getInstrumentedType());
-  }
-  return stackManipulation;
+  return MethodInvocation.invoke(invokedMethod);
 }

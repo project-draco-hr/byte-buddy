@@ -1,0 +1,3 @@
+{
+  DynamicType.Loaded<ArgumentCallDynamic> loaded=implement(ArgumentCallDynamic.class,MethodCall.invoke(Object.class.getDeclaredMethod("registerNatives")).onArgument(0));
+}

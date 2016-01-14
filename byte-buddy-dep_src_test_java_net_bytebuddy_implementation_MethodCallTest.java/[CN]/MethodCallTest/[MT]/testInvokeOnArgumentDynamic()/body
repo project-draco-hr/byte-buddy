@@ -1,0 +1,10 @@
+{
+  DynamicType.Loaded<ArgumentCallDynamic> loaded=implement(ArgumentCallDynamic.class,MethodCall.invoke(ArgumentCallDynamic.Target.class.getDeclaredMethod("foo")).onArgument(0).withAssigner(Assigner.DEFAULT,Assigner.Typing.DYNAMIC));
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
+  ArgumentCallDynamic instance=loaded.getLoaded().newInstance();
+  assertThat(instance.foo(new ArgumentCallDynamic.Target(BAR)),is(BAR));
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(InstanceMethod.class)));
+  assertThat(instance,instanceOf(ArgumentCallDynamic.class));
+}

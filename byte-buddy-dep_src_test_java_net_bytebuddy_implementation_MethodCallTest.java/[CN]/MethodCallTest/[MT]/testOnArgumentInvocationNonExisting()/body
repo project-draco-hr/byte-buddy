@@ -1,0 +1,3 @@
+{
+  implement(ArgumentCall.class,MethodCall.invoke(Object.class.getDeclaredMethod("toString")).onArgument(10));
+}
