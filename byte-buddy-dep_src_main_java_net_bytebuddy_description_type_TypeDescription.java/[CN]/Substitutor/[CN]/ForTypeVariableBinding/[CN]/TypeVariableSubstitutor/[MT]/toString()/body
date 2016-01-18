@@ -1,0 +1,3 @@
+{
+  return "TypeDescription.Generic.Visitor.Substitutor.ForTypeVariableBinding.TypeVariableSubstitutor{" + "outer=" + getOuter() + ", typeVariable="+ typeVariable+ '}';
+}

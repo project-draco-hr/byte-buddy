@@ -1,0 +1,4 @@
+{
+  when(unknown.getVariableSource()).thenReturn(methodDefinition);
+  assertThat(new TypeDescription.Generic.Visitor.Substitutor.ForTypeVariableBinding(mapping).onTypeVariable(unknown),is(substituted));
+}

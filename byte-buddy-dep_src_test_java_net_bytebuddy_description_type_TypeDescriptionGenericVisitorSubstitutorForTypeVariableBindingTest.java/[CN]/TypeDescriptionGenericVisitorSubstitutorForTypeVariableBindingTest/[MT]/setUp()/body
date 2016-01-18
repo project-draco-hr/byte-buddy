@@ -1,4 +1,6 @@
 {
   mapping=new HashMap<TypeDescription.Generic,TypeDescription.Generic>();
   mapping.put(source,target);
+  when(typeDefinition.accept(any(TypeVariableSource.Visitor.class))).thenCallRealMethod();
+  when(methodDefinition.accept(any(TypeVariableSource.Visitor.class))).thenReturn(substituted);
 }
