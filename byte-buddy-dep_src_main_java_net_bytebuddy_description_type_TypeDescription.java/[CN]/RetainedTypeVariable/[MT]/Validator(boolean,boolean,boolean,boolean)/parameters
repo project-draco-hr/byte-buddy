@@ -1,0 +1,4 @@
+boolean acceptsArray
+boolean acceptsPrimitive
+boolean acceptsVariable
+boolean acceptsVoid

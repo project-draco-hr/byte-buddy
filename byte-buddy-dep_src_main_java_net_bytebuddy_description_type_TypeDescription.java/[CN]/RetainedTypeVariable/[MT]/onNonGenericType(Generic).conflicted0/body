@@ -1,0 +1,3 @@
+{
+  return super.onNonGenericType(typeDescription) && typeDescription.asErasure().isInterface();
+}

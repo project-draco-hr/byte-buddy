@@ -1,9 +1,3 @@
 {
-  Generic substitution=bindings.get(typeVariable);
-  if (substitution == null) {
-    throw new IllegalStateException("Unknown type variable: " + typeVariable);
-  }
- else {
-    return substitution;
-  }
+  return typeVariable.getVariableSource().accept(new TypeVariableSubstitutor(typeVariable));
 }

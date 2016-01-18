@@ -1,0 +1,8 @@
+{
+  if (typeDescription.getSort().isWildcard()) {
+    return typeDescription.getLowerBounds().isEmpty() && upperBound.accept(Assigner.INSTANCE).isAssignableFrom(typeDescription.getUpperBounds().getOnly());
+  }
+ else {
+    return upperBound.accept(Assigner.INSTANCE).isAssignableFrom(typeDescription);
+  }
+}

@@ -1,0 +1,13 @@
+{
+  ElementType typeUse, typeParameter;
+  try {
+    typeUse=Enum.valueOf(ElementType.class,"TYPE_USE");
+    typeParameter=Enum.valueOf(ElementType.class,"TYPE_PARAMETER");
+  }
+ catch (  IllegalArgumentException ignored) {
+    typeUse=null;
+    typeParameter=null;
+  }
+  this.typeUse=typeUse;
+  this.typeParameter=typeParameter;
+}

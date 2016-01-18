@@ -9,5 +9,5 @@
   MethodDescription methodDescription=typeDescription.getDeclaredMethods().filter(named(BAR)).getOnly();
   assertThat(methodDescription.getReturnType().getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(methodDescription.getReturnType().getSymbol(),is("T"));
-  assertThat(methodDescription.getReturnType().getVariableSource(),is((TypeVariableSource)methodDescription));
+  assertThat(methodDescription.getReturnType().getVariableSource(),is((TypeVariableSource)methodDescription.asDefined()));
 }

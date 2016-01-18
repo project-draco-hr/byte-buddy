@@ -1,0 +1,9 @@
+{
+  Set<TypeDescription> annotationTypes=new HashSet<TypeDescription>();
+  for (  AnnotationDescription annotationDescription : typeDescription.getDeclaredAnnotations()) {
+    if (!annotationDescription.getElementTypes().contains(typeUse) || !annotationTypes.add(annotationDescription.getAnnotationType())) {
+      return false;
+    }
+  }
+  return true;
+}

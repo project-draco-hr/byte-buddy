@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(MethodDescription.TypeSubstituting.VariableRetainingDelegator.class).apply();
-}

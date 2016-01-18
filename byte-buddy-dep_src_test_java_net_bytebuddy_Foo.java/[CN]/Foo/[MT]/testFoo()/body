@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().subclass(Client.class).method(any()).intercept(StubMethod.INSTANCE).make();
+}

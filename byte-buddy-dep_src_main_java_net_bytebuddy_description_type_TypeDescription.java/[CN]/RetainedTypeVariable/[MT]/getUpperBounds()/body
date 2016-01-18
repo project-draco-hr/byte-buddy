@@ -1,0 +1,3 @@
+{
+  return typeVariable.getUpperBounds().accept(TypeVariableErasing.INSTANCE);
+}

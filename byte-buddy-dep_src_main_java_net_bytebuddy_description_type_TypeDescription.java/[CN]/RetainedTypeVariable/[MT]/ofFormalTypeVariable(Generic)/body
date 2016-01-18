@@ -1,0 +1,9 @@
+{
+  Set<TypeDescription> annotationTypes=new HashSet<TypeDescription>();
+  for (  AnnotationDescription annotationDescription : typeVariable.getDeclaredAnnotations()) {
+    if (!annotationDescription.getElementTypes().contains(INSTANCE.typeParameter) || !annotationTypes.add(annotationDescription.getAnnotationType())) {
+      return false;
+    }
+  }
+  return true;
+}

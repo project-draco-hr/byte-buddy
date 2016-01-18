@@ -1,0 +1,15 @@
+{
+  if (!isValid(parameterizedType)) {
+    return false;
+  }
+  Generic ownerType=parameterizedType.getOwnerType();
+  if (ownerType != null && !ownerType.accept(this)) {
+    return false;
+  }
+  for (  Generic typeArgument : parameterizedType.getTypeArguments()) {
+    if (!typeArgument.accept(this)) {
+      return false;
+    }
+  }
+  return true;
+}
