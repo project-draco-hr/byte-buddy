@@ -1,0 +1,9 @@
+{
+  assertThat(describe(SampleClass.class).getEnclosingType(),is(describe(AbstractTypeDescriptionTest.class)));
+  assertThat(describe(SampleClass.class).getDeclaringType(),is(describe(AbstractTypeDescriptionTest.class)));
+  Class<?> anonymousType=new Object(){
+  }
+.getClass();
+  assertThat(describe(anonymousType).getEnclosingType(),is(describe(AbstractTypeDescriptionTest.class)));
+  assertThat(describe(anonymousType).getDeclaringType(),nullValue(TypeDescription.class));
+}

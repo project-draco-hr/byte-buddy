@@ -1,0 +1,4 @@
+{
+  assertThat(describe(SampleClass.class).getEnclosingSource(),is((TypeVariableSource)describe(AbstractTypeDescriptionTest.class)));
+  assertThat(describe(Traversal.class).getEnclosingSource(),nullValue(TypeVariableSource.class));
+}

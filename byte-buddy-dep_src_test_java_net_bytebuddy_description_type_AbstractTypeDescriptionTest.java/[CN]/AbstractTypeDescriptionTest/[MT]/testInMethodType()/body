@@ -1,0 +1,4 @@
+{
+  assertThat(describe(inMethodClass()).getEnclosingMethod(),is((TypeVariableSource)new MethodDescription.ForLoadedMethod(AbstractTypeDescriptionTest.class.getDeclaredMethod("inMethodClass"))));
+  assertThat(describe(inMethodClass()).getEnclosingSource(),is((TypeVariableSource)new MethodDescription.ForLoadedMethod(AbstractTypeDescriptionTest.class.getDeclaredMethod("inMethodClass"))));
+}

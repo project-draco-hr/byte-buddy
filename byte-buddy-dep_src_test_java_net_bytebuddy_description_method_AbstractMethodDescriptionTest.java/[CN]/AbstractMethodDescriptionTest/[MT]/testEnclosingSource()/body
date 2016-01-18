@@ -1,0 +1,4 @@
+{
+  assertThat(describe(firstMethod).getEnclosingSource(),nullValue(TypeVariableSource.class));
+  assertThat(describe(secondMethod).getEnclosingSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(Sample.class)));
+}

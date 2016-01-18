@@ -1,4 +1,4 @@
 {
   MethodDescription enclosingMethod=getEnclosingMethod();
-  return enclosingMethod == null ? getEnclosingType() : enclosingMethod;
+  return enclosingMethod == null ? (isStatic() ? TypeVariableSource.UNDEFINED : getEnclosingType()) : enclosingMethod;
 }
