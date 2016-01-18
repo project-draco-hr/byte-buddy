@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   Token token=(Token)other;
-  return typeDescription.equals(token.typeDescription) && annotationDescriptions.equals(token.annotationDescriptions) && (name != null ? name.equals(token.name) : token.name == null)&& (modifiers != null ? modifiers.equals(token.modifiers) : token.modifiers == null);
+  return type.equals(token.type) && annotations.equals(token.annotations) && (name != null ? name.equals(token.name) : token.name == null)&& (modifiers != null ? modifiers.equals(token.modifiers) : token.modifiers == null);
 }

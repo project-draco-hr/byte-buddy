@@ -1,2 +1,2 @@
-TypeDescription.Generic typeDescription
-List<? extends AnnotationDescription> annotationDescriptions
+TypeDescription.Generic type
+List<? extends AnnotationDescription> annotations

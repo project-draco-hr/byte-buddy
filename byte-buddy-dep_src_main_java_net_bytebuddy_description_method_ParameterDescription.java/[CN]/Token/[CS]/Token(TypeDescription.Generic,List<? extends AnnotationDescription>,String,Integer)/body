@@ -1,6 +1,6 @@
 {
-  this.typeDescription=typeDescription;
-  this.annotationDescriptions=annotationDescriptions;
+  this.type=type;
+  this.annotations=annotations;
   this.name=name;
   this.modifiers=modifiers;
 }
