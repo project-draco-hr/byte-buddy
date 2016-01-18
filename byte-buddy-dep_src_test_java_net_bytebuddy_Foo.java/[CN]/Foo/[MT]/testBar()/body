@@ -1,3 +1,0 @@
-{
-  new ByteBuddy().subclass(Qux.class).method(any()).intercept(StubMethod.INSTANCE).make();
-}

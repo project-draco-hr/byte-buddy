@@ -1,0 +1,7 @@
+{
+  MethodDescription methodDescription=describeInterfaceType(MixedTypeVariables.Inner.class,0).getDeclaredMethods().getOnly();
+  assertThat(methodDescription.getParameters().getOnly().getType().getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
+  assertThat(methodDescription.getParameters().getOnly().getType().asRawType().represents(MixedTypeVariables.SampleType.class),is(true));
+  assertThat(methodDescription.getParameters().getOnly().getType().getTypeArguments().get(0),is(methodDescription.getTypeVariables().getOnly()));
+  assertThat(methodDescription.getParameters().getOnly().getType().getTypeArguments().get(1).represents(Void.class),is(true));
+}
