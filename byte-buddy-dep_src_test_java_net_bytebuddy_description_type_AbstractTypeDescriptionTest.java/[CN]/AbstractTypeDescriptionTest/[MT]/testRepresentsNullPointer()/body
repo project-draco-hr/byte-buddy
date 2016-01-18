@@ -1,3 +1,0 @@
-{
-  describe(Object.class).represents(null);
-}

@@ -1,6 +1,3 @@
 {
-  if (type == null) {
-    throw new NullPointerException();
-  }
-  return type instanceof Class && equals(new ForLoadedType((Class<?>)type));
+  return equals(Sort.describe(type));
 }
