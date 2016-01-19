@@ -1,0 +1,4 @@
+{
+  TypeDescription declaringType=typeDescription.getDeclaringType();
+  return declaringType == null ? UNDEFINED : declaringType.isGeneric() ? new LazyParameterizedReceiverType(declaringType,typePath + GenericTypeToken.OWNER_TYPE_PATH) : new LazyNonGenericReceiverType(declaringType,typePath + GenericTypeToken.OWNER_TYPE_PATH);
+}

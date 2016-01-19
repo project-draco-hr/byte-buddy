@@ -1,0 +1,10 @@
+{
+  if (!getTypeVariables().isEmpty()) {
+    return true;
+  }
+ else   if (isStatic()) {
+    return false;
+  }
+  TypeDescription declaringType=getDeclaringType();
+  return declaringType != null && declaringType.isGeneric();
+}
