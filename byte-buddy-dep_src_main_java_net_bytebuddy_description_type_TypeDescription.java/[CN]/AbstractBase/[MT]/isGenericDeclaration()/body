@@ -6,5 +6,5 @@
     return false;
   }
   TypeDescription declaringType=getDeclaringType();
-  return declaringType != null && declaringType.isGeneric();
+  return declaringType != null && declaringType.isGenericDeclaration();
 }

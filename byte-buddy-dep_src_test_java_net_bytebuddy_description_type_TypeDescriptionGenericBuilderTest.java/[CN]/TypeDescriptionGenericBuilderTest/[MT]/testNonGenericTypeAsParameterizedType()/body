@@ -1,0 +1,3 @@
+{
+  TypeDescription.Generic.Builder.parameterizedType(Object.class).build();
+}
