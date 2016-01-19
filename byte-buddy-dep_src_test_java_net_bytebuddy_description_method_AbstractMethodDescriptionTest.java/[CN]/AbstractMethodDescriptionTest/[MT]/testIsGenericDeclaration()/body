@@ -1,0 +1,4 @@
+{
+  assertThat(describe(genericMethodWithTypeVariable).isGenericDeclaration(),is(true));
+  assertThat(describe(firstMethod).isGenericDeclaration(),is(false));
+}
