@@ -1,0 +1,5 @@
+{
+  TypeDescription.Generic typeDescription=TypeDescription.Generic.Builder.parameterizedType(Object.class).build();
+  assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(typeDescription,is(TypeDescription.Generic.OBJECT));
+}
