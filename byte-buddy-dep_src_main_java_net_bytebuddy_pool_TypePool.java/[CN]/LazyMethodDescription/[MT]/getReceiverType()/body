@@ -1,0 +1,13 @@
+{
+  if (isStatic()) {
+    return Generic.UNDEFINED;
+  }
+ else   if (isConstructor()) {
+    TypeDescription declaringType=getDeclaringType(), enclosingDeclaringType=declaringType.getEnclosingType();
+    TypeDescription receiverType=enclosingDeclaringType == null ? declaringType : enclosingDeclaringType;
+    return receiverType.isGenericDeclaration() ? new LazyParameterizedReceiverType(receiverType) : new LazyNonGenericReceiverType(receiverType);
+  }
+ else {
+    return isGenericDeclaration() ? new LazyParameterizedReceiverType() : new LazyNonGenericReceiverType();
+  }
+}
