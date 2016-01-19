@@ -8,6 +8,6 @@
     return receiverType.isGenericDeclaration() ? new LazyParameterizedReceiverType(receiverType) : new LazyNonGenericReceiverType(receiverType);
   }
  else {
-    return isGenericDeclaration() ? new LazyParameterizedReceiverType() : new LazyNonGenericReceiverType();
+    return LazyTypeDescription.this.isGenericDeclaration() ? new LazyParameterizedReceiverType() : new LazyNonGenericReceiverType();
   }
 }

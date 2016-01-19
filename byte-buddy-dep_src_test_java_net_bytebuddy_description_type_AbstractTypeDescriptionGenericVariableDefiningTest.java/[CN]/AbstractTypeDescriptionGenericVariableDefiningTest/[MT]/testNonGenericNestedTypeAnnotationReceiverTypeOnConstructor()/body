@@ -1,0 +1,7 @@
+{
+  TypeDescription.Generic receiverType=describe(Class.forName(RECEIVER_TYPE_SAMPLE + "$" + NESTED)).getDeclaredMethods().filter(isConstructor()).getOnly().getReceiverType();
+  assertThat(receiverType,notNullValue(TypeDescription.Generic.class));
+  assertThat(receiverType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(receiverType.represents(Class.forName(RECEIVER_TYPE_SAMPLE)),is(true));
+  assertThat(receiverType.getDeclaredAnnotations().size(),is(0));
+}
