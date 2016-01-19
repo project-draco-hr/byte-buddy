@@ -24,6 +24,7 @@
   this.returnTypeAnnotationTokens=returnTypeAnnotationTokens;
   this.parameterTypeAnnotationTokens=parameterTypeAnnotationTokens;
   this.exceptionTypeAnnotationTokens=exceptionTypeAnnotationTokens;
+  this.receiverTypeAnnotationTokens=receiverTypeAnnotationTokens;
   this.annotationTokens=annotationTokens;
   this.parameterAnnotationTokens=parameterAnnotationTokens;
   parameterNames=new String[parameterType.length];

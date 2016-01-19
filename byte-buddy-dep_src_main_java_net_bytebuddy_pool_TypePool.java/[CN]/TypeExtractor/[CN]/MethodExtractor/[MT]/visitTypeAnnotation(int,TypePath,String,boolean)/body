@@ -18,7 +18,8 @@ case TypeReference.THROWS:
 annotationRegistrant=new ForTypeVariable.WithIndex(descriptor,typePath,typeReference.getExceptionIndex(),exceptionTypeAnnotationTokens);
 break;
 case TypeReference.METHOD_RECEIVER:
-return null;
+annotationRegistrant=new ForTypeVariable(descriptor,typePath,receiverTypeAnnotationTokens);
+break;
 default :
 throw new IllegalStateException("Unexpected type reference on method: " + typeReference.getSort());
 }

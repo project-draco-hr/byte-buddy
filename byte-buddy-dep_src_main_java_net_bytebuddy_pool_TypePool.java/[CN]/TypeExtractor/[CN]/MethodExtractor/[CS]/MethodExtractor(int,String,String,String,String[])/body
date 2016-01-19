@@ -10,6 +10,7 @@
   returnTypeAnnotationTokens=new HashMap<String,List<LazyTypeDescription.AnnotationToken>>();
   parameterTypeAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();
   exceptionTypeAnnotationTokens=new HashMap<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>();
+  receiverTypeAnnotationTokens=new HashMap<String,List<LazyTypeDescription.AnnotationToken>>();
   annotationTokens=new ArrayList<LazyTypeDescription.AnnotationToken>();
   parameterAnnotationTokens=new HashMap<Integer,List<LazyTypeDescription.AnnotationToken>>();
   parameterTokens=new ArrayList<LazyTypeDescription.MethodToken.ParameterToken>();

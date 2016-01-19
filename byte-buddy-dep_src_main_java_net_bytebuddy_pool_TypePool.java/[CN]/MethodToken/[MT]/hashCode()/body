@@ -9,6 +9,7 @@
   result=31 * result + returnTypeAnnotationTokens.hashCode();
   result=31 * result + parameterTypeAnnotationTokens.hashCode();
   result=31 * result + exceptionTypeAnnotationTokens.hashCode();
+  result=31 * result + receiverTypeAnnotationTokens.hashCode();
   result=31 * result + annotationTokens.hashCode();
   result=31 * result + parameterAnnotationTokens.hashCode();
   result=31 * result + parameterTokens.hashCode();

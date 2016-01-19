@@ -8,6 +8,7 @@ Map<Integer,Map<Integer,Map<String,List<AnnotationToken>>>> typeVariableBoundAnn
 Map<String,List<AnnotationToken>> returnTypeAnnotationTokens
 Map<Integer,Map<String,List<AnnotationToken>>> parameterTypeAnnotationTokens
 Map<Integer,Map<String,List<AnnotationToken>>> exceptionTypeAnnotationTokens
+Map<String,List<AnnotationToken>> receiverTypeAnnotationTokens
 List<AnnotationToken> annotationTokens
 Map<Integer,List<AnnotationToken>> parameterAnnotationTokens
 List<MethodToken.ParameterToken> parameterTokens
