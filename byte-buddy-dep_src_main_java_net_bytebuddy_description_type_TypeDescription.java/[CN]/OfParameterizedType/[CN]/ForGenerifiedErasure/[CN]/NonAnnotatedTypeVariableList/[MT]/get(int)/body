@@ -1,0 +1,3 @@
+{
+  return typeVariables.get(index).accept(Visitor.TypeVariableErasing.INSTANCE);
+}
