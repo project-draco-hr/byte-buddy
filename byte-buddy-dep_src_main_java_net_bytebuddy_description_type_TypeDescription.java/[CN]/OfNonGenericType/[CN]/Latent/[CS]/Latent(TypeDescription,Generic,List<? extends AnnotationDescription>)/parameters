@@ -1,2 +1,3 @@
 TypeDescription typeDescription
+Generic declaringType
 List<? extends AnnotationDescription> annotationDescriptions
