@@ -1,7 +1,7 @@
 {
   StringBuilder typePath=new StringBuilder();
   for (int index=0; index < typeDescription.getSegmentCount(); index++) {
-    typePath.append(GenericTypeToken.OWNER_TYPE_PATH);
+    typePath=typePath.append(GenericTypeToken.INNER_CLASS_PATH);
   }
   return typePath.toString();
 }

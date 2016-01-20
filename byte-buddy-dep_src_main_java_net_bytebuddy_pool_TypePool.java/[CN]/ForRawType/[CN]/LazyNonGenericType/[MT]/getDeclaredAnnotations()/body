@@ -1,3 +1,7 @@
 {
-  return LazyAnnotationDescription.asListOfNullable(typePool,annotationTokens.get(typePath));
+  StringBuilder typePath=new StringBuilder(this.typePath);
+  for (int index=0; index < typeDescription.getSegmentCount(); index++) {
+    typePath=typePath.append(INNER_CLASS_PATH);
+  }
+  return LazyAnnotationDescription.asListOfNullable(typePool,annotationTokens.get(typePath.toString()));
 }

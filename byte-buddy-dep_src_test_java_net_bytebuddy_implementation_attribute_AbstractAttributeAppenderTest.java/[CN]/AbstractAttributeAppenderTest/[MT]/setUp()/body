@@ -8,4 +8,7 @@
   when(annotatedTypeVariableBound.asGenericType()).thenReturn(annotatedTypeVariableBound);
   when(simpleAnnotatedType.accept(any(TypeDescription.Generic.Visitor.class))).thenCallRealMethod();
   when(simpleAnnotatedType.asGenericType()).thenReturn(simpleAnnotatedType);
+  when(simpleAnnotatedType.asErasure()).thenReturn(typeErasure);
+  when(annotatedTypeVariable.asErasure()).thenReturn(typeErasure);
+  when(annotatedTypeVariableBound.asErasure()).thenReturn(typeErasure);
 }
