@@ -1,3 +1,0 @@
-{
-  describeType(NonGeneric.class.getDeclaredField(FOO)).getOwnerType();
-}

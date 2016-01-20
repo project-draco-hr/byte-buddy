@@ -1,0 +1,4 @@
+{
+  assertThat(describeType(NonGeneric.class.getDeclaredField(FOO)).getOwnerType(),nullValue(TypeDescription.Generic.class));
+  assertThat(describeType(NonGeneric.class.getDeclaredField(BAR)).getOwnerType(),is(TypeDefinition.Sort.describe(NonGeneric.class)));
+}
