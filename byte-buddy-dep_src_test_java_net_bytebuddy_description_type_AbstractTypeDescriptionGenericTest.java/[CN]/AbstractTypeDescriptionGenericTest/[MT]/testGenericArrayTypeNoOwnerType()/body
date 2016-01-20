@@ -1,3 +1,0 @@
-{
-  describeType(SimpleGenericArrayType.class.getDeclaredField(FOO)).getOwnerType();
-}
