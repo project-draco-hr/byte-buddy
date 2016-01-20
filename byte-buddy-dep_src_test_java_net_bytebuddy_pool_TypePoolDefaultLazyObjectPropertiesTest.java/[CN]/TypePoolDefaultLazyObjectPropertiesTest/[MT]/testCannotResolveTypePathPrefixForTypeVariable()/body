@@ -1,0 +1,3 @@
+{
+  new TypePool.Default.LazyTypeDescription.GenericTypeToken.ForPrimitiveType.ForTypeVariable(FOO).getTypePathPrefix();
+}

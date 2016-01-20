@@ -1,3 +1,0 @@
-{
-  return ownerTypeToken.getPathPrefix() + OWNER_TYPE_PATH;
-}
