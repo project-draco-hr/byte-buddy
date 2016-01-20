@@ -1,0 +1,3 @@
+{
+  assertThat(describe(firstMethod).getReceiverType(),nullValue(TypeDescription.Generic.class));
+}
