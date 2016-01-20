@@ -3,5 +3,5 @@
   for (int index=0; index < typeDescription.getSegmentCount(); index++) {
     typePath.append(GenericTypeToken.OWNER_TYPE_PATH);
   }
-  return LazyAnnotationDescription.asListOfNullable(typePool,receiverTypeAnnotationTokens.get(typePath.toString()));
+  return typePath.toString();
 }
