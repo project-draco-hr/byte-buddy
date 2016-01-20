@@ -1,6 +1,11 @@
 {
   ObjectPropertyAssertion.of(TypeDescription.Generic.Builder.OfGenericArrayType.class).apply();
-  ObjectPropertyAssertion.of(TypeDescription.Generic.Builder.OfNonGenericType.class).apply();
+  ObjectPropertyAssertion.of(TypeDescription.Generic.Builder.OfNonGenericType.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
+    @Override public void apply(    TypeDescription mock){
+      when(mock.asGenericType()).thenReturn(Mockito.mock(TypeDescription.Generic.class));
+    }
+  }
+).apply();
   ObjectPropertyAssertion.of(TypeDescription.Generic.Builder.OfParameterizedType.class).apply();
   ObjectPropertyAssertion.of(TypeDescription.Generic.Builder.OfTypeVariable.class).apply();
 }
