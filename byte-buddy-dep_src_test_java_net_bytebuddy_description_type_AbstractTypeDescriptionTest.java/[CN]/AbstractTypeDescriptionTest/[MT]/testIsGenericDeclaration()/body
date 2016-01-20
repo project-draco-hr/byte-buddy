@@ -2,5 +2,6 @@
   assertThat(describe(GenericSample.class).isGenericDeclaration(),is(true));
   assertThat(describe(GenericSample.Inner.class).isGenericDeclaration(),is(true));
   assertThat(describe(GenericSample.Nested.class).isGenericDeclaration(),is(false));
+  assertThat(describe(GenericSample.NestedInterface.class).isGenericDeclaration(),is(false));
   assertThat(describe(Object.class).isGenericDeclaration(),is(false));
 }
