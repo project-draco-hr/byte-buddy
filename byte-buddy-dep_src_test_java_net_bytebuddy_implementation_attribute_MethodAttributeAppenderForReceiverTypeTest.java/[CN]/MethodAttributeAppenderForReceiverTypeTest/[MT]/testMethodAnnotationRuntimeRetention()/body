@@ -1,0 +1,7 @@
+{
+  when(simpleAnnotatedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new Baz.Instance()));
+  new MethodAttributeAppender.ForReceiverType(simpleAnnotatedType).apply(methodVisitor,methodDescription,annotationValueFilter);
+  verify(methodVisitor).visitTypeAnnotation(TypeReference.newTypeReference(TypeReference.METHOD_RECEIVER).getValue(),null,Type.getDescriptor(Baz.class),true);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(methodDescription);
+}

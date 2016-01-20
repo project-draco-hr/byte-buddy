@@ -1,0 +1,7 @@
+{
+  when(simpleAnnotatedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new QuxBaz.Instance()));
+  new MethodAttributeAppender.ForReceiverType(simpleAnnotatedType).apply(methodVisitor,methodDescription,annotationValueFilter);
+  verify(methodVisitor).visitTypeAnnotation(TypeReference.newTypeReference(TypeReference.METHOD_RECEIVER).getValue(),null,Type.getDescriptor(QuxBaz.class),false);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(methodDescription);
+}

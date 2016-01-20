@@ -1,0 +1,7 @@
+{
+  when(simpleAnnotatedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new Qux.Instance()));
+  new MethodAttributeAppender.ForReceiverType(simpleAnnotatedType).apply(methodVisitor,methodDescription,annotationValueFilter);
+  verifyZeroInteractions(methodVisitor);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(methodDescription);
+}

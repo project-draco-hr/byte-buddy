@@ -1,0 +1,3 @@
+{
+  receiverType.accept(AnnotationAppender.ForTypeAnnotations.ofReceiverType(new AnnotationAppender.Default(new AnnotationAppender.Target.OnMethod(methodVisitor)),annotationValueFilter));
+}
