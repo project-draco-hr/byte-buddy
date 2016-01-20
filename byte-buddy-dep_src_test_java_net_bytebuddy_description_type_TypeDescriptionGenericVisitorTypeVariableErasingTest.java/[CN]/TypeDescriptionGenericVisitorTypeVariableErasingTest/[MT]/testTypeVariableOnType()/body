@@ -1,0 +1,11 @@
+{
+  TypeDescription typeVariableSource=mock(TypeDescription.AbstractBase.class);
+  when(typeVariableSource.accept(any(TypeVariableSource.Visitor.class))).thenCallRealMethod();
+  TypeDescription typeErasure=mock(TypeDescription.class);
+  when(typeDescription.asErasure()).thenReturn(typeErasure);
+  when(typeDescription.getVariableSource()).thenReturn(typeVariableSource);
+  TypeDescription.Generic erasure=TypeDescription.Generic.Visitor.TypeVariableErasing.INSTANCE.onTypeVariable(typeDescription);
+  assertThat(erasure.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(erasure.asErasure(),is(typeErasure));
+  assertThat(erasure.getDeclaredAnnotations(),is(Collections.singletonList(annotationDescription)));
+}

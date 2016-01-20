@@ -1,0 +1,8 @@
+{
+  TypeDescription erasure=mock(TypeDescription.class);
+  when(typeDescription.asErasure()).thenReturn(erasure);
+  when(referencedType.accept(TypeDescription.Generic.Visitor.TypeVariableErasing.PartialErasureReviser.INSTANCE)).thenReturn(false);
+  when(typeDescription.getTypeArguments()).thenReturn(new TypeList.Generic.Explicit(referencedType));
+  when(typeDescription.getOwnerType()).thenReturn(referencedType);
+  assertThat(TypeDescription.Generic.Visitor.TypeVariableErasing.INSTANCE.onParameterizedType(typeDescription),is((TypeDescription.Generic)new TypeDescription.Generic.OfParameterizedType.Latent(erasure,transformedType,Collections.singletonList(transformedType),Collections.singletonList(annotationDescription))));
+}

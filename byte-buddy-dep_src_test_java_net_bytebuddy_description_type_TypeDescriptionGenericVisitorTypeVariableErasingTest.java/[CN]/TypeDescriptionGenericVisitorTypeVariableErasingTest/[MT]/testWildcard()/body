@@ -1,0 +1,5 @@
+{
+  when(typeDescription.getUpperBounds()).thenReturn(new TypeList.Generic.Explicit(referencedType));
+  when(typeDescription.getLowerBounds()).thenReturn(new TypeList.Generic.Explicit(referencedType));
+  assertThat(TypeDescription.Generic.Visitor.TypeVariableErasing.INSTANCE.onWildcard(typeDescription),is((TypeDescription.Generic)new TypeDescription.Generic.OfWildcardType.Latent(Collections.singletonList(transformedType),Collections.singletonList(transformedType),Collections.singletonList(annotationDescription))));
+}

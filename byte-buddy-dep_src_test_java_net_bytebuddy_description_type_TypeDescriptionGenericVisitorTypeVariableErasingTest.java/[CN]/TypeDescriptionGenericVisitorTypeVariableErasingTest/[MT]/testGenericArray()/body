@@ -1,0 +1,5 @@
+{
+  when(transformedType.getSort()).thenReturn(TypeDefinition.Sort.GENERIC_ARRAY);
+  when(typeDescription.getComponentType()).thenReturn(referencedType);
+  assertThat(TypeDescription.Generic.Visitor.TypeVariableErasing.INSTANCE.onGenericArray(typeDescription),is((TypeDescription.Generic)new TypeDescription.Generic.OfGenericArray.Latent(transformedType,Collections.singletonList(annotationDescription))));
+}

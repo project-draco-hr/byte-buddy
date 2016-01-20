@@ -1,0 +1,6 @@
+{
+  when(typeDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Explicit(annotationDescription));
+  when(referencedType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(transformedType);
+  when(referencedType.asGenericType()).thenReturn(referencedType);
+  when(transformedType.asGenericType()).thenReturn(transformedType);
+}

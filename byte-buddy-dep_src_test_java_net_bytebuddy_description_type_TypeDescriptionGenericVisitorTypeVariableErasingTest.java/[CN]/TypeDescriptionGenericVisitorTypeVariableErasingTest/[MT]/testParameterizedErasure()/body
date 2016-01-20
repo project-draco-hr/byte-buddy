@@ -1,0 +1,8 @@
+{
+  TypeDescription.Generic rawType=mock(TypeDescription.Generic.class);
+  when(typeDescription.asRawType()).thenReturn(rawType);
+  when(referencedType.accept(TypeDescription.Generic.Visitor.TypeVariableErasing.PartialErasureReviser.INSTANCE)).thenReturn(true);
+  when(typeDescription.getTypeArguments()).thenReturn(new TypeList.Generic.Explicit(referencedType));
+  when(typeDescription.getOwnerType()).thenReturn(referencedType);
+  assertThat(TypeDescription.Generic.Visitor.TypeVariableErasing.INSTANCE.onParameterizedType(typeDescription),is(rawType));
+}

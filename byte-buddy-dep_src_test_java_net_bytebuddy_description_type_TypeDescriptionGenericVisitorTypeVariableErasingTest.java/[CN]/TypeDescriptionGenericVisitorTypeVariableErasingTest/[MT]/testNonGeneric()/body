@@ -1,0 +1,3 @@
+{
+  assertThat(TypeDescription.Generic.Visitor.TypeVariableErasing.INSTANCE.onNonGenericType(typeDescription),is(typeDescription));
+}
