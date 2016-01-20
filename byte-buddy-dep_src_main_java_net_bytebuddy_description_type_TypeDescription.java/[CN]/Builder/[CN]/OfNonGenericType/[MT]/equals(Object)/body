@@ -1,3 +1,7 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && typeDescription.equals(((OfNonGenericType)other).typeDescription);
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  if (!super.equals(other))   return false;
+  OfNonGenericType that=(OfNonGenericType)other;
+  return typeDescription.equals(that.typeDescription) && (ownerType != null ? ownerType.equals(that.ownerType) : that.ownerType == null);
 }

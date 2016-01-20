@@ -1,4 +1,5 @@
 {
   super(annotations);
+  this.ownerType=ownerType;
   this.typeDescription=typeDescription;
 }

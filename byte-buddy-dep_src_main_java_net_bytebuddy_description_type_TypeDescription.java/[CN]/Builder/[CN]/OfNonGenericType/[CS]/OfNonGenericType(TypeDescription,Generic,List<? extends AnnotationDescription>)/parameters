@@ -1,2 +1,3 @@
 TypeDescription typeDescription
+Generic ownerType
 List<? extends AnnotationDescription> annotations

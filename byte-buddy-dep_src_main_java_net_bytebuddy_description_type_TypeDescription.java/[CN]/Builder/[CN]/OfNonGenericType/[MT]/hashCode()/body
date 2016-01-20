@@ -1,5 +1,6 @@
 {
   int result=super.hashCode();
   result=31 * result + typeDescription.hashCode();
+  result=31 * result + (ownerType != null ? ownerType.hashCode() : 0);
   return result;
 }

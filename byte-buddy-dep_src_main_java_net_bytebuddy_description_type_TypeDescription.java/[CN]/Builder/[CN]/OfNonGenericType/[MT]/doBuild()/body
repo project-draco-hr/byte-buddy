@@ -2,5 +2,5 @@
   if (typeDescription.represents(void.class) && !annotations.isEmpty()) {
     throw new IllegalArgumentException("The void non-type cannot be annotated");
   }
-  return new Generic.OfNonGenericType.OfErasure(typeDescription,annotations);
+  return new Generic.OfNonGenericType.Latent(typeDescription,ownerType,annotations);
 }
