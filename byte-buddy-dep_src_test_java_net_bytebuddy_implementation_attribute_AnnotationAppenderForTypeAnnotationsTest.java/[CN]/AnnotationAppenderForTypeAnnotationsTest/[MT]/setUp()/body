@@ -1,9 +1,10 @@
 {
-  when(annotationAppender.append(annotationDescription,annotationValueFilter,BAR,FOO)).thenReturn(result);
+  when(annotationAppender.append(eq(annotationDescription),eq(annotationValueFilter),eq(BAR),any(String.class))).thenReturn(result);
   when(typeDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Explicit(annotationDescription));
   when(second.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(result);
   when(third.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(result);
   when(second.asGenericType()).thenReturn(second);
   when(third.asGenericType()).thenReturn(third);
+  when(typeDescription.asErasure()).thenReturn(erasure);
   visitor=new AnnotationAppender.ForTypeAnnotations(annotationAppender,annotationValueFilter,BAR,FOO);
 }
