@@ -1,0 +1,7 @@
+{
+  Class<? extends Annotation> typeAnnotationType=(Class<? extends Annotation>)Class.forName(TYPE_VARIABLE_NAME);
+  MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotationType).getDeclaredMethods().filter(named(VALUE)).getOnly();
+  Field field=createPlain().defineField(FOO,TypeDescription.Generic.Builder.parameterizedType(new TypeDescription.ForLoadedType(Nested.Inner.class),TypeDescription.Generic.Builder.parameterizedType(Nested.class,Void.class).build(),Collections.<TypeDefinition>emptyList()).annotate(AnnotationDescription.Builder.ofType(typeAnnotationType).define(VALUE,INTEGER_VALUE).build()).build()).visit(DebuggingWrapper.makeDefault()).make().load(typeAnnotationType.getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded().getDeclaredField(FOO);
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolve(field).asList().size(),is(1));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolve(field).asList().ofType(typeAnnotationType).getValue(value,Integer.class),is(INTEGER_VALUE));
+}
