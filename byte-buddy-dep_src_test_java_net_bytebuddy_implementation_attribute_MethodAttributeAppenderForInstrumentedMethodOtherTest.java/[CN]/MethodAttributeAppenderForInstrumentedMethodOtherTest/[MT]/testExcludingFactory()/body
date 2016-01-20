@@ -1,0 +1,4 @@
+{
+  TypeDescription typeDescription=mock(TypeDescription.class);
+  assertThat(MethodAttributeAppender.ForInstrumentedMethod.EXCLUDING_RECEIVER.make(typeDescription),is((MethodAttributeAppender)MethodAttributeAppender.ForInstrumentedMethod.EXCLUDING_RECEIVER));
+}

@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{MethodAttributeAppender.ForInstrumentedMethod.EXCLUDING_RECEIVER},{MethodAttributeAppender.ForInstrumentedMethod.INCLUDING_RECEIVER}});
+}

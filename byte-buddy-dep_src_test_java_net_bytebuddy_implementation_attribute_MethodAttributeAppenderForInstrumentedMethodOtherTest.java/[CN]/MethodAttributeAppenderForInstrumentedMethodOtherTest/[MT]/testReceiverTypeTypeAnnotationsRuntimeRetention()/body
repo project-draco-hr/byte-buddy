@@ -1,0 +1,19 @@
+{
+  when(methodDescription.getParameters()).thenReturn((ParameterList)new ParameterList.Empty<ParameterDescription>());
+  when(methodDescription.getReturnType()).thenReturn(TypeDescription.Generic.VOID);
+  when(methodDescription.getTypeVariables()).thenReturn(new TypeList.Generic.Empty());
+  when(methodDescription.getExceptionTypes()).thenReturn(new TypeList.Generic.Empty());
+  when(methodDescription.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(methodDescription.getReceiverType()).thenReturn(simpleAnnotatedType);
+  when(simpleAnnotatedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new Baz.Instance()));
+  MethodAttributeAppender.ForInstrumentedMethod.INCLUDING_RECEIVER.apply(methodVisitor,methodDescription,annotationValueFilter);
+  verify(methodVisitor).visitTypeAnnotation(TypeReference.newTypeReference(TypeReference.METHOD_RECEIVER).getValue(),null,Type.getDescriptor(AbstractAttributeAppenderTest.Baz.class),true);
+  verifyNoMoreInteractions(methodVisitor);
+  verify(methodDescription).getDeclaredAnnotations();
+  verify(methodDescription).getParameters();
+  verify(methodDescription).getReturnType();
+  verify(methodDescription).getExceptionTypes();
+  verify(methodDescription).getTypeVariables();
+  verify(methodDescription).getReceiverType();
+  verifyNoMoreInteractions(methodDescription);
+}

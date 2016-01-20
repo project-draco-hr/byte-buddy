@@ -6,13 +6,7 @@
   when(methodDescription.getTypeVariables()).thenReturn(new TypeList.Generic.Empty());
   when(methodDescription.getExceptionTypes()).thenReturn(new TypeList.Generic.Explicit(simpleAnnotatedType));
   when(simpleAnnotatedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new QuxBaz.Instance()));
-  MethodAttributeAppender.ForInstrumentedMethod.INSTANCE.apply(methodVisitor,methodDescription,annotationValueFilter);
+  methodAttributeAppender.apply(methodVisitor,methodDescription,annotationValueFilter);
   verify(methodVisitor).visitTypeAnnotation(TypeReference.newExceptionReference(0).getValue(),null,Type.getDescriptor(QuxBaz.class),false);
   verifyNoMoreInteractions(methodVisitor);
-  verify(methodDescription).getDeclaredAnnotations();
-  verify(methodDescription).getParameters();
-  verify(methodDescription).getReturnType();
-  verify(methodDescription).getExceptionTypes();
-  verify(methodDescription).getTypeVariables();
-  verifyNoMoreInteractions(methodDescription);
 }

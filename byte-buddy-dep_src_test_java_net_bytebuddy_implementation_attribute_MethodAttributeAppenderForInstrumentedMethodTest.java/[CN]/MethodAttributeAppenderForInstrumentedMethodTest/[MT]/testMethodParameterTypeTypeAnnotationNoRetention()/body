@@ -9,12 +9,6 @@
   when(methodDescription.getTypeVariables()).thenReturn(new TypeList.Generic.Empty());
   when(methodDescription.getExceptionTypes()).thenReturn(new TypeList.Generic.Empty());
   when(simpleAnnotatedType.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(new Qux.Instance()));
-  MethodAttributeAppender.ForInstrumentedMethod.INSTANCE.apply(methodVisitor,methodDescription,annotationValueFilter);
+  methodAttributeAppender.apply(methodVisitor,methodDescription,annotationValueFilter);
   verifyZeroInteractions(methodVisitor);
-  verify(methodDescription).getDeclaredAnnotations();
-  verify(methodDescription).getParameters();
-  verify(methodDescription).getReturnType();
-  verify(methodDescription).getExceptionTypes();
-  verify(methodDescription).getTypeVariables();
-  verifyNoMoreInteractions(methodDescription);
 }

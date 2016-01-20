@@ -1,0 +1,11 @@
+{
+  verify(methodDescription).getDeclaredAnnotations();
+  verify(methodDescription).getParameters();
+  verify(methodDescription).getReturnType();
+  verify(methodDescription).getExceptionTypes();
+  verify(methodDescription).getTypeVariables();
+  if (methodAttributeAppender == MethodAttributeAppender.ForInstrumentedMethod.INCLUDING_RECEIVER) {
+    verify(methodDescription).getReceiverType();
+  }
+  verifyNoMoreInteractions(methodDescription);
+}

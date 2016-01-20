@@ -1,4 +1,0 @@
-{
-  assertThat(MethodAttributeAppender.ForInstrumentedMethod.INSTANCE.make(instrumentedType),sameInstance((MethodAttributeAppender)MethodAttributeAppender.ForInstrumentedMethod.INSTANCE));
-  verifyZeroInteractions(instrumentedType);
-}
