@@ -1,6 +1,0 @@
-{
-  this.typePool=typePool;
-  this.typePath=typePath;
-  this.annotationTokens=annotationTokens;
-  this.typeDescription=typeDescription;
-}

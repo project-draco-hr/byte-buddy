@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("A non-generic type does not imply an owner type: " + this);
-}

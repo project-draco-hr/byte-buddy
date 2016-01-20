@@ -1,0 +1,4 @@
+{
+  TypeDescription declaringType=typeDescription.getDeclaringType();
+  return declaringType == null ? UNDEFINED : new LazyNonGenericReceiverType(declaringType);
+}

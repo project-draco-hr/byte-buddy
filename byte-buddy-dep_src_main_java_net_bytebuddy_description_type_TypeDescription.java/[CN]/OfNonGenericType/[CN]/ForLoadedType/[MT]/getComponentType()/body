@@ -1,4 +1,4 @@
 {
-  Class<?> componentType=this.type.getComponentType();
+  Class<?> componentType=type.getComponentType();
   return componentType == null ? UNDEFINED : new ForLoadedType(componentType,annotationReader.ofComponentType());
 }
