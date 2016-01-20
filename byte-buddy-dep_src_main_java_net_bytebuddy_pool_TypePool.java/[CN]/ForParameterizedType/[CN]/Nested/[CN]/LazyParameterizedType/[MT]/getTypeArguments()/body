@@ -1,3 +1,3 @@
 {
-  return new LazyTokenList(typePool,typeVariableSource,typePath,annotationTokens,parameterTypeTokens);
+  return new LazyTokenList(typePool,typeVariableSource,ownerTypeToken.getPathPrefix() + typePath,annotationTokens,parameterTypeTokens);
 }
