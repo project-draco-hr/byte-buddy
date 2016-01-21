@@ -1,0 +1,7 @@
+{
+  when(targetParameterType.represents(any(Class.class))).thenReturn(true);
+  when(source.isConstructor()).thenReturn(true);
+  MethodDelegationBinder.ParameterBinding<?> parameterBinding=SuperCall.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+  verifyZeroInteractions(implementationTarget);
+  assertThat(parameterBinding.isValid(),is(false));
+}
