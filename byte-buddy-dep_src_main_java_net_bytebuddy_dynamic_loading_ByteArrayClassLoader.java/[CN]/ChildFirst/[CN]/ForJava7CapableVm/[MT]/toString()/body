@@ -1,0 +1,3 @@
+{
+  return "ByteArrayClassLoader.ChildFirst.SynchronizationEngine.ForJava7CapableVm{method=" + method + '}';
+}
