@@ -1,0 +1,3 @@
+{
+  return takesGenericArgument(index,is(type));
+}

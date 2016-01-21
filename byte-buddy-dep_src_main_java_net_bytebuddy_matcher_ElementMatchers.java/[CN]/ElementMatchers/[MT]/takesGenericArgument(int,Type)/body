@@ -1,0 +1,3 @@
+{
+  return takesGenericArgument(index,TypeDefinition.Sort.describe(type));
+}

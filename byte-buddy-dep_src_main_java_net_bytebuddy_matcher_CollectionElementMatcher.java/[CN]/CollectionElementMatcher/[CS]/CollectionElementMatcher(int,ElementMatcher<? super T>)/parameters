@@ -1,0 +1,2 @@
+int index
+ElementMatcher<? super T> elementMatcher

@@ -1,0 +1,12 @@
+{
+  Iterator<? extends T> iterator=target.iterator();
+  for (int index=0; index < this.index; index++) {
+    if (iterator.hasNext()) {
+      iterator.next();
+    }
+ else {
+      return false;
+    }
+  }
+  return iterator.hasNext() && elementMatcher.matches(iterator.next());
+}

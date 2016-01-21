@@ -1,0 +1,3 @@
+{
+  return takesGenericArguments(new CollectionElementMatcher<TypeDescription.Generic>(index,matcher));
+}

@@ -1,0 +1,4 @@
+{
+  assertThat(new CollectionElementMatcher<Object>(2,elementMatcher).matches(iterable),is(false));
+  verifyZeroInteractions(elementMatcher);
+}

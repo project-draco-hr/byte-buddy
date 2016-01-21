@@ -1,7 +1,7 @@
 {
   List<ElementMatcher<? super TypeDescription>> typeMatchers=new ArrayList<ElementMatcher<? super TypeDescription>>();
-  for (  TypeDescription typeDescription : typeDescriptions) {
-    typeMatchers.add(is(typeDescription));
+  for (  TypeDescription type : types) {
+    typeMatchers.add(is(type));
   }
   return rawTypes(new CollectionOneToOneMatcher<TypeDescription>(typeMatchers));
 }

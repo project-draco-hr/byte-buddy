@@ -1,0 +1,3 @@
+{
+  return elementMatcher.hashCode() + 31 * index;
+}

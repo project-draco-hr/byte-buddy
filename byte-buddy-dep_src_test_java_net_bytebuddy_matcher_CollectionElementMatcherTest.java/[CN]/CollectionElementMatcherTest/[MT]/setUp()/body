@@ -1,0 +1,4 @@
+{
+  elemet=new Object();
+  iterable=Arrays.asList(new Object(),elemet);
+}

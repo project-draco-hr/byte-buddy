@@ -1,7 +1,7 @@
 {
   List<ElementMatcher<? super TypeDescription.Generic>> typeMatchers=new ArrayList<ElementMatcher<? super TypeDescription.Generic>>();
-  for (  TypeDescription typeDescription : typeDescriptions) {
-    typeMatchers.add(rawType(typeDescription));
+  for (  TypeDescription type : types) {
+    typeMatchers.add(rawType(type));
   }
   return takesGenericArguments(new CollectionOneToOneMatcher<TypeDescription.Generic>(typeMatchers));
 }

@@ -1,3 +1,3 @@
 {
-  return new SubTypeMatcher<T>(typeDescription);
+  return new SubTypeMatcher<T>(type);
 }

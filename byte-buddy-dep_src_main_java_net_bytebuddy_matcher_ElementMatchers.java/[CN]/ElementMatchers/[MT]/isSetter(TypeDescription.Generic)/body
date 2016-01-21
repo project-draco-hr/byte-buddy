@@ -1,3 +1,3 @@
 {
-  return isSetter(is(typeDescription));
+  return isSetter(is(type));
 }
