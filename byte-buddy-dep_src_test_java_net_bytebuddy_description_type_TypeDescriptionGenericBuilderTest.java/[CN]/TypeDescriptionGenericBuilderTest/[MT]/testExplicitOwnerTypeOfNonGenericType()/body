@@ -1,0 +1,7 @@
+{
+  TypeDescription.Generic ownerType=TypeDescription.Generic.Builder.rawType(Bar.class).build();
+  TypeDescription.Generic typeDescription=TypeDescription.Generic.Builder.rawType(Bar.Inner.class,ownerType).build();
+  assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(typeDescription.represents(Bar.Inner.class),is(true));
+  assertThat(typeDescription.getOwnerType(),sameInstance(ownerType));
+}
