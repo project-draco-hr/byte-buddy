@@ -1,0 +1,12 @@
+{
+  try {
+    AnnotatedElement annotatedOwnerType=(AnnotatedElement)GET_ANNOTATED_OWNER_TYPE.invoke(annotatedElement);
+    return annotatedOwnerType == null ? NoOp.INSTANCE : annotatedOwnerType;
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.reflect.AnnotatedType#getAnnotatedOwnerType",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.reflect.AnnotatedType#getAnnotatedOwnerType",exception.getCause());
+  }
+}

@@ -1,8 +1,3 @@
 {
-  for (  TypeDescription.Generic bound : typeVariable.getUpperBounds()) {
-    if (bound.accept(this)) {
-      return true;
-    }
-  }
-  return false;
+  return acceptsVariable;
 }
