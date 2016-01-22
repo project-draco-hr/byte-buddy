@@ -3,4 +3,5 @@
   assertThat(ElementMatchers.takesArgument(0,Object.class).matches(new MethodDescription.ForLoadedMethod(TakesArguments.class.getDeclaredMethod(FOO,Void.class))),is(false));
   assertThat(ElementMatchers.takesArgument(1,int.class).matches(new MethodDescription.ForLoadedMethod(TakesArguments.class.getDeclaredMethod(BAR,String.class,int.class))),is(true));
   assertThat(ElementMatchers.takesArgument(1,Integer.class).matches(new MethodDescription.ForLoadedMethod(TakesArguments.class.getDeclaredMethod(BAR,String.class,int.class))),is(false));
+  assertThat(ElementMatchers.takesArgument(2,int.class).matches(new MethodDescription.ForLoadedMethod(TakesArguments.class.getDeclaredMethod(BAR,String.class,int.class))),is(false));
 }
