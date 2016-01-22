@@ -1,0 +1,11 @@
+{
+  try {
+    return new Simple(virtualMachineType,(String)getPid.invoke(current.invoke(STATIC_MEMBER)));
+  }
+ catch (  IllegalAccessException exception) {
+    throw new UnsupportedOperationException("Not yet implemented");
+  }
+catch (  InvocationTargetException exception) {
+    throw new UnsupportedOperationException("Not yet implemented");
+  }
+}

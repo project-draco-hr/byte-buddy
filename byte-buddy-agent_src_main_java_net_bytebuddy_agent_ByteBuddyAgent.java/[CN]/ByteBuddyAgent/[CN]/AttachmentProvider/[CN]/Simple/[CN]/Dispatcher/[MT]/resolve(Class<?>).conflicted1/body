@@ -1,0 +1,5 @@
+{
+  String runtimeName=ManagementFactory.getRuntimeMXBean().getName();
+  int processIdIndex=runtimeName.indexOf('@');
+  return processIdIndex == -1 ? Unavailable.INSTANCE : new Simple(virtualMachineType,runtimeName.substring(0,processIdIndex));
+}

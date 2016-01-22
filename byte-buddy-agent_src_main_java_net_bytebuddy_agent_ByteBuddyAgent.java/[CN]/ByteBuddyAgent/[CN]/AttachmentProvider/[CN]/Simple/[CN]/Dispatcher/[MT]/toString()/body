@@ -1,0 +1,3 @@
+{
+  return "ByteBuddyAgent.AttachmentProvider.Accessor.Simple.Dispatcher.ForLegacyVm." + name();
+}

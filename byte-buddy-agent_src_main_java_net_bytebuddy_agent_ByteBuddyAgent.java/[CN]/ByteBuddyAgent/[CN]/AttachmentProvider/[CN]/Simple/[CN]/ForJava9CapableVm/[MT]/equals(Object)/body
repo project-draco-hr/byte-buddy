@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForJava9CapableVm that=(ForJava9CapableVm)other;
+  return current.equals(that.current) && getPid.equals(that.getPid);
+}
