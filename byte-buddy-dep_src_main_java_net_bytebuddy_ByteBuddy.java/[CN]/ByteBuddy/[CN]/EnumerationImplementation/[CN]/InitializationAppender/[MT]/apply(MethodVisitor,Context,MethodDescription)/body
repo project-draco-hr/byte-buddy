@@ -6,7 +6,7 @@
   List<FieldDescription> enumerationFields=new ArrayList<FieldDescription>(values.size());
   for (  String value : values) {
     FieldDescription fieldDescription=instrumentedType.getDeclaredFields().filter(named(value)).getOnly();
-    stackManipulation=new StackManipulation.Compound(stackManipulation,TypeCreation.forType(instrumentedType),Duplication.SINGLE,new TextConstant(value),IntegerConstant.forValue(ordinal++),MethodInvocation.invoke(enumConstructor),FieldAccess.forField(fieldDescription).putter());
+    stackManipulation=new StackManipulation.Compound(stackManipulation,TypeCreation.of(instrumentedType),Duplication.SINGLE,new TextConstant(value),IntegerConstant.forValue(ordinal++),MethodInvocation.invoke(enumConstructor),FieldAccess.forField(fieldDescription).putter());
     enumerationFields.add(fieldDescription);
   }
   List<StackManipulation> fieldGetters=new ArrayList<StackManipulation>(values.size());

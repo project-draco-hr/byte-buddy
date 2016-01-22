@@ -1,4 +1,4 @@
 {
   TypeDescription auxiliaryType=implementationContext.register(this);
-  return new Compound(TypeCreation.forType(auxiliaryType),Duplication.SINGLE,accessedField.isStatic() ? Trivial.INSTANCE : MethodVariableAccess.REFERENCE.loadOffset(0),MethodInvocation.invoke(auxiliaryType.getDeclaredMethods().filter(isConstructor()).getOnly())).apply(methodVisitor,implementationContext);
+  return new Compound(TypeCreation.of(auxiliaryType),Duplication.SINGLE,accessedField.isStatic() ? Trivial.INSTANCE : MethodVariableAccess.REFERENCE.loadOffset(0),MethodInvocation.invoke(auxiliaryType.getDeclaredMethods().filter(isConstructor()).getOnly())).apply(methodVisitor,implementationContext);
 }
