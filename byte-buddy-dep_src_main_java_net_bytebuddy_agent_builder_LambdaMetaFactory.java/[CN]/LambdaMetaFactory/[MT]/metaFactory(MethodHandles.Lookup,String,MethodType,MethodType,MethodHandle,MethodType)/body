@@ -1,28 +1,15 @@
 {
-  this.targetClass=caller.lookupClass();
-  this.samBase=invokedType.returnType();
-  this.samMethodName=samMethodName;
-  this.samMethodType=samMethodType;
-  this.implMethod=implMethod;
-  this.implInfo=caller.revealDirect(implMethod);
-  this.implKind=implInfo.getReferenceKind();
-  this.implIsInstanceMethod=implKind == MethodHandleInfo.REF_invokeVirtual || implKind == MethodHandleInfo.REF_invokeSpecial || implKind == MethodHandleInfo.REF_invokeInterface;
-  this.implDefiningClass=implInfo.getDeclaringClass();
-  this.implMethodType=implInfo.getMethodType();
-  this.instantiatedMethodType=instantiatedMethodType;
-  this.isSerializable=isSerializable;
-  this.markerInterfaces=markerInterfaces;
-  this.additionalBridges=additionalBridges;
-  JavaInstance.MethodType methodType=JavaInstance.MethodType.of(invokedType);
-  DynamicType.Builder<?> builder=new ByteBuddy().subclass(samBase).modifiers(SyntheticState.SYNTHETIC,TypeManifestation.FINAL).implement(markerInterfaces).name(targetClass.getName() + "$$Lambda$" + lambdaNameCounter.incrementAndGet());
+  JavaInstance.MethodType factoryMethodType=JavaInstance.MethodType.of(invokedType);
+  JavaInstance.MethodType lambdaMethodType=JavaInstance.MethodType.of(samMethodType);
+  DynamicType.Builder<?> builder=new ByteBuddy().subclass(lambdaMethodType.getReturnType()).modifiers(SyntheticState.SYNTHETIC,TypeManifestation.FINAL).implement(factoryMethodType.getReturnType()).name(caller.lookupClass().getName() + "$$Lambda$" + lambdaNameCounter.incrementAndGet());
   int index=0;
-  for (  TypeDescription parameterTypes : methodType.getParameterTypes()) {
+  for (  TypeDescription parameterTypes : factoryMethodType.getParameterTypes()) {
     builder=builder.defineField("arg$" + index++,parameterTypes,Visibility.PUBLIC,FieldManifestation.FINAL);
   }
-  if (!methodType.getParameterTypes().isEmpty()) {
-    builder=builder.defineMethod("get$Lambda",methodType.getReturnType(),Visibility.PRIVATE,Ownership.STATIC).intercept(new FactoryImplementation());
+  if (!factoryMethodType.getParameterTypes().isEmpty()) {
+    builder=builder.defineMethod("get$Lambda",factoryMethodType.getReturnType(),Visibility.PRIVATE,Ownership.STATIC).intercept(new FactoryImplementation());
   }
-  byte[] classFile=builder.defineConstructor(Visibility.PRIVATE).intercept(SuperMethodCall.INSTANCE.andThen(new ConstructorImplementation())).method(named(invokedName).and(takesArguments(methodType.getParameterTypes())).and(returns(methodType.getReturnType()))).intercept(new LambdaMethodImplementation()).make().getBytes();
+  byte[] classFile=builder.defineConstructor(Visibility.PRIVATE).intercept(SuperMethodCall.INSTANCE.andThen(new ConstructorImplementation())).method(named(invokedName).and(takesArguments(factoryMethodType.getParameterTypes())).and(returns(factoryMethodType.getReturnType()))).intercept(new LambdaMethodImplementation()).make().getBytes();
   for (  ClassFileTransformer classFileTransformer : CLASS_FILE_TRANSFORMERS) {
     byte[] transformedClassFile=classFileTransformer.transform(null,null,null,null,classFile);
     classFile=transformedClassFile == null ? classFile : transformedClassFile;
