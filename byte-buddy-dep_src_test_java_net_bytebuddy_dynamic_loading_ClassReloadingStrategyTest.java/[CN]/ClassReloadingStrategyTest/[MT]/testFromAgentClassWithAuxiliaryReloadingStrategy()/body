@@ -1,0 +1,12 @@
+{
+  assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
+  Foo foo=new Foo();
+  assertThat(foo.foo(),is(FOO));
+  ClassReloadingStrategy classReloadingStrategy=ClassReloadingStrategy.fromInstalledAgent();
+  String randomName=RandomString.make();
+  new ByteBuddy().redefine(Foo.class).method(named(FOO)).intercept(FixedValue.value(BAR)).make().include(new ByteBuddy().subclass(Object.class).name(randomName).make()).load(Foo.class.getClassLoader(),classReloadingStrategy);
+  assertThat(foo.foo(),is(BAR));
+  classReloadingStrategy.reset(Foo.class);
+  assertThat(foo.foo(),is(FOO));
+  assertThat(Class.forName(randomName),notNullValue(Class.class));
+}
