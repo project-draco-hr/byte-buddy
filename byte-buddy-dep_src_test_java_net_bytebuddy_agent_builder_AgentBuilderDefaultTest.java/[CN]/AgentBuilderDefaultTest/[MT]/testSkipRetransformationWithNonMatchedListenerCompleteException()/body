@@ -5,7 +5,7 @@
   when(instrumentation.isModifiableClass(REDEFINED)).thenReturn(true);
   when(instrumentation.isRetransformClassesSupported()).thenReturn(true);
   doThrow(new RuntimeException()).when(listener).onComplete(REDEFINED.getName());
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).withInitializationStrategy(initializationStrategy).withRedefinitionStrategy(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION).withBinaryLocator(binaryLocator).withTypeStrategy(typeStrategy).withListener(listener).withoutNativeMethodPrefix().withAccessControlContext(accessControlContext).type(rawMatcher).transform(transformer).installOn(instrumentation);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION).with(binaryLocator).with(typeStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).type(rawMatcher).transform(transformer).installOn(instrumentation);
   verify(listener).onIgnored(new TypeDescription.ForLoadedType(REDEFINED));
   verify(listener).onComplete(REDEFINED.getName());
   verifyNoMoreInteractions(listener);
