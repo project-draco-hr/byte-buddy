@@ -3,7 +3,7 @@
   Foo foo=new Foo();
   assertThat(foo.foo(),is(FOO));
   ClassReloadingStrategy classReloadingStrategy=ClassReloadingStrategy.fromInstalledAgent();
-  String randomName=RandomString.make();
+  String randomName=FOO + RandomString.make();
   new ByteBuddy().redefine(Foo.class).method(named(FOO)).intercept(FixedValue.value(BAR)).make().include(new ByteBuddy().subclass(Object.class).name(randomName).make()).load(Foo.class.getClassLoader(),classReloadingStrategy);
   assertThat(foo.foo(),is(BAR));
   classReloadingStrategy.reset(Foo.class);
