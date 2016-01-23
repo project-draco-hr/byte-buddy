@@ -1,0 +1,7 @@
+Object callerClassLookup
+Class<?> lookupClass
+String functionalMethodName
+Object functionalMethodType
+Object expectedMethodType
+Object targetMethodHandle
+Set<ClassFileTransformer> classFileTransformers

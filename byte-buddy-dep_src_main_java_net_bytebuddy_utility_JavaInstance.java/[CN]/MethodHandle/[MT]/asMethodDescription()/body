@@ -1,0 +1,3 @@
+{
+  return ownerType.getDeclaredMethods().filter(named(name).and(returns(returnType).and(takesArguments(parameterTypes)))).getOnly();
+}

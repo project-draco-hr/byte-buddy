@@ -1,0 +1,4 @@
+{
+  this.lambdaDispatcherMethod=lambdaDispatcherMethod;
+  this.declaredFields=declaredFields;
+}

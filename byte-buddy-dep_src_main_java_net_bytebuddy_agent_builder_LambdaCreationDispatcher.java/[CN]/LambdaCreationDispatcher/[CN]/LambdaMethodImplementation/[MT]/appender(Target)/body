@@ -1,0 +1,3 @@
+{
+  return new Appender(lambdaImplementationHandle.asMethodDescription(),implementationTarget.getInstrumentedType().getDeclaredFields());
+}
