@@ -1,0 +1,16 @@
+{
+  try {
+    @SuppressWarnings("unchecked") Map<ClassFileTransformer,Method> classFileTransformers=(Map<ClassFileTransformer,Method>)ClassLoader.getSystemClassLoader().loadClass(LambdaFactory.class.getName()).getDeclaredField("CLASS_FILE_TRANSFORMERS").get(null);
+synchronized (classFileTransformers) {
+      try {
+        return classFileTransformers.isEmpty();
+      }
+  finally {
+        classFileTransformers.put(classFileTransformer,factory.getDeclaredMethod("make",Object.class,String.class,Object.class,Object.class,Object.class,Collection.class));
+      }
+    }
+  }
+ catch (  Exception exception) {
+    throw new IllegalStateException("Could not register class file transformer",exception);
+  }
+}

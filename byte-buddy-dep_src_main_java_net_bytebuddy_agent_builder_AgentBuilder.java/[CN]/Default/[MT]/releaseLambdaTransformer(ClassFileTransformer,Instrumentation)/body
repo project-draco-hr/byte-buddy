@@ -1,0 +1,10 @@
+{
+  if (LambdaFactory.release(classFileTransformer)) {
+    try {
+      ClassReloadingStrategy.of(instrumentation).reset(Class.forName("java.lang.invoke.LambdaMetafactory"));
+    }
+ catch (    Exception exception) {
+      throw new IllegalStateException("Could not release lambda transformer",exception);
+    }
+  }
+}
