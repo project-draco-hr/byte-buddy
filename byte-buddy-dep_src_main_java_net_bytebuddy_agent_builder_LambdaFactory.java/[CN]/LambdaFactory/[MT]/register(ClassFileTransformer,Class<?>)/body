@@ -6,7 +6,7 @@ synchronized (classFileTransformers) {
         return classFileTransformers.isEmpty();
       }
   finally {
-        classFileTransformers.put(classFileTransformer,factory.getDeclaredMethod("make",Object.class,String.class,Object.class,Object.class,Object.class,Collection.class));
+        classFileTransformers.put(classFileTransformer,factory.getDeclaredMethod("make",Object.class,String.class,Object.class,Object.class,Object.class,boolean.class,Collection.class));
       }
     }
   }

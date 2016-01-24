@@ -12,6 +12,12 @@
   if (!implementedMethodType.getParameterTypes().isEmpty()) {
     builder=builder.defineMethod(LAMBDA_FACTORY,factoryMethodType.getReturnType(),Visibility.PRIVATE,Ownership.STATIC).withParameters(factoryMethodType.getParameterTypes()).intercept(new FactoryImplementation());
   }
+  if (enforceSerialization || factoryMethodType.getReturnType().isAssignableTo(Serializable.class)) {
+    builder=builder.defineMethod("writeReplace",Object.class).intercept(null);
+  }
+ else {
+    builder=builder.defineMethod("readObject",ObjectInputStream.class).intercept(ExceptionMethod.throwing(NotSerializableException.class,"Non-serializable lambda")).defineMethod("writeObject",ObjectOutputStream.class).intercept(ExceptionMethod.throwing(NotSerializableException.class,"Non-serializable lambda"));
+  }
   byte[] classFile=builder.defineConstructor(factoryMethodType.getParameterTypes().isEmpty() ? Visibility.PUBLIC : Visibility.PRIVATE).intercept(SuperMethodCall.INSTANCE.andThen(new ConstructorImplementation())).method(named(functionalMethodName).and(takesArguments(implementedMethodType.getParameterTypes())).and(returns(implementedMethodType.getReturnType()))).intercept(new LambdaMethodImplementation(targetMethodHandle)).make().getBytes();
   for (  ClassFileTransformer classFileTransformer : classFileTransformers) {
     byte[] transformedClassFile=classFileTransformer.transform(lookupType.getClassLoader(),lambdaClassName.replace('.','/'),NOT_PREVIOUSLY_DEFINED,lookupType.getProtectionDomain(),classFile);

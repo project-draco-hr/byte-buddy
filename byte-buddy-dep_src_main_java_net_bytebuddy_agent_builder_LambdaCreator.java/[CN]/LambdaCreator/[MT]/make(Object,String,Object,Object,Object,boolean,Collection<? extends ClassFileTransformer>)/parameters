@@ -3,4 +3,5 @@ String functionalMethodName
 Object factoryMethod
 Object implementedMethod
 Object targetMethod
+boolean enforceSerialization
 Collection<? extends ClassFileTransformer> classFileTransformers
