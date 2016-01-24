@@ -1,8 +1,6 @@
 Object callerClassLookup
-Class<?> lookupClass
 String functionalMethodName
 Object functionalMethodType
 Object expectedMethodType
 Object targetMethodHandle
 boolean serializable
-Set<ClassFileTransformer> classFileTransformers

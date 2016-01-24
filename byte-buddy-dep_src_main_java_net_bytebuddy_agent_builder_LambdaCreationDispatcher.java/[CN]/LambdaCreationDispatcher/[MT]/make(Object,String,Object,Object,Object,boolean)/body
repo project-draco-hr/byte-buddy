@@ -2,6 +2,7 @@
   JavaInstance.MethodType factoryMethodType=JavaInstance.MethodType.of(expectedMethodType);
   JavaInstance.MethodType lambdaMethodType=JavaInstance.MethodType.of(functionalMethodType);
   JavaInstance.MethodHandle lambdaImplementationHandle=JavaInstance.MethodHandle.of(targetMethodHandle,callerClassLookup);
+  Class<?> lookupClass=null;
   String lambdaClassName=lookupClass.getName() + LAMBDA_TYPE_INFIX + lambdaNameCounter.incrementAndGet();
   DynamicType.Builder<?> builder=new ByteBuddy().subclass(lambdaMethodType.getReturnType()).modifiers(SyntheticState.SYNTHETIC,TypeManifestation.FINAL).implement(factoryMethodType.getReturnType()).name(lambdaClassName);
   int index=0;
@@ -12,7 +13,7 @@
     builder=builder.defineMethod(LAMBDA_FACTORY,factoryMethodType.getReturnType(),Visibility.PRIVATE,Ownership.STATIC).intercept(new FactoryImplementation());
   }
   byte[] classFile=builder.defineConstructor(Visibility.PRIVATE).intercept(SuperMethodCall.INSTANCE.andThen(new ConstructorImplementation())).method(named(functionalMethodName).and(takesArguments(factoryMethodType.getParameterTypes())).and(returns(factoryMethodType.getReturnType()))).intercept(new LambdaMethodImplementation(lambdaImplementationHandle)).make().getBytes();
-  for (  ClassFileTransformer classFileTransformer : classFileTransformers) {
+  for (  ClassFileTransformer classFileTransformer : CLASS_FILE_TRANSFORMERS) {
     byte[] transformedClassFile=classFileTransformer.transform(lookupClass.getClassLoader(),lambdaClassName.replace('.','/'),NOT_PREVIOUSLY_DEFINED,lookupClass.getProtectionDomain(),classFile);
     classFile=transformedClassFile == null ? classFile : transformedClassFile;
   }
