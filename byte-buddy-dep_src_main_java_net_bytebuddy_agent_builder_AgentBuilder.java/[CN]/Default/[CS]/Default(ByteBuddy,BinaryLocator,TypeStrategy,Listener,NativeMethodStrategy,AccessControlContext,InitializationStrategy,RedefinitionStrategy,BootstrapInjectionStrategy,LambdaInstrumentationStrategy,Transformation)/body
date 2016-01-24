@@ -8,5 +8,6 @@
   this.initializationStrategy=initializationStrategy;
   this.redefinitionStrategy=redefinitionStrategy;
   this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
+  this.lambdaInstrumentationStrategy=lambdaInstrumentationStrategy;
   this.transformation=transformation;
 }
