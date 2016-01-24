@@ -6,4 +6,5 @@
   this.getMethodType=getMethodType;
   this.returnType=returnType;
   this.parameterArray=parameterArray;
+  this.lookupClass=lookupClass;
 }

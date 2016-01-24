@@ -1,0 +1,6 @@
+Object callerTypeLookup
+String functionalMethodName
+Object factoryMethod
+Object implementedMethod
+Object targetMethod
+Collection<? extends ClassFileTransformer> classFileTransformers

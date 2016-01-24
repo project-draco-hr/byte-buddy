@@ -1,0 +1,21 @@
+{
+  JavaInstance.MethodType factoryMethodType=JavaInstance.MethodType.of(factoryMethod);
+  JavaInstance.MethodType implementedMethodType=JavaInstance.MethodType.of(implementedMethod);
+  JavaInstance.MethodHandle targetMethodHandle=JavaInstance.MethodHandle.of(targetMethod,callerTypeLookup);
+  Class<?> lookupType=JavaInstance.MethodHandle.lookupType(callerTypeLookup);
+  String lambdaClassName=lookupType.getName() + LAMBDA_TYPE_INFIX + lambdaNameCounter.incrementAndGet();
+  DynamicType.Builder<?> builder=new ByteBuddy().subclass(factoryMethodType.getReturnType(),ConstructorStrategy.Default.NO_CONSTRUCTORS).modifiers(SyntheticState.SYNTHETIC,TypeManifestation.FINAL,implementedMethodType.getParameterTypes().isEmpty() ? Visibility.PUBLIC : Visibility.PACKAGE_PRIVATE).name(lambdaClassName);
+  int index=0;
+  for (  TypeDescription parameterTypes : implementedMethodType.getParameterTypes()) {
+    builder=builder.defineField(FIELD_PREFIX + index++,parameterTypes,Visibility.PUBLIC,FieldManifestation.FINAL);
+  }
+  if (!implementedMethodType.getParameterTypes().isEmpty()) {
+    builder=builder.defineMethod(LAMBDA_FACTORY,factoryMethodType.getReturnType(),Visibility.PRIVATE,Ownership.STATIC).withParameters(factoryMethodType.getParameterTypes()).intercept(new FactoryImplementation());
+  }
+  byte[] classFile=builder.defineConstructor(factoryMethodType.getParameterTypes().isEmpty() ? Visibility.PUBLIC : Visibility.PRIVATE).intercept(SuperMethodCall.INSTANCE.andThen(new ConstructorImplementation())).method(named(functionalMethodName).and(takesArguments(implementedMethodType.getParameterTypes())).and(returns(implementedMethodType.getReturnType()))).intercept(new LambdaMethodImplementation(targetMethodHandle)).make().getBytes();
+  for (  ClassFileTransformer classFileTransformer : classFileTransformers) {
+    byte[] transformedClassFile=classFileTransformer.transform(lookupType.getClassLoader(),lambdaClassName.replace('.','/'),NOT_PREVIOUSLY_DEFINED,lookupType.getProtectionDomain(),classFile);
+    classFile=transformedClassFile == null ? classFile : transformedClassFile;
+  }
+  return classFile;
+}

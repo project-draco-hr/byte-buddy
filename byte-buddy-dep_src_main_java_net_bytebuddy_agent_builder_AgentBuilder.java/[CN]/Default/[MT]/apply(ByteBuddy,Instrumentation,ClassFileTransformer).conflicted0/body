@@ -1,2 +1,27 @@
 {
+  Class<?> lambdaMetaFactory;
+  try {
+    lambdaMetaFactory=Class.forName("java.lang.invoke.LambdaMetafactory");
+  }
+ catch (  ClassNotFoundException exception) {
+    throw new IllegalStateException("Cannot find meta factory",exception);
+  }
+  ClassInjector classInjector=ClassInjector.UsingReflection.ofSystemClassLoader();
+  TypeDescription dispatcherType=new TypeDescription.ForLoadedType(LambdaFactory.class);
+  Class<?> loadedDispatcher=classInjector.inject(Collections.singletonMap(dispatcherType,ClassFileLocator.ForClassLoader.read(LambdaFactory.class).resolve())).get(dispatcherType);
+  try {
+    @SuppressWarnings("unchecked") Map<ClassFileTransformer,Class<?>> classFileTransformers=(Map<ClassFileTransformer,Class<?>>)loadedDispatcher.getDeclaredField("CLASS_FILE_TRANSFORMERS").get(null);
+    try {
+      if (!classFileTransformers.isEmpty()) {
+        return;
+      }
+    }
+  finally {
+      classFileTransformers.put(classFileTransformer,LambdaCreator.class);
+    }
+  }
+ catch (  Exception exception) {
+    throw new IllegalStateException("Could not access class file transformers",exception);
+  }
+  byteBuddy.with(Implementation.Context.Disabled.Factory.INSTANCE).redefine(lambdaMetaFactory).visit(new AsmVisitorWrapper.ForDeclaredMethods().method(named("metafactory"),new MetaFactoryRedirection())).make().load(lambdaMetaFactory.getClassLoader(),ClassReloadingStrategy.of(instrumentation));
 }

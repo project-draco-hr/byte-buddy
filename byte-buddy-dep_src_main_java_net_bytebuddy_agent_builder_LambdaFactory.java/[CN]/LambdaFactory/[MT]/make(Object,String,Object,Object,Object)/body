@@ -1,0 +1,8 @@
+{
+  try {
+    return (byte[])CLASS_FILE_TRANSFORMERS.values().iterator().next().getDeclaredMethod("make",Object.class,String.class,Object.class,Object.class,Object.class,Collection.class).invoke(null,caller,invokedName,invokedType,samMethodType,implMethod,CLASS_FILE_TRANSFORMERS.keySet());
+  }
+ catch (  Exception exception) {
+    throw new IllegalStateException(exception);
+  }
+}

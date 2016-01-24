@@ -1,0 +1,5 @@
+Object caller
+String invokedName
+Object invokedType
+Object samMethodType
+Object implMethod

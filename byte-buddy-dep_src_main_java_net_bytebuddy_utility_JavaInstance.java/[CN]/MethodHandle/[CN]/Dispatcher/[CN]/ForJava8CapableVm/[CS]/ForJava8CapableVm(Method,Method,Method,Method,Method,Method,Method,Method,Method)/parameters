@@ -5,3 +5,5 @@ Method getReferenceKind
 Method getMethodType
 Method returnType
 Method parameterArray
+Method lookupClass
+Method revealDirect

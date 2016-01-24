@@ -5,7 +5,7 @@
   methodVisitor.visitVarInsn(Opcodes.ALOAD,0);
   methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/invoke/MethodHandles$Lookup","lookupClass","()Ljava/lang/Class;",false);
   methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,"java/lang/ClassLoader","getSystemClassLoader","()Ljava/lang/ClassLoader;",false);
-  methodVisitor.visitLdcInsn("net.bytebuddy.agent.builder.LambdaCreationDispatcher");
+  methodVisitor.visitLdcInsn(LambdaFactory.class.getName());
   methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/ClassLoader","loadClass","(Ljava/lang/String;)Ljava/lang/Class;",false);
   methodVisitor.visitLdcInsn("make");
   methodVisitor.visitInsn(Opcodes.ICONST_5);
@@ -69,7 +69,8 @@
   methodVisitor.visitJumpInsn(Opcodes.IFNE,firstJump);
   methodVisitor.visitTypeInsn(Opcodes.NEW,"java/lang/invoke/ConstantCallSite");
   methodVisitor.visitInsn(Opcodes.DUP);
-  methodVisitor.visitVarInsn(Opcodes.ALOAD,7);
+  methodVisitor.visitVarInsn(Opcodes.ALOAD,2);
+  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/invoke/MethodType","returnType","()Ljava/lang/Class;",false);
   methodVisitor.visitVarInsn(Opcodes.ALOAD,7);
   methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/Class","getDeclaredConstructors","()[Ljava/lang/reflect/Constructor;",false);
   methodVisitor.visitInsn(Opcodes.ICONST_0);
@@ -85,7 +86,7 @@
   methodVisitor.visitFrame(Opcodes.F_APPEND,2,new Object[]{"sun/misc/Unsafe","java/lang/Class"},0,null);
   methodVisitor.visitTypeInsn(Opcodes.NEW,"java/lang/invoke/ConstantCallSite");
   methodVisitor.visitInsn(Opcodes.DUP);
-  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,"java/lang/invoke/MethodHandles","lookup","()Ljava/lang/invoke/MethodHandles$Lookup;",false);
+  methodVisitor.visitFieldInsn(Opcodes.GETSTATIC,"java/lang/invoke/MethodHandles","IMPL_LOOKUP","Ljava/lang/invoke/MethodHandles$Lookup;");
   methodVisitor.visitVarInsn(Opcodes.ALOAD,7);
   methodVisitor.visitLdcInsn("get$Lambda");
   methodVisitor.visitVarInsn(Opcodes.ALOAD,2);
