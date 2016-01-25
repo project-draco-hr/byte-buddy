@@ -1,7 +1,7 @@
 {
   assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   ClassLoader classLoader=lambdaSamples();
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(binaryLocator).enableLambdaInstrumentation(true).type(isSubTypeOf(Callable.class)).transform(new SingleMethodReplacer("call")).installOn(ByteBuddyAgent.install());
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(binaryLocator).with(AgentBuilder.LambdaInstrumentationStrategy.ENABLED).type(isSubTypeOf(Callable.class)).transform(new SingleMethodReplacer("call")).installOn(ByteBuddyAgent.install());
   try {
     Class<?> sampleFactory=classLoader.loadClass(LAMBDA_SAMPLE_FACTORY);
     @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)sampleFactory.getDeclaredMethod("argumentCapturing",String.class).invoke(sampleFactory.newInstance(),FOO);

@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot inject LambdaFactory from disabled instrumentation strategy");
-}

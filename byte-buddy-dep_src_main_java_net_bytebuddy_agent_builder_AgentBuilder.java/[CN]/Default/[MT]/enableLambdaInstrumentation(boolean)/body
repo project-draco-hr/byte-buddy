@@ -1,3 +1,0 @@
-{
-  return new Default(byteBuddy,binaryLocator,typeStrategy,listener,nativeMethodStrategy,accessControlContext,initializationStrategy,redefinitionStrategy,bootstrapInjectionStrategy,enabled ? LambdaInstrumentationStrategy.ENABLED : LambdaInstrumentationStrategy.DISABLED,transformation);
-}
