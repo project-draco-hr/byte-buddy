@@ -9,6 +9,6 @@
   }
   finally {
     ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);
-    AgentBuilder.Default.releaseLambdaTransformer(classFileTransformer,ByteBuddyAgent.getInstrumentation());
+    AgentBuilder.LambdaInstrumentationStrategy.release(classFileTransformer,ByteBuddyAgent.getInstrumentation());
   }
 }
