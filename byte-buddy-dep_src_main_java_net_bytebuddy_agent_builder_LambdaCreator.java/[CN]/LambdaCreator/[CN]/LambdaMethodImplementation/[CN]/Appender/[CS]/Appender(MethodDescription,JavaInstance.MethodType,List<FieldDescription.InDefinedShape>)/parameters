@@ -1,2 +1,3 @@
 MethodDescription lambdaDispatcherMethod
+JavaInstance.MethodType specializedLambdaMethod
 List<FieldDescription.InDefinedShape> declaredFields
