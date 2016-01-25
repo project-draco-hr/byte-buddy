@@ -1,13 +1,13 @@
 {
-  int actualModifiers;
+  int actualModifiers=getModifiers() | (getDeclaredAnnotations().isAnnotationPresent(Deprecated.class) ? Opcodes.ACC_DEPRECATED : EMPTY_MASK);
   if (isPrivate()) {
-    actualModifiers=getModifiers() & ~(Opcodes.ACC_PRIVATE | Opcodes.ACC_STATIC);
+    actualModifiers=actualModifiers & ~(Opcodes.ACC_PRIVATE | Opcodes.ACC_STATIC);
   }
  else   if (isProtected()) {
-    actualModifiers=getModifiers() & ~(Opcodes.ACC_PROTECTED | Opcodes.ACC_STATIC) | Opcodes.ACC_PUBLIC;
+    actualModifiers=actualModifiers & ~(Opcodes.ACC_PROTECTED | Opcodes.ACC_STATIC) | Opcodes.ACC_PUBLIC;
   }
  else {
-    actualModifiers=getModifiers() & ~Opcodes.ACC_STATIC;
+    actualModifiers=actualModifiers & ~Opcodes.ACC_STATIC;
   }
   return superFlag ? (actualModifiers | Opcodes.ACC_SUPER) : actualModifiers;
 }

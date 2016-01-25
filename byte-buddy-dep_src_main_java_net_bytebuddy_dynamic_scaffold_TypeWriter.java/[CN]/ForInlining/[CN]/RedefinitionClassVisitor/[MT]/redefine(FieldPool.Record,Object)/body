@@ -1,4 +1,4 @@
 {
   FieldDescription instrumentedField=record.getField();
-  return new AttributeObtainingFieldVisitor(super.visitField(instrumentedField.getModifiers(),instrumentedField.getInternalName(),instrumentedField.getDescriptor(),instrumentedField.getGenericSignature(),record.resolveDefault(defaultValue)),record);
+  return new AttributeObtainingFieldVisitor(super.visitField(instrumentedField.getActualModifiers(),instrumentedField.getInternalName(),instrumentedField.getDescriptor(),instrumentedField.getGenericSignature(),record.resolveDefault(defaultValue)),record);
 }
