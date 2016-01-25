@@ -1,0 +1,8 @@
+{
+  try {
+    return (byte[])dispatcher.invoke(target,caller,invokedName,invokedType,samMethodType,implMethod,instantiatedMethodType,enforceSerialization,markerInterfaces,classFileTransformers);
+  }
+ catch (  Exception exception) {
+    throw new IllegalStateException(exception);
+  }
+}

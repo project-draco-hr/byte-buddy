@@ -1,2 +1,2 @@
 ClassFileTransformer classFileTransformer
-Class<?> factory
+Object lambdaCreator

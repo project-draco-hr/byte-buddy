@@ -1,0 +1,3 @@
+{
+  return CLASS_FILE_TRANSFORMERS.values().iterator().next().invoke(caller,invokedName,invokedType,samMethodType,implMethod,instantiatedMethodType,enforceSerialization,markerInterfaces,CLASS_FILE_TRANSFORMERS.keySet());
+}

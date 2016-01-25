@@ -1,7 +1,7 @@
 {
   JavaInstance.MethodType factoryMethodType=JavaInstance.MethodType.of(factoryMethod);
   JavaInstance.MethodType implementedMethodType=JavaInstance.MethodType.of(implementedMethod);
-  MethodDescription.InDefinedShape targetMethod=JavaInstance.MethodHandle.of(targetMethodHandle,callerTypeLookup).asMethodDescription();
+  JavaInstance.MethodHandle targetMethod=JavaInstance.MethodHandle.of(targetMethodHandle,callerTypeLookup);
   Class<?> lookupType=JavaInstance.MethodHandle.lookupType(callerTypeLookup);
   String lambdaClassName=lookupType.getName() + LAMBDA_TYPE_INFIX + lambdaNameCounter.incrementAndGet();
   DynamicType.Builder<?> builder=byteBuddy.subclass(factoryMethodType.getReturnType(),ConstructorStrategy.Default.NO_CONSTRUCTORS).modifiers(SyntheticState.SYNTHETIC,TypeManifestation.FINAL,implementedMethodType.getParameterTypes().isEmpty() ? Visibility.PUBLIC : Visibility.PACKAGE_PRIVATE).implement(markerInterfaces).name(lambdaClassName);
@@ -13,12 +13,12 @@
     builder=builder.defineMethod(LAMBDA_FACTORY,factoryMethodType.getReturnType(),Visibility.PRIVATE,Ownership.STATIC).withParameters(factoryMethodType.getParameterTypes()).intercept(new FactoryImplementation());
   }
   if (enforceSerialization || factoryMethodType.getReturnType().isAssignableTo(Serializable.class)) {
-    builder=builder.defineMethod("writeReplace",Object.class).intercept(new SerializationImplementation(new TypeDescription.ForLoadedType(lookupType),targetMethod,JavaInstance.MethodHandle.of(implementationMethodHandle)));
+    builder=builder.defineMethod("writeReplace",Object.class).intercept(new SerializationImplementation(new TypeDescription.ForLoadedType(lookupType),targetMethod,JavaInstance.MethodType.of(specializedMethodType)));
   }
  else {
     builder=builder.defineMethod("readObject",ObjectInputStream.class).intercept(ExceptionMethod.throwing(NotSerializableException.class,"Non-serializable lambda")).defineMethod("writeObject",ObjectOutputStream.class).intercept(ExceptionMethod.throwing(NotSerializableException.class,"Non-serializable lambda"));
   }
-  byte[] classFile=builder.defineConstructor(factoryMethodType.getParameterTypes().isEmpty() ? Visibility.PUBLIC : Visibility.PRIVATE).intercept(SuperMethodCall.INSTANCE.andThen(new ConstructorImplementation())).method(named(functionalMethodName).and(takesArguments(implementedMethodType.getParameterTypes())).and(returns(implementedMethodType.getReturnType()))).intercept(new LambdaMethodImplementation(targetMethod)).make().getBytes();
+  byte[] classFile=builder.defineConstructor(factoryMethodType.getParameterTypes().isEmpty() ? Visibility.PUBLIC : Visibility.PRIVATE).intercept(SuperMethodCall.INSTANCE.andThen(new ConstructorImplementation())).method(named(functionalMethodName).and(takesArguments(implementedMethodType.getParameterTypes())).and(returns(implementedMethodType.getReturnType()))).intercept(new LambdaMethodImplementation(targetMethod.asMethodDescription())).make().getBytes();
   for (  ClassFileTransformer classFileTransformer : classFileTransformers) {
     byte[] transformedClassFile=classFileTransformer.transform(lookupType.getClassLoader(),lambdaClassName.replace('.','/'),NOT_PREVIOUSLY_DEFINED,lookupType.getProtectionDomain(),classFile);
     classFile=transformedClassFile == null ? classFile : transformedClassFile;

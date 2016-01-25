@@ -3,7 +3,7 @@ String functionalMethodName
 Object factoryMethod
 Object implementedMethod
 Object targetMethodHandle
-Object implementationMethodHandle
+Object specializedMethodType
 boolean enforceSerialization
 List<Class<?>> markerInterfaces
 Collection<? extends ClassFileTransformer> classFileTransformers

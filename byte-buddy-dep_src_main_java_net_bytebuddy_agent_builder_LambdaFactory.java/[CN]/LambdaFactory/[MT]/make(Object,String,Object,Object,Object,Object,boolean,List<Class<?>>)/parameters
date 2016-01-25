@@ -3,6 +3,6 @@ String invokedName
 Object invokedType
 Object samMethodType
 Object implMethod
+Object instantiatedMethodType
 boolean enforceSerialization
 List<Class<?>> markerInterfaces
-Set<ClassFileTransformer> classFileTransformers
