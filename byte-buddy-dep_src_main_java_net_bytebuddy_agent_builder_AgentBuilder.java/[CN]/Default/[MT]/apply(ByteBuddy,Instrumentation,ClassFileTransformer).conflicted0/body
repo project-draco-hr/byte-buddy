@@ -1,12 +1,2 @@
 {
-  if (LambdaFactory.register(classFileTransformer,new LambdaInstanceFactory(byteBuddy),this)) {
-    Class<?> lambdaMetaFactory;
-    try {
-      lambdaMetaFactory=Class.forName("java.lang.invoke.LambdaMetafactory");
-    }
- catch (    ClassNotFoundException ignored) {
-      return;
-    }
-    byteBuddy.with(Implementation.Context.Disabled.Factory.INSTANCE).redefine(lambdaMetaFactory).visit(new AsmVisitorWrapper.ForDeclaredMethods().method(named("metafactory"),MetaFactoryRedirection.INSTANCE).method(named("altMetafactory"),AlternativeMetaFactoryRedirection.INSTANCE)).make().load(lambdaMetaFactory.getClassLoader(),ClassReloadingStrategy.of(instrumentation));
-  }
 }

@@ -28,8 +28,12 @@
   }
   byte[] classFile=builder.make().getBytes();
   for (  ClassFileTransformer classFileTransformer : classFileTransformers) {
-    byte[] transformedClassFile=classFileTransformer.transform(targetType.getClassLoader(),lambdaClassName.replace('.','/'),NOT_PREVIOUSLY_DEFINED,targetType.getProtectionDomain(),classFile);
-    classFile=transformedClassFile == null ? classFile : transformedClassFile;
+    try {
+      byte[] transformedClassFile=classFileTransformer.transform(targetType.getClassLoader(),lambdaClassName.replace('.','/'),NOT_PREVIOUSLY_DEFINED,targetType.getProtectionDomain(),classFile);
+      classFile=transformedClassFile == null ? classFile : transformedClassFile;
+    }
+ catch (    Exception ignored) {
+    }
   }
   return classFile;
 }
