@@ -2,7 +2,10 @@
   try {
     return (byte[])dispatcher.invoke(target,caller,invokedName,invokedType,samMethodType,implMethod,instantiatedMethodType,serializable,markerInterfaces,additionalBridges,classFileTransformers);
   }
- catch (  Exception exception) {
-    throw new IllegalStateException(exception);
+ catch (  RuntimeException exception) {
+    throw exception;
+  }
+catch (  Exception exception) {
+    throw new IllegalStateException("Cannot create class for lambda expression",exception);
   }
 }

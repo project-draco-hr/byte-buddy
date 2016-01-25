@@ -5,7 +5,10 @@ synchronized (classFileTransformers) {
       return classFileTransformers.remove(classFileTransformer) != null && classFileTransformers.isEmpty();
     }
   }
- catch (  Exception exception) {
+ catch (  RuntimeException exception) {
+    throw exception;
+  }
+catch (  Exception exception) {
     throw new IllegalStateException("Could not release class file transformer",exception);
   }
 }

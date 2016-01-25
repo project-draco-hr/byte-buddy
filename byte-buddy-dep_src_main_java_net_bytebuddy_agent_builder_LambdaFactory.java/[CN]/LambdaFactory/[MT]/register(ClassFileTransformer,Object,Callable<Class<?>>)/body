@@ -10,7 +10,10 @@ synchronized (classFileTransformers) {
       }
     }
   }
- catch (  Exception exception) {
+ catch (  RuntimeException exception) {
+    throw exception;
+  }
+catch (  Exception exception) {
     throw new IllegalStateException("Could not register class file transformer",exception);
   }
 }
