@@ -1,12 +1,12 @@
 {
   try {
-    @SuppressWarnings("unchecked") Map<ClassFileTransformer,Object> classFileTransformers=(Map<ClassFileTransformer,Object>)injector.call().getDeclaredField("CLASS_FILE_TRANSFORMERS").get(null);
+    Map<ClassFileTransformer,Object> classFileTransformers=(Map<ClassFileTransformer,Object>)injector.call().getDeclaredField("CLASS_FILE_TRANSFORMERS").get(null);
 synchronized (classFileTransformers) {
       try {
         return classFileTransformers.isEmpty();
       }
   finally {
-        classFileTransformers.put(classFileTransformer,new LambdaFactory(lambdaCreator,lambdaCreator.getClass().getDeclaredMethod("make",Object.class,String.class,Object.class,Object.class,Object.class,Object.class,boolean.class,List.class,List.class,Collection.class)));
+        classFileTransformers.put(classFileTransformer,new LambdaFactory(classFileFactory,classFileFactory.getClass().getDeclaredMethod("make",Object.class,String.class,Object.class,Object.class,Object.class,Object.class,boolean.class,List.class,List.class,Collection.class)));
       }
     }
   }

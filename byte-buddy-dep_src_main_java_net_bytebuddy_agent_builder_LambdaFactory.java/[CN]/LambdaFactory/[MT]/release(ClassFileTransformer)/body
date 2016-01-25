@@ -1,6 +1,6 @@
 {
   try {
-    @SuppressWarnings("unchecked") Map<ClassFileTransformer,?> classFileTransformers=(Map<ClassFileTransformer,?>)ClassLoader.getSystemClassLoader().loadClass(LambdaFactory.class.getName()).getDeclaredField("CLASS_FILE_TRANSFORMERS").get(null);
+    Map<ClassFileTransformer,?> classFileTransformers=(Map<ClassFileTransformer,?>)ClassLoader.getSystemClassLoader().loadClass(LambdaFactory.class.getName()).getDeclaredField("CLASS_FILE_TRANSFORMERS").get(null);
 synchronized (classFileTransformers) {
       return classFileTransformers.remove(classFileTransformer) != null && classFileTransformers.isEmpty();
     }
