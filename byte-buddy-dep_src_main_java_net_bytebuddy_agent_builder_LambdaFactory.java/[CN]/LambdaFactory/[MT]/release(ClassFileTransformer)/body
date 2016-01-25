@@ -1,0 +1,11 @@
+{
+  try {
+    @SuppressWarnings("unchecked") Map<ClassFileTransformer,?> classFileTransformers=(Map<ClassFileTransformer,?>)ClassLoader.getSystemClassLoader().loadClass(LambdaFactory.class.getName()).getDeclaredField("CLASS_FILE_TRANSFORMERS").get(null);
+synchronized (classFileTransformers) {
+      return classFileTransformers.remove(classFileTransformer) != null && classFileTransformers.isEmpty();
+    }
+  }
+ catch (  Exception exception) {
+    throw new IllegalStateException("Could not release class file transformer",exception);
+  }
+}

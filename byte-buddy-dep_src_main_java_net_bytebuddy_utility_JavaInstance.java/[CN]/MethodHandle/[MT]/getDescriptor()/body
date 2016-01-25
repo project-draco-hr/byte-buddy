@@ -1,0 +1,7 @@
+{
+  StringBuilder stringBuilder=new StringBuilder("(");
+  for (  TypeDescription parameterType : parameterTypes) {
+    stringBuilder.append(parameterType.getDescriptor());
+  }
+  return stringBuilder.append(')').append(returnType.getDescriptor()).toString();
+}

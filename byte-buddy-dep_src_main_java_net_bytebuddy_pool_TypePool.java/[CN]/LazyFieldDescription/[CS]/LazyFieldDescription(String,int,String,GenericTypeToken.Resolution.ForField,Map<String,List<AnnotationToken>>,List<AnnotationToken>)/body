@@ -1,5 +1,5 @@
 {
-  this.modifiers=modifiers;
+  this.modifiers=modifiers & ~Opcodes.ACC_DEPRECATED;
   this.name=name;
   this.descriptor=descriptor;
   this.signatureResolution=signatureResolution;

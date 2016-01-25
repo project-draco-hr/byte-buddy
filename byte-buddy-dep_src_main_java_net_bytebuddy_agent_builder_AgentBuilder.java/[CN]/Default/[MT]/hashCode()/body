@@ -8,6 +8,7 @@
   result=31 * result + initializationStrategy.hashCode();
   result=31 * result + redefinitionStrategy.hashCode();
   result=31 * result + bootstrapInjectionStrategy.hashCode();
+  result=31 * result + lambdaInstrumentationStrategy.hashCode();
   result=31 * result + transformation.hashCode();
   return result;
 }

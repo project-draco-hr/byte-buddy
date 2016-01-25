@@ -6,7 +6,7 @@
  else {
       TypeInitializerInjection injectedCode=new TypeInitializerInjection(new TypeInitializerDelegate(instrumentedType,RandomString.make()));
       this.injectedCode=injectedCode;
-      return super.visitMethod(injectedCode.getInjectorProxyMethod().getModifiers(),injectedCode.getInjectorProxyMethod().getInternalName(),injectedCode.getInjectorProxyMethod().getDescriptor(),injectedCode.getInjectorProxyMethod().getGenericSignature(),injectedCode.getInjectorProxyMethod().getExceptionTypes().asErasures().toInternalNames());
+      return super.visitMethod(injectedCode.getInjectorProxyMethod().getActualModifiers(),injectedCode.getInjectorProxyMethod().getInternalName(),injectedCode.getInjectorProxyMethod().getDescriptor(),injectedCode.getInjectorProxyMethod().getGenericSignature(),injectedCode.getInjectorProxyMethod().getExceptionTypes().asErasures().toInternalNames());
     }
   }
   MethodDescription methodDescription=declarableMethods.remove(internalName + descriptor);

@@ -1,4 +1,0 @@
-{
-  super(publicLookup,getName,getDeclaringClass,getReferenceKind,getMethodType,returnType,parameterArray);
-  this.revealDirect=revealDirect;
-}

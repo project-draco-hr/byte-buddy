@@ -1,5 +1,5 @@
 {
-  StackManipulation stackManipulation=TypeCreation.forType(typeDescription);
+  StackManipulation stackManipulation=TypeCreation.of(typeDescription);
   assertThat(stackManipulation.isValid(),is(true));
   StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
   assertThat(size.getSizeImpact(),is(1));

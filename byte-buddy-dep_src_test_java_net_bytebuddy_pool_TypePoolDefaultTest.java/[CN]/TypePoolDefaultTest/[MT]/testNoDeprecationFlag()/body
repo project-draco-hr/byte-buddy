@@ -1,0 +1,5 @@
+{
+  assertThat(typePool.describe(DeprecationSample.class.getName()).resolve().getModifiers() & Opcodes.ACC_DEPRECATED,is(0));
+  assertThat(typePool.describe(DeprecationSample.class.getName()).resolve().getDeclaredFields().filter(named("foo")).getOnly().getModifiers(),is(0));
+  assertThat(typePool.describe(DeprecationSample.class.getName()).resolve().getDeclaredMethods().filter(named("foo")).getOnly().getModifiers(),is(0));
+}

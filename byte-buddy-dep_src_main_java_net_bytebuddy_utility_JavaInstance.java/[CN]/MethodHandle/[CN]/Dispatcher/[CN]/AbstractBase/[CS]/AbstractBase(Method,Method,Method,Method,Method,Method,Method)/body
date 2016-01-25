@@ -1,9 +1,0 @@
-{
-  this.publicLookup=publicLookup;
-  this.getName=getName;
-  this.getDeclaringClass=getDeclaringClass;
-  this.getReferenceKind=getReferenceKind;
-  this.getMethodType=getMethodType;
-  this.returnType=returnType;
-  this.parameterArray=parameterArray;
-}

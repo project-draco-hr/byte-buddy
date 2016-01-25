@@ -1,4 +1,4 @@
 {
   when(typeDescription.isAbstract()).thenReturn(true);
-  TypeCreation.forType(typeDescription);
+  TypeCreation.of(typeDescription);
 }

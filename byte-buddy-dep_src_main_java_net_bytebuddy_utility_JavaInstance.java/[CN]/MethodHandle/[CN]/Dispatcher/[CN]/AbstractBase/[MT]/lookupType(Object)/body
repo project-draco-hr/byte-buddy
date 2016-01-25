@@ -1,0 +1,11 @@
+{
+  try {
+    return (Class<?>)lookupClass.invoke(lookup);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access java.lang.reflect.MethodHandles.Lookup#lookupClass",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error invoking java.lang.reflect.MethodHandles.Lookup#lookupClass",exception.getCause());
+  }
+}

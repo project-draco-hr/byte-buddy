@@ -1,0 +1,9 @@
+{
+  int result=targetType.hashCode();
+  result=31 * result + lambdaType.hashCode();
+  result=31 * result + lambdaMethodName.hashCode();
+  result=31 * result + lambdaMethod.hashCode();
+  result=31 * result + targetMethod.hashCode();
+  result=31 * result + specializedMethod.hashCode();
+  return result;
+}

@@ -1,3 +1,0 @@
-{
-  return "AgentBuilder.Default{" + "byteBuddy=" + byteBuddy + ", binaryLocator="+ binaryLocator+ ", typeStrategy="+ typeStrategy+ ", listener="+ listener+ ", nativeMethodStrategy="+ nativeMethodStrategy+ ", accessControlContext="+ accessControlContext+ ", initializationStrategy="+ initializationStrategy+ ", redefinitionStrategy="+ redefinitionStrategy+ ", bootstrapInjectionStrategy="+ bootstrapInjectionStrategy+ ", transformation="+ transformation+ '}';
-}

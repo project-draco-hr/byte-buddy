@@ -1,0 +1,11 @@
+{
+  PseudoFactory pseudoFactory=new PseudoFactory();
+  try {
+    assertThat(LambdaFactory.register(classFileTransformer,pseudoFactory,this),is(true));
+    assertThat(LambdaFactory.register(otherTransformer,pseudoFactory,this),is(false));
+  }
+  finally {
+    assertThat(LambdaFactory.release(classFileTransformer),is(false));
+    assertThat(LambdaFactory.release(otherTransformer),is(true));
+  }
+}

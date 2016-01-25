@@ -1,0 +1,5 @@
+{
+  int result=lambdaMethodName.hashCode();
+  result=31 * result + lambdaMethod.hashCode();
+  return result;
+}

@@ -1,0 +1,3 @@
+{
+  return new Appender(implementationTarget.invokeSuper(new MethodDescription.SignatureToken(lambdaMethodName,lambdaMethod.getReturnType(),lambdaMethod.getParameterTypes())));
+}

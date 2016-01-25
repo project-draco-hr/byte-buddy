@@ -1,4 +1,4 @@
 {
   when(typeDescription.isPrimitive()).thenReturn(true);
-  TypeCreation.forType(typeDescription);
+  TypeCreation.of(typeDescription);
 }

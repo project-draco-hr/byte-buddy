@@ -1,5 +1,5 @@
 {
   TypeDescription abstractMethodError=new TypeDescription.ForLoadedType(AbstractMethodError.class);
   MethodDescription constructor=abstractMethodError.getDeclaredMethods().filter(isConstructor().and(takesArguments(0))).getOnly();
-  implementation=new Compound(TypeCreation.forType(abstractMethodError),Duplication.SINGLE,MethodInvocation.invoke(constructor),Throw.INSTANCE);
+  implementation=new Compound(TypeCreation.of(abstractMethodError),Duplication.SINGLE,MethodInvocation.invoke(constructor),Throw.INSTANCE);
 }

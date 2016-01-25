@@ -1,0 +1,9 @@
+{
+  ByteBuddy byteBuddy=mock(ByteBuddy.class);
+  Instrumentation instrumentation=mock(Instrumentation.class);
+  ClassFileTransformer classFileTransformer=mock(ClassFileTransformer.class);
+  AgentBuilder.Default.LambdaInstrumentationStrategy.DISABLED.apply(byteBuddy,instrumentation,classFileTransformer);
+  verifyZeroInteractions(byteBuddy);
+  verifyZeroInteractions(instrumentation);
+  verifyZeroInteractions(classFileTransformer);
+}

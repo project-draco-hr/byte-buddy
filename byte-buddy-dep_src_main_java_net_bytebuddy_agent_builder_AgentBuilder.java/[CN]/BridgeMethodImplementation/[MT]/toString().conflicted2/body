@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Default.LambdaInstrumentationStrategy.AlternativeMetaFactoryRedirection." + name();
+}

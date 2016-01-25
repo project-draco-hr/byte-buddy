@@ -1,8 +1,8 @@
 {
   try {
     ExtractionClassFileTransformer classFileTransformer=new ExtractionClassFileTransformer(classLoadingDelegate.getClassLoader(),typeName);
+    instrumentation.addTransformer(classFileTransformer,true);
     try {
-      instrumentation.addTransformer(classFileTransformer,true);
       instrumentation.retransformClasses(classLoadingDelegate.locate(typeName));
       byte[] binaryRepresentation=classFileTransformer.getBinaryRepresentation();
       return binaryRepresentation == null ? Resolution.Illegal.INSTANCE : new Resolution.Explicit(binaryRepresentation);

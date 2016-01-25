@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  LambdaMethodImplementation that=(LambdaMethodImplementation)other;
+  return targetMethod.equals(that.targetMethod) && specializedLambdaMethod.equals(that.specializedLambdaMethod);
+}

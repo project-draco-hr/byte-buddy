@@ -1,0 +1,13 @@
+{
+  List<StackManipulation> fieldAccess=new ArrayList<StackManipulation>(declaredFields.size() * 2);
+  for (  FieldDescription.InDefinedShape fieldDescription : declaredFields) {
+    fieldAccess.add(MethodVariableAccess.REFERENCE.loadOffset(0));
+    fieldAccess.add(FieldAccess.forField(fieldDescription).getter());
+  }
+  List<StackManipulation> parameterAccess=new ArrayList<StackManipulation>(instrumentedMethod.getParameters().size() * 2);
+  for (  ParameterDescription parameterDescription : instrumentedMethod.getParameters()) {
+    parameterAccess.add(MethodVariableAccess.of(parameterDescription.getType()).loadOffset(parameterDescription.getOffset()));
+    parameterAccess.add(Assigner.DEFAULT.assign(parameterDescription.getType(),specializedLambdaMethod.getParameterTypes().get(parameterDescription.getIndex()).asGenericType(),Assigner.Typing.DYNAMIC));
+  }
+  return new Size(new StackManipulation.Compound(new StackManipulation.Compound(fieldAccess),new StackManipulation.Compound(parameterAccess),MethodInvocation.invoke(targetMethod),MethodReturn.returning(targetMethod.getReturnType().asErasure())).apply(methodVisitor,implementationContext).getMaximalSize(),instrumentedMethod.getStackSize());
+}

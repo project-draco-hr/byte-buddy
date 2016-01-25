@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  SerializationImplementation that=(SerializationImplementation)other;
+  return targetType.equals(that.targetType) && lambdaType.equals(that.lambdaType) && lambdaMethodName.equals(that.lambdaMethodName)&& lambdaMethod.equals(that.lambdaMethod)&& targetMethod.equals(that.targetMethod)&& specializedMethod.equals(that.specializedMethod);
+}

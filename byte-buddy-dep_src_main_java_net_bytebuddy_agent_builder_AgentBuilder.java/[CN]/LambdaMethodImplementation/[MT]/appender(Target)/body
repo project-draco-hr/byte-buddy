@@ -1,0 +1,3 @@
+{
+  return new Appender(targetMethod.getOwnerType().getDeclaredMethods().filter(named(targetMethod.getName()).and(returns(targetMethod.getReturnType())).and(takesArguments(targetMethod.getParameterTypes()))).getOnly(),specializedLambdaMethod,implementationTarget.getInstrumentedType().getDeclaredFields());
+}

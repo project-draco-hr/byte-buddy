@@ -1,0 +1,3 @@
+{
+  return builder.method(named(methodName)).intercept(FixedValue.value(BAR));
+}

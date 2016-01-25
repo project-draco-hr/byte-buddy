@@ -4,6 +4,7 @@
   if (nativeMethodStrategy.isEnabled(instrumentation)) {
     instrumentation.setNativeMethodPrefix(classFileTransformer,nativeMethodStrategy.getPrefix());
   }
+  lambdaInstrumentationStrategy.apply(byteBuddy,instrumentation,classFileTransformer);
   if (redefinitionStrategy.isEnabled()) {
     RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
     for (    Class<?> type : instrumentation.getAllLoadedClasses()) {

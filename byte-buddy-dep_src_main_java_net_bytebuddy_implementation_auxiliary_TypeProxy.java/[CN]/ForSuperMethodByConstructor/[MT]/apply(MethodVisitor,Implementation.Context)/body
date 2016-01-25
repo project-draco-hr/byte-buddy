@@ -5,5 +5,5 @@
   for (  TypeDescription parameterType : constructorParameters) {
     constructorValue[index++]=DefaultValue.of(parameterType);
   }
-  return new Compound(TypeCreation.forType(proxyType),Duplication.SINGLE,new Compound(constructorValue),MethodInvocation.invoke(proxyType.getDeclaredMethods().filter(isConstructor().and(takesArguments(constructorParameters))).getOnly()),Duplication.SINGLE,MethodVariableAccess.of(implementationTarget.getInstrumentedType()).loadOffset(0),FieldAccess.forField(proxyType.getDeclaredFields().filter((named(INSTANCE_FIELD))).getOnly()).putter()).apply(methodVisitor,implementationContext);
+  return new Compound(TypeCreation.of(proxyType),Duplication.SINGLE,new Compound(constructorValue),MethodInvocation.invoke(proxyType.getDeclaredMethods().filter(isConstructor().and(takesArguments(constructorParameters))).getOnly()),Duplication.SINGLE,MethodVariableAccess.of(implementationTarget.getInstrumentedType()).loadOffset(0),FieldAccess.forField(proxyType.getDeclaredFields().filter((named(INSTANCE_FIELD))).getOnly()).putter()).apply(methodVisitor,implementationContext);
 }

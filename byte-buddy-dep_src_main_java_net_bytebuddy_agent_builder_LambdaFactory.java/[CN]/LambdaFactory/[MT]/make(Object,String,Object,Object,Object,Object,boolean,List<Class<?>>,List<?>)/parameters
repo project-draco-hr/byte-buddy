@@ -1,0 +1,9 @@
+Object caller
+String invokedName
+Object invokedType
+Object samMethodType
+Object implMethod
+Object instantiatedMethodType
+boolean serializable
+List<Class<?>> markerInterfaces
+List<?> additionalBridges

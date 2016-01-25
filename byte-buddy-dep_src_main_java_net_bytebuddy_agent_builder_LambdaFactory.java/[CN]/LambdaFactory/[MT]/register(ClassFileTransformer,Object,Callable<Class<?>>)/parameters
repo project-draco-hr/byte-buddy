@@ -1,0 +1,3 @@
+ClassFileTransformer classFileTransformer
+Object classFileFactory
+Callable<Class<?>> injector

@@ -1,6 +1,6 @@
 {
   this.typePool=typePool;
-  this.modifiers=modifiers & ~Opcodes.ACC_SUPER;
+  this.modifiers=modifiers & ~(Opcodes.ACC_SUPER | Opcodes.ACC_DEPRECATED);
   this.name=Type.getObjectType(name).getClassName();
   this.superClassDescriptor=superClassInternalName == null ? NO_SUPER_CLASS : Type.getObjectType(superClassInternalName).getDescriptor();
   this.signatureResolution=signatureResolution;
