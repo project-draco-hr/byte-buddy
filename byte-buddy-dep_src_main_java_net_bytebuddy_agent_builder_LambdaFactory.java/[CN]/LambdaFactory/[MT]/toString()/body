@@ -1,0 +1,3 @@
+{
+  return "LambdaFactory{" + "target=" + target + ", dispatcher="+ dispatcher+ '}';
+}

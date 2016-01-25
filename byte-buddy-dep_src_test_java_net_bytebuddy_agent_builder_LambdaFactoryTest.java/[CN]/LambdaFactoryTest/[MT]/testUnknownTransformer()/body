@@ -1,0 +1,3 @@
+{
+  assertThat(LambdaFactory.release(classFileTransformer),is(false));
+}

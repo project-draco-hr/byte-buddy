@@ -1,0 +1,3 @@
+{
+  LambdaFactory.register(classFileTransformer,new Object(),this);
+}

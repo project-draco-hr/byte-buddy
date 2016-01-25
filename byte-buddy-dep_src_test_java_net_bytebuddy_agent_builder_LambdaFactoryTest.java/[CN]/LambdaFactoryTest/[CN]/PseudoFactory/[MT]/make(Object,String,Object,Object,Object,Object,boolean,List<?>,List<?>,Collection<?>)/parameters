@@ -1,0 +1,10 @@
+Object a1
+String a2
+Object a3
+Object a4
+Object a5
+Object a6
+boolean a7
+List<?> a8
+List<?> a9
+Collection<?> a10
