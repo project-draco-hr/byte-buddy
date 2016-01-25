@@ -1,0 +1,4 @@
+{
+  assertThat(AgentBuilder.LambdaInstrumentationStrategy.of(true).isEnabled(),is(true));
+  assertThat(AgentBuilder.LambdaInstrumentationStrategy.of(false).isEnabled(),is(false));
+}
