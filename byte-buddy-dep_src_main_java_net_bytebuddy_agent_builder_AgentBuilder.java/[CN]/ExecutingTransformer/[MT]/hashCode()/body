@@ -7,6 +7,7 @@
   result=31 * result + nativeMethodStrategy.hashCode();
   result=31 * result + bootstrapInjectionStrategy.hashCode();
   result=31 * result + accessControlContext.hashCode();
+  result=31 * result + ignoredTypes.hashCode();
   result=31 * result + transformation.hashCode();
   return result;
 }

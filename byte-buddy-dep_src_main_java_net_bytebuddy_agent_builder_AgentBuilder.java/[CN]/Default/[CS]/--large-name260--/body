@@ -9,5 +9,6 @@
   this.redefinitionStrategy=redefinitionStrategy;
   this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
   this.lambdaInstrumentationStrategy=lambdaInstrumentationStrategy;
+  this.ignoredTypes=ignoredTypes;
   this.transformation=transformation;
 }

@@ -5,7 +5,6 @@ Listener listener
 NativeMethodStrategy nativeMethodStrategy
 AccessControlContext accessControlContext
 InitializationStrategy initializationStrategy
-RedefinitionStrategy redefinitionStrategy
 BootstrapInjectionStrategy bootstrapInjectionStrategy
-LambdaInstrumentationStrategy lambdaInstrumentationStrategy
+ElementMatcher<? super TypeDescription> ignoredTypes
 Transformation transformation
