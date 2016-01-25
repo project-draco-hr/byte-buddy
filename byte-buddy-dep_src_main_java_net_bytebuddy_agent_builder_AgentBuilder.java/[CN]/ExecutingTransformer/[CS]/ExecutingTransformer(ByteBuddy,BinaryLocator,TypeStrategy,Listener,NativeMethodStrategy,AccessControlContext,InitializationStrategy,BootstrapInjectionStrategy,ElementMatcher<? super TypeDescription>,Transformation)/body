@@ -1,11 +1,12 @@
 {
-  this.binaryLocator=binaryLocator;
-  this.initializationStrategy=initializationStrategy;
-  this.typeStrategy=typeStrategy;
   this.byteBuddy=byteBuddy;
-  this.nativeMethodStrategy=nativeMethodStrategy;
-  this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
-  this.accessControlContext=accessControlContext;
+  this.binaryLocator=binaryLocator;
+  this.typeStrategy=typeStrategy;
   this.listener=listener;
+  this.nativeMethodStrategy=nativeMethodStrategy;
+  this.accessControlContext=accessControlContext;
+  this.initializationStrategy=initializationStrategy;
+  this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
+  this.ignoredTypes=ignoredTypes;
   this.transformation=transformation;
 }

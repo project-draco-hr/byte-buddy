@@ -1,0 +1,21 @@
+{
+  when(dynamicType.getBytes()).thenReturn(BAZ);
+  when(resolution.resolve()).thenReturn(new TypeDescription.ForLoadedType(REDEFINED));
+  @SuppressWarnings("unchecked") ElementMatcher<? super TypeDescription> ignoredTypes=mock(ElementMatcher.class);
+  when(ignoredTypes.matches(new TypeDescription.ForLoadedType(REDEFINED))).thenReturn(true);
+  when(instrumentation.isModifiableClass(REDEFINED)).thenReturn(true);
+  when(instrumentation.isRedefineClassesSupported()).thenReturn(true);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(AgentBuilder.RedefinitionStrategy.REDEFINITION).with(binaryLocator).with(typeStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).ignore(ignoredTypes).type(rawMatcher).transform(transformer).installOn(instrumentation);
+  verify(listener).onIgnored(new TypeDescription.ForLoadedType(REDEFINED));
+  verify(listener).onComplete(REDEFINED.getName());
+  verifyNoMoreInteractions(listener);
+  verify(instrumentation).addTransformer(classFileTransformer,false);
+  verify(instrumentation).isModifiableClass(REDEFINED);
+  verify(instrumentation).getAllLoadedClasses();
+  verify(instrumentation).isRedefineClassesSupported();
+  verifyNoMoreInteractions(instrumentation);
+  verifyZeroInteractions(rawMatcher);
+  verifyZeroInteractions(initializationStrategy);
+  verify(ignoredTypes).matches(new TypeDescription.ForLoadedType(REDEFINED));
+  verifyNoMoreInteractions(ignoredTypes);
+}
