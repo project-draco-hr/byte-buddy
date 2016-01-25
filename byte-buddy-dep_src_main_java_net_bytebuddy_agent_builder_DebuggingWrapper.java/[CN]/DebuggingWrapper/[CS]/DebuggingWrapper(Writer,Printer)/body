@@ -1,4 +1,0 @@
-{
-  printWriter=new PrintWriter(writer);
-  this.printer=printer;
-}
