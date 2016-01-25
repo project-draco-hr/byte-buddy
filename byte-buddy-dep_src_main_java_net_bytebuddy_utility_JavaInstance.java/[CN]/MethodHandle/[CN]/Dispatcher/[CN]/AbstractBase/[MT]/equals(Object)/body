@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   AbstractBase that=(AbstractBase)other;
-  return publicLookup.equals(that.publicLookup) && getName.equals(that.getName) && getDeclaringClass.equals(that.getDeclaringClass)&& getReferenceKind.equals(that.getReferenceKind)&& getMethodType.equals(that.getMethodType)&& returnType.equals(that.returnType)&& parameterArray.equals(that.parameterArray);
+  return publicLookup.equals(that.publicLookup) && getName.equals(that.getName) && getDeclaringClass.equals(that.getDeclaringClass)&& getReferenceKind.equals(that.getReferenceKind)&& getMethodType.equals(that.getMethodType)&& returnType.equals(that.returnType)&& parameterArray.equals(that.parameterArray)&& lookupClass.equals(that.lookupClass);
 }

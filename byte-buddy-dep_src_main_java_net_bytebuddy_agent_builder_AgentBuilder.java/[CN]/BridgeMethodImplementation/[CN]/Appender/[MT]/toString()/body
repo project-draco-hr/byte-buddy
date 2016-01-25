@@ -1,3 +1,3 @@
 {
-  return "AgentBuilder.Default.LambdaInstrumentationStrategy.LambdaInstanceFactory.BridgeMethodImplementation.Appender{" + "bridgeMethodInvocation=" + bridgeMethodInvocation + '}';
+  return "AgentBuilder.Default.LambdaInstrumentationStrategy.LambdaInstanceFactory.BridgeMethodImplementation.Appender{" + "bridgeTargetInvocation=" + bridgeTargetInvocation + '}';
 }

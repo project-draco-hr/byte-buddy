@@ -1,0 +1,4 @@
+{
+  TypeDescription lambdaFactory=new TypeDescription.ForLoadedType(LambdaFactory.class);
+  return ClassInjector.UsingReflection.ofSystemClassLoader().inject(Collections.singletonMap(lambdaFactory,ClassFileLocator.ForClassLoader.read(LambdaFactory.class).resolve())).get(lambdaFactory);
+}

@@ -1,3 +1,3 @@
 {
-  return "AgentBuilder.Default.LambdaInstrumentationStrategy.LambdaInstanceFactory.LambdaMethodImplementation.Appender{" + "lambdaDispatcherMethod=" + lambdaDispatcherMethod + ", declaredFields="+ declaredFields+ ", specializedLambdaMethod="+ specializedLambdaMethod+ '}';
+  return "AgentBuilder.Default.LambdaInstrumentationStrategy.LambdaInstanceFactory.LambdaMethodImplementation.Appender{" + "targetMethod=" + targetMethod + ", specializedLambdaMethod="+ specializedLambdaMethod+ ", declaredFields="+ declaredFields+ '}';
 }

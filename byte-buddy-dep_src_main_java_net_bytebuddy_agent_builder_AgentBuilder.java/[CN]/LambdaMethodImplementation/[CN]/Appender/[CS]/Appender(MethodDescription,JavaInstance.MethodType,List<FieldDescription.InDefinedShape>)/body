@@ -1,5 +1,5 @@
 {
-  this.lambdaDispatcherMethod=lambdaDispatcherMethod;
+  this.targetMethod=targetMethod;
   this.specializedLambdaMethod=specializedLambdaMethod;
   this.declaredFields=declaredFields;
 }
