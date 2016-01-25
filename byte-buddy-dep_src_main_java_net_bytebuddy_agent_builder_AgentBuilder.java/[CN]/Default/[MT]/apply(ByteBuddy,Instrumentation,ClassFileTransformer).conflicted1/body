@@ -1,13 +1,2 @@
 {
-  Class<?> lambdaMetaFactory;
-  try {
-    lambdaMetaFactory=Class.forName("java.lang.invoke.LambdaMetafactory");
-  }
- catch (  ClassNotFoundException exception) {
-    throw new IllegalStateException("Cannot find meta factory",exception);
-  }
-  ClassInjector.UsingReflection.ofSystemClassLoader().inject(Collections.singletonMap(new TypeDescription.ForLoadedType(LambdaFactory.class),ClassFileLocator.ForClassLoader.read(LambdaFactory.class).resolve()));
-  if (LambdaFactory.register(classFileTransformer,new LambdaCreator(byteBuddy))) {
-    byteBuddy.with(Implementation.Context.Disabled.Factory.INSTANCE).redefine(lambdaMetaFactory).visit(new AsmVisitorWrapper.ForDeclaredMethods().method(named("metafactory"),new MetaFactoryRedirection())).make().load(lambdaMetaFactory.getClassLoader(),ClassReloadingStrategy.of(instrumentation));
-  }
 }
