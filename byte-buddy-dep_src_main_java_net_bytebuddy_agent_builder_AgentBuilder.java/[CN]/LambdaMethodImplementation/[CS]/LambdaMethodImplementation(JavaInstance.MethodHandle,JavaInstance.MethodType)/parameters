@@ -1,2 +1,2 @@
-MethodDescription.InDefinedShape targetMethod
+JavaInstance.MethodHandle targetMethod
 JavaInstance.MethodType specializedLambdaMethod

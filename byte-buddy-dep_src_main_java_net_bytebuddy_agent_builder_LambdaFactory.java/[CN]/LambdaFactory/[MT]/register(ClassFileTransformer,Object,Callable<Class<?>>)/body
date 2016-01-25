@@ -1,6 +1,6 @@
 {
   try {
-    Map<ClassFileTransformer,Object> classFileTransformers=(Map<ClassFileTransformer,Object>)injector.call().getDeclaredField("CLASS_FILE_TRANSFORMERS").get(null);
+    @SuppressWarnings("unchecked") Map<ClassFileTransformer,Object> classFileTransformers=(Map<ClassFileTransformer,Object>)injector.call().getDeclaredField("CLASS_FILE_TRANSFORMERS").get(null);
 synchronized (classFileTransformers) {
       try {
         return classFileTransformers.isEmpty();
