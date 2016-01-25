@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Default.LambdaInstrumentationStrategy.LambdaInstanceFactory.SerializationImplementation{" + "targetType=" + targetType + ", lambdaType="+ lambdaType+ ", lambdaMethodName='"+ lambdaMethodName+ '\''+ ", lambdaMethod="+ lambdaMethod+ ", targetMethod="+ targetMethod+ ", specializedMethod="+ specializedMethod+ '}';
+}

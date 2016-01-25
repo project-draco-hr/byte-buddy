@@ -1,0 +1,6 @@
+{
+  int result=lambdaDispatcherMethod.hashCode();
+  result=31 * result + declaredFields.hashCode();
+  result=31 * result + specializedLambdaMethod.hashCode();
+  return result;
+}
