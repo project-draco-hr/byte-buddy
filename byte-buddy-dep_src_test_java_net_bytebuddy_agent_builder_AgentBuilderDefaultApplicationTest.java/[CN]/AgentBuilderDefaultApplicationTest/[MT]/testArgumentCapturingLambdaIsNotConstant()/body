@@ -1,0 +1,13 @@
+{
+  assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
+  ClassLoader classLoader=lambdaSamples();
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(binaryLocator).with(AgentBuilder.LambdaInstrumentationStrategy.ENABLED).type(isSubTypeOf(Callable.class)).transform(new SingleMethodReplacer("call")).installOn(ByteBuddyAgent.install());
+  try {
+    Class<?> sampleFactory=classLoader.loadClass(LAMBDA_SAMPLE_FACTORY);
+    assertThat(sampleFactory.getDeclaredMethod("argumentCapturing",String.class).invoke(sampleFactory.newInstance(),FOO),not(sameInstance(sampleFactory.getDeclaredMethod("argumentCapturing",String.class).invoke(sampleFactory.newInstance(),FOO))));
+  }
+  finally {
+    ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);
+    AgentBuilder.LambdaInstrumentationStrategy.release(classFileTransformer,ByteBuddyAgent.getInstrumentation());
+  }
+}
