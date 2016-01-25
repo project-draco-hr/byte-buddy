@@ -3,3 +3,5 @@ String invokedName
 Object invokedType
 Object samMethodType
 Object implMethod
+boolean enforceSerialization
+List<Class<?>> markerInterfaces

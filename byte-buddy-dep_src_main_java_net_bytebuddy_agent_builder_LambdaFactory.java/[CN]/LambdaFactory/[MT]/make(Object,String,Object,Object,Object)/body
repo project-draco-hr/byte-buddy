@@ -1,8 +1,0 @@
-{
-  try {
-    return (byte[])CLASS_FILE_TRANSFORMERS.values().iterator().next().invoke(null,caller,invokedName,invokedType,samMethodType,implMethod,false,CLASS_FILE_TRANSFORMERS.keySet());
-  }
- catch (  Exception exception) {
-    throw new IllegalStateException(exception);
-  }
-}

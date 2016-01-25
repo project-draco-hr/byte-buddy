@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("This instance is meant as a lambda factory dispatcher and should not be instantiated");
-}

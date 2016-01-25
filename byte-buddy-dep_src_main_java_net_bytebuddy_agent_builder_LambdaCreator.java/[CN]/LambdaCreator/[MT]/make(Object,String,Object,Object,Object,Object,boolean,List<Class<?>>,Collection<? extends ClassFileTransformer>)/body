@@ -4,7 +4,7 @@
   MethodDescription.InDefinedShape targetMethod=JavaInstance.MethodHandle.of(targetMethodHandle,callerTypeLookup).asMethodDescription();
   Class<?> lookupType=JavaInstance.MethodHandle.lookupType(callerTypeLookup);
   String lambdaClassName=lookupType.getName() + LAMBDA_TYPE_INFIX + lambdaNameCounter.incrementAndGet();
-  DynamicType.Builder<?> builder=new ByteBuddy().subclass(factoryMethodType.getReturnType(),ConstructorStrategy.Default.NO_CONSTRUCTORS).modifiers(SyntheticState.SYNTHETIC,TypeManifestation.FINAL,implementedMethodType.getParameterTypes().isEmpty() ? Visibility.PUBLIC : Visibility.PACKAGE_PRIVATE).implement(markerInterfaces).name(lambdaClassName);
+  DynamicType.Builder<?> builder=byteBuddy.subclass(factoryMethodType.getReturnType(),ConstructorStrategy.Default.NO_CONSTRUCTORS).modifiers(SyntheticState.SYNTHETIC,TypeManifestation.FINAL,implementedMethodType.getParameterTypes().isEmpty() ? Visibility.PUBLIC : Visibility.PACKAGE_PRIVATE).implement(markerInterfaces).name(lambdaClassName);
   int index=0;
   for (  TypeDescription parameterTypes : implementedMethodType.getParameterTypes()) {
     builder=builder.defineField(FIELD_PREFIX + index++,parameterTypes,Visibility.PUBLIC,FieldManifestation.FINAL);
