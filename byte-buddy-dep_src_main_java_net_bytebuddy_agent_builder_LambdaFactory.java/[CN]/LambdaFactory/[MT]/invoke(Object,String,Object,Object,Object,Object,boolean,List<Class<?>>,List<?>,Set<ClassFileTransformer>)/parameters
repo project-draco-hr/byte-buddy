@@ -4,5 +4,7 @@ Object invokedType
 Object samMethodType
 Object implMethod
 Object instantiatedMethodType
-boolean enforceSerialization
+boolean serializable
 List<Class<?>> markerInterfaces
+List<?> additionalBridges
+Set<ClassFileTransformer> classFileTransformers

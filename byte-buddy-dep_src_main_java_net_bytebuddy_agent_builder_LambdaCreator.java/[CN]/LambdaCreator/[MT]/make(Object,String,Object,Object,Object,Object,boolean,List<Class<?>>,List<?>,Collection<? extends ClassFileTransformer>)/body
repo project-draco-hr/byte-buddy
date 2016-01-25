@@ -4,7 +4,7 @@
   JavaInstance.MethodHandle targetMethod=JavaInstance.MethodHandle.of(targetMethodHandle,targetTypeLookup);
   JavaInstance.MethodType specializedLambdaMethod=JavaInstance.MethodType.of(specializedLambdaMethodType);
   Class<?> targetType=JavaInstance.MethodHandle.lookupType(targetTypeLookup);
-  String lambdaClassName=targetType.getName() + LAMBDA_TYPE_INFIX + lambdaNameCounter.incrementAndGet();
+  String lambdaClassName=targetType.getName() + LAMBDA_TYPE_INFIX + LAMBDA_NAME_COUNTER.incrementAndGet();
   DynamicType.Builder<?> builder=byteBuddy.subclass(factoryMethod.getReturnType(),ConstructorStrategy.Default.NO_CONSTRUCTORS).modifiers(SyntheticState.SYNTHETIC,TypeManifestation.FINAL,Visibility.PUBLIC).implement(markerInterfaces).name(lambdaClassName).defineConstructor(Visibility.PUBLIC).withParameters(factoryMethod.getParameterTypes()).intercept(new ConstructorImplementation()).method(named(lambdaMethodName).and(takesArguments(lambdaMethod.getParameterTypes())).and(returns(lambdaMethod.getReturnType()))).intercept(new LambdaMethodImplementation(targetMethod.asMethodDescription(),specializedLambdaMethod));
   int index=0;
   for (  TypeDescription capturedType : factoryMethod.getParameterTypes()) {
@@ -13,11 +13,18 @@
   if (!factoryMethod.getParameterTypes().isEmpty()) {
     builder=builder.defineMethod(LAMBDA_FACTORY,factoryMethod.getReturnType(),Visibility.PRIVATE,Ownership.STATIC).withParameters(factoryMethod.getParameterTypes()).intercept(new FactoryImplementation());
   }
-  if (enforceSerialization || factoryMethod.getReturnType().isAssignableTo(Serializable.class) || markerInterfaces.contains(Serializable.class)) {
-    builder=builder.defineMethod("writeReplace",Object.class).intercept(new SerializationImplementation(new TypeDescription.ForLoadedType(targetType),targetMethod,JavaInstance.MethodType.of(specializedLambdaMethodType)));
+  if (serializable) {
+    if (!markerInterfaces.contains(Serializable.class)) {
+      builder=builder.implement(Serializable.class);
+    }
+    builder=builder.defineMethod("writeReplace",Object.class).intercept(new SerializationImplementation(new TypeDescription.ForLoadedType(targetType),factoryMethod.getReturnType(),lambdaMethodName,lambdaMethod,targetMethod,JavaInstance.MethodType.of(specializedLambdaMethodType)));
   }
- else {
-    builder=builder.defineMethod("readObject",ObjectInputStream.class).intercept(ExceptionMethod.throwing(NotSerializableException.class,"Non-serializable lambda")).defineMethod("writeObject",ObjectOutputStream.class).intercept(ExceptionMethod.throwing(NotSerializableException.class,"Non-serializable lambda"));
+ else   if (factoryMethod.getReturnType().isAssignableTo(Serializable.class)) {
+    builder=builder.defineMethod("readObject",void.class,Visibility.PRIVATE,MethodManifestation.FINAL).withParameters(ObjectInputStream.class).throwing(NotSerializableException.class).intercept(ExceptionMethod.throwing(NotSerializableException.class,"Non-serializable lambda")).defineMethod("writeObject",void.class,Visibility.PRIVATE,MethodManifestation.FINAL).withParameters(ObjectOutputStream.class).throwing(NotSerializableException.class).intercept(ExceptionMethod.throwing(NotSerializableException.class,"Non-serializable lambda"));
+  }
+  for (  Object additionalBridgeType : additionalBridges) {
+    JavaInstance.MethodType additionalBridge=JavaInstance.MethodType.of(additionalBridgeType);
+    builder=builder.defineMethod(lambdaMethodName,additionalBridge.getReturnType(),MethodManifestation.BRIDGE,Visibility.PUBLIC).withParameters(additionalBridge.getParameterTypes()).intercept(new BridgeMethodImplementation(lambdaMethodName,lambdaMethod));
   }
   byte[] classFile=builder.visit(DebuggingWrapper.makeDefault()).make().getBytes();
   for (  ClassFileTransformer classFileTransformer : classFileTransformers) {

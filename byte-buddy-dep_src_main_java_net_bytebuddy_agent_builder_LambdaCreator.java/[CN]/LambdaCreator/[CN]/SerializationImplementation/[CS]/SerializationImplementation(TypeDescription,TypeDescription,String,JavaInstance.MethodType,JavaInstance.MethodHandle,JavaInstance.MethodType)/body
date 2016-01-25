@@ -1,0 +1,8 @@
+{
+  this.targetType=targetType;
+  this.lambdaType=lambdaType;
+  this.lambdaMethodName=lambdaMethodName;
+  this.lambdaMethod=lambdaMethod;
+  this.targetMethod=targetMethod;
+  this.specializedMethod=specializedMethod;
+}

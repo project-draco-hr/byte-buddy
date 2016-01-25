@@ -1,5 +1,0 @@
-{
-  this.targetType=targetType;
-  this.targetMethodHandle=targetMethodHandle;
-  this.specializedMethodType=specializedMethodType;
-}

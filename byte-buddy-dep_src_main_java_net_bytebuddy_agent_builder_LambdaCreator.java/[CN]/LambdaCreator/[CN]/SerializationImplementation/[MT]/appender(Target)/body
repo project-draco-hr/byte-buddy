@@ -1,14 +1,14 @@
 {
   TypeDescription serializedLambda;
   try {
-    serializedLambda=new TypeDescription.ForLoadedType(Class.forName("java.lang.invoke.SerializableLambda"));
+    serializedLambda=new TypeDescription.ForLoadedType(Class.forName("java.lang.invoke.SerializedLambda"));
   }
  catch (  ClassNotFoundException exception) {
-    throw new IllegalStateException("Cannot find serializable lambda class",exception);
+    throw new IllegalStateException("Cannot find class for lambda serialization",exception);
   }
   List<StackManipulation> lambdaArguments=new ArrayList<StackManipulation>(implementationTarget.getInstrumentedType().getDeclaredFields().size());
   for (  FieldDescription.InDefinedShape fieldDescription : implementationTarget.getInstrumentedType().getDeclaredFields()) {
     lambdaArguments.add(new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(fieldDescription).getter(),Assigner.DEFAULT.assign(fieldDescription.getType(),TypeDescription.Generic.OBJECT,Assigner.Typing.STATIC)));
   }
-  return new ByteCodeAppender.Simple(new StackManipulation.Compound(TypeCreation.of(serializedLambda),Duplication.SINGLE,ClassConstant.of(targetType),new TextConstant(implementationTarget.getInstrumentedType().getInternalName()),new TextConstant(targetMethodHandle.getName()),new TextConstant(targetMethodHandle.getDescriptor()),IntegerConstant.forValue(targetMethodHandle.getHandleType().getIdentifier()),new TextConstant(targetMethodHandle.getInstanceType().getInternalName()),new TextConstant(targetMethodHandle.getName()),new TextConstant(specializedMethodType.getDescriptor()),ArrayFactory.forType(TypeDescription.Generic.OBJECT).withValues(lambdaArguments),MethodInvocation.invoke(serializedLambda.getDeclaredMethods().filter(isConstructor()).getOnly()),MethodReturn.REFERENCE));
+  return new ByteCodeAppender.Simple(new StackManipulation.Compound(TypeCreation.of(serializedLambda),Duplication.SINGLE,ClassConstant.of(targetType),new TextConstant(lambdaType.getInternalName()),new TextConstant(lambdaMethodName),new TextConstant(lambdaMethod.getDescriptor()),IntegerConstant.forValue(targetMethod.getHandleType().getIdentifier()),new TextConstant(targetMethod.getOwnerType().getInternalName()),new TextConstant(targetMethod.getName()),new TextConstant(targetMethod.getDescriptor()),new TextConstant(specializedMethod.getDescriptor()),ArrayFactory.forType(TypeDescription.Generic.OBJECT).withValues(lambdaArguments),MethodInvocation.invoke(serializedLambda.getDeclaredMethods().filter(isConstructor()).getOnly()),MethodReturn.REFERENCE));
 }

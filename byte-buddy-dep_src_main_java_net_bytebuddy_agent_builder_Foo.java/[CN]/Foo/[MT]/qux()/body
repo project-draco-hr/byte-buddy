@@ -1,4 +1,0 @@
-{
-  Object o=null;
-  byte[] b=(byte[])o;
-}

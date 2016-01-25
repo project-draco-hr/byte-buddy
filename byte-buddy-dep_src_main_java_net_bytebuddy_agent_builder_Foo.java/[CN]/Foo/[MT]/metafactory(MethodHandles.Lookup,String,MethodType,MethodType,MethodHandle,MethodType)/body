@@ -1,6 +1,6 @@
 {
   Unsafe unsafe=Unsafe.getUnsafe();
-  final Class<?> lambdaClass=unsafe.defineAnonymousClass(caller.lookupClass(),(byte[])ClassLoader.getSystemClassLoader().loadClass("net.bytebuddy.agent.builder.LambdaFactory").getDeclaredMethod("make",Object.class,String.class,Object.class,Object.class,Object.class,Object.class,boolean.class,List.class).invoke(null,caller,invokedName,invokedType,samMethodType,implMethod,instantiatedMethodType,false,Collections.emptyList()),null);
+  final Class<?> lambdaClass=unsafe.defineAnonymousClass(caller.lookupClass(),(byte[])ClassLoader.getSystemClassLoader().loadClass("net.bytebuddy.agent.builder.LambdaFactory").getDeclaredMethod("make",Object.class,String.class,Object.class,Object.class,Object.class,Object.class,boolean.class,List.class,List.class).invoke(null,caller,invokedName,invokedType,samMethodType,implMethod,instantiatedMethodType,false,Collections.emptyList(),Collections.emptyList()),null);
   unsafe.ensureClassInitialized(lambdaClass);
   return invokedType.parameterCount() == 0 ? new ConstantCallSite(MethodHandles.constant(invokedType.returnType(),lambdaClass.getDeclaredConstructors()[0].newInstance())) : new ConstantCallSite(MethodHandles.lookup().findStatic(lambdaClass,"get$Lambda",invokedType));
 }

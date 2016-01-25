@@ -1,0 +1,4 @@
+{
+  this.lambdaMethodName=lambdaMethodName;
+  this.lambdaMethod=lambdaMethod;
+}

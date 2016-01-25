@@ -4,6 +4,7 @@ Object factoryMethodType
 Object lambdaMethodType
 Object targetMethodHandle
 Object specializedLambdaMethodType
-boolean enforceSerialization
+boolean serializable
 List<Class<?>> markerInterfaces
+List<?> additionalBridges
 Collection<? extends ClassFileTransformer> classFileTransformers

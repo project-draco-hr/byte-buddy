@@ -2,8 +2,7 @@
   try {
     @SuppressWarnings("unchecked") Map<ClassFileTransformer,LambdaFactory> classFileTransformers=(Map<ClassFileTransformer,LambdaFactory>)ClassLoader.getSystemClassLoader().loadClass(LambdaFactory.class.getName()).getDeclaredField("CLASS_FILE_TRANSFORMERS").get(null);
 synchronized (classFileTransformers) {
-      classFileTransformers.remove(classFileTransformer);
-      return classFileTransformers.isEmpty();
+      return classFileTransformers.remove(classFileTransformer) != null && classFileTransformers.isEmpty();
     }
   }
  catch (  Exception exception) {
