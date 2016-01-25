@@ -1,0 +1,3 @@
+TypeDescription targetType
+MethodDescription targetMethod
+JavaInstance.MethodHandle implementationMethod

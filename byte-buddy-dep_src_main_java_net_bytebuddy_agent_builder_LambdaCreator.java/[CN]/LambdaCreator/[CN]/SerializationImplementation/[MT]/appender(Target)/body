@@ -1,0 +1,15 @@
+{
+  TypeDescription serializedLambda;
+  try {
+    serializedLambda=new TypeDescription.ForLoadedType(Class.forName("java.lang.invoke.SerializableLambda"));
+  }
+ catch (  ClassNotFoundException exception) {
+    throw new IllegalStateException("Cannot find serializable lambda class",exception);
+  }
+  MethodDescription.InDefinedShape implementationMethod=this.implementationMethod.asMethodDescription();
+  List<StackManipulation> lambdaArguments=new ArrayList<StackManipulation>(implementationTarget.getInstrumentedType().getDeclaredFields().size());
+  for (  FieldDescription.InDefinedShape fieldDescription : implementationTarget.getInstrumentedType().getDeclaredFields()) {
+    lambdaArguments.add(new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadOffset(0),FieldAccess.forField(fieldDescription).getter(),Assigner.DEFAULT.assign(fieldDescription.getType(),TypeDescription.Generic.OBJECT,Assigner.Typing.STATIC)));
+  }
+  return new ByteCodeAppender.Simple(new StackManipulation.Compound(TypeCreation.of(serializedLambda),Duplication.SINGLE,ClassConstant.of(targetType),new TextConstant(implementationTarget.getInstrumentedType().getInternalName()),new TextConstant(targetMethod.getInternalName()),new TextConstant(targetMethod.getDescriptor()),IntegerConstant.forValue(this.implementationMethod.getHandleType().getIdentifier()),new TextConstant(implementationMethod.getDeclaringType().getInternalName()),new TextConstant(implementationMethod.getInternalName()),new TextConstant(implementationMethod.getDescriptor()),ArrayFactory.forType(TypeDescription.Generic.OBJECT).withValues(lambdaArguments),MethodInvocation.invoke(serializedLambda.getDeclaredMethods().filter(isConstructor()).getOnly()),MethodReturn.REFERENCE));
+}

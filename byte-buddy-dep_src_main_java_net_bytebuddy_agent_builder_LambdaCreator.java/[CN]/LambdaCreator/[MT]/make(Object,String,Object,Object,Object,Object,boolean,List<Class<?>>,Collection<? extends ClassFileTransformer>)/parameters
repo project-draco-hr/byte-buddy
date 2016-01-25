@@ -2,6 +2,8 @@ Object callerTypeLookup
 String functionalMethodName
 Object factoryMethod
 Object implementedMethod
-Object targetMethod
+Object targetMethodHandle
+Object implementationMethodHandle
 boolean enforceSerialization
+List<Class<?>> markerInterfaces
 Collection<? extends ClassFileTransformer> classFileTransformers

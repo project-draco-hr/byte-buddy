@@ -1,0 +1,5 @@
+{
+  this.targetType=targetType;
+  this.targetMethod=targetMethod;
+  this.implementationMethod=implementationMethod;
+}
