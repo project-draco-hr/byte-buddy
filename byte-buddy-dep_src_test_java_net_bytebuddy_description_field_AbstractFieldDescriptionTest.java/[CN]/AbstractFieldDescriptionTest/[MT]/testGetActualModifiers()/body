@@ -1,0 +1,4 @@
+{
+  assertThat(describe(first).getActualModifiers(),is(first.getModifiers()));
+  assertThat(describe(DeprecationSample.class.getDeclaredField("foo")).getActualModifiers(),is(Opcodes.ACC_DEPRECATED | Opcodes.ACC_PRIVATE));
+}

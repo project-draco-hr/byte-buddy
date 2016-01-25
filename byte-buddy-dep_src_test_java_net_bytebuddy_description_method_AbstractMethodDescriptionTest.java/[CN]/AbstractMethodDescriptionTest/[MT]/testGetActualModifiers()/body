@@ -1,0 +1,6 @@
+{
+  assertThat(describe(firstMethod).getActualModifiers(),is(Opcodes.ACC_PRIVATE | Opcodes.ACC_STATIC));
+  assertThat(describe(firstMethod).getActualModifiers(true),is(Opcodes.ACC_PRIVATE | Opcodes.ACC_STATIC));
+  assertThat(describe(firstMethod).getActualModifiers(false),is(Opcodes.ACC_PRIVATE | Opcodes.ACC_STATIC | Opcodes.ACC_ABSTRACT));
+  assertThat(describe(DeprecationSample.class.getDeclaredMethod("foo")).getActualModifiers(),is(Opcodes.ACC_PRIVATE | Opcodes.ACC_DEPRECATED));
+}
