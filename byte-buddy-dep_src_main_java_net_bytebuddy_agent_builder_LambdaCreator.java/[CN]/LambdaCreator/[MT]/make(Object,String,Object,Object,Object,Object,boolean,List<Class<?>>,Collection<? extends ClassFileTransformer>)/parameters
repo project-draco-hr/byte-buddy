@@ -1,9 +1,9 @@
-Object callerTypeLookup
-String functionalMethodName
-Object factoryMethod
-Object implementedMethod
+Object targetTypeLookup
+String lambdaMethodName
+Object factoryMethodType
+Object lambdaMethodType
 Object targetMethodHandle
-Object specializedMethodType
+Object specializedLambdaMethodType
 boolean enforceSerialization
 List<Class<?>> markerInterfaces
 Collection<? extends ClassFileTransformer> classFileTransformers

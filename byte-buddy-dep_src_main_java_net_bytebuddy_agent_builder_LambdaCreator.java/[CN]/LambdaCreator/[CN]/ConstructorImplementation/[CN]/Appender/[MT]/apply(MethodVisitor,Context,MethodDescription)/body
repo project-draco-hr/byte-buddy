@@ -6,5 +6,5 @@
     fieldAssignments.add(MethodVariableAccess.of(parameterDescription.getType()).loadOffset(parameterDescription.getOffset()));
     fieldAssignments.add(FieldAccess.forField(fieldDescriptions.get(parameterDescription.getIndex())).putter());
   }
-  return new Size(new StackManipulation.Compound(new StackManipulation.Compound(fieldAssignments),MethodReturn.VOID).apply(methodVisitor,implementationContext).getMaximalSize(),instrumentedMethod.getStackSize());
+  return new Size(new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadOffset(0),MethodInvocation.invoke(OBJECT_CONSTRUCTOR),new StackManipulation.Compound(fieldAssignments),MethodReturn.VOID).apply(methodVisitor,implementationContext).getMaximalSize(),instrumentedMethod.getStackSize());
 }

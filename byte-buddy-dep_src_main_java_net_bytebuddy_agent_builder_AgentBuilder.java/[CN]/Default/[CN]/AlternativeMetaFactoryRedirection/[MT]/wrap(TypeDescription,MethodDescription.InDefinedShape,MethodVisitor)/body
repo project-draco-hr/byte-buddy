@@ -165,7 +165,7 @@
   methodVisitor.visitFrame(Opcodes.F_APPEND,1,new Object[]{"java/lang/Class"},0,null);
   methodVisitor.visitTypeInsn(Opcodes.NEW,"java/lang/invoke/ConstantCallSite");
   methodVisitor.visitInsn(Opcodes.DUP);
-  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,"java/lang/invoke/MethodHandles","lookup","()Ljava/lang/invoke/MethodHandles$Lookup;",false);
+  methodVisitor.visitFieldInsn(Opcodes.GETSTATIC,"java/lang/invoke/MethodHandles$Lookup","IMPL_LOOKUP","Ljava/lang/invoke/MethodHandles$Lookup;");
   methodVisitor.visitVarInsn(Opcodes.ALOAD,7);
   methodVisitor.visitLdcInsn("get$Lambda");
   methodVisitor.visitVarInsn(Opcodes.ALOAD,2);

@@ -4,5 +4,5 @@
     fieldAccess.add(MethodVariableAccess.REFERENCE.loadOffset(0));
     fieldAccess.add(FieldAccess.forField(fieldDescription).getter());
   }
-  return new Size(new StackManipulation.Compound(new StackManipulation.Compound(fieldAccess),MethodVariableAccess.allArgumentsOf(lambdaDispatcherMethod),MethodInvocation.invoke(lambdaDispatcherMethod),MethodReturn.returning(lambdaDispatcherMethod.getReturnType().asErasure())).apply(methodVisitor,implementationContext).getMaximalSize(),instrumentedMethod.getStackSize());
+  return new Size(new StackManipulation.Compound(new StackManipulation.Compound(fieldAccess),MethodInvocation.invoke(lambdaDispatcherMethod),MethodReturn.returning(lambdaDispatcherMethod.getReturnType().asErasure())).apply(methodVisitor,implementationContext).getMaximalSize(),instrumentedMethod.getStackSize());
 }

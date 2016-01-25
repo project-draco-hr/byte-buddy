@@ -1,0 +1,4 @@
+{
+  printWriter=new PrintWriter(outputStream);
+  this.printer=printer;
+}
