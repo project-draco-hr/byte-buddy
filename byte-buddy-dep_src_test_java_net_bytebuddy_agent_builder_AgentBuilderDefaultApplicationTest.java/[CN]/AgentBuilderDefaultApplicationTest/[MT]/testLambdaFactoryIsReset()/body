@@ -1,7 +1,7 @@
 {
   assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   ClassLoader classLoader=lambdaSamples();
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(binaryLocator).with(AgentBuilder.LambdaInstrumentationStrategy.ENABLED).installOn(ByteBuddyAgent.install());
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(binaryLocator).with(AgentBuilder.LambdaInstrumentationStrategy.ENABLED).installOn(ByteBuddyAgent.getInstrumentation());
   ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);
   AgentBuilder.LambdaInstrumentationStrategy.release(classFileTransformer,ByteBuddyAgent.getInstrumentation());
   Class<?> sampleFactory=classLoader.loadClass(LAMBDA_SAMPLE_FACTORY);
