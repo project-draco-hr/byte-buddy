@@ -3,7 +3,11 @@
   ClassReloadingStrategy classReloadingStrategy=ClassReloadingStrategy.fromInstalledAgent();
   Bar bar=new Bar();
   new ByteBuddy().redefine(Qux.class).name(Bar.class.getName()).make().load(Bar.class.getClassLoader(),classReloadingStrategy);
-  assertThat(bar.foo(),is(BAR));
-  classReloadingStrategy.reset(Bar.class);
-  assertThat(bar.foo(),is(FOO));
+  try {
+    assertThat(bar.foo(),is(BAR));
+  }
+  finally {
+    classReloadingStrategy.reset(Bar.class);
+    assertThat(bar.foo(),is(FOO));
+  }
 }

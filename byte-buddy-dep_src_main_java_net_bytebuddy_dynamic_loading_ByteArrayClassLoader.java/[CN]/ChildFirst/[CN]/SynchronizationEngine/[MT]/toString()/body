@@ -1,3 +1,0 @@
-{
-  return "ByteArrayClassLoader.ChildFirst.SynchronizationEngine.ForLegacyVm." + name();
-}

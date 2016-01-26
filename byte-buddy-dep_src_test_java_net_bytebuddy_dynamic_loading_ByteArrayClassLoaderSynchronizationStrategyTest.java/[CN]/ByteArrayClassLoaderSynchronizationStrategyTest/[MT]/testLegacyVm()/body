@@ -1,0 +1,3 @@
+{
+  assertThat(ByteArrayClassLoader.ChildFirst.SynchronizationStrategy.ForLegacyVm.INSTANCE.classLoadingLock(FOO,classLoader),is((Object)classLoader));
+}

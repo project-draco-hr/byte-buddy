@@ -1,0 +1,8 @@
+{
+  Map<Class<?>,ClassDefinition> classDefinitions=new HashMap<Class<?>,ClassDefinition>(types.size());
+  for (  Class<?> type : types) {
+    int anonymousLoaderIndex=type.getName().indexOf('/');
+    classDefinitions.put(type,new ClassDefinition(type,classFileLocator.locate(anonymousLoaderIndex == -1 ? type.getName() : type.getName().substring(0,anonymousLoaderIndex)).resolve()));
+  }
+  apply(instrumentation,classDefinitions);
+}

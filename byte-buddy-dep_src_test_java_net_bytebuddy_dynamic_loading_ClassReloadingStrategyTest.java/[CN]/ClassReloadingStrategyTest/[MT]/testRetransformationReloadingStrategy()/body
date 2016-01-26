@@ -2,9 +2,13 @@
   assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   Foo foo=new Foo();
   assertThat(foo.foo(),is(FOO));
-  ClassReloadingStrategy classReloadingStrategy=new ClassReloadingStrategy(ByteBuddyAgent.getInstrumentation(),ClassReloadingStrategy.Engine.RETRANSFORMATION);
+  ClassReloadingStrategy classReloadingStrategy=new ClassReloadingStrategy(ByteBuddyAgent.getInstrumentation(),ClassReloadingStrategy.Strategy.RETRANSFORMATION);
   new ByteBuddy().redefine(Foo.class).method(named(FOO)).intercept(FixedValue.value(BAR)).make().load(Foo.class.getClassLoader(),classReloadingStrategy);
-  assertThat(foo.foo(),is(BAR));
-  classReloadingStrategy.reset(Foo.class);
-  assertThat(foo.foo(),is(FOO));
+  try {
+    assertThat(foo.foo(),is(BAR));
+  }
+  finally {
+    classReloadingStrategy.reset(Foo.class);
+    assertThat(foo.foo(),is(FOO));
+  }
 }

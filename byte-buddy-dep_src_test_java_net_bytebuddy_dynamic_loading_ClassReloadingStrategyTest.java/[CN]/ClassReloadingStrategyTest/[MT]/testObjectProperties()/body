@@ -7,8 +7,9 @@
   }
 ).apply();
   ObjectPropertyAssertion.of(ClassReloadingStrategy.BootstrapInjection.Enabled.class).apply();
-  ObjectPropertyAssertion.of(ClassReloadingStrategy.Engine.class).apply();
-  ObjectPropertyAssertion.of(ClassReloadingStrategy.Engine.ClassRedefinitionTransformer.class).applyBasic();
+  ObjectPropertyAssertion.of(ClassReloadingStrategy.Strategy.class).apply();
+  ObjectPropertyAssertion.of(ClassReloadingStrategy.Strategy.ClassRedefinitionTransformer.class).applyBasic();
+  ObjectPropertyAssertion.of(ClassReloadingStrategy.Strategy.ClassResettingTransformer.class).apply();
   ObjectPropertyAssertion.of(ClassReloadingStrategy.BootstrapInjection.Enabled.class).apply();
   ObjectPropertyAssertion.of(ClassReloadingStrategy.BootstrapInjection.Disabled.class).apply();
 }

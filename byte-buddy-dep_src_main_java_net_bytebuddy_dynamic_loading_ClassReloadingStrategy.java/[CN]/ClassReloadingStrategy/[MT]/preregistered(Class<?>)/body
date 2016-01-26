@@ -5,5 +5,5 @@
     int anonymousLoaderIndex=typeName.indexOf('/');
     preregisteredTypes.put(anonymousLoaderIndex == -1 ? typeName : typeName.substring(0,anonymousLoaderIndex),aType);
   }
-  return new ClassReloadingStrategy(instrumentation,engine,bootstrapInjection,preregisteredTypes);
+  return new ClassReloadingStrategy(instrumentation,strategy,bootstrapInjection,preregisteredTypes);
 }

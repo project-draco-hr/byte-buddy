@@ -1,5 +1,0 @@
-{
-  super((Class<MethodSortMatcher<?>>)(Object)MethodSortMatcher.class,sort.getDescription());
-  this.sort=sort;
-  this.mockEngine=mockEngine;
-}

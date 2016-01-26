@@ -1,0 +1,3 @@
+{
+  return "ClassReloadingStrategy.Strategy.ClassResettingTransformer." + name();
+}

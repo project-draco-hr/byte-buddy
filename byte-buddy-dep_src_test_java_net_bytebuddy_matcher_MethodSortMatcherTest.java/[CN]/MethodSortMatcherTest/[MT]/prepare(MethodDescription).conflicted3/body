@@ -1,3 +1,3 @@
 {
-  when(target.isDefaultMethod()).thenReturn(true);
+  when(target.isTypeInitializer()).thenReturn(true);
 }

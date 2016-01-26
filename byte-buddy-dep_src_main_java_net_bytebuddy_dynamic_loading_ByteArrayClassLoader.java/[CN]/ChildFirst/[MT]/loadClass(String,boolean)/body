@@ -1,5 +1,5 @@
 {
-synchronized (SYNCHRONIZATION_ENGINE.classLoadingLock(name,this)) {
+synchronized (SYNCHRONIZATION_STRATEGY.classLoadingLock(name,this)) {
     Class<?> type=findLoadedClass(name);
     if (type != null) {
       return type;

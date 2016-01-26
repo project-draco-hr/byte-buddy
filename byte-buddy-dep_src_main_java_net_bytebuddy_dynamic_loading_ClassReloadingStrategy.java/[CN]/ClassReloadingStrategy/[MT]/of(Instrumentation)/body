@@ -1,13 +1,13 @@
 {
-  Engine engine;
-  if (instrumentation.isRetransformClassesSupported()) {
-    engine=Engine.RETRANSFORMATION;
+  Strategy strategy;
+  if (instrumentation.isRedefineClassesSupported()) {
+    strategy=Strategy.REDEFINITION;
   }
- else   if (instrumentation.isRedefineClassesSupported()) {
-    engine=Engine.REDEFINITION;
+ else   if (instrumentation.isRetransformClassesSupported()) {
+    strategy=Strategy.RETRANSFORMATION;
   }
  else {
     throw new IllegalArgumentException("Instrumentation does not support manipulation of loaded classes: " + instrumentation);
   }
-  return new ClassReloadingStrategy(instrumentation,engine);
+  return new ClassReloadingStrategy(instrumentation,strategy);
 }

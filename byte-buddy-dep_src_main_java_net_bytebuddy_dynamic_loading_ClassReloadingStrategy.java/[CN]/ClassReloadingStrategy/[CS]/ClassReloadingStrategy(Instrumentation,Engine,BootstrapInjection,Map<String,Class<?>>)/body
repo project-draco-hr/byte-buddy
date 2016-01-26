@@ -1,6 +1,0 @@
-{
-  this.instrumentation=instrumentation;
-  this.engine=engine;
-  this.bootstrapInjection=bootstrapInjection;
-  this.preregisteredTypes=preregisteredTypes;
-}

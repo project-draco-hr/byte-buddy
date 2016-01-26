@@ -1,0 +1,9 @@
+{
+  instrumentation.addTransformer(ClassResettingTransformer.INSTANCE,true);
+  try {
+    instrumentation.retransformClasses(types.toArray(new Class<?>[types.size()]));
+  }
+  finally {
+    instrumentation.removeTransformer(ClassResettingTransformer.INSTANCE);
+  }
+}

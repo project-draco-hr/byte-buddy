@@ -1,6 +1,6 @@
 {
   int result=instrumentation.hashCode();
-  result=31 * result + engine.hashCode();
+  result=31 * result + strategy.hashCode();
   result=31 * result + bootstrapInjection.hashCode();
   result=31 * result + preregisteredTypes.hashCode();
   return result;

@@ -1,4 +1,4 @@
 {
-  mockEngine.prepare(methodDescription);
+  mockImplementation.prepare(methodDescription);
   assertThat(new MethodSortMatcher<MethodDescription>(sort).matches(methodDescription),is(true));
 }

@@ -1,3 +1,0 @@
-{
-  this(instrumentation,engine.validate(instrumentation),BootstrapInjection.Disabled.INSTANCE,Collections.<String,Class<?>>emptyMap());
-}

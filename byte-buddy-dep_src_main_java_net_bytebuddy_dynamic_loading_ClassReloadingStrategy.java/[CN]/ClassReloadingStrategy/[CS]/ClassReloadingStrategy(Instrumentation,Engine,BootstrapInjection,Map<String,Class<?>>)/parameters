@@ -1,4 +1,0 @@
-Instrumentation instrumentation
-Engine engine
-BootstrapInjection bootstrapInjection
-Map<String,Class<?>> preregisteredTypes

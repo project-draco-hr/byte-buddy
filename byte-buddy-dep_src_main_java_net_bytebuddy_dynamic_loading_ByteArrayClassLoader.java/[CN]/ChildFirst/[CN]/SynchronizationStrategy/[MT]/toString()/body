@@ -1,0 +1,3 @@
+{
+  return "ByteArrayClassLoader.ChildFirst.SynchronizationStrategy.ForLegacyVm." + name();
+}

@@ -1,15 +1,7 @@
 {
   if (type.length > 0) {
-    if (!instrumentation.isRedefineClassesSupported()) {
-      throw new IllegalStateException("Classes can only be reset when redefinition is supported");
-    }
-    Map<Class<?>,ClassDefinition> classDefinitions=new HashMap<Class<?>,ClassDefinition>(type.length);
-    for (    Class<?> aType : type) {
-      int anonymousLoaderIndex=aType.getName().indexOf('/');
-      classDefinitions.put(aType,new ClassDefinition(aType,classFileLocator.locate(anonymousLoaderIndex == -1 ? aType.getName() : aType.getName().substring(0,anonymousLoaderIndex)).resolve()));
-    }
     try {
-      engine.apply(instrumentation,classDefinitions);
+      strategy.reset(instrumentation,classFileLocator,Arrays.asList(type));
     }
  catch (    ClassNotFoundException exception) {
       throw new IllegalArgumentException("Cannot locate types " + Arrays.toString(type),exception);
