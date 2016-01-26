@@ -1,7 +1,7 @@
 {
   Instrumentation instrumentation=mock(Instrumentation.class);
-  when(instrumentation.isRetransformClassesSupported()).thenReturn(true);
+  when(instrumentation.isRedefineClassesSupported()).thenReturn(true);
   ClassReloadingStrategy.of(instrumentation).reset();
-  verify(instrumentation,times(2)).isRetransformClassesSupported();
+  verify(instrumentation,times(2)).isRedefineClassesSupported();
   verifyNoMoreInteractions(instrumentation);
 }

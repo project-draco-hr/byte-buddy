@@ -1,9 +1,9 @@
 {
   Instrumentation instrumentation=mock(Instrumentation.class);
   ClassFileLocator classFileLocator=mock(ClassFileLocator.class);
-  when(instrumentation.isRetransformClassesSupported()).thenReturn(true);
+  when(instrumentation.isRedefineClassesSupported()).thenReturn(true);
   ClassReloadingStrategy.of(instrumentation).reset(classFileLocator);
-  verify(instrumentation,times(2)).isRetransformClassesSupported();
+  verify(instrumentation,times(2)).isRedefineClassesSupported();
   verifyNoMoreInteractions(instrumentation);
   verifyZeroInteractions(classFileLocator);
 }
