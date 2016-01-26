@@ -1,6 +1,6 @@
 {
   if (internalName != null && isChild(classLoader) && typeName.equals(internalName.replace('/','.'))) {
-    this.binaryRepresentation=classFile;
+    this.binaryRepresentation=binaryRepresentation;
   }
   return DO_NOT_TRANSFORM;
 }

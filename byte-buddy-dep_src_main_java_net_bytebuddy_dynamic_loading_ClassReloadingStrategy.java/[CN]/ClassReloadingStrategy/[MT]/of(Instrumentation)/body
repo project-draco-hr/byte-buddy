@@ -1,10 +1,10 @@
 {
   Engine engine;
-  if (instrumentation.isRedefineClassesSupported()) {
-    engine=Engine.REDEFINITION;
-  }
- else   if (instrumentation.isRetransformClassesSupported()) {
+  if (instrumentation.isRetransformClassesSupported()) {
     engine=Engine.RETRANSFORMATION;
+  }
+ else   if (instrumentation.isRedefineClassesSupported()) {
+    engine=Engine.REDEFINITION;
   }
  else {
     throw new IllegalArgumentException("Instrumentation does not support manipulation of loaded classes: " + instrumentation);

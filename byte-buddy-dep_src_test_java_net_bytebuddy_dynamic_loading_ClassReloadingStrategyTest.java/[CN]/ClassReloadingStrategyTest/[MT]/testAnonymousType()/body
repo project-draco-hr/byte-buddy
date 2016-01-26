@@ -1,3 +1,17 @@
 {
-  ((Runnable)Class.forName("net.bytebuddy.test.precompiled.AnonymousClassLoader").newInstance()).run();
+  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(Class.forName(LAMBDA_SAMPLE_FACTORY)),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
+  Instrumentation instrumentation=ByteBuddyAgent.install();
+  Class<?> factory=classLoader.loadClass(LAMBDA_SAMPLE_FACTORY);
+  @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)factory.getDeclaredMethod("nonCapturing").invoke(factory.newInstance());
+  ClassReloadingStrategy classReloadingStrategy=ClassReloadingStrategy.of(instrumentation).preregistered(instance.getClass());
+  ClassFileLocator classFileLocator=ClassFileLocator.AgentBased.of(instrumentation,instance.getClass());
+  try {
+    assertThat(instance.call(),is(FOO));
+    new ByteBuddy().redefine(instance.getClass(),classFileLocator).method(named("call")).intercept(FixedValue.value(BAR)).make().load(instance.getClass().getClassLoader(),classReloadingStrategy);
+    assertThat(instance.call(),is(BAR));
+  }
+  finally {
+    classReloadingStrategy.reset(classFileLocator,instance.getClass());
+    assertThat(instance.call(),is(FOO));
+  }
 }

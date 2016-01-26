@@ -2,4 +2,4 @@ ClassLoader classLoader
 String internalName
 Class<?> redefinedType
 ProtectionDomain protectionDomain
-byte[] classFile
+byte[] binaryRepresentation
