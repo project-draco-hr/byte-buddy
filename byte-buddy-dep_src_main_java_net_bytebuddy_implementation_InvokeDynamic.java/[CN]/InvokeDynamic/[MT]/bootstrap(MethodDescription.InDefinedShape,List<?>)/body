@@ -5,10 +5,10 @@
       argument=new TypeDescription.ForLoadedType((Class<?>)argument);
     }
  else     if (JavaType.METHOD_HANDLE.getTypeStub().isInstance(argument)) {
-      argument=JavaInstance.MethodHandle.of(argument);
+      argument=JavaInstance.MethodHandle.ofLoaded(argument);
     }
  else     if (JavaType.METHOD_TYPE.getTypeStub().isInstance(argument)) {
-      argument=JavaInstance.MethodType.of(argument);
+      argument=JavaInstance.MethodType.ofLoaded(argument);
     }
     arguments.add(argument);
   }

@@ -33,10 +33,10 @@
     return new ForEnumerationValue(new EnumerationDescription.ForLoadedEnumeration((Enum<?>)value));
   }
  else   if (JavaType.METHOD_HANDLE.getTypeStub().isInstance(value)) {
-    return new ForJavaInstance(JavaInstance.MethodHandle.of(value));
+    return new ForJavaInstance(JavaInstance.MethodHandle.ofLoaded(value));
   }
  else   if (JavaType.METHOD_TYPE.getTypeStub().isInstance(value)) {
-    return new ForJavaInstance(JavaInstance.MethodType.of(value));
+    return new ForJavaInstance(JavaInstance.MethodType.ofLoaded(value));
   }
  else {
     return ForStaticField.of(value);

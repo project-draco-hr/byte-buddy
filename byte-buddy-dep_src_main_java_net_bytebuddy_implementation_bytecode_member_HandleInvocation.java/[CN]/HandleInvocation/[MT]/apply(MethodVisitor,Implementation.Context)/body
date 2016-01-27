@@ -1,0 +1,5 @@
+{
+  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,METHOD_HANDLE_NAME,INVOKE_EXACT,methodType.getDescriptor(),false);
+  int size=methodType.getReturnType().getStackSize().getSize() - methodType.getParameterTypes().getStackSize();
+  return new Size(size,Math.max(size,0));
+}

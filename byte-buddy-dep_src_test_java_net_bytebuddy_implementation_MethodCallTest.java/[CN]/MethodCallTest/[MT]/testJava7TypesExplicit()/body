@@ -1,5 +1,5 @@
 {
-  DynamicType.Loaded<SimpleMethod> loaded=implement(SimpleMethod.class,MethodCall.invoke(Foo.class.getDeclaredMethod(BAR,Object.class,Object.class)).with(JavaInstance.MethodHandle.of(makeMethodHandle()),JavaInstance.MethodType.of(makeMethodType(void.class))),SimpleMethod.class.getClassLoader(),named(FOO));
+  DynamicType.Loaded<SimpleMethod> loaded=implement(SimpleMethod.class,MethodCall.invoke(Foo.class.getDeclaredMethod(BAR,Object.class,Object.class)).with(JavaInstance.MethodHandle.ofLoaded(makeMethodHandle()),JavaInstance.MethodType.ofLoaded(makeMethodType(void.class))),SimpleMethod.class.getClassLoader(),named(FOO));
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));

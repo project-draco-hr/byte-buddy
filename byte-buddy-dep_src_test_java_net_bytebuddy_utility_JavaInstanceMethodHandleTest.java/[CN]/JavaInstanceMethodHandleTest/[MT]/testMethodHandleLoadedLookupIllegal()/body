@@ -3,5 +3,5 @@
   Object lookup=publicLookup.invoke(null);
   Method unreflect=Class.forName("java.lang.invoke.MethodHandles$Lookup").getDeclaredMethod("unreflect",Method.class);
   Object methodHandleLoaded=unreflect.invoke(lookup,Foo.class.getDeclaredMethod(BAR,Void.class));
-  JavaInstance.MethodHandle.of(methodHandleLoaded,new Object());
+  JavaInstance.MethodHandle.ofLoaded(methodHandleLoaded,new Object());
 }

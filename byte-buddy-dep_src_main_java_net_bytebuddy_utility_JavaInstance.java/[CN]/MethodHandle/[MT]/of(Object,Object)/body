@@ -1,3 +1,0 @@
-{
-  return of(methodHandle,lookup,AccessController.getContext());
-}

@@ -1,0 +1,11 @@
+{
+  JavaInstance.MethodType methodType=JavaInstance.MethodType.of(void.class,Object.class);
+  StackManipulation stackManipulation=new HandleInvocation(methodType);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(-1));
+  assertThat(size.getMaximalSize(),is(0));
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/invoke/MethodHandle","invokeExact","(Ljava/lang/Object;)V",false);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+}
