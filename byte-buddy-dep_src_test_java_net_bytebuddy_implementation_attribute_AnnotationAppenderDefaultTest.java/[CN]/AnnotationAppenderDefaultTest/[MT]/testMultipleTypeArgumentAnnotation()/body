@@ -1,7 +1,7 @@
 {
   int[] array={2,3,4};
   Class<?> bar=makeTypeWithSuperClassAnnotation(new Baz.Instance(FOOBAR,array,new Foo.Instance(),Baz.Enum.VALUE,Void.class));
-  TypeDescription.Generic.AnnotationReader annotationReader=TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperClass(bar);
+  TypeDescription.Generic.AnnotationReader annotationReader=TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperClassType(bar);
   assertThat(annotationReader.asList().size(),is(1));
   assertThat(annotationReader.asList().isAnnotationPresent(Baz.class),is(true));
   assertThat(annotationReader.asList().ofType(Baz.class).load().value(),is(FOOBAR));

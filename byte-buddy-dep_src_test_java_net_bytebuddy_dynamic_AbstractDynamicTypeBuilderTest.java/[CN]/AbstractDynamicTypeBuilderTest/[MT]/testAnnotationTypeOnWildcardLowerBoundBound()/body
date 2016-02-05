@@ -2,6 +2,6 @@
   Class<? extends Annotation> typeAnnotationType=(Class<? extends Annotation>)Class.forName(TYPE_VARIABLE_NAME);
   MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotationType).getDeclaredMethods().filter(named(VALUE)).getOnly();
   Field field=createPlain().defineField(FOO,TypeDescription.Generic.Builder.parameterizedType(new TypeDescription.ForLoadedType(Collection.class),TypeDescription.Generic.Builder.rawType(Object.class).annotate(AnnotationDescription.Builder.ofType(typeAnnotationType).define(VALUE,INTEGER_VALUE).build()).asWildcardLowerBound()).build()).make().load(typeAnnotationType.getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded().getDeclaredField(FOO);
-  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolve(field).ofTypeArgument(0).ofWildcardLowerBoundType(0).asList().size(),is(1));
-  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolve(field).ofTypeArgument(0).ofWildcardLowerBoundType(0).asList().ofType(typeAnnotationType).getValue(value,Integer.class),is(INTEGER_VALUE));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveFieldType(field).ofTypeArgument(0).ofWildcardLowerBoundType(0).asList().size(),is(1));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveFieldType(field).ofTypeArgument(0).ofWildcardLowerBoundType(0).asList().ofType(typeAnnotationType).getValue(value,Integer.class),is(INTEGER_VALUE));
 }
