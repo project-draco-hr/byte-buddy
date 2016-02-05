@@ -1,4 +1,5 @@
 {
-  when(fieldDescription.asToken(ElementMatchers.is(instrumentedType))).thenReturn(token);
+  when(fieldDescription.asSignatureToken()).thenReturn(signatureToken);
+  when(token.asSignatureToken(instrumentedType)).thenReturn(signatureToken);
   assertThat(new LatentMatcher.ForFieldToken(token).resolve(instrumentedType).matches(fieldDescription),is(true));
 }

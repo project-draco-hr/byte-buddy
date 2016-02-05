@@ -1,3 +1,0 @@
-{
-  when(token.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(token);
-}

@@ -4,5 +4,5 @@
       return typeVariableToken.getBounds().get(0).accept(this);
     }
   }
-  return declaringType.findVariable(typeVariable.getSymbol()).asErasure();
+  return TargetType.resolve(declaringType.findVariable(typeVariable.getSymbol()).asErasure(),declaringType);
 }

@@ -1,0 +1,8 @@
+{
+  assertThat(visitor.onGenericArray(TargetType.DESCRIPTION.asGenericType()),is(declaringType));
+  assertThat(visitor.onParameterizedType(TargetType.DESCRIPTION.asGenericType()),is(declaringType));
+  assertThat(visitor.onNonGenericType(TargetType.DESCRIPTION.asGenericType()),is(declaringType));
+  when(typeDescription.getSymbol()).thenReturn(BAR);
+  when(declaringType.findVariable(BAR)).thenReturn(TargetType.DESCRIPTION.asGenericType());
+  assertThat(visitor.onTypeVariable(typeDescription),is(declaringType));
+}

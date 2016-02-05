@@ -1,0 +1,6 @@
+{
+  when(typeDescription.isArray()).thenReturn(true);
+  when(typeDescription.getComponentType()).thenReturn(componentType);
+  when(componentType.represents(TargetType.class)).thenReturn(false);
+  assertThat(TargetType.resolve(typeDescription,targetType),is(typeDescription));
+}

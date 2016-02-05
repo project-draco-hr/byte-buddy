@@ -1,0 +1,4 @@
+{
+  when(typeDescription.represents(TargetType.class)).thenReturn(false);
+  assertThat(TargetType.resolve(typeDescription,targetType),is(typeDescription));
+}
