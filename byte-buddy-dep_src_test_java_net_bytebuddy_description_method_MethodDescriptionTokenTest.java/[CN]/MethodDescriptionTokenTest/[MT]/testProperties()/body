@@ -1,5 +1,5 @@
 {
-  MethodDescription.Token token=new MethodDescription.Token(FOO,MODIFIERS,Collections.singletonList(typeVariableToken),returnType,Collections.singletonList(parameterToken),Collections.singletonList(exceptionType),Collections.singletonList(annotation),defaultValue);
+  MethodDescription.Token token=new MethodDescription.Token(FOO,MODIFIERS,Collections.singletonList(typeVariableToken),returnType,Collections.singletonList(parameterToken),Collections.singletonList(exceptionType),Collections.singletonList(annotation),defaultValue,receiverType);
   assertThat(token.getName(),is(FOO));
   assertThat(token.getModifiers(),is(MODIFIERS));
   assertThat(token.getTypeVariableTokens(),is(Collections.singletonList(typeVariableToken)));
@@ -8,4 +8,5 @@
   assertThat(token.getExceptionTypes(),is(Collections.singletonList(exceptionType)));
   assertThat(token.getAnnotations(),is(Collections.singletonList(annotation)));
   assertThat(token.getDefaultValue(),is(defaultValue));
+  assertThat(token.getReceiverType(),is(receiverType));
 }

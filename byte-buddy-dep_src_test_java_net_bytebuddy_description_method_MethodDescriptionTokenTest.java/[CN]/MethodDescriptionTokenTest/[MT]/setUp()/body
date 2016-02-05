@@ -7,4 +7,5 @@
   when(visitedExceptionType.asGenericType()).thenReturn(visitedExceptionType);
   when(exceptionType.accept((TypeDescription.Generic.Visitor)visitor)).thenReturn(visitedExceptionType);
   when(parameterToken.accept(visitor)).thenReturn(visitedParameterToken);
+  when(receiverType.accept((TypeDescription.Generic.Visitor)visitor)).thenReturn(visitedReceiverType);
 }
