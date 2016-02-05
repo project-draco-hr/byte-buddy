@@ -1,0 +1,3 @@
+{
+  InstrumentedType.Default.of(new TypeDescription.ForLoadedType(Foo.class)).withMethod(new MethodDescription.Token(MethodDescription.CONSTRUCTOR_INTERNAL_NAME,ModifierContributor.EMPTY_MASK,Collections.<TypeVariableToken>emptyList(),TypeDescription.Generic.OBJECT,Collections.<ParameterDescription.Token>emptyList(),Collections.<TypeDescription.Generic>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE,TypeDefinition.Sort.describe(Foo.class))).validated();
+}
