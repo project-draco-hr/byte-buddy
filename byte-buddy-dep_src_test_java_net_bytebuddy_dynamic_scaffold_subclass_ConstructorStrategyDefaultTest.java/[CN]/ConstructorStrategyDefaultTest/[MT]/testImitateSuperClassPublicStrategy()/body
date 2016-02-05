@@ -1,6 +1,6 @@
 {
-  when(methodList.filter(isPublic().and(isConstructor()))).thenReturn((MethodList)filteredMethodList);
-  assertThat(ConstructorStrategy.Default.IMITATE_SUPER_CLASS_PUBLIC.extractConstructors(instrumentedType),is((List<MethodDescription.Token>)filteredMethodTokenList));
+  when(methodDescription.getModifiers()).thenReturn(Opcodes.ACC_PUBLIC);
+  assertThat(ConstructorStrategy.Default.IMITATE_SUPER_CLASS_PUBLIC.extractConstructors(instrumentedType),is(Collections.singletonList(stripped)));
   assertThat(ConstructorStrategy.Default.IMITATE_SUPER_CLASS_PUBLIC.inject(methodRegistry),is(methodRegistry));
   verify(methodRegistry).append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),eq(MethodAttributeAppender.ForInstrumentedMethod.EXCLUDING_RECEIVER),eq(MethodTransformer.NoOp.INSTANCE));
   verifyNoMoreInteractions(methodRegistry);

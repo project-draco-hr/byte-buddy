@@ -1,0 +1,4 @@
+{
+  when(methodDescription.getModifiers()).thenReturn(0);
+  assertThat(ConstructorStrategy.Default.IMITATE_SUPER_CLASS_PUBLIC.extractConstructors(instrumentedType).size(),is(0));
+}

@@ -1,5 +1,4 @@
 {
-  when(methodList.filter(isConstructor().and(takesArguments(0)).<MethodDescription>and(isVisibleTo(instrumentedType)))).thenReturn((MethodList)filteredMethodList);
-  when(filteredMethodList.size()).thenReturn(0);
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Explicit<ParameterDescription.InGenericShape>(mock(ParameterDescription.InGenericShape.class)));
   ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(instrumentedType);
 }
