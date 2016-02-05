@@ -1,3 +1,3 @@
 {
-  return typeDescription.represents(TargetType.class) ? this.typeDescription : typeDescription;
+  return typeDescription.represents(TargetType.class) ? new OfNonGenericType.Latent(this.typeDescription,typeDescription.getDeclaredAnnotations()) : typeDescription;
 }

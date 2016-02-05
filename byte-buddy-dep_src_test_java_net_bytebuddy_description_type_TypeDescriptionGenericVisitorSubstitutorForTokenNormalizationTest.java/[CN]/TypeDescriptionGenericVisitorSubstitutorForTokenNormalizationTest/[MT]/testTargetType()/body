@@ -1,3 +1,5 @@
 {
-  assertThat(new TypeDescription.Generic.Visitor.Substitutor.ForTokenNormalization(target).onSimpleType(TargetType.DESCRIPTION.asGenericType()),is(target));
+  TypeDescription.Generic typeDescription=new TypeDescription.Generic.Visitor.Substitutor.ForTokenNormalization(target).onSimpleType(new TypeDescription.Generic.OfNonGenericType.Latent(TargetType.DESCRIPTION,Collections.singletonList(annotationDescription)));
+  assertThat(typeDescription.asErasure(),is(target));
+  assertThat(typeDescription.getDeclaredAnnotations(),is(Collections.singletonList(annotationDescription)));
 }
