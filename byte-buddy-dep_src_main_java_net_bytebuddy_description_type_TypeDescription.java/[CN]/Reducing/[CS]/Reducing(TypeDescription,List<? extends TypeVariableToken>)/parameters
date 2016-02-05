@@ -1,0 +1,2 @@
+TypeDescription declaringType
+List<? extends TypeVariableToken> typeVariableTokens

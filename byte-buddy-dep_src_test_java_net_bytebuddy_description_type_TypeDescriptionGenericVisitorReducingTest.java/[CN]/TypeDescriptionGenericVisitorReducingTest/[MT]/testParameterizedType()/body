@@ -1,0 +1,6 @@
+{
+  when(typeDescription.asErasure()).thenReturn(rawTypeDescription);
+  assertThat(visitor.onParameterizedType(typeDescription),is(rawTypeDescription));
+  verify(typeDescription).asErasure();
+  verifyNoMoreInteractions(typeDescription);
+}

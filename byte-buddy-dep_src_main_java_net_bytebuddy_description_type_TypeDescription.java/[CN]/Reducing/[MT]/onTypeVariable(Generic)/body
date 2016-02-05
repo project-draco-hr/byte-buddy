@@ -1,0 +1,8 @@
+{
+  for (  TypeVariableToken typeVariableToken : typeVariableTokens) {
+    if (typeVariable.getSymbol().equals(typeVariableToken.getSymbol())) {
+      return typeVariableToken.getBounds().get(0).accept(this);
+    }
+  }
+  return declaringType.findVariable(typeVariable.getSymbol()).asErasure();
+}

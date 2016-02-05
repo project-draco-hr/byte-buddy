@@ -1,0 +1,4 @@
+{
+  this.declaringType=declaringType;
+  this.typeVariableTokens=typeVariableTokens;
+}

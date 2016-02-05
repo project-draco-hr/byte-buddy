@@ -1,0 +1,13 @@
+{
+  when(typeDescription.getSymbol()).thenReturn(FOO);
+  when(typeVariableToken.getSymbol()).thenReturn(BAR);
+  when(declaringType.findVariable(FOO)).thenReturn(genericTypeDescription);
+  when(genericTypeDescription.asErasure()).thenReturn(rawTypeDescription);
+  assertThat(visitor.onTypeVariable(typeDescription),is(rawTypeDescription));
+  verify(typeDescription,times(2)).getSymbol();
+  verifyNoMoreInteractions(typeDescription);
+  verify(typeVariableToken).getSymbol();
+  verifyNoMoreInteractions(typeVariableToken);
+  verify(declaringType).findVariable(FOO);
+  verifyNoMoreInteractions(declaringType);
+}

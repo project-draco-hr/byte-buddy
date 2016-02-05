@@ -1,0 +1,12 @@
+{
+  when(typeDescription.getSymbol()).thenReturn(FOO);
+  when(typeVariableToken.getSymbol()).thenReturn(FOO);
+  when(typeVariableToken.getBounds()).thenReturn(new TypeList.Generic.Explicit(bound));
+  when(bound.accept(visitor)).thenReturn(rawTypeDescription);
+  assertThat(visitor.onTypeVariable(typeDescription),is(rawTypeDescription));
+  verify(typeDescription).getSymbol();
+  verifyNoMoreInteractions(typeDescription);
+  verify(typeVariableToken).getSymbol();
+  verify(typeVariableToken).getBounds();
+  verifyNoMoreInteractions(typeVariableToken);
+}

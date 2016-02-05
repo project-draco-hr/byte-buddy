@@ -1,0 +1,6 @@
+{
+  when(typeDescription.asErasure()).thenReturn(rawTypeDescription);
+  assertThat(visitor.onNonGenericType(typeDescription),is(rawTypeDescription));
+  verify(typeDescription).asErasure();
+  verifyNoMoreInteractions(typeDescription);
+}

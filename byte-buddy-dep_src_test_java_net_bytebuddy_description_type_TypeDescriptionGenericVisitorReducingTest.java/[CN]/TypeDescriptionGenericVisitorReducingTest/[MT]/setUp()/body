@@ -1,0 +1,4 @@
+{
+  when(bound.asGenericType()).thenReturn(bound);
+  visitor=new TypeDescription.Generic.Visitor.Reducing(declaringType,Collections.singletonList(typeVariableToken));
+}
