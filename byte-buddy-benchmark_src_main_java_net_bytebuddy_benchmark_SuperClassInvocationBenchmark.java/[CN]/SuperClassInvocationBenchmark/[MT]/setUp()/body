@@ -1,5 +1,6 @@
 {
   ClassByExtensionBenchmark classByExtensionBenchmark=new ClassByExtensionBenchmark();
+  baselineInstance=classByExtensionBenchmark.baseline();
   byteBuddyWithAnnotationsInstance=classByExtensionBenchmark.benchmarkByteBuddyWithAnnotations();
   byteBuddySpecializedInstance=classByExtensionBenchmark.benchmarkByteBuddySpecialized();
   cglibInstance=classByExtensionBenchmark.benchmarkCglib();

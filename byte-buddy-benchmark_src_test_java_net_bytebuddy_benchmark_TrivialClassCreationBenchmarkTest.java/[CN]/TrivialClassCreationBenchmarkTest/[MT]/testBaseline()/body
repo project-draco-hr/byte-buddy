@@ -1,0 +1,4 @@
+{
+  Class<?> type=trivialClassCreationBenchmark.baseline();
+  assertThat(type,CoreMatchers.<Class<?>>is(TrivialClassCreationBenchmark.BASE_CLASS));
+}

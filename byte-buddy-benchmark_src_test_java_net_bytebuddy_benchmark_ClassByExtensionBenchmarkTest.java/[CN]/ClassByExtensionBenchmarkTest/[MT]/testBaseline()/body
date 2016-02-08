@@ -1,0 +1,5 @@
+{
+  ExampleClass instance=classByExtensionBenchmark.baseline();
+  assertThat(instance.getClass(),CoreMatchers.<Class<?>>is(ClassByExtensionBenchmark.BASE_CLASS));
+  assertReturnValues(instance);
+}

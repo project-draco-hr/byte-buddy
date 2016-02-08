@@ -1,0 +1,3 @@
+{
+  stubInvocationBenchmark.baseline(blackHole);
+}
