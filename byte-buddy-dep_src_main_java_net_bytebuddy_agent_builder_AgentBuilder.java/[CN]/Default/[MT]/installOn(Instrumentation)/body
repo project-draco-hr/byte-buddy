@@ -37,7 +37,7 @@
       }
     }
     try {
-      collector.apply(instrumentation,byteBuddy,binaryLocator,typeStrategy,listener,nativeMethodStrategy,accessControlContext,initializationStrategy,bootstrapInjectionStrategy);
+      collector.apply(instrumentation,binaryLocator,listener);
     }
  catch (    UnmodifiableClassException exception) {
       throw new IllegalStateException("Cannot modify at least one class: " + collector,exception);
