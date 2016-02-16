@@ -1,9 +1,9 @@
 {
-  when(first.transform(builder,typeDescription)).thenReturn((DynamicType.Builder)builder);
-  when(second.transform(builder,typeDescription)).thenReturn((DynamicType.Builder)builder);
-  assertThat(new AgentBuilder.Transformer.Compound(first,second).transform(builder,typeDescription),sameInstance((DynamicType.Builder)builder));
-  verify(first).transform(builder,typeDescription);
+  when(first.transform(builder,typeDescription,classLoader)).thenReturn((DynamicType.Builder)builder);
+  when(second.transform(builder,typeDescription,classLoader)).thenReturn((DynamicType.Builder)builder);
+  assertThat(new AgentBuilder.Transformer.Compound(first,second).transform(builder,typeDescription,classLoader),sameInstance((DynamicType.Builder)builder));
+  verify(first).transform(builder,typeDescription,classLoader);
   verifyNoMoreInteractions(first);
-  verify(second).transform(builder,typeDescription);
+  verify(second).transform(builder,typeDescription,classLoader);
   verifyNoMoreInteractions(second);
 }
