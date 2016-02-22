@@ -1,3 +1,18 @@
 {
-  createPlain().defineMethod(QUX,String.class).intercept(FixedValue.value(FOO)).defineMethod(QUX,Object.class).intercept(FixedValue.value(BAR)).make();
+  Class<?> type=createPlain().defineMethod(QUX,String.class,Visibility.PUBLIC).intercept(FixedValue.value(FOO)).defineMethod(QUX,Object.class,Visibility.PUBLIC).intercept(FixedValue.value(BAR)).visit(DebuggingWrapper.makeDefault()).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
+  for (  Method method : type.getDeclaredMethods()) {
+    if (method.getReturnType() == String.class) {
+      assertThat(method.getName(),is(QUX));
+      assertThat(method.getParameterTypes().length,is(0));
+      assertThat(method.invoke(type.newInstance()),is((Object)BAR));
+    }
+ else     if (method.getReturnType() == Object.class) {
+      assertThat(method.getName(),is(QUX));
+      assertThat(method.getParameterTypes().length,is(0));
+      assertThat(method.invoke(type.newInstance()),is((Object)BAR));
+    }
+ else {
+      throw new AssertionError();
+    }
+  }
 }
