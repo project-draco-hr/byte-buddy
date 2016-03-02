@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().subclass(Object.class).defineField(FOO,String.class,Ownership.STATIC).value(null);
+}
