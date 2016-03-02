@@ -1,4 +1,64 @@
 {
-  constraint.assertField(name,(modifiers & Opcodes.ACC_PUBLIC) != 0,(modifiers & Opcodes.ACC_STATIC) != 0,signature != null);
-  return new ValidatingFieldVisitor(super.visitField(modifiers,name,descriptor,signature,defaultValue));
+  if (defaultValue != null) {
+    if ((modifiers & Opcodes.ACC_STATIC) == 0) {
+      throw new IllegalStateException("Cannot define a default value for non-static field " + name);
+    }
+    Class<?> type;
+switch (descriptor.charAt(0)) {
+case 'Z':
+case 'B':
+case 'C':
+case 'S':
+case 'I':
+      type=Integer.class;
+    break;
+case 'J':
+  type=Long.class;
+break;
+case 'F':
+type=Float.class;
+break;
+case 'D':
+type=Double.class;
+break;
+default :
+if (!descriptor.equals(STRING_DESCRIPTOR)) {
+throw new IllegalStateException("Cannot define a default value for type of field " + name);
+}
+type=String.class;
+}
+if (!type.isInstance(defaultValue)) {
+throw new IllegalStateException("Field " + name + " defines an incompatible default value "+ defaultValue);
+}
+ else if (type == Integer.class) {
+int minimum, maximum;
+switch (descriptor.charAt(0)) {
+case 'Z':
+minimum=0;
+maximum=1;
+break;
+case 'B':
+minimum=Byte.MIN_VALUE;
+maximum=Byte.MAX_VALUE;
+break;
+case 'C':
+minimum=Character.MIN_VALUE;
+maximum=Character.MAX_VALUE;
+break;
+case 'S':
+minimum=Short.MIN_VALUE;
+maximum=Short.MAX_VALUE;
+break;
+default :
+minimum=Integer.MIN_VALUE;
+maximum=Integer.MAX_VALUE;
+}
+int value=(Integer)defaultValue;
+if (value < minimum || value > maximum) {
+throw new IllegalStateException("Field " + name + " defines an incompatible default value "+ defaultValue);
+}
+}
+}
+constraint.assertField(name,(modifiers & Opcodes.ACC_PUBLIC) != 0,(modifiers & Opcodes.ACC_STATIC) != 0,signature != null);
+return new ValidatingFieldVisitor(super.visitField(modifiers,name,descriptor,signature,defaultValue));
 }

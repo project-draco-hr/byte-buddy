@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().subclass(Object.class).defineField(FOO,Object.class,Ownership.STATIC).value(FOO).make();
+}
