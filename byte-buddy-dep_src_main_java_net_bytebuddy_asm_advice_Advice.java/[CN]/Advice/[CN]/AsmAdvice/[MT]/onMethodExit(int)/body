@@ -17,5 +17,5 @@ break;
 default :
 throw new IllegalStateException("Unexpected termination opcode: " + opcode);
 }
-classReader.accept(new CodeInliner(methodExit,stackIncrement),ClassReader.SKIP_DEBUG);
+classReader.accept(new CodeCopier(methodExit,stackIncrement),ClassReader.SKIP_DEBUG);
 }
