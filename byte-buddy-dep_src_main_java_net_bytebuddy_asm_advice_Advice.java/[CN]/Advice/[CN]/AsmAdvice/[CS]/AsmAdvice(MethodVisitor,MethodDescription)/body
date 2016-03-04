@@ -1,5 +1,5 @@
 {
-  super(Opcodes.ASM5,methodVisitor,methodDescription.getActualModifiers(),methodDescription.getInternalName(),methodDescription.getDescriptor());
+  super(Opcodes.ASM5,methodVisitor);
   classReader=new ClassReader(binaryRepresentation);
   this.instrumentedMethod=methodDescription;
 }

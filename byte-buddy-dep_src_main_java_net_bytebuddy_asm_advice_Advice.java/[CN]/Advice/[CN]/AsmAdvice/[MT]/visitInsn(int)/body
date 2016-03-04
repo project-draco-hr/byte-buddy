@@ -1,0 +1,18 @@
+{
+switch (opcode) {
+case Opcodes.RETURN:
+    classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
+  break;
+case Opcodes.IRETURN:
+case Opcodes.FRETURN:
+case Opcodes.ARETURN:
+case Opcodes.ATHROW:
+classReader.accept(new CodeCopier(methodExit,1),ClassReader.SKIP_DEBUG);
+break;
+case Opcodes.DRETURN:
+case Opcodes.LRETURN:
+classReader.accept(new CodeCopier(methodExit,2),ClassReader.SKIP_DEBUG);
+break;
+}
+super.visitInsn(opcode);
+}
