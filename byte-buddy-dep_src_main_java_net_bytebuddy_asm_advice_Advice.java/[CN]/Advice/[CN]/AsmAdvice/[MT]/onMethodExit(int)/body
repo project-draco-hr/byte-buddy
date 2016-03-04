@@ -15,7 +15,7 @@ case Opcodes.LRETURN:
 stackIncrement=2;
 break;
 default :
-throw new IllegalStateException("Unexpected opcode: " + opcode);
+throw new IllegalStateException("Unexpected termination opcode: " + opcode);
 }
-new ClassReader(binaryRepresentation).accept(new CodeInliner(methodExit,stackIncrement),ClassReader.SKIP_DEBUG);
+classReader.accept(new CodeInliner(methodExit,stackIncrement),ClassReader.SKIP_DEBUG);
 }

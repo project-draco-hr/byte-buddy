@@ -1,0 +1,4 @@
+{
+  Class<?> type=new ByteBuddy().redefine(Sample.class).visit(new AsmVisitorWrapper.ForDeclaredMethods().method(named(BAR),Advice.to(ArgumentAdvice.class))).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethod(BAR,String.class).invoke(type.newInstance(),BAR),is((Object)BAR));
+}

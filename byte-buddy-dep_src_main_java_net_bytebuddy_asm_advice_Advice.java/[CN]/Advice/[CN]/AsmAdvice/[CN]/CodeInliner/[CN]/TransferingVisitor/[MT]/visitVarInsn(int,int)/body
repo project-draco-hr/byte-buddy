@@ -1,0 +1,15 @@
+{
+  for (  ParameterDescription parameter : inlinedMethod.getParameters()) {
+    int parameterOffset=parameter.getOffset();
+    if (parameterOffset == variableOffset) {
+      AnnotationDescription.Loadable<Argument> argument=parameter.getDeclaredAnnotations().ofType(Argument.class);
+      int instrumentedIndex=argument == null ? parameter.getIndex() : argument.loadSilent().value();
+      ParameterList<?> instrumentedParameters=instrumentedMethod.getParameters();
+      if (instrumentedIndex > instrumentedParameters.size()) {
+        throw new IllegalStateException(instrumentedMethod + " does not define a parameter with index " + instrumentedIndex);
+      }
+      variableOffset=instrumentedParameters.get(instrumentedIndex).getOffset();
+    }
+  }
+  super.visitVarInsn(opcode,variableOffset);
+}
