@@ -1,0 +1,16 @@
+{
+  try {
+    Map<String,MethodDescription> methodEnter=new HashMap<String,MethodDescription>(), methodExit=new HashMap<String,MethodDescription>();
+    for (    MethodDescription methodDescription : typeDescription.getDeclaredMethods()) {
+      considerAdvice(OnMethodEnter.class,methodEnter,methodDescription);
+      considerAdvice(OnMethodExit.class,methodExit,methodDescription);
+    }
+    if (methodEnter.isEmpty() && methodExit.isEmpty()) {
+      throw new IllegalArgumentException("No advice defined by " + typeDescription);
+    }
+    return new Advice(methodEnter,methodExit,classFileLocator.locate(typeDescription.getName()).resolve());
+  }
+ catch (  IOException exception) {
+    throw new IllegalStateException("Error reading class file of " + typeDescription,exception);
+  }
+}

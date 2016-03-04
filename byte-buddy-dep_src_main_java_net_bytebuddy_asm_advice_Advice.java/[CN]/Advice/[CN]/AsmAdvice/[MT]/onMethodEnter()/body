@@ -1,0 +1,3 @@
+{
+  new ClassReader(binaryRepresentation).accept(new CodeInliner(methodEnter),ClassReader.SKIP_DEBUG);
+}

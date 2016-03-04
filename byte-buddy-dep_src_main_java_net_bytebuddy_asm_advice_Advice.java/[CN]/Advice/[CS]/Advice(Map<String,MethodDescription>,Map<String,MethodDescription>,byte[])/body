@@ -1,0 +1,5 @@
+{
+  this.methodEnter=methodEnter;
+  this.methodExit=methodExit;
+  this.binaryRepresentation=binaryRepresentation;
+}

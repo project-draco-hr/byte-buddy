@@ -1,0 +1,4 @@
+int typeRef
+TypePath typePath
+String descriptor
+boolean visible
