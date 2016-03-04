@@ -1,15 +1,19 @@
 {
-  for (  ParameterDescription parameter : inlinedMethod.getParameters()) {
-    int parameterOffset=parameter.getOffset();
-    if (parameterOffset == variableOffset) {
-      AnnotationDescription.Loadable<Argument> argument=parameter.getDeclaredAnnotations().ofType(Argument.class);
-      int instrumentedIndex=argument == null ? parameter.getIndex() : argument.loadSilent().value();
-      ParameterList<?> instrumentedParameters=instrumentedMethod.getParameters();
-      if (instrumentedIndex > instrumentedParameters.size()) {
-        throw new IllegalStateException(instrumentedMethod + " does not define a parameter with index " + instrumentedIndex);
-      }
-      variableOffset=instrumentedParameters.get(instrumentedIndex).getOffset();
+  ParameterDescription parameterDescription=parameters.get(offset);
+  if (parameterDescription != null) {
+    AnnotationDescription.Loadable<Argument> argument=parameterDescription.getDeclaredAnnotations().ofType(Argument.class);
+    int targetIndex=argument == null ? parameterDescription.getIndex() : argument.loadSilent().value();
+    ParameterList<?> targetParameters=instrumentedMethod.getParameters();
+    if (targetIndex >= targetParameters.size()) {
+      throw new IllegalStateException(instrumentedMethod + " does not define a parameter with index " + targetIndex);
     }
+ else     if (!targetParameters.get(targetIndex).getType().asErasure().isAssignableTo(parameterDescription.getType().asErasure())) {
+      throw new IllegalStateException("Cannot assign " + targetParameters.get(targetIndex) + " to "+ parameterDescription);
+    }
+    offset=targetParameters.get(targetIndex).getOffset();
   }
-  super.visitVarInsn(opcode,variableOffset);
+ else {
+    offset+=offsetCorrection;
+  }
+  super.visitVarInsn(opcode,offset);
 }

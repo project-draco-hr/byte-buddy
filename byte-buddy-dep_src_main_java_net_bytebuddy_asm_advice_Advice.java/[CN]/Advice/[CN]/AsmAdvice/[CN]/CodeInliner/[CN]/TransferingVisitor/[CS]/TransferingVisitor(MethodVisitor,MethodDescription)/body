@@ -1,4 +1,9 @@
 {
   super(Opcodes.ASM5,methodVisitor);
-  this.inlinedMethod=inlinedMethod;
+  parameters=new HashMap<Integer,ParameterDescription>();
+  for (  ParameterDescription parameter : inlinedMethod.getParameters()) {
+    parameters.put(parameter.getOffset(),parameter);
+  }
+  offsetCorrection=instrumentedMethod.getStackSize() - inlinedMethod.getStackSize();
+  endOfMethod=new Label();
 }
