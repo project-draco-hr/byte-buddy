@@ -1,4 +1,3 @@
 {
-  super(Opcodes.ASM5);
-  this.methods=methods;
+  this(methods,0);
 }

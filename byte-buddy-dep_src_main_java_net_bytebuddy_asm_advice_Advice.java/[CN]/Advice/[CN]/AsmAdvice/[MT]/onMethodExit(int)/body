@@ -1,3 +1,21 @@
 {
-  new ClassReader(binaryRepresentation).accept(new CodeInliner(methodExit),ClassReader.SKIP_DEBUG);
+  int stackIncrement;
+switch (opcode) {
+case Opcodes.RETURN:
+    stackIncrement=0;
+  break;
+case Opcodes.ARETURN:
+case Opcodes.ATHROW:
+case Opcodes.IRETURN:
+case Opcodes.FRETURN:
+stackIncrement=1;
+break;
+case Opcodes.DRETURN:
+case Opcodes.LRETURN:
+stackIncrement=2;
+break;
+default :
+throw new IllegalStateException("Unexpected opcode: " + opcode);
+}
+new ClassReader(binaryRepresentation).accept(new CodeInliner(methodExit,stackIncrement),ClassReader.SKIP_DEBUG);
 }

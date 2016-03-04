@@ -1,0 +1,17 @@
+{
+switch (opcode) {
+case Opcodes.RETURN:
+    break;
+case Opcodes.IRETURN:
+case Opcodes.FRETURN:
+case Opcodes.ARETURN:
+  super.visitInsn(Opcodes.POP);
+break;
+case Opcodes.LRETURN:
+case Opcodes.DRETURN:
+super.visitInsn(Opcodes.POP2);
+break;
+default :
+super.visitInsn(opcode);
+}
+}

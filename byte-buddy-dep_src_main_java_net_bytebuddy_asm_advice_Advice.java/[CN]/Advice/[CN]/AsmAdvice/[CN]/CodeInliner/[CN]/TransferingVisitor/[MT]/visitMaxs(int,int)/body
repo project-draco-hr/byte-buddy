@@ -1,2 +1,4 @@
 {
+  AsmAdvice.this.maxStack=maxStack + stackIncrement;
+  AsmAdvice.this.maxLocals=maxLocals;
 }

@@ -1,4 +1,4 @@
 {
   MethodDescription methodDescription=methods.get(internalName + descriptor);
-  return methodDescription == null ? IGNORE_METHOD : new TransferingVisitor(AsmAdvice.this);
+  return methodDescription == null ? IGNORE_METHOD : new TransferingVisitor(AsmAdvice.this.mv);
 }
