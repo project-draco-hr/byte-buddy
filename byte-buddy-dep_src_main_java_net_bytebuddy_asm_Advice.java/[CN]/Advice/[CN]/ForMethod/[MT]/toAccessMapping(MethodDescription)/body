@@ -7,10 +7,10 @@
       }
       accessMappings.put(parameter.getOffset(),AccessMapping.ForMethodArgument.ofThisReference());
     }
- else     if (parameter.getDeclaredAnnotations().isAnnotationPresent(EntranceValue.class)) {
+ else     if (parameter.getDeclaredAnnotations().isAnnotationPresent(Entry.class)) {
       accessMappings.put(parameter.getOffset(),new AccessMapping.ForEntranceValue(instrumentedMethod));
     }
- else     if (parameter.getDeclaredAnnotations().isAnnotationPresent(ReturnValue.class)) {
+ else     if (parameter.getDeclaredAnnotations().isAnnotationPresent(Return.class)) {
       accessMappings.put(parameter.getOffset(),new AccessMapping.ForReturnValue(instrumentedMethod));
     }
  else {

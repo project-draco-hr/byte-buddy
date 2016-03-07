@@ -4,7 +4,7 @@
   }
   boolean valueParameterExpected=dispatcher.isActive() && !dispatcher.getInlinedMethod().getReturnType().asErasure().represents(void.class);
   for (  ParameterDescription parameter : methodDescription.getParameters()) {
-    if (parameter.getDeclaredAnnotations().isAnnotationPresent(EntranceValue.class)) {
+    if (parameter.getDeclaredAnnotations().isAnnotationPresent(Entry.class)) {
       if (valueParameterExpected) {
         if (!dispatcher.getInlinedMethod().getReturnType().asErasure().isAssignableTo(parameter.getType().asErasure())) {
           throw new IllegalStateException();
