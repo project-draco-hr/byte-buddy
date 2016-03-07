@@ -1,0 +1,11 @@
+{
+  if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(Thrown.class)) {
+    if (!parameterDescription.getType().asErasure().isAssignableFrom(Throwable.class)) {
+      throw new IllegalStateException("Throwable must be of subtype Throwable for " + parameterDescription);
+    }
+    return this;
+  }
+ else {
+    return UNDEFINED;
+  }
+}

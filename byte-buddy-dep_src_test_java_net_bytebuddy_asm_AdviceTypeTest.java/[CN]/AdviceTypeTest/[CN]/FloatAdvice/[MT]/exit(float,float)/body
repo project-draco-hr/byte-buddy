@@ -1,7 +1,0 @@
-{
-  if (result != (exception ? 0 : VALUE) || enter != VALUE * 2) {
-    throw new AssertionError();
-  }
-  exit++;
-  return VALUE;
-}

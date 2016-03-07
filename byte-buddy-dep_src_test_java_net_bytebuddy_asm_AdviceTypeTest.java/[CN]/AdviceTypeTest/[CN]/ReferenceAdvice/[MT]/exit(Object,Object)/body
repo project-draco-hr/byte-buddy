@@ -1,7 +1,0 @@
-{
-  if ((exception ? result != null : !result.equals(FOO)) || !enter.equals(FOO + BAR)) {
-    throw new AssertionError();
-  }
-  exit++;
-  return FOO;
-}
