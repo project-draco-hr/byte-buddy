@@ -23,8 +23,11 @@ super.visitInsn(Opcodes.DUP2);
 super.visitVarInsn(Opcodes.LSTORE,instrumentedMethod.getStackSize() + methodEnter.getValueOffset());
 classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
 break;
-case Opcodes.ARETURN:
 case Opcodes.ATHROW:
+if (methodExit.isSkipException()) {
+break;
+}
+case Opcodes.ARETURN:
 super.visitInsn(Opcodes.DUP);
 super.visitVarInsn(Opcodes.ASTORE,instrumentedMethod.getStackSize() + methodEnter.getValueOffset());
 classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);

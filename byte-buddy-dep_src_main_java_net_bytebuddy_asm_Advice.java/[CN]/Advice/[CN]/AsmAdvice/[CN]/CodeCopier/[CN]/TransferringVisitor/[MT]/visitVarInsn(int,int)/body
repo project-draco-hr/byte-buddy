@@ -4,6 +4,6 @@
     accessMapping.apply(mv,opcode);
   }
  else {
-    super.visitVarInsn(opcode,offset + offsetCorrection);
+    super.visitVarInsn(opcode,offset + this.offset);
   }
 }

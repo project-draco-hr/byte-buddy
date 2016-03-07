@@ -1,7 +1,6 @@
 {
-  super(Opcodes.ASM5,methodVisitor);
-  accessMappings=new HashMap<Integer,AccessMapping>();
-  for (  ParameterDescription parameter : inlinedMethod.getParameters()) {
+  Map<Integer,AccessMapping> accessMappings=new HashMap<Integer,AccessMapping>();
+  for (  ParameterDescription parameter : methodDescription.getParameters()) {
     if (parameter.getDeclaredAnnotations().isAnnotationPresent(This.class)) {
       if (instrumentedMethod.isStatic()) {
         throw new IllegalStateException("Static methods do not imply a this reference for " + parameter);
@@ -26,6 +25,5 @@
       accessMappings.put(parameter.getOffset(),new AccessMapping.ForMethodArgument(instrumentedMethod.getParameters().get(index).getOffset()));
     }
   }
-  offsetCorrection=instrumentedMethod.getStackSize() - inlinedMethod.getStackSize();
-  endOfMethod=new Label();
+  return accessMappings;
 }
