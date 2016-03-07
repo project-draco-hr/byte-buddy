@@ -1,5 +1,5 @@
 {
-  if ((exception ? result != null : !result.equals(FOO)) || !enter.equals(FOO + BAR) || (exception ? throwable instanceof RuntimeException : throwable == null)) {
+  if ((exception ? result != null : !result.equals(FOO)) || !enter.equals(FOO + BAR) || !(exception ? throwable instanceof RuntimeException : throwable == null)) {
     throw new AssertionError();
   }
   exit++;

@@ -1,5 +1,5 @@
 {
-  if (result != (exception ? 0 : VALUE) || enter != VALUE * 2 || (exception ? throwable instanceof RuntimeException : throwable == null)) {
+  if (result != (exception ? 0 : VALUE) || enter != VALUE * 2 || !(exception ? throwable instanceof RuntimeException : throwable == null)) {
     throw new AssertionError();
   }
   exit++;

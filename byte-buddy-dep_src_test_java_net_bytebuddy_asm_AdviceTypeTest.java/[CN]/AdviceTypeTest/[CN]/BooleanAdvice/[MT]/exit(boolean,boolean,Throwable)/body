@@ -1,5 +1,5 @@
 {
-  if (result == exception || !enter || (exception ? throwable instanceof RuntimeException : throwable == null)) {
+  if (result == exception || !enter || !(exception ? throwable instanceof RuntimeException : throwable == null)) {
     throw new AssertionError();
   }
   exit++;
