@@ -1,10 +1,10 @@
 {
   if (methodDescription.getDeclaredAnnotations().isAnnotationPresent(annotation)) {
     if (dispatcher.isAlive()) {
-      throw new IllegalArgumentException("Duplicate advice for " + dispatcher + " and "+ methodDescription);
+      throw new IllegalStateException("Duplicate advice for " + dispatcher + " and "+ methodDescription);
     }
  else     if (!methodDescription.isStatic()) {
-      throw new IllegalArgumentException("Advice for " + methodDescription + " is not static");
+      throw new IllegalStateException("Advice for " + methodDescription + " is not static");
     }
     return new Dispatcher.ForMethod(methodDescription);
   }

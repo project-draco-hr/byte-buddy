@@ -1,0 +1,5 @@
+{
+  topValue(store);
+  onMethodExit();
+  topValue(load);
+}

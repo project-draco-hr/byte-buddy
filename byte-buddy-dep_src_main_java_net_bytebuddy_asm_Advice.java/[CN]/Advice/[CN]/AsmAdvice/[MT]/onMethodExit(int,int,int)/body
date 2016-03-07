@@ -1,6 +1,0 @@
-{
-  mv.visitInsn(duplication);
-  mv.visitVarInsn(store,instrumentedMethod.getStackSize() + methodEnter.getEnterType().getStackSize().getSize());
-  onMethodExit();
-  mv.visitVarInsn(load,instrumentedMethod.getStackSize() + methodEnter.getEnterType().getStackSize().getSize());
-}

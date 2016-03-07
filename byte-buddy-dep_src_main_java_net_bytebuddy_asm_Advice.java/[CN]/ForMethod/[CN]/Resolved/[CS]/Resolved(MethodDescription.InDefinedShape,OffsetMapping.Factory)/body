@@ -10,7 +10,7 @@
           offsetMapping=possible;
         }
  else {
-          throw new IllegalStateException();
+          throw new IllegalStateException(parameterDescription + " is bound to both " + possible+ " and "+ offsetMapping);
         }
       }
     }

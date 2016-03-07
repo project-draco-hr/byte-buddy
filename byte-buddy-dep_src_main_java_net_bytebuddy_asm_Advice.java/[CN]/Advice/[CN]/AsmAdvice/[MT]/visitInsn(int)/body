@@ -4,16 +4,16 @@ case Opcodes.RETURN:
     onMethodExit();
   break;
 case Opcodes.IRETURN:
-onMethodExit(Opcodes.DUP,Opcodes.ISTORE,Opcodes.ILOAD);
+onMethodExit(Opcodes.ISTORE,Opcodes.ILOAD);
 break;
 case Opcodes.FRETURN:
-onMethodExit(Opcodes.DUP,Opcodes.FSTORE,Opcodes.FLOAD);
+onMethodExit(Opcodes.FSTORE,Opcodes.FLOAD);
 break;
 case Opcodes.DRETURN:
-onMethodExit(Opcodes.DUP2,Opcodes.DSTORE,Opcodes.DLOAD);
+onMethodExit(Opcodes.DSTORE,Opcodes.DLOAD);
 break;
 case Opcodes.LRETURN:
-onMethodExit(Opcodes.DUP2,Opcodes.LSTORE,Opcodes.LLOAD);
+onMethodExit(Opcodes.LSTORE,Opcodes.LLOAD);
 break;
 case Opcodes.ATHROW:
 if (methodExit.isSkipException()) {
@@ -21,28 +21,28 @@ break;
 }
  else if (instrumentedMethod.getReturnType().represents(boolean.class) || instrumentedMethod.getReturnType().represents(byte.class) || instrumentedMethod.getReturnType().represents(short.class)|| instrumentedMethod.getReturnType().represents(char.class)|| instrumentedMethod.getReturnType().represents(int.class)) {
 mv.visitInsn(Opcodes.ICONST_0);
-mv.visitVarInsn(Opcodes.ISTORE,instrumentedMethod.getStackSize() + methodEnter.getEnterType().getStackSize().getSize());
+topValue(Opcodes.ISTORE);
 }
  else if (instrumentedMethod.getReturnType().represents(long.class)) {
 mv.visitInsn(Opcodes.LCONST_0);
-mv.visitVarInsn(Opcodes.LSTORE,instrumentedMethod.getStackSize() + methodEnter.getEnterType().getStackSize().getSize());
+topValue(Opcodes.LSTORE);
 }
  else if (instrumentedMethod.getReturnType().represents(float.class)) {
 mv.visitInsn(Opcodes.FCONST_0);
-mv.visitVarInsn(Opcodes.FSTORE,instrumentedMethod.getStackSize() + methodEnter.getEnterType().getStackSize().getSize());
+topValue(Opcodes.FSTORE);
 }
  else if (instrumentedMethod.getReturnType().represents(double.class)) {
 mv.visitInsn(Opcodes.DCONST_0);
-mv.visitVarInsn(Opcodes.DSTORE,instrumentedMethod.getStackSize() + methodEnter.getEnterType().getStackSize().getSize());
+topValue(Opcodes.DSTORE);
 }
  else if (!instrumentedMethod.getReturnType().represents(void.class)) {
 mv.visitInsn(Opcodes.ACONST_NULL);
-mv.visitVarInsn(Opcodes.ASTORE,instrumentedMethod.getStackSize() + methodEnter.getEnterType().getStackSize().getSize());
+topValue(Opcodes.ASTORE);
 }
 onMethodExit();
 break;
 case Opcodes.ARETURN:
-onMethodExit(Opcodes.DUP,Opcodes.ASTORE,Opcodes.ALOAD);
+onMethodExit(Opcodes.ASTORE,Opcodes.ALOAD);
 break;
 }
 mv.visitInsn(opcode);
