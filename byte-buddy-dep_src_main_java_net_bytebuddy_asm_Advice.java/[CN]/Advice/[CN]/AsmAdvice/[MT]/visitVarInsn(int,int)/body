@@ -1,6 +1,3 @@
 {
-  if (offset >= instrumentedMethod.getStackSize()) {
-    offset+=methodEnter.getValueOffset() + instrumentedMethod.getReturnType().asErasure().getStackSize().getSize();
-  }
-  super.visitVarInsn(opcode,offset);
+  super.visitVarInsn(opcode,offset < instrumentedMethod.getStackSize() ? offset : offset + methodEnter.getAdditionalSize().getSize());
 }

@@ -1,3 +1,0 @@
-{
-  return methodDescription.getInternalName().equals(internalName) && methodDescription.getDescriptor().equals(descriptor);
-}

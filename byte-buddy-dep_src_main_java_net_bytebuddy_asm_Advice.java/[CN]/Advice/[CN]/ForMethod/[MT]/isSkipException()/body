@@ -1,3 +1,0 @@
-{
-  return !methodDescription.getDeclaredAnnotations().ofType(OnMethodExit.class).loadSilent().onException();
-}

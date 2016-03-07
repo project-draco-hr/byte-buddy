@@ -1,5 +1,0 @@
-{
-  super(Opcodes.ASM5,methodVisitor);
-  classReader=new ClassReader(binaryRepresentation);
-  this.instrumentedMethod=methodDescription;
-}

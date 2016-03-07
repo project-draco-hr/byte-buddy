@@ -1,0 +1,3 @@
+{
+  return offset + instrumentedMethod.getReturnType().getStackSize().getSize() + additionalSize.getSize();
+}

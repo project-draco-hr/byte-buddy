@@ -1,6 +1,6 @@
 {
   if (methodDescription.getDeclaredAnnotations().isAnnotationPresent(annotation)) {
-    if (dispatcher.isActive()) {
+    if (dispatcher.isAlive()) {
       throw new IllegalArgumentException("Duplicate advice for " + dispatcher + " and "+ methodDescription);
     }
  else     if (!methodDescription.isStatic()) {

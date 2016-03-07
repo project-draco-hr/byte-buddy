@@ -1,3 +1,3 @@
 {
-  return dispatcher.isInlined(internalName,descriptor) ? new TransferringVisitor(dispatcher.getInlinedMethod()) : IGNORE_METHOD;
+  return dispatcher.apply(internalName,descriptor,AsmAdvice.this.mv,instrumentedMethod);
 }

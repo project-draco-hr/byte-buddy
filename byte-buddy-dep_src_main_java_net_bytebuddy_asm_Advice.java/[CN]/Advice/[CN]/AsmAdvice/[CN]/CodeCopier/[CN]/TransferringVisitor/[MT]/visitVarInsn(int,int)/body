@@ -1,9 +1,0 @@
-{
-  AccessMapping accessMapping=accessMappings.get(offset);
-  if (accessMapping != null) {
-    accessMapping.apply(mv,opcode);
-  }
- else {
-    super.visitVarInsn(opcode,offset + this.offset);
-  }
-}

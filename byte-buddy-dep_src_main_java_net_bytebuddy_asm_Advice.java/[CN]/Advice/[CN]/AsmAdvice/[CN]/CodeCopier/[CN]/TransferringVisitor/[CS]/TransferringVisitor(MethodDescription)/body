@@ -1,6 +1,0 @@
-{
-  super(Opcodes.ASM5,AsmAdvice.this.mv);
-  accessMappings=dispatcher.toAccessMapping(instrumentedMethod);
-  offset=instrumentedMethod.getStackSize() + instrumentedMethod.getReturnType().getStackSize().getSize() - inlinedMethod.getStackSize();
-  endOfMethod=new Label();
-}

@@ -1,0 +1,25 @@
+{
+switch (opcode) {
+case Opcodes.RETURN:
+    break;
+case Opcodes.IRETURN:
+  mv.visitVarInsn(Opcodes.ISTORE,instrumentedMethod.getStackSize());
+break;
+case Opcodes.LRETURN:
+mv.visitVarInsn(Opcodes.LSTORE,instrumentedMethod.getStackSize());
+break;
+case Opcodes.ARETURN:
+mv.visitVarInsn(Opcodes.ASTORE,instrumentedMethod.getStackSize());
+break;
+case Opcodes.FRETURN:
+mv.visitVarInsn(Opcodes.FSTORE,instrumentedMethod.getStackSize());
+break;
+case Opcodes.DRETURN:
+mv.visitVarInsn(Opcodes.DSTORE,instrumentedMethod.getStackSize());
+break;
+default :
+mv.visitInsn(opcode);
+return;
+}
+mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);
+}

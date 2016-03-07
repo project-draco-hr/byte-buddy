@@ -1,0 +1,4 @@
+MethodVisitor methodVisitor
+MethodDescription.InDefinedShape instrumentedMethod
+MethodDescription.InDefinedShape inlinedMethod
+Map<Integer,Integer> offsetTranslations
