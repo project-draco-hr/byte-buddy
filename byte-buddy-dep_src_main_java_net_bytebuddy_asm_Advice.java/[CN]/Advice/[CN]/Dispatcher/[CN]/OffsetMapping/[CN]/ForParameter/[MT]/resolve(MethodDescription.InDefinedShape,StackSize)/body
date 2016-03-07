@@ -1,3 +1,10 @@
 {
-  return instrumentedMethod.getParameters().get(index).getOffset();
+  ParameterList<?> parameters=instrumentedMethod.getParameters();
+  if (parameters.size() <= index) {
+    throw new IllegalStateException(instrumentedMethod + " does not define an index " + index);
+  }
+ else   if (!parameters.get(index).getType().asErasure().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Cannot assign " + parameters.get(index) + " to "+ targetType);
+  }
+  return parameters.get(index).getOffset();
 }

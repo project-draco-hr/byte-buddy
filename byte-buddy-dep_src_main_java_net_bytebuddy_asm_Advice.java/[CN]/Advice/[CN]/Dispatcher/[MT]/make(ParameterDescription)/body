@@ -1,3 +1,0 @@
-{
-  return parameterDescription.getDeclaredAnnotations().isAnnotationPresent(This.class) ? this : UNDEFINED;
-}

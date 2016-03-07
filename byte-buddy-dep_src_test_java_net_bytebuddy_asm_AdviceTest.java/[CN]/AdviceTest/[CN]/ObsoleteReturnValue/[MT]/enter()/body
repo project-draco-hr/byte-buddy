@@ -1,3 +1,4 @@
 {
-  throw new AssertionError();
+  Sample.enter++;
+  return VALUE;
 }

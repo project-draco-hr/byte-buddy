@@ -1,4 +1,0 @@
-{
-  super(inlinedMethod,OffsetMapping.ForParameter.Factory.INSTANCE,OffsetMapping.ForThisReference.INSTANCE,OffsetMapping.ForEnterMethodValue.INSTANCE,OffsetMapping.ForReturnValue.INSTANCE);
-  this.additionalSize=additionalSize;
-}

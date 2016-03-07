@@ -1,0 +1,9 @@
+{
+  if (instrumentedMethod.isStatic()) {
+    throw new IllegalStateException("Cannot map this reference for static method " + instrumentedMethod);
+  }
+ else   if (!instrumentedMethod.getDeclaringType().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Cannot assign this reference of " + instrumentedMethod + " to "+ targetType);
+  }
+  return 0;
+}

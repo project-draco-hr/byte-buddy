@@ -1,0 +1,3 @@
+{
+  return parameterDescription.getDeclaredAnnotations().isAnnotationPresent(This.class) ? new ForThisReference(parameterDescription.getType().asErasure()) : UNDEFINED;
+}

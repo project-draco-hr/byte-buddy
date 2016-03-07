@@ -1,0 +1,4 @@
+{
+  super(inlinedMethod,OffsetMapping.ForParameter.Factory.INSTANCE,OffsetMapping.ForThisReference.Factory.INSTANCE,new OffsetMapping.ForEnterValue.Factory(enterType),OffsetMapping.ForReturnValue.Factory.INSTANCE);
+  additionalSize=enterType.getStackSize();
+}

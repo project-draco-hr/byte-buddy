@@ -14,6 +14,6 @@
         }
       }
     }
-    offsetMappings.put(parameterDescription.getOffset(),offsetMapping == null ? new OffsetMapping.ForParameter(parameterDescription.getIndex()) : offsetMapping);
+    offsetMappings.put(parameterDescription.getOffset(),offsetMapping == null ? new OffsetMapping.ForParameter(parameterDescription.getIndex(),parameterDescription.getType().asErasure()) : offsetMapping);
   }
 }
