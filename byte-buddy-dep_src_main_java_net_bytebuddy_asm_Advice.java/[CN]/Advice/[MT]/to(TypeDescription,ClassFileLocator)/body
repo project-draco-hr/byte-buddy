@@ -8,7 +8,7 @@
     if (!methodEnter.isActive() && !methodExit.isActive()) {
       throw new IllegalArgumentException("No advice defined by " + typeDescription);
     }
-    return new Advice(methodEnter,methodExit.bindTo(methodEnter),classFileLocator.locate(typeDescription.getName()).resolve());
+    return new Advice(methodEnter,methodExit.asExitFrom(methodEnter),classFileLocator.locate(typeDescription.getName()).resolve());
   }
  catch (  IOException exception) {
     throw new IllegalStateException("Error reading class file of " + typeDescription,exception);

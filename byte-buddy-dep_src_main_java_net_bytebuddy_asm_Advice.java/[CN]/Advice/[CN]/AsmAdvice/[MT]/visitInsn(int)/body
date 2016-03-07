@@ -1,13 +1,34 @@
 {
 switch (opcode) {
 case Opcodes.RETURN:
+    classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
+  break;
 case Opcodes.IRETURN:
+super.visitInsn(Opcodes.DUP);
+super.visitVarInsn(Opcodes.ISTORE,instrumentedMethod.getStackSize() + methodEnter.getValueOffset());
+classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
+break;
 case Opcodes.FRETURN:
+super.visitInsn(Opcodes.DUP);
+super.visitVarInsn(Opcodes.FSTORE,instrumentedMethod.getStackSize() + methodEnter.getValueOffset());
+classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
+break;
 case Opcodes.DRETURN:
+super.visitInsn(Opcodes.DUP2);
+super.visitVarInsn(Opcodes.DSTORE,instrumentedMethod.getStackSize() + methodEnter.getValueOffset());
+classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
+break;
 case Opcodes.LRETURN:
+super.visitInsn(Opcodes.DUP2);
+super.visitVarInsn(Opcodes.LSTORE,instrumentedMethod.getStackSize() + methodEnter.getValueOffset());
+classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
+break;
 case Opcodes.ARETURN:
 case Opcodes.ATHROW:
-    classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
+super.visitInsn(Opcodes.DUP);
+super.visitVarInsn(Opcodes.ASTORE,instrumentedMethod.getStackSize() + methodEnter.getValueOffset());
+classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
+break;
 }
 super.visitInsn(opcode);
 }

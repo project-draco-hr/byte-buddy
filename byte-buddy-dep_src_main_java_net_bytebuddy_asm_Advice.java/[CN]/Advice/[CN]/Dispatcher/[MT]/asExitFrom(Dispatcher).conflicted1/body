@@ -1,0 +1,6 @@
+{
+  if (!dispatcher.getInlinedMethod().getReturnType().represents(void.class)) {
+    throw new IllegalStateException(dispatcher + " supplies return value that is never read");
+  }
+  return this;
+}

@@ -1,6 +1,0 @@
-{
-  if (!methodEnter.getInlinedMethod().getReturnType().represents(void.class)) {
-    throw new IllegalStateException(methodEnter + " supplies return value that is never read");
-  }
-  return this;
-}

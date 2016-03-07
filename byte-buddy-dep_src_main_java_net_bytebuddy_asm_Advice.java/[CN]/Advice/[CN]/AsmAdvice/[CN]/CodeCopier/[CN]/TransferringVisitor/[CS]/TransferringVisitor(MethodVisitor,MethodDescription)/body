@@ -8,8 +8,11 @@
       }
       accessMappings.put(parameter.getOffset(),AccessMapping.ForMethodArgument.ofThisReference());
     }
- else     if (parameter.getDeclaredAnnotations().isAnnotationPresent(Value.class)) {
-      accessMappings.put(parameter.getOffset(),new AccessMapping.ForValue(instrumentedMethod));
+ else     if (parameter.getDeclaredAnnotations().isAnnotationPresent(EntranceValue.class)) {
+      accessMappings.put(parameter.getOffset(),new AccessMapping.ForEntranceValue(instrumentedMethod));
+    }
+ else     if (parameter.getDeclaredAnnotations().isAnnotationPresent(ReturnValue.class)) {
+      accessMappings.put(parameter.getOffset(),new AccessMapping.ForReturnValue(instrumentedMethod));
     }
  else {
       AnnotationDescription.Loadable<Argument> argument=parameter.getDeclaredAnnotations().ofType(Argument.class);

@@ -1,0 +1,6 @@
+{
+  if (!value.equals(FOO)) {
+    throw new AssertionError();
+  }
+  Sample.exit++;
+}
