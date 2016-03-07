@@ -1,0 +1,5 @@
+{
+  ClassFileLocator classFileLocator=mock(ClassFileLocator.class);
+  when(classFileLocator.locate(TrivialAdvice.class.getName())).thenThrow(new IOException());
+  Advice.to(TrivialAdvice.class,classFileLocator);
+}
