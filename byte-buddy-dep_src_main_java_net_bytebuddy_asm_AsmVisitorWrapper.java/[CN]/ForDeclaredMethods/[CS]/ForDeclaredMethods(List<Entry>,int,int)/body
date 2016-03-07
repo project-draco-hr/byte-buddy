@@ -1,0 +1,5 @@
+{
+  this.entries=entries;
+  this.writerFlags=writerFlags;
+  this.readerFlags=readerFlags;
+}

@@ -1,3 +1,0 @@
-{
-  super.visitMaxs(Math.max(maxStack,this.maxStack),Math.max(maxLocals,this.maxLocals));
-}

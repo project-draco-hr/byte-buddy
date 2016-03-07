@@ -1,3 +1,3 @@
 {
-  this(Collections.<Entry>emptyList());
+  this(Collections.<Entry>emptyList(),NO_FLAGS,NO_FLAGS);
 }

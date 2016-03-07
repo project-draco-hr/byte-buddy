@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && entries.equals(((ForDeclaredMethods)other).entries);
+  return this == other || !(other == null || getClass() != other.getClass()) && writerFlags == ((ForDeclaredMethods)other).writerFlags && readerFlags == ((ForDeclaredMethods)other).readerFlags && entries.equals(((ForDeclaredMethods)other).entries);
 }

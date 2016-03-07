@@ -1,0 +1,3 @@
+{
+  assertThat(new AsmVisitorWrapper.ForDeclaredMethods().readerFlags(FLAGS).mergeReader(0),is(FLAGS));
+}

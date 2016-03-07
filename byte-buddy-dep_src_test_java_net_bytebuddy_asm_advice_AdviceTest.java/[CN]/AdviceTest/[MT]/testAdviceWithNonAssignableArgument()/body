@@ -1,3 +1,0 @@
-{
-  new ByteBuddy().redefine(Sample.class).visit(new AsmVisitorWrapper.ForDeclaredMethods().method(named(BAR),Advice.to(IllegalAdvice.class))).make();
-}

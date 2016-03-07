@@ -1,0 +1,3 @@
+List<Entry> entries
+int writerFlags
+int readerFlags

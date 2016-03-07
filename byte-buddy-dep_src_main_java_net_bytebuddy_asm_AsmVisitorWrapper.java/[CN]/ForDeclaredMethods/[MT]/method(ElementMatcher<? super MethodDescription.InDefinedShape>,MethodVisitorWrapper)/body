@@ -1,3 +1,3 @@
 {
-  return new ForDeclaredMethods(CompoundList.of(entries,new Entry(matcher,methodVisitorWrapper)));
+  return new ForDeclaredMethods(CompoundList.of(entries,new Entry(matcher,methodVisitorWrapper)),writerFlags,readerFlags);
 }
