@@ -1,3 +1,6 @@
 {
+  if (!argument.equals(BAR)) {
+    throw new AssertionError();
+  }
   Sample.exit++;
 }

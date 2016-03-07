@@ -1,19 +1,9 @@
 {
-  ParameterDescription parameterDescription=parameters.get(offset);
-  if (parameterDescription != null) {
-    AnnotationDescription.Loadable<Argument> argument=parameterDescription.getDeclaredAnnotations().ofType(Argument.class);
-    int targetIndex=argument == null ? parameterDescription.getIndex() : argument.loadSilent().value();
-    ParameterList<?> targetParameters=instrumentedMethod.getParameters();
-    if (targetIndex >= targetParameters.size()) {
-      throw new IllegalStateException(instrumentedMethod + " does not define a parameter with index " + targetIndex);
-    }
- else     if (!targetParameters.get(targetIndex).getType().asErasure().isAssignableTo(parameterDescription.getType().asErasure())) {
-      throw new IllegalStateException("Cannot assign " + targetParameters.get(targetIndex) + " to "+ parameterDescription);
-    }
-    offset=targetParameters.get(targetIndex).getOffset();
+  AccessMapping accessMapping=accessMappings.get(offset);
+  if (accessMapping != null) {
+    accessMapping.apply(mv,opcode);
   }
  else {
-    offset+=offsetCorrection;
+    super.visitVarInsn(opcode,offset + offsetCorrection);
   }
-  super.visitVarInsn(opcode,offset);
 }

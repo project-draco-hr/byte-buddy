@@ -1,3 +1,0 @@
-Map<String,MethodDescription> methodEnter
-Map<String,MethodDescription> methodExit
-byte[] binaryRepresentation

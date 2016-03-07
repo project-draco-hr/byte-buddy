@@ -1,14 +1,14 @@
 {
   try {
-    Map<String,MethodDescription> methodEnter=new HashMap<String,MethodDescription>(), methodExit=new HashMap<String,MethodDescription>();
-    for (    MethodDescription methodDescription : typeDescription.getDeclaredMethods()) {
-      considerAdvice(OnMethodEnter.class,methodEnter,methodDescription);
-      considerAdvice(OnMethodExit.class,methodExit,methodDescription);
+    Dispatcher methodEnter=Dispatcher.Inactive.INSTANCE, methodExit=Dispatcher.Inactive.INSTANCE;
+    for (    MethodDescription.InDefinedShape methodDescription : typeDescription.getDeclaredMethods()) {
+      methodEnter=resolve(OnMethodEnter.class,methodEnter,methodDescription);
+      methodExit=resolve(OnMethodExit.class,methodExit,methodDescription);
     }
-    if (methodEnter.isEmpty() && methodExit.isEmpty()) {
+    if (!methodEnter.isActive() && !methodExit.isActive()) {
       throw new IllegalArgumentException("No advice defined by " + typeDescription);
     }
-    return new Advice(methodEnter,methodExit,classFileLocator.locate(typeDescription.getName()).resolve());
+    return new Advice(methodEnter,methodExit.bindTo(methodEnter),classFileLocator.locate(typeDescription.getName()).resolve());
   }
  catch (  IOException exception) {
     throw new IllegalStateException("Error reading class file of " + typeDescription,exception);

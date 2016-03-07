@@ -8,9 +8,6 @@ case Opcodes.LRETURN:
 case Opcodes.ARETURN:
 case Opcodes.ATHROW:
     classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
-  classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
-classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
-break;
 }
 super.visitInsn(opcode);
 }

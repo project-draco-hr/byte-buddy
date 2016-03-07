@@ -1,0 +1,6 @@
+{
+  if (value != VALUE) {
+    throw new AssertionError();
+  }
+  Sample.exit++;
+}

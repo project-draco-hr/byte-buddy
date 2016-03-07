@@ -1,8 +1,0 @@
-{
-  if (methodDescription.getDeclaredAnnotations().isAnnotationPresent(annotation)) {
-    if (!methodDescription.isStatic()) {
-      throw new IllegalStateException("Advice is not static: " + methodDescription);
-    }
-    methods.put(methodDescription.getInternalName() + methodDescription.getDescriptor(),methodDescription);
-  }
-}

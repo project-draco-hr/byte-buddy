@@ -1,4 +1,3 @@
 {
-  MethodDescription methodDescription=methods.get(internalName + descriptor);
-  return methodDescription == null ? IGNORE_METHOD : new TransferringVisitor(AsmAdvice.this.mv,methodDescription);
+  return dispatcher.isInlined(internalName,descriptor) ? new TransferringVisitor(AsmAdvice.this.mv,dispatcher.getInlinedMethod()) : IGNORE_METHOD;
 }

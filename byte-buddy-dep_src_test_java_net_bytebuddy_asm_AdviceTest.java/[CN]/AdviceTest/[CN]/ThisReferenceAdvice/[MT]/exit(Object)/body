@@ -1,0 +1,6 @@
+{
+  if (!(thiz instanceof Sample)) {
+    throw new AssertionError();
+  }
+  Sample.exit++;
+}

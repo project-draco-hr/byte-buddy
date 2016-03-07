@@ -1,0 +1,3 @@
+{
+  methodVisitor.visitVarInsn(Type.getType(suppliedType.getDescriptor()).getOpcode(Opcodes.ASTORE),instrumentedMethod.getStackSize());
+}

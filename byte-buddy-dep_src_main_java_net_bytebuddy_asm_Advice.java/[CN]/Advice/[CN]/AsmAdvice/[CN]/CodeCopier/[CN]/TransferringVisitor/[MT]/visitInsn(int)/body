@@ -6,12 +6,10 @@ case Opcodes.RETURN:
 case Opcodes.IRETURN:
 case Opcodes.FRETURN:
 case Opcodes.ARETURN:
-super.visitInsn(Opcodes.POP);
 super.visitJumpInsn(Opcodes.GOTO,endOfMethod);
 break;
 case Opcodes.LRETURN:
 case Opcodes.DRETURN:
-super.visitInsn(Opcodes.POP2);
 super.visitJumpInsn(Opcodes.GOTO,endOfMethod);
 break;
 default :
