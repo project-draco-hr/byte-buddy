@@ -1,0 +1,8 @@
+{
+  for (  Class<? extends Annotation> annotation : annotations) {
+    if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(annotation)) {
+      throw new IllegalStateException();
+    }
+  }
+  return UNDEFINED;
+}

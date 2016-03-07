@@ -1,3 +1,0 @@
-{
-  return new CodeTranslationVisitor.ReturnValueRetaining(methodVisitor,instrumentedMethod,inlinedMethod,offsetTranslations);
-}

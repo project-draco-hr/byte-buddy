@@ -1,5 +1,0 @@
-{
-  super.visitInsn(duplication);
-  super.visitVarInsn(store,instrumentedMethod.getStackSize() + methodEnter.getAdditionalSize().getSize());
-  onMethodExit();
-}

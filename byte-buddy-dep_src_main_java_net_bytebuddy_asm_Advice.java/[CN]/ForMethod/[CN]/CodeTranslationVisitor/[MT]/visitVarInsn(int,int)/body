@@ -1,0 +1,4 @@
+{
+  Integer mapped=offsetMappings.get(offset);
+  mv.visitVarInsn(opcode,mapped == null ? adjust(offset + instrumentedMethod.getStackSize() - inlinedMethod.getStackSize()) : mapped);
+}

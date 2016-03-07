@@ -1,4 +1,0 @@
-{
-  Integer translated=offsetTranslations.get(offset);
-  mv.visitVarInsn(opcode,translated == null ? adjust(offset + instrumentedMethod.getStackSize() - inlinedMethod.getStackSize()) : translated);
-}
