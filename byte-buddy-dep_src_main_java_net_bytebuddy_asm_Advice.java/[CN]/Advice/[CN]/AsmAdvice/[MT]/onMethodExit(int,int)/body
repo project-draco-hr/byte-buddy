@@ -1,5 +1,7 @@
 {
   topValue(store);
+  mv.visitInsn(Opcodes.ACONST_NULL);
+  topValue(Opcodes.ASTORE,1);
   onMethodExit();
   topValue(load);
 }

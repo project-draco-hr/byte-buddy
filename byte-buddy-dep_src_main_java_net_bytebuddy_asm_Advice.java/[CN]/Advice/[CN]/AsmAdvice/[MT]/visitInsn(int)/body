@@ -39,7 +39,9 @@ topValue(Opcodes.DSTORE);
 mv.visitInsn(Opcodes.ACONST_NULL);
 topValue(Opcodes.ASTORE);
 }
+topValue(Opcodes.ASTORE,1);
 onMethodExit();
+topValue(Opcodes.ALOAD,1);
 break;
 case Opcodes.ARETURN:
 onMethodExit(Opcodes.ASTORE,Opcodes.ALOAD);
