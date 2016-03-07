@@ -1,0 +1,4 @@
+{
+  enter++;
+  return VALUE * 2;
+}

@@ -1,0 +1,4 @@
+{
+  String foo=FOO, bar=BAR, qux=QUX, baz=BAZ;
+  return foo + bar + qux+ baz;
+}

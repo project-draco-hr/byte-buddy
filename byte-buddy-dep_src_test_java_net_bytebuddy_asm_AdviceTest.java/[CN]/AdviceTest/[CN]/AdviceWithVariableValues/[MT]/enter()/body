@@ -1,0 +1,5 @@
+{
+  int foo=VALUE, bar=VALUE * 2;
+  Sample.enter++;
+  return foo + bar;
+}

@@ -1,0 +1,7 @@
+{
+  if (result == exception || !enter) {
+    throw new AssertionError();
+  }
+  exit++;
+  return BOOLEAN;
+}

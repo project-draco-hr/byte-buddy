@@ -1,0 +1,7 @@
+{
+  int foo=VALUE, bar=VALUE * 2;
+  if (foo + bar != enter || !value.equals(FOO + BAR + QUX+ BAZ)) {
+    throw new AssertionError();
+  }
+  Sample.exit++;
+}

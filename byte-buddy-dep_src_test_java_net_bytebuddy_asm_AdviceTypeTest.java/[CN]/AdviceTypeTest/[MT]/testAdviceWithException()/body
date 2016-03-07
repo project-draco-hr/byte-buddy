@@ -1,0 +1,13 @@
+{
+  Class<?> type=new ByteBuddy().redefine(advice).visit(new AsmVisitorWrapper.ForDeclaredMethods().writerFlags(ClassWriter.COMPUTE_FRAMES).method(named(BAR),Advice.to(advice))).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  type.getDeclaredField(exception).set(null,true);
+  try {
+    assertThat(type.getDeclaredMethod(BAR).invoke(type.newInstance()),is(expected));
+    fail();
+  }
+ catch (  InvocationTargetException exception) {
+    assertThat(exception.getCause(),instanceOf(RuntimeException.class));
+  }
+  assertThat(type.getDeclaredField(ENTER).get(null),is((Object)1));
+  assertThat(type.getDeclaredField(EXIT).get(null),is((Object)1));
+}
