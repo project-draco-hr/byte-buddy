@@ -1,4 +1,5 @@
 {
+  mv.visitLabel(userEnd);
   mv.visitLabel(handler);
   variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
   makeDefaultReturn();

@@ -3,5 +3,4 @@
   this.instrumentedMethod=instrumentedMethod;
   classReader=new ClassReader(binaryRepresentation);
   handler=new Label();
-  userStart=new Label();
 }

@@ -2,5 +2,5 @@
   if (methodDescription.isAbstract() || methodDescription.isNative()) {
     throw new IllegalStateException("Cannot advice abstract or native method " + methodDescription);
   }
-  return new ExplicitAdvice(methodVisitor,methodDescription);
+  return methodExit.isSkipException() ? new ExplicitAdvice(methodVisitor,methodDescription) : new BlockAdvice(methodVisitor,methodDescription);
 }
