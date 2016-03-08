@@ -1,0 +1,11 @@
+{
+  Class<?> type=new ByteBuddy().redefine(Sample.class).visit(new AsmVisitorWrapper.ForDeclaredMethods().writerFlags(ClassWriter.COMPUTE_FRAMES).method(named(FOO + BAR),Advice.to(ThrowableAdvice.class))).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  try {
+    type.getDeclaredMethod(FOO + BAR).invoke(type.newInstance());
+    fail();
+  }
+ catch (  InvocationTargetException exception) {
+    assertThat(exception.getCause(),instanceOf(RuntimeException.class));
+  }
+  assertThat(type.getDeclaredField(THROWABLE).get(null),instanceOf(RuntimeException.class));
+}

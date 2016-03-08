@@ -1,7 +1,7 @@
 {
   if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(Thrown.class)) {
     if (!parameterDescription.getType().asErasure().isAssignableFrom(Throwable.class)) {
-      throw new IllegalStateException("Throwable must be of subtype Throwable for " + parameterDescription);
+      throw new IllegalStateException("Parameter type must be a supertype of Throwable for " + parameterDescription);
     }
     return this;
   }

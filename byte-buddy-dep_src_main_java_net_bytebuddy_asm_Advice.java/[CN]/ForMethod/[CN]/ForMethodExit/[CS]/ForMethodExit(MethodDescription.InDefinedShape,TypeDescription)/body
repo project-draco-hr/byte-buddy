@@ -1,4 +1,4 @@
 {
-  super(inlinedMethod,OffsetMapping.ForParameter.Factory.INSTANCE,OffsetMapping.ForThisReference.Factory.INSTANCE,new OffsetMapping.ForEnterValue.Factory(enterType),OffsetMapping.ForReturnValue.Factory.INSTANCE,inlinedMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).loadSilent().onException() ? OffsetMapping.ForException.INSTANCE : new OffsetMapping.Illegal(Thrown.class));
+  super(inlinedMethod,OffsetMapping.ForParameter.Factory.INSTANCE,OffsetMapping.ForThisReference.Factory.INSTANCE,new OffsetMapping.ForEnterValue.Factory(enterType),OffsetMapping.ForReturnValue.Factory.INSTANCE,inlinedMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).loadSilent().onThrowable() ? OffsetMapping.ForException.INSTANCE : new OffsetMapping.Illegal(Thrown.class));
   additionalSize=enterType.getStackSize();
 }

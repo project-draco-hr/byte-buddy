@@ -1,3 +1,3 @@
 {
-  return !inlinedMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).loadSilent().onException();
+  return !inlinedMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).loadSilent().onThrowable();
 }

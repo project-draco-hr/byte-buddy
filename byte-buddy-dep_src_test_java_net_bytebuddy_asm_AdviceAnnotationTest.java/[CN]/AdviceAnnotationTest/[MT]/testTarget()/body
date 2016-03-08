@@ -1,0 +1,4 @@
+{
+  assertThat(type.getAnnotation(Target.class).value().length,is(1));
+  assertThat(type.getAnnotation(Target.class).value()[0],is(elementType));
+}
