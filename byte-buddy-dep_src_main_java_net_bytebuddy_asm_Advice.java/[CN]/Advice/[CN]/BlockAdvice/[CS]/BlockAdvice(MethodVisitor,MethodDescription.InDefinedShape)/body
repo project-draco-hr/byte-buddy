@@ -1,0 +1,7 @@
+{
+  super(Opcodes.ASM5,methodVisitor);
+  this.instrumentedMethod=instrumentedMethod;
+  classReader=new ClassReader(binaryRepresentation);
+  handler=new Label();
+  userStart=new Label();
+}

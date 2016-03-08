@@ -1,3 +1,6 @@
 {
-  return new AsmAdvice(methodVisitor,methodDescription);
+  if (methodDescription.isAbstract() || methodDescription.isNative()) {
+    throw new IllegalStateException("Cannot advice abstract or native method " + methodDescription);
+  }
+  return new ExplicitAdvice(methodVisitor,methodDescription);
 }

@@ -1,0 +1,5 @@
+{
+  super.visitCode();
+  classReader.accept(new CodeCopier(methodEnter),ClassReader.SKIP_DEBUG);
+  mv.visitLabel(userStart);
+}

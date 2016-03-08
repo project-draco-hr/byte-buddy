@@ -1,0 +1,32 @@
+{
+switch (opcode) {
+case Opcodes.RETURN:
+    onMethodExit();
+  break;
+case Opcodes.IRETURN:
+onMethodExit(Opcodes.ISTORE,Opcodes.ILOAD);
+break;
+case Opcodes.FRETURN:
+onMethodExit(Opcodes.FSTORE,Opcodes.FLOAD);
+break;
+case Opcodes.DRETURN:
+onMethodExit(Opcodes.DSTORE,Opcodes.DLOAD);
+break;
+case Opcodes.LRETURN:
+onMethodExit(Opcodes.LSTORE,Opcodes.LLOAD);
+break;
+case Opcodes.ATHROW:
+if (Advice.this.methodExit.isSkipException()) {
+break;
+}
+variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
+makeDefaultReturn();
+onMethodExit();
+variable(Opcodes.ALOAD,instrumentedMethod.getReturnType().getStackSize().getSize());
+break;
+case Opcodes.ARETURN:
+onMethodExit(Opcodes.ASTORE,Opcodes.ALOAD);
+break;
+}
+mv.visitInsn(opcode);
+}

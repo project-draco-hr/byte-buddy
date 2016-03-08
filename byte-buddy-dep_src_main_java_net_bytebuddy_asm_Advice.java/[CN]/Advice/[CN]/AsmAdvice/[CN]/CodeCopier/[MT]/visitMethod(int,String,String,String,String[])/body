@@ -1,3 +1,0 @@
-{
-  return dispatcher.apply(internalName,descriptor,AsmAdvice.this.mv,instrumentedMethod);
-}

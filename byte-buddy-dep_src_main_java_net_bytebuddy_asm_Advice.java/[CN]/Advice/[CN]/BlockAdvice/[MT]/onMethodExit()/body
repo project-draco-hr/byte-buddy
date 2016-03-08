@@ -1,0 +1,8 @@
+{
+  Label userEnd=new Label();
+  mv.visitLabel(userEnd);
+  mv.visitTryCatchBlock(userStart,userEnd,handler,null);
+  classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
+  userStart=new Label();
+  mv.visitLabel(userStart);
+}
