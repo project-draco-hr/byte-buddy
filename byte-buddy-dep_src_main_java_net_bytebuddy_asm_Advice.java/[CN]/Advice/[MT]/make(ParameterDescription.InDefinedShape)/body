@@ -1,0 +1,11 @@
+{
+  if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(Thrown.class)) {
+    if (!parameterDescription.getType().represents(Throwable.class)) {
+      throw new IllegalStateException("Parameter must be of type Throwable for " + parameterDescription);
+    }
+    return this;
+  }
+ else {
+    return UNDEFINED;
+  }
+}

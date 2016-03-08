@@ -1,3 +1,0 @@
-{
-  return inlinedMethod.getInternalName().equals(internalName) && inlinedMethod.getDescriptor().equals(descriptor) ? inline(methodVisitor,instrumentedMethod) : IGNORE_METHOD;
-}

@@ -1,3 +1,0 @@
-{
-  return new Resolved.ForMethodExit(inlinedMethod,dispatcher.getEnterType());
-}

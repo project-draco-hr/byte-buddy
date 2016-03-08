@@ -1,6 +1,0 @@
-{
-  if (!instrumentedMethod.getReturnType().asErasure().isAssignableTo(targetType)) {
-    throw new IllegalStateException("Cannot assign return type of " + instrumentedMethod + " to "+ targetType);
-  }
-  return instrumentedMethod.getStackSize() + offset.getSize();
-}

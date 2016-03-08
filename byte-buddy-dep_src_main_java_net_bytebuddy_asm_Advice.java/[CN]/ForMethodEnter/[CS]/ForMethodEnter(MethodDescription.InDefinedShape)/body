@@ -1,0 +1,3 @@
+{
+  super(adviseMethod,OffsetMapping.ForParameter.Factory.INSTANCE,OffsetMapping.ForThisReference.Factory.INSTANCE,new OffsetMapping.Illegal(Thrown.class,Enter.class,Return.class));
+}

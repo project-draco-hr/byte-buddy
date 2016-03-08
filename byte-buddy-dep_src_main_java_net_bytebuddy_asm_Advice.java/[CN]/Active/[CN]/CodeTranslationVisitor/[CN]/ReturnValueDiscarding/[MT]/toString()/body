@@ -1,3 +1,0 @@
-{
-  return "Advice.Dispatcher.Active.CodeTranslationVisitor.ReturnValueDiscarding{" + "instrumentedMethod=" + instrumentedMethod + ", inlinedMethod="+ inlinedMethod+ ", additionalSize="+ additionalSize+ '}';
-}

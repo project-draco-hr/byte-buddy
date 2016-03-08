@@ -1,4 +1,0 @@
-{
-  super(methodVisitor,instrumentedMethod,inlinedMethod,offsetMappings);
-  this.additionalSize=additionalSize;
-}

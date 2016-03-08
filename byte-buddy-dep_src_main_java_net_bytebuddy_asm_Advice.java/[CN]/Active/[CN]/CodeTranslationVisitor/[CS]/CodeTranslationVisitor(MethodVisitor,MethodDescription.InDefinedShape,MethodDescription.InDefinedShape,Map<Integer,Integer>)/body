@@ -1,7 +1,0 @@
-{
-  super(Opcodes.ASM5,methodVisitor);
-  this.instrumentedMethod=instrumentedMethod;
-  this.inlinedMethod=inlinedMethod;
-  this.offsetMappings=offsetMappings;
-  endOfMethod=new Label();
-}

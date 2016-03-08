@@ -1,0 +1,9 @@
+{
+  if (instrumentedMethod.isStatic()) {
+    throw new IllegalStateException("Cannot map this reference for static method " + instrumentedMethod);
+  }
+ else   if (!instrumentedMethod.getDeclaringType().equals(targetType)) {
+    throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not equal to "+ targetType);
+  }
+  return THIS_REFERENCE;
+}

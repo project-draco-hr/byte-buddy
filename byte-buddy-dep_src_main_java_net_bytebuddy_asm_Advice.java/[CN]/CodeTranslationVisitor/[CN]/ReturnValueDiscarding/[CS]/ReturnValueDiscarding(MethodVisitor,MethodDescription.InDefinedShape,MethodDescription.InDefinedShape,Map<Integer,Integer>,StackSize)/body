@@ -1,0 +1,4 @@
+{
+  super(methodVisitor,instrumentedMethod,adviseMethod,offsetMappings);
+  this.additionalVariableSize=additionalVariableSize;
+}

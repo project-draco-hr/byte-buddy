@@ -1,0 +1,10 @@
+{
+  ParameterList<?> parameters=instrumentedMethod.getParameters();
+  if (parameters.size() <= index) {
+    throw new IllegalStateException(instrumentedMethod + " does not define an index " + index);
+  }
+ else   if (!parameters.get(index).getType().asErasure().equals(targetType)) {
+    throw new IllegalStateException(targetType + " is not equal to type of " + parameters.get(index));
+  }
+  return parameters.get(index).getOffset();
+}

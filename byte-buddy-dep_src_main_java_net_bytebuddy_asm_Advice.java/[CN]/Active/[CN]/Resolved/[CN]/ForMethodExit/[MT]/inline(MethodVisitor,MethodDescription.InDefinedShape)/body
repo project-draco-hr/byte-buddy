@@ -1,7 +1,0 @@
-{
-  Map<Integer,Integer> offsetMappings=new HashMap<Integer,Integer>();
-  for (  Map.Entry<Integer,OffsetMapping> entry : this.offsetMappings.entrySet()) {
-    offsetMappings.put(entry.getKey(),entry.getValue().resolve(instrumentedMethod,additionalSize));
-  }
-  return new CodeTranslationVisitor.ReturnValueDiscarding(methodVisitor,instrumentedMethod,inlinedMethod,offsetMappings,additionalSize);
-}

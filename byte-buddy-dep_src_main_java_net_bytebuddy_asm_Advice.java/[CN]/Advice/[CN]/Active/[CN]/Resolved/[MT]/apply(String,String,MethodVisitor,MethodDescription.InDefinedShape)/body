@@ -1,0 +1,3 @@
+{
+  return adviseMethod.getInternalName().equals(internalName) && adviseMethod.getDescriptor().equals(descriptor) ? apply(methodVisitor,instrumentedMethod) : IGNORE_METHOD;
+}

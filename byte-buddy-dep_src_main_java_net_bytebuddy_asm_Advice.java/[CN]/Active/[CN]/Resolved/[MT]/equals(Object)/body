@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  Resolved resolved=(Resolved)other;
-  return inlinedMethod.equals(resolved.inlinedMethod) && offsetMappings.equals(resolved.offsetMappings);
-}

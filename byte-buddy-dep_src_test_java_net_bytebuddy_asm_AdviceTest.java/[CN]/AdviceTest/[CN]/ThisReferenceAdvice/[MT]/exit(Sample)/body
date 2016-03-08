@@ -1,0 +1,6 @@
+{
+  if (thiz == null) {
+    throw new AssertionError();
+  }
+  Sample.exit++;
+}
