@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  Advice advice=(Advice)other;
+  return methodEnter.equals(advice.methodEnter) && methodExit.equals(advice.methodExit) && Arrays.equals(binaryRepresentation,advice.binaryRepresentation);
+}
