@@ -1,0 +1,3 @@
+{
+  return dispatcher.apply(internalName,descriptor,AdviceVisitor.this.mv,instrumentedMethod);
+}

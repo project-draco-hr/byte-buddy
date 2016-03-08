@@ -1,3 +1,0 @@
-{
-  classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
-}

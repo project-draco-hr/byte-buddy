@@ -1,3 +1,0 @@
-{
-  mv.visitVarInsn(opcode,instrumentedMethod.getStackSize() + methodEnter.getEnterType().getStackSize().getSize() + offset);
-}

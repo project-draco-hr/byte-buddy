@@ -1,8 +1,0 @@
-{
-  mv.visitLabel(userEnd);
-  classReader.accept(new CodeCopier(methodExit),ClassReader.SKIP_DEBUG);
-  Label userStart=new Label();
-  userEnd=new Label();
-  mv.visitTryCatchBlock(userStart,userEnd,handler,null);
-  mv.visitLabel(userStart);
-}

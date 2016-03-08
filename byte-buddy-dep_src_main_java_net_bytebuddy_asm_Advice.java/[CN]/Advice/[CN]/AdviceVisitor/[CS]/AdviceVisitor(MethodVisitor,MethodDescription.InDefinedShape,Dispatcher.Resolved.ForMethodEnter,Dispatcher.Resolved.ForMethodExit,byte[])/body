@@ -1,0 +1,7 @@
+{
+  super(Opcodes.ASM5,methodVisitor);
+  this.instrumentedMethod=instrumentedMethod;
+  this.methodEnter=methodEnter;
+  this.methodExit=methodExit;
+  this.classReader=new ClassReader(binaryRepresentation);
+}

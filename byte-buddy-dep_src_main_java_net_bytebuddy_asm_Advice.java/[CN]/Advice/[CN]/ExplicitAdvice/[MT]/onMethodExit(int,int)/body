@@ -1,7 +1,0 @@
-{
-  topValue(store);
-  mv.visitInsn(Opcodes.ACONST_NULL);
-  topValue(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
-  onMethodExit();
-  topValue(load);
-}

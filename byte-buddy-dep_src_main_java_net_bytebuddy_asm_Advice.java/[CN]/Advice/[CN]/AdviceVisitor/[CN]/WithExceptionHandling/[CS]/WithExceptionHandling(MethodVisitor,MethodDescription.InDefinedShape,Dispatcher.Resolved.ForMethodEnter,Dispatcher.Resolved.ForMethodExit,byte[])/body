@@ -1,0 +1,4 @@
+{
+  super(methodVisitor,instrumentedMethod,methodEnter,methodExit,binaryRepresentation);
+  handler=new Label();
+}

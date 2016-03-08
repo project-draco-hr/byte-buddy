@@ -1,0 +1,3 @@
+{
+  variable(opcode,NO_OFFSET);
+}
