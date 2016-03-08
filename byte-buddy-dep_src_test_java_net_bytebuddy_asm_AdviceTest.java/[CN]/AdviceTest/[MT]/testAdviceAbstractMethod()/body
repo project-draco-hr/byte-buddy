@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().redefine(AbstractMethod.class).visit(new AsmVisitorWrapper.ForDeclaredMethods().writerFlags(ClassWriter.COMPUTE_FRAMES).method(named(FOO),Advice.to(TrivialAdvice.class))).make();
+}

@@ -1,3 +1,11 @@
 {
-  return inlinedMethod.getInternalName().equals(internalName) && inlinedMethod.getDescriptor().equals(descriptor) ? inline(methodVisitor,instrumentedMethod) : IGNORE_METHOD;
+  if (inlinedMethod.getInternalName().equals(internalName) && inlinedMethod.getDescriptor().equals(descriptor)) {
+    if (instrumentedMethod.isAbstract() || instrumentedMethod.isNative()) {
+      throw new IllegalStateException("Cannot advice abstract or native method " + instrumentedMethod);
+    }
+    return inline(methodVisitor,instrumentedMethod);
+  }
+ else {
+    return IGNORE_METHOD;
+  }
 }
