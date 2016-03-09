@@ -3,7 +3,7 @@
     throw new IllegalStateException("Cannot map this reference for static method " + instrumentedMethod);
   }
  else   if (!readOnly && !instrumentedMethod.getDeclaringType().equals(targetType)) {
-    throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not equal to read only "+ targetType);
+    throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not equal to read-only "+ targetType);
   }
  else   if (readOnly && !instrumentedMethod.getDeclaringType().isAssignableTo(targetType)) {
     throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not assignable to "+ targetType);

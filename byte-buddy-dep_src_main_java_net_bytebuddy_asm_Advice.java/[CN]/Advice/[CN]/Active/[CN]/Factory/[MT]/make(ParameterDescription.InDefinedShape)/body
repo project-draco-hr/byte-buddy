@@ -3,7 +3,7 @@
   if (annotation != null) {
     boolean readOnly=annotation.loadSilent().readOnly();
     if (!readOnly && !enterType.equals(parameterDescription.getType().asErasure())) {
-      throw new IllegalStateException("Read only type of " + parameterDescription + " does not equal "+ enterType);
+      throw new IllegalStateException("read-only type of " + parameterDescription + " does not equal "+ enterType);
     }
  else     if (readOnly && !enterType.isAssignableTo(parameterDescription.getType().asErasure())) {
       throw new IllegalStateException("Cannot assign the type of " + parameterDescription + " to supplied type "+ enterType);

@@ -2,7 +2,7 @@
   Resolved.OffsetMapping.Target target=offsetMappings.get(offset);
   if (target != null) {
     if (!target.supports(opcode)) {
-      throw new IllegalStateException("Cannot write to read only variable " + target);
+      throw new IllegalStateException("Cannot write to read-only variable " + target);
     }
     offset=target.getOffset();
   }
