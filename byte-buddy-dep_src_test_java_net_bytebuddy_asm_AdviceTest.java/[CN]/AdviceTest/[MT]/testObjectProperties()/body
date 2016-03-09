@@ -2,13 +2,15 @@
   ObjectPropertyAssertion.of(Advice.class).apply();
   ObjectPropertyAssertion.of(Advice.AdviceVisitor.CodeCopier.class).applyBasic();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Inactive.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.ForMethodEnter.class).refine(new ObjectPropertyAssertion.Refinement<MethodDescription.InDefinedShape>(){
-    @Override public void apply(    MethodDescription.InDefinedShape mock){
-      when(mock.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
+  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Target.ReadOnly.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Target.ReadWrite.class).apply();
+  final int[] value=new int[1];
+  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForParameter.class).refine(new ObjectPropertyAssertion.Refinement<Advice.Argument>(){
+    @Override public void apply(    Advice.Argument mock){
+      when(mock.value()).thenReturn(value[0]++);
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForParameter.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForParameter.Factory.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForThisReference.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForThisReference.Factory.class).apply();
@@ -21,6 +23,12 @@
   ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Illegal.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
     @Override public Class<?> create(){
       return types.next();
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.ForMethodEnter.class).refine(new ObjectPropertyAssertion.Refinement<MethodDescription.InDefinedShape>(){
+    @Override public void apply(    MethodDescription.InDefinedShape mock){
+      when(mock.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
     }
   }
 ).apply();

@@ -1,3 +1,4 @@
 {
-  return parameterDescription.getDeclaredAnnotations().isAnnotationPresent(This.class) ? new ForThisReference(parameterDescription.getType().asErasure()) : UNDEFINED;
+  AnnotationDescription.Loadable<This> annotation=parameterDescription.getDeclaredAnnotations().ofType(This.class);
+  return annotation == null ? UNDEFINED : new ForThisReference(annotation.loadSilent().readOnly(),parameterDescription.getType().asErasure());
 }

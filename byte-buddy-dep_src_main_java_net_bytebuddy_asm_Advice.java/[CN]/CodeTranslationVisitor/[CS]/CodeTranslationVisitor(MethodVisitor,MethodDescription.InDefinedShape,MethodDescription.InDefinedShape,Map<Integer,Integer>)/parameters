@@ -1,4 +1,0 @@
-MethodVisitor methodVisitor
-MethodDescription.InDefinedShape instrumentedMethod
-MethodDescription.InDefinedShape adviseMethod
-Map<Integer,Integer> offsetMappings

@@ -1,9 +1,14 @@
 {
-  if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(Enter.class)) {
-    if (!enterType.equals(parameterDescription.getType().asErasure())) {
-      throw new IllegalStateException("Cannot assign " + parameterDescription + " to supplied type "+ enterType);
+  AnnotationDescription.Loadable<Enter> annotation=parameterDescription.getDeclaredAnnotations().ofType(Enter.class);
+  if (annotation != null) {
+    boolean readOnly=annotation.loadSilent().readOnly();
+    if (!readOnly && !enterType.equals(parameterDescription.getType().asErasure())) {
+      throw new IllegalStateException("Read only type of " + parameterDescription + " does not equal "+ enterType);
     }
-    return ForEnterValue.INSTANCE;
+ else     if (readOnly && !enterType.isAssignableTo(parameterDescription.getType().asErasure())) {
+      throw new IllegalStateException("Cannot assign the type of " + parameterDescription + " to supplied type "+ enterType);
+    }
+    return ForEnterValue.of(readOnly);
   }
  else {
     return UNDEFINED;

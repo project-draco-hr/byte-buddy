@@ -1,3 +1,5 @@
 {
-  return targetType.hashCode();
+  int result=(readOnly ? 1 : 0);
+  result=31 * result + targetType.hashCode();
+  return result;
 }

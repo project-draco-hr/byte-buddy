@@ -1,4 +1,4 @@
 {
-  AnnotationDescription.Loadable<Argument> argument=parameterDescription.getDeclaredAnnotations().ofType(Argument.class);
-  return argument == null ? UNDEFINED : new ForParameter(argument.loadSilent().value(),parameterDescription.getType().asErasure());
+  AnnotationDescription.Loadable<Argument> annotation=parameterDescription.getDeclaredAnnotations().ofType(Argument.class);
+  return annotation == null ? UNDEFINED : new ForParameter(annotation.loadSilent(),parameterDescription.getType().asErasure());
 }

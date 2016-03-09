@@ -2,8 +2,11 @@
   if (instrumentedMethod.isStatic()) {
     throw new IllegalStateException("Cannot map this reference for static method " + instrumentedMethod);
   }
- else   if (!instrumentedMethod.getDeclaringType().equals(targetType)) {
-    throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not equal to "+ targetType);
+ else   if (!readOnly && !instrumentedMethod.getDeclaringType().equals(targetType)) {
+    throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not equal to read only "+ targetType);
   }
-  return THIS_REFERENCE;
+ else   if (readOnly && !instrumentedMethod.getDeclaringType().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not assignable to "+ targetType);
+  }
+  return readOnly ? new Target.ReadOnly(THIS_REFERENCE) : new Target.ReadWrite(THIS_REFERENCE);
 }

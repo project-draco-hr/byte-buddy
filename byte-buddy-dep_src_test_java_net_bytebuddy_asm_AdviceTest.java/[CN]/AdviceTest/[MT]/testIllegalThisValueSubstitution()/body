@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().redefine(Box.class).visit(new AsmVisitorWrapper.ForDeclaredMethods().writerFlags(ClassWriter.COMPUTE_FRAMES).method(named(FOO),Advice.to(IllegalThisSubstitutionAdvice.class))).make();
+}

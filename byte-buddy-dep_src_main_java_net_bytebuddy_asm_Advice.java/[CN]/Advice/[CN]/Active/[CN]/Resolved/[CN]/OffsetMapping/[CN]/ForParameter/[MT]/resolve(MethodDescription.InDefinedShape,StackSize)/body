@@ -3,8 +3,11 @@
   if (parameters.size() <= index) {
     throw new IllegalStateException(instrumentedMethod + " does not define an index " + index);
   }
- else   if (!parameters.get(index).getType().asErasure().equals(targetType)) {
-    throw new IllegalStateException(targetType + " is not equal to type of " + parameters.get(index));
+ else   if (!readOnly && !parameters.get(index).getType().asErasure().equals(targetType)) {
+    throw new IllegalStateException("Read only " + targetType + " is not equal to type of "+ parameters.get(index));
   }
-  return parameters.get(index).getOffset();
+ else   if (readOnly && !parameters.get(index).getType().asErasure().isAssignableTo(targetType)) {
+    throw new IllegalStateException(targetType + " is not assignable to " + parameters.get(index));
+  }
+  return readOnly ? new Target.ReadOnly(parameters.get(index).getOffset()) : new Target.ReadWrite(parameters.get(index).getOffset());
 }

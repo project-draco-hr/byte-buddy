@@ -1,0 +1,4 @@
+{
+  Class<?> type=new ByteBuddy().redefine(Box.class).visit(new AsmVisitorWrapper.ForDeclaredMethods().writerFlags(ClassWriter.COMPUTE_FRAMES).method(named(BAR),Advice.to(ParameterSubstitutionAdvice.class))).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethod(BAR,String.class).invoke(null,FOO),is((Object)BAR));
+}

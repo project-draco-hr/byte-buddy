@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().redefine(Sample.class).visit(new AsmVisitorWrapper.ForDeclaredMethods().writerFlags(ClassWriter.COMPUTE_FRAMES).method(named(BAR),Advice.to(IllegalArgumentReadOnlyAdvice.class))).make();
+}

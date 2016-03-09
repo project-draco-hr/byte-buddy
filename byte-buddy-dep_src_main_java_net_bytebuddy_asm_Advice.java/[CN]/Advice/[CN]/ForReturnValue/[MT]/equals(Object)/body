@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   ForReturnValue that=(ForReturnValue)other;
-  return targetType.equals(that.targetType);
+  return readOnly == that.readOnly && targetType.equals(that.targetType);
 }

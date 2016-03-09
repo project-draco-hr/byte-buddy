@@ -1,0 +1,6 @@
+{
+  value=BAR;
+  if (!value.equals(BAR)) {
+    throw new AssertionError();
+  }
+}

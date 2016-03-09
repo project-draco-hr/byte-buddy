@@ -1,5 +1,5 @@
 {
-  Map<Integer,Integer> offsetMappings=new HashMap<Integer,Integer>();
+  Map<Integer,OffsetMapping.Target> offsetMappings=new HashMap<Integer,OffsetMapping.Target>();
   for (  Map.Entry<Integer,OffsetMapping> entry : this.offsetMappings.entrySet()) {
     offsetMappings.put(entry.getKey(),entry.getValue().resolve(instrumentedMethod,additionalSize));
   }
