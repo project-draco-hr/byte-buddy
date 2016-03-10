@@ -1,4 +1,4 @@
 {
-  when(left.resolve(instrumentedType)).thenReturn((ElementMatcher)leftMatcher);
-  when(right.resolve(instrumentedType)).thenReturn((ElementMatcher)rightMatcher);
+  when(left.resolve(typeDescription)).thenReturn((ElementMatcher)leftMatcher);
+  when(right.resolve(typeDescription)).thenReturn((ElementMatcher)rightMatcher);
 }
