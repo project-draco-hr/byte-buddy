@@ -1,0 +1,5 @@
+{
+  this.throwableType=throwableType;
+  startOfMethod=new Label();
+  handler=new Label();
+}

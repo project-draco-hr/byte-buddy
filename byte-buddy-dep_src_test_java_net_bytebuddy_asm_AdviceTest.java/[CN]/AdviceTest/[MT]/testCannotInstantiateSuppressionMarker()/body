@@ -1,0 +1,14 @@
+{
+  Class<?> type=Class.forName(Advice.class.getName() + "$NoSuppression");
+  assertThat(Modifier.isPrivate(type.getModifiers()),is(true));
+  try {
+    Constructor<?> constructor=type.getDeclaredConstructor();
+    assertThat(Modifier.isPrivate(constructor.getModifiers()),is(true));
+    constructor.setAccessible(true);
+    constructor.newInstance();
+    fail();
+  }
+ catch (  InvocationTargetException exception) {
+    assertThat(exception.getCause(),instanceOf(UnsupportedOperationException.class));
+  }
+}

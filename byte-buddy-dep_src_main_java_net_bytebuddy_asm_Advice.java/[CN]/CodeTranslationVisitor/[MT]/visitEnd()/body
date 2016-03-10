@@ -1,3 +1,4 @@
 {
   mv.visitLabel(endOfMethod);
+  suppressionHandler.onEnd(mv,this);
 }

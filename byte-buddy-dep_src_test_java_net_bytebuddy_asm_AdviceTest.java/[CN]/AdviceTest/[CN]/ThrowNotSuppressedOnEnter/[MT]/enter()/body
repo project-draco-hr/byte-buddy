@@ -1,0 +1,4 @@
+{
+  TracableSample.enter++;
+  throw new Exception();
+}

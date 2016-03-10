@@ -3,5 +3,5 @@
   for (  Map.Entry<Integer,OffsetMapping> entry : this.offsetMappings.entrySet()) {
     offsetMappings.put(entry.getKey(),entry.getValue().resolve(instrumentedMethod,additionalSize));
   }
-  return new CodeTranslationVisitor.ReturnValueDiscarding(methodVisitor,instrumentedMethod,adviseMethod,offsetMappings,additionalSize);
+  return new CodeTranslationVisitor.ReturnValueDiscarding(methodVisitor,instrumentedMethod,adviseMethod,offsetMappings,adviseMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).getValue(SUPPRESS,TypeDescription.class),additionalSize);
 }

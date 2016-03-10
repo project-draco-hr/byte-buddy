@@ -1,0 +1,3 @@
+{
+  return "Advice.Dispatcher.Active.CodeTranslationVisitor.SuppressionHandler.Suppressing{" + "throwableType=" + throwableType + ", startOfMethod="+ startOfMethod+ ", handler="+ handler+ '}';
+}

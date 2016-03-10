@@ -1,0 +1,8 @@
+{
+  super(Opcodes.ASM5,methodVisitor);
+  this.instrumentedMethod=instrumentedMethod;
+  this.adviseMethod=adviseMethod;
+  this.offsetMappings=offsetMappings;
+  suppressionHandler=throwableType.represents(NoSuppression.class) ? SuppressionHandler.NoOp.INSTANCE : new SuppressionHandler.Suppressing(throwableType);
+  endOfMethod=new Label();
+}
