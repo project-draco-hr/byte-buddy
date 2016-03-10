@@ -1,0 +1,5 @@
+{
+  super(cacheProvider,parentPool);
+  this.classFileLocator=classFileLocator;
+  this.readerMode=readerMode;
+}

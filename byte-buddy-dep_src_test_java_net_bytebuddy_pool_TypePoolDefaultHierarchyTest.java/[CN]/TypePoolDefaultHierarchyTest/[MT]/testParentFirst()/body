@@ -1,0 +1,12 @@
+{
+  TypePool typePool=new TypePool.Default(cacheProvider,classFileLocator,TypePool.Default.ReaderMode.FAST,parentPool);
+  when(parentPool.describe(FOO)).thenReturn(resolution);
+  when(resolution.isResolved()).thenReturn(true);
+  assertThat(typePool.describe(FOO),is(resolution));
+  verifyZeroInteractions(cacheProvider);
+  verifyZeroInteractions(classFileLocator);
+  verify(parentPool).describe(FOO);
+  verifyNoMoreInteractions(parentPool);
+  verify(resolution).isResolved();
+  verifyNoMoreInteractions(resolution);
+}

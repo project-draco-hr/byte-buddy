@@ -1,0 +1,3 @@
+{
+  TypePool.Empty.INSTANCE.describe(FOO).resolve();
+}

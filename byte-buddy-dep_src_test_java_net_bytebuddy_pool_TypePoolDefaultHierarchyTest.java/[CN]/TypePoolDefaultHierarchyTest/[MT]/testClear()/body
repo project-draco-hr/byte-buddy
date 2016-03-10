@@ -1,0 +1,8 @@
+{
+  TypePool typePool=new TypePool.Default(cacheProvider,classFileLocator,TypePool.Default.ReaderMode.FAST,parentPool);
+  typePool.clear();
+  verify(cacheProvider).clear();
+  verifyNoMoreInteractions(cacheProvider);
+  verify(parentPool).clear();
+  verifyNoMoreInteractions(parentPool);
+}

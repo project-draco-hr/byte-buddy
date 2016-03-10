@@ -1,0 +1,4 @@
+{
+  Resolution resolution=parent.describe(name);
+  return resolution.isResolved() ? resolution : super.describe(name);
+}

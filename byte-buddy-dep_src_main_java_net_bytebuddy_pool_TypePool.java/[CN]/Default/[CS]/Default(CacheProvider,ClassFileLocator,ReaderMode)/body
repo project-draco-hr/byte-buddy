@@ -1,5 +1,3 @@
 {
-  super(cacheProvider);
-  this.classFileLocator=classFileLocator;
-  this.readerMode=readerMode;
+  this(cacheProvider,classFileLocator,readerMode,Empty.INSTANCE);
 }

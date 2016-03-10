@@ -1,0 +1,3 @@
+{
+  assertThat(TypePool.Empty.INSTANCE.describe(FOO).isResolved(),is(false));
+}
