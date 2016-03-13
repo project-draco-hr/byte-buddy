@@ -1,0 +1,5 @@
+{
+  int result=current.hashCode();
+  result=31 * result + major.hashCode();
+  return result;
+}
