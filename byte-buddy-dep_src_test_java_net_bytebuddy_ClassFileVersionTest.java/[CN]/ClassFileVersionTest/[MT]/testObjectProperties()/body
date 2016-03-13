@@ -8,5 +8,4 @@
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(ClassFileVersion.VersionPropertyAction.class).apply();
 }
