@@ -1,4 +1,4 @@
 {
-  Class<?> dynamicType=new ByteBuddy(ClassFileVersion.JAVA_V4).subclass(Object.class).visit(TypeConstantAdjustment.INSTANCE).defineMethod(FOO,Object.class,Visibility.PUBLIC).intercept(FixedValue.value(Object.class)).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> dynamicType=new ByteBuddy(ClassFileVersion.JAVA_V4).with(TypeValidation.DISABLED).subclass(Object.class).visit(TypeConstantAdjustment.INSTANCE).defineMethod(FOO,Object.class,Visibility.PUBLIC).intercept(FixedValue.value(Object.class)).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(dynamicType.getDeclaredMethod(FOO).invoke(dynamicType.newInstance()),is((Object)Object.class));
 }

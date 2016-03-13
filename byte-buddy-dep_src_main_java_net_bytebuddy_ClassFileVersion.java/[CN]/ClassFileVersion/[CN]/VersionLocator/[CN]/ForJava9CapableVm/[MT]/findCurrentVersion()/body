@@ -1,6 +1,6 @@
 {
   try {
-    return (Integer)major.invoke(current.invoke(STATIC_METHOD));
+    return ClassFileVersion.ofJavaVersion((Integer)major.invoke(current.invoke(STATIC_METHOD)));
   }
  catch (  InvocationTargetException exception) {
     throw new IllegalStateException("Could not look up VM version",exception.getCause());
