@@ -1,3 +1,3 @@
 {
-  new ByteBuddy().redefine(Sample.class).visit(new AsmVisitorWrapper.ForDeclaredMethods().writerFlags(ClassWriter.COMPUTE_FRAMES).method(named(FOO + QUX),Advice.to(NonEqualReturnWritableAdvice.class))).make();
+  new ByteBuddy().redefine(Sample.class).visit(Advice.to(NonEqualReturnWritableAdvice.class).on(named(FOO + QUX))).make();
 }
