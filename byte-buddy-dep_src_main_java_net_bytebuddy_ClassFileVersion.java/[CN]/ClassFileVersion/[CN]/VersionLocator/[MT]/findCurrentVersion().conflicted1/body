@@ -1,0 +1,14 @@
+{
+  String versionString=AccessController.doPrivileged(this);
+  if (versionString.startsWith("9")) {
+    return ClassFileVersion.JAVA_V9;
+  }
+  int[] versionIndex={-1,0,0};
+  for (int i=1; i < 3; i++) {
+    versionIndex[i]=versionString.indexOf('.',versionIndex[i - 1] + 1);
+    if (versionIndex[i] == -1) {
+      throw new IllegalStateException("This JVM's version string does not seem to be valid: " + versionString);
+    }
+  }
+  return ClassFileVersion.ofJavaVersion(Integer.parseInt(versionString.substring(versionIndex[1] + 1,versionIndex[2])));
+}
