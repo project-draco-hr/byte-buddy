@@ -1,0 +1,5 @@
+{
+  MethodList<MethodDescription.InDefinedShape> methods=new TypeDescription.ForLoadedType(FieldValue.class).getDeclaredMethods();
+  value=methods.filter(named("value")).getOnly();
+  definingType=methods.filter(named("definingType")).getOnly();
+}

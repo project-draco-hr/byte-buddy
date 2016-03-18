@@ -8,5 +8,5 @@
  else   if (readOnly && !instrumentedMethod.getDeclaringType().isAssignableTo(targetType)) {
     throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not assignable to "+ targetType);
   }
-  return readOnly ? new Target.ReadOnly(THIS_REFERENCE) : new Target.ReadWrite(THIS_REFERENCE);
+  return readOnly ? new Target.ForReadOnlyParameter(THIS_REFERENCE) : new Target.ForParameter(THIS_REFERENCE);
 }

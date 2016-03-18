@@ -1,3 +1,0 @@
-{
-  return readOnly ? new Target.ReadOnly(instrumentedMethod.getStackSize()) : new Target.ReadWrite(instrumentedMethod.getStackSize());
-}

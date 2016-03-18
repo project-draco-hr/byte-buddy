@@ -1,0 +1,10 @@
+{
+  FieldDescription fieldDescription=fieldLocator(instrumentedMethod.getDeclaringType()).locate(name);
+  if (!fieldDescription.getType().asErasure().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Cannot assign type of field " + fieldDescription + " to "+ targetType);
+  }
+ else   if (!fieldDescription.isStatic() && instrumentedMethod.isStatic()) {
+    throw new IllegalStateException("Cannot read non-static field " + fieldDescription + " from static method "+ instrumentedMethod);
+  }
+  return new Target.ForField(fieldDescription);
+}

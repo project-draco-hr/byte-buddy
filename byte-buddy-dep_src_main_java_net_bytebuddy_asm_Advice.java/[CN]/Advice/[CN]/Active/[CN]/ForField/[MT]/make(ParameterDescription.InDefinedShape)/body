@@ -1,0 +1,12 @@
+{
+  AnnotationDescription annotation=parameterDescription.getDeclaredAnnotations().ofType(FieldValue.class);
+  if (annotation == null) {
+    return UNDEFINED;
+  }
+ else {
+    TypeDescription definingType=annotation.getValue(this.definingType,TypeDescription.class);
+    String name=annotation.getValue(value,String.class);
+    TypeDescription targetType=parameterDescription.getType().asErasure();
+    return definingType.represents(void.class) ? new WithImplicitType(name,targetType) : new WithExplicitType(name,targetType,definingType);
+  }
+}

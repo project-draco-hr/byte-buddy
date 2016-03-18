@@ -1,0 +1,19 @@
+{
+switch (opcode) {
+case Opcodes.ISTORE:
+case Opcodes.LSTORE:
+case Opcodes.FSTORE:
+case Opcodes.DSTORE:
+case Opcodes.ASTORE:
+    throw new IllegalStateException("Cannot write to read-only parameter at offset " + offset);
+case Opcodes.ILOAD:
+case Opcodes.LLOAD:
+case Opcodes.FLOAD:
+case Opcodes.DLOAD:
+case Opcodes.ALOAD:
+  methodVisitor.visitVarInsn(opcode,offset);
+break;
+default :
+throw new IllegalArgumentException("Did not expect opcode: " + opcode);
+}
+}

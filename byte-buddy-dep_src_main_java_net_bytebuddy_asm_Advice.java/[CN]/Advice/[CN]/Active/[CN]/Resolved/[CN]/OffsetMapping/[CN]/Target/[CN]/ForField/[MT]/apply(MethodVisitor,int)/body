@@ -1,0 +1,27 @@
+{
+switch (opcode) {
+case Opcodes.ISTORE:
+case Opcodes.ASTORE:
+case Opcodes.FSTORE:
+case Opcodes.LSTORE:
+case Opcodes.DSTORE:
+    throw new IllegalStateException("Cannot write to field: " + fieldDescription);
+case Opcodes.ILOAD:
+case Opcodes.FLOAD:
+case Opcodes.ALOAD:
+case Opcodes.LLOAD:
+case Opcodes.DLOAD:
+  int accessOpcode;
+if (fieldDescription.isStatic()) {
+  accessOpcode=Opcodes.GETSTATIC;
+}
+ else {
+  methodVisitor.visitVarInsn(Opcodes.ALOAD,0);
+  accessOpcode=Opcodes.GETFIELD;
+}
+methodVisitor.visitFieldInsn(accessOpcode,fieldDescription.getDeclaringType().asErasure().getInternalName(),fieldDescription.getInternalName(),fieldDescription.getDescriptor());
+break;
+default :
+throw new IllegalArgumentException("Did not expect opcode: " + opcode);
+}
+}

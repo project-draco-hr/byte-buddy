@@ -1,0 +1,6 @@
+{
+  FieldSample.exit++;
+  if (!foo.equals(FOO)) {
+    throw new AssertionError();
+  }
+}

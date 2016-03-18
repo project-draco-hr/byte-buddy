@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().redefine(FieldSample.class).visit(Advice.to(FieldAdviceIllegalExplicit.class).on(named(FOO))).make();
+}

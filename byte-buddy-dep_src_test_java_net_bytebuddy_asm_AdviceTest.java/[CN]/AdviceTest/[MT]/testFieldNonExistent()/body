@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().redefine(FieldSample.class).visit(Advice.to(FieldAdviceNonExistent.class).on(named(FOO))).make();
+}

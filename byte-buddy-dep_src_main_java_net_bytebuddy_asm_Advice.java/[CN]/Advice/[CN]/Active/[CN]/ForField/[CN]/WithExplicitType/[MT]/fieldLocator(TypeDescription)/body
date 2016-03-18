@@ -1,0 +1,6 @@
+{
+  if (!instrumentedType.isAssignableTo(explicitType)) {
+    throw new IllegalStateException(explicitType + " is no super type of " + instrumentedType);
+  }
+  return new FieldLocator.ForExactType(explicitType);
+}
