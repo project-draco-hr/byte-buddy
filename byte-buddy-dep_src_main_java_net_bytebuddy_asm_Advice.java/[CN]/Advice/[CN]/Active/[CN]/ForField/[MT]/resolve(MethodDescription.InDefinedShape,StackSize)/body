@@ -1,10 +1,13 @@
 {
-  FieldDescription fieldDescription=fieldLocator(instrumentedMethod.getDeclaringType()).locate(name);
-  if (!fieldDescription.getType().asErasure().isAssignableTo(targetType)) {
-    throw new IllegalStateException("Cannot assign type of field " + fieldDescription + " to "+ targetType);
+  FieldLocator.Resolution resolution=fieldLocator(instrumentedMethod.getDeclaringType()).locate(name);
+  if (!resolution.isResolved()) {
+    throw new IllegalStateException("Cannot locate field named " + name + " for "+ instrumentedMethod);
   }
- else   if (!fieldDescription.isStatic() && instrumentedMethod.isStatic()) {
-    throw new IllegalStateException("Cannot read non-static field " + fieldDescription + " from static method "+ instrumentedMethod);
+ else   if (!resolution.getFieldDescription().getType().asErasure().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Cannot assign type of field " + resolution.getFieldDescription() + " to "+ targetType);
   }
-  return new Target.ForField(fieldDescription);
+ else   if (!resolution.getFieldDescription().isStatic() && instrumentedMethod.isStatic()) {
+    throw new IllegalStateException("Cannot read non-static field " + resolution.getFieldDescription() + " from static method "+ instrumentedMethod);
+  }
+  return new Target.ForField(resolution.getFieldDescription());
 }

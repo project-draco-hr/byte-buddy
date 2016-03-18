@@ -1,0 +1,3 @@
+{
+  return "FieldLocator.ForClassHierarchy{" + "accessingType=" + accessingType + ", typeDescription="+ typeDescription+ '}';
+}

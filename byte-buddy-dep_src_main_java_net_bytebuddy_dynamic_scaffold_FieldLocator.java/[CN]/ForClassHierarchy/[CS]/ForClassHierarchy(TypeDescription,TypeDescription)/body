@@ -1,0 +1,4 @@
+{
+  super(accessingType);
+  this.typeDescription=typeDescription;
+}

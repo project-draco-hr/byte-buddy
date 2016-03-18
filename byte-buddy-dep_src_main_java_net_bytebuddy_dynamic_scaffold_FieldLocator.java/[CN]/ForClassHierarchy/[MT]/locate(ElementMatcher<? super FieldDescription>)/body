@@ -1,0 +1,9 @@
+{
+  for (  TypeDefinition typeDefinition : typeDescription) {
+    FieldList<?> candidates=typeDefinition.getDeclaredFields().filter(matcher);
+    if (!candidates.isEmpty()) {
+      return candidates;
+    }
+  }
+  return new FieldList.Empty<FieldDescription>();
+}

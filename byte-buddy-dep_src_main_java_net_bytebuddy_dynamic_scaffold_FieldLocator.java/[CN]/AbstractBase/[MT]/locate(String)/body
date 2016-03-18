@@ -1,0 +1,4 @@
+{
+  FieldList<?> candidates=locate(named(name).and(isVisibleTo(accessingType)));
+  return candidates.size() == 1 ? new Resolution.Simple(candidates.getOnly()) : Resolution.Illegal.INSTANCE;
+}
