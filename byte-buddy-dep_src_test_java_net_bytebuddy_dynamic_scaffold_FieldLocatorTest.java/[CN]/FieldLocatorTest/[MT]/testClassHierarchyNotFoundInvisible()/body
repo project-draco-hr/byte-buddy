@@ -1,3 +1,0 @@
-{
-  assertThat(new FieldLocator.ForClassHierarchy(new TypeDescription.ForLoadedType(Foo.class),new TypeDescription.ForLoadedType(Object.class)).locate(QUX).isResolved(),is(false));
-}

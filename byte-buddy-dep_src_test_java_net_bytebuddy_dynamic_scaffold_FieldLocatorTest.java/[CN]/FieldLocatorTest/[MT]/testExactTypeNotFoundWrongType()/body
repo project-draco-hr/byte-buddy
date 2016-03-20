@@ -1,3 +1,0 @@
-{
-  assertThat(new FieldLocator.ForExactType(new TypeDescription.ForLoadedType(Foo.class)).locate(QUX,new TypeDescription.ForLoadedType(Object.class)).isResolved(),is(false));
-}

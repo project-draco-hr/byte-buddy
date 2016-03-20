@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(FieldLocator.Resolution.Simple.class).apply();
+  ObjectPropertyAssertion.of(FieldLocator.Resolution.Illegal.class).apply();
+}

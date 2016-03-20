@@ -1,0 +1,3 @@
+{
+  assertThat(FieldLocator.NoOp.INSTANCE.locate(FOO).isResolved(),is(false));
+}
