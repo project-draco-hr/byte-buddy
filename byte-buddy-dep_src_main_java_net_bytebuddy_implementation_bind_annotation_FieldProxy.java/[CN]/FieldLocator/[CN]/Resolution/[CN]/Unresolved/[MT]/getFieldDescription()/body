@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot resolve an unresolved field lookup");
-}

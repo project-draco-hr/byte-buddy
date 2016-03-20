@@ -1,7 +1,0 @@
-{
-  FieldList<?> fieldList=typeDescription.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
-  if (fieldList.size() > 1) {
-    throw new IllegalStateException("Ambiguous fields: " + fieldList);
-  }
-  return !fieldList.isEmpty() && (!staticMethod || fieldList.getOnly().isStatic()) ? new Resolution.Resolved(fieldList.getOnly()) : new Resolution.Unresolved();
-}

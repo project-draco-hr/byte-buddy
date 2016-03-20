@@ -1,5 +1,5 @@
 {
   FieldLocator.Resolution resolution=new FieldLocator.ForClassHierarchy(new TypeDescription.ForLoadedType(Bar.class)).locate(BAR);
   assertThat(resolution.isResolved(),is(true));
-  assertThat(resolution.getFieldDescription(),is((FieldDescription)new FieldDescription.ForLoadedField(Bar.class.getDeclaredField(BAR))));
+  assertThat(resolution.getField(),is((FieldDescription)new FieldDescription.ForLoadedField(Bar.class.getDeclaredField(BAR))));
 }

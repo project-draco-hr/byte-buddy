@@ -1,3 +1,0 @@
-{
-  return typeDescription.represents(void.class) ? new LookupStrategy.ForHierarchy(fieldName) : new LookupStrategy.ForExplicitType(fieldName,TargetType.resolve(typeDescription,instrumentedType));
-}

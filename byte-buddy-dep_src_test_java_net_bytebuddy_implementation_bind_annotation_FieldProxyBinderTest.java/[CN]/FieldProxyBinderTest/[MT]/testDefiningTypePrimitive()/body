@@ -1,0 +1,5 @@
+{
+  when(target.getType()).thenReturn(genericSetterType);
+  doReturn(int.class).when(annotation).definingType();
+  new FieldProxy.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,implementationTarget,assigner);
+}
