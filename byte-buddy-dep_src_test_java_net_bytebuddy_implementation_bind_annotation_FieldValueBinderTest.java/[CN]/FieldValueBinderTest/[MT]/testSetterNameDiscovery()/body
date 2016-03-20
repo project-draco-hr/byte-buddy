@@ -1,0 +1,15 @@
+{
+  doReturn(void.class).when(annotation).declaringType();
+  when(annotation.value()).thenReturn(FieldValue.Binder.Delegate.BEAN_PROPERTY);
+  when(instrumentedType.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDefinedShape>(fieldDescription));
+  when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
+  when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
+  when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
+  when(stackManipulation.isValid()).thenReturn(true);
+  when(source.getInternalName()).thenReturn("setFoo");
+  when(source.getSourceCodeName()).thenReturn("setFoo");
+  when(source.getReturnType()).thenReturn(TypeDescription.Generic.VOID);
+  when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,TypeDescription.Generic.OBJECT));
+  MethodDelegationBinder.ParameterBinding<?> binding=FieldValue.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
+  assertThat(binding.isValid(),is(true));
+}
