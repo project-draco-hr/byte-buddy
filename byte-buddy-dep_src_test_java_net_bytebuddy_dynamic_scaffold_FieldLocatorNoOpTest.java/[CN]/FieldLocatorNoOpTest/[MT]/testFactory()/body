@@ -1,0 +1,3 @@
+{
+  assertThat(FieldLocator.NoOp.INSTANCE.make(TypeDescription.OBJECT),is((FieldLocator)FieldLocator.NoOp.INSTANCE));
+}

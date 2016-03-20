@@ -1,3 +1,4 @@
 {
   ObjectPropertyAssertion.of(FieldLocator.ForExactType.class).apply();
+  ObjectPropertyAssertion.of(FieldLocator.ForExactType.Factory.class).apply();
 }

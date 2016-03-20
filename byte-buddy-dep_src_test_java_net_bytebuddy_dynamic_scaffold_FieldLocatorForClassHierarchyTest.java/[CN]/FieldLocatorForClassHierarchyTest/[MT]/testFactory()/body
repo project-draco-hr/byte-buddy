@@ -1,0 +1,3 @@
+{
+  assertThat(FieldLocator.ForClassHierarchy.Factory.INSTANCE.make(typeDescription),is((FieldLocator)new FieldLocator.ForClassHierarchy(typeDescription)));
+}

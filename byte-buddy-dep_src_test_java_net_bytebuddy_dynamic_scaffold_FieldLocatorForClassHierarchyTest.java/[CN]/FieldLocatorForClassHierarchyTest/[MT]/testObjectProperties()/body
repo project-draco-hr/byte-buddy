@@ -1,3 +1,4 @@
 {
   ObjectPropertyAssertion.of(FieldLocator.ForClassHierarchy.class).apply();
+  ObjectPropertyAssertion.of(FieldLocator.ForClassHierarchy.Factory.class).apply();
 }

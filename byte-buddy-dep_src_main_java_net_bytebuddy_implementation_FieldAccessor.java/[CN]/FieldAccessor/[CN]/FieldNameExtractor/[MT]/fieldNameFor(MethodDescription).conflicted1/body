@@ -1,0 +1,18 @@
+{
+  String name=methodDescription.getInternalName();
+  int crop;
+  if (name.startsWith("get") || name.startsWith("set")) {
+    crop=3;
+  }
+ else   if (name.startsWith("is")) {
+    crop=2;
+  }
+ else {
+    throw new IllegalArgumentException(methodDescription + " does not follow Java bean naming conventions");
+  }
+  name=name.substring(crop);
+  if (name.length() == 0) {
+    throw new IllegalArgumentException(methodDescription + " does not specify a bean name");
+  }
+  return Character.toLowerCase(name.charAt(0)) + name.substring(1);
+}

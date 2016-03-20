@@ -2,11 +2,15 @@
   if (isConstructor().matches(instrumentedMethod)) {
     throw new IllegalArgumentException("Constructors cannot define beans: " + instrumentedMethod);
   }
+  FieldLocator.Resolution resolution=fieldLocator.locate(getFieldName(instrumentedMethod));
+  if (!resolution.isResolved() || (instrumentedMethod.isStatic() && !resolution.getField().isStatic())) {
+    throw new IllegalStateException("Cannot locate accessible field for " + instrumentedMethod);
+  }
   if (takesArguments(0).and(not(returns(void.class))).matches(instrumentedMethod)) {
-    return applyGetter(methodVisitor,implementationContext,fieldLocator.locate(getFieldName(instrumentedMethod),instrumentedMethod.isStatic()),instrumentedMethod);
+    return applyGetter(methodVisitor,implementationContext,resolution.getField(),instrumentedMethod);
   }
  else   if (takesArguments(1).and(returns(void.class)).matches(instrumentedMethod)) {
-    return applySetter(methodVisitor,implementationContext,fieldLocator.locate(getFieldName(instrumentedMethod),instrumentedMethod.isStatic()),instrumentedMethod);
+    return applySetter(methodVisitor,implementationContext,resolution.getField(),instrumentedMethod);
   }
  else {
     throw new IllegalArgumentException("Method " + implementationContext + " is no bean property");

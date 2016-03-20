@@ -2,5 +2,5 @@
   super(assigner,typing);
   this.fieldName=fieldName;
   preparationHandler=PreparationHandler.NoOp.INSTANCE;
-  fieldLocatorFactory=FieldLocator.ForInstrumentedTypeHierarchy.Factory.INSTANCE;
+  fieldLocatorFactory=FieldLocator.ForClassHierarchy.Factory.INSTANCE;
 }

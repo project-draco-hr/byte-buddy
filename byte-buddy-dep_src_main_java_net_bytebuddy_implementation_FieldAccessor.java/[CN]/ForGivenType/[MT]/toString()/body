@@ -1,3 +1,0 @@
-{
-  return "FieldAccessor.FieldLocator.ForGivenType{" + "targetType=" + targetType + ", instrumentedType="+ instrumentedType+ '}';
-}
