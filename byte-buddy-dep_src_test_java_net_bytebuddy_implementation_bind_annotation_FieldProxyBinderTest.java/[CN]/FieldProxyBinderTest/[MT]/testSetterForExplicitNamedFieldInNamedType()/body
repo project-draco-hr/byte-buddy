@@ -1,6 +1,6 @@
 {
   when(target.getType()).thenReturn(genericSetterType);
-  doReturn(Foo.class).when(annotation).definingType();
+  doReturn(Foo.class).when(annotation).declaringType();
   when(instrumentedType.isAssignableTo(new TypeDescription.ForLoadedType(Foo.class))).thenReturn(true);
   when(annotation.value()).thenReturn(FOO);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);

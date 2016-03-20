@@ -1,7 +1,7 @@
 {
   when(target.getType()).thenReturn(genericSetterType);
-  doReturn(void.class).when(annotation).definingType();
-  when(annotation.value()).thenReturn(FieldProxy.BEAN_PROPERTY);
+  doReturn(void.class).when(annotation).declaringType();
+  when(annotation.value()).thenReturn(FieldProxy.Binder.BEAN_PROPERTY);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
   when(source.getReturnType()).thenReturn(TypeDescription.Generic.VOID);
   when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,fieldType));

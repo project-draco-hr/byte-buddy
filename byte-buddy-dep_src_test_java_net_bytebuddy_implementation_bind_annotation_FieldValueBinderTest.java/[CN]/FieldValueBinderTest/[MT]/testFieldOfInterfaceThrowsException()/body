@@ -1,4 +1,0 @@
-{
-  doReturn(Runnable.class).when(annotation).definingType();
-  FieldValue.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
-}

@@ -1,0 +1,13 @@
+{
+  if (!declaringType(annotation).represents(void.class)) {
+    if (declaringType(annotation).isPrimitive() || declaringType(annotation).isArray()) {
+      throw new IllegalStateException("A primitive type or array type cannot declare a field: " + source);
+    }
+ else     if (!implementationTarget.getInstrumentedType().isAssignableTo(declaringType(annotation))) {
+      return MethodDelegationBinder.ParameterBinding.Illegal.INSTANCE;
+    }
+  }
+  FieldLocator fieldLocator=declaringType(annotation).represents(void.class) ? new FieldLocator.ForClassHierarchy(implementationTarget.getInstrumentedType()) : new FieldLocator.ForExactType(declaringType(annotation),implementationTarget.getInstrumentedType());
+  FieldLocator.Resolution resolution=fieldName(annotation).equals(BEAN_PROPERTY) ? resolveAccessor(fieldLocator,source) : fieldLocator.locate(fieldName(annotation));
+  return resolution.isResolved() && !(source.isStatic() && !resolution.getField().isStatic()) ? bind(resolution.getField(),annotation,source,target,implementationTarget,assigner) : ParameterBinding.Illegal.INSTANCE;
+}

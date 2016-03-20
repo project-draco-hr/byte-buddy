@@ -1,5 +1,5 @@
 {
-  doReturn(FooStatic.class).when(annotation).definingType();
+  doReturn(FooStatic.class).when(annotation).declaringType();
   when(annotation.value()).thenReturn(FOO);
   when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   when(source.isStatic()).thenReturn(true);

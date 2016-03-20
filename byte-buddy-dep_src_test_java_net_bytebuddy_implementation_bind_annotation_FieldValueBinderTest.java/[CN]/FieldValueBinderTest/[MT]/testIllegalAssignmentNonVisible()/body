@@ -1,5 +1,5 @@
 {
-  doReturn(void.class).when(annotation).definingType();
+  doReturn(void.class).when(annotation).declaringType();
   when(annotation.value()).thenReturn(FOO);
   when(instrumentedType.getDeclaredFields()).thenReturn((FieldList)new FieldList.Explicit<FieldDescription>(fieldDescription));
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);

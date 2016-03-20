@@ -1,8 +1,4 @@
 {
   ObjectPropertyAssertion.of(FieldValue.Binder.class).apply();
-  ObjectPropertyAssertion.of(FieldValue.Binder.FieldLocator.ForFieldInHierarchy.class).apply();
-  ObjectPropertyAssertion.of(FieldValue.Binder.FieldLocator.ForSpecificType.class).apply();
-  ObjectPropertyAssertion.of(FieldValue.Binder.FieldLocator.Impossible.class).apply();
-  ObjectPropertyAssertion.of(FieldValue.Binder.FieldLocator.Resolution.Resolved.class).apply();
-  ObjectPropertyAssertion.of(FieldValue.Binder.FieldLocator.Resolution.Unresolved.class).apply();
+  ObjectPropertyAssertion.of(FieldValue.Binder.Delegate.class).applyBasic();
 }

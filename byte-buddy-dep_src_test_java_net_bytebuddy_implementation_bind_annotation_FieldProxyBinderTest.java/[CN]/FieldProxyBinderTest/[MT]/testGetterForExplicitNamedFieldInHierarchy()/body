@@ -1,6 +1,6 @@
 {
   when(target.getType()).thenReturn(genericGetterType);
-  doReturn(void.class).when(annotation).definingType();
+  doReturn(void.class).when(annotation).declaringType();
   when(annotation.value()).thenReturn(FOO);
   when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
   when(source.getReturnType()).thenReturn(genericFieldType);

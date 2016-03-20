@@ -1,4 +1,4 @@
 {
-  doReturn(int.class).when(annotation).definingType();
+  doReturn(int.class).when(annotation).declaringType();
   FieldValue.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
 }
