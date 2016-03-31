@@ -10,7 +10,7 @@
     for (    Class<?> type : instrumentation.getAllLoadedClasses()) {
       TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
       try {
-        if (!instrumentation.isModifiableClass(type) || !collector.consider(type,ignoredTypes)) {
+        if (!instrumentation.isModifiableClass(type) || !collector.consider(type,ignoredTypes,ignoredClassLoaders)) {
           try {
             try {
               listener.onIgnored(typeDescription);

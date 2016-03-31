@@ -6,7 +6,10 @@
   this.nativeMethodStrategy=nativeMethodStrategy;
   this.accessControlContext=accessControlContext;
   this.initializationStrategy=initializationStrategy;
+  this.redefinitionStrategy=redefinitionStrategy;
   this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
+  this.lambdaInstrumentationStrategy=lambdaInstrumentationStrategy;
   this.ignoredTypes=ignoredTypes;
+  this.ignoredClassLoaders=ignoredClassLoaders;
   this.transformation=transformation;
 }

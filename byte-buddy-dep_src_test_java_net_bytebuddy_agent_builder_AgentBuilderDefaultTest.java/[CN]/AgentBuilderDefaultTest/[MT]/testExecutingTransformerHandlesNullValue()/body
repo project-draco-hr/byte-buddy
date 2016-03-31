@@ -1,3 +1,3 @@
 {
-  assertThat(new AgentBuilder.Default.ExecutingTransformer(byteBuddy,binaryLocator,typeStrategy,listener,mock(AgentBuilder.Default.NativeMethodStrategy.class),accessControlContext,initializationStrategy,mock(AgentBuilder.Default.BootstrapInjectionStrategy.class),mock(ElementMatcher.class),mock(AgentBuilder.Default.Transformation.class)).transform(null,null,null,null,new byte[0]),nullValue(byte[].class));
+  assertThat(new AgentBuilder.Default.ExecutingTransformer(byteBuddy,binaryLocator,typeStrategy,listener,mock(AgentBuilder.Default.NativeMethodStrategy.class),accessControlContext,initializationStrategy,mock(AgentBuilder.Default.BootstrapInjectionStrategy.class),mock(ElementMatcher.class),mock(ElementMatcher.class),mock(AgentBuilder.Default.Transformation.class)).transform(null,null,null,null,new byte[0]),nullValue(byte[].class));
 }

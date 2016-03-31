@@ -10,6 +10,7 @@
   result=31 * result + bootstrapInjectionStrategy.hashCode();
   result=31 * result + lambdaInstrumentationStrategy.hashCode();
   result=31 * result + ignoredTypes.hashCode();
+  result=31 * result + ignoredClassLoaders.hashCode();
   result=31 * result + transformation.hashCode();
   return result;
 }

@@ -1,3 +1,3 @@
 {
-  return "AgentBuilder.Default.ExecutingTransformer{" + "byteBuddy=" + byteBuddy + ", binaryLocator="+ binaryLocator+ ", typeStrategy="+ typeStrategy+ ", initializationStrategy="+ initializationStrategy+ ", listener="+ listener+ ", nativeMethodStrategy="+ nativeMethodStrategy+ ", bootstrapInjectionStrategy="+ bootstrapInjectionStrategy+ ", accessControlContext="+ accessControlContext+ ", ignoredTypes="+ ignoredTypes+ ", transformation="+ transformation+ '}';
+  return "AgentBuilder.Default.ExecutingTransformer{" + "byteBuddy=" + byteBuddy + ", binaryLocator="+ binaryLocator+ ", typeStrategy="+ typeStrategy+ ", initializationStrategy="+ initializationStrategy+ ", listener="+ listener+ ", nativeMethodStrategy="+ nativeMethodStrategy+ ", bootstrapInjectionStrategy="+ bootstrapInjectionStrategy+ ", accessControlContext="+ accessControlContext+ ", ignoredTypes="+ ignoredTypes+ ", ignoredClassLoaders="+ ignoredClassLoaders+ ", transformation="+ transformation+ '}';
 }

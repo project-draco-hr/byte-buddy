@@ -1,0 +1,2 @@
+ElementMatcher<? super TypeDescription> ignoredTypes
+ElementMatcher<? super ClassLoader> ignoredClassLoaders
