@@ -7,7 +7,6 @@
   this.accessControlContext=accessControlContext;
   this.initializationStrategy=initializationStrategy;
   this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
-  this.ignoredTypes=ignoredTypes;
-  this.ignoredClassLoaders=ignoredClassLoaders;
+  this.ignoredTypeMatcher=ignoredTypeMatcher;
   this.transformation=transformation;
 }

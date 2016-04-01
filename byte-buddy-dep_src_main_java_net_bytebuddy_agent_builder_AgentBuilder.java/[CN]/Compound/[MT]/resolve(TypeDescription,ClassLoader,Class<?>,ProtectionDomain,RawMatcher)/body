@@ -1,6 +1,6 @@
 {
   for (  Transformation transformation : transformations) {
-    Resolution resolution=transformation.resolve(typeDescription,classLoader,classBeingRedefined,protectionDomain,ignoredTypes,ignoredClassLoaders);
+    Resolution resolution=transformation.resolve(typeDescription,classLoader,classBeingRedefined,protectionDomain,ignoredTypeMatcher);
     if (resolution.isResolved()) {
       return resolution;
     }

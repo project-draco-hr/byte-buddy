@@ -9,7 +9,6 @@
   this.redefinitionStrategy=redefinitionStrategy;
   this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
   this.lambdaInstrumentationStrategy=lambdaInstrumentationStrategy;
-  this.ignoredTypes=ignoredTypes;
-  this.ignoredClassLoaders=ignoredClassLoaders;
+  this.ignoredTypeMatcher=ignoredTypeMatcher;
   this.transformation=transformation;
 }

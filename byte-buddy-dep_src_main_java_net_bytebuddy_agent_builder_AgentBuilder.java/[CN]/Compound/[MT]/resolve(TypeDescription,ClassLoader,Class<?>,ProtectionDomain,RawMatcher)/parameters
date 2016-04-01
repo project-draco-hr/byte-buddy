@@ -2,5 +2,4 @@ TypeDescription typeDescription
 ClassLoader classLoader
 Class<?> classBeingRedefined
 ProtectionDomain protectionDomain
-ElementMatcher<? super TypeDescription> ignoredTypes
-ElementMatcher<? super ClassLoader> ignoredClassLoaders
+RawMatcher ignoredTypeMatcher
