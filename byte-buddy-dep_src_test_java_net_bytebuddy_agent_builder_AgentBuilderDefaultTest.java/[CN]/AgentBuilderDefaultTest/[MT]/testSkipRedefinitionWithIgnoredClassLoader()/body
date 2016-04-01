@@ -2,6 +2,7 @@
   when(dynamicType.getBytes()).thenReturn(BAZ);
   when(resolution.resolve()).thenReturn(new TypeDescription.ForLoadedType(REDEFINED));
   @SuppressWarnings("unchecked") ElementMatcher<? super TypeDescription> ignoredTypes=mock(ElementMatcher.class);
+  when(ignoredTypes.matches(new TypeDescription.ForLoadedType(REDEFINED))).thenReturn(true);
   @SuppressWarnings("unchecked") ElementMatcher<? super ClassLoader> ignoredClassLoaders=mock(ElementMatcher.class);
   when(ignoredClassLoaders.matches(REDEFINED.getClassLoader())).thenReturn(true);
   when(instrumentation.isModifiableClass(REDEFINED)).thenReturn(true);
@@ -19,5 +20,6 @@
   verifyZeroInteractions(initializationStrategy);
   verify(ignoredClassLoaders).matches(REDEFINED.getClassLoader());
   verifyNoMoreInteractions(ignoredClassLoaders);
-  verifyZeroInteractions(ignoredTypes);
+  verify(ignoredTypes).matches(new TypeDescription.ForLoadedType(REDEFINED));
+  verifyNoMoreInteractions(ignoredTypes);
 }

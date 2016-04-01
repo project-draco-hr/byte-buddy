@@ -1,3 +1,0 @@
-{
-  return "AgentBuilder.Default.Matched{" + "rawMatcher=" + rawMatcher + ", transformer="+ transformer+ ", agentBuilder="+ Default.this+ '}';
-}

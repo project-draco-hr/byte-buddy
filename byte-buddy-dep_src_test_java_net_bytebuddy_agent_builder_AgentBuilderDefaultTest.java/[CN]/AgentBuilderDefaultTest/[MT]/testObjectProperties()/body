@@ -5,7 +5,8 @@
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.Default.Matched.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.Ignoring.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.Transforming.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Default.Transformation.Simple.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Default.Transformation.Simple.Resolution.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Default.Transformation.Ignored.class).apply();

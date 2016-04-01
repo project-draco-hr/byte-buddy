@@ -1,0 +1,10 @@
+{
+  when(left.matches(typeDescription,classLoader,Foo.class,protectionDomain)).thenReturn(true);
+  when(right.matches(typeDescription,classLoader,Foo.class,protectionDomain)).thenReturn(false);
+  AgentBuilder.RawMatcher rawMatcher=new AgentBuilder.RawMatcher.Conjunction(left,right);
+  assertThat(rawMatcher.matches(typeDescription,classLoader,Foo.class,protectionDomain),is(false));
+  verify(left).matches(typeDescription,classLoader,Foo.class,protectionDomain);
+  verifyNoMoreInteractions(left);
+  verify(right).matches(typeDescription,classLoader,Foo.class,protectionDomain);
+  verifyNoMoreInteractions(right);
+}

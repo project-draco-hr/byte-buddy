@@ -1,3 +1,0 @@
-{
-  return new Matched(rawMatcher,new Transformer.Compound(this.transformer,transformer));
-}
