@@ -1,0 +1,36 @@
+{
+  if (pattern.equals(Origin.DEFAULT)) {
+    return new ForOrigin(Collections.<Renderer>singletonList(Renderer.ForStringRepresentation.INSTANCE));
+  }
+ else {
+    List<Renderer> renderers=new ArrayList<Renderer>(pattern.length());
+    int from=0;
+    for (int to=pattern.indexOf(DELIMITER); to != -1; to=pattern.indexOf(DELIMITER,from)) {
+      if (to != 0 && pattern.charAt(to - 1) == ESCAPE && (to == 1 || pattern.charAt(to - 2) != ESCAPE)) {
+        renderers.add(new Renderer.ForConstantValue(pattern.substring(from,Math.max(0,to - 1)) + DELIMITER));
+        from=to + 1;
+        continue;
+      }
+ else       if (pattern.length() == to + 1) {
+        throw new IllegalStateException("Missing sort descriptor for " + pattern + " at index "+ to);
+      }
+      renderers.add(new Renderer.ForConstantValue(pattern.substring(from,to).replace("" + ESCAPE + ESCAPE,"" + ESCAPE)));
+switch (pattern.charAt(to + 1)) {
+case METHOD_NAME:
+        renderers.add(Renderer.ForMethodName.INSTANCE);
+      break;
+case TYPE_NAME:
+    renderers.add(Renderer.ForTypeName.INSTANCE);
+  break;
+case DESCRIPTOR:
+renderers.add(Renderer.ForDescriptor.INSTANCE);
+break;
+default :
+throw new IllegalStateException("Illegal sort descriptor " + pattern.charAt(to + 1) + " for "+ pattern);
+}
+from=to + 2;
+}
+renderers.add(new Renderer.ForConstantValue(pattern.substring(from)));
+return new ForOrigin(renderers);
+}
+}

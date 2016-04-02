@@ -1,0 +1,7 @@
+{
+  StringBuilder stringBuilder=new StringBuilder();
+  for (  Renderer renderer : renderers) {
+    stringBuilder.append(renderer.apply(instrumentedMethod));
+  }
+  return new Target.ForConstantPoolValue(stringBuilder.toString());
+}

@@ -1,0 +1,6 @@
+{
+  if (!origin.equals(Sample.class.getDeclaredMethod(FOO).toString())) {
+    throw new AssertionError();
+  }
+  Sample.exit++;
+}

@@ -1,0 +1,12 @@
+{
+  AnnotationDescription.Loadable<Origin> origin=parameterDescription.getDeclaredAnnotations().ofType(Origin.class);
+  if (origin == null) {
+    return UNDEFINED;
+  }
+ else {
+    if (!parameterDescription.getType().asErasure().isAssignableFrom(String.class)) {
+      throw new IllegalStateException("Non-String type " + parameterDescription + " for origin annotation");
+    }
+    return ForOrigin.parse(origin.loadSilent().value());
+  }
+}
