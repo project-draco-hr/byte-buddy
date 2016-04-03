@@ -1,3 +1,3 @@
 {
-  return "Advice.FrameTranslator.Bound{" + "frameTranslator=" + FrameTranslator.this + ", methodDescription="+ methodDescription+ ", intermediateTypes="+ intermediateTypes+ '}';
+  return "Advice.FrameTranslator.Bound{" + "frameTranslator=" + FrameTranslator.this + ", methodDescription="+ methodDescription+ ", intermediateTypes="+ intermediateTypes+ ", yieldedTypes="+ yieldedTypes+ '}';
 }
