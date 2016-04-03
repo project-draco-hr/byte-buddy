@@ -1,0 +1,3 @@
+{
+  return offset + instrumentedMethod.getReturnType().getStackSize().getSize() + enterType.getStackSize().getSize()+ EXCEPTION_SIZE;
+}

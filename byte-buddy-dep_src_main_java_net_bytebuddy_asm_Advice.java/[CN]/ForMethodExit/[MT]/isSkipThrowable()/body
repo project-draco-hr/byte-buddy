@@ -1,3 +1,0 @@
-{
-  return !adviseMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).loadSilent().onThrowable();
-}

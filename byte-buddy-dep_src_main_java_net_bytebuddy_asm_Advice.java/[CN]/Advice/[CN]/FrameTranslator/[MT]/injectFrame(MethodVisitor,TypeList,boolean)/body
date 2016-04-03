@@ -1,0 +1,19 @@
+{
+  if (requiresFull) {
+    Object[] localVariable=new Object[instrumentedMethod.getParameters().size() + intermediateTypes.size()];
+    int variableIndex=0;
+    for (    TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
+      variableIndex+=insertFrame(typeDescription,localVariable,variableIndex);
+    }
+    for (    TypeDescription typeDescription : intermediateTypes) {
+      variableIndex+=insertFrame(typeDescription,localVariable,variableIndex);
+    }
+    methodVisitor.visitFrame(Opcodes.F_FULL,localVariable.length,localVariable,throwableOnStack ? 1 : 0,throwableOnStack ? new Object[]{Type.getInternalName(Throwable.class)} : EMPTY);
+  }
+ else   if (throwableOnStack) {
+    methodVisitor.visitFrame(Opcodes.F_SAME,UNDEFINED,EMPTY,UNDEFINED,EMPTY);
+  }
+ else {
+    methodVisitor.visitFrame(Opcodes.F_SAME1,UNDEFINED,EMPTY,StackSize.SINGLE.getSize(),new Object[]{Type.getInternalName(Throwable.class)});
+  }
+}

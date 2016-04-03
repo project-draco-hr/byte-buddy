@@ -3,5 +3,6 @@
   this.instrumentedMethod=instrumentedMethod;
   this.methodEnter=methodEnter;
   this.methodExit=methodExit;
-  this.classReader=new ClassReader(binaryRepresentation);
+  classReader=new ClassReader(binaryRepresentation);
+  frameTranslator=new FrameTranslator(instrumentedMethod,methodEnter.getEnterType().represents(void.class) ? new TypeList.Empty() : new TypeList.Explicit(methodEnter.getEnterType()));
 }

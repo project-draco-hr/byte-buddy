@@ -1,4 +1,4 @@
 {
   mv.visitLabel(endOfMethod);
-  suppressionHandler.onEnd(mv,this);
+  suppressionHandler.onEnd(mv,frameTranslator,this);
 }

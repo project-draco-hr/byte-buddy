@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && additionalSize == ((Resolved.ForMethodExit)other).additionalSize;
-}

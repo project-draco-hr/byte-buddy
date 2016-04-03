@@ -1,0 +1,22 @@
+{
+  if (typeDescription.represents(boolean.class) || typeDescription.represents(byte.class) || typeDescription.represents(short.class)|| typeDescription.represents(char.class)|| typeDescription.represents(int.class)) {
+    translated[index]=Opcodes.INTEGER;
+    return 1;
+  }
+ else   if (typeDescription.represents(long.class)) {
+    translated[index]=Opcodes.LONG;
+    return 1;
+  }
+ else   if (typeDescription.represents(float.class)) {
+    translated[index]=Opcodes.FLOAT;
+    return 1;
+  }
+ else   if (typeDescription.represents(double.class)) {
+    translated[index]=Opcodes.DOUBLE;
+    return 1;
+  }
+ else {
+    translated[index]=typeDescription.getInternalName();
+    return 1;
+  }
+}

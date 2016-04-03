@@ -1,4 +1,0 @@
-String internalName
-String descriptor
-MethodVisitor methodVisitor
-MethodDescription.InDefinedShape instrumentedMethod

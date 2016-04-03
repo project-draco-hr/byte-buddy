@@ -1,0 +1,6 @@
+MethodVisitor methodVisitor
+int type
+int localVariableLength
+Object[] localVariable
+int stackSize
+Object[] stack

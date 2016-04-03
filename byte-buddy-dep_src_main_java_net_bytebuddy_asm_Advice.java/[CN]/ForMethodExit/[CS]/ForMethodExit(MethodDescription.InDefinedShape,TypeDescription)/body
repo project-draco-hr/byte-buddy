@@ -1,4 +1,0 @@
-{
-  super(adviseMethod,OffsetMapping.ForParameter.Factory.INSTANCE,OffsetMapping.ForThisReference.Factory.INSTANCE,OffsetMapping.ForField.Factory.INSTANCE,OffsetMapping.ForOrigin.Factory.INSTANCE,OffsetMapping.ForIgnored.INSTANCE,new OffsetMapping.ForEnterValue.Factory(enterType),OffsetMapping.ForReturnValue.Factory.INSTANCE,adviseMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).loadSilent().onThrowable() ? OffsetMapping.ForThrowable.INSTANCE : new OffsetMapping.Illegal(Thrown.class));
-  additionalSize=enterType.getStackSize();
-}

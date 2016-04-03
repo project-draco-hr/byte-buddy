@@ -1,3 +1,3 @@
 {
-  return "Advice.Dispatcher.Active.Resolved.ForMethodEnter{" + "adviseMethod=" + adviseMethod + ", offsetMappings="+ offsetMappings+ '}';
+  return "Advice.Dispatcher.Active.CodeTranslationVisitor.ForMethodEnter{" + "instrumentedMethod=" + instrumentedMethod + ", adviseMethod="+ adviseMethod+ '}';
 }

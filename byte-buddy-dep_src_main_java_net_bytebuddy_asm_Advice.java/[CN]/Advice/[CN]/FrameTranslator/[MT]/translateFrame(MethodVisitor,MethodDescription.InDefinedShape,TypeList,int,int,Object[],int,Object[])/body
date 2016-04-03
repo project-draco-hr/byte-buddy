@@ -2,22 +2,23 @@
 switch (type) {
 case Opcodes.F_SAME:
 case Opcodes.F_SAME1:
-case Opcodes.F_APPEND:
-case Opcodes.F_CHOP:
     break;
 case Opcodes.F_FULL:
 case Opcodes.F_NEW:
-  Object[] translated=new Object[localVariableLength - methodDescription.getParameters().asTypeList().getStackSize() + instrumentedMethod.getParameters().asTypeList().getStackSize() + intermediateTypes.getStackSize()];
+  Object[] translated=new Object[localVariableLength - methodDescription.getParameters().size() + instrumentedMethod.getParameters().size() + intermediateTypes.size()];
 int index=0;
 for (TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
-index+=asFrame(typeDescription,translated,index);
+index+=insertFrame(typeDescription,translated,index);
 }
 for (TypeDescription typeDescription : intermediateTypes) {
-index+=asFrame(typeDescription,translated,index);
+index+=insertFrame(typeDescription,translated,index);
 }
-System.arraycopy(localVariable,stackSize - methodDescription.getParameters().asTypeList().getStackSize(),translated,index,translated.length - index);
+System.arraycopy(localVariable,localVariableLength - methodDescription.getParameters().size(),translated,index,translated.length - index);
 localVariableLength=translated.length;
 localVariable=translated;
+case Opcodes.F_APPEND:
+case Opcodes.F_CHOP:
+requiresFull=true;
 break;
 default :
 throw new IllegalArgumentException("Unexpected frame type: " + type);

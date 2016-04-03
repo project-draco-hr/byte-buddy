@@ -1,0 +1,3 @@
+{
+  super(methodVisitor,frameTranslator.bind(adviseMethod),instrumentedMethod,adviseMethod,offsetMappings,throwableType);
+}

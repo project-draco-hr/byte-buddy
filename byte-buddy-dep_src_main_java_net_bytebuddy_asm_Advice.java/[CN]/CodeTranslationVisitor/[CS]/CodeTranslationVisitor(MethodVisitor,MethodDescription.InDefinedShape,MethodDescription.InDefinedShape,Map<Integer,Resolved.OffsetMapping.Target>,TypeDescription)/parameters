@@ -1,5 +1,0 @@
-MethodVisitor methodVisitor
-MethodDescription.InDefinedShape instrumentedMethod
-MethodDescription.InDefinedShape adviseMethod
-Map<Integer,Resolved.OffsetMapping.Target> offsetMappings
-TypeDescription throwableType
