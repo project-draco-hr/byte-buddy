@@ -1,4 +1,5 @@
 {
   this.instrumentedMethod=instrumentedMethod;
   this.intermediateTypes=intermediateTypes;
+  stackSize=1;
 }

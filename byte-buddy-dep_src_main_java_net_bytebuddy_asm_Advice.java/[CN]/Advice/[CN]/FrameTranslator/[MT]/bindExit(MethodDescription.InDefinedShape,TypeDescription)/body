@@ -7,5 +7,5 @@
     typeDescriptions.add(instrumentedMethod.getReturnType().asErasure());
   }
   typeDescriptions.add(TypeDescription.THROWABLE);
-  return new TypeList.Explicit(typeDescriptions);
+  return new Bound(methodDescription,new TypeList.Explicit(typeDescriptions),Collections.<TypeDescription>emptyList());
 }

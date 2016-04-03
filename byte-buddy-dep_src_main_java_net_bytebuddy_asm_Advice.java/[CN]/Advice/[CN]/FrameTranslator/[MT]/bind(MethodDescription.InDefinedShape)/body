@@ -1,3 +1,0 @@
-{
-  return bind(methodDescription,new TypeList.Empty());
-}

@@ -1,0 +1,3 @@
+{
+  injectFrame(methodVisitor,CompoundList.of(intermediateTypes,instrumentedMethod.getReturnType().represents(void.class) ? new TypeList.Empty() : new TypeList.Explicit(instrumentedMethod.getReturnType().asErasure())),false);
+}

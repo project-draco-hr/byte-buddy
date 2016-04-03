@@ -1,3 +1,0 @@
-{
-  FrameTranslator.this.injectFrame(methodVisitor,intermediateTypes,false);
-}

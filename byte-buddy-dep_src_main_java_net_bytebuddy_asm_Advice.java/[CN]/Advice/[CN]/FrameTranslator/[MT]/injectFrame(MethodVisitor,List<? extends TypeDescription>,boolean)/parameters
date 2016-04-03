@@ -1,3 +1,3 @@
 MethodVisitor methodVisitor
-TypeList intermediateTypes
+List<? extends TypeDescription> extensionTypes
 boolean throwableOnStack
