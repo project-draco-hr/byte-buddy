@@ -1,4 +1,4 @@
 {
   when(methodDescription.isConstructor()).thenReturn(true);
-  testMethodHandle(MethodHandleConstant.of(methodDescription),Opcodes.H_NEWINVOKESPECIAL);
+  testMethodHandle(MethodHandleConstant.of(methodDescription),Opcodes.H_NEWINVOKESPECIAL,false);
 }

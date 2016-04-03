@@ -1,5 +1,0 @@
-int type
-int sizeLocal
-Object[] local
-int sizeStack
-Object[] stack

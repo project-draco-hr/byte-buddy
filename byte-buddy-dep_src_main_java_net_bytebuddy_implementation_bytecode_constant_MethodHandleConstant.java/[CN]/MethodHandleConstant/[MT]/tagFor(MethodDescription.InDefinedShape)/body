@@ -8,7 +8,7 @@
  else   if (methodDescription.isPrivate() || methodDescription.isDefaultMethod()) {
     return Opcodes.H_INVOKESPECIAL;
   }
- else   if (methodDescription.isInterface()) {
+ else   if (methodDescription.getDeclaringType().isInterface()) {
     return Opcodes.H_INVOKEINTERFACE;
   }
  else {

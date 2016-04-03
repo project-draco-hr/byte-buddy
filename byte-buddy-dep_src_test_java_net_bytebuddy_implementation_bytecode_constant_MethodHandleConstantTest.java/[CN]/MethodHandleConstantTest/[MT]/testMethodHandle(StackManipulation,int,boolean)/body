@@ -3,6 +3,6 @@
   StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
   assertThat(size.getSizeImpact(),is(1));
   assertThat(size.getMaximalSize(),is(1));
-  verify(methodVisitor).visitLdcInsn(new Handle(handleCode,FOO,BAR,QUX));
+  verify(methodVisitor).visitLdcInsn(new Handle(handleCode,FOO,BAR,QUX,handleInterface));
   verifyNoMoreInteractions(methodVisitor);
 }

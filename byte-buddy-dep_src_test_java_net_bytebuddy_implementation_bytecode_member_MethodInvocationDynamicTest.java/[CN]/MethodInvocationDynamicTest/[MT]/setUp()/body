@@ -1,5 +1,5 @@
 {
-  when(declaringType.asErasure()).thenReturn(declaringType);
+  when(methodDescription.asDefined()).thenReturn(methodDescription);
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);
   when(firstType.getStackSize()).thenReturn(StackSize.ZERO);
   when(firstType.getDescriptor()).thenReturn(FOO);

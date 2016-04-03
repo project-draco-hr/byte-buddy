@@ -1,5 +1,5 @@
 String methodName
 TypeDescription returnType
 TypeList parameterTypes
-MethodDescription bootstrapMethod
+MethodDescription.InDefinedShape bootstrapMethod
 List<?> arguments

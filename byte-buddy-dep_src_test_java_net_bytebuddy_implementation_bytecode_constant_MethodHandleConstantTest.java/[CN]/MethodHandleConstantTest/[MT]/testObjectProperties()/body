@@ -2,7 +2,7 @@
   final Iterator<String> iterator=Arrays.asList(FOO,BAR).iterator();
   ObjectPropertyAssertion.of(MethodHandleConstant.class).create(new ObjectPropertyAssertion.Creator<Handle>(){
     @Override public Handle create(){
-      return new Handle(Opcodes.H_GETFIELD,FOO,BAR,iterator.next());
+      return new Handle(Opcodes.H_GETFIELD,FOO,BAR,iterator.next(),false);
     }
   }
 ).apply();

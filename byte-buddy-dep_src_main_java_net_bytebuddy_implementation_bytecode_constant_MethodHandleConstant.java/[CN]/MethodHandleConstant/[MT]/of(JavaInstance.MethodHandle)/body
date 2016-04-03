@@ -4,5 +4,5 @@
   for (  TypeDescription typeDescription : methodHandle.getParameterTypes()) {
     parameterType[index++]=Type.getType(typeDescription.getDescriptor());
   }
-  return new MethodHandleConstant(new Handle(methodHandle.getHandleType().getIdentifier(),methodHandle.getOwnerType().getInternalName(),methodHandle.getName(),Type.getMethodDescriptor(Type.getType(methodHandle.getReturnType().getDescriptor()),parameterType)));
+  return new MethodHandleConstant(new Handle(methodHandle.getHandleType().getIdentifier(),methodHandle.getOwnerType().getInternalName(),methodHandle.getName(),Type.getMethodDescriptor(Type.getType(methodHandle.getReturnType().getDescriptor()),parameterType),methodHandle.getOwnerType().isInterface()));
 }

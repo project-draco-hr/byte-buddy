@@ -1,3 +1,3 @@
 {
-  testMethodHandle(MethodHandleConstant.of(methodDescription),Opcodes.H_INVOKEVIRTUAL);
+  testMethodHandle(MethodHandleConstant.of(methodDescription),Opcodes.H_INVOKEVIRTUAL,false);
 }

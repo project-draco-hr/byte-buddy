@@ -1,3 +1,0 @@
-{
-  return originalName.equals(targetName) ? classVisitor : new FramePreservingRemapper(classVisitor,new SimpleRemapper(originalName,targetName));
-}

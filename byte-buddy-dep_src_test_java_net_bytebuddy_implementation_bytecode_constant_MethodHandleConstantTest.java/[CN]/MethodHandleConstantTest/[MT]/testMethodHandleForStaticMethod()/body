@@ -1,4 +1,4 @@
 {
   when(methodDescription.isStatic()).thenReturn(true);
-  testMethodHandle(MethodHandleConstant.of(methodDescription),Opcodes.H_INVOKESTATIC);
+  testMethodHandle(MethodHandleConstant.of(methodDescription),Opcodes.H_INVOKESTATIC,false);
 }

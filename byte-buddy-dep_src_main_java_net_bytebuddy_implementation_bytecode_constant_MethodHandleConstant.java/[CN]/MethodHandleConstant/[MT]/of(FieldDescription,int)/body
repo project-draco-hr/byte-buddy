@@ -1,3 +1,0 @@
-{
-  return new MethodHandleConstant(new Handle(tag,fieldDescription.getDeclaringType().asErasure().getInternalName(),fieldDescription.getInternalName(),fieldDescription.getDescriptor()));
-}
