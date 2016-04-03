@@ -1,0 +1,30 @@
+{
+switch (opcode) {
+case Opcodes.ALOAD:
+    methodVisitor.visitInsn(Opcodes.ACONST_NULL);
+  break;
+case Opcodes.ILOAD:
+methodVisitor.visitInsn(Opcodes.ICONST_0);
+break;
+case Opcodes.LLOAD:
+methodVisitor.visitInsn(Opcodes.LCONST_0);
+break;
+case Opcodes.FLOAD:
+methodVisitor.visitInsn(Opcodes.FCONST_0);
+break;
+case Opcodes.DLOAD:
+methodVisitor.visitInsn(Opcodes.DCONST_0);
+break;
+case Opcodes.ISTORE:
+case Opcodes.FSTORE:
+case Opcodes.ASTORE:
+methodVisitor.visitInsn(Opcodes.POP);
+break;
+case Opcodes.LSTORE:
+case Opcodes.DSTORE:
+methodVisitor.visitInsn(Opcodes.POP2);
+break;
+default :
+throw new IllegalStateException("Unexpected opcode: " + opcode);
+}
+}

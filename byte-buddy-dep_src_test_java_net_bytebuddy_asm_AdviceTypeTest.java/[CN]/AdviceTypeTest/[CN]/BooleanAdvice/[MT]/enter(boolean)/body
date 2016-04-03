@@ -1,0 +1,11 @@
+{
+  if (value) {
+    throw new AssertionError();
+  }
+  value=BOOLEAN;
+  if (value) {
+    throw new AssertionError();
+  }
+  enter++;
+  return BOOLEAN;
+}

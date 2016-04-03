@@ -1,0 +1,11 @@
+{
+  if (value != null) {
+    throw new AssertionError();
+  }
+  value=null;
+  if (value != null) {
+    throw new AssertionError();
+  }
+  enter++;
+  return FOO + BAR;
+}

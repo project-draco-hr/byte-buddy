@@ -1,6 +1,6 @@
 {
   if (this == object)   return true;
   if (object == null || getClass() != object.getClass())   return false;
-  ForParameter that=(ForParameter)object;
-  return index == that.index && readOnly == that.readOnly && targetType.equals(that.targetType);
+  ForParameter forParameter=(ForParameter)object;
+  return offset == forParameter.offset;
 }
