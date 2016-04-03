@@ -8,13 +8,13 @@ case Opcodes.F_NEW:
   Object[] translated=new Object[localVariableLength - methodDescription.getParameters().size() - (methodDescription.isStatic() ? 0 : 1) + instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + intermediateTypes.size()];
 int index=0;
 if (!instrumentedMethod.isStatic()) {
-index+=insertFrame(instrumentedMethod.getDeclaringType(),translated,index);
+localVariable[index++]=toFrame(instrumentedMethod.getDeclaringType());
 }
 for (TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
-index+=insertFrame(typeDescription,translated,index);
+localVariable[index++]=toFrame(typeDescription);
 }
 for (TypeDescription typeDescription : intermediateTypes) {
-index+=insertFrame(typeDescription,translated,index);
+localVariable[index++]=toFrame(typeDescription);
 }
 System.arraycopy(localVariable,methodDescription.getParameters().size() + (methodDescription.isStatic() ? 0 : 1),translated,index,translated.length - index);
 localVariableLength=translated.length;
