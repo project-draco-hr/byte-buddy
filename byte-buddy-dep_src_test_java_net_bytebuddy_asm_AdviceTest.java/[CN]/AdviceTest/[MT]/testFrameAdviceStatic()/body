@@ -1,4 +1,4 @@
 {
   Class<?> type=new ByteBuddy().redefine(FrameSample.class).visit(Advice.to(FrameAdvice.class).on(named(FOO))).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(type.getDeclaredMethod(FOO,String.class).invoke(type.newInstance(),FOO),is((Object)FOO));
+  assertThat(type.getDeclaredMethod(BAR,String.class).invoke(null,FOO),is((Object)FOO));
 }

@@ -1,5 +1,4 @@
 {
-  int value=0;
 switch (value) {
 case 0:
 {
@@ -17,5 +16,5 @@ long a=1L;
 long a=1L;
 }
 long a=1L;
-return FOO;
+return pseudo;
 }
