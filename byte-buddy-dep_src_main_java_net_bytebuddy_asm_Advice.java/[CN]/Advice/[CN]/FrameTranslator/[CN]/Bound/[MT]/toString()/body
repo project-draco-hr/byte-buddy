@@ -1,0 +1,3 @@
+{
+  return "Bound{" + "frameTranslator=" + FrameTranslator.this + ", methodDescription="+ methodDescription+ ", intermediateTypes="+ intermediateTypes+ '}';
+}

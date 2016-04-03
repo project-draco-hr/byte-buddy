@@ -1,5 +1,4 @@
 {
-  int ignored=0;
 {
     long v1=1L, v2=2L, v3=3L;
     if (ignored == 1) {
@@ -26,5 +25,6 @@
  catch (  Exception exception) {
     long v9=1L;
   }
+  FrameSample.count++;
   return value;
 }

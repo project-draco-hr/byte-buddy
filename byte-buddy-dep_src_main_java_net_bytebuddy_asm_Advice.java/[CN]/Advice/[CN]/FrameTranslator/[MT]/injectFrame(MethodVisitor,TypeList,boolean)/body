@@ -1,7 +1,4 @@
 {
-  if (true) {
-    return;
-  }
   if (requiresFull) {
     Object[] localVariable=new Object[instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + intermediateTypes.size()];
     int variableIndex=0;
