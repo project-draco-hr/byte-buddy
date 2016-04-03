@@ -14,9 +14,9 @@
     methodVisitor.visitFrame(Opcodes.F_FULL,localVariable.length,localVariable,throwableOnStack ? 1 : 0,throwableOnStack ? new Object[]{Type.getInternalName(Throwable.class)} : EMPTY);
   }
  else   if (throwableOnStack) {
-    methodVisitor.visitFrame(Opcodes.F_SAME,UNDEFINED,EMPTY,UNDEFINED,EMPTY);
+    methodVisitor.visitFrame(Opcodes.F_SAME1,UNDEFINED,EMPTY,StackSize.SINGLE.getSize(),new Object[]{Type.getInternalName(Throwable.class)});
   }
  else {
-    methodVisitor.visitFrame(Opcodes.F_SAME1,UNDEFINED,EMPTY,StackSize.SINGLE.getSize(),new Object[]{Type.getInternalName(Throwable.class)});
+    methodVisitor.visitFrame(Opcodes.F_SAME,UNDEFINED,EMPTY,UNDEFINED,EMPTY);
   }
 }
