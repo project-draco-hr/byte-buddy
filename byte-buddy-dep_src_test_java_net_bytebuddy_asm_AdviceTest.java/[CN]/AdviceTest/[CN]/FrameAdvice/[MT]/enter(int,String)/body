@@ -16,5 +16,6 @@ long a=1L;
 long a=1L;
 }
 long a=1L;
+FrameSample.count++;
 return pseudo;
 }

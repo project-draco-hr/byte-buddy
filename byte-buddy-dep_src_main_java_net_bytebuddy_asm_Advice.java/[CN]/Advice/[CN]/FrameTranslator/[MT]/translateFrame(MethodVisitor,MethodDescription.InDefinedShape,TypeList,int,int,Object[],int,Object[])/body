@@ -1,4 +1,7 @@
 {
+  if (true) {
+    return;
+  }
 switch (type) {
 case Opcodes.F_SAME:
 case Opcodes.F_SAME1:
