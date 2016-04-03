@@ -5,5 +5,5 @@
  else   if (readOnly && !instrumentedMethod.getReturnType().asErasure().isAssignableTo(targetType)) {
     throw new IllegalStateException("Cannot assign return type of " + instrumentedMethod + " to "+ targetType);
   }
-  return readOnly ? new Target.ForReadOnlyParameter(instrumentedMethod.getStackSize() + additionalSize.getSize()) : new Target.ForParameter(instrumentedMethod.getStackSize() + additionalSize.getSize());
+  return readOnly ? new Target.ForReadOnlyParameter(instrumentedMethod.getStackSize() + enterType.getStackSize().getSize()) : new Target.ForParameter(instrumentedMethod.getStackSize() + enterType.getStackSize().getSize());
 }

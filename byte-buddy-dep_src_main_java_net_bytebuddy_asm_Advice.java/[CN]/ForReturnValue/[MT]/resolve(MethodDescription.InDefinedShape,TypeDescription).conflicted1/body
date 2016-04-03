@@ -1,0 +1,3 @@
+{
+  return new Target.ForParameter(instrumentedMethod.getStackSize() + enterType.getStackSize().getSize() + instrumentedMethod.getReturnType().getStackSize().getSize());
+}
