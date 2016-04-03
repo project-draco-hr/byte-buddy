@@ -1,22 +1,14 @@
 {
-  if (requiresFull) {
-    Object[] localVariable=new Object[instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + intermediateTypes.size()];
-    int index=0;
-    if (!instrumentedMethod.isStatic()) {
-      localVariable[index++]=toFrame(instrumentedMethod.getDeclaringType());
-    }
-    for (    TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
-      localVariable[index++]=toFrame(typeDescription);
-    }
-    for (    TypeDescription typeDescription : intermediateTypes) {
-      localVariable[index++]=toFrame(typeDescription);
-    }
-    methodVisitor.visitFrame(Opcodes.F_FULL,localVariable.length,localVariable,throwableOnStack ? 1 : 0,throwableOnStack ? new Object[]{Type.getInternalName(Throwable.class)} : EMPTY);
+  Object[] localVariable=new Object[instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + intermediateTypes.size()];
+  int index=0;
+  if (!instrumentedMethod.isStatic()) {
+    localVariable[index++]=toFrame(instrumentedMethod.getDeclaringType());
   }
- else   if (throwableOnStack) {
-    methodVisitor.visitFrame(Opcodes.F_SAME1,UNDEFINED,EMPTY,StackSize.SINGLE.getSize(),new Object[]{Type.getInternalName(Throwable.class)});
+  for (  TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
+    localVariable[index++]=toFrame(typeDescription);
   }
- else {
-    methodVisitor.visitFrame(Opcodes.F_SAME,UNDEFINED,EMPTY,UNDEFINED,EMPTY);
+  for (  TypeDescription typeDescription : intermediateTypes) {
+    localVariable[index++]=toFrame(typeDescription);
   }
+  methodVisitor.visitFrame(Opcodes.F_FULL,localVariable.length,localVariable,throwableOnStack ? 1 : 0,throwableOnStack ? new Object[]{Type.getInternalName(Throwable.class)} : EMPTY);
 }

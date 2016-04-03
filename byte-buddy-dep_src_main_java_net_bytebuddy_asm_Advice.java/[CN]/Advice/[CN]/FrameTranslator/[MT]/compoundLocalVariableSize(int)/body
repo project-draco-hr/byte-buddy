@@ -1,3 +1,3 @@
 {
-  return Math.max(this.localVariableLength,localVariableSize + intermediateTypes.getStackSize());
+  return Math.max(this.localVariableLength,localVariableLength + instrumentedMethod.getReturnType().getStackSize().getSize() + StackSize.SINGLE.getSize()+ intermediateTypes.getStackSize());
 }
