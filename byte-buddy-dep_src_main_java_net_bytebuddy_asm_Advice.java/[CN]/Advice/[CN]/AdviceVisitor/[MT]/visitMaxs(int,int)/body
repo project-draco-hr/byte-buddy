@@ -1,4 +1,4 @@
 {
   onMethodEnd();
-  super.visitMaxs(UNDEFINED,UNDEFINED);
+  super.visitMaxs(frameTranslator.compoundStackSize(maxStack),frameTranslator.compoundLocalVariableSize(maxLocals));
 }
