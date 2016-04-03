@@ -1,4 +1,4 @@
 {
   onMethodEnd();
-  super.visitMaxs(maxStack,maxLocals);
+  super.visitMaxs(UNDEFINED,UNDEFINED);
 }
