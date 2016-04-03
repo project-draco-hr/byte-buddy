@@ -1,7 +1,10 @@
 {
   if (requiresFull) {
-    Object[] localVariable=new Object[instrumentedMethod.getParameters().size() + intermediateTypes.size()];
+    Object[] localVariable=new Object[instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + intermediateTypes.size()];
     int variableIndex=0;
+    if (!instrumentedMethod.isStatic()) {
+      variableIndex+=insertFrame(instrumentedMethod.getDeclaringType(),localVariable,variableIndex);
+    }
     for (    TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
       variableIndex+=insertFrame(typeDescription,localVariable,variableIndex);
     }

@@ -5,15 +5,18 @@ case Opcodes.F_SAME1:
     break;
 case Opcodes.F_FULL:
 case Opcodes.F_NEW:
-  Object[] translated=new Object[localVariableLength - methodDescription.getParameters().size() + instrumentedMethod.getParameters().size() + intermediateTypes.size()];
+  Object[] translated=new Object[localVariableLength - methodDescription.getParameters().size() - (methodDescription.isStatic() ? 0 : 1) + instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + intermediateTypes.size()];
 int index=0;
+if (!instrumentedMethod.isStatic()) {
+index+=insertFrame(instrumentedMethod.getDeclaringType(),translated,index);
+}
 for (TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
 index+=insertFrame(typeDescription,translated,index);
 }
 for (TypeDescription typeDescription : intermediateTypes) {
 index+=insertFrame(typeDescription,translated,index);
 }
-System.arraycopy(localVariable,localVariableLength - methodDescription.getParameters().size(),translated,index,translated.length - index);
+System.arraycopy(localVariable,localVariableLength - methodDescription.getParameters().size() - (methodDescription.isStatic() ? 0 : 1),translated,index,translated.length - index);
 localVariableLength=translated.length;
 localVariable=translated;
 case Opcodes.F_APPEND:
