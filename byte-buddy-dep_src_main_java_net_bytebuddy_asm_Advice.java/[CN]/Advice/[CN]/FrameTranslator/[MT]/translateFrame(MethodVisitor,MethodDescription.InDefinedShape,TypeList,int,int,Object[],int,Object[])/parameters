@@ -1,0 +1,8 @@
+MethodVisitor methodVisitor
+MethodDescription.InDefinedShape methodDescription
+TypeList intermediateTypes
+int type
+int localVariableLength
+Object[] localVariable
+int stackSize
+Object[] stack

@@ -1,0 +1,16 @@
+{
+  if (requiresFull) {
+    Object[] localVariable=new Object[instrumentedMethod.getParameters().asTypeList().getStackSize() + intermediateTypes.getStackSize()];
+    int index=0;
+    for (    TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
+      index+=asFrame(typeDescription,localVariable,index);
+    }
+    for (    TypeDescription typeDescription : intermediateTypes) {
+      index+=asFrame(typeDescription,localVariable,index);
+    }
+    methodVisitor.visitFrame(Opcodes.F_FULL,localVariable.length,localVariable,0,EMPTY);
+  }
+ else {
+    methodVisitor.visitFrame(Opcodes.F_SAME,UNDEFINED,EMPTY,UNDEFINED,EMPTY);
+  }
+}

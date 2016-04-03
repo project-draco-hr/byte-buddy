@@ -1,0 +1,26 @@
+{
+switch (type) {
+case Opcodes.F_SAME:
+case Opcodes.F_SAME1:
+case Opcodes.F_APPEND:
+case Opcodes.F_CHOP:
+    break;
+case Opcodes.F_FULL:
+case Opcodes.F_NEW:
+  Object[] translated=new Object[localVariableLength - methodDescription.getParameters().asTypeList().getStackSize() + instrumentedMethod.getParameters().asTypeList().getStackSize() + intermediateTypes.getStackSize()];
+int index=0;
+for (TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
+index+=asFrame(typeDescription,translated,index);
+}
+for (TypeDescription typeDescription : intermediateTypes) {
+index+=asFrame(typeDescription,translated,index);
+}
+System.arraycopy(localVariable,stackSize - methodDescription.getParameters().asTypeList().getStackSize(),translated,index,translated.length - index);
+localVariableLength=translated.length;
+localVariable=translated;
+break;
+default :
+throw new IllegalArgumentException("Unexpected frame type: " + type);
+}
+methodVisitor.visitFrame(type,localVariableLength,localVariable,stackSize,stack);
+}

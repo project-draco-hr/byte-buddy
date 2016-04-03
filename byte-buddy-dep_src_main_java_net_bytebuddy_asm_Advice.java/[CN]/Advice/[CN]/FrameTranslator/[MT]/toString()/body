@@ -1,0 +1,3 @@
+{
+  return "Advice.FrameAdjustment{" + "instrumentedMethod=" + instrumentedMethod + ", requiresFull="+ requiresFull+ '}';
+}
