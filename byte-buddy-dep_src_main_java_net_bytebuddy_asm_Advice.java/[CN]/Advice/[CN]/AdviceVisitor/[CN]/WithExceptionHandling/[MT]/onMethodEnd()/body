@@ -1,6 +1,7 @@
 {
   mv.visitLabel(userEnd);
   mv.visitLabel(handler);
+  frameTranslator.injectHandlerFrame(mv);
   variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
   storeDefaultReturn();
   appendExit();

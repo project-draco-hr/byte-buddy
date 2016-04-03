@@ -1,0 +1,6 @@
+{
+  if (!(exception ? throwable instanceof RuntimeException : throwable == null)) {
+    throw new AssertionError();
+  }
+  exit++;
+}

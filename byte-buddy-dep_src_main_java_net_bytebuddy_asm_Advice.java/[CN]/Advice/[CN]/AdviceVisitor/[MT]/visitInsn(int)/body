@@ -1,8 +1,11 @@
 {
 switch (opcode) {
 case Opcodes.RETURN:
-    onMethodExit();
-  break;
+    mv.visitInsn(Opcodes.ACONST_NULL);
+  variable(Opcodes.ASTORE);
+frameTranslator.injectCompletionFrame(mv);
+onMethodExit();
+break;
 case Opcodes.IRETURN:
 onMethodExit(Opcodes.ISTORE,Opcodes.ILOAD);
 break;
