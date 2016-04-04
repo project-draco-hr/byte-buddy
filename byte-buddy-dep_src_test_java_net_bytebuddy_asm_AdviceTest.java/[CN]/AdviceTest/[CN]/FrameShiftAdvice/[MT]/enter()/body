@@ -1,0 +1,6 @@
+{
+  int v0=0;
+  if (v0 != 0) {
+  }
+  return BAR;
+}
