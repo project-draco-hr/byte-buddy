@@ -1,4 +1,4 @@
 {
-  mv.visitTryCatchBlock(userStart,userEnd,userHandler,ANY_THROWABLE);
+  mv.visitTryCatchBlock(userStart,userEnd,userEnd,ANY_THROWABLE);
   mv.visitLabel(userStart);
 }

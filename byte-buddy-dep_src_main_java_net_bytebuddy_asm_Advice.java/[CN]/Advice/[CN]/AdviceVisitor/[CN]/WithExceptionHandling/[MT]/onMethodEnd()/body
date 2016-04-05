@@ -1,6 +1,5 @@
 {
   mv.visitLabel(userEnd);
-  mv.visitLabel(userHandler);
   variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
   storeDefaultReturn();
   mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);
