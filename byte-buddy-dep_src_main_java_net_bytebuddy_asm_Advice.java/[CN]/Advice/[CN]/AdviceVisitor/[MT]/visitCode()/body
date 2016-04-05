@@ -1,4 +1,5 @@
 {
   super.visitCode();
-  onMethodStart();
+  append(methodEnter);
+  onUserStart();
 }

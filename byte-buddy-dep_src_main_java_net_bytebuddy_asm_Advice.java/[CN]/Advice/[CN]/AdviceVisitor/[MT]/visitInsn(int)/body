@@ -1,24 +1,22 @@
 {
 switch (opcode) {
 case Opcodes.RETURN:
-    mv.visitInsn(Opcodes.ACONST_NULL);
-  variable(Opcodes.ASTORE);
-onMethodExit();
-break;
+    onMethodExit();
+  break;
 case Opcodes.IRETURN:
-onMethodExit(Opcodes.ISTORE,Opcodes.ILOAD);
+onMethodExit(Opcodes.ISTORE);
 break;
 case Opcodes.FRETURN:
-onMethodExit(Opcodes.FSTORE,Opcodes.FLOAD);
+onMethodExit(Opcodes.FSTORE);
 break;
 case Opcodes.DRETURN:
-onMethodExit(Opcodes.DSTORE,Opcodes.DLOAD);
+onMethodExit(Opcodes.DSTORE);
 break;
 case Opcodes.LRETURN:
-onMethodExit(Opcodes.LSTORE,Opcodes.LLOAD);
+onMethodExit(Opcodes.LSTORE);
 break;
 case Opcodes.ARETURN:
-onMethodExit(Opcodes.ASTORE,Opcodes.ALOAD);
+onMethodExit(Opcodes.ASTORE);
 break;
 }
 mv.visitInsn(opcode);

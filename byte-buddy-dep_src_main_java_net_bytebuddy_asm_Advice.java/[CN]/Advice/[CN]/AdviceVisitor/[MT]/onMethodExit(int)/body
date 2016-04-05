@@ -2,6 +2,5 @@
   variable(store);
   mv.visitInsn(Opcodes.ACONST_NULL);
   variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
-  onMethodExit();
-  variable(load);
+  mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);
 }

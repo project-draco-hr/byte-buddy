@@ -1,8 +1,0 @@
-{
-  mv.visitLabel(userEnd);
-  appendExit();
-  Label userStart=new Label();
-  userEnd=new Label();
-  mv.visitTryCatchBlock(userStart,userEnd,handler,ANY_THROWABLE);
-  mv.visitLabel(userStart);
-}

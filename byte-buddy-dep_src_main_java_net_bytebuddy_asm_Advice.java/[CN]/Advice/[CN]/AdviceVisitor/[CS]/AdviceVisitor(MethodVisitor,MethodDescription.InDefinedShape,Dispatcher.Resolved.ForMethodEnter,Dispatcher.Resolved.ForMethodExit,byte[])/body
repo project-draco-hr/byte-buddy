@@ -5,4 +5,5 @@
   this.methodExit=methodExit;
   classReader=new ClassReader(binaryRepresentation);
   frameTranslator=new FrameTranslator(instrumentedMethod,methodEnter.getEnterType().represents(void.class) ? new TypeList.Empty() : new TypeList.Explicit(methodEnter.getEnterType()));
+  endOfMethod=new Label();
 }
