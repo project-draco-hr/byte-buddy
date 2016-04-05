@@ -1,3 +1,3 @@
 {
-  methodVisitor.visitFrame(Opcodes.F_SAME1,0,EMPTY,1,new Object[]{Type.getInternalName(Throwable.class)});
+  injectFrame(methodVisitor,intermediateTypes,true);
 }

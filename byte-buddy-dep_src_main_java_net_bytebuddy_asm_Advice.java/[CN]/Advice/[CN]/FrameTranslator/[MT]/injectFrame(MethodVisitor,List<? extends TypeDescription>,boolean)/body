@@ -1,0 +1,15 @@
+{
+  Object[] localVariable=new Object[instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + additionalTypes.size()];
+  int index=0;
+  if (!instrumentedMethod.isStatic()) {
+    localVariable[index++]=toFrame(instrumentedMethod.getDeclaringType());
+  }
+  for (  TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
+    localVariable[index++]=toFrame(typeDescription);
+  }
+  for (  TypeDescription typeDescription : additionalTypes) {
+    localVariable[index++]=toFrame(typeDescription);
+  }
+  Object[] stackType=exceptionOnStack ? new Object[]{Type.getInternalName(Throwable.class)} : EMPTY;
+  methodVisitor.visitFrame(Opcodes.F_FULL,localVariable.length,localVariable,stackType.length,stackType);
+}

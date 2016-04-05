@@ -1,6 +1,7 @@
 {
   Label endOfHandler=new Label();
   methodVisitor.visitJumpInsn(Opcodes.GOTO,endOfHandler);
+  frameTranslator.injectHandlerFrame(methodVisitor);
   methodVisitor.visitLabel(handler);
   methodVisitor.visitInsn(Opcodes.POP);
   returnValueProducer.makeDefault(methodVisitor);

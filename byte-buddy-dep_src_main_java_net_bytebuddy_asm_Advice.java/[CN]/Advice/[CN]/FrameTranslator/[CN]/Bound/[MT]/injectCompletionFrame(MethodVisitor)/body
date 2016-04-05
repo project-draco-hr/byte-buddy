@@ -1,8 +1,3 @@
 {
-  Object[] local=new Object[yieldedTypes.size()];
-  int index=0;
-  for (  TypeDescription typeDescription : yieldedTypes) {
-    local[index++]=toFrame(typeDescription);
-  }
-  methodVisitor.visitFrame(Opcodes.F_APPEND,local.length,local,0,EMPTY);
+  injectFrame(methodVisitor,CompoundList.of(intermediateTypes,yieldedTypes),false);
 }

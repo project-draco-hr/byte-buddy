@@ -2,22 +2,23 @@
 switch (opcode) {
 case Opcodes.RETURN:
     onMethodExit();
-  break;
+  return;
 case Opcodes.IRETURN:
 onMethodExit(Opcodes.ISTORE);
-break;
+return;
 case Opcodes.FRETURN:
 onMethodExit(Opcodes.FSTORE);
-break;
+return;
 case Opcodes.DRETURN:
 onMethodExit(Opcodes.DSTORE);
-break;
+return;
 case Opcodes.LRETURN:
 onMethodExit(Opcodes.LSTORE);
-break;
+return;
 case Opcodes.ARETURN:
 onMethodExit(Opcodes.ASTORE);
-break;
-}
+return;
+default :
 mv.visitInsn(opcode);
+}
 }
