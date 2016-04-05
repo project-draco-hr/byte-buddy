@@ -1,8 +1,10 @@
 {
 switch (opcode) {
 case Opcodes.RETURN:
-    onMethodExit();
-  return;
+    mv.visitInsn(Opcodes.ACONST_NULL);
+  variable(Opcodes.ASTORE);
+mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);
+return;
 case Opcodes.IRETURN:
 onMethodExit(Opcodes.ISTORE);
 return;

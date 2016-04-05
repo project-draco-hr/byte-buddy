@@ -1,5 +1,0 @@
-{
-  mv.visitInsn(Opcodes.ACONST_NULL);
-  variable(Opcodes.ASTORE);
-  mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);
-}
