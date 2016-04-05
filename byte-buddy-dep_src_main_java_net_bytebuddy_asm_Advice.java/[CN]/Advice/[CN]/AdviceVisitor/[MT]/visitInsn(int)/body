@@ -3,7 +3,6 @@ switch (opcode) {
 case Opcodes.RETURN:
     mv.visitInsn(Opcodes.ACONST_NULL);
   variable(Opcodes.ASTORE);
-frameTranslator.injectCompletionFrame(mv);
 onMethodExit();
 break;
 case Opcodes.IRETURN:

@@ -1,5 +1,4 @@
 {
   mv.visitLabel(endOfMethod);
-  frameTranslator.injectCompletionFrame(mv);
   suppressionHandler.onEnd(mv,frameTranslator,this);
 }

@@ -2,9 +2,7 @@
   Label endOfHandler=new Label();
   methodVisitor.visitJumpInsn(Opcodes.GOTO,endOfHandler);
   methodVisitor.visitLabel(handler);
-  frameTranslator.injectHandlerFrame(methodVisitor);
   methodVisitor.visitInsn(Opcodes.POP);
   returnValueProducer.makeDefault(methodVisitor);
   methodVisitor.visitLabel(endOfHandler);
-  frameTranslator.injectCompletionFrame(methodVisitor);
 }

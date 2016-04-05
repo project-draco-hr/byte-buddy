@@ -2,7 +2,6 @@
   variable(store);
   mv.visitInsn(Opcodes.ACONST_NULL);
   variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
-  frameTranslator.injectCompletionFrame(mv);
   onMethodExit();
   variable(load);
 }
