@@ -1,3 +1,3 @@
 {
-  return new AsmVisitorWrapper.ForDeclaredMethods().writerFlags(ClassWriter.COMPUTE_FRAMES).method(matcher,this);
+  return new AsmVisitorWrapper.ForDeclaredMethods().method(matcher,this);
 }
