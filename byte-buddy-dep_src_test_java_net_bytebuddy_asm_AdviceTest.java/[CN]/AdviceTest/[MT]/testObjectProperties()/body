@@ -1,7 +1,8 @@
 {
   ObjectPropertyAssertion.of(Advice.class).apply();
-  ObjectPropertyAssertion.of(Advice.FrameTranslator.class).applyBasic();
-  ObjectPropertyAssertion.of(Advice.FrameTranslator.Bound.class).applyBasic();
+  ObjectPropertyAssertion.of(Advice.FrameTranslator.NoOp.class).applyBasic();
+  ObjectPropertyAssertion.of(Advice.FrameTranslator.Default.class).applyBasic();
+  ObjectPropertyAssertion.of(Advice.FrameTranslator.Default.ForAdvice.class).applyBasic();
   ObjectPropertyAssertion.of(Advice.AdviceVisitor.CodeCopier.class).applyBasic();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Inactive.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Target.ForReadOnlyParameter.class).apply();

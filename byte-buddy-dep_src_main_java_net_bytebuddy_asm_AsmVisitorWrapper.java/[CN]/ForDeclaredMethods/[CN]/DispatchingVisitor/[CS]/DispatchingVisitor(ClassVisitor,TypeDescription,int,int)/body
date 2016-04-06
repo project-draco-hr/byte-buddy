@@ -1,0 +1,10 @@
+{
+  super(Opcodes.ASM5,classVisitor);
+  this.instrumentedType=instrumentedType;
+  this.writerFlags=writerFlags;
+  this.readerFlags=readerFlags;
+  methodsByName=new HashMap<String,MethodDescription.InDefinedShape>();
+  for (  MethodDescription.InDefinedShape methodDescription : instrumentedType.getDeclaredMethods()) {
+    methodsByName.put(methodDescription.getInternalName() + methodDescription.getDescriptor(),methodDescription);
+  }
+}

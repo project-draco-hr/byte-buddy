@@ -1,4 +1,0 @@
-{
-  super(methodVisitor,frameTranslator.bindExit(adviseMethod,enterType),instrumentedMethod,adviseMethod,offsetMappings,throwableType);
-  this.enterType=enterType;
-}

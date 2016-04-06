@@ -1,3 +1,0 @@
-{
-  return methodVisitorWrapper.wrap(instrumentedType,methodDescription,methodVisitor);
-}

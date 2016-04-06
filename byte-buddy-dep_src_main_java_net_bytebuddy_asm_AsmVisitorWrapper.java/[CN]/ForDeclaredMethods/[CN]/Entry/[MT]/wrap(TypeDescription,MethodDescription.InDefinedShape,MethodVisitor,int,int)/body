@@ -1,0 +1,3 @@
+{
+  return methodVisitorWrapper.wrap(instrumentedType,methodDescription,methodVisitor,writerFlags,readerFlags);
+}

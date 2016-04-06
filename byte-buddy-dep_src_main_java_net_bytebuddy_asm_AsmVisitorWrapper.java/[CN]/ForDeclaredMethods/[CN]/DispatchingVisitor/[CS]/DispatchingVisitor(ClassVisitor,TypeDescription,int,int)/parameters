@@ -1,0 +1,4 @@
+ClassVisitor classVisitor
+TypeDescription instrumentedType
+int writerFlags
+int readerFlags

@@ -1,0 +1,3 @@
+{
+  return expandFrames ? ClassReader.EXPAND_FRAMES : AsmVisitorWrapper.NO_FLAGS;
+}

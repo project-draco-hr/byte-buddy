@@ -1,10 +1,10 @@
 {
   AsmVisitorWrapper.Compound compound=new AsmVisitorWrapper.Compound(prepend,wrapper,append);
-  assertThat(compound.wrap(instrumentedType,prependVisitor),is(resultVisitor));
-  verify(prepend).wrap(instrumentedType,prependVisitor);
+  assertThat(compound.wrap(instrumentedType,prependVisitor,FLAGS,FLAGS * 2),is(resultVisitor));
+  verify(prepend).wrap(instrumentedType,prependVisitor,FLAGS,FLAGS * 2);
   verifyNoMoreInteractions(prepend);
-  verify(wrapper).wrap(instrumentedType,wrapperVisitor);
+  verify(wrapper).wrap(instrumentedType,wrapperVisitor,FLAGS,FLAGS * 2);
   verifyNoMoreInteractions(wrapper);
-  verify(append).wrap(instrumentedType,appendVisitor);
+  verify(append).wrap(instrumentedType,appendVisitor,FLAGS,FLAGS * 2);
   verifyNoMoreInteractions(append);
 }

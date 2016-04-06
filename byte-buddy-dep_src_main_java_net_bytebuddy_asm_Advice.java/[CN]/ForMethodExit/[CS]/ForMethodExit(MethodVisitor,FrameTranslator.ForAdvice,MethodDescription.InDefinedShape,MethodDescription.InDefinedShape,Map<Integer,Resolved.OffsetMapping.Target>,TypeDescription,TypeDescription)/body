@@ -1,0 +1,4 @@
+{
+  super(methodVisitor,frameTranslator,instrumentedMethod,adviseMethod,offsetMappings,throwableType);
+  this.enterType=enterType;
+}

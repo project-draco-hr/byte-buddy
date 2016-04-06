@@ -1,4 +1,0 @@
-{
-  FrameTranslator.this.stackSize=Math.max(FrameTranslator.this.stackSize,stackSize);
-  FrameTranslator.this.localVariableLength=Math.max(FrameTranslator.this.localVariableLength,localVariableLength - methodDescription.getStackSize() + instrumentedMethod.getStackSize() + intermediateTypes.getStackSize());
-}

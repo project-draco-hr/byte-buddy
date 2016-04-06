@@ -1,5 +1,5 @@
 {
-  ClassVisitor classVisitor=TypeConstantAdjustment.INSTANCE.wrap(mock(TypeDescription.class),this.classVisitor);
+  ClassVisitor classVisitor=TypeConstantAdjustment.INSTANCE.wrap(mock(TypeDescription.class),this.classVisitor,IRRELEVANT,IRRELEVANT);
   classVisitor.visit(ClassFileVersion.JAVA_V4.getMinorMajorVersion(),FOOBAR,FOO,BAR,QUX,new String[]{BAZ});
   MethodVisitor methodVisitor=classVisitor.visitMethod(FOOBAR,FOO,BAR,QUX,new String[]{BAZ});
   assertThat(methodVisitor,not(this.methodVisitor));

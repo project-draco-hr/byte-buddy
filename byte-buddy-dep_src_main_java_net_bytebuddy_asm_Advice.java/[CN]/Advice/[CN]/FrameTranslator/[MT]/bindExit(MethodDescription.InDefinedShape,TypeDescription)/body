@@ -1,11 +1,3 @@
 {
-  List<TypeDescription> typeDescriptions=new ArrayList<TypeDescription>(3);
-  if (!enterType.represents(void.class)) {
-    typeDescriptions.add(enterType);
-  }
-  if (!instrumentedMethod.getReturnType().represents(void.class)) {
-    typeDescriptions.add(instrumentedMethod.getReturnType().asErasure());
-  }
-  typeDescriptions.add(TypeDescription.THROWABLE);
-  return new Bound(methodDescription,new TypeList.Explicit(typeDescriptions),Collections.<TypeDescription>emptyList());
+  return this;
 }

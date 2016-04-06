@@ -1,0 +1,3 @@
+{
+  return (writerFlags & ClassWriter.COMPUTE_FRAMES) != 0 ? NoOp.INSTANCE : new Default(instrumentedMethod,additionalTypes,(readerFlags & ClassReader.EXPAND_FRAMES) != 0);
+}

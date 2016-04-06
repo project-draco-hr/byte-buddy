@@ -1,3 +1,0 @@
-{
-  FrameTranslator.this.translateFrame(methodVisitor,methodDescription,intermediateTypes,type,localVariableLength,localVariable,stackSize,stack);
-}

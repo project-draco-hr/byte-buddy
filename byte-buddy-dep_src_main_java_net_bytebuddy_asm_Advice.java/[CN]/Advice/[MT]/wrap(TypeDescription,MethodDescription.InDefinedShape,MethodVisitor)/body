@@ -1,6 +1,0 @@
-{
-  if (methodDescription.isAbstract() || methodDescription.isNative()) {
-    throw new IllegalStateException("Cannot advice abstract or native method " + methodDescription);
-  }
-  return methodExit.isSkipThrowable() ? new AdviceVisitor.WithoutExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,binaryRepresentation) : new AdviceVisitor.WithExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,binaryRepresentation);
-}

@@ -1,6 +1,7 @@
 {
+  int writerFlags=asmVisitorWrapper.mergeWriter(AsmVisitorWrapper.NO_FLAGS), readerFlags=asmVisitorWrapper.mergeReader(AsmVisitorWrapper.NO_FLAGS);
   ClassReader classReader=new ClassReader(binaryRepresentation);
-  ClassWriter classWriter=FrameComputingClassWriter.of(classReader,asmVisitorWrapper.mergeWriter(ASM_MANUAL_FLAGS),classFileLocator);
-  classReader.accept(writeTo(asmVisitorWrapper.wrap(instrumentedType,ValidatingClassVisitor.of(classWriter,typeValidation)),implementationContext),asmVisitorWrapper.mergeReader(ASM_MANUAL_FLAGS));
+  ClassWriter classWriter=FrameComputingClassWriter.of(classReader,writerFlags,classFileLocator);
+  classReader.accept(writeTo(asmVisitorWrapper.wrap(instrumentedType,ValidatingClassVisitor.of(classWriter,typeValidation),writerFlags,readerFlags),implementationContext),readerFlags);
   return classWriter.toByteArray();
 }

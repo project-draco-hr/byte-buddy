@@ -1,5 +1,0 @@
-{
-  super(methodVisitor,instrumentedMethod,methodEnter,methodExit,binaryRepresentation);
-  userStart=new Label();
-  userEnd=new Label();
-}

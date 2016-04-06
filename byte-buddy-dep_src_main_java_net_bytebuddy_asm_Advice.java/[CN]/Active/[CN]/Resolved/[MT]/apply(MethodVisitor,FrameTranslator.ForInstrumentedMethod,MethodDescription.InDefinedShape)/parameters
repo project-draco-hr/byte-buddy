@@ -1,0 +1,3 @@
+MethodVisitor methodVisitor
+FrameTranslator.ForInstrumentedMethod frameTranslator
+MethodDescription.InDefinedShape instrumentedMethod

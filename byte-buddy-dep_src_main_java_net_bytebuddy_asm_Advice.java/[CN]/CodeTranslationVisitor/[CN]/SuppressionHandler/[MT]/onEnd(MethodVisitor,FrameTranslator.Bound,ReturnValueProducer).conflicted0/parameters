@@ -1,3 +1,0 @@
-MethodVisitor methodVisitor
-FrameTranslator.Bound frameTranslator
-ReturnValueProducer returnValueProducer

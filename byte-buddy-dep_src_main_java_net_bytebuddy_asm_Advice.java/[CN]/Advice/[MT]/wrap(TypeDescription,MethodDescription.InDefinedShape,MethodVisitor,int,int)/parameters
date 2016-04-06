@@ -1,0 +1,5 @@
+TypeDescription instrumentedType
+MethodDescription.InDefinedShape methodDescription
+MethodVisitor methodVisitor
+int writerFlags
+int readerFlags

@@ -1,5 +1,0 @@
-String internalName
-String descriptor
-MethodVisitor methodVisitor
-FrameTranslator frameTranslator
-MethodDescription.InDefinedShape instrumentedMethod

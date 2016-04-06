@@ -1,0 +1,3 @@
+MethodVisitor methodVisitor
+FrameTranslator.ForAdvice frameTranslator
+ReturnValueProducer returnValueProducer

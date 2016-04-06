@@ -1,5 +1,5 @@
 {
-  assertThat(new AsmVisitorWrapper.ForDeclaredFields().field(matcher,fieldVisitorWrapper).wrap(instrumentedType,classVisitor).visitField(MODIFIERS,FOO + BAR,QUX,BAZ,QUX + BAZ),is(fieldVisitor));
+  assertThat(new AsmVisitorWrapper.ForDeclaredFields().field(matcher,fieldVisitorWrapper).wrap(instrumentedType,classVisitor,IRRELEVANT,IRRELEVANT).visitField(MODIFIERS,FOO + BAR,QUX,BAZ,QUX + BAZ),is(fieldVisitor));
   verifyZeroInteractions(matcher);
   verifyZeroInteractions(fieldVisitorWrapper);
 }

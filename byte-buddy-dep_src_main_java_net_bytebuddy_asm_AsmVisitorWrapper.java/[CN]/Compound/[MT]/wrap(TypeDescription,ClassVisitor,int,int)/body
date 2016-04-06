@@ -1,0 +1,6 @@
+{
+  for (  AsmVisitorWrapper asmVisitorWrapper : asmVisitorWrappers) {
+    classVisitor=asmVisitorWrapper.wrap(instrumentedType,classVisitor,writerFlags,readerFlags);
+  }
+  return classVisitor;
+}

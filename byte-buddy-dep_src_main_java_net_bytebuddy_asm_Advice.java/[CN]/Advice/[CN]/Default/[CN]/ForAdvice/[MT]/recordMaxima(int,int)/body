@@ -1,0 +1,4 @@
+{
+  Default.this.stackSize=Math.max(Default.this.stackSize,stackSize);
+  Default.this.localVariableLength=Math.max(Default.this.localVariableLength,localVariableLength - methodDescription.getStackSize() + instrumentedMethod.getStackSize() + intermediateTypes.getStackSize());
+}

@@ -1,0 +1,3 @@
+{
+  super(methodVisitor,instrumentedMethod,methodEnter,methodExit,binaryRepresentation,writerFlags,readerFlags);
+}
