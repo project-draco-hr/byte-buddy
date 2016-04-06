@@ -1,3 +1,3 @@
 Class<? extends Annotation> annotation
-Dispatcher dispatcher
+Dispatcher.Unresolved dispatcher
 MethodDescription.InDefinedShape methodDescription

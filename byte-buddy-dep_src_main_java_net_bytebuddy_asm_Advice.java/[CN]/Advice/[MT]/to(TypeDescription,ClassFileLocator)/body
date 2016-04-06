@@ -1,9 +1,9 @@
 {
   try {
-    Dispatcher methodEnter=Dispatcher.Inactive.INSTANCE, methodExit=Dispatcher.Inactive.INSTANCE;
+    Dispatcher.Unresolved methodEnter=Dispatcher.Inactive.INSTANCE, methodExit=Dispatcher.Inactive.INSTANCE;
     for (    MethodDescription.InDefinedShape methodDescription : typeDescription.getDeclaredMethods()) {
-      methodEnter=resolve(OnMethodEnter.class,methodEnter,methodDescription);
-      methodExit=resolve(OnMethodExit.class,methodExit,methodDescription);
+      methodEnter=locate(OnMethodEnter.class,methodEnter,methodDescription);
+      methodExit=locate(OnMethodExit.class,methodExit,methodDescription);
     }
     if (!methodEnter.isAlive() && !methodExit.isAlive()) {
       throw new IllegalArgumentException("No advice defined by " + typeDescription);
