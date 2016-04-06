@@ -1,0 +1,5 @@
+{
+  int length=instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1);
+  System.arraycopy(localVariable,0,translated,0,length);
+  return length;
+}

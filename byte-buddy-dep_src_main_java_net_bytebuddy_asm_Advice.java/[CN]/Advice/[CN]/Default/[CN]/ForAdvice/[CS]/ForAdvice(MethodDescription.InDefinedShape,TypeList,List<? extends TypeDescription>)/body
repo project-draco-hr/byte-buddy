@@ -1,8 +1,0 @@
-{
-  this.methodDescription=methodDescription;
-  this.intermediateTypes=intermediateTypes;
-  this.yieldedTypes=yieldedTypes;
-  if (yieldedTypes.size() > 3) {
-    throw new UnsupportedOperationException("Did not implement support for more then three yielded types: " + yieldedTypes);
-  }
-}

@@ -1,0 +1,6 @@
+{
+  this.methodDescription=methodDescription;
+  this.intermediateTypes=intermediateTypes;
+  this.yieldedTypes=yieldedTypes;
+  this.translationMode=translationMode;
+}

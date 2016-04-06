@@ -1,5 +1,6 @@
 MethodVisitor methodVisitor
 MethodDescription.InDefinedShape methodDescription
+TranslationMode translationMode
 TypeList additionalTypes
 int type
 int localVariableLength

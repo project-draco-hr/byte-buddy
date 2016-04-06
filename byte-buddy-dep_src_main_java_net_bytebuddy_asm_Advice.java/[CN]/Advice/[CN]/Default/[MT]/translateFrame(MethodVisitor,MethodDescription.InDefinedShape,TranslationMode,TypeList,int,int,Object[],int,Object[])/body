@@ -12,13 +12,7 @@ break;
 case Opcodes.F_FULL:
 case Opcodes.F_NEW:
 Object[] translated=new Object[localVariableLength - methodDescription.getParameters().size() - (methodDescription.isStatic() ? 0 : 1) + instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + additionalTypes.size()];
-int index=0;
-if (!instrumentedMethod.isStatic()) {
-translated[index++]=toFrame(instrumentedMethod.getDeclaringType());
-}
-for (TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
-translated[index++]=toFrame(typeDescription);
-}
+int index=translationMode.copy(instrumentedMethod,methodDescription,localVariable,translated);
 for (TypeDescription typeDescription : additionalTypes) {
 translated[index++]=toFrame(typeDescription);
 }
