@@ -1,5 +1,5 @@
 {
-switch (type) {
+switch (frameType) {
 case Opcodes.F_SAME:
 case Opcodes.F_SAME1:
     break;
@@ -22,7 +22,7 @@ localVariable=translated;
 currentFrameDivergence=translated.length - index;
 break;
 default :
-throw new IllegalArgumentException("Unexpected frame type: " + type);
+throw new IllegalArgumentException("Unexpected frame frameType: " + frameType);
 }
-methodVisitor.visitFrame(type,localVariableLength,localVariable,stackSize,stack);
+methodVisitor.visitFrame(frameType,localVariableLength,localVariable,stackSize,stack);
 }

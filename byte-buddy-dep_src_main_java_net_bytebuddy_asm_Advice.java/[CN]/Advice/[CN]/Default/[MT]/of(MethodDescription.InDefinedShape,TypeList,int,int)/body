@@ -3,9 +3,9 @@
     return NoOp.INSTANCE;
   }
  else   if ((writerFlags & ClassWriter.COMPUTE_MAXS) != 0) {
-    return new Default.WithoutStackSizeComputation(instrumentedMethod,additionalTypes,(readerFlags & ClassReader.EXPAND_FRAMES) != 0);
+    return new Default.WithoutStackSizeComputation(instrumentedMethod,expectedTypes,(readerFlags & ClassReader.EXPAND_FRAMES) != 0);
   }
  else {
-    return new Default.WithStackSizeComputation(instrumentedMethod,additionalTypes,(readerFlags & ClassReader.EXPAND_FRAMES) != 0);
+    return new Default.WithStackSizeComputation(instrumentedMethod,expectedTypes,(readerFlags & ClassReader.EXPAND_FRAMES) != 0);
   }
 }

@@ -1,8 +1,8 @@
 MethodVisitor methodVisitor
-MethodDescription.InDefinedShape methodDescription
 TranslationMode translationMode
+MethodDescription.InDefinedShape methodDescription
 TypeList additionalTypes
-int type
+int frameType
 int localVariableLength
 Object[] localVariable
 int stackSize

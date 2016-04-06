@@ -1,4 +1,4 @@
 MethodDescription.InDefinedShape instrumentedMethod
-TypeList additionalTypes
+TypeList expectedTypes
 int writerFlags
 int readerFlags
