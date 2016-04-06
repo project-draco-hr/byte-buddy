@@ -1,0 +1,3 @@
+{
+  return bind(methodDescription,new TypeList.Explicit(CompoundList.of(this.expectedTypes,instrumentedMethod.getReturnType().represents(void.class) ? Collections.singletonList(TypeDescription.THROWABLE) : Arrays.asList(instrumentedMethod.getReturnType().asErasure(),TypeDescription.THROWABLE))),Collections.<TypeDescription>emptyList(),TranslationMode.EXIT);
+}
