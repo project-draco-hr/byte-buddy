@@ -1,3 +1,0 @@
-{
-  injectFrame(methodVisitor,CompoundList.of(intermediateTypes,yieldedTypes),false);
-}

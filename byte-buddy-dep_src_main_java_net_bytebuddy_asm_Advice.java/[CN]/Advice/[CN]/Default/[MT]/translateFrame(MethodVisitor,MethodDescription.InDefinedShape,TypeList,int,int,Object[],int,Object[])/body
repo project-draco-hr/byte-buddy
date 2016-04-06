@@ -2,12 +2,16 @@
 switch (type) {
 case Opcodes.F_SAME:
 case Opcodes.F_SAME1:
-case Opcodes.F_APPEND:
-case Opcodes.F_CHOP:
     break;
+case Opcodes.F_APPEND:
+  currentFrameDivergence+=localVariableLength;
+break;
+case Opcodes.F_CHOP:
+currentFrameDivergence-=localVariableLength;
+break;
 case Opcodes.F_FULL:
 case Opcodes.F_NEW:
-  Object[] translated=new Object[localVariableLength - methodDescription.getParameters().size() - (methodDescription.isStatic() ? 0 : 1) + instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + intermediateTypes.size()];
+Object[] translated=new Object[localVariableLength - methodDescription.getParameters().size() - (methodDescription.isStatic() ? 0 : 1) + instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + additionalTypes.size()];
 int index=0;
 if (!instrumentedMethod.isStatic()) {
 translated[index++]=toFrame(instrumentedMethod.getDeclaringType());
@@ -15,12 +19,13 @@ translated[index++]=toFrame(instrumentedMethod.getDeclaringType());
 for (TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
 translated[index++]=toFrame(typeDescription);
 }
-for (TypeDescription typeDescription : intermediateTypes) {
+for (TypeDescription typeDescription : additionalTypes) {
 translated[index++]=toFrame(typeDescription);
 }
 System.arraycopy(localVariable,methodDescription.getParameters().size() + (methodDescription.isStatic() ? 0 : 1),translated,index,translated.length - index);
 localVariableLength=translated.length;
 localVariable=translated;
+currentFrameDivergence=translated.length - index;
 break;
 default :
 throw new IllegalArgumentException("Unexpected frame type: " + type);

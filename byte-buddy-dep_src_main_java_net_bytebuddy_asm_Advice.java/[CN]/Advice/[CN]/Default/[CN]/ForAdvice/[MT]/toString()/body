@@ -1,3 +1,0 @@
-{
-  return "Advice.FrameTranslator.Bound{" + "frameTranslator=" + Default.this + ", methodDescription="+ methodDescription+ ", intermediateTypes="+ intermediateTypes+ ", yieldedTypes="+ yieldedTypes+ '}';
-}

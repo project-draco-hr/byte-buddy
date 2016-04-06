@@ -1,0 +1,14 @@
+{
+  if (!expandFrames && currentFrameDivergence == 0) {
+    if (secondaryCompletion) {
+      methodVisitor.visitFrame(Opcodes.F_SAME,0,EMPTY,0,EMPTY);
+    }
+ else {
+      Object[] local=instrumentedMethod.getReturnType().represents(void.class) ? new Object[]{Type.getInternalName(Throwable.class)} : new Object[]{toFrame(instrumentedMethod.getReturnType().asErasure()),Type.getInternalName(Throwable.class)};
+      methodVisitor.visitFrame(Opcodes.F_APPEND,local.length,local,0,EMPTY);
+    }
+  }
+ else {
+    injectFullFrame(methodVisitor,CompoundList.of(intermediateTypes,instrumentedMethod.getReturnType().represents(void.class) ? Collections.singletonList(TypeDescription.THROWABLE) : Arrays.asList(instrumentedMethod.getReturnType().asErasure(),TypeDescription.THROWABLE)),false);
+  }
+}

@@ -1,3 +1,0 @@
-{
-  injectFrame(methodVisitor,CompoundList.of(intermediateTypes,instrumentedMethod.getReturnType().represents(void.class) ? Collections.singletonList(TypeDescription.THROWABLE) : Arrays.asList(instrumentedMethod.getReturnType().asErasure(),TypeDescription.THROWABLE)),false);
-}

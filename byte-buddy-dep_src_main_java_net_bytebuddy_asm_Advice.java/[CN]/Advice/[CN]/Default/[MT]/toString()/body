@@ -1,3 +1,0 @@
-{
-  return "Advice.FrameTranslator{" + "instrumentedMethod=" + instrumentedMethod + ", intermediateTypes="+ intermediateTypes+ ", stackSize="+ stackSize+ ", localVariableLength="+ localVariableLength+ '}';
-}

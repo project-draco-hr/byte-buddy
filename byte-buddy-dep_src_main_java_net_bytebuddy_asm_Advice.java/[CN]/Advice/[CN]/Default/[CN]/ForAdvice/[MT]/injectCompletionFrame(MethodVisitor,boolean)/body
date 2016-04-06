@@ -1,0 +1,18 @@
+{
+  if (!expandFrames && currentFrameDivergence == 0 && yieldedTypes.size() < 4) {
+    if (secondaryCompletion || yieldedTypes.isEmpty()) {
+      methodVisitor.visitFrame(Opcodes.F_SAME,0,EMPTY,0,EMPTY);
+    }
+ else {
+      Object[] local=new Object[yieldedTypes.size()];
+      int index=0;
+      for (      TypeDescription typeDescription : yieldedTypes) {
+        local[index++]=toFrame(typeDescription);
+      }
+      methodVisitor.visitFrame(Opcodes.F_APPEND,local.length,local,0,EMPTY);
+    }
+  }
+ else {
+    injectFullFrame(methodVisitor,CompoundList.of(intermediateTypes,yieldedTypes),false);
+  }
+}
