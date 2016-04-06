@@ -1,3 +1,0 @@
-{
-  super(methodVisitor,frameTranslator,instrumentedMethod,adviseMethod,offsetMappings,throwableType);
-}

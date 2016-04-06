@@ -1,5 +1,5 @@
 String internalName
 String descriptor
 MethodVisitor methodVisitor
-FrameTranslator.ForInstrumentedMethod frameTranslator
+MetaDataHandler.ForInstrumentedMethod metaDataHandler
 MethodDescription.InDefinedShape instrumentedMethod

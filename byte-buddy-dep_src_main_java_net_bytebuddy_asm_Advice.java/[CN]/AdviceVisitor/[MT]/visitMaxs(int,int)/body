@@ -1,7 +1,7 @@
 {
   onUserEnd();
   mv.visitLabel(endOfMethod);
-  frameTranslator.injectCompletionFrame(mv,false);
+  metaDataHandler.injectCompletionFrame(mv,false);
   append(methodExit);
   variable(Opcodes.ALOAD,instrumentedMethod.getReturnType().getStackSize().getSize());
   Label exceptionalReturn=new Label();
@@ -15,8 +15,8 @@
     mv.visitInsn(returnType.getOpcode(Opcodes.IRETURN));
   }
   mv.visitLabel(exceptionalReturn);
-  frameTranslator.injectCompletionFrame(mv,true);
+  metaDataHandler.injectCompletionFrame(mv,true);
   variable(Opcodes.ALOAD,instrumentedMethod.getReturnType().getStackSize().getSize());
   mv.visitInsn(Opcodes.ATHROW);
-  super.visitMaxs(frameTranslator.compoundStackSize(maxStack),frameTranslator.compoundLocalVariableSize(maxLocals));
+  super.visitMaxs(metaDataHandler.compoundStackSize(maxStack),metaDataHandler.compoundLocalVariableSize(maxLocals));
 }

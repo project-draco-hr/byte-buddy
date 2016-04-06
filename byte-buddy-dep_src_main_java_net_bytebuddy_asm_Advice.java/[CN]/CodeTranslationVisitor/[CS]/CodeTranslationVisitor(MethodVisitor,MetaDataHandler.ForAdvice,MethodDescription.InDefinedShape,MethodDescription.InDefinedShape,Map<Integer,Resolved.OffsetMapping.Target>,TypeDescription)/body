@@ -1,6 +1,6 @@
 {
   super(Opcodes.ASM5,methodVisitor);
-  this.frameTranslator=frameTranslator;
+  this.metaDataHandler=metaDataHandler;
   this.instrumentedMethod=instrumentedMethod;
   this.adviseMethod=adviseMethod;
   this.offsetMappings=offsetMappings;

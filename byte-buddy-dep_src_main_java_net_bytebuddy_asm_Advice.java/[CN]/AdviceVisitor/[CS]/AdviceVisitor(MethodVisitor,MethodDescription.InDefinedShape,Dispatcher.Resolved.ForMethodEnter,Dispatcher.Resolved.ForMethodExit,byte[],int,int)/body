@@ -4,6 +4,6 @@
   this.methodEnter=methodEnter;
   this.methodExit=methodExit;
   classReader=new ClassReader(binaryRepresentation);
-  frameTranslator=FrameTranslator.Default.of(instrumentedMethod,methodEnter.getEnterType().represents(void.class) ? new TypeList.Empty() : new TypeList.Explicit(methodEnter.getEnterType()),writerFlags,readerFlags);
+  metaDataHandler=MetaDataHandler.Default.of(instrumentedMethod,methodEnter.getEnterType().represents(void.class) ? new TypeList.Empty() : new TypeList.Explicit(methodEnter.getEnterType()),writerFlags,readerFlags);
   endOfMethod=new Label();
 }

@@ -1,5 +1,5 @@
 MethodVisitor methodVisitor
-FrameTranslator.ForAdvice frameTranslator
+MetaDataHandler.ForAdvice metaDataHandler
 MethodDescription.InDefinedShape instrumentedMethod
 MethodDescription.InDefinedShape adviseMethod
 Map<Integer,Resolved.OffsetMapping.Target> offsetMappings

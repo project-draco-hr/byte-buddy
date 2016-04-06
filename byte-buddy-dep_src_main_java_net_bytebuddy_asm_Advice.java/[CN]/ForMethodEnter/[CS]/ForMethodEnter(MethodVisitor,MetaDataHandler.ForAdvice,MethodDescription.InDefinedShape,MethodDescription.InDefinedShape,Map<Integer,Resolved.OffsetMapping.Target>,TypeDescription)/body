@@ -1,0 +1,3 @@
+{
+  super(methodVisitor,metaDataHandler,instrumentedMethod,adviseMethod,offsetMappings,throwableType);
+}

@@ -1,5 +1,5 @@
-int type
-int nLocal
-Object[] local
-int nStack
+int frameType
+int localVariableLength
+Object[] localVariable
+int stackSize
 Object[] stack

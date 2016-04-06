@@ -1,3 +1,3 @@
 {
-  suppressionHandler.onStart(mv,frameTranslator);
+  suppressionHandler.onStart(mv,metaDataHandler);
 }

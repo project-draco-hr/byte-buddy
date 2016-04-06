@@ -1,6 +1,6 @@
 {
   mv.visitLabel(userEnd);
-  frameTranslator.injectHandlerFrame(mv);
+  metaDataHandler.injectHandlerFrame(mv);
   variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
   storeDefaultReturn();
   mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);

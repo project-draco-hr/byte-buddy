@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  DispatchingVisitor that=((DispatchingVisitor)other);
-  return instrumentedType.equals(that.instrumentedType) && getOuter().equals(that.getOuter()) && cv.equals(that.cv);
-}
