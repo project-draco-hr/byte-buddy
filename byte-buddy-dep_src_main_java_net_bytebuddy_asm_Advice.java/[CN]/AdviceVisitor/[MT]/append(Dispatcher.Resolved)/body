@@ -1,3 +1,5 @@
 {
-  classReader.accept(new CodeCopier(dispatcher),ClassReader.SKIP_DEBUG | metaDataHandler.getReaderHint());
+  if (dispatcher.isAlive()) {
+    classReader.accept(new CodeCopier(dispatcher),ClassReader.SKIP_DEBUG | metaDataHandler.getReaderHint());
+  }
 }

@@ -1,0 +1,16 @@
+{
+  onUserExit();
+  mv.visitLabel(endOfMethod);
+  metaDataHandler.injectCompletionFrame(mv,false);
+  append(methodExit);
+  onAdviceExit();
+  if (instrumentedMethod.getReturnType().represents(void.class)) {
+    mv.visitInsn(Opcodes.RETURN);
+  }
+ else {
+    Type returnType=Type.getType(instrumentedMethod.getReturnType().asErasure().getDescriptor());
+    variable(returnType.getOpcode(Opcodes.ILOAD));
+    mv.visitInsn(returnType.getOpcode(Opcodes.IRETURN));
+  }
+  onMethodExit();
+}

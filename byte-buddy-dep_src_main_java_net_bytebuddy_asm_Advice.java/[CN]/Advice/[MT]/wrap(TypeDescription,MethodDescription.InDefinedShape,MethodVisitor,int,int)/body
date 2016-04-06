@@ -2,5 +2,13 @@
   if (methodDescription.isAbstract() || methodDescription.isNative()) {
     throw new IllegalStateException("Cannot advice abstract or native method " + methodDescription);
   }
-  return methodExit.isSkipThrowable() ? new AdviceVisitor.WithoutExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,binaryRepresentation,writerFlags,readerFlags) : new AdviceVisitor.WithExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,binaryRepresentation,writerFlags,readerFlags);
+ else   if (!methodExit.isAlive()) {
+    return new AdviceVisitor.WithoutExitAdvice(methodVisitor,methodDescription,methodEnter,binaryRepresentation,writerFlags,readerFlags);
+  }
+ else   if (methodExit.isSkipThrowable()) {
+    return new AdviceVisitor.WithExitAdvice.WithoutExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,binaryRepresentation,writerFlags,readerFlags);
+  }
+ else {
+    return new AdviceVisitor.WithExitAdvice.WithExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,binaryRepresentation,writerFlags,readerFlags);
+  }
 }

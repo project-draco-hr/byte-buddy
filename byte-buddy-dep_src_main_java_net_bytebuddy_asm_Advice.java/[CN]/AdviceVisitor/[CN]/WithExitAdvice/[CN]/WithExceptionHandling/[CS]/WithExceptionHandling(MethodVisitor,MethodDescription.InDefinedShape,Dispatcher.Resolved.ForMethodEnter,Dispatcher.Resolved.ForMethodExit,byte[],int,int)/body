@@ -2,4 +2,5 @@
   super(methodVisitor,instrumentedMethod,methodEnter,methodExit,binaryRepresentation,writerFlags,readerFlags);
   userStart=new Label();
   userEnd=new Label();
+  exceptionalReturn=new Label();
 }
