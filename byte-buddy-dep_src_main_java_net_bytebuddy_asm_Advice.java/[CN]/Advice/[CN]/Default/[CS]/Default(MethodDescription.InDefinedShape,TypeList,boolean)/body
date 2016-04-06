@@ -2,5 +2,4 @@
   this.instrumentedMethod=instrumentedMethod;
   this.intermediateTypes=intermediateTypes;
   this.expandFrames=expandFrames;
-  stackSize=2;
 }

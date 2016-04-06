@@ -1,3 +1,11 @@
 {
-  return (writerFlags & ClassWriter.COMPUTE_FRAMES) != 0 ? NoOp.INSTANCE : new Default(instrumentedMethod,additionalTypes,(readerFlags & ClassReader.EXPAND_FRAMES) != 0);
+  if ((writerFlags & ClassWriter.COMPUTE_FRAMES) != 0) {
+    return NoOp.INSTANCE;
+  }
+ else   if ((writerFlags & ClassWriter.COMPUTE_MAXS) != 0) {
+    return new Default.WithoutStackSizeComputation(instrumentedMethod,additionalTypes,(readerFlags & ClassReader.EXPAND_FRAMES) != 0);
+  }
+ else {
+    return new Default.WithStackSizeComputation(instrumentedMethod,additionalTypes,(readerFlags & ClassReader.EXPAND_FRAMES) != 0);
+  }
 }

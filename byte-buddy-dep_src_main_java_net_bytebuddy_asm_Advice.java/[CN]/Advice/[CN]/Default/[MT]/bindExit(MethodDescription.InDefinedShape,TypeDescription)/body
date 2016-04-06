@@ -7,5 +7,5 @@
     typeDescriptions.add(instrumentedMethod.getReturnType().asErasure());
   }
   typeDescriptions.add(TypeDescription.THROWABLE);
-  return new ForAdvice(methodDescription,new TypeList.Explicit(typeDescriptions),Collections.<TypeDescription>emptyList(),TranslationMode.EXIT);
+  return bind(methodDescription,new TypeList.Explicit(typeDescriptions),Collections.<TypeDescription>emptyList(),TranslationMode.EXIT);
 }

@@ -1,0 +1,4 @@
+MethodDescription.InDefinedShape methodDescription
+TypeList intermediateTypes
+List<? extends TypeDescription> yieldedTypes
+TranslationMode translationMode

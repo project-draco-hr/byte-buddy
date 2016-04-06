@@ -1,2 +1,2 @@
-int maxStack
-int maxLocals
+int stackSize
+int localVariableLength

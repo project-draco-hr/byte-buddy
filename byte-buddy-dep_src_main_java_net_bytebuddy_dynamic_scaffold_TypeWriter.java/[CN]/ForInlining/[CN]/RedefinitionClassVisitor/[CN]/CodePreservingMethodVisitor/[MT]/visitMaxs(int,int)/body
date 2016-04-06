@@ -1,3 +1,3 @@
 {
-  super.visitMaxs(maxStack,Math.max(maxLocals,resolution.getResolvedMethod().getStackSize()));
+  super.visitMaxs(stackSize,Math.max(localVariableLength,resolution.getResolvedMethod().getStackSize()));
 }
