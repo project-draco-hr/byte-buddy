@@ -1,0 +1,3 @@
+{
+  return with(InitializationStrategy.NoOp.INSTANCE).with(TypeStrategy.Default.REDEFINE);
+}

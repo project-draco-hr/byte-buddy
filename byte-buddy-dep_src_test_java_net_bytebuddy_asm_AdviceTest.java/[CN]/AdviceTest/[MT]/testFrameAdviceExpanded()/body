@@ -1,5 +1,5 @@
 {
-  Class<?> type=new ByteBuddy().redefine(FrameSample.class).visit(Advice.to(FrameAdvice.class).on(named(FOO)).readerFlags(ClassReader.EXPAND_FRAMES)).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=new ByteBuddy().redefine(FrameSample.class).visit(DebuggingWrapper.makeDefault()).visit(Advice.to(EmptyAdvice.class).on(named(FOO)).readerFlags(ClassReader.EXPAND_FRAMES | ClassReader.SKIP_DEBUG)).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethod(FOO,String.class).invoke(type.newInstance(),FOO),is((Object)FOO));
   assertThat(type.getField(COUNT).getInt(null),is((Object)2));
 }

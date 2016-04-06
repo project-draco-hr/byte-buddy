@@ -11,7 +11,7 @@
       }
     }
   }
-  long v4=1L, v5=2L, v6=3L, v7=4L;
+  long v4=4L, v5=5L, v6=6L, v7=7L;
   if (ignored == 3) {
     throw new AssertionError();
   }
@@ -21,10 +21,10 @@
     }
   }
   try {
-    long v8=1L;
+    long v8=8L;
   }
  catch (  Exception exception) {
-    long v9=1L;
+    long v9=9L;
   }
   return value;
 }

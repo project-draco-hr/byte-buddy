@@ -11,7 +11,7 @@
       }
     }
   }
-  long v4=1L, v5=2L, v6=3L, v7=4L;
+  long v4=4L, v5=5L, v6=6L, v7=4L;
   if (ignored == 3) {
     throw new AssertionError();
   }
