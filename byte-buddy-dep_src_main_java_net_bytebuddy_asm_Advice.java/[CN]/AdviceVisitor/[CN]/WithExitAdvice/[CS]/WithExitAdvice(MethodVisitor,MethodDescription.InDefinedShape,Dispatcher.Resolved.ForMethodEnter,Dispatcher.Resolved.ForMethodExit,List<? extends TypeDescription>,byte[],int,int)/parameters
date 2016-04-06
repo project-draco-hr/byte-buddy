@@ -1,6 +1,8 @@
 MethodVisitor methodVisitor
 MethodDescription.InDefinedShape instrumentedMethod
 Dispatcher.Resolved.ForMethodEnter methodEnter
+Dispatcher.Resolved.ForMethodExit methodExit
+List<? extends TypeDescription> yieldedTypes
 byte[] binaryRepresentation
 int writerFlags
 int readerFlags

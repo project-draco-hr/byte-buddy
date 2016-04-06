@@ -4,6 +4,6 @@
     target.resolveAccess(mv,opcode);
   }
  else {
-    mv.visitVarInsn(opcode,adjust(offset + instrumentedMethod.getStackSize() - adviseMethod.getStackSize()));
+    mv.visitVarInsn(opcode,adjust(offset + instrumentedMethod.getStackSize() - adviceMethod.getStackSize()));
   }
 }

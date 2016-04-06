@@ -1,4 +1,0 @@
-{
-  super(instrumentedMethod,expectedTypes,expandFrames);
-  stackSize=instrumentedMethod.getReturnType().getStackSize().getSize() + StackSize.SINGLE.getSize();
-}

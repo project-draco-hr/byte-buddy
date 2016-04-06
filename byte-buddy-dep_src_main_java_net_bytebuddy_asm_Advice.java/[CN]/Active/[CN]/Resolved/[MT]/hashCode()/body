@@ -1,5 +1,5 @@
 {
-  int result=adviseMethod.hashCode();
+  int result=adviceMethod.hashCode();
   result=31 * result + offsetMappings.hashCode();
   return result;
 }

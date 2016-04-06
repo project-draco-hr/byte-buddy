@@ -1,0 +1,6 @@
+{
+  this.instrumentedMethod=instrumentedMethod;
+  this.requiredTypes=new TypeList.Explicit(requiredTypes);
+  this.yieldedTypes=new TypeList.Explicit(yieldedTypes);
+  this.expandFrames=expandFrames;
+}

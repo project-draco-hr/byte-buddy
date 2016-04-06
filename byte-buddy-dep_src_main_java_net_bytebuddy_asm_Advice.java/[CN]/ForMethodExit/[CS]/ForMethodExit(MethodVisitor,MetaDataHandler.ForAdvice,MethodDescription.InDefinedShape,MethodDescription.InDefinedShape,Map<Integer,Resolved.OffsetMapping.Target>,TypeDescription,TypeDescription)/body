@@ -1,4 +1,0 @@
-{
-  super(methodVisitor,metaDataHandler,instrumentedMethod,adviseMethod,offsetMappings,throwableType);
-  this.enterType=enterType;
-}
