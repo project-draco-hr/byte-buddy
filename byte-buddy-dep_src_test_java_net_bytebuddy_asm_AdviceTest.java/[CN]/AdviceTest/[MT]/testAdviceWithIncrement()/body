@@ -1,0 +1,4 @@
+{
+  Class<?> type=new ByteBuddy().redefine(IncrementSample.class).visit(Advice.to(IncrementAdvice.class).on(named(FOO))).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethod(FOO,int.class).invoke(type.newInstance(),0),is((Object)2));
+}

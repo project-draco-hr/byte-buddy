@@ -1,0 +1,3 @@
+{
+  methodVisitor.visitIincInsn(offset,increment);
+}
