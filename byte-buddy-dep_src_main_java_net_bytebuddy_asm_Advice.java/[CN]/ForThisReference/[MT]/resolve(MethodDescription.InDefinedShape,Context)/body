@@ -1,0 +1,15 @@
+{
+  if (instrumentedMethod.isStatic()) {
+    throw new IllegalStateException("Cannot map this reference for static method " + instrumentedMethod);
+  }
+ else   if (!readOnly && !instrumentedMethod.getDeclaringType().equals(targetType)) {
+    throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not equal to read-only "+ targetType);
+  }
+ else   if (readOnly && !instrumentedMethod.getDeclaringType().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not assignable to "+ targetType);
+  }
+ else   if (!context.isInitialized()) {
+    throw new IllegalStateException("Cannot access this reference before calling constructor: " + instrumentedMethod);
+  }
+  return readOnly ? new Target.ForReadOnlyParameter(THIS_REFERENCE) : new Target.ForParameter(THIS_REFERENCE);
+}

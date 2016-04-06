@@ -8,6 +8,9 @@
  else   if (methodExit.isSkipThrowable()) {
     return new AdviceVisitor.WithExitAdvice.WithoutExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,binaryRepresentation,writerFlags,readerFlags);
   }
+ else   if (methodDescription.isConstructor()) {
+    throw new IllegalStateException("Cannot catch exception during constructor call for " + methodDescription);
+  }
  else {
     return new AdviceVisitor.WithExitAdvice.WithExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,binaryRepresentation,writerFlags,readerFlags);
   }
