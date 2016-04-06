@@ -1,6 +1,6 @@
 {
-  if (!expandFrames && currentFrameDivergence == 0) {
-    if (secondaryCompletion) {
+  if (!expandFrames && currentFrameDivergence == 0 && (secondary || !instrumentedMethod.isConstructor())) {
+    if (secondary) {
       methodVisitor.visitFrame(Opcodes.F_SAME,0,EMPTY,0,EMPTY);
     }
  else {
