@@ -7,6 +7,6 @@
     throw new IllegalStateException();
   }
  else {
-    return new ForCustomValue(computedValue.resolve(parameterDescription,annotation));
+    return new ForCustomValue(dynamicValue.resolve(parameterDescription,annotation));
   }
 }

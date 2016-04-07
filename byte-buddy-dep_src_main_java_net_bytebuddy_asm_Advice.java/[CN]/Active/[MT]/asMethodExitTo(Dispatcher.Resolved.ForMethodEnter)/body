@@ -1,3 +1,0 @@
-{
-  return Resolved.ForMethodExit.of(adviceMethod,dispatcher.getEnterType());
-}

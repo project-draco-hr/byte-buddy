@@ -1,17 +1,3 @@
 {
-  try {
-    Dispatcher.Unresolved methodEnter=Dispatcher.Inactive.INSTANCE, methodExit=Dispatcher.Inactive.INSTANCE;
-    for (    MethodDescription.InDefinedShape methodDescription : typeDescription.getDeclaredMethods()) {
-      methodEnter=locate(OnMethodEnter.class,methodEnter,methodDescription);
-      methodExit=locate(OnMethodExit.class,methodExit,methodDescription);
-    }
-    if (!methodEnter.isAlive() && !methodExit.isAlive()) {
-      throw new IllegalArgumentException("No advice defined by " + typeDescription);
-    }
-    Dispatcher.Resolved.ForMethodEnter resolved=methodEnter.asMethodEnter();
-    return new Advice(methodEnter.asMethodEnter(),methodExit.asMethodExitTo(resolved),classFileLocator.locate(typeDescription.getName()).resolve());
-  }
- catch (  IOException exception) {
-    throw new IllegalStateException("Error reading class file of " + typeDescription,exception);
-  }
+  return to(typeDescription,classFileLocator,Collections.<DynamicValue<?>>emptyList());
 }
