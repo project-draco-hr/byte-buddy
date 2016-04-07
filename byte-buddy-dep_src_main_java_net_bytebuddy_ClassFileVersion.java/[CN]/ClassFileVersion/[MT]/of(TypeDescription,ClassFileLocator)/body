@@ -1,0 +1,6 @@
+{
+  ClassReader classReader=new ClassReader(classFileLocator.locate(typeDescription.getName()).resolve());
+  VersionExtractor versionExtractor=new VersionExtractor();
+  classReader.accept(versionExtractor,ClassReader.SKIP_CODE);
+  return ClassFileVersion.ofMinorMajor(versionExtractor.getClassFileVersionNumber());
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(ClassFileVersion.of(Foo.class),is(ClassFileVersion.forCurrentJavaVersion()));
+}
