@@ -1,0 +1,12 @@
+{
+  AnnotationDescription.Loadable<? extends T> annotation=parameterDescription.getDeclaredAnnotations().ofType(type);
+  if (annotation == null) {
+    return UNDEFINED;
+  }
+ else   if (!parameterDescription.getType().represents(String.class)) {
+    throw new IllegalStateException();
+  }
+ else {
+    return new ForCustomValue(computedValue.resolve(parameterDescription,annotation));
+  }
+}

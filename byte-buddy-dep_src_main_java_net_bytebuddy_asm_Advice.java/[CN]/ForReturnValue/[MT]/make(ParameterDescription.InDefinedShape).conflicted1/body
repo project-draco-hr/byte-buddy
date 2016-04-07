@@ -1,11 +1,11 @@
 {
-  if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(BoxedReturn.class)) {
-    if (!parameterDescription.getType().represents(Object.class)) {
-      throw new IllegalStateException();
-    }
-    return this;
+  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(BoxedArguments.class)) {
+    return UNDEFINED;
+  }
+ else   if (!parameterDescription.getType().represents(Object[].class)) {
+    throw new IllegalStateException();
   }
  else {
-    return UNDEFINED;
+    return this;
   }
 }

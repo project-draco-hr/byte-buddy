@@ -1,11 +1,11 @@
 {
-  if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(OriginType.class)) {
-    if (!parameterDescription.getType().represents(Class.class)) {
-      throw new IllegalStateException();
-    }
-    return this;
+  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(OriginType.class)) {
+    return UNDEFINED;
+  }
+ else   if (!parameterDescription.getType().represents(Class.class)) {
+    throw new IllegalStateException();
   }
  else {
-    return UNDEFINED;
+    return this;
   }
 }
