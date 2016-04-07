@@ -9,6 +9,6 @@
     }
   }
  else {
-    injectFullFrame(methodVisitor,CompoundList.of(expectedTypes,instrumentedMethod.getReturnType().represents(void.class) ? Collections.singletonList(TypeDescription.THROWABLE) : Arrays.asList(instrumentedMethod.getReturnType().asErasure(),TypeDescription.THROWABLE)),false);
+    injectFullFrame(methodVisitor,CompoundList.of(requiredTypes,instrumentedMethod.getReturnType().represents(void.class) ? Collections.singletonList(TypeDescription.THROWABLE) : Arrays.asList(instrumentedMethod.getReturnType().asErasure(),TypeDescription.THROWABLE)),false);
   }
 }

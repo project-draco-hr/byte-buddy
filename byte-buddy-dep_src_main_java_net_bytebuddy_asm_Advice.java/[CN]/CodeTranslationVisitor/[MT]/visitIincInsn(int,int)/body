@@ -4,6 +4,6 @@
     target.resolveIncrement(mv,increment);
   }
  else {
-    mv.visitIincInsn(adjust(offset + instrumentedMethod.getStackSize() - adviseMethod.getStackSize()),increment);
+    mv.visitIincInsn(adjust(offset + instrumentedMethod.getStackSize() - adviceMethod.getStackSize()),increment);
   }
 }

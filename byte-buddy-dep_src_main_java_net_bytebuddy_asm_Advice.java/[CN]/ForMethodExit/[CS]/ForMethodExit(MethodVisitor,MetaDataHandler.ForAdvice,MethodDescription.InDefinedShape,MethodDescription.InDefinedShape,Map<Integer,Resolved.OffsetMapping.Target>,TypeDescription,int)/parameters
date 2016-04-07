@@ -1,7 +1,7 @@
 MethodVisitor methodVisitor
 MetaDataHandler.ForAdvice metaDataHandler
 MethodDescription.InDefinedShape instrumentedMethod
-MethodDescription.InDefinedShape adviseMethod
+MethodDescription.InDefinedShape adviceMethod
 Map<Integer,Resolved.OffsetMapping.Target> offsetMappings
 TypeDescription throwableType
-TypeDescription enterType
+int padding

@@ -1,6 +1,6 @@
 {
   this.methodDescription=methodDescription;
-  this.expectedTypes=expectedTypes;
+  this.requiredTypes=requiredTypes;
   this.yieldedTypes=yieldedTypes;
   this.translationMode=translationMode;
 }

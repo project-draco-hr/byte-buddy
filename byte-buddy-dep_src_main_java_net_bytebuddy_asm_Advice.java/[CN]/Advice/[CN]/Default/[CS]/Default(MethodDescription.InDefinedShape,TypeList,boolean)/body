@@ -1,5 +1,0 @@
-{
-  this.instrumentedMethod=instrumentedMethod;
-  this.expectedTypes=expectedTypes;
-  this.expandFrames=expandFrames;
-}

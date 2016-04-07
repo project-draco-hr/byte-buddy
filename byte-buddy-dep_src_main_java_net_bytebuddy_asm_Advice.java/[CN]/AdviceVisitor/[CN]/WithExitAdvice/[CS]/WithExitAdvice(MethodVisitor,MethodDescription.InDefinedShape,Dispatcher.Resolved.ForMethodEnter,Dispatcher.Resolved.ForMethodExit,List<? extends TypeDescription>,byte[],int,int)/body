@@ -1,0 +1,5 @@
+{
+  super(methodVisitor,instrumentedMethod,methodEnter,yieldedTypes,binaryRepresentation,writerFlags,readerFlags);
+  this.methodExit=methodExit;
+  endOfMethod=new Label();
+}

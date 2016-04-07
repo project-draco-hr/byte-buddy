@@ -3,6 +3,6 @@
     methodVisitor.visitFrame(Opcodes.F_SAME1,0,EMPTY,1,new Object[]{Type.getInternalName(Throwable.class)});
   }
  else {
-    injectFullFrame(methodVisitor,expectedTypes,true);
+    injectFullFrame(methodVisitor,requiredTypes,true);
   }
 }
