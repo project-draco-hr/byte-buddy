@@ -1,4 +1,11 @@
 {
-  AnnotationDescription.Loadable<Return> annotation=parameterDescription.getDeclaredAnnotations().ofType(Return.class);
-  return annotation == null ? UNDEFINED : new ForReturnValue(annotation.loadSilent().readOnly(),parameterDescription.getType().asErasure());
+  if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(OriginType.class)) {
+    if (!parameterDescription.getType().represents(Class.class)) {
+      throw new IllegalStateException();
+    }
+    return this;
+  }
+ else {
+    return UNDEFINED;
+  }
 }

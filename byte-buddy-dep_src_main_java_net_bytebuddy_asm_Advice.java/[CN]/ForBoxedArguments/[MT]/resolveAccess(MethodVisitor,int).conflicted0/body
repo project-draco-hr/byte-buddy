@@ -1,0 +1,24 @@
+{
+switch (opcode) {
+case Opcodes.ALOAD:
+    methodVisitor.visitLdcInsn(parameters.size());
+  methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,TypeDescription.OBJECT.getInternalName());
+for (ParameterDescription parameter : parameters) {
+  ForBoxedParameter.BoxingDispatcher.of(parameter.getType()).loadBoxed(methodVisitor,parameter.getOffset());
+  methodVisitor.visitInsn(Opcodes.AASTORE);
+}
+break;
+case Opcodes.ILOAD:
+case Opcodes.LLOAD:
+case Opcodes.FLOAD:
+case Opcodes.DLOAD:
+case Opcodes.ISTORE:
+case Opcodes.FSTORE:
+case Opcodes.ASTORE:
+case Opcodes.LSTORE:
+case Opcodes.DSTORE:
+throw new IllegalStateException();
+default :
+throw new IllegalStateException("Unexpected opcode: " + opcode);
+}
+}

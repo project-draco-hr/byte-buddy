@@ -1,0 +1,11 @@
+{
+  if (instrumentedMethod.getReturnType().represents(void.class)) {
+    return Target.ForNullConstant.INSTANCE;
+  }
+ else   if (instrumentedMethod.getReturnType().isPrimitive()) {
+    return new Target.ForReadOnlyParameter(instrumentedMethod.getStackSize() + context.getPadding());
+  }
+ else {
+    return Target.ForBoxedParameter.of(instrumentedMethod.getStackSize() + context.getPadding(),instrumentedMethod.getReturnType());
+  }
+}

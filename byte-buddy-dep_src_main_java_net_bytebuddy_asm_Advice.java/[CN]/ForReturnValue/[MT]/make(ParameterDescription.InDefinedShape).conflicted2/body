@@ -1,7 +1,7 @@
 {
-  if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(Thrown.class)) {
-    if (!parameterDescription.getType().represents(Throwable.class)) {
-      throw new IllegalStateException("Parameter must be of type Throwable for " + parameterDescription);
+  if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(BoxedArguments.class)) {
+    if (!parameterDescription.getType().represents(Object[].class)) {
+      throw new IllegalStateException();
     }
     return this;
   }

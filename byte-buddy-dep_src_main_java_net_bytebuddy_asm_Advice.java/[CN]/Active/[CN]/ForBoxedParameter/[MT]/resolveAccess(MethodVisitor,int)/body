@@ -1,9 +1,8 @@
 {
 switch (opcode) {
 case Opcodes.ALOAD:
-    methodVisitor.visitVarInsn(boxingDispatcher.getOpcode(),offset);
-  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,boxingDispatcher.getOwner(),VALUE_OF,boxingDispatcher.getDescriptor(),false);
-break;
+    boxingDispatcher.loadBoxed(methodVisitor,offset);
+  break;
 case Opcodes.ILOAD:
 case Opcodes.LLOAD:
 case Opcodes.FLOAD:
