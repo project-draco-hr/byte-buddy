@@ -1,0 +1,3 @@
+{
+  assertThat(new AgentBuilder.Default().disableClassFormatChanges(),is(new AgentBuilder.Default(new ByteBuddy().with(Implementation.Context.Disabled.Factory.INSTANCE)).with(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).with(AgentBuilder.TypeStrategy.Default.REDEFINE_DECLARED_ONLY)));
+}

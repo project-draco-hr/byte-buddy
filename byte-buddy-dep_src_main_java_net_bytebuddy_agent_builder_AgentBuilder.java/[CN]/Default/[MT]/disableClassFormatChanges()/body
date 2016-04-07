@@ -1,0 +1,3 @@
+{
+  return new Default(byteBuddy.with(Implementation.Context.Disabled.Factory.INSTANCE),binaryLocator,TypeStrategy.Default.REDEFINE_DECLARED_ONLY,listener,nativeMethodStrategy,accessControlContext,InitializationStrategy.NoOp.INSTANCE,redefinitionStrategy,bootstrapInjectionStrategy,lambdaInstrumentationStrategy,ignoredTypeMatcher,transformation);
+}

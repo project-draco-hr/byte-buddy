@@ -3,4 +3,5 @@
   assertThat(AgentBuilder.TypeStrategy.Default.REBASE.builder(typeDescription,byteBuddy,classFileLocator,methodNameTransformer),is((DynamicType.Builder)dynamicTypeBuilder));
   verify(byteBuddy).rebase(typeDescription,classFileLocator,methodNameTransformer);
   verifyNoMoreInteractions(byteBuddy);
+  verifyZeroInteractions(dynamicTypeBuilder);
 }
