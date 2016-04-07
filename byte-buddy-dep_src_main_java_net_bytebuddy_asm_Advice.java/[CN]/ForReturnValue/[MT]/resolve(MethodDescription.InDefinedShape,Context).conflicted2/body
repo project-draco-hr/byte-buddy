@@ -1,0 +1,3 @@
+{
+  return new Target.ForParameter(instrumentedMethod.getStackSize() + context.getPadding() + instrumentedMethod.getReturnType().getStackSize().getSize());
+}

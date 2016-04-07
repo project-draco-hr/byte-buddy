@@ -1,0 +1,5 @@
+{
+  this.opcode=opcode;
+  target=Type.getInternalName(wrapperType);
+  descriptor=Type.getMethodDescriptor(Type.getType(wrapperType),Type.getType(primitiveType));
+}
