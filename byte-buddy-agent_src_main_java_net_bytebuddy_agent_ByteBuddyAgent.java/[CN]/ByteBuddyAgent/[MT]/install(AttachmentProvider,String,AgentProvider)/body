@@ -5,17 +5,11 @@
   }
   try {
     Object virtualMachineInstance=attachmentAccessor.getVirtualMachineType().getDeclaredMethod(ATTACH_METHOD_NAME,String.class).invoke(STATIC_MEMBER,processId);
-    AgentProvider.Agent agent=agentProvider.provide();
     try {
-      try {
-        attachmentAccessor.getVirtualMachineType().getDeclaredMethod(LOAD_AGENT_METHOD_NAME,String.class,String.class).invoke(virtualMachineInstance,agent.getAbsolutePath(),WITHOUT_ARGUMENTS);
-      }
-  finally {
-        attachmentAccessor.getVirtualMachineType().getDeclaredMethod(DETACH_METHOD_NAME).invoke(virtualMachineInstance);
-      }
+      attachmentAccessor.getVirtualMachineType().getDeclaredMethod(LOAD_AGENT_METHOD_NAME,String.class,String.class).invoke(virtualMachineInstance,agentProvider.resolve().getAbsolutePath(),WITHOUT_ARGUMENTS);
     }
   finally {
-      agent.release();
+      attachmentAccessor.getVirtualMachineType().getDeclaredMethod(DETACH_METHOD_NAME).invoke(virtualMachineInstance);
     }
   }
  catch (  Exception exception) {

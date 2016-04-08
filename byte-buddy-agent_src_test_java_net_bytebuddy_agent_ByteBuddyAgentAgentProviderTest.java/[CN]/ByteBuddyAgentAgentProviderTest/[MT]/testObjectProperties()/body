@@ -1,5 +1,4 @@
 {
   ObjectPropertyAssertion.of(ByteBuddyAgent.AgentProvider.ForExistingAgent.class).apply();
   ObjectPropertyAssertion.of(ByteBuddyAgent.AgentProvider.ForByteBuddyAgent.class).apply();
-  ObjectPropertyAssertion.of(ByteBuddyAgent.AgentProvider.Agent.ForTemporaryAgent.class).apply();
 }
