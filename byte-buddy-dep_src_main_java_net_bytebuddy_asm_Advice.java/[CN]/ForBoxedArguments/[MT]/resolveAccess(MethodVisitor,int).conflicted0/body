@@ -1,9 +1,11 @@
 {
 switch (opcode) {
 case Opcodes.ALOAD:
-    methodVisitor.visitLdcInsn(parameters.size());
+    loadNonNegativeInteger(methodVisitor,parameters.size());
   methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,TypeDescription.OBJECT.getInternalName());
 for (ParameterDescription parameter : parameters) {
+  methodVisitor.visitInsn(Opcodes.DUP);
+  loadNonNegativeInteger(methodVisitor,parameter.getIndex());
   ForBoxedParameter.BoxingDispatcher.of(parameter.getType()).loadBoxed(methodVisitor,parameter.getOffset());
   methodVisitor.visitInsn(Opcodes.AASTORE);
 }

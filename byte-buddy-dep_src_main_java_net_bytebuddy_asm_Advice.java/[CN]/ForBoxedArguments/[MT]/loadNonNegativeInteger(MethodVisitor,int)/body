@@ -1,0 +1,32 @@
+{
+switch (value) {
+case 0:
+    methodVisitor.visitInsn(Opcodes.ICONST_0);
+  break;
+case 1:
+methodVisitor.visitInsn(Opcodes.ICONST_1);
+break;
+case 2:
+methodVisitor.visitInsn(Opcodes.ICONST_2);
+break;
+case 3:
+methodVisitor.visitInsn(Opcodes.ICONST_3);
+break;
+case 4:
+methodVisitor.visitInsn(Opcodes.ICONST_4);
+break;
+case 5:
+methodVisitor.visitInsn(Opcodes.ICONST_5);
+break;
+default :
+if (value < Byte.MAX_VALUE) {
+methodVisitor.visitIntInsn(Opcodes.BIPUSH,value);
+}
+ else if (value < Short.MAX_VALUE) {
+methodVisitor.visitIntInsn(Opcodes.SIPUSH,value);
+}
+ else {
+methodVisitor.visitLdcInsn(value);
+}
+}
+}

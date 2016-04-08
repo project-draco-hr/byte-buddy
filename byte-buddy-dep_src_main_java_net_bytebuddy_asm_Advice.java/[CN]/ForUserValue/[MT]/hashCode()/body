@@ -1,0 +1,6 @@
+{
+  int result=mappedParameter.hashCode();
+  result=31 * result + userAnnotation.hashCode();
+  result=31 * result + dynamicValue.hashCode();
+  return result;
+}

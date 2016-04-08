@@ -1,0 +1,3 @@
+{
+  return "Advice.Dispatcher.OffsetMapping.ForUserValue{" + "mappedParameter=" + mappedParameter + ", userAnnotation="+ userAnnotation+ ", dynamicValue="+ dynamicValue+ '}';
+}

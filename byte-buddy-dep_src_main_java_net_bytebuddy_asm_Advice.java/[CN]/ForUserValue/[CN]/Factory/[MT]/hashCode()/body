@@ -1,0 +1,5 @@
+{
+  int result=annotationType.hashCode();
+  result=31 * result + dynamicValue.hashCode();
+  return result;
+}
