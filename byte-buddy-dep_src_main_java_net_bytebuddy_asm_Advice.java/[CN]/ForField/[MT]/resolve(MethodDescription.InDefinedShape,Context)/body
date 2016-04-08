@@ -3,8 +3,11 @@
   if (!resolution.isResolved()) {
     throw new IllegalStateException("Cannot locate field named " + name + " for "+ instrumentedMethod);
   }
- else   if (!resolution.getField().getType().asErasure().isAssignableTo(targetType)) {
-    throw new IllegalStateException("Cannot assign type of field " + resolution.getField() + " to "+ targetType);
+ else   if (readOnly && !resolution.getField().getType().asErasure().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Cannot assign type of read-only field " + resolution.getField() + " to "+ targetType);
+  }
+ else   if (!readOnly && !resolution.getField().getType().asErasure().equals(targetType)) {
+    throw new IllegalStateException("Type of field " + resolution.getField() + " is not equal to "+ targetType);
   }
  else   if (!resolution.getField().isStatic() && instrumentedMethod.isStatic()) {
     throw new IllegalStateException("Cannot read non-static field " + resolution.getField() + " from static method "+ instrumentedMethod);
@@ -12,5 +15,5 @@
  else   if (!context.isInitialized() && !resolution.getField().isStatic()) {
     throw new IllegalStateException("Cannot access non-static field before calling constructor: " + instrumentedMethod);
   }
-  return new Target.ForReadOnlyField(resolution.getField());
+  return readOnly ? new Target.ForReadOnlyField(resolution.getField()) : new Target.ForField(resolution.getField());
 }
