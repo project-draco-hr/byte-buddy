@@ -12,5 +12,5 @@
  else   if (!context.isInitialized() && !resolution.getField().isStatic()) {
     throw new IllegalStateException("Cannot access non-static field before calling constructor: " + instrumentedMethod);
   }
-  return new Target.ForField(resolution.getField());
+  return new Target.ForReadOnlyField(resolution.getField());
 }

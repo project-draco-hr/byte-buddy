@@ -1,15 +1,17 @@
 {
 switch (opcode) {
 case Opcodes.ALOAD:
-    loadNonNegativeInteger(methodVisitor,parameters.size());
+    loadInteger(methodVisitor,parameters.size());
   methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,TypeDescription.OBJECT.getInternalName());
+StackSize stackSize=StackSize.ZERO;
 for (ParameterDescription parameter : parameters) {
-  methodVisitor.visitInsn(Opcodes.DUP);
-  loadNonNegativeInteger(methodVisitor,parameter.getIndex());
-  ForBoxedParameter.BoxingDispatcher.of(parameter.getType()).loadBoxed(methodVisitor,parameter.getOffset());
-  methodVisitor.visitInsn(Opcodes.AASTORE);
+methodVisitor.visitInsn(Opcodes.DUP);
+loadInteger(methodVisitor,parameter.getIndex());
+ForBoxedParameter.BoxingDispatcher.of(parameter.getType()).loadBoxed(methodVisitor,parameter.getOffset());
+methodVisitor.visitInsn(Opcodes.AASTORE);
+stackSize=stackSize.maximum(parameter.getType().getStackSize());
 }
-break;
+return stackSize.getSize() + 2;
 case Opcodes.ILOAD:
 case Opcodes.LLOAD:
 case Opcodes.FLOAD:

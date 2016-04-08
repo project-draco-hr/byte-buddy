@@ -16,4 +16,5 @@ throw new IllegalStateException();
 default :
 throw new IllegalStateException("Unexpected opcode: " + opcode);
 }
+return NO_PADDING;
 }

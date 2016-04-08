@@ -2,6 +2,5 @@
   if (this == object)   return true;
   if (object == null || getClass() != object.getClass())   return false;
   ForUserValue that=(ForUserValue)object;
-  if (!mappedParameter.equals(that.mappedParameter))   return false;
-  return userAnnotation.equals(that.userAnnotation) && dynamicValue.equals(that.dynamicValue);
+  return mappedParameter.equals(that.mappedParameter) && userAnnotation.equals(that.userAnnotation) && dynamicValue.equals(that.dynamicValue);
 }

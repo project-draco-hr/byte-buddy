@@ -2,4 +2,5 @@
   this.opcode=opcode;
   owner=Type.getInternalName(wrapperType);
   descriptor=Type.getMethodDescriptor(Type.getType(wrapperType),Type.getType(primitiveType));
+  stackSize=StackSize.of(primitiveType);
 }
