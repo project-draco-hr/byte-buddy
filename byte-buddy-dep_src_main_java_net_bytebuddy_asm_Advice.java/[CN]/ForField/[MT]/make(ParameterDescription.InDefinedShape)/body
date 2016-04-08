@@ -7,6 +7,6 @@
     TypeDescription definingType=annotation.getValue(this.definingType,TypeDescription.class);
     String name=annotation.getValue(value,String.class);
     TypeDescription targetType=parameterDescription.getType().asErasure();
-    return definingType.represents(void.class) ? new WithImplicitType(name,targetType) : new WithExplicitType(name,targetType,definingType);
+    return definingType.represents(void.class) ? new WithImplicitType(name,targetType,annotation.getValue(readOnly,Boolean.class)) : new WithExplicitType(name,targetType,definingType,annotation.getValue(readOnly,Boolean.class));
   }
 }

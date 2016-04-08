@@ -1,7 +1,7 @@
 {
   Resolved.OffsetMapping.Target target=offsetMappings.get(offset);
   if (target != null) {
-    target.resolveIncrement(mv,increment);
+    metaDataHandler.recordStackPadding(target.resolveIncrement(mv,increment));
   }
  else {
     mv.visitIincInsn(adjust(offset + instrumentedMethod.getStackSize() - adviceMethod.getStackSize()),increment);
