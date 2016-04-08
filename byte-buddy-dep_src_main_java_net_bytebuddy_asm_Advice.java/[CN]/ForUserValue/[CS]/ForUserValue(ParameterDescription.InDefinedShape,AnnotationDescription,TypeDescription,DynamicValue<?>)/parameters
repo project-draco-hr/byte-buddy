@@ -1,0 +1,4 @@
+ParameterDescription.InDefinedShape mappedParameter
+AnnotationDescription userAnnotation
+TypeDescription annotationType
+DynamicValue<?> dynamicValue

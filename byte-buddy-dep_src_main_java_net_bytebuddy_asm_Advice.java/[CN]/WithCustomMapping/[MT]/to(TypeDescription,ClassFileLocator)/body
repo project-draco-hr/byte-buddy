@@ -1,0 +1,7 @@
+{
+  List<Dispatcher.OffsetMapping.Factory> userFactories=new ArrayList<Dispatcher.OffsetMapping.Factory>(dynamicValues.size());
+  for (  Map.Entry<TypeDescription,DynamicValue<?>> entry : dynamicValues.entrySet()) {
+    userFactories.add(new Dispatcher.OffsetMapping.ForUserValue.Factory(entry.getKey(),entry.getValue()));
+  }
+  return Advice.to(typeDescription,classFileLocator,userFactories);
+}

@@ -1,0 +1,13 @@
+{
+  Object userValue=dynamicValue.resolve(instrumentedMethod,mappedParameter,userAnnotation,context.isInitialized());
+  if ((instrumentedMethod.getReturnType().represents(String.class) && !(userValue instanceof String)) || (instrumentedMethod.getReturnType().represents(Class.class) && !(userValue instanceof TypeDescription || userValue instanceof Class)) || (instrumentedMethod.getReturnType().isPrimitive() && !instrumentedMethod.getReturnType().asErasure().isInstanceOrWrapper(userValue))) {
+    throw new IllegalStateException("Cannot map " + userValue + " as constant value of "+ instrumentedMethod.getReturnType());
+  }
+ else   if (userValue instanceof TypeDescription) {
+    userValue=Type.getType(((TypeDescription)userValue).getDescriptor());
+  }
+ else   if (userValue instanceof Class) {
+    userValue=Type.getType((Class<?>)userValue);
+  }
+  return new Target.ForConstantPoolValue(userValue);
+}

@@ -1,0 +1,3 @@
+TypeDescription typeDescription
+ClassFileLocator classFileLocator
+List<? extends Dispatcher.OffsetMapping.Factory> userFactories
