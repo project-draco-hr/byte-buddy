@@ -1,0 +1,8 @@
+{
+  ByteBuddyAgent.AgentProvider provider=ByteBuddyAgent.AgentProvider.ForByteBuddyAgent.INSTANCE;
+  ByteBuddyAgent.AgentProvider.Agent agent=provider.provide();
+  assertThat(new File(agent.getAbsolutePath()).exists(),is(true));
+  assertThat(agent.getAbsolutePath(),notNullValue(String.class));
+  agent.release();
+  assertThat(new File(agent.getAbsolutePath()).exists(),is(false));
+}

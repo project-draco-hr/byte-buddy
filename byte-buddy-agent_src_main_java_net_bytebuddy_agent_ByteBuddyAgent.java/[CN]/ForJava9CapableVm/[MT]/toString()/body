@@ -1,0 +1,3 @@
+{
+  return "ByteBuddyAgent.ProcessProvider.ForCurrentVm.ForJava9CapableVm{" + "current=" + current + ", getPid="+ getPid+ '}';
+}

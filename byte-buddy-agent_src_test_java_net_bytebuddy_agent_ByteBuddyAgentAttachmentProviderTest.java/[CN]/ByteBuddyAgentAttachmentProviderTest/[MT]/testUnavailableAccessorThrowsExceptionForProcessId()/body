@@ -1,3 +1,0 @@
-{
-  ByteBuddyAgent.AttachmentProvider.Accessor.Unavailable.INSTANCE.getProcessId();
-}

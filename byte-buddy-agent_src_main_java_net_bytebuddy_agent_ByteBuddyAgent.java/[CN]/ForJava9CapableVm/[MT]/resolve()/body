@@ -1,0 +1,11 @@
+{
+  try {
+    return getPid.invoke(current.invoke(STATIC_MEMBER)).toString();
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access Java 9 process API",exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Error when accessing Java 9 process API",exception.getCause());
+  }
+}

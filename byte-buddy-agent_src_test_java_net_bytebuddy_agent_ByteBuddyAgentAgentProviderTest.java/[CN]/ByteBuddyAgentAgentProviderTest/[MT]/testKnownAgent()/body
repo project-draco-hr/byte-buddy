@@ -1,0 +1,11 @@
+{
+  File agent=mock(File.class);
+  when(agent.getAbsolutePath()).thenReturn(FOO);
+  ByteBuddyAgent.AgentProvider.ForExistingAgent provider=new ByteBuddyAgent.AgentProvider.ForExistingAgent(agent);
+  assertThat(provider.getAbsolutePath(),is(FOO));
+  verify(agent).getAbsolutePath();
+  verifyNoMoreInteractions(agent);
+  assertThat(provider.provide(),is((ByteBuddyAgent.AgentProvider.Agent)provider));
+  provider.release();
+  verifyNoMoreInteractions(agent);
+}

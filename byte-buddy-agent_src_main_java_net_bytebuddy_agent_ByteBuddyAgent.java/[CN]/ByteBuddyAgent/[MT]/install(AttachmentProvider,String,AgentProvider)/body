@@ -1,0 +1,24 @@
+{
+  AttachmentProvider.Accessor attachmentAccessor=attachmentProvider.attempt();
+  if (!attachmentAccessor.isAvailable()) {
+    throw new IllegalStateException();
+  }
+  try {
+    Object virtualMachineInstance=attachmentAccessor.getVirtualMachineType().getDeclaredMethod(ATTACH_METHOD_NAME,String.class).invoke(STATIC_MEMBER,processId);
+    AgentProvider.Agent agent=agentProvider.provide();
+    try {
+      try {
+        attachmentAccessor.getVirtualMachineType().getDeclaredMethod(LOAD_AGENT_METHOD_NAME,String.class,String.class).invoke(virtualMachineInstance,agent.getAbsolutePath(),WITHOUT_ARGUMENTS);
+      }
+  finally {
+        attachmentAccessor.getVirtualMachineType().getDeclaredMethod(DETACH_METHOD_NAME).invoke(virtualMachineInstance);
+      }
+    }
+  finally {
+      agent.release();
+    }
+  }
+ catch (  Exception exception) {
+    throw new IllegalStateException("Error during attachment using: " + attachmentProvider,exception);
+  }
+}
