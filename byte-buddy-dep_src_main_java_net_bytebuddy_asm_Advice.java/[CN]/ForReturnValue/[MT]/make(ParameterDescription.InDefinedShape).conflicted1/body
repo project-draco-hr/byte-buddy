@@ -1,8 +1,8 @@
 {
-  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(BoxedReturn.class)) {
+  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(OriginType.class)) {
     return UNDEFINED;
   }
- else   if (!parameterDescription.getType().represents(Object.class)) {
+ else   if (!parameterDescription.getType().represents(Class.class)) {
     throw new IllegalStateException();
   }
  else {
