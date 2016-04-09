@@ -1,11 +1,11 @@
 {
-  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(BoxedReturn.class)) {
-    return UNDEFINED;
-  }
- else   if (!parameterDescription.getType().represents(Object.class)) {
-    throw new IllegalStateException();
+  if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(Thrown.class)) {
+    if (!parameterDescription.getType().represents(Throwable.class)) {
+      throw new IllegalStateException("Parameter must be of type Throwable for " + parameterDescription);
+    }
+    return this;
   }
  else {
-    return this;
+    return UNDEFINED;
   }
 }
