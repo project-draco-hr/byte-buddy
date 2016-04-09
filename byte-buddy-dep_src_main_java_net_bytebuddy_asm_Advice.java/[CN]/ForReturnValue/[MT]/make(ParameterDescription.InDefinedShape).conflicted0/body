@@ -1,5 +1,5 @@
 {
-  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(OriginType.class)) {
+  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(Origin.Type.class)) {
     return UNDEFINED;
   }
  else   if (!parameterDescription.getType().represents(Class.class)) {
