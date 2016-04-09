@@ -2,5 +2,5 @@
   if (this == object)   return true;
   if (object == null || getClass() != object.getClass())   return false;
   ForField forField=(ForField)object;
-  return name.equals(forField.name) && targetType.equals(forField.targetType);
+  return name.equals(forField.name) && targetType.equals(forField.targetType) && readOnly == forField.readOnly;
 }

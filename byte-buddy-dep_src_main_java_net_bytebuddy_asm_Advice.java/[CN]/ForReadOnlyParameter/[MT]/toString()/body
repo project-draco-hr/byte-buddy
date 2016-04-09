@@ -1,3 +1,3 @@
 {
-  return "Advice.Dispatcher.Active.Resolved.OffsetMapping.Target.ForReadOnlyParameter{" + "offset=" + offset + '}';
+  return "Advice.Dispatcher.OffsetMapping.Target.ForReadOnlyParameter{" + "offset=" + offset + '}';
 }

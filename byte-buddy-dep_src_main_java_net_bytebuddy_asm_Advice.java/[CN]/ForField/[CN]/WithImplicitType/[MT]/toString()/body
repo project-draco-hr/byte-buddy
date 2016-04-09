@@ -1,3 +1,3 @@
 {
-  return "Advice.Dispatcher.Active.Resolved.OffsetMapping.ForField.WithImplicitType{" + "name=" + name + ", targetType="+ targetType+ '}';
+  return "Advice.Dispatcher.OffsetMapping.ForField.WithImplicitType{" + "name=" + name + ", targetType="+ targetType+ '}';
 }

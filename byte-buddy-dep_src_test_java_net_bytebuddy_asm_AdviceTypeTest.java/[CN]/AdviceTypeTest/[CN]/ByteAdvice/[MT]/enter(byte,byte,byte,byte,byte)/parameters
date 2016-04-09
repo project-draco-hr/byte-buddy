@@ -1,0 +1,5 @@
+byte value
+byte field
+byte staticField
+byte mutated
+byte mutatedStatic

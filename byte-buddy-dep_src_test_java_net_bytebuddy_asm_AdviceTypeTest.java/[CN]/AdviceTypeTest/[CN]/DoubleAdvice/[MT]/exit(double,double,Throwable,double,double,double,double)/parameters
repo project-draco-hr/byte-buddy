@@ -1,0 +1,7 @@
+double result
+double enter
+Throwable throwable
+double field
+double staticField
+double mutated
+double mutatedStatic

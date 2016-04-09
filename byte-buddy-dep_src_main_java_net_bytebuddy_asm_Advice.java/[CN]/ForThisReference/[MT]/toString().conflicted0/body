@@ -1,3 +1,3 @@
 {
-  return "Advice.Dispatcher.Active.Resolved.OffsetMapping.ForThisReference{" + "readOnly=" + readOnly + ", targetType="+ targetType+ '}';
+  return "Advice.Dispatcher.OffsetMapping.ForThisReference{" + "readOnly=" + readOnly + ", targetType="+ targetType+ '}';
 }

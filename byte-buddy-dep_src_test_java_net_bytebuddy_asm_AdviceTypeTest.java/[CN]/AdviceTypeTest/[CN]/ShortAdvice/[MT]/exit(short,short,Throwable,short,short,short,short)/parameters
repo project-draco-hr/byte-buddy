@@ -1,0 +1,7 @@
+short result
+short enter
+Throwable throwable
+short field
+short staticField
+short mutated
+short mutatedStatic

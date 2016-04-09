@@ -1,0 +1,5 @@
+float value
+float field
+float staticField
+float mutated
+float mutatedStatic

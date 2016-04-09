@@ -1,0 +1,5 @@
+long value
+long field
+long staticField
+long mutated
+long mutatedStatic
