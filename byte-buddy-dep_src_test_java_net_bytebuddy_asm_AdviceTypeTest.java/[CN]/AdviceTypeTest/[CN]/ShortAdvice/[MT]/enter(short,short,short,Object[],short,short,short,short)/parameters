@@ -1,8 +1,0 @@
-short value
-short argument
-short mutableArgument
-Object[] boxed
-short field
-short staticField
-short mutated
-short mutatedStatic

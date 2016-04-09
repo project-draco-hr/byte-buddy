@@ -1,0 +1,12 @@
+float result
+float enter
+Throwable throwable
+Object boxedReturn
+float argument
+float mutableArgument
+Object[] boxed
+float field
+float staticField
+float mutated
+float mutatedStatic
+float custom

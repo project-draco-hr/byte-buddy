@@ -1,0 +1,27 @@
+{
+  if (value != NUMERIC_DEFAULT) {
+    throw new AssertionError();
+  }
+  value=VALUE;
+  if (value != NUMERIC_DEFAULT) {
+    throw new AssertionError();
+  }
+  if (argument != VALUE || mutableArgument != VALUE) {
+  }
+  if (boxed.length != 2 || !boxed[0].equals((short)VALUE) || !boxed[1].equals((short)VALUE)) {
+    throw new AssertionError();
+  }
+  mutableArgument=VALUE * 2;
+  if (boxed.length != 2 || !boxed[0].equals((short)VALUE) || !boxed[1].equals((short)(VALUE * 2))) {
+    throw new AssertionError();
+  }
+  if (field != VALUE || mutated != VALUE || staticField != VALUE || mutatedStatic != VALUE) {
+    throw new AssertionError();
+  }
+  mutated=mutatedStatic=VALUE * 2;
+  if (custom != VALUE) {
+    throw new AssertionError();
+  }
+  enter++;
+  return VALUE * 2;
+}

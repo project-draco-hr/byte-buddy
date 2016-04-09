@@ -1,8 +1,0 @@
-int value
-int argument
-int mutableArgument
-Object[] boxed
-int field
-int staticField
-int mutated
-int mutatedStatic

@@ -1,8 +1,0 @@
-float value
-float argument
-float mutableArgument
-Object[] boxed
-float field
-float staticField
-float mutated
-float mutatedStatic
