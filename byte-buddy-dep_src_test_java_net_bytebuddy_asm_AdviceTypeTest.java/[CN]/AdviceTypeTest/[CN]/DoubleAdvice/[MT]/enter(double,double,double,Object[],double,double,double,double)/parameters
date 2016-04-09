@@ -1,0 +1,8 @@
+double value
+double argument
+double mutableArgument
+Object[] boxed
+double field
+double staticField
+double mutated
+double mutatedStatic

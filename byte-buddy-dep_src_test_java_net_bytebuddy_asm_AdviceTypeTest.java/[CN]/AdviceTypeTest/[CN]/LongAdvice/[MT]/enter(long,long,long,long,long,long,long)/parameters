@@ -1,7 +1,0 @@
-long value
-long argument
-long mutableArgument
-long field
-long staticField
-long mutated
-long mutatedStatic

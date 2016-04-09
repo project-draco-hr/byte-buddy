@@ -1,9 +1,0 @@
-float result
-float enter
-float argument
-float mutableArgument
-Throwable throwable
-float field
-float staticField
-float mutated
-float mutatedStatic

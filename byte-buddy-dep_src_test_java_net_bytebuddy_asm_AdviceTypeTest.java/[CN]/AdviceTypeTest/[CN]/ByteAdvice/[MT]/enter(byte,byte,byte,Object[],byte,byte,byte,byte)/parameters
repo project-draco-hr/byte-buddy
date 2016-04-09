@@ -1,0 +1,8 @@
+byte value
+byte argument
+byte mutableArgument
+Object[] boxed
+byte field
+byte staticField
+byte mutated
+byte mutatedStatic

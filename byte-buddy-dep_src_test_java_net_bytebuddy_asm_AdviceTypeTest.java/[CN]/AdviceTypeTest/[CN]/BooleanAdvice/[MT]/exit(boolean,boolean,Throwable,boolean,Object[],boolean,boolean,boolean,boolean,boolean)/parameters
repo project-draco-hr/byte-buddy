@@ -1,0 +1,10 @@
+boolean result
+boolean enter
+Throwable throwable
+boolean argument
+Object[] boxed
+boolean mutableArgument
+boolean field
+boolean staticField
+boolean mutated
+boolean mutatedStatic

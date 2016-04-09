@@ -1,7 +1,0 @@
-int value
-int argument
-int mutableArgument
-int field
-int staticField
-int mutated
-int mutatedStatic

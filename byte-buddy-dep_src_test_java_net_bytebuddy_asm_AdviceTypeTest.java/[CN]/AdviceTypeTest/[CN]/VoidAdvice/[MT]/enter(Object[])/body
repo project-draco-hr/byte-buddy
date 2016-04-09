@@ -1,0 +1,6 @@
+{
+  if (boxed.length != 2 || boxed[0] != null || boxed[1] != null) {
+    throw new AssertionError();
+  }
+  enter++;
+}
