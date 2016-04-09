@@ -1,0 +1,11 @@
+double result
+double enter
+Throwable throwable
+Object boxedReturn
+double argument
+double mutableArgument
+Object[] boxed
+double field
+double staticField
+double mutated
+double mutatedStatic

@@ -1,3 +1,3 @@
 {
-  super(adviceMethod,CompoundList.of(Arrays.asList(OffsetMapping.ForParameter.Factory.INSTANCE,OffsetMapping.ForBoxedArguments.INSTANCE,OffsetMapping.ForThisReference.Factory.INSTANCE,OffsetMapping.ForField.Factory.INSTANCE,OffsetMapping.ForOrigin.Factory.INSTANCE,OffsetMapping.ForOriginType.INSTANCE,OffsetMapping.ForIgnored.INSTANCE,new OffsetMapping.Illegal(Thrown.class,Enter.class,Return.class)),userFactories));
+  super(adviceMethod,CompoundList.of(Arrays.asList(OffsetMapping.ForParameter.Factory.INSTANCE,OffsetMapping.ForBoxedArguments.INSTANCE,OffsetMapping.ForThisReference.Factory.INSTANCE,OffsetMapping.ForField.Factory.INSTANCE,OffsetMapping.ForOrigin.Factory.INSTANCE,OffsetMapping.ForOriginType.INSTANCE,OffsetMapping.ForIgnored.INSTANCE,new OffsetMapping.Illegal(Thrown.class,Enter.class,Return.class,BoxedReturn.class)),userFactories));
 }

@@ -1,0 +1,11 @@
+int result
+int enter
+Throwable throwable
+Object boxedReturn
+int argument
+int mutableArgument
+Object[] boxed
+int field
+int staticField
+int mutated
+int mutatedStatic

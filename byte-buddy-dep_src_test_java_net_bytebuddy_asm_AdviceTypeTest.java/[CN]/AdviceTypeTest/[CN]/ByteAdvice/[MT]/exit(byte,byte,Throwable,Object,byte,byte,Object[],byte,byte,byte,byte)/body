@@ -1,0 +1,19 @@
+{
+  if (result != (exception ? 0 : VALUE) || enter != VALUE * 2 || !(exception ? throwable instanceof RuntimeException : throwable == null)) {
+    throw new AssertionError();
+  }
+  if (!boxedReturn.equals(exception ? NUMERIC_DEFAULT : VALUE)) {
+    throw new AssertionError();
+  }
+  if (argument != VALUE || mutableArgument != VALUE * 2) {
+    throw new AssertionError();
+  }
+  if (boxed.length != 2 || !boxed[0].equals(VALUE) || !boxed[1].equals((byte)(VALUE * 2))) {
+    throw new AssertionError();
+  }
+  if (field != VALUE || mutated != VALUE * 2 || staticField != VALUE || mutatedStatic != VALUE * 2) {
+    throw new AssertionError();
+  }
+  exit++;
+  return VALUE;
+}

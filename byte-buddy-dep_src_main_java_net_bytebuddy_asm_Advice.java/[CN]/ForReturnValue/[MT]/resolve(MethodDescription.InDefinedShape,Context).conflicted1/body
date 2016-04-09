@@ -1,11 +1,9 @@
 {
-  if (instrumentedMethod.getReturnType().represents(void.class)) {
-    return Target.ForNullConstant.INSTANCE;
+  if (!readOnly && !instrumentedMethod.getReturnType().asErasure().equals(targetType)) {
+    throw new IllegalStateException("read-only return type of " + instrumentedMethod + " is not equal to "+ targetType);
   }
- else   if (instrumentedMethod.getReturnType().isPrimitive()) {
-    return new Target.ForReadOnlyParameter(instrumentedMethod.getStackSize() + context.getPadding());
+ else   if (readOnly && !instrumentedMethod.getReturnType().asErasure().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Cannot assign return type of " + instrumentedMethod + " to "+ targetType);
   }
- else {
-    return Target.ForBoxedParameter.of(instrumentedMethod.getStackSize() + context.getPadding(),instrumentedMethod.getReturnType());
-  }
+  return readOnly ? new Target.ForReadOnlyParameter(instrumentedMethod.getStackSize() + context.getPadding()) : new Target.ForParameter(instrumentedMethod.getStackSize() + context.getPadding());
 }
