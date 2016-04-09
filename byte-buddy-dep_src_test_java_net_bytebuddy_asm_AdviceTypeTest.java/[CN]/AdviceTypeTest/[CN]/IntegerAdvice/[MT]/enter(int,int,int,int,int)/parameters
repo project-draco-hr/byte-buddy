@@ -1,5 +1,0 @@
-int value
-int field
-int staticField
-int mutated
-int mutatedStatic

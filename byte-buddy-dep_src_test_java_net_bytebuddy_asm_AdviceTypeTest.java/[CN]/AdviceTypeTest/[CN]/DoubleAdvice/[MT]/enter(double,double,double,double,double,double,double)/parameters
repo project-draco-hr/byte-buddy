@@ -1,0 +1,7 @@
+double value
+double argument
+double mutableArgument
+double field
+double staticField
+double mutated
+double mutatedStatic

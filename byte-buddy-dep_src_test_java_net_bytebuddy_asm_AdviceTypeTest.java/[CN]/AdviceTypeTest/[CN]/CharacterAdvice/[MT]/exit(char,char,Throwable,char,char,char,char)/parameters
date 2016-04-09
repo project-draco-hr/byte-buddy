@@ -1,7 +1,0 @@
-char result
-char enter
-Throwable throwable
-char field
-char staticField
-char mutated
-char mutatedStatic

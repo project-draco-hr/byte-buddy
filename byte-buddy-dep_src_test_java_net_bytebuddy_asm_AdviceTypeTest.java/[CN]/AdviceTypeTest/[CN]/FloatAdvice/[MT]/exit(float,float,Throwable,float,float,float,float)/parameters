@@ -1,7 +1,0 @@
-float result
-float enter
-Throwable throwable
-float field
-float staticField
-float mutated
-float mutatedStatic

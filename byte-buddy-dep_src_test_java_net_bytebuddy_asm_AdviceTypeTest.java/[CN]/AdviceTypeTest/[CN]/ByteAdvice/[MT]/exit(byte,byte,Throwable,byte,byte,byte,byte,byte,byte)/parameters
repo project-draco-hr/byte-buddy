@@ -1,0 +1,9 @@
+byte result
+byte enter
+Throwable throwable
+byte argument
+byte mutableArgument
+byte field
+byte staticField
+byte mutated
+byte mutatedStatic

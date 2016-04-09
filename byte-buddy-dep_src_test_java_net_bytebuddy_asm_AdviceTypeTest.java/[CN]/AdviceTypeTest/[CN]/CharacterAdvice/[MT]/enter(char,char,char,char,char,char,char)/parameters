@@ -1,0 +1,7 @@
+char value
+char argument
+char mutableArgument
+char field
+char staticField
+char mutated
+char mutatedStatic

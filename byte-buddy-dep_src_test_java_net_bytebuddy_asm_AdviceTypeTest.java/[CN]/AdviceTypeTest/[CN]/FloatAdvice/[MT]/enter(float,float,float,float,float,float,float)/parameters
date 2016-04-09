@@ -1,0 +1,7 @@
+float value
+float argument
+float mutableArgument
+float field
+float staticField
+float mutated
+float mutatedStatic

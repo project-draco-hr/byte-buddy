@@ -1,0 +1,7 @@
+byte value
+byte argument
+byte mutableArgument
+byte field
+byte staticField
+byte mutated
+byte mutatedStatic

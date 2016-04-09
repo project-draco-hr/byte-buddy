@@ -1,0 +1,18 @@
+{
+  if (value != NUMERIC_DEFAULT) {
+    throw new AssertionError();
+  }
+  value=VALUE;
+  if (value != NUMERIC_DEFAULT) {
+    throw new AssertionError();
+  }
+  if (argument != VALUE || mutableArgument != VALUE) {
+  }
+  mutableArgument=VALUE * 2;
+  if (field != VALUE || mutated != VALUE || staticField != VALUE || mutatedStatic != VALUE) {
+    throw new AssertionError();
+  }
+  mutated=mutatedStatic=VALUE * 2;
+  enter++;
+  return VALUE * 2;
+}

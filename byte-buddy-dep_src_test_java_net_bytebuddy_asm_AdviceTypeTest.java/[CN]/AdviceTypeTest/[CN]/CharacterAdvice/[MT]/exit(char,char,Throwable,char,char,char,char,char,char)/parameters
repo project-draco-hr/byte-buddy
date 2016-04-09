@@ -1,0 +1,9 @@
+char result
+char enter
+Throwable throwable
+char argument
+char mutableArgument
+char field
+char staticField
+char mutated
+char mutatedStatic

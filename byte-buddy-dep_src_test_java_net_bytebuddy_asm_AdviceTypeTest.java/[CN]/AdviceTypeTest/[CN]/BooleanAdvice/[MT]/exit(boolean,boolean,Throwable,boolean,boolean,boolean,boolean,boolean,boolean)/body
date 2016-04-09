@@ -1,0 +1,13 @@
+{
+  if (result == exception || !enter || !(exception ? throwable instanceof RuntimeException : throwable == null)) {
+    throw new AssertionError();
+  }
+  if (!argument || mutableArgument) {
+    throw new AssertionError();
+  }
+  if (!field || mutated || !staticField|| mutatedStatic) {
+    throw new AssertionError();
+  }
+  exit++;
+  return BOOLEAN;
+}

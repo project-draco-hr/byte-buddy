@@ -1,7 +1,0 @@
-byte result
-byte enter
-Throwable throwable
-byte field
-byte staticField
-byte mutated
-byte mutatedStatic
