@@ -1,0 +1,12 @@
+{
+  Class<?> type=new ByteBuddy().redefine(Sample.class).visit(DebuggingWrapper.makeDefault()).visit(Advice.to(TrivialAdvice.class).on(named(FOO + BAR))).visit(Advice.to(TrivialAdvice.class).on(named(FOO + BAR))).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  try {
+    type.getDeclaredMethod(FOO + BAR).invoke(type.newInstance());
+    fail();
+  }
+ catch (  InvocationTargetException exception) {
+    assertThat(exception.getCause(),instanceOf(RuntimeException.class));
+  }
+  assertThat(type.getDeclaredField(ENTER).get(null),is((Object)2));
+  assertThat(type.getDeclaredField(EXIT).get(null),is((Object)2));
+}
