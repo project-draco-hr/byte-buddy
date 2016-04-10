@@ -1,4 +1,4 @@
 {
-  AnnotationDescription annotation=parameterDescription.getDeclaredAnnotations().ofType(annotationType);
-  return annotation == null ? UNDEFINED : new ForUserValue(parameterDescription,annotation,dynamicValue);
+  AnnotationDescription.Loadable<S> annotation=parameterDescription.getDeclaredAnnotations().ofType(type);
+  return annotation == null ? UNDEFINED : new ForUserValue<S>(parameterDescription,annotation,dynamicValue);
 }

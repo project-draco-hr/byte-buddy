@@ -1,3 +1,10 @@
 {
-  return bind(new TypeDescription.ForLoadedType(type),dynamicValue);
+  Map<Class<? extends Annotation>,DynamicValue<?>> dynamicValues=new HashMap<Class<? extends Annotation>,Advice.DynamicValue<?>>(this.dynamicValues);
+  if (!type.isAnnotation()) {
+    throw new IllegalArgumentException("Not an annotation type: " + type);
+  }
+ else   if (dynamicValues.put(type,dynamicValue) != null) {
+    throw new IllegalArgumentException("Annotation-type already mapped: " + type);
+  }
+  return new WithCustomMapping(dynamicValues);
 }

@@ -1,5 +1,0 @@
-{
-  this.mappedParameter=mappedParameter;
-  this.userAnnotation=userAnnotation;
-  this.dynamicValue=dynamicValue;
-}

@@ -1,4 +1,4 @@
 {
-  this.annotationType=annotationType;
+  this.type=type;
   this.dynamicValue=dynamicValue;
 }
