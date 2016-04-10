@@ -1,0 +1,3 @@
+{
+  return instrumentedMethod.getReturnType().asErasure().getName();
+}

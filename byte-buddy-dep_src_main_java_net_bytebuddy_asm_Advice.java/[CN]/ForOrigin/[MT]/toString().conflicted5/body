@@ -1,0 +1,3 @@
+{
+  return "Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForStringRepresentation." + name();
+}
