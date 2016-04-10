@@ -1,0 +1,38 @@
+{
+  Object value=bind(annotation,source,target);
+  if (value == null) {
+    return new ParameterBinding.Anonymous(DefaultValue.of(target.getType()));
+  }
+  StackManipulation stackManipulation;
+  if (value instanceof Boolean) {
+    stackManipulation=IntegerConstant.forValue((Boolean)value);
+  }
+ else   if (value instanceof Byte) {
+    stackManipulation=IntegerConstant.forValue((Byte)value);
+  }
+ else   if (value instanceof Short) {
+    stackManipulation=IntegerConstant.forValue((Short)value);
+  }
+ else   if (value instanceof Character) {
+    stackManipulation=IntegerConstant.forValue((Character)value);
+  }
+ else   if (value instanceof Integer) {
+    stackManipulation=IntegerConstant.forValue((Integer)value);
+  }
+ else   if (value instanceof Long) {
+    stackManipulation=LongConstant.forValue((Long)value);
+  }
+ else   if (value instanceof Float) {
+    stackManipulation=FloatConstant.forValue((Float)value);
+  }
+ else   if (value instanceof Double) {
+    stackManipulation=DoubleConstant.forValue((Double)value);
+  }
+ else   if (value instanceof String) {
+    stackManipulation=new TextConstant((String)value);
+  }
+ else {
+    throw new IllegalStateException();
+  }
+  return new ParameterBinding.Anonymous(new StackManipulation.Compound(stackManipulation,assigner.assign(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(value.getClass()),target.getType(),Assigner.Typing.STATIC)));
+}
