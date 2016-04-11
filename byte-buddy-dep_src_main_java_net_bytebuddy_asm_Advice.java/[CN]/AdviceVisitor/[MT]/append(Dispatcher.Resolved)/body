@@ -1,3 +1,0 @@
-{
-  dispatcher.apply(instrumentedMethod,mv,metaDataHandler,classReader);
-}

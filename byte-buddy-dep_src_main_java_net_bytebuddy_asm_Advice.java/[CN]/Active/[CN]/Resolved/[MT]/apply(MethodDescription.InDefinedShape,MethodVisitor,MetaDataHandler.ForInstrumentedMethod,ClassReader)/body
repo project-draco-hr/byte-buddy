@@ -1,3 +1,0 @@
-{
-  classReader.accept(new CodeCopier(instrumentedMethod,methodVisitor,metaDataHandler),ClassReader.SKIP_DEBUG | metaDataHandler.getReaderHint());
-}

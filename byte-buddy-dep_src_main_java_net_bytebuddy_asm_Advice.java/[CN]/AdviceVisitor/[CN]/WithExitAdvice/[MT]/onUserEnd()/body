@@ -2,7 +2,7 @@
   onUserExit();
   mv.visitLabel(endOfMethod);
   metaDataHandler.injectCompletionFrame(mv,false);
-  append(methodExit);
+  methodExit.apply(classReader);
   onAdviceExit();
   if (instrumentedMethod.getReturnType().represents(void.class)) {
     mv.visitInsn(Opcodes.RETURN);
