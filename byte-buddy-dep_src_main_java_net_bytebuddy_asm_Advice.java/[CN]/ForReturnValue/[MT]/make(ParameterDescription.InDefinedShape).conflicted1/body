@@ -1,11 +1,4 @@
 {
-  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(BoxedArguments.class)) {
-    return UNDEFINED;
-  }
- else   if (!parameterDescription.getType().represents(Object[].class)) {
-    throw new IllegalStateException();
-  }
- else {
-    return this;
-  }
+  AnnotationDescription.Loadable<Return> annotation=parameterDescription.getDeclaredAnnotations().ofType(Return.class);
+  return annotation == null ? UNDEFINED : new ForReturnValue(annotation.loadSilent().readOnly(),parameterDescription.getType().asErasure());
 }
