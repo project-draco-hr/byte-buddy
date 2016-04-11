@@ -1,4 +1,4 @@
 {
-  considerEndExceptionTable();
+  considerEndOfExceptionTable();
   onVisitTypeInsn(opcode,type);
 }
