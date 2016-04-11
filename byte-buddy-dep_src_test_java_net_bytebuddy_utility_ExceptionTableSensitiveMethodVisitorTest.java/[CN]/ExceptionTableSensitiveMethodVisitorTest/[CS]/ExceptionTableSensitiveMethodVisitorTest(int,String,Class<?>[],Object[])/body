@@ -1,0 +1,6 @@
+{
+  this.api=api;
+  this.name=name;
+  this.type=type;
+  this.argument=argument;
+}

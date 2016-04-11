@@ -1,6 +1,6 @@
 {
   if (trigger) {
     trigger=false;
-    onFirstCodeInstruction();
+    onAfterExceptionTable();
   }
 }

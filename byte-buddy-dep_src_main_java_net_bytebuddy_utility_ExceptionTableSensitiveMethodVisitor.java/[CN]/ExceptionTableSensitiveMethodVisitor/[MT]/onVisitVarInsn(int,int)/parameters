@@ -1,2 +1,2 @@
 int opcode
-int var
+int offset

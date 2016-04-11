@@ -1,4 +1,4 @@
 String name
-String desc
-Handle bsm
-Object bsmArgs
+String descriptor
+Handle handle
+Object argument

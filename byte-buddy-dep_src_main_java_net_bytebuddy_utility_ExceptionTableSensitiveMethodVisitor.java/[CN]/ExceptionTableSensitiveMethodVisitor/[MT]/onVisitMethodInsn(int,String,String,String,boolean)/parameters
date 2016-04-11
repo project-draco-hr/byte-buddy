@@ -1,5 +1,5 @@
 int opcode
 String owner
 String name
-String desc
-boolean itf
+String descriptor
+boolean iFace

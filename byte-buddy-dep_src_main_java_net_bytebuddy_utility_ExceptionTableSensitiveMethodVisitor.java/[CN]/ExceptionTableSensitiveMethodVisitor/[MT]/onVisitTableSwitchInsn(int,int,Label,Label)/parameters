@@ -1,4 +1,4 @@
 int min
 int max
-Label dflt
-Label labels
+Label defaultTarget
+Label label
