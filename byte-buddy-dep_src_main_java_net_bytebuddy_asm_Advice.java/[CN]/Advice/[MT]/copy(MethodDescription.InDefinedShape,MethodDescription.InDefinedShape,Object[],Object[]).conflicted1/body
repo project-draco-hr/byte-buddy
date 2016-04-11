@@ -1,7 +1,7 @@
 {
   int index=0;
   if (!instrumentedMethod.isStatic()) {
-    translated[index++]=instrumentedMethod.isConstructor() ? Opcodes.UNINITIALIZED_THIS : toFrame(instrumentedMethod.getDeclaringType());
+    translated[index++]=toFrame(instrumentedMethod.getDeclaringType());
   }
   for (  TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
     translated[index++]=toFrame(typeDescription);
