@@ -1,14 +1,3 @@
 {
-  StringBuilder stringBuilder=new StringBuilder("(");
-  boolean comma=false;
-  for (  TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
-    if (comma) {
-      stringBuilder.append(',');
-    }
- else {
-      comma=true;
-    }
-    stringBuilder.append(typeDescription.getName());
-  }
-  return stringBuilder.append(')').toString();
+  return instrumentedMethod.getDescriptor();
 }

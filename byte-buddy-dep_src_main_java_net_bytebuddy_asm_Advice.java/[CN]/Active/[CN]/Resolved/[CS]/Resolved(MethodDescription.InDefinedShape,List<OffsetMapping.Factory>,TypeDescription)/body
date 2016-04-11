@@ -16,4 +16,5 @@
     }
     offsetMappings.put(parameterDescription.getOffset(),offsetMapping == null ? new OffsetMapping.ForParameter(parameterDescription.getIndex(),READ_ONLY,parameterDescription.getType().asErasure()) : offsetMapping);
   }
+  suppressionHandler=throwableType.represents(NoSuppression.class) ? CodeTranslationVisitor.SuppressionHandler.NoOp.INSTANCE : new CodeTranslationVisitor.SuppressionHandler.Suppressing(throwableType);
 }
