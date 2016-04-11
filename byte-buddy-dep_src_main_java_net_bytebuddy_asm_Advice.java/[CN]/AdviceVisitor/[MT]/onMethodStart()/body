@@ -1,3 +1,7 @@
 {
+  onAdviceStart();
+  if (methodEnter.isAlive()) {
+    append(methodEnter);
+  }
   onUserStart();
 }
