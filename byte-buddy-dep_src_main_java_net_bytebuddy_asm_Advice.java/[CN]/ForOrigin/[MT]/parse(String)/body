@@ -28,8 +28,8 @@ break;
 case Renderer.ForReturnTypeName.SYMBOL:
 renderers.add(Renderer.ForReturnTypeName.INSTANCE);
 break;
-case Renderer.ForSignature.SYMBOL:
-renderers.add(Renderer.ForSignature.INSTANCE);
+case Renderer.ForJavaSignature.SYMBOL:
+renderers.add(Renderer.ForJavaSignature.INSTANCE);
 break;
 default :
 throw new IllegalStateException("Illegal sort descriptor " + pattern.charAt(to + 1) + " for "+ pattern);
