@@ -1,3 +1,3 @@
 {
-  describe(Carrier.class.getAnnotation(PrivateAnnotation.class),Carrier.class).prepare(PrivateAnnotation.class).load(null);
+  describe(Carrier.class.getAnnotation(PrivateAnnotation.class),Carrier.class).prepare(PrivateAnnotation.class).load(ClassLoadingStrategy.BOOTSTRAP_LOADER);
 }

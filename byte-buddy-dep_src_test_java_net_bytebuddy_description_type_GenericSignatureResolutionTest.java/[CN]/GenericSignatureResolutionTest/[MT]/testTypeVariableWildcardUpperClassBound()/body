@@ -1,6 +1,6 @@
 {
   DynamicType.Unloaded<?> unloaded=new ByteBuddy().redefine(TypeVariableWildcardUpperClassBound.class).make();
-  Class<?> type=unloaded.load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=unloaded.load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   TypeDescription createdType=new TypeDescription.ForLoadedType(type);
   TypeDescription originalType=new TypeDescription.ForLoadedType(TypeVariableWildcardUpperClassBound.class);
   assertThat(createdType.getTypeVariables(),is(originalType.getTypeVariables()));

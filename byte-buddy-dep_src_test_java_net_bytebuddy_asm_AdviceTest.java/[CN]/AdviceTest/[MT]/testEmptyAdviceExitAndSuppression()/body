@@ -1,4 +1,4 @@
 {
-  Class<?> type=new ByteBuddy().redefine(EmptyMethod.class).visit(Advice.to(EmptyAdviceExitAndSuppression.class).on(named(FOO)).readerFlags(ClassReader.SKIP_DEBUG)).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=new ByteBuddy().redefine(EmptyMethod.class).visit(Advice.to(EmptyAdviceExitAndSuppression.class).on(named(FOO)).readerFlags(ClassReader.SKIP_DEBUG)).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),nullValue(Object.class));
 }
