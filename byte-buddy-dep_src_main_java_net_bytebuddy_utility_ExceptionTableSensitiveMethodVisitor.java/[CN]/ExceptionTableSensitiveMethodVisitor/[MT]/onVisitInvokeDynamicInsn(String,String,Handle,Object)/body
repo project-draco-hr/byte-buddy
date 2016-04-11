@@ -1,0 +1,3 @@
+{
+  super.visitInvokeDynamicInsn(name,desc,bsm,bsmArgs);
+}

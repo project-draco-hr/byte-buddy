@@ -1,0 +1,4 @@
+{
+  considerEndExceptionTable();
+  onVisitIincInsn(var,increment);
+}

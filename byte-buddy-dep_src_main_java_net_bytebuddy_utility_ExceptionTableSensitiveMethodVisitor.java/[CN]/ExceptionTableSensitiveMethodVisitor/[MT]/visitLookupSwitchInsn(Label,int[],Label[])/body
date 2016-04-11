@@ -1,0 +1,4 @@
+{
+  considerEndExceptionTable();
+  onVisitLookupSwitchInsn(dflt,keys,labels);
+}

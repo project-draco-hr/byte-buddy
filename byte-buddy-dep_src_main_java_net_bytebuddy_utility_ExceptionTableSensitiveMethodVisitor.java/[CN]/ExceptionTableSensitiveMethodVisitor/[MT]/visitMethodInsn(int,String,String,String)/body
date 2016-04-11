@@ -1,0 +1,4 @@
+{
+  considerEndExceptionTable();
+  onVisitMethodInsn(opcode,owner,name,desc);
+}

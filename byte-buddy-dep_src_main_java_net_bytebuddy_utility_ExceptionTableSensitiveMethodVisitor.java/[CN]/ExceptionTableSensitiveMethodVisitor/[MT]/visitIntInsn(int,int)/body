@@ -1,0 +1,4 @@
+{
+  considerEndExceptionTable();
+  onVisitIntInsn(opcode,operand);
+}

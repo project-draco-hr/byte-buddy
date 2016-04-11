@@ -1,0 +1,4 @@
+{
+  considerEndExceptionTable();
+  onVisitMultiANewArrayInsn(desc,dims);
+}

@@ -1,0 +1,4 @@
+{
+  considerEndExceptionTable();
+  onVisitFieldInsn(opcode,owner,name,desc);
+}
