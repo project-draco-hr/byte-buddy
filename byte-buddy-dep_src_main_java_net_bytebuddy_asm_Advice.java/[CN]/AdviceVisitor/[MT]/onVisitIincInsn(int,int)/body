@@ -1,0 +1,3 @@
+{
+  mv.visitIincInsn(offset < instrumentedMethod.getStackSize() ? offset : offset + methodEnter.getEnterType().getStackSize().getSize(),increment);
+}
