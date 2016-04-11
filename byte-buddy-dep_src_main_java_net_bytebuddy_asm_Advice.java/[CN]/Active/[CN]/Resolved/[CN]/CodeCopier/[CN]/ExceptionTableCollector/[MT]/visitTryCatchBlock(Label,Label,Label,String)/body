@@ -1,0 +1,4 @@
+{
+  methodVisitor.visitTryCatchBlock(start,end,handler,type);
+  labels.addAll(Arrays.asList(start,end,handler));
+}

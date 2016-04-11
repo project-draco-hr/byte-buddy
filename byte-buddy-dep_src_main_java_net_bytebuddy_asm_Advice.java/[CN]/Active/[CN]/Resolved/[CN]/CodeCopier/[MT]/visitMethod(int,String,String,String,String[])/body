@@ -1,3 +1,3 @@
 {
-  return adviceMethod.getInternalName().equals(internalName) && adviceMethod.getDescriptor().equals(descriptor) ? Active.Resolved.this.apply(methodVisitor,metaDataHandler,instrumentedMethod) : IGNORE_METHOD;
+  return adviceMethod.getInternalName().equals(internalName) && adviceMethod.getDescriptor().equals(descriptor) ? new LabelSubstitutor(Active.Resolved.this.apply(methodVisitor,metaDataHandler,instrumentedMethod)) : IGNORE_METHOD;
 }

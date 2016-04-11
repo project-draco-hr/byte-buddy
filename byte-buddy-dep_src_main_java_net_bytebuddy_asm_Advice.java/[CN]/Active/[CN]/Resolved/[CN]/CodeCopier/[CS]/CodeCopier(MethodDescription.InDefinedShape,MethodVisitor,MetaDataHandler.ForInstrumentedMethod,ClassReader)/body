@@ -4,4 +4,5 @@
   this.methodVisitor=methodVisitor;
   this.metaDataHandler=metaDataHandler;
   this.classReader=classReader;
+  labels=new ArrayList<Label>();
 }

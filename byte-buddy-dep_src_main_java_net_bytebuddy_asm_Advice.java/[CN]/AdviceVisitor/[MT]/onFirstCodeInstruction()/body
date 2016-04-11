@@ -1,7 +1,7 @@
 {
   methodEnter.prepare();
+  onUserPrepare();
   methodExit.prepare();
-  onAdviceStart();
   methodEnter.apply();
   onUserStart();
 }

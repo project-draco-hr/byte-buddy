@@ -1,3 +1,4 @@
 {
+  classReader.accept(new LabelCollector(),ClassReader.SKIP_FRAMES | ClassReader.SKIP_DEBUG);
   suppressionHandler.onPrepare(methodVisitor);
 }
