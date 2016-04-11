@@ -1,0 +1,3 @@
+{
+  assertThat(asList(getFirst()).ofType(new TypeDescription.ForLoadedType(Annotation.class)),nullValue(AnnotationDescription.class));
+}
