@@ -3,16 +3,6 @@ switch (opcode) {
 case Opcodes.ALOAD:
     boxingDispatcher.loadBoxed(methodVisitor,offset);
   break;
-case Opcodes.ILOAD:
-case Opcodes.LLOAD:
-case Opcodes.FLOAD:
-case Opcodes.DLOAD:
-case Opcodes.ISTORE:
-case Opcodes.FSTORE:
-case Opcodes.ASTORE:
-case Opcodes.LSTORE:
-case Opcodes.DSTORE:
-throw new IllegalStateException();
 default :
 throw new IllegalStateException("Unexpected opcode: " + opcode);
 }

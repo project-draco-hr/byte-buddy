@@ -24,6 +24,6 @@
     return DOUBLE;
   }
  else {
-    throw new IllegalArgumentException();
+    throw new IllegalArgumentException("Cannot box: " + typeDefinition);
   }
 }
