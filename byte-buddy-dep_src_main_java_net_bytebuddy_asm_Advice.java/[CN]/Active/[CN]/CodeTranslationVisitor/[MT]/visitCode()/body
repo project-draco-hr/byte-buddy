@@ -1,2 +1,3 @@
 {
+  suppressionHandler.onStart(mv,metaDataHandler);
 }

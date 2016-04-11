@@ -1,3 +1,0 @@
-{
-  suppressionHandler.onStart(mv,metaDataHandler);
-}

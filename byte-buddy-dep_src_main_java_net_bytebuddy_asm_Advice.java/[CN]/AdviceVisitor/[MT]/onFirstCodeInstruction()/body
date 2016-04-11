@@ -2,6 +2,6 @@
   methodEnter.prepare();
   methodExit.prepare();
   onAdviceStart();
-  methodEnter.apply(classReader);
+  methodEnter.apply();
   onUserStart();
 }

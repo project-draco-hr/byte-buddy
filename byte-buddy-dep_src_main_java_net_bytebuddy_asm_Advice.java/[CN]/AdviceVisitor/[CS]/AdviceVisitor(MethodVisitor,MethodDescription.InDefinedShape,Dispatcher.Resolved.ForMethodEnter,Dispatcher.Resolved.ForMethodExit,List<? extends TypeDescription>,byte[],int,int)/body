@@ -2,8 +2,8 @@
   super(Opcodes.ASM5,methodVisitor);
   this.instrumentedMethod=instrumentedMethod;
   padding=methodEnter.getEnterType().getStackSize().getSize();
-  classReader=new ClassReader(binaryRepresentation);
   metaDataHandler=MetaDataHandler.Default.of(instrumentedMethod,methodEnter.getEnterType().represents(void.class) ? Collections.<TypeDescription>emptyList() : Collections.singletonList(methodEnter.getEnterType()),yieldedTypes,writerFlags,readerFlags);
-  this.methodEnter=methodEnter.bind(instrumentedMethod,methodVisitor,metaDataHandler);
-  this.methodExit=methodExit.bind(instrumentedMethod,methodVisitor,metaDataHandler);
+  ClassReader classReader=new ClassReader(binaryRepresentation);
+  this.methodEnter=methodEnter.bind(instrumentedMethod,methodVisitor,metaDataHandler,classReader);
+  this.methodExit=methodExit.bind(instrumentedMethod,methodVisitor,metaDataHandler,classReader);
 }

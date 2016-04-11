@@ -3,4 +3,5 @@
   this.instrumentedMethod=instrumentedMethod;
   this.methodVisitor=methodVisitor;
   this.metaDataHandler=metaDataHandler;
+  this.classReader=classReader;
 }
