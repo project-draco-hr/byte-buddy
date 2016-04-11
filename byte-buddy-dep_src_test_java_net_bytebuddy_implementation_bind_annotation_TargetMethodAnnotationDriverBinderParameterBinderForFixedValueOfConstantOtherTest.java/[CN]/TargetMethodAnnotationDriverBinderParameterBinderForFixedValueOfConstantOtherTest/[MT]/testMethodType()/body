@@ -1,0 +1,4 @@
+{
+  Object loadedMethodType=JavaType.METHOD_TYPE.load().getDeclaredMethod("methodType",Class.class,Class[].class).invoke(null,void.class,new Class<?>[]{Object.class});
+  assertThat(JavaInstance.MethodType.ofLoaded(new ByteBuddy().subclass(Foo.class).method(named(FOO)).intercept(MethodDelegation.to(Foo.class).appendParameterBinder(TargetMethodAnnotationDrivenBinder.ParameterBinder.ForFixedValue.OfConstant.of(Bar.class,JavaInstance.MethodType.ofLoaded(loadedMethodType)))).make().load(Foo.class.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance().foo()),is(JavaInstance.MethodType.ofLoaded(loadedMethodType)));
+}

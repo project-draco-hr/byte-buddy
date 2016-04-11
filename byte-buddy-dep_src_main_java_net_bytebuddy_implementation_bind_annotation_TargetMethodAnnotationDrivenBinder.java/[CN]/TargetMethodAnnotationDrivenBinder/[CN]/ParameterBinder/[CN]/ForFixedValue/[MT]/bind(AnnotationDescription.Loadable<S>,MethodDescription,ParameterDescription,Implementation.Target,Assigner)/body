@@ -4,35 +4,69 @@
     return new ParameterBinding.Anonymous(DefaultValue.of(target.getType()));
   }
   StackManipulation stackManipulation;
+  TypeDescription suppliedType;
   if (value instanceof Boolean) {
     stackManipulation=IntegerConstant.forValue((Boolean)value);
+    suppliedType=new TypeDescription.ForLoadedType(boolean.class);
   }
  else   if (value instanceof Byte) {
     stackManipulation=IntegerConstant.forValue((Byte)value);
+    suppliedType=new TypeDescription.ForLoadedType(byte.class);
   }
  else   if (value instanceof Short) {
     stackManipulation=IntegerConstant.forValue((Short)value);
+    suppliedType=new TypeDescription.ForLoadedType(short.class);
   }
  else   if (value instanceof Character) {
     stackManipulation=IntegerConstant.forValue((Character)value);
+    suppliedType=new TypeDescription.ForLoadedType(char.class);
   }
  else   if (value instanceof Integer) {
     stackManipulation=IntegerConstant.forValue((Integer)value);
+    suppliedType=new TypeDescription.ForLoadedType(int.class);
   }
  else   if (value instanceof Long) {
     stackManipulation=LongConstant.forValue((Long)value);
+    suppliedType=new TypeDescription.ForLoadedType(long.class);
   }
  else   if (value instanceof Float) {
     stackManipulation=FloatConstant.forValue((Float)value);
+    suppliedType=new TypeDescription.ForLoadedType(float.class);
   }
  else   if (value instanceof Double) {
     stackManipulation=DoubleConstant.forValue((Double)value);
+    suppliedType=new TypeDescription.ForLoadedType(double.class);
   }
  else   if (value instanceof String) {
     stackManipulation=new TextConstant((String)value);
+    suppliedType=TypeDescription.STRING;
+  }
+ else   if (value instanceof Class) {
+    stackManipulation=ClassConstant.of(new TypeDescription.ForLoadedType((Class<?>)value));
+    suppliedType=TypeDescription.CLASS;
+  }
+ else   if (value instanceof TypeDescription) {
+    stackManipulation=ClassConstant.of((TypeDescription)value);
+    suppliedType=TypeDescription.CLASS;
+  }
+ else   if (JavaType.METHOD_HANDLE.getTypeStub().isInstance(value)) {
+    stackManipulation=MethodHandleConstant.of(JavaInstance.MethodHandle.ofLoaded(value));
+    suppliedType=new TypeDescription.ForLoadedType(JavaType.METHOD_HANDLE.load());
+  }
+ else   if (value instanceof JavaInstance.MethodHandle) {
+    stackManipulation=MethodHandleConstant.of((JavaInstance.MethodHandle)value);
+    suppliedType=new TypeDescription.ForLoadedType(JavaType.METHOD_HANDLE.load());
+  }
+ else   if (JavaType.METHOD_TYPE.getTypeStub().isInstance(value)) {
+    stackManipulation=MethodTypeConstant.of(JavaInstance.MethodType.ofLoaded(value));
+    suppliedType=new TypeDescription.ForLoadedType(JavaType.METHOD_TYPE.load());
+  }
+ else   if (value instanceof JavaInstance.MethodType) {
+    stackManipulation=MethodTypeConstant.of((JavaInstance.MethodType)value);
+    suppliedType=new TypeDescription.ForLoadedType(JavaType.METHOD_TYPE.load());
   }
  else {
-    throw new IllegalStateException();
+    throw new IllegalStateException("Not able to save in class's constant pool: " + value);
   }
-  return new ParameterBinding.Anonymous(new StackManipulation.Compound(stackManipulation,assigner.assign(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(value.getClass()),target.getType(),Assigner.Typing.STATIC)));
+  return new ParameterBinding.Anonymous(new StackManipulation.Compound(stackManipulation,assigner.assign(suppliedType.asGenericType(),target.getType(),Assigner.Typing.STATIC)));
 }
