@@ -1,0 +1,9 @@
+{
+  super(Opcodes.ASM5);
+  this.instrumentedMethod=instrumentedMethod;
+  this.methodVisitor=methodVisitor;
+  this.metaDataHandler=metaDataHandler;
+  this.suppressionHandler=suppressionHandler;
+  this.classReader=classReader;
+  labels=new ArrayList<Label>();
+}

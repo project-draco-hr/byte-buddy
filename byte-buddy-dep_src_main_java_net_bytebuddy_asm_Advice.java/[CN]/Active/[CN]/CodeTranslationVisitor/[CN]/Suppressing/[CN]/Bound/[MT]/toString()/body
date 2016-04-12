@@ -1,0 +1,3 @@
+{
+  return "Advice.Dispatcher.Active.CodeTranslationVisitor.SuppressionHandler.Suppressing.Bound{" + "throwableType=" + throwableType + ", startOfMethod="+ startOfMethod+ ", endOfMethod="+ endOfMethod+ '}';
+}
