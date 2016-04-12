@@ -1,0 +1,4 @@
+MethodDescription.InDefinedShape instrumentedMethod
+TypeList requiredTypes
+TypeList yieldedTypes
+boolean expandFrames

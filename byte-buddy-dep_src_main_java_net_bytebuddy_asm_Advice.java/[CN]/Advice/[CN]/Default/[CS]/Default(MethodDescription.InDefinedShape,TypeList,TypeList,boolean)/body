@@ -1,0 +1,6 @@
+{
+  this.instrumentedMethod=instrumentedMethod;
+  this.requiredTypes=requiredTypes;
+  this.yieldedTypes=yieldedTypes;
+  this.expandFrames=expandFrames;
+}

@@ -1,0 +1,4 @@
+MethodDescription.InDefinedShape methodDescription
+TypeList requiredTypes
+TypeList yieldedTypes
+TranslationMode translationMode

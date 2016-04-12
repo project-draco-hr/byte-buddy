@@ -1,4 +1,0 @@
-{
-  Class<?> type=new ByteBuddy().redefine(Sample.class).visit(Advice.to(FrameExitAdvice.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),is((Object)FOO));
-}
