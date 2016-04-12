@@ -3,7 +3,7 @@
   MethodDescription.InDefinedShape methodDescription=methodsByName.get(internalName + descriptor);
   for (  Entry entry : entries) {
     if (entry.matches(methodDescription)) {
-      methodVisitor=entry.wrap(instrumentedType,methodDescription,methodVisitor,writerFlags,readerFlags);
+      methodVisitor=entry.wrap(instrumentedType,methodDescription,methodVisitor,classFileVersion,writerFlags,readerFlags);
     }
   }
   return methodVisitor;

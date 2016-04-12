@@ -1,5 +1,6 @@
 TypeDescription instrumentedType
 MethodDescription.InDefinedShape methodDescription
 MethodVisitor methodVisitor
+ClassFileVersion classFileVersion
 int writerFlags
 int readerFlags
