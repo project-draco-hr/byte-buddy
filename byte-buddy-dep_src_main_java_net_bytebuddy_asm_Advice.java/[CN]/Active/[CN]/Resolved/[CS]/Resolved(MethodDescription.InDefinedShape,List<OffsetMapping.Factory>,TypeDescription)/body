@@ -1,0 +1,20 @@
+{
+  this.adviceMethod=adviceMethod;
+  offsetMappings=new HashMap<Integer,OffsetMapping>();
+  for (  ParameterDescription.InDefinedShape parameterDescription : adviceMethod.getParameters()) {
+    OffsetMapping offsetMapping=OffsetMapping.Factory.UNDEFINED;
+    for (    OffsetMapping.Factory factory : factories) {
+      OffsetMapping possible=factory.make(parameterDescription);
+      if (possible != null) {
+        if (offsetMapping == null) {
+          offsetMapping=possible;
+        }
+ else {
+          throw new IllegalStateException(parameterDescription + " is bound to both " + possible+ " and "+ offsetMapping);
+        }
+      }
+    }
+    offsetMappings.put(parameterDescription.getOffset(),offsetMapping == null ? new OffsetMapping.ForParameter(parameterDescription.getIndex(),READ_ONLY,parameterDescription.getType().asErasure()) : offsetMapping);
+  }
+  suppressionHandler=throwableType.represents(NoSuppression.class) ? CodeTranslationVisitor.SuppressionHandler.NoOp.INSTANCE : new CodeTranslationVisitor.SuppressionHandler.Suppressing(throwableType);
+}

@@ -1,0 +1,4 @@
+{
+  ByteBuddyAgent.AgentProvider provider=ByteBuddyAgent.AgentProvider.ForByteBuddyAgent.INSTANCE;
+  assertThat(provider.resolve().isFile(),is(true));
+}

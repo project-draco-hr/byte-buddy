@@ -1,0 +1,4 @@
+{
+  considerEndOfExceptionTable();
+  onVisitTableSwitchInsn(min,max,dflt,labels);
+}

@@ -1,5 +1,5 @@
 {
-  Class<?> type=createPlain().serialVersionUid(42L).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=createPlain().serialVersionUid(42L).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   Field field=type.getDeclaredField("serialVersionUID");
   field.setAccessible(true);
   assertThat((Long)field.get(null),is(42L));

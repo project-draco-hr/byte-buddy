@@ -1,0 +1,8 @@
+{
+  Label[] resolved=new Label[label.length];
+  int index=0;
+  for (  Label aLabel : label) {
+    resolved[index++]=resolve(aLabel);
+  }
+  return resolved;
+}

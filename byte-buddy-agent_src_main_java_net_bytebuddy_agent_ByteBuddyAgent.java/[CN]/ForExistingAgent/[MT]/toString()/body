@@ -1,0 +1,3 @@
+{
+  return "ByteBuddyAgent.AgentProvider.ForExistingAgent{" + "agent='" + agent + '\''+ '}';
+}

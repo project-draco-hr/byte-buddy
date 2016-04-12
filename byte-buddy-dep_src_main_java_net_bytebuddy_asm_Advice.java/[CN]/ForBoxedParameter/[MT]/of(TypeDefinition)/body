@@ -1,0 +1,29 @@
+{
+  if (typeDefinition.represents(boolean.class)) {
+    return BOOLEAN;
+  }
+ else   if (typeDefinition.represents(byte.class)) {
+    return BYTE;
+  }
+ else   if (typeDefinition.represents(short.class)) {
+    return SHORT;
+  }
+ else   if (typeDefinition.represents(char.class)) {
+    return CHARACTER;
+  }
+ else   if (typeDefinition.represents(int.class)) {
+    return INTEGER;
+  }
+ else   if (typeDefinition.represents(long.class)) {
+    return LONG;
+  }
+ else   if (typeDefinition.represents(float.class)) {
+    return FLOAT;
+  }
+ else   if (typeDefinition.represents(double.class)) {
+    return DOUBLE;
+  }
+ else {
+    throw new IllegalArgumentException("Cannot box: " + typeDefinition);
+  }
+}

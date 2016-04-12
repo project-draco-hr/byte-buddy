@@ -1,0 +1,7 @@
+{
+  if (called) {
+    throw new AssertionError();
+  }
+  called=true;
+  verifyZeroInteractions(mv);
+}

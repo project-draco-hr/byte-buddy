@@ -1,0 +1,12 @@
+boolean result
+boolean enter
+Throwable throwable
+Object boxedReturn
+boolean argument
+Object[] boxed
+boolean mutableArgument
+boolean field
+boolean staticField
+boolean mutated
+boolean mutatedStatic
+boolean custom

@@ -1,3 +1,9 @@
 {
-  return new Target.ForParameter(instrumentedMethod.getStackSize() + context.getPadding() + instrumentedMethod.getReturnType().getStackSize().getSize());
+  if (!readOnly && !instrumentedMethod.getReturnType().asErasure().equals(targetType)) {
+    throw new IllegalStateException("read-only return type of " + instrumentedMethod + " is not equal to "+ targetType);
+  }
+ else   if (readOnly && !instrumentedMethod.getReturnType().asErasure().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Cannot assign return type of " + instrumentedMethod + " to "+ targetType);
+  }
+  return readOnly ? new Target.ForReadOnlyParameter(instrumentedMethod.getStackSize() + context.getPadding()) : new Target.ForParameter(instrumentedMethod.getStackSize() + context.getPadding());
 }

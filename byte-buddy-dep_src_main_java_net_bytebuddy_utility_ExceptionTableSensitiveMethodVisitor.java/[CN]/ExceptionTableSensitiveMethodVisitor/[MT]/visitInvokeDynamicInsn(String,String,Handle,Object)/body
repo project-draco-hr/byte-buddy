@@ -1,0 +1,4 @@
+{
+  considerEndOfExceptionTable();
+  onVisitInvokeDynamicInsn(name,desc,bsm,bsmArgs);
+}

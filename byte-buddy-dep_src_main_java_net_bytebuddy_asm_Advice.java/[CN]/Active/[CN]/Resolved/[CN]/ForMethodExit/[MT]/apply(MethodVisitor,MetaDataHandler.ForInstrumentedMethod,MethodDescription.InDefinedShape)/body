@@ -1,0 +1,7 @@
+{
+  Map<Integer,OffsetMapping.Target> offsetMappings=new HashMap<Integer,OffsetMapping.Target>();
+  for (  Map.Entry<Integer,OffsetMapping> entry : this.offsetMappings.entrySet()) {
+    offsetMappings.put(entry.getKey(),entry.getValue().resolve(instrumentedMethod,OffsetMapping.Context.ForMethodExit.of(enterType)));
+  }
+  return new CodeTranslationVisitor.ForMethodExit(methodVisitor,metaDataHandler.bindExit(adviceMethod),instrumentedMethod,adviceMethod,offsetMappings,suppressionHandler,enterType.getStackSize().getSize() + getPadding().getSize());
+}

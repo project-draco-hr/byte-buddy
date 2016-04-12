@@ -1,7 +1,0 @@
-{
-  super(Opcodes.ASM5,methodVisitor);
-  this.instrumentedMethod=instrumentedMethod;
-  this.methodEnter=methodEnter;
-  classReader=new ClassReader(binaryRepresentation);
-  metaDataHandler=MetaDataHandler.Default.of(instrumentedMethod,methodEnter.getEnterType().represents(void.class) ? Collections.<TypeDescription>emptyList() : Collections.singletonList(methodEnter.getEnterType()),yieldedTypes,writerFlags,readerFlags);
-}

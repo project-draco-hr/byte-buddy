@@ -1,4 +1,0 @@
-{
-  this.advice=advice;
-  this.expected=expected;
-}

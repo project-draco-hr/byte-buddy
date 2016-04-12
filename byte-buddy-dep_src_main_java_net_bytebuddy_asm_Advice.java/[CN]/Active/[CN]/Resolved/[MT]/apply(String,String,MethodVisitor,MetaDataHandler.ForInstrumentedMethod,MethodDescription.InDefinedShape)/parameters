@@ -1,5 +1,0 @@
-String internalName
-String descriptor
-MethodVisitor methodVisitor
-MetaDataHandler.ForInstrumentedMethod metaDataHandler
-MethodDescription.InDefinedShape instrumentedMethod

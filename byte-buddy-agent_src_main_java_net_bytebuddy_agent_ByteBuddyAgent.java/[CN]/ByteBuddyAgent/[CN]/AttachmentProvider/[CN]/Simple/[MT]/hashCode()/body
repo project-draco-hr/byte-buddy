@@ -1,5 +1,3 @@
 {
-  int result=virtualMachineType.hashCode();
-  result=31 * result + processId.hashCode();
-  return result;
+  return virtualMachineType.hashCode();
 }

@@ -16,14 +16,20 @@
       }
       renderers.add(new Renderer.ForConstantValue(pattern.substring(from,to).replace("" + ESCAPE + ESCAPE,"" + ESCAPE)));
 switch (pattern.charAt(to + 1)) {
-case METHOD_NAME:
+case Renderer.ForMethodName.SYMBOL:
         renderers.add(Renderer.ForMethodName.INSTANCE);
       break;
-case TYPE_NAME:
+case Renderer.ForTypeName.SYMBOL:
     renderers.add(Renderer.ForTypeName.INSTANCE);
   break;
-case DESCRIPTOR:
+case Renderer.ForDescriptor.SYMBOL:
 renderers.add(Renderer.ForDescriptor.INSTANCE);
+break;
+case Renderer.ForReturnTypeName.SYMBOL:
+renderers.add(Renderer.ForReturnTypeName.INSTANCE);
+break;
+case Renderer.ForJavaSignature.SYMBOL:
+renderers.add(Renderer.ForJavaSignature.INSTANCE);
 break;
 default :
 throw new IllegalStateException("Illegal sort descriptor " + pattern.charAt(to + 1) + " for "+ pattern);

@@ -1,0 +1,11 @@
+{
+  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(BoxedArguments.class)) {
+    return UNDEFINED;
+  }
+ else   if (parameterDescription.getType().represents(Object[].class)) {
+    return this;
+  }
+ else {
+    throw new IllegalStateException("Can only assign an array of boxed arguments to an Object[] array");
+  }
+}

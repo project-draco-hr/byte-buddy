@@ -1,0 +1,9 @@
+{
+  final Iterator<Class<?>> iterator=Arrays.<Class<?>>asList(Object.class,String.class,int.class,float.class).iterator();
+  ObjectPropertyAssertion.of(TargetMethodAnnotationDrivenBinder.ParameterBinder.ForFixedValue.OfConstant.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
+    @Override public Class<?> create(){
+      return iterator.next();
+    }
+  }
+).apply();
+}

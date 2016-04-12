@@ -1,0 +1,3 @@
+{
+  assertThat(asList(getFirst()).ofType(new TypeDescription.ForLoadedType(Foo.class)),is((AnnotationDescription)AnnotationDescription.ForLoadedAnnotation.of(Holder.class.getAnnotation(Foo.class))));
+}

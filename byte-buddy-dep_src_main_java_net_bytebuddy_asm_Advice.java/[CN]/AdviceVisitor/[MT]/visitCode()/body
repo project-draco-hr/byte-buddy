@@ -1,7 +1,0 @@
-{
-  super.visitCode();
-  if (methodEnter.isAlive()) {
-    append(methodEnter);
-  }
-  onUserStart();
-}

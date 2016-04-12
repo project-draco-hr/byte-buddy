@@ -1,0 +1,9 @@
+{
+  Method method=MethodVisitor.class.getDeclaredMethod(name,type);
+  PseudoVisitor pseudoVisitor=new PseudoVisitor(api,methodVisitor);
+  method.invoke(pseudoVisitor,argument);
+  method.invoke(pseudoVisitor,argument);
+  method.invoke(verify(methodVisitor,times(2)),argument);
+  verifyNoMoreInteractions(methodVisitor);
+  pseudoVisitor.check();
+}

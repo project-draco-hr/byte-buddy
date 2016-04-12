@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   Simple simple=(Simple)other;
-  return virtualMachineType.equals(simple.virtualMachineType) && processId.equals(simple.processId);
+  return virtualMachineType.equals(simple.virtualMachineType);
 }

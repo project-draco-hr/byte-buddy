@@ -1,4 +1,0 @@
-{
-  this.virtualMachineType=virtualMachineType;
-  this.processId=processId;
-}

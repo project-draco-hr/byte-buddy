@@ -1,0 +1,5 @@
+{
+  this.check=check;
+  printWriter=new PrintWriter(writer);
+  this.printer=printer;
+}

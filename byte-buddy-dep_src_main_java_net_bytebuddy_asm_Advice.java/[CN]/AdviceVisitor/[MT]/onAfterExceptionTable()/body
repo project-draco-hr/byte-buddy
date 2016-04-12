@@ -1,0 +1,7 @@
+{
+  methodEnter.prepare();
+  onUserPrepare();
+  methodExit.prepare();
+  methodEnter.apply();
+  onUserStart();
+}

@@ -1,3 +1,0 @@
-{
-  return instrumentedMethod.isConstructor() ? NON_INITIALIZED : INITIALIZED;
-}

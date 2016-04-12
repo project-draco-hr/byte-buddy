@@ -1,3 +1,0 @@
-{
-  methodVisitor.visitVarInsn(opcode,offset);
-}

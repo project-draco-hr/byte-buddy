@@ -1,3 +1,3 @@
 {
-  return Arrays.asList(new Object[][]{{VoidAdvice.class,null},{BooleanAdvice.class,BOOLEAN},{ByteAdvice.class,VALUE},{ShortAdvice.class,(short)VALUE},{CharacterAdvice.class,(char)VALUE},{IntegerAdvice.class,(int)VALUE},{LongAdvice.class,(long)VALUE},{FloatAdvice.class,(float)VALUE},{DoubleAdvice.class,(double)VALUE},{ReferenceAdvice.class,FOO}});
+  return Arrays.asList(new Object[][]{{VoidAdvice.class,Void.class,null},{BooleanAdvice.class,boolean.class,BOOLEAN},{ByteAdvice.class,byte.class,VALUE},{ShortAdvice.class,short.class,(short)VALUE},{CharacterAdvice.class,char.class,(char)VALUE},{IntegerAdvice.class,int.class,(int)VALUE},{LongAdvice.class,long.class,(long)VALUE},{FloatAdvice.class,float.class,(float)VALUE},{DoubleAdvice.class,double.class,(double)VALUE},{ReferenceAdvice.class,Object.class,FOO}});
 }

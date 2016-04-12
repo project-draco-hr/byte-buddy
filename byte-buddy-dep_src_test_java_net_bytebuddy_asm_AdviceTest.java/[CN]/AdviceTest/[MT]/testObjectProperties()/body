@@ -1,5 +1,6 @@
 {
   ObjectPropertyAssertion.of(Advice.class).apply();
+  ObjectPropertyAssertion.of(Advice.WithCustomMapping.class).apply();
   ObjectPropertyAssertion.of(Advice.MetaDataHandler.NoOp.class).apply();
   ObjectPropertyAssertion.of(Advice.MetaDataHandler.Default.WithoutStackSizeComputation.class).applyBasic();
   ObjectPropertyAssertion.of(Advice.MetaDataHandler.Default.WithoutStackSizeComputation.ForAdvice.class).applyBasic();
@@ -10,90 +11,70 @@
   }
 ).applyBasic();
   ObjectPropertyAssertion.of(Advice.MetaDataHandler.Default.WithStackSizeComputation.ForAdvice.class).applyBasic();
-  ObjectPropertyAssertion.of(Advice.AdviceVisitor.CodeCopier.class).applyBasic();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Inactive.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Context.ForMethodEntry.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Context.ForMethodExit.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Target.ForReadOnlyParameter.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Target.ForParameter.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Target.ForField.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Target.ForConstantPoolValue.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Target.ForDefaultValue.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Context.ForMethodEntry.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Context.ForMethodExit.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForReadOnlyParameter.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForParameter.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForField.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForReadOnlyField.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForConstantPoolValue.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForDefaultValue.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedArguments.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedParameter.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedParameter.BoxingDispatcher.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForNullConstant.class).apply();
   final int[] value=new int[1];
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForParameter.class).refine(new ObjectPropertyAssertion.Refinement<Advice.Argument>(){
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForParameter.class).refine(new ObjectPropertyAssertion.Refinement<Advice.Argument>(){
     @Override public void apply(    Advice.Argument mock){
       when(mock.value()).thenReturn(value[0]++);
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForParameter.Factory.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForThisReference.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForThisReference.Factory.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForField.WithImplicitType.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForField.WithExplicitType.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForField.Factory.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForOrigin.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForOrigin.Factory.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForOrigin.Renderer.ForConstantValue.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForOrigin.Renderer.ForDescriptor.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForOrigin.Renderer.ForMethodName.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForOrigin.Renderer.ForStringRepresentation.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForOrigin.Renderer.ForTypeName.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForIgnored.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForReturnValue.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForReturnValue.Factory.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForThrowable.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForEnterValue.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.ForEnterValue.Factory.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForParameter.Factory.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForThisReference.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForThisReference.Factory.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForField.WithImplicitType.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForField.WithExplicitType.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForField.Factory.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForBoxedReturnValue.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForBoxedArguments.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Factory.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForConstantValue.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForDescriptor.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForMethodName.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForStringRepresentation.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForTypeName.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForReturnTypeName.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForJavaSignature.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForIgnored.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForUserValue.class).apply();
+  final Iterator<Class<?>> annotationTypes=Arrays.<Class<?>>asList(Object.class,String.class,int.class,float.class).iterator();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForUserValue.Factory.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
+    @Override public Class<?> create(){
+      return annotationTypes.next();
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForInstrumentedType.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForReturnValue.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForReturnValue.Factory.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForThrowable.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForEnterValue.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForEnterValue.Factory.class).apply();
   final Iterator<Class<?>> types=Arrays.<Class<?>>asList(Object.class,String.class).iterator();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.OffsetMapping.Illegal.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Illegal.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
     @Override public Class<?> create(){
       return types.next();
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.ForMethodEnter.class).refine(new ObjectPropertyAssertion.Refinement<MethodDescription.InDefinedShape>(){
-    @Override public void apply(    MethodDescription.InDefinedShape mock){
-      when(mock.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
-    }
-  }
-).apply();
-  final Iterator<StackSize> iterator1=Arrays.asList(StackSize.values()).iterator();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.ForMethodExit.WithExceptionHandler.class).refine(new ObjectPropertyAssertion.Refinement<MethodDescription.InDefinedShape>(){
-    @Override public void apply(    MethodDescription.InDefinedShape mock){
-      when(mock.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
-      try {
-        when(mock.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(TrivialAdvice.class.getDeclaredMethod(EXIT).getDeclaredAnnotations()));
-      }
- catch (      Exception exception) {
-        throw new AssertionError(exception);
-      }
-    }
-  }
-).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
-    @Override public void apply(    TypeDescription mock){
-      when(mock.getStackSize()).thenReturn(iterator1.next());
-    }
-  }
-).apply();
-  final Iterator<StackSize> iterator2=Arrays.asList(StackSize.values()).iterator();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.ForMethodExit.WithoutExceptionHandler.class).refine(new ObjectPropertyAssertion.Refinement<MethodDescription.InDefinedShape>(){
-    @Override public void apply(    MethodDescription.InDefinedShape mock){
-      when(mock.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
-      try {
-        when(mock.getDeclaredAnnotations()).thenReturn(new AnnotationList.ForLoadedAnnotations(TrivialAdvice.class.getDeclaredMethod(EXIT).getDeclaredAnnotations()));
-      }
- catch (      Exception exception) {
-        throw new AssertionError(exception);
-      }
-    }
-  }
-).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
-    @Override public void apply(    TypeDescription mock){
-      when(mock.getStackSize()).thenReturn(iterator2.next());
-    }
-  }
-).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.CodeCopier.class).applyBasic();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.CodeCopier.ExceptionTabelSubstitutor.class).applyBasic();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.CodeCopier.ExceptionTableCollector.class).applyBasic();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.Active.Resolved.CodeCopier.ExceptionTableExtractor.class).applyBasic();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Active.CodeTranslationVisitor.SuppressionHandler.NoOp.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Active.CodeTranslationVisitor.SuppressionHandler.Suppressing.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Active.CodeTranslationVisitor.ForMethodEnter.class).applyBasic();
@@ -103,4 +84,5 @@
     }
   }
 ).applyBasic();
+  ObjectPropertyAssertion.of(Advice.DynamicValue.ForFixedValue.class).apply();
 }

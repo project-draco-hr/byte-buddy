@@ -1,0 +1,12 @@
+char result
+char enter
+Throwable throwable
+Object boxedReturn
+char argument
+char mutableArgument
+Object[] boxed
+char field
+char staticField
+char mutated
+char mutatedStatic
+char custom

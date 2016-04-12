@@ -1,1 +1,1 @@
-ElementMatcher<? super Iterable<? extends TypeDescription.Generic>> exceptionMatcher
+ElementMatcher<? super Iterable<? extends TypeDescription.Generic>> matcher

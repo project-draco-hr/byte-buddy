@@ -1,0 +1,5 @@
+{
+  if (!called) {
+    throw new AssertionError();
+  }
+}

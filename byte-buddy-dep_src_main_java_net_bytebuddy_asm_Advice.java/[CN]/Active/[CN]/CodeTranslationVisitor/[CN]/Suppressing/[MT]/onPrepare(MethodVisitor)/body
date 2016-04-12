@@ -1,0 +1,3 @@
+{
+  methodVisitor.visitTryCatchBlock(startOfMethod,endOfMethod,endOfMethod,throwableType.getInternalName());
+}

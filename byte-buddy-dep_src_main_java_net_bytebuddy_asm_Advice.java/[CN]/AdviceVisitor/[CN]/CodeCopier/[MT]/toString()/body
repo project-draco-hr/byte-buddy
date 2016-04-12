@@ -1,3 +1,0 @@
-{
-  return "Advice.AdviceVisitor.CodeCopier{" + "outer=" + AdviceVisitor.this + ", dispatcher="+ dispatcher+ '}';
-}

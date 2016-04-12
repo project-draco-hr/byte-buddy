@@ -1,0 +1,21 @@
+{
+  Object value=dynamicValue.resolve(instrumentedMethod,target,annotation,context.isInitialized());
+  if (value == null) {
+    if (target.getType().isPrimitive()) {
+      throw new IllegalStateException("Cannot map null to primitive type of " + target);
+    }
+    return Target.ForNullConstant.INSTANCE;
+  }
+ else   if ((target.getType().asErasure().isAssignableFrom(String.class) && value instanceof String) || (target.getType().isPrimitive() && target.getType().asErasure().isInstanceOrWrapper(value))) {
+    return new Target.ForConstantPoolValue(value);
+  }
+ else   if (target.getType().asErasure().isAssignableFrom(Class.class) && value instanceof Class) {
+    return new Target.ForConstantPoolValue(Type.getType((Class<?>)value));
+  }
+ else   if (target.getType().asErasure().isAssignableFrom(Class.class) && value instanceof TypeDescription) {
+    return new Target.ForConstantPoolValue(Type.getType(((TypeDescription)value).getDescriptor()));
+  }
+ else {
+    throw new IllegalStateException("Cannot map " + value + " as constant value of "+ target.getType());
+  }
+}

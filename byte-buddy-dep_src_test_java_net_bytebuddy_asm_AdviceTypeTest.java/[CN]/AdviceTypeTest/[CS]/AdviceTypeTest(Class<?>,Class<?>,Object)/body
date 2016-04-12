@@ -1,0 +1,5 @@
+{
+  this.advice=advice;
+  this.type=type;
+  this.value=value;
+}

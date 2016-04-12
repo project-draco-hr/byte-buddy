@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot read process ID for an unavailable accessor");
-}

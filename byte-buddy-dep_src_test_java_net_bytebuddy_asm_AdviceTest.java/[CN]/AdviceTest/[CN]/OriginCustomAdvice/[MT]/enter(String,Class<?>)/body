@@ -1,0 +1,9 @@
+{
+  if (!origin.equals(Sample.class.getName() + " " + FOO+ " ()L"+ String.class.getName().replace('.','/')+ "; "+ String.class.getName()+ " ()")) {
+    throw new AssertionError();
+  }
+  if (type != Sample.class) {
+    throw new AssertionError();
+  }
+  Sample.enter++;
+}

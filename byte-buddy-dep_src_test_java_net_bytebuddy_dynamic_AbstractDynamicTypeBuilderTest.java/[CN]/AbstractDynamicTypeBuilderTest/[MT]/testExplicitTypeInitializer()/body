@@ -4,5 +4,5 @@
       return new Size(new StackManipulation.Compound(new TextConstant(FOO),FieldAccess.forField(instrumentedMethod.getDeclaringType().getDeclaredFields().filter(named(FOO)).getOnly()).putter()).apply(methodVisitor,implementationContext).getMaximalSize(),instrumentedMethod.getStackSize());
     }
   }
-).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded().getDeclaredField(FOO).get(null),is((Object)FOO));
+).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded().getDeclaredField(FOO).get(null),is((Object)FOO));
 }

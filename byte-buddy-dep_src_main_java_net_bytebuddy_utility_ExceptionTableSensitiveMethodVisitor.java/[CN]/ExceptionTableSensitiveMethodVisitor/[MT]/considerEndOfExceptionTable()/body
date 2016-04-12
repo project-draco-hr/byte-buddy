@@ -1,0 +1,6 @@
+{
+  if (trigger) {
+    trigger=false;
+    onAfterExceptionTable();
+  }
+}

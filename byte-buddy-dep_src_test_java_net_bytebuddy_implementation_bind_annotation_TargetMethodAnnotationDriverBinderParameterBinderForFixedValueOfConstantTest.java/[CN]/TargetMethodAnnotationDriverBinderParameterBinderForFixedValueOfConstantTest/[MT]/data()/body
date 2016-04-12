@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{true},{NUMERIC_VALUE},{(short)NUMERIC_VALUE},{(char)NUMERIC_VALUE},{(int)NUMERIC_VALUE},{(long)NUMERIC_VALUE},{(float)NUMERIC_VALUE},{(double)NUMERIC_VALUE},{FOO},{Object.class}});
+}

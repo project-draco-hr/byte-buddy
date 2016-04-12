@@ -1,0 +1,10 @@
+{
+switch (opcode) {
+case Opcodes.ALOAD:
+    methodVisitor.visitInsn(Opcodes.ACONST_NULL);
+  break;
+default :
+throw new IllegalStateException("Unexpected opcode: " + opcode);
+}
+return NO_PADDING;
+}
