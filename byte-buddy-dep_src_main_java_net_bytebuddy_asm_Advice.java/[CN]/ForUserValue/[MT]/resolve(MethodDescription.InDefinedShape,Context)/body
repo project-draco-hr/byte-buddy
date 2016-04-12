@@ -6,14 +6,16 @@
     }
     return Target.ForNullConstant.INSTANCE;
   }
- else   if ((target.getType().represents(String.class) && !(value instanceof String)) || (target.getType().represents(Class.class) && !(value instanceof TypeDescription || value instanceof Class)) || (target.getType().isPrimitive() && !target.getType().asErasure().isInstanceOrWrapper(value))) {
+ else   if ((target.getType().asErasure().isAssignableFrom(String.class) && value instanceof String) || (target.getType().isPrimitive() && target.getType().asErasure().isInstanceOrWrapper(value))) {
+    return new Target.ForConstantPoolValue(value);
+  }
+ else   if (target.getType().asErasure().isAssignableFrom(Class.class) && value instanceof Class) {
+    return new Target.ForConstantPoolValue(Type.getType((Class<?>)value));
+  }
+ else   if (target.getType().asErasure().isAssignableFrom(Class.class) && value instanceof TypeDescription) {
+    return new Target.ForConstantPoolValue(Type.getType(((TypeDescription)value).getDescriptor()));
+  }
+ else {
     throw new IllegalStateException("Cannot map " + value + " as constant value of "+ target.getType());
   }
- else   if (value instanceof TypeDescription) {
-    value=Type.getType(((TypeDescription)value).getDescriptor());
-  }
- else   if (value instanceof Class) {
-    value=Type.getType((Class<?>)value);
-  }
-  return new Target.ForConstantPoolValue(value);
 }

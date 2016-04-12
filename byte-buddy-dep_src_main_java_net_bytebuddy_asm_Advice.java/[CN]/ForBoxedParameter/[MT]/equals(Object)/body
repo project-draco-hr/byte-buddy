@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  ForBoxedParameter that=(ForBoxedParameter)object;
+  return offset == that.offset && boxingDispatcher == that.boxingDispatcher;
+}

@@ -1,0 +1,8 @@
+{
+  new ByteBuddy().redefine(Sample.class).visit(Advice.withCustomMapping().bind(Custom.class,new Advice.DynamicValue<Custom>(){
+    @Override public Object resolve(    MethodDescription.InDefinedShape instrumentedMethod,    ParameterDescription.InDefinedShape target,    AnnotationDescription.Loadable<Custom> annotation,    boolean initialized){
+      return new Object();
+    }
+  }
+).to(CustomAdvice.class).on(named(FOO))).make();
+}

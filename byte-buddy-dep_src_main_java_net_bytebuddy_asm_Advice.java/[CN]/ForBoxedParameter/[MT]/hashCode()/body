@@ -1,0 +1,5 @@
+{
+  int result=offset;
+  result=31 * result + boxingDispatcher.hashCode();
+  return result;
+}

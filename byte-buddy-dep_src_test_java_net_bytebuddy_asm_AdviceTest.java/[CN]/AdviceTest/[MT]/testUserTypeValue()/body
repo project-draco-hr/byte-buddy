@@ -1,0 +1,9 @@
+{
+  Class<?> type=new ByteBuddy().redefine(Sample.class).visit(Advice.withCustomMapping().bind(Custom.class,new Advice.DynamicValue<Custom>(){
+    @Override public Object resolve(    MethodDescription.InDefinedShape instrumentedMethod,    ParameterDescription.InDefinedShape target,    AnnotationDescription.Loadable<Custom> annotation,    boolean initialized){
+      return Object.class;
+    }
+  }
+).to(CustomAdvice.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),is((Object)FOO));
+}

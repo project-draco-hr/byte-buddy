@@ -1,0 +1,8 @@
+{
+  Advice.withCustomMapping().bind(Custom.class,new Advice.DynamicValue<Annotation>(){
+    @Override public Object resolve(    MethodDescription.InDefinedShape instrumentedMethod,    ParameterDescription.InDefinedShape target,    AnnotationDescription.Loadable<Annotation> annotation,    boolean initialized){
+      return null;
+    }
+  }
+).bind(Custom.class,null);
+}
