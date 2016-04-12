@@ -5,6 +5,6 @@
   when(bar.getInternalName()).thenReturn(BAR);
   when(bar.getDescriptor()).thenReturn(BAZ);
   when(classVisitor.visitMethod(eq(MODIFIERS),any(String.class),any(String.class),eq(BAZ),eq(new String[]{QUX + BAZ}))).thenReturn(methodVisitor);
-  when(methodVisitorWrapper.wrap(instrumentedType,foo,methodVisitor,classFileVersion,FLAGS,FLAGS * 2)).thenReturn(wrappedVisitor);
+  when(methodVisitorWrapper.wrap(instrumentedType,foo,methodVisitor,null,FLAGS,FLAGS * 2)).thenReturn(wrappedVisitor);
   when(matcher.matches(foo)).thenReturn(true);
 }
