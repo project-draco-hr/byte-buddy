@@ -1,0 +1,5 @@
+MethodDescription.InDefinedShape instrumentedMethod
+MethodVisitor methodVisitor
+MetaDataHandler.ForInstrumentedMethod metaDataHandler
+SuppressionHandler.Bound suppressionHandler
+ClassReader classReader

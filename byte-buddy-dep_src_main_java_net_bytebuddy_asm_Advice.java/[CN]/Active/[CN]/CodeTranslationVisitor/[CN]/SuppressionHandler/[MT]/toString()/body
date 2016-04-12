@@ -1,3 +1,0 @@
-{
-  return "Advice.Dispatcher.Active.CodeTranslationVisitor.SuppressionHandler.NoOp." + name();
-}
