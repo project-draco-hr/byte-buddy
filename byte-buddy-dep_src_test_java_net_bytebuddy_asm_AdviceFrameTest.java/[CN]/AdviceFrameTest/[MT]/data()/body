@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{FrameAdvice.class,2},{FrameAdviceWithoutThrowable.class,2},{FrameAdviceWithSuppression.class,2},{FrameAdviceEntryOnly.class,1},{FrameAdviceEntryOnlyWithSuppression.class,1},{FrameAdviceExitOnly.class,1},{FrameAdviceExitOnlyWithSuppression.class,1},{FrameAdviceExitOnlyWithSuppressionAndNotException.class,1},{FrameReturnAdvice.class,2}});
+}

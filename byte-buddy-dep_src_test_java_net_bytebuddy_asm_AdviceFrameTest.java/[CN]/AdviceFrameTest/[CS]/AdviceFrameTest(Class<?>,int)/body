@@ -1,0 +1,4 @@
+{
+  this.advice=advice;
+  this.count=count;
+}

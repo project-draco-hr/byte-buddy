@@ -1,0 +1,16 @@
+{
+  try {
+    int ignored=0;
+    if (ignored != 0) {
+      return BAR;
+    }
+  }
+ catch (  Exception e) {
+    int ignored=0;
+    if (ignored != 0) {
+      return QUX;
+    }
+  }
+  FrameSample.count++;
+  return FOO;
+}
