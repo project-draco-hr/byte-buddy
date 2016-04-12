@@ -12,7 +12,10 @@
       attachmentAccessor.getVirtualMachineType().getDeclaredMethod(DETACH_METHOD_NAME).invoke(virtualMachineInstance);
     }
   }
- catch (  Exception exception) {
+ catch (  RuntimeException exception) {
+    throw exception;
+  }
+catch (  Exception exception) {
     throw new IllegalStateException("Error during attachment using: " + attachmentProvider,exception);
   }
 }
