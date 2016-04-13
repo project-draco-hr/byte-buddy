@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.Listener.StreamWriting.toSystemError(),is((AgentBuilder.Listener)new AgentBuilder.Listener.StreamWriting(System.err)));
+}
