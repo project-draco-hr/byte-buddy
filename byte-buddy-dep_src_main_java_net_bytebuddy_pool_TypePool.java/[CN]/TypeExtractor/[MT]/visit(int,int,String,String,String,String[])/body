@@ -1,5 +1,5 @@
 {
-  this.modifiers=modifiers;
+  this.modifiers=modifiers & REAL_MODIFIER_MASK;
   this.internalName=internalName;
   this.genericSignature=genericSignature;
   this.superClassName=superClassName;

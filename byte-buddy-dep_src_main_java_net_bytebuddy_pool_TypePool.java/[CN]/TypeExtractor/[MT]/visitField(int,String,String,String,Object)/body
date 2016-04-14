@@ -1,3 +1,3 @@
 {
-  return new FieldExtractor(modifiers,internalName,descriptor,genericSignature);
+  return new FieldExtractor(modifiers & REAL_MODIFIER_MASK,internalName,descriptor,genericSignature);
 }

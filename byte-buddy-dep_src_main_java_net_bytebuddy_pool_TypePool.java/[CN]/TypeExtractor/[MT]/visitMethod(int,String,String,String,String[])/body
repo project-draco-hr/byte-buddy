@@ -1,3 +1,3 @@
 {
-  return internalName.equals(MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME) ? IGNORE_METHOD : new MethodExtractor(modifiers,internalName,descriptor,genericSignature,exceptionName);
+  return internalName.equals(MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME) ? IGNORE_METHOD : new MethodExtractor(modifiers & REAL_MODIFIER_MASK,internalName,descriptor,genericSignature,exceptionName);
 }

@@ -1,6 +1,6 @@
 {
   if (internalName.equals(this.internalName)) {
-    this.modifiers=modifiers;
+    this.modifiers=modifiers & REAL_MODIFIER_MASK;
     if (innerName == null) {
       anonymousType=true;
     }
