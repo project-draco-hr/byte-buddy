@@ -1,0 +1,4 @@
+{
+  assertThat(describe(SyntheticField.class.getDeclaredFields()[0]).getModifiers(),is(SyntheticField.class.getDeclaredFields()[0].getModifiers()));
+  assertThat(describe(SyntheticField.class.getDeclaredFields()[0]).isSynthetic(),is(SyntheticField.class.getDeclaredFields()[0].isSynthetic()));
+}
