@@ -1,7 +1,7 @@
 {
-  new AgentBuilder.Listener.Compound(first,second).onIgnored(typeDescription);
-  verify(first).onIgnored(typeDescription);
+  new AgentBuilder.Listener.Compound(first,second).onIgnored(typeDescription,classLoader);
+  verify(first).onIgnored(typeDescription,classLoader);
   verifyNoMoreInteractions(first);
-  verify(second).onIgnored(typeDescription);
+  verify(second).onIgnored(typeDescription,classLoader);
   verifyNoMoreInteractions(second);
 }

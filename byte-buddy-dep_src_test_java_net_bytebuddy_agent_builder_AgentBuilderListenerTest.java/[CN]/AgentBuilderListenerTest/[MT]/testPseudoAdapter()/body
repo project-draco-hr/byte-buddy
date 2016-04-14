@@ -1,0 +1,9 @@
+{
+  AgentBuilder.Listener listener=new PseudoAdapter();
+  listener.onTransformation(typeDescription,classLoader,dynamicType);
+  verifyZeroInteractions(dynamicType);
+  listener.onError(FOO,classLoader,throwable);
+  verifyZeroInteractions(throwable);
+  listener.onIgnored(typeDescription,classLoader);
+  listener.onComplete(FOO,classLoader);
+}

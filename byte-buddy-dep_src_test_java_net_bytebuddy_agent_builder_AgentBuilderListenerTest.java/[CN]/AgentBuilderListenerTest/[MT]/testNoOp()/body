@@ -1,8 +1,8 @@
 {
-  AgentBuilder.Listener.NoOp.INSTANCE.onTransformation(typeDescription,dynamicType);
+  AgentBuilder.Listener.NoOp.INSTANCE.onTransformation(typeDescription,classLoader,dynamicType);
   verifyZeroInteractions(dynamicType);
-  AgentBuilder.Listener.NoOp.INSTANCE.onError(FOO,throwable);
+  AgentBuilder.Listener.NoOp.INSTANCE.onError(FOO,classLoader,throwable);
   verifyZeroInteractions(throwable);
-  AgentBuilder.Listener.NoOp.INSTANCE.onIgnored(typeDescription);
-  AgentBuilder.Listener.NoOp.INSTANCE.onComplete(FOO);
+  AgentBuilder.Listener.NoOp.INSTANCE.onIgnored(typeDescription,classLoader);
+  AgentBuilder.Listener.NoOp.INSTANCE.onComplete(FOO,classLoader);
 }

@@ -1,7 +1,7 @@
 {
   PrintStream printStream=mock(PrintStream.class);
   AgentBuilder.Listener listener=new AgentBuilder.Listener.StreamWriting(printStream);
-  listener.onIgnored(typeDescription);
+  listener.onIgnored(typeDescription,classLoader);
   verify(printStream).println("[Byte Buddy] IGNORE " + FOO);
   verifyNoMoreInteractions(printStream);
 }

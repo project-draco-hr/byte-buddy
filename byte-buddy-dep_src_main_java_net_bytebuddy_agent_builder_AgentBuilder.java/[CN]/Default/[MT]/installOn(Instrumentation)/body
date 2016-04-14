@@ -13,10 +13,10 @@
         if (!instrumentation.isModifiableClass(type) || !collector.consider(type,ignoredTypeMatcher)) {
           try {
             try {
-              listener.onIgnored(typeDescription);
+              listener.onIgnored(typeDescription,type.getClassLoader());
             }
   finally {
-              listener.onComplete(typeDescription.getName());
+              listener.onComplete(typeDescription.getName(),type.getClassLoader());
             }
           }
  catch (          Throwable ignored) {
@@ -26,10 +26,10 @@
  catch (      Throwable throwable) {
         try {
           try {
-            listener.onError(typeDescription.getName(),throwable);
+            listener.onError(typeDescription.getName(),type.getClassLoader(),throwable);
           }
   finally {
-            listener.onComplete(typeDescription.getName());
+            listener.onComplete(typeDescription.getName(),type.getClassLoader());
           }
         }
  catch (        Throwable ignored) {

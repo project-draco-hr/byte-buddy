@@ -10,8 +10,8 @@
   when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),null,REDEFINED.getProtectionDomain())).thenReturn(true);
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(binaryLocator).with(typeStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).type(rawMatcher).transform(transformer).installOn(instrumentation);
   assertThat(classFileTransformer.transform(REDEFINED.getClassLoader(),REDEFINED.getName(),null,REDEFINED.getProtectionDomain(),QUX),is(BAZ));
-  verify(listener).onTransformation(new TypeDescription.ForLoadedType(REDEFINED),dynamicType);
-  verify(listener).onComplete(REDEFINED.getName());
+  verify(listener).onTransformation(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),dynamicType);
+  verify(listener).onComplete(REDEFINED.getName(),REDEFINED.getClassLoader());
   verifyNoMoreInteractions(listener);
   verify(instrumentation).addTransformer(classFileTransformer,false);
   verifyNoMoreInteractions(instrumentation);

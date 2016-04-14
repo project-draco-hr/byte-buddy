@@ -5,5 +5,5 @@
       return resolution;
     }
   }
-  return new Resolution.Unresolved(typeDescription);
+  return new Resolution.Unresolved(typeDescription,classLoader);
 }

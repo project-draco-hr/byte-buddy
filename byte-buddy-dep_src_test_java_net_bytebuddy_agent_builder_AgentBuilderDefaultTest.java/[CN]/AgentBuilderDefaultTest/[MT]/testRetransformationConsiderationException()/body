@@ -6,7 +6,7 @@
   when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),REDEFINED,REDEFINED.getProtectionDomain())).thenThrow(exception);
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION).with(binaryLocator).with(typeStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).type(rawMatcher).transform(transformer).installOn(instrumentation);
   verify(instrumentation).addTransformer(classFileTransformer,true);
-  verify(listener).onError(REDEFINED.getName(),exception);
-  verify(listener).onComplete(REDEFINED.getName());
+  verify(listener).onError(REDEFINED.getName(),REDEFINED.getClassLoader(),exception);
+  verify(listener).onComplete(REDEFINED.getName(),REDEFINED.getClassLoader());
   verifyNoMoreInteractions(listener);
 }
