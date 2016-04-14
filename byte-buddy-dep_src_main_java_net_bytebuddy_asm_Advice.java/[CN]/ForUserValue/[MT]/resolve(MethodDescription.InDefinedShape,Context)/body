@@ -15,6 +15,9 @@
  else   if (target.getType().asErasure().isAssignableFrom(Class.class) && value instanceof TypeDescription) {
     return new Target.ForConstantPoolValue(Type.getType(((TypeDescription)value).getDescriptor()));
   }
+ else   if (!target.getType().isPrimitive() && !target.getType().isArray() && value instanceof Serializable&& target.getType().asErasure().isInstance(value)) {
+    return Target.ForSerializedObject.of(target.getType().asErasure(),(Serializable)value);
+  }
  else {
     throw new IllegalStateException("Cannot map " + value + " as constant value of "+ target.getType());
   }

@@ -12,9 +12,8 @@ case Opcodes.ALOAD:
 case Opcodes.LLOAD:
 case Opcodes.DLOAD:
   methodVisitor.visitLdcInsn(value);
-break;
+return NO_PADDING;
 default :
 throw new IllegalArgumentException("Did not expect opcode: " + opcode);
 }
-return NO_PADDING;
 }

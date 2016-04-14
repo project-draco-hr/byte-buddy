@@ -2,9 +2,8 @@
 switch (opcode) {
 case Opcodes.ALOAD:
     methodVisitor.visitInsn(Opcodes.ACONST_NULL);
-  break;
+  return NO_PADDING;
 default :
 throw new IllegalStateException("Unexpected opcode: " + opcode);
 }
-return NO_PADDING;
 }

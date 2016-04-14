@@ -1,0 +1,19 @@
+{
+switch (opcode) {
+case Opcodes.ALOAD:
+    methodVisitor.visitTypeInsn(Opcodes.NEW,Type.getInternalName(ObjectInputStream.class));
+  methodVisitor.visitInsn(Opcodes.DUP);
+methodVisitor.visitTypeInsn(Opcodes.NEW,Type.getInternalName(ByteArrayInputStream.class));
+methodVisitor.visitInsn(Opcodes.DUP);
+methodVisitor.visitLdcInsn(serialized);
+methodVisitor.visitLdcInsn(CHARSET);
+methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,Type.getInternalName(String.class),"getBytes",Type.getMethodType(Type.getType(byte[].class),Type.getType(String.class)).toString(),false);
+methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL,Type.getInternalName(ByteArrayInputStream.class),MethodDescription.CONSTRUCTOR_INTERNAL_NAME,Type.getMethodType(Type.VOID_TYPE,Type.getType(byte[].class)).toString(),false);
+methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL,Type.getInternalName(ObjectInputStream.class),MethodDescription.CONSTRUCTOR_INTERNAL_NAME,Type.getMethodType(Type.VOID_TYPE,Type.getType(InputStream.class)).toString(),false);
+methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,Type.getInternalName(ObjectInputStream.class),"readObject",Type.getMethodType(Type.getType(Object.class)).toString(),false);
+methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,target.getInternalName());
+return 5;
+default :
+throw new IllegalStateException("Unexpected opcode: " + opcode);
+}
+}

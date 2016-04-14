@@ -2,9 +2,8 @@
 switch (opcode) {
 case Opcodes.ALOAD:
     boxingDispatcher.loadBoxed(methodVisitor,offset);
-  break;
+  return boxingDispatcher.getStackSize().getSize() - 1;
 default :
 throw new IllegalStateException("Unexpected opcode: " + opcode);
 }
-return boxingDispatcher.getStackSize().getSize() - 1;
 }

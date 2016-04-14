@@ -1,0 +1,16 @@
+{
+  try {
+    ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
+    ObjectOutputStream objectOutputStream=new ObjectOutputStream(byteArrayOutputStream);
+    try {
+      objectOutputStream.writeObject(value);
+    }
+  finally {
+      objectOutputStream.close();
+    }
+    return new ForSerializedObject(target,byteArrayOutputStream.toString(CHARSET));
+  }
+ catch (  IOException exception) {
+    throw new IllegalStateException("Cannot serialize " + value,exception);
+  }
+}
