@@ -1,1 +1,2 @@
 TypeDescription enterType
+boolean readOnly

@@ -8,6 +8,9 @@
  else     if (readOnly && !enterType.isAssignableTo(parameterDescription.getType().asErasure())) {
       throw new IllegalStateException("Cannot assign the type of " + parameterDescription + " to supplied type "+ enterType);
     }
+ else     if (this.readOnly && !readOnly) {
+      throw new IllegalStateException("Cannot write to enter value field for " + parameterDescription + " in read only context");
+    }
     return ForEnterValue.of(readOnly);
   }
  else {

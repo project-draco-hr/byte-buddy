@@ -1,3 +1,4 @@
 {
   this.enterType=enterType;
+  this.readOnly=readOnly;
 }
