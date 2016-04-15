@@ -1,11 +1,4 @@
 {
-  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(BoxedReturn.class)) {
-    return UNDEFINED;
-  }
- else   if (parameterDescription.getType().represents(Object.class)) {
-    return this;
-  }
- else {
-    throw new IllegalStateException("Can only assign a boxed return value to an Object type");
-  }
+  AnnotationDescription.Loadable<Return> annotation=parameterDescription.getDeclaredAnnotations().ofType(Return.class);
+  return annotation == null ? UNDEFINED : new ForReturnValue(annotation.loadSilent().readOnly(),parameterDescription.getType().asErasure());
 }
