@@ -1,0 +1,3 @@
+{
+  return "Advice.Dispatcher.Delegating.Resolved.AdviceMethodWriter.ForMethodEnter{" + "instrumentedMethod=" + instrumentedMethod + ", adviceMethod="+ adviceMethod+ "}";
+}

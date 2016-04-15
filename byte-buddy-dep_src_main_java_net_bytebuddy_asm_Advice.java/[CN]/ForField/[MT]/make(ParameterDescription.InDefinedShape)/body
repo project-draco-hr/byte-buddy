@@ -3,13 +3,13 @@
   if (annotation == null) {
     return UNDEFINED;
   }
- else   if (readOnly && !annotation.getValue(READ_ONLY_FIELD,Boolean.class)) {
+ else   if (readOnly && !annotation.getValue(ForField.READ_ONLY,Boolean.class)) {
     throw new IllegalStateException("Cannot write to field for " + parameterDescription + " in read-only context");
   }
  else {
     TypeDescription declaringType=annotation.getValue(DECLARING_TYPE,TypeDescription.class);
     String name=annotation.getValue(VALUE,String.class);
     TypeDescription targetType=parameterDescription.getType().asErasure();
-    return declaringType.represents(void.class) ? new WithImplicitType(name,targetType,annotation.getValue(READ_ONLY_FIELD,Boolean.class)) : new WithExplicitType(name,targetType,declaringType,annotation.getValue(READ_ONLY_FIELD,Boolean.class));
+    return declaringType.represents(void.class) ? new WithImplicitType(name,targetType,annotation.getValue(ForField.READ_ONLY,Boolean.class)) : new WithExplicitType(name,targetType,declaringType,annotation.getValue(ForField.READ_ONLY,Boolean.class));
   }
 }

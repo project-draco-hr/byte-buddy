@@ -1,3 +1,7 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && enterType.equals(((Factory)other).enterType);
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  Factory factory=(Factory)object;
+  if (readOnly != factory.readOnly)   return false;
+  return enterType.equals(factory.enterType);
 }
