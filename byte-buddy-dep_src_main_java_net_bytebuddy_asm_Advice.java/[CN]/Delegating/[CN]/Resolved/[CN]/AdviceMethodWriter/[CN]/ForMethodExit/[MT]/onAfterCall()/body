@@ -9,6 +9,6 @@ case DOUBLE:
 methodVisitor.visitInsn(Opcodes.POP2);
 return;
 default :
-throw new IllegalStateException();
+throw new IllegalStateException("Unexpected size: " + adviceMethod.getReturnType().getStackSize());
 }
 }

@@ -2,9 +2,9 @@
   suppressionHandler.onStart(methodVisitor,metaDataHandler);
   int index=0, currentStackSize=0, padding=0;
   for (  OffsetMapping.Target offsetMapping : offsetMappings) {
-    TypeDescription typeDescription=adviceMethod.getParameters().get(index++).getType().asErasure();
-    currentStackSize+=typeDescription.getStackSize().getSize();
-    padding=Math.max(padding,currentStackSize + offsetMapping.resolveAccess(methodVisitor,Type.getType(typeDescription.getDescriptor()).getOpcode(Opcodes.ILOAD)));
+    Type type=Type.getType(adviceMethod.getParameters().get(index++).getType().asErasure().getDescriptor());
+    currentStackSize+=type.getSize();
+    padding=Math.max(padding,currentStackSize + offsetMapping.resolveAccess(methodVisitor,type.getOpcode(Opcodes.ILOAD)));
   }
   methodVisitor.visitMethodInsn(Opcodes.ACC_STATIC,adviceMethod.getDeclaringType().getInternalName(),adviceMethod.getInternalName(),adviceMethod.getDescriptor(),false);
   onAfterCall();
