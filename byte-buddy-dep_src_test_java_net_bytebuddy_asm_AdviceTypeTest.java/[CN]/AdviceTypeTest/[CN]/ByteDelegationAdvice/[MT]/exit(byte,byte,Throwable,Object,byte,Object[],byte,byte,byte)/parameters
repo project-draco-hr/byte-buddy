@@ -1,0 +1,9 @@
+byte result
+byte enter
+Throwable throwable
+Object boxedReturn
+byte argument
+Object[] boxed
+byte field
+byte staticField
+byte custom

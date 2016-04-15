@@ -11,7 +11,7 @@ if (parameter.getType().isPrimitive()) {
   ForBoxedParameter.BoxingDispatcher.of(parameter.getType()).loadBoxed(methodVisitor,parameter.getOffset());
 }
  else {
-  methodVisitor.visitIntInsn(Opcodes.ALOAD,parameter.getOffset());
+  methodVisitor.visitVarInsn(Opcodes.ALOAD,parameter.getOffset());
 }
 methodVisitor.visitInsn(Opcodes.AASTORE);
 stackSize=stackSize.maximum(parameter.getType().getStackSize());

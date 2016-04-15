@@ -1,0 +1,6 @@
+short value
+short argument
+Object[] boxed
+short field
+short staticField
+short custom

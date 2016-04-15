@@ -1,0 +1,6 @@
+float value
+float argument
+Object[] boxed
+float field
+float staticField
+float custom

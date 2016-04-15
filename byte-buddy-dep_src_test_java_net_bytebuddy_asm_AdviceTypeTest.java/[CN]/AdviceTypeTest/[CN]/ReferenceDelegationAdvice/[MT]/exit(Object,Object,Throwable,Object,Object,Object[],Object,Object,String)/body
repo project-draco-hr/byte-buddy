@@ -1,0 +1,22 @@
+{
+  if ((exception ? result != null : !result.equals(FOO)) || !enter.equals(FOO + BAR) || !(exception ? throwable instanceof RuntimeException : throwable == null)) {
+    throw new AssertionError();
+  }
+  if (exception ? boxedReturn != null : !boxedReturn.equals(FOO)) {
+    throw new AssertionError();
+  }
+  if (!argument.equals(FOO)) {
+    throw new AssertionError();
+  }
+  if (boxed.length != 2 || !boxed[0].equals(FOO) || !boxed[1].equals(FOO)) {
+    throw new AssertionError();
+  }
+  if (!field.equals(FOO) || !staticField.equals(FOO)) {
+    throw new AssertionError();
+  }
+  if (!custom.equals(FOO)) {
+    throw new AssertionError();
+  }
+  exit++;
+  return FOO;
+}

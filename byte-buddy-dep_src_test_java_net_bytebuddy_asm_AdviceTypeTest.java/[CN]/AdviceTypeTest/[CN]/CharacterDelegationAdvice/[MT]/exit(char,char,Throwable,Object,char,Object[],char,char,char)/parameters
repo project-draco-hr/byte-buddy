@@ -1,0 +1,9 @@
+char result
+char enter
+Throwable throwable
+Object boxedReturn
+char argument
+Object[] boxed
+char field
+char staticField
+char custom

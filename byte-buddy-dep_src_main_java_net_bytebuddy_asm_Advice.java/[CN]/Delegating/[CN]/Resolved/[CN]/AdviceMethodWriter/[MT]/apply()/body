@@ -1,13 +1,13 @@
 {
   suppressionHandler.onStart(methodVisitor,metaDataHandler);
-  int index=0, currentStackSize=0, padding=0;
+  int index=0, currentStackSize=0, maximumStackSize=0;
   for (  OffsetMapping.Target offsetMapping : offsetMappings) {
     Type type=Type.getType(adviceMethod.getParameters().get(index++).getType().asErasure().getDescriptor());
     currentStackSize+=type.getSize();
-    padding=Math.max(padding,currentStackSize + offsetMapping.resolveAccess(methodVisitor,type.getOpcode(Opcodes.ILOAD)));
+    maximumStackSize=Math.max(maximumStackSize,currentStackSize + offsetMapping.resolveAccess(methodVisitor,type.getOpcode(Opcodes.ILOAD)));
   }
-  methodVisitor.visitMethodInsn(Opcodes.ACC_STATIC,adviceMethod.getDeclaringType().getInternalName(),adviceMethod.getInternalName(),adviceMethod.getDescriptor(),false);
+  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,adviceMethod.getDeclaringType().getInternalName(),adviceMethod.getInternalName(),adviceMethod.getDescriptor(),false);
   onAfterCall();
   suppressionHandler.onEndSkipped(methodVisitor,metaDataHandler,this);
-  metaDataHandler.recordMaxima(currentStackSize,EMPTY);
+  metaDataHandler.recordMaxima(maximumStackSize,EMPTY);
 }

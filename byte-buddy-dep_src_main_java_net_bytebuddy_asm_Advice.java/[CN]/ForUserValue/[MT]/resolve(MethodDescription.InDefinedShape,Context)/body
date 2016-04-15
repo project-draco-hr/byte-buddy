@@ -7,6 +7,18 @@
     return Target.ForNullConstant.INSTANCE;
   }
  else   if ((target.getType().asErasure().isAssignableFrom(String.class) && value instanceof String) || (target.getType().isPrimitive() && target.getType().asErasure().isInstanceOrWrapper(value))) {
+    if (value instanceof Boolean) {
+      value=(Boolean)value ? 1 : 0;
+    }
+ else     if (value instanceof Byte) {
+      value=((Byte)value).intValue();
+    }
+ else     if (value instanceof Short) {
+      value=((Short)value).intValue();
+    }
+ else     if (value instanceof Character) {
+      value=(int)((Character)value).charValue();
+    }
     return new Target.ForConstantPoolValue(value);
   }
  else   if (target.getType().asErasure().isAssignableFrom(Class.class) && value instanceof Class) {

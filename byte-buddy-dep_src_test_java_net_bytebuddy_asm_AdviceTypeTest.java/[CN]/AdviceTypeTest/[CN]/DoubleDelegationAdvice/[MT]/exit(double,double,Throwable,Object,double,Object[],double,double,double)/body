@@ -1,0 +1,16 @@
+{
+  if (result != (exception ? 0 : VALUE) || enter != VALUE * 2 || !(exception ? throwable instanceof RuntimeException : throwable == null)) {
+    throw new AssertionError();
+  }
+  if (!boxedReturn.equals((double)(exception ? NUMERIC_DEFAULT : VALUE))) {
+    throw new AssertionError();
+  }
+  if (boxed.length != 2 || !boxed[0].equals((double)VALUE) || !boxed[1].equals((double)VALUE)) {
+    throw new AssertionError();
+  }
+  if (custom != VALUE) {
+    throw new AssertionError();
+  }
+  exit++;
+  return VALUE;
+}

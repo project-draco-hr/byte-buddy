@@ -1,0 +1,22 @@
+{
+  if (result == exception || !enter || !(exception ? throwable instanceof RuntimeException : throwable == null)) {
+    throw new AssertionError();
+  }
+  if (boxedReturn.equals(exception)) {
+    throw new AssertionError();
+  }
+  if (!argument) {
+    throw new AssertionError();
+  }
+  if (boxed.length != 2 || !boxed[0].equals(BOOLEAN) || !boxed[1].equals(BOOLEAN)) {
+    throw new AssertionError();
+  }
+  if (!field || !staticField) {
+    throw new AssertionError();
+  }
+  if (!custom) {
+    throw new AssertionError();
+  }
+  exit++;
+  return BOOLEAN;
+}

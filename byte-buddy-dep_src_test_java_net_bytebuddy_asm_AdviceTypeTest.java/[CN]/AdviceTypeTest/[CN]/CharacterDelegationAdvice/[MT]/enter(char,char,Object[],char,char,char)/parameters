@@ -1,0 +1,6 @@
+char value
+char argument
+Object[] boxed
+char field
+char staticField
+char custom

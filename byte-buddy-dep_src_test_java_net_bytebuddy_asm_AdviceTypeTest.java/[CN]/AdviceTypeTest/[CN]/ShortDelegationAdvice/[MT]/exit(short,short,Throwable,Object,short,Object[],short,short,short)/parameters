@@ -1,0 +1,9 @@
+short result
+short enter
+Throwable throwable
+Object boxedReturn
+short argument
+Object[] boxed
+short field
+short staticField
+short custom

@@ -1,0 +1,9 @@
+double result
+double enter
+Throwable throwable
+Object boxedReturn
+double argument
+Object[] boxed
+double field
+double staticField
+double custom
