@@ -7,20 +7,6 @@
   }
   methodVisitor.visitMethodInsn(Opcodes.ACC_STATIC,adviceMethod.getDeclaringType().getInternalName(),adviceMethod.getInternalName(),adviceMethod.getDescriptor(),false);
   suppressionHandler.onEnd(methodVisitor,metaDataHandler,returnValueProducer);
-  if (adviceMethod.getReturnType().represents(boolean.class) || adviceMethod.getReturnType().represents(byte.class) || adviceMethod.getReturnType().represents(short.class)|| adviceMethod.getReturnType().represents(char.class)|| adviceMethod.getReturnType().represents(int.class)) {
-    methodVisitor.visitIntInsn(Opcodes.ISTORE,adviceMethod.getStackSize());
-  }
- else   if (adviceMethod.getReturnType().represents(long.class)) {
-    methodVisitor.visitIntInsn(Opcodes.LSTORE,adviceMethod.getStackSize());
-  }
- else   if (adviceMethod.getReturnType().represents(float.class)) {
-    methodVisitor.visitIntInsn(Opcodes.FSTORE,adviceMethod.getStackSize());
-  }
- else   if (adviceMethod.getReturnType().represents(double.class)) {
-    methodVisitor.visitIntInsn(Opcodes.DSTORE,adviceMethod.getStackSize());
-  }
- else   if (!adviceMethod.getReturnType().represents(void.class)) {
-    methodVisitor.visitIntInsn(Opcodes.ASTORE,adviceMethod.getStackSize());
-  }
+  onReturn();
   metaDataHandler.recordMaxima(currentStackSize,0);
 }
