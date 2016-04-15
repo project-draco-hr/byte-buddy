@@ -9,5 +9,5 @@
   methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,adviceMethod.getDeclaringType().getInternalName(),adviceMethod.getInternalName(),adviceMethod.getDescriptor(),false);
   onAfterCall();
   suppressionHandler.onEndSkipped(methodVisitor,metaDataHandler,this);
-  metaDataHandler.recordMaxima(maximumStackSize,EMPTY);
+  metaDataHandler.recordMaxima(Math.max(maximumStackSize,adviceMethod.getReturnType().getStackSize().getSize()),EMPTY);
 }

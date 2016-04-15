@@ -1,0 +1,4 @@
+{
+  Class<?> type=new ByteBuddy().redefine(Sample.class).visit(Advice.to(ExceptionSuppressionAdvice.class).on(named(FOO + BAR))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethod(FOO + BAR).invoke(type.newInstance()),nullValue(Object.class));
+}

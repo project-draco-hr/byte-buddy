@@ -1,4 +1,4 @@
 {
-  Class<?> dynamicType=new ByteBuddy().redefine(Sample.class).visit(Advice.to(type).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> dynamicType=new ByteBuddy().redefine(type).visit(Advice.to(type).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(dynamicType.getDeclaredMethod(FOO).invoke(dynamicType.newInstance()),is((Object)FOO));
 }
