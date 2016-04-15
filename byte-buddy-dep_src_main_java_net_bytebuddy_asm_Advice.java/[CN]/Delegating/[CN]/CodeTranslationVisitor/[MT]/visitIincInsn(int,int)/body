@@ -1,0 +1,9 @@
+{
+  Resolved.OffsetMapping.Target target=offsetMappings.get(offset);
+  if (target != null) {
+    metaDataHandler.recordPadding(target.resolveIncrement(mv,increment));
+  }
+ else {
+    mv.visitIincInsn(adjust(offset + instrumentedMethod.getStackSize() - adviceMethod.getStackSize()),increment);
+  }
+}

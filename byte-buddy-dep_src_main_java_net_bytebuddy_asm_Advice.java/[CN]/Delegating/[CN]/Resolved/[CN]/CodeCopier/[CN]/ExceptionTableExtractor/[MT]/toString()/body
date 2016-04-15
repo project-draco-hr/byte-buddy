@@ -1,0 +1,3 @@
+{
+  return "Advice.Dispatcher.Delegating.Resolved.CodeCopier.ExceptionTableExtractor{" + "methodVisitor=" + methodVisitor + '}';
+}

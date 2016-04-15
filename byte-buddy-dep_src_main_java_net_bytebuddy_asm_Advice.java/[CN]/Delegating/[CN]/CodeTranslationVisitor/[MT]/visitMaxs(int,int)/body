@@ -1,0 +1,3 @@
+{
+  metaDataHandler.recordMaxima(stackSize,localVariableLength);
+}

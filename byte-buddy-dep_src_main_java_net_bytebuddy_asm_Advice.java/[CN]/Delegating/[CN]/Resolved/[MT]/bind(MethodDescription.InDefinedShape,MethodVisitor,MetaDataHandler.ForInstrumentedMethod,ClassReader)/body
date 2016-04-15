@@ -1,0 +1,3 @@
+{
+  return new CodeCopier(instrumentedMethod,methodVisitor,metaDataHandler,suppressionHandler.bind(),classReader);
+}
