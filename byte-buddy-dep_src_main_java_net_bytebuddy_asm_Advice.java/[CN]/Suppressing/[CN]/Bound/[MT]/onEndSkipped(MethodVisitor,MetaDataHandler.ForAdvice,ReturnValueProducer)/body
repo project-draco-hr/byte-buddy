@@ -1,0 +1,7 @@
+{
+  Label endOfHandler=new Label();
+  methodVisitor.visitJumpInsn(Opcodes.GOTO,endOfHandler);
+  onEnd(methodVisitor,metaDataHandler,returnValueProducer,endOfHandler);
+  methodVisitor.visitLabel(endOfHandler);
+  metaDataHandler.injectCompletionFrame(methodVisitor,false);
+}
