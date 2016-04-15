@@ -1,3 +1,0 @@
-{
-  super.visitLookupSwitchInsn(resolve(dflt),keys,resolve(labels));
-}

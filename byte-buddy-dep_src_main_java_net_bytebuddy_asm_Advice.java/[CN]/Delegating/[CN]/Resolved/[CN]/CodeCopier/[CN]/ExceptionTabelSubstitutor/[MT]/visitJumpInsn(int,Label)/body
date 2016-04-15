@@ -1,3 +1,0 @@
-{
-  super.visitJumpInsn(opcode,resolve(label));
-}

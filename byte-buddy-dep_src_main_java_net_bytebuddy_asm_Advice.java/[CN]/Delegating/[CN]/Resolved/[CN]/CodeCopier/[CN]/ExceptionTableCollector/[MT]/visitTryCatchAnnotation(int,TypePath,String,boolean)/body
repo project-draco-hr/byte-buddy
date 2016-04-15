@@ -1,3 +1,0 @@
-{
-  return methodVisitor.visitTryCatchAnnotation(typeReference,typePath,descriptor,visible);
-}

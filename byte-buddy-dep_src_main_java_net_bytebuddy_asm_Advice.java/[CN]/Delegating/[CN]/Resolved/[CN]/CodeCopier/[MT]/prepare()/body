@@ -1,4 +1,0 @@
-{
-  classReader.accept(new ExceptionTableExtractor(),ClassReader.SKIP_FRAMES | ClassReader.SKIP_DEBUG);
-  suppressionHandler.onPrepare(methodVisitor);
-}

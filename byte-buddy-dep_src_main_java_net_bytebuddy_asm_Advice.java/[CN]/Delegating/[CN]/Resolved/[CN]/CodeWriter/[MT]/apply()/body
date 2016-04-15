@@ -1,0 +1,3 @@
+{
+  methodVisitor.visitMethodInsn(Opcodes.ACC_STATIC,adviceMethod.getDeclaringType().getInternalName(),adviceMethod.getInternalName(),adviceMethod.getDescriptor(),false);
+}

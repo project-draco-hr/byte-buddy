@@ -1,3 +1,0 @@
-{
-  classReader.accept(this,ClassReader.SKIP_DEBUG | metaDataHandler.getReaderHint());
-}

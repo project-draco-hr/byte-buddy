@@ -1,5 +1,0 @@
-{
-  substitutions.put(start,labels.get(index++));
-  substitutions.put(end,labels.get(index++));
-  substitutions.put(handler,labels.get(index++));
-}

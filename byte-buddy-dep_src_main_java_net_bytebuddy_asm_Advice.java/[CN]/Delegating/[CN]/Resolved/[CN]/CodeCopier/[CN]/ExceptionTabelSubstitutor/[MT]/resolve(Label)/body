@@ -1,4 +1,0 @@
-{
-  Label substitution=substitutions.get(label);
-  return substitution == null ? label : substitution;
-}
