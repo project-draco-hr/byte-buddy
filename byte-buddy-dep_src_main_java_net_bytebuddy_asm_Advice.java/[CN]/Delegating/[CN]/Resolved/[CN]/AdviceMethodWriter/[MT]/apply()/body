@@ -7,7 +7,11 @@
     padding=Math.max(padding,currentStackSize + offsetMapping.resolveAccess(methodVisitor,Type.getType(typeDescription.getDescriptor()).getOpcode(Opcodes.ILOAD)));
   }
   methodVisitor.visitMethodInsn(Opcodes.ACC_STATIC,adviceMethod.getDeclaringType().getInternalName(),adviceMethod.getInternalName(),adviceMethod.getDescriptor(),false);
+  onAfterCall();
+  Label endOfMethod=new Label();
+  methodVisitor.visitJumpInsn(Opcodes.GOTO,endOfMethod);
   suppressionHandler.onEnd(methodVisitor,metaDataHandler,this);
-  onReturn();
+  methodVisitor.visitLabel(endOfMethod);
+  metaDataHandler.injectCompletionFrame(methodVisitor,false);
   metaDataHandler.recordMaxima(currentStackSize,EMPTY);
 }

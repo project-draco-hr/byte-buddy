@@ -1,0 +1,14 @@
+{
+switch (adviceMethod.getReturnType().getStackSize()) {
+case ZERO:
+    return;
+case SINGLE:
+  methodVisitor.visitInsn(Opcodes.POP);
+return;
+case DOUBLE:
+methodVisitor.visitInsn(Opcodes.POP2);
+return;
+default :
+throw new IllegalStateException();
+}
+}
