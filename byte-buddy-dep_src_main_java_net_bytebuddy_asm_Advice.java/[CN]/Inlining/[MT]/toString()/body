@@ -1,0 +1,3 @@
+{
+  return "Advice.Dispatcher.Inlining{" + "adviceMethod=" + adviceMethod + '}';
+}

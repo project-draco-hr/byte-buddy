@@ -1,3 +1,0 @@
-{
-  return "Advice.Dispatcher.Active.Resolved.CodeCopier{" + "instrumentedMethod=" + instrumentedMethod + ", methodVisitor="+ methodVisitor+ ", metaDataHandler="+ metaDataHandler+ ", suppressionHandler="+ suppressionHandler+ ", classReader="+ classReader+ ", labels="+ labels+ '}';
-}

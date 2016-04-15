@@ -1,3 +1,0 @@
-{
-  return "Advice.Dispatcher.Active.Resolved.ForMethodExit.WithoutExceptionHandler{" + "adviceMethod=" + adviceMethod + ", offsetMappings="+ offsetMappings+ '}';
-}

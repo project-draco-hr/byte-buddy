@@ -1,3 +1,0 @@
-{
-  return adviceMethod.getInternalName().equals(internalName) && adviceMethod.getDescriptor().equals(descriptor) ? new ExceptionTabelSubstitutor(Active.Resolved.this.apply(methodVisitor,metaDataHandler,instrumentedMethod,suppressionHandler)) : IGNORE_METHOD;
-}

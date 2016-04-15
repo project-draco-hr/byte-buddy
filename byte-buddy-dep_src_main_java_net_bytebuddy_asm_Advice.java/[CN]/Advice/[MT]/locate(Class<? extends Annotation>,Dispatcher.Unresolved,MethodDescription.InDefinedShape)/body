@@ -6,7 +6,7 @@
  else     if (!methodDescription.isStatic()) {
       throw new IllegalStateException("Advice for " + methodDescription + " is not static");
     }
-    return new Dispatcher.Active(methodDescription);
+    return new Dispatcher.Inlining(methodDescription);
   }
  else {
     return dispatcher;

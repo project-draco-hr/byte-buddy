@@ -1,3 +1,3 @@
 {
-  return "Advice.Dispatcher.Active.CodeTranslationVisitor.ForMethodExit{" + "instrumentedMethod=" + instrumentedMethod + ", adviceMethod="+ adviceMethod+ ", padding="+ padding+ '}';
+  return "Advice.Dispatcher.Inlining.CodeTranslationVisitor.ForMethodExit{" + "instrumentedMethod=" + instrumentedMethod + ", adviceMethod="+ adviceMethod+ ", padding="+ padding+ '}';
 }
