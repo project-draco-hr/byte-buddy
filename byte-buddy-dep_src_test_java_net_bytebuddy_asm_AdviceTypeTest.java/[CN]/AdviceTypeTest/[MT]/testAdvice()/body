@@ -1,5 +1,5 @@
 {
-  Class<?> type=new ByteBuddy().redefine(advice).visit(Advice.withCustomMapping().bind(CustomAnnotation.class,new Advice.DynamicValue.ForFixedValue(value)).to(advice).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=new ByteBuddy().redefine(advice).visit(DebuggingWrapper.makeDefault()).visit(Advice.withCustomMapping().bind(CustomAnnotation.class,new Advice.DynamicValue.ForFixedValue(value)).to(advice).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethod(FOO,this.type,this.type).invoke(type.newInstance(),value,value),is(value));
   assertThat(type.getDeclaredField(ENTER).get(null),is((Object)1));
   assertThat(type.getDeclaredField(EXIT).get(null),is((Object)1));

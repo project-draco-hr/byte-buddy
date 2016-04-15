@@ -1,4 +1,3 @@
 MethodVisitor methodVisitor
 MetaDataHandler.ForAdvice metaDataHandler
 ReturnValueProducer returnValueProducer
-Label endOfHandler

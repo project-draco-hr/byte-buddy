@@ -1,3 +1,3 @@
 {
-  onEnd(methodVisitor,metaDataHandler,returnValueProducer,new Label());
+  writeHandler(methodVisitor,metaDataHandler,returnValueProducer);
 }
