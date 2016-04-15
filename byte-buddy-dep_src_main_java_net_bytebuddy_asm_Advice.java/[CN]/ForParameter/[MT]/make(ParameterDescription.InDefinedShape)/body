@@ -1,4 +1,12 @@
 {
   AnnotationDescription.Loadable<Argument> annotation=parameterDescription.getDeclaredAnnotations().ofType(Argument.class);
-  return annotation == null ? UNDEFINED : new ForParameter(annotation.loadSilent(),parameterDescription.getType().asErasure());
+  if (annotation == null) {
+    return UNDEFINED;
+  }
+ else   if (readOnly && !annotation.loadSilent().readOnly()) {
+    throw new IllegalStateException("Cannot define writable field access for " + parameterDescription);
+  }
+ else {
+    return new ForParameter(annotation.loadSilent(),parameterDescription.getType().asErasure());
+  }
 }

@@ -1,11 +1,15 @@
 {
-  if (parameterDescription.getDeclaredAnnotations().isAnnotationPresent(Thrown.class)) {
-    if (!parameterDescription.getType().represents(Throwable.class)) {
-      throw new IllegalStateException("Parameter must be of type Throwable for " + parameterDescription);
-    }
-    return this;
+  AnnotationDescription.Loadable<Thrown> annotation=parameterDescription.getDeclaredAnnotations().ofType(Thrown.class);
+  if (annotation == null) {
+    return UNDEFINED;
+  }
+ else   if (!parameterDescription.getType().represents(Throwable.class)) {
+    throw new IllegalStateException("Parameter must be of type Throwable for " + parameterDescription);
+  }
+ else   if (readOnly && !annotation.loadSilent().readOnly()) {
+    throw new IllegalStateException("Cannot write exception value for " + parameterDescription + " in read-only context");
   }
  else {
-    return UNDEFINED;
+    return annotation.loadSilent().readOnly() ? ForThrowable.READ_ONLY : ForThrowable.READ_WRITE;
   }
 }

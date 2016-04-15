@@ -1,4 +1,12 @@
 {
   AnnotationDescription.Loadable<Return> annotation=parameterDescription.getDeclaredAnnotations().ofType(Return.class);
-  return annotation == null ? UNDEFINED : new ForReturnValue(annotation.loadSilent().readOnly(),parameterDescription.getType().asErasure());
+  if (annotation == null) {
+    return UNDEFINED;
+  }
+ else   if (readOnly && !annotation.loadSilent().readOnly()) {
+    throw new IllegalStateException("Cannot write return value for " + parameterDescription + " in read-only context");
+  }
+ else {
+    return new ForReturnValue(annotation.loadSilent().readOnly(),parameterDescription.getType().asErasure());
+  }
 }

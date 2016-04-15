@@ -1,4 +1,12 @@
 {
   AnnotationDescription.Loadable<This> annotation=parameterDescription.getDeclaredAnnotations().ofType(This.class);
-  return annotation == null ? UNDEFINED : new ForThisReference(annotation.loadSilent().readOnly(),parameterDescription.getType().asErasure());
+  if (annotation == null) {
+    return UNDEFINED;
+  }
+ else   if (readOnly && !annotation.loadSilent().readOnly()) {
+    throw new IllegalStateException("Cannot write to this reference for " + parameterDescription + " in read-only context");
+  }
+ else {
+    return new ForThisReference(annotation.loadSilent().readOnly(),parameterDescription.getType().asErasure());
+  }
 }
