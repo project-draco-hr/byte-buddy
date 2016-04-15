@@ -1,3 +1,3 @@
 {
-  return "AgentBuilder.LambdaInstrumentationStrategy.LambdaInstanceFactory.BridgeMethodImplementation{" + "lambdaMethodName='" + lambdaMethodName + '\''+ ", lambdaMethod="+ lambdaMethod+ '}';
+  return "AgentBuilder.LambdaInstrumentationStrategy.MetaFactoryRedirection." + name();
 }
