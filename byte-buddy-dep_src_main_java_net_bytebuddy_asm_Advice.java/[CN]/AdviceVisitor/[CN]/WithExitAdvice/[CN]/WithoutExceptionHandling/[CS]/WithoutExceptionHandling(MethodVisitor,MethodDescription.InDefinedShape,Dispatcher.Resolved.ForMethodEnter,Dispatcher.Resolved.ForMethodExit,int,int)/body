@@ -1,0 +1,3 @@
+{
+  super(methodVisitor,instrumentedMethod,methodEnter,methodExit,instrumentedMethod.getReturnType().represents(void.class) ? Collections.<TypeDescription>emptyList() : Collections.singletonList(instrumentedMethod.getReturnType().asErasure()),writerFlags,readerFlags);
+}

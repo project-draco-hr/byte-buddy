@@ -1,0 +1,3 @@
+{
+  return adviceMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).loadSilent().onThrowable() ? new WithExceptionHandler(adviceMethod,userFactories,binaryRepresentation,enterType) : new WithoutExceptionHandler(adviceMethod,userFactories,binaryRepresentation,enterType);
+}

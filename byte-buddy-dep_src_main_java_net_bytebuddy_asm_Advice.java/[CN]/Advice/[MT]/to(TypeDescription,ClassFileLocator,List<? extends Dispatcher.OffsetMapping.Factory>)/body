@@ -8,8 +8,9 @@
     if (!methodEnter.isAlive() && !methodExit.isAlive()) {
       throw new IllegalArgumentException("No advice defined by " + typeDescription);
     }
-    Dispatcher.Resolved.ForMethodEnter resolved=methodEnter.asMethodEnter(userFactories);
-    return new Advice(resolved,methodExit.asMethodExitTo(userFactories,resolved),classFileLocator.locate(typeDescription.getName()).resolve());
+    ClassFileLocator.Resolution binaryRepresentation=methodEnter.isBinary() || methodExit.isBinary() ? classFileLocator.locate(typeDescription.getName()) : ClassFileLocator.Resolution.Illegal.INSTANCE;
+    Dispatcher.Resolved.ForMethodEnter resolved=methodEnter.asMethodEnter(userFactories,binaryRepresentation);
+    return new Advice(resolved,methodExit.asMethodExitTo(userFactories,binaryRepresentation,resolved));
   }
  catch (  IOException exception) {
     throw new IllegalStateException("Error reading class file of " + typeDescription,exception);

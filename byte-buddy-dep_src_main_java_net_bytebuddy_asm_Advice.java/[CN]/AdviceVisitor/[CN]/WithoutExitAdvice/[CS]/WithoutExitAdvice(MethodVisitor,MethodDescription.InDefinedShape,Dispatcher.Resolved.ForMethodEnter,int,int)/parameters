@@ -1,0 +1,5 @@
+MethodVisitor methodVisitor
+MethodDescription.InDefinedShape instrumentedMethod
+Dispatcher.Resolved.ForMethodEnter methodEnter
+int writerFlags
+int readerFlags

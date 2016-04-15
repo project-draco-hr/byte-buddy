@@ -1,7 +1,0 @@
-MethodVisitor methodVisitor
-MethodDescription.InDefinedShape instrumentedMethod
-Dispatcher.Resolved.ForMethodEnter methodEnter
-Dispatcher.Resolved.ForMethodExit methodExit
-byte[] binaryRepresentation
-int writerFlags
-int readerFlags

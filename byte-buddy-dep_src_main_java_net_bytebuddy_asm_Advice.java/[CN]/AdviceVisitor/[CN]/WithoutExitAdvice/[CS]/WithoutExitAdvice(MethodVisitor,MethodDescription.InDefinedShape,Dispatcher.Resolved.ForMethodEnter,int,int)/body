@@ -1,0 +1,3 @@
+{
+  super(methodVisitor,instrumentedMethod,methodEnter,Dispatcher.Inactive.INSTANCE,Collections.<TypeDescription>emptyList(),writerFlags,readerFlags);
+}

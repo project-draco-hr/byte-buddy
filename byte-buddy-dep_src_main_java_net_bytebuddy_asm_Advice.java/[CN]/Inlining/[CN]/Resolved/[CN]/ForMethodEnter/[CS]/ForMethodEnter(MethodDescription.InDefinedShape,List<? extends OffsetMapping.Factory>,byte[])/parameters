@@ -1,0 +1,3 @@
+MethodDescription.InDefinedShape adviceMethod
+List<? extends OffsetMapping.Factory> userFactories
+byte[] binaryRepresentation

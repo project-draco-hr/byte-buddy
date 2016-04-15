@@ -1,0 +1,4 @@
+{
+  super(adviceMethod,CompoundList.of(Arrays.asList(OffsetMapping.ForParameter.Factory.READ_WRITE,OffsetMapping.ForBoxedArguments.INSTANCE,OffsetMapping.ForThisReference.Factory.READ_WRITE,OffsetMapping.ForField.Factory.READ_WRITE,OffsetMapping.ForOrigin.Factory.INSTANCE,OffsetMapping.ForIgnored.INSTANCE,new OffsetMapping.ForEnterValue.Factory(enterType,false),OffsetMapping.ForReturnValue.Factory.READ_WRITE,OffsetMapping.ForBoxedReturnValue.INSTANCE,adviceMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).getValue(ON_THROWABLE,Boolean.class) ? OffsetMapping.ForThrowable.Factory.READ_WRITE : new OffsetMapping.Illegal(Thrown.class)),userFactories),binaryRepresentation,adviceMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).getValue(SUPPRESS_EXIT,TypeDescription.class));
+  this.enterType=enterType;
+}

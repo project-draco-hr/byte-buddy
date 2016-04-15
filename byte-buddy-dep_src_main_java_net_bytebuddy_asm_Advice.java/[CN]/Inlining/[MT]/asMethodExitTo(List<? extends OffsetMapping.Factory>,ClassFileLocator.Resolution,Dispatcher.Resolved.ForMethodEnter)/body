@@ -1,0 +1,3 @@
+{
+  return Resolved.ForMethodExit.of(adviceMethod,userFactories,binaryRepresentation.resolve(),dispatcher.getEnterType());
+}
