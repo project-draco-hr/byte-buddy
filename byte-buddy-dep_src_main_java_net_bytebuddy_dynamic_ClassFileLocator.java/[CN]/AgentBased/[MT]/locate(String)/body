@@ -5,7 +5,7 @@
     try {
       instrumentation.retransformClasses(classLoadingDelegate.locate(typeName));
       byte[] binaryRepresentation=classFileTransformer.getBinaryRepresentation();
-      return binaryRepresentation == null ? Resolution.Illegal.INSTANCE : new Resolution.Explicit(binaryRepresentation);
+      return binaryRepresentation == null ? new Resolution.Illegal(typeName) : new Resolution.Explicit(binaryRepresentation);
     }
   finally {
       instrumentation.removeTransformer(classFileTransformer);
@@ -15,6 +15,6 @@
     throw exception;
   }
 catch (  Exception ignored) {
-    return Resolution.Illegal.INSTANCE;
+    return new Resolution.Illegal(typeName);
   }
 }

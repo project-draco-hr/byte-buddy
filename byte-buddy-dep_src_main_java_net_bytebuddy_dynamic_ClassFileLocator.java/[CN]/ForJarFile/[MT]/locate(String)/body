@@ -1,7 +1,7 @@
 {
   ZipEntry zipEntry=jarFile.getEntry(typeName.replace('.','/') + CLASS_FILE_EXTENSION);
   if (zipEntry == null) {
-    return Resolution.Illegal.INSTANCE;
+    return new Resolution.Illegal(typeName);
   }
  else {
     InputStream inputStream=jarFile.getInputStream(zipEntry);

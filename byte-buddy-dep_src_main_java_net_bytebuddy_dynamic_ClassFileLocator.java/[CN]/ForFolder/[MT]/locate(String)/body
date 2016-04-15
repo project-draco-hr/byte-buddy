@@ -10,6 +10,6 @@
     }
   }
  else {
-    return Resolution.Illegal.INSTANCE;
+    return new Resolution.Illegal(typeName);
   }
 }
