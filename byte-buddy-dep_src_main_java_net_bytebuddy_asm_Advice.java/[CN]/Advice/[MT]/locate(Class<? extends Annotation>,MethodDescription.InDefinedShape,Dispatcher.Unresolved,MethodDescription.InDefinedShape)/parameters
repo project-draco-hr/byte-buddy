@@ -1,3 +1,4 @@
-Class<? extends Annotation> annotation
+Class<? extends Annotation> type
+MethodDescription.InDefinedShape receiver
 Dispatcher.Unresolved dispatcher
 MethodDescription.InDefinedShape methodDescription

@@ -1,0 +1,15 @@
+{
+  AnnotationDescription annotation=methodDescription.getDeclaredAnnotations().ofType(type);
+  if (annotation == null) {
+    return dispatcher;
+  }
+ else   if (dispatcher.isAlive()) {
+    throw new IllegalStateException("Duplicate advice for " + dispatcher + " and "+ methodDescription);
+  }
+ else   if (!methodDescription.isStatic()) {
+    throw new IllegalStateException("Advice for " + methodDescription + " is not static");
+  }
+ else {
+    return annotation.getValue(receiver,Boolean.class) ? new Dispatcher.Inlining(methodDescription) : new Dispatcher.Delegating(methodDescription);
+  }
+}
