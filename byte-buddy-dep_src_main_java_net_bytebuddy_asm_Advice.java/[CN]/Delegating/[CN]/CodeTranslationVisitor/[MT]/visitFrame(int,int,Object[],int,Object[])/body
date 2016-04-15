@@ -1,3 +1,0 @@
-{
-  metaDataHandler.translateFrame(mv,frameType,localVariableLength,localVariable,stackSize,stack);
-}

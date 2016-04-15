@@ -1,3 +1,0 @@
-{
-  return "Advice.Dispatcher.Delegating.Resolved.CodeWriter{" + "instrumentedMethod=" + instrumentedMethod + ", methodVisitor="+ methodVisitor+ ", metaDataHandler="+ metaDataHandler+ ", suppressionHandler="+ suppressionHandler+ '}';
-}

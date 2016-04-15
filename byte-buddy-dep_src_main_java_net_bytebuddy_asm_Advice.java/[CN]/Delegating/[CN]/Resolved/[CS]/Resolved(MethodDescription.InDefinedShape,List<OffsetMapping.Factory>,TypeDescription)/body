@@ -1,6 +1,6 @@
 {
   this.adviceMethod=adviceMethod;
-  offsetMappings=new HashMap<Integer,OffsetMapping>();
+  offsetMappings=new ArrayList<OffsetMapping>(adviceMethod.getParameters().size());
   for (  ParameterDescription.InDefinedShape parameterDescription : adviceMethod.getParameters()) {
     OffsetMapping offsetMapping=OffsetMapping.Factory.UNDEFINED;
     for (    OffsetMapping.Factory factory : factories) {
@@ -14,7 +14,7 @@
         }
       }
     }
-    offsetMappings.put(parameterDescription.getOffset(),offsetMapping == null ? new OffsetMapping.ForParameter(parameterDescription.getIndex(),READ_ONLY,parameterDescription.getType().asErasure()) : offsetMapping);
+    offsetMappings.add(offsetMapping == null ? new OffsetMapping.ForParameter(parameterDescription.getIndex(),READ_ONLY,parameterDescription.getType().asErasure()) : offsetMapping);
   }
   suppressionHandler=throwableType.represents(NoSuppression.class) ? SuppressionHandler.NoOp.INSTANCE : new SuppressionHandler.Suppressing(throwableType);
 }

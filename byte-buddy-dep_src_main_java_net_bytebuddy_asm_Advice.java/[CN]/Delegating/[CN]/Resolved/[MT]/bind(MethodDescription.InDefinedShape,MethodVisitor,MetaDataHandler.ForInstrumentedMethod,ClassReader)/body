@@ -1,3 +1,3 @@
 {
-  return new CodeWriter(instrumentedMethod,methodVisitor,metaDataHandler,suppressionHandler.bind());
+  return resolve(instrumentedMethod,methodVisitor,metaDataHandler);
 }

@@ -1,3 +1,0 @@
-{
-  return instrumentedMethod.getReturnType().getStackSize().getSize() + padding + offset;
-}

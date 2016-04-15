@@ -1,0 +1,26 @@
+{
+  suppressionHandler.onStart(methodVisitor,metaDataHandler);
+  int index=0, currentStackSize=0, padding=0;
+  for (  OffsetMapping.Target offsetMapping : offsetMappings) {
+    currentStackSize+=adviceMethod.getParameters().get(index++).getType().getStackSize().getSize();
+    padding=Math.max(padding,currentStackSize + offsetMapping.resolveAccess(methodVisitor,-1));
+  }
+  methodVisitor.visitMethodInsn(Opcodes.ACC_STATIC,adviceMethod.getDeclaringType().getInternalName(),adviceMethod.getInternalName(),adviceMethod.getDescriptor(),false);
+  suppressionHandler.onEnd(methodVisitor,metaDataHandler,returnValueProducer);
+  if (adviceMethod.getReturnType().represents(boolean.class) || adviceMethod.getReturnType().represents(byte.class) || adviceMethod.getReturnType().represents(short.class)|| adviceMethod.getReturnType().represents(char.class)|| adviceMethod.getReturnType().represents(int.class)) {
+    methodVisitor.visitIntInsn(Opcodes.ISTORE,adviceMethod.getStackSize());
+  }
+ else   if (adviceMethod.getReturnType().represents(long.class)) {
+    methodVisitor.visitIntInsn(Opcodes.LSTORE,adviceMethod.getStackSize());
+  }
+ else   if (adviceMethod.getReturnType().represents(float.class)) {
+    methodVisitor.visitIntInsn(Opcodes.FSTORE,adviceMethod.getStackSize());
+  }
+ else   if (adviceMethod.getReturnType().represents(double.class)) {
+    methodVisitor.visitIntInsn(Opcodes.DSTORE,adviceMethod.getStackSize());
+  }
+ else   if (!adviceMethod.getReturnType().represents(void.class)) {
+    methodVisitor.visitIntInsn(Opcodes.ASTORE,adviceMethod.getStackSize());
+  }
+  metaDataHandler.recordMaxima(currentStackSize,0);
+}

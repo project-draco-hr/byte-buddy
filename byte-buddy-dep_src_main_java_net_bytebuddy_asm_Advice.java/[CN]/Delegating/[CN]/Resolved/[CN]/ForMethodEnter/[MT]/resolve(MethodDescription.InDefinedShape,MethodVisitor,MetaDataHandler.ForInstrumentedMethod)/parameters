@@ -1,0 +1,3 @@
+MethodDescription.InDefinedShape instrumentedMethod
+MethodVisitor methodVisitor
+MetaDataHandler.ForInstrumentedMethod metaDataHandler

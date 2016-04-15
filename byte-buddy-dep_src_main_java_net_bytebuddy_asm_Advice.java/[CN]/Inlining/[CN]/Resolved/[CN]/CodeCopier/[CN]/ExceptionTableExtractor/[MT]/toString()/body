@@ -1,3 +1,0 @@
-{
-  return "Advice.Dispatcher.Inlining.Resolved.CodeCopier.ExceptionTableExtractor{" + "methodVisitor=" + methodVisitor + '}';
-}

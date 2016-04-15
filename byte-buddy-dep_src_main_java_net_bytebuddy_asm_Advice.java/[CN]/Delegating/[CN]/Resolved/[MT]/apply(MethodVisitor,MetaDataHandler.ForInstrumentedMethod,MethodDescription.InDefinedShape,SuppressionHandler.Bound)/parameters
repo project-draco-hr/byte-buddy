@@ -1,4 +1,0 @@
-MethodVisitor methodVisitor
-MetaDataHandler.ForInstrumentedMethod metaDataHandler
-MethodDescription.InDefinedShape instrumentedMethod
-SuppressionHandler.Bound suppressionHandler
