@@ -1,0 +1,4 @@
+{
+  WithStackSizeComputation.this.stackSize=Math.max(WithStackSizeComputation.this.stackSize,stackSize) + padding;
+  WithStackSizeComputation.this.localVariableLength=Math.max(WithStackSizeComputation.this.localVariableLength,localVariableLength - methodDescription.getStackSize() + instrumentedMethod.getStackSize() + requiredTypes.getStackSize());
+}

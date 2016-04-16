@@ -1,0 +1,3 @@
+{
+  return "Advice.MetaDataHandler.Default.WithStackSizeComputation{" + "instrumentedMethod=" + instrumentedMethod + ", stackSize="+ stackSize+ ", localVariableLength="+ localVariableLength+ "}";
+}

@@ -1,0 +1,3 @@
+{
+  return (writerFlags & ClassWriter.COMPUTE_MAXS) != 0 ? NoOp.INSTANCE : new Default(instrumentedMethod,new TypeList.Explicit(requiredTypes),new TypeList.Explicit(yieldedTypes));
+}

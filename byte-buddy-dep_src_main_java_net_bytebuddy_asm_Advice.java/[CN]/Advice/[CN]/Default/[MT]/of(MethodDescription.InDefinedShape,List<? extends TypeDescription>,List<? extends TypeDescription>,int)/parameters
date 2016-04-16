@@ -1,3 +1,4 @@
 MethodDescription.InDefinedShape instrumentedMethod
 List<? extends TypeDescription> requiredTypes
+List<? extends TypeDescription> yieldedTypes
 int writerFlags
