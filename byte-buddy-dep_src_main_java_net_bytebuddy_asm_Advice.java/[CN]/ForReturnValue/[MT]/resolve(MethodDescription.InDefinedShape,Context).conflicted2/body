@@ -1,11 +1,3 @@
 {
-  if (instrumentedMethod.getReturnType().represents(void.class)) {
-    return Target.ForNullConstant.INSTANCE;
-  }
- else   if (instrumentedMethod.getReturnType().isPrimitive()) {
-    return Target.ForBoxedParameter.of(instrumentedMethod.getStackSize() + context.getPadding(),instrumentedMethod.getReturnType());
-  }
- else {
-    return new Target.ForReadOnlyParameter(instrumentedMethod.getStackSize() + context.getPadding());
-  }
+  return new Target.ForBoxedArguments(instrumentedMethod.getParameters());
 }
