@@ -1,6 +1,0 @@
-MethodVisitor methodVisitor
-int frameType
-int localVariableLength
-Object[] localVariable
-int stackSize
-Object[] stack

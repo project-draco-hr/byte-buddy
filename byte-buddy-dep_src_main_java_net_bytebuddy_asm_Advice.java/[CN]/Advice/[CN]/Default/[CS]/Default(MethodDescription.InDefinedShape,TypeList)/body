@@ -1,0 +1,5 @@
+{
+  this.instrumentedMethod=instrumentedMethod;
+  this.requiredTypes=requiredTypes;
+  stackSize=Math.max(instrumentedMethod.getReturnType().getStackSize().getSize(),StackSize.SINGLE.getSize());
+}
