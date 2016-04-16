@@ -3,5 +3,4 @@
   methodVisitor.visitJumpInsn(Opcodes.GOTO,endOfHandler);
   onEnd(methodVisitor,metaDataHandler,returnValueProducer);
   methodVisitor.visitLabel(endOfHandler);
-  metaDataHandler.injectCompletionFrame(methodVisitor,false);
 }
