@@ -1,6 +1,0 @@
-{
-  super(methodVisitor,instrumentedMethod,methodEnter,methodExit,instrumentedMethod.getReturnType().represents(void.class) ? Collections.singletonList(TypeDescription.THROWABLE) : Arrays.asList(instrumentedMethod.getReturnType().asErasure(),TypeDescription.THROWABLE),writerFlags,readerFlags);
-  userStart=new Label();
-  userEnd=new Label();
-  exceptionalReturn=new Label();
-}

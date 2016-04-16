@@ -1,3 +1,0 @@
-{
-  super(methodDescription,requiredTypes,yieldedTypes,translationMode);
-}

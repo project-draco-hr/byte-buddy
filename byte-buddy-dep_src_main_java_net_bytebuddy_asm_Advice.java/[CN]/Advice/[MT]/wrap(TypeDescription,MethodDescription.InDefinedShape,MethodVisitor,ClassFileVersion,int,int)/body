@@ -3,15 +3,15 @@
     throw new IllegalStateException("Cannot advice abstract or native method " + methodDescription);
   }
  else   if (!methodExit.isAlive()) {
-    return new AdviceVisitor.WithoutExitAdvice(methodVisitor,methodDescription,methodEnter,writerFlags,readerFlags);
+    return new AdviceVisitor.WithoutExitAdvice(methodVisitor,methodDescription,methodEnter,classFileVersion,writerFlags,readerFlags);
   }
  else   if (methodExit.isSkipThrowable()) {
-    return new AdviceVisitor.WithExitAdvice.WithoutExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,writerFlags,readerFlags);
+    return new AdviceVisitor.WithExitAdvice.WithoutExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,classFileVersion,writerFlags,readerFlags);
   }
  else   if (methodDescription.isConstructor()) {
     throw new IllegalStateException("Cannot catch exception during constructor call for " + methodDescription);
   }
  else {
-    return new AdviceVisitor.WithExitAdvice.WithExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,writerFlags,readerFlags);
+    return new AdviceVisitor.WithExitAdvice.WithExceptionHandling(methodVisitor,methodDescription,methodEnter,methodExit,classFileVersion,writerFlags,readerFlags);
   }
 }

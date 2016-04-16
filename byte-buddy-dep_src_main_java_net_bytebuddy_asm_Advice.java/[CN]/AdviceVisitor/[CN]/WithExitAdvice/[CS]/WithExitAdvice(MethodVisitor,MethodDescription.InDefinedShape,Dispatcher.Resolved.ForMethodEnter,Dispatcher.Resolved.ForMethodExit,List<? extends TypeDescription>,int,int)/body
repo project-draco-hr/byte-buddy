@@ -1,4 +1,0 @@
-{
-  super(methodVisitor,instrumentedMethod,methodEnter,methodExit,yieldedTypes,writerFlags,readerFlags);
-  endOfMethod=new Label();
-}

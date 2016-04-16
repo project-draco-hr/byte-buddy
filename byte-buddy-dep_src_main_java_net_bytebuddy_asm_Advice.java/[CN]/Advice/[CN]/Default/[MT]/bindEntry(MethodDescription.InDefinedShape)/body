@@ -1,0 +1,4 @@
+{
+  stackSize=Math.max(stackSize,adviceMethod.getReturnType().getStackSize().getSize());
+  return new ForAdvice(adviceMethod);
+}

@@ -1,4 +1,0 @@
-{
-  super(instrumentedMethod,requiredTypes,yieldedTypes,expandFrames);
-  stackSize=Math.max(instrumentedMethod.getReturnType().getStackSize().getSize(),StackSize.SINGLE.getSize());
-}

@@ -1,6 +1,0 @@
-MethodVisitor methodVisitor
-MethodDescription.InDefinedShape instrumentedMethod
-Dispatcher.Resolved.ForMethodEnter methodEnter
-Dispatcher.Resolved.ForMethodExit methodExit
-int writerFlags
-int readerFlags

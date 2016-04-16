@@ -1,6 +1,0 @@
-MethodVisitor methodVisitor
-MetaDataHandler.ForAdvice metaDataHandler
-MethodDescription.InDefinedShape instrumentedMethod
-MethodDescription.InDefinedShape adviceMethod
-Map<Integer,Resolved.OffsetMapping.Target> offsetMappings
-SuppressionHandler.Bound suppressionHandler

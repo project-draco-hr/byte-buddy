@@ -1,0 +1,9 @@
+{
+  this.adviceMethod=adviceMethod;
+  this.instrumentedMethod=instrumentedMethod;
+  this.offsetMappings=offsetMappings;
+  this.methodVisitor=methodVisitor;
+  this.stackSizeHandler=stackSizeHandler;
+  this.stackFrameHandler=stackFrameHandler;
+  this.suppressionHandler=suppressionHandler;
+}

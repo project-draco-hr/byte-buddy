@@ -1,7 +1,7 @@
 {
   onUserExit();
   mv.visitLabel(endOfMethod);
-  metaDataHandler.injectCompletionFrame(mv,false);
+  stackFrameHandler.injectCompletionFrame(mv,false);
   methodExit.apply();
   onAdviceExit();
   if (instrumentedMethod.getReturnType().represents(void.class)) {

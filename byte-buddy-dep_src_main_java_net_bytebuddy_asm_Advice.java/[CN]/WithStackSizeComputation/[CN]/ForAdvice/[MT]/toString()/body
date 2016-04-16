@@ -1,3 +1,0 @@
-{
-  return "Advice.MetaDataHandler.Default.WithStackSizeComputation.ForAdvice{" + "instrumentedMethod=" + instrumentedMethod + ", methodDescription="+ methodDescription+ ", padding="+ padding+ "}";
-}

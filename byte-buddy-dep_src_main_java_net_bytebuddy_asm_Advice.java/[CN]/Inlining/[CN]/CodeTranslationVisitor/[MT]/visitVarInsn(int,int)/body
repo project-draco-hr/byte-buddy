@@ -1,7 +1,7 @@
 {
   Resolved.OffsetMapping.Target target=offsetMappings.get(offset);
   if (target != null) {
-    metaDataHandler.recordPadding(target.resolveAccess(mv,opcode));
+    stackSizeHandler.recordPadding(target.resolveAccess(mv,opcode));
   }
  else {
     mv.visitVarInsn(opcode,adjust(offset + instrumentedMethod.getStackSize() - adviceMethod.getStackSize()));

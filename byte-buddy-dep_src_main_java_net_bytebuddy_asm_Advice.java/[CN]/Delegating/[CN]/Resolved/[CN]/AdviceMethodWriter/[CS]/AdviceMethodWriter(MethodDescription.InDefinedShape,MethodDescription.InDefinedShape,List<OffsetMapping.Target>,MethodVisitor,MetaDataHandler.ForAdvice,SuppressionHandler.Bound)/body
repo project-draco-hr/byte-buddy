@@ -1,8 +1,0 @@
-{
-  this.adviceMethod=adviceMethod;
-  this.instrumentedMethod=instrumentedMethod;
-  this.offsetMappings=offsetMappings;
-  this.methodVisitor=methodVisitor;
-  this.metaDataHandler=metaDataHandler;
-  this.suppressionHandler=suppressionHandler;
-}

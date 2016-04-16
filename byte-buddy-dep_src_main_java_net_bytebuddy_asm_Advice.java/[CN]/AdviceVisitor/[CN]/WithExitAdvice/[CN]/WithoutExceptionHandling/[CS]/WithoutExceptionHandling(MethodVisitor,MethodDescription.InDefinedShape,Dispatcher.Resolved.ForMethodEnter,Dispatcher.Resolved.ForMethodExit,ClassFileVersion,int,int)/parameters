@@ -1,0 +1,7 @@
+MethodVisitor methodVisitor
+MethodDescription.InDefinedShape instrumentedMethod
+Dispatcher.Resolved.ForMethodEnter methodEnter
+Dispatcher.Resolved.ForMethodExit methodExit
+ClassFileVersion classFileVersion
+int writerFlags
+int readerFlags

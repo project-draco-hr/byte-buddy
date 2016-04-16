@@ -1,0 +1,3 @@
+{
+  super(methodVisitor,stackSizeHandler,stackFrameHandler,instrumentedMethod,adviceMethod,offsetMappings,suppressionHandler);
+}

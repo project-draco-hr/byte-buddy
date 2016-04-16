@@ -1,0 +1,6 @@
+MethodDescription.InDefinedShape instrumentedMethod
+List<? extends TypeDescription> requiredTypes
+List<? extends TypeDescription> yieldedTypes
+ClassFileVersion classFileVersion
+int writerFlags
+int readerFlags
