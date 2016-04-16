@@ -1,3 +1,6 @@
 {
-  writeHandler(methodVisitor,metaDataHandler,returnValueProducer);
+  methodVisitor.visitLabel(endOfMethod);
+  metaDataHandler.injectHandlerFrame(methodVisitor);
+  methodVisitor.visitInsn(Opcodes.POP);
+  returnValueProducer.storeDefaultValue(methodVisitor);
 }
