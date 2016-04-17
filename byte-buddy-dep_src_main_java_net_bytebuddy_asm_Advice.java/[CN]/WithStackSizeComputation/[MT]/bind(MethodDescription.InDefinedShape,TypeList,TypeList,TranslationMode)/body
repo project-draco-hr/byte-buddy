@@ -1,6 +1,0 @@
-{
-  if (translationMode == TranslationMode.ENTRY) {
-    stackSize=Math.max(adviceMethod.getReturnType().getStackSize().getSize(),stackSize);
-  }
-  return new ForAdvice(adviceMethod,requiredTypes,yieldedTypes,translationMode);
-}

@@ -1,3 +1,0 @@
-{
-  return new ForAdvice(adviceMethod,requiredTypes,yieldedTypes,translationMode);
-}

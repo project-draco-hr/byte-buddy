@@ -1,0 +1,6 @@
+{
+  this.adviceMethod=adviceMethod;
+  this.requiredTypes=requiredTypes;
+  this.yieldedTypes=yieldedTypes;
+  stackSize=Math.max(stackSize,adviceMethod.getReturnType().getStackSize().getSize());
+}

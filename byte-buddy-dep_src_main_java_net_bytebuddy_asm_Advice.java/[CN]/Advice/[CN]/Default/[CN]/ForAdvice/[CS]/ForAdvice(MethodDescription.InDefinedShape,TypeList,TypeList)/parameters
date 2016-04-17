@@ -1,1 +1,3 @@
 MethodDescription.InDefinedShape adviceMethod
+TypeList requiredTypes
+TypeList yieldedTypes

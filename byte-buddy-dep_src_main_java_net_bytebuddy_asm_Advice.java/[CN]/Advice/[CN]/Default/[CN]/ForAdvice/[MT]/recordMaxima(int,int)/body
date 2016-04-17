@@ -1,4 +1,4 @@
 {
   Default.this.stackSize=Math.max(Default.this.stackSize,stackSize) + padding;
-  Default.this.localVariableLength=Math.max(Default.this.localVariableLength,localVariableLength - adviceMethod.getStackSize() + instrumentedMethod.getStackSize() + requiredTypes.getStackSize());
+  Default.this.localVariableLength=Math.max(Default.this.localVariableLength,localVariableLength - adviceMethod.getStackSize() + instrumentedMethod.getStackSize() + requiredTypes.getStackSize() + yieldedTypes.getStackSize());
 }
