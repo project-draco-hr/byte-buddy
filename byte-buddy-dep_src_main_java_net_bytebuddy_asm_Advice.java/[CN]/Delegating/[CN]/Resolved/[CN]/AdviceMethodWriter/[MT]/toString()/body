@@ -1,3 +1,3 @@
 {
-  return "Advice.Dispatcher.Delegating.Resolved.AdviceMethodWriter{" + "instrumentedMethod=" + instrumentedMethod + ", methodVisitor="+ methodVisitor+ ", stackSizeHandler="+ stackSizeHandler+ ", stackFrameHandler="+ stackFrameHandler+ ", suppressionHandler="+ suppressionHandler+ '}';
+  return "Advice.Dispatcher.Delegating.Resolved.AdviceMethodWriter{" + "instrumentedMethod=" + instrumentedMethod + ", methodVisitor="+ methodVisitor+ ", methodSizeHandler="+ methodSizeHandler+ ", stackMapFrameHandler="+ stackMapFrameHandler+ ", suppressionHandler="+ suppressionHandler+ '}';
 }

@@ -1,8 +1,0 @@
-MethodVisitor methodVisitor
-StackSizeHandler.ForAdvice stackSizeHandler
-StackFrameHandler.ForAdvice stackFrameHandler
-MethodDescription.InDefinedShape instrumentedMethod
-MethodDescription.InDefinedShape adviceMethod
-Map<Integer,Resolved.OffsetMapping.Target> offsetMappings
-SuppressionHandler.Bound suppressionHandler
-int padding

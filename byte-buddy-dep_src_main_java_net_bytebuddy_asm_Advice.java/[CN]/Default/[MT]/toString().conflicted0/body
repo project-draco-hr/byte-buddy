@@ -1,0 +1,3 @@
+{
+  return "Advice.StackMapFrameHandler.Default{" + "instrumentedMethod=" + instrumentedMethod + ", requiredTypes="+ requiredTypes+ ", yieldedTypes="+ yieldedTypes+ ", expandFrames="+ expandFrames+ ", currentFrameDivergence="+ currentFrameDivergence+ '}';
+}

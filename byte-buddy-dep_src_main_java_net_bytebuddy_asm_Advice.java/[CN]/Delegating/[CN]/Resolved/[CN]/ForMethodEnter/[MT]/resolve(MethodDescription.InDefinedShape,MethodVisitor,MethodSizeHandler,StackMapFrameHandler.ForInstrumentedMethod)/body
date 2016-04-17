@@ -1,0 +1,7 @@
+{
+  List<OffsetMapping.Target> offsetMappings=new ArrayList<OffsetMapping.Target>(this.offsetMappings.size());
+  for (  OffsetMapping offsetMapping : this.offsetMappings) {
+    offsetMappings.add(offsetMapping.resolve(instrumentedMethod,OffsetMapping.Context.ForMethodEntry.of(instrumentedMethod)));
+  }
+  return new AdviceMethodWriter.ForMethodEnter(adviceMethod,instrumentedMethod,offsetMappings,methodVisitor,methodSizeHandler.bindEntry(adviceMethod),stackMapFrameHandler.bindEntry(adviceMethod),suppressionHandler.bind());
+}

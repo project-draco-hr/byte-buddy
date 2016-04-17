@@ -1,6 +1,6 @@
 {
   mv.visitLabel(exceptionalReturn);
-  stackFrameHandler.injectCompletionFrame(mv,true);
+  stackMapFrameHandler.injectCompletionFrame(mv,true);
   variable(Opcodes.ALOAD,instrumentedMethod.getReturnType().getStackSize().getSize());
   mv.visitInsn(Opcodes.ATHROW);
 }

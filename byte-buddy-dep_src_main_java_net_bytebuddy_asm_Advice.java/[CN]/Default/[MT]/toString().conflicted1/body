@@ -1,0 +1,3 @@
+{
+  return "Advice.StackMapFrameHandler.Default.TranslationMode." + name();
+}

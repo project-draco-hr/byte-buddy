@@ -1,0 +1,7 @@
+MethodDescription.InDefinedShape adviceMethod
+MethodDescription.InDefinedShape instrumentedMethod
+List<OffsetMapping.Target> offsetMappings
+MethodVisitor methodVisitor
+MethodSizeHandler.ForAdvice methodSizeHandler
+StackMapFrameHandler.ForAdvice stackMapFrameHandler
+SuppressionHandler.Bound suppressionHandler

@@ -1,5 +1,0 @@
-MethodVisitor methodVisitor
-StackSizeHandler stackSizeHandler
-StackFrameHandler.ForInstrumentedMethod stackFrameHandler
-MethodDescription.InDefinedShape instrumentedMethod
-SuppressionHandler.Bound suppressionHandler

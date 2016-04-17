@@ -1,0 +1,10 @@
+{
+  super(Opcodes.ASM5,methodVisitor);
+  this.methodSizeHandler=methodSizeHandler;
+  this.stackMapFrameHandler=stackMapFrameHandler;
+  this.instrumentedMethod=instrumentedMethod;
+  this.adviceMethod=adviceMethod;
+  this.offsetMappings=offsetMappings;
+  this.suppressionHandler=suppressionHandler;
+  endOfMethod=new Label();
+}

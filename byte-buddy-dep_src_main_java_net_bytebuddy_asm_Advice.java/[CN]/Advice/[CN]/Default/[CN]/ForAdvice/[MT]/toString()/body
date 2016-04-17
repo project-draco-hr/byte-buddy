@@ -1,0 +1,3 @@
+{
+  return "Advice.MethodSizeHandler.Default.ForAdvice{" + "adviceMethod=" + adviceMethod + ", requiredTypes="+ requiredTypes+ ", yieldedTypes="+ yieldedTypes+ ", padding="+ padding+ '}';
+}

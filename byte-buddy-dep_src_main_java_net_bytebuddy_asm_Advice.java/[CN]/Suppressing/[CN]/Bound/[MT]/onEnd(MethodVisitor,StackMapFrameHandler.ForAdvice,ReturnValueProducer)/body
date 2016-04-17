@@ -1,0 +1,6 @@
+{
+  methodVisitor.visitLabel(endOfMethod);
+  stackMapFrameHandler.injectHandlerFrame(methodVisitor);
+  methodVisitor.visitInsn(Opcodes.POP);
+  returnValueProducer.storeDefaultValue(methodVisitor);
+}

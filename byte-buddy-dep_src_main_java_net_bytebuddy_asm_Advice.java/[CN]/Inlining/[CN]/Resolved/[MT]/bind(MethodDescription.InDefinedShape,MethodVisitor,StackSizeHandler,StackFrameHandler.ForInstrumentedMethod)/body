@@ -1,3 +1,0 @@
-{
-  return new AdviceMethodInliner(instrumentedMethod,methodVisitor,stackSizeHandler,stackFrameHandler,suppressionHandler.bind(),new ClassReader(binaryRepresentation));
-}

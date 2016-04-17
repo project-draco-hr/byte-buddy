@@ -1,0 +1,3 @@
+{
+  return "Advice.StackMapFrameHandler.Default.TranslationMode.ForAdvice{" + "methodDescription=" + methodDescription + ", requiredTypes="+ requiredTypes+ ", yieldedTypes="+ yieldedTypes+ ", translationMode="+ translationMode+ '}';
+}

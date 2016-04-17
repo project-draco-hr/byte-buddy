@@ -1,4 +1,4 @@
 {
   onUserEnd();
-  mv.visitMaxs(stackSizeHandler.compoundStackSize(stackSize),stackSizeHandler.compoundLocalVariableLength(localVariableLength));
+  mv.visitMaxs(methodSizeHandler.compoundStackSize(stackSize),methodSizeHandler.compoundLocalVariableLength(localVariableLength));
 }

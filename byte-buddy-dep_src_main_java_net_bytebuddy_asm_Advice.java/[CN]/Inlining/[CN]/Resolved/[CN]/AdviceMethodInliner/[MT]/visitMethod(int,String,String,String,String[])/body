@@ -1,3 +1,3 @@
 {
-  return adviceMethod.getInternalName().equals(internalName) && adviceMethod.getDescriptor().equals(descriptor) ? new ExceptionTableSubstitutor(Inlining.Resolved.this.apply(methodVisitor,stackSizeHandler,stackFrameHandler,instrumentedMethod,suppressionHandler)) : IGNORE_METHOD;
+  return adviceMethod.getInternalName().equals(internalName) && adviceMethod.getDescriptor().equals(descriptor) ? new ExceptionTableSubstitutor(Inlining.Resolved.this.apply(methodVisitor,methodSizeHandler,stackMapFrameHandler,instrumentedMethod,suppressionHandler)) : IGNORE_METHOD;
 }

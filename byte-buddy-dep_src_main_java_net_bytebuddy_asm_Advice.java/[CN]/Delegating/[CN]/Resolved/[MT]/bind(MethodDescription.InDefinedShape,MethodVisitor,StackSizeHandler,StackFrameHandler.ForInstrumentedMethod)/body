@@ -1,6 +1,0 @@
-{
-  if (!adviceMethod.isVisibleTo(instrumentedMethod.getDeclaringType())) {
-    throw new IllegalStateException(adviceMethod + " is not visible to " + instrumentedMethod.getDeclaringType());
-  }
-  return resolve(instrumentedMethod,methodVisitor,stackSizeHandler,stackFrameHandler);
-}

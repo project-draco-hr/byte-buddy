@@ -1,0 +1,3 @@
+MethodVisitor methodVisitor
+StackMapFrameHandler.ForAdvice stackMapFrameHandler
+ReturnValueProducer returnValueProducer

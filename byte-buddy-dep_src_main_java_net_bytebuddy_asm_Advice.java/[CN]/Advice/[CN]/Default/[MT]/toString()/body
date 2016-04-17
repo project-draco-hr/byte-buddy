@@ -1,0 +1,3 @@
+{
+  return "Advice.MethodSizeHandler.Default{" + "instrumentedMethod=" + instrumentedMethod + ", requiredTypes="+ requiredTypes+ ", yieldedTypes="+ yieldedTypes+ ", stackSize="+ stackSize+ ", localVariableLength="+ localVariableLength+ '}';
+}
