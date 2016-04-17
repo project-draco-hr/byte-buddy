@@ -1,0 +1,3 @@
+{
+  Default.this.stackSize=Math.max(Default.this.stackSize,stackSize);
+}

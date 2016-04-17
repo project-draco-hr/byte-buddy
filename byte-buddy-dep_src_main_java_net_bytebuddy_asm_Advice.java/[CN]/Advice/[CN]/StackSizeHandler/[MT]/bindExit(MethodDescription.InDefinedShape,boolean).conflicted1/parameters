@@ -1,1 +1,2 @@
 MethodDescription.InDefinedShape adviceMethod
+boolean onThrowable

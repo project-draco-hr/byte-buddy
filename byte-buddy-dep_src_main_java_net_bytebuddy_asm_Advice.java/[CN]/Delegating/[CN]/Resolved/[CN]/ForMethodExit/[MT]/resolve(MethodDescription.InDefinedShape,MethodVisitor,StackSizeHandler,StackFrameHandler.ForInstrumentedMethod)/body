@@ -3,5 +3,5 @@
   for (  OffsetMapping offsetMapping : this.offsetMappings) {
     offsetMappings.add(offsetMapping.resolve(instrumentedMethod,OffsetMapping.Context.ForMethodExit.of(enterType)));
   }
-  return new AdviceMethodWriter.ForMethodExit(adviceMethod,instrumentedMethod,offsetMappings,methodVisitor,stackSizeHandler.bindExit(adviceMethod),stackFrameHandler.bindExit(adviceMethod),suppressionHandler.bind());
+  return new AdviceMethodWriter.ForMethodExit(adviceMethod,instrumentedMethod,offsetMappings,methodVisitor,stackSizeHandler.bindExit(adviceMethod,isSkipThrowable()),stackFrameHandler.bindExit(adviceMethod),suppressionHandler.bind());
 }

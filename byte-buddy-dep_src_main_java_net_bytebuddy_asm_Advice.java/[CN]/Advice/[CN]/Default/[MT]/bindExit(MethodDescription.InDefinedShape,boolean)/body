@@ -1,0 +1,4 @@
+{
+  stackSize=Math.max(stackSize,adviceMethod.getReturnType().getStackSize().maximum(onThrowable ? StackSize.ZERO : StackSize.SINGLE).getSize());
+  return new ForAdvice(adviceMethod,new TypeList.Explicit(CompoundList.of(requiredTypes,yieldedTypes)),new TypeList.Empty());
+}

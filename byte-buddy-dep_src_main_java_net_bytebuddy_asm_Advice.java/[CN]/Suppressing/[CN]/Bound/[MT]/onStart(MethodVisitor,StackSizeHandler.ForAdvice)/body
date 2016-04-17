@@ -1,3 +1,4 @@
 {
   methodVisitor.visitLabel(startOfMethod);
+  stackSizeHandler.recordMinimum(StackSize.SINGLE.getSize());
 }
