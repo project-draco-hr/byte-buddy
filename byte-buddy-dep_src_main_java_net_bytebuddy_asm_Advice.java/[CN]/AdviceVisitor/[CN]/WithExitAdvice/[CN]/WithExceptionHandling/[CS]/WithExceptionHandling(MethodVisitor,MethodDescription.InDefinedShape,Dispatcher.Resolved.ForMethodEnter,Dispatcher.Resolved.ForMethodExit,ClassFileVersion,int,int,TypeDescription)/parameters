@@ -5,3 +5,4 @@ Dispatcher.Resolved.ForMethodExit methodExit
 ClassFileVersion classFileVersion
 int writerFlags
 int readerFlags
+TypeDescription triggeringThrowable

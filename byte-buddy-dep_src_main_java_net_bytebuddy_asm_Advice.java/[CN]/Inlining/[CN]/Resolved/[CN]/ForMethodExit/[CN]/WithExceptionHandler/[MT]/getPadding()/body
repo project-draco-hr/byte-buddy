@@ -1,3 +1,3 @@
 {
-  return StackSize.SINGLE;
+  return triggeringThrowable.getStackSize();
 }

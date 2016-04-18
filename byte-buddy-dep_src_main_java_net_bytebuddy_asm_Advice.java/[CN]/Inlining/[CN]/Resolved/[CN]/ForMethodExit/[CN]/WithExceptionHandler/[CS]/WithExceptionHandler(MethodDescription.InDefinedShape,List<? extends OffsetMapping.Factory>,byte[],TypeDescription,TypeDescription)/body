@@ -1,3 +1,4 @@
 {
   super(adviceMethod,userFactories,binaryRepresentation,enterType);
+  this.triggeringThrowable=triggeringThrowable;
 }

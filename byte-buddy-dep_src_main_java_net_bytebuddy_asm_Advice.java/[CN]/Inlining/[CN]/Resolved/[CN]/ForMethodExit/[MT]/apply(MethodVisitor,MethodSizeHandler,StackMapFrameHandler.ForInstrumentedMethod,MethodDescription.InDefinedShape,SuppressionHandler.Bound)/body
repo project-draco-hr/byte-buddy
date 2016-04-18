@@ -3,5 +3,5 @@
   for (  Map.Entry<Integer,OffsetMapping> entry : this.offsetMappings.entrySet()) {
     offsetMappings.put(entry.getKey(),entry.getValue().resolve(instrumentedMethod,OffsetMapping.Context.ForMethodExit.of(enterType)));
   }
-  return new CodeTranslationVisitor.ForMethodExit(methodVisitor,methodSizeHandler.bindExit(adviceMethod,isSkipThrowable()),stackMapFrameHandler.bindExit(adviceMethod),instrumentedMethod,adviceMethod,offsetMappings,suppressionHandler,enterType.getStackSize().getSize() + getPadding().getSize());
+  return new CodeTranslationVisitor.ForMethodExit(methodVisitor,methodSizeHandler.bindExit(adviceMethod,getTriggeringThrowable().represents(NoExceptionHandler.class)),stackMapFrameHandler.bindExit(adviceMethod),instrumentedMethod,adviceMethod,offsetMappings,suppressionHandler,enterType.getStackSize().getSize() + getPadding().getSize());
 }

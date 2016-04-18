@@ -1,3 +1,3 @@
 {
-  return "Advice.AdviceVisitor.WithExitAdvice.WithExceptionHandling{" + "instrumentedMethod=" + instrumentedMethod + "}";
+  return "Advice.AdviceVisitor.WithExitAdvice.WithExceptionHandling{" + "instrumentedMethod=" + instrumentedMethod + ", triggeringThrowable="+ triggeringThrowable+ "}";
 }
