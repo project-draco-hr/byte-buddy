@@ -1,0 +1,4 @@
+{
+  enter++;
+  throw new UnsupportedOperationException();
+}
