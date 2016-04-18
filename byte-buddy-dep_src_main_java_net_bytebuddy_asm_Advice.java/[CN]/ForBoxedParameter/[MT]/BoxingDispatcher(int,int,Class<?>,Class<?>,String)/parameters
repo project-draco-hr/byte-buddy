@@ -1,0 +1,5 @@
+int load
+int store
+Class<?> wrapperType
+Class<?> primitiveType
+String unboxingMethod

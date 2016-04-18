@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{VoidAssignment.class,null},{BooleanAssignment.class,true},{ByteAssignment.class,NUMERIC_VALUE},{ShortAssignment.class,(short)NUMERIC_VALUE},{CharacterAssignment.class,(char)NUMERIC_VALUE},{IntegerAssignment.class,(int)NUMERIC_VALUE},{LongAssignment.class,(long)NUMERIC_VALUE},{FloatAssignment.class,(float)NUMERIC_VALUE},{DoubleAssignment.class,(double)NUMERIC_VALUE},{ReferenceAssignment.class,FOO}});
+}

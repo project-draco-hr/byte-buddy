@@ -1,0 +1,3 @@
+{
+  boxingDispatcher.storeUnboxed(methodVisitor,offset);
+}

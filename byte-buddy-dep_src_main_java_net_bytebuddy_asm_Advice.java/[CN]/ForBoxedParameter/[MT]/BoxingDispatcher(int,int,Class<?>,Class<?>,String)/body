@@ -1,0 +1,9 @@
+{
+  this.load=load;
+  this.store=store;
+  this.unboxingMethod=unboxingMethod;
+  owner=Type.getInternalName(wrapperType);
+  boxingDescriptor=Type.getMethodDescriptor(Type.getType(wrapperType),Type.getType(primitiveType));
+  unboxingDescriptor=Type.getMethodDescriptor(Type.getType(primitiveType));
+  stackSize=StackSize.of(primitiveType);
+}

@@ -2,8 +2,12 @@
 switch (opcode) {
 case Opcodes.ALOAD:
     methodVisitor.visitInsn(Opcodes.ACONST_NULL);
-  return NO_PADDING;
+  break;
+case Opcodes.ASTORE:
+onWrite(methodVisitor);
+break;
 default :
 throw new IllegalStateException("Unexpected opcode: " + opcode);
 }
+return NO_PADDING;
 }

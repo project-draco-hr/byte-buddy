@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Cannot write to read-only parameter at offset " + offset);
-}

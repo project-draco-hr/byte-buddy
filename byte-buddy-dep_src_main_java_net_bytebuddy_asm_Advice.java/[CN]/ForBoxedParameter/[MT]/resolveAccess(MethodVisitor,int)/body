@@ -3,6 +3,9 @@ switch (opcode) {
 case Opcodes.ALOAD:
     boxingDispatcher.loadBoxed(methodVisitor,offset);
   return boxingDispatcher.getStackSize().getSize() - 1;
+case Opcodes.ASTORE:
+onStore(methodVisitor);
+return NO_PADDING;
 default :
 throw new IllegalStateException("Unexpected opcode: " + opcode);
 }

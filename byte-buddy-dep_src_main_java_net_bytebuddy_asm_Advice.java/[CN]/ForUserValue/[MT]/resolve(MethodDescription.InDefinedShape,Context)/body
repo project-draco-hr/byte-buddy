@@ -4,7 +4,7 @@
     if (target.getType().isPrimitive()) {
       throw new IllegalStateException("Cannot map null to primitive type of " + target);
     }
-    return Target.ForNullConstant.INSTANCE;
+    return Target.ForNullConstant.READ_ONLY;
   }
  else   if ((target.getType().asErasure().isAssignableFrom(String.class) && value instanceof String) || (target.getType().isPrimitive() && target.getType().asErasure().isInstanceOrWrapper(value))) {
     if (value instanceof Boolean) {

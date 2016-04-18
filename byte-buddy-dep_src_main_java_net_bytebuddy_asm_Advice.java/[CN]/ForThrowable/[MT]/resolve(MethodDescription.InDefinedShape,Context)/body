@@ -1,4 +1,4 @@
 {
   int offset=instrumentedMethod.getStackSize() + context.getPadding() + instrumentedMethod.getReturnType().getStackSize().getSize();
-  return readOnly ? new Target.ForReadOnlyParameter(offset) : new Target.ForParameter(offset);
+  return readOnly ? new Target.ForParameter.ReadOnly(offset) : new Target.ForParameter.ReadWrite(offset);
 }

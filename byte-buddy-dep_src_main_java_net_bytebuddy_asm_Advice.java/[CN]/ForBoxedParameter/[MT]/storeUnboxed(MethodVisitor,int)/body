@@ -1,0 +1,5 @@
+{
+  methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,owner);
+  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,owner,unboxingMethod,unboxingDescriptor,false);
+  methodVisitor.visitVarInsn(store,offset);
+}

@@ -9,5 +9,5 @@
  else   if (readOnly && !parameters.get(index).getType().asErasure().isAssignableTo(targetType)) {
     throw new IllegalStateException(targetType + " is not assignable to " + parameters.get(index));
   }
-  return readOnly ? new Target.ForReadOnlyParameter(parameters.get(index).getOffset()) : new Target.ForParameter(parameters.get(index).getOffset());
+  return readOnly ? new Target.ForParameter.ReadOnly(parameters.get(index).getOffset()) : new Target.ForParameter.ReadWrite(parameters.get(index).getOffset());
 }

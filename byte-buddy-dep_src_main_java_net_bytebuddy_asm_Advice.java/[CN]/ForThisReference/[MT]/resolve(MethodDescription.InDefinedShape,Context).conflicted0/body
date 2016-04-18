@@ -11,5 +11,5 @@
  else   if (!context.isInitialized()) {
     throw new IllegalStateException("Cannot access this reference before calling constructor: " + instrumentedMethod);
   }
-  return readOnly ? new Target.ForReadOnlyParameter(THIS_REFERENCE) : new Target.ForParameter(THIS_REFERENCE);
+  return readOnly ? new Target.ForParameter.ReadOnly(THIS_REFERENCE) : new Target.ForParameter.ReadWrite(THIS_REFERENCE);
 }
