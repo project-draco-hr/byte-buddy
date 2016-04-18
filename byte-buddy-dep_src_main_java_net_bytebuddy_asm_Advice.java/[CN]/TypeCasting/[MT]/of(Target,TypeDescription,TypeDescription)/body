@@ -1,3 +1,0 @@
-{
-  return target.isAssignableTo(source) ? delegate : new TypeCasting(delegate,target);
-}

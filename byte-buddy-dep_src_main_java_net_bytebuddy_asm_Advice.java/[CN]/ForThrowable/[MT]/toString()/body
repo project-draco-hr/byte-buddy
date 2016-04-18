@@ -1,0 +1,3 @@
+{
+  return "Advice.Dispatcher.OffsetMapping.ForThrowable{" + "targetType=" + targetType + ", triggeringThrowable="+ triggeringThrowable+ ", readOnly="+ readOnly+ '}';
+}

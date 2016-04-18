@@ -3,14 +3,8 @@
   if (annotation == null) {
     return UNDEFINED;
   }
- else   if (!parameterDescription.getType().asErasure().isAssignableTo(Throwable.class)) {
+ else   if (!parameterDescription.getType().represents(Throwable.class)) {
     throw new IllegalStateException("Parameter must be a throwable type for " + parameterDescription);
-  }
- else   if (readOnly && !parameterDescription.getType().asErasure().isAssignableFrom(triggeringThrowable)) {
-    throw new IllegalStateException("Parameter must be a super type of " + triggeringThrowable);
-  }
- else   if (!readOnly && !parameterDescription.getType().represents(Throwable.class)) {
-    throw new IllegalStateException("Writable parameter must be exactly type of type Throwable");
   }
  else   if (readOnly && !annotation.loadSilent().readOnly()) {
     throw new IllegalStateException("Cannot write exception value for " + parameterDescription + " in read-only context");

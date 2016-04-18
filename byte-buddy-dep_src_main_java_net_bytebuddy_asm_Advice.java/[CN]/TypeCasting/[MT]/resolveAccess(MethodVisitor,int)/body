@@ -1,8 +1,0 @@
-{
-  try {
-    return delegate.resolveAccess(methodVisitor,opcode);
-  }
-  finally {
-    methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,target.getInternalName());
-  }
-}

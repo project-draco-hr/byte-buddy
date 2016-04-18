@@ -1,0 +1,6 @@
+{
+  int result=triggeringThrowable.hashCode();
+  result=31 * result + targetType.hashCode();
+  result=31 * result + (readOnly ? 1 : 0);
+  return result;
+}
