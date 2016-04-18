@@ -1,0 +1,4 @@
+{
+  exit++;
+  throwable=new IOException();
+}
