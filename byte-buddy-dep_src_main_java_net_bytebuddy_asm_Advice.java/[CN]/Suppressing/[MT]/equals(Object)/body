@@ -2,5 +2,5 @@
   if (this == object)   return true;
   if (object == null || getClass() != object.getClass())   return false;
   Suppressing that=(Suppressing)object;
-  return throwableType.equals(that.throwableType);
+  return suppressedType.equals(that.suppressedType);
 }

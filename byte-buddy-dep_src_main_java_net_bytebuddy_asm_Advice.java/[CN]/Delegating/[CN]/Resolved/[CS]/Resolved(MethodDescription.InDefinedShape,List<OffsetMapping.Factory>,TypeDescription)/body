@@ -16,5 +16,5 @@
     }
     offsetMappings.add(offsetMapping == null ? new OffsetMapping.ForParameter(parameterDescription.getIndex(),READ_ONLY,parameterDescription.getType().asErasure()) : offsetMapping);
   }
-  suppressionHandler=throwableType.represents(NoSuppression.class) ? SuppressionHandler.NoOp.INSTANCE : new SuppressionHandler.Suppressing(throwableType);
+  suppressionHandler=SuppressionHandler.Suppressing.of(throwableType);
 }

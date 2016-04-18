@@ -1,5 +1,5 @@
 {
-  this.throwableType=throwableType;
+  this.suppressedType=suppressedType;
   startOfMethod=new Label();
   endOfMethod=new Label();
 }

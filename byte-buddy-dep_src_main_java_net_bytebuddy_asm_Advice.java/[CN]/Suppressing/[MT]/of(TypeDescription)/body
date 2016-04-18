@@ -1,0 +1,3 @@
+{
+  return suppressedType.represents(NoSuppression.class) ? NoOp.INSTANCE : new Suppressing(suppressedType);
+}

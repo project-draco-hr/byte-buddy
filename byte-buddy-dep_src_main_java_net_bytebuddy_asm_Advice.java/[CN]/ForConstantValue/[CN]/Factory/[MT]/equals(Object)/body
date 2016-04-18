@@ -2,6 +2,5 @@
   if (this == object)   return true;
   if (object == null || getClass() != object.getClass())   return false;
   Factory factory=(Factory)object;
-  if (readOnly != factory.readOnly)   return false;
-  return enterType.equals(factory.enterType);
+  return readOnly == factory.readOnly && enterType.equals(factory.enterType);
 }

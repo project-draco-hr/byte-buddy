@@ -17,5 +17,5 @@
     offsetMappings.put(parameterDescription.getOffset(),offsetMapping == null ? new OffsetMapping.ForParameter(parameterDescription.getIndex(),READ_ONLY,parameterDescription.getType().asErasure()) : offsetMapping);
   }
   this.binaryRepresentation=binaryRepresentation;
-  suppressionHandler=throwableType.represents(NoSuppression.class) ? SuppressionHandler.NoOp.INSTANCE : new SuppressionHandler.Suppressing(throwableType);
+  suppressionHandler=SuppressionHandler.Suppressing.of(throwableType);
 }
