@@ -1,0 +1,3 @@
+TypeDescription targetType
+TypeDescription triggeringThrowable
+boolean readOnly

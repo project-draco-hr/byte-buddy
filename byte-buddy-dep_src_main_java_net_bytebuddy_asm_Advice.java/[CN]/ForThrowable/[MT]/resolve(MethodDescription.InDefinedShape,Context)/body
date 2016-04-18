@@ -1,0 +1,4 @@
+{
+  int offset=instrumentedMethod.getStackSize() + context.getPadding() + instrumentedMethod.getReturnType().getStackSize().getSize();
+  return readOnly ? Target.TypeCasting.of(new Target.ForReadOnlyParameter(offset),triggeringThrowable,targetType) : new Target.ForParameter(offset);
+}

@@ -1,0 +1,4 @@
+{
+  this.triggeringThrowable=triggeringThrowable;
+  this.readOnly=readOnly;
+}

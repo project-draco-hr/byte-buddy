@@ -1,3 +1,0 @@
-{
-  return adviceMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).getValue(ON_THROWABLE,TypeDescription.class).represents(NoExceptionHandler.class) ? new OffsetMapping.Illegal(Thrown.class) : this;
-}
