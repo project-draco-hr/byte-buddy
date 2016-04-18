@@ -1,5 +1,10 @@
 {
-  int length=instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1);
-  System.arraycopy(localVariable,0,translated,0,length);
-  return length;
+  int index=0;
+  if (!instrumentedMethod.isStatic()) {
+    translated[index++]=instrumentedMethod.isConstructor() ? Opcodes.UNINITIALIZED_THIS : toFrame(instrumentedMethod.getDeclaringType());
+  }
+  for (  TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
+    translated[index++]=toFrame(typeDescription);
+  }
+  return index;
 }
