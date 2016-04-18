@@ -1,0 +1,3 @@
+{
+  return new TypePool.LazyFacade(TypePool.Default.Precomputed.withObjectType(locate(classLoader),classFileLocator,readerMode));
+}

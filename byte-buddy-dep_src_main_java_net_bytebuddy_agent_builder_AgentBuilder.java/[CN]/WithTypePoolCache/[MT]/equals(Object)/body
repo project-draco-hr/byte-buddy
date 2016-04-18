@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  WithTypePoolCache that=(WithTypePoolCache)object;
+  return readerMode == that.readerMode;
+}
