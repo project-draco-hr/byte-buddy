@@ -1,0 +1,3 @@
+{
+  return builder.visit(Advice.to(BarAdvice.class).on(named(FOO)));
+}

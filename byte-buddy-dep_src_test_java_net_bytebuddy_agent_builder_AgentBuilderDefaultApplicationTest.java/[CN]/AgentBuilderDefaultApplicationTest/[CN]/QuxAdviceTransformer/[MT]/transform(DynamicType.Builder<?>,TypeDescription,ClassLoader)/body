@@ -1,0 +1,3 @@
+{
+  return builder.visit(Advice.to(QuxAdvice.class).on(named(FOO)));
+}
