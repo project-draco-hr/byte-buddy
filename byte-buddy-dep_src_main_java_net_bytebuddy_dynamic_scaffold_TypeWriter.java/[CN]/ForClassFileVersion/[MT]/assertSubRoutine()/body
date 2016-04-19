@@ -1,0 +1,5 @@
+{
+  if (!classFileVersion.isLessThan(ClassFileVersion.JAVA_V6)) {
+    throw new IllegalStateException("Cannot write subroutine for class file version " + classFileVersion);
+  }
+}

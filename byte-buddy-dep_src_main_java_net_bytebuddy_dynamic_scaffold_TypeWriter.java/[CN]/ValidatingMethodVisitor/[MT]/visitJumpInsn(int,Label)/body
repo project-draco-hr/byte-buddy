@@ -1,0 +1,6 @@
+{
+  if (opcode == Opcodes.JSR) {
+    constraint.assertSubRoutine();
+  }
+  super.visitJumpInsn(opcode,label);
+}
