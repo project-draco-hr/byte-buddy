@@ -1,0 +1,8 @@
+{
+  TypePool.CacheProvider cacheProvider=cacheProviders.get(classLoader);
+  while (cacheProvider == null) {
+    cacheProviders.putIfAbsent(classLoader,new TypePool.CacheProvider.Simple());
+    cacheProvider=cacheProviders.get(classLoader);
+  }
+  return cacheProvider;
+}

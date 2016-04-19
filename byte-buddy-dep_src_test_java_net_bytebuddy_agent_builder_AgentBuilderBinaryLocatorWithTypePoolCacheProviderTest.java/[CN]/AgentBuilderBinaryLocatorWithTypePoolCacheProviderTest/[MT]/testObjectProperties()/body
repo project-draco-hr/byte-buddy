@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(VoidLocator.class).apply();
-}

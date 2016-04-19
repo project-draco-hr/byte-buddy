@@ -1,2 +1,0 @@
-TypePool.Default.ReaderMode readerMode
-Map<ClassLoader,TypePool.CacheProvider> cacheProviders
