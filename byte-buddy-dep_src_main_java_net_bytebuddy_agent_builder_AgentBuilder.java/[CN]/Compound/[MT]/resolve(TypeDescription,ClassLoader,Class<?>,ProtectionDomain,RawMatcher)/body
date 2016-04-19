@@ -1,9 +1,17 @@
 {
+  Resolution current=new Resolution.Unresolved(typeDescription,classLoader);
   for (  Transformation transformation : transformations) {
     Resolution resolution=transformation.resolve(typeDescription,classLoader,classBeingRedefined,protectionDomain,ignoredTypeMatcher);
-    if (resolution.isResolved()) {
-      return resolution;
-    }
-  }
-  return new Resolution.Unresolved(typeDescription,classLoader);
+switch (resolution.getSort()) {
+case TERMINAL:
+      return current.asDecoratorOf(resolution);
+case DECORATOR:
+    current=current.asDecoratorOf(resolution);
+case UNDEFINED:
+  break;
+default :
+throw new IllegalStateException("Unexpected resolution type: " + resolution.getSort());
+}
+}
+return current;
 }
