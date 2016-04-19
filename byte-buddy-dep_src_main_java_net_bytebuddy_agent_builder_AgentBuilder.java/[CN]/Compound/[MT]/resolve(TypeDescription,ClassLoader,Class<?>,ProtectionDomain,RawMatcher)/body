@@ -7,8 +7,9 @@ case TERMINAL:
       return current.asDecoratorOf(resolution);
 case DECORATOR:
     current=current.asDecoratorOf(resolution);
-case UNDEFINED:
   break;
+case UNDEFINED:
+break;
 default :
 throw new IllegalStateException("Unexpected resolution type: " + resolution.getSort());
 }
