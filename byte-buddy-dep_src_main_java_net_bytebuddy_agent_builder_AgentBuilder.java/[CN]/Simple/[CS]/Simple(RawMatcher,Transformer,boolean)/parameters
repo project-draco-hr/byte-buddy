@@ -1,2 +1,3 @@
 RawMatcher rawMatcher
 Transformer transformer
+boolean decorator
