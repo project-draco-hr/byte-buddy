@@ -1,0 +1,3 @@
+{
+  this(TypePool.Default.ReaderMode.FAST,cacheProviders);
+}
