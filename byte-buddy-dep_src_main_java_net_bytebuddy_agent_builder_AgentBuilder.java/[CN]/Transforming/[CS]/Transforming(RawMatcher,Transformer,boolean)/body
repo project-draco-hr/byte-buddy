@@ -1,4 +1,5 @@
 {
   this.rawMatcher=rawMatcher;
   this.transformer=transformer;
+  this.decorator=decorator;
 }
