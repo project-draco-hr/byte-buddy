@@ -1,4 +1,0 @@
-{
-  when(methodDescription.isPrivate()).thenReturn(true);
-  testMethodHandle(MethodHandleConstant.of(methodDescription),Opcodes.H_INVOKESPECIAL,false);
-}

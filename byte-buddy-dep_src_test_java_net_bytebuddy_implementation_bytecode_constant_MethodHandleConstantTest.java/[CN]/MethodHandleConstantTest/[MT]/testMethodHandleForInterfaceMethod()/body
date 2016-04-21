@@ -1,4 +1,0 @@
-{
-  when(typeDescription.isInterface()).thenReturn(true);
-  testMethodHandle(MethodHandleConstant.of(methodDescription),Opcodes.H_INVOKEINTERFACE,true);
-}

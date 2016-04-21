@@ -1,3 +1,0 @@
-{
-  testMethodHandle(MethodHandleConstant.ofPutter(fieldDescription),Opcodes.H_PUTFIELD,false);
-}

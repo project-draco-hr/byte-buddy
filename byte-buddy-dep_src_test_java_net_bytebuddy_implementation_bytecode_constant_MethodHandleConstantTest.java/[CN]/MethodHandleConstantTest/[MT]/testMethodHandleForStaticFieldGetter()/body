@@ -1,4 +1,0 @@
-{
-  when(fieldDescription.isStatic()).thenReturn(true);
-  testMethodHandle(MethodHandleConstant.ofGetter(fieldDescription),Opcodes.H_GETSTATIC,false);
-}

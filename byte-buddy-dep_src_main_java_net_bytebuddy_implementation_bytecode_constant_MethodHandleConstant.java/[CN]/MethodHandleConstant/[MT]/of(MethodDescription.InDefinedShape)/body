@@ -1,3 +1,0 @@
-{
-  return methodDescription.isTypeInitializer() ? Illegal.INSTANCE : new MethodHandleConstant(new Handle(tagFor(methodDescription),methodDescription.getDeclaringType().asErasure().getInternalName(),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getDeclaringType().isInterface()));
-}

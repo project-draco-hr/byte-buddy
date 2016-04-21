@@ -1,3 +1,3 @@
 {
-  return MethodHandleConstant.of(this);
+  return new JavaInstanceConstant(this);
 }

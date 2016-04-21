@@ -3,5 +3,4 @@
   assertThat(size.getSizeImpact(),is(1));
   assertThat(size.getMaximalSize(),is(6));
   verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,Type.getInternalName(Class.class),"getDeclaredMethod","(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;",false);
-  verifyZeroInteractions(implementationContext);
 }

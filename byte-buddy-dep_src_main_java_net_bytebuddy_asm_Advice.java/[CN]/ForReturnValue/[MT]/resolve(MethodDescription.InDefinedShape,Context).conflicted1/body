@@ -1,11 +1,9 @@
 {
-  if (instrumentedMethod.getReturnType().represents(void.class)) {
-    return readOnly ? Target.ForNullConstant.READ_ONLY : Target.ForNullConstant.READ_WRITE;
+  if (!readOnly && !instrumentedMethod.getReturnType().asErasure().equals(targetType)) {
+    throw new IllegalStateException("read-only return type of " + instrumentedMethod + " is not equal to "+ targetType);
   }
- else   if (instrumentedMethod.getReturnType().isPrimitive()) {
-    return readOnly ? Target.ForBoxedParameter.ReadOnly.of(instrumentedMethod.getStackSize() + context.getPadding(),instrumentedMethod.getReturnType()) : Target.ForBoxedParameter.ReadWrite.of(instrumentedMethod.getStackSize() + context.getPadding(),instrumentedMethod.getReturnType());
+ else   if (readOnly && !instrumentedMethod.getReturnType().asErasure().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Cannot assign return type of " + instrumentedMethod + " to "+ targetType);
   }
- else {
-    return readOnly ? new Target.ForParameter.ReadOnly(instrumentedMethod.getStackSize() + context.getPadding()) : new Target.ForParameter.ReadWrite(instrumentedMethod.getStackSize() + context.getPadding()).casted(instrumentedMethod.getReturnType().asErasure());
-  }
+  return readOnly ? new Target.ForParameter.ReadOnly(instrumentedMethod.getStackSize() + context.getPadding()) : new Target.ForParameter.ReadWrite(instrumentedMethod.getStackSize() + context.getPadding());
 }

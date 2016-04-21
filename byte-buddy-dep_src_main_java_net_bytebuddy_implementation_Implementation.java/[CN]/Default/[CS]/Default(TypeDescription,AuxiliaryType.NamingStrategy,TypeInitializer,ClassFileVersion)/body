@@ -1,5 +1,5 @@
 {
-  this.instrumentedType=instrumentedType;
+  super(instrumentedType);
   this.auxiliaryTypeNamingStrategy=auxiliaryTypeNamingStrategy;
   this.typeInitializer=typeInitializer;
   this.classFileVersion=classFileVersion;

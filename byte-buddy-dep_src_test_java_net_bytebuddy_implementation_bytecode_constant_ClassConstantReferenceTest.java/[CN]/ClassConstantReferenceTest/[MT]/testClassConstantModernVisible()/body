@@ -1,0 +1,16 @@
+{
+  when(typeDescription.isVisibleTo(instrumentedType)).thenReturn(true);
+  when(classFileVersion.isAtLeast(ClassFileVersion.JAVA_V5)).thenReturn(true);
+  when(typeDescription.getDescriptor()).thenReturn(FOO);
+  StackManipulation stackManipulation=ClassConstant.of(typeDescription);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(1));
+  verify(typeDescription).getDescriptor();
+  verify(typeDescription).isVisibleTo(instrumentedType);
+  verify(typeDescription,times(9)).represents(any(Class.class));
+  verifyNoMoreInteractions(typeDescription);
+  verify(methodVisitor).visitLdcInsn(Type.getType(FOO));
+  verifyNoMoreInteractions(methodVisitor);
+}

@@ -1,0 +1,4 @@
+{
+  TypeDescription instrumentedType=mock(TypeDescription.class);
+  assertThat(new Implementation.Context.Default(instrumentedType,mock(AuxiliaryType.NamingStrategy.class),mock(TypeInitializer.class),mock(ClassFileVersion.class)).getInstrumentedType(),is(instrumentedType));
+}

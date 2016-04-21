@@ -1,3 +1,0 @@
-{
-  return of(fieldDescription,fieldDescription.isStatic() ? Opcodes.H_PUTSTATIC : Opcodes.H_PUTFIELD);
-}

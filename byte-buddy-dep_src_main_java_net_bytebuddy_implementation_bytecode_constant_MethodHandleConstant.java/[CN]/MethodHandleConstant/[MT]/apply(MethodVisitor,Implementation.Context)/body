@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitLdcInsn(handle);
-  return SIZE;
-}

@@ -6,6 +6,7 @@
   when(implementationContext.cache(new FieldConstant(fieldDescription),new TypeDescription.ForLoadedType(Field.class))).thenReturn(cacheField);
   when(cacheField.getDeclaringType()).thenReturn(cacheDeclaringType);
   when(cacheField.isStatic()).thenReturn(true);
+  when(declaringType.getName()).thenReturn(BAZ);
   when(cacheDeclaringType.getInternalName()).thenReturn(BAZ);
   when(cacheField.getName()).thenReturn(FOO + BAR);
   when(cacheField.getType()).thenReturn(genericCacheFieldType);
@@ -13,4 +14,6 @@
   when(genericCacheFieldType.getStackSize()).thenReturn(StackSize.SINGLE);
   when(cacheField.getInternalName()).thenReturn(FOO + BAR);
   when(cacheField.getDescriptor()).thenReturn(QUX + BAZ);
+  when(implementationContext.getClassFileVersion()).thenReturn(classFileVersion);
+  when(implementationContext.getInstrumentedType()).thenReturn(instrumentedType);
 }

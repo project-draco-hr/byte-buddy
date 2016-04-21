@@ -1,0 +1,4 @@
+{
+  when(implementationContext.getInstrumentedType()).thenReturn(instrumentedType);
+  when(implementationContext.getClassFileVersion()).thenReturn(classFileVersion);
+}

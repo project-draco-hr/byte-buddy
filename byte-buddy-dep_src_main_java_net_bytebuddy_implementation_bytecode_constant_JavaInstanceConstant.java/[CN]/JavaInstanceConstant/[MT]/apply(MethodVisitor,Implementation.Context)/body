@@ -1,0 +1,4 @@
+{
+  methodVisitor.visitLdcInsn(javaInstance.asConstantPoolValue());
+  return StackSize.SINGLE.toIncreasingSize();
+}

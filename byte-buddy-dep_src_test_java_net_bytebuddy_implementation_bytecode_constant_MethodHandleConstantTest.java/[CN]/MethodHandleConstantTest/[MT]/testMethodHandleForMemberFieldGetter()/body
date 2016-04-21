@@ -1,3 +1,0 @@
-{
-  testMethodHandle(MethodHandleConstant.ofGetter(fieldDescription),Opcodes.H_GETFIELD,false);
-}

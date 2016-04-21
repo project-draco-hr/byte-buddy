@@ -1,6 +1,7 @@
 {
   when(genericTargetType.asErasure()).thenReturn(new TypeDescription.ForLoadedType(JavaType.METHOD_TYPE.load()));
-  when(methodDescription.getDescriptor()).thenReturn(FOO);
+  when(methodDescription.getReturnType()).thenReturn(TypeDescription.Generic.VOID);
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
   MethodDelegationBinder.ParameterBinding<?> parameterBinding=Origin.Binder.INSTANCE.bind(annotationDescription,source,target,implementationTarget,assigner);
   assertThat(parameterBinding.isValid(),is(true));
 }

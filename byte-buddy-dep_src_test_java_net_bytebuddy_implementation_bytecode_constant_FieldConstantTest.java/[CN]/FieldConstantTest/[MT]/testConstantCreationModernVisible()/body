@@ -1,0 +1,13 @@
+{
+  when(classFileVersion.isAtLeast(ClassFileVersion.JAVA_V5)).thenReturn(true);
+  when(declaringType.isVisibleTo(instrumentedType)).thenReturn(true);
+  StackManipulation stackManipulation=new FieldConstant(fieldDescription);
+  assertThat(stackManipulation.isValid(),is(true));
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(2));
+  verify(methodVisitor).visitLdcInsn(Type.getObjectType(QUX));
+  verify(methodVisitor).visitLdcInsn(BAR);
+  verify(methodVisitor).visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/Class","getDeclaredField","(Ljava/lang/String;)Ljava/lang/reflect/Field;",false);
+  verifyNoMoreInteractions(methodVisitor);
+}

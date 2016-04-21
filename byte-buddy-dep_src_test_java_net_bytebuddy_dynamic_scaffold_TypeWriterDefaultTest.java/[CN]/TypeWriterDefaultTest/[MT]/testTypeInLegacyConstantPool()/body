@@ -1,3 +1,0 @@
-{
-  new ByteBuddy(ClassFileVersion.JAVA_V4).subclass(Object.class).defineMethod(FOO,Object.class).intercept(FixedValue.value(Object.class)).make();
-}

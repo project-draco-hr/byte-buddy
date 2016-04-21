@@ -1,4 +1,10 @@
 {
-  methodVisitor.visitLdcInsn(Type.getType(typeDescription.getDescriptor()));
+  if (implementationContext.getClassFileVersion().isAtLeast(ClassFileVersion.JAVA_V5) && typeDescription.isVisibleTo(implementationContext.getInstrumentedType())) {
+    methodVisitor.visitLdcInsn(Type.getType(typeDescription.getDescriptor()));
+  }
+ else {
+    methodVisitor.visitLdcInsn(typeDescription.getName());
+    methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,"java/lang/Class","forName","(Ljava/lang/String;)Ljava/lang/Class;",false);
+  }
   return SIZE;
 }

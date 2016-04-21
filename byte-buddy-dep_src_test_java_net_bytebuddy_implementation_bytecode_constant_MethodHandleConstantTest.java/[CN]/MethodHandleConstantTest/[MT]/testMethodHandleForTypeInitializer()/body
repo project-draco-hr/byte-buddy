@@ -1,5 +1,0 @@
-{
-  when(methodDescription.isTypeInitializer()).thenReturn(true);
-  StackManipulation stackManipulation=MethodHandleConstant.of(methodDescription);
-  assertThat(stackManipulation.isValid(),is(false));
-}

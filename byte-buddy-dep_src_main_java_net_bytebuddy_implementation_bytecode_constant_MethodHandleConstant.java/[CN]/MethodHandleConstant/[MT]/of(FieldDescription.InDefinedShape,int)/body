@@ -1,3 +1,0 @@
-{
-  return new MethodHandleConstant(new Handle(tag,fieldDescription.getDeclaringType().getInternalName(),fieldDescription.getInternalName(),fieldDescription.getDescriptor(),fieldDescription.getDeclaringType().isInterface()));
-}

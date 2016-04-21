@@ -17,4 +17,6 @@
   when(fieldDescription.getInternalName()).thenReturn(FOO);
   when(fieldDescription.getDescriptor()).thenReturn(QUX);
   when(fieldDescription.asDefined()).thenReturn(fieldDescription);
+  when(implementationContext.getClassFileVersion()).thenReturn(classFileVersion);
+  when(implementationContext.getInstrumentedType()).thenReturn(instrumentedType);
 }
