@@ -1,3 +1,0 @@
-{
-  new ByteBuddy().subclass(Object.class).defineField(FOO,String.class).value(FOO).make();
-}
