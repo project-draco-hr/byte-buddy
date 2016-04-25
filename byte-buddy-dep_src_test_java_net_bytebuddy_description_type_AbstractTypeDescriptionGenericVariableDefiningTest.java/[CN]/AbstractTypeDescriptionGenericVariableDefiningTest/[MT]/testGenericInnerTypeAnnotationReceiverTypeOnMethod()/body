@@ -23,4 +23,6 @@
   assertThat(receiverType.getOwnerType().getTypeArguments().getOnly().getDeclaredAnnotations().size(),is(1));
   assertThat(receiverType.getOwnerType().getTypeArguments().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
   assertThat(receiverType.getOwnerType().getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(7));
+  assertThat(receiverType.getOwnerType().getOwnerType().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(receiverType.getOwnerType().getOwnerType().represents(Class.forName(RECEIVER_TYPE_SAMPLE)),is(true));
 }

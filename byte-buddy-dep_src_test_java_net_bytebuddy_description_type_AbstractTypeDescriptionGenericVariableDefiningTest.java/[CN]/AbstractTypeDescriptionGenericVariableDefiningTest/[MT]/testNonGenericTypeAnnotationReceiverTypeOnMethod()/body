@@ -8,4 +8,5 @@
   assertThat(receiverType.getDeclaredAnnotations().size(),is(1));
   assertThat(receiverType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
   assertThat(receiverType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(0));
+  assertThat(receiverType.getOwnerType(),nullValue(TypeDescription.Generic.class));
 }
