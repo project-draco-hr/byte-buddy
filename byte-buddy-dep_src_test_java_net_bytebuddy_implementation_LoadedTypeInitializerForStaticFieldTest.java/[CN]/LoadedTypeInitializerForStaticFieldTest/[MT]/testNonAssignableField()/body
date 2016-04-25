@@ -1,0 +1,3 @@
+{
+  new LoadedTypeInitializer.ForStaticField(FOO,new Object()).onLoad(FooBar.class);
+}
