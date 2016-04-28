@@ -6,7 +6,6 @@
   assertThat(classFileTransformer.transform(REDEFINED.getClassLoader(),REDEFINED.getName(),null,REDEFINED.getProtectionDomain(),QUX),is(BAZ));
   verify(listener).onTransformation(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),dynamicType);
   verify(listener).onComplete(REDEFINED.getName(),REDEFINED.getClassLoader());
-  ;
   verifyNoMoreInteractions(listener);
   verify(instrumentation).addTransformer(classFileTransformer,false);
   verifyNoMoreInteractions(instrumentation);
