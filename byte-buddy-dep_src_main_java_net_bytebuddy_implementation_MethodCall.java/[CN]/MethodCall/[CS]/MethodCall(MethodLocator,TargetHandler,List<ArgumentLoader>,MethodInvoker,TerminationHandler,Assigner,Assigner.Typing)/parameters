@@ -1,7 +1,0 @@
-MethodLocator methodLocator
-TargetHandler targetHandler
-List<ArgumentLoader> argumentLoaders
-MethodInvoker methodInvoker
-TerminationHandler terminationHandler
-Assigner assigner
-Assigner.Typing typing

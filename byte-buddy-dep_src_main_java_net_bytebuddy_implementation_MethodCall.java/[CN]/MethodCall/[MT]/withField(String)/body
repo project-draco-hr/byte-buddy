@@ -1,7 +1,7 @@
 {
-  List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(fieldName.length);
+  List<ArgumentLoader.Factory> argumentLoaders=new ArrayList<ArgumentLoader.Factory>(fieldName.length);
   for (  String aFieldName : fieldName) {
-    argumentLoaders.add(new ArgumentLoader.ForExistingField(aFieldName));
+    argumentLoaders.add(new ArgumentLoader.ForExistingField.Factory(aFieldName));
   }
   return new MethodCall(methodLocator,targetHandler,CompoundList.of(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,typing);
 }

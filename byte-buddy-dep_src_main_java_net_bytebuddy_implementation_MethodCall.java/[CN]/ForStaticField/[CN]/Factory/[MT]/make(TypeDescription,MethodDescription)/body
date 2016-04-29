@@ -1,0 +1,3 @@
+{
+  return Collections.<ArgumentLoader>singletonList(new ForStaticField(instrumentedType.getDeclaredFields().filter(named(fieldName)).getOnly()));
+}

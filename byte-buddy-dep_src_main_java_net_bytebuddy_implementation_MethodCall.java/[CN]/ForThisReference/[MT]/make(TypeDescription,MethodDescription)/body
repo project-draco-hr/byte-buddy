@@ -1,0 +1,6 @@
+{
+  if (instrumentedMethod.isStatic()) {
+    throw new IllegalStateException(instrumentedMethod + " is static and cannot supply an invoker instance");
+  }
+  return Collections.<ArgumentLoader>singletonList(new ForThisReference(instrumentedType));
+}

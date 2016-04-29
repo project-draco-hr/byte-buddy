@@ -1,6 +1,6 @@
 {
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  ForInstanceField that=(ForInstanceField)other;
-  return fieldName.equals(that.fieldName) && fieldType.equals(that.fieldType);
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  ForInstanceField that=(ForInstanceField)object;
+  return fieldDescription.equals(that.fieldDescription);
 }

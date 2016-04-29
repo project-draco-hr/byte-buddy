@@ -1,5 +1,5 @@
 {
-  List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(enumerationDescription.length);
+  List<ArgumentLoader.Factory> argumentLoaders=new ArrayList<ArgumentLoader.Factory>(enumerationDescription.length);
   for (  EnumerationDescription anEnumerationDescription : enumerationDescription) {
     argumentLoaders.add(new ArgumentLoader.ForEnumerationValue(anEnumerationDescription));
   }

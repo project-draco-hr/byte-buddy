@@ -1,0 +1,6 @@
+{
+  if (instrumentedMethod.isStatic()) {
+    throw new IllegalStateException("Cannot access instance field from static " + instrumentedMethod);
+  }
+  return Collections.<ArgumentLoader>singletonList(new ForInstanceField(instrumentedType.getDeclaredFields().filter(named(fieldName)).getOnly()));
+}

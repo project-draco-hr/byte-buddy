@@ -1,5 +1,0 @@
-TypeDescription instrumentedType
-MethodDescription interceptedMethod
-ParameterDescription target
-Assigner assigner
-Assigner.Typing typing

@@ -1,5 +1,5 @@
 {
-  List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(typeDescription.length);
+  List<ArgumentLoader.Factory> argumentLoaders=new ArrayList<ArgumentLoader.Factory>(typeDescription.length);
   for (  TypeDescription aTypeDescription : typeDescription) {
     argumentLoaders.add(new ArgumentLoader.ForClassConstant(aTypeDescription));
   }

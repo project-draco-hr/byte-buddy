@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=new StackManipulation.Compound(ClassConstant.of(instrumentedType),assigner.assign(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(Class.class),target.getType(),typing));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign Class value to " + target);
+  }
+  return stackManipulation;
+}

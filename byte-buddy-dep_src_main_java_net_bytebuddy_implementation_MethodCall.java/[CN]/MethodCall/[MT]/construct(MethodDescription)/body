@@ -2,5 +2,5 @@
   if (!methodDescription.isConstructor()) {
     throw new IllegalArgumentException("Not a constructor: " + methodDescription);
   }
-  return new MethodCall(new MethodLocator.ForExplicitMethod(methodDescription),TargetHandler.ForConstructingInvocation.INSTANCE,Collections.<ArgumentLoader>emptyList(),MethodInvoker.ForContextualInvocation.INSTANCE,TerminationHandler.ForMethodReturn.INSTANCE,Assigner.DEFAULT,Assigner.Typing.STATIC);
+  return new MethodCall(new MethodLocator.ForExplicitMethod(methodDescription),TargetHandler.ForConstructingInvocation.INSTANCE,Collections.<ArgumentLoader.Factory>emptyList(),MethodInvoker.ForContextualInvocation.INSTANCE,TerminationHandler.ForMethodReturn.INSTANCE,Assigner.DEFAULT,Assigner.Typing.STATIC);
 }

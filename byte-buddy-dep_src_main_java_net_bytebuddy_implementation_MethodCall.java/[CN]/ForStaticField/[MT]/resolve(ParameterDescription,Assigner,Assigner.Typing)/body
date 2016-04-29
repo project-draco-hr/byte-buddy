@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=new StackManipulation.Compound(FieldAccess.forField(fieldDescription).getter(),assigner.assign(fieldDescription.getType(),target.getType(),typing));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign " + fieldDescription.getType() + " to "+ target);
+  }
+  return stackManipulation;
+}

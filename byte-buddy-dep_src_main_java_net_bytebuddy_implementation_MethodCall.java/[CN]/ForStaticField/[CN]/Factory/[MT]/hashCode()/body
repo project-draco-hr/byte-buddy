@@ -1,0 +1,4 @@
+{
+  int result=value.hashCode();
+  return result;
+}

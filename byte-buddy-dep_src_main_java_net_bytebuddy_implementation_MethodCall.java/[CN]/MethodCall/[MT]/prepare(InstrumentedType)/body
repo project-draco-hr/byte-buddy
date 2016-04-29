@@ -1,5 +1,5 @@
 {
-  for (  ArgumentLoader argumentLoader : argumentLoaders) {
+  for (  ArgumentLoader.Factory argumentLoader : argumentLoaders) {
     instrumentedType=argumentLoader.prepare(instrumentedType);
   }
   return targetHandler.prepare(instrumentedType);

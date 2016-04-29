@@ -1,0 +1,7 @@
+{
+  StackManipulation stackManipulation=new StackManipulation.Compound(MethodVariableAccess.REFERENCE.loadOffset(0),assigner.assign(instrumentedType.asGenericType(),target.getType(),typing));
+  if (!stackManipulation.isValid()) {
+    throw new IllegalStateException("Cannot assign " + instrumentedType + " to "+ target);
+  }
+  return stackManipulation;
+}

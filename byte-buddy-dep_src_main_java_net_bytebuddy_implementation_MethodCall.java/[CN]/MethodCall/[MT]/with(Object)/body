@@ -1,7 +1,7 @@
 {
-  List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(argument.length);
+  List<ArgumentLoader.Factory> argumentLoaders=new ArrayList<ArgumentLoader.Factory>(argument.length);
   for (  Object anArgument : argument) {
-    argumentLoaders.add(ArgumentLoader.ForStaticField.of(anArgument));
+    argumentLoaders.add(ArgumentLoader.ForStaticField.Factory.of(anArgument));
   }
   return new MethodCall(methodLocator,targetHandler,CompoundList.of(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,typing);
 }

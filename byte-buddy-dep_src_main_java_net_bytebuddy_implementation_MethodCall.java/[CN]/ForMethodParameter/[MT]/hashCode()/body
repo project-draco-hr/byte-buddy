@@ -1,3 +1,5 @@
 {
-  return index;
+  int result=index;
+  result=31 * result + instrumentedMethod.hashCode();
+  return result;
 }

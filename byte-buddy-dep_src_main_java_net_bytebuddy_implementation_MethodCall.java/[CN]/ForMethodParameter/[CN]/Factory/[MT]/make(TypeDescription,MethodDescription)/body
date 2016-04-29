@@ -1,0 +1,6 @@
+{
+  if (index >= instrumentedMethod.getParameters().size()) {
+    throw new IllegalStateException(instrumentedMethod + " does not have a parameter with index " + index);
+  }
+  return Collections.<ArgumentLoader>singletonList(new ForMethodParameter(index,instrumentedMethod));
+}

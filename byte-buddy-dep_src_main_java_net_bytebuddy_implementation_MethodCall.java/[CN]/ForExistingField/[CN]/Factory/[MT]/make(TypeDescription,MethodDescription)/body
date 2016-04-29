@@ -1,0 +1,9 @@
+{
+  for (  TypeDefinition currentType : instrumentedType) {
+    FieldList<?> fieldList=currentType.getDeclaredFields().filter(named(fieldName).and(isVisibleTo(instrumentedType)));
+    if (fieldList.size() != 0) {
+      return Collections.<ArgumentLoader>singletonList(new ForExistingField(fieldList.getOnly(),instrumentedMethod));
+    }
+  }
+  throw new IllegalStateException(instrumentedType + " does not define a visible field " + fieldName);
+}

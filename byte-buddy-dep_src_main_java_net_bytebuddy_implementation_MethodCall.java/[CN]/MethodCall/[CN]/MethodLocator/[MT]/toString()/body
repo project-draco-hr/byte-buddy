@@ -1,3 +1,3 @@
 {
-  return "MethodCall.MethodLocator.ForInterceptedMethod." + name();
+  return "MethodCall.MethodLocator.ForInstrumentedMethod." + name();
 }

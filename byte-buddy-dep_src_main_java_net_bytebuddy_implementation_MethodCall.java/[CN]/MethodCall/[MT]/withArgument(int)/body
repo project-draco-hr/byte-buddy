@@ -1,10 +1,10 @@
 {
-  List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(index.length);
+  List<ArgumentLoader.Factory> argumentLoaders=new ArrayList<ArgumentLoader.Factory>(index.length);
   for (  int anIndex : index) {
     if (anIndex < 0) {
       throw new IllegalArgumentException("Negative index: " + anIndex);
     }
-    argumentLoaders.add(new ArgumentLoader.ForMethodParameter(anIndex));
+    argumentLoaders.add(new ArgumentLoader.ForMethodParameter.Factory(anIndex));
   }
   return new MethodCall(methodLocator,targetHandler,CompoundList.of(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,typing);
 }

@@ -1,0 +1,7 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  Factory factory=(Factory)object;
+  if (!fieldType.equals(factory.fieldType))   return false;
+  return fieldName.equals(factory.fieldName);
+}

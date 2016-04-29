@@ -1,5 +1,3 @@
 {
-  int result=fieldType.hashCode();
-  result=31 * result + fieldName.hashCode();
-  return result;
+  return fieldDescription.hashCode();
 }

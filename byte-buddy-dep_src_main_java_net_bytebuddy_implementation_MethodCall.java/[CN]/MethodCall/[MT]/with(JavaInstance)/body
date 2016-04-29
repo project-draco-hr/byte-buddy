@@ -1,5 +1,5 @@
 {
-  List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(javaInstance.length);
+  List<ArgumentLoader.Factory> argumentLoaders=new ArrayList<ArgumentLoader.Factory>(javaInstance.length);
   for (  JavaInstance aJavaInstance : javaInstance) {
     argumentLoaders.add(new ArgumentLoader.ForJavaInstance(aJavaInstance));
   }
