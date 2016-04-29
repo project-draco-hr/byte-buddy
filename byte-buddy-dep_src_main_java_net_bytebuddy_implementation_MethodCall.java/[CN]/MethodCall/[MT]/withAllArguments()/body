@@ -1,0 +1,3 @@
+{
+  return new MethodCall(methodLocator,targetHandler,CompoundList.of(this.argumentLoaders,ArgumentLoader.ForMethodParameter.OfInstrumentedMethod.INSTANCE),methodInvoker,terminationHandler,assigner,typing);
+}

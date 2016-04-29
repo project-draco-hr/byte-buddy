@@ -1,0 +1,7 @@
+{
+  List<ArgumentLoader> argumentLoaders=new ArrayList<ArgumentLoader>(instrumentedMethod.getParameters().size());
+  for (  ParameterDescription parameterDescription : instrumentedMethod.getParameters()) {
+    argumentLoaders.add(new ForMethodParameter(parameterDescription.getIndex(),instrumentedMethod));
+  }
+  return argumentLoaders;
+}
