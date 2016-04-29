@@ -7,6 +7,6 @@
     throw new IllegalStateException("Cannot write to this reference for " + parameterDescription + " in read-only context");
   }
  else {
-    return new ForThisReference(annotation.loadSilent().readOnly(),parameterDescription.getType().asErasure());
+    return new ForThisReference(annotation.loadSilent().readOnly(),annotation.loadSilent().optional(),parameterDescription.getType().asErasure());
   }
 }

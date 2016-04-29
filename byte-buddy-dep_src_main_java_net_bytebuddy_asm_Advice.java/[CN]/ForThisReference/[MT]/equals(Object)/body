@@ -2,5 +2,5 @@
   if (this == object)   return true;
   if (object == null || getClass() != object.getClass())   return false;
   ForThisReference that=(ForThisReference)object;
-  return readOnly == that.readOnly && targetType.equals(that.targetType);
+  return readOnly == that.readOnly && optional == that.optional && targetType.equals(that.targetType);
 }

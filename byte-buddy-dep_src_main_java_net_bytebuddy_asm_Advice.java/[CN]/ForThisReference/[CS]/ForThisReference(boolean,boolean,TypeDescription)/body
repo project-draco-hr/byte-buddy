@@ -1,4 +1,5 @@
 {
   this.readOnly=readOnly;
+  this.optional=optional;
   this.targetType=targetType;
 }

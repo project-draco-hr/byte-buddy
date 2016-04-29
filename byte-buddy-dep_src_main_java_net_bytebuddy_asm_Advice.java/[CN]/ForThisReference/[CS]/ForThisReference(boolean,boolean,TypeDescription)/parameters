@@ -1,2 +1,3 @@
 boolean readOnly
+boolean optional
 TypeDescription targetType
