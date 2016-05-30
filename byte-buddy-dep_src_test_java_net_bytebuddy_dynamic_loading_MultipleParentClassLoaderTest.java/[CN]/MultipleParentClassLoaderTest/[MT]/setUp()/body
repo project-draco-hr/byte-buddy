@@ -1,11 +1,13 @@
 {
-  doReturn(Foo.class).when(first).loadClass(FOO);
-  doReturn(BarFirst.class).when(first).loadClass(BAR);
-  when(first.loadClass(QUX)).thenThrow(new ClassNotFoundException());
-  when(first.loadClass(BAZ)).thenThrow(new ClassNotFoundException());
-  doReturn(BarSecond.class).when(second).loadClass(BAR);
-  doReturn(Qux.class).when(second).loadClass(QUX);
-  when(second.loadClass(BAZ)).thenThrow(new ClassNotFoundException());
+  Method loadClass=ClassLoader.class.getDeclaredMethod("loadClass",String.class,boolean.class);
+  loadClass.setAccessible(true);
+  when(loadClass.invoke(first,FOO,false)).thenReturn(Foo.class);
+  when(loadClass.invoke(first,BAR,false)).thenReturn(BarFirst.class);
+  when(loadClass.invoke(first,QUX,false)).thenThrow(new ClassNotFoundException());
+  when(loadClass.invoke(first,BAZ,false)).thenThrow(new ClassNotFoundException());
+  when(loadClass.invoke(second,BAR,false)).thenReturn(BarSecond.class);
+  when(loadClass.invoke(second,QUX,false)).thenReturn(Qux.class);
+  when(loadClass.invoke(second,BAZ,false)).thenThrow(new ClassNotFoundException());
   fooUrl=new URL(SCHEME + FOO);
   barFirstUrl=new URL(SCHEME + BAR);
   barSecondUrl=new URL(SCHEME + BAZ);

@@ -1,0 +1,4 @@
+{
+  MultipleParentClassLoader.Dispatcher dispatcher=new MultipleParentClassLoader.Dispatcher.Erroneous(new Exception());
+  dispatcher.loadClass(mock(ClassLoader.class),FOO,true);
+}

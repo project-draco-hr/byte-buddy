@@ -1,0 +1,15 @@
+{
+  try {
+    return (Class<?>)loadClass.invoke(classLoader,name,resolve);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access " + loadClass,exception);
+  }
+catch (  InvocationTargetException exception) {
+    Throwable cause=exception.getCause();
+    if (cause instanceof ClassNotFoundException) {
+      throw (ClassNotFoundException)cause;
+    }
+    throw new IllegalStateException("Cannot execute " + loadClass,cause);
+  }
+}

@@ -1,9 +1,9 @@
 {
   List<ClassLoader> filtered=new ArrayList<ClassLoader>(this.classLoaders.size() + classLoaders.size());
-  Set<ClassLoader> registered=new HashSet<ClassLoader>(this.classLoaders);
+  Set<ClassLoader> registered=new HashSet<ClassLoader>();
   filtered.addAll(this.classLoaders);
   for (  ClassLoader classLoader : classLoaders) {
-    if (registered.add(classLoader)) {
+    if (classLoader != null && registered.add(classLoader)) {
       filtered.add(classLoader);
     }
   }

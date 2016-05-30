@@ -1,10 +1,10 @@
 {
   for (  ClassLoader parent : parents) {
     try {
-      return parent != null ? parent.loadClass(name) : super.loadClass(name);
+      return DISPATCHER.loadClass(parent,name,resolve);
     }
  catch (    ClassNotFoundException ignored) {
     }
   }
-  return super.loadClass(name);
+  return super.loadClass(name,resolve);
 }

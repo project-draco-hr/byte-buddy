@@ -1,0 +1,4 @@
+{
+  loadClass.setAccessible(true);
+  return this;
+}
