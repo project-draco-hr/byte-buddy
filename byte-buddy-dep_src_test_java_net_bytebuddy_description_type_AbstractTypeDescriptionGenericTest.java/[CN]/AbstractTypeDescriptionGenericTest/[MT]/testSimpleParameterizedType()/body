@@ -1,7 +1,7 @@
 {
   TypeDescription.Generic typeDescription=describeType(SimpleParameterizedType.class.getDeclaredField(FOO));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
-  assertThat(typeDescription.getSourceCodeName(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.getActualName(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.getTypeName(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.toString(),is(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.hashCode(),is(TypeDefinition.Sort.describe(SimpleParameterizedType.class.getDeclaredField(FOO).getGenericType()).hashCode()));

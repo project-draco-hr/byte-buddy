@@ -6,7 +6,7 @@
   ObjectPropertyAssertion.of(TypeProxy.MethodCall.Appender.class).refine(new ObjectPropertyAssertion.Refinement<TypeDescription>(){
     @Override public void apply(    TypeDescription mock){
       FieldDescription.InDefinedShape fieldDescription=Mockito.mock(FieldDescription.InDefinedShape.class);
-      when(fieldDescription.getSourceCodeName()).thenReturn(TypeProxy.INSTANCE_FIELD);
+      when(fieldDescription.getActualName()).thenReturn(TypeProxy.INSTANCE_FIELD);
       when(mock.getDeclaredFields()).thenReturn(new FieldList.Explicit<FieldDescription.InDefinedShape>(fieldDescription));
     }
   }

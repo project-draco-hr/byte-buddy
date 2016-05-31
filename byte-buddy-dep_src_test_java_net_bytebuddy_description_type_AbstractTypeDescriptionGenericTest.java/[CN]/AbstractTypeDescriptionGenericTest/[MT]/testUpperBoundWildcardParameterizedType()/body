@@ -1,7 +1,7 @@
 {
   TypeDescription.Generic typeDescription=describeType(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO));
   assertThat(typeDescription.getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
-  assertThat(typeDescription.getSourceCodeName(),is(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
+  assertThat(typeDescription.getActualName(),is(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.getTypeName(),is(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.toString(),is(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType().toString()));
   assertThat(typeDescription.hashCode(),is(TypeDefinition.Sort.describe(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO).getGenericType()).hashCode()));

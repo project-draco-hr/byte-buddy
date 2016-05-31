@@ -7,7 +7,7 @@
   when(source.getReturnType()).thenReturn(genericFieldType);
   when(source.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
   when(source.getName()).thenReturn("getFoo");
-  when(source.getSourceCodeName()).thenReturn("getFoo");
+  when(source.getActualName()).thenReturn("getFoo");
   when(source.getInternalName()).thenReturn("getFoo");
   when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
   MethodDelegationBinder.ParameterBinding<?> binding=new FieldProxy.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,implementationTarget,assigner);

@@ -1,0 +1,5 @@
+{
+  this.getModule=getModule;
+  this.isNamed=isNamed;
+  this.getName=getName;
+}

@@ -1,5 +1,5 @@
 {
-  StackManipulation stackManipulation=new StackManipulation.Compound(javaConstant.asStackManipulation(),assigner.assign(javaConstant.getInstanceType().asGenericType(),target.getType(),typing));
+  StackManipulation stackManipulation=new StackManipulation.Compound(javaConstant.asStackManipulation(),assigner.assign(javaConstant.getType().asGenericType(),target.getType(),typing));
   if (!stackManipulation.isValid()) {
     throw new IllegalStateException("Cannot assign Class value to " + target);
   }

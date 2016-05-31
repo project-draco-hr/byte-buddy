@@ -1,3 +1,3 @@
 {
-  when(namedElement.getSourceCodeName()).thenReturn(FOO);
+  when(namedElement.getActualName()).thenReturn(FOO);
 }

@@ -2,7 +2,7 @@
   doReturn(void.class).when(annotation).declaringType();
   when(annotation.value()).thenReturn(FOO);
   when(instrumentedType.getDeclaredFields()).thenReturn((FieldList)new FieldList.Explicit<FieldDescription>(fieldDescription));
-  when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
+  when(fieldDescription.getActualName()).thenReturn(FOO);
   when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(false);
   when(target.getDeclaredAnnotations()).thenReturn(new AnnotationList.Empty());
   when(stackManipulation.isValid()).thenReturn(true);

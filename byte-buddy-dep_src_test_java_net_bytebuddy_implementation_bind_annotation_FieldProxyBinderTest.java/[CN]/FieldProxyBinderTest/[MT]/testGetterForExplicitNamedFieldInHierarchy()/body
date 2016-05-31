@@ -2,7 +2,7 @@
   when(target.getType()).thenReturn(genericGetterType);
   doReturn(void.class).when(annotation).declaringType();
   when(annotation.value()).thenReturn(FOO);
-  when(fieldDescription.getSourceCodeName()).thenReturn(FOO);
+  when(fieldDescription.getActualName()).thenReturn(FOO);
   when(source.getReturnType()).thenReturn(genericFieldType);
   when(source.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
   when(source.getName()).thenReturn("getFoo");
