@@ -1,3 +1,0 @@
-{
-  assertThat(AgentBuilder.TypeLocator.Default.EXTENDED.classFileLocator(classLoader),is(ClassFileLocator.ForClassLoader.of(classLoader)));
-}

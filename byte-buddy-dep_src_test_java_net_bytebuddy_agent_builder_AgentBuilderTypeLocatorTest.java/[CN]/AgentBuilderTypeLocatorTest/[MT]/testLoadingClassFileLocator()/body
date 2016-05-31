@@ -1,3 +1,0 @@
-{
-  assertThat(AgentBuilder.TypeLocator.ClassLoading.INSTANCE.classFileLocator(classLoader),is((ClassFileLocator)ClassFileLocator.NoOp.INSTANCE));
-}
