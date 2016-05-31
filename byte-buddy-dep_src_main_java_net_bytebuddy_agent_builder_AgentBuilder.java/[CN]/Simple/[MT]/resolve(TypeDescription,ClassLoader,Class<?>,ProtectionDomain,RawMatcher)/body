@@ -1,3 +1,0 @@
-{
-  return !ignoredTypeMatcher.matches(typeDescription,classLoader,classBeingRedefined,protectionDomain) && rawMatcher.matches(typeDescription,classLoader,classBeingRedefined,protectionDomain) ? new Resolution(typeDescription,classLoader,protectionDomain,transformer,decorator) : new Transformation.Resolution.Unresolved(typeDescription,classLoader);
-}

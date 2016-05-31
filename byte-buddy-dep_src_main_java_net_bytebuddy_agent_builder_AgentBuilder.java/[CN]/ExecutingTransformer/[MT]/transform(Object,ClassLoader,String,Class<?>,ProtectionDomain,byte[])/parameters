@@ -1,0 +1,6 @@
+Object module
+ClassLoader classLoader
+String internalTypeName
+Class<?> classBeingRedefined
+ProtectionDomain protectionDomain
+byte[] binaryRepresentation

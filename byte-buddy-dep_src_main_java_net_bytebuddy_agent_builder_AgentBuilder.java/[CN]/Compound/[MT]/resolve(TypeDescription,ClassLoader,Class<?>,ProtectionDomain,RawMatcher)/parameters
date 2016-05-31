@@ -1,5 +1,0 @@
-TypeDescription typeDescription
-ClassLoader classLoader
-Class<?> classBeingRedefined
-ProtectionDomain protectionDomain
-RawMatcher ignoredTypeMatcher

@@ -1,3 +1,3 @@
 {
-  return new Resolution(typeDescription,classLoader,protectionDomain,new Transformer.Compound(this.transformer,transformer),decorator);
+  return new Resolution(typeDescription,classLoader,module,protectionDomain,new Transformer.Compound(this.transformer,transformer),decorator);
 }

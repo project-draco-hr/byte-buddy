@@ -1,0 +1,6 @@
+{
+  if (!JavaType.MODULE.getTypeStub().isInstance(module)) {
+    throw new IllegalArgumentException("Not a Java module: " + module);
+  }
+  return new JavaModule(module);
+}

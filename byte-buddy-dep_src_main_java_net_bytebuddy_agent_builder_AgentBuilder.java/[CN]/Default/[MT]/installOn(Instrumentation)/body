@@ -9,14 +9,15 @@
     RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
     for (    Class<?> type : instrumentation.getAllLoadedClasses()) {
       TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
+      JavaModule module=JavaModule.ofType(type);
       try {
         if (!instrumentation.isModifiableClass(type) || !collector.consider(type,ignoredTypeMatcher)) {
           try {
             try {
-              listener.onIgnored(typeDescription,type.getClassLoader());
+              listener.onIgnored(typeDescription,type.getClassLoader(),module);
             }
   finally {
-              listener.onComplete(typeDescription.getName(),type.getClassLoader());
+              listener.onComplete(typeDescription.getName(),type.getClassLoader(),module);
             }
           }
  catch (          Throwable ignored) {
@@ -26,10 +27,10 @@
  catch (      Throwable throwable) {
         try {
           try {
-            listener.onError(typeDescription.getName(),type.getClassLoader(),throwable);
+            listener.onError(typeDescription.getName(),type.getClassLoader(),module,throwable);
           }
   finally {
-            listener.onComplete(typeDescription.getName(),type.getClassLoader());
+            listener.onComplete(typeDescription.getName(),type.getClassLoader(),module);
           }
         }
  catch (        Throwable ignored) {
