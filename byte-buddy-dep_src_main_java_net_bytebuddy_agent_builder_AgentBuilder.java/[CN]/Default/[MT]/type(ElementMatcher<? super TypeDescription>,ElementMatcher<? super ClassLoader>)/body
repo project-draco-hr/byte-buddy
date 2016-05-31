@@ -1,3 +1,3 @@
 {
-  return type(new RawMatcher.ForElementMatcherPair(typeMatcher,classLoaderMatcher));
+  return type(typeMatcher,classLoaderMatcher,any());
 }
