@@ -1,5 +1,4 @@
-Object module
-ClassLoader classLoader
+Object rawModule
 String internalTypeName
 Class<?> classBeingRedefined
 ProtectionDomain protectionDomain
