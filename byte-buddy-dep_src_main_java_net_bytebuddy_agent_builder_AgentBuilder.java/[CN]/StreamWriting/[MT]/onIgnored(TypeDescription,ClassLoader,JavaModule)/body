@@ -1,3 +1,3 @@
 {
-  printStream.println(PREFIX + " IGNORE " + typeDescription.getName());
+  printStream.println(PREFIX + " IGNORE " + typeDescription.getName()+ "["+ classLoader+ ":"+ module+ "]");
 }
