@@ -1,0 +1,6 @@
+TypeDescription typeDescription
+ClassLoader classLoader
+JavaModule module
+Class<?> classBeingRedefined
+ProtectionDomain protectionDomain
+RawMatcher ignoredTypeMatcher

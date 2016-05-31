@@ -1,17 +1,3 @@
 {
-  if (internalTypeName == null) {
-    return NO_TRANSFORMATION;
-  }
-  String binaryTypeName=internalTypeName.replace('/','.');
-  try {
-    ClassFileLocator classFileLocator=ClassFileLocator.Simple.of(binaryTypeName,binaryRepresentation,ClassFileLocator.ForClassLoader.of(classLoader));
-    return transformation.resolve(classBeingRedefined == null ? typeLocator.typePool(classFileLocator,classLoader).describe(binaryTypeName).resolve() : new TypeDescription.ForLoadedType(classBeingRedefined),classLoader,classBeingRedefined,protectionDomain,ignoredTypeMatcher).apply(initializationStrategy,classFileLocator,typeStrategy,byteBuddy,nativeMethodStrategy,bootstrapInjectionStrategy,accessControlContext,listener);
-  }
- catch (  Throwable throwable) {
-    listener.onError(binaryTypeName,classLoader,throwable);
-    return NO_TRANSFORMATION;
-  }
- finally {
-    listener.onComplete(binaryTypeName,classLoader);
-  }
+  return transform(JavaModule.UNDEFINED,classLoader,internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation);
 }

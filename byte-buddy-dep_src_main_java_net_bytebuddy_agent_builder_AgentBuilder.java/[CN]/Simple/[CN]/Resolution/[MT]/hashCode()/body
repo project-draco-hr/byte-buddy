@@ -2,6 +2,7 @@
   int result=typeDescription.hashCode();
   result=31 * result + (decorator ? 1 : 0);
   result=31 * result + (classLoader != null ? classLoader.hashCode() : 0);
+  result=31 * result + (module != null ? module.hashCode() : 0);
   result=31 * result + (protectionDomain != null ? protectionDomain.hashCode() : 0);
   result=31 * result + transformer.hashCode();
   return result;
