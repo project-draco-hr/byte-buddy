@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(AgentBuilder.RawMatcher.ForElementMatcherPair.class).apply();
-}

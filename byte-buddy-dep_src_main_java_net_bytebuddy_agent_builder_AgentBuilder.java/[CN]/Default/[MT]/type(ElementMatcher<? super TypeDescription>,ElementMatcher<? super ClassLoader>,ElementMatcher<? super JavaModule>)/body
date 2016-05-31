@@ -1,0 +1,3 @@
+{
+  return type(new RawMatcher.ForElementMatchers(typeMatcher,classLoaderMatcher,moduleMatcher));
+}
