@@ -1,6 +1,0 @@
-{
-  ConcurrentMap<ClassLoader,TypePool.CacheProvider> cacheProviders=new ConcurrentHashMap<ClassLoader,TypePool.CacheProvider>();
-  AgentBuilder.BinaryLocator binaryLocator=new AgentBuilder.BinaryLocator.WithTypePoolCache.Simple(TypePool.Default.ReaderMode.FAST,cacheProviders);
-  assertThat(binaryLocator.typePool(classFileLocator,null),is(binaryLocator.typePool(classFileLocator,null)));
-  assertThat(binaryLocator.typePool(classFileLocator,null),not(binaryLocator.typePool(classFileLocator,second)));
-}

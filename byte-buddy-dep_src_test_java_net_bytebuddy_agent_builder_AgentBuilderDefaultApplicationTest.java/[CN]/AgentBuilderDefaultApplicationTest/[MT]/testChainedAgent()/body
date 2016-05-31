@@ -1,6 +1,6 @@
 {
   assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
-  AgentBuilder agentBuilder=new AgentBuilder.Default().with(binaryLocator).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new QuxTransformer());
+  AgentBuilder agentBuilder=new AgentBuilder.Default().with(typeLocator).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new QuxTransformer());
   ClassFileTransformer firstTransformer=agentBuilder.installOnByteBuddyAgent();
   ClassFileTransformer secondTransformer=agentBuilder.installOnByteBuddyAgent();
   try {

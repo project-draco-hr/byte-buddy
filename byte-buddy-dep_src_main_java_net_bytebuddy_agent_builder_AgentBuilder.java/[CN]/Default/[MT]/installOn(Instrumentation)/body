@@ -37,7 +37,7 @@
       }
     }
     try {
-      collector.apply(instrumentation,binaryLocator,listener);
+      collector.apply(instrumentation,typeLocator,listener);
     }
  catch (    UnmodifiableClassException exception) {
       throw new IllegalStateException("Cannot modify at least one class: " + collector,exception);

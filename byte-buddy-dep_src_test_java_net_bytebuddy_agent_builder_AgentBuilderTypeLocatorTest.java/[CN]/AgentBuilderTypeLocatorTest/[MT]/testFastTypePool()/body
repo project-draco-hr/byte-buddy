@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.TypeLocator.Default.FAST.typePool(classFileLocator,classLoader),notNullValue(TypePool.class));
+}

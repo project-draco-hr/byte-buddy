@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(AgentBuilder.BinaryLocator.WithTypePoolCache.Simple.class).apply();
-}

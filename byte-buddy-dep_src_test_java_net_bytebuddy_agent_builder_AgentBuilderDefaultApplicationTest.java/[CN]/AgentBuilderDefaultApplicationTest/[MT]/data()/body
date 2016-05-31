@@ -1,3 +1,3 @@
 {
-  return Arrays.asList(new Object[][]{{AgentBuilder.BinaryLocator.Default.EXTENDED},{AgentBuilder.BinaryLocator.Default.FAST},{AgentBuilder.BinaryLocator.ClassLoading.INSTANCE}});
+  return Arrays.asList(new Object[][]{{AgentBuilder.TypeLocator.Default.EXTENDED},{AgentBuilder.TypeLocator.Default.FAST},{AgentBuilder.TypeLocator.ClassLoading.INSTANCE}});
 }
