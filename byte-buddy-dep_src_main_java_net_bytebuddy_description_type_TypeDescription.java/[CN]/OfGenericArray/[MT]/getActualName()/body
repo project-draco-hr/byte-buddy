@@ -1,0 +1,3 @@
+{
+  return getSort().isNonGeneric() ? asErasure().getActualName() : toString();
+}

@@ -1,0 +1,3 @@
+{
+  return "JavaModule.Dispatcher.Disabled." + name();
+}
