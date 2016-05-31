@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(JavaConstant.MethodType.class).apply();
+}

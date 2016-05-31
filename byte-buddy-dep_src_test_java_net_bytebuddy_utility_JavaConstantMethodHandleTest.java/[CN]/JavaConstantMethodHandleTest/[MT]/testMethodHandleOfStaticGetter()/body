@@ -1,0 +1,8 @@
+{
+  JavaConstant.MethodHandle methodHandle=JavaConstant.MethodHandle.ofGetter(Foo.class.getDeclaredField(QUX));
+  assertThat(methodHandle.getHandleType(),is(JavaConstant.MethodHandle.HandleType.GET_STATIC_FIELD));
+  assertThat(methodHandle.getName(),is(QUX));
+  assertThat(methodHandle.getOwnerType(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(methodHandle.getReturnType(),is((TypeDefinition)new TypeDescription.ForLoadedType(Void.class)));
+  assertThat(methodHandle.getParameterTypes(),is(Collections.<TypeDescription>emptyList()));
+}

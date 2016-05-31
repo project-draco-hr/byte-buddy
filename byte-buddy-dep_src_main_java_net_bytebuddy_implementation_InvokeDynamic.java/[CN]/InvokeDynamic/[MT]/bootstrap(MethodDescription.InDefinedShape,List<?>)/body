@@ -5,10 +5,10 @@
       argument=new TypeDescription.ForLoadedType((Class<?>)argument);
     }
  else     if (JavaType.METHOD_HANDLE.getTypeStub().isInstance(argument)) {
-      argument=JavaInstance.MethodHandle.ofLoaded(argument);
+      argument=JavaConstant.MethodHandle.ofLoaded(argument);
     }
  else     if (JavaType.METHOD_TYPE.getTypeStub().isInstance(argument)) {
-      argument=JavaInstance.MethodType.ofLoaded(argument);
+      argument=JavaConstant.MethodType.ofLoaded(argument);
     }
     arguments.add(argument);
   }
@@ -20,8 +20,8 @@
     if (anArgument instanceof TypeDescription) {
       anArgument=Type.getType(((TypeDescription)anArgument).getDescriptor());
     }
- else     if (anArgument instanceof JavaInstance) {
-      anArgument=((JavaInstance)anArgument).asConstantPoolValue();
+ else     if (anArgument instanceof JavaConstant) {
+      anArgument=((JavaConstant)anArgument).asConstantPoolValue();
     }
     serializedArguments.add(anArgument);
   }

@@ -1,0 +1,7 @@
+{
+  List<ArgumentLoader.Factory> argumentLoaders=new ArrayList<ArgumentLoader.Factory>(javaConstant.length);
+  for (  JavaConstant aJavaConstant : javaConstant) {
+    argumentLoaders.add(new ArgumentLoader.ForJavaConstant(aJavaConstant));
+  }
+  return new MethodCall(methodLocator,targetHandler,CompoundList.of(this.argumentLoaders,argumentLoaders),methodInvoker,terminationHandler,assigner,typing);
+}

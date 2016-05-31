@@ -1,0 +1,2 @@
+JavaConstant.MethodHandle targetMethod
+JavaConstant.MethodType specializedLambdaMethod

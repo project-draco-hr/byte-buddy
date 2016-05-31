@@ -50,19 +50,19 @@
     suppliedType=TypeDescription.CLASS;
   }
  else   if (JavaType.METHOD_HANDLE.getTypeStub().isInstance(value)) {
-    stackManipulation=JavaInstance.MethodHandle.ofLoaded(value).asStackManipulation();
+    stackManipulation=JavaConstant.MethodHandle.ofLoaded(value).asStackManipulation();
     suppliedType=JavaType.METHOD_HANDLE.getTypeStub();
   }
- else   if (value instanceof JavaInstance.MethodHandle) {
-    stackManipulation=new JavaInstanceConstant((JavaInstance.MethodHandle)value);
+ else   if (value instanceof JavaConstant.MethodHandle) {
+    stackManipulation=new JavaConstantValue((JavaConstant.MethodHandle)value);
     suppliedType=JavaType.METHOD_HANDLE.getTypeStub();
   }
  else   if (JavaType.METHOD_TYPE.getTypeStub().isInstance(value)) {
-    stackManipulation=new JavaInstanceConstant(JavaInstance.MethodType.ofLoaded(value));
+    stackManipulation=new JavaConstantValue(JavaConstant.MethodType.ofLoaded(value));
     suppliedType=JavaType.METHOD_HANDLE.getTypeStub();
   }
- else   if (value instanceof JavaInstance.MethodType) {
-    stackManipulation=new JavaInstanceConstant((JavaInstance.MethodType)value);
+ else   if (value instanceof JavaConstant.MethodType) {
+    stackManipulation=new JavaConstantValue((JavaConstant.MethodType)value);
     suppliedType=JavaType.METHOD_HANDLE.getTypeStub();
   }
  else {

@@ -26,7 +26,7 @@
   ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForInstanceField.class).apply();
   ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForStaticField.class).apply();
   ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForThisInstance.class).apply();
-  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForJavaInstance.class).apply();
+  ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForJavaConstant.class).apply();
   ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForMethodParameter.class).apply();
   ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ForExplicitTypedMethodParameter.class).apply();
   ObjectPropertyAssertion.of(InvokeDynamic.InvocationProvider.ArgumentProvider.ConstantPoolWrapper.class).apply();

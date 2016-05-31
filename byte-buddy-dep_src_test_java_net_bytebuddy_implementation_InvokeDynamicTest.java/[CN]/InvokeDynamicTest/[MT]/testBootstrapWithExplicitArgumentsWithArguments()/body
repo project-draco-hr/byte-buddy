@@ -14,5 +14,5 @@
   assertThat(arguments[4],is((Object)FOO));
   assertThat(arguments[5],is((Object)CLASS));
   assertThat(arguments[6],is(makeMethodType(CLASS)));
-  assertThat(JavaInstance.MethodHandle.ofLoaded(arguments[7]),is(JavaInstance.MethodHandle.ofLoaded(makeMethodHandle())));
+  assertThat(JavaConstant.MethodHandle.ofLoaded(arguments[7]),is(JavaConstant.MethodHandle.ofLoaded(makeMethodHandle())));
 }

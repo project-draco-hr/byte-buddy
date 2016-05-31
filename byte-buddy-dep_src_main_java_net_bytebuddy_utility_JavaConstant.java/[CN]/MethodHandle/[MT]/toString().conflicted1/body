@@ -1,0 +1,3 @@
+{
+  return "JavaConstant.MethodHandle.HandleType." + name();
+}

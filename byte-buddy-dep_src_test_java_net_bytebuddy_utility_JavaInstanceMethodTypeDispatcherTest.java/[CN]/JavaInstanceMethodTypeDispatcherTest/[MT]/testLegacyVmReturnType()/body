@@ -1,3 +1,0 @@
-{
-  JavaInstance.MethodType.Dispatcher.ForLegacyVm.INSTANCE.returnType(mock(Object.class));
-}

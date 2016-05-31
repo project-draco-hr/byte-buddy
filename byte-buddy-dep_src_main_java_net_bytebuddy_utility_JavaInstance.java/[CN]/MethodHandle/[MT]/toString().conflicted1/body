@@ -1,3 +1,0 @@
-{
-  return "JavaInstance.MethodHandle.HandleType." + name();
-}

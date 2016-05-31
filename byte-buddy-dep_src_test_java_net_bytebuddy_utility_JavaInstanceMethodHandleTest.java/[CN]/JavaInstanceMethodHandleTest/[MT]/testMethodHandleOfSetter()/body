@@ -1,8 +1,0 @@
-{
-  JavaInstance.MethodHandle methodHandle=JavaInstance.MethodHandle.ofSetter(Foo.class.getDeclaredField(BAR));
-  assertThat(methodHandle.getHandleType(),is(JavaInstance.MethodHandle.HandleType.PUT_FIELD));
-  assertThat(methodHandle.getName(),is(BAR));
-  assertThat(methodHandle.getOwnerType(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
-  assertThat(methodHandle.getReturnType(),is(TypeDescription.VOID));
-  assertThat(methodHandle.getParameterTypes(),is((List<TypeDescription>)new TypeList.ForLoadedTypes(Void.class)));
-}

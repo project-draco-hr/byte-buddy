@@ -1,0 +1,7 @@
+{
+  List<InvocationProvider.ArgumentProvider> argumentProviders=new ArrayList<InvocationProvider.ArgumentProvider>(javaConstant.length);
+  for (  JavaConstant aJavaConstant : javaConstant) {
+    argumentProviders.add(new InvocationProvider.ArgumentProvider.ForJavaConstant(aJavaConstant));
+  }
+  return new InvokeDynamic(bootstrapMethod,handleArguments,invocationProvider.appendArguments(argumentProviders),terminationHandler,assigner,typing);
+}

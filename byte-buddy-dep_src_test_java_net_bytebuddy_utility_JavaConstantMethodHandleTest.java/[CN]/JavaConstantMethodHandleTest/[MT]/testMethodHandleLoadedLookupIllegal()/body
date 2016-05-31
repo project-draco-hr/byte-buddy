@@ -1,0 +1,7 @@
+{
+  Method publicLookup=Class.forName("java.lang.invoke.MethodHandles").getDeclaredMethod("publicLookup");
+  Object lookup=publicLookup.invoke(null);
+  Method unreflect=Class.forName("java.lang.invoke.MethodHandles$Lookup").getDeclaredMethod("unreflect",Method.class);
+  Object methodHandleLoaded=unreflect.invoke(lookup,Foo.class.getDeclaredMethod(BAR,Void.class));
+  JavaConstant.MethodHandle.ofLoaded(methodHandleLoaded,new Object());
+}

@@ -1,0 +1,8 @@
+{
+  JavaConstant.MethodHandle methodHandle=JavaConstant.MethodHandle.of(new MethodDescription.ForLoadedConstructor(Foo.class.getDeclaredConstructor(Void.class)));
+  assertThat(methodHandle.getHandleType(),is(JavaConstant.MethodHandle.HandleType.INVOKE_SPECIAL_CONSTRUCTOR));
+  assertThat(methodHandle.getName(),is(MethodDescription.CONSTRUCTOR_INTERNAL_NAME));
+  assertThat(methodHandle.getOwnerType(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(methodHandle.getReturnType(),is(TypeDescription.VOID));
+  assertThat(methodHandle.getParameterTypes(),is((List<TypeDescription>)new TypeList.ForLoadedTypes(Void.class)));
+}

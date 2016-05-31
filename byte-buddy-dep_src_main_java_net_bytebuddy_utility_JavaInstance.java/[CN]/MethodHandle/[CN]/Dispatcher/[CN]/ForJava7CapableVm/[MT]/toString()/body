@@ -1,3 +1,0 @@
-{
-  return "JavaInstance.MethodHandle.Dispatcher.ForJava7CapableVm{" + "publicLookup=" + publicLookup + ", getName="+ getName+ ", getDeclaringClass="+ getDeclaringClass+ ", getReferenceKind="+ getReferenceKind+ ", getMethodType="+ getMethodType+ ", returnType="+ returnType+ ", parameterArray="+ parameterArray+ ", lookupClass="+ lookupClass+ ", methodInfo="+ methodInfo+ '}';
-}

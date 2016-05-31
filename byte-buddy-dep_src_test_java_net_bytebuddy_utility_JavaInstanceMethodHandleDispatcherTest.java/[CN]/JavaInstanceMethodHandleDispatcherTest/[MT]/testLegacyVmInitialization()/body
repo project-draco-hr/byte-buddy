@@ -1,3 +1,0 @@
-{
-  JavaInstance.MethodHandle.Dispatcher.ForLegacyVm.INSTANCE.initialize(AccessController.getContext());
-}

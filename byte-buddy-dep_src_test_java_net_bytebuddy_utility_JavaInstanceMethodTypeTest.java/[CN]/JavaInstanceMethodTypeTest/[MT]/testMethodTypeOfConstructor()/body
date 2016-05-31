@@ -1,5 +1,0 @@
-{
-  JavaInstance.MethodType methodType=JavaInstance.MethodType.of(Foo.class.getDeclaredConstructor(Void.class));
-  assertThat(methodType.getReturnType(),is(TypeDescription.VOID));
-  assertThat(methodType.getParameterTypes(),is((List<TypeDescription>)new TypeList.ForLoadedTypes(Void.class)));
-}

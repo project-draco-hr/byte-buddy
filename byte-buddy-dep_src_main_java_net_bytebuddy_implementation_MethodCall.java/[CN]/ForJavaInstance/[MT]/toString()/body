@@ -1,3 +1,0 @@
-{
-  return "MethodCall.ArgumentLoader.ForJavaInstance{" + "javaInstance=" + javaInstance + '}';
-}

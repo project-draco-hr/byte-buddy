@@ -1,0 +1,12 @@
+{
+  Method publicLookup=Class.forName("java.lang.invoke.MethodHandles").getDeclaredMethod("publicLookup");
+  Object lookup=publicLookup.invoke(null);
+  Method unreflected=Class.forName("java.lang.invoke.MethodHandles$Lookup").getDeclaredMethod("unreflect",Method.class);
+  Object methodHandleLoaded=unreflected.invoke(lookup,Foo.class.getDeclaredMethod(BAR,Void.class));
+  JavaConstant.MethodHandle methodHandle=JavaConstant.MethodHandle.ofLoaded(methodHandleLoaded);
+  assertThat(methodHandle.getHandleType(),is(JavaConstant.MethodHandle.HandleType.INVOKE_VIRTUAL));
+  assertThat(methodHandle.getName(),is(BAR));
+  assertThat(methodHandle.getOwnerType(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(methodHandle.getReturnType(),is(TypeDescription.VOID));
+  assertThat(methodHandle.getParameterTypes(),is((List<TypeDescription>)new TypeList.ForLoadedTypes(Void.class)));
+}

@@ -47,5 +47,5 @@
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForTextConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForClassConstant.class).apply();
   ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForEnumerationValue.class).apply();
-  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForJavaInstance.class).apply();
+  ObjectPropertyAssertion.of(MethodCall.ArgumentLoader.ForJavaConstant.class).apply();
 }

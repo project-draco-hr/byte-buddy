@@ -1,0 +1,3 @@
+{
+  JavaConstant.MethodHandle.ofLoaded(new Object());
+}

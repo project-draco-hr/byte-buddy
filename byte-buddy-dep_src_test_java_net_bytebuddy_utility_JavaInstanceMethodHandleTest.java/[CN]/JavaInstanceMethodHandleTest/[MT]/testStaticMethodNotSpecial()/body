@@ -1,7 +1,0 @@
-{
-  MethodDescription.InDefinedShape methodDescription=mock(MethodDescription.InDefinedShape.class);
-  TypeDescription typeDescription=mock(TypeDescription.class);
-  when(methodDescription.isStatic()).thenReturn(true);
-  when(methodDescription.isSpecializableFor(typeDescription)).thenReturn(true);
-  JavaInstance.MethodHandle.ofSpecial(methodDescription,typeDescription);
-}

@@ -1,0 +1,10 @@
+{
+  final Iterator<Method> methods=Arrays.asList(Object.class.getDeclaredMethods()).iterator();
+  ObjectPropertyAssertion.of(JavaConstant.MethodType.Dispatcher.ForJava7CapableVm.class).create(new ObjectPropertyAssertion.Creator<Method>(){
+    @Override public Method create(){
+      return methods.next();
+    }
+  }
+).apply();
+  ObjectPropertyAssertion.of(JavaConstant.MethodType.Dispatcher.ForLegacyVm.class).apply();
+}

@@ -1,0 +1,3 @@
+{
+  return "JavaConstant.MethodHandle{" + "handleType=" + handleType + ", ownerType="+ ownerType+ ", name='"+ name+ '\''+ ", returnType="+ returnType+ ", parameterTypes="+ parameterTypes+ '}';
+}

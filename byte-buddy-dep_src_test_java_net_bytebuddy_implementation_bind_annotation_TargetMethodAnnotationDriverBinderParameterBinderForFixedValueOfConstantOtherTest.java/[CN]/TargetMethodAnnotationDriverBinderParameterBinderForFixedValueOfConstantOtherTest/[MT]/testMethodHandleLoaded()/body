@@ -3,5 +3,5 @@
   Object lookup=publicLookup.invoke(null);
   Method unreflected=Class.forName("java.lang.invoke.MethodHandles$Lookup").getDeclaredMethod("unreflect",Method.class);
   Object methodHandleLoaded=unreflected.invoke(lookup,Foo.class.getDeclaredMethod(FOO));
-  assertThat(JavaInstance.MethodHandle.ofLoaded(new ByteBuddy().subclass(Foo.class).method(named(FOO)).intercept(MethodDelegation.to(Foo.class).appendParameterBinder(TargetMethodAnnotationDrivenBinder.ParameterBinder.ForFixedValue.OfConstant.of(Bar.class,methodHandleLoaded))).make().load(Foo.class.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance().foo()),is(JavaInstance.MethodHandle.ofLoaded(methodHandleLoaded)));
+  assertThat(JavaConstant.MethodHandle.ofLoaded(new ByteBuddy().subclass(Foo.class).method(named(FOO)).intercept(MethodDelegation.to(Foo.class).appendParameterBinder(TargetMethodAnnotationDrivenBinder.ParameterBinder.ForFixedValue.OfConstant.of(Bar.class,methodHandleLoaded))).make().load(Foo.class.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance().foo()),is(JavaConstant.MethodHandle.ofLoaded(methodHandleLoaded)));
 }

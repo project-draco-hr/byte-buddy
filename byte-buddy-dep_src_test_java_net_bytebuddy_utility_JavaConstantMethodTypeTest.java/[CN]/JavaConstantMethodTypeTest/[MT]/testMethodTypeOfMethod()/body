@@ -1,0 +1,6 @@
+{
+  JavaConstant.MethodType methodType=JavaConstant.MethodType.of(Foo.class.getDeclaredMethod(BAR,Void.class));
+  assertThat(methodType.getReturnType(),is(TypeDescription.VOID));
+  assertThat(methodType.getParameterTypes(),is((List<TypeDescription>)new TypeList.ForLoadedTypes(Void.class)));
+  assertThat(methodType.getDescriptor(),is(new MethodDescription.ForLoadedMethod(Foo.class.getDeclaredMethod(BAR,Void.class)).getDescriptor()));
+}

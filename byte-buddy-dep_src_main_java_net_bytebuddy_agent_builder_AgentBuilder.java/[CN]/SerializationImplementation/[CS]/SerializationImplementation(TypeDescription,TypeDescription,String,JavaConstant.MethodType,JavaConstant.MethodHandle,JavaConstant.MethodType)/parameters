@@ -1,0 +1,6 @@
+TypeDescription targetType
+TypeDescription lambdaType
+String lambdaMethodName
+JavaConstant.MethodType lambdaMethod
+JavaConstant.MethodHandle targetMethod
+JavaConstant.MethodType specializedMethod

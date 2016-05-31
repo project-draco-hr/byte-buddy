@@ -1,0 +1,12 @@
+{
+  when(javaConstant.asConstantPoolValue()).thenReturn(FOO);
+  StackManipulation stackManipulation=new JavaConstantValue(javaConstant);
+  StackManipulation.Size size=stackManipulation.apply(methodVisitor,implementationContext);
+  assertThat(size.getSizeImpact(),is(1));
+  assertThat(size.getMaximalSize(),is(1));
+  verify(javaConstant).asConstantPoolValue();
+  verifyNoMoreInteractions(javaConstant);
+  verify(methodVisitor).visitLdcInsn(FOO);
+  verifyNoMoreInteractions(methodVisitor);
+  verifyZeroInteractions(implementationContext);
+}

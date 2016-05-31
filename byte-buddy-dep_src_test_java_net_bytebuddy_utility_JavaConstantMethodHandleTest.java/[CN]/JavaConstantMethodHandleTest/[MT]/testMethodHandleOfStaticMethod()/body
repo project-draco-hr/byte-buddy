@@ -1,0 +1,8 @@
+{
+  JavaConstant.MethodHandle methodHandle=JavaConstant.MethodHandle.of(Foo.class.getDeclaredMethod(QUX,Void.class));
+  assertThat(methodHandle.getHandleType(),is(JavaConstant.MethodHandle.HandleType.INVOKE_STATIC));
+  assertThat(methodHandle.getName(),is(QUX));
+  assertThat(methodHandle.getOwnerType(),is((TypeDescription)new TypeDescription.ForLoadedType(Foo.class)));
+  assertThat(methodHandle.getReturnType(),is(TypeDescription.VOID));
+  assertThat(methodHandle.getParameterTypes(),is((List<TypeDescription>)new TypeList.ForLoadedTypes(Void.class)));
+}
