@@ -3,9 +3,9 @@
     return (Boolean)isNamed.invoke(module);
   }
  catch (  IllegalAccessException exception) {
-    throw new IllegalStateException("Cannot access " + getModule,exception);
+    throw new IllegalStateException("Cannot access " + isNamed,exception);
   }
 catch (  InvocationTargetException exception) {
-    throw new IllegalStateException("Cannot invoke " + getModule,exception.getCause());
+    throw new IllegalStateException("Cannot invoke " + isNamed,exception.getCause());
   }
 }

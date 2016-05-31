@@ -1,0 +1,11 @@
+{
+  try {
+    return (ClassLoader)getClassLoader.invoke(module);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access " + getClassLoader,exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Cannot invoke " + getClassLoader,exception.getCause());
+  }
+}
