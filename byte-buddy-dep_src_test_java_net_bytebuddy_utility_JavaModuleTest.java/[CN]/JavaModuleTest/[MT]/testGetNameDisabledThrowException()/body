@@ -1,0 +1,3 @@
+{
+  JavaModule.Dispatcher.Disabled.INSTANCE.getName(mock(Object.class));
+}

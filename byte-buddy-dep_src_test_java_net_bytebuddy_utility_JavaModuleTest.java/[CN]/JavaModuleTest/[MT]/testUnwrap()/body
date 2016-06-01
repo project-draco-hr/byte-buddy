@@ -1,0 +1,5 @@
+{
+  Object object=new Object();
+  JavaModule module=new JavaModule(object);
+  assertThat(module.unwrap(),sameInstance(object));
+}

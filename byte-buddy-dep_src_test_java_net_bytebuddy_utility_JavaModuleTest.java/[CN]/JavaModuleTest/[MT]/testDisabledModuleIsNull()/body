@@ -1,0 +1,3 @@
+{
+  assertThat(JavaModule.Dispatcher.Disabled.INSTANCE.moduleOf(Object.class),nullValue(JavaModule.class));
+}

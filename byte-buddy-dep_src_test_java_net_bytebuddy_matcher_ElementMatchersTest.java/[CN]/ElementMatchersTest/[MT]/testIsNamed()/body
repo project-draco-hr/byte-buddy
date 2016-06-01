@@ -1,0 +1,6 @@
+{
+  NamedElement.WithOptionalName namedElement=mock(NamedElement.WithOptionalName.class);
+  assertThat(ElementMatchers.isNamed().matches(namedElement),is(false));
+  when(namedElement.isNamed()).thenReturn(true);
+  assertThat(ElementMatchers.isNamed().matches(namedElement),is(true));
+}

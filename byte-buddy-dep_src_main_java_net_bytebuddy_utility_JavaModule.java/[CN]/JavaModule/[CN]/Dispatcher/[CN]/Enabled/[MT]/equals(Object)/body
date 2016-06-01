@@ -1,0 +1,9 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  Enabled enabled=(Enabled)object;
+  if (!getModule.equals(enabled.getModule))   return false;
+  if (!getClassLoader.equals(enabled.getClassLoader))   return false;
+  if (!isNamed.equals(enabled.isNamed))   return false;
+  return getName.equals(enabled.getName);
+}

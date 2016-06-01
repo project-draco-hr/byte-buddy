@@ -1,0 +1,7 @@
+{
+  int result=getModule.hashCode();
+  result=31 * result + getClassLoader.hashCode();
+  result=31 * result + isNamed.hashCode();
+  result=31 * result + getName.hashCode();
+  return result;
+}

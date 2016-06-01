@@ -1,0 +1,3 @@
+{
+  return "JavaModule.Dispatcher.Enabled{" + "getModule=" + getModule + ", getClassLoader="+ getClassLoader+ ", isNamed="+ isNamed+ ", getName="+ getName+ '}';
+}

@@ -1,0 +1,3 @@
+{
+  JavaModule.Dispatcher.Disabled.INSTANCE.getClassLoader(mock(Object.class));
+}
