@@ -1,7 +1,7 @@
 {
-  new AgentBuilder.Listener.Compound(first,second).onComplete(FOO,classLoader);
-  verify(first).onComplete(FOO,classLoader);
+  new AgentBuilder.Listener.Compound(first,second).onComplete(FOO,classLoader,module);
+  verify(first).onComplete(FOO,classLoader,module);
   verifyNoMoreInteractions(first);
-  verify(second).onComplete(FOO,classLoader);
+  verify(second).onComplete(FOO,classLoader,module);
   verifyNoMoreInteractions(second);
 }

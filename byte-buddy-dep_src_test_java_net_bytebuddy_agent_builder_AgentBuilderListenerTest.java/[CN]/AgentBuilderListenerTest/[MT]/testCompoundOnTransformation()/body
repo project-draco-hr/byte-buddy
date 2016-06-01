@@ -1,7 +1,7 @@
 {
-  new AgentBuilder.Listener.Compound(first,second).onTransformation(typeDescription,classLoader,dynamicType);
-  verify(first).onTransformation(typeDescription,classLoader,dynamicType);
+  new AgentBuilder.Listener.Compound(first,second).onTransformation(typeDescription,classLoader,module,dynamicType);
+  verify(first).onTransformation(typeDescription,classLoader,module,dynamicType);
   verifyNoMoreInteractions(first);
-  verify(second).onTransformation(typeDescription,classLoader,dynamicType);
+  verify(second).onTransformation(typeDescription,classLoader,module,dynamicType);
   verifyNoMoreInteractions(second);
 }

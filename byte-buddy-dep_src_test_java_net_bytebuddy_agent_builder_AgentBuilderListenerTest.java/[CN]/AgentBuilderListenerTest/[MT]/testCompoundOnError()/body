@@ -1,7 +1,7 @@
 {
-  new AgentBuilder.Listener.Compound(first,second).onError(FOO,classLoader,throwable);
-  verify(first).onError(FOO,classLoader,throwable);
+  new AgentBuilder.Listener.Compound(first,second).onError(FOO,classLoader,module,throwable);
+  verify(first).onError(FOO,classLoader,module,throwable);
   verifyNoMoreInteractions(first);
-  verify(second).onError(FOO,classLoader,throwable);
+  verify(second).onError(FOO,classLoader,module,throwable);
   verifyNoMoreInteractions(second);
 }

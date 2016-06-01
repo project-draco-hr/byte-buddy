@@ -1,0 +1,3 @@
+{
+  assertThat(new IsNamedMatcher<NamedElement.WithOptionalName>().matches(namedElement),is(false));
+}

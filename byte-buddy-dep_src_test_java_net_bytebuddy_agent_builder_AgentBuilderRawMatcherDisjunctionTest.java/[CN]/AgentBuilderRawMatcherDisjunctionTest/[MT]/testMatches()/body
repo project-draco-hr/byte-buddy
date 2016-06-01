@@ -1,9 +1,9 @@
 {
-  when(left.matches(typeDescription,classLoader,Foo.class,protectionDomain)).thenReturn(true);
-  when(right.matches(typeDescription,classLoader,Foo.class,protectionDomain)).thenReturn(true);
+  when(left.matches(typeDescription,classLoader,module,Foo.class,protectionDomain)).thenReturn(true);
+  when(right.matches(typeDescription,classLoader,module,Foo.class,protectionDomain)).thenReturn(true);
   AgentBuilder.RawMatcher rawMatcher=new AgentBuilder.RawMatcher.Disjunction(left,right);
-  assertThat(rawMatcher.matches(typeDescription,classLoader,Foo.class,protectionDomain),is(true));
-  verify(left).matches(typeDescription,classLoader,Foo.class,protectionDomain);
+  assertThat(rawMatcher.matches(typeDescription,classLoader,module,Foo.class,protectionDomain),is(true));
+  verify(left).matches(typeDescription,classLoader,module,Foo.class,protectionDomain);
   verifyNoMoreInteractions(left);
   verifyZeroInteractions(right);
 }

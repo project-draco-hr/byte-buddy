@@ -3,11 +3,11 @@
   when(instrumentation.isRedefineClassesSupported()).thenReturn(true);
   when(instrumentation.getAllLoadedClasses()).thenReturn(new Class<?>[]{REDEFINED});
   when(instrumentation.isModifiableClass(REDEFINED)).thenReturn(true);
-  when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),REDEFINED,REDEFINED.getProtectionDomain())).thenThrow(exception);
-  doThrow(new RuntimeException()).when(listener).onError(REDEFINED.getName(),REDEFINED.getClassLoader(),exception);
+  when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),REDEFINED,REDEFINED.getProtectionDomain())).thenThrow(exception);
+  doThrow(new RuntimeException()).when(listener).onError(REDEFINED.getName(),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),exception);
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(AgentBuilder.RedefinitionStrategy.REDEFINITION).with(typeLocator).with(typeStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).type(rawMatcher).transform(transformer).installOn(instrumentation);
   verify(instrumentation).addTransformer(classFileTransformer,false);
-  verify(listener).onError(REDEFINED.getName(),REDEFINED.getClassLoader(),exception);
-  verify(listener).onComplete(REDEFINED.getName(),REDEFINED.getClassLoader());
+  verify(listener).onError(REDEFINED.getName(),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),exception);
+  verify(listener).onComplete(REDEFINED.getName(),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED));
   verifyNoMoreInteractions(listener);
 }

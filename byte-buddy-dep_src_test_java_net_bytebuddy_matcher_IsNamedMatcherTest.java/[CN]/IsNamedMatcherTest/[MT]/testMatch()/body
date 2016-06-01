@@ -1,0 +1,4 @@
+{
+  when(namedElement.isNamed()).thenReturn(true);
+  assertThat(new IsNamedMatcher<NamedElement.WithOptionalName>().matches(namedElement),is(true));
+}

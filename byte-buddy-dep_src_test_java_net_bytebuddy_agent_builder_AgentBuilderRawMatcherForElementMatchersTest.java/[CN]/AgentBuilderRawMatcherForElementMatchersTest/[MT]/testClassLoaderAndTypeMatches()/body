@@ -1,0 +1,9 @@
+{
+  when(classLoaderMatcher.matches(classLoader)).thenReturn(true);
+  when(typeMatcher.matches(typeDescription)).thenReturn(true);
+  assertThat(new AgentBuilder.RawMatcher.ForElementMatchers(typeMatcher,classLoaderMatcher,moduleMatcher).matches(typeDescription,classLoader,module,Object.class,protectionDomain),is(false));
+  verify(moduleMatcher).matches(module);
+  verifyNoMoreInteractions(moduleMatcher);
+  verifyZeroInteractions(classLoaderMatcher);
+  verifyZeroInteractions(typeMatcher);
+}

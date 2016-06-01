@@ -1,8 +1,8 @@
 {
   PrintStream printStream=mock(PrintStream.class);
   AgentBuilder.Listener listener=new AgentBuilder.Listener.StreamWriting(printStream);
-  listener.onError(FOO,classLoader,throwable);
-  verify(printStream).println("[Byte Buddy] ERROR " + FOO);
+  listener.onError(FOO,classLoader,module,throwable);
+  verify(printStream).println("[Byte Buddy] ERROR " + FOO + "["+ classLoader+ ","+ module+ "]");
   verifyNoMoreInteractions(printStream);
   verify(throwable).printStackTrace(printStream);
   verifyNoMoreInteractions(throwable);

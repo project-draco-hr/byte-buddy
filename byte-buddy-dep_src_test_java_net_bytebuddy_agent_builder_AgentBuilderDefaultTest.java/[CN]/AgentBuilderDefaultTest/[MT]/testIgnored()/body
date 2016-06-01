@@ -1,11 +1,11 @@
 {
   when(dynamicType.getBytes()).thenReturn(BAZ);
   when(resolution.resolve()).thenReturn(new TypeDescription.ForLoadedType(REDEFINED));
-  when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),REDEFINED,REDEFINED.getProtectionDomain())).thenReturn(false);
+  when(rawMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),REDEFINED,REDEFINED.getProtectionDomain())).thenReturn(false);
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(typeLocator).with(typeStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).type(rawMatcher).transform(transformer).installOn(instrumentation);
   assertThat(classFileTransformer.transform(REDEFINED.getClassLoader(),REDEFINED.getName(),REDEFINED,REDEFINED.getProtectionDomain(),QUX),nullValue(byte[].class));
-  verify(listener).onIgnored(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader());
-  verify(listener).onComplete(REDEFINED.getName(),REDEFINED.getClassLoader());
+  verify(listener).onIgnored(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED));
+  verify(listener).onComplete(REDEFINED.getName(),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED));
   verifyNoMoreInteractions(listener);
   verify(instrumentation).addTransformer(classFileTransformer,false);
   verifyNoMoreInteractions(instrumentation);

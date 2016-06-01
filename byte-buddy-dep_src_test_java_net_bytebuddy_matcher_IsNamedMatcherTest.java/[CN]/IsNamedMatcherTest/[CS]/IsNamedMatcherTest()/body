@@ -1,0 +1,3 @@
+{
+  super((Class<IsNamedMatcher<?>>)(Object)IsNamedMatcher.class,"isNamed");
+}
