@@ -8,5 +8,5 @@
       return false;
     }
   }
-  return iterator.hasNext() && elementMatcher.matches(iterator.next());
+  return iterator.hasNext() && matcher.matches(iterator.next());
 }

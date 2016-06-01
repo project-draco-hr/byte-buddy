@@ -1,1 +1,1 @@
-ElementMatcher<? super TypeDescription.Generic> typeMatcher
+ElementMatcher<? super TypeDescription.Generic> matcher

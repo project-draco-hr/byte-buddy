@@ -1,0 +1,8 @@
+{
+  for (  TypeDefinition interfaceType : typeDefinition.getInterfaces()) {
+    if (checkedInterfaces.add(interfaceType.asErasure()) && (matcher.matches(interfaceType.asGenericType()) || hasInterface(interfaceType,checkedInterfaces))) {
+      return true;
+    }
+  }
+  return false;
+}

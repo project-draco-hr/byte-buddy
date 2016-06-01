@@ -1,0 +1,4 @@
+{
+  when(typeMatcher.matches(implicitInterfaceType)).thenReturn(true);
+  assertThat(new HasSuperTypeMatcher<TypeDescription>(typeMatcher).matches(typeDescription),is(true));
+}

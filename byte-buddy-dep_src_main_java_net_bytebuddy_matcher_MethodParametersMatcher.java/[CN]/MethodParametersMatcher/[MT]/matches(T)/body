@@ -1,3 +1,3 @@
 {
-  return parameterMatcher.matches(target.getParameters());
+  return matcher.matches(target.getParameters());
 }

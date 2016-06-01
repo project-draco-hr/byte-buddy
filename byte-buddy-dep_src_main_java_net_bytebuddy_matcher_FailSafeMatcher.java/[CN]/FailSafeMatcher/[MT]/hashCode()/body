@@ -1,5 +1,5 @@
 {
-  int result=delegate.hashCode();
+  int result=matcher.hashCode();
   result=31 * result + (fallback ? 1 : 0);
   return result;
 }

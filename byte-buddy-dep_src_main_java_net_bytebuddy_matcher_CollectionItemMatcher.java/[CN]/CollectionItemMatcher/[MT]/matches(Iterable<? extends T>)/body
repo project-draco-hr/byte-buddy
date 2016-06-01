@@ -1,6 +1,6 @@
 {
   for (  T value : target) {
-    if (elementMatcher.matches(value)) {
+    if (matcher.matches(value)) {
       return true;
     }
   }

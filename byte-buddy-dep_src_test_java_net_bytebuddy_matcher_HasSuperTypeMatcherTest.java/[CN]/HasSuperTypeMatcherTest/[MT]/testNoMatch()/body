@@ -1,0 +1,3 @@
+{
+  assertThat(new HasSuperTypeMatcher<TypeDescription>(typeMatcher).matches(typeDescription),is(false));
+}

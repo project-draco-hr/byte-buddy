@@ -1,0 +1,9 @@
+{
+  Set<TypeDescription> checkedInterfaces=new HashSet<TypeDescription>();
+  for (  TypeDefinition typeDefinition : target) {
+    if (matcher.matches(typeDefinition.asGenericType()) || hasInterface(typeDefinition,checkedInterfaces)) {
+      return true;
+    }
+  }
+  return false;
+}

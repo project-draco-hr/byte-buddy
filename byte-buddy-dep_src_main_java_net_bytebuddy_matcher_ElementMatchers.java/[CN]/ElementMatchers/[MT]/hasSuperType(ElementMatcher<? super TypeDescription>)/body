@@ -1,0 +1,3 @@
+{
+  return hasGenericSuperType(rawType(matcher));
+}

@@ -1,3 +1,3 @@
 {
-  return "inheritsAnnotations(" + annotationMatcher + ")";
+  return "inheritsAnnotations(" + matcher + ")";
 }

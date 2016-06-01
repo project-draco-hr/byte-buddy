@@ -1,1 +1,1 @@
-ElementMatcher<? super T> negatedMatcher
+ElementMatcher<? super T> matcher

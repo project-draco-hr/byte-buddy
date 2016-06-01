@@ -1,1 +1,1 @@
-ElementMatcher<? super TypeList.Generic> exceptionMatcher
+ElementMatcher<? super TypeList.Generic> matcher
