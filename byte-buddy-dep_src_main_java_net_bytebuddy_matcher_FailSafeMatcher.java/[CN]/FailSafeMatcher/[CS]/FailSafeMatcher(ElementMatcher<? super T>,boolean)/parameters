@@ -1,2 +1,2 @@
-ElementMatcher<? super T> delegate
+ElementMatcher<? super T> matcher
 boolean fallback

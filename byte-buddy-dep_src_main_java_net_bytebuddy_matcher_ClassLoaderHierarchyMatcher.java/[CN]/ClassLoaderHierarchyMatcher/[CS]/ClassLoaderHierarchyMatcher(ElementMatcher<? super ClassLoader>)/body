@@ -1,3 +1,3 @@
 {
-  this.classLoaderMatcher=classLoaderMatcher;
+  this.matcher=matcher;
 }

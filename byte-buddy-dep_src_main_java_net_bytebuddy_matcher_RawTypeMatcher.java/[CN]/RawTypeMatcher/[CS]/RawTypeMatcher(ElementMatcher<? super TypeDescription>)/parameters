@@ -1,1 +1,1 @@
-ElementMatcher<? super TypeDescription> rawTypeMatcher
+ElementMatcher<? super TypeDescription> matcher

@@ -1,8 +1,8 @@
 {
-  if ((target instanceof Collection) && ((Collection<?>)target).size() != elementMatchers.size()) {
+  if ((target instanceof Collection) && ((Collection<?>)target).size() != matchers.size()) {
     return false;
   }
-  Iterator<? extends ElementMatcher<? super T>> iterator=elementMatchers.iterator();
+  Iterator<? extends ElementMatcher<? super T>> iterator=matchers.iterator();
   for (  T value : target) {
     if (!iterator.hasNext() || !iterator.next().matches(value)) {
       return false;

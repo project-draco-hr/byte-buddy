@@ -1,6 +1,6 @@
 {
   try {
-    return delegate.matches(target);
+    return matcher.matches(target);
   }
  catch (  Exception ignored) {
     return fallback;

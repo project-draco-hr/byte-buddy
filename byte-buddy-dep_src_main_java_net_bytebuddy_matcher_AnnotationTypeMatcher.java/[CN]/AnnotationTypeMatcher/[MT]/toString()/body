@@ -1,3 +1,3 @@
 {
-  return "ofAnnotationType(" + typeMatcher + ')';
+  return "ofAnnotationType(" + matcher + ')';
 }

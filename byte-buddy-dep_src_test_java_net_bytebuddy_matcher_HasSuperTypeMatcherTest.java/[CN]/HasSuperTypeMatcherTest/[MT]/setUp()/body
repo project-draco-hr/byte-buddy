@@ -1,0 +1,11 @@
+{
+  when(superType.asGenericType()).thenReturn(superType);
+  when(interfaceType.asGenericType()).thenReturn(interfaceType);
+  when(interfaceType.asErasure()).thenReturn(mock(TypeDescription.class));
+  when(implicitInterfaceType.asGenericType()).thenReturn(implicitInterfaceType);
+  when(implicitInterfaceType.asErasure()).thenReturn(mock(TypeDescription.class));
+  when(typeDescription.iterator()).thenReturn(Collections.<TypeDefinition>singletonList(superType).iterator());
+  when(superType.getInterfaces()).thenReturn(new TypeList.Generic.Explicit(interfaceType));
+  when(interfaceType.getInterfaces()).thenReturn(new TypeList.Generic.Explicit(implicitInterfaceType));
+  when(implicitInterfaceType.getInterfaces()).thenReturn(new TypeList.Generic.Empty());
+}

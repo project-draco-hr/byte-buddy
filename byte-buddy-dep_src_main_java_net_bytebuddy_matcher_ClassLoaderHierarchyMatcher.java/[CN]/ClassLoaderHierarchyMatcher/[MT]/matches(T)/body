@@ -1,10 +1,10 @@
 {
   ClassLoader current=target;
   while (current != null) {
-    if (classLoaderMatcher.matches(current)) {
+    if (matcher.matches(current)) {
       return true;
     }
     current=current.getParent();
   }
-  return classLoaderMatcher.matches(null);
+  return matcher.matches(null);
 }
