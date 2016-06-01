@@ -1,0 +1,4 @@
+{
+  assertThat(ElementMatchers.supportsModules().matches(mock(JavaModule.class)),is(true));
+  assertThat(ElementMatchers.supportsModules().matches(null),is(false));
+}

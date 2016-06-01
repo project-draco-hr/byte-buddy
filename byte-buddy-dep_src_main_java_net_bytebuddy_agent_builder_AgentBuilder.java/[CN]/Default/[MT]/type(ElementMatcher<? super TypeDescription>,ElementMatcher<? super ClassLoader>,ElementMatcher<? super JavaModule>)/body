@@ -1,3 +1,3 @@
 {
-  return type(new RawMatcher.ForElementMatchers(typeMatcher,classLoaderMatcher,moduleMatcher));
+  return type(new RawMatcher.ForElementMatchers(typeMatcher,classLoaderMatcher,not(supportsModules()).or(moduleMatcher)));
 }
