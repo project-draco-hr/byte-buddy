@@ -27,6 +27,12 @@
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.Default.ExecutingTransformer.Factory.ForJava9CapableVm.class).apply();
+  final Iterator<Constructor<?>> iterator=Arrays.asList(String.class.getDeclaredConstructors()).iterator();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.ExecutingTransformer.Factory.ForJava9CapableVm.class).create(new ObjectPropertyAssertion.Creator<Constructor<?>>(){
+    @Override public Constructor<?> create(){
+      return iterator.next();
+    }
+  }
+).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Default.ExecutingTransformer.Factory.ForLegacyVm.class).apply();
 }
