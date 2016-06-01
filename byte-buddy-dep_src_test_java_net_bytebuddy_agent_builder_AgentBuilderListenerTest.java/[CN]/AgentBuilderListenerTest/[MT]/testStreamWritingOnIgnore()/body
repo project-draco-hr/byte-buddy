@@ -2,6 +2,6 @@
   PrintStream printStream=mock(PrintStream.class);
   AgentBuilder.Listener listener=new AgentBuilder.Listener.StreamWriting(printStream);
   listener.onIgnored(typeDescription,classLoader,module);
-  verify(printStream).println("[Byte Buddy] IGNORE " + FOO + "["+ classLoader+ ","+ module+ "]");
+  verify(printStream).println("[Byte Buddy] IGNORE " + FOO + "["+ classLoader+ ", "+ module+ "]");
   verifyNoMoreInteractions(printStream);
 }

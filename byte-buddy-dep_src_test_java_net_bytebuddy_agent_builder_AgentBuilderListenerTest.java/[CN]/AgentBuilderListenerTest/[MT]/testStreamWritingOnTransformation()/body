@@ -2,6 +2,6 @@
   PrintStream printStream=mock(PrintStream.class);
   AgentBuilder.Listener listener=new AgentBuilder.Listener.StreamWriting(printStream);
   listener.onTransformation(typeDescription,classLoader,module,dynamicType);
-  verify(printStream).println("[Byte Buddy] TRANSFORM " + FOO + "["+ classLoader+ ","+ module+ "]");
+  verify(printStream).println("[Byte Buddy] TRANSFORM " + FOO + "["+ classLoader+ ", "+ module+ "]");
   verifyNoMoreInteractions(printStream);
 }
