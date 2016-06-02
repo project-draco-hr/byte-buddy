@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Listener.ModuleReadEdgeCompleting{" + "instrumentation=" + instrumentation + ", modules="+ modules+ '}';
+}

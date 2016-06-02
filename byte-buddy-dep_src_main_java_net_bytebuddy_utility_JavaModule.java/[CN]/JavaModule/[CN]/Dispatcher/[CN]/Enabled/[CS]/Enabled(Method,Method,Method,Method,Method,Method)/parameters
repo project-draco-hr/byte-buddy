@@ -2,3 +2,5 @@ Method getModule
 Method getClassLoader
 Method isNamed
 Method getName
+Method canRead
+Method addModuleReads

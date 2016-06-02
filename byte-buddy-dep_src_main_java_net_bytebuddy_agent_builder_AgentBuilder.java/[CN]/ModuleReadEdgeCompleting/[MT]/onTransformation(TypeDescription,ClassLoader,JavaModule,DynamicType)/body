@@ -1,0 +1,9 @@
+{
+  if (module != null && module.isNamed()) {
+    for (    JavaModule target : modules) {
+      if (!module.canRead(target)) {
+        module.addReads(instrumentation,target);
+      }
+    }
+  }
+}

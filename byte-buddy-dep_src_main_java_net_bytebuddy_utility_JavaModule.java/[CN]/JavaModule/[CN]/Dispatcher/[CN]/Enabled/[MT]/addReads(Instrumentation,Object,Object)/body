@@ -1,0 +1,11 @@
+{
+  try {
+    addModuleReads.invoke(instrumentation,source,target);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access " + addModuleReads,exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Cannot invoke " + addModuleReads,exception.getCause());
+  }
+}

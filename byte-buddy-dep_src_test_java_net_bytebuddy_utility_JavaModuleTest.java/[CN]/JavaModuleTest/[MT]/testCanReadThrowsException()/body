@@ -1,0 +1,3 @@
+{
+  JavaModule.Dispatcher.Disabled.INSTANCE.canRead(mock(Object.class),mock(Object.class));
+}

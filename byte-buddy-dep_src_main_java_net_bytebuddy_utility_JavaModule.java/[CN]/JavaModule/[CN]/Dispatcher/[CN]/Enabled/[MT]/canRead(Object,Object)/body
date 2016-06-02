@@ -1,0 +1,11 @@
+{
+  try {
+    return (Boolean)canRead.invoke(source,target);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access " + canRead,exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Cannot invoke " + canRead,exception.getCause());
+  }
+}

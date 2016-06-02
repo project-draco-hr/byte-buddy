@@ -1,0 +1,3 @@
+{
+  DISPATCHER.addReads(instrumentation,this.module,module.unwrap());
+}

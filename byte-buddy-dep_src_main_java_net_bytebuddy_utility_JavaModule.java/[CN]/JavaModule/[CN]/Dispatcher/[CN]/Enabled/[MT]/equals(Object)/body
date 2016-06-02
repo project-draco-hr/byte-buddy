@@ -2,8 +2,5 @@
   if (this == object)   return true;
   if (object == null || getClass() != object.getClass())   return false;
   Enabled enabled=(Enabled)object;
-  if (!getModule.equals(enabled.getModule))   return false;
-  if (!getClassLoader.equals(enabled.getClassLoader))   return false;
-  if (!isNamed.equals(enabled.isNamed))   return false;
-  return getName.equals(enabled.getName);
+  return getModule.equals(enabled.getModule) && getClassLoader.equals(enabled.getClassLoader) && isNamed.equals(enabled.isNamed)&& getName.equals(enabled.getName)&& canRead.equals(enabled.canRead)&& addModuleReads.equals(enabled.addModuleReads);
 }

@@ -1,0 +1,3 @@
+{
+  JavaModule.Dispatcher.Disabled.INSTANCE.addReads(mock(Instrumentation.class),mock(Object.class),mock(Object.class));
+}

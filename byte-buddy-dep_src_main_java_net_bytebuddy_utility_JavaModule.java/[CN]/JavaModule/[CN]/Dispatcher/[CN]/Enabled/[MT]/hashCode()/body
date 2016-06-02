@@ -3,5 +3,7 @@
   result=31 * result + getClassLoader.hashCode();
   result=31 * result + isNamed.hashCode();
   result=31 * result + getName.hashCode();
+  result=31 * result + canRead.hashCode();
+  result=31 * result + addModuleReads.hashCode();
   return result;
 }

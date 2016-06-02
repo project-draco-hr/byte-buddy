@@ -3,4 +3,6 @@
   this.getClassLoader=getClassLoader;
   this.isNamed=isNamed;
   this.getName=getName;
+  this.canRead=canRead;
+  this.addModuleReads=addModuleReads;
 }

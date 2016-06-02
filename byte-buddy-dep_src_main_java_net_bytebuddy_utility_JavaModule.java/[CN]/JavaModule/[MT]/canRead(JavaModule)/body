@@ -1,0 +1,3 @@
+{
+  return DISPATCHER.canRead(this.module,module.unwrap());
+}
