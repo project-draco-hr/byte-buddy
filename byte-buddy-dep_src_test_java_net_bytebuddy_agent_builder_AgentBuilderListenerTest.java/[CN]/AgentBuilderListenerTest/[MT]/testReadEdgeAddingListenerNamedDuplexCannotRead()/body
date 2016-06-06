@@ -3,11 +3,14 @@
   JavaModule source=mock(JavaModule.class), target=mock(JavaModule.class);
   when(source.isNamed()).thenReturn(true);
   when(source.canRead(target)).thenReturn(false);
-  AgentBuilder.Listener listener=new AgentBuilder.Listener.ModuleReadEdgeCompleting(instrumentation,false,Collections.singleton(target));
+  when(target.canRead(source)).thenReturn(false);
+  AgentBuilder.Listener listener=new AgentBuilder.Listener.ModuleReadEdgeCompleting(instrumentation,true,Collections.singleton(target));
   listener.onTransformation(mock(TypeDescription.class),mock(ClassLoader.class),source,mock(DynamicType.class));
   verify(source).isNamed();
   verify(source).canRead(target);
   verify(source).addReads(instrumentation,target);
   verifyNoMoreInteractions(source);
-  verifyZeroInteractions(target);
+  verify(target).canRead(source);
+  verify(target).addReads(instrumentation,source);
+  verifyNoMoreInteractions(target);
 }

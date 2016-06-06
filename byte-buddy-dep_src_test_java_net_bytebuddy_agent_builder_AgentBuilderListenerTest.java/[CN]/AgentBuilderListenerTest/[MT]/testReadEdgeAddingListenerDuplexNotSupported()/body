@@ -1,0 +1,5 @@
+{
+  Instrumentation instrumentation=mock(Instrumentation.class);
+  AgentBuilder.Listener listener=new AgentBuilder.Listener.ModuleReadEdgeCompleting(instrumentation,true,Collections.<JavaModule>emptySet());
+  listener.onTransformation(mock(TypeDescription.class),mock(ClassLoader.class),JavaModule.UNSUPPORTED,mock(DynamicType.class));
+}
