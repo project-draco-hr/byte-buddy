@@ -2,5 +2,5 @@
   if (this == object)   return true;
   if (object == null || getClass() != object.getClass())   return false;
   ModuleReadEdgeCompleting that=(ModuleReadEdgeCompleting)object;
-  return instrumentation.equals(that.instrumentation) && modules.equals(that.modules);
+  return instrumentation.equals(that.instrumentation) && addTargetEdge == that.addTargetEdge && modules.equals(that.modules);
 }

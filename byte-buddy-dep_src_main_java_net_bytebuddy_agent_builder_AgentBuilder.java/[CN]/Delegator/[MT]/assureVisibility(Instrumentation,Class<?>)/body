@@ -1,3 +1,0 @@
-{
-  return materialize().assureVisibility(instrumentation,type);
-}

@@ -4,6 +4,9 @@
       if (!module.canRead(target)) {
         module.addReads(instrumentation,target);
       }
+      if (addTargetEdge && !target.canRead(module)) {
+        target.addReads(instrumentation,module);
+      }
     }
   }
 }

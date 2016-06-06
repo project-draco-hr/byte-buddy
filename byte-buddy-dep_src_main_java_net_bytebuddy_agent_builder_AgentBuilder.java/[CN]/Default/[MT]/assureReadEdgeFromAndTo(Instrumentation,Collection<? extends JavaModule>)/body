@@ -1,0 +1,3 @@
+{
+  return with(new Listener.ModuleReadEdgeCompleting(instrumentation,true,new HashSet<JavaModule>(modules)));
+}

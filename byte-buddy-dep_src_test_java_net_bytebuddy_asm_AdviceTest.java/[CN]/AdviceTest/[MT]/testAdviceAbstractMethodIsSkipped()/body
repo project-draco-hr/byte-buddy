@@ -1,0 +1,8 @@
+{
+  Advice.Dispatcher.Resolved.ForMethodEnter methodEnter=mock(Advice.Dispatcher.Resolved.ForMethodEnter.class);
+  Advice.Dispatcher.Resolved.ForMethodExit methodExit=mock(Advice.Dispatcher.Resolved.ForMethodExit.class);
+  MethodDescription.InDefinedShape methodDescription=mock(MethodDescription.InDefinedShape.class);
+  when(methodDescription.isAbstract()).thenReturn(true);
+  MethodVisitor methodVisitor=mock(MethodVisitor.class);
+  assertThat(new Advice(methodEnter,methodExit).wrap(mock(TypeDescription.class),methodDescription,methodVisitor,mock(ClassFileVersion.class),0,0),sameInstance(methodVisitor));
+}

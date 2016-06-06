@@ -1,3 +1,0 @@
-{
-  new ByteBuddy().redefine(AbstractMethod.class).visit(Advice.to(TrivialAdvice.class).on(named(FOO))).make();
-}

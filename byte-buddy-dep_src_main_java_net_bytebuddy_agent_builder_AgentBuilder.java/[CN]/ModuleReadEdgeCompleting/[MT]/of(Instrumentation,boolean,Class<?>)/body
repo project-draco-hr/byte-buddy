@@ -1,0 +1,10 @@
+{
+  Set<JavaModule> modules=new HashSet<JavaModule>();
+  for (  Class<?> aType : type) {
+    JavaModule module=JavaModule.ofType(aType);
+    if (module.isNamed()) {
+      modules.add(module);
+    }
+  }
+  return modules.isEmpty() ? Listener.NoOp.INSTANCE : new Listener.ModuleReadEdgeCompleting(instrumentation,addTargetEdge,modules);
+}

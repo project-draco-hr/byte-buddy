@@ -1,0 +1,3 @@
+{
+  return assureReadEdgeFromAndTo(instrumentation,Arrays.asList(module));
+}

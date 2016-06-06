@@ -1,6 +1,6 @@
 {
   if (methodDescription.isAbstract() || methodDescription.isNative()) {
-    throw new IllegalStateException("Cannot advice abstract or native method " + methodDescription);
+    return methodVisitor;
   }
  else   if (!methodExit.isAlive()) {
     return new AdviceVisitor.WithoutExitAdvice(methodVisitor,methodDescription,methodEnter,classFileVersion,writerFlags,readerFlags);

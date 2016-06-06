@@ -1,7 +1,7 @@
 {
   Instrumentation instrumentation=mock(Instrumentation.class);
   JavaModule source=mock(JavaModule.class), target=mock(JavaModule.class);
-  AgentBuilder.Listener listener=new AgentBuilder.Listener.ModuleReadEdgeCompleting(instrumentation,Collections.singleton(target));
+  AgentBuilder.Listener listener=new AgentBuilder.Listener.ModuleReadEdgeCompleting(instrumentation,false,Collections.singleton(target));
   listener.onTransformation(mock(TypeDescription.class),mock(ClassLoader.class),source,mock(DynamicType.class));
   verify(source).isNamed();
   verifyNoMoreInteractions(source);

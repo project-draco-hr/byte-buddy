@@ -1,5 +1,6 @@
 {
   int result=instrumentation.hashCode();
   result=31 * result + modules.hashCode();
+  result=31 * result + (addTargetEdge ? 1 : 0);
   return result;
 }

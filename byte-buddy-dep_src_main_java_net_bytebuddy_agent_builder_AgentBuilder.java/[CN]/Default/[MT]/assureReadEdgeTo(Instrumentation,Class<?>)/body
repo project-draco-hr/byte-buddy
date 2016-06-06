@@ -1,0 +1,3 @@
+{
+  return JavaModule.isSupported() ? with(Listener.ModuleReadEdgeCompleting.of(instrumentation,false,type)) : this;
+}

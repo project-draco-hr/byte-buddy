@@ -1,3 +1,0 @@
-{
-  new ByteBuddy().redefine(Object.class).visit(Advice.to(TrivialAdvice.class).on(named("getClass"))).make();
-}
