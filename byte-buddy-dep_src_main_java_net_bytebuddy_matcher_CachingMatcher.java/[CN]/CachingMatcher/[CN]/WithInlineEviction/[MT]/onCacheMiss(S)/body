@@ -1,0 +1,8 @@
+{
+  if (map.size() >= evictionSize) {
+    Iterator<?> iterator=map.entrySet().iterator();
+    iterator.next();
+    iterator.remove();
+  }
+  return super.onCacheMiss(target);
+}

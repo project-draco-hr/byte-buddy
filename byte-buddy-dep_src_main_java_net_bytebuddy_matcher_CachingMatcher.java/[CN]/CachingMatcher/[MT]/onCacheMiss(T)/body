@@ -1,0 +1,5 @@
+{
+  boolean cached=matcher.matches(target);
+  map.put(target,cached);
+  return cached;
+}

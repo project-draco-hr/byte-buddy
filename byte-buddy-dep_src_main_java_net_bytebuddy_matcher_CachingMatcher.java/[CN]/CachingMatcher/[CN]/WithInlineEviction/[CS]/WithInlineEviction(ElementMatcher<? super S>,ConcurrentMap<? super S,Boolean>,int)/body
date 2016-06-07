@@ -1,0 +1,4 @@
+{
+  super(matcher,map);
+  this.evictionSize=evictionSize;
+}

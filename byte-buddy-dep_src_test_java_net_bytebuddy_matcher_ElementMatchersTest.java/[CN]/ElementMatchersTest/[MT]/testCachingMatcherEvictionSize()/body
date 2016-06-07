@@ -1,0 +1,9 @@
+{
+  ElementMatcher<Object> delegate=mock(ElementMatcher.class);
+  ElementMatcher<Object> matcher=ElementMatchers.cached(delegate,1);
+  Object target=new Object();
+  when(delegate.matches(target)).thenReturn(true);
+  assertThat(matcher.matches(target),is(true));
+  assertThat(matcher.matches(target),is(true));
+  verify(delegate).matches(target);
+}

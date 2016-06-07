@@ -1,0 +1,3 @@
+{
+  super((Class<CachingMatcher<?>>)(Object)CachingMatcher.class,"cached");
+}

@@ -1,0 +1,8 @@
+{
+  ElementMatcher<Object> matcher=new CachingMatcher<Object>(this.matcher,map);
+  assertThat(matcher.matches(target),is(true));
+  assertThat(matcher.matches(target),is(true));
+  verify(this.matcher).matches(target);
+  verifyNoMoreInteractions(this.matcher);
+  verifyZeroInteractions(target);
+}

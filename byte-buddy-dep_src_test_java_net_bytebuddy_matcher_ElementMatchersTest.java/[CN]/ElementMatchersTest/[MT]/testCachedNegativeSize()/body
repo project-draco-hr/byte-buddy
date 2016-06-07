@@ -1,0 +1,3 @@
+{
+  ElementMatchers.cached(new BooleanMatcher<Object>(true),-1);
+}

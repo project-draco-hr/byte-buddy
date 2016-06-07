@@ -1,0 +1,6 @@
+{
+  if (evictionSize < 1) {
+    throw new IllegalArgumentException("Eviction size must be a positive number: " + evictionSize);
+  }
+  return new CachingMatcher.WithInlineEviction<T>(matcher,new ConcurrentHashMap<T,Boolean>(),evictionSize);
+}

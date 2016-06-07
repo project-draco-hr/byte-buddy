@@ -1,0 +1,3 @@
+ElementMatcher<? super S> matcher
+ConcurrentMap<? super S,Boolean> map
+int evictionSize

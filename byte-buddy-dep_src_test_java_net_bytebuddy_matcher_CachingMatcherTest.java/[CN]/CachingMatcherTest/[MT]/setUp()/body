@@ -1,0 +1,4 @@
+{
+  map=new ConcurrentHashMap<Object,Boolean>();
+  when(matcher.matches(target)).thenReturn(true);
+}

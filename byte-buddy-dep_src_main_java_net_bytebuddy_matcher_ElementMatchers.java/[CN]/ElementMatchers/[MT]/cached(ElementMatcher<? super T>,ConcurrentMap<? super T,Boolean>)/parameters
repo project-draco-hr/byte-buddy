@@ -1,0 +1,2 @@
+ElementMatcher<? super T> matcher
+ConcurrentMap<? super T,Boolean> map

@@ -1,0 +1,11 @@
+{
+  ElementMatcher<Object> delegate=mock(ElementMatcher.class);
+  ConcurrentMap<Object,Boolean> map=new ConcurrentHashMap<Object,Boolean>();
+  ElementMatcher<Object> matcher=ElementMatchers.cached(delegate,map);
+  Object target=new Object();
+  when(delegate.matches(target)).thenReturn(true);
+  assertThat(matcher.matches(target),is(true));
+  assertThat(matcher.matches(target),is(true));
+  verify(delegate).matches(target);
+  assertThat(map.get(target),is(true));
+}

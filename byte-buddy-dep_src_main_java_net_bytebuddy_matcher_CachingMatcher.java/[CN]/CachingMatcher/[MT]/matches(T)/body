@@ -1,0 +1,7 @@
+{
+  Boolean cached=map.get(target);
+  if (cached == null) {
+    cached=onCacheMiss(target);
+  }
+  return cached;
+}
