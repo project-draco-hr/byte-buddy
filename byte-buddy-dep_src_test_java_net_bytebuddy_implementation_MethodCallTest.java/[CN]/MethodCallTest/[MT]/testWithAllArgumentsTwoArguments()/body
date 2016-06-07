@@ -1,0 +1,12 @@
+{
+  DynamicType.Loaded<MethodCallWithTwoExplicitArguments> loaded=implement(MethodCallWithTwoExplicitArguments.class,MethodCall.invokeSuper().withAllArguments());
+  assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
+  assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredMethod(FOO,String.class,String.class),not(nullValue(Method.class)));
+  assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
+  assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
+  MethodCallWithTwoExplicitArguments instance=loaded.getLoaded().newInstance();
+  assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(MethodCallWithTwoExplicitArguments.class)));
+  assertThat(instance,instanceOf(MethodCallWithTwoExplicitArguments.class));
+  assertThat(instance.foo(FOO,BAR),is(FOO + BAR));
+}
