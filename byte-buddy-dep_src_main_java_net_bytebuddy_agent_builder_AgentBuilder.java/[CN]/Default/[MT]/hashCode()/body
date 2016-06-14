@@ -9,6 +9,7 @@
   result=31 * result + redefinitionStrategy.hashCode();
   result=31 * result + bootstrapInjectionStrategy.hashCode();
   result=31 * result + lambdaInstrumentationStrategy.hashCode();
+  result=31 * result + descriptionStrategy.hashCode();
   result=31 * result + ignoredTypeMatcher.hashCode();
   result=31 * result + transformation.hashCode();
   return result;

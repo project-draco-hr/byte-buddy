@@ -8,10 +8,10 @@
   if (redefinitionStrategy.isEnabled()) {
     RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
     for (    Class<?> type : instrumentation.getAllLoadedClasses()) {
-      TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
+      TypeDescription typeDescription=descriptionStrategy.apply(type,typeLocator);
       JavaModule module=JavaModule.ofType(type);
       try {
-        if (!instrumentation.isModifiableClass(type) || !collector.consider(type,ignoredTypeMatcher)) {
+        if (!instrumentation.isModifiableClass(type) || !collector.consider(typeDescription,type,ignoredTypeMatcher)) {
           try {
             try {
               listener.onIgnored(typeDescription,type.getClassLoader(),module);

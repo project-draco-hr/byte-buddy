@@ -1,0 +1,3 @@
+{
+  return new ExecutingTransformer(byteBuddy,typeLocator,typeStrategy,listener,nativeMethodStrategy,accessControlContext,initializationStrategy,bootstrapInjectionStrategy,descriptionStrategy,ignoredTypeMatcher,transformation);
+}

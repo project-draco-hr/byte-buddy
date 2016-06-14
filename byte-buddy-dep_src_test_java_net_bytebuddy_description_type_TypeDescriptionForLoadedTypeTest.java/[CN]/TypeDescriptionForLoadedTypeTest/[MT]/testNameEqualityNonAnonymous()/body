@@ -1,0 +1,3 @@
+{
+  assertThat(TypeDescription.ForLoadedType.getName(Object.class),is(Object.class.getName()));
+}

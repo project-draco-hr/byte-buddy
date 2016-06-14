@@ -1,0 +1,11 @@
+ByteBuddy byteBuddy
+TypeLocator typeLocator
+TypeStrategy typeStrategy
+Listener listener
+NativeMethodStrategy nativeMethodStrategy
+AccessControlContext accessControlContext
+InitializationStrategy initializationStrategy
+BootstrapInjectionStrategy bootstrapInjectionStrategy
+DescriptionStrategy descriptionStrategy
+RawMatcher ignoredTypeMatcher
+Transformation transformation

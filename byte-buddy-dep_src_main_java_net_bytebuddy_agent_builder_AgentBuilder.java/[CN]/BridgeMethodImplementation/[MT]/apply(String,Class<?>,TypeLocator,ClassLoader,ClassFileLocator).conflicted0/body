@@ -1,0 +1,3 @@
+{
+  return typeLocator.typePool(classFileLocator,classLoader).describe(typeName).resolve();
+}

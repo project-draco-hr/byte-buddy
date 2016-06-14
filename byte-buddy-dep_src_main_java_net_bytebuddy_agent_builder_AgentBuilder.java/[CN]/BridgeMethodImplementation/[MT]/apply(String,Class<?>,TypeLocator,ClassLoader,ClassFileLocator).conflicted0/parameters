@@ -1,0 +1,5 @@
+String typeName
+Class<?> typeBeingRedefined
+TypeLocator typeLocator
+ClassLoader classLoader
+ClassFileLocator classFileLocator

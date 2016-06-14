@@ -1,0 +1,4 @@
+{
+  assertThat(AgentBuilder.DescriptionStrategy.HYBRID.apply(Object.class,typeLocator),is(TypeDescription.OBJECT));
+  assertThat(AgentBuilder.DescriptionStrategy.HYBRID.apply(Object.class,typeLocator),instanceOf(TypeDescription.ForLoadedType.class));
+}

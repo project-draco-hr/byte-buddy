@@ -1,3 +1,3 @@
 {
-  return super.onNonGenericType(typeDescription) && !typeDescription.asErasure().isInterface();
+  return typeDescription.asErasure().isAssignableTo(Throwable.class);
 }
