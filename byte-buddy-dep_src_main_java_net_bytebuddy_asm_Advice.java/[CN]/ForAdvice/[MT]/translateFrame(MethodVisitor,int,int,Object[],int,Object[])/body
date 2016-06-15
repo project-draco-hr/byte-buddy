@@ -1,3 +1,3 @@
 {
-  Default.this.translateFrame(methodVisitor,translationMode,methodDescription,requiredTypes,type,localVariableLength,localVariable,stackSize,stack);
+  Default.this.translateFrame(methodVisitor,translationMode,adviceMethod,requiredTypes,type,localVariableLength,localVariable,stackSize,stack);
 }
