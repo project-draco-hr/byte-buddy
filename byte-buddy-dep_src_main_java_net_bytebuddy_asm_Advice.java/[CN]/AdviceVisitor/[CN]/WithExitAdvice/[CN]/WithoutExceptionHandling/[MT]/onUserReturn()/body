@@ -1,2 +1,5 @@
 {
+  if (!instrumentedMethod.getReturnType().represents(void.class)) {
+    stackMapFrameHandler.injectCompletionFrame(mv,false);
+  }
 }

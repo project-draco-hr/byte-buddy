@@ -1,4 +1,12 @@
 {
   mv.visitInsn(Opcodes.ACONST_NULL);
   variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
+  Label endOfHandler=new Label();
+  mv.visitJumpInsn(Opcodes.GOTO,endOfHandler);
+  mv.visitLabel(exceptionHandler);
+  stackMapFrameHandler.injectHandlerFrame(mv);
+  variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
+  storeDefaultReturn();
+  mv.visitLabel(endOfHandler);
+  stackMapFrameHandler.injectCompletionFrame(mv,false);
 }

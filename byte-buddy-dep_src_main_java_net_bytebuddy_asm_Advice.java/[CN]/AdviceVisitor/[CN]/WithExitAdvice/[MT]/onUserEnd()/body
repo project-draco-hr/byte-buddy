@@ -4,9 +4,10 @@
   Type returnType=Type.getType(instrumentedMethod.getReturnType().asErasure().getDescriptor());
   if (!returnType.equals(Type.VOID_TYPE)) {
     variable(returnType.getOpcode(Opcodes.ISTORE));
-    stackMapFrameHandler.injectCompletionFrame(mv,false);
   }
+  onUserReturn();
   methodExit.apply();
+  onExitAdviceReturn();
   if (returnType.equals(Type.VOID_TYPE)) {
     mv.visitInsn(Opcodes.RETURN);
   }

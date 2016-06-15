@@ -1,6 +1,0 @@
-{
-  mv.visitLabel(userEnd);
-  stackMapFrameHandler.injectHandlerFrame(mv);
-  variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
-  storeDefaultReturn();
-}
