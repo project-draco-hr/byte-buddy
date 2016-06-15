@@ -7,8 +7,9 @@
     maximumStackSize=Math.max(maximumStackSize,currentStackSize + offsetMapping.resolveAccess(methodVisitor,type.getOpcode(Opcodes.ILOAD)));
   }
   methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,adviceMethod.getDeclaringType().getInternalName(),adviceMethod.getInternalName(),adviceMethod.getDescriptor(),false);
-  onAfterCall();
+  onMethodReturn();
   suppressionHandler.onEndSkipped(methodVisitor,stackMapFrameHandler,this);
+  onMethodExit();
   stackMapFrameHandler.injectCompletionFrame(methodVisitor,false);
   methodSizeHandler.recordMaxima(Math.max(maximumStackSize,adviceMethod.getReturnType().getStackSize().getSize()),EMPTY);
 }
