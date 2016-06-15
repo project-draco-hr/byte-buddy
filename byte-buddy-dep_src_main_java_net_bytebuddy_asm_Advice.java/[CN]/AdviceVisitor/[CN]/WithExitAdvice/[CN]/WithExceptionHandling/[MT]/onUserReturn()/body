@@ -4,7 +4,7 @@
   Label endOfHandler=new Label();
   mv.visitJumpInsn(Opcodes.GOTO,endOfHandler);
   mv.visitLabel(exceptionHandler);
-  stackMapFrameHandler.injectHandlerFrame(mv);
+  stackMapFrameHandler.injectExceptionFrame(mv);
   variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
   storeDefaultReturn();
   mv.visitLabel(endOfHandler);

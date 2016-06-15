@@ -1,6 +1,6 @@
 {
   methodVisitor.visitLabel(endOfMethod);
-  stackMapFrameHandler.injectHandlerFrame(methodVisitor);
+  stackMapFrameHandler.injectExceptionFrame(methodVisitor);
   methodVisitor.visitInsn(Opcodes.POP);
   returnValueProducer.storeDefaultValue(methodVisitor);
 }

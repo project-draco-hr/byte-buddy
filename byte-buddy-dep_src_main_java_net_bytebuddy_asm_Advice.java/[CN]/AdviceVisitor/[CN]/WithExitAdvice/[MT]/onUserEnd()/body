@@ -1,6 +1,6 @@
 {
   mv.visitLabel(returnHandler);
-  stackMapFrameHandler.injectReturnFrame(mv,instrumentedMethod.getReturnType().asErasure());
+  stackMapFrameHandler.injectReturnFrame(mv);
   Type returnType=Type.getType(instrumentedMethod.getReturnType().asErasure().getDescriptor());
   if (!returnType.equals(Type.VOID_TYPE)) {
     variable(returnType.getOpcode(Opcodes.ISTORE));

@@ -1,0 +1,13 @@
+{
+  if (!expandFrames && currentFrameDivergence == 0 && !instrumentedMethod.isConstructor()) {
+    if (instrumentedMethod.getReturnType().represents(void.class)) {
+      methodVisitor.visitFrame(Opcodes.F_SAME,0,EMPTY,0,EMPTY);
+    }
+ else {
+      methodVisitor.visitFrame(Opcodes.F_SAME1,0,EMPTY,1,new Object[]{toFrame(instrumentedMethod.getReturnType().asErasure())});
+    }
+  }
+ else {
+    injectFullFrame(methodVisitor,requiredTypes,instrumentedMethod.getReturnType().represents(void.class) ? Collections.emptyList() : Collections.singletonList(instrumentedMethod.getReturnType().asErasure()));
+  }
+}
