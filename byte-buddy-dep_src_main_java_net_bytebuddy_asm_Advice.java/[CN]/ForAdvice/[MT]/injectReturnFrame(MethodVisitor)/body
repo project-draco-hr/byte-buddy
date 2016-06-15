@@ -8,6 +8,6 @@
     }
   }
  else {
-    injectFullFrame(methodVisitor,requiredTypes,yieldedTypes.isEmpty() || adviceMethod.getReturnType().represents(void.class) ? Collections.emptyList() : Collections.singletonList(adviceMethod.getReturnType().asErasure()));
+    injectFullFrame(methodVisitor,requiredTypes,yieldedTypes.isEmpty() || adviceMethod.getReturnType().represents(void.class) ? Collections.<TypeDescription>emptyList() : Collections.singletonList(adviceMethod.getReturnType().asErasure()));
   }
 }
