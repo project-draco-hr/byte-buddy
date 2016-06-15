@@ -3,5 +3,4 @@
   methodVisitor.visitJumpInsn(Opcodes.GOTO,endOfHandler);
   onEnd(methodVisitor,stackMapFrameHandler,returnValueProducer);
   methodVisitor.visitLabel(endOfHandler);
-  stackMapFrameHandler.injectReturnFrame(methodVisitor);
 }
