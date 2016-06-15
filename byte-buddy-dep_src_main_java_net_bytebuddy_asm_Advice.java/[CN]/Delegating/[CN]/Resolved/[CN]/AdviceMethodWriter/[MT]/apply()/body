@@ -10,6 +10,5 @@
   onMethodReturn();
   suppressionHandler.onEndSkipped(methodVisitor,stackMapFrameHandler,this);
   onMethodExit();
-  stackMapFrameHandler.injectCompletionFrame(methodVisitor,false);
   methodSizeHandler.recordMaxima(Math.max(maximumStackSize,adviceMethod.getReturnType().getStackSize().getSize()),EMPTY);
 }

@@ -2,5 +2,5 @@
   methodVisitor.visitLabel(endOfMethod);
   stackMapFrameHandler.injectExceptionFrame(methodVisitor);
   methodVisitor.visitInsn(Opcodes.POP);
-  returnValueProducer.storeDefaultValue(methodVisitor);
+  returnValueProducer.pushDefaultValue(methodVisitor);
 }

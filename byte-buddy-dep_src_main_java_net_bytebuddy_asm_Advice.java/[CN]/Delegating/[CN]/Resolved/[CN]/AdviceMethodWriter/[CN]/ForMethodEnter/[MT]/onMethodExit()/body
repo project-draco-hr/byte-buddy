@@ -14,4 +14,7 @@
  else   if (!adviceMethod.getReturnType().represents(void.class)) {
     methodVisitor.visitVarInsn(Opcodes.ASTORE,instrumentedMethod.getStackSize());
   }
+  if (!adviceMethod.getReturnType().represents(void.class)) {
+    stackMapFrameHandler.injectCompletionFrame(methodVisitor,false);
+  }
 }
