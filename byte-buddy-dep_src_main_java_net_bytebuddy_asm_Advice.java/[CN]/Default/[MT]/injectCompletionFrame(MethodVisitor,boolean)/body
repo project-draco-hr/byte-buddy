@@ -13,6 +13,6 @@
     }
   }
  else {
-    injectFullFrame(methodVisitor,CompoundList.of(requiredTypes,yieldedTypes),false);
+    injectFullFrame(methodVisitor,CompoundList.of(requiredTypes,yieldedTypes),Collections.emptyList());
   }
 }

@@ -3,5 +3,4 @@
   stackMapFrameHandler.injectHandlerFrame(mv);
   variable(Opcodes.ASTORE,instrumentedMethod.getReturnType().getStackSize().getSize());
   storeDefaultReturn();
-  mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);
 }

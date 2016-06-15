@@ -1,0 +1,3 @@
+{
+  injectFullFrame(methodVisitor,requiredTypes,returnType.represents(void.class) ? Collections.emptyList() : Collections.singletonList(returnType));
+}

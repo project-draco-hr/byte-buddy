@@ -3,6 +3,6 @@
     methodVisitor.visitFrame(Opcodes.F_SAME1,0,EMPTY,1,new Object[]{Type.getInternalName(Throwable.class)});
   }
  else {
-    injectFullFrame(methodVisitor,requiredTypes,true);
+    injectFullFrame(methodVisitor,requiredTypes,Collections.singletonList(TypeDescription.THROWABLE));
   }
 }

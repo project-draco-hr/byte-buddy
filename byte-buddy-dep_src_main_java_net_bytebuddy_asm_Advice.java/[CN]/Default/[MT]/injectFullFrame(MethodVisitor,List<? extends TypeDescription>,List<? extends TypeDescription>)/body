@@ -1,5 +1,5 @@
 {
-  Object[] localVariable=new Object[instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + additionalTypes.size()];
+  Object[] localVariable=new Object[instrumentedMethod.getParameters().size() + (instrumentedMethod.isStatic() ? 0 : 1) + typesInArray.size()];
   int index=0;
   if (!instrumentedMethod.isStatic()) {
     localVariable[index++]=toFrame(instrumentedMethod.getDeclaringType());
@@ -7,10 +7,14 @@
   for (  TypeDescription typeDescription : instrumentedMethod.getParameters().asTypeList().asErasures()) {
     localVariable[index++]=toFrame(typeDescription);
   }
-  for (  TypeDescription typeDescription : additionalTypes) {
+  for (  TypeDescription typeDescription : typesInArray) {
     localVariable[index++]=toFrame(typeDescription);
   }
-  Object[] stackType=exceptionOnStack ? new Object[]{Type.getInternalName(Throwable.class)} : EMPTY;
+  index=0;
+  Object[] stackType=new Object[typesOnStack.size()];
+  for (  TypeDescription typeDescription : typesOnStack) {
+    stackType[index++]=toFrame(typeDescription);
+  }
   methodVisitor.visitFrame(expandFrames ? Opcodes.F_NEW : Opcodes.F_FULL,localVariable.length,localVariable,stackType.length,stackType);
   currentFrameDivergence=0;
 }

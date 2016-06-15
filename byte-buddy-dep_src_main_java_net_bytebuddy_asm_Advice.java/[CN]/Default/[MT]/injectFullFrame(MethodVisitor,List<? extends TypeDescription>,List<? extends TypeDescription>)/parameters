@@ -1,0 +1,3 @@
+MethodVisitor methodVisitor
+List<? extends TypeDescription> typesInArray
+List<? extends TypeDescription> typesOnStack
