@@ -1,3 +1,0 @@
-{
-  return typeLocator.typePool(ClassFileLocator.ForClassLoader.of(type.getClassLoader()),type.getClassLoader()).describe(TypeDescription.ForLoadedType.getName(type)).resolve();
-}

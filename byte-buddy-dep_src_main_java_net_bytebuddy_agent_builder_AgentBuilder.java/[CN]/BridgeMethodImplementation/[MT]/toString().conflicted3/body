@@ -1,3 +1,0 @@
-{
-  return "AgentBuilder.DescriptionStrategy." + name();
-}

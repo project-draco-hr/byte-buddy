@@ -1,3 +1,0 @@
-{
-  return typeBeingRedefined == null ? POOL_ONLY.apply(typeName,UNAVAILABLE,typeLocator,classLoader,classFileLocator) : new TypeDescription.ForLoadedType(typeBeingRedefined);
-}

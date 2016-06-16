@@ -1,5 +1,5 @@
 {
   when(typeLocator.typePool(ClassFileLocator.ForClassLoader.of(Object.class.getClassLoader()),Object.class.getClassLoader())).thenReturn(typePool);
   when(typePool.describe(Object.class.getName())).thenReturn(new TypePool.Resolution.Simple(typeDescription));
-  assertThat(AgentBuilder.DescriptionStrategy.POOL_ONLY.apply(Object.class,typeLocator),is(typeDescription));
+  assertThat(AgentBuilder.DescriptionStrategy.Default.POOL_ONLY.apply(Object.class,typeLocator),is(typeDescription));
 }
