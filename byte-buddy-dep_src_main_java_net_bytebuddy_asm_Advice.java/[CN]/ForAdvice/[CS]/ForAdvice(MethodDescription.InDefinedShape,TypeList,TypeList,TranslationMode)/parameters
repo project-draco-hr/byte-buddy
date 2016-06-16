@@ -1,4 +1,4 @@
-MethodDescription.InDefinedShape methodDescription
+MethodDescription.InDefinedShape adviceMethod
 TypeList requiredTypes
 TypeList yieldedTypes
 TranslationMode translationMode

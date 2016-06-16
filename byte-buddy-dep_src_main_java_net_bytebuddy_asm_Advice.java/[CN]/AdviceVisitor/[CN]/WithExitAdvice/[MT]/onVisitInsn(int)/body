@@ -1,26 +1,14 @@
 {
 switch (opcode) {
 case Opcodes.RETURN:
-    break;
 case Opcodes.IRETURN:
-  variable(Opcodes.ISTORE);
-break;
 case Opcodes.FRETURN:
-variable(Opcodes.FSTORE);
-break;
 case Opcodes.DRETURN:
-variable(Opcodes.DSTORE);
-break;
 case Opcodes.LRETURN:
-variable(Opcodes.LSTORE);
-break;
 case Opcodes.ARETURN:
-variable(Opcodes.ASTORE);
-break;
+    mv.visitJumpInsn(Opcodes.GOTO,returnHandler);
+  break;
 default :
 mv.visitInsn(opcode);
-return;
 }
-onUserReturn();
-mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);
 }

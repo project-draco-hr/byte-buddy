@@ -1,5 +1,5 @@
 {
-  this.methodDescription=methodDescription;
+  this.adviceMethod=adviceMethod;
   this.requiredTypes=requiredTypes;
   this.yieldedTypes=yieldedTypes;
   this.translationMode=translationMode;

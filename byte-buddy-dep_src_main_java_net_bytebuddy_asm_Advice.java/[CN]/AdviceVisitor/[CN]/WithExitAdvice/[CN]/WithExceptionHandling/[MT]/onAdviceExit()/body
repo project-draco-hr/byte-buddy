@@ -1,4 +1,0 @@
-{
-  variable(Opcodes.ALOAD,instrumentedMethod.getReturnType().getStackSize().getSize());
-  mv.visitJumpInsn(Opcodes.IFNONNULL,exceptionalReturn);
-}

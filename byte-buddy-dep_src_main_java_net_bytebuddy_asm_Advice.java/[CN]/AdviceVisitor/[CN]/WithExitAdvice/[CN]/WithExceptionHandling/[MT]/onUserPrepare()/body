@@ -1,3 +1,3 @@
 {
-  mv.visitTryCatchBlock(userStart,userEnd,userEnd,triggeringThrowable.getInternalName());
+  mv.visitTryCatchBlock(userStart,returnHandler,exceptionHandler,triggeringThrowable.getInternalName());
 }
