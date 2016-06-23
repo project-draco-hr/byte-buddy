@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION_CHUNKED.isEnabled(),is(true));
+}
