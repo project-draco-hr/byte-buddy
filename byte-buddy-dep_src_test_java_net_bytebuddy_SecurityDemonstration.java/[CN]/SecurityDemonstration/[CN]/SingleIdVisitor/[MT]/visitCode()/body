@@ -1,0 +1,12 @@
+{
+  super.visitCode();
+  super.visitMethodInsn(Opcodes.INVOKESTATIC,"java/lang/Thread","currentThread","()Ljava/lang/Thread;",false);
+  super.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/Thread","getId","()J",false);
+  super.visitLdcInsn(id);
+  super.visitInsn(Opcodes.LCMP);
+  Label skipShortCut=new Label();
+  super.visitJumpInsn(Opcodes.IFNE,skipShortCut);
+  super.visitInsn(Opcodes.RETURN);
+  super.visitLabel(skipShortCut);
+  super.visitFrame(Opcodes.F_SAME,0,null,0,null);
+}

@@ -1,0 +1,3 @@
+{
+  super.visitMaxs(Math.max(5,maxStack),Math.max(7,maxLocals));
+}

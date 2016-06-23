@@ -1,0 +1,35 @@
+{
+  Instrumentation instrumentation=ByteBuddyAgent.install();
+  System.setSecurityManager(new SecurityManager());
+  final long id=Thread.currentThread().getId();
+  instrumentation.addTransformer(new ClassFileTransformer(){
+    @Override public byte[] transform(    ClassLoader loader,    String className,    final Class<?> classBeingRedefined,    ProtectionDomain protectionDomain,    byte[] classfileBuffer) throws IllegalClassFormatException {
+      if (classBeingRedefined != AccessControlContext.class) {
+        return null;
+      }
+      try {
+        ClassReader classReader=new ClassReader(classfileBuffer);
+        ClassWriter classWriter=new ClassWriter(classReader,0);
+        classReader.accept(new ClassVisitor(Opcodes.ASM5,classWriter){
+          @Override public MethodVisitor visitMethod(          int access,          String name,          String desc,          String signature,          String[] exceptions){
+            MethodVisitor methodVisitor=super.visitMethod(access,name,desc,signature,exceptions);
+            if (name.equals("checkPermission")) {
+              methodVisitor=new MultipleIdVisitor(methodVisitor,new long[]{id});
+            }
+            return methodVisitor;
+          }
+        }
+,0);
+        return classWriter.toByteArray();
+      }
+ catch (      Exception e) {
+        e.printStackTrace();
+        throw new IllegalClassFormatException();
+      }
+    }
+  }
+,true);
+  instrumentation.retransformClasses(AccessControlContext.class);
+  System.getProperty("foo");
+  System.out.println("Hurray!");
+}
