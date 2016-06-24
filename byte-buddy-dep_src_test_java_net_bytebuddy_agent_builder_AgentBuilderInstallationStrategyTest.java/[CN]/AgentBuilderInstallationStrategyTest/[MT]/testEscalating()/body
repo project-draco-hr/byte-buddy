@@ -1,0 +1,9 @@
+{
+  try {
+    AgentBuilder.InstallationStrategy.Default.ESCALATING.onError(instrumentation,classFileTransformer,throwable);
+  }
+  finally {
+    verify(instrumentation).removeTransformer(classFileTransformer);
+    verifyNoMoreInteractions(instrumentation);
+  }
+}

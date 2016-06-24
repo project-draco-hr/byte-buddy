@@ -10,6 +10,7 @@
   this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
   this.lambdaInstrumentationStrategy=lambdaInstrumentationStrategy;
   this.descriptionStrategy=descriptionStrategy;
+  this.installationStrategy=installationStrategy;
   this.ignoredTypeMatcher=ignoredTypeMatcher;
   this.transformation=transformation;
 }

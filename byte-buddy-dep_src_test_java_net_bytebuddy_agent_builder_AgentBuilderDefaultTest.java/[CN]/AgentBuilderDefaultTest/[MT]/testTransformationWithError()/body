@@ -3,7 +3,7 @@
   RuntimeException exception=mock(RuntimeException.class);
   when(resolution.resolve()).thenThrow(exception);
   when(typeMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),REDEFINED,REDEFINED.getProtectionDomain())).thenReturn(true);
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(typeLocator).with(typeStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).type(typeMatcher).transform(transformer).installOn(instrumentation);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(typeLocator).with(typeStrategy).with(installationStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).type(typeMatcher).transform(transformer).installOn(instrumentation);
   assertThat(classFileTransformer.transform(REDEFINED.getClassLoader(),REDEFINED.getName(),null,REDEFINED.getProtectionDomain(),QUX),nullValue(byte[].class));
   verify(listener).onError(REDEFINED.getName(),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),exception);
   verify(listener).onComplete(REDEFINED.getName(),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED));
@@ -11,4 +11,5 @@
   verify(instrumentation).addTransformer(classFileTransformer,false);
   verifyNoMoreInteractions(instrumentation);
   verifyZeroInteractions(initializationStrategy);
+  verifyZeroInteractions(installationStrategy);
 }

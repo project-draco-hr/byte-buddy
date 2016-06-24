@@ -5,7 +5,7 @@
   when(ignoredTypes.matches(new TypeDescription.ForLoadedType(REDEFINED))).thenReturn(true);
   when(instrumentation.isModifiableClass(REDEFINED)).thenReturn(true);
   when(instrumentation.isRedefineClassesSupported()).thenReturn(true);
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(AgentBuilder.RedefinitionStrategy.REDEFINITION).with(typeLocator).with(typeStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).ignore(none()).or(ignoredTypes).type(typeMatcher).transform(transformer).installOn(instrumentation);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(AgentBuilder.RedefinitionStrategy.REDEFINITION).with(typeLocator).with(typeStrategy).with(installationStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).ignore(none()).or(ignoredTypes).type(typeMatcher).transform(transformer).installOn(instrumentation);
   verify(listener).onIgnored(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED));
   verify(listener).onComplete(REDEFINED.getName(),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED));
   verifyNoMoreInteractions(listener);
@@ -18,4 +18,5 @@
   verifyZeroInteractions(initializationStrategy);
   verify(ignoredTypes).matches(new TypeDescription.ForLoadedType(REDEFINED));
   verifyNoMoreInteractions(ignoredTypes);
+  verifyZeroInteractions(installationStrategy);
 }

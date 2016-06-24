@@ -1,0 +1,4 @@
+{
+  assertThat(AgentBuilder.InstallationStrategy.Default.SUPPRESSING.onError(instrumentation,classFileTransformer,throwable),is(classFileTransformer));
+  verifyZeroInteractions(instrumentation);
+}

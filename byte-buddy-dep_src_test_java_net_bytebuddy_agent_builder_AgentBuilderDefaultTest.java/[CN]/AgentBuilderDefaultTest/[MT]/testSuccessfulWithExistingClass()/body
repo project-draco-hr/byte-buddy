@@ -1,7 +1,7 @@
 {
   when(dynamicType.getBytes()).thenReturn(BAZ);
   when(typeMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),REDEFINED,REDEFINED.getProtectionDomain())).thenReturn(true);
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(typeLocator).with(typeStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).ignore(none()).type(typeMatcher).transform(transformer).installOn(instrumentation);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(typeLocator).with(typeStrategy).with(installationStrategy).with(listener).disableNativeMethodPrefix().with(accessControlContext).ignore(none()).type(typeMatcher).transform(transformer).installOn(instrumentation);
   assertThat(classFileTransformer.transform(REDEFINED.getClassLoader(),REDEFINED.getName(),REDEFINED,REDEFINED.getProtectionDomain(),QUX),is(BAZ));
   verify(listener).onTransformation(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),dynamicType);
   verify(listener).onComplete(REDEFINED.getName(),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED));
@@ -13,4 +13,5 @@
   verify(dispatcher).apply(builder);
   verify(dispatcher).register(dynamicType,REDEFINED.getClassLoader(),new AgentBuilder.Default.Transformation.Simple.Resolution.BootstrapClassLoaderCapableInjectorFactory(AgentBuilder.Default.BootstrapInjectionStrategy.Disabled.INSTANCE,REDEFINED.getClassLoader(),REDEFINED.getProtectionDomain(),accessControlContext));
   verifyNoMoreInteractions(dispatcher);
+  verifyZeroInteractions(installationStrategy);
 }
