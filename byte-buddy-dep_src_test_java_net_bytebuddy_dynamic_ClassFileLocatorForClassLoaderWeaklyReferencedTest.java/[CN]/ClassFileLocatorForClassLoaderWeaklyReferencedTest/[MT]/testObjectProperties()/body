@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(ClassFileLocator.ForClassLoader.WeaklyReferenced.class).apply();
+}

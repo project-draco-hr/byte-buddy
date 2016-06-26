@@ -1,0 +1,4 @@
+{
+  ClassLoader classLoader=get();
+  return classLoader == null ? new Resolution.Illegal(typeName) : ForClassLoader.locate(classLoader,typeName);
+}
