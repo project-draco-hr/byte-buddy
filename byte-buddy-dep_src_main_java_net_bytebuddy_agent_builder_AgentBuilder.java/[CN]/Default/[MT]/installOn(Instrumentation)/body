@@ -9,7 +9,7 @@
     if (redefinitionStrategy.isEnabled()) {
       RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
       for (      Class<?> type : instrumentation.getAllLoadedClasses()) {
-        TypeDescription typeDescription=descriptionStrategy.apply(type,typeLocator);
+        TypeDescription typeDescription=descriptionStrategy.apply(type,typeLocator,locationStrategy);
         JavaModule module=JavaModule.ofType(type);
         try {
           if (!instrumentation.isModifiableClass(type) || !collector.consider(typeDescription,type,ignoredTypeMatcher)) {
@@ -38,7 +38,7 @@
           }
         }
       }
-      collector.apply(instrumentation,typeLocator,listener);
+      collector.apply(instrumentation,typeLocator,locationStrategy,listener);
     }
     return classFileTransformer;
   }

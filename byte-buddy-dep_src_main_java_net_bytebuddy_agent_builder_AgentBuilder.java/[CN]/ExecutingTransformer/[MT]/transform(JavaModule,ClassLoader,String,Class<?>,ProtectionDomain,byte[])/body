@@ -4,7 +4,7 @@
   }
   String binaryTypeName=internalTypeName.replace('/','.');
   try {
-    ClassFileLocator classFileLocator=ClassFileLocator.Simple.of(binaryTypeName,binaryRepresentation,ClassFileLocator.ForClassLoader.of(classLoader));
+    ClassFileLocator classFileLocator=ClassFileLocator.Simple.of(binaryTypeName,binaryRepresentation,locationStrategy.classFileLocator(classLoader,module));
     return transformation.resolve(descriptionStrategy.apply(binaryTypeName,classBeingRedefined,typeLocator,classLoader,classFileLocator),classLoader,module,classBeingRedefined,protectionDomain,ignoredTypeMatcher).apply(initializationStrategy,classFileLocator,typeStrategy,byteBuddy,nativeMethodStrategy,bootstrapInjectionStrategy,accessControlContext,listener);
   }
  catch (  Throwable throwable) {

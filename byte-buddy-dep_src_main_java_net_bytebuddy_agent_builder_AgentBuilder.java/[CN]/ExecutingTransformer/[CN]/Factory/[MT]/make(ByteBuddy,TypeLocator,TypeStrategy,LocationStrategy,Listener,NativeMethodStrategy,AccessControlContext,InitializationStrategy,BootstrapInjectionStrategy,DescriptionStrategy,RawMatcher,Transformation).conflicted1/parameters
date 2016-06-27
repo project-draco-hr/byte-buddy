@@ -1,6 +1,7 @@
 ByteBuddy byteBuddy
 TypeLocator typeLocator
 TypeStrategy typeStrategy
+LocationStrategy locationStrategy
 Listener listener
 NativeMethodStrategy nativeMethodStrategy
 AccessControlContext accessControlContext

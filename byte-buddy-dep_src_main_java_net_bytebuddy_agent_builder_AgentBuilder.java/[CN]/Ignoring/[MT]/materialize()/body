@@ -1,3 +1,3 @@
 {
-  return new Default(byteBuddy,typeLocator,typeStrategy,listener,nativeMethodStrategy,accessControlContext,initializationStrategy,redefinitionStrategy,bootstrapInjectionStrategy,lambdaInstrumentationStrategy,descriptionStrategy,installationStrategy,rawMatcher,transformation);
+  return new Default(byteBuddy,typeLocator,typeStrategy,locationStrategy,listener,nativeMethodStrategy,accessControlContext,initializationStrategy,redefinitionStrategy,bootstrapInjectionStrategy,lambdaInstrumentationStrategy,descriptionStrategy,installationStrategy,rawMatcher,transformation);
 }
