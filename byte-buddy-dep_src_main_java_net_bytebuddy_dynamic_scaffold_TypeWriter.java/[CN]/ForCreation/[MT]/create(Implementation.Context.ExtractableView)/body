@@ -8,10 +8,11 @@
   for (  FieldDescription fieldDescription : instrumentedType.getDeclaredFields()) {
     fieldPool.target(fieldDescription).apply(classVisitor,annotationValueFilterFactory);
   }
+  boolean supportsBridges=classFileVersion.isAtLeast(ClassFileVersion.JAVA_V5);
   for (  MethodDescription methodDescription : instrumentedMethods) {
-    methodPool.target(methodDescription).apply(classVisitor,implementationContext,annotationValueFilterFactory);
+    methodPool.target(methodDescription,supportsBridges).apply(classVisitor,implementationContext,annotationValueFilterFactory);
   }
-  implementationContext.drain(classVisitor,methodPool,Implementation.Context.ExtractableView.InjectedCode.None.INSTANCE,annotationValueFilterFactory);
+  implementationContext.drain(classVisitor,methodPool,Implementation.Context.ExtractableView.InjectedCode.None.INSTANCE,annotationValueFilterFactory,supportsBridges);
   classVisitor.visitEnd();
   return classWriter.toByteArray();
 }
