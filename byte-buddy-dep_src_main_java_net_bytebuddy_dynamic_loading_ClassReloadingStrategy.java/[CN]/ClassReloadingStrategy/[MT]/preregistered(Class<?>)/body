@@ -1,9 +1,7 @@
 {
   Map<String,Class<?>> preregisteredTypes=new HashMap<String,Class<?>>(this.preregisteredTypes);
   for (  Class<?> aType : type) {
-    String typeName=aType.getName();
-    int anonymousLoaderIndex=typeName.indexOf('/');
-    preregisteredTypes.put(anonymousLoaderIndex == -1 ? typeName : typeName.substring(0,anonymousLoaderIndex),aType);
+    preregisteredTypes.put(TypeDescription.ForLoadedType.getName(aType),aType);
   }
   return new ClassReloadingStrategy(instrumentation,strategy,bootstrapInjection,preregisteredTypes);
 }

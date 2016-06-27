@@ -1,4 +1,0 @@
-{
-  int anonymousLoaderIndex=typeName.indexOf('/');
-  return anonymousLoaderIndex == -1 ? typeName : typeName.substring(0,anonymousLoaderIndex);
-}

@@ -1,8 +1,7 @@
 {
   Map<String,Class<?>> availableTypes=new HashMap<String,Class<?>>(preregisteredTypes);
   for (  Class<?> type : instrumentation.getInitiatedClasses(classLoader)) {
-    int anonymousLoaderIndex=type.getName().indexOf('/');
-    availableTypes.put(anonymousLoaderIndex == -1 ? type.getName() : type.getName().substring(0,anonymousLoaderIndex),type);
+    availableTypes.put(TypeDescription.ForLoadedType.getName(type),type);
   }
   Map<Class<?>,ClassDefinition> classDefinitions=new ConcurrentHashMap<Class<?>,ClassDefinition>();
   Map<TypeDescription,Class<?>> loadedClasses=new HashMap<TypeDescription,Class<?>>();

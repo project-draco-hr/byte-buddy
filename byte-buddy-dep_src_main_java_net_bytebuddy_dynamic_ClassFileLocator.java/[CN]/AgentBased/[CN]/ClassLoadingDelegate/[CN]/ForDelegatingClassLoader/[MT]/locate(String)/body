@@ -10,5 +10,5 @@
     return super.locate(name);
   }
   Class<?> type=classes.get(ONLY);
-  return nonAnonymous(type.getName()).equals(name) ? type : super.locate(name);
+  return TypeDescription.ForLoadedType.getName(type).equals(name) ? type : super.locate(name);
 }
