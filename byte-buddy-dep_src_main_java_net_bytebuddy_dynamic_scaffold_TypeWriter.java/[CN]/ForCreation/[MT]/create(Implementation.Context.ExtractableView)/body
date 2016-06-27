@@ -1,6 +1,6 @@
 {
   int writerFlags=asmVisitorWrapper.mergeWriter(AsmVisitorWrapper.NO_FLAGS);
-  ClassWriter classWriter=new ClassWriter(writerFlags);
+  ClassWriter classWriter=new FrameComputingClassWriter(writerFlags,typePool);
   ClassVisitor classVisitor=asmVisitorWrapper.wrap(instrumentedType,ValidatingClassVisitor.of(classWriter,typeValidation),writerFlags,asmVisitorWrapper.mergeReader(AsmVisitorWrapper.NO_FLAGS));
   classVisitor.visit(classFileVersion.getMinorMajorVersion(),instrumentedType.getActualModifiers(!instrumentedType.isInterface()),instrumentedType.getInternalName(),instrumentedType.getGenericSignature(),(instrumentedType.getSuperClass() == null ? TypeDescription.OBJECT : instrumentedType.getSuperClass().asErasure()).getInternalName(),instrumentedType.getInterfaces().asErasures().toInternalNames());
   implementationContext.setClassFileVersion(classFileVersion);

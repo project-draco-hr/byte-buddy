@@ -1,4 +1,0 @@
-{
-  super(cacheProvider,classFileLocator,ReaderMode.FAST);
-  this.classLoader=classLoader;
-}

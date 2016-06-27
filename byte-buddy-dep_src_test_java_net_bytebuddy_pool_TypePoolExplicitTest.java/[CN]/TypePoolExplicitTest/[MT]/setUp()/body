@@ -1,0 +1,4 @@
+{
+  when(parent.describe(anyString())).thenReturn(new TypePool.Resolution.Illegal(BAR));
+  typePool=new TypePool.Explicit(parent,Collections.singletonMap(FOO,typeDescription));
+}

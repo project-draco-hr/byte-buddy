@@ -1,7 +1,4 @@
 {
-  if (typeLocator.equals(AgentBuilder.TypeLocator.ClassLoading.INSTANCE)) {
-    return;
-  }
   assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   assertThat(classLoader.loadClass(SimpleType.class.getName()).getName(),is(SimpleType.class.getName()));
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(typeLocator).ignore(none()).with(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).with(AgentBuilder.TypeStrategy.Default.REDEFINE).with(AgentBuilder.RedefinitionStrategy.REDEFINITION).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new FooTransformer()).installOnByteBuddyAgent();

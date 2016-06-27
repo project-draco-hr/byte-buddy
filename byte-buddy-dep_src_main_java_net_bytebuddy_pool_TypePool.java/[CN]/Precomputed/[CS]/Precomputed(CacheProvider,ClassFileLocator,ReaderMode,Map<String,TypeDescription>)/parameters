@@ -1,4 +1,0 @@
-CacheProvider cacheProvider
-ClassFileLocator classFileLocator
-ReaderMode readerMode
-Map<String,TypeDescription> precomputed

@@ -1,3 +1,0 @@
-{
-  return "TypePool.Default.Precomputed{" + "classFileLocator=" + classFileLocator + ", cacheProvider="+ cacheProvider+ ", readerMode="+ readerMode+ ", precomputed="+ precomputed+ '}';
-}

@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && precomputed.equals(((Precomputed)other).precomputed);
-}

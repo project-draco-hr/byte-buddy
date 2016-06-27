@@ -1,4 +1,0 @@
-{
-  super(cacheProvider,classFileLocator,readerMode);
-  this.precomputed=precomputed;
-}

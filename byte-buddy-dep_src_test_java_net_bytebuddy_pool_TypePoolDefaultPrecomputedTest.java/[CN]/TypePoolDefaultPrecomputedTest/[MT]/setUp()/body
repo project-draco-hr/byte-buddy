@@ -1,3 +1,0 @@
-{
-  typePool=TypePool.Default.Precomputed.withObjectType(new TypePool.CacheProvider.Simple(),ClassFileLocator.ForClassLoader.ofClassPath(),TypePool.Default.ReaderMode.FAST);
-}

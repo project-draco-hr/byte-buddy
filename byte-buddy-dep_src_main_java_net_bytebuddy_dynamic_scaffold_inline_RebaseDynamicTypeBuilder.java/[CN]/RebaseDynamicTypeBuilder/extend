@@ -1,1 +1,1 @@
-DynamicType.Builder.AbstractBase.Adapter<T>
+AbstractInliningDynamicTypeBuilder<T>

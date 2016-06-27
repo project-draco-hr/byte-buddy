@@ -1,5 +1,0 @@
-{
-  TypePool.Resolution resolution=typePool.describe(String.class.getName());
-  assertThat(resolution.isResolved(),is(true));
-  assertThat(resolution.resolve(),is(TypeDescription.STRING));
-}

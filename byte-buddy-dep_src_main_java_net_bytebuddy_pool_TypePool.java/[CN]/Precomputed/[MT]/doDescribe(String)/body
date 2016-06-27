@@ -1,4 +1,0 @@
-{
-  TypeDescription typeDescription=precomputed.get(name);
-  return typeDescription == null ? super.doDescribe(name) : new Resolution.Simple(typeDescription);
-}

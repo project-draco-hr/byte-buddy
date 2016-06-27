@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(TypePool.Default.Precomputed.class).apply();
-}

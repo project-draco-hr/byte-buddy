@@ -1,8 +1,4 @@
 {
-  Resolution resolution=super.doDescribe(name);
-  if (resolution.isResolved()) {
-    return resolution;
-  }
   try {
     return new Resolution.Simple(new TypeDescription.ForLoadedType(Class.forName(name,false,classLoader)));
   }

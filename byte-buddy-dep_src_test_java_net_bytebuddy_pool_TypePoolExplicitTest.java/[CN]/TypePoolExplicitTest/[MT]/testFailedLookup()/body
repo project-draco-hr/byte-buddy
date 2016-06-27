@@ -1,0 +1,6 @@
+{
+  TypePool.Resolution resolution=typePool.describe(BAR);
+  assertThat(resolution.isResolved(),is(false));
+  verify(parent).describe(BAR);
+  verifyNoMoreInteractions(parent);
+}

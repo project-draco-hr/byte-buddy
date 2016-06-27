@@ -1,0 +1,8 @@
+{
+  TypePool.Resolution resolution=mock(TypePool.Resolution.class);
+  when(resolution.isResolved()).thenReturn(true);
+  when(parent.describe(BAR)).thenReturn(resolution);
+  assertThat(typePool.describe(BAR),sameInstance(resolution));
+  verify(parent).describe(BAR);
+  verifyNoMoreInteractions(parent);
+}

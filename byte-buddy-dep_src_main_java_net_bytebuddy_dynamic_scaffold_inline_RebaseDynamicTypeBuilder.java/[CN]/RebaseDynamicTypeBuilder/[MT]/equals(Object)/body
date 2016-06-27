@@ -3,5 +3,5 @@
   if (other == null || getClass() != other.getClass())   return false;
   if (!super.equals(other))   return false;
   RebaseDynamicTypeBuilder<?> that=(RebaseDynamicTypeBuilder<?>)other;
-  return originalType.equals(that.originalType) && classFileLocator.equals(that.classFileLocator) && methodNameTransformer.equals(that.methodNameTransformer);
+  return methodNameTransformer.equals(that.methodNameTransformer);
 }

@@ -1,0 +1,3 @@
+{
+  return "TypePool.Explicit{" + "cacheProvider=" + cacheProvider + ", precomputed="+ precomputed+ '}';
+}

@@ -2,7 +2,7 @@
   classLoader=classLoader == null ? BootstrapClassLoaderMarker.INSTANCE : classLoader;
   TypePool.CacheProvider cacheProvider=cacheProviders.get(classLoader);
   while (cacheProvider == null) {
-    cacheProviders.putIfAbsent(classLoader,new TypePool.CacheProvider.Simple());
+    cacheProviders.putIfAbsent(classLoader,TypePool.CacheProvider.Simple.withObjectType());
     cacheProvider=cacheProviders.get(classLoader);
   }
   return cacheProvider;

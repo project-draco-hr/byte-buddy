@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypePool.Explicit.class).apply();
+}

@@ -1,0 +1,4 @@
+{
+  super(CacheProvider.NoOp.INSTANCE,parent);
+  this.precomputed=precomputed;
+}

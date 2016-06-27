@@ -1,0 +1,2 @@
+TypePool parent
+Map<String,TypeDescription> precomputed

@@ -1,0 +1,7 @@
+{
+  TypePool.Resolution resolution=typePool.describe(FOO);
+  assertThat(resolution.isResolved(),is(true));
+  assertThat(resolution.resolve(),is(typeDescription));
+  verify(parent).describe(FOO);
+  verifyNoMoreInteractions(parent);
+}

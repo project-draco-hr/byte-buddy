@@ -1,0 +1,11 @@
+MethodRegistry.Compiled methodRegistry
+FieldPool fieldPool
+TypeAttributeAppender typeAttributeAppender
+AsmVisitorWrapper asmVisitorWrapper
+ClassFileVersion classFileVersion
+AnnotationValueFilter.Factory annotationValueFilterFactory
+AnnotationRetention annotationRetention
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+Implementation.Context.Factory implementationContextFactory
+TypeValidation typeValidation
+TypePool typePool
