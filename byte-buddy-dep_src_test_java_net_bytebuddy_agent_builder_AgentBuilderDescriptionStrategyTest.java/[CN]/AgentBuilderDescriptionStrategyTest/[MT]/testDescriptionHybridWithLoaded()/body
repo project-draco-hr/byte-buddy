@@ -1,9 +1,8 @@
 {
   ClassFileLocator classFileLocator=ClassFileLocator.ForClassLoader.of(Object.class.getClassLoader());
-  when(typeLocator.typePool(classFileLocator,Object.class.getClassLoader())).thenReturn(typePool);
   when(typePool.describe(Object.class.getName())).thenReturn(new TypePool.Resolution.Simple(typeDescription));
   when(locationStrategy.classFileLocator(Object.class.getClassLoader(),JavaModule.ofType(Object.class))).thenReturn(classFileLocator);
-  TypeDescription typeDescription=AgentBuilder.DescriptionStrategy.Default.HYBRID.apply(Object.class.getName(),Object.class,typeLocator,Object.class.getClassLoader(),classFileLocator);
+  TypeDescription typeDescription=AgentBuilder.DescriptionStrategy.Default.HYBRID.apply(Object.class.getName(),Object.class,typePool);
   assertThat(typeDescription,is(TypeDescription.OBJECT));
   assertThat(typeDescription,instanceOf(TypeDescription.ForLoadedType.class));
 }
