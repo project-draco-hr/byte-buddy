@@ -17,7 +17,7 @@
   assertThat(implementationContext.registerSetterFor(firstField),is(firstFieldSetter));
   assertThat(implementationContext.registerSetterFor(secondField),is(secondFieldSetter));
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
-  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory);
+  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory,true);
   verify(classVisitor).visitMethod(eq(accessorMethodModifiers),Matchers.startsWith(FOO),eq("(" + BAR + ")V"),isNull(String.class),isNull(String[].class));
   verify(classVisitor).visitMethod(eq(accessorMethodModifiers | Opcodes.ACC_STATIC),Matchers.startsWith(BAR),eq("(" + QUX + ")V"),isNull(String.class),isNull(String[].class));
 }

@@ -27,5 +27,5 @@
   verify(secondHandler).prepare(secondType);
   verifyZeroInteractions(firstFactory);
   verifyZeroInteractions(secondFactory);
-  assertThat(methodRegistry.target(instrumentedMethod),instanceOf(TypeWriter.MethodPool.Record.ForDefinedMethod.OfVisibilityBridge.class));
+  assertThat(methodRegistry.target(instrumentedMethod,true),instanceOf(TypeWriter.MethodPool.Record.ForDefinedMethod.OfVisibilityBridge.class));
 }

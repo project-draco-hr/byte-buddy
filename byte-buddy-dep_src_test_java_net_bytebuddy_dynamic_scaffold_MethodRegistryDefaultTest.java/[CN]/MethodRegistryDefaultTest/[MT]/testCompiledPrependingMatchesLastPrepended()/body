@@ -12,5 +12,5 @@
   verify(secondHandler).prepare(secondType);
   verify(firstFactory).make(typeDescription);
   verifyZeroInteractions(secondFactory);
-  assertThat(methodRegistry.target(instrumentedMethod),is(firstRecord));
+  assertThat(methodRegistry.target(instrumentedMethod,true),is(firstRecord));
 }
