@@ -3,4 +3,5 @@
   this.attributeAppenderFactory=attributeAppenderFactory;
   this.methodDescription=methodDescription;
   this.typeTokens=typeTokens;
+  this.bridgeMethod=bridgeMethod;
 }

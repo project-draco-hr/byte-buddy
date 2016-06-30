@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   Entry entry=(Entry)other;
-  return handler.equals(entry.handler) && attributeAppenderFactory.equals(entry.attributeAppenderFactory) && methodDescription.equals(entry.methodDescription)&& typeTokens.equals(entry.typeTokens);
+  return handler.equals(entry.handler) && bridgeMethod == entry.bridgeMethod && attributeAppenderFactory.equals(entry.attributeAppenderFactory) && methodDescription.equals(entry.methodDescription) && typeTokens.equals(entry.typeTokens);
 }

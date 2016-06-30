@@ -1,5 +1,6 @@
 {
   int result=handler.hashCode();
+  result=31 * result + (bridgeMethod ? 1 : 0);
   result=31 * result + attributeAppender.hashCode();
   result=31 * result + methodDescription.hashCode();
   result=31 * result + bridgeTypes.hashCode();

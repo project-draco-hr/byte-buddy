@@ -1,0 +1,7 @@
+{
+  if (bridgeMethod && !supportsBridges) {
+    return Record.ForNonDefinedMethod.INSTANCE;
+  }
+  Record record=handler.assemble(methodDescription,attributeAppender);
+  return supportsBridges ? TypeWriter.MethodPool.Record.AccessBridgeWrapper.of(record,instrumentedType,methodDescription,bridgeTypes,attributeAppender) : record;
+}

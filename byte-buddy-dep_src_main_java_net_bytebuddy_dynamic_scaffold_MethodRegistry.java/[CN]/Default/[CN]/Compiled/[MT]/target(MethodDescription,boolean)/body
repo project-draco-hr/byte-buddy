@@ -1,4 +1,4 @@
 {
   Entry entry=implementations.get(methodDescription);
-  return entry == null ? Record.ForNonDefinedMethod.INSTANCE : entry.bind(instrumentedType);
+  return entry == null ? Record.ForNonDefinedMethod.INSTANCE : entry.bind(instrumentedType,supportsBridges);
 }

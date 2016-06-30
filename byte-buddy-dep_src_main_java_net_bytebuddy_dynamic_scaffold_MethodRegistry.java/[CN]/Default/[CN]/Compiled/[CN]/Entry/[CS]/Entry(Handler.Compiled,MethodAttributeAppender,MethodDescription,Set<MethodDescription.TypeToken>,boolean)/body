@@ -3,4 +3,5 @@
   this.attributeAppender=attributeAppender;
   this.methodDescription=methodDescription;
   this.bridgeTypes=bridgeTypes;
+  this.bridgeMethod=bridgeMethod;
 }
