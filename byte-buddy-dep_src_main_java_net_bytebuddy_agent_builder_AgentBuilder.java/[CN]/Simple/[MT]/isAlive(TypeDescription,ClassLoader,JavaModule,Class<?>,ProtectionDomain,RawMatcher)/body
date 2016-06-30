@@ -1,0 +1,3 @@
+{
+  return !ignoredTypeMatcher.matches(typeDescription,classLoader,module,classBeingRedefined,protectionDomain) && rawMatcher.matches(typeDescription,classLoader,module,classBeingRedefined,protectionDomain);
+}

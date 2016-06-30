@@ -1,7 +1,7 @@
 {
   Resolution current=new Resolution.Unresolved(typeDescription,classLoader,module);
   for (  Transformation transformation : transformations) {
-    Resolution resolution=transformation.resolve(typeDescription,classLoader,module,classBeingRedefined,protectionDomain,ignoredTypeMatcher);
+    Resolution resolution=transformation.resolve(typeDescription,classLoader,module,classBeingRedefined,protectionDomain,typePool,ignoredTypeMatcher);
 switch (resolution.getSort()) {
 case TERMINAL:
       return current.asDecoratorOf(resolution);
