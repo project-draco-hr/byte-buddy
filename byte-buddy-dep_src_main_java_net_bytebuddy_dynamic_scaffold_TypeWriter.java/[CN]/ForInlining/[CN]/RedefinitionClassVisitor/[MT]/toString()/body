@@ -1,3 +1,3 @@
 {
-  return "TypeWriter.Default.ForInlining.RedefinitionClassVisitor{" + "typeWriter=" + TypeWriter.Default.ForInlining.this + ", implementationContext="+ implementationContext+ ", declaredFields="+ declaredFields+ ", declarableMethods="+ declarableMethods+ ", injectedCode="+ injectedCode+ '}';
+  return "TypeWriter.Default.ForInlining.RedefinitionClassVisitor{" + "typeWriter=" + TypeWriter.Default.ForInlining.this + ", implementationContext="+ implementationContext+ ", declaredFields="+ declaredFields+ ", declarableMethods="+ declarableMethods+ ", injectedCode="+ injectedCode+ ", supportsBridges="+ supportsBridges+ '}';
 }
