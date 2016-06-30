@@ -1,5 +1,6 @@
 {
   this.interfaceType=interfaceType;
+  this.supportsBridges=supportsBridges;
   this.accessorMethodModifiers=accessorMethodModifiers;
   this.cacheFieldModifiers=cacheFieldModifiers;
 }

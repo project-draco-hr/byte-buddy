@@ -10,7 +10,7 @@
   when(otherTypeInitializer.expandWith(any(ByteCodeAppender.class))).thenReturn(thirdTypeInitializer);
   when(thirdTypeInitializer.withReturn()).thenReturn(terminationAppender);
   when(thirdTypeInitializer.isDefined()).thenReturn(true);
-  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory,true);
+  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory,supportsBridges);
   verify(classVisitor).visitField(eq(cacheFieldModifiers),Mockito.startsWith(Implementation.Context.Default.FIELD_CACHE_PREFIX),eq(BAR),Mockito.isNull(String.class),Mockito.isNull(Object.class));
   verify(classVisitor).visitField(eq(cacheFieldModifiers),Mockito.startsWith(Implementation.Context.Default.FIELD_CACHE_PREFIX),eq(QUX),Mockito.isNull(String.class),Mockito.isNull(Object.class));
   verify(typeInitializer).expandWith(any(ByteCodeAppender.class));

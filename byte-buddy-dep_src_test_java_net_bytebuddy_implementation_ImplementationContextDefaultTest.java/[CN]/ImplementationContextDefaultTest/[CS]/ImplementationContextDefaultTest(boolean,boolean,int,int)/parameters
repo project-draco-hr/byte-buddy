@@ -1,3 +1,4 @@
 boolean interfaceType
+boolean supportsBridges
 int accessorMethodModifiers
 int cacheFieldModifiers
