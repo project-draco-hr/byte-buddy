@@ -1,2 +1,1 @@
-TypePool parent
 Map<String,TypeDescription> types

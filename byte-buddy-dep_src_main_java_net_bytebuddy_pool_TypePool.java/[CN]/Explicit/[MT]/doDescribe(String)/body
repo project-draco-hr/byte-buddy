@@ -1,4 +1,4 @@
 {
-  TypeDescription typeDescription=precomputed.get(name);
+  TypeDescription typeDescription=types.get(name);
   return typeDescription == null ? new Resolution.Illegal(name) : new Resolution.Simple(typeDescription);
 }
