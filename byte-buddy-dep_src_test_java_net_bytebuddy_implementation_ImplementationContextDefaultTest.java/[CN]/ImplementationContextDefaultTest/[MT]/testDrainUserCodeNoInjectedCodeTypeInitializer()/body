@@ -3,7 +3,7 @@
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.IMPLEMENTED);
   when(typeInitializer.isDefined()).thenReturn(true);
   when(record.prepend(typeInitializer)).thenReturn(otherRecord);
-  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory);
+  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory,supportsBridges);
   verify(record).getSort();
   verify(record).prepend(typeInitializer);
   verifyNoMoreInteractions(record);

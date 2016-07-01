@@ -1,0 +1,7 @@
+TypeDescription typeDescription
+ClassLoader classLoader
+JavaModule module
+ProtectionDomain protectionDomain
+TypePool typePool
+Transformer transformer
+boolean decorator

@@ -1,0 +1,5 @@
+Handler handler
+MethodAttributeAppender.Factory attributeAppenderFactory
+MethodDescription methodDescription
+Set<MethodDescription.TypeToken> typeTokens
+boolean bridgeMethod

@@ -1,5 +1,0 @@
-{
-  if (injectedCode.isDefined() || methodPool.target(new MethodDescription.Latent.TypeInitializer(instrumentedType)).getSort().isDefined()) {
-    throw new IllegalStateException("Type initializer interception is impossible or was disabled for " + instrumentedType);
-  }
-}

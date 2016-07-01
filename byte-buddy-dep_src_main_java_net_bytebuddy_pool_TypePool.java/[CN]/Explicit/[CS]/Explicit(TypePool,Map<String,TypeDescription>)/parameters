@@ -1,2 +1,2 @@
 TypePool parent
-Map<String,TypeDescription> precomputed
+Map<String,TypeDescription> types

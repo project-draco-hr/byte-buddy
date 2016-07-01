@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && precomputed.equals(((Explicit)other).precomputed);
+  return this == other || !(other == null || getClass() != other.getClass()) && super.equals(other) && types.equals(((Explicit)other).types);
 }

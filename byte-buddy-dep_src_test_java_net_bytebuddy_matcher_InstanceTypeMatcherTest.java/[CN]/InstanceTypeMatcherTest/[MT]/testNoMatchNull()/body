@@ -1,0 +1,3 @@
+{
+  assertThat(new InstanceTypeMatcher<Object>(matcher).matches(null),is(false));
+}

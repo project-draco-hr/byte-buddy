@@ -1,0 +1,3 @@
+{
+  this(Empty.INSTANCE,types);
+}

@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  InstanceTypeMatcher<?> that=(InstanceTypeMatcher<?>)object;
+  return matcher.equals(that.matcher);
+}

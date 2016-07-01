@@ -1,6 +1,0 @@
-{
-  this.handler=handler;
-  this.attributeAppender=attributeAppender;
-  this.methodDescription=methodDescription;
-  this.bridgeTypes=bridgeTypes;
-}

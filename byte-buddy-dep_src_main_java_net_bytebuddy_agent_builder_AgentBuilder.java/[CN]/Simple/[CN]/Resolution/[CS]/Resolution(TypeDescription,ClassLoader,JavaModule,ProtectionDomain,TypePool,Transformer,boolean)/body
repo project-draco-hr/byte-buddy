@@ -1,0 +1,9 @@
+{
+  this.typeDescription=typeDescription;
+  this.classLoader=classLoader;
+  this.module=module;
+  this.protectionDomain=protectionDomain;
+  this.typePool=typePool;
+  this.transformer=transformer;
+  this.decorator=decorator;
+}

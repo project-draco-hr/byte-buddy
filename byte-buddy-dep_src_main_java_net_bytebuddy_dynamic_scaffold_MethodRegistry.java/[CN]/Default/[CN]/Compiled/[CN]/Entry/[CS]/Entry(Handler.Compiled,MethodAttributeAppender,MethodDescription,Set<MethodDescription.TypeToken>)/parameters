@@ -1,4 +1,0 @@
-Handler.Compiled handler
-MethodAttributeAppender attributeAppender
-MethodDescription methodDescription
-Set<MethodDescription.TypeToken> bridgeTypes

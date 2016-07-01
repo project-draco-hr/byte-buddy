@@ -1,0 +1,4 @@
+{
+  when(matcher.matches(new TypeDescription.ForLoadedType(object.getClass()))).thenReturn(false);
+  assertThat(new InstanceTypeMatcher<Object>(matcher).matches(object),is(false));
+}

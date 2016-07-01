@@ -1,0 +1,5 @@
+ClassVisitor classVisitor
+TypeWriter.MethodPool methodPool
+InjectedCode injectedCode
+AnnotationValueFilter.Factory annotationValueFilterFactory
+boolean supportsBridges

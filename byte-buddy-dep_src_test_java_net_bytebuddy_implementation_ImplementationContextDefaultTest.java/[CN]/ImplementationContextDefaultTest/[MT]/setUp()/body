@@ -4,7 +4,7 @@
   when(instrumentedType.getInternalName()).thenReturn(BAZ);
   when(instrumentedType.asErasure()).thenReturn(instrumentedType);
   when(instrumentedType.isInterface()).thenReturn(interfaceType);
-  when(methodPool.target(any(MethodDescription.class))).thenReturn(record);
+  when(methodPool.target(any(MethodDescription.class),eq(supportsBridges))).thenReturn(record);
   when(auxiliaryType.make(any(String.class),any(ClassFileVersion.class),any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn(firstDynamicType);
   when(firstDynamicType.getTypeDescription()).thenReturn(firstDescription);
   when(otherAuxiliaryType.make(any(String.class),any(ClassFileVersion.class),any(AuxiliaryType.MethodAccessorFactory.class))).thenReturn(secondDynamicType);

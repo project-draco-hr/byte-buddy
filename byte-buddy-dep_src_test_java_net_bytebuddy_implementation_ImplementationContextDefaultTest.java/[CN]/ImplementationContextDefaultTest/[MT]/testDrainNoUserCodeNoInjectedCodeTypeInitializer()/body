@@ -3,7 +3,7 @@
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
   when(typeInitializer.isDefined()).thenReturn(true);
   when(typeInitializer.withReturn()).thenReturn(terminationAppender);
-  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory);
+  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory,supportsBridges);
   verify(record).getSort();
   verifyNoMoreInteractions(record);
   verify(typeInitializer,atLeast(1)).isDefined();

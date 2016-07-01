@@ -1,0 +1,8 @@
+{
+  for (  Transformation transformation : transformations) {
+    if (transformation.isAlive(typeDescription,classLoader,module,classBeingRedefined,protectionDomain,ignoredTypeMatcher)) {
+      return true;
+    }
+  }
+  return false;
+}

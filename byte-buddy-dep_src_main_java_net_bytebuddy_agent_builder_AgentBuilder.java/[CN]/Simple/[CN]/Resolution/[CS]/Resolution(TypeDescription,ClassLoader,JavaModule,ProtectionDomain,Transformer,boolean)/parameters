@@ -1,6 +1,0 @@
-TypeDescription typeDescription
-ClassLoader classLoader
-JavaModule module
-ProtectionDomain protectionDomain
-Transformer transformer
-boolean decorator

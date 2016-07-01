@@ -1,8 +1,0 @@
-{
-  this.typeDescription=typeDescription;
-  this.classLoader=classLoader;
-  this.module=module;
-  this.protectionDomain=protectionDomain;
-  this.transformer=transformer;
-  this.decorator=decorator;
-}
