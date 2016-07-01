@@ -1,0 +1,7 @@
+{
+  Class<?> type=new ByteBuddy().makeEnumeration("foo").make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(Modifier.isPublic(type.getModifiers()),is(true));
+  assertThat(type.isEnum(),is(true));
+  assertThat(type.isInterface(),is(false));
+  assertThat(type.isAnnotation(),is(false));
+}
