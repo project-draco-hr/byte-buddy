@@ -1,0 +1,38 @@
+{
+  MethodList<?> methods=new TypeDescription.ForLoadedType(AnnotationValues.class).getDeclaredMethods();
+  Map<String,Object> properties=new LinkedHashMap<String,Object>();
+  properties.put("boolean_property",true);
+  properties.put("boolean_property_array",new boolean[]{true});
+  properties.put("byte_property",(byte)0);
+  properties.put("byte_property_array",new byte[]{0});
+  properties.put("short_property",(short)0);
+  properties.put("short_property_array",new short[]{0});
+  properties.put("int_property",0);
+  properties.put("int_property_array",new int[]{0});
+  properties.put("long_property",0L);
+  properties.put("long_property_array",new long[]{0});
+  properties.put("float_property",0f);
+  properties.put("float_property_array",new float[]{0});
+  properties.put("double_property",0d);
+  properties.put("double_property_array",new double[]{0d});
+  properties.put("string_property","foo");
+  properties.put("string_property_array",new String[]{"foo"});
+  AnnotationDescription annotationDescription=mock(AnnotationDescription.class);
+  when(annotationDescription.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(SampleAnnotation.class));
+  properties.put("annotation_property",annotationDescription);
+  properties.put("annotation_property_array",new AnnotationDescription[]{annotationDescription});
+  EnumerationDescription enumerationDescription=mock(EnumerationDescription.class);
+  when(enumerationDescription.getEnumerationType()).thenReturn(new TypeDescription.ForLoadedType(SampleEnumeration.class));
+  properties.put("enum_property",enumerationDescription);
+  properties.put("enum_property_array",new EnumerationDescription[]{enumerationDescription});
+  for (  Map.Entry<String,Object> entry : properties.entrySet()) {
+    assertThat(methods.filter(named(entry.getKey())).getOnly().isDefaultValue(entry.getValue()),is(true));
+    assertThat(methods.filter(named(entry.getKey())).getOnly().isDefaultValue(new Object()),is(false));
+  }
+  when(annotationDescription.getAnnotationType()).thenReturn(TypeDescription.OBJECT);
+  assertThat(methods.filter(named("annotation_property")).getOnly().isDefaultValue(annotationDescription),is(false));
+  assertThat(methods.filter(named("annotation_property_array")).getOnly().isDefaultValue(new AnnotationDescription[]{annotationDescription}),is(false));
+  when(enumerationDescription.getEnumerationType()).thenReturn(TypeDescription.OBJECT);
+  assertThat(methods.filter(named("enum_property")).getOnly().isDefaultValue(enumerationDescription),is(false));
+  assertThat(methods.filter(named("enum_property_array")).getOnly().isDefaultValue(new EnumerationDescription[]{enumerationDescription}),is(false));
+}
