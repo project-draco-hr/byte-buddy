@@ -1,3 +1,0 @@
-{
-  return "TypePool.Default.AnnotationRegistrant.ForTypeVariable{" + ", pathMap=" + pathMap + '}';
-}

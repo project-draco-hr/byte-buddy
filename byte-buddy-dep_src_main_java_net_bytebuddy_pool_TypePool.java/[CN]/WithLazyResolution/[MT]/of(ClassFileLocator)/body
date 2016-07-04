@@ -1,0 +1,3 @@
+{
+  return new WithLazyResolution(new CacheProvider.Simple(),classFileLocator,ReaderMode.FAST);
+}

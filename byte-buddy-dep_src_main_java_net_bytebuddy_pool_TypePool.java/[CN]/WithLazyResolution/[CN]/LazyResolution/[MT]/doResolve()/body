@@ -1,0 +1,7 @@
+{
+  Resolution resolution=cacheProvider.find(name);
+  if (resolution == null) {
+    resolution=cacheProvider.register(name,WithLazyResolution.super.doDescribe(name));
+  }
+  return resolution;
+}

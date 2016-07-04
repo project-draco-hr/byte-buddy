@@ -1,4 +1,0 @@
-{
-  super(descriptor,typePath,index);
-  this.indexedPathMap=indexedPathMap;
-}

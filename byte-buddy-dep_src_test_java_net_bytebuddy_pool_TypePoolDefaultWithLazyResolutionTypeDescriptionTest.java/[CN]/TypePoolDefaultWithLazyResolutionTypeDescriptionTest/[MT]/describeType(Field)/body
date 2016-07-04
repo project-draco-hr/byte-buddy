@@ -1,0 +1,3 @@
+{
+  return describe(field.getDeclaringClass()).getDeclaredFields().filter(is(field)).getOnly().getType();
+}

@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("Unexpected lookup of component type for " + name);
-}

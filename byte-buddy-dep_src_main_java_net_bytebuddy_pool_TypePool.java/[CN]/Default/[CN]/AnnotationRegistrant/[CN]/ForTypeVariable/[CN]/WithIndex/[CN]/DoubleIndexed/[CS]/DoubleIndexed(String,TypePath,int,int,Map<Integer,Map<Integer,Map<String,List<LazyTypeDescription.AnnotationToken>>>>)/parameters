@@ -1,5 +1,0 @@
-String descriptor
-TypePath typePath
-int index
-int preIndex
-Map<Integer,Map<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>>> doubleIndexedPathMap

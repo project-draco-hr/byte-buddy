@@ -1,0 +1,9 @@
+{
+  TypePool typePool=new TypePool.Default.WithLazyResolution(TypePool.CacheProvider.NoOp.INSTANCE,ClassFileLocator.ForClassLoader.of(type.getClassLoader()),TypePool.Default.ReaderMode.EXTENDED);
+  try {
+    return typePool.describe(type.getName()).resolve();
+  }
+  finally {
+    typePool.clear();
+  }
+}

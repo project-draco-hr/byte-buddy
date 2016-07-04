@@ -1,0 +1,4 @@
+CacheProvider cacheProvider
+ClassFileLocator classFileLocator
+ReaderMode readerMode
+TypePool parentPool

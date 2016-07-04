@@ -1,9 +1,0 @@
-{
-  Map<Integer,Map<String,List<LazyTypeDescription.AnnotationToken>>> indexedPathMap=getIndexedPathMap();
-  Map<String,List<LazyTypeDescription.AnnotationToken>> pathMap=indexedPathMap.get(index);
-  if (pathMap == null) {
-    pathMap=new HashMap<String,List<LazyTypeDescription.AnnotationToken>>();
-    indexedPathMap.put(index,pathMap);
-  }
-  return pathMap;
-}
