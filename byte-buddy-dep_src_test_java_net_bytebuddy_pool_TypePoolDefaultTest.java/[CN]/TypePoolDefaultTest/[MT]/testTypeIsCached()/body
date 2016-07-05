@@ -1,0 +1,8 @@
+{
+  ClassFileLocator classFileLocator=spy(ClassFileLocator.ForClassLoader.ofClassPath());
+  TypePool typePool=TypePool.Default.of(classFileLocator);
+  TypePool.Resolution resolution=typePool.describe(Object.class.getName());
+  assertThat(typePool.describe(Object.class.getName()).resolve(),CoreMatchers.is(resolution.resolve()));
+  verify(classFileLocator).locate(Object.class.getName());
+  verifyNoMoreInteractions(classFileLocator);
+}
