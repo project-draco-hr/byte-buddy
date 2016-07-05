@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(TypePool.Default.WithLazyResolution.LazyResolution.class).apply();
+}

@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  LazyResolution that=(LazyResolution)object;
+  return name.equals(that.name) && getOuter().equals(that.getOuter());
+}

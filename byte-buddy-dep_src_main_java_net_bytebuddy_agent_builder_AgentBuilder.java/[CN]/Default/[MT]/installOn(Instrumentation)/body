@@ -9,9 +9,9 @@
     if (redefinitionStrategy.isEnabled()) {
       RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
       for (      Class<?> type : instrumentation.getAllLoadedClasses()) {
-        TypeDescription typeDescription=descriptionStrategy.apply(type,typeLocator,locationStrategy);
         JavaModule module=JavaModule.ofType(type);
         try {
+          TypeDescription typeDescription=descriptionStrategy.apply(type,typeLocator,locationStrategy);
           if (!instrumentation.isModifiableClass(type) || !collector.consider(typeDescription,type,ignoredTypeMatcher)) {
             try {
               try {
@@ -28,10 +28,10 @@
  catch (        Throwable throwable) {
           try {
             try {
-              listener.onError(typeDescription.getName(),type.getClassLoader(),module,throwable);
+              listener.onError(TypeDescription.ForLoadedType.getName(type),type.getClassLoader(),module,throwable);
             }
   finally {
-              listener.onComplete(typeDescription.getName(),type.getClassLoader(),module);
+              listener.onComplete(TypeDescription.ForLoadedType.getName(type),type.getClassLoader(),module);
             }
           }
  catch (          Throwable ignored) {
