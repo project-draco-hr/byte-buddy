@@ -1,0 +1,6 @@
+{
+  Recorder recorder=new Recorder();
+  Class<?> type=new ByteBuddy().subclass(Object.class).invokable(isTypeInitializer()).intercept(MethodDelegation.to(recorder)).make(TypeResolver.Active.INSTANCE).load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.newInstance(),instanceOf(type));
+  assertThat(recorder.counter,is(1));
+}
