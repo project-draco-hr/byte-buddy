@@ -1,0 +1,4 @@
+{
+  Class<?> type=new ByteBuddy().subclass(Object.class).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER).getLoaded();
+  assertThat(type.getClassLoader(),notNullValue(ClassLoader.class));
+}
