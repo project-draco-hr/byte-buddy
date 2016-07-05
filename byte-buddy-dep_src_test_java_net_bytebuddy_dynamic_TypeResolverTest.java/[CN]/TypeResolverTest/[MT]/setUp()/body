@@ -1,0 +1,8 @@
+{
+  when(dynamicType.getTypeDescription()).thenReturn(typeDescription);
+  when(dynamicType.getAllTypes()).thenReturn(Collections.singletonMap(typeDescription,FOO));
+  when(dynamicType.getLoadedTypeInitializers()).thenReturn(Collections.singletonMap(typeDescription,loadedTypeInitializer));
+  when(classLoadingStrategy.load(classLoader,Collections.singletonMap(typeDescription,FOO))).thenReturn(Collections.<TypeDescription,Class<?>>singletonMap(typeDescription,Foo.class));
+  when(loadedTypeInitializer.isAlive()).thenReturn(true);
+  when(typeDescription.getName()).thenReturn(Foo.class.getName());
+}

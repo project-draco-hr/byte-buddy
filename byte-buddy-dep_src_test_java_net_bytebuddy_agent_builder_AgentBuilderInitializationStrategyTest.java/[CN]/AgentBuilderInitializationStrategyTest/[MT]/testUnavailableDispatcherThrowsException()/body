@@ -1,3 +1,0 @@
-{
-  new AgentBuilder.InitializationStrategy.SelfInjection.NexusAccessor.Dispatcher.Unavailable(new Exception()).register(FOO,classLoader,BAR,loadedTypeInitializer);
-}

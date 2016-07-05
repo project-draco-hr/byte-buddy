@@ -1,0 +1,23 @@
+{
+  ClassLoader classLoader=new ByteArrayClassLoader.ChildFirst(getClass().getClassLoader(),ClassFileExtraction.of(Nexus.class,TypeResolver.Active.class,TypeResolver.Active.Dispatcher.class,TypeResolver.Active.Dispatcher.Available.class,TypeResolver.Active.Dispatcher.Unavailable.class),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
+  Field duplicateInitializers=classLoader.loadClass(Nexus.class.getName()).getDeclaredField("TYPE_INITIALIZERS");
+  duplicateInitializers.setAccessible(true);
+  assertThat(((Map<?,?>)duplicateInitializers.get(null)).size(),is(0));
+  Field actualInitializers=Nexus.class.getDeclaredField("TYPE_INITIALIZERS");
+  actualInitializers.setAccessible(true);
+  assertThat(((Map<?,?>)actualInitializers.get(null)).size(),is(0));
+  Class<?> accessor=classLoader.loadClass(TypeResolver.Active.class.getName());
+  ClassLoader qux=mock(ClassLoader.class);
+  when(loadedTypeInitializer.isAlive()).thenReturn(false);
+  assertThat(accessor.getDeclaredMethod("register",String.class,ClassLoader.class,int.class,LoadedTypeInitializer.class).invoke(accessor.getEnumConstants()[0],FOO,qux,BAR,loadedTypeInitializer),nullValue(Object.class));
+  try {
+    assertThat(((Map<?,?>)duplicateInitializers.get(null)).size(),is(0));
+    assertThat(((Map<?,?>)actualInitializers.get(null)).size(),is(0));
+  }
+  finally {
+    Constructor<Nexus> constructor=Nexus.class.getDeclaredConstructor(String.class,ClassLoader.class,int.class);
+    constructor.setAccessible(true);
+    Object value=((Map<?,?>)actualInitializers.get(null)).remove(constructor.newInstance(FOO,qux,BAR));
+    assertThat(value,nullValue());
+  }
+}

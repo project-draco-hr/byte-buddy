@@ -1,0 +1,3 @@
+{
+  new TypeResolver.Active.Dispatcher.Unavailable(new Exception()).register(FOO,classLoader,BAR,loadedTypeInitializer);
+}

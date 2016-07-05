@@ -1,0 +1,3 @@
+{
+  TypeResolver.Disabled.INSTANCE.resolve().initialize(dynamicType,classLoader,classLoadingStrategy);
+}

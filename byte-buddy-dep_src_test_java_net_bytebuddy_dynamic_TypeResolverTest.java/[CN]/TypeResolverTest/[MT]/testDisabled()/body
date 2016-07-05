@@ -1,0 +1,4 @@
+{
+  TypeResolver.Resolved resolved=TypeResolver.Disabled.INSTANCE.resolve();
+  assertThat(resolved.injectedInto(typeInitializer),is(typeInitializer));
+}
