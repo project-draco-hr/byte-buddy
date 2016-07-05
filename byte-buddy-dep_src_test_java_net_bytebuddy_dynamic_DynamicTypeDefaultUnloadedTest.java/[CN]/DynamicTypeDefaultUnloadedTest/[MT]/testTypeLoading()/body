@@ -3,6 +3,6 @@
   assertThat(loaded.getLoaded(),CoreMatchers.<Class<?>>is(MAIN_TYPE));
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(1));
   assertThat(loaded.getLoadedAuxiliaryTypes().get(auxiliaryTypeDescription),CoreMatchers.<Class<?>>is(AUXILIARY_TYPE));
-  verify(mainLoadedTypeInitializer).onLoad(MAIN_TYPE);
-  verify(auxiliaryLoadedTypeInitializer).onLoad(AUXILIARY_TYPE);
+  verify(typeResolver).initialize(unloaded,classLoader,classLoadingStrategy);
+  verifyNoMoreInteractions(typeResolver);
 }

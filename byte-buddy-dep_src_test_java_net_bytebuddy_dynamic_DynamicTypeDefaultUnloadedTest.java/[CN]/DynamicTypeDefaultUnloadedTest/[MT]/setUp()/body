@@ -5,9 +5,9 @@
   Map<TypeDescription,Class<?>> loadedTypes=new HashMap<TypeDescription,Class<?>>();
   loadedTypes.put(typeDescription,MAIN_TYPE);
   loadedTypes.put(auxiliaryTypeDescription,AUXILIARY_TYPE);
-  when(classLoadingStrategy.load(any(ClassLoader.class),any(LinkedHashMap.class))).thenReturn(loadedTypes);
   when(auxiliaryType.getTypeDescription()).thenReturn(auxiliaryTypeDescription);
   when(auxiliaryType.getBytes()).thenReturn(auxiliaryTypeByte);
   when(auxiliaryType.getLoadedTypeInitializers()).thenReturn(Collections.singletonMap(auxiliaryTypeDescription,auxiliaryLoadedTypeInitializer));
   when(auxiliaryType.getAuxiliaryTypes()).thenReturn(Collections.<TypeDescription,byte[]>emptyMap());
+  when(typeResolver.initialize(unloaded,classLoader,classLoadingStrategy)).thenReturn(loadedTypes);
 }
