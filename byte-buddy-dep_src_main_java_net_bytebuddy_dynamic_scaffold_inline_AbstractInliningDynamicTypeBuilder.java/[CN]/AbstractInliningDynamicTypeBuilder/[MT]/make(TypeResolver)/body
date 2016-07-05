@@ -1,0 +1,3 @@
+{
+  return make(typeResolver,TypePool.Default.of(classFileLocator));
+}

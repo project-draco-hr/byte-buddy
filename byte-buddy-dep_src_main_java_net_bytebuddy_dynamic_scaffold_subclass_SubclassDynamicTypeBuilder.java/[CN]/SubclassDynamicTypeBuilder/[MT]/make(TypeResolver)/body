@@ -1,0 +1,3 @@
+{
+  return make(typeResolver,TypePool.ClassLoading.ofClassPath());
+}

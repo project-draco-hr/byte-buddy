@@ -1,3 +1,0 @@
-{
-  return make(TypePool.ClassLoading.ofClassPath());
-}
