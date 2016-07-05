@@ -1,3 +1,0 @@
-{
-  assertThat(AuxiliaryType.SignatureRelevant.class.getAnnotation(Retention.class).value(),is(RetentionPolicy.SOURCE));
-}
