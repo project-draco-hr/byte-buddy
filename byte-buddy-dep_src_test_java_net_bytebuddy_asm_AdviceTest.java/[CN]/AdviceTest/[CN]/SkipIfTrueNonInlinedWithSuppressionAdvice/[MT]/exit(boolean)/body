@@ -1,0 +1,6 @@
+{
+  if (enter) {
+    throw new AssertionError();
+  }
+  exit++;
+}
