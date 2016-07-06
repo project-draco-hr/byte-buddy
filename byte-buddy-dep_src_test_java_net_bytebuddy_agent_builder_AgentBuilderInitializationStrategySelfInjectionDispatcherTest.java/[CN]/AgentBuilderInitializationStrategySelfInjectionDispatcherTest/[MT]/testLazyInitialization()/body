@@ -1,7 +1,7 @@
 {
   AgentBuilder.InitializationStrategy.Dispatcher dispatcher=new AgentBuilder.InitializationStrategy.SelfInjection.Dispatcher.Lazy(IDENTIFIER);
   assertThat(dispatcher.apply(builder),is((DynamicType.Builder)appendedBuilder));
-  verify(builder).initializer(new TypeResolutionStrategy.Active.InitializationAppender(IDENTIFIER));
+  verify(builder).initializer(new NexusAccessor.InitializationAppender(IDENTIFIER));
   verifyNoMoreInteractions(builder);
   verifyZeroInteractions(appendedBuilder);
 }

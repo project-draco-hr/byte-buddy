@@ -6,13 +6,14 @@
     }
   }
 ).apply();
+  ObjectPropertyAssertion.of(NexusAccessor.class).apply();
   final Iterator<Method> methods=Arrays.asList(Object.class.getDeclaredMethods()).iterator();
-  ObjectPropertyAssertion.of(TypeResolutionStrategy.Active.Dispatcher.Available.class).create(new ObjectPropertyAssertion.Creator<Method>(){
+  ObjectPropertyAssertion.of(NexusAccessor.Dispatcher.Available.class).create(new ObjectPropertyAssertion.Creator<Method>(){
     @Override public Method create(){
       return methods.next();
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(TypeResolutionStrategy.Active.Dispatcher.Unavailable.class).apply();
-  ObjectPropertyAssertion.of(TypeResolutionStrategy.Active.InitializationAppender.class).apply();
+  ObjectPropertyAssertion.of(NexusAccessor.Dispatcher.Unavailable.class).apply();
+  ObjectPropertyAssertion.of(NexusAccessor.InitializationAppender.class).apply();
 }
