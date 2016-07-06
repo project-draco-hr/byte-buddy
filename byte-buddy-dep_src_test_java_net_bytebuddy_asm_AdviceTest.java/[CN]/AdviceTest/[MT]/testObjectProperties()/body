@@ -80,10 +80,7 @@
   }
 ).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Inlining.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Inlining.Resolved.ForMethodEnter.class).applyBasic();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Inlining.Resolved.ForMethodEnter.AdviceMethodInliner.class).applyBasic();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Inlining.Resolved.ForMethodExit.WithExceptionHandler.class).applyBasic();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.Inlining.Resolved.ForMethodExit.WithoutExceptionHandler.class).applyBasic();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Inlining.Resolved.ForMethodExit.AdviceMethodInliner.class).applyBasic();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Inlining.Resolved.AdviceMethodInliner.ExceptionTableSubstitutor.class).applyBasic();
   ObjectPropertyAssertion.of(Advice.Dispatcher.Inlining.Resolved.AdviceMethodInliner.ExceptionTableCollector.class).applyBasic();
@@ -96,4 +93,5 @@
   }
 ).applyBasic();
   ObjectPropertyAssertion.of(Advice.DynamicValue.ForFixedValue.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.Resolved.ForMethodEnter.SkipDispatcher.class).apply();
 }

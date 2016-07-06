@@ -1,0 +1,5 @@
+{
+  if (value != 0d) {
+    throw new AssertionError();
+  }
+}

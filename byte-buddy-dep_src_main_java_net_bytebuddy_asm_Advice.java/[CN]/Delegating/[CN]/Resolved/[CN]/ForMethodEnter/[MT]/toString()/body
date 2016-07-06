@@ -1,3 +1,3 @@
 {
-  return "Advice.Dispatcher.Delegating.Resolved.ForMethodEnter{" + "adviceMethod=" + adviceMethod + ", offsetMappings="+ offsetMappings+ '}';
+  return "Advice.Dispatcher.Delegating.Resolved.ForMethodEnter{" + "adviceMethod=" + adviceMethod + ", offsetMappings="+ offsetMappings+ ", skipDispatcher="+ skipDispatcher+ '}';
 }

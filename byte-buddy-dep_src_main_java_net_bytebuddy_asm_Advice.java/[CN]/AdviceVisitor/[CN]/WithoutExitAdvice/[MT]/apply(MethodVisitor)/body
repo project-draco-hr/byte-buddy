@@ -15,7 +15,10 @@
     mv.visitInsn(Opcodes.DCONST_0);
     methodVisitor.visitInsn(Opcodes.DRETURN);
   }
- else   if (!instrumentedMethod.getReturnType().represents(void.class)) {
+ else   if (instrumentedMethod.getReturnType().represents(void.class)) {
+    methodVisitor.visitInsn(Opcodes.RETURN);
+  }
+ else {
     mv.visitInsn(Opcodes.ACONST_NULL);
     methodVisitor.visitInsn(Opcodes.ARETURN);
   }

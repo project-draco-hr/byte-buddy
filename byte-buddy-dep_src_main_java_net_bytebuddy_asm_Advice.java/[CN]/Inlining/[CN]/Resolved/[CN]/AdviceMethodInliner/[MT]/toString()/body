@@ -1,3 +1,0 @@
-{
-  return "Advice.Dispatcher.Inlining.Resolved.AdviceMethodInliner{" + "instrumentedMethod=" + instrumentedMethod + ", methodVisitor="+ methodVisitor+ ", methodSizeHandler="+ methodSizeHandler+ ", stackMapFrameHandler="+ stackMapFrameHandler+ ", suppressionHandler="+ suppressionHandler+ ", classReader="+ classReader+ ", labels="+ labels+ '}';
-}

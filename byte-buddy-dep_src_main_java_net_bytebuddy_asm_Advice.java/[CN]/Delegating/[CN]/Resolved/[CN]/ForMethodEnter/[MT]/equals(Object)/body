@@ -1,0 +1,7 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  if (!super.equals(object))   return false;
+  Delegating.Resolved.ForMethodEnter that=(Delegating.Resolved.ForMethodEnter)object;
+  return skipDispatcher == that.skipDispatcher;
+}
