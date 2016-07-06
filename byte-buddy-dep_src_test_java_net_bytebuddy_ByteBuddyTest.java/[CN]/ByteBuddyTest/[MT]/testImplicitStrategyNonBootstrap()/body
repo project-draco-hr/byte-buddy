@@ -1,0 +1,5 @@
+{
+  ClassLoader classLoader=new URLClassLoader(new URL[0],null);
+  Class<?> type=new ByteBuddy().subclass(Object.class).make().load(classLoader).getLoaded();
+  assertThat(type.getClassLoader(),is(classLoader));
+}
