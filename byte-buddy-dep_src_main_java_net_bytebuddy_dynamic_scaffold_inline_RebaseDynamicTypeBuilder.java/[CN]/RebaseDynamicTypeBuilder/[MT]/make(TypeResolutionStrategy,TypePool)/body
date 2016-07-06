@@ -1,0 +1,6 @@
+{
+  MethodRegistry.Prepared preparedMethodRegistry=methodRegistry.prepare(instrumentedType,methodGraphCompiler,typeValidation,InliningImplementationMatcher.of(ignoredMethods,originalType));
+  MethodRebaseResolver methodRebaseResolver=MethodRebaseResolver.Default.make(preparedMethodRegistry.getInstrumentedType(),new HashSet<MethodDescription.Token>(originalType.getDeclaredMethods().filter(RebaseableMatcher.of(preparedMethodRegistry.getInstrumentedType(),preparedMethodRegistry.getInstrumentedMethods())).asTokenList(is(originalType))),classFileVersion,auxiliaryTypeNamingStrategy,methodNameTransformer);
+  MethodRegistry.Compiled compiledMethodRegistry=preparedMethodRegistry.compile(new RebaseImplementationTarget.Factory(methodRebaseResolver));
+  return TypeWriter.Default.<T>forRebasing(compiledMethodRegistry,fieldRegistry.compile(compiledMethodRegistry.getInstrumentedType()),typeAttributeAppender,asmVisitorWrapper,classFileVersion,annotationValueFilterFactory,annotationRetention,auxiliaryTypeNamingStrategy,implementationContextFactory,typeValidation,typePool,originalType,classFileLocator,methodRebaseResolver).make(typeResolutionStrategy.resolve());
+}

@@ -1,0 +1,7 @@
+{
+  ObjectPropertyAssertion.of(TypeResolutionStrategy.Active.class).apply();
+  ObjectPropertyAssertion.of(TypeResolutionStrategy.Active.Resolved.class).apply();
+  ObjectPropertyAssertion.of(TypeResolutionStrategy.Passive.class).apply();
+  ObjectPropertyAssertion.of(TypeResolutionStrategy.Lazy.class).apply();
+  ObjectPropertyAssertion.of(TypeResolutionStrategy.Disabled.class).apply();
+}

@@ -1,0 +1,9 @@
+{
+  TypeResolutionStrategy.Resolved resolved=TypeResolutionStrategy.Passive.INSTANCE.resolve();
+  assertThat(resolved.injectedInto(typeInitializer),is(typeInitializer));
+  assertThat(resolved.initialize(dynamicType,classLoader,classLoadingStrategy),is(Collections.<TypeDescription,Class<?>>singletonMap(typeDescription,Foo.class)));
+  verify(classLoadingStrategy).load(classLoader,Collections.singletonMap(typeDescription,FOO));
+  verifyNoMoreInteractions(classLoadingStrategy);
+  verify(loadedTypeInitializer).onLoad(Foo.class);
+  verifyNoMoreInteractions(loadedTypeInitializer);
+}

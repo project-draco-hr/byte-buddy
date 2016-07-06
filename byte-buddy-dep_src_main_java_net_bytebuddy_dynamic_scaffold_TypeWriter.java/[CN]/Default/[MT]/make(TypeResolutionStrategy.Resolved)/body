@@ -1,0 +1,19 @@
+{
+  Implementation.Context.ExtractableView implementationContext=implementationContextFactory.make(instrumentedType,auxiliaryTypeNamingStrategy,typeResolutionStrategy.injectedInto(typeInitializer),classFileVersion);
+  byte[] binaryRepresentation=create(implementationContext);
+  if (DUMP_FOLDER != null) {
+    try {
+      OutputStream outputStream=new FileOutputStream(new File(DUMP_FOLDER,instrumentedType.getName() + "." + System.currentTimeMillis()));
+      try {
+        outputStream.write(binaryRepresentation);
+      }
+  finally {
+        outputStream.close();
+      }
+    }
+ catch (    Exception exception) {
+      Logger.getLogger("net.bytebuddy").warning("Could not dump class file for " + instrumentedType + ": "+ exception.getMessage());
+    }
+  }
+  return new DynamicType.Default.Unloaded<S>(instrumentedType,binaryRepresentation,loadedTypeInitializer,CompoundList.of(explicitAuxiliaryTypes,implementationContext.getRegisteredAuxiliaryTypes()),typeResolutionStrategy);
+}

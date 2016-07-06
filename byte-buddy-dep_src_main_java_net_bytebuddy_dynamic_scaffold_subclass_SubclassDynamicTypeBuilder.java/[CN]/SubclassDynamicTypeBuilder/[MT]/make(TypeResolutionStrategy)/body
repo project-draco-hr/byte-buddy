@@ -1,0 +1,3 @@
+{
+  return make(typeResolutionStrategy,TypePool.ClassLoading.ofClassPath());
+}

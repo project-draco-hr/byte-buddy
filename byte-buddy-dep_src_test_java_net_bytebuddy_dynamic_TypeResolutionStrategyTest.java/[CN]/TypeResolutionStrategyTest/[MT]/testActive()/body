@@ -1,0 +1,23 @@
+{
+  TypeResolutionStrategy.Resolved resolved=TypeResolutionStrategy.Active.INSTANCE.resolve();
+  Field field=TypeResolutionStrategy.Active.Resolved.class.getDeclaredField("identification");
+  field.setAccessible(true);
+  int identification=(Integer)field.get(resolved);
+  when(typeInitializer.expandWith(new TypeResolutionStrategy.Active.InitializationAppender(identification))).thenReturn(otherTypeInitializer);
+  assertThat(resolved.injectedInto(typeInitializer),is(otherTypeInitializer));
+  assertThat(resolved.initialize(dynamicType,classLoader,classLoadingStrategy),is(Collections.<TypeDescription,Class<?>>singletonMap(typeDescription,Foo.class)));
+  try {
+    verify(classLoadingStrategy).load(classLoader,Collections.singletonMap(typeDescription,FOO));
+    verifyNoMoreInteractions(classLoadingStrategy);
+    verify(loadedTypeInitializer).isAlive();
+    verifyNoMoreInteractions(loadedTypeInitializer);
+  }
+  finally {
+    Field initializers=Nexus.class.getDeclaredField("TYPE_INITIALIZERS");
+    initializers.setAccessible(true);
+    Constructor<Nexus> constructor=Nexus.class.getDeclaredConstructor(String.class,ClassLoader.class,int.class);
+    constructor.setAccessible(true);
+    Object value=((Map<?,?>)initializers.get(null)).remove(constructor.newInstance(Foo.class.getName(),Foo.class.getClassLoader(),identification));
+    assertThat(value,CoreMatchers.is((Object)loadedTypeInitializer));
+  }
+}

@@ -1,8 +1,0 @@
-{
-  TypeResolver.Resolved resolved=TypeResolver.Lazy.INSTANCE.resolve();
-  assertThat(resolved.injectedInto(typeInitializer),is(typeInitializer));
-  assertThat(resolved.initialize(dynamicType,classLoader,classLoadingStrategy),is(Collections.<TypeDescription,Class<?>>singletonMap(typeDescription,Foo.class)));
-  verify(classLoadingStrategy).load(classLoader,Collections.singletonMap(typeDescription,FOO));
-  verifyNoMoreInteractions(classLoadingStrategy);
-  verifyNoMoreInteractions(loadedTypeInitializer);
-}
