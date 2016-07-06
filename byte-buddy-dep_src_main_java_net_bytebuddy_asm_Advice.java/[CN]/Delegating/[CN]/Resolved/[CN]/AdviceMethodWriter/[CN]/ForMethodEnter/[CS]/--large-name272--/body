@@ -1,3 +1,4 @@
 {
   super(adviceMethod,instrumentedMethod,offsetMappings,methodVisitor,methodSizeHandler,stackMapFrameHandler,suppressionHandler);
+  this.skipDispatcher=skipDispatcher;
 }

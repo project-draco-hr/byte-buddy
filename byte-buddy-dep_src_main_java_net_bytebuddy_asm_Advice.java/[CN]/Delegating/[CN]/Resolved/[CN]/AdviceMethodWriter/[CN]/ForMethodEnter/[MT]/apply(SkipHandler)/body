@@ -1,0 +1,4 @@
+{
+  doApply();
+  skipDispatcher.apply(methodVisitor,stackMapFrameHandler,instrumentedMethod,skipHandler);
+}

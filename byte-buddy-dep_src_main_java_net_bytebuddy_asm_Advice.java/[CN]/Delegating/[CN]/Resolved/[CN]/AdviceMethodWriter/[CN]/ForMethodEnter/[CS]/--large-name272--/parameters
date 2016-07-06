@@ -5,3 +5,4 @@ MethodVisitor methodVisitor
 MethodSizeHandler.ForAdvice methodSizeHandler
 StackMapFrameHandler.ForAdvice stackMapFrameHandler
 SuppressionHandler.Bound suppressionHandler
+Resolved.ForMethodEnter.SkipDispatcher skipDispatcher

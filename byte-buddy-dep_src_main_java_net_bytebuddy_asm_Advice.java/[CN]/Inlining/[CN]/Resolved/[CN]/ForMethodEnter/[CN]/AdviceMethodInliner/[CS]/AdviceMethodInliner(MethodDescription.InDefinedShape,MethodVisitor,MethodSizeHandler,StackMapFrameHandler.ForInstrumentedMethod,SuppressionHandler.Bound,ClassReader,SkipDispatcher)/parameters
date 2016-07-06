@@ -1,0 +1,7 @@
+MethodDescription.InDefinedShape instrumentedMethod
+MethodVisitor methodVisitor
+MethodSizeHandler methodSizeHandler
+StackMapFrameHandler.ForInstrumentedMethod stackMapFrameHandler
+SuppressionHandler.Bound suppressionHandler
+ClassReader classReader
+SkipDispatcher skipDispatcher

@@ -2,6 +2,6 @@
   methodEnter.prepare();
   onUserPrepare();
   methodExit.prepare();
-  methodEnter.apply();
+  methodEnter.apply(this);
   onUserStart();
 }
