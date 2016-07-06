@@ -2,6 +2,6 @@
   int result=matcher.hashCode();
   result=31 * result + handler.hashCode();
   result=31 * result + attributeAppenderFactory.hashCode();
-  result=31 * result + methodTransformer.hashCode();
+  result=31 * result + transformer.hashCode();
   return result;
 }

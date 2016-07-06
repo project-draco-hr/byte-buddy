@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(FieldTransformer.NoOp.class).apply();
-}

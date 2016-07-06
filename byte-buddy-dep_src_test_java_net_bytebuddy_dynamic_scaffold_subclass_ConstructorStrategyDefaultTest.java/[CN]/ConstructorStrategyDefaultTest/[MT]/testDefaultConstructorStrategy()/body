@@ -2,7 +2,7 @@
   when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InGenericShape>());
   assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.extractConstructors(instrumentedType),is(Collections.singletonList(stripped)));
   assertThat(ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.inject(methodRegistry),is(methodRegistry));
-  verify(methodRegistry).append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),eq(MethodAttributeAppender.NoOp.INSTANCE),eq(MethodTransformer.NoOp.INSTANCE));
+  verify(methodRegistry).append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),eq(MethodAttributeAppender.NoOp.INSTANCE),eq(Transformer.NoOp.<MethodDescription>make()));
   verifyNoMoreInteractions(methodRegistry);
   verify(instrumentedType).getSuperClass();
   verifyNoMoreInteractions(instrumentedType);

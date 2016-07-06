@@ -1,3 +1,0 @@
-{
-  return new MethodDescription.Token(token.getName(),ModifierContributor.Resolver.of(modifierContributors).resolve(token.getModifiers()),token.getTypeVariableTokens(),token.getReturnType(),token.getParameterTokens(),token.getExceptionTypes(),token.getAnnotations(),token.getDefaultValue(),token.getReceiverType());
-}

@@ -1,0 +1,4 @@
+{
+  Object target=mock(Object.class);
+  assertThat(Transformer.NoOp.INSTANCE.transform(mock(TypeDescription.class),target),is(target));
+}

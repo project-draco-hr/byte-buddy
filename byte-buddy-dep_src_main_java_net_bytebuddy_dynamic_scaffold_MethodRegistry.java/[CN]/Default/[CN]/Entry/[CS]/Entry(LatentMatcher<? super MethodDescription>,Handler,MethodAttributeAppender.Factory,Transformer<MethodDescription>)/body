@@ -1,0 +1,6 @@
+{
+  this.matcher=matcher;
+  this.handler=handler;
+  this.attributeAppenderFactory=attributeAppenderFactory;
+  this.transformer=transformer;
+}

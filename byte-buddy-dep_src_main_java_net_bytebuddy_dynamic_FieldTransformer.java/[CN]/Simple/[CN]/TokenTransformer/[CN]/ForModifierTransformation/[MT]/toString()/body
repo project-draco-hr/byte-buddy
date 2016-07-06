@@ -1,3 +1,0 @@
-{
-  return "FieldTransformer.Simple.TokenTransformer.ForModifierTransformation{" + "modifierContributors=" + modifierContributors + '}';
-}

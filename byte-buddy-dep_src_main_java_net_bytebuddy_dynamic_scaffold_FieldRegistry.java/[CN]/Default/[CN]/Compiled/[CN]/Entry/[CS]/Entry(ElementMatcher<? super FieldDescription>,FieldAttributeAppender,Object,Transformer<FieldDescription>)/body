@@ -1,0 +1,6 @@
+{
+  this.matcher=matcher;
+  this.fieldAttributeAppender=fieldAttributeAppender;
+  this.defaultValue=defaultValue;
+  this.transformer=transformer;
+}

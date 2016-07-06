@@ -1,4 +1,0 @@
-{
-  FieldDescription fieldDescription=mock(FieldDescription.class);
-  assertThat(FieldTransformer.NoOp.INSTANCE.transform(mock(TypeDescription.class),fieldDescription),is(fieldDescription));
-}

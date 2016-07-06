@@ -1,3 +1,0 @@
-{
-  assertThat(new FieldTransformer.Compound(first,second).transform(typeDescription,firstMethod),is(finalMethod));
-}

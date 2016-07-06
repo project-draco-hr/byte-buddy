@@ -1,0 +1,3 @@
+{
+  return new MethodDescription.Token(target.getName(),ModifierContributor.Resolver.of(modifierContributors).resolve(target.getModifiers()),target.getTypeVariableTokens(),target.getReturnType(),target.getParameterTokens(),target.getExceptionTypes(),target.getAnnotations(),target.getDefaultValue(),target.getReceiverType());
+}

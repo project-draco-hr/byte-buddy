@@ -1,0 +1,6 @@
+{
+  List<Entry> entries=new ArrayList<Entry>(this.entries.size() + 1);
+  entries.add(new Entry(matcher,fieldAttributeAppenderFactory,defaultValue,transformer));
+  entries.addAll(this.entries);
+  return new Default(entries);
+}

@@ -1,3 +1,0 @@
-{
-  return new FieldDescription.Token(token.getName(),ModifierContributor.Resolver.of(modifierContributors).resolve(token.getModifiers()),token.getType(),token.getAnnotations());
-}

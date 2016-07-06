@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(FieldTransformer.Compound.class).apply();
-}

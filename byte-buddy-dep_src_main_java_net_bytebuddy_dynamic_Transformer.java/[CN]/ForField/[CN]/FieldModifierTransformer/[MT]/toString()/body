@@ -1,0 +1,3 @@
+{
+  return "Transformer.ForField.FieldModifierTransformer{" + "modifierContributors=" + modifierContributors + '}';
+}

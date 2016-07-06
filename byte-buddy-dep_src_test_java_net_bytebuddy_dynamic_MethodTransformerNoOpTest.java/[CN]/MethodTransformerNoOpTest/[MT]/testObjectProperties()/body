@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(MethodTransformer.NoOp.class).apply();
-}

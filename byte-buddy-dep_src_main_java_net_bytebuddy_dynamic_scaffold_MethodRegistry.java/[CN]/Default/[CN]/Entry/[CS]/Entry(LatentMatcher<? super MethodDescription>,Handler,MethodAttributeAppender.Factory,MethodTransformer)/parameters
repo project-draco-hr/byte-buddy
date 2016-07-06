@@ -1,4 +1,0 @@
-LatentMatcher<? super MethodDescription> matcher
-Handler handler
-MethodAttributeAppender.Factory attributeAppenderFactory
-MethodTransformer methodTransformer

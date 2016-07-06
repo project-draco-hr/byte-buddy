@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(Transformer.NoOp.class).apply();
+}

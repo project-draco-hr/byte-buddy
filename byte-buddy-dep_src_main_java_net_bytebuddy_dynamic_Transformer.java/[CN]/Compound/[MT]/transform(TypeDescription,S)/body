@@ -1,0 +1,6 @@
+{
+  for (  Transformer<S> transformer : transformers) {
+    target=transformer.transform(instrumentedType,target);
+  }
+  return target;
+}

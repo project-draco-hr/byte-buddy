@@ -1,5 +1,5 @@
 {
-  when(methodRegistry.append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),any(MethodAttributeAppender.Factory.class),any(MethodTransformer.class))).thenReturn(methodRegistry);
+  when(methodRegistry.append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),any(MethodAttributeAppender.Factory.class),any(Transformer.class))).thenReturn(methodRegistry);
   when(instrumentedType.getSuperClass()).thenReturn(superClass);
   when(superClass.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InGenericShape>(methodDescription));
   when(methodDescription.isConstructor()).thenReturn(true);

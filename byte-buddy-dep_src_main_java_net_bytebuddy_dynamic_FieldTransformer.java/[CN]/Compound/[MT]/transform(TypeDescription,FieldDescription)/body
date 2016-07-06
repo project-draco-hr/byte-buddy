@@ -1,7 +1,0 @@
-{
-  FieldDescription transformed=fieldDescription;
-  for (  FieldTransformer fieldTransformer : fieldTransformers) {
-    transformed=fieldTransformer.transform(instrumentedType,transformed);
-  }
-  return transformed;
-}

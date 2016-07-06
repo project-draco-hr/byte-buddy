@@ -1,0 +1,4 @@
+{
+  when(first.transform(typeDescription,firstTarget)).thenReturn(secondTarget);
+  when(second.transform(typeDescription,secondTarget)).thenReturn(finalTarget);
+}

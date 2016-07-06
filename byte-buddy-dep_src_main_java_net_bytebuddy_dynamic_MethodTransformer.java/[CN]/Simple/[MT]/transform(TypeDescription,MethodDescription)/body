@@ -1,3 +1,0 @@
-{
-  return new TransformedMethod(methodDescription.getDeclaringType(),tokenTransformer.transform(methodDescription.asToken(is(instrumentedType))),methodDescription.asDefined());
-}

@@ -1,3 +1,0 @@
-{
-  return "MethodTransformer.Compound{" + "methodTransformers=" + methodTransformers + '}';
-}

@@ -1,0 +1,3 @@
+{
+  assertThat(new Transformer.Compound<Object>(first,second).transform(typeDescription,firstTarget),is(finalTarget));
+}
