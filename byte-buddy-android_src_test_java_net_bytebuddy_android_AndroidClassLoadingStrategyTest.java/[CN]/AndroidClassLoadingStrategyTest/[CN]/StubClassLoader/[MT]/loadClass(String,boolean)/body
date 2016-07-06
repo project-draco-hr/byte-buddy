@@ -1,0 +1,10 @@
+{
+  if (loaded != null) {
+    throw new AssertionError("Already loaded: " + loaded);
+  }
+ else   if (resolve) {
+    throw new AssertionError("Did not intend to resolve: " + name);
+  }
+  loaded=dynamicType.load(getParent()).getLoaded();
+  return loaded;
+}

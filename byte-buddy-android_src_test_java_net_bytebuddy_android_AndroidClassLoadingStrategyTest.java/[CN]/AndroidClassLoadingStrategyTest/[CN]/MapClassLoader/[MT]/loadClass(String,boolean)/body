@@ -1,0 +1,10 @@
+{
+  Class<?> type=types.get(name);
+  if (type == null) {
+    throw new AssertionError("Unexpected type: " + name);
+  }
+ else   if (resolve) {
+    throw new AssertionError("Did not intend to resolve: " + name);
+  }
+  return type;
+}

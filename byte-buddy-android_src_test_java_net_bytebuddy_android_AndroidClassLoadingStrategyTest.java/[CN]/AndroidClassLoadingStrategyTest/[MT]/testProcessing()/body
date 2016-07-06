@@ -1,25 +1,25 @@
 {
   AndroidClassLoadingStrategy.DexProcessor dexProcessor=mock(AndroidClassLoadingStrategy.DexProcessor.class);
-  ClassLoader classLoader=mock(ClassLoader.class);
-  doReturn(Object.class).when(classLoader).loadClass(FOO);
-  doReturn(Void.class).when(classLoader).loadClass(BAR);
+  Map<String,Class<?>> types=new HashMap<String,Class<?>>();
+  types.put(Foo.class.getName(),Foo.class);
+  types.put(Bar.class.getName(),Bar.class);
+  ClassLoader classLoader=new MapClassLoader(getClass().getClassLoader(),types);
   when(dexProcessor.makeClassLoader(any(File.class),eq(folder),any(ClassLoader.class))).thenReturn(classLoader);
   AndroidClassLoadingStrategy.DexProcessor.Conversion conversion=mock(AndroidClassLoadingStrategy.DexProcessor.Conversion.class);
   when(dexProcessor.create()).thenReturn(conversion);
   ClassLoadingStrategy classLoadingStrategy=new AndroidClassLoadingStrategy(folder,dexProcessor);
   Map<TypeDescription,byte[]> unloaded=new HashMap<TypeDescription,byte[]>();
-  unloaded.put(first,QUX);
-  unloaded.put(second,BAZ);
-  ClassLoader parentClassLoader=mock(ClassLoader.class);
-  Map<TypeDescription,Class<?>> loaded=classLoadingStrategy.load(parentClassLoader,unloaded);
+  unloaded.put(firstType,QUX);
+  unloaded.put(secondType,BAZ);
+  Map<TypeDescription,Class<?>> loaded=classLoadingStrategy.load(getClass().getClassLoader(),unloaded);
   assertThat(loaded.size(),is(2));
-  assertThat(loaded.get(first),CoreMatchers.<Class<?>>is(Object.class));
-  assertThat(loaded.get(second),CoreMatchers.<Class<?>>is(Void.class));
+  assertThat(loaded.get(firstType),CoreMatchers.<Class<?>>is(Foo.class));
+  assertThat(loaded.get(secondType),CoreMatchers.<Class<?>>is(Bar.class));
   verify(dexProcessor).create();
-  verify(dexProcessor).makeClassLoader(any(File.class),eq(folder),eq(parentClassLoader));
+  verify(dexProcessor).makeClassLoader(any(File.class),eq(folder),eq(getClass().getClassLoader()));
   verifyNoMoreInteractions(dexProcessor);
-  verify(conversion).register(FOO,QUX);
-  verify(conversion).register(BAR,BAZ);
+  verify(conversion).register(Foo.class.getName(),QUX);
+  verify(conversion).register(Bar.class.getName(),BAZ);
   verify(conversion).drainTo(any(OutputStream.class));
   verifyNoMoreInteractions(conversion);
 }

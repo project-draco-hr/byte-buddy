@@ -3,6 +3,6 @@
   assertThat(folder.delete(),is(true));
   folder=new File(folder.getParentFile(),UUID.randomUUID().toString());
   assertThat(folder.mkdir(),is(true));
-  when(first.getName()).thenReturn(FOO);
-  when(second.getName()).thenReturn(BAR);
+  when(firstType.getName()).thenReturn(Foo.class.getName());
+  when(secondType.getName()).thenReturn(Bar.class.getName());
 }

@@ -1,0 +1,4 @@
+{
+  super(new URLClassLoader(new URL[0],null));
+  this.dynamicType=dynamicType;
+}
