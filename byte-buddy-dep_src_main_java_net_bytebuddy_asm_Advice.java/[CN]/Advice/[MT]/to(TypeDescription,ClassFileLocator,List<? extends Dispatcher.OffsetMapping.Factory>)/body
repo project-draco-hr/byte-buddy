@@ -1,18 +1,18 @@
 {
+  Dispatcher.Unresolved methodEnter=Dispatcher.Inactive.INSTANCE, methodExit=Dispatcher.Inactive.INSTANCE;
+  for (  MethodDescription.InDefinedShape methodDescription : advice.getDeclaredMethods()) {
+    methodEnter=locate(OnMethodEnter.class,INLINE_ENTER,methodEnter,methodDescription);
+    methodExit=locate(OnMethodExit.class,INLINE_EXIT,methodExit,methodDescription);
+  }
+  if (!methodEnter.isAlive() && !methodExit.isAlive()) {
+    throw new IllegalArgumentException("No advice defined by " + advice);
+  }
   try {
-    Dispatcher.Unresolved methodEnter=Dispatcher.Inactive.INSTANCE, methodExit=Dispatcher.Inactive.INSTANCE;
-    for (    MethodDescription.InDefinedShape methodDescription : typeDescription.getDeclaredMethods()) {
-      methodEnter=locate(OnMethodEnter.class,INLINE_ENTER,methodEnter,methodDescription);
-      methodExit=locate(OnMethodExit.class,INLINE_EXIT,methodExit,methodDescription);
-    }
-    if (!methodEnter.isAlive() && !methodExit.isAlive()) {
-      throw new IllegalArgumentException("No advice defined by " + typeDescription);
-    }
-    ClassReader classReader=methodEnter.isBinary() || methodExit.isBinary() ? new ClassReader(classFileLocator.locate(typeDescription.getName()).resolve()) : UNDEFINED;
+    ClassReader classReader=methodEnter.isBinary() || methodExit.isBinary() ? new ClassReader(classFileLocator.locate(advice.getName()).resolve()) : UNDEFINED;
     Dispatcher.Resolved.ForMethodEnter resolved=methodEnter.asMethodEnter(userFactories,classReader);
     return new Advice(resolved,methodExit.asMethodExitTo(userFactories,classReader,resolved));
   }
  catch (  IOException exception) {
-    throw new IllegalStateException("Error reading class file of " + typeDescription,exception);
+    throw new IllegalStateException("Error reading class file of " + advice,exception);
   }
 }

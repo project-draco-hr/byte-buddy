@@ -1,0 +1,3 @@
+{
+  return to(enterAdvice,exitAdvice,enterAdvice.getClassLoader().equals(exitAdvice.getClassLoader()) ? ClassFileLocator.ForClassLoader.of(enterAdvice.getClassLoader()) : new ClassFileLocator.Compound(ClassFileLocator.ForClassLoader.of(enterAdvice.getClassLoader()),ClassFileLocator.ForClassLoader.of(exitAdvice.getClassLoader())));
+}

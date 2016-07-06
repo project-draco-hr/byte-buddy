@@ -3,5 +3,5 @@
   for (  Map.Entry<Class<? extends Annotation>,DynamicValue<?>> entry : dynamicValues.entrySet()) {
     userFactories.add(Dispatcher.OffsetMapping.ForUserValue.Factory.of(entry.getKey(),entry.getValue()));
   }
-  return Advice.to(advice,classFileLocator,userFactories);
+  return Advice.to(enterAdvice,exitAdvice,classFileLocator,userFactories);
 }

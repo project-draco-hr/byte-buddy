@@ -1,2 +1,2 @@
-Class<?> type
+Class<?> advice
 ClassFileLocator classFileLocator

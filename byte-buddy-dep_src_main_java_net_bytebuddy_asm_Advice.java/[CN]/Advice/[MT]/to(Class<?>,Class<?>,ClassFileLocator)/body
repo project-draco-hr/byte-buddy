@@ -1,0 +1,3 @@
+{
+  return to(new TypeDescription.ForLoadedType(enterAdvice),new TypeDescription.ForLoadedType(exitAdvice),classFileLocator);
+}

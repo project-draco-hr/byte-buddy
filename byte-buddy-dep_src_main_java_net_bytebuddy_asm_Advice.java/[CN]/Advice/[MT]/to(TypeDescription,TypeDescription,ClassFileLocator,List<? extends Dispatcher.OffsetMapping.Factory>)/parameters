@@ -1,3 +1,4 @@
-TypeDescription advice
+TypeDescription enterAdvice
+TypeDescription exitAdvice
 ClassFileLocator classFileLocator
 List<? extends Dispatcher.OffsetMapping.Factory> userFactories
