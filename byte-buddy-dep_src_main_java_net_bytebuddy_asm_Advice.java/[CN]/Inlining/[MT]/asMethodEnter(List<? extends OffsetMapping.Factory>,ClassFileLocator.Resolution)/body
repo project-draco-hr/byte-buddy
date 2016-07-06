@@ -1,3 +1,0 @@
-{
-  return new Resolved.ForMethodEnter(adviceMethod,userFactories,binaryRepresentation.resolve());
-}

@@ -1,2 +1,2 @@
 List<? extends OffsetMapping.Factory> userFactories
-ClassFileLocator.Resolution binaryRepresentation
+ClassReader classReader

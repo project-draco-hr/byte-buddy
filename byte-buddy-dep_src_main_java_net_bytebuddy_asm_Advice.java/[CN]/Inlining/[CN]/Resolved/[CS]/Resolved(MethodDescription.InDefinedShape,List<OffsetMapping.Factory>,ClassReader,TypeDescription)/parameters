@@ -1,4 +1,4 @@
 MethodDescription.InDefinedShape adviceMethod
 List<OffsetMapping.Factory> factories
-byte[] binaryRepresentation
+ClassReader classReader
 TypeDescription throwableType

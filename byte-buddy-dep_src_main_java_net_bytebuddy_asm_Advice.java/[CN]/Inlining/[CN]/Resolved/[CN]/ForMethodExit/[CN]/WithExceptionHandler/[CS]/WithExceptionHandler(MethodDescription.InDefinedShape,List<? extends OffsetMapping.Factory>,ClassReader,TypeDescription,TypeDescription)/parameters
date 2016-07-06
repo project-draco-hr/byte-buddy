@@ -1,5 +1,5 @@
 MethodDescription.InDefinedShape adviceMethod
 List<? extends OffsetMapping.Factory> userFactories
-byte[] binaryRepresentation
+ClassReader classReader
 TypeDescription enterType
 TypeDescription triggeringThrowable

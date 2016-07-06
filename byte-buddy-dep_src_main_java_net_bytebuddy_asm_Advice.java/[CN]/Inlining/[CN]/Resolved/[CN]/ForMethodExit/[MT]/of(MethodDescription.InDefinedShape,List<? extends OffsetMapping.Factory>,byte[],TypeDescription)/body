@@ -1,4 +1,0 @@
-{
-  TypeDescription triggeringThrowable=adviceMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).getValue(ON_THROWABLE,TypeDescription.class);
-  return triggeringThrowable.represents(NoExceptionHandler.class) ? new WithoutExceptionHandler(adviceMethod,userFactories,binaryRepresentation,enterType) : new WithExceptionHandler(adviceMethod,userFactories,binaryRepresentation,enterType,triggeringThrowable);
-}
