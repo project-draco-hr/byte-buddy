@@ -1,2 +1,2 @@
 ElementMatcher<? super FieldDescription.InDefinedShape> matcher
-FieldVisitorWrapper fieldVisitorWrapper
+List<? extends FieldVisitorWrapper> fieldVisitorWrappers

@@ -1,3 +1,6 @@
 {
-  return methodVisitorWrapper.wrap(instrumentedType,methodDescription,methodVisitor,classFileVersion,writerFlags,readerFlags);
+  for (  MethodVisitorWrapper methodVisitorWrapper : methodVisitorWrappers) {
+    methodVisitor=methodVisitorWrapper.wrap(instrumentedType,methodDescription,methodVisitor,classFileVersion,writerFlags,readerFlags);
+  }
+  return methodVisitor;
 }
