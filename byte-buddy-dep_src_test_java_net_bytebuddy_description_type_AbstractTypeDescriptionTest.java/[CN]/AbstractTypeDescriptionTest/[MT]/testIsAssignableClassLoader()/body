@@ -1,8 +1,8 @@
 {
-  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(SampleClass.class),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
-  Class<?> otherSampleClass=classLoader.loadClass(SampleClass.class.getName());
-  assertThat(describe(SampleClass.class).isAssignableFrom(describe(otherSampleClass)),is(true));
-  assertThat(describe(SampleClass.class).isAssignableTo(describe(otherSampleClass)),is(true));
-  assertThat(describe(Object.class).isAssignableFrom(describe(otherSampleClass)),is(true));
-  assertThat(describe(otherSampleClass).isAssignableTo(describe(Object.class)),is(true));
+  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(SimpleType.class),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
+  Class<?> otherSimpleType=classLoader.loadClass(SimpleType.class.getName());
+  assertThat(describe(SimpleType.class).isAssignableFrom(describe(otherSimpleType)),is(true));
+  assertThat(describe(SimpleType.class).isAssignableTo(describe(otherSimpleType)),is(true));
+  assertThat(describe(Object.class).isAssignableFrom(describe(otherSimpleType)),is(true));
+  assertThat(describe(otherSimpleType).isAssignableTo(describe(Object.class)),is(true));
 }

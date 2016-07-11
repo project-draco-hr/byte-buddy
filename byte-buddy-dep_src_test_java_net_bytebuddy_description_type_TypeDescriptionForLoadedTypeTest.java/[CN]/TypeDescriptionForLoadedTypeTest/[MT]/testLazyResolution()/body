@@ -1,0 +1,4 @@
+{
+  ClassLoader classLoader=new ByteArrayClassLoader(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassFileExtraction.of(TypeDescriptionForLoadedTypeWithEagerPropertiesTest.Foo.class),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
+  new TypeDescription.ForLoadedType(classLoader.loadClass(TypeDescriptionForLoadedTypeWithEagerPropertiesTest.Foo.class.getName()));
+}

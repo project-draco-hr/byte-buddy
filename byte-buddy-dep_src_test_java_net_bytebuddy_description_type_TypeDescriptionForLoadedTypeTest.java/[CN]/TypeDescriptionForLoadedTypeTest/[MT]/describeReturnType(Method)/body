@@ -1,3 +1,3 @@
 {
-  return new MethodDescription.ForLoadedMethod(method).getReturnType();
+  return new TypeDescription.ForLoadedType(method.getDeclaringClass()).getDeclaredMethods().filter(ElementMatchers.is(method)).getOnly().getReturnType();
 }

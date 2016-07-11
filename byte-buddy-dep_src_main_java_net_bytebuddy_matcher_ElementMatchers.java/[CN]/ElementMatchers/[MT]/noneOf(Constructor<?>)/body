@@ -1,3 +1,3 @@
 {
-  return definedMethod(noneOf(new MethodList.ForLoadedType(value,new Method[0])));
+  return definedMethod(noneOf(new MethodList.ForLoadedMethods(value,new Method[0])));
 }
