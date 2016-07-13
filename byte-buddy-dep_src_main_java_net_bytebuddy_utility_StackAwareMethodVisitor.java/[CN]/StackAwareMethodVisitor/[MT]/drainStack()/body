@@ -1,0 +1,16 @@
+{
+  if (!current.isEmpty()) {
+    for (    StackSize stackSize : current) {
+switch (stackSize) {
+case SINGLE:
+        super.visitInsn(Opcodes.POP);
+      break;
+case DOUBLE:
+    super.visitInsn(Opcodes.POP2);
+  break;
+default :
+throw new IllegalStateException("Unexpected stack size: " + stackSize);
+}
+}
+}
+}

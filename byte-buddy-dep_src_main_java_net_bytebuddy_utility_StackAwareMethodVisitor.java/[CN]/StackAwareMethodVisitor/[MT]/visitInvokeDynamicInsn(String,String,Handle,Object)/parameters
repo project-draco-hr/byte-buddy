@@ -1,0 +1,4 @@
+String name
+String descriptor
+Handle bootstrap
+Object bootstrapArguments

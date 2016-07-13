@@ -1,0 +1,6 @@
+{
+  super(Opcodes.ASM5,methodVisitor);
+  current=new ArrayList<StackSize>();
+  sizes=new HashMap<Label,List<StackSize>>();
+  freeIndex=methodDescription.getStackSize();
+}

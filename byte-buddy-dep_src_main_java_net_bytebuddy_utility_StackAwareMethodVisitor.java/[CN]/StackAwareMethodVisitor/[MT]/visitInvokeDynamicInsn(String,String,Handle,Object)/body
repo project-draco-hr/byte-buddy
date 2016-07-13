@@ -1,0 +1,6 @@
+{
+  int baseline=Type.getArgumentsAndReturnSizes(descriptor);
+  adjustStack(-(baseline >> 2) + 1);
+  adjustStack(baseline & 0x03);
+  super.visitInvokeDynamicInsn(name,descriptor,bootstrap,bootstrapArguments);
+}

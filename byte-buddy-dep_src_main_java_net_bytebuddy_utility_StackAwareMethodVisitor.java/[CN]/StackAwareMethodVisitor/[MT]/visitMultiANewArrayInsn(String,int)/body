@@ -1,0 +1,4 @@
+{
+  adjustStack(1 - dimension);
+  super.visitMultiANewArrayInsn(descriptor,dimension);
+}

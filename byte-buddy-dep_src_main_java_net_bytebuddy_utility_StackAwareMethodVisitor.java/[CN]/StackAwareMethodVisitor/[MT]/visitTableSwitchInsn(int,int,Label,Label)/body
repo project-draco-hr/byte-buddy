@@ -1,0 +1,8 @@
+{
+  adjustStack(-1);
+  sizes.put(defaultOption,new ArrayList<StackSize>(current));
+  for (  Label aLabel : label) {
+    sizes.put(aLabel,new ArrayList<StackSize>(current));
+  }
+  super.visitTableSwitchInsn(min,max,defaultOption,label);
+}

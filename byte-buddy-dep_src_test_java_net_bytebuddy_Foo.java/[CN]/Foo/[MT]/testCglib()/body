@@ -1,0 +1,12 @@
+{
+  Enhancer enhancer=new Enhancer();
+  enhancer.setSuperclass(Object.class);
+  enhancer.setCallback(new MethodInterceptor(){
+    @Override public Object intercept(    Object o,    Method method,    Object[] objects,    MethodProxy methodProxy) throws Throwable {
+      return methodProxy.invokeSuper(o,objects);
+    }
+  }
+);
+  Class<?> type=enhancer.create().getClass();
+  new ByteBuddy().redefine(type,ClassFileLocator.AgentBased.of(ByteBuddyAgent.install(),type)).name("XYZ").visit(Advice.to(Foo.class).on(named("toString"))).make().load(type.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().newInstance();
+}

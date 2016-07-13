@@ -1,0 +1,4 @@
+{
+  adjustStack(SIZE[opcode]);
+  super.visitIntInsn(opcode,operand);
+}

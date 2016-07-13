@@ -1,0 +1,16 @@
+{
+  if (size == 1) {
+    current.add(StackSize.SINGLE);
+  }
+ else   if (size == 2) {
+    current.add(StackSize.DOUBLE);
+  }
+ else   if (size > 0) {
+    throw new IllegalStateException("Cannot push multiple values onto the operand stack: " + size);
+  }
+ else {
+    while (size < 0) {
+      size+=current.remove(current.size() - 1).getSize();
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  int baseline=Type.getArgumentsAndReturnSizes(descriptor);
+  adjustStack(-(baseline >> 2) + ((opcode == Opcodes.INVOKESTATIC) ? 1 : 0));
+  adjustStack(baseline & 0x03);
+  super.visitMethodInsn(opcode,owner,name,descriptor,isInterface);
+}
