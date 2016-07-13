@@ -1,5 +1,5 @@
 {
-  classLoader=classLoader == null ? BootstrapClassLoaderMarker.INSTANCE : classLoader;
+  classLoader=classLoader == null ? getBootstrapMarkerLoader() : classLoader;
   TypePool.CacheProvider cacheProvider=cacheProviders.get(classLoader);
   while (cacheProvider == null) {
     cacheProvider=TypePool.CacheProvider.Simple.withObjectType();

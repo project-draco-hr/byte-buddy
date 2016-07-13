@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("This loader is only a non-null marker and is not supposed to be used");
-}
