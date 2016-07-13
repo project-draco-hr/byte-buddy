@@ -12,6 +12,7 @@ adjustStack(-baseline - 1);
 break;
 case Opcodes.PUTSTATIC:
 adjustStack(-baseline);
+break;
 default :
 throw new IllegalStateException("Unexpected opcode: " + opcode);
 }
