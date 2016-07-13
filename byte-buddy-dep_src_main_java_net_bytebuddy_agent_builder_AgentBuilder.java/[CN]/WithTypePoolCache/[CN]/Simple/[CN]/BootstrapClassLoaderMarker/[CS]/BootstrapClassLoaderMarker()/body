@@ -1,0 +1,3 @@
+{
+  super(ClassLoadingStrategy.BOOTSTRAP_LOADER);
+}
