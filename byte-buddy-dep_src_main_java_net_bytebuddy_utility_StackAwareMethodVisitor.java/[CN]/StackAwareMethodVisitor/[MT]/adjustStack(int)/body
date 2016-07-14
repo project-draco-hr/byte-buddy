@@ -15,8 +15,5 @@
     if (change == 1) {
       current.add(StackSize.SINGLE);
     }
- else     if (change != 0) {
-      throw new AssertionError();
-    }
   }
 }

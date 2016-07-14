@@ -1,5 +1,6 @@
 {
-  super(Opcodes.ASM5,traceStack ? new StackAwareMethodVisitor(methodVisitor,instrumentedMethod) : methodVisitor);
+  super(Opcodes.ASM5,delegate);
+  this.methodVisitor=methodVisitor;
   this.instrumentedMethod=instrumentedMethod;
   padding=methodEnter.getEnterType().getStackSize().getSize();
   List<TypeDescription> requiredTypes=methodEnter.getEnterType().represents(void.class) ? Collections.<TypeDescription>emptyList() : Collections.singletonList(methodEnter.getEnterType());

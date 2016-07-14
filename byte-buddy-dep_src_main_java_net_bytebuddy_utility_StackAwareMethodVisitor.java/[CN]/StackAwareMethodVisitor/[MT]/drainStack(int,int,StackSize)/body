@@ -8,9 +8,6 @@
     if (difference == 1) {
       super.visitInsn(Opcodes.POP);
     }
- else     if (difference != 0) {
-      throw new AssertionError();
-    }
     doDrain(current.subList(0,current.size() - 1));
     super.visitVarInsn(load,freeIndex);
     return freeIndex + size.getSize();
