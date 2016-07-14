@@ -1,0 +1,5 @@
+{
+  assertThat(new TypePool.Default.LazyTypeDescription.TypeContainment.WithinMethod(FOO_INTERNAL,BAR,QUX).isLocalType(),is(true));
+  assertThat(new TypePool.Default.LazyTypeDescription.TypeContainment.WithinMethod(FOO_INTERNAL,BAR,QUX).isMemberClass(),is(false));
+  assertThat(new TypePool.Default.LazyTypeDescription.TypeContainment.WithinMethod(FOO_INTERNAL,BAR,QUX).isSelfContained(),is(false));
+}

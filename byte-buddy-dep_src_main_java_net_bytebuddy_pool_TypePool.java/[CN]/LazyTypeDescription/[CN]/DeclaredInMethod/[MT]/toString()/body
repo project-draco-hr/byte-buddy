@@ -1,3 +1,0 @@
-{
-  return "TypePool.Default.LazyTypeDescription.DeclarationContext.DeclaredInMethod{" + "name='" + name + '\''+ ", methodName='"+ methodName+ '\''+ ", methodDescriptor='"+ methodDescriptor+ '\''+ '}';
-}

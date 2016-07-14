@@ -1,0 +1,5 @@
+{
+  for (  Class<?> type : standardTypes) {
+    assertThat(describe(type).getEnclosingType(),type.getEnclosingClass() == null ? nullValue(TypeDescription.class) : is((TypeDescription)new TypeDescription.ForLoadedType(type.getEnclosingClass())));
+  }
+}

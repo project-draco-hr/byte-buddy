@@ -1,8 +1,8 @@
 {
   if (methodName != null) {
-    declarationContext=new LazyTypeDescription.DeclarationContext.DeclaredInMethod(typeName,methodName,methodDescriptor);
+    typeContainment=new LazyTypeDescription.TypeContainment.WithinMethod(typeName,methodName,methodDescriptor);
   }
  else   if (typeName != null) {
-    declarationContext=new LazyTypeDescription.DeclarationContext.DeclaredInType(typeName);
+    typeContainment=new LazyTypeDescription.TypeContainment.WithinType(typeName,true);
   }
 }

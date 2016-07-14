@@ -1,10 +1,10 @@
 {
-class MemberType {
+class LocalType {
   }
-  memberType=MemberType.class;
-  standardTypes=Arrays.asList(Object.class,Object[].class,SampleClass.class,SampleClass[].class,PrivateClass.class,PrivateClass[].class,StaticClass.class,StaticClass[].class,PrivateStaticClass.class,PrivateStaticClass[].class,SampleInterface.class,SampleInterface[].class,SampleAnnotation.class,SampleAnnotation[].class,DeprecatedClass.class,DeprecatedClass[].class,void.class,void.class,byte.class,byte[].class,short.class,short[].class,char.class,char[].class,int.class,int[].class,long.class,long[].class,float.class,float[].class,double.class,double[].class,MemberType.class,MemberType[].class,new Object(){
+  localType=LocalType.class;
+  standardTypes=Arrays.asList(Object.class,Object[].class,SampleClass.class,SampleClass[].class,PrivateClass.class,PrivateClass[].class,StaticClass.class,StaticClass[].class,PrivateStaticClass.class,PrivateStaticClass[].class,SampleInterface.class,SampleInterface[].class,SampleAnnotation.class,SampleAnnotation[].class,DeprecatedClass.class,DeprecatedClass[].class,void.class,void.class,byte.class,byte[].class,short.class,short[].class,char.class,char[].class,int.class,int[].class,long.class,long[].class,float.class,float[].class,double.class,double[].class,LocalType.class,LocalType[].class,new Object(){
   }
 .getClass(),Array.newInstance(new Object(){
   }
-.getClass(),1).getClass());
+.getClass(),1).getClass(),STATIC_LOCAL,Array.newInstance(STATIC_LOCAL.getClass(),1).getClass(),STATIC_ANONYMOUS,Array.newInstance(STATIC_ANONYMOUS.getClass(),1).getClass());
 }

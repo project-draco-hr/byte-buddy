@@ -1,3 +1,3 @@
 {
-  return new LazyTypeDescription(Default.this,modifiers,internalName,superClassName,interfaceName,GenericTypeExtractor.ForSignature.OfType.extract(genericSignature),declarationContext,declaredTypes,anonymousType,superTypeAnnotationTokens,typeVariableAnnotationTokens,typeVariableBoundsAnnotationTokens,annotationTokens,fieldTokens,methodTokens);
+  return new LazyTypeDescription(Default.this,modifiers,internalName,superClassName,interfaceName,GenericTypeExtractor.ForSignature.OfType.extract(genericSignature),typeContainment,declaringType,declaredTypes,anonymousType,superTypeAnnotationTokens,typeVariableAnnotationTokens,typeVariableBoundsAnnotationTokens,annotationTokens,fieldTokens,methodTokens);
 }

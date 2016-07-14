@@ -1,6 +1,5 @@
 {
-  assertThat(describe(SampleClass.class).getDeclaringType(),is((TypeDescription)new TypeDescription.ForLoadedType(AbstractTypeDescriptionTest.class)));
-  assertThat(describe(Object.class).getDeclaringType(),nullValue(TypeDescription.class));
-  assertThat(describe(Object[].class).getDeclaringType(),nullValue(TypeDescription.class));
-  assertThat(describe(void.class).getDeclaringType(),nullValue(TypeDescription.class));
+  for (  Class<?> type : standardTypes) {
+    assertThat(describe(type).getDeclaringType(),type.getDeclaringClass() == null ? nullValue(TypeDescription.class) : is((TypeDescription)new TypeDescription.ForLoadedType(type.getDeclaringClass())));
+  }
 }

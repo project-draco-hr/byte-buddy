@@ -1,0 +1,5 @@
+{
+  assertThat(TypePool.Default.LazyTypeDescription.TypeContainment.SelfContained.INSTANCE.isLocalType(),is(false));
+  assertThat(TypePool.Default.LazyTypeDescription.TypeContainment.SelfContained.INSTANCE.isMemberClass(),is(false));
+  assertThat(TypePool.Default.LazyTypeDescription.TypeContainment.SelfContained.INSTANCE.isSelfContained(),is(true));
+}
