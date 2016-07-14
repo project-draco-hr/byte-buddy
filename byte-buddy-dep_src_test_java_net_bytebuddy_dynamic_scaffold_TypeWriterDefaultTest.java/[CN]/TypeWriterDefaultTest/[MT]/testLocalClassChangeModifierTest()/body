@@ -1,8 +1,0 @@
-{
-  ClassLoader classLoader=new ByteArrayClassLoader(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassFileExtraction.of(EnclosingType.class),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
-  Class<?> redefined=new ByteBuddy().redefine(EnclosingType.LOCAL_INITIALIZER).modifiers(Visibility.PUBLIC).visit(new InnerClassValidator.Wrapper(EnclosingType.LOCAL_INITIALIZER,Opcodes.ACC_PUBLIC)).make().load(classLoader,ClassLoadingStrategy.Default.INJECTION).getLoaded();
-  assertThat(redefined.isAnonymousClass(),is(EnclosingType.LOCAL_INITIALIZER.isAnonymousClass()));
-  assertThat(redefined.isLocalClass(),is(EnclosingType.LOCAL_INITIALIZER.isLocalClass()));
-  assertThat(redefined.isMemberClass(),is(EnclosingType.LOCAL_INITIALIZER.isMemberClass()));
-  assertThat(redefined.getModifiers(),is(Modifier.PUBLIC | EnclosingType.LOCAL_INITIALIZER.getModifiers()));
-}

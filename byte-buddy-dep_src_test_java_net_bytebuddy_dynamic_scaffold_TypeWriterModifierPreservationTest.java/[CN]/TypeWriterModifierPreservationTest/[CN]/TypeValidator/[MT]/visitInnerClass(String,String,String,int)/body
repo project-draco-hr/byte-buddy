@@ -1,0 +1,6 @@
+{
+  if (name.equals(this.name) && modifiers != inner) {
+    throw new AssertionError("Unexpected inner modifiers: Observed " + modifiers + " instead of "+ inner);
+  }
+  super.visitInnerClass(name,outerName,innerName,modifiers);
+}

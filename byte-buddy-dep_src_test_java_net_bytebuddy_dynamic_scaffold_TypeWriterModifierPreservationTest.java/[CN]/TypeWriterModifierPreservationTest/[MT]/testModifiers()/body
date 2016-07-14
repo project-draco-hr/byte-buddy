@@ -1,0 +1,5 @@
+{
+  TypeModifierExtractor typeModifierExtractor=new TypeModifierExtractor();
+  new ClassReader(type.getName()).accept(typeModifierExtractor,0);
+  new ByteBuddy().redefine(type).visit(new TypeValidator.Wrapper(typeModifierExtractor)).make();
+}

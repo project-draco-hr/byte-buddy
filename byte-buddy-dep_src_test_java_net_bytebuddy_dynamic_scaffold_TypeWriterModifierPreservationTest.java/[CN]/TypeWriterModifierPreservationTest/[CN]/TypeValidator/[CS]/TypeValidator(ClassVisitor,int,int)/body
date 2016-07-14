@@ -1,0 +1,5 @@
+{
+  super(Opcodes.ASM5,classVisitor);
+  this.modifiers=modifiers;
+  this.inner=inner;
+}

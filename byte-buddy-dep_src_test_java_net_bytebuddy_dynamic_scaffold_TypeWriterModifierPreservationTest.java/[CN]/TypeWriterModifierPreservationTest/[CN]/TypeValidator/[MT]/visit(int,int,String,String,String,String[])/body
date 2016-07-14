@@ -1,0 +1,7 @@
+{
+  this.name=name;
+  if (modifiers != this.modifiers) {
+    throw new AssertionError("Unexpected modifiers: Observed " + modifiers + " instead of "+ this.modifiers);
+  }
+  super.visit(version,modifiers,name,signature,superName,interfaceName);
+}
