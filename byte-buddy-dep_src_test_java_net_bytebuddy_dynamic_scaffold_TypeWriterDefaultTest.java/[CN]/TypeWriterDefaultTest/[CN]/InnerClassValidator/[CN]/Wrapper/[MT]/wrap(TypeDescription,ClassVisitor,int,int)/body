@@ -1,3 +1,0 @@
-{
-  return new InnerClassValidator(classVisitor,type,modifiers);
-}
