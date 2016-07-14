@@ -1,5 +1,5 @@
 {
-  Class<?> type=new ByteBuddy().redefine(SkipIfTrueAdvice.class).visit(Advice.to(SkipIfTrueAdvice.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=new ByteBuddy().redefine(SkipIfTrueAdvice.class).visit(DebuggingWrapper.makeDefault(true)).visit(Advice.to(SkipIfTrueAdvice.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),nullValue(Object.class));
   assertThat(type.getDeclaredField(ENTER).get(null),is((Object)1));
   assertThat(type.getDeclaredField(EXIT).get(null),is((Object)1));

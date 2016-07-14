@@ -1,4 +1,4 @@
-int min
-int max
+int minimum
+int maximum
 Label defaultOption
 Label label
