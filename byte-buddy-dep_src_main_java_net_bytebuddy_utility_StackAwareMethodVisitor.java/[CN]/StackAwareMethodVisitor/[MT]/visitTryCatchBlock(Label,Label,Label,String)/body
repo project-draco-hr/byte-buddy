@@ -1,4 +1,4 @@
 {
-  sizes.put(handler,new ArrayList<StackSize>(Collections.singletonList(StackSize.SINGLE)));
+  sizes.put(handler,Collections.singletonList(StackSize.SINGLE));
   super.visitTryCatchBlock(start,end,handler,type);
 }

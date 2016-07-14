@@ -1,0 +1,6 @@
+{
+  this.type=type;
+  this.original=original;
+  this.replaced=replaced;
+  this.opcode=opcode;
+}

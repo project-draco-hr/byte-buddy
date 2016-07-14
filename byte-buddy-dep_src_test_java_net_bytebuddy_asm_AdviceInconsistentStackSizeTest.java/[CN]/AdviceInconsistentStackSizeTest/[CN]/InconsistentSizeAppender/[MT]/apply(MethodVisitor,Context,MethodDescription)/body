@@ -1,0 +1,13 @@
+{
+  if (original != null) {
+    methodVisitor.visitLdcInsn(original);
+  }
+  methodVisitor.visitInsn(opcode);
+  methodVisitor.visitFrame(Opcodes.F_SAME,0,new Object[0],0,new Object[0]);
+  if (original != null) {
+    methodVisitor.visitLdcInsn(original);
+    methodVisitor.visitLdcInsn(original);
+  }
+  methodVisitor.visitInsn(opcode);
+  return new Size(StackSize.of(type).getSize() * 2,instrumentedMethod.getStackSize());
+}
