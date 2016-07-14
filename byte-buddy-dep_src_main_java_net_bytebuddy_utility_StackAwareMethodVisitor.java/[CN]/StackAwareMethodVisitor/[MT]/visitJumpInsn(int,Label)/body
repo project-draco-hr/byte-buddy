@@ -1,5 +1,5 @@
 {
-  adjustStack(SIZE[opcode]);
+  adjustStack(SIZE_CHANGE[opcode]);
   sizes.put(label,new ArrayList<StackSize>(current));
   super.visitJumpInsn(opcode,label);
 }

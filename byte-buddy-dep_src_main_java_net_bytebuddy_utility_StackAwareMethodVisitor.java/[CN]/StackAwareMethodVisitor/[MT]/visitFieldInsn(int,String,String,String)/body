@@ -1,5 +1,5 @@
 {
-  int baseline=(descriptor.charAt(0) == 'D' || descriptor.charAt(0) == 'J' ? 2 : 1);
+  int baseline=Type.getType(descriptor).getSize();
 switch (opcode) {
 case Opcodes.GETFIELD:
     adjustStack(baseline - 1);

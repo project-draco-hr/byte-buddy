@@ -1,0 +1,3 @@
+{
+  this.localVariableLength=Math.max(this.localVariableLength,localVariableLength);
+}

@@ -10,6 +10,6 @@ case Opcodes.DSTORE:
 freeIndex=Math.max(freeIndex,variable + 2);
 break;
 }
-adjustStack(SIZE[opcode]);
+adjustStack(SIZE_CHANGE[opcode]);
 super.visitVarInsn(opcode,variable);
 }

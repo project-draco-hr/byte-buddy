@@ -1,5 +1,5 @@
 {
-  if (current.size() != 1) {
+  if (current.size() > 1) {
     super.visitVarInsn(store,freeIndex);
     for (    StackSize stackSize : current.subList(0,current.size() - 1)) {
 switch (stackSize) {
@@ -14,5 +14,9 @@ throw new IllegalStateException("Unexpected stack size: " + stackSize);
 }
 }
 super.visitVarInsn(load,freeIndex);
+return freeIndex + size.getSize();
+}
+ else {
+return 0;
 }
 }

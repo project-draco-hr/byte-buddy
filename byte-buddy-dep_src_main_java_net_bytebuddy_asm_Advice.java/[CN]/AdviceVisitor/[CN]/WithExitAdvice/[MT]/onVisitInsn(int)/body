@@ -4,19 +4,19 @@ case Opcodes.RETURN:
     ((StackAwareMethodVisitor)mv).drainStack();
   break;
 case Opcodes.IRETURN:
-((StackAwareMethodVisitor)mv).drainStack(Opcodes.ISTORE,Opcodes.ILOAD);
+methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor)mv).drainStack(Opcodes.ISTORE,Opcodes.ILOAD,StackSize.SINGLE));
 break;
 case Opcodes.FRETURN:
-((StackAwareMethodVisitor)mv).drainStack(Opcodes.FSTORE,Opcodes.FLOAD);
+methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor)mv).drainStack(Opcodes.FSTORE,Opcodes.FLOAD,StackSize.SINGLE));
 break;
 case Opcodes.DRETURN:
-((StackAwareMethodVisitor)mv).drainStack(Opcodes.DSTORE,Opcodes.DLOAD);
+methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor)mv).drainStack(Opcodes.DSTORE,Opcodes.DLOAD,StackSize.DOUBLE));
 break;
 case Opcodes.LRETURN:
-((StackAwareMethodVisitor)mv).drainStack(Opcodes.LSTORE,Opcodes.LLOAD);
+methodSizeHandler.requireLocalVariableLength((((StackAwareMethodVisitor)mv).drainStack(Opcodes.LSTORE,Opcodes.LLOAD,StackSize.DOUBLE)));
 break;
 case Opcodes.ARETURN:
-((StackAwareMethodVisitor)mv).drainStack(Opcodes.ASTORE,Opcodes.ALOAD);
+methodSizeHandler.requireLocalVariableLength((((StackAwareMethodVisitor)mv).drainStack(Opcodes.ASTORE,Opcodes.ALOAD,StackSize.SINGLE)));
 break;
 default :
 mv.visitInsn(opcode);

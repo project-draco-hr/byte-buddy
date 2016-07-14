@@ -2,8 +2,8 @@
   adjustStack(-1);
   List<StackSize> current=new ArrayList<StackSize>(this.current);
   sizes.put(defaultOption,current);
-  for (  Label aLabel : label) {
-    sizes.put(aLabel,current);
+  for (  Label label : option) {
+    sizes.put(label,current);
   }
-  super.visitTableSwitchInsn(minimum,maximum,defaultOption,label);
+  super.visitTableSwitchInsn(minimum,maximum,defaultOption,option);
 }
