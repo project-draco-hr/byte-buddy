@@ -1,0 +1,10 @@
+{
+class Qux {
+  }
+  localConstructor=Qux.class;
+  anonymousConstructor=new Object(){
+  }
+.getClass();
+  localMethod=local();
+  anonymousMethod=anonymous();
+}

@@ -1,10 +1,3 @@
 {
-class LocalType {
-  }
-  localType=LocalType.class;
-  standardTypes=Arrays.asList(Object.class,Object[].class,SampleClass.class,SampleClass[].class,PrivateClass.class,PrivateClass[].class,StaticClass.class,StaticClass[].class,PrivateStaticClass.class,PrivateStaticClass[].class,SampleInterface.class,SampleInterface[].class,SampleAnnotation.class,SampleAnnotation[].class,DeprecatedClass.class,DeprecatedClass[].class,void.class,void.class,byte.class,byte[].class,short.class,short[].class,char.class,char[].class,int.class,int[].class,long.class,long[].class,float.class,float[].class,double.class,double[].class,LocalType.class,LocalType[].class,new Object(){
-  }
-.getClass(),Array.newInstance(new Object(){
-  }
-.getClass(),1).getClass(),STATIC_LOCAL,Array.newInstance(STATIC_LOCAL.getClass(),1).getClass(),STATIC_ANONYMOUS,Array.newInstance(STATIC_ANONYMOUS.getClass(),1).getClass());
+  standardTypes=Arrays.asList(Object.class,Object[].class,SampleClass.class,SampleClass[].class,PrivateClass.class,PrivateClass[].class,StaticClass.class,StaticClass[].class,PrivateStaticClass.class,PrivateStaticClass[].class,SampleInterface.class,SampleInterface[].class,SampleAnnotation.class,SampleAnnotation[].class,DeprecatedClass.class,DeprecatedClass[].class,void.class,void.class,byte.class,byte[].class,short.class,short[].class,char.class,char[].class,int.class,int[].class,long.class,long[].class,float.class,float[].class,double.class,double[].class,new EnclosingType().localMethod,Array.newInstance(new EnclosingType().localConstructor,1).getClass(),new EnclosingType().anonymousMethod,Array.newInstance(new EnclosingType().anonymousMethod,1).getClass(),new EnclosingType().localConstructor,Array.newInstance(new EnclosingType().localConstructor,1).getClass(),new EnclosingType().anonymousConstructor,Array.newInstance(new EnclosingType().anonymousConstructor,1).getClass(),EnclosingType.LOCAL_INITIALIZER,Array.newInstance(EnclosingType.LOCAL_INITIALIZER.getClass(),1).getClass(),EnclosingType.ANONYMOUS_INITIALIZER,Array.newInstance(EnclosingType.ANONYMOUS_INITIALIZER,1).getClass(),EnclosingType.LOCAL_METHOD,Array.newInstance(EnclosingType.LOCAL_METHOD.getClass(),1).getClass(),EnclosingType.ANONYMOUS_METHOD,Array.newInstance(EnclosingType.ANONYMOUS_METHOD,1).getClass(),EnclosingType.INNER,Array.newInstance(EnclosingType.INNER,1).getClass());
 }
