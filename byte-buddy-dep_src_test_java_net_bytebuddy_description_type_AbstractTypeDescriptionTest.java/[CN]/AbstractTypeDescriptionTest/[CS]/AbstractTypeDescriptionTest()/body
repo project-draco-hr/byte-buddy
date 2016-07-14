@@ -1,8 +1,10 @@
 {
 class MemberType {
   }
-  constructorType=MemberType.class;
-  standardTypes=Arrays.asList(Object.class,SampleClass.class,void.class,byte.class,short.class,char.class,int.class,long.class,float.class,double.class,Object[].class,MemberType.class,MemberType[].class,new Object(){
+  memberType=MemberType.class;
+  standardTypes=Arrays.asList(Object.class,Object[].class,SampleClass.class,SampleClass[].class,PrivateClass.class,PrivateClass[].class,StaticClass.class,StaticClass[].class,PrivateStaticClass.class,PrivateStaticClass[].class,SampleInterface.class,SampleInterface[].class,SampleAnnotation.class,SampleAnnotation[].class,DeprecatedClass.class,DeprecatedClass[].class,void.class,void.class,byte.class,byte[].class,short.class,short[].class,char.class,char[].class,int.class,int[].class,long.class,long[].class,float.class,float[].class,double.class,double[].class,MemberType.class,MemberType[].class,new Object(){
   }
-.getClass());
+.getClass(),Array.newInstance(new Object(){
+  }
+.getClass(),1).getClass());
 }

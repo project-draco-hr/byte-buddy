@@ -4,7 +4,7 @@
 class MethodSample {
   }
   assertThat(describe(MethodSample.class).getEnclosingMethod().represents(method),is(true));
-  assertThat(describe(constructorType).getEnclosingMethod().represents(constructor),is(true));
+  assertThat(describe(memberType).getEnclosingMethod().represents(constructor),is(true));
   assertThat(describe(SampleClass.class).getEnclosingMethod(),nullValue(MethodDescription.class));
   assertThat(describe(Object[].class).getEnclosingMethod(),nullValue(MethodDescription.class));
 }

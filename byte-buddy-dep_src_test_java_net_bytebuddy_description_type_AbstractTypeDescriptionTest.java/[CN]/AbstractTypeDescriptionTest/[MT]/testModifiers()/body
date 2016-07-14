@@ -1,0 +1,10 @@
+{
+  for (  Class<?> type : standardTypes) {
+    try {
+      assertThat(describe(type).getModifiers(),is(type.getModifiers()));
+    }
+ catch (    AssertionError e) {
+      System.out.println(type + " - " + (describe(type).getModifiers() & ~type.getModifiers())+ "/"+ (type.getModifiers() & ~describe(type).getModifiers()));
+    }
+  }
+}
