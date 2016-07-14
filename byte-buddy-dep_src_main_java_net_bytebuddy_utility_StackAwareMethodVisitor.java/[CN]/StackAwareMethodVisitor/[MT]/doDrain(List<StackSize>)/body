@@ -1,0 +1,16 @@
+{
+  ListIterator<StackSize> iterator=stackSizes.listIterator(stackSizes.size());
+  while (iterator.hasPrevious()) {
+    StackSize current=iterator.previous();
+switch (current) {
+case SINGLE:
+      super.visitInsn(Opcodes.POP);
+    break;
+case DOUBLE:
+  super.visitInsn(Opcodes.POP2);
+break;
+default :
+throw new IllegalStateException("Unexpected stack size: " + current);
+}
+}
+}

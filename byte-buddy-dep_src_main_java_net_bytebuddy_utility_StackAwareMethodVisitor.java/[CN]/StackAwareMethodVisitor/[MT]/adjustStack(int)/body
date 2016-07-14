@@ -1,22 +1,22 @@
 {
-  if (size == 1) {
+  if (change == 1) {
     current.add(StackSize.SINGLE);
   }
- else   if (size == 2) {
+ else   if (change == 2) {
     current.add(StackSize.DOUBLE);
   }
- else   if (size > 2) {
-    throw new IllegalStateException("Cannot push multiple values onto the operand stack: " + size);
+ else   if (change > 2) {
+    throw new IllegalStateException("Cannot push multiple values onto the operand stack: " + change);
   }
  else {
-    while (size < 0) {
-      size+=current.remove(current.size() - 1).getSize();
+    while (change < 0) {
+      change+=current.remove(current.size() - 1).getSize();
     }
-    if (size == 1) {
+    if (change == 1) {
       current.add(StackSize.SINGLE);
     }
- else     if (size != 0) {
-      throw new AssertionError("Say what?");
+ else     if (change != 0) {
+      throw new AssertionError();
     }
   }
 }

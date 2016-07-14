@@ -1,22 +1,18 @@
 {
-  if (current.size() > 1) {
-    super.visitVarInsn(store,freeIndex);
-    for (    StackSize stackSize : current.subList(0,current.size() - 1)) {
-switch (stackSize) {
-case SINGLE:
-        super.visitInsn(Opcodes.POP);
-      break;
-case DOUBLE:
-    super.visitInsn(Opcodes.POP2);
-  break;
-default :
-throw new IllegalStateException("Unexpected stack size: " + stackSize);
-}
-}
-super.visitVarInsn(load,freeIndex);
-return freeIndex + size.getSize();
-}
+  int difference=current.get(current.size() - 1).getSize() - size.getSize();
+  if (current.size() == 1 && difference == 0) {
+    return 0;
+  }
  else {
-return 0;
-}
+    super.visitVarInsn(store,freeIndex);
+    if (difference == 1) {
+      super.visitInsn(Opcodes.POP);
+    }
+ else     if (difference != 0) {
+      throw new AssertionError();
+    }
+    doDrain(current.subList(0,current.size() - 1));
+    super.visitVarInsn(load,freeIndex);
+    return freeIndex + size.getSize();
+  }
 }
