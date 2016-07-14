@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  WithinMethod that=(WithinMethod)object;
+  return name.equals(that.name) && methodName.equals(that.methodName) && methodDescriptor.equals(that.methodDescriptor);
+}

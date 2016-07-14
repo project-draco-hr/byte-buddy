@@ -1,3 +1,0 @@
-{
-  assertThat(new ByteBuddy().redefine(Bar.class).modifiers(Visibility.PUBLIC).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded().getModifiers(),is(Modifier.PUBLIC));
-}

@@ -1,3 +1,0 @@
-{
-  return "TypePool.Default.LazyTypeDescription.DeclarationContext.DeclaredInType{" + "name='" + name + '\''+ '}';
-}

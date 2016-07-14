@@ -1,5 +1,0 @@
-{
-  assertThat(TypePool.Default.LazyTypeDescription.DeclarationContext.SelfDeclared.INSTANCE.isDeclaredInMethod(),is(false));
-  assertThat(TypePool.Default.LazyTypeDescription.DeclarationContext.SelfDeclared.INSTANCE.isDeclaredInType(),is(false));
-  assertThat(TypePool.Default.LazyTypeDescription.DeclarationContext.SelfDeclared.INSTANCE.isSelfDeclared(),is(true));
-}

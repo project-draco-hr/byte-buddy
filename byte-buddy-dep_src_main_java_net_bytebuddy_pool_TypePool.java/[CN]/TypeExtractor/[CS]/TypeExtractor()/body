@@ -7,6 +7,6 @@
   fieldTokens=new ArrayList<LazyTypeDescription.FieldToken>();
   methodTokens=new ArrayList<LazyTypeDescription.MethodToken>();
   anonymousType=false;
-  declarationContext=LazyTypeDescription.DeclarationContext.SelfDeclared.INSTANCE;
+  typeContainment=LazyTypeDescription.TypeContainment.SelfContained.INSTANCE;
   declaredTypes=new ArrayList<String>();
 }

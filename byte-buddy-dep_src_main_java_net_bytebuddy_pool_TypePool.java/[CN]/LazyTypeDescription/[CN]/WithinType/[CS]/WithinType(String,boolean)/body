@@ -1,0 +1,4 @@
+{
+  name=internalName.replace('/','.');
+  this.localType=localType;
+}

@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.LazyTypeDescription.TypeContainment.WithinType{" + "name='" + name + '\''+ ", localType="+ localType+ '}';
+}

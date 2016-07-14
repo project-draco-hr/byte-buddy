@@ -1,0 +1,15 @@
+{
+  for (  Class<?> type : standardTypes) {
+    Matcher<MethodDescription> matcher;
+    if (type.getEnclosingMethod() != null) {
+      matcher=CoreMatchers.<MethodDescription>is(new MethodDescription.ForLoadedMethod(type.getEnclosingMethod()));
+    }
+ else     if (type.getEnclosingConstructor() != null) {
+      matcher=CoreMatchers.<MethodDescription>is(new MethodDescription.ForLoadedConstructor(type.getEnclosingConstructor()));
+    }
+ else {
+      matcher=nullValue(MethodDescription.class);
+    }
+    assertThat(describe(type).getEnclosingMethod(),matcher);
+  }
+}

@@ -1,4 +1,4 @@
 {
-  assertThat(describe(DeprecationSample.class).getActualModifiers(false),is(Opcodes.ACC_DEPRECATED));
-  assertThat(describe(DeprecationSample.class).getActualModifiers(true),is(Opcodes.ACC_DEPRECATED | Opcodes.ACC_SUPER));
+  assertThat(describe(EnclosingType.DEPRECATED).getActualModifiers(false),is(Opcodes.ACC_DEPRECATED));
+  assertThat(describe(EnclosingType.DEPRECATED).getActualModifiers(true),is(Opcodes.ACC_DEPRECATED | Opcodes.ACC_SUPER));
 }

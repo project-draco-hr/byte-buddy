@@ -1,6 +1,5 @@
 {
   if (!origin.equals("##\\" + FOO)) {
-    System.out.println(origin);
     throw new AssertionError();
   }
   if (type != Sample.class) {

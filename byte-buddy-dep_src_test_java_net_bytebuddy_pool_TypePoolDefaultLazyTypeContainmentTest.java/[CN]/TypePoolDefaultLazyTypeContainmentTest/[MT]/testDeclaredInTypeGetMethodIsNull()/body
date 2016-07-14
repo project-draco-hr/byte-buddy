@@ -1,0 +1,6 @@
+{
+  assertThat(new TypePool.Default.LazyTypeDescription.TypeContainment.WithinType(FOO_INTERNAL,false).getEnclosingMethod(mock(TypePool.class)),nullValue(MethodDescription.class));
+  assertThat(new TypePool.Default.LazyTypeDescription.TypeContainment.WithinType(FOO_INTERNAL,false).getEnclosingMethod(mock(TypePool.class)),nullValue(MethodDescription.class));
+  assertThat(new TypePool.Default.LazyTypeDescription.TypeContainment.WithinType(FOO_INTERNAL,true).getEnclosingMethod(mock(TypePool.class)),nullValue(MethodDescription.class));
+  assertThat(new TypePool.Default.LazyTypeDescription.TypeContainment.WithinType(FOO_INTERNAL,true).getEnclosingMethod(mock(TypePool.class)),nullValue(MethodDescription.class));
+}

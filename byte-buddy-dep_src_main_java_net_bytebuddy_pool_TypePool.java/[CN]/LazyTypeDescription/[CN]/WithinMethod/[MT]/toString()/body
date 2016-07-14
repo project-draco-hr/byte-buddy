@@ -1,0 +1,3 @@
+{
+  return "TypePool.Default.LazyTypeDescription.TypeContainment.WithinMethod{" + "name='" + name + '\''+ ", methodName='"+ methodName+ '\''+ ", methodDescriptor='"+ methodDescriptor+ '\''+ '}';
+}

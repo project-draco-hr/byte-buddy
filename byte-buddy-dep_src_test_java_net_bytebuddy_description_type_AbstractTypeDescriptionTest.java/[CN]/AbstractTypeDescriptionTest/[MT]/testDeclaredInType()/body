@@ -1,5 +1,0 @@
-{
-  assertThat(describe(SampleClass.class).getEnclosingType().represents(AbstractTypeDescriptionTest.class),is(true));
-  assertThat(describe(Object.class).getEnclosingType(),nullValue(TypeDescription.class));
-  assertThat(describe(Object[].class).getEnclosingType(),nullValue(TypeDescription.class));
-}
