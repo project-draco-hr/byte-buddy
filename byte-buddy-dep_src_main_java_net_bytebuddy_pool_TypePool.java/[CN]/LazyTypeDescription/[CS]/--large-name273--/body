@@ -14,7 +14,7 @@
     }
   }
   this.typeContainment=typeContainment;
-  declaringType=declaringTypeInternalName == null ? NO_TYPE : declaringTypeInternalName.replace('/','.');
+  declaringTypeName=declaringTypeInternalName == null ? NO_TYPE : declaringTypeInternalName.replace('/','.');
   this.declaredTypes=declaredTypes;
   this.anonymousType=anonymousType;
   this.superTypeAnnotationTokens=superTypeAnnotationTokens;

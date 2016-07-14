@@ -5,7 +5,7 @@
       anonymousType=true;
     }
     if (outerName != null) {
-      declaringType=outerName;
+      declaringTypeName=outerName;
       if (typeContainment.isSelfContained()) {
         typeContainment=new LazyTypeDescription.TypeContainment.WithinType(outerName,false);
       }

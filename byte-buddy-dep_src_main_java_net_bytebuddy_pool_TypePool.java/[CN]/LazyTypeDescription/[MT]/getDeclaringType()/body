@@ -1,3 +1,3 @@
 {
-  return declaringType == null ? TypeDescription.UNDEFINED : typePool.describe(declaringType).resolve();
+  return declaringTypeName == null ? TypeDescription.UNDEFINED : typePool.describe(declaringTypeName).resolve();
 }
