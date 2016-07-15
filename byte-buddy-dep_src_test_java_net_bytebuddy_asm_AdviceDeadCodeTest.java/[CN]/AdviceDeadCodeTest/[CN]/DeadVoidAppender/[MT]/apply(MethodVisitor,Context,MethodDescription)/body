@@ -1,0 +1,6 @@
+{
+  methodVisitor.visitInsn(Opcodes.RETURN);
+  methodVisitor.visitInsn(Opcodes.POP);
+  methodVisitor.visitInsn(Opcodes.RETURN);
+  return new Size(1,instrumentedMethod.getStackSize());
+}

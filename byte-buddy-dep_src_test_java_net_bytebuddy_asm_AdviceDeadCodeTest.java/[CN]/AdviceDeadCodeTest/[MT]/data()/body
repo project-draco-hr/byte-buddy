@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{ClassFileVersion.JAVA_V5},{ClassFileVersion.JAVA_V6}});
+}
