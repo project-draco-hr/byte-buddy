@@ -1,5 +1,5 @@
 {
-  if (Boolean.getBoolean("net.bytebuddy.travis")) {
+  if (Boolean.getBoolean("net.bytebuddy.test.travis")) {
     Logger.getLogger("net.bytebuddy").info("Only running agent application with a single type locator on Travis CI server");
     return Arrays.asList(new Object[][]{{AgentBuilder.TypeLocator.Default.FAST}});
   }

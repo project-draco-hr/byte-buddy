@@ -1,0 +1,12 @@
+{
+  StackAwareMethodVisitor methodVisitor=new StackAwareMethodVisitor(this.methodVisitor,methodDescription);
+  Label label=new Label();
+  methodVisitor.register(label,Arrays.asList(StackSize.DOUBLE,StackSize.SINGLE));
+  methodVisitor.visitLabel(label);
+  methodVisitor.drainStack();
+  InOrder inOrder=inOrder(this.methodVisitor);
+  inOrder.verify(this.methodVisitor).visitLabel(label);
+  inOrder.verify(this.methodVisitor).visitInsn(Opcodes.POP);
+  inOrder.verify(this.methodVisitor).visitInsn(Opcodes.POP2);
+  verifyNoMoreInteractions(this.methodVisitor);
+}

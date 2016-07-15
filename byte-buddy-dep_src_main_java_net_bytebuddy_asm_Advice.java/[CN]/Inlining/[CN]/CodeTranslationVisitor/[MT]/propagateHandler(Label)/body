@@ -1,0 +1,3 @@
+{
+  ((StackAwareMethodVisitor)mv).register(label,Collections.singletonList(StackSize.SINGLE));
+}

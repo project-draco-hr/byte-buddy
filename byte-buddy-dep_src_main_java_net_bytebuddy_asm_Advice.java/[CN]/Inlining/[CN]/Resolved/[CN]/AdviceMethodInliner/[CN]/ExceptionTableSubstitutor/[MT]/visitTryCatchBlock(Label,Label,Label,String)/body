@@ -1,5 +1,7 @@
 {
   substitutions.put(start,labels.get(index++));
   substitutions.put(end,labels.get(index++));
-  substitutions.put(handler,labels.get(index++));
+  Label actualHandler=labels.get(index++);
+  substitutions.put(handler,actualHandler);
+  ((CodeTranslationVisitor)mv).propagateHandler(actualHandler);
 }

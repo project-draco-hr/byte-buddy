@@ -1,0 +1,3 @@
+{
+  sizes.put(label,stackSizes);
+}
