@@ -1,6 +1,6 @@
 {
-  suppressionHandler.onEnd(mv,stackMapFrameHandler,this);
-  mv.visitLabel(endOfMethod);
+  suppressionHandler.onEnd(methodVisitor,stackMapFrameHandler,this);
+  methodVisitor.visitLabel(endOfMethod);
   onMethodReturn();
-  stackMapFrameHandler.injectCompletionFrame(mv,false);
+  stackMapFrameHandler.injectCompletionFrame(methodVisitor,false);
 }

@@ -1,4 +1,6 @@
 MethodDescription.InDefinedShape instrumentedMethod
 MethodVisitor methodVisitor
-MethodSizeHandler methodSizeHandler
+MethodSizeHandler.ForInstrumentedMethod methodSizeHandler
 StackMapFrameHandler.ForInstrumentedMethod stackMapFrameHandler
+SuppressionHandler.Bound suppressionHandler
+ClassReader classReader

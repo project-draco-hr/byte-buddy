@@ -1,4 +1,0 @@
-MethodDescription.InDefinedShape instrumentedMethod
-MethodVisitor methodVisitor
-MethodSizeHandler methodSizeHandler
-StackMapFrameHandler.ForInstrumentedMethod stackMapFrameHandler

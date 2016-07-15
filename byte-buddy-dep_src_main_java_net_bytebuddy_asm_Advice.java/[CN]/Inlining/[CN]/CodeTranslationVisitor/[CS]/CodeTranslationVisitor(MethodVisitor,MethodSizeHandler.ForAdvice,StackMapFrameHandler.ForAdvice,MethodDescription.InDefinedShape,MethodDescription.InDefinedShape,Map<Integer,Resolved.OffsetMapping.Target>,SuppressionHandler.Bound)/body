@@ -1,5 +1,6 @@
 {
-  super(Opcodes.ASM5,methodVisitor);
+  super(Opcodes.ASM5,new StackAwareMethodVisitor(methodVisitor,instrumentedMethod));
+  this.methodVisitor=methodVisitor;
   this.methodSizeHandler=methodSizeHandler;
   this.stackMapFrameHandler=stackMapFrameHandler;
   this.instrumentedMethod=instrumentedMethod;

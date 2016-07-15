@@ -1,14 +1,26 @@
 {
 switch (opcode) {
 case Opcodes.RETURN:
-case Opcodes.IRETURN:
-case Opcodes.LRETURN:
-case Opcodes.ARETURN:
-case Opcodes.FRETURN:
-case Opcodes.DRETURN:
-    mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);
+    ((StackAwareMethodVisitor)mv).drainStack();
   break;
+case Opcodes.IRETURN:
+methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor)mv).drainStack(Opcodes.ISTORE,Opcodes.ILOAD,StackSize.SINGLE));
+break;
+case Opcodes.ARETURN:
+methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor)mv).drainStack(Opcodes.ASTORE,Opcodes.ALOAD,StackSize.SINGLE));
+break;
+case Opcodes.FRETURN:
+methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor)mv).drainStack(Opcodes.FSTORE,Opcodes.FLOAD,StackSize.SINGLE));
+break;
+case Opcodes.LRETURN:
+methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor)mv).drainStack(Opcodes.LSTORE,Opcodes.LLOAD,StackSize.DOUBLE));
+break;
+case Opcodes.DRETURN:
+methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor)mv).drainStack(Opcodes.DSTORE,Opcodes.DLOAD,StackSize.DOUBLE));
+break;
 default :
 mv.visitInsn(opcode);
+return;
 }
+mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);
 }

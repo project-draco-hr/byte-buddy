@@ -15,5 +15,6 @@ default :
 mv.visitInsn(opcode);
 return;
 }
+((StackAwareMethodVisitor)mv).drainStack();
 mv.visitJumpInsn(Opcodes.GOTO,endOfMethod);
 }
