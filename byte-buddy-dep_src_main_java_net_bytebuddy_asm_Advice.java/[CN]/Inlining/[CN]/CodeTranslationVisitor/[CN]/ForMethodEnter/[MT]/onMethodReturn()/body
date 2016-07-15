@@ -1,6 +1,6 @@
 {
   Type returnType=Type.getType(adviceMethod.getReturnType().asErasure().getDescriptor());
-  if (!returnType.equals(Type.VOID_TYPE)) {
+  if (doesReturn && !returnType.equals(Type.VOID_TYPE)) {
     stackMapFrameHandler.injectReturnFrame(methodVisitor);
     methodVisitor.visitVarInsn(returnType.getOpcode(Opcodes.ISTORE),instrumentedMethod.getStackSize());
   }
