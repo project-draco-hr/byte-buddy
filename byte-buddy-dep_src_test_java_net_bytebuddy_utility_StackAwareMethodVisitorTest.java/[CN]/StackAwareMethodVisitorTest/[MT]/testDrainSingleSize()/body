@@ -1,0 +1,8 @@
+{
+  StackAwareMethodVisitor methodVisitor=new StackAwareMethodVisitor(this.methodVisitor,methodDescription);
+  methodVisitor.visitLdcInsn(1);
+  methodVisitor.drainStack();
+  verify(this.methodVisitor).visitLdcInsn(1);
+  verify(this.methodVisitor).visitInsn(Opcodes.POP);
+  verifyNoMoreInteractions(this.methodVisitor);
+}

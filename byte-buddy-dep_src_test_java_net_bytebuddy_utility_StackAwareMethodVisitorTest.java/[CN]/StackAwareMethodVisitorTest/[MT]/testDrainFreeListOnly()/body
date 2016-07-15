@@ -1,0 +1,12 @@
+{
+  StackAwareMethodVisitor methodVisitor=new StackAwareMethodVisitor(this.methodVisitor,methodDescription);
+  methodVisitor.visitLdcInsn(1);
+  methodVisitor.visitVarInsn(Opcodes.ISTORE,41);
+  methodVisitor.visitLdcInsn(1);
+  assertThat(methodVisitor.drainStack(Opcodes.ISTORE,Opcodes.ILOAD,StackSize.SINGLE),is(0));
+  InOrder inOrder=inOrder(this.methodVisitor);
+  inOrder.verify(this.methodVisitor).visitLdcInsn(1);
+  inOrder.verify(this.methodVisitor).visitVarInsn(Opcodes.ISTORE,41);
+  inOrder.verify(this.methodVisitor).visitLdcInsn(1);
+  verifyNoMoreInteractions(this.methodVisitor);
+}
