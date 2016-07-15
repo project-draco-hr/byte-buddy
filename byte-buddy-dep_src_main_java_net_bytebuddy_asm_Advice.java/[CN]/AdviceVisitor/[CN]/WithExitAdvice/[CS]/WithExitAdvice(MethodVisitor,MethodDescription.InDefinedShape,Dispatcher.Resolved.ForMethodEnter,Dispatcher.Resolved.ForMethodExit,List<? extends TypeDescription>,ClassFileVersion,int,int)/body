@@ -1,4 +1,5 @@
 {
   super(methodVisitor,new StackAwareMethodVisitor(methodVisitor,instrumentedMethod),instrumentedMethod,methodEnter,methodExit,yieldedTypes,classFileVersion,writerFlags,readerFlags);
   returnHandler=new Label();
+  doesReturn=false;
 }

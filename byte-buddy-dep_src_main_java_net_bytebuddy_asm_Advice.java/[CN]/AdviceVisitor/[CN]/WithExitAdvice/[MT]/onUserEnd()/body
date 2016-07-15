@@ -1,9 +1,11 @@
 {
-  methodVisitor.visitLabel(returnHandler);
-  stackMapFrameHandler.injectReturnFrame(methodVisitor);
   Type returnType=Type.getType(instrumentedMethod.getReturnType().asErasure().getDescriptor());
-  if (!returnType.equals(Type.VOID_TYPE)) {
-    variable(returnType.getOpcode(Opcodes.ISTORE));
+  methodVisitor.visitLabel(returnHandler);
+  if (doesReturn) {
+    stackMapFrameHandler.injectReturnFrame(methodVisitor);
+    if (!returnType.equals(Type.VOID_TYPE)) {
+      variable(returnType.getOpcode(Opcodes.ISTORE));
+    }
   }
   onUserReturn();
   methodExit.apply();

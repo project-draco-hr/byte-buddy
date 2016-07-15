@@ -15,4 +15,5 @@
     methodVisitor.visitInsn(Opcodes.ACONST_NULL);
   }
   methodVisitor.visitJumpInsn(Opcodes.GOTO,returnHandler);
+  doesReturn=true;
 }

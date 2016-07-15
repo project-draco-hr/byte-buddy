@@ -1,3 +1,3 @@
 {
-  return "Advice.Dispatcher.OffsetMapping.ForReturnValue.Factory." + name();
+  return "Advice.Dispatcher.OffsetMapping.ForBoxedReturnValue.Factory." + name();
 }

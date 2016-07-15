@@ -23,4 +23,5 @@ mv.visitInsn(opcode);
 return;
 }
 mv.visitJumpInsn(Opcodes.GOTO,returnHandler);
+doesReturn=true;
 }
