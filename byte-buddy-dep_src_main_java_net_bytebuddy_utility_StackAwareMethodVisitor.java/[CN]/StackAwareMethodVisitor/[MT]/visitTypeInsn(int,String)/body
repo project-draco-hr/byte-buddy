@@ -1,0 +1,4 @@
+{
+  adjustStack(SIZE_CHANGE[opcode]);
+  super.visitTypeInsn(opcode,type);
+}

@@ -1,0 +1,15 @@
+{
+switch (opcode) {
+case Opcodes.ASTORE:
+case Opcodes.ISTORE:
+case Opcodes.FSTORE:
+    freeIndex=Math.max(freeIndex,variable + 1);
+  break;
+case Opcodes.LSTORE:
+case Opcodes.DSTORE:
+freeIndex=Math.max(freeIndex,variable + 2);
+break;
+}
+adjustStack(SIZE_CHANGE[opcode]);
+super.visitVarInsn(opcode,variable);
+}

@@ -1,0 +1,3 @@
+{
+  return "StackAwareMethodVisitor{" + "methodVisitor=" + mv + ", current="+ current+ ", sizes="+ sizes+ ", freeIndex="+ freeIndex+ '}';
+}

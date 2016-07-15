@@ -1,9 +1,9 @@
 {
   variable(Opcodes.ALOAD,instrumentedMethod.getReturnType().getStackSize().getSize());
   Label endOfHandler=new Label();
-  mv.visitJumpInsn(Opcodes.IFNULL,endOfHandler);
+  methodVisitor.visitJumpInsn(Opcodes.IFNULL,endOfHandler);
   variable(Opcodes.ALOAD,instrumentedMethod.getReturnType().getStackSize().getSize());
-  mv.visitInsn(Opcodes.ATHROW);
-  mv.visitLabel(endOfHandler);
-  stackMapFrameHandler.injectCompletionFrame(mv,true);
+  methodVisitor.visitInsn(Opcodes.ATHROW);
+  methodVisitor.visitLabel(endOfHandler);
+  stackMapFrameHandler.injectCompletionFrame(methodVisitor,true);
 }

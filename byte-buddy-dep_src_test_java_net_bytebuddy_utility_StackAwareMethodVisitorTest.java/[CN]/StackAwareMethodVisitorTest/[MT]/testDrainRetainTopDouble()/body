@@ -1,0 +1,14 @@
+{
+  when(methodDescription.getStackSize()).thenReturn(42);
+  StackAwareMethodVisitor methodVisitor=new StackAwareMethodVisitor(this.methodVisitor,methodDescription);
+  methodVisitor.visitLdcInsn(1);
+  methodVisitor.visitLdcInsn(1L);
+  assertThat(methodVisitor.drainStack(Opcodes.LSTORE,Opcodes.LLOAD,StackSize.DOUBLE),is(44));
+  InOrder inOrder=inOrder(this.methodVisitor);
+  inOrder.verify(this.methodVisitor).visitLdcInsn(1);
+  inOrder.verify(this.methodVisitor).visitLdcInsn(1L);
+  inOrder.verify(this.methodVisitor).visitVarInsn(Opcodes.LSTORE,42);
+  inOrder.verify(this.methodVisitor).visitInsn(Opcodes.POP);
+  inOrder.verify(this.methodVisitor).visitVarInsn(Opcodes.LLOAD,42);
+  verifyNoMoreInteractions(this.methodVisitor);
+}

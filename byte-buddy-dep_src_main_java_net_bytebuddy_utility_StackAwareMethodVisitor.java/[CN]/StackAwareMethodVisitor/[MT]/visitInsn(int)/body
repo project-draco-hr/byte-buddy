@@ -1,0 +1,17 @@
+{
+switch (opcode) {
+case Opcodes.RETURN:
+case Opcodes.ARETURN:
+case Opcodes.IRETURN:
+case Opcodes.LRETURN:
+case Opcodes.FRETURN:
+case Opcodes.DRETURN:
+case Opcodes.ATHROW:
+case Opcodes.RET:
+    current.clear();
+  break;
+default :
+adjustStack(SIZE_CHANGE[opcode]);
+}
+super.visitInsn(opcode);
+}

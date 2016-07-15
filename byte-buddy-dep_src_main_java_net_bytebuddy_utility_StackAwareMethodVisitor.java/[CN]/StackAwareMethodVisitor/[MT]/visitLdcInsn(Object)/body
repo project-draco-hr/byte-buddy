@@ -1,0 +1,4 @@
+{
+  adjustStack((value instanceof Long || value instanceof Double) ? 2 : 1);
+  super.visitLdcInsn(value);
+}

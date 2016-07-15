@@ -1,0 +1,7 @@
+{
+  List<StackSize> current=sizes.get(label);
+  if (current != null) {
+    this.current=new ArrayList<StackSize>(current);
+  }
+  super.visitLabel(label);
+}

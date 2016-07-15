@@ -1,0 +1,20 @@
+{
+  int baseline=Type.getType(descriptor).getSize();
+switch (opcode) {
+case Opcodes.GETFIELD:
+    adjustStack(baseline - 1);
+  break;
+case Opcodes.GETSTATIC:
+adjustStack(baseline);
+break;
+case Opcodes.PUTFIELD:
+adjustStack(-baseline - 1);
+break;
+case Opcodes.PUTSTATIC:
+adjustStack(-baseline);
+break;
+default :
+throw new IllegalStateException("Unexpected opcode: " + opcode);
+}
+super.visitFieldInsn(opcode,owner,name,descriptor);
+}

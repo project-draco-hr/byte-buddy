@@ -1,0 +1,18 @@
+{
+  int difference=current.get(current.size() - 1).getSize() - size.getSize();
+  if (current.size() == 1 && difference == 0) {
+    return 0;
+  }
+ else {
+    super.visitVarInsn(store,freeIndex);
+    if (difference == 1) {
+      super.visitInsn(Opcodes.POP);
+    }
+ else     if (difference != 0) {
+      throw new IllegalStateException("Unexpected remainder on the operand stack: " + difference);
+    }
+    doDrain(current.subList(0,current.size() - 1));
+    super.visitVarInsn(load,freeIndex);
+    return freeIndex + size.getSize();
+  }
+}

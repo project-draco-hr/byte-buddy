@@ -1,0 +1,8 @@
+{
+  adjustStack(SIZE_CHANGE[opcode]);
+  sizes.put(label,new ArrayList<StackSize>(current));
+  if (opcode == Opcodes.GOTO) {
+    current.clear();
+  }
+  super.visitJumpInsn(opcode,label);
+}

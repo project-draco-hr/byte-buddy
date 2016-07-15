@@ -1,6 +1,6 @@
 {
-  mv.visitLabel(returnHandler);
-  stackMapFrameHandler.injectReturnFrame(mv);
+  methodVisitor.visitLabel(returnHandler);
+  stackMapFrameHandler.injectReturnFrame(methodVisitor);
   Type returnType=Type.getType(instrumentedMethod.getReturnType().asErasure().getDescriptor());
   if (!returnType.equals(Type.VOID_TYPE)) {
     variable(returnType.getOpcode(Opcodes.ISTORE));
@@ -9,10 +9,10 @@
   methodExit.apply();
   onExitAdviceReturn();
   if (returnType.equals(Type.VOID_TYPE)) {
-    mv.visitInsn(Opcodes.RETURN);
+    methodVisitor.visitInsn(Opcodes.RETURN);
   }
  else {
     variable(returnType.getOpcode(Opcodes.ILOAD));
-    mv.visitInsn(returnType.getOpcode(Opcodes.IRETURN));
+    methodVisitor.visitInsn(returnType.getOpcode(Opcodes.IRETURN));
   }
 }

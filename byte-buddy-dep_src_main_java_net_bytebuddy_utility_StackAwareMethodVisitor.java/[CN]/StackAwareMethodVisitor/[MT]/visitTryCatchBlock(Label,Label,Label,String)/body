@@ -1,0 +1,4 @@
+{
+  sizes.put(handler,Collections.singletonList(StackSize.SINGLE));
+  super.visitTryCatchBlock(start,end,handler,type);
+}
