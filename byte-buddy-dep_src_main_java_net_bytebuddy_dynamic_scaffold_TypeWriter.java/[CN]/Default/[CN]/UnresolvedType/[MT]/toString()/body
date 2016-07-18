@@ -1,0 +1,3 @@
+{
+  return "TypeWriter.Default.UnresolvedType{" + "outer=" + Default.this + ", binaryRepresentation=<"+ binaryRepresentation.length+ " bytes>"+ ", auxiliaryTypes="+ auxiliaryTypes+ '}';
+}

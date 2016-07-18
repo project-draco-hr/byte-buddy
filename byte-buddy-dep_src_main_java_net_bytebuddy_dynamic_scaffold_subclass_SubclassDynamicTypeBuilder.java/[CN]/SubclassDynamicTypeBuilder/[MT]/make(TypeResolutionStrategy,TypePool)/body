@@ -1,4 +1,4 @@
 {
-  MethodRegistry.Compiled methodRegistry=constructorStrategy.inject(this.methodRegistry).prepare(applyConstructorStrategy(instrumentedType),methodGraphCompiler,typeValidation,new InstrumentableMatcher(ignoredMethods)).compile(SubclassImplementationTarget.Factory.SUPER_CLASS);
+  MethodRegistry.Compiled methodRegistry=constructorStrategy.inject(this.methodRegistry).prepare(applyConstructorStrategy(instrumentedType),methodGraphCompiler,typeValidation,new InstrumentableMatcher(ignoredMethods)).compile(SubclassImplementationTarget.Factory.SUPER_CLASS,classFileVersion);
   return TypeWriter.Default.<T>forCreation(methodRegistry,fieldRegistry.compile(methodRegistry.getInstrumentedType()),typeAttributeAppender,asmVisitorWrapper,classFileVersion,annotationValueFilterFactory,annotationRetention,auxiliaryTypeNamingStrategy,implementationContextFactory,typeValidation,typePool).make(typeResolutionStrategy.resolve());
 }

@@ -2,10 +2,10 @@
   when(instrumentedType.asErasure()).thenReturn(instrumentedType);
   when(instrumentedType.getInternalName()).thenReturn(BAZ);
   when(methodGraph.getSuperClassGraph()).thenReturn(superGraph);
-  when(superGraph.locate(Mockito.any(MethodDescription.SignatureToken.class))).thenReturn(MethodGraph.Node.Unresolved.INSTANCE);
+  when(superGraph.locate(any(MethodDescription.SignatureToken.class))).thenReturn(MethodGraph.Node.Unresolved.INSTANCE);
   when(superGraph.locate(invokableToken)).thenReturn(new MethodGraph.Node.Simple(invokableMethod));
   when(methodGraph.getInterfaceGraph(defaultMethodDeclaringType)).thenReturn(defaultGraph);
-  when(defaultGraph.locate(Mockito.any(MethodDescription.SignatureToken.class))).thenReturn(MethodGraph.Node.Unresolved.INSTANCE);
+  when(defaultGraph.locate(any(MethodDescription.SignatureToken.class))).thenReturn(MethodGraph.Node.Unresolved.INSTANCE);
   when(defaultGraph.locate(defaultToken)).thenReturn(new MethodGraph.Node.Simple(defaultMethod));
   when(methodDeclaringType.asErasure()).thenReturn(methodDeclaringType);
   when(invokableMethod.getDeclaringType()).thenReturn(methodDeclaringType);
@@ -33,5 +33,4 @@
   when(genericInstrumentedType.asErasure()).thenReturn(instrumentedType);
   when(genericInstrumentedType.asGenericType()).thenReturn(genericInstrumentedType);
   when(instrumentedType.asGenericType()).thenReturn(genericInstrumentedType);
-  implementationTarget=makeImplementationTarget();
 }

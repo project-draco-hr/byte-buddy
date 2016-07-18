@@ -1,3 +1,0 @@
-{
-  return new DynamicType.Default.Unloaded<U>(instrumentedType,binaryRepresentation,loadedTypeInitializer,CompoundList.of(Default.this.auxiliaryTypes,auxiliaryTypes),typeResolutionStrategy);
-}

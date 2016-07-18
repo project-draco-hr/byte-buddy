@@ -1,0 +1,4 @@
+TypeDescription instrumentedType
+MethodGraph.Linked methodGraph
+DefaultMethodInvocation defaultMethodInvocation
+OriginTypeResolver originTypeResolver

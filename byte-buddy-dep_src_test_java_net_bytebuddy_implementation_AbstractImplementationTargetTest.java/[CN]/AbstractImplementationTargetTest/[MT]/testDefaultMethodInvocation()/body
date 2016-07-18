@@ -1,5 +1,5 @@
 {
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeDefault(defaultMethodDeclaringType,defaultToken);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=makeImplementationTarget().invokeDefault(defaultMethodDeclaringType,defaultToken);
   assertThat(specialMethodInvocation.isValid(),is(true));
   assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)defaultMethod));
   assertThat(specialMethodInvocation.getTypeDescription(),is(defaultMethodDeclaringType));

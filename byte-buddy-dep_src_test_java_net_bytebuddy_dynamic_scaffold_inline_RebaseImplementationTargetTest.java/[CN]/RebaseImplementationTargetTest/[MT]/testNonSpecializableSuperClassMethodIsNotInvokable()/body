@@ -2,6 +2,6 @@
   when(invokableMethod.isSpecializableFor(rawSuperClass)).thenReturn(false);
   when(resolution.isRebased()).thenReturn(false);
   when(resolution.getResolvedMethod()).thenReturn(invokableMethod);
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(invokableToken);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=makeImplementationTarget().invokeSuper(invokableToken);
   assertThat(specialMethodInvocation.isValid(),is(false));
 }

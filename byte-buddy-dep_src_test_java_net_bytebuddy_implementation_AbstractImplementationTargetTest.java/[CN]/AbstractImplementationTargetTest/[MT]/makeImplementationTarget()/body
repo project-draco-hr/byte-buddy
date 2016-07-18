@@ -1,0 +1,3 @@
+{
+  return makeImplementationTarget(Implementation.Target.AbstractBase.DefaultMethodInvocation.ENABLED);
+}

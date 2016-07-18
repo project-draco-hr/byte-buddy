@@ -1,0 +1,4 @@
+{
+  Implementation.SpecialMethodInvocation specialMethodInvocation=makeImplementationTarget(Implementation.Target.AbstractBase.DefaultMethodInvocation.DISABLED).invokeDefault(defaultMethodDeclaringType,defaultToken);
+  assertThat(specialMethodInvocation.isValid(),is(false));
+}

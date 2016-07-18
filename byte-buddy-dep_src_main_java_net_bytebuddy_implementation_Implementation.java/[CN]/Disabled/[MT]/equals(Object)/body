@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && instrumentedType.equals(((Disabled)other).instrumentedType);
+  return this == other || !(other == null || getClass() != other.getClass()) && instrumentedType.equals(((Disabled)other).instrumentedType) && classFileVersion.equals(((Disabled)other).classFileVersion);
 }

@@ -1,0 +1,3 @@
+{
+  new Implementation.Context.Disabled(instrumentedType,classFileVersion).cache(mock(StackManipulation.class),mock(TypeDescription.class));
+}

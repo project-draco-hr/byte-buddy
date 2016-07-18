@@ -1,0 +1,11 @@
+{
+  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,classFileVersion,auxiliaryTypeNamingStrategy,typeInitializer,auxiliaryClassFileVersion);
+  when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.SKIPPED);
+  implementationContext.drain(classVisitor,methodPool,injectedCode,annotationValueFilterFactory,supportsBridges);
+  verifyZeroInteractions(classVisitor);
+  verify(methodPool).target(new MethodDescription.Latent.TypeInitializer(instrumentedType),supportsBridges);
+  verifyNoMoreInteractions(methodPool);
+  verify(injectedCode).isDefined();
+  verifyNoMoreInteractions(injectedCode);
+  implementationContext.cache(firstFieldValue,firstRawFieldType);
+}

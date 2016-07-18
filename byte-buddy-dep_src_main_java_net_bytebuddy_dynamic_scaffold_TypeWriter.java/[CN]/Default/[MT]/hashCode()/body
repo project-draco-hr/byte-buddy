@@ -1,5 +1,6 @@
 {
   int result=instrumentedType.hashCode();
+  result=31 * result + classFileVersion.hashCode();
   result=31 * result + fieldPool.hashCode();
   result=31 * result + auxiliaryTypes.hashCode();
   result=31 * result + instrumentedMethods.hashCode();

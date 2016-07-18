@@ -1,0 +1,15 @@
+{
+  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,classFileVersion,auxiliaryTypeNamingStrategy,typeInitializer,auxiliaryClassFileVersion);
+  assertThat(implementationContext.getAuxiliaryTypes().size(),is(0));
+  assertThat(implementationContext.register(auxiliaryType),is(firstDescription));
+  assertThat(implementationContext.getAuxiliaryTypes().size(),is(1));
+  assertThat(implementationContext.getAuxiliaryTypes().contains(firstDynamicType),is(true));
+  assertThat(implementationContext.register(otherAuxiliaryType),is(secondDescription));
+  assertThat(implementationContext.getAuxiliaryTypes().size(),is(2));
+  assertThat(implementationContext.getAuxiliaryTypes().contains(firstDynamicType),is(true));
+  assertThat(implementationContext.getAuxiliaryTypes().contains(secondDynamicType),is(true));
+  assertThat(implementationContext.register(auxiliaryType),is(firstDescription));
+  assertThat(implementationContext.getAuxiliaryTypes().size(),is(2));
+  assertThat(implementationContext.getAuxiliaryTypes().contains(firstDynamicType),is(true));
+  assertThat(implementationContext.getAuxiliaryTypes().contains(secondDynamicType),is(true));
+}

@@ -1,7 +1,7 @@
 {
   when(invokableMethod.isConstructor()).thenReturn(true);
   when(definedSuperClassConstructor.isSpecializableFor(rawSuperClass)).thenReturn(true);
-  Implementation.SpecialMethodInvocation specialMethodInvocation=implementationTarget.invokeSuper(superConstructorToken);
+  Implementation.SpecialMethodInvocation specialMethodInvocation=makeImplementationTarget().invokeSuper(superConstructorToken);
   assertThat(specialMethodInvocation.isValid(),is(true));
   assertThat(specialMethodInvocation.getMethodDescription(),is((MethodDescription)superClassConstructor));
   assertThat(specialMethodInvocation.getTypeDescription(),is(rawSuperClass));

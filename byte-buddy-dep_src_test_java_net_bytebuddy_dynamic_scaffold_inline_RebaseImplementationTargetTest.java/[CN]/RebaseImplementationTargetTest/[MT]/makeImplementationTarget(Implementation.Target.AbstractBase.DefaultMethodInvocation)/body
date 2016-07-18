@@ -1,0 +1,3 @@
+{
+  return new RebaseImplementationTarget(instrumentedType,methodGraph,defaultMethodInvocation,Collections.singletonMap(rebasedSignatureToken,resolution));
+}

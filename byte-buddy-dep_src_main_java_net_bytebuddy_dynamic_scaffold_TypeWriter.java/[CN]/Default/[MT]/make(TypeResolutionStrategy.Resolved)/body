@@ -1,5 +1,5 @@
 {
-  UnresolvedType<S> unresolvedType=create(typeResolutionStrategy.injectedInto(typeInitializer));
+  UnresolvedType unresolvedType=create(typeResolutionStrategy.injectedInto(typeInitializer));
   if (DUMP_FOLDER != null) {
     try {
       OutputStream outputStream=new FileOutputStream(new File(DUMP_FOLDER,instrumentedType.getName() + "." + System.currentTimeMillis()));
@@ -14,5 +14,5 @@
       Logger.getLogger("net.bytebuddy").log(Level.WARNING,"Could not dump class file for " + instrumentedType,exception);
     }
   }
-  return unresolvedType.resolve(typeResolutionStrategy);
+  return unresolvedType.toDynamicType(typeResolutionStrategy);
 }

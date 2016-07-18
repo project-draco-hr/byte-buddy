@@ -1,0 +1,4 @@
+TypeDescription instrumentedType
+MethodGraph.Linked methodGraph
+ClassFileVersion classFileVersion
+MethodRebaseResolver methodRebaseResolver

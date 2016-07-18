@@ -1,0 +1,5 @@
+{
+  TypeInitializer typeInitializer=mock(TypeInitializer.class);
+  when(typeInitializer.isDefined()).thenReturn(true);
+  Implementation.Context.Disabled.Factory.INSTANCE.make(instrumentedType,mock(AuxiliaryType.NamingStrategy.class),typeInitializer,mock(ClassFileVersion.class),mock(ClassFileVersion.class));
+}

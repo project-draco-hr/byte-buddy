@@ -1,3 +1,3 @@
 {
-  return "Implementation.Context.Disabled{" + "instrumentedType=" + instrumentedType + '}';
+  return "Implementation.Context.Disabled{" + "instrumentedType=" + instrumentedType + ", classFileVersion="+ classFileVersion+ '}';
 }

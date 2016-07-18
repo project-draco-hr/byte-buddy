@@ -1,0 +1,3 @@
+{
+  return RebaseImplementationTarget.of(instrumentedType,methodGraph,classFileVersion,methodRebaseResolver);
+}

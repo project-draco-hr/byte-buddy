@@ -1,0 +1,4 @@
+TypeDescription instrumentedType
+MethodGraph.Linked methodGraph
+DefaultMethodInvocation defaultMethodInvocation
+Map<MethodDescription.SignatureToken,MethodRebaseResolver.Resolution> rebaseableMethods

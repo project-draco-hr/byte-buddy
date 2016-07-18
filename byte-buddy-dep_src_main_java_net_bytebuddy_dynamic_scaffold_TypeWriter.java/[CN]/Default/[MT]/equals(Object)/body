@@ -1,6 +1,6 @@
 {
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  Default<?> aDefault=(Default<?>)other;
-  return instrumentedType.equals(aDefault.instrumentedType) && fieldPool.equals(aDefault.fieldPool) && auxiliaryTypes.equals(aDefault.auxiliaryTypes)&& instrumentedMethods.equals(aDefault.instrumentedMethods)&& loadedTypeInitializer.equals(aDefault.loadedTypeInitializer)&& typeInitializer.equals(aDefault.typeInitializer)&& typeAttributeAppender.equals(aDefault.typeAttributeAppender)&& asmVisitorWrapper.equals(aDefault.asmVisitorWrapper)&& annotationValueFilterFactory.equals(aDefault.annotationValueFilterFactory)&& annotationRetention == aDefault.annotationRetention && auxiliaryTypeNamingStrategy.equals(aDefault.auxiliaryTypeNamingStrategy) && implementationContextFactory.equals(aDefault.implementationContextFactory) && typeValidation.equals(aDefault.typeValidation) && typePool.equals(aDefault.typePool);
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  Default<?> aDefault=(Default<?>)object;
+  return instrumentedType.equals(aDefault.instrumentedType) && classFileVersion.equals(aDefault.classFileVersion) && fieldPool.equals(aDefault.fieldPool)&& auxiliaryTypes.equals(aDefault.auxiliaryTypes)&& instrumentedMethods.equals(aDefault.instrumentedMethods)&& loadedTypeInitializer.equals(aDefault.loadedTypeInitializer)&& typeInitializer.equals(aDefault.typeInitializer)&& typeAttributeAppender.equals(aDefault.typeAttributeAppender)&& asmVisitorWrapper.equals(aDefault.asmVisitorWrapper)&& annotationValueFilterFactory.equals(aDefault.annotationValueFilterFactory)&& annotationRetention == aDefault.annotationRetention && auxiliaryTypeNamingStrategy.equals(aDefault.auxiliaryTypeNamingStrategy) && implementationContextFactory.equals(aDefault.implementationContextFactory) && typeValidation == aDefault.typeValidation && typePool.equals(aDefault.typePool);
 }

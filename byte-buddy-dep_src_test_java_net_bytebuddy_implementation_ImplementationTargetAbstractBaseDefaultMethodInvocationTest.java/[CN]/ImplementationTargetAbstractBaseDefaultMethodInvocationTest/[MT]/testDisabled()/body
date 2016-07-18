@@ -1,0 +1,3 @@
+{
+  assertThat(Implementation.Target.AbstractBase.DefaultMethodInvocation.of(ClassFileVersion.JAVA_V7),is(Implementation.Target.AbstractBase.DefaultMethodInvocation.DISABLED));
+}

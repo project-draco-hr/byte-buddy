@@ -1,3 +1,0 @@
-{
-  return RebaseImplementationTarget.of(instrumentedType,methodGraph,methodRebaseResolver);
-}

@@ -1,0 +1,6 @@
+{
+  int result=Arrays.hashCode(binaryRepresentation);
+  result=31 * result + auxiliaryTypes.hashCode();
+  result=31 * result + Default.this.hashCode();
+  return result;
+}

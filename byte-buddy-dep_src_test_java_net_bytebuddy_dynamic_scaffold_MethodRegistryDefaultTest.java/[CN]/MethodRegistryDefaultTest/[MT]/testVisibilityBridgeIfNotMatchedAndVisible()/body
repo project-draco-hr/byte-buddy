@@ -18,7 +18,7 @@
   MethodDescription.Token methodToken=mock(MethodDescription.Token.class);
   when(instrumentedMethod.asToken(ElementMatchers.is(typeDescription))).thenReturn(methodToken);
   when(methodToken.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(methodToken);
-  MethodRegistry.Compiled methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory,transformer).append(secondMatcher,secondHandler,secondFactory,transformer).prepare(firstType,methodGraphCompiler,TypeValidation.ENABLED,methodFilter).compile(implementationTargetFactory);
+  MethodRegistry.Compiled methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory,transformer).append(secondMatcher,secondHandler,secondFactory,transformer).prepare(firstType,methodGraphCompiler,TypeValidation.ENABLED,methodFilter).compile(implementationTargetFactory,classFileVersion);
   assertThat(methodRegistry.getInstrumentedType(),is(typeDescription));
   assertThat(methodRegistry.getInstrumentedMethods().size(),is(1));
   assertThat(methodRegistry.getTypeInitializer(),is(typeInitializer));

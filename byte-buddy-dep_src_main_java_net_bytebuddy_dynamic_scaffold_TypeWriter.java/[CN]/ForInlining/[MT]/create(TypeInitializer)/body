@@ -9,7 +9,7 @@
     ClassWriter classWriter=new FrameComputingClassWriter(classReader,writerFlags,typePool);
     ContextRegistry contextRegistry=new ContextRegistry();
     classReader.accept(writeTo(asmVisitorWrapper.wrap(instrumentedType,ValidatingClassVisitor.of(classWriter,typeValidation),writerFlags,readerFlags),typeInitializer,contextRegistry),readerFlags);
-    return new UnresolvedType<U>(classWriter.toByteArray(),contextRegistry.getAuxiliaryTypes());
+    return new UnresolvedType(classWriter.toByteArray(),contextRegistry.getAuxiliaryTypes());
   }
  catch (  IOException exception) {
     throw new RuntimeException("The class file could not be written",exception);

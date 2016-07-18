@@ -14,5 +14,5 @@
   }
   implementationContext.drain(classVisitor,methodPool,Implementation.Context.ExtractableView.InjectedCode.None.INSTANCE,annotationValueFilterFactory,supportsBridges);
   classVisitor.visitEnd();
-  return new UnresolvedType<U>(classWriter.toByteArray(),implementationContext.getAuxiliaryTypes());
+  return new UnresolvedType(classWriter.toByteArray(),implementationContext.getAuxiliaryTypes());
 }

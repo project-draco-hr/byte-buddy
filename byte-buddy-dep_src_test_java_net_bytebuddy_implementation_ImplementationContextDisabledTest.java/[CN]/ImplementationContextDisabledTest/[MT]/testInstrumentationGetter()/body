@@ -1,0 +1,3 @@
+{
+  assertThat(new Implementation.Context.Disabled(instrumentedType,classFileVersion).getInstrumentedType(),is(instrumentedType));
+}

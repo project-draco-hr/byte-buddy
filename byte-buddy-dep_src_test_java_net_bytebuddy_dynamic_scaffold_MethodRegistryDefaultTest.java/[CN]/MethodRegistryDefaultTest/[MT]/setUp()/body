@@ -15,7 +15,7 @@
   when(secondMatcher.resolve(thirdType)).thenReturn((ElementMatcher)secondFilter);
   when(firstFactory.make(typeDescription)).thenReturn(firstAppender);
   when(secondFactory.make(typeDescription)).thenReturn(secondAppender);
-  when(implementationTargetFactory.make(typeDescription,methodGraph)).thenReturn(implementationTarget);
+  when(implementationTargetFactory.make(typeDescription,methodGraph,classFileVersion)).thenReturn(implementationTarget);
   when(firstCompiledHandler.assemble(instrumentedMethod,firstAppender)).thenReturn(firstRecord);
   when(secondCompiledHandler.assemble(instrumentedMethod,secondAppender)).thenReturn(secondRecord);
   when(transformer.transform(thirdType,instrumentedMethod)).thenReturn(instrumentedMethod);
