@@ -1,0 +1,8 @@
+{
+  super(instrumentedType,classFileVersion,fieldPool,explicitAuxiliaryTypes,instrumentedMethods,loadedTypeInitializer,typeInitializer,typeAttributeAppender,asmVisitorWrapper,annotationValueFilterFactory,annotationRetention,auxiliaryTypeNamingStrategy,implementationContextFactory,typeValidation,typePool);
+  this.methodRegistry=methodRegistry;
+  this.implementationTargetFactory=implementationTargetFactory;
+  this.originalType=originalType;
+  this.classFileLocator=classFileLocator;
+  this.methodRebaseResolver=methodRebaseResolver;
+}

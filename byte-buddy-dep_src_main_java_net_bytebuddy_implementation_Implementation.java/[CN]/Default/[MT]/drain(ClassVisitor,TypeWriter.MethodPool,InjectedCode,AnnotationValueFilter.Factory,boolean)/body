@@ -16,7 +16,7 @@
  else   if (typeInitializer.isDefined()) {
     initializerRecord=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithBody(typeInitializerMethod,typeInitializer.withReturn());
   }
-  if (prohibitTypeInitiailzer && initializerRecord.getSort().isDefined()) {
+  if (prohibitTypeInitializer && initializerRecord.getSort().isDefined()) {
     throw new IllegalStateException("It is impossible to define a class initializer or cached values for " + instrumentedType);
   }
   initializerRecord.apply(classVisitor,this,annotationValueFilterFactory);

@@ -1,4 +1,0 @@
-{
-  super(instrumentedType,fieldPool,explicitAuxiliaryTypes,instrumentedMethods,loadedTypeInitializer,typeInitializer,typeAttributeAppender,asmVisitorWrapper,classFileVersion,annotationValueFilterFactory,annotationRetention,auxiliaryTypeNamingStrategy,implementationContextFactory,typeValidation,typePool);
-  this.methodPool=methodPool;
-}

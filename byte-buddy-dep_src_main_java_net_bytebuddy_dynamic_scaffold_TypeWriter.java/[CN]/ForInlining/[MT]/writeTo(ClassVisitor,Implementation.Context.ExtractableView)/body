@@ -1,3 +1,0 @@
-{
-  return originalType.getName().equals(instrumentedType.getName()) ? new RedefinitionClassVisitor(classVisitor,implementationContext) : new ClassRemapper(new RedefinitionClassVisitor(classVisitor,implementationContext),new SimpleRemapper(originalType.getInternalName(),instrumentedType.getInternalName()));
-}

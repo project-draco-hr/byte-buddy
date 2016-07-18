@@ -1,6 +1,0 @@
-{
-  if (typeInitializer.isDefined()) {
-    throw new IllegalStateException("Cannot define type initializer which was explicitly disabled: " + typeInitializer);
-  }
-  return new Disabled(instrumentedType);
-}

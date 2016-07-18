@@ -1,0 +1,4 @@
+{
+  this.binaryRepresentation=binaryRepresentation;
+  this.auxiliaryTypes=auxiliaryTypes;
+}

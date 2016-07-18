@@ -1,3 +1,0 @@
-{
-  assertThat(Implementation.Context.Default.Factory.INSTANCE.make(mock(TypeDescription.class),mock(AuxiliaryType.NamingStrategy.class),mock(TypeInitializer.class),mock(ClassFileVersion.class)),instanceOf(Implementation.Context.Default.class));
-}

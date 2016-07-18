@@ -1,0 +1,5 @@
+TypeDescription instrumentedType
+ClassFileVersion classFileVersion
+AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
+TypeInitializer typeInitializer
+ClassFileVersion auxiliaryClassFileVersion

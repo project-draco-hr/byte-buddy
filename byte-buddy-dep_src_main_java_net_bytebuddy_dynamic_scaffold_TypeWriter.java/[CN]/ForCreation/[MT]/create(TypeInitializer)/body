@@ -1,0 +1,18 @@
+{
+  int writerFlags=asmVisitorWrapper.mergeWriter(AsmVisitorWrapper.NO_FLAGS);
+  ClassWriter classWriter=new FrameComputingClassWriter(writerFlags,typePool);
+  ClassVisitor classVisitor=asmVisitorWrapper.wrap(instrumentedType,ValidatingClassVisitor.of(classWriter,typeValidation),writerFlags,asmVisitorWrapper.mergeReader(AsmVisitorWrapper.NO_FLAGS));
+  classVisitor.visit(classFileVersion.getMinorMajorVersion(),instrumentedType.getActualModifiers(!instrumentedType.isInterface()),instrumentedType.getInternalName(),instrumentedType.getGenericSignature(),(instrumentedType.getSuperClass() == null ? TypeDescription.OBJECT : instrumentedType.getSuperClass().asErasure()).getInternalName(),instrumentedType.getInterfaces().asErasures().toInternalNames());
+  Implementation.Context.ExtractableView implementationContext=implementationContextFactory.make(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion,classFileVersion);
+  typeAttributeAppender.apply(classVisitor,instrumentedType,annotationValueFilterFactory.on(instrumentedType));
+  for (  FieldDescription fieldDescription : instrumentedType.getDeclaredFields()) {
+    fieldPool.target(fieldDescription).apply(classVisitor,annotationValueFilterFactory);
+  }
+  boolean supportsBridges=classFileVersion.isAtLeast(ClassFileVersion.JAVA_V5);
+  for (  MethodDescription methodDescription : instrumentedMethods) {
+    methodPool.target(methodDescription,supportsBridges).apply(classVisitor,implementationContext,annotationValueFilterFactory);
+  }
+  implementationContext.drain(classVisitor,methodPool,Implementation.Context.ExtractableView.InjectedCode.None.INSTANCE,annotationValueFilterFactory,supportsBridges);
+  classVisitor.visitEnd();
+  return new UnresolvedType<U>(classWriter.toByteArray(),implementationContext.getAuxiliaryTypes());
+}

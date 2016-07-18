@@ -1,0 +1,17 @@
+{
+  this.instrumentedType=instrumentedType;
+  this.classFileVersion=classFileVersion;
+  this.fieldPool=fieldPool;
+  this.auxiliaryTypes=auxiliaryTypes;
+  this.instrumentedMethods=instrumentedMethods;
+  this.loadedTypeInitializer=loadedTypeInitializer;
+  this.typeInitializer=typeInitializer;
+  this.typeAttributeAppender=typeAttributeAppender;
+  this.asmVisitorWrapper=asmVisitorWrapper;
+  this.auxiliaryTypeNamingStrategy=auxiliaryTypeNamingStrategy;
+  this.annotationValueFilterFactory=annotationValueFilterFactory;
+  this.annotationRetention=annotationRetention;
+  this.implementationContextFactory=implementationContextFactory;
+  this.typeValidation=typeValidation;
+  this.typePool=typePool;
+}

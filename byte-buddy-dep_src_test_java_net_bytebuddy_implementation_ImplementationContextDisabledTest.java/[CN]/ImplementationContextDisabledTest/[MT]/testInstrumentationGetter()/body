@@ -1,3 +1,0 @@
-{
-  assertThat(new Implementation.Context.Disabled(instrumentedType).getInstrumentedType(),is(instrumentedType));
-}

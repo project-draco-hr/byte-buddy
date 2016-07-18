@@ -1,0 +1,2 @@
+byte[] binaryRepresentation
+List<? extends DynamicType> auxiliaryTypes

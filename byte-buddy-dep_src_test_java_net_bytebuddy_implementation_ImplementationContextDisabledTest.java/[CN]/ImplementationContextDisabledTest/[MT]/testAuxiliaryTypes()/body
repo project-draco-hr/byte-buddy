@@ -1,3 +1,0 @@
-{
-  assertThat(new Implementation.Context.Disabled(instrumentedType).getRegisteredAuxiliaryTypes().size(),is(0));
-}
