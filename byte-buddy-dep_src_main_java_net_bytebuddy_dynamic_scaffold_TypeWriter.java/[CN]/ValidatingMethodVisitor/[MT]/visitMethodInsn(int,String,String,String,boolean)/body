@@ -1,0 +1,6 @@
+{
+  if (isInterface && opcode == Opcodes.INVOKESPECIAL) {
+    constraint.assertDefaultMethodCall();
+  }
+  super.visitMethodInsn(opcode,owner,name,descriptor,isInterface);
+}

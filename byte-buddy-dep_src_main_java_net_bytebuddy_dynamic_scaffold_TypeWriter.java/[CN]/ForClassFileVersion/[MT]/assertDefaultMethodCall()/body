@@ -1,0 +1,5 @@
+{
+  if (classFileVersion.isLessThan(ClassFileVersion.JAVA_V8)) {
+    throw new IllegalStateException("Cannot invoke default method for class file version " + classFileVersion);
+  }
+}

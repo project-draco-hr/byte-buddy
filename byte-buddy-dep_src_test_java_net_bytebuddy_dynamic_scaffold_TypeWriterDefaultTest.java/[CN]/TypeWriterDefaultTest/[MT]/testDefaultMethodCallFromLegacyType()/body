@@ -1,0 +1,3 @@
+{
+  new ByteBuddy(ClassFileVersion.JAVA_V7).subclass(Class.forName("net.bytebuddy.test.precompiled.SingleDefaultMethodInterface")).method(isDefaultMethod()).intercept(SuperMethodCall.INSTANCE).make();
+}
