@@ -16,5 +16,5 @@
     }
     entries.put(entry.getKey(),new Compiled.Entry(cachedHandler,cachedAttributeAppender,entry.getValue().getMethodDescription(),entry.getValue().resolveBridgeTypes(),entry.getValue().isBridgeMethod()));
   }
-  return new Compiled(instrumentedType,loadedTypeInitializer,typeInitializer,entries);
+  return new Compiled(instrumentedType,loadedTypeInitializer,typeInitializer,entries,classFileVersion.isAtLeast(ClassFileVersion.JAVA_V5));
 }

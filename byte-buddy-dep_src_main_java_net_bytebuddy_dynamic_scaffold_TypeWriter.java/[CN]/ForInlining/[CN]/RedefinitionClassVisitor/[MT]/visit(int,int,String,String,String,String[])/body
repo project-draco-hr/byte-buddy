@@ -1,7 +1,6 @@
 {
   ClassFileVersion classFileVersion=ClassFileVersion.ofMinorMajor(classFileVersionNumber);
   methodPool=methodRegistry.compile(implementationTargetFactory,classFileVersion);
-  supportsBridges=classFileVersion.isAtLeast(ClassFileVersion.JAVA_V5);
   implementationContext=implementationContextFactory.make(instrumentedType,auxiliaryTypeNamingStrategy,typeInitializer,classFileVersion,ForInlining.this.classFileVersion);
   contextRegistry.setImplementationContext(implementationContext);
   if (!classFileVersion.isAtLeast(ClassFileVersion.JAVA_V8) && instrumentedType.isInterface()) {

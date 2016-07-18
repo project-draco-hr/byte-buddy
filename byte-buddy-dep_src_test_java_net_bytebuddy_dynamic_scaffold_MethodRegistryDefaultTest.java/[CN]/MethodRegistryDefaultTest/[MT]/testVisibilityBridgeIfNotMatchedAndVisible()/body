@@ -18,6 +18,7 @@
   MethodDescription.Token methodToken=mock(MethodDescription.Token.class);
   when(instrumentedMethod.asToken(ElementMatchers.is(typeDescription))).thenReturn(methodToken);
   when(methodToken.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(methodToken);
+  when(classFileVersion.isAtLeast(ClassFileVersion.JAVA_V5)).thenReturn(true);
   MethodRegistry.Compiled methodRegistry=new MethodRegistry.Default().append(firstMatcher,firstHandler,firstFactory,transformer).append(secondMatcher,secondHandler,secondFactory,transformer).prepare(firstType,methodGraphCompiler,TypeValidation.ENABLED,methodFilter).compile(implementationTargetFactory,classFileVersion);
   assertThat(methodRegistry.getInstrumentedType(),is(typeDescription));
   assertThat(methodRegistry.getInstrumentedMethods().size(),is(1));
@@ -27,5 +28,5 @@
   verify(secondHandler).prepare(secondType);
   verifyZeroInteractions(firstFactory);
   verifyZeroInteractions(secondFactory);
-  assertThat(methodRegistry.target(instrumentedMethod,true),instanceOf(TypeWriter.MethodPool.Record.ForDefinedMethod.OfVisibilityBridge.class));
+  assertThat(methodRegistry.target(instrumentedMethod),instanceOf(TypeWriter.MethodPool.Record.ForDefinedMethod.OfVisibilityBridge.class));
 }

@@ -3,5 +3,6 @@
   result=31 * result + loadedTypeInitializer.hashCode();
   result=31 * result + typeInitializer.hashCode();
   result=31 * result + implementations.hashCode();
+  result=31 * result + (supportsBridges ? 1 : 0);
   return result;
 }

@@ -1,5 +1,5 @@
 {
-  MethodPool.Record record=methodPool.target(methodDescription,supportsBridges);
+  MethodPool.Record record=methodPool.target(methodDescription);
   if (!record.getSort().isDefined()) {
     return super.visitMethod(methodDescription.getActualModifiers(),methodDescription.getInternalName(),methodDescription.getDescriptor(),methodDescription.getGenericSignature(),methodDescription.getExceptionTypes().asErasures().toInternalNames());
   }

@@ -9,7 +9,7 @@
     typeInitializer=typeInitializer.expandWith(injectedCode.getByteCodeAppender());
   }
   MethodDescription typeInitializerMethod=new MethodDescription.Latent.TypeInitializer(instrumentedType);
-  TypeWriter.MethodPool.Record initializerRecord=methodPool.target(typeInitializerMethod,supportsBridges);
+  TypeWriter.MethodPool.Record initializerRecord=methodPool.target(typeInitializerMethod);
   if (initializerRecord.getSort().isImplemented() && typeInitializer.isDefined()) {
     initializerRecord=initializerRecord.prepend(typeInitializer);
   }

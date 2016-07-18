@@ -3,4 +3,5 @@
   this.loadedTypeInitializer=loadedTypeInitializer;
   this.typeInitializer=typeInitializer;
   this.implementations=implementations;
+  this.supportsBridges=supportsBridges;
 }
