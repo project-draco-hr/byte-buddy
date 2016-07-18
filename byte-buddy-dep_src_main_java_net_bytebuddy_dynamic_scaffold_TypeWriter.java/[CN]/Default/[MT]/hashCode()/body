@@ -1,7 +1,6 @@
 {
   int result=instrumentedType.hashCode();
   result=31 * result + fieldPool.hashCode();
-  result=31 * result + methodPool.hashCode();
   result=31 * result + explicitAuxiliaryTypes.hashCode();
   result=31 * result + instrumentedMethods.hashCode();
   result=31 * result + loadedTypeInitializer.hashCode();

@@ -1,7 +1,6 @@
 {
   this.instrumentedType=instrumentedType;
   this.fieldPool=fieldPool;
-  this.methodPool=methodPool;
   this.explicitAuxiliaryTypes=explicitAuxiliaryTypes;
   this.instrumentedMethods=instrumentedMethods;
   this.loadedTypeInitializer=loadedTypeInitializer;

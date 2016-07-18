@@ -1,10 +1,5 @@
-TypeDescription instrumentedType
+MethodRegistry.Prepared methodRegistry
 FieldPool fieldPool
-MethodPool methodPool
-List<DynamicType> explicitAuxiliaryTypes
-MethodList<?> instrumentedMethods
-LoadedTypeInitializer loadedTypeInitializer
-TypeInitializer typeInitializer
 TypeAttributeAppender typeAttributeAppender
 AsmVisitorWrapper asmVisitorWrapper
 ClassFileVersion classFileVersion
@@ -14,3 +9,5 @@ AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
 Implementation.Context.Factory implementationContextFactory
 TypeValidation typeValidation
 TypePool typePool
+TypeDescription originalType
+ClassFileLocator classFileLocator

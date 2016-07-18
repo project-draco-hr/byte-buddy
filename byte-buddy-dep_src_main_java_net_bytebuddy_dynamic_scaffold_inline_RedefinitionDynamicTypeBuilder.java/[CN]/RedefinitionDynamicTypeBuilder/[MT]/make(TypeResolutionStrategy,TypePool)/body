@@ -1,4 +1,4 @@
 {
-  MethodRegistry.Compiled compiledMethodRegistry=methodRegistry.prepare(instrumentedType,methodGraphCompiler,typeValidation,InliningImplementationMatcher.of(ignoredMethods,originalType)).compile(SubclassImplementationTarget.Factory.LEVEL_TYPE);
-  return TypeWriter.Default.<T>forRedefinition(compiledMethodRegistry,fieldRegistry.compile(compiledMethodRegistry.getInstrumentedType()),typeAttributeAppender,asmVisitorWrapper,classFileVersion,annotationValueFilterFactory,annotationRetention,auxiliaryTypeNamingStrategy,implementationContextFactory,typeValidation,typePool,originalType,classFileLocator).make(typeResolutionStrategy.resolve());
+  MethodRegistry.Prepared methodRegistry=this.methodRegistry.prepare(instrumentedType,methodGraphCompiler,typeValidation,InliningImplementationMatcher.of(ignoredMethods,originalType));
+  return TypeWriter.Default.<T>forRedefinition(methodRegistry,fieldRegistry.compile(methodRegistry.getInstrumentedType()),typeAttributeAppender,asmVisitorWrapper,classFileVersion,annotationValueFilterFactory,annotationRetention,auxiliaryTypeNamingStrategy,implementationContextFactory,typeValidation,typePool,originalType,classFileLocator).make(typeResolutionStrategy.resolve());
 }

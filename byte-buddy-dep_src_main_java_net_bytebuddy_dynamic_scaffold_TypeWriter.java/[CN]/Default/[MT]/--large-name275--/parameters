@@ -1,4 +1,4 @@
-MethodRegistry.Compiled methodRegistry
+MethodRegistry.Prepared methodRegistry
 FieldPool fieldPool
 TypeAttributeAppender typeAttributeAppender
 AsmVisitorWrapper asmVisitorWrapper

@@ -1,5 +1,11 @@
-MethodRegistry.Compiled methodRegistry
+TypeDescription instrumentedType
 FieldPool fieldPool
+MethodRegistry.Prepared methodRegistry
+Implementation.Target.Factory implementationTargetFactory
+List<DynamicType> explicitAuxiliaryTypes
+MethodList<?> instrumentedMethods
+LoadedTypeInitializer loadedTypeInitializer
+TypeInitializer typeInitializer
 TypeAttributeAppender typeAttributeAppender
 AsmVisitorWrapper asmVisitorWrapper
 ClassFileVersion classFileVersion
@@ -11,3 +17,4 @@ TypeValidation typeValidation
 TypePool typePool
 TypeDescription originalType
 ClassFileLocator classFileLocator
+MethodRebaseResolver methodRebaseResolver

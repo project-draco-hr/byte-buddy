@@ -1,0 +1,3 @@
+{
+  return new ForInlining<U>(methodRegistry.getInstrumentedType(),fieldPool,methodRegistry,new RebaseImplementationTarget.Factory(methodRebaseResolver),methodRebaseResolver.getAuxiliaryTypes(),methodRegistry.getInstrumentedMethods(),methodRegistry.getLoadedTypeInitializer(),methodRegistry.getTypeInitializer(),typeAttributeAppender,asmVisitorWrapper,classFileVersion,annotationValueFilterFactory,annotationRetention,auxiliaryTypeNamingStrategy,implementationContextFactory,typeValidation,typePool,originalType,classFileLocator,methodRebaseResolver);
+}

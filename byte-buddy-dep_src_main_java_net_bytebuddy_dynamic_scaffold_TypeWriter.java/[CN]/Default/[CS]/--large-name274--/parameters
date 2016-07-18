@@ -1,6 +1,5 @@
 TypeDescription instrumentedType
 FieldPool fieldPool
-MethodPool methodPool
 List<DynamicType> explicitAuxiliaryTypes
 MethodList<?> instrumentedMethods
 LoadedTypeInitializer loadedTypeInitializer
@@ -14,6 +13,3 @@ AuxiliaryType.NamingStrategy auxiliaryTypeNamingStrategy
 Implementation.Context.Factory implementationContextFactory
 TypeValidation typeValidation
 TypePool typePool
-TypeDescription originalType
-ClassFileLocator classFileLocator
-MethodRebaseResolver methodRebaseResolver
