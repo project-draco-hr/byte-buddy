@@ -33,4 +33,5 @@
   when(genericInstrumentedType.asErasure()).thenReturn(instrumentedType);
   when(genericInstrumentedType.asGenericType()).thenReturn(genericInstrumentedType);
   when(instrumentedType.asGenericType()).thenReturn(genericInstrumentedType);
+  defaultMethodInvocation=Implementation.Target.AbstractBase.DefaultMethodInvocation.ENABLED;
 }
