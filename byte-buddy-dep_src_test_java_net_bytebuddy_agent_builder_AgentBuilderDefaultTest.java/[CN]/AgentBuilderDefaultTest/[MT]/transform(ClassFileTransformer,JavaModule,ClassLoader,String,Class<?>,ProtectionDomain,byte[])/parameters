@@ -1,0 +1,7 @@
+ClassFileTransformer classFileTransformer
+JavaModule javaModule
+ClassLoader classLoader
+String typeName
+Class<?> type
+ProtectionDomain protectionDomain
+byte[] binaryRepresentation
