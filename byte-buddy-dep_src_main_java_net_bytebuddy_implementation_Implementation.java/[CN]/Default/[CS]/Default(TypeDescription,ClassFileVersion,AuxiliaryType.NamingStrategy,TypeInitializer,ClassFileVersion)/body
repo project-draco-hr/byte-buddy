@@ -11,5 +11,4 @@
   registeredFieldCacheEntries=new HashMap<FieldCacheEntry,FieldDescription.InDefinedShape>();
   suffix=RandomString.make();
   fieldCacheCanAppendEntries=true;
-  prohibitTypeInitializer=false;
 }
