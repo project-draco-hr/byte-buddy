@@ -1,0 +1,8 @@
+{
+  try {
+    return forCurrentJavaVersion();
+  }
+ catch (  Exception ignored) {
+    return fallback;
+  }
+}
