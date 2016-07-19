@@ -1,0 +1,3 @@
+{
+  accessibleObject=Foo.class.getDeclaredConstructor();
+}

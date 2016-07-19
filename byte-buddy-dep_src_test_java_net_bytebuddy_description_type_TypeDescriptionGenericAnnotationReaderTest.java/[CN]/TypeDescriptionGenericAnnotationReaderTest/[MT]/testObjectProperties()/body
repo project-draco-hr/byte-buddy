@@ -29,7 +29,13 @@
     }
   }
 ).apply();
-  ObjectPropertyAssertion.of(TypeDescription.Generic.AnnotationReader.Dispatcher.ForJava8CapableVm.AnnotatedParameterizedType.class).apply();
+  final Iterator<AccessibleObject> iterator=Arrays.<AccessibleObject>asList(Object.class.getDeclaredMethods()).iterator();
+  ObjectPropertyAssertion.of(TypeDescription.Generic.AnnotationReader.Dispatcher.ForJava8CapableVm.AnnotatedParameterizedType.class).create(new ObjectPropertyAssertion.Creator<AccessibleObject>(){
+    @Override public AccessibleObject create(){
+      return iterator.next();
+    }
+  }
+).apply();
   final Iterator<Method> methods2=Arrays.asList(Object.class.getDeclaredMethods()).iterator();
   ObjectPropertyAssertion.of(TypeDescription.Generic.AnnotationReader.Dispatcher.ForJava8CapableVm.AnnotatedReturnType.class).create(new ObjectPropertyAssertion.Creator<Method>(){
     @Override public Method create(){
@@ -45,5 +51,10 @@
   }
 ).apply();
   ObjectPropertyAssertion.of(TypeDescription.Generic.AnnotationReader.Dispatcher.ForJava8CapableVm.AnnotatedTypeVariableType.class).apply();
-  ObjectPropertyAssertion.of(TypeDescription.Generic.AnnotationReader.Dispatcher.ForJava8CapableVm.AnnotatedExceptionType.class).apply();
+  ObjectPropertyAssertion.of(TypeDescription.Generic.AnnotationReader.Dispatcher.ForJava8CapableVm.AnnotatedExceptionType.class).create(new ObjectPropertyAssertion.Creator<AccessibleObject>(){
+    @Override public AccessibleObject create(){
+      return iterator.next();
+    }
+  }
+).apply();
 }
