@@ -6,7 +6,7 @@
       String packageName=name.substring(0,packageIndex);
       PackageDefinitionStrategy.Definition definition=packageDefinitionStrategy.define(ByteArrayClassLoader.this,packageName,name);
       if (definition.isDefined()) {
-        @SuppressWarnings("deprecation") Package definedPackage=getPackage(packageName);
+        Package definedPackage=PACKAGE_LOOKUP_STRATEGY.apply(this,packageName);
         if (definedPackage == null) {
           definePackage(packageName,definition.getSpecificationTitle(),definition.getSpecificationVersion(),definition.getSpecificationVendor(),definition.getImplementationTitle(),definition.getImplementationVersion(),definition.getImplementationVendor(),definition.getSealBase());
         }

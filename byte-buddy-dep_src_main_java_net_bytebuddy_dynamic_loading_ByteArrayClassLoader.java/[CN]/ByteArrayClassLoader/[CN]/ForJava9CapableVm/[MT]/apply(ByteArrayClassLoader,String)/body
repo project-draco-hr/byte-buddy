@@ -1,0 +1,11 @@
+{
+  try {
+    return (Package)getDefinedPackage.invoke(classLoader,name);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access " + getDefinedPackage,exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Cannot invoke " + getDefinedPackage,exception.getCause());
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return "ByteArrayClassLoader.PackageLookupStrategy.ForJava9CapableVm{" + "getDefinedPackage=" + getDefinedPackage + '}';
+}
