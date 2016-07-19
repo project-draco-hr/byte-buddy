@@ -1,3 +1,3 @@
 {
-  assertThat(new AgentBuilder.Default.BootstrapInjectionStrategy.Enabled(mock(File.class),mock(Instrumentation.class)).make(mock(ProtectionDomain.class)),instanceOf(ClassInjector.UsingInstrumentation.class));
+  assertThat(new AgentBuilder.Default.BootstrapInjectionStrategy.Enabled(mock(File.class),mock(Instrumentation.class)).make(mock(ProtectionDomain.class),accessControlContext),instanceOf(ClassInjector.UsingInstrumentation.class));
 }

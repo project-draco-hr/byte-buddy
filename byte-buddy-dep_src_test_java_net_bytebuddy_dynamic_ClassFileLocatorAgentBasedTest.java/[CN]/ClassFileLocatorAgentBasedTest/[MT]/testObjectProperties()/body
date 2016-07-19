@@ -1,5 +1,10 @@
 {
-  ObjectPropertyAssertion.of(ClassFileLocator.AgentBased.class).refine(new ObjectPropertyAssertion.Refinement<Instrumentation>(){
+  ObjectPropertyAssertion.of(ClassFileLocator.AgentBased.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
+    @Override public AccessControlContext create(){
+      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
+    }
+  }
+).refine(new ObjectPropertyAssertion.Refinement<Instrumentation>(){
     @Override public void apply(    Instrumentation mock){
       when(mock.isRetransformClassesSupported()).thenReturn(true);
     }
