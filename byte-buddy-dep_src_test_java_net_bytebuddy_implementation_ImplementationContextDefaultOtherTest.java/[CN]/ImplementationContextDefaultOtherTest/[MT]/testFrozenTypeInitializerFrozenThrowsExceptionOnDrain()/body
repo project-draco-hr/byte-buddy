@@ -1,9 +1,7 @@
 {
   TypeDescription instrumentedType=mock(TypeDescription.class);
-  ClassFileVersion classFileVersion=mock(ClassFileVersion.class);
-  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,classFileVersion,mock(AuxiliaryType.NamingStrategy.class),mock(TypeInitializer.class),mock(ClassFileVersion.class));
-  when(instrumentedType.isInterface()).thenReturn(true);
-  when(classFileVersion.isAtLeast(ClassFileVersion.JAVA_V8)).thenReturn(false);
+  Implementation.Context.ExtractableView implementationContext=new Implementation.Context.Default(instrumentedType,mock(ClassFileVersion.class),mock(AuxiliaryType.NamingStrategy.class),mock(TypeInitializer.class),mock(ClassFileVersion.class));
+  implementationContext.prohibitTypeInitializer();
   TypeWriter.MethodPool methodPool=mock(TypeWriter.MethodPool.class);
   TypeWriter.MethodPool.Record record=mock(TypeWriter.MethodPool.Record.class);
   when(record.getSort()).thenReturn(TypeWriter.MethodPool.Record.Sort.DEFINED);
