@@ -1,0 +1,4 @@
+{
+  accessible=flag;
+  accessibleObject.setAccessible(flag);
+}
