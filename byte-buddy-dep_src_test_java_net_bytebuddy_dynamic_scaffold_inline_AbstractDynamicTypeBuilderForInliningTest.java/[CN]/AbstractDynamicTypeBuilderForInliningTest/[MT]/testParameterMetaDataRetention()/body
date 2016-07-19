@@ -1,5 +1,5 @@
 {
-  Class<?> dynamicType=create(typePool.describe(PARAMETER_NAME_CLASS).resolve(),ClassFileLocator.ForClassLoader.ofClassPath()).method(named(FOO)).intercept(StubMethod.INSTANCE).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> dynamicType=create(Class.forName(PARAMETER_NAME_CLASS)).method(named(FOO)).intercept(StubMethod.INSTANCE).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   Class<?> executable=Class.forName("java.lang.reflect.Executable");
   Method getParameters=executable.getDeclaredMethod("getParameters");
   Class<?> parameter=Class.forName("java.lang.reflect.Parameter");
