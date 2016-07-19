@@ -1,5 +1,5 @@
 {
   Instrumentation instrumentation=mock(Instrumentation.class);
   when(instrumentation.isRetransformClassesSupported()).thenReturn(true);
-  new ClassReloadingStrategy(instrumentation,ClassReloadingStrategy.Strategy.RETRANSFORMATION).reset();
+  new ClassReloadingStrategy(instrumentation,ClassReloadingStrategy.Strategy.RETRANSFORMATION,AccessController.getContext()).reset();
 }

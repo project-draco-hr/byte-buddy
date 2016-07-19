@@ -1,0 +1,4 @@
+{
+  ClassLoader classLoader=ParentClassLoaderAction.apply(SystemClassLoaderAction.apply(accessControlContext),accessControlContext);
+  return classLoader == null ? ElementMatchers.<T>none() : new EqualityMatcher<T>(classLoader);
+}

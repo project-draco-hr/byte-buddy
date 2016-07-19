@@ -1,0 +1,3 @@
+{
+  return type.length == 0 ? this : reset(ClassFileLocator.ForClassLoader.of(ClassLoaderAction.apply(type[0],accessControlContext)),type);
+}

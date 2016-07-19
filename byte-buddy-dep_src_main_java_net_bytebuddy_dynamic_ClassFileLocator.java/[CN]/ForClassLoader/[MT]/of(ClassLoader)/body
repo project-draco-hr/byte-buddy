@@ -1,3 +1,3 @@
 {
-  return new ForClassLoader(classLoader == null ? ClassLoader.getSystemClassLoader() : classLoader);
+  return of(classLoader,AccessController.getContext());
 }

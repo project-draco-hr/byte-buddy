@@ -1,8 +1,0 @@
-{
-  try {
-    return new Simple(ClassLoader.getSystemClassLoader().loadClass(VIRTUAL_MACHINE_TYPE_NAME_J9));
-  }
- catch (  ClassNotFoundException ignored) {
-    return Unavailable.INSTANCE;
-  }
-}

@@ -1,9 +1,3 @@
 {
-  try {
-    ClassLoader classLoader=type.getClassLoader();
-    return locate(classLoader == null ? ClassLoader.getSystemClassLoader() : classLoader,TypeDescription.ForLoadedType.getName(type));
-  }
- catch (  IOException exception) {
-    throw new IllegalStateException("Cannot read class file for " + type,exception);
-  }
+  return read(type,AccessController.getContext());
 }

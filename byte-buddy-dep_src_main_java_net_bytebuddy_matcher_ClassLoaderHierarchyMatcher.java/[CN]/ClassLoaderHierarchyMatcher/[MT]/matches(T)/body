@@ -4,7 +4,7 @@
     if (matcher.matches(current)) {
       return true;
     }
-    current=current.getParent();
+    current=ParentClassLoaderAction.apply(current,accessControlContext);
   }
   return matcher.matches(null);
 }

@@ -1,13 +1,3 @@
 {
-  Strategy strategy;
-  if (instrumentation.isRedefineClassesSupported()) {
-    strategy=Strategy.REDEFINITION;
-  }
- else   if (instrumentation.isRetransformClassesSupported()) {
-    strategy=Strategy.RETRANSFORMATION;
-  }
- else {
-    throw new IllegalArgumentException("Instrumentation does not support manipulation of loaded classes: " + instrumentation);
-  }
-  return new ClassReloadingStrategy(instrumentation,strategy);
+  return of(instrumentation,AccessController.getContext());
 }

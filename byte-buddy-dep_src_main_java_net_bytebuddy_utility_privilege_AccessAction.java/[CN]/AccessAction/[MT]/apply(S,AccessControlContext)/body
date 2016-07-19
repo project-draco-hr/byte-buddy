@@ -1,0 +1,3 @@
+{
+  return AccessController.doPrivileged(new AccessAction<S>(accessibleObject),accessControlContext);
+}

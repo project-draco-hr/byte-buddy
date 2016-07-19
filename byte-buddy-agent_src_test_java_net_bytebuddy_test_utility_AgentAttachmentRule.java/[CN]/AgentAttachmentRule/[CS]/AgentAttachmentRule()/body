@@ -1,3 +1,3 @@
 {
-  available=ByteBuddyAgent.AttachmentProvider.DEFAULT.attempt().isAvailable();
+  available=ByteBuddyAgent.AttachmentProvider.DEFAULT.attempt(AccessController.getContext()).isAvailable();
 }

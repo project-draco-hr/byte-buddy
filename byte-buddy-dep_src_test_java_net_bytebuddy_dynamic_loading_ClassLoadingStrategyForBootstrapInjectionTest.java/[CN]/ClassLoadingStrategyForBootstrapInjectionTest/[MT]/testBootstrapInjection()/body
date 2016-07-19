@@ -1,5 +1,5 @@
 {
-  ClassLoadingStrategy bootstrapStrategy=new ClassLoadingStrategy.ForBootstrapInjection(ByteBuddyAgent.install(),file);
+  ClassLoadingStrategy bootstrapStrategy=new ClassLoadingStrategy.ForBootstrapInjection(ByteBuddyAgent.install(),file,AccessController.getContext());
   String name=FOO + RandomString.make();
   DynamicType dynamicType=new ByteBuddy().subclass(Object.class).name(name).make();
   Map<TypeDescription,Class<?>> loaded=bootstrapStrategy.load(ClassLoadingStrategy.BOOTSTRAP_LOADER,Collections.singletonMap(dynamicType.getTypeDescription(),dynamicType.getBytes()));

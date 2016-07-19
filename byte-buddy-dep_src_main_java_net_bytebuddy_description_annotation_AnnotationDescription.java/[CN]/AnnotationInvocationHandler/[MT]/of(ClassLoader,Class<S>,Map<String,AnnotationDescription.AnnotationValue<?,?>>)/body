@@ -3,7 +3,7 @@
   LinkedHashMap<Method,AnnotationValue.Loaded<?>> loadedValues=new LinkedHashMap<Method,AnnotationValue.Loaded<?>>();
   for (  Method method : declaredMethod) {
     AnnotationDescription.AnnotationValue<?,?> annotationValue=values.get(method.getName());
-    loadedValues.put(method,annotationValue == null ? DefaultValue.of(method) : annotationValue.load(classLoader == null ? ClassLoader.getSystemClassLoader() : classLoader));
+    loadedValues.put(method,annotationValue == null ? DefaultValue.of(method) : annotationValue.load(classLoader == null ? AccessController.doPrivileged(SystemClassLoaderAction.INSTANCE) : classLoader));
   }
   return new AnnotationInvocationHandler<S>(annotationType,loadedValues);
 }

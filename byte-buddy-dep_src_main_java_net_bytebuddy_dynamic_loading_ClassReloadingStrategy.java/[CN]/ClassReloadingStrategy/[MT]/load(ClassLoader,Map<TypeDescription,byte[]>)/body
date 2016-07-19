@@ -19,7 +19,7 @@
   try {
     strategy.apply(instrumentation,classDefinitions);
     if (!unloadedClasses.isEmpty()) {
-      loadedClasses.putAll((classLoader == null ? bootstrapInjection.make(instrumentation) : new ClassInjector.UsingReflection(classLoader)).inject(unloadedClasses));
+      loadedClasses.putAll((classLoader == null ? bootstrapInjection.make(instrumentation) : new ClassInjector.UsingReflection(classLoader,accessControlContext)).inject(unloadedClasses));
     }
   }
  catch (  ClassNotFoundException exception) {

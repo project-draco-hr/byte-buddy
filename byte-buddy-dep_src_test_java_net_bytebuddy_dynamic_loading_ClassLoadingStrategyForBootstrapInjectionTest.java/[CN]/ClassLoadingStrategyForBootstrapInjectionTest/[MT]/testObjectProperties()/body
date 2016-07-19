@@ -1,3 +1,8 @@
 {
-  ObjectPropertyAssertion.of(ClassLoadingStrategy.ForBootstrapInjection.class).apply();
+  ObjectPropertyAssertion.of(ClassLoadingStrategy.ForBootstrapInjection.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
+    @Override public AccessControlContext create(){
+      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
+    }
+  }
+).apply();
 }

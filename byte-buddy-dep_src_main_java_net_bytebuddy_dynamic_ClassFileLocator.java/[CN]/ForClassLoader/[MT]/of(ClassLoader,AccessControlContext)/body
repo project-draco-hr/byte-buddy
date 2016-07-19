@@ -1,0 +1,3 @@
+{
+  return new ForClassLoader(classLoader == null ? SystemClassLoaderAction.apply(accessControlContext) : classLoader);
+}

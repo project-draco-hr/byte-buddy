@@ -1,0 +1,5 @@
+Instrumentation instrumentation
+Strategy strategy
+AccessControlContext accessControlContext
+BootstrapInjection bootstrapInjection
+Map<String,Class<?>> preregisteredTypes

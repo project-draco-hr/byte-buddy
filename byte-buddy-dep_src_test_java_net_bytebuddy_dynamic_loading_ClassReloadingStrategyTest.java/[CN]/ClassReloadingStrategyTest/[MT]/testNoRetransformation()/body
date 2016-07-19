@@ -1,3 +1,3 @@
 {
-  new ClassReloadingStrategy(mock(Instrumentation.class),ClassReloadingStrategy.Strategy.RETRANSFORMATION);
+  new ClassReloadingStrategy(mock(Instrumentation.class),ClassReloadingStrategy.Strategy.RETRANSFORMATION,AccessController.getContext());
 }

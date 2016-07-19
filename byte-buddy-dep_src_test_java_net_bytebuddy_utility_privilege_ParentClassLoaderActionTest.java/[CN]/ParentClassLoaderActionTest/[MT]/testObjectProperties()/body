@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(ParentClassLoaderAction.class).apply();
+}

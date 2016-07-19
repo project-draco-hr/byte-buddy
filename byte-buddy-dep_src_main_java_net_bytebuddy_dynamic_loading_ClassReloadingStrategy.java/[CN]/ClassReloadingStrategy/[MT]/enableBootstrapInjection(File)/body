@@ -1,3 +1,3 @@
 {
-  return new ClassReloadingStrategy(instrumentation,strategy,new BootstrapInjection.Enabled(folder),preregisteredTypes);
+  return new ClassReloadingStrategy(instrumentation,strategy,accessControlContext,new BootstrapInjection.Enabled(folder),preregisteredTypes);
 }

@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   ClassReloadingStrategy that=(ClassReloadingStrategy)other;
-  return instrumentation.equals(that.instrumentation) && strategy == that.strategy && bootstrapInjection.equals(that.bootstrapInjection) && preregisteredTypes.equals(that.preregisteredTypes);
+  return instrumentation.equals(that.instrumentation) && strategy == that.strategy && bootstrapInjection.equals(that.bootstrapInjection) && preregisteredTypes.equals(that.preregisteredTypes) && accessControlContext.equals(that.accessControlContext);
 }

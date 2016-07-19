@@ -1,6 +1,6 @@
 {
   try {
-    Instrumentation instrumentation=(Instrumentation)ClassLoader.getSystemClassLoader().loadClass(INSTALLER_TYPE).getDeclaredField(INSTRUMENTATION_FIELD).get(STATIC_FIELD);
+    Instrumentation instrumentation=(Instrumentation)AccessController.doPrivileged(SystemClassLoaderAction.INSTANCE).loadClass(INSTALLER_TYPE).getDeclaredField(INSTRUMENTATION_FIELD).get(STATIC_FIELD);
     if (instrumentation == null) {
       throw new IllegalStateException("The Byte Buddy agent is not installed");
     }

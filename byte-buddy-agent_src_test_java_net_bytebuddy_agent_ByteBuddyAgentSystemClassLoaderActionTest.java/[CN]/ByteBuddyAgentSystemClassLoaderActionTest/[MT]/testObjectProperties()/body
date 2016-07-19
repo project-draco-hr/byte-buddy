@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(ByteBuddyAgent.SystemClassLoaderAction.class).apply();
+}

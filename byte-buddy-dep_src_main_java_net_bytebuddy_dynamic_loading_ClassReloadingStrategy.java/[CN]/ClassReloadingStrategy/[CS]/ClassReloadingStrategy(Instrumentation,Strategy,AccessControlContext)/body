@@ -1,0 +1,3 @@
+{
+  this(instrumentation,strategy,accessControlContext,BootstrapInjection.Disabled.INSTANCE,Collections.<String,Class<?>>emptyMap());
+}

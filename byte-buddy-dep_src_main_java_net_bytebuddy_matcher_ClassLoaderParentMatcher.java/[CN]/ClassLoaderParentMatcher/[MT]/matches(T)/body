@@ -4,7 +4,7 @@
     if (current == target) {
       return true;
     }
-    current=current.getParent();
+    current=ParentClassLoaderAction.apply(current,accessControlContext);
   }
   return target == null;
 }

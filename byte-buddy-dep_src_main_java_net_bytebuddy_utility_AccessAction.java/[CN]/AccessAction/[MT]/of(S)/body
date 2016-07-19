@@ -1,3 +1,0 @@
-{
-  return new AccessAction<S>(accessibleObject);
-}

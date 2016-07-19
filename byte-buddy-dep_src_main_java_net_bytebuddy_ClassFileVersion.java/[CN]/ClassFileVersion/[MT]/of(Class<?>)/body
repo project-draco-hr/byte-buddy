@@ -1,3 +1,3 @@
 {
-  return of(type,ClassFileLocator.ForClassLoader.of(type.getClassLoader()));
+  return of(type,AccessController.getContext());
 }

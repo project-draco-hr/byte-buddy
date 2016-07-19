@@ -1,0 +1,4 @@
+{
+  ClassLoader enterLoader=ClassLoaderAction.apply(enterAdvice,accessControlContext), exitLoader=ClassLoaderAction.apply(enterAdvice,accessControlContext);
+  return to(enterAdvice,exitAdvice,enterLoader == exitLoader ? ClassFileLocator.ForClassLoader.of(enterLoader,accessControlContext) : new ClassFileLocator.Compound(ClassFileLocator.ForClassLoader.of(enterLoader,accessControlContext),ClassFileLocator.ForClassLoader.of(exitLoader,accessControlContext)));
+}

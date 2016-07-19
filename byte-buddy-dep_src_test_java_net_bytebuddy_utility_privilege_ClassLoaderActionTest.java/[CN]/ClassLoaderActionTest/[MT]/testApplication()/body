@@ -1,0 +1,3 @@
+{
+  assertThat(ClassLoaderAction.apply(getClass(),AccessController.getContext()),is(getClass().getClassLoader()));
+}

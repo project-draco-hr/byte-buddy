@@ -1,3 +1,3 @@
 {
-  return new EqualityMatcher<T>(ClassLoader.getSystemClassLoader());
+  return isSystemClassLoader(AccessController.getContext());
 }

@@ -8,7 +8,7 @@
     if (method == null || (!accessible && !method.isAccessible())) {
       method=annotation.annotationType().getDeclaredMethod(methodDescription.getName());
       if (!accessible) {
-        AccessController.doPrivileged(AccessAction.of(method));
+        AccessAction.apply(method,AccessController.getContext());
       }
     }
     return describe(method.invoke(annotation),methodDescription.getReturnType().asErasure());

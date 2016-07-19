@@ -1,11 +1,11 @@
 {
-  ClassLoader thisClassLoader=annotation.getClass().getClassLoader();
+  ClassLoader thisClassLoader=AccessController.doPrivileged(new ClassLoaderAction(annotation.getClass()));
   ClassLoader otherClassLoader=classLoader;
   while (otherClassLoader != null) {
     if (otherClassLoader == thisClassLoader) {
       break;
     }
-    otherClassLoader=otherClassLoader.getParent();
+    otherClassLoader=AccessController.doPrivileged(new ParentClassLoaderAction(otherClassLoader));
   }
   if (otherClassLoader != thisClassLoader) {
     throw new IllegalArgumentException(annotation + " is not loaded using " + classLoader);

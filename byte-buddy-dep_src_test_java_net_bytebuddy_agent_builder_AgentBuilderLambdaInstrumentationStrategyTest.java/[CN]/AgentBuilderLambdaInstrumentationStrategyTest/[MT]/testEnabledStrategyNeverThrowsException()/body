@@ -6,7 +6,7 @@
     Instrumentation instrumentation=mock(Instrumentation.class);
     ClassFileTransformer classFileTransformer=mock(ClassFileTransformer.class);
     try {
-      AgentBuilder.Default.LambdaInstrumentationStrategy.ENABLED.apply(byteBuddy,instrumentation,classFileTransformer);
+      AgentBuilder.Default.LambdaInstrumentationStrategy.ENABLED.apply(byteBuddy,instrumentation,classFileTransformer,AccessController.getContext());
     }
   finally {
       assertThat(LambdaFactory.release(classFileTransformer),is(false));

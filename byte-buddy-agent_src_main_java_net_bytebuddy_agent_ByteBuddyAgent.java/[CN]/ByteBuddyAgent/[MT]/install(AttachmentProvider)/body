@@ -1,3 +1,3 @@
 {
-  return install(attachmentProvider,ProcessProvider.ForCurrentVm.INSTANCE);
+  return install(attachmentProvider,AccessController.getContext());
 }

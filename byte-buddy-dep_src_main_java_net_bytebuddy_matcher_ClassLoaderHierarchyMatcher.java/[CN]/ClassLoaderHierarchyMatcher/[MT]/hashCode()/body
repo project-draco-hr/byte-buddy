@@ -1,3 +1,3 @@
 {
-  return matcher.hashCode();
+  return matcher.hashCode() + 31 * accessControlContext.hashCode();
 }

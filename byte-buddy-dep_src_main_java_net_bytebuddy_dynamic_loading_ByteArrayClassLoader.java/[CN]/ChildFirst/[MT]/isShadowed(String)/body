@@ -8,6 +8,6 @@ synchronized (this) {
       return true;
     }
     Class<?> loadedClass=findLoadedClass(typeName);
-    return loadedClass != null && loadedClass.getClassLoader() == this;
+    return loadedClass != null && ClassLoaderAction.apply(loadedClass,accessControlContext) == this;
   }
 }

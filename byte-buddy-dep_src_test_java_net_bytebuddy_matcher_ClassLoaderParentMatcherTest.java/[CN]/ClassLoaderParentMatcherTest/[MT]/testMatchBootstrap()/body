@@ -1,3 +1,3 @@
 {
-  assertThat(new ClassLoaderParentMatcher<ClassLoader>(child).matches(null),is(true));
+  assertThat(new ClassLoaderParentMatcher<ClassLoader>(child,accessControlContext).matches(null),is(true));
 }

@@ -7,6 +7,6 @@
       return true;
     }
   }
- while ((classLoader=classLoader.getParent()) != null);
+ while ((classLoader=AccessController.doPrivileged(new ParentClassLoaderAction(classLoader))) != null);
   return false;
 }

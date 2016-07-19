@@ -1,3 +1,8 @@
 {
-  modify(ObjectPropertyAssertion.of(type)).specificToString(makeRegex(startsWith)).apply();
+  modify(ObjectPropertyAssertion.of(type)).specificToString(makeRegex(startsWith)).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
+    @Override public AccessControlContext create(){
+      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
+    }
+  }
+).apply();
 }
