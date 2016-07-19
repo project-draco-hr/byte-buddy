@@ -1,3 +1,3 @@
 {
-  return new AgentBased(instrumentation,ClassLoadingDelegate.Explicit.of(type));
+  return of(instrumentation,type,AccessController.getContext());
 }

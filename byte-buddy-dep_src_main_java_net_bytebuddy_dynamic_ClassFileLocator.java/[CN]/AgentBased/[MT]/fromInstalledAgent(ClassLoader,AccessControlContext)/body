@@ -1,0 +1,15 @@
+{
+  try {
+    Instrumentation instrumentation=(Instrumentation)SystemClassLoaderAction.apply(accessControlContext).loadClass(INSTALLER_TYPE).getDeclaredField(INSTRUMENTATION_FIELD).get(STATIC_FIELD);
+    if (instrumentation == null) {
+      throw new IllegalStateException("The Byte Buddy agent is not installed");
+    }
+    return new AgentBased(instrumentation,classLoader,accessControlContext);
+  }
+ catch (  RuntimeException exception) {
+    throw exception;
+  }
+catch (  Exception exception) {
+    throw new IllegalStateException("The Byte Buddy agent is not installed or not accessible",exception);
+  }
+}

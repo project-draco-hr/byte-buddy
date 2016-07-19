@@ -1,0 +1,3 @@
+{
+  this(instrumentation,ClassLoadingDelegate.Default.of(classLoader,accessControlContext),accessControlContext);
+}

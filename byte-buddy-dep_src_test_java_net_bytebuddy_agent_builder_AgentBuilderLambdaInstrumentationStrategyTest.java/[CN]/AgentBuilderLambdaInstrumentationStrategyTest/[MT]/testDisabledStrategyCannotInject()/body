@@ -1,3 +1,0 @@
-{
-  AgentBuilder.Default.LambdaInstrumentationStrategy.DISABLED.call();
-}

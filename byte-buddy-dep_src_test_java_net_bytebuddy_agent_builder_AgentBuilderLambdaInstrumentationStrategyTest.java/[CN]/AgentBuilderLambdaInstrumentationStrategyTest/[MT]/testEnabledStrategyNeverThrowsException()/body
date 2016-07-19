@@ -1,12 +1,12 @@
 {
   ClassFileTransformer initialClassFileTransformer=mock(ClassFileTransformer.class);
-  assertThat(LambdaFactory.register(initialClassFileTransformer,mock(AgentBuilder.Default.LambdaInstrumentationStrategy.LambdaInstanceFactory.class),AgentBuilder.LambdaInstrumentationStrategy.ENABLED),is(true));
+  assertThat(LambdaFactory.register(initialClassFileTransformer,mock(AgentBuilder.Default.LambdaInstrumentationStrategy.LambdaInstanceFactory.class),new AgentBuilder.LambdaInstrumentationStrategy.LambdaInjector(accessControlContext)),is(true));
   try {
     ByteBuddy byteBuddy=mock(ByteBuddy.class);
     Instrumentation instrumentation=mock(Instrumentation.class);
     ClassFileTransformer classFileTransformer=mock(ClassFileTransformer.class);
     try {
-      AgentBuilder.Default.LambdaInstrumentationStrategy.ENABLED.apply(byteBuddy,instrumentation,classFileTransformer,AccessController.getContext());
+      AgentBuilder.Default.LambdaInstrumentationStrategy.ENABLED.apply(byteBuddy,instrumentation,classFileTransformer,accessControlContext);
     }
   finally {
       assertThat(LambdaFactory.release(classFileTransformer),is(false));

@@ -1,3 +1,0 @@
-{
-  this(Default.of(classLoader),types);
-}

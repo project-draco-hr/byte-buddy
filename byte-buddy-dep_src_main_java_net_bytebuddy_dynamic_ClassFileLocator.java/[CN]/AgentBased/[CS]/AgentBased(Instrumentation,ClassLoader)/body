@@ -1,3 +1,0 @@
-{
-  this(instrumentation,ClassLoadingDelegate.Default.of(classLoader));
-}

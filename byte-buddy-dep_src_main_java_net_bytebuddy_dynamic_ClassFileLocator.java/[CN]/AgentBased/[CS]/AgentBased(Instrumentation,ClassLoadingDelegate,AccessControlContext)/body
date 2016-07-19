@@ -4,4 +4,5 @@
   }
   this.instrumentation=instrumentation;
   this.classLoadingDelegate=classLoadingDelegate;
+  this.accessControlContext=accessControlContext;
 }
