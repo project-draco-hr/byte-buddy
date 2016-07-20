@@ -1,4 +1,4 @@
 {
-  URL url=persistenceHandler.url(name,typeDefinitions,accessControlContext);
+  URL url=persistenceHandler.url(name,typeDefinitions);
   return url == null ? super.getResources(name) : new PrependingEnumeration(url,super.getResources(name));
 }
