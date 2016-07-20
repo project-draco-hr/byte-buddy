@@ -2,8 +2,9 @@
   int baseline=Type.getType(descriptor).getSize();
 switch (opcode) {
 case Opcodes.GETFIELD:
-    adjustStack(baseline - 1);
-  break;
+    adjustStack(-1);
+  adjustStack(baseline);
+break;
 case Opcodes.GETSTATIC:
 adjustStack(baseline);
 break;

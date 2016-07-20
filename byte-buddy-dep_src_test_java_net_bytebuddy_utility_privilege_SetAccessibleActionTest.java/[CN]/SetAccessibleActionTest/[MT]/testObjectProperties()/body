@@ -1,0 +1,9 @@
+{
+  final Iterator<AccessibleObject> iterator=Arrays.<AccessibleObject>asList(Foo.class.getDeclaredFields()).iterator();
+  ObjectPropertyAssertion.of(SetAccessibleAction.class).create(new ObjectPropertyAssertion.Creator<AccessibleObject>(){
+    @Override public AccessibleObject create(){
+      return iterator.next();
+    }
+  }
+).apply();
+}

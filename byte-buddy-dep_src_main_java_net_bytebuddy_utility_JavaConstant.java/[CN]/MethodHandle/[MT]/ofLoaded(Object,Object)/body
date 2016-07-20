@@ -1,3 +1,12 @@
 {
-  return ofLoaded(methodHandle,lookup,AccessController.getContext());
+  if (!JavaType.METHOD_HANDLE.getTypeStub().isInstance(methodHandle)) {
+    throw new IllegalArgumentException("Expected method handle object: " + methodHandle);
+  }
+ else   if (!JavaType.METHOD_HANDLES_LOOKUP.getTypeStub().isInstance(lookup)) {
+    throw new IllegalArgumentException("Expected method handle lookup object: " + lookup);
+  }
+  Dispatcher dispatcher=DISPATCHER.initialize();
+  Object methodHandleInfo=dispatcher.reveal(lookup,methodHandle);
+  Object methodType=dispatcher.getMethodType(methodHandleInfo);
+  return new MethodHandle(HandleType.of(dispatcher.getReferenceKind(methodHandleInfo)),new TypeDescription.ForLoadedType(dispatcher.getDeclaringClass(methodHandleInfo)),dispatcher.getName(methodHandleInfo),new TypeDescription.ForLoadedType(dispatcher.returnType(methodType)),new TypeList.ForLoadedTypes(dispatcher.parameterArray(methodType)));
 }

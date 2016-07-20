@@ -7,7 +7,6 @@ case Opcodes.LRETURN:
 case Opcodes.FRETURN:
 case Opcodes.DRETURN:
 case Opcodes.ATHROW:
-case Opcodes.RET:
     current.clear();
   break;
 default :

@@ -1,0 +1,8 @@
+{
+  try {
+    return TypeVariable.class.getDeclaredMethod("getAnnotatedBounds");
+  }
+ catch (  Exception exception) {
+    return NOT_AVAILABLE;
+  }
+}

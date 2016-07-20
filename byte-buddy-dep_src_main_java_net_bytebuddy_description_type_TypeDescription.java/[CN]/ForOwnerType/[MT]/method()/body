@@ -1,0 +1,8 @@
+{
+  try {
+    return Class.forName("java.lang.reflect.AnnotatedType").getDeclaredMethod("getAnnotatedOwnerType");
+  }
+ catch (  Exception exception) {
+    return null;
+  }
+}

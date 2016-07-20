@@ -1,6 +1,6 @@
 {
   adjustStack(SIZE_CHANGE[opcode]);
-  sizes.put(label,new ArrayList<StackSize>(current));
+  sizes.put(label,new ArrayList<StackSize>(opcode == Opcodes.JSR ? CompoundList.of(current,StackSize.SINGLE) : current));
   if (opcode == Opcodes.GOTO) {
     current.clear();
   }

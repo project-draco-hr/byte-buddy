@@ -7,7 +7,7 @@
   }
 ).apply();
   final Iterator<Method> methods2=Arrays.asList(Foo.class.getDeclaredMethods()).iterator();
-  final Iterator<Constructor<?>> constructors2=Arrays.asList(Foo.class.getDeclaredConstructors()).iterator();
+  final Iterator<Constructor<?>> constructors2=Arrays.<Constructor<?>>asList(Foo.class.getDeclaredConstructors()).iterator();
   ObjectPropertyAssertion.of(JavaConstant.MethodHandle.Dispatcher.ForJava7CapableVm.class).create(new ObjectPropertyAssertion.Creator<Method>(){
     @Override public Method create(){
       return methods2.next();

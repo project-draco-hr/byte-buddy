@@ -9,6 +9,9 @@ case Opcodes.LSTORE:
 case Opcodes.DSTORE:
 freeIndex=Math.max(freeIndex,variable + 2);
 break;
+case Opcodes.RET:
+current.clear();
+break;
 }
 adjustStack(SIZE_CHANGE[opcode]);
 super.visitVarInsn(opcode,variable);

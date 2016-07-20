@@ -1,3 +1,0 @@
-{
-  return ofLoaded(methodHandle,DISPATCHER.publicLookup(),accessControlContext);
-}

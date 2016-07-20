@@ -8,15 +8,12 @@
     if (method == null || (!accessible && !method.isAccessible())) {
       method=annotation.annotationType().getDeclaredMethod(methodDescription.getName());
       if (!accessible) {
-        AccessAction.apply(method,AccessController.getContext());
+        AccessController.doPrivileged(new SetAccessibleAction<Method>(method));
       }
     }
     return describe(method.invoke(annotation),methodDescription.getReturnType().asErasure());
   }
- catch (  RuntimeException exception) {
-    throw exception;
-  }
-catch (  Exception exception) {
-    throw new IllegalStateException("Cannot access annotation property " + methodDescription,exception);
+ catch (  Exception exception) {
+    throw new IllegalStateException("Cannot access annotation property " + methodDescription,exception.getCause());
   }
 }

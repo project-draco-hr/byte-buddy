@@ -1,0 +1,5 @@
+{
+  AccessibleObjectSpy accessibleObjectSpy=new AccessibleObjectSpy(Foo.class.getDeclaredField(BAR));
+  assertThat(new SetAccessibleAction<AccessibleObjectSpy>(accessibleObjectSpy).run(),is(accessibleObjectSpy));
+  assertThat(accessibleObjectSpy.accessible,is(true));
+}

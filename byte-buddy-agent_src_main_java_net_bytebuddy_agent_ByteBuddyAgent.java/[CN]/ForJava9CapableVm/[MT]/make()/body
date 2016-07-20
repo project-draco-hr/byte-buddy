@@ -2,10 +2,7 @@
   try {
     return new ForJava9CapableVm(Class.forName("java.lang.ProcessHandle").getDeclaredMethod("current"),Class.forName("java.lang.ProcessHandle").getDeclaredMethod("getPid"));
   }
- catch (  RuntimeException exception) {
-    throw exception;
-  }
-catch (  Exception ignored) {
+ catch (  Exception ignored) {
     return ForLegacyVm.INSTANCE;
   }
 }

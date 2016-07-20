@@ -1,0 +1,6 @@
+{
+  Class<?> type=new ByteBuddy(ClassFileVersion.JAVA_V4).subclass(Object.class).defineMethod(FOO,String.class,Visibility.PUBLIC).intercept(new JsrRetMethod()).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER_PERSISTENT).getLoaded();
+  assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),is((Object)FOO));
+  Class<?> advised=new ByteBuddy().redefine(type).visit(Advice.to(JsrAdvice.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(advised.getDeclaredMethod(FOO).invoke(advised.newInstance()),is((Object)BAR));
+}

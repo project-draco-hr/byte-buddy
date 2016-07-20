@@ -1,0 +1,8 @@
+{
+  try {
+    return Class.forName("java.lang.reflect.AnnotatedWildcardType").getDeclaredMethod("getAnnotatedUpperBounds");
+  }
+ catch (  Exception exception) {
+    return NOT_AVAILABLE;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  try {
+    return Class.forName("java.lang.reflect.AnnotatedParameterizedType").getDeclaredMethod("getAnnotatedActualTypeArguments");
+  }
+ catch (  Exception exception) {
+    return NOT_AVAILABLE;
+  }
+}

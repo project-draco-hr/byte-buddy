@@ -1,0 +1,12 @@
+{
+  Label target=new Label();
+  methodVisitor.visitJumpInsn(Opcodes.JSR,target);
+  methodVisitor.visitVarInsn(Opcodes.ALOAD,1);
+  methodVisitor.visitInsn(Opcodes.ARETURN);
+  methodVisitor.visitLabel(target);
+  methodVisitor.visitVarInsn(Opcodes.ASTORE,2);
+  methodVisitor.visitLdcInsn(FOO);
+  methodVisitor.visitVarInsn(Opcodes.ASTORE,1);
+  methodVisitor.visitVarInsn(Opcodes.RET,2);
+  return new Size(1,3);
+}
