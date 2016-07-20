@@ -1,3 +1,3 @@
 {
-  return build(AccessController.getContext());
+  return classLoaders.size() == 1 ? classLoaders.get(ONLY) : new MultipleParentClassLoader(classLoaders);
 }

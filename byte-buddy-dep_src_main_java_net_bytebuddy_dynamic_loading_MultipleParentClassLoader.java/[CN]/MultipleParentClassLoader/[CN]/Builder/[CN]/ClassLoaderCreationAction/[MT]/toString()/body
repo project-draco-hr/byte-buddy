@@ -1,3 +1,0 @@
-{
-  return "MultipleParentClassLoader.Builder.ClassLoaderCreationAction{" + "classLoaders=" + classLoaders + '}';
-}

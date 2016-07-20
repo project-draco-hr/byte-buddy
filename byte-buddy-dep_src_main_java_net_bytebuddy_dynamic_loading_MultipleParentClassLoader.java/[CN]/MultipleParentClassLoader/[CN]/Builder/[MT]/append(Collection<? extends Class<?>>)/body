@@ -1,3 +1,7 @@
 {
-  return append(AccessController.getContext(),types);
+  List<ClassLoader> classLoaders=new ArrayList<ClassLoader>(types.size());
+  for (  Class<?> type : types) {
+    classLoaders.add(type.getClassLoader());
+  }
+  return append(classLoaders);
 }

@@ -1,3 +1,0 @@
-{
-  return append(accessControlContext,Arrays.asList(type));
-}
