@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Default.ExecutingTransformer.Java9CapableVmDispatcher{" + "outer=" + ExecutingTransformer.this + ", rawModule="+ rawModule+ ", internalTypeName='"+ internalTypeName+ '\''+ ", classBeingRedefined="+ classBeingRedefined+ ", protectionDomain="+ protectionDomain+ ", binaryRepresentation=<"+ binaryRepresentation.length+ " bytes>"+ '}';
+}

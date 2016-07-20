@@ -1,7 +1,6 @@
 {
   try {
-    Class<?> version=Class.forName("java.lang.Runtime$Version");
-    return new VersionLocator.ForJava9CapableVm(version.getDeclaredMethod("current"),version.getDeclaredMethod("major"));
+    return new VersionLocator.ForJava9CapableVm(Runtime.class.getDeclaredMethod("version"),Class.forName("java.lang.Runtime$Version").getDeclaredMethod("major"));
   }
  catch (  Exception ignored) {
     return VersionLocator.ForLegacyVm.INSTANCE;

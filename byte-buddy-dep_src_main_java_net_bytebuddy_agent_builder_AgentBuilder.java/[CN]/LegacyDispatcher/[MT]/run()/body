@@ -1,0 +1,3 @@
+{
+  return transform(JavaModule.UNSUPPORTED,classLoader,internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation);
+}

@@ -1,4 +1,3 @@
 {
-  JavaModule module=JavaModule.of(rawModule);
-  return transform(module,module.getClassLoader(accessControlContext),internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation);
+  return AccessController.doPrivileged(new Java9CapableVmDispatcher(rawModule,internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation));
 }

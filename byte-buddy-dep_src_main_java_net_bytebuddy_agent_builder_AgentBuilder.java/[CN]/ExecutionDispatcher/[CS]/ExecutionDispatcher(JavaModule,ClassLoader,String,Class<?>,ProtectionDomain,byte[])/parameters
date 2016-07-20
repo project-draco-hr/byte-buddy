@@ -1,0 +1,6 @@
+JavaModule module
+ClassLoader classLoader
+String binaryTypeName
+Class<?> classBeingRedefined
+ProtectionDomain protectionDomain
+byte[] binaryRepresentation
