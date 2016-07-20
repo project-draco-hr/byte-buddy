@@ -1,3 +1,0 @@
-{
-  return rebase(type,ClassFileLocator.ForClassLoader.of(ClassLoaderAction.apply(type,accessControlContext),accessControlContext));
-}

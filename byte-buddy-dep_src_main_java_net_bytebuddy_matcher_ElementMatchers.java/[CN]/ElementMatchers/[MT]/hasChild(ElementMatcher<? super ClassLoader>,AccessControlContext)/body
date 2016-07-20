@@ -1,3 +1,0 @@
-{
-  return new ClassLoaderHierarchyMatcher<T>(matcher,accessControlContext);
-}

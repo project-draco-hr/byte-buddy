@@ -1,3 +1,0 @@
-ClassLoader classLoader
-Collection<? extends Class<?>> types
-AccessControlContext accessControlContext

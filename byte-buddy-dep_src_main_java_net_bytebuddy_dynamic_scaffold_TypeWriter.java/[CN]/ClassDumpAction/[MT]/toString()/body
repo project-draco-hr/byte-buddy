@@ -1,0 +1,3 @@
+{
+  return "TypeWriter.Default.ClassDumpAction{" + "target=" + target + ", instrumentedType="+ instrumentedType+ ", binaryRepresentation=<"+ binaryRepresentation.length+ " bytes>"+ '}';
+}

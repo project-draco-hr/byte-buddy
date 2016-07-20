@@ -1,7 +1,7 @@
 {
   Vector<Class<?>> classes;
   try {
-    classes=DISPATCHER.initialize(accessControlContext).extract(classLoader);
+    classes=DISPATCHER.initialize().extract(classLoader);
   }
  catch (  RuntimeException ignored) {
     return super.locate(name);

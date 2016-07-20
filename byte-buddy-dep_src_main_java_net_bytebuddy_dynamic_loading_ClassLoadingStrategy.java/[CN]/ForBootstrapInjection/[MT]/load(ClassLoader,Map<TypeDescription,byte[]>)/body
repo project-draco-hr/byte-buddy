@@ -1,4 +1,4 @@
 {
-  ClassInjector classInjector=classLoader == null ? ClassInjector.UsingInstrumentation.of(folder,ClassInjector.UsingInstrumentation.Target.BOOTSTRAP,instrumentation,accessControlContext) : new ClassInjector.UsingReflection(classLoader,accessControlContext);
+  ClassInjector classInjector=classLoader == null ? ClassInjector.UsingInstrumentation.of(folder,ClassInjector.UsingInstrumentation.Target.BOOTSTRAP,instrumentation) : new ClassInjector.UsingReflection(classLoader);
   return classInjector.inject(types);
 }

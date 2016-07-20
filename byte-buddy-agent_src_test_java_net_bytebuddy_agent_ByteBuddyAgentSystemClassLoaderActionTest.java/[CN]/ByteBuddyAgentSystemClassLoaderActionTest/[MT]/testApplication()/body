@@ -1,3 +1,0 @@
-{
-  assertThat(ByteBuddyAgent.SystemClassLoaderAction.apply(AccessController.getContext()),is(ClassLoader.getSystemClassLoader()));
-}

@@ -1,8 +1,0 @@
-{
-  if (!instrumentation.isRetransformClassesSupported()) {
-    throw new IllegalArgumentException(instrumentation + " does not support retransformation");
-  }
-  this.instrumentation=instrumentation;
-  this.classLoadingDelegate=classLoadingDelegate;
-  this.accessControlContext=accessControlContext;
-}

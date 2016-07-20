@@ -2,6 +2,6 @@
   AgentBuilder.Default.BootstrapInjectionStrategy bootstrapInjectionStrategy=mock(AgentBuilder.Default.BootstrapInjectionStrategy.class);
   ClassLoader classLoader=mock(ClassLoader.class);
   ProtectionDomain protectionDomain=mock(ProtectionDomain.class);
-  assertThat(new AgentBuilder.Default.Transformation.Simple.Resolution.BootstrapClassLoaderCapableInjectorFactory(bootstrapInjectionStrategy,classLoader,protectionDomain,accessControlContext).resolve(),is((ClassInjector)new ClassInjector.UsingReflection(classLoader,protectionDomain,accessControlContext)));
+  assertThat(new AgentBuilder.Default.Transformation.Simple.Resolution.BootstrapClassLoaderCapableInjectorFactory(bootstrapInjectionStrategy,classLoader,protectionDomain).resolve(),is((ClassInjector)new ClassInjector.UsingReflection(classLoader,protectionDomain)));
   verifyZeroInteractions(bootstrapInjectionStrategy);
 }

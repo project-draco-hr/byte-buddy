@@ -1,3 +1,0 @@
-{
-  return "ByteBuddyAgent.AttachmentProvider.ForToolsJarVm.SystemPropertyAction." + name();
-}

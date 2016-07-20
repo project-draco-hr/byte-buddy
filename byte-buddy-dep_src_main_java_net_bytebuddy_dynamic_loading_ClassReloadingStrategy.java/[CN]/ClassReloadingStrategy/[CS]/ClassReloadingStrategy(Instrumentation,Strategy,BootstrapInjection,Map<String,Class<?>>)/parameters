@@ -1,0 +1,4 @@
+Instrumentation instrumentation
+Strategy strategy
+BootstrapInjection bootstrapInjection
+Map<String,Class<?>> preregisteredTypes

@@ -1,3 +1,4 @@
 {
-  return isExtensionClassLoader(AccessController.getContext());
+  ClassLoader classLoader=ClassLoader.getSystemClassLoader().getParent();
+  return classLoader == null ? ElementMatchers.<T>none() : new EqualityMatcher<T>(classLoader);
 }

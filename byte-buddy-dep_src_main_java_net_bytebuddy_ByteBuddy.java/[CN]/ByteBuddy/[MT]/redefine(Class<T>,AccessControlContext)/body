@@ -1,3 +1,0 @@
-{
-  return redefine(type,ClassFileLocator.ForClassLoader.of(ClassLoaderAction.apply(type,accessControlContext),accessControlContext));
-}

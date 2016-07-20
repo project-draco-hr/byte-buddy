@@ -1,3 +1,4 @@
 {
-  return to(enterAdvice,exitAdvice,AccessController.getContext());
+  ClassLoader enterLoader=enterAdvice.getClassLoader(), exitLoader=exitAdvice.getClassLoader();
+  return to(enterAdvice,exitAdvice,enterLoader == exitLoader ? ClassFileLocator.ForClassLoader.of(enterLoader) : new ClassFileLocator.Compound(ClassFileLocator.ForClassLoader.of(enterLoader),ClassFileLocator.ForClassLoader.of(exitLoader)));
 }

@@ -1,3 +1,3 @@
 {
-  assertThat(AgentBuilder.LocationStrategy.ForClassLoader.WEAK.classFileLocator(classLoader,module,accessControlContext),is(ClassFileLocator.ForClassLoader.WeaklyReferenced.of(classLoader)));
+  assertThat(AgentBuilder.LocationStrategy.ForClassLoader.WEAK.classFileLocator(classLoader,module),is(ClassFileLocator.ForClassLoader.WeaklyReferenced.of(classLoader)));
 }

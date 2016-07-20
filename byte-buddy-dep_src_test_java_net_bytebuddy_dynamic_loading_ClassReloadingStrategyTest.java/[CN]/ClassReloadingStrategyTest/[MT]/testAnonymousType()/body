@@ -3,7 +3,7 @@
   Instrumentation instrumentation=ByteBuddyAgent.install();
   Class<?> factory=classLoader.loadClass(LAMBDA_SAMPLE_FACTORY);
   @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)factory.getDeclaredMethod("nonCapturing").invoke(factory.newInstance());
-  ClassReloadingStrategy classReloadingStrategy=new ClassReloadingStrategy(instrumentation,ClassReloadingStrategy.Strategy.RETRANSFORMATION,AccessController.getContext()).preregistered(instance.getClass());
+  ClassReloadingStrategy classReloadingStrategy=new ClassReloadingStrategy(instrumentation,ClassReloadingStrategy.Strategy.RETRANSFORMATION).preregistered(instance.getClass());
   ClassFileLocator classFileLocator=ClassFileLocator.AgentBased.of(instrumentation,instance.getClass());
   try {
     assertThat(instance.call(),is(FOO));

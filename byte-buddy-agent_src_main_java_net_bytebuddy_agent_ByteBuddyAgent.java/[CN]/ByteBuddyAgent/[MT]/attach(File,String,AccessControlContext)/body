@@ -1,3 +1,0 @@
-{
-  attach(agentJar,processId,AttachmentProvider.DEFAULT,accessControlContext);
-}

@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  ClassDumpAction that=(ClassDumpAction)object;
+  return instrumentedType.equals(that.instrumentedType) && target.equals(that.target) && Arrays.equals(binaryRepresentation,that.binaryRepresentation);
+}

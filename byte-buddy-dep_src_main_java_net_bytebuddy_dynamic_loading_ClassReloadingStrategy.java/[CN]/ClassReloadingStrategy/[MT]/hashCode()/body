@@ -3,6 +3,5 @@
   result=31 * result + strategy.hashCode();
   result=31 * result + bootstrapInjection.hashCode();
   result=31 * result + preregisteredTypes.hashCode();
-  result=31 * result + accessControlContext.hashCode();
   return result;
 }

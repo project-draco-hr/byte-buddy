@@ -1,0 +1,3 @@
+{
+  this(instrumentation,strategy,BootstrapInjection.Disabled.INSTANCE,Collections.<String,Class<?>>emptyMap());
+}

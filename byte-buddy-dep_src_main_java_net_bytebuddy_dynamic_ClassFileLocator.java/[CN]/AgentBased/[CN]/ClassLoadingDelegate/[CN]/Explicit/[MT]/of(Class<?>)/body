@@ -1,3 +1,3 @@
 {
-  return of(type,AccessController.getContext());
+  return new Explicit(type.getClassLoader(),Collections.singleton(type));
 }

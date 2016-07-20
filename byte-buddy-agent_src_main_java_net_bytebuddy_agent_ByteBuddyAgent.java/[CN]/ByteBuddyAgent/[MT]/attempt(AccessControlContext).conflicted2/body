@@ -1,4 +1,0 @@
-{
-  File toolsJar=new File(SystemPropertyAction.apply(accessControlContext).replace('\\','/') + "/../" + toolsJarPath);
-  return toolsJar.isFile() && toolsJar.canRead() ? Accessor.Simple.of(ClassLoaderCreationAction.apply(toolsJar,accessControlContext)) : Accessor.Unavailable.INSTANCE;
-}

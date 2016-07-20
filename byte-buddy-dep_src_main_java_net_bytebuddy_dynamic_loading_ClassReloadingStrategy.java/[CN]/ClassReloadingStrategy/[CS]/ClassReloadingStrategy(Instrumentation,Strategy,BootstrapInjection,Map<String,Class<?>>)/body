@@ -1,0 +1,6 @@
+{
+  this.instrumentation=instrumentation;
+  this.strategy=strategy.validate(instrumentation);
+  this.bootstrapInjection=bootstrapInjection;
+  this.preregisteredTypes=preregisteredTypes;
+}

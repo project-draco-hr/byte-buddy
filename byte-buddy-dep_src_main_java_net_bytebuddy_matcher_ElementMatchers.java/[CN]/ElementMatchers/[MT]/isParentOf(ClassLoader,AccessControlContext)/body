@@ -1,3 +1,0 @@
-{
-  return classLoader == BOOTSTRAP_CLASSLOADER ? ElementMatchers.<T>isBootstrapClassLoader() : new ClassLoaderParentMatcher<T>(classLoader,accessControlContext);
-}

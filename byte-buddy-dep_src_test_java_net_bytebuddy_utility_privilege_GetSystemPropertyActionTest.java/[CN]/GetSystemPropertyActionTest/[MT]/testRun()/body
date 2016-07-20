@@ -1,0 +1,9 @@
+{
+  System.setProperty(FOO,BAR);
+  try {
+    assertThat(new GetSystemPropertyAction(FOO).run(),is(BAR));
+  }
+  finally {
+    System.clearProperty(FOO);
+  }
+}

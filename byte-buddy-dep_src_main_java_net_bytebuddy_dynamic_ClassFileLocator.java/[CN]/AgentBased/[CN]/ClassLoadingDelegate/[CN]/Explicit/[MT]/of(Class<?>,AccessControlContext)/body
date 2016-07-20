@@ -1,3 +1,0 @@
-{
-  return new Explicit(ClassLoaderAction.apply(type,accessControlContext),Collections.singleton(type),accessControlContext);
-}

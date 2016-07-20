@@ -1,9 +1,0 @@
-{
-  final Iterator<Class<?>> iterator=Arrays.<Class<?>>asList(Object.class,String.class).iterator();
-  ObjectPropertyAssertion.of(ProtectionDomainAction.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
-    @Override public Class<?> create(){
-      return iterator.next();
-    }
-  }
-).apply();
-}

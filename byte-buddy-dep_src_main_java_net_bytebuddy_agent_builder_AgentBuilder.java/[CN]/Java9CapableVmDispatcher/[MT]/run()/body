@@ -1,4 +1,4 @@
 {
   JavaModule module=JavaModule.of(rawModule);
-  return transform(module,module.getClassLoader(accessControlContext),internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation);
+  return transform(module,module.getClassLoader(),internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation);
 }

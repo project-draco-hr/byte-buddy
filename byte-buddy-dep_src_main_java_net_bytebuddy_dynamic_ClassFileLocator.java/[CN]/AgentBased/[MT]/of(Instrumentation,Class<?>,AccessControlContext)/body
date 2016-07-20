@@ -1,3 +1,0 @@
-{
-  return new AgentBased(instrumentation,ClassLoadingDelegate.Explicit.of(type,accessControlContext),accessControlContext);
-}

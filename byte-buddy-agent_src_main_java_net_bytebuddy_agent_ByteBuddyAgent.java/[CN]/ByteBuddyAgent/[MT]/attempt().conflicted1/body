@@ -1,0 +1,3 @@
+{
+  return Accessor.Simple.of(ClassLoader.getSystemClassLoader());
+}

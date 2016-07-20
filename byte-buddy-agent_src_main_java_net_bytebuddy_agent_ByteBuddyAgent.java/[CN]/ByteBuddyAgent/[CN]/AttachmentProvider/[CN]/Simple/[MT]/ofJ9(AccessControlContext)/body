@@ -1,8 +1,0 @@
-{
-  try {
-    return new Simple(SystemClassLoaderAction.apply(accessControlContext).loadClass(VIRTUAL_MACHINE_TYPE_NAME_J9));
-  }
- catch (  ClassNotFoundException ignored) {
-    return Unavailable.INSTANCE;
-  }
-}

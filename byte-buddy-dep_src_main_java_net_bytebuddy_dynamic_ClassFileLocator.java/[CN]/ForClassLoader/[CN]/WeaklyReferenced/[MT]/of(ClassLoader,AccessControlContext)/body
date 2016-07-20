@@ -1,3 +1,0 @@
-{
-  return classLoader == null || classLoader == SystemClassLoaderAction.apply(accessControlContext) ? ForClassLoader.of(classLoader,accessControlContext) : new WeaklyReferenced(classLoader);
-}

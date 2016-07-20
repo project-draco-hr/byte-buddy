@@ -5,11 +5,6 @@
       when(mock.isRetransformClassesSupported()).thenReturn(true);
     }
   }
-).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
-    @Override public AccessControlContext create(){
-      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
-    }
-  }
 ).apply();
   ObjectPropertyAssertion.of(ClassReloadingStrategy.BootstrapInjection.Enabled.class).apply();
   ObjectPropertyAssertion.of(ClassReloadingStrategy.Strategy.class).apply();

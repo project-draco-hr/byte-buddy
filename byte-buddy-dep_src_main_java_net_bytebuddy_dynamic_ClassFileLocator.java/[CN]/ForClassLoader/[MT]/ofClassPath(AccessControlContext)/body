@@ -1,3 +1,0 @@
-{
-  return new ForClassLoader(SystemClassLoaderAction.apply(accessControlContext));
-}

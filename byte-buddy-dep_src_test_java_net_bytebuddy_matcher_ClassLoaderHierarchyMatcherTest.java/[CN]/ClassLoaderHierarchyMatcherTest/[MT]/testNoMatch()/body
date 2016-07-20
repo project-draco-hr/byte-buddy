@@ -1,5 +1,5 @@
 {
-  assertThat(new ClassLoaderHierarchyMatcher<ClassLoader>(classLoaderMatcher,AccessController.getContext()).matches(classLoader),is(false));
+  assertThat(new ClassLoaderHierarchyMatcher<ClassLoader>(classLoaderMatcher).matches(classLoader),is(false));
   verify(classLoaderMatcher).matches(classLoader);
   verify(classLoaderMatcher).matches(null);
   verifyNoMoreInteractions(classLoaderMatcher);

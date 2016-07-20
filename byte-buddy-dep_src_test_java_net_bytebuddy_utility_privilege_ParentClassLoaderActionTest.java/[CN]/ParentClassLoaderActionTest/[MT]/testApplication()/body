@@ -1,3 +1,0 @@
-{
-  assertThat(ParentClassLoaderAction.apply(getClass().getClassLoader(),AccessController.getContext()),is(getClass().getClassLoader().getParent()));
-}

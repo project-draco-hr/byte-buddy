@@ -1,3 +1,3 @@
 {
-  return AccessController.doPrivileged(SystemClassLoaderAction.INSTANCE);
+  return ClassLoader.getSystemClassLoader();
 }

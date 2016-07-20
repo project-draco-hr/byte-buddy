@@ -1,7 +1,0 @@
-{
-  this.instrumentation=instrumentation;
-  this.strategy=strategy.validate(instrumentation);
-  this.accessControlContext=accessControlContext;
-  this.bootstrapInjection=bootstrapInjection;
-  this.preregisteredTypes=preregisteredTypes;
-}

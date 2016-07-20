@@ -12,7 +12,7 @@
   verify(initializationStrategy).dispatcher();
   verifyNoMoreInteractions(initializationStrategy);
   verify(dispatcher).apply(builder);
-  verify(dispatcher).register(dynamicType,REDEFINED.getClassLoader(),new AgentBuilder.Default.Transformation.Simple.Resolution.BootstrapClassLoaderCapableInjectorFactory(AgentBuilder.Default.BootstrapInjectionStrategy.Disabled.INSTANCE,REDEFINED.getClassLoader(),REDEFINED.getProtectionDomain(),accessControlContext));
+  verify(dispatcher).register(dynamicType,REDEFINED.getClassLoader(),new AgentBuilder.Default.Transformation.Simple.Resolution.BootstrapClassLoaderCapableInjectorFactory(AgentBuilder.Default.BootstrapInjectionStrategy.Disabled.INSTANCE,REDEFINED.getClassLoader(),REDEFINED.getProtectionDomain()));
   verifyNoMoreInteractions(dispatcher);
   verify(typeMatcher,times(2)).matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),REDEFINED,REDEFINED.getProtectionDomain());
   verifyNoMoreInteractions(typeMatcher);

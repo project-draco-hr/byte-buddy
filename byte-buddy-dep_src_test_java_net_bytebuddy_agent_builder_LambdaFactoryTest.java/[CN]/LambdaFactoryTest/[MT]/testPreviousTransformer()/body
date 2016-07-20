@@ -1,8 +1,8 @@
 {
   PseudoFactory pseudoFactory=new PseudoFactory();
   try {
-    assertThat(LambdaFactory.register(classFileTransformer,pseudoFactory,new AgentBuilder.LambdaInstrumentationStrategy.LambdaInjector(accessControlContext)),is(true));
-    assertThat(LambdaFactory.register(otherTransformer,pseudoFactory,new AgentBuilder.LambdaInstrumentationStrategy.LambdaInjector(accessControlContext)),is(false));
+    assertThat(LambdaFactory.register(classFileTransformer,pseudoFactory,AgentBuilder.LambdaInstrumentationStrategy.LambdaInjector.INSTANCE),is(true));
+    assertThat(LambdaFactory.register(otherTransformer,pseudoFactory,AgentBuilder.LambdaInstrumentationStrategy.LambdaInjector.INSTANCE),is(false));
   }
   finally {
     assertThat(LambdaFactory.release(classFileTransformer),is(false));

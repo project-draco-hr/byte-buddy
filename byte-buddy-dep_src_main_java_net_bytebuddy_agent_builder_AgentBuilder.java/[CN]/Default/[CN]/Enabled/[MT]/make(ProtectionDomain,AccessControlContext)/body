@@ -1,3 +1,0 @@
-{
-  return ClassInjector.UsingInstrumentation.of(folder,ClassInjector.UsingInstrumentation.Target.BOOTSTRAP,instrumentation,accessControlContext);
-}

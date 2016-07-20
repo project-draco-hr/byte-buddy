@@ -1,7 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  if (!super.equals(other))   return false;
-  ForDelegatingClassLoader that=(ForDelegatingClassLoader)other;
-  return accessControlContext.equals(that.accessControlContext);
-}

@@ -3,5 +3,5 @@
   for (  Class<?> aType : type) {
     preregisteredTypes.put(TypeDescription.ForLoadedType.getName(aType),aType);
   }
-  return new ClassReloadingStrategy(instrumentation,strategy,accessControlContext,bootstrapInjection,preregisteredTypes);
+  return new ClassReloadingStrategy(instrumentation,strategy,bootstrapInjection,preregisteredTypes);
 }

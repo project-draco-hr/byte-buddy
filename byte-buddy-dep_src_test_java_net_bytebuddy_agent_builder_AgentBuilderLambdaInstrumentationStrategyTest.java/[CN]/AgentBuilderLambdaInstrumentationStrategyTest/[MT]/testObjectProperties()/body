@@ -1,11 +1,6 @@
 {
   ObjectPropertyAssertion.of(AgentBuilder.Default.LambdaInstrumentationStrategy.class).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.Default.LambdaInstrumentationStrategy.LambdaInjector.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
-    @Override public AccessControlContext create(){
-      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
-    }
-  }
-).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.LambdaInstrumentationStrategy.LambdaInjector.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Default.LambdaInstrumentationStrategy.MetaFactoryRedirection.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Default.LambdaInstrumentationStrategy.AlternativeMetaFactoryRedirection.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Default.LambdaInstrumentationStrategy.LambdaInstanceFactory.class).apply();

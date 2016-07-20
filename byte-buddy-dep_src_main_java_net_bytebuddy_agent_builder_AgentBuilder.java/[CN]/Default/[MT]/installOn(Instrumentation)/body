@@ -5,20 +5,20 @@
     if (nativeMethodStrategy.isEnabled(instrumentation)) {
       instrumentation.setNativeMethodPrefix(classFileTransformer,nativeMethodStrategy.getPrefix());
     }
-    lambdaInstrumentationStrategy.apply(byteBuddy,instrumentation,classFileTransformer,accessControlContext);
+    lambdaInstrumentationStrategy.apply(byteBuddy,instrumentation,classFileTransformer);
     if (redefinitionStrategy.isEnabled()) {
       RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
       for (      Class<?> type : instrumentation.getAllLoadedClasses()) {
         JavaModule module=JavaModule.ofType(type);
         try {
-          TypeDescription typeDescription=descriptionStrategy.apply(type,typeLocator,locationStrategy,accessControlContext);
-          if (!instrumentation.isModifiableClass(type) || !collector.consider(typeDescription,type,ignoredTypeMatcher,accessControlContext)) {
+          TypeDescription typeDescription=descriptionStrategy.apply(type,typeLocator,locationStrategy);
+          if (!instrumentation.isModifiableClass(type) || !collector.consider(typeDescription,type,ignoredTypeMatcher)) {
             try {
               try {
-                listener.onIgnored(typeDescription,ClassLoaderAction.apply(type,accessControlContext),module);
+                listener.onIgnored(typeDescription,type.getClassLoader(),module);
               }
   finally {
-                listener.onComplete(typeDescription.getName(),ClassLoaderAction.apply(type,accessControlContext),module);
+                listener.onComplete(typeDescription.getName(),type.getClassLoader(),module);
               }
             }
  catch (            Throwable ignored) {
@@ -28,17 +28,17 @@
  catch (        Throwable throwable) {
           try {
             try {
-              listener.onError(TypeDescription.ForLoadedType.getName(type),ClassLoaderAction.apply(type,accessControlContext),module,throwable);
+              listener.onError(TypeDescription.ForLoadedType.getName(type),type.getClassLoader(),module,throwable);
             }
   finally {
-              listener.onComplete(TypeDescription.ForLoadedType.getName(type),ClassLoaderAction.apply(type,accessControlContext),module);
+              listener.onComplete(TypeDescription.ForLoadedType.getName(type),type.getClassLoader(),module);
             }
           }
  catch (          Throwable ignored) {
           }
         }
       }
-      collector.apply(instrumentation,typeLocator,locationStrategy,listener,accessControlContext);
+      collector.apply(instrumentation,typeLocator,locationStrategy,listener);
     }
     return classFileTransformer;
   }

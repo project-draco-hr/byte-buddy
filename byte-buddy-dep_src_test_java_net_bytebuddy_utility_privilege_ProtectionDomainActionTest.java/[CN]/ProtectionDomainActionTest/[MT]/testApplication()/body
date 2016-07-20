@@ -1,3 +1,0 @@
-{
-  assertThat(ProtectionDomainAction.apply(getClass(),AccessController.getContext()),is(getClass().getProtectionDomain()));
-}

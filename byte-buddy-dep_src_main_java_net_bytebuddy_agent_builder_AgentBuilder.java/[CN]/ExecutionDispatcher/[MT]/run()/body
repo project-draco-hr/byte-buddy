@@ -1,6 +1,6 @@
 {
   try {
-    ClassFileLocator classFileLocator=ClassFileLocator.Simple.of(binaryTypeName,binaryRepresentation,locationStrategy.classFileLocator(classLoader,module,accessControlContext));
+    ClassFileLocator classFileLocator=ClassFileLocator.Simple.of(binaryTypeName,binaryRepresentation,locationStrategy.classFileLocator(classLoader,module));
     TypePool typePool=typeLocator.typePool(classFileLocator,classLoader);
     return transformation.resolve(descriptionStrategy.apply(binaryTypeName,classBeingRedefined,typePool),classLoader,module,classBeingRedefined,protectionDomain,typePool,ignoredTypeMatcher).apply(initializationStrategy,classFileLocator,typeStrategy,byteBuddy,nativeMethodStrategy,bootstrapInjectionStrategy,accessControlContext,listener);
   }

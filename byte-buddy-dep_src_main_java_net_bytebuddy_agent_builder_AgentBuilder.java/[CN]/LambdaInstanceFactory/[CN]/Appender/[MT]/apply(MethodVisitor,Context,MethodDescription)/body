@@ -1,0 +1,3 @@
+{
+  return new Size(new StackManipulation.Compound(TypeCreation.of(instrumentedType),Duplication.SINGLE,MethodVariableAccess.allArgumentsOf(instrumentedMethod),MethodInvocation.invoke(instrumentedType.getDeclaredMethods().filter(isConstructor()).getOnly()),MethodReturn.REFERENCE).apply(methodVisitor,implementationContext).getMaximalSize(),instrumentedMethod.getStackSize());
+}

@@ -1,3 +1,0 @@
-{
-  return Accessor.Simple.ofJ9(accessControlContext);
-}

@@ -1,0 +1,3 @@
+BootstrapInjectionStrategy bootstrapInjectionStrategy
+ClassLoader classLoader
+ProtectionDomain protectionDomain

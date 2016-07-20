@@ -1,5 +1,6 @@
 {
   ObjectPropertyAssertion.of(TypeWriter.Default.UnresolvedType.class).apply();
+  ObjectPropertyAssertion.of(TypeWriter.Default.ClassDumpAction.class).apply();
   ObjectPropertyAssertion.of(TypeWriter.Default.ForCreation.class).apply();
   ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.class).apply();
   ObjectPropertyAssertion.of(TypeWriter.Default.ForInlining.ContextRegistry.class).applyBasic();

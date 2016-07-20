@@ -1,0 +1,9 @@
+{
+  for (  AttachmentProvider attachmentProvider : attachmentProviders) {
+    Accessor accessor=attachmentProvider.attempt();
+    if (accessor.isAvailable()) {
+      return accessor;
+    }
+  }
+  return Accessor.Unavailable.INSTANCE;
+}

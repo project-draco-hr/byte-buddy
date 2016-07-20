@@ -1,3 +1,3 @@
 {
-  return ofClassPath(AccessController.getContext());
+  return new ForClassLoader(ClassLoader.getSystemClassLoader());
 }

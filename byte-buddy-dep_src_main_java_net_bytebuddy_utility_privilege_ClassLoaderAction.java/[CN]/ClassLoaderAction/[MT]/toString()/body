@@ -1,3 +1,0 @@
-{
-  return "ClassLoaderAction{" + "type=" + type + '}';
-}

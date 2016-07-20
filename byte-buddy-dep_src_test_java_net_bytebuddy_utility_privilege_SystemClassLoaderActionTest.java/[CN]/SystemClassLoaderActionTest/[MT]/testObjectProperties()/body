@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(SystemClassLoaderAction.class).apply();
-}

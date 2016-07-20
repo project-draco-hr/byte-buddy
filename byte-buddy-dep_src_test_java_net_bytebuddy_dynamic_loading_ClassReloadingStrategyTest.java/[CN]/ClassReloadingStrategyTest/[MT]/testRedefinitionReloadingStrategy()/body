@@ -2,7 +2,7 @@
   assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   Foo foo=new Foo();
   assertThat(foo.foo(),is(FOO));
-  ClassReloadingStrategy classReloadingStrategy=new ClassReloadingStrategy(ByteBuddyAgent.getInstrumentation(),ClassReloadingStrategy.Strategy.REDEFINITION,AccessController.getContext());
+  ClassReloadingStrategy classReloadingStrategy=new ClassReloadingStrategy(ByteBuddyAgent.getInstrumentation(),ClassReloadingStrategy.Strategy.REDEFINITION);
   new ByteBuddy().redefine(Foo.class).method(named(FOO)).intercept(FixedValue.value(BAR)).make().load(Foo.class.getClassLoader(),classReloadingStrategy);
   try {
     assertThat(foo.foo(),is(BAR));

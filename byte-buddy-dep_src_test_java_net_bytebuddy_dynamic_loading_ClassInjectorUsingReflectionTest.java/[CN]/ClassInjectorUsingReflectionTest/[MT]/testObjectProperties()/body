@@ -1,10 +1,5 @@
 {
-  ObjectPropertyAssertion.of(ClassInjector.UsingReflection.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
-    @Override public AccessControlContext create(){
-      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
-    }
-  }
-).apply();
+  ObjectPropertyAssertion.of(ClassInjector.UsingReflection.class).apply();
   final Iterator<Method> iterator=Arrays.asList(Object.class.getDeclaredMethods()).iterator();
   ObjectPropertyAssertion.of(ClassInjector.UsingReflection.Dispatcher.Resolved.class).create(new ObjectPropertyAssertion.Creator<Method>(){
     @Override public Method create(){

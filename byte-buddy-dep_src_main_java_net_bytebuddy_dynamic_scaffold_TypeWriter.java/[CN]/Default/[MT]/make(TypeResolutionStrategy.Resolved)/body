@@ -2,16 +2,10 @@
   UnresolvedType unresolvedType=create(typeResolutionStrategy.injectedInto(typeInitializer));
   if (DUMP_FOLDER != null) {
     try {
-      OutputStream outputStream=new FileOutputStream(new File(DUMP_FOLDER,instrumentedType.getName() + "." + System.currentTimeMillis()));
-      try {
-        outputStream.write(unresolvedType.getBinaryRepresentation());
-      }
-  finally {
-        outputStream.close();
-      }
+      AccessController.doPrivileged(new ClassDumpAction(DUMP_FOLDER,instrumentedType,unresolvedType.getBinaryRepresentation()));
     }
  catch (    Exception exception) {
-      Logger.getLogger("net.bytebuddy").log(Level.WARNING,"Could not dump class file for " + instrumentedType,exception);
+      Logger.getLogger("net.bytebuddy").log(Level.WARNING,"Could not dump class file for " + instrumentedType,exception.getCause());
     }
   }
   return unresolvedType.toDynamicType(typeResolutionStrategy);

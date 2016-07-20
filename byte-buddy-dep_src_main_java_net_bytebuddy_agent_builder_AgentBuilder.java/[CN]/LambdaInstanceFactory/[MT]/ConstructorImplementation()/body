@@ -1,0 +1,3 @@
+{
+  objectConstructor=TypeDescription.OBJECT.getDeclaredMethods().filter(isConstructor()).getOnly();
+}

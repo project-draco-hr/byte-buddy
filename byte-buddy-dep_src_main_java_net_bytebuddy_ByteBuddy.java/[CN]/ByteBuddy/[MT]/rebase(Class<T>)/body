@@ -1,3 +1,3 @@
 {
-  return rebase(type,AccessController.getContext());
+  return rebase(type,ClassFileLocator.ForClassLoader.of(type.getClassLoader()));
 }

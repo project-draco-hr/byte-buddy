@@ -1,9 +1,7 @@
 {
-  instrumentation.addTransformer(ClassResettingTransformer.INSTANCE,true);
-  try {
-    instrumentation.retransformClasses(types.toArray(new Class<?>[types.size()]));
+  Map<Class<?>,ClassDefinition> classDefinitions=new HashMap<Class<?>,ClassDefinition>(types.size());
+  for (  Class<?> type : types) {
+    classDefinitions.put(type,new ClassDefinition(type,classFileLocator.locate(TypeDescription.ForLoadedType.getName(type)).resolve()));
   }
-  finally {
-    instrumentation.removeTransformer(ClassResettingTransformer.INSTANCE);
-  }
+  apply(instrumentation,classDefinitions);
 }

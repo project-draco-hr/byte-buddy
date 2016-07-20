@@ -1,8 +1,0 @@
-{
-  Instrumentation instrumentation=doGetInstrumentation();
-  if (instrumentation != null) {
-    return instrumentation;
-  }
-  install(attachmentProvider,processProvider.resolve(),AgentProvider.ForByteBuddyAgent.INSTANCE,accessControlContext);
-  return doGetInstrumentation();
-}

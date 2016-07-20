@@ -1,3 +1,0 @@
-{
-  return of(ClassFileLocator.ForClassLoader.of(classLoader,accessControlContext));
-}

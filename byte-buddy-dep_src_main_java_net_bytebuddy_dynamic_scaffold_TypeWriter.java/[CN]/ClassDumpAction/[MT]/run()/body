@@ -1,0 +1,10 @@
+{
+  OutputStream outputStream=new FileOutputStream(new File(target,instrumentedType.getName() + "." + System.currentTimeMillis()));
+  try {
+    outputStream.write(binaryRepresentation);
+    return NOTHING;
+  }
+  finally {
+    outputStream.close();
+  }
+}

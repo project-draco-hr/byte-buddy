@@ -1,3 +1,0 @@
-{
-  return to(advice,ClassFileLocator.ForClassLoader.of(ClassLoaderAction.apply(advice,accessControlContext),accessControlContext));
-}
