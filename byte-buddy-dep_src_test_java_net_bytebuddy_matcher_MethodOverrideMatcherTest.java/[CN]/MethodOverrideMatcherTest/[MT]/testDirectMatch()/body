@@ -1,0 +1,7 @@
+{
+  when(declaredTypeMethod.asSignatureToken()).thenReturn(token);
+  when(typeMatcher.matches(declaringType)).thenReturn(true);
+  assertThat(new MethodOverrideMatcher<MethodDescription>(typeMatcher).matches(methodDescription),is(true));
+  verify(typeMatcher).matches(declaringType);
+  verifyNoMoreInteractions(typeMatcher);
+}

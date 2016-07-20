@@ -1,0 +1,9 @@
+{
+  assertThat(ElementMatchers.isOverriddenFrom(Object.class).matches(new MethodDescription.ForLoadedMethod(String.class.getDeclaredMethod("toString"))),is(true));
+  assertThat(ElementMatchers.isOverriddenFrom(Object.class).matches(new MethodDescription.ForLoadedMethod(String.class.getDeclaredMethod("substring",int.class))),is(false));
+  assertThat(ElementMatchers.isOverriddenFrom(Comparable.class).matches(new MethodDescription.ForLoadedMethod(String.class.getDeclaredMethod("compareTo",String.class))),is(true));
+  assertThat(ElementMatchers.isOverriddenFromGeneric(Object.class).matches(new MethodDescription.ForLoadedMethod(String.class.getDeclaredMethod("toString"))),is(true));
+  assertThat(ElementMatchers.isOverriddenFromGeneric(Object.class).matches(new MethodDescription.ForLoadedMethod(String.class.getDeclaredMethod("substring",int.class))),is(false));
+  assertThat(ElementMatchers.isOverriddenFromGeneric(Comparable.class).matches(new MethodDescription.ForLoadedMethod(String.class.getDeclaredMethod("compareTo",String.class))),is(false));
+  assertThat(ElementMatchers.isOverriddenFromGeneric(String.class.getGenericInterfaces()[1]).matches(new MethodDescription.ForLoadedMethod(String.class.getDeclaredMethod("compareTo",String.class))),is(true));
+}

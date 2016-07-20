@@ -1,0 +1,10 @@
+{
+  when(declaredTypeMethod.asSignatureToken()).thenReturn(token);
+  when(superTypeMethod.asSignatureToken()).thenReturn(token);
+  when(interfaceTypeMethod.asSignatureToken()).thenReturn(token);
+  assertThat(new MethodOverrideMatcher<MethodDescription>(typeMatcher).matches(methodDescription),is(false));
+  verify(typeMatcher).matches(declaringType);
+  verify(typeMatcher).matches(superType);
+  verify(typeMatcher).matches(interfaceType);
+  verifyNoMoreInteractions(typeMatcher);
+}

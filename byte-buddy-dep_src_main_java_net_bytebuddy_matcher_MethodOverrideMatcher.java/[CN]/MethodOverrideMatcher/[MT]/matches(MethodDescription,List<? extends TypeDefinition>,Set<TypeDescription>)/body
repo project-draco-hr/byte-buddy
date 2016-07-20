@@ -1,0 +1,8 @@
+{
+  for (  TypeDefinition anInterface : typeDefinitions) {
+    if (duplicates.add(anInterface.asErasure()) && (matches(target,anInterface) || matches(target,anInterface.getInterfaces(),duplicates))) {
+      return true;
+    }
+  }
+  return false;
+}

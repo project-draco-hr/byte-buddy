@@ -1,0 +1,9 @@
+{
+  Set<TypeDescription> duplicates=new HashSet<TypeDescription>();
+  for (  TypeDefinition typeDefinition : target.getDeclaringType()) {
+    if (matches(target,typeDefinition) || matches(target,typeDefinition.getInterfaces(),duplicates)) {
+      return true;
+    }
+  }
+  return false;
+}

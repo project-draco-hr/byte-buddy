@@ -1,0 +1,3 @@
+MethodDescription target
+List<? extends TypeDefinition> typeDefinitions
+Set<TypeDescription> duplicates

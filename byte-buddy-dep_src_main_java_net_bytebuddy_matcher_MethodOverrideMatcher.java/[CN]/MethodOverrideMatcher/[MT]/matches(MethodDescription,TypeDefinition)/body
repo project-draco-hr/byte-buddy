@@ -1,0 +1,13 @@
+{
+  for (  MethodDescription methodDescription : typeDefinition.getDeclaredMethods().filter(isVirtual())) {
+    if (methodDescription.asSignatureToken().equals(target.asSignatureToken())) {
+      if (matcher.matches(typeDefinition.asGenericType())) {
+        return true;
+      }
+ else {
+        break;
+      }
+    }
+  }
+  return false;
+}

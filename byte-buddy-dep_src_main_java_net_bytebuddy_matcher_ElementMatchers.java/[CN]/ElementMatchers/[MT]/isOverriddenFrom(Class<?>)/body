@@ -1,0 +1,3 @@
+{
+  return isOverriddenFrom(new TypeDescription.ForLoadedType(type));
+}

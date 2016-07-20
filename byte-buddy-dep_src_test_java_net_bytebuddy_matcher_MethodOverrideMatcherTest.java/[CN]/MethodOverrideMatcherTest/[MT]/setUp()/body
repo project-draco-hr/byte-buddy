@@ -1,0 +1,20 @@
+{
+  when(declaredTypeMethod.isVirtual()).thenReturn(true);
+  when(superTypeMethod.isVirtual()).thenReturn(true);
+  when(interfaceTypeMethod.isVirtual()).thenReturn(true);
+  when(methodDescription.getDeclaringType()).thenReturn(declaringType);
+  when(methodDescription.asSignatureToken()).thenReturn(token);
+  when(declaringType.asGenericType()).thenReturn(declaringType);
+  when(superType.asGenericType()).thenReturn(superType);
+  when(interfaceType.asGenericType()).thenReturn(interfaceType);
+  when(declaringType.asErasure()).thenReturn(rawDeclaringType);
+  when(superType.asErasure()).thenReturn(rawSuperType);
+  when(interfaceType.asErasure()).thenReturn(rawInterfaceType);
+  when(declaringType.iterator()).thenReturn(Arrays.<TypeDefinition>asList(declaringType,superType).iterator());
+  when(declaringType.getInterfaces()).thenReturn(new TypeList.Generic.Explicit(interfaceType));
+  when(superType.getInterfaces()).thenReturn(new TypeList.Generic.Empty());
+  when(interfaceType.getInterfaces()).thenReturn(new TypeList.Generic.Empty());
+  when(declaringType.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InGenericShape>(declaredTypeMethod));
+  when(superType.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InGenericShape>(superTypeMethod));
+  when(interfaceType.getDeclaredMethods()).thenReturn(new MethodList.Explicit<MethodDescription.InGenericShape>(interfaceTypeMethod));
+}
