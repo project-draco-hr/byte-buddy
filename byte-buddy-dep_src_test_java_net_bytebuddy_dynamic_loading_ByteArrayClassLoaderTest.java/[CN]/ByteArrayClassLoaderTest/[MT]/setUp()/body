@@ -1,5 +1,5 @@
 {
-  classLoader=new ByteArrayClassLoader(BOOTSTRAP_CLASS_LOADER,ClassFileExtraction.of(Foo.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),persistenceHandler,packageDefinitionStrategy);
+  classLoader=new ByteArrayClassLoader(BOOTSTRAP_CLASS_LOADER,ClassFileExtraction.of(Foo.class),DEFAULT_PROTECTION_DOMAIN,persistenceHandler,packageDefinitionStrategy);
   sealBase=new URL("file://foo");
   when(packageDefinitionStrategy.define(classLoader,Foo.class.getPackage().getName(),Foo.class.getName())).thenReturn(new PackageDefinitionStrategy.Definition.Simple(FOO,BAR,QUX,QUX,FOO,BAR,sealBase));
 }

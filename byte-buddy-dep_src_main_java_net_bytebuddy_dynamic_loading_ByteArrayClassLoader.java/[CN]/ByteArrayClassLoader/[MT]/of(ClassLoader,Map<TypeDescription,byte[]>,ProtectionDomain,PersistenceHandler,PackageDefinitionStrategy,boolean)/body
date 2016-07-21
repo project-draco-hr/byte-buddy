@@ -1,0 +1,7 @@
+{
+  Map<String,byte[]> namedTypeDefinitions=new HashMap<String,byte[]>();
+  for (  Map.Entry<TypeDescription,byte[]> entry : typeDefinitions.entrySet()) {
+    namedTypeDefinitions.put(entry.getKey().getName(),entry.getValue());
+  }
+  return childFirst ? new ChildFirst(parent,namedTypeDefinitions,protectionDomain,persistenceHandler,packageDefinitionStrategy) : new ByteArrayClassLoader(parent,namedTypeDefinitions,protectionDomain,persistenceHandler,packageDefinitionStrategy);
+}

@@ -1,5 +1,5 @@
 {
-  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(PublicVisibilityBridgeExtension.class,VisibilityBridge.class,FooBar.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
+  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(PublicVisibilityBridgeExtension.class,VisibilityBridge.class,FooBar.class),DEFAULT_PROTECTION_DOMAIN,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
   Class<?> type=new ByteBuddy().subclass(PublicVisibilityBridgeExtension.class).modifiers(Opcodes.ACC_PUBLIC).make().load(classLoader,ClassLoadingStrategy.Default.INJECTION).getLoaded();
   assertThat(type.getDeclaredConstructors().length,is(1));
   assertThat(type.getDeclaredMethods().length,is(0));

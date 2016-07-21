@@ -1,5 +1,5 @@
 {
-  ByteArrayClassLoader byteArrayClassLoader=new ByteArrayClassLoader(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassFileExtraction.of(Foo.class),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.Trivial.INSTANCE);
+  ByteArrayClassLoader byteArrayClassLoader=new ByteArrayClassLoader(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassFileExtraction.of(Foo.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.Trivial.INSTANCE);
   byteArrayClassLoader.loadClass(Foo.class.getName());
   assertThat(ByteArrayClassLoader.PackageLookupStrategy.ForLegacyVm.INSTANCE.apply(byteArrayClassLoader,Foo.class.getPackage().getName()).getName(),is(Foo.class.getPackage().getName()));
 }

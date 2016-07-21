@@ -5,7 +5,6 @@
   result=31 * result + typeStrategy.hashCode();
   result=31 * result + locationStrategy.hashCode();
   result=31 * result + nativeMethodStrategy.hashCode();
-  result=31 * result + accessControlContext.hashCode();
   result=31 * result + initializationStrategy.hashCode();
   result=31 * result + redefinitionStrategy.hashCode();
   result=31 * result + bootstrapInjectionStrategy.hashCode();

@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   ForBootstrapInjection that=(ForBootstrapInjection)other;
-  return folder.equals(that.folder) && instrumentation.equals(that.instrumentation) && accessControlContext.equals(that.accessControlContext);
+  return folder.equals(that.folder) && instrumentation.equals(that.instrumentation);
 }

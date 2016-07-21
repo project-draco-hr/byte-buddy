@@ -10,6 +10,7 @@
     }
   }
 ).applyBasic();
+  ObjectPropertyAssertion.of(ByteArrayClassLoader.ClassDefinitionAction.class).apply();
   ObjectPropertyAssertion.of(ByteArrayClassLoader.ChildFirst.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
     @Override public AccessControlContext create(){
       return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
@@ -31,10 +32,4 @@
     }
   }
 ).applyBasic();
-  ObjectPropertyAssertion.of(ByteArrayClassLoader.ClassLoaderCreationAction.class).create(new ObjectPropertyAssertion.Creator<AccessControlContext>(){
-    @Override public AccessControlContext create(){
-      return new AccessControlContext(new ProtectionDomain[]{mock(ProtectionDomain.class)});
-    }
-  }
-).apply();
 }

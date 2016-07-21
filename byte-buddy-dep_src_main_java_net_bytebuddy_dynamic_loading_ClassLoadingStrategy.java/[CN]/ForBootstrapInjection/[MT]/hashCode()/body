@@ -1,6 +1,5 @@
 {
   int result=instrumentation.hashCode();
   result=31 * result + folder.hashCode();
-  result=31 * result + accessControlContext.hashCode();
   return result;
 }

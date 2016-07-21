@@ -2,7 +2,7 @@
   if (typeLocator instanceof AgentBuilder.TypeLocator.Eager) {
     return;
   }
-  classLoader=new ByteArrayClassLoader.ChildFirst(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassFileExtraction.of(SimpleOptionalType.class,ShouldRebase.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
+  classLoader=new ByteArrayClassLoader.ChildFirst(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassFileExtraction.of(SimpleOptionalType.class,ShouldRebase.class),DEFAULT_PROTECTION_DOMAIN,ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
   assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
   assertThat(classLoader.loadClass(SimpleOptionalType.class.getName()).getName(),is(SimpleOptionalType.class.getName()));
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default(new ByteBuddy().with(TypeValidation.DISABLED)).with(typeLocator).ignore(none()).with(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).with(AgentBuilder.TypeStrategy.Default.REDEFINE).with(AgentBuilder.RedefinitionStrategy.REDEFINITION).with(AgentBuilder.DescriptionStrategy.Default.POOL_LAST).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new FooTransformer()).installOnByteBuddyAgent();

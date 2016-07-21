@@ -1,0 +1,3 @@
+{
+  return "ByteArrayClassLoader.ClassDefinitionAction{" + "outer=" + ByteArrayClassLoader.this + ", name='"+ name+ '\''+ ", binaryRepresentation=<"+ binaryRepresentation.length+ " bytes>"+ '}';
+}

@@ -2,5 +2,5 @@
   ClassReader classReader=new ClassReader(InconsistentGenerics.class.getName());
   ClassWriter classWriter=new ClassWriter(classReader,ClassWriter.COMPUTE_MAXS);
   classReader.accept(new GenericDisintegrator(classWriter),0);
-  return new ByteArrayClassLoader(null,Collections.singletonMap(InconsistentGenerics.class.getName(),classWriter.toByteArray()),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE).loadClass(InconsistentGenerics.class.getName()).getDeclaredField(FOO);
+  return new ByteArrayClassLoader(null,Collections.singletonMap(InconsistentGenerics.class.getName(),classWriter.toByteArray()),null,ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE).loadClass(InconsistentGenerics.class.getName()).getDeclaredField(FOO);
 }

@@ -1,4 +1,4 @@
 {
-  Class<?> type=new ByteBuddy().subclass(PackagePrivateArgumentType.class).name("net.bytebuddy.test.generated." + FOO).method(isDeclaredBy(PackagePrivateArgumentType.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(PackagePrivateArgumentType.class,PackagePrivateArgumentType.Argument.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=new ByteBuddy().subclass(PackagePrivateArgumentType.class).name("net.bytebuddy.test.generated." + FOO).method(isDeclaredBy(PackagePrivateArgumentType.class)).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(PackagePrivateArgumentType.class,PackagePrivateArgumentType.Argument.class),DEFAULT_PROTECTION_DOMAIN,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethods().length,is(0));
 }

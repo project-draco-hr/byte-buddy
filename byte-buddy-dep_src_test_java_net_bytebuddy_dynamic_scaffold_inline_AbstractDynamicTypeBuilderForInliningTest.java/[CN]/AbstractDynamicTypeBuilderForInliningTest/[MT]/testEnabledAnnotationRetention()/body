@@ -1,5 +1,5 @@
 {
-  Class<?> type=create(Annotated.class).field(ElementMatchers.any()).annotateField(new Annotation[0]).method(ElementMatchers.any()).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(SampleAnnotation.class),null,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> type=create(Annotated.class).field(ElementMatchers.any()).annotateField(new Annotation[0]).method(ElementMatchers.any()).intercept(StubMethod.INSTANCE).make().load(new ByteArrayClassLoader(null,ClassFileExtraction.of(SampleAnnotation.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   @SuppressWarnings("unchecked") Class<? extends Annotation> sampleAnnotation=(Class<? extends Annotation>)type.getClassLoader().loadClass(SampleAnnotation.class.getName());
   assertThat(type.isAnnotationPresent(sampleAnnotation),is(true));
   assertThat(type.getDeclaredField(FOO).isAnnotationPresent(sampleAnnotation),is(true));

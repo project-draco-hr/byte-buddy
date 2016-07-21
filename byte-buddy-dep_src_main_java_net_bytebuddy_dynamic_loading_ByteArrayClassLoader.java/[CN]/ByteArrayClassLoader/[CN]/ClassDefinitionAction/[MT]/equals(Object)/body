@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  ClassDefinitionAction that=(ClassDefinitionAction)object;
+  return name.equals(that.name) && ByteArrayClassLoader.this.equals(that.getOuter()) && Arrays.equals(binaryRepresentation,that.binaryRepresentation);
+}

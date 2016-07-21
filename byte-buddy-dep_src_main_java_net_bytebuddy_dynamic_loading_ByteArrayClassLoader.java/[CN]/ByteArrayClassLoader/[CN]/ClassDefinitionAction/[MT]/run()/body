@@ -1,0 +1,17 @@
+{
+  int packageIndex=name.lastIndexOf('.');
+  if (packageIndex != -1) {
+    String packageName=name.substring(0,packageIndex);
+    PackageDefinitionStrategy.Definition definition=packageDefinitionStrategy.define(ByteArrayClassLoader.this,packageName,name);
+    if (definition.isDefined()) {
+      Package definedPackage=PACKAGE_LOOKUP_STRATEGY.apply(ByteArrayClassLoader.this,packageName);
+      if (definedPackage == null) {
+        definePackage(packageName,definition.getSpecificationTitle(),definition.getSpecificationVersion(),definition.getSpecificationVendor(),definition.getImplementationTitle(),definition.getImplementationVersion(),definition.getImplementationVendor(),definition.getSealBase());
+      }
+ else       if (!definition.isCompatibleTo(definedPackage)) {
+        throw new SecurityException("Sealing violation for package " + packageName);
+      }
+    }
+  }
+  return defineClass(name,binaryRepresentation,FROM_BEGINNING,binaryRepresentation.length,protectionDomain);
+}

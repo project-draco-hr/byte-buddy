@@ -1,21 +1,9 @@
 {
-  byte[] javaType=persistenceHandler.lookup(name,typeDefinitions);
-  if (javaType != null) {
-    int packageIndex=name.lastIndexOf('.');
-    if (packageIndex != -1) {
-      String packageName=name.substring(0,packageIndex);
-      PackageDefinitionStrategy.Definition definition=packageDefinitionStrategy.define(ByteArrayClassLoader.this,packageName,name);
-      if (definition.isDefined()) {
-        Package definedPackage=PACKAGE_LOOKUP_STRATEGY.apply(this,packageName);
-        if (definedPackage == null) {
-          definePackage(packageName,definition.getSpecificationTitle(),definition.getSpecificationVersion(),definition.getSpecificationVendor(),definition.getImplementationTitle(),definition.getImplementationVersion(),definition.getImplementationVendor(),definition.getSealBase());
-        }
- else         if (!definition.isCompatibleTo(definedPackage)) {
-          throw new SecurityException("Sealing violation for package " + packageName);
-        }
-      }
-    }
-    return defineClass(name,javaType,FROM_BEGINNING,javaType.length,protectionDomain);
+  byte[] binaryRepresentation=persistenceHandler.lookup(name,typeDefinitions);
+  if (binaryRepresentation == null) {
+    throw new ClassNotFoundException(name);
   }
-  throw new ClassNotFoundException(name);
+ else {
+    return AccessController.doPrivileged(new ClassDefinitionAction(name,binaryRepresentation),accessControlContext);
+  }
 }

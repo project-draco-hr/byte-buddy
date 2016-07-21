@@ -1,5 +1,5 @@
 {
-  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(Bar.class),DEFAULT_PROTECTION_DOMAIN,AccessController.getContext(),ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
+  ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(Bar.class),DEFAULT_PROTECTION_DOMAIN,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
   Class<?> type=createPlain().invokable(isTypeInitializer()).intercept(MethodCall.invoke(Bar.class.getDeclaredMethod("invoke"))).make().load(classLoader,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.newInstance(),notNullValue(Object.class));
   Class<?> foo=classLoader.loadClass(Bar.class.getName());
