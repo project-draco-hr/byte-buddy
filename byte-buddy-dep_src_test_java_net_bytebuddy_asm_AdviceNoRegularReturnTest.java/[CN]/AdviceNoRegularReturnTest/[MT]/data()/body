@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{VoidSample.class},{BooleanSample.class},{ByteSample.class},{ShortSample.class},{CharacterSample.class},{IntegerSample.class},{LongSample.class},{FloatSample.class},{DoubleSample.class},{ReferenceSample.class}});
+}

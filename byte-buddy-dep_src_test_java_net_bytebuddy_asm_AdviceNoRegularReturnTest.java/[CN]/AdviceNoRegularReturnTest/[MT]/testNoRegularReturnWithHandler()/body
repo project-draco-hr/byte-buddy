@@ -1,0 +1,10 @@
+{
+  Class<?> type=new ByteBuddy().redefine(this.type).visit(Advice.to(AdviceWithHandler.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  try {
+    type.getDeclaredMethod(FOO).invoke(type.newInstance());
+    fail();
+  }
+ catch (  InvocationTargetException exception) {
+    assertThat(exception.getCause(),instanceOf(RuntimeException.class));
+  }
+}
