@@ -1,7 +1,9 @@
 String name
 boolean isAbstract
 boolean isPublic
+boolean isPrivate
 boolean isStatic
-boolean isDefaultValueIncompatible
-boolean isNonStaticNonVirtual
+boolean isVirtual
+boolean isConstructor
+boolean isNoDefaultValue
 boolean isGeneric

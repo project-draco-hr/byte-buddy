@@ -1,0 +1,16 @@
+{
+  if (!name.equals(MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME)) {
+    if (isConstructor) {
+      throw new IllegalStateException("Cannot define constructor for interface type");
+    }
+ else     if (classic && !isPublic) {
+      throw new IllegalStateException("Cannot define non-public method '" + name + "' for interface type");
+    }
+ else     if (classic && !isVirtual) {
+      throw new IllegalStateException("Cannot define non-virtual method '" + name + "' for a pre-Java 8 interface type");
+    }
+ else     if (classic && !isAbstract) {
+      throw new IllegalStateException("Cannot define default method '" + name + "' for pre-Java 8 interface type");
+    }
+  }
+}

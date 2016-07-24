@@ -1,0 +1,3 @@
+{
+  new ByteBuddy(ClassFileVersion.JAVA_V8).makeInterface().defineMethod(FOO,void.class).withoutCode().make();
+}

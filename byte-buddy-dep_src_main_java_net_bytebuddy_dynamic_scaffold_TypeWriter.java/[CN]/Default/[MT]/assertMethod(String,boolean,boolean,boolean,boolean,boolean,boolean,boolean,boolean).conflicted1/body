@@ -1,0 +1,13 @@
+{
+  if (!name.equals(MethodDescription.TYPE_INITIALIZER_INTERNAL_NAME)) {
+    if (isConstructor) {
+      throw new IllegalStateException("Cannot define constructor for interface type");
+    }
+ else     if (classic && !isVirtual) {
+      throw new IllegalStateException("Cannot define non-virtual method '" + name + "' for a pre-Java 8 annotation type");
+    }
+ else     if (!isStatic && isDefaultValueIncompatible) {
+      throw new IllegalStateException("Cannot define method '" + name + "' with the given signature as an annotation type method");
+    }
+  }
+}
