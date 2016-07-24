@@ -1,3 +1,0 @@
-{
-  return "AgentBuilder.Default.ExecutingTransformer.ExecutionDispatcher{" + "outer=" + ExecutingTransformer.this + ", module="+ module+ ", classLoader="+ classLoader+ ", binaryTypeName='"+ binaryTypeName+ '\''+ ", classBeingRedefined="+ classBeingRedefined+ ", protectionDomain="+ protectionDomain+ ", binaryRepresentation=<"+ binaryRepresentation.length+ " bytes>"+ '}';
-}

@@ -1,5 +1,5 @@
 {
-  Map<TypeDescription,Class<?>> loaded=ClassLoadingStrategy.Default.CHILD_FIRST.withPackageDefinitionStrategy(packageDefinitionStrategy).load(classLoader,binaryRepresentations);
+  Map<TypeDescription,Class<?>> loaded=ClassLoadingStrategy.Default.CHILD_FIRST.with(packageDefinitionStrategy).load(classLoader,binaryRepresentations);
   assertThat(loaded.size(),is(1));
   Class<?> type=loaded.get(typeDescription);
   assertThat(type.getClassLoader().getParent(),is(classLoader));

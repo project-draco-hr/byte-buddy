@@ -1,8 +1,0 @@
-{
-  this.module=module;
-  this.classLoader=classLoader;
-  this.binaryTypeName=binaryTypeName;
-  this.classBeingRedefined=classBeingRedefined;
-  this.protectionDomain=protectionDomain;
-  this.binaryRepresentation=binaryRepresentation;
-}

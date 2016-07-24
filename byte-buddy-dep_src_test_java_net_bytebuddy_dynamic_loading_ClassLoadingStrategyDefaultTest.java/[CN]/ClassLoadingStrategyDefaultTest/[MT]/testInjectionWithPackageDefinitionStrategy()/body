@@ -1,5 +1,5 @@
 {
-  Map<TypeDescription,Class<?>> loaded=ClassLoadingStrategy.Default.INJECTION.withPackageDefinitionStrategy(packageDefinitionStrategy).load(classLoader,binaryRepresentations);
+  Map<TypeDescription,Class<?>> loaded=ClassLoadingStrategy.Default.INJECTION.with(packageDefinitionStrategy).load(classLoader,binaryRepresentations);
   assertThat(loaded.size(),is(1));
   Class<?> type=loaded.get(typeDescription);
   assertThat(type.getClassLoader(),is(classLoader));
