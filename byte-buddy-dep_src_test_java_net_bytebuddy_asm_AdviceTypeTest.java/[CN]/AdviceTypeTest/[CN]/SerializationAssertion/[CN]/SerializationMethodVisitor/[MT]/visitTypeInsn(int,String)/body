@@ -1,0 +1,6 @@
+{
+  if (type.equals(Type.getInternalName(ObjectInputStream.class))) {
+    throw new AssertionError("Unexpected deserialization");
+  }
+  super.visitTypeInsn(opcode,type);
+}
