@@ -1,0 +1,4 @@
+Class<?> type
+Serializable original
+Serializable replaced
+int opcode

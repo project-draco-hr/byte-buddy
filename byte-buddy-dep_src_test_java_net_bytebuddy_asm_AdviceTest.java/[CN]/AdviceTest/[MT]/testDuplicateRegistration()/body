@@ -4,5 +4,5 @@
       return null;
     }
   }
-).bind(Custom.class,null);
+).bind(Custom.class,(Serializable)null);
 }
