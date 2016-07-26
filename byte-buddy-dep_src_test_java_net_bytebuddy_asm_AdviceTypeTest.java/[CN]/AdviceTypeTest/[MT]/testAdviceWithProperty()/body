@@ -1,0 +1,9 @@
+{
+  if (type == Void.class) {
+    return;
+  }
+  Class<?> type=new ByteBuddy().redefine(advice).visit(new SerializationAssertion()).visit(Advice.withCustomMapping().bindProperty(CustomAnnotation.class,this.type.getSimpleName().toLowerCase(Locale.US) + "Value").to(advice).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethod(FOO,this.type,this.type).invoke(type.newInstance(),value,value),is((Object)value));
+  assertThat(type.getDeclaredField(ENTER).get(null),is((Object)1));
+  assertThat(type.getDeclaredField(EXIT).get(null),is((Object)1));
+}
