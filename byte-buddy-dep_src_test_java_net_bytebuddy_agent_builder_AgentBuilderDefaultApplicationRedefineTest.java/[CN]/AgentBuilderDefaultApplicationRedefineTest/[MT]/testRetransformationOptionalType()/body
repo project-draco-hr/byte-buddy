@@ -1,0 +1,12 @@
+{
+  assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
+  assertThat(optionalTypeLoader.loadClass(SimpleOptionalType.class.getName()).getName(),is(SimpleOptionalType.class.getName()));
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(new ByteBuddy().with(TypeValidation.DISABLED)).ignore(none()).disableClassFormatChanges().with(AgentBuilder.RedefinitionStrategy.REDEFINITION).with(descriptionStrategy).type(ElementMatchers.is(SimpleOptionalType.class),ElementMatchers.is(optionalTypeLoader)).transform(new FooTransformer()).installOnByteBuddyAgent();
+  try {
+    Class<?> type=optionalTypeLoader.loadClass(SimpleOptionalType.class.getName());
+    assertThat(type.getDeclaredMethod(FOO).invoke(type.newInstance()),is((Object)(descriptionStrategy == AgentBuilder.DescriptionStrategy.Default.HYBRID ? FOO : BAR)));
+  }
+  finally {
+    ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);
+  }
+}

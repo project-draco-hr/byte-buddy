@@ -1,0 +1,7 @@
+{
+  List<Object[]> list=new ArrayList<Object[]>();
+  for (  AgentBuilder.DescriptionStrategy descriptionStrategy : AgentBuilder.DescriptionStrategy.Default.values()) {
+    list.add(new Object[]{descriptionStrategy});
+  }
+  return list;
+}

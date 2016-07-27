@@ -1,0 +1,4 @@
+{
+  simpleTypeLoader=new ByteArrayClassLoader(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassFileExtraction.of(SimpleType.class),DEFAULT_PROTECTION_DOMAIN,ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
+  optionalTypeLoader=new ByteArrayClassLoader(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassFileExtraction.of(SimpleOptionalType.class),DEFAULT_PROTECTION_DOMAIN,ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
+}

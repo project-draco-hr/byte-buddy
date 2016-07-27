@@ -1,7 +1,7 @@
 {
   if (Boolean.getBoolean("net.bytebuddy.test.travis")) {
-    Logger.getLogger("net.bytebuddy").info("Only running agent application with a single type locator on Travis CI server");
-    return Arrays.asList(new Object[][]{{AgentBuilder.TypeLocator.Default.FAST},{AgentBuilder.TypeLocator.Eager.FAST},{AgentBuilder.TypeLocator.ClassLoading.FAST}});
+    Logger.getLogger("net.bytebuddy").info("Running only a subset of type locator tests on Travis CI.");
+    return Arrays.asList(new Object[][]{{AgentBuilder.TypeLocator.Default.EXTENDED},{AgentBuilder.TypeLocator.Eager.EXTENDED},{AgentBuilder.TypeLocator.ClassLoading.EXTENDED}});
   }
   return Arrays.asList(new Object[][]{{AgentBuilder.TypeLocator.Default.EXTENDED},{AgentBuilder.TypeLocator.Default.FAST},{AgentBuilder.TypeLocator.Eager.EXTENDED},{AgentBuilder.TypeLocator.Eager.FAST},{AgentBuilder.TypeLocator.ClassLoading.EXTENDED},{AgentBuilder.TypeLocator.ClassLoading.FAST}});
 }
