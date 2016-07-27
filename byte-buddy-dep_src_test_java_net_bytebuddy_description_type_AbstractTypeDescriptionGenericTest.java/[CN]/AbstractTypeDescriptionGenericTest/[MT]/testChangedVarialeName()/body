@@ -1,0 +1,6 @@
+{
+  TypeDescription.Generic typeDescription=describeReturnType(ChangedVariableName.class.getDeclaredMethod(BAR));
+  MethodDescription methodDescription=typeDescription.getInterfaces().getOnly().getDeclaredMethods().filter(named(FOO)).getOnly();
+  assertThat(methodDescription.getReturnType().getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(methodDescription.getReturnType().getSymbol(),is("S"));
+}
