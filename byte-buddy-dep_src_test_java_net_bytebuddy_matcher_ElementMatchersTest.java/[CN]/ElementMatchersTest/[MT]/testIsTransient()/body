@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isTransient().matches(new FieldDescription.ForLoadedField(FieldSample.class.getDeclaredField("foo"))),is(false));
+  assertThat(ElementMatchers.isTransient().matches(new FieldDescription.ForLoadedField(FieldSample.class.getDeclaredField("qux"))),is(false));
+  assertThat(ElementMatchers.isTransient().matches(new FieldDescription.ForLoadedField(FieldSample.class.getDeclaredField("baz"))),is(true));
+}

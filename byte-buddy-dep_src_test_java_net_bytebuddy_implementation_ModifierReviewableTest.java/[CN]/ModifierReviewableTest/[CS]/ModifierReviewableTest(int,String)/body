@@ -1,4 +1,4 @@
 {
   simpleModifierReviewable=new SimpleModifierReviewable(modifiers);
-  method=ModifierReviewable.class.getDeclaredMethod(methodName);
+  method=ModifierReviewable.AbstractBase.class.getMethod(methodName);
 }

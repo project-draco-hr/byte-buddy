@@ -1,0 +1,5 @@
+{
+  assertThat(ElementMatchers.isVolatile().matches(new FieldDescription.ForLoadedField(FieldSample.class.getDeclaredField("foo"))),is(false));
+  assertThat(ElementMatchers.isVolatile().matches(new FieldDescription.ForLoadedField(FieldSample.class.getDeclaredField("qux"))),is(true));
+  assertThat(ElementMatchers.isVolatile().matches(new FieldDescription.ForLoadedField(FieldSample.class.getDeclaredField("baz"))),is(false));
+}

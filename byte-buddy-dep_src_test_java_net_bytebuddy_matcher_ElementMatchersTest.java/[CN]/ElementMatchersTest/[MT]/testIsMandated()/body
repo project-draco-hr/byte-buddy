@@ -1,0 +1,6 @@
+{
+  ParameterDescription parameterDescription=mock(ParameterDescription.class);
+  when(parameterDescription.getModifiers()).thenReturn(Opcodes.ACC_MANDATED);
+  assertThat(ElementMatchers.isMandated().matches(parameterDescription),is(true));
+  assertThat(ElementMatchers.isMandated().matches(mock(ParameterDescription.class)),is(false));
+}

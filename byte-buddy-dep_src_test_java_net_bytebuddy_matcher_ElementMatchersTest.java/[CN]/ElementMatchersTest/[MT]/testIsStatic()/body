@@ -1,6 +1,6 @@
 {
-  ModifierReviewable modifierReviewable=mock(ModifierReviewable.class);
+  ModifierReviewable.OfByteCodeElement modifierReviewable=mock(ModifierReviewable.OfByteCodeElement.class);
   when(modifierReviewable.getModifiers()).thenReturn(Opcodes.ACC_STATIC);
   assertThat(ElementMatchers.isStatic().matches(modifierReviewable),is(true));
-  assertThat(ElementMatchers.isStatic().matches(mock(ModifierReviewable.class)),is(false));
+  assertThat(ElementMatchers.isStatic().matches(mock(ModifierReviewable.OfByteCodeElement.class)),is(false));
 }

@@ -1,4 +1,4 @@
 {
-  assertThat(ElementMatchers.is(FieldType.class.getDeclaredField("foo")).matches(new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField("foo"))),is(true));
-  assertThat(ElementMatchers.is(FieldType.class.getDeclaredField("bar")).matches(new FieldDescription.ForLoadedField(FieldType.class.getDeclaredField("foo"))),is(false));
+  assertThat(ElementMatchers.is(FieldSample.class.getDeclaredField("foo")).matches(new FieldDescription.ForLoadedField(FieldSample.class.getDeclaredField("foo"))),is(true));
+  assertThat(ElementMatchers.is(FieldSample.class.getDeclaredField("bar")).matches(new FieldDescription.ForLoadedField(FieldSample.class.getDeclaredField("foo"))),is(false));
 }

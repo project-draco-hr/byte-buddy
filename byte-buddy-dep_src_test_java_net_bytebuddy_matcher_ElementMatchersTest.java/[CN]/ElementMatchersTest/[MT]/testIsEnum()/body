@@ -1,0 +1,6 @@
+{
+  ModifierReviewable.OfEnumeration modifierReviewable=mock(ModifierReviewable.OfEnumeration.class);
+  when(modifierReviewable.getModifiers()).thenReturn(Opcodes.ACC_ENUM);
+  assertThat(ElementMatchers.isEnum().matches(modifierReviewable),is(true));
+  assertThat(ElementMatchers.isEnum().matches(mock(ModifierReviewable.OfEnumeration.class)),is(false));
+}
