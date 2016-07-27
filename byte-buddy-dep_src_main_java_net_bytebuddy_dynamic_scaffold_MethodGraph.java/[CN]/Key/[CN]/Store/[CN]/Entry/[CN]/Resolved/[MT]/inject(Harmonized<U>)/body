@@ -1,3 +1,3 @@
 {
-  return new Resolved<U>(key.combineWith(key),methodDescription,madeVisible);
+  return new Resolved<U>(this.key.combineWith(key),methodDescription,madeVisible);
 }

@@ -1,0 +1,13 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(GenericDiamondClassBase.Inner.class);
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
+  assertThat(methodGraph.listNodes().size(),is(TypeDescription.OBJECT.getDeclaredMethods().filter(isVirtual()).size() + 1));
+  MethodDescription diamondOverride=typeDescription.getInterfaces().getOnly().getDeclaredMethods().getOnly();
+  MethodDescription explicitOverride=typeDescription.getSuperClass().getDeclaredMethods().filter(isVirtual()).getOnly();
+  MethodGraph.Node methodNode=methodGraph.locate(diamondOverride.asSignatureToken());
+  assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.VISIBLE));
+  assertThat(methodGraph.locate(explicitOverride.asDefined().asSignatureToken()),is(methodNode));
+  assertThat(methodNode.getMethodTypes().size(),is(2));
+  assertThat(methodNode.getMethodTypes().contains(diamondOverride.asTypeToken()),is(true));
+  assertThat(methodNode.getMethodTypes().contains(explicitOverride.asDefined().asTypeToken()),is(true));
+}

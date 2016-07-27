@@ -1,0 +1,13 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(GenericDiamondInterfaceBase.Inner.class);
+  MethodGraph.Linked methodGraph=MethodGraph.Compiler.Default.forJavaHierarchy().compile(typeDescription);
+  assertThat(methodGraph.listNodes().size(),is(1));
+  MethodDescription diamondOverride=typeDescription.getInterfaces().get(0).getDeclaredMethods().getOnly();
+  MethodDescription explicitOverride=typeDescription.getInterfaces().get(1).getDeclaredMethods().getOnly();
+  MethodGraph.Node methodNode=methodGraph.locate(diamondOverride.asSignatureToken());
+  assertThat(methodNode.getSort(),is(MethodGraph.Node.Sort.AMBIGUOUS));
+  assertThat(methodGraph.locate(explicitOverride.asDefined().asSignatureToken()),is(methodNode));
+  assertThat(methodNode.getMethodTypes().size(),is(2));
+  assertThat(methodNode.getMethodTypes().contains(diamondOverride.asTypeToken()),is(true));
+  assertThat(methodNode.getMethodTypes().contains(explicitOverride.asDefined().asTypeToken()),is(true));
+}
