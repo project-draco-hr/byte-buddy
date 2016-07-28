@@ -1,0 +1,7 @@
+{
+  when(classFileLocator.locate(FOO)).thenReturn(legal);
+  new ClassFileLocator.Compound(classFileLocator,otherClassFileLocator).close();
+  verify(classFileLocator).close();
+  verifyNoMoreInteractions(classFileLocator);
+  verifyZeroInteractions(otherClassFileLocator);
+}

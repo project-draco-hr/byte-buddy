@@ -1,0 +1,7 @@
+{
+  for (  ClassFileLocator classFileLocator : classFileLocators) {
+    if (classFileLocator instanceof Closeable) {
+      ((Closeable)classFileLocator).close();
+    }
+  }
+}

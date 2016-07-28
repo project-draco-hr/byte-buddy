@@ -1,0 +1,10 @@
+{
+  ClassFileLocator classFileLocator=ClassFileLocator.ForJarFile.ofClassPath();
+  try {
+    assertThat(classFileLocator.locate(ByteBuddy.class.getName()).isResolved(),is(true));
+    assertThat(classFileLocator.locate(ClassVisitor.class.getName()).isResolved(),is(true));
+  }
+  finally {
+    ((Closeable)classFileLocator).close();
+  }
+}

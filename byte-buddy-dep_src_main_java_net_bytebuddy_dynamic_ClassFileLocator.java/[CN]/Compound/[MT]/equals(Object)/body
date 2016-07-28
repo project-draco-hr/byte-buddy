@@ -1,3 +1,3 @@
 {
-  return this == other || !(other == null || getClass() != other.getClass()) && Arrays.equals(classFileLocator,((Compound)other).classFileLocator);
+  return this == other || !(other == null || getClass() != other.getClass()) && classFileLocators.equals(((Compound)other).classFileLocators);
 }

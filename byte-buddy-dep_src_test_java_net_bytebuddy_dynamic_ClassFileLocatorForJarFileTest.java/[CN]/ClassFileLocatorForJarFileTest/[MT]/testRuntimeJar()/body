@@ -1,0 +1,9 @@
+{
+  ClassFileLocator classFileLocator=ClassFileLocator.ForJarFile.ofRuntimeJar();
+  try {
+    assertThat(classFileLocator.locate(Object.class.getName()).isResolved(),is(true));
+  }
+  finally {
+    ((Closeable)classFileLocator).close();
+  }
+}

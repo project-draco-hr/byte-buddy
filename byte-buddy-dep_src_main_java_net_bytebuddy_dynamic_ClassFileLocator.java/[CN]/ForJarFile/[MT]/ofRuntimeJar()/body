@@ -1,0 +1,15 @@
+{
+  String javaHome=System.getProperty("java.home").replace('\\','/');
+  File runtimeJar=null;
+  for (  String location : RUNTIME_LOCATIONS) {
+    File candidate=new File(javaHome + "/" + location);
+    if (candidate.isFile()) {
+      runtimeJar=candidate;
+      break;
+    }
+  }
+  if (runtimeJar == null) {
+    throw new IllegalStateException("Runtime jar does not exist in " + javaHome + " for any of "+ RUNTIME_LOCATIONS);
+  }
+  return new ForJarFile(runtimeJar);
+}
