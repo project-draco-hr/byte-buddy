@@ -4,7 +4,7 @@
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(typeLocator).ignore(none()).with(AgentBuilder.LambdaInstrumentationStrategy.ENABLED).type(isSubTypeOf(Callable.class)).transform(new SingleMethodReplacer("call")).installOn(ByteBuddyAgent.getInstrumentation());
   try {
     Class<?> sampleFactory=classLoader.loadClass(LAMBDA_SAMPLE_FACTORY);
-    @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)sampleFactory.getDeclaredMethod("nonCapturing").invoke(sampleFactory.newInstance());
+    @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)sampleFactory.getDeclaredMethod("nonCapturing").invoke(sampleFactory.getConstructor().newInstance());
     assertThat(instance.call(),is(BAR));
   }
   finally {

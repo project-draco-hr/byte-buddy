@@ -3,7 +3,7 @@
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(1));
-  Foo instance=loaded.getLoaded().newInstance();
+  Foo instance=loaded.getLoaded().getConstructor().newInstance();
   Field field=loaded.getLoaded().getDeclaredField(FOO);
   field.setAccessible(true);
   field.set(null,new Bar());

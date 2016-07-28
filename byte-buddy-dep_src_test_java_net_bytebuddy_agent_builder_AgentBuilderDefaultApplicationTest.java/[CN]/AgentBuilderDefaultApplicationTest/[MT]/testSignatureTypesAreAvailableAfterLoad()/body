@@ -4,7 +4,7 @@
   try {
     Class<?> type=classLoader.loadClass(Foo.class.getName());
     assertThat(type.getDeclaredConstructors().length,is(2));
-    assertThat(type.newInstance(),notNullValue(Object.class));
+    assertThat(type.getConstructor().newInstance(),notNullValue(Object.class));
   }
   finally {
     ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);

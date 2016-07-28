@@ -4,5 +4,5 @@
   assertThat(method.getReturnType(),CoreMatchers.<Class<?>>is(Object.class));
   assertThat(method.getExceptionTypes(),is(new Class<?>[]{Exception.class}));
   assertThat(method.getModifiers(),is(Modifier.PUBLIC));
-  assertThat(method.invoke(type.newInstance()),is((Object)FOO));
+  assertThat(method.invoke(type.getConstructor().newInstance()),is((Object)FOO));
 }

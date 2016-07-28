@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<Foo> loaded=implement(Foo.class,MethodDelegation.to(RunnableClass.class));
-  Foo instance=loaded.getLoaded().newInstance();
+  Foo instance=loaded.getLoaded().getConstructor().newInstance();
   assertThat(instance.value,is(BAR));
   instance.foo();
   assertThat(instance.value,is(FOO));

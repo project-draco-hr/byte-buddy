@@ -15,7 +15,7 @@
     }
   }
 );
-  Object instance=proxyFactory.createClass().newInstance();
+  @SuppressWarnings("unchecked") Object instance=proxyFactory.createClass().getConstructor().newInstance();
   ((javassist.util.proxy.Proxy)instance).setHandler(new MethodHandler(){
     public Object invoke(    Object self,    Method thisMethod,    Method proceed,    Object[] args) throws Throwable {
       Class<?> returnType=thisMethod.getReturnType();

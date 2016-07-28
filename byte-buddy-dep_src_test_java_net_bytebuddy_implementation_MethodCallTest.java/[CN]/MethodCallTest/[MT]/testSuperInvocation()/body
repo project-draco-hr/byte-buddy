@@ -5,7 +5,7 @@
   assertThat(loaded.getLoaded().getDeclaredMethod(FOO),not(nullValue(Method.class)));
   assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
-  SuperMethodInvocation instance=loaded.getLoaded().newInstance();
+  SuperMethodInvocation instance=loaded.getLoaded().getConstructor().newInstance();
   assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(SuperMethodInvocation.class)));
   assertThat(instance,instanceOf(SuperMethodInvocation.class));
   assertThat(instance.foo(),is(FOO));

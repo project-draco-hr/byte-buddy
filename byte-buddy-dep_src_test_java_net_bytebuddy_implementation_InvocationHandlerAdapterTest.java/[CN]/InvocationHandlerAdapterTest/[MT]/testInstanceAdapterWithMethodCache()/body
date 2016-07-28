@@ -6,7 +6,7 @@
   Field field=loaded.getLoaded().getDeclaredField(QUX);
   assertThat(field.getModifiers(),is(Modifier.PUBLIC | Opcodes.ACC_SYNTHETIC));
   field.setAccessible(true);
-  Bar instance=loaded.getLoaded().newInstance();
+  Bar instance=loaded.getLoaded().getConstructor().newInstance();
   Foo foo=new Foo();
   field.set(instance,foo);
   assertThat(instance.bar(FOO),is((Object)instance));

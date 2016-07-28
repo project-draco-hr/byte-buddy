@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<SampleGetter> loaded=implement(SampleGetter.class,FieldAccessor.ofField(FOO));
-  SampleGetter sampleGetter=loaded.getLoaded().newInstance();
+  SampleGetter sampleGetter=loaded.getLoaded().getConstructor().newInstance();
   Field field=SampleGetter.class.getDeclaredField(FOO);
   field.setAccessible(true);
   assertThat(field.get(sampleGetter),is((Object)STRING_VALUE));

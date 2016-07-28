@@ -1,5 +1,5 @@
 {
   DynamicType.Loaded<Foo> loaded=implement(Foo.class,MethodDelegation.to(new ForwardingInterceptor(new Object())).defineParameterBinder(Pipe.Binder.install(ForwardingType.class)));
-  Foo instance=loaded.getLoaded().newInstance();
+  Foo instance=loaded.getLoaded().getConstructor().newInstance();
   instance.foo(QUX);
 }

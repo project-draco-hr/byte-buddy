@@ -4,7 +4,7 @@
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(typeLocator).ignore(none()).with(AgentBuilder.LambdaInstrumentationStrategy.ENABLED).installOn(ByteBuddyAgent.getInstrumentation());
   try {
     Class<?> sampleFactory=classLoader.loadClass(LAMBDA_SAMPLE_FACTORY);
-    @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)sampleFactory.getDeclaredMethod("serializable",String.class).invoke(sampleFactory.newInstance(),FOO);
+    @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)sampleFactory.getDeclaredMethod("serializable",String.class).invoke(sampleFactory.getConstructor().newInstance(),FOO);
     assertThat(instance.call(),is(FOO));
     ByteArrayOutputStream outputStream=new ByteArrayOutputStream();
     ObjectOutputStream objectOutputStream=new ObjectOutputStream(outputStream);

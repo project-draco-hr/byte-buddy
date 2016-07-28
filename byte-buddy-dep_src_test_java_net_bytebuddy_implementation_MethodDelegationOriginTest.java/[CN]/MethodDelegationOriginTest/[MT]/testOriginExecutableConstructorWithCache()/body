@@ -1,12 +1,12 @@
 {
-  Object originConstructor=Class.forName(ORIGIN_EXECUTABLE_CACHED).newInstance();
+  Object originConstructor=Class.forName(ORIGIN_EXECUTABLE_CACHED).getConstructor().newInstance();
   Field constructor=Class.forName(ORIGIN_EXECUTABLE_CACHED).getDeclaredField("executable");
   DynamicType.Loaded<Foo> loaded=implement(Foo.class,SuperMethodCall.INSTANCE.andThen(MethodDelegation.to(originConstructor)),getClass().getClassLoader(),isConstructor());
-  loaded.getLoaded().newInstance();
+  loaded.getLoaded().getConstructor().newInstance();
   assertThat(constructor.get(originConstructor),instanceOf(Constructor.class));
   assertThat(constructor.get(originConstructor),is((Object)loaded.getLoaded().getDeclaredConstructor()));
   Object previous=constructor.get(originConstructor);
-  loaded.getLoaded().newInstance();
+  loaded.getLoaded().getConstructor().newInstance();
   assertThat(constructor.get(originConstructor),instanceOf(Constructor.class));
   assertThat(constructor.get(originConstructor),sameInstance(previous));
 }

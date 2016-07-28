@@ -3,7 +3,7 @@
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
   DynamicType.Loaded<SimpleWithField> dynamicType=implement(SimpleWithField.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP)).getOnly()).invoke(QUX,String.class).withField(FOO),getClass().getClassLoader(),isDeclaredBy(SimpleWithField.class));
   assertThat(dynamicType.getLoaded().getDeclaredFields().length,is(0));
-  SimpleWithField instance=dynamicType.getLoaded().newInstance();
+  SimpleWithField instance=dynamicType.getLoaded().getConstructor().newInstance();
   Field field=SimpleWithField.class.getDeclaredField(FOO);
   field.setAccessible(true);
   field.set(instance,FOO);

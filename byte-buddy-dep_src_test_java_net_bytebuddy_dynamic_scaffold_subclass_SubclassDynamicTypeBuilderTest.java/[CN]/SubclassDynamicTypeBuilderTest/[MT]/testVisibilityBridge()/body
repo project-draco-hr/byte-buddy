@@ -6,12 +6,12 @@
   assertThat(foo.isBridge(),is(true));
   assertThat(foo.getDeclaredAnnotations().length,is(1));
   assertThat(foo.getAnnotation(Foo.class),notNullValue(Foo.class));
-  assertThat(foo.invoke(type.newInstance(),BAR),is((Object)(FOO + BAR)));
+  assertThat(foo.invoke(type.getConstructor().newInstance(),BAR),is((Object)(FOO + BAR)));
   Method bar=type.getDeclaredMethod(BAR,List.class);
   assertThat(bar.isBridge(),is(true));
   assertThat(bar.getDeclaredAnnotations().length,is(0));
   List<?> list=new ArrayList<Object>();
-  assertThat(bar.invoke(type.newInstance(),list),sameInstance((Object)list));
+  assertThat(bar.invoke(type.getConstructor().newInstance(),list),sameInstance((Object)list));
   assertThat(bar.getGenericReturnType(),instanceOf(Class.class));
   assertThat(bar.getGenericParameterTypes()[0],instanceOf(Class.class));
   assertThat(bar.getGenericExceptionTypes()[0],instanceOf(Class.class));

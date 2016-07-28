@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<Foo> loaded=implement(Foo.class,SuperMethodCall.INSTANCE.andThen(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)));
-  Foo foo=loaded.getLoaded().newInstance();
+  Foo foo=loaded.getLoaded().getConstructor().newInstance();
   assertThat(foo.foo(),is(FOO));
   foo.assertOnlyCall(FOO);
 }

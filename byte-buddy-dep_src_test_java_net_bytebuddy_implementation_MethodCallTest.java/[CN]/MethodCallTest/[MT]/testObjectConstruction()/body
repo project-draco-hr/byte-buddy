@@ -4,7 +4,7 @@
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
-  SelfReference instance=loaded.getLoaded().newInstance();
+  SelfReference instance=loaded.getLoaded().getConstructor().newInstance();
   SelfReference created=instance.foo();
   assertThat(created.getClass(),CoreMatchers.<Class<?>>is(SelfReference.class));
   assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(SelfReference.class)));

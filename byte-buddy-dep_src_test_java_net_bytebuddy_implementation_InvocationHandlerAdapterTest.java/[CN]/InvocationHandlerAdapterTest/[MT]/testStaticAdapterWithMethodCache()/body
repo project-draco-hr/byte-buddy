@@ -4,7 +4,7 @@
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(2));
-  Bar instance=loaded.getLoaded().newInstance();
+  Bar instance=loaded.getLoaded().getConstructor().newInstance();
   assertThat(instance.bar(FOO),is((Object)instance));
   assertThat(foo.methods.size(),is(1));
   assertThat(instance.bar(FOO),is((Object)instance));

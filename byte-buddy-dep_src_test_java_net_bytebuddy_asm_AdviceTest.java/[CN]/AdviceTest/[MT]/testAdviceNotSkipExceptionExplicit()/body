@@ -1,7 +1,7 @@
 {
   Class<?> type=new ByteBuddy().redefine(Sample.class).visit(Advice.to(TrivialAdvice.class).on(named(BAR + BAZ))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   try {
-    type.getDeclaredMethod(BAR + BAZ).invoke(type.newInstance());
+    type.getDeclaredMethod(BAR + BAZ).invoke(type.getConstructor().newInstance());
     fail();
   }
  catch (  InvocationTargetException exception) {

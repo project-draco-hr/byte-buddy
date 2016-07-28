@@ -1,5 +1,5 @@
 {
   DynamicType.Loaded<Bar> loaded=implement(Bar.class,MethodDelegation.to(GenericBaz.class));
-  Bar instance=loaded.getLoaded().newInstance();
+  Bar instance=loaded.getLoaded().getConstructor().newInstance();
   assertThat(instance.qux(BAR),is(BAR + QUX));
 }

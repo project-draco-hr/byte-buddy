@@ -5,7 +5,7 @@
   assertThat(loaded.getLoaded().getDeclaredMethod(FOO,String.class),not(nullValue(Method.class)));
   assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(1));
-  MethodCallWithExplicitArgument instance=loaded.getLoaded().newInstance();
+  MethodCallWithExplicitArgument instance=loaded.getLoaded().getConstructor().newInstance();
   Field field=instance.getClass().getDeclaredField(FOO);
   field.setAccessible(true);
   field.set(instance,FOO);

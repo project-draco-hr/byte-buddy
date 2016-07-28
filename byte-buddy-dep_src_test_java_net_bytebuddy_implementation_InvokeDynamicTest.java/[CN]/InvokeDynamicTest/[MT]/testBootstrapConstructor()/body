@@ -1,6 +1,6 @@
 {
   for (  Constructor<?> constructor : Class.forName(STANDARD_ARGUMENT_BOOTSTRAP).getDeclaredConstructors()) {
     DynamicType.Loaded<Simple> dynamicType=implement(Simple.class,InvokeDynamic.bootstrap(constructor).withoutArguments(),getClass().getClassLoader(),isDeclaredBy(Simple.class));
-    assertThat(dynamicType.getLoaded().newInstance().foo(),is(FOO));
+    assertThat(dynamicType.getLoaded().getConstructor().newInstance().foo(),is(FOO));
   }
 }

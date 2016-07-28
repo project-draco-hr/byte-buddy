@@ -4,7 +4,7 @@
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(1));
-  Baz instance=loaded.getLoaded().newInstance();
+  Baz instance=loaded.getLoaded().getConstructor().newInstance();
   assertThat(instance.bar(BAZ),is(BAZ * 2L));
   instance.assertZeroCalls();
 }

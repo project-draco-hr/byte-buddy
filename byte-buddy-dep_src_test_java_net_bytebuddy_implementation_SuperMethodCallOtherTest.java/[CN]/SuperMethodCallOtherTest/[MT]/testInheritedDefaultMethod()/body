@@ -2,6 +2,6 @@
   DynamicType.Loaded<?> loaded=implement(Class.forName(SINGLE_DEFAULT_METHOD_CLASS),SuperMethodCall.INSTANCE,getClass().getClassLoader(),isMethod().and(not(isDeclaredBy(Object.class))));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   Method method=loaded.getLoaded().getDeclaredMethod(FOO);
-  Object instance=loaded.getLoaded().newInstance();
+  Object instance=loaded.getLoaded().getConstructor().newInstance();
   assertThat(method.invoke(instance),is((Object)FOO));
 }

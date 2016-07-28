@@ -2,6 +2,6 @@
   ClassFileVersion classFileVersion=ClassFileVersion.ofJavaVersion(javaVersion);
   if (ClassFileVersion.forCurrentJavaVersion().compareTo(classFileVersion) >= 0) {
     Class<?> type=new ByteBuddy(classFileVersion).subclass(Foo.class).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-    assertThat(type.newInstance(),notNullValue(Object.class));
+    assertThat(type.getConstructor().newInstance(),notNullValue(Object.class));
   }
 }

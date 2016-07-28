@@ -1,3 +1,3 @@
 {
-  return new ByteBuddy().with(TypeValidation.DISABLED).ignore(none()).subclass(baseClass).method(isDeclaredBy(baseClass)).intercept(StubMethod.INSTANCE).make().load(newClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded().newInstance();
+  return new ByteBuddy().with(TypeValidation.DISABLED).ignore(none()).subclass(baseClass).method(isDeclaredBy(baseClass)).intercept(StubMethod.INSTANCE).make().load(newClassLoader(),ClassLoadingStrategy.Default.INJECTION).getLoaded().getConstructor().newInstance();
 }

@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<ExtendedField> loaded=implement(ExtendedField.class,MethodDelegation.to(ExplicitInterceptor.class));
-  SimpleField instance=loaded.getLoaded().newInstance();
+  SimpleField instance=loaded.getLoaded().getConstructor().newInstance();
   instance.foo=FOO;
   assertThat(instance.foo(),is((Object)FOO));
   instance.foo=BAR;
