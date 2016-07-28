@@ -1,0 +1,10 @@
+{
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InGenericShape>());
+  ConstructorStrategy constructorStrategy=ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.withInheritedAnnotations();
+  assertThat(constructorStrategy.extractConstructors(instrumentedType),is(Collections.singletonList(stripped)));
+  assertThat(constructorStrategy.inject(methodRegistry),is(methodRegistry));
+  verify(methodRegistry).append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),eq(MethodAttributeAppender.ForInstrumentedMethod.EXCLUDING_RECEIVER),eq(Transformer.NoOp.<MethodDescription>make()));
+  verifyNoMoreInteractions(methodRegistry);
+  verify(instrumentedType).getSuperClass();
+  verifyNoMoreInteractions(instrumentedType);
+}

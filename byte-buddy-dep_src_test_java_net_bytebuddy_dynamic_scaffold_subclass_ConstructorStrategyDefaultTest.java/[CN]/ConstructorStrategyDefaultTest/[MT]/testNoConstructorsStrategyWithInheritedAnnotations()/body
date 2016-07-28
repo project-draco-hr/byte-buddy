@@ -1,0 +1,7 @@
+{
+  ConstructorStrategy constructorStrategy=ConstructorStrategy.Default.NO_CONSTRUCTORS.withInheritedAnnotations();
+  assertThat(constructorStrategy.extractConstructors(instrumentedType).size(),is(0));
+  assertThat(constructorStrategy.inject(methodRegistry),is(methodRegistry));
+  verifyZeroInteractions(methodRegistry);
+  verifyZeroInteractions(instrumentedType);
+}

@@ -1,0 +1,11 @@
+{
+  when(methodDescription.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InGenericShape>());
+  MethodAttributeAppender.Factory methodAttributeAppenderFactory=mock(MethodAttributeAppender.Factory.class);
+  ConstructorStrategy constructorStrategy=ConstructorStrategy.Default.DEFAULT_CONSTRUCTOR.with(methodAttributeAppenderFactory);
+  assertThat(constructorStrategy.extractConstructors(instrumentedType),is(Collections.singletonList(stripped)));
+  assertThat(constructorStrategy.inject(methodRegistry),is(methodRegistry));
+  verify(methodRegistry).append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),eq(methodAttributeAppenderFactory),eq(Transformer.NoOp.<MethodDescription>make()));
+  verifyNoMoreInteractions(methodRegistry);
+  verify(instrumentedType).getSuperClass();
+  verifyNoMoreInteractions(instrumentedType);
+}

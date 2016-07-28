@@ -1,0 +1,10 @@
+{
+  when(methodDescription.getModifiers()).thenReturn(Opcodes.ACC_PUBLIC);
+  ConstructorStrategy constructorStrategy=ConstructorStrategy.Default.IMITATE_SUPER_CLASS_PUBLIC.withInheritedAnnotations();
+  assertThat(constructorStrategy.extractConstructors(instrumentedType),is(Collections.singletonList(stripped)));
+  assertThat(constructorStrategy.inject(methodRegistry),is(methodRegistry));
+  verify(methodRegistry).append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),eq(MethodAttributeAppender.ForInstrumentedMethod.EXCLUDING_RECEIVER),eq(Transformer.NoOp.<MethodDescription>make()));
+  verifyNoMoreInteractions(methodRegistry);
+  verify(instrumentedType,atLeastOnce()).getSuperClass();
+  verifyNoMoreInteractions(instrumentedType);
+}

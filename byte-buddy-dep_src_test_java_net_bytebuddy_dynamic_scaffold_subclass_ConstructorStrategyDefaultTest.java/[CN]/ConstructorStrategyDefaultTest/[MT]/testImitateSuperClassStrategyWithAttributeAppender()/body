@@ -1,0 +1,11 @@
+{
+  when(methodDescription.getModifiers()).thenReturn(Opcodes.ACC_PUBLIC);
+  MethodAttributeAppender.Factory methodAttributeAppenderFactory=mock(MethodAttributeAppender.Factory.class);
+  ConstructorStrategy constructorStrategy=ConstructorStrategy.Default.IMITATE_SUPER_CLASS.with(methodAttributeAppenderFactory);
+  assertThat(constructorStrategy.extractConstructors(instrumentedType),is(Collections.singletonList(stripped)));
+  assertThat(constructorStrategy.inject(methodRegistry),is(methodRegistry));
+  verify(methodRegistry).append(any(LatentMatcher.class),any(MethodRegistry.Handler.class),eq(methodAttributeAppenderFactory),eq(Transformer.NoOp.<MethodDescription>make()));
+  verifyNoMoreInteractions(methodRegistry);
+  verify(instrumentedType,atLeastOnce()).getSuperClass();
+  verifyNoMoreInteractions(instrumentedType);
+}

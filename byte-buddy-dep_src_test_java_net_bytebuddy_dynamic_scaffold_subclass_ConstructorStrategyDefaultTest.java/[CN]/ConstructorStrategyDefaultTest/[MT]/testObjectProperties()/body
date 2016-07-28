@@ -1,3 +1,4 @@
 {
   ObjectPropertyAssertion.of(ConstructorStrategy.Default.class).apply();
+  ObjectPropertyAssertion.of(ConstructorStrategy.Default.WithMethodAttributeAppenderFactory.class).apply();
 }

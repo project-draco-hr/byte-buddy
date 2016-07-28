@@ -1,0 +1,8 @@
+{
+  MethodAttributeAppender.Factory methodAttributeAppenderFactory=mock(MethodAttributeAppender.Factory.class);
+  ConstructorStrategy constructorStrategy=ConstructorStrategy.Default.NO_CONSTRUCTORS.with(methodAttributeAppenderFactory);
+  assertThat(constructorStrategy.extractConstructors(instrumentedType).size(),is(0));
+  assertThat(constructorStrategy.inject(methodRegistry),is(methodRegistry));
+  verifyZeroInteractions(methodRegistry);
+  verifyZeroInteractions(instrumentedType);
+}
