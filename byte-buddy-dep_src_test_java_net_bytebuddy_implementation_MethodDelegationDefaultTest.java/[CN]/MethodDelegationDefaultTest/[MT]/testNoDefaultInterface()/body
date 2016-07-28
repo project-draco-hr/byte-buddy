@@ -1,5 +1,5 @@
 {
   DynamicType.Loaded<?> loaded=implement(Object.class,MethodDelegation.to(DelegationNoDefaultInterfaceInterceptor.class),getClass().getClassLoader(),isMethod().and(not(isDeclaredBy(Object.class))),DelegationNoDefaultInterface.class);
-  DelegationNoDefaultInterface instance=(DelegationNoDefaultInterface)loaded.getLoaded().getConstructor().newInstance();
+  DelegationNoDefaultInterface instance=(DelegationNoDefaultInterface)loaded.getLoaded().getDeclaredConstructor().newInstance();
   instance.foo();
 }

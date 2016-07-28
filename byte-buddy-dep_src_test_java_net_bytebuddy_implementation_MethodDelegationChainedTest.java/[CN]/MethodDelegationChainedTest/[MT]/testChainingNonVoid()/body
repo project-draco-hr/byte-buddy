@@ -1,6 +1,6 @@
 {
   NonVoidInterceptor nonVoidInterceptor=new NonVoidInterceptor();
   DynamicType.Loaded<Foo> dynamicType=implement(Foo.class,MethodDelegation.to(nonVoidInterceptor).filter(isDeclaredBy(NonVoidInterceptor.class)).andThen(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)));
-  assertThat(dynamicType.getLoaded().getConstructor().newInstance().foo(),is(FOO));
+  assertThat(dynamicType.getLoaded().getDeclaredConstructor().newInstance().foo(),is(FOO));
   assertThat(nonVoidInterceptor.intercepted,is(true));
 }

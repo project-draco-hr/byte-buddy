@@ -1,7 +1,7 @@
 {
   ByteBuddy byteBuddy=new ByteBuddy();
   Class<? extends UserType> dynamicUserType=byteBuddy.subclass(UserType.class).method(not(isDeclaredBy(Object.class))).intercept(MethodDelegation.toInstanceField(Interceptor2.class,"interceptor")).implement(InterceptionAccessor.class).intercept(FieldAccessor.ofBeanProperty()).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  InstanceCreator factory=byteBuddy.subclass(InstanceCreator.class).method(not(isDeclaredBy(Object.class))).intercept(MethodDelegation.toConstructor(dynamicUserType)).make().load(dynamicUserType.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getConstructor().newInstance();
+  InstanceCreator factory=byteBuddy.subclass(InstanceCreator.class).method(not(isDeclaredBy(Object.class))).intercept(MethodDelegation.toConstructor(dynamicUserType)).make().load(dynamicUserType.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getDeclaredConstructor().newInstance();
   UserType userType=(UserType)factory.makeInstance();
   ((InterceptionAccessor)userType).setInterceptor(new HelloWorldInterceptor());
   assertThat(userType.doSomething(),is("Hello World!"));

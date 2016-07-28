@@ -1,5 +1,5 @@
 {
   Class<? extends Qux> qux=implement(Qux.class,FixedValue.value(makeMethodHandle())).getLoaded();
   assertThat(qux.getDeclaredFields().length,is(0));
-  assertThat(JavaConstant.MethodHandle.ofLoaded(qux.getConstructor().newInstance().bar()),is(JavaConstant.MethodHandle.ofLoaded(makeMethodHandle())));
+  assertThat(JavaConstant.MethodHandle.ofLoaded(qux.getDeclaredConstructor().newInstance().bar()),is(JavaConstant.MethodHandle.ofLoaded(makeMethodHandle())));
 }

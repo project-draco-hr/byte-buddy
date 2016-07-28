@@ -1,5 +1,5 @@
 {
   DynamicType.Loaded<Qux> loaded=implement(Qux.class,MethodDelegation.to(BazSlack.class));
-  Qux instance=loaded.getLoaded().getConstructor().newInstance();
+  Qux instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   assertThat(instance.foo(FOOBAR,BAZ),is((Object)(QUX + BAZ)));
 }

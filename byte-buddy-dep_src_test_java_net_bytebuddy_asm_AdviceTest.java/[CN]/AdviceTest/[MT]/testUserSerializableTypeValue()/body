@@ -5,5 +5,5 @@
     }
   }
 ).to(CustomSerializableAdvice.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(type.getDeclaredMethod(FOO).invoke(type.getConstructor().newInstance()),is((Object)FOO));
+  assertThat(type.getDeclaredMethod(FOO).invoke(type.getDeclaredConstructor().newInstance()),is((Object)FOO));
 }

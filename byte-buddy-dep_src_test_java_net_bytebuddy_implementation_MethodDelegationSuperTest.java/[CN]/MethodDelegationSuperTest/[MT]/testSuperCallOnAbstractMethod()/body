@@ -1,4 +1,4 @@
 {
   DynamicType.Loaded<FooBarQuxBaz> loaded=implement(FooBarQuxBaz.class,MethodDelegation.to(FooBar.class));
-  loaded.getLoaded().getConstructor().newInstance().qux();
+  loaded.getLoaded().getDeclaredConstructor().newInstance().qux();
 }

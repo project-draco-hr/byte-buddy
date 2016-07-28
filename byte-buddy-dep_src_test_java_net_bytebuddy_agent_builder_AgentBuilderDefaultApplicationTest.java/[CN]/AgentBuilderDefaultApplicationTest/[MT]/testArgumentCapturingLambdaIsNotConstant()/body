@@ -4,7 +4,7 @@
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(typeLocator).ignore(none()).with(AgentBuilder.LambdaInstrumentationStrategy.ENABLED).type(isSubTypeOf(Callable.class)).transform(new SingleMethodReplacer("call")).installOn(ByteBuddyAgent.getInstrumentation());
   try {
     Class<?> sampleFactory=classLoader.loadClass(LAMBDA_SAMPLE_FACTORY);
-    assertThat(sampleFactory.getDeclaredMethod("argumentCapturing",String.class).invoke(sampleFactory.getConstructor().newInstance(),FOO),not(sameInstance(sampleFactory.getDeclaredMethod("argumentCapturing",String.class).invoke(sampleFactory.getConstructor().newInstance(),FOO))));
+    assertThat(sampleFactory.getDeclaredMethod("argumentCapturing",String.class).invoke(sampleFactory.getDeclaredConstructor().newInstance(),FOO),not(sameInstance(sampleFactory.getDeclaredMethod("argumentCapturing",String.class).invoke(sampleFactory.getDeclaredConstructor().newInstance(),FOO))));
   }
   finally {
     ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);

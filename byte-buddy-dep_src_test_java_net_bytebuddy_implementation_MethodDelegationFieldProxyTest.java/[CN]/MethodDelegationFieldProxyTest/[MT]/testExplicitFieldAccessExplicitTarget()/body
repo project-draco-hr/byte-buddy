@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<ExplicitInherited> loaded=implement(ExplicitInherited.class,MethodDelegation.to(SwapInherited.class).appendParameterBinder(FieldProxy.Binder.install(Get.class,Set.class)));
-  ExplicitInherited explicitInherited=loaded.getLoaded().getConstructor().newInstance();
+  ExplicitInherited explicitInherited=loaded.getLoaded().getDeclaredConstructor().newInstance();
   assertThat(((Explicit)explicitInherited).foo,is(FOO));
   assertThat(explicitInherited.foo,is(QUX));
   explicitInherited.swap();

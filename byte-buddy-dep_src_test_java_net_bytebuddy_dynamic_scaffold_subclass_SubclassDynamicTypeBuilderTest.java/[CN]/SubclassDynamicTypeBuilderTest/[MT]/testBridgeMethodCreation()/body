@@ -2,7 +2,7 @@
   Class<?> dynamicType=new ByteBuddy().subclass(BridgeRetention.Inner.class).method(named(FOO)).intercept(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
   assertEquals(String.class,dynamicType.getDeclaredMethod(FOO).getReturnType());
   assertThat(dynamicType.getDeclaredMethod(FOO).getGenericReturnType(),is((Type)String.class));
-  BridgeRetention<String> bridgeRetention=(BridgeRetention<String>)dynamicType.getConstructor().newInstance();
+  BridgeRetention<String> bridgeRetention=(BridgeRetention<String>)dynamicType.getDeclaredConstructor().newInstance();
   assertThat(bridgeRetention.foo(),is(FOO));
   bridgeRetention.assertZeroCalls();
 }

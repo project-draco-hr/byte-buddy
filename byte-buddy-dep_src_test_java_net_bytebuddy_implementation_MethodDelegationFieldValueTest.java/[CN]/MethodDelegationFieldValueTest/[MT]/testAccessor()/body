@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<SimpleFieldAccessor> loaded=implement(SimpleFieldAccessor.class,MethodDelegation.to(SimpleAccessorInterceptor.class));
-  SimpleFieldAccessor instance=loaded.getLoaded().getConstructor().newInstance();
+  SimpleFieldAccessor instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   instance.foo=FOO;
   assertThat(instance.getFoo(),is((Object)FOO));
   instance.foo=BAR;

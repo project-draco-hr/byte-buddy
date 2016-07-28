@@ -5,7 +5,7 @@
   assertThat(loaded.getLoaded().getDeclaredMethod(FOO,String.class,String.class),not(nullValue(Method.class)));
   assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
-  MethodCallWithTwoExplicitArguments instance=loaded.getLoaded().getConstructor().newInstance();
+  MethodCallWithTwoExplicitArguments instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(MethodCallWithTwoExplicitArguments.class)));
   assertThat(instance,instanceOf(MethodCallWithTwoExplicitArguments.class));
   assertThat(instance.foo(FOO,BAR),is(FOO + BAR));

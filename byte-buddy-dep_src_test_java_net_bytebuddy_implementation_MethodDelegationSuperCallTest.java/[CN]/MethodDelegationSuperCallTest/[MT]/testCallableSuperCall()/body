@@ -1,5 +1,5 @@
 {
   DynamicType.Loaded<Bar> loaded=implement(Bar.class,MethodDelegation.to(CallableClass.class));
-  Bar instance=loaded.getLoaded().getConstructor().newInstance();
+  Bar instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   assertThat(instance.bar(),is(FOO));
 }

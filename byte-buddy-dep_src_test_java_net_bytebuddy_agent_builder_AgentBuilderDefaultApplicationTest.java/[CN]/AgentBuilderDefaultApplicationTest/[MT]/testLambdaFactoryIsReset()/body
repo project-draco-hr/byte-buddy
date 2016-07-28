@@ -5,6 +5,6 @@
   ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);
   AgentBuilder.LambdaInstrumentationStrategy.release(classFileTransformer,ByteBuddyAgent.getInstrumentation());
   Class<?> sampleFactory=classLoader.loadClass(LAMBDA_SAMPLE_FACTORY);
-  @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)sampleFactory.getDeclaredMethod("nonCapturing").invoke(sampleFactory.getConstructor().newInstance());
+  @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)sampleFactory.getDeclaredMethod("nonCapturing").invoke(sampleFactory.getDeclaredConstructor().newInstance());
   assertThat(instance.call(),is(FOO));
 }

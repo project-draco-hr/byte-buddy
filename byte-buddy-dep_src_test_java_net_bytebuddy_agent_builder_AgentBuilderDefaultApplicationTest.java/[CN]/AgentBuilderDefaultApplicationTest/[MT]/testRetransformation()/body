@@ -4,7 +4,7 @@
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(typeLocator).ignore(none()).with(AgentBuilder.InitializationStrategy.NoOp.INSTANCE).with(AgentBuilder.TypeStrategy.Default.REDEFINE).with(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new FooTransformer()).installOnByteBuddyAgent();
   try {
     Class<?> type=classLoader.loadClass(SimpleType.class.getName());
-    assertThat(type.getDeclaredMethod(FOO).invoke(type.getConstructor().newInstance()),is((Object)BAR));
+    assertThat(type.getDeclaredMethod(FOO).invoke(type.getDeclaredConstructor().newInstance()),is((Object)BAR));
   }
   finally {
     ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);

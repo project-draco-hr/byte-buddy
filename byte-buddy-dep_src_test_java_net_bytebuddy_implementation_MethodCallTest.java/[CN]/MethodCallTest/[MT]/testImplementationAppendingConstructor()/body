@@ -5,7 +5,7 @@
   assertThat(loaded.getLoaded().getDeclaredMethod(FOO),not(nullValue(Method.class)));
   assertThat(loaded.getLoaded().getDeclaredConstructors().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
-  MethodCallAppending instance=loaded.getLoaded().getConstructor().newInstance();
+  MethodCallAppending instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(MethodCallAppending.class)));
   assertThat(instance,instanceOf(MethodCallAppending.class));
   assertThat(instance.foo(),is((Object)FOO));

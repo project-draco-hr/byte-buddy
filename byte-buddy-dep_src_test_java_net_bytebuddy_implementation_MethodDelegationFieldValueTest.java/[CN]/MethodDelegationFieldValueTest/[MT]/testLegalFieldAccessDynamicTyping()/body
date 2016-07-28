@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<SimpleStaticField> loaded=implement(SimpleStaticField.class,MethodDelegation.to(DynamicInterceptor.class));
-  SimpleStaticField instance=loaded.getLoaded().getConstructor().newInstance();
+  SimpleStaticField instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   SimpleStaticField.foo=FOO;
   assertThat(instance.foo(),is((Object)FOO));
   SimpleStaticField.foo=BAR;

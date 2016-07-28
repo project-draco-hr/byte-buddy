@@ -1,4 +1,4 @@
 {
   Class<?> dynamicType=new ByteBuddy().subclass(Object.class).method(named("toString")).intercept(FixedValue.value("Hello World!")).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(dynamicType.getConstructor().newInstance().toString(),is("Hello World!"));
+  assertThat(dynamicType.getDeclaredConstructor().newInstance().toString(),is("Hello World!"));
 }

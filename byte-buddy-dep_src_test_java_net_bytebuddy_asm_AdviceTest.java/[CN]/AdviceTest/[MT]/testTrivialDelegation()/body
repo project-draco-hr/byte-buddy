@@ -1,4 +1,4 @@
 {
   Class<?> type=new ByteBuddy().redefine(EmptyDelegationAdvice.class).visit(Advice.to(EmptyDelegationAdvice.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(type.getDeclaredMethod(FOO).invoke(type.getConstructor().newInstance()),nullValue(Object.class));
+  assertThat(type.getDeclaredMethod(FOO).invoke(type.getDeclaredConstructor().newInstance()),nullValue(Object.class));
 }

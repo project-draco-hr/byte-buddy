@@ -1,5 +1,5 @@
 {
   Class<?> type=new ByteBuddy(classFileVersion).subclass(Object.class).defineMethod(FOO,String.class,Visibility.PUBLIC).intercept(new DeadStringAppender()).make().load(null,ClassLoadingStrategy.Default.WRAPPER_PERSISTENT).getLoaded();
   Class<?> redefined=new ByteBuddy().redefine(type).visit(Advice.to(ExitAdvice.class).on(named(FOO))).make().load(null,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(redefined.getDeclaredMethod(FOO).invoke(redefined.getConstructor().newInstance()),is((Object)FOO));
+  assertThat(redefined.getDeclaredMethod(FOO).invoke(redefined.getDeclaredConstructor().newInstance()),is((Object)FOO));
 }

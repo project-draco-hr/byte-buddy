@@ -4,6 +4,6 @@
       continue;
     }
     DynamicType.Loaded<Simple> dynamicType=implement(Simple.class,InvokeDynamic.bootstrap(method).withoutArguments(),getClass().getClassLoader(),isDeclaredBy(Simple.class));
-    assertThat(dynamicType.getLoaded().getConstructor().newInstance().foo(),is(FOO));
+    assertThat(dynamicType.getLoaded().getDeclaredConstructor().newInstance().foo(),is(FOO));
   }
 }

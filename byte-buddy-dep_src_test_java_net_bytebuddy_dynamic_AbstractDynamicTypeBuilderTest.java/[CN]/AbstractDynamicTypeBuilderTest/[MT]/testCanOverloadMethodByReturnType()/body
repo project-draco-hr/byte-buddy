@@ -4,7 +4,7 @@
     if (method.getReturnType() == String.class) {
       assertThat(method.getName(),is(QUX));
       assertThat(method.getParameterTypes().length,is(0));
-      assertThat(method.invoke(type.getConstructor().newInstance()),is((Object)FOO));
+      assertThat(method.invoke(type.getDeclaredConstructor().newInstance()),is((Object)FOO));
     }
  else     if (method.getReturnType() == Object.class) {
       assertThat(method.getName(),is(QUX));

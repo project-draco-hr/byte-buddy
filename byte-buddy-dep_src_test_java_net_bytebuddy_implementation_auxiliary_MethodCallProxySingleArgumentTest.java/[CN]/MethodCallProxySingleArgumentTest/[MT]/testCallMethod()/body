@@ -2,7 +2,7 @@
   Class<?> auxiliaryType=proxyOnlyDeclaredMethodOf(targetType);
   Constructor<?> constructor=auxiliaryType.getDeclaredConstructor(targetType,valueType);
   constructor.setAccessible(true);
-  T proxiedInstance=targetType.getConstructor().newInstance();
+  T proxiedInstance=targetType.getDeclaredConstructor().newInstance();
   assertThat(((Callable<?>)constructor.newInstance(proxiedInstance,value)).call(),is(value));
   proxiedInstance.assertOnlyCall(FOO,value);
 }

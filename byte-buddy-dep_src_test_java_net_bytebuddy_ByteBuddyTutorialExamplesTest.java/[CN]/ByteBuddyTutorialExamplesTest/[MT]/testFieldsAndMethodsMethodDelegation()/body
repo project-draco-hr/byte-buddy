@@ -1,4 +1,4 @@
 {
-  String helloWorld=new ByteBuddy().subclass(Source.class).method(named("hello")).intercept(MethodDelegation.to(Target.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getConstructor().newInstance().hello("World");
+  String helloWorld=new ByteBuddy().subclass(Source.class).method(named("hello")).intercept(MethodDelegation.to(Target.class)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getDeclaredConstructor().newInstance().hello("World");
   assertThat(helloWorld,is("Hello World!"));
 }

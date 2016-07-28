@@ -1,7 +1,7 @@
 {
-  Object origin=Class.forName(ORIGIN_EXECUTABLE_CACHED).getConstructor().newInstance();
+  Object origin=Class.forName(ORIGIN_EXECUTABLE_CACHED).getDeclaredConstructor().newInstance();
   DynamicType.Loaded<Foo> loaded=implement(Foo.class,MethodDelegation.to(origin));
-  Foo instance=loaded.getLoaded().getConstructor().newInstance();
+  Foo instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   Object method=instance.foo();
   assertThat(method,instanceOf(Method.class));
   assertThat(method,is((Object)Foo.class.getDeclaredMethod(FOO)));

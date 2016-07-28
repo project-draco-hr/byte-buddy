@@ -3,7 +3,7 @@
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(typeLocator).ignore(none()).type(isAnnotatedWith(ShouldRebase.class),ElementMatchers.is(classLoader)).transform(new BarTransformer()).installOnByteBuddyAgent();
   try {
     Class<?> type=classLoader.loadClass(Bar.class.getName());
-    assertThat(type.getDeclaredMethod(FOO).invoke(type.getConstructor().newInstance()),is((Object)BAR));
+    assertThat(type.getDeclaredMethod(FOO).invoke(type.getDeclaredConstructor().newInstance()),is((Object)BAR));
   }
   finally {
     ByteBuddyAgent.getInstrumentation().removeTransformer(classFileTransformer);

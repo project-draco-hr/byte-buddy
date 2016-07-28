@@ -2,7 +2,7 @@
   Class<?> interfaceType=Class.forName(DEFAULT_METHOD_INTERFACE);
   Class<?> dynamicInterfaceType=new ByteBuddy().redefine(interfaceType).method(named(FOO)).intercept(new Implementation.Simple(new TextConstant(BAR),MethodReturn.REFERENCE)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
   Class<?> dynamicClassType=new ByteBuddy().subclass(dynamicInterfaceType).make().load(dynamicInterfaceType.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(dynamicClassType.getMethod(FOO).invoke(dynamicClassType.getConstructor().newInstance()),is((Object)BAR));
+  assertThat(dynamicClassType.getMethod(FOO).invoke(dynamicClassType.getDeclaredConstructor().newInstance()),is((Object)BAR));
   assertThat(dynamicInterfaceType.getDeclaredMethods().length,is(1));
   assertThat(dynamicClassType.getDeclaredMethods().length,is(0));
 }

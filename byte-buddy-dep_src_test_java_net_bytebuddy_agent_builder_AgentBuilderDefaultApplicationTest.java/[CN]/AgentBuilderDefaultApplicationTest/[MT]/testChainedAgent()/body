@@ -5,7 +5,7 @@
   ClassFileTransformer secondTransformer=agentBuilder.installOnByteBuddyAgent();
   try {
     Class<?> type=classLoader.loadClass(Qux.class.getName());
-    assertThat(type.getDeclaredMethod(FOO).invoke(type.getConstructor().newInstance()),is((Object)(FOO + BAR + BAR)));
+    assertThat(type.getDeclaredMethod(FOO).invoke(type.getDeclaredConstructor().newInstance()),is((Object)(FOO + BAR + BAR)));
   }
   finally {
     ByteBuddyAgent.getInstrumentation().removeTransformer(firstTransformer);

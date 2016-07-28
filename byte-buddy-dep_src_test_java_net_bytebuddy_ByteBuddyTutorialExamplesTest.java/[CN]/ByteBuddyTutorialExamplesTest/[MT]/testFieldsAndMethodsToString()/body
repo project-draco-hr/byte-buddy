@@ -1,4 +1,4 @@
 {
-  String toString=new ByteBuddy().subclass(Object.class).name("example.Type").make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getConstructor().newInstance().toString();
+  String toString=new ByteBuddy().subclass(Object.class).name("example.Type").make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getDeclaredConstructor().newInstance().toString();
   assertThat(toString,startsWith("example.Type"));
 }

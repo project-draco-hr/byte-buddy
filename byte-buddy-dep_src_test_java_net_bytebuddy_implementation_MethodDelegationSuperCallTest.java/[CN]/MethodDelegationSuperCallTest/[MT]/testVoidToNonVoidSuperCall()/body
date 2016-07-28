@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<VoidTest> loaded=implement(VoidTest.class,MethodDelegation.to(NonVoidTarget.class));
-  VoidTest instance=loaded.getLoaded().getConstructor().newInstance();
+  VoidTest instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   instance.foo();
   instance.assertOnlyCall(FOO);
 }

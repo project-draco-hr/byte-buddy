@@ -1,5 +1,5 @@
 {
   DynamicType.Loaded<RuntimeTypeTest> loaded=implement(RuntimeTypeTest.class,MethodDelegation.to(RuntimeTypeTarget.class));
-  RuntimeTypeTest instance=loaded.getLoaded().getConstructor().newInstance();
+  RuntimeTypeTest instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   assertThat(instance.foo(),is(FOO));
 }

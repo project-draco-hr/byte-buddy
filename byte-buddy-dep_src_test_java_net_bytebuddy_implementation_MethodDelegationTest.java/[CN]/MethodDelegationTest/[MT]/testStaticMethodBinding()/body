@@ -3,7 +3,7 @@
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
-  T instance=loaded.getLoaded().getConstructor().newInstance();
+  T instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(sourceType)));
   assertThat(instance,instanceOf(sourceType));
   assertThat(loaded.getLoaded().getDeclaredMethod(FOO,parameterTypes).invoke(instance,arguments),(Matcher)matcher);

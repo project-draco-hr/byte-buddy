@@ -5,5 +5,5 @@
   Class<?> dynamicType=new ByteBuddy().subclass(interfaceType).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(dynamicType.getDeclaredFields().length,is(0));
   assertThat(dynamicType.getDeclaredMethods().length,is(0));
-  assertThat(interfaceMethod.invoke(dynamicType.getConstructor().newInstance()),is(interfaceMarker));
+  assertThat(interfaceMethod.invoke(dynamicType.getDeclaredConstructor().newInstance()),is(interfaceMarker));
 }

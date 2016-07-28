@@ -3,7 +3,7 @@
   assertThat(loaded.getLoadedAuxiliaryTypes().size(),is(0));
   assertThat(loaded.getLoaded().getDeclaredMethods().length,is(1));
   assertThat(loaded.getLoaded().getDeclaredFields().length,is(0));
-  SimpleMethod instance=loaded.getLoaded().getConstructor().newInstance();
+  SimpleMethod instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   assertThat(instance.foo(),is("" + makeMethodHandle() + makeMethodType(void.class)));
   assertThat(instance.getClass(),not(CoreMatchers.<Class<?>>is(SimpleMethod.class)));
   assertThat(instance,instanceOf(SimpleMethod.class));

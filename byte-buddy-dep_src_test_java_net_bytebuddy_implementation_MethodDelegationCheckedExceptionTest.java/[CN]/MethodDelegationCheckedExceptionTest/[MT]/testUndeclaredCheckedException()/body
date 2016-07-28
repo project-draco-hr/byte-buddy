@@ -1,3 +1,3 @@
 {
-  implement(Foo.class,MethodDelegation.to(Foo.class)).getLoaded().getConstructor().newInstance().bar();
+  implement(Foo.class,MethodDelegation.to(Foo.class)).getLoaded().getDeclaredConstructor().newInstance().bar();
 }

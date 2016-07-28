@@ -1,6 +1,6 @@
 {
   Class<?> type=new ByteBuddy().redefine(Sample.class).visit(Advice.to(ArgumentAdviceExplicit.class).on(named(QUX))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(type.getDeclaredMethod(QUX,String.class,String.class).invoke(type.getConstructor().newInstance(),FOO,BAR),is((Object)(FOO + BAR)));
+  assertThat(type.getDeclaredMethod(QUX,String.class,String.class).invoke(type.getDeclaredConstructor().newInstance(),FOO,BAR),is((Object)(FOO + BAR)));
   assertThat(type.getDeclaredField(ENTER).get(null),is((Object)1));
   assertThat(type.getDeclaredField(EXIT).get(null),is((Object)1));
 }

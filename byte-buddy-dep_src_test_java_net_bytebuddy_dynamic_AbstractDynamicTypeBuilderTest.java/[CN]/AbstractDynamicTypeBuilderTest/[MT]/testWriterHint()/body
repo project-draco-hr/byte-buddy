@@ -18,7 +18,7 @@
 );
   when(asmVisitorWrapper.mergeWriter(0)).thenReturn(ClassWriter.COMPUTE_MAXS);
   Class<?> type=createPlain().visit(asmVisitorWrapper).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(type.getDeclaredMethod(FOO).invoke(type.getConstructor().newInstance()),is((Object)FOO));
+  assertThat(type.getDeclaredMethod(FOO).invoke(type.getDeclaredConstructor().newInstance()),is((Object)FOO));
   verify(asmVisitorWrapper).mergeWriter(0);
   verify(asmVisitorWrapper,atMost(1)).mergeReader(0);
   verify(asmVisitorWrapper).wrap(any(TypeDescription.class),any(ClassVisitor.class),anyInt(),anyInt());

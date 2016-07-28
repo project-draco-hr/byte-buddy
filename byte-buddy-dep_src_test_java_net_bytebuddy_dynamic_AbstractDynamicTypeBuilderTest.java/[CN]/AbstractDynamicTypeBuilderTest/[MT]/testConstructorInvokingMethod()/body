@@ -1,5 +1,5 @@
 {
   Class<?> type=createPlain().defineMethod(FOO,Object.class,Visibility.PUBLIC).intercept(new Implementation.Simple(new TextConstant(FOO),MethodReturn.REFERENCE)).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   Method method=type.getDeclaredMethod(FOO);
-  assertThat(method.invoke(type.getConstructor().newInstance()),is((Object)FOO));
+  assertThat(method.invoke(type.getDeclaredConstructor().newInstance()),is((Object)FOO));
 }

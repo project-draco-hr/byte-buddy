@@ -1,6 +1,6 @@
 {
   Traceable traceable=new Traceable();
   Class<? extends SimpleStringMethod> loaded=implement(SimpleStringMethod.class,MethodCall.run(traceable)).getLoaded();
-  assertThat(loaded.getConstructor().newInstance().foo(),nullValue(String.class));
+  assertThat(loaded.getDeclaredConstructor().newInstance().foo(),nullValue(String.class));
   traceable.assertOnlyCall(FOO);
 }

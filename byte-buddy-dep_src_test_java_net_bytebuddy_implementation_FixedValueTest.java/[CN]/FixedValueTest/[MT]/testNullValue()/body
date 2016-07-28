@@ -2,5 +2,5 @@
   Class<?> type=implement(Foo.class,FixedValue.nullValue()).getLoaded();
   assertThat(type.getDeclaredFields().length,is(0));
   assertThat(type.getDeclaredMethods().length,is(1));
-  assertThat(type.getDeclaredMethod(BAR).invoke(type.getConstructor().newInstance()),nullValue(Object.class));
+  assertThat(type.getDeclaredMethod(BAR).invoke(type.getDeclaredConstructor().newInstance()),nullValue(Object.class));
 }

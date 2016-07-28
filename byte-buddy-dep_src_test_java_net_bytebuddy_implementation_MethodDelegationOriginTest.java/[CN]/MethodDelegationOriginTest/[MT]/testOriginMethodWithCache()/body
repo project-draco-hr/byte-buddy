@@ -1,6 +1,6 @@
 {
   DynamicType.Loaded<Foo> loaded=implement(Foo.class,MethodDelegation.to(OriginMethodWithCache.class));
-  Foo instance=loaded.getLoaded().getConstructor().newInstance();
+  Foo instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   Object method=instance.foo();
   assertThat(method,instanceOf(Method.class));
   assertThat(method,is((Object)Foo.class.getDeclaredMethod(FOO)));

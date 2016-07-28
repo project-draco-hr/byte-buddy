@@ -4,7 +4,7 @@
   field.set(null,null);
   TypeDescription typeDescription=new TypeDescription.ForLoadedType(type);
   DynamicType.Loaded<Simple> dynamicType=implement(Simple.class,InvokeDynamic.bootstrap(typeDescription.getDeclaredMethods().filter(named(BOOTSTRAP_EXPLICIT_ARGUMENTS)).getOnly(),INTEGER,LONG,FLOAT,DOUBLE,FOO,CLASS,makeMethodType(CLASS),makeMethodHandle()).withoutArguments(),getClass().getClassLoader(),isDeclaredBy(Simple.class));
-  assertThat(dynamicType.getLoaded().getConstructor().newInstance().foo(),is(FOO));
+  assertThat(dynamicType.getLoaded().getDeclaredConstructor().newInstance().foo(),is(FOO));
   Object[] arguments=(Object[])field.get(null);
   assertThat(arguments.length,is(8));
   assertThat(arguments[0],is((Object)INTEGER));

@@ -1,5 +1,5 @@
 {
   Class<?> atypical=new ByteBuddy().subclass(Object.class).defineMethod(FOO,type,Visibility.PUBLIC).intercept(new InconsistentSizeAppender()).make().load(null,ClassLoadingStrategy.Default.WRAPPER_PERSISTENT).getLoaded();
   Class<?> adviced=new ByteBuddy().redefine(atypical).visit(Advice.withCustomMapping().bind(Value.class,replaced).to(ExitAdvice.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(adviced.getDeclaredMethod(FOO).invoke(adviced.getConstructor().newInstance()),is((Object)replaced));
+  assertThat(adviced.getDeclaredMethod(FOO).invoke(adviced.getDeclaredConstructor().newInstance()),is((Object)replaced));
 }

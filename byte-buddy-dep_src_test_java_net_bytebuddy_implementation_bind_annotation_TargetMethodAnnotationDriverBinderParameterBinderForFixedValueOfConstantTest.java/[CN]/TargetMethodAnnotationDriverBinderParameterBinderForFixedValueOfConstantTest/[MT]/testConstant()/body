@@ -1,3 +1,3 @@
 {
-  assertThat(new ByteBuddy().subclass(Foo.class).method(named(FOO)).intercept(MethodDelegation.to(Foo.class).appendParameterBinder(TargetMethodAnnotationDrivenBinder.ParameterBinder.ForFixedValue.OfConstant.of(Bar.class,value))).make().load(Foo.class.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getConstructor().newInstance().foo(),is(value));
+  assertThat(new ByteBuddy().subclass(Foo.class).method(named(FOO)).intercept(MethodDelegation.to(Foo.class).appendParameterBinder(TargetMethodAnnotationDrivenBinder.ParameterBinder.ForFixedValue.OfConstant.of(Bar.class,value))).make().load(Foo.class.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getDeclaredConstructor().newInstance().foo(),is(value));
 }

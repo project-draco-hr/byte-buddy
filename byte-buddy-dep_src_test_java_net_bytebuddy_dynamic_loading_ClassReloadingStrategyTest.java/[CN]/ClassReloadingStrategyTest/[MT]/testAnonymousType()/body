@@ -2,7 +2,7 @@
   ClassLoader classLoader=new ByteArrayClassLoader(null,ClassFileExtraction.of(Class.forName(LAMBDA_SAMPLE_FACTORY)),null,ByteArrayClassLoader.PersistenceHandler.MANIFEST,PackageDefinitionStrategy.NoOp.INSTANCE);
   Instrumentation instrumentation=ByteBuddyAgent.install();
   Class<?> factory=classLoader.loadClass(LAMBDA_SAMPLE_FACTORY);
-  @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)factory.getDeclaredMethod("nonCapturing").invoke(factory.getConstructor().newInstance());
+  @SuppressWarnings("unchecked") Callable<String> instance=(Callable<String>)factory.getDeclaredMethod("nonCapturing").invoke(factory.getDeclaredConstructor().newInstance());
   ClassReloadingStrategy classReloadingStrategy=new ClassReloadingStrategy(instrumentation,ClassReloadingStrategy.Strategy.RETRANSFORMATION).preregistered(instance.getClass());
   ClassFileLocator classFileLocator=ClassFileLocator.AgentBased.of(instrumentation,instance.getClass());
   try {

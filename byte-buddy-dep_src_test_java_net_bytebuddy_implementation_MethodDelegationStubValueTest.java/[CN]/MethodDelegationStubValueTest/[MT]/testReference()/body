@@ -1,5 +1,5 @@
 {
   DynamicType.Loaded<ReferenceMethod> loaded=implement(ReferenceMethod.class,MethodDelegation.to(new Interceptor(null)));
-  ReferenceMethod instance=loaded.getLoaded().getConstructor().newInstance();
+  ReferenceMethod instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   assertThat(instance.foo(),nullValue(Object.class));
 }

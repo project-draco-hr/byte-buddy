@@ -1,3 +1,3 @@
 {
-  assertThat(new ByteBuddy().subclass(Object.class).method(named("toString")).intercept(FixedValue.value(42).withAssigner(new PrimitiveTypeAwareAssigner(ToStringAssigner.INSTANCE),Assigner.Typing.STATIC)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getConstructor().newInstance().toString(),is("42"));
+  assertThat(new ByteBuddy().subclass(Object.class).method(named("toString")).intercept(FixedValue.value(42).withAssigner(new PrimitiveTypeAwareAssigner(ToStringAssigner.INSTANCE),Assigner.Typing.STATIC)).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getDeclaredConstructor().newInstance().toString(),is("42"));
 }

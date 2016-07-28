@@ -1,5 +1,5 @@
 {
   DynamicType.Loaded<Foo> loaded=implement(Foo.class,MethodDelegation.to(TargetTypeTest.class));
-  Foo instance=loaded.getLoaded().getConstructor().newInstance();
+  Foo instance=loaded.getLoaded().getDeclaredConstructor().newInstance();
   assertThat(instance.qux(),is((Object)(FOO + QUX)));
 }

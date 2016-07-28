@@ -7,7 +7,7 @@
   assertEquals(Object.class,dynamicType.getDeclaredMethod(FOO,Object.class).getReturnType());
   assertThat(dynamicType.getDeclaredMethod(FOO,Object.class).getGenericReturnType(),is((Type)Object.class));
   assertThat(dynamicType.getDeclaredMethod(FOO,Object.class).isBridge(),is(true));
-  CallSuperMethod<String> callSuperMethod=(CallSuperMethod<String>)dynamicType.getConstructor().newInstance();
+  CallSuperMethod<String> callSuperMethod=(CallSuperMethod<String>)dynamicType.getDeclaredConstructor().newInstance();
   assertThat(callSuperMethod.foo(FOO),is(FOO));
   callSuperMethod.assertOnlyCall(FOO);
 }

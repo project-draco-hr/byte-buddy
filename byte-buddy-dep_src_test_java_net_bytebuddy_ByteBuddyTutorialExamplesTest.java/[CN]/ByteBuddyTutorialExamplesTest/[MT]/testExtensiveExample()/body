@@ -1,4 +1,4 @@
 {
   Class<? extends Function> dynamicType=new ByteBuddy().subclass(Function.class).method(named("apply")).intercept(MethodDelegation.to(new GreetingInterceptor())).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
-  assertThat(dynamicType.getConstructor().newInstance().apply("Byte Buddy"),is((Object)"Hello from Byte Buddy"));
+  assertThat(dynamicType.getDeclaredConstructor().newInstance().apply("Byte Buddy"),is((Object)"Hello from Byte Buddy"));
 }
