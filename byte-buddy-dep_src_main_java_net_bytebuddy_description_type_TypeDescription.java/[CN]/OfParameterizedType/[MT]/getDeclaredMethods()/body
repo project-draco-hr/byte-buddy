@@ -1,3 +1,3 @@
 {
-  return new MethodList.TypeSubstituting(this,asErasure().getDeclaredMethods(),Visitor.Substitutor.ForTypeVariableBinding.bind(this));
+  return new MethodList.TypeSubstituting(this,asErasure().getDeclaredMethods(),Generic.Visitor.Substitutor.ForTypeVariableBinding.bind(this));
 }

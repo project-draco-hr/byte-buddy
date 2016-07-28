@@ -1,3 +1,3 @@
 {
-  return override.isBridge() ? new Resolved<V>(key,original,(original.getDeclaringType().asErasure().getModifiers() & MADE_VISIBLE) == 0) : new Resolved<V>(key,override,false);
+  return override.isBridge() ? new Resolved<V>(key,original,(original.getDeclaringType().getModifiers() & MADE_VISIBLE) == 0) : new Resolved<V>(key,override,false);
 }

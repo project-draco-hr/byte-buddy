@@ -1,0 +1,7 @@
+{
+  TypeDescription typeDescription=new TypeDescription.ForLoadedType(Bar.class);
+  FieldDescription fieldDescription=typeDescription.getSuperClass().getDeclaredFields().filter(named(FOO)).getOnly();
+  FieldDescription transformed=Transformer.ForField.withModifiers().transform(typeDescription,fieldDescription);
+  assertThat(transformed,is(fieldDescription));
+  assertThat(transformed.getModifiers(),is(fieldDescription.getModifiers()));
+}

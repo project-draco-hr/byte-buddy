@@ -1,0 +1,4 @@
+{
+  TypeVariableSource typeDescription=describeType(SimpleTypeVariableType.class.getDeclaredField(BAR));
+  assertThat(typeDescription.accept(TypeVariableSource.Visitor.NoOp.INSTANCE),is(typeDescription));
+}

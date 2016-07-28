@@ -1,4 +1,4 @@
 {
   Class<?> declaringClass=this.type.getDeclaringClass();
-  return declaringClass == null ? UNDEFINED : new ForLoadedType(declaringClass,annotationReader.ofOuterClass());
+  return declaringClass == null ? Generic.UNDEFINED : new ForLoadedType(declaringClass,annotationReader.ofOuterClass());
 }

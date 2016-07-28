@@ -1,4 +1,4 @@
 {
   TypeDescription componentType=typeDescription.getComponentType();
-  return componentType == null ? UNDEFINED : componentType.asGenericType();
+  return componentType == null ? Generic.UNDEFINED : componentType.asGenericType();
 }

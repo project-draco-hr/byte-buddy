@@ -1,7 +1,7 @@
 {
   TypeDescription declaringType=typeDescription.getDeclaringType();
   if (declaringType == null) {
-    return UNDEFINED;
+    return Generic.UNDEFINED;
   }
  else {
     return !typeDescription.isStatic() && declaringType.isGenericDeclaration() ? new LazyParameterizedReceiverType(declaringType) : new LazyNonGenericReceiverType(declaringType);

@@ -1,0 +1,5 @@
+{
+  assertThat(describeType(SimpleTypeVariableType.class.getDeclaredField(BAR)).getTypeVariables().size(),is(1));
+  assertThat(describeType(SimpleTypeVariableType.class.getDeclaredField(BAR)).getTypeVariables().getOnly().getSort(),is(TypeDefinition.Sort.VARIABLE));
+  assertThat(describeType(SimpleTypeVariableType.class.getDeclaredField(BAR)).getTypeVariables().getOnly().getSymbol(),is(T));
+}

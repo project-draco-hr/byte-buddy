@@ -1,0 +1,5 @@
+{
+  assertThat(describeType(SimpleParameterizedType.class.getDeclaredField(FOO)).getTypeVariables().size(),is(1));
+  assertThat(describeType(SimpleParameterizedType.class.getDeclaredField(FOO)).getTypeVariables().getOnly().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
+  assertThat(describeType(SimpleParameterizedType.class.getDeclaredField(FOO)).getTypeVariables().getOnly().asErasure().represents(String.class),is(true));
+}

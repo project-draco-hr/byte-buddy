@@ -1,4 +1,4 @@
 {
   TypeDescription declaringType=typeDescription.getDeclaringType();
-  return declaringType == null ? UNDEFINED : of(declaringType);
+  return declaringType == null ? Generic.UNDEFINED : of(declaringType);
 }
