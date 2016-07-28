@@ -15,6 +15,9 @@
  else   if (annotation == explicitTarget) {
     carrier=ExplicitTarget.Carrier.class;
   }
+ else   if (annotation == broken) {
+    carrier=brokenCarrier;
+  }
  else {
     throw new AssertionError();
   }

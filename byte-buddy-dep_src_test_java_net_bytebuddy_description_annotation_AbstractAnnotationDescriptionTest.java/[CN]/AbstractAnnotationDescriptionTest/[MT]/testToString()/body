@@ -1,0 +1,4 @@
+{
+  assertToString(describe(first).prepare(Sample.class).toString(),first);
+  assertToString(describe(second).prepare(Sample.class).toString(),second);
+}

@@ -1,3 +1,9 @@
 {
-  return typePool.describe(declaringType.getName()).resolve().getDeclaredAnnotations().ofType(annotation.annotationType());
+  TypePool typePool=TypePool.Default.of(declaringType.getClassLoader());
+  try {
+    return typePool.describe(declaringType.getName()).resolve().getDeclaredAnnotations().ofType(annotation.annotationType());
+  }
+  finally {
+    typePool.clear();
+  }
 }

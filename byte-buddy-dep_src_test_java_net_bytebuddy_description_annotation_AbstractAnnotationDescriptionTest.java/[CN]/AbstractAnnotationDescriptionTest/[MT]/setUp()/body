@@ -4,4 +4,6 @@
   defaultFirst=DefaultSample.class.getAnnotation(SampleDefault.class);
   defaultSecond=NonDefaultSample.class.getAnnotation(SampleDefault.class);
   explicitTarget=ExplicitTarget.Carrier.class.getAnnotation(ExplicitTarget.class);
+  brokenCarrier=new ByteBuddy().subclass(Object.class).visit(new AnnotationValueBreaker()).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER_PERSISTENT).getLoaded();
+  broken=brokenCarrier.getAnnotations()[0];
 }

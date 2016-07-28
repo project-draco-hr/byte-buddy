@@ -1,0 +1,8 @@
+{
+  super.visit(version,access,name,signature,superName,interfaces);
+  AnnotationVisitor annotationVisitor=visitAnnotation(Type.getDescriptor(BrokenAnnotation.class),true);
+  annotationVisitor.visit("stringValue",INTEGER);
+  annotationVisitor.visitEnum("enumValue",Type.getDescriptor(SampleEnumeration.class),FOO);
+  annotationVisitor.visit("classValue",Type.getType("Lnet/bytebuddy/inexistant/Foo;"));
+  annotationVisitor.visitEnd();
+}

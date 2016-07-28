@@ -1,4 +1,0 @@
-{
-  super.setUp();
-  typePool=TypePool.Default.ofClassPath();
-}
