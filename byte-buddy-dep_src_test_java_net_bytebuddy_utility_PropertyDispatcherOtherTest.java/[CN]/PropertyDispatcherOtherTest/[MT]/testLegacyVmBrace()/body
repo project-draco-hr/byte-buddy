@@ -1,0 +1,4 @@
+{
+  assertThat(PropertyDispatcher.TypeRenderer.FOR_LEGACY_VM.getOpen(),is('['));
+  assertThat(PropertyDispatcher.TypeRenderer.FOR_LEGACY_VM.getClose(),is(']'));
+}
