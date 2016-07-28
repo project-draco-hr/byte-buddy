@@ -1,12 +1,15 @@
 {
-  AnnotationDescription.Loadable<Return> annotation=parameterDescription.getDeclaredAnnotations().ofType(Return.class);
+  AnnotationDescription.Loadable<BoxedReturn> annotation=parameterDescription.getDeclaredAnnotations().ofType(BoxedReturn.class);
   if (annotation == null) {
     return UNDEFINED;
   }
  else   if (readOnly && !annotation.loadSilent().readOnly()) {
-    throw new IllegalStateException("Cannot write return value for " + parameterDescription + " in read-only context");
+    throw new IllegalStateException("Cannot write return value from a non-writable context for " + parameterDescription);
+  }
+ else   if (parameterDescription.getType().represents(Object.class)) {
+    return annotation.loadSilent().readOnly() ? ForBoxedReturnValue.READ_ONLY : ForBoxedReturnValue.READ_WRITE;
   }
  else {
-    return new ForReturnValue(annotation.loadSilent().readOnly(),parameterDescription.getType().asErasure());
+    throw new IllegalStateException("Can only assign a boxed return value to an Object type for " + parameterDescription);
   }
 }

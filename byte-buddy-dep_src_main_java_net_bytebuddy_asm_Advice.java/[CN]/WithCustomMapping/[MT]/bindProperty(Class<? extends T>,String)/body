@@ -1,3 +1,3 @@
 {
-  return bind(type,DynamicValue.ForAnnotationProperty.of(type,property));
+  return bind(type,DynamicValue.ForAnnotationProperty.<T>of(type,property));
 }
