@@ -1,4 +1,0 @@
-{
-  assertThat(PropertyDispatcher.TypeRenderer.FOR_LEGACY_VM.adjust('0'),is('0'));
-  assertThat(PropertyDispatcher.TypeRenderer.FOR_JAVA9_CAPABLE_VM.adjust('0'),is((char)('0' + '{' - '[')));
-}

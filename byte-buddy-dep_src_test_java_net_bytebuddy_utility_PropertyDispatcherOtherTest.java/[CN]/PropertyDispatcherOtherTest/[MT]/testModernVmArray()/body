@@ -1,0 +1,4 @@
+{
+  assertThat(PropertyDispatcher.TypeRenderer.FOR_JAVA9_CAPABLE_VM.render(new Class<?>[]{Object.class}),is("{" + Object.class.getName() + ".class}"));
+  assertThat(PropertyDispatcher.TypeRenderer.FOR_JAVA9_CAPABLE_VM.render(new TypeDescription[]{TypeDescription.OBJECT}),is("{" + Object.class.getName() + ".class}"));
+}

@@ -1,6 +1,6 @@
 {
   try {
-    return forCurrentJavaVersion();
+    return forThisVm();
   }
  catch (  Exception ignored) {
     return fallback;
