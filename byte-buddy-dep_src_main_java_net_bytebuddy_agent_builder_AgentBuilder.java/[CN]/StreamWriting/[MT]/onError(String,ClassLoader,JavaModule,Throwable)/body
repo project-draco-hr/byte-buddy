@@ -1,4 +1,6 @@
 {
-  printStream.println(PREFIX + " ERROR " + typeName+ "["+ classLoader+ ", "+ module+ "]");
-  throwable.printStackTrace(printStream);
+synchronized (printStream) {
+    printStream.println(PREFIX + " ERROR " + typeName+ "["+ classLoader+ ", "+ module+ "]");
+    throwable.printStackTrace(printStream);
+  }
 }
