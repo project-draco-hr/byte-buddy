@@ -11,5 +11,5 @@
   if (runtimeJar == null) {
     throw new IllegalStateException("Runtime jar does not exist in " + javaHome + " for any of "+ RUNTIME_LOCATIONS);
   }
-  return new ForJarFile(runtimeJar);
+  return of(runtimeJar);
 }

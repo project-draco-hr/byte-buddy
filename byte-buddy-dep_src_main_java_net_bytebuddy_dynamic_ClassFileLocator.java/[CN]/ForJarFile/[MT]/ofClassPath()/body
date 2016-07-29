@@ -6,7 +6,7 @@
       classFileLocators.add(new ForFolder(file));
     }
  else     if (file.isFile()) {
-      classFileLocators.add(new ForJarFile(file));
+      classFileLocators.add(of(file));
     }
   }
   return new Compound(classFileLocators);
