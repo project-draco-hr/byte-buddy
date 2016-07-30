@@ -9,11 +9,14 @@
           if (aModule.isDirectory()) {
             classFileLocators.add(new ForFolder(aModule));
           }
+ else           if (aModule.isFile()) {
+            classFileLocators.add(aModule.getName().endsWith(JMOD_FILE_EXTENSION) ? of(aModule) : ForJarFile.of(aModule));
+          }
         }
       }
     }
  else     if (file.isFile()) {
-      classFileLocators.add(of(file));
+      classFileLocators.add(file.getName().endsWith(JMOD_FILE_EXTENSION) ? of(file) : ForJarFile.of(file));
     }
   }
   return new Compound(classFileLocators);
