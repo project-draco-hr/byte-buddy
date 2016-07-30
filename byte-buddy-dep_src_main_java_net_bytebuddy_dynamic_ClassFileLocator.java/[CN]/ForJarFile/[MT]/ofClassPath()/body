@@ -1,13 +1,3 @@
 {
-  List<ClassFileLocator> classFileLocators=new ArrayList<ClassFileLocator>();
-  for (  String element : Pattern.compile(System.getProperty("path.separator"),Pattern.LITERAL).split(System.getProperty("java.class.path"))) {
-    File file=new File(element);
-    if (file.isDirectory()) {
-      classFileLocators.add(new ForFolder(file));
-    }
- else     if (file.isFile()) {
-      classFileLocators.add(of(file));
-    }
-  }
-  return new Compound(classFileLocators);
+  return ofClassPath(System.getProperty("java.class.path"));
 }

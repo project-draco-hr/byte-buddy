@@ -1,0 +1,4 @@
+{
+  String modulePath=System.getProperty("jdk.module.path");
+  return modulePath == null ? NoOp.INSTANCE : ofModulePath(modulePath);
+}

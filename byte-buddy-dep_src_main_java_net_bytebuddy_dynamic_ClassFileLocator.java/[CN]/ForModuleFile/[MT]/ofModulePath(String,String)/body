@@ -1,0 +1,20 @@
+{
+  List<ClassFileLocator> classFileLocators=new ArrayList<ClassFileLocator>();
+  for (  String element : Pattern.compile(System.getProperty("path.separator"),Pattern.LITERAL).split(modulePath)) {
+    File file=new File(baseFolder,element);
+    if (file.isDirectory()) {
+      File[] module=file.listFiles();
+      if (module != null) {
+        for (        File aModule : module) {
+          if (aModule.isDirectory()) {
+            classFileLocators.add(new ForFolder(aModule));
+          }
+        }
+      }
+    }
+ else     if (file.isFile()) {
+      classFileLocators.add(of(file));
+    }
+  }
+  return new Compound(classFileLocators);
+}

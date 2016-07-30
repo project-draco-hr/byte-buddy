@@ -1,0 +1,13 @@
+{
+  File[] module=bootPath.listFiles();
+  if (module == null) {
+    return NoOp.INSTANCE;
+  }
+  List<ClassFileLocator> classFileLocators=new ArrayList<ClassFileLocator>(module.length);
+  for (  File aModule : module) {
+    if (aModule.isFile()) {
+      classFileLocators.add(of(aModule));
+    }
+  }
+  return new Compound(classFileLocators);
+}

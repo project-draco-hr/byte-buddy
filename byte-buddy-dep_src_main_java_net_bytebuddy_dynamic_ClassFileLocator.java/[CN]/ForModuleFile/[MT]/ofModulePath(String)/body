@@ -1,0 +1,3 @@
+{
+  return ofModulePath(modulePath,System.getProperty("user.dir"));
+}
