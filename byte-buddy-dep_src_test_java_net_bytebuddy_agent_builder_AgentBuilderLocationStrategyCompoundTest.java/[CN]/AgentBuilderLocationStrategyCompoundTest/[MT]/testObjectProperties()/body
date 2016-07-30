@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(AgentBuilder.LocationStrategy.Compound.class).apply();
+}

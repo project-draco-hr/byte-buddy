@@ -1,0 +1,4 @@
+{
+  assertThat(AgentBuilder.LocationStrategy.ForClassLoader.STRONG.with(fallback),is((AgentBuilder.LocationStrategy)new AgentBuilder.LocationStrategy.Compound(AgentBuilder.LocationStrategy.ForClassLoader.STRONG,fallback)));
+  assertThat(AgentBuilder.LocationStrategy.ForClassLoader.WEAK.with(fallback),is((AgentBuilder.LocationStrategy)new AgentBuilder.LocationStrategy.Compound(AgentBuilder.LocationStrategy.ForClassLoader.WEAK,fallback)));
+}
