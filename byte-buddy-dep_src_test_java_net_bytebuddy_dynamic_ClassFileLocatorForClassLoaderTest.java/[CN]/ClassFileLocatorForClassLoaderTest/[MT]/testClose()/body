@@ -1,0 +1,4 @@
+{
+  ClassFileLocator.ForClassLoader.of(classLoader).close();
+  verify(classLoader).close();
+}

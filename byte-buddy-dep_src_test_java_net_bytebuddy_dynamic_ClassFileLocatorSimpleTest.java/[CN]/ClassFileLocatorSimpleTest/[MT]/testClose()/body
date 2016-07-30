@@ -1,0 +1,3 @@
+{
+  ClassFileLocator.Simple.of(FOO,QUX).close();
+}

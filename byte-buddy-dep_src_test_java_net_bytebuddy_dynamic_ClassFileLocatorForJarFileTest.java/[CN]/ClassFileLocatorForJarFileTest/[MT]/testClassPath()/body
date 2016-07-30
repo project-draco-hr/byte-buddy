@@ -5,6 +5,6 @@
     assertThat(classFileLocator.locate(ClassVisitor.class.getName()).isResolved(),is(true));
   }
   finally {
-    ((Closeable)classFileLocator).close();
+    classFileLocator.close();
   }
 }

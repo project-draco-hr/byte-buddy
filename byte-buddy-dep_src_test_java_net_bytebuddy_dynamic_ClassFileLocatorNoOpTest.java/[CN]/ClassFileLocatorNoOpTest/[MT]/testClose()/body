@@ -1,0 +1,3 @@
+{
+  ClassFileLocator.NoOp.INSTANCE.close();
+}

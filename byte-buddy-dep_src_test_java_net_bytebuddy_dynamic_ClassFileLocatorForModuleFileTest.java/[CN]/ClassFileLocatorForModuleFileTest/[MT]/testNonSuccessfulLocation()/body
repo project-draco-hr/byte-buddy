@@ -1,0 +1,21 @@
+{
+  ZipOutputStream zipOutputStream=new ZipOutputStream(new FileOutputStream(file));
+  try {
+    ZipEntry zipEntry=new ZipEntry("noop.class");
+    zipOutputStream.putNextEntry(zipEntry);
+    zipOutputStream.write(VALUE);
+    zipOutputStream.closeEntry();
+  }
+  finally {
+    zipOutputStream.close();
+  }
+  ZipFile zipFile=new ZipFile(file);
+  try {
+    ClassFileLocator classFileLocator=new ClassFileLocator.ForModuleFile(zipFile);
+    ClassFileLocator.Resolution resolution=classFileLocator.locate(FOO + "." + BAR);
+    assertThat(resolution.isResolved(),is(false));
+  }
+  finally {
+    zipFile.close();
+  }
+}

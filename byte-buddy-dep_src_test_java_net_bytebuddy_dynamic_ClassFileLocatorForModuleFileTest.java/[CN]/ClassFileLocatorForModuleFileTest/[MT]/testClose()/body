@@ -1,0 +1,6 @@
+{
+  ZipFile zipFile=mock(ZipFile.class);
+  new ClassFileLocator.ForModuleFile(zipFile).close();
+  verify(zipFile).close();
+  verifyNoMoreInteractions(zipFile);
+}

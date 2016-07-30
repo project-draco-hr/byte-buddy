@@ -1,0 +1,6 @@
+{
+  JarFile jarFile=mock(JarFile.class);
+  new ClassFileLocator.ForJarFile(jarFile).close();
+  verify(jarFile).close();
+  verifyNoMoreInteractions(jarFile);
+}

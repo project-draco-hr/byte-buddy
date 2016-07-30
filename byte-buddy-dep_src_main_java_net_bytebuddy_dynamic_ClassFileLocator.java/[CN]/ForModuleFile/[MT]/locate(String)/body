@@ -1,0 +1,15 @@
+{
+  ZipEntry zipEntry=zipFile.getEntry("classes/" + typeName.replace('.','/') + CLASS_FILE_EXTENSION);
+  if (zipEntry == null) {
+    return new Resolution.Illegal(typeName);
+  }
+ else {
+    InputStream inputStream=zipFile.getInputStream(zipEntry);
+    try {
+      return new Resolution.Explicit(StreamDrainer.DEFAULT.drain(inputStream));
+    }
+  finally {
+      inputStream.close();
+    }
+  }
+}

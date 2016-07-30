@@ -1,0 +1,3 @@
+{
+  assertThat(ClassFileLocator.ForClassLoader.ofClassPath(),is(ClassFileLocator.ForClassLoader.of(ClassLoader.getSystemClassLoader())));
+}

@@ -1,0 +1,5 @@
+{
+  if (classLoader instanceof Closeable) {
+    ((Closeable)classLoader).close();
+  }
+}

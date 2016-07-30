@@ -1,5 +1,5 @@
 {
-  ClassFileLocator classFileLocator=ClassFileLocator.ForJarFile.ofRuntimeJar();
+  ClassFileLocator classFileLocator=ClassFileLocator.ForModuleFile.ofBootPath();
   try {
     assertThat(classFileLocator.locate(Object.class.getName()).isResolved(),is(true));
   }

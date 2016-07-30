@@ -2,7 +2,7 @@
   String javaHome=System.getProperty("java.home").replace('\\','/');
   File runtimeJar=null;
   for (  String location : RUNTIME_LOCATIONS) {
-    File candidate=new File(javaHome + "/" + location);
+    File candidate=new File(javaHome,location);
     if (candidate.isFile()) {
       runtimeJar=candidate;
       break;

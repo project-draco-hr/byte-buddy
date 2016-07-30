@@ -1,0 +1,25 @@
+{
+  String javaHome=System.getProperty("java.home").replace('\\','/');
+  File bootModules=null;
+  for (  String location : BOOT_LOCATIONS) {
+    File candidate=new File(javaHome,location);
+    if (candidate.isDirectory()) {
+      bootModules=candidate;
+      break;
+    }
+  }
+  if (bootModules == null) {
+    throw new IllegalStateException("Boot modules do not exist in " + javaHome + " for any of "+ BOOT_LOCATIONS);
+  }
+  File[] module=bootModules.listFiles();
+  if (module == null) {
+    return NoOp.INSTANCE;
+  }
+  List<ClassFileLocator> classFileLocators=new ArrayList<ClassFileLocator>(module.length);
+  for (  File aModule : module) {
+    if (aModule.isFile()) {
+      classFileLocators.add(of(aModule));
+    }
+  }
+  return new Compound(classFileLocators);
+}

@@ -1,0 +1,23 @@
+{
+  ZipOutputStream zipOutputStream=new ZipOutputStream(new FileOutputStream(file));
+  try {
+    ZipEntry zipEntry=new ZipEntry("classes/" + FOO + "/"+ BAR+ ".class");
+    zipOutputStream.putNextEntry(zipEntry);
+    zipOutputStream.write(VALUE);
+    zipOutputStream.write(VALUE * 2);
+    zipOutputStream.closeEntry();
+  }
+  finally {
+    zipOutputStream.close();
+  }
+  ZipFile zipFile=new ZipFile(file);
+  try {
+    ClassFileLocator classFileLocator=new ClassFileLocator.ForModuleFile(zipFile);
+    ClassFileLocator.Resolution resolution=classFileLocator.locate(FOO + "." + BAR);
+    assertThat(resolution.isResolved(),is(true));
+    assertThat(resolution.resolve(),is(new byte[]{VALUE,VALUE * 2}));
+  }
+  finally {
+    zipFile.close();
+  }
+}
