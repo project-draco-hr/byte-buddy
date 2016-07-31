@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.LocationStrategy.NoOp.INSTANCE.classFileLocator(mock(ClassLoader.class),mock(JavaModule.class)),is((ClassFileLocator)ClassFileLocator.NoOp.INSTANCE));
+}
