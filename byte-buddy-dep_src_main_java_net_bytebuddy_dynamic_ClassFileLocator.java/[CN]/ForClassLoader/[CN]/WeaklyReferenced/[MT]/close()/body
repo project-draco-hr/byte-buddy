@@ -1,6 +1,2 @@
 {
-  ClassLoader classLoader=get();
-  if (classLoader instanceof Closeable) {
-    ((Closeable)classLoader).close();
-  }
 }
