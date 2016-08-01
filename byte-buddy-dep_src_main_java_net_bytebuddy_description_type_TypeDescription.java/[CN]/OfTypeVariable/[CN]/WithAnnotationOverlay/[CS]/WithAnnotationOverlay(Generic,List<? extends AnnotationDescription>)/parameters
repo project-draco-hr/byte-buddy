@@ -1,0 +1,2 @@
+Generic typeVariable
+List<? extends AnnotationDescription> declaredAnnotations

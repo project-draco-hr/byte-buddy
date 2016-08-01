@@ -4,6 +4,6 @@
     throw new IllegalArgumentException("Cannot attach undefined variable: " + typeVariable);
   }
  else {
-    return new AnnotatedTypeVariable(attachedVariable,typeVariable.getDeclaredAnnotations());
+    return new OfTypeVariable.WithAnnotationOverlay(attachedVariable,typeVariable.getDeclaredAnnotations());
   }
 }

@@ -1,0 +1,10 @@
+{
+  TypeList.Generic candidates=getTypeVariables().filter(named(typeVariable.getSymbol()));
+  TypeDescription.Generic attached=candidates.isEmpty() ? instrumentedType.findVariable(typeVariable.getSymbol()) : candidates.getOnly();
+  if (attached == null) {
+    throw new IllegalArgumentException("Cannot attach undefined variable: " + typeVariable);
+  }
+ else {
+    return new TypeDescription.Generic.OfTypeVariable.WithAnnotationOverlay(attached,typeVariable.getDeclaredAnnotations());
+  }
+}

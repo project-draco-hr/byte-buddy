@@ -1,4 +1,5 @@
 {
+  this.instrumentedType=instrumentedType;
   this.declaringType=declaringType;
   this.token=token;
   this.methodDescription=methodDescription;

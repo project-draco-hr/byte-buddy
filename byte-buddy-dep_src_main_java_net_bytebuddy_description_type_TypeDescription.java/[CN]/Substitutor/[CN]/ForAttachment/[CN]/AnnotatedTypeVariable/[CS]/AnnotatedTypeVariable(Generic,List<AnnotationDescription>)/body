@@ -1,4 +1,0 @@
-{
-  this.typeVariable=typeVariable;
-  this.annotations=annotations;
-}
