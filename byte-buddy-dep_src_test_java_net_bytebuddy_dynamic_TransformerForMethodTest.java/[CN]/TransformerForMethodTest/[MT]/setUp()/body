@@ -6,7 +6,7 @@
   when(typeVariableBound.getSymbol()).thenReturn(QUX);
   when(typeVariableBound.getSort()).thenReturn(TypeDefinition.Sort.VARIABLE);
   when(typeVariableBound.asGenericType()).thenReturn(typeVariableBound);
-  when(methodDescription.asToken(ElementMatchers.is(instrumentedType))).thenReturn(methodToken);
+  when(methodDescription.asToken(none())).thenReturn(methodToken);
   when(methodDescription.getDeclaringType()).thenReturn(declaringType);
   when(methodDescription.asDefined()).thenReturn(definedMethod);
   when(methodToken.getName()).thenReturn(FOO);

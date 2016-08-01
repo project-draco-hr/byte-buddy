@@ -1,6 +1,6 @@
 {
   when(fieldType.accept(any(TypeDescription.Generic.Visitor.class))).thenReturn(fieldType);
-  when(fieldDescription.asToken(ElementMatchers.is(instrumentedType))).thenReturn(fieldToken);
+  when(fieldDescription.asToken(none())).thenReturn(fieldToken);
   when(fieldDescription.getDeclaringType()).thenReturn(declaringType);
   when(fieldDescription.asDefined()).thenReturn(definedField);
   when(fieldToken.getName()).thenReturn(FOO);
