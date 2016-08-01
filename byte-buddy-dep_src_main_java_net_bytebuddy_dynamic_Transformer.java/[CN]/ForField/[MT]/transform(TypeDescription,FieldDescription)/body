@@ -1,3 +1,3 @@
 {
-  return new TransformedField(instrumentedType,fieldDescription.getDeclaringType(),transformer.transform(instrumentedType,fieldDescription.asToken(is(instrumentedType))),fieldDescription.asDefined());
+  return new TransformedField(instrumentedType,fieldDescription.getDeclaringType(),transformer.transform(instrumentedType,fieldDescription.asToken(none())),fieldDescription.asDefined());
 }
