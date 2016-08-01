@@ -1,6 +1,6 @@
 {
   try {
-    return forThisVm();
+    return ofThisVm();
   }
  catch (  Exception ignored) {
     return fallback;

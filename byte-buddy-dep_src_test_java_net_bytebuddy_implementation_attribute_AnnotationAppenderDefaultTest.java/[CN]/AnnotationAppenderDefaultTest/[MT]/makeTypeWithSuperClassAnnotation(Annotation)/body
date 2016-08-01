@@ -1,7 +1,7 @@
 {
   when(valueFilter.isRelevant(any(AnnotationDescription.class),any(MethodDescription.InDefinedShape.class))).thenReturn(true);
   ClassWriter classWriter=new ClassWriter(AsmVisitorWrapper.NO_FLAGS);
-  classWriter.visit(ClassFileVersion.forThisVm().getMinorMajorVersion(),Opcodes.ACC_PUBLIC,BAR.replace('.','/'),null,Type.getInternalName(Object.class),null);
+  classWriter.visit(ClassFileVersion.ofThisVm().getMinorMajorVersion(),Opcodes.ACC_PUBLIC,BAR.replace('.','/'),null,Type.getInternalName(Object.class),null);
   AnnotationVisitor annotationVisitor=classWriter.visitTypeAnnotation(TypeReference.newSuperTypeReference(-1).getValue(),null,Type.getDescriptor(annotation.annotationType()),true);
   when(target.visit(any(String.class),anyBoolean())).thenReturn(annotationVisitor);
   AnnotationDescription annotationDescription=AnnotationDescription.ForLoadedAnnotation.of(annotation);
