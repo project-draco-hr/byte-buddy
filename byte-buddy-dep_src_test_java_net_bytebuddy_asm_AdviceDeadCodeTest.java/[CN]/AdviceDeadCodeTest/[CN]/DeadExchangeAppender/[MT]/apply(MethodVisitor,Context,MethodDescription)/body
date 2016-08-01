@@ -1,0 +1,7 @@
+{
+  methodVisitor.visitInsn(Opcodes.ACONST_NULL);
+  methodVisitor.visitInsn(Opcodes.ARETURN);
+  methodVisitor.visitInsn(Opcodes.DUP_X1);
+  methodVisitor.visitInsn(Opcodes.ARETURN);
+  return new Size(1,instrumentedMethod.getStackSize());
+}
