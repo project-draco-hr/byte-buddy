@@ -9,6 +9,14 @@ case Opcodes.DRETURN:
 case Opcodes.ATHROW:
     current.clear();
   break;
+case Opcodes.DUP_X1:
+case Opcodes.DUP2_X1:
+adjustStack(SIZE_CHANGE[opcode],SIZE_CHANGE[opcode] + 1);
+break;
+case Opcodes.DUP_X2:
+case Opcodes.DUP2_X2:
+adjustStack(SIZE_CHANGE[opcode],SIZE_CHANGE[opcode] + 2);
+break;
 default :
 adjustStack(SIZE_CHANGE[opcode]);
 }

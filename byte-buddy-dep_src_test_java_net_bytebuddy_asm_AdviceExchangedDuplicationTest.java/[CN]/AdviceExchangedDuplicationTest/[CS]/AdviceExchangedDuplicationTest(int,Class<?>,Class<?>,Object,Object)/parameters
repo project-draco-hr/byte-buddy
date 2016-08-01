@@ -1,0 +1,5 @@
+int duplication
+Class<?> valueType
+Class<?> ignoredValueType
+Object value
+Object ignoredValue

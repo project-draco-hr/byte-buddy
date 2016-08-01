@@ -1,0 +1,32 @@
+{
+  if (delta > 2) {
+    throw new IllegalStateException("Cannot push multiple values onto the operand stack: " + delta);
+  }
+ else   if (delta > 0) {
+    int position=current.size();
+    while (offset > 0) {
+      offset-=current.get(--position).getSize();
+    }
+    if (offset != 0) {
+      throw new IllegalStateException("Unexpected offset remainder: " + offset);
+    }
+    current.add(position,StackSize.of(delta));
+  }
+ else   if (offset != 0) {
+    throw new IllegalStateException("Cannot specify non-zero offset " + offset + " for non-incrementing value: "+ delta);
+  }
+ else {
+    while (delta < 0) {
+      if (current.isEmpty()) {
+        return;
+      }
+      delta+=current.remove(current.size() - 1).getSize();
+    }
+    if (delta == 1) {
+      current.add(StackSize.SINGLE);
+    }
+ else     if (delta != 0) {
+      throw new IllegalStateException("Unexpected remainder on the operand stack: " + delta);
+    }
+  }
+}

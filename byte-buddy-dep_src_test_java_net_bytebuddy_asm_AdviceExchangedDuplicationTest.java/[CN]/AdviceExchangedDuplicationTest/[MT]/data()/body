@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{Opcodes.DUP_X1,int.class,int.class,NUMERIC_VALUE,NUMERIC_VALUE},{Opcodes.DUP_X2,int.class,long.class,NUMERIC_VALUE,(long)NUMERIC_VALUE},{Opcodes.DUP2_X1,long.class,int.class,(long)NUMERIC_VALUE,NUMERIC_VALUE},{Opcodes.DUP2_X2,long.class,long.class,(long)NUMERIC_VALUE,(long)NUMERIC_VALUE}});
+}

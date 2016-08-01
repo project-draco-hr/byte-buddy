@@ -1,0 +1,7 @@
+{
+  this.duplication=duplication;
+  this.valueType=valueType;
+  this.ignoredValueType=ignoredValueType;
+  this.value=value;
+  this.ignoredValue=ignoredValue;
+}

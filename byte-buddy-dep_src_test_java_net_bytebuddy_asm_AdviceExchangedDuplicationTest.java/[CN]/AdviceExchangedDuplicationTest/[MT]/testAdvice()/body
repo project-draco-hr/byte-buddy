@@ -1,0 +1,5 @@
+{
+  Class<?> type=new ByteBuddy().subclass(Object.class).defineMethod(FOO,valueType,Visibility.PUBLIC).intercept(new DuplicationImplementation()).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER_PERSISTENT).getLoaded();
+  Class<?> redefined=new ByteBuddy().redefine(type).visit(Advice.to(AdviceExchangedDuplicationTest.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(redefined.getDeclaredMethod(FOO).invoke(redefined.getDeclaredConstructor().newInstance()),is(value));
+}

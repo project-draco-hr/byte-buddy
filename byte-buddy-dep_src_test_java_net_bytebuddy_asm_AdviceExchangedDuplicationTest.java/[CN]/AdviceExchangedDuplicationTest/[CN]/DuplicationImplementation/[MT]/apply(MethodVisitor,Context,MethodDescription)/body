@@ -1,0 +1,9 @@
+{
+  methodVisitor.visitLdcInsn(ignoredValue);
+  methodVisitor.visitLdcInsn(value);
+  methodVisitor.visitInsn(duplication);
+  methodVisitor.visitInsn(Type.getType(valueType).getSize() == 2 ? Opcodes.POP2 : Opcodes.POP);
+  methodVisitor.visitInsn(Type.getType(ignoredValueType).getSize() == 2 ? Opcodes.POP2 : Opcodes.POP);
+  methodVisitor.visitInsn(Type.getType(valueType).getOpcode(Opcodes.IRETURN));
+  return new Size(Type.getType(valueType).getSize() * 2 + Type.getType(ignoredValueType).getSize(),instrumentedMethod.getStackSize());
+}
