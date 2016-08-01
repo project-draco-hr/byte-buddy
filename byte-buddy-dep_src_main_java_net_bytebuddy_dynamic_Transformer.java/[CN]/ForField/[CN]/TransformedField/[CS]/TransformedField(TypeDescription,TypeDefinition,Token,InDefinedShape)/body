@@ -1,0 +1,6 @@
+{
+  this.instrumentedType=instrumentedType;
+  this.declaringType=declaringType;
+  this.token=token;
+  this.fieldDescription=fieldDescription;
+}

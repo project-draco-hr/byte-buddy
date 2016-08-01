@@ -1,3 +1,0 @@
-{
-  assertThat(describeType(GenericArrayOfGenericComponentType.class.getDeclaredField(FOO)).getTypeVariables().size(),is(0));
-}

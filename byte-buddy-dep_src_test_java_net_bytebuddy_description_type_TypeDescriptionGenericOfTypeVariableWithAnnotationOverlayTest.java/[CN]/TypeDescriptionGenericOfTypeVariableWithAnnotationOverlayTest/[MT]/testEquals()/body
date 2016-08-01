@@ -1,0 +1,10 @@
+{
+  assertThat(typeVariable,is(typeVariable));
+  assertThat(typeVariable,is(typeVariable(FOO,typeVariableSource,annotationDescription)));
+  assertThat(typeVariable,is(typeVariable(FOO,typeVariableSource)));
+  assertThat(typeVariable,not(typeVariable(BAR,typeVariableSource,annotationDescription)));
+  assertThat(typeVariable,not(typeVariable(FOO,mock(TypeVariableSource.class),annotationDescription)));
+  assertThat(typeVariable,not(TypeDescription.Generic.OBJECT));
+  assertThat(typeVariable,not(new Object()));
+  assertThat(typeVariable,not(equalTo(null)));
+}

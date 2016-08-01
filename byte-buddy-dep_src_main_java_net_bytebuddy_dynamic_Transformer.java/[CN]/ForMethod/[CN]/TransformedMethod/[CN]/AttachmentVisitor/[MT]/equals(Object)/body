@@ -1,0 +1,3 @@
+{
+  return this == other || (other instanceof AttachmentVisitor && ((AttachmentVisitor)other).getOuter().equals(TransformedMethod.this));
+}

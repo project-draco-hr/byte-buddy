@@ -1,3 +1,0 @@
-{
-  describeType(UpperBoundWildcardParameterizedType.class.getDeclaredField(FOO)).getTypeArguments().getOnly().accept(TypeVariableSource.Visitor.NoOp.INSTANCE);
-}

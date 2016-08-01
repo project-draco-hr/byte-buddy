@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("A type variable does not imply type variables: " + this);
-}

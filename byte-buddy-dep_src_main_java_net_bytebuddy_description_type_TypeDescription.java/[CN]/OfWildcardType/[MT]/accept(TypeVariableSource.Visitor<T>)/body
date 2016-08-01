@@ -1,3 +1,0 @@
-{
-  throw new IllegalStateException("A wildcard does not imply a type variable source: " + this);
-}

@@ -1,3 +1,0 @@
-{
-  describeType(SimpleTypeVariableType.class.getDeclaredField(FOO)).accept(TypeVariableSource.Visitor.NoOp.INSTANCE);
-}

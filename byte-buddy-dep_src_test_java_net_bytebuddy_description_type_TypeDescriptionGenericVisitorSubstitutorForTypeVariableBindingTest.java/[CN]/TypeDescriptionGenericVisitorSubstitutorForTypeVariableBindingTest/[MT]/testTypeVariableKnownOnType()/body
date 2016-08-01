@@ -1,4 +1,4 @@
 {
-  when(source.getVariableSource()).thenReturn(typeDefinition);
+  when(source.getTypeVariableSource()).thenReturn(typeDefinition);
   assertThat(new TypeDescription.Generic.Visitor.Substitutor.ForTypeVariableBinding(mapping).onTypeVariable(source),is(target));
 }

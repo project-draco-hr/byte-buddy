@@ -1,0 +1,9 @@
+{
+  when(original.getSymbol()).thenReturn(FOO);
+  when(upperBound.asGenericType()).thenReturn(upperBound);
+  when(lowerBound.asGenericType()).thenReturn(lowerBound);
+  when(original.getUpperBounds()).thenReturn(new TypeList.Generic.Explicit(upperBound));
+  when(original.getLowerBounds()).thenReturn(new TypeList.Generic.Explicit(lowerBound));
+  when(original.getTypeVariableSource()).thenReturn(typeVariableSource);
+  typeVariable=new TypeDescription.Generic.OfTypeVariable.WithAnnotationOverlay(original,Collections.singletonList(annotationDescription));
+}

@@ -1,4 +1,4 @@
 {
-  when(unknown.getVariableSource()).thenReturn(typeDefinition);
+  when(unknown.getTypeVariableSource()).thenReturn(typeDefinition);
   new TypeDescription.Generic.Visitor.Substitutor.ForTypeVariableBinding(mapping).onTypeVariable(unknown);
 }

@@ -1,3 +1,0 @@
-{
-  describeType(LowerBoundWildcardParameterizedType.class.getDeclaredField(FOO)).getTypeArguments().getOnly().getTypeVariables();
-}

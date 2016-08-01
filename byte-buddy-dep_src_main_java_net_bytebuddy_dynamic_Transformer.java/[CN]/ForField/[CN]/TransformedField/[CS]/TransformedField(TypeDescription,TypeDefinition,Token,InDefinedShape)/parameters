@@ -1,0 +1,4 @@
+TypeDescription instrumentedType
+TypeDefinition declaringType
+Token token
+InDefinedShape fieldDescription

@@ -6,7 +6,7 @@
   assertThat(typeDescription.getUpperBounds().getOnly(),is((TypeDefinition)new TypeDescription.ForLoadedType(String.class)));
   assertThat(typeDescription.getUpperBounds().getOnly().getStackSize(),is(StackSize.SINGLE));
   assertThat(typeDescription.getTypeName(),is(SingleUpperBoundTypeVariableType.class.getDeclaredField(FOO).getGenericType().toString()));
-  assertThat(typeDescription.getVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(SingleUpperBoundTypeVariableType.class)));
-  assertThat(typeDescription.getVariableSource().getTypeVariables().size(),is(1));
-  assertThat(typeDescription.getVariableSource().getTypeVariables().getOnly(),is(typeDescription));
+  assertThat(typeDescription.getTypeVariableSource(),is((TypeVariableSource)new TypeDescription.ForLoadedType(SingleUpperBoundTypeVariableType.class)));
+  assertThat(typeDescription.getTypeVariableSource().getTypeVariables().size(),is(1));
+  assertThat(typeDescription.getTypeVariableSource().getTypeVariables().getOnly(),is(typeDescription));
 }

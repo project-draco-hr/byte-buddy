@@ -1,0 +1,8 @@
+{
+  TypeDescription.Generic typeVariable=mock(TypeDescription.Generic.class);
+  when(typeVariable.getSort()).thenReturn(TypeDefinition.Sort.VARIABLE);
+  when(typeVariable.getSymbol()).thenReturn(symbol);
+  when(typeVariable.getTypeVariableSource()).thenReturn(typeVariableSource);
+  when(typeVariable.getDeclaredAnnotations()).thenReturn(new AnnotationList.Explicit(annotationDescription));
+  return typeVariable;
+}

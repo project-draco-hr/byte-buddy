@@ -6,7 +6,7 @@
   assertThat(typeDescription.getUpperBounds().size(),is(1));
   assertThat(typeDescription.getUpperBounds().getOnly(),is(TypeDescription.Generic.OBJECT));
   assertThat(typeDescription.getTypeName(),is(ShadowingTypeVariableType.class.getDeclaredMethod(FOO).getGenericReturnType().toString()));
-  assertThat(typeDescription.getVariableSource(),is((TypeVariableSource)new MethodDescription.ForLoadedMethod(ShadowingTypeVariableType.class.getDeclaredMethod(FOO))));
-  assertThat(typeDescription.getVariableSource().getTypeVariables().size(),is(1));
-  assertThat(typeDescription.getVariableSource().getTypeVariables().getOnly(),is(typeDescription));
+  assertThat(typeDescription.getTypeVariableSource(),is((TypeVariableSource)new MethodDescription.ForLoadedMethod(ShadowingTypeVariableType.class.getDeclaredMethod(FOO))));
+  assertThat(typeDescription.getTypeVariableSource().getTypeVariables().size(),is(1));
+  assertThat(typeDescription.getTypeVariableSource().getTypeVariables().getOnly(),is(typeDescription));
 }
