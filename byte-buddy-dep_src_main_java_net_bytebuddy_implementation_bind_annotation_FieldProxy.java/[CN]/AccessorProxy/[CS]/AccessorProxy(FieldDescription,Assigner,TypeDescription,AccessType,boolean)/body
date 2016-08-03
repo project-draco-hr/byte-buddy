@@ -1,7 +1,0 @@
-{
-  this.accessedField=accessedField;
-  this.assigner=assigner;
-  this.instrumentedType=instrumentedType;
-  this.accessType=accessType;
-  this.serializableProxy=serializableProxy;
-}

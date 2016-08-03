@@ -1,0 +1,4 @@
+{
+  DynamicType.Loaded<FinalField> loaded=implement(FinalField.class,MethodDelegation.to(SwapGetSet.class).appendParameterBinder(FieldProxy.Binder.install(GetSet.class)));
+  loaded.getLoaded().getDeclaredConstructor().newInstance().method();
+}

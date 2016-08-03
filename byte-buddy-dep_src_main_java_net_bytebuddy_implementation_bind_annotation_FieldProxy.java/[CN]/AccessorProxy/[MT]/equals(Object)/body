@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  AccessorProxy that=(AccessorProxy)other;
-  return serializableProxy == that.serializableProxy && accessType == that.accessType && accessedField.equals(that.accessedField) && assigner.equals(that.assigner) && Binder.this.equals(that.getOuter()) && instrumentedType.equals(that.instrumentedType);
-}

@@ -1,0 +1,4 @@
+{
+  assertThat(getset,not(instanceOf(Serializable.class)));
+  getset.set(getset.get() + BAR);
+}

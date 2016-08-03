@@ -1,0 +1,3 @@
+{
+  return isGenericSetter(is(type));
+}

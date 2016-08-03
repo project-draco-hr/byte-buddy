@@ -1,0 +1,3 @@
+{
+  implement(FinalField.class,MethodDelegation.to(Swap.class).appendParameterBinder(FieldProxy.Binder.install(Get.class,Set.class)));
+}

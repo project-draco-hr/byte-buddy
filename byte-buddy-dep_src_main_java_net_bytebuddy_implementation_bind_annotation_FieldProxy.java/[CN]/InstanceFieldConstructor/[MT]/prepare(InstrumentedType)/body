@@ -1,3 +1,0 @@
-{
-  return instrumentedType.withField(new FieldDescription.Token(AccessorProxy.FIELD_NAME,Opcodes.ACC_FINAL | Opcodes.ACC_PRIVATE,this.instrumentedType.asGenericType()));
-}
