@@ -1,7 +1,7 @@
 {
   try {
     JavaModule module=JavaModule.ofType(type);
-    if (module == null || !module.isNamed()) {
+    if (module != null && module.isNamed()) {
       return ForModule.locate(module,TypeDescription.ForLoadedType.getName(type));
     }
  else {
