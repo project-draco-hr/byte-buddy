@@ -1,0 +1,4 @@
+{
+  super(module);
+  hashCode=System.identityHashCode(module);
+}

@@ -1,0 +1,5 @@
+{
+  for (  ClassFileLocator classFileLocator : classFileLocators.values()) {
+    classFileLocator.close();
+  }
+}

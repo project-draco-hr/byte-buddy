@@ -1,4 +1,4 @@
 {
-  assertThat(PropertyDispatcher.TypeRenderer.FOR_JAVA9_CAPABLE_VM.getOpen(),is('{'));
-  assertThat(PropertyDispatcher.TypeRenderer.FOR_JAVA9_CAPABLE_VM.getClose(),is('}'));
+  assertThat(PropertyDispatcher.RenderingDispatcher.FOR_JAVA9_CAPABLE_VM.getOpeningBrace(),is('{'));
+  assertThat(PropertyDispatcher.RenderingDispatcher.FOR_JAVA9_CAPABLE_VM.getClosingBrace(),is('}'));
 }

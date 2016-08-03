@@ -1,0 +1,4 @@
+{
+  when(module.isNamed()).thenReturn(true);
+  assertThat(ClassFileLocator.ForModule.of(module),is((ClassFileLocator)new ClassFileLocator.ForModule(module)));
+}

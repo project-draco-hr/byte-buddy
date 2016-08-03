@@ -1,0 +1,7 @@
+Method getModule
+Method getClassLoader
+Method isNamed
+Method getName
+Method getResourceAsStream
+Method canRead
+Method addModuleReads

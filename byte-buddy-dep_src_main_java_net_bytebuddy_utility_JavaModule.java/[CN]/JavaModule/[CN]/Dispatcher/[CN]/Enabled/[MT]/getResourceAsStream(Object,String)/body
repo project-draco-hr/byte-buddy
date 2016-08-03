@@ -1,0 +1,11 @@
+{
+  try {
+    return (InputStream)getResourceAsStream.invoke(module,name);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access " + getResourceAsStream,exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Cannot invoke " + getResourceAsStream,exception.getCause());
+  }
+}

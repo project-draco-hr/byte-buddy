@@ -1,0 +1,4 @@
+{
+  when(module.isNamed()).thenReturn(true);
+  assertThat(ClassFileLocator.ForModule.WeaklyReferenced.of(module),is((ClassFileLocator)new ClassFileLocator.ForModule.WeaklyReferenced(unwrapped)));
+}

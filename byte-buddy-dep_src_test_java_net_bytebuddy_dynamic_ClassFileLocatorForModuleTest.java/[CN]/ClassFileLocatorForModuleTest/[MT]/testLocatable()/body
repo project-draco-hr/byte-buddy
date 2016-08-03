@@ -1,0 +1,9 @@
+{
+  ByteArrayInputStream inputStream=new ByteArrayInputStream(new byte[]{1,2,3});
+  when(module.getResourceAsStream(FOOBAR + ".class")).thenReturn(inputStream);
+  ClassFileLocator.Resolution resolution=new ClassFileLocator.ForModule(module).locate(FOOBAR);
+  assertThat(resolution.isResolved(),is(true));
+  assertThat(resolution.resolve(),is(new byte[]{1,2,3}));
+  verify(module).getResourceAsStream(FOOBAR + ".class");
+  verifyNoMoreInteractions(module);
+}

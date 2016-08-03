@@ -1,0 +1,8 @@
+{
+  if (module.isNamed()) {
+    return module.getClassLoader() == null || module.getClassLoader() == ClassLoader.getSystemClassLoader() || module.getClassLoader() == ClassLoader.getSystemClassLoader().getParent() ? new ForModule(module) : new WeaklyReferenced(module.unwrap());
+  }
+ else {
+    return ForClassLoader.WeaklyReferenced.of(module.getClassLoader());
+  }
+}

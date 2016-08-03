@@ -1,0 +1,3 @@
+{
+  assertThat(ClassFileLocator.ForClassLoader.WeaklyReferenced.of(ClassLoader.getSystemClassLoader().getParent()),is(ClassFileLocator.ForClassLoader.of(ClassLoader.getSystemClassLoader().getParent())));
+}

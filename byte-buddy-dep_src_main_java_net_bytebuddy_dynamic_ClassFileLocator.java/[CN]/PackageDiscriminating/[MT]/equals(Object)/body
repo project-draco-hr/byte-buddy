@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  PackageDiscriminating that=(PackageDiscriminating)object;
+  return classFileLocators.equals(that.classFileLocators);
+}

@@ -1,0 +1,5 @@
+{
+  int packageIndex=typeName.lastIndexOf('.');
+  ClassFileLocator classFileLocator=classFileLocators.get(packageIndex == -1 ? NamedElement.EMPTY_NAME : typeName.substring(0,packageIndex));
+  return classFileLocator == null ? new Resolution.Illegal(typeName) : classFileLocator.locate(typeName);
+}

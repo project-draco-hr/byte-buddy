@@ -1,0 +1,7 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  WeaklyReferenced that=(WeaklyReferenced)object;
+  Object module=that.get();
+  return module != null && get() == module;
+}

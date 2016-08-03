@@ -1,0 +1,5 @@
+{
+  when(module.isNamed()).thenReturn(true);
+  when(module.getClassLoader()).thenReturn(ClassLoader.getSystemClassLoader());
+  assertThat(ClassFileLocator.ForModule.WeaklyReferenced.of(module),is((ClassFileLocator)new ClassFileLocator.ForModule(module)));
+}

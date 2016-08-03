@@ -1,0 +1,4 @@
+{
+  new ClassFileLocator.ForModule(module).close();
+  verifyZeroInteractions(module);
+}

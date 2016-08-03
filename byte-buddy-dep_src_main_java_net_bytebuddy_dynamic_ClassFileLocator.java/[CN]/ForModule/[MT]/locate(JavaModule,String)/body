@@ -1,0 +1,14 @@
+{
+  InputStream inputStream=module.getResourceAsStream(typeName.replace('.','/') + CLASS_FILE_EXTENSION);
+  if (inputStream != null) {
+    try {
+      return new Resolution.Explicit(StreamDrainer.DEFAULT.drain(inputStream));
+    }
+  finally {
+      inputStream.close();
+    }
+  }
+ else {
+    return new Resolution.Illegal(typeName);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return new Compound(new PackageDiscriminating(BOOT_MODULES),ForClassLoader.ofClassPath());
+}

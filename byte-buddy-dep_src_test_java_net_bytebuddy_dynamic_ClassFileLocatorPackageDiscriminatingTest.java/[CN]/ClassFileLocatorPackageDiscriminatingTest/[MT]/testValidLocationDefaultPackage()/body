@@ -1,0 +1,3 @@
+{
+  assertThat(classFileLocator.locate(BAR),is(barResolution));
+}

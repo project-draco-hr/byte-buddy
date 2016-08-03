@@ -1,0 +1,7 @@
+{
+  classFileLocator.close();
+  verify(foo).close();
+  verifyNoMoreInteractions(foo);
+  verify(bar).close();
+  verifyNoMoreInteractions(bar);
+}

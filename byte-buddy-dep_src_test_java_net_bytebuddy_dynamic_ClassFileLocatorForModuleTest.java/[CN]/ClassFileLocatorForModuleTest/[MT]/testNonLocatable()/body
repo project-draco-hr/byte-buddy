@@ -1,0 +1,8 @@
+{
+  ClassFileLocator.Resolution resolution=new ClassFileLocator.ForModule(module).locate(FOOBAR);
+  assertThat(resolution.isResolved(),is(false));
+  verify(module).getResourceAsStream(FOOBAR + ".class");
+  verifyNoMoreInteractions(module);
+  resolution.resolve();
+  fail();
+}

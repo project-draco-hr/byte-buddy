@@ -1,0 +1,9 @@
+{
+  this.getModule=getModule;
+  this.getClassLoader=getClassLoader;
+  this.isNamed=isNamed;
+  this.getName=getName;
+  this.getResourceAsStream=getResourceAsStream;
+  this.canRead=canRead;
+  this.addModuleReads=addModuleReads;
+}

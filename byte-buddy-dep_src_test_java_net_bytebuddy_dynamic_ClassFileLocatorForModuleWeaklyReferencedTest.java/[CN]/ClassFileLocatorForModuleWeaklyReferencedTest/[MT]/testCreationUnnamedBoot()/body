@@ -1,0 +1,5 @@
+{
+  when(module.isNamed()).thenReturn(false);
+  when(module.getClassLoader()).thenReturn(null);
+  assertThat(ClassFileLocator.ForModule.of(module),is((ClassFileLocator)new ClassFileLocator.ForClassLoader(ClassLoader.getSystemClassLoader())));
+}

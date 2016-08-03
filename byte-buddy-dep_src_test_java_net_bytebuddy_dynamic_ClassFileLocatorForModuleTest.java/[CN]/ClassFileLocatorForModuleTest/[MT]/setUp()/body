@@ -1,0 +1,4 @@
+{
+  when(module.isNamed()).thenReturn(true);
+  when(module.getClassLoader()).thenReturn(classLoader);
+}

@@ -1,5 +1,4 @@
 {
-  ClassLoader classLoader=mock(ClassLoader.class);
   assertThat(ClassFileLocator.ForClassLoader.of(classLoader),is((ClassFileLocator)new ClassFileLocator.ForClassLoader(classLoader)));
   assertThat(ClassFileLocator.ForClassLoader.of(null),is((ClassFileLocator)new ClassFileLocator.ForClassLoader(ClassLoader.getSystemClassLoader())));
 }

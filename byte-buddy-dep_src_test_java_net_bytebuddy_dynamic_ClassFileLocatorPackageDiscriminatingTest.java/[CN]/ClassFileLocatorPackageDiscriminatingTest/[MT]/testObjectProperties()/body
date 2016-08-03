@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(ClassFileLocator.PackageDiscriminating.class).apply();
+}

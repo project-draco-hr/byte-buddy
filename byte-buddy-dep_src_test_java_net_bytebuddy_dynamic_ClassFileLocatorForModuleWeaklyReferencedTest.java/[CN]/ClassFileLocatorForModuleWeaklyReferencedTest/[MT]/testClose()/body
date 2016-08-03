@@ -1,0 +1,4 @@
+{
+  new ClassFileLocator.ForModule.WeaklyReferenced(module).close();
+  verifyZeroInteractions(module);
+}

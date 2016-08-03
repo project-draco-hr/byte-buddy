@@ -1,0 +1,3 @@
+{
+  assertThat(classFileLocator.locate(FOO + "." + BAR),is(fooResulution));
+}

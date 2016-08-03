@@ -1,0 +1,8 @@
+{
+  when(foo.locate(FOO + "." + BAR)).thenReturn(fooResulution);
+  when(bar.locate(BAR)).thenReturn(barResolution);
+  Map<String,ClassFileLocator> map=new HashMap<String,ClassFileLocator>();
+  map.put(FOO,foo);
+  map.put(NamedElement.EMPTY_NAME,bar);
+  classFileLocator=new ClassFileLocator.PackageDiscriminating(map);
+}
