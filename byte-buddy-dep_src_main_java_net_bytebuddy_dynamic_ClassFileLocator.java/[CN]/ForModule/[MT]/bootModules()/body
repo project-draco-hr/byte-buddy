@@ -1,0 +1,16 @@
+{
+  try {
+    Map<String,ClassFileLocator> bootModules=new HashMap<String,ClassFileLocator>();
+    Class<?> layerType=Class.forName("java.lang.reflect.Layer");
+    for (    Object rawModule : (Set<?>)layerType.getDeclaredMethod("modules").invoke(layerType.getDeclaredMethod("boot").invoke(null))) {
+      ClassFileLocator classFileLocator=ForModule.of(JavaModule.of(rawModule));
+      for (      String packageName : (String[])JavaType.MODULE.load().getDeclaredMethod("getPackages").invoke(rawModule)) {
+        bootModules.put(packageName,classFileLocator);
+      }
+    }
+    return bootModules;
+  }
+ catch (  Exception ignored) {
+    return Collections.emptyMap();
+  }
+}
