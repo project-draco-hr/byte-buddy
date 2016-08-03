@@ -1,0 +1,4 @@
+{
+  assertThat(AgentBuilder.LocationStrategy.ForClassLoader.STRONG.withFallbackTo(classFileLocator),is((AgentBuilder.LocationStrategy)new AgentBuilder.LocationStrategy.Compound(AgentBuilder.LocationStrategy.ForClassLoader.STRONG,new AgentBuilder.LocationStrategy.Simple(classFileLocator))));
+  assertThat(AgentBuilder.LocationStrategy.ForClassLoader.WEAK.withFallbackTo(classFileLocator),is((AgentBuilder.LocationStrategy)new AgentBuilder.LocationStrategy.Compound(AgentBuilder.LocationStrategy.ForClassLoader.WEAK,new AgentBuilder.LocationStrategy.Simple(classFileLocator))));
+}

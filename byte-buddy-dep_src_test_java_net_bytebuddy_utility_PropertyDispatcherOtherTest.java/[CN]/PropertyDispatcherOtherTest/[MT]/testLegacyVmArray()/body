@@ -1,4 +1,4 @@
 {
-  assertThat(PropertyDispatcher.RenderingDispatcher.FOR_LEGACY_VM.toSourceString(new Class<?>[]{Object.class}),is("[" + Object.class.toString() + "]"));
-  assertThat(PropertyDispatcher.RenderingDispatcher.FOR_LEGACY_VM.toSourceString(new TypeDescription[]{TypeDescription.OBJECT}),is("[" + Object.class.toString() + "]"));
+  assertThat(PropertyDispatcher.TypeRenderer.FOR_LEGACY_VM.render(new Class<?>[]{Object.class}),is("[" + Object.class.toString() + "]"));
+  assertThat(PropertyDispatcher.TypeRenderer.FOR_LEGACY_VM.render(new TypeDescription[]{TypeDescription.OBJECT}),is("[" + Object.class.toString() + "]"));
 }

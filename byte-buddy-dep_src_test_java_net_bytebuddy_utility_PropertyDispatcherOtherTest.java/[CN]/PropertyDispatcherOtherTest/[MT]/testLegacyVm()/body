@@ -1,4 +1,4 @@
 {
-  assertThat(PropertyDispatcher.RenderingDispatcher.FOR_LEGACY_VM.toSourceString(Object.class),is(Object.class.toString()));
-  assertThat(PropertyDispatcher.RenderingDispatcher.FOR_LEGACY_VM.toSourceString(TypeDescription.OBJECT),is(Object.class.toString()));
+  assertThat(PropertyDispatcher.TypeRenderer.FOR_LEGACY_VM.render(Object.class),is(Object.class.toString()));
+  assertThat(PropertyDispatcher.TypeRenderer.FOR_LEGACY_VM.render(TypeDescription.OBJECT),is(Object.class.toString()));
 }

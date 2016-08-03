@@ -1,0 +1,4 @@
+{
+  ClassFileLocator classFileLocator=mock(ClassFileLocator.class);
+  assertThat(new AgentBuilder.LocationStrategy.Simple(classFileLocator).classFileLocator(mock(ClassLoader.class),mock(JavaModule.class)),is(classFileLocator));
+}

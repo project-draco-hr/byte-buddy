@@ -1,4 +1,4 @@
 {
-  assertThat(PropertyDispatcher.RenderingDispatcher.FOR_JAVA9_CAPABLE_VM.toSourceString(Object.class),is(Object.class.getName() + ".class"));
-  assertThat(PropertyDispatcher.RenderingDispatcher.FOR_JAVA9_CAPABLE_VM.toSourceString(TypeDescription.OBJECT),is(Object.class.getName() + ".class"));
+  assertThat(PropertyDispatcher.TypeRenderer.FOR_JAVA9_CAPABLE_VM.render(Object.class),is(Object.class.getName() + ".class"));
+  assertThat(PropertyDispatcher.TypeRenderer.FOR_JAVA9_CAPABLE_VM.render(TypeDescription.OBJECT),is(Object.class.getName() + ".class"));
 }
