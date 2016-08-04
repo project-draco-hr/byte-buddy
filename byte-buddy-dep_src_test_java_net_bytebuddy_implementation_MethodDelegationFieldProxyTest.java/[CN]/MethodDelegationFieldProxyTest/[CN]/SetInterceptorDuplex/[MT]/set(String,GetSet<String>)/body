@@ -1,0 +1,3 @@
+{
+  accessor.set(accessor.get() + value);
+}

@@ -1,0 +1,4 @@
+{
+  assertThat(accessor,instanceOf(Serializable.class));
+  accessor.set(accessor.get() + BAR);
+}

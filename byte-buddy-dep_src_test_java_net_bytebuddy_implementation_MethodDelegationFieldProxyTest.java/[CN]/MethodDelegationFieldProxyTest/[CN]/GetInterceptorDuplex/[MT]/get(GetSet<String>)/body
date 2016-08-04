@@ -1,0 +1,4 @@
+{
+  accessor.set(accessor.get() + BAR);
+  return accessor.get();
+}

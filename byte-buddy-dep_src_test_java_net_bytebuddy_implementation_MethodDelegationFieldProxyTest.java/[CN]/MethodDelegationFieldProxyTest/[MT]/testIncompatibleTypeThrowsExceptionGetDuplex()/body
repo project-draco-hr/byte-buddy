@@ -1,0 +1,5 @@
+{
+  DynamicType.Loaded<Explicit> loaded=implement(Explicit.class,MethodDelegation.to(GetterIncompatibleDuplex.class).appendParameterBinder(FieldProxy.Binder.install(GetSet.class)));
+  Explicit explicit=loaded.getLoaded().getDeclaredConstructor().newInstance();
+  explicit.swap();
+}

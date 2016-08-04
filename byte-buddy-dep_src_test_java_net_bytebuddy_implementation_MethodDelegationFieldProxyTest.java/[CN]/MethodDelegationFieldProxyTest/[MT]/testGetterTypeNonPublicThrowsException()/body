@@ -1,3 +1,3 @@
 {
-  MethodDelegation.to(GetterIncompatible.class).appendParameterBinder(FieldProxy.Binder.install(GetPrivate.class,Set.class));
+  FieldProxy.Binder.install(GetPrivate.class,Set.class);
 }

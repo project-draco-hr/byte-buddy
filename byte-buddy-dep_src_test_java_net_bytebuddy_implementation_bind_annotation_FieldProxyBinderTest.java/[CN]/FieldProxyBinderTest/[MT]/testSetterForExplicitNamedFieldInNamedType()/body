@@ -1,0 +1,14 @@
+{
+  when(target.getType()).thenReturn(genericSetterType);
+  doReturn(Foo.class).when(annotation).declaringType();
+  when(instrumentedType.isAssignableTo(new TypeDescription.ForLoadedType(Foo.class))).thenReturn(true);
+  when(annotation.value()).thenReturn(FOO);
+  when(fieldDescription.getActualName()).thenReturn(FOO);
+  when(source.getReturnType()).thenReturn(TypeDescription.Generic.VOID);
+  when(source.getParameters()).thenReturn(new ParameterList.Explicit.ForTypes(source,fieldType));
+  when(source.getName()).thenReturn("setFoo");
+  when(source.getInternalName()).thenReturn("setFoo");
+  when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
+  MethodDelegationBinder.ParameterBinding<?> binding=new FieldProxy.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,implementationTarget,assigner);
+  assertThat(binding.isValid(),is(true));
+}

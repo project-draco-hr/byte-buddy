@@ -4,6 +4,4 @@
   assertThat(ElementMatchers.isSetter().matches(new MethodDescription.ForLoadedMethod(Setters.class.getDeclaredMethod("setQux",Boolean.class))),is(true));
   assertThat(ElementMatchers.isSetter().matches(new MethodDescription.ForLoadedMethod(Setters.class.getDeclaredMethod("setBaz",String.class))),is(true));
   assertThat(ElementMatchers.isSetter().matches(new MethodDescription.ForLoadedMethod(Setters.class.getDeclaredMethod("setBaz",String.class,Void.class))),is(false));
-  assertThat(ElementMatchers.isSetter(String.class).matches(new MethodDescription.ForLoadedMethod(Setters.class.getDeclaredMethod("setBaz",String.class))),is(true));
-  assertThat(ElementMatchers.isSetter(Void.class).matches(new MethodDescription.ForLoadedMethod(Setters.class.getDeclaredMethod("setBaz",String.class))),is(false));
 }

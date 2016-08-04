@@ -1,0 +1,7 @@
+{
+  when(target.getType()).thenReturn(genericSetterType);
+  doReturn(Foo.class).when(annotation).declaringType();
+  when(instrumentedType.isAssignableTo(new TypeDescription.ForLoadedType(Foo.class))).thenReturn(false);
+  MethodDelegationBinder.ParameterBinding<?> binding=new FieldProxy.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,implementationTarget,assigner);
+  assertThat(binding.isValid(),is(false));
+}

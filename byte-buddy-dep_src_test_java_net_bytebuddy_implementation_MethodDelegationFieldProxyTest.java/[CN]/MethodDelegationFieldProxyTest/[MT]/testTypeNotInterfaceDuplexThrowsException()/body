@@ -1,0 +1,3 @@
+{
+  FieldProxy.Binder.install(Object.class);
+}

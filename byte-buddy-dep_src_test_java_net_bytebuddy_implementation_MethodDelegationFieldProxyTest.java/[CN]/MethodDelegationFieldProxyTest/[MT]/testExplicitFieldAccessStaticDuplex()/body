@@ -1,0 +1,7 @@
+{
+  DynamicType.Loaded<ExplicitStatic> loaded=implement(ExplicitStatic.class,MethodDelegation.to(SwapDuplex.class).appendParameterBinder(FieldProxy.Binder.install(GetSet.class)));
+  ExplicitStatic explicit=loaded.getLoaded().getDeclaredConstructor().newInstance();
+  assertThat(ExplicitStatic.foo,is(FOO));
+  explicit.swap();
+  assertThat(ExplicitStatic.foo,is(FOO + BAR));
+}

@@ -1,0 +1,7 @@
+{
+  DynamicType.Loaded<ImplicitSetter> loaded=implement(ImplicitSetter.class,MethodDelegation.to(SetInterceptorDuplex.class).appendParameterBinder(FieldProxy.Binder.install(GetSet.class)));
+  ImplicitSetter implicitSetter=loaded.getLoaded().getDeclaredConstructor().newInstance();
+  assertThat(implicitSetter.foo,is(FOO));
+  implicitSetter.setFoo(BAR);
+  assertThat(implicitSetter.foo,is(FOO + BAR));
+}

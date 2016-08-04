@@ -1,0 +1,14 @@
+{
+  when(target.getType()).thenReturn(genericGetterType);
+  doReturn(void.class).when(annotation).declaringType();
+  when(annotation.value()).thenReturn(FieldProxy.Binder.BEAN_PROPERTY);
+  when(fieldDescription.getActualName()).thenReturn(FOO);
+  when(source.getReturnType()).thenReturn(genericFieldType);
+  when(source.getParameters()).thenReturn(new ParameterList.Empty<ParameterDescription.InDefinedShape>());
+  when(source.getName()).thenReturn("getFoo");
+  when(source.getActualName()).thenReturn("getFoo");
+  when(source.getInternalName()).thenReturn("getFoo");
+  when(fieldDescription.isVisibleTo(instrumentedType)).thenReturn(true);
+  MethodDelegationBinder.ParameterBinding<?> binding=new FieldProxy.Binder(getterMethod,setterMethod).bind(annotationDescription,source,target,implementationTarget,assigner);
+  assertThat(binding.isValid(),is(true));
+}

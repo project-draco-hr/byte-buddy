@@ -7,6 +7,4 @@
   assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("isBaz"))),is(false));
   assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getBaz"))),is(true));
   assertThat(ElementMatchers.isGetter().matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getBaz",Void.class))),is(false));
-  assertThat(ElementMatchers.isGetter(String.class).matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getBaz"))),is(true));
-  assertThat(ElementMatchers.isGetter(Void.class).matches(new MethodDescription.ForLoadedMethod(Getters.class.getDeclaredMethod("getBaz"))),is(false));
 }
