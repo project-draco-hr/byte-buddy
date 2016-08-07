@@ -1,4 +1,14 @@
 {
+  if (JavaModule.isSupported()) {
+    int packageIndex=typeName.lastIndexOf('.');
+    ClassFileLocator classFileLocator=ForModule.BOOT_MODULES.get(packageIndex == -1 ? NamedElement.EMPTY_NAME : typeName.substring(0,packageIndex));
+    if (classFileLocator != null && !(classFileLocator instanceof ForClassLoader || classFileLocator instanceof WeaklyReferenced)) {
+      Resolution resolution=classFileLocator.locate(typeName);
+      if (resolution.isResolved()) {
+        return resolution;
+      }
+    }
+  }
   InputStream inputStream=classLoader.getResourceAsStream(typeName.replace('.','/') + CLASS_FILE_EXTENSION);
   if (inputStream != null) {
     try {

@@ -1,3 +1,0 @@
-{
-  return BOOT_MODULES.isEmpty() ? ForClassLoader.ofClassPath() : ofBootLayer();
-}
