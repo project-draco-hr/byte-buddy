@@ -1,0 +1,4 @@
+{
+  Class<?> type=new ByteBuddy().redefine(target).visit(Advice.to(AdviceSizeConversionTest.class).on(named(FOO))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  assertThat(type.getDeclaredMethod(FOO,parameter).invoke(type.getDeclaredConstructor().newInstance(),input),is(output));
+}
