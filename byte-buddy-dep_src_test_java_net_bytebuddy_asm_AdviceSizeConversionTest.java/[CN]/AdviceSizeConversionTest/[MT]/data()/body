@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{IntToFloat.class,int.class,NUMERIC,(float)NUMERIC},{IntToLong.class,int.class,NUMERIC,(long)NUMERIC},{IntToDouble.class,int.class,NUMERIC,(double)NUMERIC},{FloatToInt.class,float.class,(float)NUMERIC,NUMERIC},{FloatToLong.class,float.class,(float)NUMERIC,(long)NUMERIC},{FloatToDouble.class,float.class,(float)NUMERIC,(double)NUMERIC},{LongToInt.class,long.class,(long)NUMERIC,NUMERIC},{LongToFloat.class,long.class,(long)NUMERIC,(float)NUMERIC},{LongToDouble.class,long.class,(long)NUMERIC,(double)NUMERIC},{DoubleToInt.class,double.class,(double)NUMERIC,NUMERIC},{DoubleToLong.class,double.class,(double)NUMERIC,(long)NUMERIC},{DoubleToFloat.class,double.class,(double)NUMERIC,(float)NUMERIC}});
+}
