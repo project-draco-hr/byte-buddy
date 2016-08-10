@@ -1,6 +1,0 @@
-int value
-int argument
-Object[] boxed
-int field
-int staticField
-int custom

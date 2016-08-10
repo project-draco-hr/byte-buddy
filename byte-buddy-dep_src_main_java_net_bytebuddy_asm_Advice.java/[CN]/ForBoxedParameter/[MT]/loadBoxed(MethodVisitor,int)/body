@@ -1,4 +1,0 @@
-{
-  methodVisitor.visitVarInsn(load,offset);
-  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,owner,VALUE_OF,boxingDescriptor,false);
-}

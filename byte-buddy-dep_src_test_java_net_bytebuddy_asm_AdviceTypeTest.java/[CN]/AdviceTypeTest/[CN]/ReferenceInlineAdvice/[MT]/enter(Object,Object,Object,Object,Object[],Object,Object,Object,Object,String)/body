@@ -1,0 +1,35 @@
+{
+  if (value != null) {
+    throw new AssertionError();
+  }
+  value=FOO;
+  if (value != null) {
+    throw new AssertionError();
+  }
+  if (stubValue != null) {
+    throw new AssertionError();
+  }
+  stubValue=FOO;
+  if (stubValue != null) {
+    throw new AssertionError();
+  }
+  if (!argument.equals(FOO) || !mutableArgument.equals(FOO)) {
+    throw new AssertionError();
+  }
+  if (boxed.length != 2 || !boxed[0].equals(FOO) || !boxed[1].equals(FOO)) {
+    throw new AssertionError();
+  }
+  mutableArgument=BAR;
+  if (boxed.length != 2 || !boxed[0].equals(FOO) || !boxed[1].equals(BAR)) {
+    throw new AssertionError();
+  }
+  if (!field.equals(FOO) || !mutated.equals(FOO) || !staticField.equals(FOO)|| !mutatedStatic.equals(FOO)) {
+    throw new AssertionError();
+  }
+  mutated=mutatedStatic=BAR;
+  if (!custom.equals(FOO)) {
+    throw new AssertionError();
+  }
+  enter++;
+  return FOO + BAR;
+}

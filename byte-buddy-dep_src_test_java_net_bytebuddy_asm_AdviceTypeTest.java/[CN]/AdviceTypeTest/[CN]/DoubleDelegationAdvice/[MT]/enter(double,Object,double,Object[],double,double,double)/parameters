@@ -1,0 +1,7 @@
+double value
+Object stubValue
+double argument
+Object[] boxed
+double field
+double staticField
+double custom

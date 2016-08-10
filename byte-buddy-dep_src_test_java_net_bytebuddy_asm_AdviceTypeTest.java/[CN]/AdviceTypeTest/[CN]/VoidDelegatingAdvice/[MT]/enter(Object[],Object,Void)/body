@@ -1,0 +1,12 @@
+{
+  if (boxed.length != 2 || boxed[0] != null || boxed[1] != null) {
+    throw new AssertionError();
+  }
+  if (stubValue != null) {
+    throw new AssertionError();
+  }
+  if (custom != null) {
+    throw new AssertionError();
+  }
+  enter++;
+}

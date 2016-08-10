@@ -1,0 +1,7 @@
+byte value
+Object stubValue
+byte argument
+Object[] boxed
+byte field
+byte staticField
+byte custom

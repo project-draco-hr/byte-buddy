@@ -1,0 +1,7 @@
+float value
+Object stubValue
+float argument
+Object[] boxed
+float field
+float staticField
+float custom

@@ -1,0 +1,10 @@
+char value
+Object stubValue
+char argument
+char mutableArgument
+Object[] boxed
+char field
+char staticField
+char mutated
+char mutatedStatic
+char custom

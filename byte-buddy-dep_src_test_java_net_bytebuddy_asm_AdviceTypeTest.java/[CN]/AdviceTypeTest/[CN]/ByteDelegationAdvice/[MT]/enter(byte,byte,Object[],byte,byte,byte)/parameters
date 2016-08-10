@@ -1,6 +1,0 @@
-byte value
-byte argument
-Object[] boxed
-byte field
-byte staticField
-byte custom

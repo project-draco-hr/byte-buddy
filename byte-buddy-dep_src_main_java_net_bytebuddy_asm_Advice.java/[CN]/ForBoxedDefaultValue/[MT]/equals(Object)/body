@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  ForBoxedDefaultValue that=(ForBoxedDefaultValue)object;
+  return boxingDispatcher == that.boxingDispatcher;
+}

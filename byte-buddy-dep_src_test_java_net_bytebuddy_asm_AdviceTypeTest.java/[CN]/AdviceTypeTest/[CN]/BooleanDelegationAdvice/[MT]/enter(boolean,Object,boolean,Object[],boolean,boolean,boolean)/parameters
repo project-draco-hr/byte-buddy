@@ -1,0 +1,7 @@
+boolean value
+Object stubValue
+boolean argument
+Object[] boxed
+boolean field
+boolean staticField
+boolean custom

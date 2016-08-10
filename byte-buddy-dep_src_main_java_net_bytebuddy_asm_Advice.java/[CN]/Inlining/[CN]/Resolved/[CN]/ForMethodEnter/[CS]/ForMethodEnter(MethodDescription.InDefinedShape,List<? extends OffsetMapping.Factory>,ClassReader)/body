@@ -1,4 +1,4 @@
 {
-  super(adviceMethod,CompoundList.of(Arrays.asList(OffsetMapping.ForParameter.Factory.READ_WRITE,OffsetMapping.ForBoxedArguments.INSTANCE,OffsetMapping.ForThisReference.Factory.READ_WRITE,OffsetMapping.ForField.Factory.READ_WRITE,OffsetMapping.ForOrigin.Factory.INSTANCE,OffsetMapping.ForStubValue.INSTANCE,new OffsetMapping.Illegal(Thrown.class,Enter.class,Return.class,BoxedReturn.class)),userFactories),classReader,adviceMethod.getDeclaredAnnotations().ofType(OnMethodEnter.class).getValue(SUPPRESS_ENTER,TypeDescription.class));
+  super(adviceMethod,CompoundList.of(Arrays.asList(OffsetMapping.ForParameter.Factory.READ_WRITE,OffsetMapping.ForBoxedArguments.INSTANCE,OffsetMapping.ForThisReference.Factory.READ_WRITE,OffsetMapping.ForField.Factory.READ_WRITE,OffsetMapping.ForOrigin.Factory.INSTANCE,OffsetMapping.ForUnusedValue.INSTANCE,OffsetMapping.ForStubValue.INSTANCE,new OffsetMapping.Illegal(Thrown.class,Enter.class,Return.class,BoxedReturn.class)),userFactories),classReader,adviceMethod.getDeclaredAnnotations().ofType(OnMethodEnter.class).getValue(SUPPRESS_ENTER,TypeDescription.class));
   skipDispatcher=SkipDispatcher.of(adviceMethod);
 }

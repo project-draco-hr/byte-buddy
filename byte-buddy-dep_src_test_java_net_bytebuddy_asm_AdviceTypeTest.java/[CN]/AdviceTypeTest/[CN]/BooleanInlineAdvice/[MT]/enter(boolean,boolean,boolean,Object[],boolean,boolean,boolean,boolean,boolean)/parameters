@@ -1,9 +1,0 @@
-boolean value
-boolean argument
-boolean mutableArgument
-Object[] boxed
-boolean field
-boolean staticField
-boolean mutated
-boolean mutatedStatic
-boolean custom

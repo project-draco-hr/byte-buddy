@@ -1,0 +1,7 @@
+char value
+Object stubValue
+char argument
+Object[] boxed
+char field
+char staticField
+char custom

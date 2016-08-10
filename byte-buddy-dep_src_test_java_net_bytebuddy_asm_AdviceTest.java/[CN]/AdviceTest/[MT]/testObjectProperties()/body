@@ -19,6 +19,7 @@
   ObjectPropertyAssertion.of(Advice.Dispatcher.Inactive.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Context.ForMethodEntry.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Context.ForMethodExit.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.BoxingDispatcher.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForParameter.ReadOnly.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForParameter.ReadWrite.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForParameter.ReadWrite.WithCasting.class).apply();
@@ -26,10 +27,10 @@
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForField.ReadWrite.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForConstantPoolValue.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForDefaultValue.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedDefaultValue.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedArguments.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedParameter.ReadOnly.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedParameter.ReadWrite.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedParameter.BoxingDispatcher.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForSerializedObject.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForNullConstant.class).apply();
   final int[] value=new int[1];
@@ -57,6 +58,7 @@
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForTypeName.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForReturnTypeName.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForJavaSignature.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForUnusedValue.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForStubValue.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForUserValue.class).apply();
   final Iterator<Class<?>> annotationTypes=Arrays.<Class<?>>asList(Object.class,String.class,int.class,float.class).iterator();

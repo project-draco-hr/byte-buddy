@@ -1,0 +1,3 @@
+{
+  return readOnly ? new Target.ForParameter.ReadOnly(instrumentedMethod.getStackSize()) : new Target.ForParameter.ReadWrite(instrumentedMethod.getStackSize());
+}

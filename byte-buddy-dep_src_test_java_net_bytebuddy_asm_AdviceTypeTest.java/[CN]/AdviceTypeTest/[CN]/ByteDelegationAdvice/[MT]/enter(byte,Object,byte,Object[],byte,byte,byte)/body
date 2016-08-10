@@ -1,0 +1,22 @@
+{
+  if (value != NUMERIC_DEFAULT) {
+    throw new AssertionError();
+  }
+  if ((Byte)stubValue != NUMERIC_DEFAULT) {
+    throw new AssertionError();
+  }
+  if (argument != VALUE) {
+    throw new AssertionError();
+  }
+  if (boxed.length != 2 || !boxed[0].equals(VALUE) || !boxed[1].equals(VALUE)) {
+    throw new AssertionError();
+  }
+  if (field != VALUE || staticField != VALUE) {
+    throw new AssertionError();
+  }
+  if (custom != VALUE) {
+    throw new AssertionError();
+  }
+  enter++;
+  return VALUE * 2;
+}

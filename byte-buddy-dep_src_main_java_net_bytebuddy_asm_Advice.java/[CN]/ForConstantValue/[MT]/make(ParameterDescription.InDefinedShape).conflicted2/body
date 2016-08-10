@@ -1,0 +1,11 @@
+{
+  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(StubValue.class)) {
+    return UNDEFINED;
+  }
+ else   if (!parameterDescription.getType().represents(Object.class)) {
+    throw new IllegalStateException("Cannot use StubValue on non-Object parameter type " + parameterDescription);
+  }
+ else {
+    return this;
+  }
+}

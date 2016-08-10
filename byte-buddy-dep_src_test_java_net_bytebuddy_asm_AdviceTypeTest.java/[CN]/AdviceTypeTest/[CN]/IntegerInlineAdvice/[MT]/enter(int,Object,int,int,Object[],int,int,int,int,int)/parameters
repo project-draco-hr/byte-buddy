@@ -1,0 +1,10 @@
+int value
+Object stubValue
+int argument
+int mutableArgument
+Object[] boxed
+int field
+int staticField
+int mutated
+int mutatedStatic
+int custom
