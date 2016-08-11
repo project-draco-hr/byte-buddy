@@ -2,7 +2,8 @@
   if (methodDescription.isAbstract() || methodDescription.isNative()) {
     return methodVisitor;
   }
- else   if (!methodExit.isAlive()) {
+  methodVisitor=methodEnter.isPrependLineNumber() ? new LineNumberPrependingMethodVisitor(methodVisitor) : methodVisitor;
+  if (!methodExit.isAlive()) {
     return new AdviceVisitor.WithoutExitAdvice(methodVisitor,methodDescription,methodEnter,classFileVersion,writerFlags,readerFlags);
   }
  else   if (methodExit.getTriggeringThrowable().represents(NoExceptionHandler.class)) {

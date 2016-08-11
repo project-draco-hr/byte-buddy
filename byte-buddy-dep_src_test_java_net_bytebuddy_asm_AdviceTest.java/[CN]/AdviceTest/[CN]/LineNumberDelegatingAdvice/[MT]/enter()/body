@@ -1,0 +1,6 @@
+{
+  StackTraceElement top=new Throwable().getStackTrace()[1];
+  if (top.getLineNumber() < 0) {
+    throw new AssertionError();
+  }
+}
