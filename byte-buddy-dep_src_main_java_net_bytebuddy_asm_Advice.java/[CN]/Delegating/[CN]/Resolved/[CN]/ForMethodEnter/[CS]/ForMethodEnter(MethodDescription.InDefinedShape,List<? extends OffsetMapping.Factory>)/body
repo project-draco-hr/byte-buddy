@@ -1,5 +1,5 @@
 {
-  super(adviceMethod,CompoundList.of(Arrays.asList(OffsetMapping.ForParameter.Factory.READ_ONLY,OffsetMapping.ForBoxedArguments.INSTANCE,OffsetMapping.ForThisReference.Factory.READ_ONLY,OffsetMapping.ForField.Factory.READ_ONLY,OffsetMapping.ForOrigin.Factory.INSTANCE,OffsetMapping.ForUnusedValue.INSTANCE,OffsetMapping.ForStubValue.INSTANCE,new OffsetMapping.Illegal(Thrown.class,Enter.class,Return.class,BoxedReturn.class)),userFactories),adviceMethod.getDeclaredAnnotations().ofType(OnMethodEnter.class).getValue(SUPPRESS_ENTER,TypeDescription.class));
+  super(adviceMethod,CompoundList.of(Arrays.asList(OffsetMapping.ForParameter.Factory.READ_ONLY,OffsetMapping.ForBoxedArguments.INSTANCE,OffsetMapping.ForThisReference.Factory.READ_ONLY,OffsetMapping.ForField.Factory.READ_ONLY,OffsetMapping.ForOrigin.Factory.INSTANCE,OffsetMapping.ForUnusedValue.INSTANCE,OffsetMapping.ForStubValue.INSTANCE,new OffsetMapping.Illegal(Thrown.class,Enter.class,Return.class,BoxedReturn.class)),userFactories),adviceMethod.getDeclaredAnnotations().ofType(OnMethodEnter.class).getValue(SUPPRESS_ENTER).resolve(TypeDescription.class));
   skipDispatcher=SkipDispatcher.of(adviceMethod);
-  prependLineNumber=adviceMethod.getDeclaredAnnotations().ofType(OnMethodEnter.class).getValue(PREPEND_LINE_NUMBER,Boolean.class);
+  prependLineNumber=adviceMethod.getDeclaredAnnotations().ofType(OnMethodEnter.class).getValue(PREPEND_LINE_NUMBER).resolve(Boolean.class);
 }

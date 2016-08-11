@@ -3,5 +3,5 @@
   MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotationType).getDeclaredMethods().filter(named(VALUE)).getOnly();
   Field field=createPlain().defineField(FOO,TypeDescription.Generic.Builder.rawType(Object.class).annotate(AnnotationDescription.Builder.ofType(typeAnnotationType).define(VALUE,INTEGER_VALUE).build()).asArray().build()).make().load(typeAnnotationType.getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded().getDeclaredField(FOO);
   assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveFieldType(field).ofComponentType().asList().size(),is(1));
-  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveFieldType(field).ofComponentType().asList().ofType(typeAnnotationType).getValue(value,Integer.class),is(INTEGER_VALUE));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveFieldType(field).ofComponentType().asList().ofType(typeAnnotationType).getValue(value).resolve(Integer.class),is(INTEGER_VALUE));
 }

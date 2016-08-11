@@ -3,5 +3,5 @@
   MethodDescription.InDefinedShape value=new TypeDescription.ForLoadedType(typeAnnotationType).getDeclaredMethods().filter(named(VALUE)).getOnly();
   Method method=createPlain().defineMethod(FOO,void.class).intercept(StubMethod.INSTANCE).receiverType(TypeDescription.Generic.Builder.rawType(TargetType.class).annotate(AnnotationDescription.Builder.ofType(typeAnnotationType).define(VALUE,BAZ).build()).build()).make().load(typeAnnotationType.getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded().getDeclaredMethod(FOO);
   assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveReceiverType(method).getDeclaredAnnotations().size(),is(1));
-  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveReceiverType(method).getDeclaredAnnotations().ofType(typeAnnotationType).getValue(value,Integer.class),is(BAZ));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveReceiverType(method).getDeclaredAnnotations().ofType(typeAnnotationType).getValue(value).resolve(Integer.class),is(BAZ));
 }

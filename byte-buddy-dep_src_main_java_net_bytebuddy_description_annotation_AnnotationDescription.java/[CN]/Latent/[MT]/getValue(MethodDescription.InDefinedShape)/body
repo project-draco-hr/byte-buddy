@@ -1,9 +1,9 @@
 {
   AnnotationValue<?,?> value=annotationValues.get(methodDescription.getName());
   if (value != null) {
-    return value.resolve();
+    return value;
   }
-  Object defaultValue=methodDescription.getDefaultValue();
+  AnnotationValue<?,?> defaultValue=methodDescription.getDefaultValue();
   if (defaultValue != null) {
     return defaultValue;
   }

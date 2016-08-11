@@ -4,5 +4,5 @@
   Field field=createPlain().defineField(FOO,TypeDescription.Generic.Builder.rawType(Object.class).build(AnnotationDescription.Builder.ofType(typeAnnotationType).define(VALUE,INTEGER_VALUE).build())).make().load(typeAnnotationType.getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded().getDeclaredField(FOO);
   assertThat(field.getType(),is((Object)Object.class));
   assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveFieldType(field).asList().size(),is(1));
-  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveFieldType(field).asList().ofType(typeAnnotationType).getValue(value,Integer.class),is(INTEGER_VALUE));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveFieldType(field).asList().ofType(typeAnnotationType).getValue(value).resolve(Integer.class),is(INTEGER_VALUE));
 }

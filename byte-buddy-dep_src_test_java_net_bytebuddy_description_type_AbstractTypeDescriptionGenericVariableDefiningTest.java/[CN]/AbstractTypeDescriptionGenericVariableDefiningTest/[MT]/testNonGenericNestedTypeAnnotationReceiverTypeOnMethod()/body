@@ -7,7 +7,7 @@
   assertThat(receiverType.represents(Class.forName(RECEIVER_TYPE_SAMPLE + "$" + NESTED)),is(true));
   assertThat(receiverType.getDeclaredAnnotations().size(),is(1));
   assertThat(receiverType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(receiverType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(3));
+  assertThat(receiverType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(3));
   assertThat(receiverType.getOwnerType().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(receiverType.getOwnerType().represents(Class.forName(RECEIVER_TYPE_SAMPLE)),is(true));
 }

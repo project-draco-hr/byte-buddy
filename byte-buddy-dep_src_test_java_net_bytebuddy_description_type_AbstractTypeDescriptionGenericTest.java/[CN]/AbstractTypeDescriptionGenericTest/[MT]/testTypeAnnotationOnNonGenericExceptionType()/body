@@ -6,5 +6,5 @@
   assertThat(exceptionType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(exceptionType.getDeclaredAnnotations().size(),is(1));
   assertThat(exceptionType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(exceptionType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(11));
+  assertThat(exceptionType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(11));
 }

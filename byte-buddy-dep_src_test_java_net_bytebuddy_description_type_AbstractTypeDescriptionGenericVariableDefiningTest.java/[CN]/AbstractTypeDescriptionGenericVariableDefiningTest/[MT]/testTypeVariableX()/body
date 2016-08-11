@@ -6,14 +6,14 @@
   assertThat(t.getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(t.getDeclaredAnnotations().size(),is(1));
   assertThat(t.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(t.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(15));
+  assertThat(t.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(15));
   assertThat(t.getUpperBounds().size(),is(1));
   assertThat(t.getUpperBounds().getOnly().getSort(),is(TypeDefinition.Sort.PARAMETERIZED));
   assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().size(),is(1));
   assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(16));
+  assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(16));
   assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getSort(),is(TypeDefinition.Sort.WILDCARD));
   assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getDeclaredAnnotations().size(),is(1));
   assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(17));
+  assertThat(t.getUpperBounds().getOnly().getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(17));
 }

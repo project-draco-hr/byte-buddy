@@ -1,3 +1,3 @@
 {
-  assertThat(describe(Carrier.class.getAnnotation(PrivateAnnotation.class),Carrier.class).getValue(new MethodDescription.ForLoadedMethod(PrivateAnnotation.class.getDeclaredMethod("value")),String.class),is(FOO));
+  assertThat(describe(Carrier.class.getAnnotation(PrivateAnnotation.class),Carrier.class).getValue(new MethodDescription.ForLoadedMethod(PrivateAnnotation.class.getDeclaredMethod("value"))).resolve(String.class),is(FOO));
 }

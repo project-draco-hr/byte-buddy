@@ -11,7 +11,7 @@
         AccessController.doPrivileged(new SetAccessibleAction<Method>(method));
       }
     }
-    return describe(method.invoke(annotation),methodDescription.getReturnType().asErasure());
+    return asValue(method.getReturnType(),method.invoke(annotation));
   }
  catch (  Exception exception) {
     throw new IllegalStateException("Cannot access annotation property " + methodDescription,exception.getCause());

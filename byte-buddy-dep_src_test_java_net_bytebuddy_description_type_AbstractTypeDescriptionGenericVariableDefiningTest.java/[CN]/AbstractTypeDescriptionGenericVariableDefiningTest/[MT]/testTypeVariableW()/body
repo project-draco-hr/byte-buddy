@@ -6,10 +6,10 @@
   assertThat(t.getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(t.getDeclaredAnnotations().size(),is(1));
   assertThat(t.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(t.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(13));
+  assertThat(t.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(13));
   assertThat(t.getUpperBounds().size(),is(1));
   assertThat(t.getUpperBounds().getOnly().getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().size(),is(1));
   assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(14));
+  assertThat(t.getUpperBounds().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(14));
 }

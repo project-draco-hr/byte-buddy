@@ -4,5 +4,5 @@
   Class<?> type=new ByteBuddy().subclass(TypeDescription.Generic.Builder.rawType(Object.class).build(AnnotationDescription.Builder.ofType(typeAnnotationType).define(VALUE,BAZ).build())).make().load(typeAnnotationType.getClassLoader(),ClassLoadingStrategy.Default.CHILD_FIRST).getLoaded();
   assertThat(type.getSuperclass(),is((Object)Object.class));
   assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperClassType(type).asList().size(),is(1));
-  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperClassType(type).asList().ofType(typeAnnotationType).getValue(value,Integer.class),is(BAZ));
+  assertThat(TypeDescription.Generic.AnnotationReader.DISPATCHER.resolveSuperClassType(type).asList().ofType(typeAnnotationType).getValue(value).resolve(Integer.class),is(BAZ));
 }

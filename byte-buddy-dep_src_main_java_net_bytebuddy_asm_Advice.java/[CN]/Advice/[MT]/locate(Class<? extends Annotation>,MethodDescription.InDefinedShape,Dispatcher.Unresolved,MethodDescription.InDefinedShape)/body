@@ -10,6 +10,6 @@
     throw new IllegalStateException("Advice for " + methodDescription + " is not static");
   }
  else {
-    return annotation.getValue(property,Boolean.class) ? new Dispatcher.Inlining(methodDescription) : new Dispatcher.Delegating(methodDescription);
+    return annotation.getValue(property).resolve(Boolean.class) ? new Dispatcher.Inlining(methodDescription) : new Dispatcher.Delegating(methodDescription);
   }
 }

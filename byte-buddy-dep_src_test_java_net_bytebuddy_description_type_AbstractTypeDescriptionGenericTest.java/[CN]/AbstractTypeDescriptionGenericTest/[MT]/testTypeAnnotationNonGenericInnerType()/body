@@ -6,9 +6,9 @@
   assertThat(fieldType.getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(fieldType.getDeclaredAnnotations().size(),is(1));
   assertThat(fieldType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(fieldType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(8));
+  assertThat(fieldType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(8));
   assertThat(fieldType.getOwnerType().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(fieldType.getOwnerType().getDeclaredAnnotations().size(),is(1));
   assertThat(fieldType.getOwnerType().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(fieldType.getOwnerType().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(7));
+  assertThat(fieldType.getOwnerType().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(7));
 }

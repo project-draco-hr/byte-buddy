@@ -1,3 +1,3 @@
 {
-  new ByteBuddy().makeInterface().defineMethod(FOO,String.class).defaultValue(BAR).make();
+  new ByteBuddy().makeInterface().defineMethod(FOO,String.class).defaultValue(BAR,String.class).make();
 }

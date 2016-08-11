@@ -7,10 +7,10 @@
   assertThat(receiverType.asErasure().represents(Class.forName(RECEIVER_TYPE_SAMPLE + "$" + GENERIC+ "$"+ NESTED)),is(true));
   assertThat(receiverType.getDeclaredAnnotations().size(),is(1));
   assertThat(receiverType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(receiverType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(12));
+  assertThat(receiverType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(12));
   assertThat(receiverType.getTypeArguments().getOnly().getDeclaredAnnotations().size(),is(1));
   assertThat(receiverType.getTypeArguments().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(receiverType.getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(13));
+  assertThat(receiverType.getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(13));
   assertThat(receiverType.getOwnerType().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(receiverType.getOwnerType().represents(Class.forName(RECEIVER_TYPE_SAMPLE + "$" + GENERIC)),is(true));
 }

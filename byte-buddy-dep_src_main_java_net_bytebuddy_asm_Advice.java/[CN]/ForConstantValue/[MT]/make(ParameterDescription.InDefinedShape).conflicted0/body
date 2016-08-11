@@ -1,3 +1,15 @@
 {
-  return parameterDescription.getDeclaredAnnotations().isAnnotationPresent(Unused.class) ? this : UNDEFINED;
+  AnnotationDescription.Loadable<Origin> origin=parameterDescription.getDeclaredAnnotations().ofType(Origin.class);
+  if (origin == null) {
+    return UNDEFINED;
+  }
+ else   if (parameterDescription.getType().asErasure().represents(Class.class)) {
+    return OffsetMapping.ForInstrumentedType.INSTANCE;
+  }
+ else   if (parameterDescription.getType().asErasure().isAssignableFrom(String.class)) {
+    return ForOrigin.parse(origin.loadSilent().value());
+  }
+ else {
+    throw new IllegalStateException("Non-String type " + parameterDescription + " for origin annotation");
+  }
 }

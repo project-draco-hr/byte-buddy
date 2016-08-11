@@ -3,9 +3,11 @@
     throw new IllegalArgumentException(methodDescription + " is not declared by " + getAnnotationType());
   }
   AnnotationValue<?,?> annotationValue=values.get(methodDescription.getName());
-  Object value=annotationValue == null ? getAnnotationType().getDeclaredMethods().filter(is(methodDescription)).getOnly().getDefaultValue() : annotationValue.resolve();
-  if (value == null) {
-    throw new IllegalStateException(methodDescription + " is not defined on annotation");
+  if (annotationValue == null) {
+    annotationValue=getAnnotationType().getDeclaredMethods().filter(is(methodDescription)).getOnly().getDefaultValue();
   }
-  return PropertyDispatcher.of(value.getClass()).conditionalClone(value);
+  if (annotationValue != null) {
+    return annotationValue;
+  }
+  throw new IllegalStateException(methodDescription + " is not defined on annotation");
 }

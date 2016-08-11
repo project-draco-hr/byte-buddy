@@ -7,12 +7,12 @@
   assertThat(receiverType.asErasure().represents(Class.forName(RECEIVER_TYPE_SAMPLE + "$" + GENERIC)),is(true));
   assertThat(receiverType.getDeclaredAnnotations().size(),is(1));
   assertThat(receiverType.getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(receiverType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(4));
+  assertThat(receiverType.getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(4));
   assertThat(receiverType.getTypeArguments().getOnly().getSort(),is(TypeDefinition.Sort.VARIABLE));
   assertThat(receiverType.getTypeArguments().getOnly().getSymbol(),is(T));
   assertThat(receiverType.getTypeArguments().getOnly().getDeclaredAnnotations().size(),is(1));
   assertThat(receiverType.getTypeArguments().getOnly().getDeclaredAnnotations().isAnnotationPresent(typeAnnotation),is(true));
-  assertThat(receiverType.getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value,Integer.class),is(5));
+  assertThat(receiverType.getTypeArguments().getOnly().getDeclaredAnnotations().ofType(typeAnnotation).getValue(value).resolve(Integer.class),is(5));
   assertThat(receiverType.getOwnerType().getSort(),is(TypeDefinition.Sort.NON_GENERIC));
   assertThat(receiverType.getOwnerType().represents(Class.forName(RECEIVER_TYPE_SAMPLE)),is(true));
 }

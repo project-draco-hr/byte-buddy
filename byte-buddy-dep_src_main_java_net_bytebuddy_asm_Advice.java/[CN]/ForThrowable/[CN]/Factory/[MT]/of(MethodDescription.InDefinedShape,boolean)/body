@@ -1,4 +1,4 @@
 {
-  TypeDescription triggeringThrowable=adviceMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).getValue(ON_THROWABLE,TypeDescription.class);
+  TypeDescription triggeringThrowable=adviceMethod.getDeclaredAnnotations().ofType(OnMethodExit.class).getValue(ON_THROWABLE).resolve(TypeDescription.class);
   return triggeringThrowable.represents(NoExceptionHandler.class) ? new OffsetMapping.Illegal(Thrown.class) : new Factory(triggeringThrowable,readOnly);
 }

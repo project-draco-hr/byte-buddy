@@ -1,5 +1,5 @@
 {
-  Class<? extends Annotation> type=new ByteBuddy().makeAnnotation().defineMethod(FOO,int.class,Visibility.PUBLIC).withoutCode().defineMethod(BAR,String.class,Visibility.PUBLIC).defaultValue(FOO).defineMethod(QUX,SimpleEnum.class,Visibility.PUBLIC).defaultValue(SimpleEnum.FIRST,SimpleEnum.class).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<? extends Annotation> type=new ByteBuddy().makeAnnotation().defineMethod(FOO,int.class,Visibility.PUBLIC).withoutCode().defineMethod(BAR,String.class,Visibility.PUBLIC).defaultValue(FOO,String.class).defineMethod(QUX,SimpleEnum.class,Visibility.PUBLIC).defaultValue(SimpleEnum.FIRST,SimpleEnum.class).make().load(getClass().getClassLoader(),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(type.getDeclaredMethods().length,is(3));
   assertThat(type.getDeclaredMethod(FOO),notNullValue(Method.class));
   assertThat(type.getDeclaredMethod(BAR).getDefaultValue(),is((Object)FOO));

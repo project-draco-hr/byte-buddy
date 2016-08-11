@@ -1,5 +1,5 @@
 {
-  Class<?> dynamicType=create(Baz.class).method(named(FOO)).defaultValue(FOO).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Class<?> dynamicType=create(Baz.class).method(named(FOO)).defaultValue(FOO,String.class).make().load(new URLClassLoader(new URL[0],null),ClassLoadingStrategy.Default.WRAPPER).getLoaded();
   assertThat(dynamicType.getDeclaredMethods().length,is(1));
   assertThat(dynamicType.getDeclaredMethod(FOO).getDefaultValue(),is((Object)FOO));
 }
