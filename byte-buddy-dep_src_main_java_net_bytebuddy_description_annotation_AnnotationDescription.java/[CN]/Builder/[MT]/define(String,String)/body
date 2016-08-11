@@ -1,3 +1,0 @@
-{
-  return define(property,new AnnotationValue.Trivial<String>(value));
-}

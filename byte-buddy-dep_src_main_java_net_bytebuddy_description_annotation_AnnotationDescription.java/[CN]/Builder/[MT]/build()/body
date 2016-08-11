@@ -1,8 +1,0 @@
-{
-  for (  MethodDescription methodDescription : annotationType.getDeclaredMethods()) {
-    if (annotationValues.get(methodDescription.getName()) == null && methodDescription.getDefaultValue() == null) {
-      throw new IllegalStateException("No value or default value defined for " + methodDescription.getName());
-    }
-  }
-  return new Latent(annotationType,annotationValues);
-}

@@ -1,0 +1,3 @@
+{
+  return "AnnotationValue.ForType{" + "typeDescription=" + typeDescription + '}';
+}

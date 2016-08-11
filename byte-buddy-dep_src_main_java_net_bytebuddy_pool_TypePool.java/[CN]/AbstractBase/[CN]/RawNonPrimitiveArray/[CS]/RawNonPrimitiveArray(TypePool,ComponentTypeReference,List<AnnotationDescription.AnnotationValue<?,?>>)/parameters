@@ -1,3 +1,0 @@
-TypePool typePool
-ComponentTypeReference componentTypeReference
-List<AnnotationDescription.AnnotationValue<?,?>> value

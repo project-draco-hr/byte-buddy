@@ -1,0 +1,3 @@
+{
+  return "AnnotationValue.ForEnumeration{" + "enumerationDescription=" + enumerationDescription + '}';
+}

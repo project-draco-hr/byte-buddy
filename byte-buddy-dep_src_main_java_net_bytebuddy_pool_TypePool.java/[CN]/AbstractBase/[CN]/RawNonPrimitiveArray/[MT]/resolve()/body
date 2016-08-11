@@ -18,7 +18,7 @@
   }
   Object[] array=(Object[])Array.newInstance(componentType,value.size());
   int index=0;
-  for (  AnnotationDescription.AnnotationValue<?,?> annotationValue : value) {
+  for (  AnnotationValue<?,?> annotationValue : value) {
     Array.set(array,index++,annotationValue.resolve());
   }
   return array;

@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") Class<U> enumerationType=(Class<U>)Class.forName(enumerationDescription.getEnumerationType().getName(),false,classLoader);
+  return new Loaded<U>(enumerationDescription.load(enumerationType));
+}

@@ -1,0 +1,3 @@
+{
+  return "AnnotationValue.Trivial{" + "value=" + value + ", propertyDispatcher="+ propertyDispatcher+ '}';
+}

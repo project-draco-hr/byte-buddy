@@ -1,0 +1,4 @@
+{
+  this.enumType=enumType;
+  this.value=value;
+}

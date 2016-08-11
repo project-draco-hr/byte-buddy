@@ -1,0 +1,3 @@
+{
+  return PropertyDispatcher.TYPE_LOADED.toString(type);
+}

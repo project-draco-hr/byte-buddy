@@ -1,6 +1,0 @@
-{
-  if (!annotation.annotationType().getName().equals(annotationType.getName())) {
-    throw new IllegalArgumentException(annotationType + " does not represent " + annotation.annotationType());
-  }
-  return annotationType == annotation.annotationType() ? (Loadable<T>)this : new ForLoadedAnnotation<T>((T)annotation,annotationType);
-}

@@ -1,3 +1,0 @@
-{
-  return AnnotationDescription.AnnotationInvocationHandler.of(annotationType.getClassLoader(),annotationType,annotationValues);
-}

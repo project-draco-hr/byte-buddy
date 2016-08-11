@@ -1,8 +1,0 @@
-{
-  int result=annotationType.hashCode();
-  result=31 * result + values.hashCode();
-  for (  Map.Entry<Method,?> entry : values.entrySet()) {
-    result=31 * result + PropertyDispatcher.of(entry.getValue().getClass()).hashCode(entry.getValue());
-  }
-  return result;
-}

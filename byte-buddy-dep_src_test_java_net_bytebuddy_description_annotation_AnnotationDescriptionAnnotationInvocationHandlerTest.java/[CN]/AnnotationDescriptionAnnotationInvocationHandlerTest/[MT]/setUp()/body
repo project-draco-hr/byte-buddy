@@ -1,4 +1,4 @@
 {
-  when(annotationValue.load(getClass().getClassLoader())).thenReturn((AnnotationDescription.AnnotationValue.Loaded)loadedAnnotationValue);
-  when(otherAnnotationValue.load(getClass().getClassLoader())).thenReturn((AnnotationDescription.AnnotationValue.Loaded)otherLoadedAnnotationValue);
+  when(annotationValue.load(getClass().getClassLoader())).thenReturn((AnnotationValue.Loaded)loadedAnnotationValue);
+  when(otherAnnotationValue.load(getClass().getClassLoader())).thenReturn((AnnotationValue.Loaded)otherLoadedAnnotationValue);
 }

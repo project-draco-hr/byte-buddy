@@ -1,3 +1,0 @@
-{
-  return define(property,new EnumerationDescription.Latent(enumerationType,value));
-}

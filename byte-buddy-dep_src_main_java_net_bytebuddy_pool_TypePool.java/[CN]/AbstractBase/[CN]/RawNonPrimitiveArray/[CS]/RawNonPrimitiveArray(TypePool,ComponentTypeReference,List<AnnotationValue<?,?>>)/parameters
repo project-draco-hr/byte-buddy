@@ -1,0 +1,3 @@
+TypePool typePool
+ComponentTypeReference componentTypeReference
+List<AnnotationValue<?,?>> value

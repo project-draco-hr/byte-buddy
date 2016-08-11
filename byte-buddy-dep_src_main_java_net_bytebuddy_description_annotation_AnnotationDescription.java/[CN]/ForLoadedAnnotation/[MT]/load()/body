@@ -1,3 +1,0 @@
-{
-  return annotationType == annotation.annotationType() ? annotation : AnnotationInvocationHandler.of(annotationType.getClassLoader(),annotationType,asValue(annotation));
-}

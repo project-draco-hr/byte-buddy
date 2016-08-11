@@ -1,8 +1,0 @@
-{
-  EnumerationDescription[] enumerationDescription=new EnumerationDescription[value.length];
-  int index=0;
-  for (  T aValue : value) {
-    enumerationDescription[index++]=new EnumerationDescription.ForLoadedEnumeration(aValue);
-  }
-  return defineEnumerationArray(property,new TypeDescription.ForLoadedType(enumerationType),enumerationDescription);
-}

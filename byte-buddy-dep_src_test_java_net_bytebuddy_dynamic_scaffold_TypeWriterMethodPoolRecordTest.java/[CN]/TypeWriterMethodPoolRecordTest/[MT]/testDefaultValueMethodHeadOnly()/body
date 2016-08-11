@@ -3,7 +3,7 @@
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
   when(methodDescription.isDefaultValue(FOO)).thenReturn(true);
-  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,new AnnotationDescription.AnnotationValue.Trivial<String>(FOO),methodAttributeAppender);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,new AnnotationValue.Trivial<String>(FOO),methodAttributeAppender);
   record.applyHead(methodVisitor);
   verify(methodVisitor).visitAnnotationDefault();
   verifyNoMoreInteractions(methodVisitor);

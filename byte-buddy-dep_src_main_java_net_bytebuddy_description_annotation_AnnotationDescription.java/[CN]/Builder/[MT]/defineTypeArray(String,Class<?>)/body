@@ -1,3 +1,0 @@
-{
-  return defineTypeArray(property,new TypeList.ForLoadedTypes(type).toArray(new TypeDescription[type.length]));
-}

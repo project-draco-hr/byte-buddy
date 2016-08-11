@@ -1,4 +1,0 @@
-{
-  Object defaultValue=method.getDefaultValue();
-  return defaultValue == null ? new Missing((Class<? extends Annotation>)method.getDeclaringClass(),method.getName()) : new DefaultValue(defaultValue);
-}

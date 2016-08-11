@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForComplexArray that=(ForComplexArray)other;
+  return annotationValues.equals(that.annotationValues) && componentType.equals(that.componentType) && unloadedComponentType.equals(that.unloadedComponentType);
+}

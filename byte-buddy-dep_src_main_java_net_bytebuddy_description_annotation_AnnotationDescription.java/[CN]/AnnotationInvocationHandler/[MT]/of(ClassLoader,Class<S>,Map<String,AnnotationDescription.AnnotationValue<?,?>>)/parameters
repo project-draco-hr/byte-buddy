@@ -1,3 +1,0 @@
-ClassLoader classLoader
-Class<S> annotationType
-Map<String,AnnotationDescription.AnnotationValue<?,?>> values

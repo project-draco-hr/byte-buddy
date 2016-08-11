@@ -1,0 +1,3 @@
+{
+  return new ForAnnotation<V>(new AnnotationDescription.Latent(annotationType,annotationValues));
+}

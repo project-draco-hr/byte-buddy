@@ -1,3 +1,0 @@
-{
-  return "AnnotationDescription.Builder{" + "annotationType=" + annotationType + ", annotationValues="+ annotationValues+ '}';
-}

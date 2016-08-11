@@ -1,3 +1,0 @@
-{
-  return Latent.this.prepare(annotationType);
-}

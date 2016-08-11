@@ -1,3 +1,0 @@
-{
-  return define(property,AnnotationValue.ForComplexArray.<Enum>of(enumerationType,value));
-}

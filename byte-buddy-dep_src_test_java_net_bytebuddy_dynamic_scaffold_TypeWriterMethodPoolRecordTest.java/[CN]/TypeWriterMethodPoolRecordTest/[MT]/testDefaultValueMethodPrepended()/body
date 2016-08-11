@@ -1,3 +1,3 @@
 {
-  new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,new AnnotationDescription.AnnotationValue.Trivial<String>(FOO),methodAttributeAppender).prepend(otherAppender);
+  new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,new AnnotationValue.Trivial<String>(FOO),methodAttributeAppender).prepend(otherAppender);
 }

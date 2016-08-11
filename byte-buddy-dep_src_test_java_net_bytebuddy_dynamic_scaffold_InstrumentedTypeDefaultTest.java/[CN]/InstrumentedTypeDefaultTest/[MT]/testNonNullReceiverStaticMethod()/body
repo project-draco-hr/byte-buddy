@@ -1,3 +1,3 @@
 {
-  makePlainInstrumentedType().withMethod(new MethodDescription.Token(FOO,Opcodes.ACC_STATIC,Collections.<TypeVariableToken>emptyList(),TypeDescription.Generic.OBJECT,Collections.<ParameterDescription.Token>emptyList(),Collections.<TypeDescription.Generic>emptyList(),Collections.<AnnotationDescription>emptyList(),MethodDescription.NO_DEFAULT_VALUE,TypeDescription.Generic.OBJECT)).validated();
+  makePlainInstrumentedType().withMethod(new MethodDescription.Token(FOO,Opcodes.ACC_STATIC,Collections.<TypeVariableToken>emptyList(),TypeDescription.Generic.OBJECT,Collections.<ParameterDescription.Token>emptyList(),Collections.<TypeDescription.Generic>emptyList(),Collections.<AnnotationDescription>emptyList(),AnnotationValue.UNDEFINED,TypeDescription.Generic.OBJECT)).validated();
 }

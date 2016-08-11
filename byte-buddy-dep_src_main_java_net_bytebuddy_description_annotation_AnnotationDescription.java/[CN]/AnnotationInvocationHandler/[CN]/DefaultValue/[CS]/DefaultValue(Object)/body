@@ -1,4 +1,0 @@
-{
-  this.defaultValue=defaultValue;
-  propertyDispatcher=PropertyDispatcher.of(defaultValue.getClass());
-}

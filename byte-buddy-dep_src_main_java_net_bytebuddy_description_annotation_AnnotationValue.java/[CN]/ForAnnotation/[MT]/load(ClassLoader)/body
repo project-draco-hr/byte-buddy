@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") Class<U> annotationType=(Class<U>)Class.forName(annotationDescription.getAnnotationType().getName(),false,classLoader);
+  return new Loaded<U>(annotationDescription.prepare(annotationType).load());
+}

@@ -12,7 +12,7 @@
   when(token.getParameterTokens()).thenReturn(new ByteCodeElement.Token.TokenList<ParameterDescription.Token>());
   when(token.getExceptionTypes()).thenReturn(new TypeList.Generic.Empty());
   when(token.getAnnotations()).thenReturn(new AnnotationList.Empty());
-  when(token.getDefaultValue()).thenReturn((AnnotationDescription.AnnotationValue)defaultValue);
+  when(token.getDefaultValue()).thenReturn((AnnotationValue)defaultValue);
   when(token.getReceiverType()).thenReturn(typeDescription);
   stripped=new MethodDescription.Token(FOO,MODIFIERS,Collections.<TypeVariableToken>emptyList(),typeDescription,Collections.<ParameterDescription.Token>emptyList(),Collections.<TypeDescription.Generic>emptyList(),Collections.<AnnotationDescription>emptyList(),defaultValue,TypeDescription.Generic.UNDEFINED);
 }

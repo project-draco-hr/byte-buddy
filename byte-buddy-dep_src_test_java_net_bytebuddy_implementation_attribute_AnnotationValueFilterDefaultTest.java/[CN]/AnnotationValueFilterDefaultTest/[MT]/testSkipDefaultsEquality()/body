@@ -1,7 +1,7 @@
 {
-  AnnotationDescription.AnnotationValue<?,?> annotationValue=mock(AnnotationDescription.AnnotationValue.class);
-  when(methodDescription.getDefaultValue()).thenReturn((AnnotationDescription.AnnotationValue)annotationValue);
-  when(annotationDescription.getValue(methodDescription)).thenReturn((AnnotationDescription.AnnotationValue)annotationValue);
+  AnnotationValue<?,?> annotationValue=mock(AnnotationValue.class);
+  when(methodDescription.getDefaultValue()).thenReturn((AnnotationValue)annotationValue);
+  when(annotationDescription.getValue(methodDescription)).thenReturn((AnnotationValue)annotationValue);
   assertThat(AnnotationValueFilter.Default.SKIP_DEFAULTS.isRelevant(annotationDescription,methodDescription),is(false));
   verify(annotationDescription).getValue(methodDescription);
   verifyNoMoreInteractions(annotationDescription);

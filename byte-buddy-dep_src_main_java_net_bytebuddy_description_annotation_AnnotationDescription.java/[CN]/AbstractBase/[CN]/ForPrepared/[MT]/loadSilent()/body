@@ -1,8 +1,0 @@
-{
-  try {
-    return load();
-  }
- catch (  ClassNotFoundException exception) {
-    throw new IllegalStateException("Could not load annotation type or referenced type",exception);
-  }
-}

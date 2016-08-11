@@ -1,3 +1,0 @@
-{
-  return this == other || !(other == null || getClass() != other.getClass()) && annotationType.equals(((Builder)other).annotationType) && annotationValues.equals(((Builder)other).annotationValues);
-}
