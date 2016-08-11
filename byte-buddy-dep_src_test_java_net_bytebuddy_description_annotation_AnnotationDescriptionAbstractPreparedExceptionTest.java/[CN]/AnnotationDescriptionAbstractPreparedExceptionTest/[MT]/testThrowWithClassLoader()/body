@@ -1,3 +1,0 @@
-{
-  new PseudoDescription().loadSilent(getClass().getClassLoader());
-}

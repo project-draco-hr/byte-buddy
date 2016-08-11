@@ -1,8 +1,0 @@
-{
-  try {
-    return load(classLoader);
-  }
- catch (  ClassNotFoundException exception) {
-    throw new IllegalStateException(ForLoadedAnnotation.ERROR_MESSAGE,exception);
-  }
-}

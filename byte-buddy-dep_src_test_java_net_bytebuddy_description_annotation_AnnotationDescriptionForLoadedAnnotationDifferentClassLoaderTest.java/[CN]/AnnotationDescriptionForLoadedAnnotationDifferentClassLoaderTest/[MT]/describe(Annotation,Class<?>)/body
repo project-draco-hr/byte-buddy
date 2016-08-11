@@ -1,0 +1,8 @@
+{
+  try {
+    return AnnotationDescription.ForLoadedAnnotation.of(AnnotationDescription.ForLoadedAnnotation.of(annotation).prepare((Class<Annotation>)classLoader.loadClass(annotation.annotationType().getName())).load());
+  }
+ catch (  ClassNotFoundException exception) {
+    throw new AssertionError(exception);
+  }
+}

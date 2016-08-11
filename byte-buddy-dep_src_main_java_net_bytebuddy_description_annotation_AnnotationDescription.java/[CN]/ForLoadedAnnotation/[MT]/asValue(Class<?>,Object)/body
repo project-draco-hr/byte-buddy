@@ -4,33 +4,36 @@
   }
  else   if (Enum[].class.isAssignableFrom(type)) {
     Enum<?>[] element=(Enum<?>[])value;
-    List<AnnotationValue<?,?>> annotationValues=new ArrayList<AnnotationValue<?,?>>(element.length);
+    EnumerationDescription[] enumerationDescription=new EnumerationDescription[element.length];
+    int index=0;
     for (    Enum<?> anElement : element) {
-      annotationValues.add(AnnotationValue.ForEnumeration.<Enum>of(new EnumerationDescription.ForLoadedEnumeration(anElement)));
+      enumerationDescription[index++]=new EnumerationDescription.ForLoadedEnumeration(anElement);
     }
-    return new AnnotationValue.ForComplexArray<Object,Object>(Enum.class,new TypeDescription.ForLoadedType(type),annotationValues);
+    return AnnotationValue.ForComplexArray.of(new TypeDescription.ForLoadedType(type.getComponentType()),enumerationDescription);
   }
  else   if (Annotation.class.isAssignableFrom(type)) {
     return AnnotationValue.ForAnnotation.<Annotation>of(new TypeDescription.ForLoadedType(type),asValue((Annotation)value));
   }
  else   if (Annotation[].class.isAssignableFrom(type)) {
     Annotation[] element=(Annotation[])value;
-    List<AnnotationValue<?,?>> annotationValues=new ArrayList<AnnotationValue<?,?>>(element.length);
+    AnnotationDescription[] annotationDescription=new AnnotationDescription[element.length];
+    int index=0;
     for (    Annotation anElement : element) {
-      annotationValues.add(AnnotationValue.ForAnnotation.<Annotation>of(new TypeDescription.ForLoadedType(type),asValue(anElement)));
+      annotationDescription[index++]=new AnnotationDescription.Latent(new TypeDescription.ForLoadedType(type.getComponentType()),asValue(anElement));
     }
-    return new AnnotationValue.ForComplexArray<Object,Object>(Annotation.class,new TypeDescription.ForLoadedType(type),annotationValues);
+    return AnnotationValue.ForComplexArray.of(new TypeDescription.ForLoadedType(type.getComponentType()),annotationDescription);
   }
  else   if (Class.class.isAssignableFrom(type)) {
     return AnnotationValue.ForType.<Class>of(new TypeDescription.ForLoadedType((Class<?>)value));
   }
  else   if (Class[].class.isAssignableFrom(type)) {
     Class<?>[] element=(Class<?>[])value;
-    List<AnnotationValue<?,?>> annotationValues=new ArrayList<AnnotationValue<?,?>>(element.length);
+    TypeDescription[] typeDescription=new TypeDescription[element.length];
+    int index=0;
     for (    Class<?> anElement : element) {
-      annotationValues.add(AnnotationValue.ForType.<Class>of(new TypeDescription.ForLoadedType(anElement)));
+      typeDescription[index++]=new TypeDescription.ForLoadedType(anElement);
     }
-    return new AnnotationValue.ForComplexArray<Object,Object>(Class.class,TypeDescription.CLASS,annotationValues);
+    return AnnotationValue.ForComplexArray.of(typeDescription);
   }
  else {
     return new AnnotationValue.Trivial<Object>(value);
