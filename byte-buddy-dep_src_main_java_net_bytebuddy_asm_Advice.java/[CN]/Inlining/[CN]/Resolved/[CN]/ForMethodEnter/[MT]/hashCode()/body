@@ -1,5 +1,6 @@
 {
   int result=super.hashCode();
   result=31 * result + skipDispatcher.hashCode();
+  result=31 * result + (prependLineNumber ? 1 : 0);
   return result;
 }
