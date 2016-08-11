@@ -1,5 +1,7 @@
 {
-  when(leftAnnotations.ofType(BindingPriority.class)).thenReturn(AnnotationDescription.ForLoadedAnnotation.of(lowPriority));
-  when(rightAnnotations.ofType(BindingPriority.class)).thenReturn(AnnotationDescription.ForLoadedAnnotation.of(highPriority));
+  AnnotationDescription.Loadable<BindingPriority> lowPriority=AnnotationDescription.ForLoadedAnnotation.of(this.lowPriority);
+  when(leftAnnotations.ofType(BindingPriority.class)).thenReturn(lowPriority);
+  AnnotationDescription.Loadable<BindingPriority> highPriority=AnnotationDescription.ForLoadedAnnotation.of(this.highPriority);
+  when(rightAnnotations.ofType(BindingPriority.class)).thenReturn(highPriority);
   assertThat(BindingPriority.Resolver.INSTANCE.resolve(source,left,right),is(MethodDelegationBinder.AmbiguityResolver.Resolution.RIGHT));
 }
