@@ -1,0 +1,10 @@
+{
+  MethodVisitor delegate=mock(MethodVisitor.class);
+  LineNumberPrependingMethodVisitor methodVisitor=new LineNumberPrependingMethodVisitor(delegate);
+  methodVisitor.onAfterExceptionTable();
+  Label label=new Label();
+  methodVisitor.visitLineNumber(LINE,label);
+  verify(delegate,times(2)).visitLabel(any(Label.class));
+  verify(delegate).visitLineNumber(eq(LINE),argThat(not(label)));
+  verifyNoMoreInteractions(delegate);
+}

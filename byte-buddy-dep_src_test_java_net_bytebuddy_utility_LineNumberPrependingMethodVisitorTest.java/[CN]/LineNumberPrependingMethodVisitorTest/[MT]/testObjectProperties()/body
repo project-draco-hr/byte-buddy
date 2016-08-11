@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(LineNumberPrependingMethodVisitor.class).applyBasic();
+}
