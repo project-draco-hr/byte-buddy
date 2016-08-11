@@ -4,7 +4,7 @@
       return hashCodeRepresentation();
     }
  else     if (method.getName().equals(EQUALS) && method.getParameterTypes().length == 1) {
-      return equalsRepresentation(proxy,arguments[0]);
+      return equalsRepresentation(proxy,argument[0]);
     }
  else     if (method.getName().equals(TO_STRING)) {
       return toStringRepresentation();
