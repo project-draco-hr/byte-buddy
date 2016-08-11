@@ -1,0 +1,3 @@
+{
+  return "LineNumberPrependingMethodVisitor{" + "startOfMethod=" + startOfMethod + ", prependLineNumber="+ prependLineNumber+ '}';
+}

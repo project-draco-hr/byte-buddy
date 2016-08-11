@@ -1,5 +1,5 @@
 {
-  super(Opcodes.ASM5,delegate);
+  super(Opcodes.ASM5,methodEnter.isPrependLineNumber() ? new LineNumberPrependingMethodVisitor(delegate) : delegate);
   this.methodVisitor=methodVisitor;
   this.instrumentedMethod=instrumentedMethod;
   padding=methodEnter.getEnterType().getStackSize().getSize();

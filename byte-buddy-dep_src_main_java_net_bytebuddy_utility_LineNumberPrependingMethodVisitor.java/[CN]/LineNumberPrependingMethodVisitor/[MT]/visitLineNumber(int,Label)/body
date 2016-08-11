@@ -1,0 +1,7 @@
+{
+  if (prependLineNumber) {
+    start=startOfMethod;
+    prependLineNumber=false;
+  }
+  super.visitLineNumber(line,start);
+}
