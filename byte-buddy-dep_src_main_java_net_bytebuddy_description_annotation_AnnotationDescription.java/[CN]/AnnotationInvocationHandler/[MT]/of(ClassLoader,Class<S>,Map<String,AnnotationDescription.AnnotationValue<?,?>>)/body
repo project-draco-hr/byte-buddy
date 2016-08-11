@@ -5,5 +5,5 @@
     AnnotationDescription.AnnotationValue<?,?> annotationValue=values.get(method.getName());
     loadedValues.put(method,annotationValue == null ? DefaultValue.of(method) : annotationValue.load(classLoader == null ? ClassLoader.getSystemClassLoader() : classLoader));
   }
-  return new AnnotationInvocationHandler<S>(annotationType,loadedValues);
+  return (S)Proxy.newProxyInstance(classLoader,new Class<?>[]{annotationType},new AnnotationInvocationHandler<S>(annotationType,loadedValues));
 }

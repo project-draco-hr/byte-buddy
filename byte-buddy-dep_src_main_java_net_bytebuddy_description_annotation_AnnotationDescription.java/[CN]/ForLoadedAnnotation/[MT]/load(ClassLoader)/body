@@ -1,14 +1,4 @@
 {
-  ClassLoader thisClassLoader=annotation.getClass().getClassLoader();
-  ClassLoader otherClassLoader=classLoader;
-  while (otherClassLoader != null) {
-    if (otherClassLoader == thisClassLoader) {
-      break;
-    }
-    otherClassLoader=otherClassLoader.getParent();
-  }
-  if (otherClassLoader != thisClassLoader) {
-    throw new IllegalArgumentException(annotation + " is not loaded using " + classLoader);
-  }
-  return load();
+  Class<?> annotationType=Class.forName(TypeDescription.ForLoadedType.getName(annotation.annotationType()),false,classLoader);
+  return annotationType == annotation.annotationType() ? annotation : AnnotationInvocationHandler.of(classLoader,(Class<S>)annotationType,asValue(annotation));
 }
