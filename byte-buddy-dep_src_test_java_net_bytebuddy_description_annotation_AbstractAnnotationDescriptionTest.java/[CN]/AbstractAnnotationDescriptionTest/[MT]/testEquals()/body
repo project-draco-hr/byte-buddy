@@ -33,7 +33,9 @@
   assertThat(describe(first),not(equalFirstTypeOnly));
   AnnotationDescription equalFirstNameOnly=mock(AnnotationDescription.class);
   when(equalFirstNameOnly.getAnnotationType()).thenReturn(new TypeDescription.ForLoadedType(first.annotationType()));
-  when(equalFirstNameOnly.getValue(Mockito.any(MethodDescription.InDefinedShape.class))).thenReturn(null);
+  AnnotationValue<?,?> annotationValue=mock(AnnotationValue.class);
+  when(annotationValue.resolve()).thenReturn(null);
+  when(equalFirstNameOnly.getValue(Mockito.any(MethodDescription.InDefinedShape.class))).thenReturn((AnnotationValue)annotationValue);
   assertThat(describe(first),not(equalFirstNameOnly));
   assertThat(describe(first),not(equalSecond));
   assertThat(describe(first),not(new Object()));

@@ -1,6 +1,6 @@
 {
   when(methodDescription.getReturnType()).thenReturn(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(String.class));
-  when(methodDescription.isDefaultValue(FOO)).thenReturn(true);
+  when(methodDescription.isDefaultValue(new AnnotationValue.Trivial<String>(FOO))).thenReturn(true);
   TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,new AnnotationValue.Trivial<String>(FOO),methodAttributeAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.DEFINED));
   record.apply(classVisitor,implementationContext,annotationValueFilterFactory);

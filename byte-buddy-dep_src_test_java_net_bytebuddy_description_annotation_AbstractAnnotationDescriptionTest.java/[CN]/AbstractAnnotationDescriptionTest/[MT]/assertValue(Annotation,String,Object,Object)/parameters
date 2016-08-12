@@ -1,4 +1,4 @@
 Annotation annotation
 String methodName
-Object rawValue
+Object unloadedValue
 Object loadedValue

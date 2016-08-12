@@ -1,4 +1,4 @@
 {
-  when(methodDescription.isDefaultValue(FOO)).thenReturn(false);
+  when(methodDescription.isDefaultValue(new AnnotationValue.Trivial<String>(FOO))).thenReturn(false);
   new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,new AnnotationValue.Trivial<String>(FOO),methodAttributeAppender).apply(classVisitor,implementationContext,annotationValueFilterFactory);
 }
