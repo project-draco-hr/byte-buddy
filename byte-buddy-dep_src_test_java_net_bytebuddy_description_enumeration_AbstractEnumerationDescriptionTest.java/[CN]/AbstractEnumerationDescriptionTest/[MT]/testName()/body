@@ -1,0 +1,4 @@
+{
+  assertThat(describe(Sample.FIRST).getActualName(),is(Sample.FIRST.name()));
+  assertThat(describe(Sample.SECOND).getActualName(),is(Sample.SECOND.name()));
+}
