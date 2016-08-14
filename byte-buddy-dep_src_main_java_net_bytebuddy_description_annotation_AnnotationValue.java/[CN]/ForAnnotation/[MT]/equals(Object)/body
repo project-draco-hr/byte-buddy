@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   ForAnnotation that=(ForAnnotation)other;
-  return equals(that.annotationDescription);
+  return annotationDescription.equals(that.annotationDescription);
 }
