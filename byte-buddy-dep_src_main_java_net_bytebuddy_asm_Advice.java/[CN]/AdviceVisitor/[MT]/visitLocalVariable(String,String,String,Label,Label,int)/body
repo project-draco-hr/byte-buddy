@@ -1,0 +1,3 @@
+{
+  mv.visitLocalVariable(name,descriptor,signature,start,end,index < instrumentedMethod.getStackSize() ? index : padding + index);
+}
