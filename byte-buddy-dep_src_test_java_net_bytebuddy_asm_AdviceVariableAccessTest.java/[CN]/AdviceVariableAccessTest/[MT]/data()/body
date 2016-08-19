@@ -1,0 +1,3 @@
+{
+  return Arrays.asList(new Object[][]{{BooleanSample.class,true,boolean.class},{ByteSample.class,(byte)42,byte.class},{ShortSample.class,(short)42,short.class},{CharacterSample.class,(char)42,char.class},{IntegerSample.class,42,int.class},{LongSample.class,42L,long.class},{FloatSample.class,42f,float.class},{DoubleSample.class,42d,double.class},{ReferenceSample.class,"foo",Object.class}});
+}

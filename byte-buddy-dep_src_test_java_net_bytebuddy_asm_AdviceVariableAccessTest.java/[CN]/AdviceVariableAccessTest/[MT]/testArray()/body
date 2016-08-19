@@ -1,0 +1,6 @@
+{
+  Class<?> dynamicType=new ByteBuddy().redefine(sample).visit(Advice.to(AdviceVariableAccessTest.class).on(named(READ).or(named(WRITE)))).make().load(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassLoadingStrategy.Default.WRAPPER).getLoaded();
+  Object instance=dynamicType.getDeclaredConstructor().newInstance();
+  assertThat(dynamicType.getDeclaredMethod(WRITE,type).invoke(instance,value),nullValue(Object.class));
+  assertThat(dynamicType.getDeclaredMethod(READ).invoke(instance),is(value));
+}

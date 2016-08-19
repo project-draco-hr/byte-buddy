@@ -1,0 +1,5 @@
+{
+  this.sample=sample;
+  this.value=value;
+  this.type=type;
+}
