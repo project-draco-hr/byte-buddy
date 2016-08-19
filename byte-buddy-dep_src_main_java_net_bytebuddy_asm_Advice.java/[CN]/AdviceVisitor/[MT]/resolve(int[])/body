@@ -1,0 +1,6 @@
+{
+  for (int anIndex=0; anIndex < index.length; anIndex++) {
+    index[anIndex]=resolve(index[anIndex]);
+  }
+  return index;
+}

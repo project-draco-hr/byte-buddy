@@ -1,0 +1,3 @@
+{
+  return mv.visitLocalVariableAnnotation(typeReference,typePath,start,end,resolve(index),descriptor,visible);
+}

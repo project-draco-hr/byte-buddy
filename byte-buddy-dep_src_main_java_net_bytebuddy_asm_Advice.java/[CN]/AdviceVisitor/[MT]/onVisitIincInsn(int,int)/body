@@ -1,3 +1,3 @@
 {
-  mv.visitIincInsn(offset < instrumentedMethod.getStackSize() ? offset : padding + offset,increment);
+  mv.visitIincInsn(resolve(offset),increment);
 }
