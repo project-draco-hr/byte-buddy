@@ -1,4 +1,4 @@
-int typeRef
+int typeReference
 TypePath typePath
-String desc
+String descriptor
 boolean visible

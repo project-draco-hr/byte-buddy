@@ -1,4 +1,4 @@
-int min
-int max
-Label dflt
-Label labels
+int minimum
+int maximum
+Label defaultOption
+Label label
