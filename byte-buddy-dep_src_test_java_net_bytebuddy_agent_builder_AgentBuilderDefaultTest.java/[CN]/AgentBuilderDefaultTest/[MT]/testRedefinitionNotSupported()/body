@@ -1,3 +1,3 @@
 {
-  new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(AgentBuilder.RedefinitionStrategy.REDEFINITION).with(typeLocator).with(typeStrategy).with(installationStrategy).with(listener).disableNativeMethodPrefix().type(typeMatcher).transform(transformer).installOn(instrumentation);
+  new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(AgentBuilder.RedefinitionStrategy.REDEFINITION).with(poolStrategy).with(typeStrategy).with(installationStrategy).with(listener).disableNativeMethodPrefix().type(typeMatcher).transform(transformer).installOn(instrumentation);
 }

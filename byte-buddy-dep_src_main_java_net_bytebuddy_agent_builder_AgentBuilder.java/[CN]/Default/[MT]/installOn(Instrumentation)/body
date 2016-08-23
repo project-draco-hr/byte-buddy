@@ -11,7 +11,7 @@
       for (      Class<?> type : instrumentation.getAllLoadedClasses()) {
         JavaModule module=JavaModule.ofType(type);
         try {
-          TypeDescription typeDescription=descriptionStrategy.apply(type,typeLocator,locationStrategy);
+          TypeDescription typeDescription=descriptionStrategy.apply(type,poolStrategy,locationStrategy);
           if (!instrumentation.isModifiableClass(type) || !collector.consider(typeDescription,type,ignoredTypeMatcher)) {
             try {
               try {
@@ -38,7 +38,7 @@
           }
         }
       }
-      collector.apply(instrumentation,typeLocator,locationStrategy,listener);
+      collector.apply(instrumentation,poolStrategy,locationStrategy,listener);
     }
     return classFileTransformer;
   }

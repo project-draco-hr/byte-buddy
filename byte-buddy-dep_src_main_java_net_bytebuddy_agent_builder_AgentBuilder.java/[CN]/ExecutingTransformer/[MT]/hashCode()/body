@@ -1,6 +1,6 @@
 {
   int result=byteBuddy.hashCode();
-  result=31 * result + typeLocator.hashCode();
+  result=31 * result + poolStrategy.hashCode();
   result=31 * result + typeStrategy.hashCode();
   result=31 * result + locationStrategy.hashCode();
   result=31 * result + initializationStrategy.hashCode();

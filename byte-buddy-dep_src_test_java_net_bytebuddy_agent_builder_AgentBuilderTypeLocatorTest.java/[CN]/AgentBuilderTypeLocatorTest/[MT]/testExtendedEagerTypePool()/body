@@ -1,3 +1,0 @@
-{
-  assertThat(AgentBuilder.TypeLocator.Eager.EXTENDED.typePool(classFileLocator,classLoader),notNullValue(TypePool.class));
-}

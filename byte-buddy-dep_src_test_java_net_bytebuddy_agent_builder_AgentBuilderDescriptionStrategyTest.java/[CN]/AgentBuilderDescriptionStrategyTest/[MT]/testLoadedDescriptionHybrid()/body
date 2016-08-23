@@ -1,4 +1,4 @@
 {
-  assertThat(AgentBuilder.DescriptionStrategy.Default.HYBRID.apply(Object.class,typeLocator,locationStrategy),is(TypeDescription.OBJECT));
-  assertThat(AgentBuilder.DescriptionStrategy.Default.HYBRID.apply(Object.class,typeLocator,locationStrategy),instanceOf(TypeDescription.ForLoadedType.class));
+  assertThat(AgentBuilder.DescriptionStrategy.Default.HYBRID.apply(Object.class,poolStrategy,locationStrategy),is(TypeDescription.OBJECT));
+  assertThat(AgentBuilder.DescriptionStrategy.Default.HYBRID.apply(Object.class,poolStrategy,locationStrategy),instanceOf(TypeDescription.ForLoadedType.class));
 }

@@ -6,7 +6,7 @@
   when(instrumentation.isModifiableClass(OTHER)).thenReturn(true);
   when(instrumentation.isRedefineClassesSupported()).thenReturn(true);
   doThrow(new RuntimeException()).when(instrumentation).redefineClasses(any(ClassDefinition[].class));
-  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(AgentBuilder.RedefinitionStrategy.REDEFINITION_CHUNKED).with(typeLocator).with(typeStrategy).with(installationStrategy).with(listener).disableNativeMethodPrefix().ignore(none()).type(typeMatcher).transform(transformer).installOn(instrumentation);
+  ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(AgentBuilder.RedefinitionStrategy.REDEFINITION_CHUNKED).with(poolStrategy).with(typeStrategy).with(installationStrategy).with(listener).disableNativeMethodPrefix().ignore(none()).type(typeMatcher).transform(transformer).installOn(instrumentation);
   verifyZeroInteractions(listener);
   verify(instrumentation).addTransformer(classFileTransformer,false);
   verify(instrumentation).getAllLoadedClasses();

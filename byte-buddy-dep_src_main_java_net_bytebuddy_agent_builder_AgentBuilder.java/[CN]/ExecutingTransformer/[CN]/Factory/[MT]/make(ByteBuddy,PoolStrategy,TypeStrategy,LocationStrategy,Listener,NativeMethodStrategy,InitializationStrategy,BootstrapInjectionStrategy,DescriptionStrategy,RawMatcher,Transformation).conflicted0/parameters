@@ -1,0 +1,11 @@
+ByteBuddy byteBuddy
+PoolStrategy poolStrategy
+TypeStrategy typeStrategy
+LocationStrategy locationStrategy
+Listener listener
+NativeMethodStrategy nativeMethodStrategy
+InitializationStrategy initializationStrategy
+BootstrapInjectionStrategy bootstrapInjectionStrategy
+DescriptionStrategy descriptionStrategy
+RawMatcher ignoredTypeMatcher
+Transformation transformation

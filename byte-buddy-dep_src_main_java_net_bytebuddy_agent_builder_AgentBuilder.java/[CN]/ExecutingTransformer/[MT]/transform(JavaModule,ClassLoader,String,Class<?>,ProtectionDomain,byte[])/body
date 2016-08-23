@@ -5,7 +5,7 @@
   String typeName=internalTypeName.replace('/','.');
   try {
     ClassFileLocator classFileLocator=ClassFileLocator.Simple.of(typeName,binaryRepresentation,locationStrategy.classFileLocator(classLoader,module));
-    TypePool typePool=typeLocator.typePool(classFileLocator,classLoader);
+    TypePool typePool=poolStrategy.typePool(classFileLocator,classLoader);
     return transformation.resolve(descriptionStrategy.apply(typeName,classBeingRedefined,typePool),classLoader,module,classBeingRedefined,protectionDomain,typePool,ignoredTypeMatcher).apply(initializationStrategy,classFileLocator,typeStrategy,byteBuddy,nativeMethodStrategy,bootstrapInjectionStrategy,accessControlContext,listener);
   }
  catch (  Throwable throwable) {

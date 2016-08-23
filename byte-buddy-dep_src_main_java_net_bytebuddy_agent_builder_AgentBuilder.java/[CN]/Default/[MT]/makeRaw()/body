@@ -1,3 +1,3 @@
 {
-  return ExecutingTransformer.FACTORY.make(byteBuddy,typeLocator,typeStrategy,locationStrategy,listener,nativeMethodStrategy,initializationStrategy,bootstrapInjectionStrategy,descriptionStrategy,ignoredTypeMatcher,transformation);
+  return ExecutingTransformer.FACTORY.make(byteBuddy,poolStrategy,typeStrategy,locationStrategy,listener,nativeMethodStrategy,initializationStrategy,bootstrapInjectionStrategy,descriptionStrategy,ignoredTypeMatcher,transformation);
 }

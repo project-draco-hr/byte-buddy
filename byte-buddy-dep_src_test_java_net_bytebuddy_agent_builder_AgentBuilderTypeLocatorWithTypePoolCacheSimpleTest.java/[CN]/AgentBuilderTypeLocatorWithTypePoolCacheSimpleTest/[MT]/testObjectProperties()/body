@@ -1,3 +1,3 @@
 {
-  ObjectPropertyAssertion.of(AgentBuilder.TypeLocator.WithTypePoolCache.Simple.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.PoolStrategy.WithTypePoolCache.Simple.class).apply();
 }

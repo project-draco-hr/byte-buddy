@@ -1,6 +1,6 @@
 {
   ConcurrentMap<ClassLoader,TypePool.CacheProvider> cacheProviders=new ConcurrentHashMap<ClassLoader,TypePool.CacheProvider>();
-  AgentBuilder.TypeLocator typeLocator=new AgentBuilder.TypeLocator.WithTypePoolCache.Simple(TypePool.Default.ReaderMode.FAST,cacheProviders);
-  assertThat(typeLocator.typePool(classFileLocator,first),is(typeLocator.typePool(classFileLocator,first)));
-  assertThat(typeLocator.typePool(classFileLocator,first),not(typeLocator.typePool(classFileLocator,second)));
+  AgentBuilder.PoolStrategy poolStrategy=new AgentBuilder.PoolStrategy.WithTypePoolCache.Simple(TypePool.Default.ReaderMode.FAST,cacheProviders);
+  assertThat(poolStrategy.typePool(classFileLocator,first),is(poolStrategy.typePool(classFileLocator,first)));
+  assertThat(poolStrategy.typePool(classFileLocator,first),not(poolStrategy.typePool(classFileLocator,second)));
 }

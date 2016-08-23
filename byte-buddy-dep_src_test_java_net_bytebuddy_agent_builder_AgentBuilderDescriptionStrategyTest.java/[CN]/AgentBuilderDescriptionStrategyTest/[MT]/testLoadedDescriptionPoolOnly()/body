@@ -1,6 +1,6 @@
 {
-  when(typeLocator.typePool(ClassFileLocator.ForClassLoader.of(Object.class.getClassLoader()),Object.class.getClassLoader())).thenReturn(typePool);
+  when(poolStrategy.typePool(ClassFileLocator.ForClassLoader.of(Object.class.getClassLoader()),Object.class.getClassLoader())).thenReturn(typePool);
   when(typePool.describe(Object.class.getName())).thenReturn(new TypePool.Resolution.Simple(typeDescription));
   when(locationStrategy.classFileLocator(Object.class.getClassLoader(),JavaModule.ofType(Object.class))).thenReturn(ClassFileLocator.ForClassLoader.of(Object.class.getClassLoader()));
-  assertThat(AgentBuilder.DescriptionStrategy.Default.POOL_ONLY.apply(Object.class,typeLocator,locationStrategy),is(typeDescription));
+  assertThat(AgentBuilder.DescriptionStrategy.Default.POOL_ONLY.apply(Object.class,poolStrategy,locationStrategy),is(typeDescription));
 }

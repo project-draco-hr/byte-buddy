@@ -1,0 +1,5 @@
+{
+  ObjectPropertyAssertion.of(AgentBuilder.PoolStrategy.Default.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.PoolStrategy.Eager.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.PoolStrategy.ClassLoading.class).apply();
+}

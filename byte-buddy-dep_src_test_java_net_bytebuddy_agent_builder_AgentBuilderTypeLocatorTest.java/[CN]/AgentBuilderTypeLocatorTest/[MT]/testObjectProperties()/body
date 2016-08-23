@@ -1,5 +1,0 @@
-{
-  ObjectPropertyAssertion.of(AgentBuilder.TypeLocator.Default.class).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.TypeLocator.Eager.class).apply();
-  ObjectPropertyAssertion.of(AgentBuilder.TypeLocator.ClassLoading.class).apply();
-}
