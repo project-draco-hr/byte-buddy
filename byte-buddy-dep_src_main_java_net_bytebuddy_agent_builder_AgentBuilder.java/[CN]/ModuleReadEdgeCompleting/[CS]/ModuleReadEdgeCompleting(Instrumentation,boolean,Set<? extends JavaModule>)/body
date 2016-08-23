@@ -1,5 +1,0 @@
-{
-  this.instrumentation=instrumentation;
-  this.addTargetEdge=addTargetEdge;
-  this.modules=modules;
-}

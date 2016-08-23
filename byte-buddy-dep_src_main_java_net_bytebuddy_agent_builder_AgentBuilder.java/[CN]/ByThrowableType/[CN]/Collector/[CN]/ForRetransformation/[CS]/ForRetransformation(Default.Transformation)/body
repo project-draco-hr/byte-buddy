@@ -1,0 +1,4 @@
+{
+  this.transformation=transformation;
+  types=new ArrayList<Class<?>>();
+}

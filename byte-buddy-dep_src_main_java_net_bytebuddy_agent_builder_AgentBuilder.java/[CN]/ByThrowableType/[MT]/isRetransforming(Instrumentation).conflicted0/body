@@ -1,0 +1,3 @@
+{
+  return REDEFINITION.isRetransforming(instrumentation);
+}

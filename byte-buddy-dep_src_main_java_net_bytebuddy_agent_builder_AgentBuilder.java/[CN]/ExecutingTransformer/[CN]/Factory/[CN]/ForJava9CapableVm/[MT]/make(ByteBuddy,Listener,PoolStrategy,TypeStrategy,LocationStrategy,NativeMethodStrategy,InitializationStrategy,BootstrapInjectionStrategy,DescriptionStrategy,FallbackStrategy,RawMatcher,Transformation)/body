@@ -1,0 +1,14 @@
+{
+  try {
+    return executingTransformer.newInstance(byteBuddy,listener,poolStrategy,typeStrategy,locationStrategy,nativeMethodStrategy,initializationStrategy,bootstrapInjectionStrategy,descriptionStrategy,fallbackStrategy,ignoredTypeMatcher,transformation);
+  }
+ catch (  IllegalAccessException exception) {
+    throw new IllegalStateException("Cannot access " + executingTransformer,exception);
+  }
+catch (  InstantiationException exception) {
+    throw new IllegalStateException("Cannot instantiate " + executingTransformer.getDeclaringClass(),exception);
+  }
+catch (  InvocationTargetException exception) {
+    throw new IllegalStateException("Cannot invoke " + executingTransformer,exception.getCause());
+  }
+}

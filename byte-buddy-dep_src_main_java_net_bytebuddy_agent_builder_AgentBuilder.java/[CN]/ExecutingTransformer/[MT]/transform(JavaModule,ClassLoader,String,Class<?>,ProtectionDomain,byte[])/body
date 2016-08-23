@@ -6,7 +6,17 @@
   try {
     ClassFileLocator classFileLocator=ClassFileLocator.Simple.of(typeName,binaryRepresentation,locationStrategy.classFileLocator(classLoader,module));
     TypePool typePool=poolStrategy.typePool(classFileLocator,classLoader);
-    return transformation.resolve(descriptionStrategy.apply(typeName,classBeingRedefined,typePool),classLoader,module,classBeingRedefined,protectionDomain,typePool,ignoredTypeMatcher).apply(initializationStrategy,classFileLocator,typeStrategy,byteBuddy,nativeMethodStrategy,bootstrapInjectionStrategy,accessControlContext,listener);
+    try {
+      return doTransform(module,classLoader,typeName,classBeingRedefined,protectionDomain,typePool,classFileLocator);
+    }
+ catch (    Throwable throwable) {
+      if (classBeingRedefined != null && descriptionStrategy.isLoadedFirst() && fallbackStrategy.isFallback(classBeingRedefined,throwable)) {
+        return doTransform(module,classLoader,typeName,NO_LOADED_TYPE,protectionDomain,typePool,classFileLocator);
+      }
+ else {
+        throw throwable;
+      }
+    }
   }
  catch (  Throwable throwable) {
     listener.onError(typeName,classLoader,module,throwable);

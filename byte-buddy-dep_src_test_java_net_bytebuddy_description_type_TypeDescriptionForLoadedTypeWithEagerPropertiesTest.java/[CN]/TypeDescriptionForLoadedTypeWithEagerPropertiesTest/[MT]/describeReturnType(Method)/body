@@ -1,3 +1,0 @@
-{
-  return new TypeDescription.ForLoadedType.WithEagerProperties(method.getDeclaringClass()).getDeclaredMethods().filter(ElementMatchers.is(method)).getOnly().getReturnType();
-}

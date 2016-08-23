@@ -1,0 +1,5 @@
+{
+  if (!classDefinitions.isEmpty()) {
+    instrumentation.redefineClasses(classDefinitions.toArray(new ClassDefinition[classDefinitions.size()]));
+  }
+}

@@ -1,0 +1,7 @@
+JavaModule module
+ClassLoader classLoader
+String typeName
+Class<?> classBeingRedefined
+ProtectionDomain protectionDomain
+TypePool typePool
+ClassFileLocator classFileLocator

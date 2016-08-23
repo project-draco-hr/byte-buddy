@@ -1,0 +1,3 @@
+{
+  assertThat(new AgentBuilder.FallbackStrategy.ByThrowableType(RuntimeException.class).isFallback(Object.class,new Exception()),is(false));
+}

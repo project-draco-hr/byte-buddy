@@ -1,3 +1,0 @@
-{
-  return new TypeDescription.ForLoadedType.WithEagerProperties(field.getDeclaringClass()).getDeclaredFields().filter(ElementMatchers.is(field)).getOnly().getType();
-}

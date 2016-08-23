@@ -1,0 +1,8 @@
+{
+  for (  Class<? extends Throwable> aType : types) {
+    if (aType.isInstance(throwable)) {
+      return true;
+    }
+  }
+  return false;
+}

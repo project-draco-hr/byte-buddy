@@ -1,0 +1,5 @@
+TypeDescription typeDescription
+Class<?> type
+JavaModule module
+RedefinitionStrategy.Collector collector
+boolean unmodifiable

@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.RedefinitionStrategy.Collector.ForRedefinition.Cumulative{" + "transformation=" + transformation + ", entries="+ entries+ '}';
+}

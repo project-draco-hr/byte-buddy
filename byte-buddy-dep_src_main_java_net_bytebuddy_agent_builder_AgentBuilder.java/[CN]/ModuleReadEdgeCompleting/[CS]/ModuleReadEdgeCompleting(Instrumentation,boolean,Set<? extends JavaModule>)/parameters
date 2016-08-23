@@ -1,3 +1,0 @@
-Instrumentation instrumentation
-boolean addTargetEdge
-Set<? extends JavaModule> modules

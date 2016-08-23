@@ -1,0 +1,3 @@
+TypeDescription typeDescription
+Class<?> type
+RawMatcher ignoredTypeMatcher

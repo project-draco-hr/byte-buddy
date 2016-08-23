@@ -1,4 +1,0 @@
-{
-  ClassLoader classLoader=new ByteArrayClassLoader(ClassLoadingStrategy.BOOTSTRAP_LOADER,ClassFileExtraction.of(Foo.class),null,ByteArrayClassLoader.PersistenceHandler.LATENT,PackageDefinitionStrategy.NoOp.INSTANCE);
-  new TypeDescription.ForLoadedType.WithEagerProperties(classLoader.loadClass(Foo.class.getName()));
-}

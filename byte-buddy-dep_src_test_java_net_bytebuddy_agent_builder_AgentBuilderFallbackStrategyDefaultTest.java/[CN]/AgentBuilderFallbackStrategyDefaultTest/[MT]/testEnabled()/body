@@ -1,0 +1,3 @@
+{
+  assertThat(AgentBuilder.FallbackStrategy.Default.ENABLED.isFallback(Object.class,new Throwable()),is(true));
+}

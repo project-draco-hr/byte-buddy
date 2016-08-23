@@ -1,0 +1,17 @@
+{
+  this.byteBuddy=byteBuddy;
+  this.poolStrategy=poolStrategy;
+  this.typeStrategy=typeStrategy;
+  this.locationStrategy=locationStrategy;
+  this.listener=listener;
+  this.nativeMethodStrategy=nativeMethodStrategy;
+  this.initializationStrategy=initializationStrategy;
+  this.redefinitionStrategy=redefinitionStrategy;
+  this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
+  this.lambdaInstrumentationStrategy=lambdaInstrumentationStrategy;
+  this.descriptionStrategy=descriptionStrategy;
+  this.installationStrategy=installationStrategy;
+  this.fallbackStrategy=fallbackStrategy;
+  this.ignoredTypeMatcher=ignoredTypeMatcher;
+  this.transformation=transformation;
+}

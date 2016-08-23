@@ -1,0 +1,14 @@
+{
+  Map<Class<?>,Exception> exceptions=new HashMap<Class<?>,Exception>();
+  for (  ClassDefinition classDefinition : classDefinitions) {
+    try {
+      instrumentation.redefineClasses(classDefinition);
+    }
+ catch (    Exception exception) {
+      exceptions.put(classDefinition.getDefinitionClass(),exception);
+    }
+  }
+  if (!exceptions.isEmpty()) {
+    throw new IllegalStateException("Could not retransform at least one class: " + exceptions);
+  }
+}

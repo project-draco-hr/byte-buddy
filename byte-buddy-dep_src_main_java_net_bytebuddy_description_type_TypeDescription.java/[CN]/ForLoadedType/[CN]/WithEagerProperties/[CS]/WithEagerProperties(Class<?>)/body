@@ -1,7 +1,0 @@
-{
-  super(type);
-  field=type.getDeclaredFields();
-  constructor=type.getDeclaredConstructors();
-  method=type.getDeclaredMethods();
-  declaredClass=type.getDeclaredClasses();
-}

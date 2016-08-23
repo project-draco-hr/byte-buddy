@@ -11,17 +11,16 @@
       for (      Class<?> type : instrumentation.getAllLoadedClasses()) {
         JavaModule module=JavaModule.ofType(type);
         try {
-          TypeDescription typeDescription=descriptionStrategy.apply(type,poolStrategy,locationStrategy);
-          if (!instrumentation.isModifiableClass(type) || !collector.consider(typeDescription,type,ignoredTypeMatcher)) {
-            try {
-              try {
-                listener.onIgnored(typeDescription,type.getClassLoader(),module);
-              }
-  finally {
-                listener.onComplete(typeDescription.getName(),type.getClassLoader(),module);
-              }
+          TypePool typePool=poolStrategy.typePool(locationStrategy.classFileLocator(type.getClassLoader(),module),type.getClassLoader());
+          try {
+            doConsider(descriptionStrategy.apply(TypeDescription.ForLoadedType.getName(type),type,typePool),type,module,collector,!instrumentation.isModifiableClass(type));
+          }
+ catch (          Throwable throwable) {
+            if (descriptionStrategy.isLoadedFirst() && fallbackStrategy.isFallback(type,throwable)) {
+              doConsider(typePool.describe(TypeDescription.ForLoadedType.getName(type)).resolve(),type,module,collector,false);
             }
- catch (            Throwable ignored) {
+ else {
+              throw throwable;
             }
           }
         }

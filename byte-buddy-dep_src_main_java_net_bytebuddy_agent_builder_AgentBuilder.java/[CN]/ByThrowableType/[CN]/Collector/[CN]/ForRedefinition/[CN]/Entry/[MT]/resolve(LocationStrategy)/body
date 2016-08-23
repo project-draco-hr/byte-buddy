@@ -1,0 +1,3 @@
+{
+  return new ClassDefinition(type,locationStrategy.classFileLocator(type.getClassLoader(),JavaModule.ofType(type)).locate(TypeDescription.ForLoadedType.getName(type)).resolve());
+}

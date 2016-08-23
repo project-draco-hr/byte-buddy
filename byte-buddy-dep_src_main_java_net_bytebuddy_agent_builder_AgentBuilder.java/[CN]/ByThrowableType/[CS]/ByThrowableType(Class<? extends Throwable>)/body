@@ -1,0 +1,3 @@
+{
+  this(new HashSet<Class<? extends Throwable>>(Arrays.asList(type)));
+}

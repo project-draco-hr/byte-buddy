@@ -1,0 +1,15 @@
+{
+  this.byteBuddy=byteBuddy;
+  this.typeStrategy=typeStrategy;
+  this.poolStrategy=poolStrategy;
+  this.locationStrategy=locationStrategy;
+  this.listener=listener;
+  this.nativeMethodStrategy=nativeMethodStrategy;
+  this.initializationStrategy=initializationStrategy;
+  this.bootstrapInjectionStrategy=bootstrapInjectionStrategy;
+  this.descriptionStrategy=descriptionStrategy;
+  this.fallbackStrategy=fallbackStrategy;
+  this.ignoredTypeMatcher=ignoredTypeMatcher;
+  this.transformation=transformation;
+  accessControlContext=AccessController.getContext();
+}

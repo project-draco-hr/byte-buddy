@@ -1,0 +1,3 @@
+{
+  return transformation.resolve(descriptionStrategy.apply(typeName,classBeingRedefined,typePool),classLoader,module,classBeingRedefined,protectionDomain,typePool,ignoredTypeMatcher).apply(initializationStrategy,classFileLocator,typeStrategy,byteBuddy,nativeMethodStrategy,bootstrapInjectionStrategy,accessControlContext,listener);
+}

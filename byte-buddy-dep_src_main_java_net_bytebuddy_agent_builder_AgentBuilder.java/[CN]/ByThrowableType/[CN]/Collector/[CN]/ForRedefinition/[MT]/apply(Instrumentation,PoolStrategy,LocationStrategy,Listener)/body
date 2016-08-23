@@ -1,0 +1,18 @@
+{
+  List<ClassDefinition> classDefinitions=new ArrayList<ClassDefinition>(entries.size());
+  for (  Entry entry : entries) {
+    try {
+      classDefinitions.add(entry.resolve(locationStrategy));
+    }
+ catch (    Throwable throwable) {
+      JavaModule module=JavaModule.ofType(entry.getType());
+      try {
+        listener.onError(TypeDescription.ForLoadedType.getName(entry.getType()),entry.getType().getClassLoader(),module,throwable);
+      }
+  finally {
+        listener.onComplete(TypeDescription.ForLoadedType.getName(entry.getType()),entry.getType().getClassLoader(),module);
+      }
+    }
+  }
+  doApply(instrumentation,classDefinitions);
+}
