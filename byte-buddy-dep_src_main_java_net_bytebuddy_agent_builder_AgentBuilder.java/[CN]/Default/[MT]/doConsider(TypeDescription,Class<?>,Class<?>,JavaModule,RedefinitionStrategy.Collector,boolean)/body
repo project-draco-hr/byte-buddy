@@ -1,5 +1,5 @@
 {
-  if (unmodifiable || !collector.consider(typeDescription,type,ignoredTypeMatcher)) {
+  if (unmodifiable || !collector.consider(typeDescription,type,classBeingRedefined,ignoredTypeMatcher)) {
     try {
       try {
         listener.onIgnored(typeDescription,type.getClassLoader(),module);

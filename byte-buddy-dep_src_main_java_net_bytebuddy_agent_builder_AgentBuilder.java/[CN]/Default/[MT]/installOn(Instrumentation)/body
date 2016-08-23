@@ -13,11 +13,11 @@
         try {
           TypePool typePool=poolStrategy.typePool(locationStrategy.classFileLocator(type.getClassLoader(),module),type.getClassLoader());
           try {
-            doConsider(descriptionStrategy.apply(TypeDescription.ForLoadedType.getName(type),type,typePool),type,module,collector,!instrumentation.isModifiableClass(type));
+            doConsider(descriptionStrategy.apply(TypeDescription.ForLoadedType.getName(type),type,typePool),type,type,module,collector,!instrumentation.isModifiableClass(type));
           }
  catch (          Throwable throwable) {
             if (descriptionStrategy.isLoadedFirst() && fallbackStrategy.isFallback(type,throwable)) {
-              doConsider(typePool.describe(TypeDescription.ForLoadedType.getName(type)).resolve(),type,module,collector,false);
+              doConsider(typePool.describe(TypeDescription.ForLoadedType.getName(type)).resolve(),type,NO_LOADED_TYPE,module,collector,false);
             }
  else {
               throw throwable;

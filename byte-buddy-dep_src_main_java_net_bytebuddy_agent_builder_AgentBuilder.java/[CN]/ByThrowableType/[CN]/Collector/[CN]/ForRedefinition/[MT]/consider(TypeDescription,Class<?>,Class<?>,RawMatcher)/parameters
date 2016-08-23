@@ -1,3 +1,4 @@
 TypeDescription typeDescription
 Class<?> type
+Class<?> classBeingRedefined
 RawMatcher ignoredTypeMatcher
