@@ -3,5 +3,18 @@
   getLog().debug("Processing class file: " + typeName);
   TypeDescription typeDescription=typePool.describe(typeName).resolve();
   DynamicType.Builder<?> builder=rebase ? byteBuddy.rebase(typeDescription,classFileLocator) : byteBuddy.redefine(typeDescription,classFileLocator);
-  builder.make().saveIn(root);
+  boolean transformed=false;
+  for (  Plugin plugin : plugins) {
+    if (plugin.matches(typeDescription)) {
+      builder=plugin.apply(builder);
+      transformed=true;
+    }
+  }
+  if (transformed) {
+    getLog().info("Transformed type: " + typeName);
+    builder.make().saveIn(root);
+  }
+ else {
+    getLog().debug("Skipping non-transformed file: " + typeName);
+  }
 }

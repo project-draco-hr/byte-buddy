@@ -3,3 +3,4 @@ File directory
 ByteBuddy byteBuddy
 ClassFileLocator classFileLocator
 TypePool typePool
+List<Plugin> plugins

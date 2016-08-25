@@ -1,6 +1,6 @@
 {
   try {
-    processClasses(new File(mavenProject.getBuild().getDirectory(),"classes"),mavenProject.getCompileClasspathElements());
+    doExecute();
   }
  catch (  IOException exception) {
     throw new MojoExecutionException("Could not process classes",exception);

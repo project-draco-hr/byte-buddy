@@ -3,6 +3,15 @@
   if (!target.isDirectory()) {
     throw new IOException("Source location does not exist: " + target);
   }
+  List<Plugin> plugins=new ArrayList<Plugin>(this.plugins.size());
+  for (  String plugin : this.plugins) {
+    try {
+      plugins.add((Plugin)Class.forName(plugin).getDeclaredConstructor().newInstance());
+    }
+ catch (    Exception exception) {
+      throw new RuntimeException("Cannot create plugin: " + plugin,exception);
+    }
+  }
   ByteBuddy byteBuddy=new ByteBuddy();
   List<ClassFileLocator> classFileLocators=new ArrayList<ClassFileLocator>(dependencies.size() + 1);
   classFileLocators.add(new ClassFileLocator.ForFolder(target));
@@ -13,7 +22,7 @@
   ClassFileLocator classFileLocator=new ClassFileLocator.Compound(classFileLocators);
   try {
     TypePool typePool=new TypePool.Default.WithLazyResolution(new TypePool.CacheProvider.Simple(),classFileLocator,TypePool.Default.ReaderMode.FAST,TypePool.ClassLoading.of(null));
-    processDirectory(target,target,byteBuddy,classFileLocator,typePool);
+    processDirectory(target,target,byteBuddy,classFileLocator,typePool,plugins);
   }
   finally {
     classFileLocator.close();

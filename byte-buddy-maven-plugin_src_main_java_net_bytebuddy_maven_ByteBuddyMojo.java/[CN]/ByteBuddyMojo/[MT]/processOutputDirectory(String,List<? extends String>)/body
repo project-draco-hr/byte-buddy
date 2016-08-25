@@ -1,0 +1,3 @@
+{
+  processOutputDirectory(new File(target),dependencies);
+}
