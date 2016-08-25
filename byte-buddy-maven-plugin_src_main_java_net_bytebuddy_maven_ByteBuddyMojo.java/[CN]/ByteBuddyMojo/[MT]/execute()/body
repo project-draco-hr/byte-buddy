@@ -1,0 +1,11 @@
+{
+  try {
+    processClasses(new File(mavenProject.getBuild().getDirectory(),"classes"),mavenProject.getCompileClasspathElements());
+  }
+ catch (  IOException exception) {
+    throw new MojoExecutionException("Could not process classes",exception);
+  }
+catch (  DependencyResolutionRequiredException exception) {
+    throw new MojoExecutionException("Dependencies not resolved",exception);
+  }
+}

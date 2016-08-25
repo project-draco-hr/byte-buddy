@@ -1,0 +1,21 @@
+{
+  getLog().info("Processing classes in: " + target);
+  if (!target.isDirectory()) {
+    throw new IOException("Source location does not exist: " + target);
+  }
+  ByteBuddy byteBuddy=new ByteBuddy();
+  List<ClassFileLocator> classFileLocators=new ArrayList<ClassFileLocator>(dependencies.size() + 1);
+  classFileLocators.add(new ClassFileLocator.ForFolder(target));
+  for (  String dependency : dependencies) {
+    File artifact=new File(dependency);
+    classFileLocators.add(artifact.isFile() ? ClassFileLocator.ForJarFile.of(artifact) : new ClassFileLocator.ForFolder(artifact));
+  }
+  ClassFileLocator classFileLocator=new ClassFileLocator.Compound(classFileLocators);
+  try {
+    TypePool typePool=new TypePool.Default.WithLazyResolution(new TypePool.CacheProvider.Simple(),classFileLocator,TypePool.Default.ReaderMode.FAST,TypePool.ClassLoading.of(null));
+    processDirectory(target,target,byteBuddy,classFileLocator,typePool);
+  }
+  finally {
+    classFileLocator.close();
+  }
+}
