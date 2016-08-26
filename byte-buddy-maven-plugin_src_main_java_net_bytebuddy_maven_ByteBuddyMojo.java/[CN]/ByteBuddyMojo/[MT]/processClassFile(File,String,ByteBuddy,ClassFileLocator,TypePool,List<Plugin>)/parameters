@@ -1,6 +1,0 @@
-File root
-String classFile
-ByteBuddy byteBuddy
-ClassFileLocator classFileLocator
-TypePool typePool
-List<Plugin> plugins

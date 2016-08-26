@@ -1,3 +1,0 @@
-{
-  processOutputDirectory(mavenProject.getBuild().getOutputDirectory(),mavenProject.getCompileClasspathElements());
-}

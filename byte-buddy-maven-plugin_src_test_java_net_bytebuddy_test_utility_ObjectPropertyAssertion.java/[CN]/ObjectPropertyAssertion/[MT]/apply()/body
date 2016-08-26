@@ -1,0 +1,55 @@
+{
+  if (type.isEnum()) {
+    for (    T instance : type.getEnumConstants()) {
+      assertThat(instance.toString(),is(type.getCanonicalName().substring(type.getPackage().getName().length() + 1) + "." + ((Enum<?>)instance).name()));
+    }
+    return;
+  }
+  for (  Constructor<?> constructor : type.getDeclaredConstructors()) {
+    if (constructor.isSynthetic() && skipSynthetic) {
+      continue;
+    }
+    constructor.setAccessible(true);
+    Class<?>[] parameterTypes=constructor.getParameterTypes();
+    Object[] actualArguments=new Object[parameterTypes.length];
+    Object[] otherArguments=new Object[parameterTypes.length];
+    int index=0;
+    for (    Class<?> parameterType : parameterTypes) {
+      putInstance(parameterType,actualArguments,otherArguments,index++);
+    }
+    int testIndex=0;
+    @SuppressWarnings("unchecked") T instance=(T)constructor.newInstance(actualArguments);
+    assertThat(instance,is(instance));
+    assertThat(instance,not(equalTo(null)));
+    assertThat(instance,not(new Object()));
+    Object similarInstance=constructor.newInstance(actualArguments);
+    assertThat(instance.hashCode(),is(similarInstance.hashCode()));
+    assertThat(instance,is(similarInstance));
+    if (skipToString) {
+      assertThat(instance.toString(),notNullValue());
+    }
+ else     if (optionalToStringRegex == null) {
+      checkString(instance);
+    }
+ else {
+      assertThat(instance.toString(),new RegexMatcher(optionalToStringRegex));
+    }
+    for (    Object otherArgument : otherArguments) {
+      Object[] compareArguments=new Object[actualArguments.length];
+      int argumentIndex=0;
+      for (      Object actualArgument : actualArguments) {
+        if (argumentIndex == testIndex) {
+          compareArguments[argumentIndex]=otherArgument;
+        }
+ else {
+          compareArguments[argumentIndex]=actualArgument;
+        }
+        argumentIndex++;
+      }
+      Object unlikeInstance=constructor.newInstance(compareArguments);
+      assertThat(instance.hashCode(),not(unlikeInstance));
+      assertThat(instance,not(unlikeInstance));
+      testIndex++;
+    }
+  }
+}
