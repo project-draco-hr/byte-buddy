@@ -1,0 +1,5 @@
+{
+  assertThat(EntryPoint.Default.REBASE.getByteBuddy(),is(new ByteBuddy()));
+  when(byteBuddy.rebase(typeDescription,classFileLocator,methodNameTransformer)).thenReturn((DynamicType.Builder)builder);
+  assertThat(EntryPoint.Default.REBASE.transform(typeDescription,byteBuddy,classFileLocator,methodNameTransformer),is((DynamicType.Builder)builder));
+}

@@ -1,0 +1,6 @@
+{
+  Initialization initalization=new Initialization();
+  initalization.entryPoint=EntryPoint.Default.REBASE.name();
+  assertThat(initalization.getEntryPoint(classLoaderResolver,BAR,QUX,BAZ),is((EntryPoint)EntryPoint.Default.REBASE));
+  verifyZeroInteractions(classLoaderResolver);
+}

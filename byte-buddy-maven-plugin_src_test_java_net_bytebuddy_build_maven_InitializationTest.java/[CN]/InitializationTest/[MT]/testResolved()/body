@@ -1,0 +1,9 @@
+{
+  Initialization initalization=new Initialization();
+  initalization.groupId=BAR;
+  initalization.artifactId=QUX;
+  initalization.version=BAZ;
+  assertThat(initalization.getGroupId(FOO),is(BAR));
+  assertThat(initalization.getArtifactId(FOO),is(QUX));
+  assertThat(initalization.getVersion(FOO),is(BAZ));
+}

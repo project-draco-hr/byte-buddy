@@ -1,0 +1,6 @@
+{
+  Initialization initalization=new Initialization();
+  initalization.entryPoint=EntryPoint.Default.REDEFINE_LOCAL.name();
+  assertThat(initalization.getEntryPoint(classLoaderResolver,BAR,QUX,BAZ),is((EntryPoint)EntryPoint.Default.REDEFINE_LOCAL));
+  verifyZeroInteractions(classLoaderResolver);
+}

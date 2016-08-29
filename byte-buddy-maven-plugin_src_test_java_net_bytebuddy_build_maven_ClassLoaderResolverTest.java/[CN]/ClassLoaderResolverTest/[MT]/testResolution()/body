@@ -1,0 +1,3 @@
+{
+  assertThat(classLoaderResolver.resolve(new MavenCoordinate(FOO,BAR,QUX)),sameInstance(classLoaderResolver.resolve(new MavenCoordinate(FOO,BAR,QUX))));
+}

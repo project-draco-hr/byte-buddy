@@ -1,0 +1,4 @@
+{
+  Transformation transformation=new Transformation();
+  assertThat(transformation.asCoordinate(BAR,QUX,BAZ),is(new MavenCoordinate(BAR,QUX,BAZ)));
+}

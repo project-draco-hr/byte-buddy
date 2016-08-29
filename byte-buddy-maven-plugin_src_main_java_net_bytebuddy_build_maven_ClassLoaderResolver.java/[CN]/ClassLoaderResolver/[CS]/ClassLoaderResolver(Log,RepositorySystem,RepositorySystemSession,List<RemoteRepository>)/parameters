@@ -1,0 +1,4 @@
+Log log
+RepositorySystem repositorySystem
+RepositorySystemSession repositorySystemSession
+List<RemoteRepository> remoteRepositories

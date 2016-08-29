@@ -1,0 +1,4 @@
+{
+  when(repositorySystem.collectDependencies(eq(repositorySystemSession),any(CollectRequest.class))).thenThrow(new DependencyCollectionException(new CollectResult(new CollectRequest())));
+  classLoaderResolver.resolve(new MavenCoordinate(FOO,BAR,QUX));
+}

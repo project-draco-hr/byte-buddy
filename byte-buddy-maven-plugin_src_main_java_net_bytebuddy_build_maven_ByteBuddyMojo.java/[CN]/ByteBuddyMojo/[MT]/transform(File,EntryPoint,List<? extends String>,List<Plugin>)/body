@@ -1,0 +1,17 @@
+{
+  List<ClassFileLocator> classFileLocators=new ArrayList<ClassFileLocator>(classPath.size() + 1);
+  classFileLocators.add(new ClassFileLocator.ForFolder(root));
+  for (  String target : classPath) {
+    File artifact=new File(target);
+    classFileLocators.add(artifact.isFile() ? ClassFileLocator.ForJarFile.of(artifact) : new ClassFileLocator.ForFolder(artifact));
+  }
+  ClassFileLocator classFileLocator=new ClassFileLocator.Compound(classFileLocators);
+  try {
+    TypePool typePool=new TypePool.Default.WithLazyResolution(new TypePool.CacheProvider.Simple(),classFileLocator,TypePool.Default.ReaderMode.FAST,TypePool.ClassLoading.ofBootPath());
+    getLog().info("Processing class files located in in: " + root);
+    processDirectory(root,root,entryPoint.getByteBuddy(),entryPoint,suffix == null || suffix.isEmpty() ? MethodNameTransformer.Suffixing.withRandomSuffix() : new MethodNameTransformer.Suffixing(suffix),classFileLocator,typePool,plugins);
+  }
+  finally {
+    classFileLocator.close();
+  }
+}

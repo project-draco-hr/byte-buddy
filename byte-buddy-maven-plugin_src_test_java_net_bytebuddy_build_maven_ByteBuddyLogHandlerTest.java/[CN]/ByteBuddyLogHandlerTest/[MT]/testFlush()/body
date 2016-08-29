@@ -1,0 +1,3 @@
+{
+  new ByteBuddyLogHandler(log,false).flush();
+}

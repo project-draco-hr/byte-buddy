@@ -1,0 +1,25 @@
+{
+  if (!root.isDirectory()) {
+    throw new MojoExecutionException("Target location does not exist or is no directory: " + root);
+  }
+  ClassLoaderResolver classLoaderResolver=new ClassLoaderResolver(getLog(),repositorySystem,repositorySystemSession,remoteRepositories);
+  try {
+    List<Plugin> plugins=new ArrayList<Plugin>(transformations.size());
+    for (    Transformation transformation : transformations) {
+      try {
+        String plugin=transformation.getPlugin();
+        plugins.add((Plugin)Class.forName(plugin,false,classLoaderResolver.resolve(transformation.asCoordinate(groupId,artifactId,version))).getDeclaredConstructor().newInstance());
+        getLog().info("Created plugin: " + plugin);
+      }
+ catch (      Exception exception) {
+        throw new MojoExecutionException("Cannot create plugin: " + transformation,exception);
+      }
+    }
+    EntryPoint entryPoint=(initialization == null ? Initialization.makeDefault() : initialization).getEntryPoint(classLoaderResolver,groupId,artifactId,version);
+    getLog().info("Resolved entry point: " + entryPoint);
+    transform(root,entryPoint,classPath,plugins);
+  }
+  finally {
+    classLoaderResolver.close();
+  }
+}

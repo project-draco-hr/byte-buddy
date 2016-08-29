@@ -1,0 +1,4 @@
+{
+  Initialization initialization=new Initialization();
+  assertThat(initialization.asCoordinate(BAR,QUX,BAZ),is(new MavenCoordinate(BAR,QUX,BAZ)));
+}

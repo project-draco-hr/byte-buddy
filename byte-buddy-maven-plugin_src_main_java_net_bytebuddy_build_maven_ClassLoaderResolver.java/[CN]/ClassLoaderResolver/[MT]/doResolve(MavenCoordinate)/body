@@ -1,0 +1,23 @@
+{
+  List<URL> urls=new ArrayList<URL>();
+  log.info("Resolving transformer dependency: " + mavenCoordinate);
+  try {
+    DependencyNode root=repositorySystem.collectDependencies(repositorySystemSession,new CollectRequest(new Dependency(mavenCoordinate.asArtifact(),"runtime"),remoteRepositories)).getRoot();
+    repositorySystem.resolveDependencies(repositorySystemSession,new DependencyRequest().setRoot(root));
+    PreorderNodeListGenerator preorderNodeListGenerator=new PreorderNodeListGenerator();
+    root.accept(preorderNodeListGenerator);
+    for (    Artifact artifact : preorderNodeListGenerator.getArtifacts(false)) {
+      urls.add(artifact.getFile().toURI().toURL());
+    }
+  }
+ catch (  DependencyCollectionException exception) {
+    throw new MojoExecutionException("Could not collect dependencies for " + mavenCoordinate,exception);
+  }
+catch (  DependencyResolutionException exception) {
+    throw new MojoExecutionException("Could not resolve dependencies for " + mavenCoordinate,exception);
+  }
+catch (  MalformedURLException exception) {
+    throw new MojoFailureException("Could not resolve file as URL for " + mavenCoordinate,exception);
+  }
+  return new URLClassLoader(urls.toArray(new URL[urls.size()]),ByteBuddy.class.getClassLoader());
+}

@@ -1,0 +1,4 @@
+{
+  classLoaderResolver.resolve(new MavenCoordinate(FOO,BAR,QUX));
+  classLoaderResolver.close();
+}

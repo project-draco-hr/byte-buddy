@@ -1,0 +1,7 @@
+{
+  this.log=log;
+  this.repositorySystem=repositorySystem;
+  this.repositorySystemSession=repositorySystemSession;
+  this.remoteRepositories=remoteRepositories;
+  classLoaders=new HashMap<MavenCoordinate,ClassLoader>();
+}

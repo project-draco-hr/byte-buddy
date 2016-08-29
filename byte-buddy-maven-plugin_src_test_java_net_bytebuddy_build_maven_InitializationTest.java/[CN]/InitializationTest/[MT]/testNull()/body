@@ -1,0 +1,3 @@
+{
+  new Initialization().getEntryPoint(classLoaderResolver,BAR,QUX,BAZ);
+}

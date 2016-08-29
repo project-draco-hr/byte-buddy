@@ -1,0 +1,7 @@
+{
+  Transformation transformation=new Transformation();
+  transformation.groupId=BAR;
+  transformation.artifactId=QUX;
+  transformation.version=BAZ;
+  assertThat(transformation.asCoordinate(FOO,FOO,FOO),is(new MavenCoordinate(BAR,QUX,BAZ)));
+}

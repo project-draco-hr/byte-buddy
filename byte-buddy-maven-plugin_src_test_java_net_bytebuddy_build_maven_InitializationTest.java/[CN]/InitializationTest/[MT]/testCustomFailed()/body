@@ -1,0 +1,6 @@
+{
+  Initialization initalization=new Initialization();
+  initalization.entryPoint=FOO;
+  when(classLoaderResolver.resolve(new MavenCoordinate(BAR,QUX,BAZ))).thenReturn(Foo.class.getClassLoader());
+  initalization.getEntryPoint(classLoaderResolver,BAR,QUX,BAZ);
+}

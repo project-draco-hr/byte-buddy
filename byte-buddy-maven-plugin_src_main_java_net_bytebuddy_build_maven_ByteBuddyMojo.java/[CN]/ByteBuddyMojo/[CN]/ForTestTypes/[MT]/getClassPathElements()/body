@@ -1,0 +1,3 @@
+{
+  return CompoundList.of(compileClasspathElements,testClasspathElements);
+}

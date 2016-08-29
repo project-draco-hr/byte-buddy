@@ -1,0 +1,5 @@
+{
+  assertThat(EntryPoint.Default.REDEFINE.getByteBuddy(),is(new ByteBuddy()));
+  when(byteBuddy.redefine(typeDescription,classFileLocator)).thenReturn((DynamicType.Builder)builder);
+  assertThat(EntryPoint.Default.REDEFINE.transform(typeDescription,byteBuddy,classFileLocator,methodNameTransformer),is((DynamicType.Builder)builder));
+}

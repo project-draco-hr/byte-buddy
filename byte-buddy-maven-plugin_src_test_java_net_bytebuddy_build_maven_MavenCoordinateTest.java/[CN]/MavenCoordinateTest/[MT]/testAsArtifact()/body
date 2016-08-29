@@ -1,0 +1,7 @@
+{
+  Artifact artifact=new MavenCoordinate(FOO,BAR,QUX).asArtifact();
+  assertThat(artifact.getGroupId(),is(FOO));
+  assertThat(artifact.getArtifactId(),is(BAR));
+  assertThat(artifact.getVersion(),is(QUX));
+  assertThat(artifact.getExtension(),is("jar"));
+}

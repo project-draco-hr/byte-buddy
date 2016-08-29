@@ -1,0 +1,7 @@
+{
+  Initialization initialization=new Initialization();
+  initialization.groupId=BAR;
+  initialization.artifactId=QUX;
+  initialization.version=BAZ;
+  assertThat(initialization.asCoordinate(FOO,FOO,FOO),is(new MavenCoordinate(BAR,QUX,BAZ)));
+}

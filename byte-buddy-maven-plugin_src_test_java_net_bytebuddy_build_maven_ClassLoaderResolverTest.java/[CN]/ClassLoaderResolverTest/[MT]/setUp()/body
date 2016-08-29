@@ -1,0 +1,14 @@
+{
+  classLoaderResolver=new ClassLoaderResolver(log,repositorySystem,repositorySystemSession,Collections.<RemoteRepository>emptyList());
+  when(repositorySystem.collectDependencies(eq(repositorySystemSession),any(CollectRequest.class))).thenReturn(new CollectResult(new CollectRequest()).setRoot(root));
+  when(child.getDependency()).thenReturn(new Dependency(new DefaultArtifact(FOO,BAR,QUX,BAZ,FOO + BAR,Collections.<String,String>emptyMap(),new File(FOO + "/" + BAR)),QUX + BAZ));
+  when(root.accept(any(DependencyVisitor.class))).then(new Answer<Void>(){
+    @Override public Void answer(    InvocationOnMock invocationOnMock) throws Throwable {
+      DependencyVisitor dependencyVisitor=invocationOnMock.getArgumentAt(0,DependencyVisitor.class);
+      dependencyVisitor.visitEnter(child);
+      dependencyVisitor.visitLeave(child);
+      return null;
+    }
+  }
+);
+}

@@ -1,0 +1,6 @@
+{
+  Transformation transformation=new Transformation();
+  assertThat(transformation.getGroupId(BAR),is(BAR));
+  assertThat(transformation.getArtifactId(QUX),is(QUX));
+  assertThat(transformation.getVersion(BAZ),is(BAZ));
+}

@@ -1,0 +1,7 @@
+{
+  ByteBuddyLogHandler byteBuddyLogHandler=new ByteBuddyLogHandler(log,false);
+  LogRecord logRecord=new LogRecord(Level.INFO,FOO);
+  byteBuddyLogHandler.publish(logRecord);
+  verify(log).isDebugEnabled();
+  verifyNoMoreInteractions(log);
+}

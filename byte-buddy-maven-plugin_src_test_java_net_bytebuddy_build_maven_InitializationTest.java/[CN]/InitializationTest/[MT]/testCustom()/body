@@ -1,0 +1,8 @@
+{
+  Initialization initalization=new Initialization();
+  initalization.entryPoint=Foo.class.getName();
+  when(classLoaderResolver.resolve(new MavenCoordinate(BAR,QUX,BAZ))).thenReturn(Foo.class.getClassLoader());
+  assertThat(initalization.getEntryPoint(classLoaderResolver,BAR,QUX,BAZ),instanceOf(Foo.class));
+  verify(classLoaderResolver).resolve(new MavenCoordinate(BAR,QUX,BAZ));
+  verifyNoMoreInteractions(classLoaderResolver);
+}

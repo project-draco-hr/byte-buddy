@@ -1,0 +1,3 @@
+{
+  return "MavenCoordinate{" + "groupId='" + groupId + '\''+ ", artifactId='"+ artifactId+ '\''+ ", version='"+ version+ '\''+ '}';
+}

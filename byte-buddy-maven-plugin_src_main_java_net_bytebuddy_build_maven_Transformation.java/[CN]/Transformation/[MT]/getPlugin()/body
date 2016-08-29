@@ -1,0 +1,6 @@
+{
+  if (plugin == null || plugin.isEmpty()) {
+    throw new MojoExecutionException("Plugin name was not specified");
+  }
+  return plugin;
+}

@@ -1,0 +1,8 @@
+File root
+String file
+ByteBuddy byteBuddy
+EntryPoint entryPoint
+MethodNameTransformer methodNameTransformer
+ClassFileLocator classFileLocator
+TypePool typePool
+List<Plugin> plugins

@@ -1,0 +1,3 @@
+{
+  return this.artifactId == null || this.artifactId.isEmpty() ? artifactId : this.artifactId;
+}

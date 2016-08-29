@@ -1,0 +1,6 @@
+{
+  assertThat(EntryPoint.Default.REDEFINE_LOCAL.getByteBuddy(),is(new ByteBuddy().with(Implementation.Context.Disabled.Factory.INSTANCE)));
+  when(byteBuddy.redefine(typeDescription,classFileLocator)).thenReturn((DynamicType.Builder)builder);
+  when(builder.ignoreAlso(not(isDeclaredBy(typeDescription)))).thenReturn((DynamicType.Builder)otherBuilder);
+  assertThat(EntryPoint.Default.REDEFINE_LOCAL.transform(typeDescription,byteBuddy,classFileLocator,methodNameTransformer),is((DynamicType.Builder)otherBuilder));
+}

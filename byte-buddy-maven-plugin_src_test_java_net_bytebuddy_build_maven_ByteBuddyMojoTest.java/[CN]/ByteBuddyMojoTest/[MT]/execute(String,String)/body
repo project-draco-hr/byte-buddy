@@ -1,0 +1,5 @@
+{
+  Mojo mojo=mojoRule.lookupMojo(goal,new File("src/test/resources/" + target + ".pom.xml"));
+  mojo.setLog(new SilentLog());
+  mojo.execute();
+}

@@ -1,0 +1,10 @@
+{
+  Logger logger=Logger.getLogger("net.bytebuddy");
+  try {
+    logger.setUseParentHandlers(useParentHandlers);
+    logger.removeHandler(this);
+  }
+ catch (  SecurityException exception) {
+    log.warn("Cannot configure Byte Buddy logging",exception);
+  }
+}

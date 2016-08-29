@@ -1,0 +1,5 @@
+{
+  Initialization initalization=new Initialization();
+  initalization.entryPoint="";
+  initalization.getEntryPoint(classLoaderResolver,BAR,QUX,BAZ);
+}

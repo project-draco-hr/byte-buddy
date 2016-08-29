@@ -1,0 +1,7 @@
+{
+  for (  ClassLoader classLoader : classLoaders.values()) {
+    if (classLoader instanceof Closeable) {
+      ((Closeable)classLoader).close();
+    }
+  }
+}

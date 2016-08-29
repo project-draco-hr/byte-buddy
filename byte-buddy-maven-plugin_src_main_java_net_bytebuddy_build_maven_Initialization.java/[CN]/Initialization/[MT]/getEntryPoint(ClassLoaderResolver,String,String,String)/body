@@ -1,0 +1,16 @@
+{
+  if (entryPoint == null || entryPoint.isEmpty()) {
+    throw new MojoExecutionException("Entry point name is not defined");
+  }
+  for (  EntryPoint.Default entryPoint : EntryPoint.Default.values()) {
+    if (this.entryPoint.equals(entryPoint.name())) {
+      return entryPoint;
+    }
+  }
+  try {
+    return (EntryPoint)Class.forName(entryPoint,false,classLoaderResolver.resolve(asCoordinate(groupId,artifactId,version))).getDeclaredConstructor().newInstance();
+  }
+ catch (  Exception exception) {
+    throw new MojoExecutionException("Cannot create entry point: " + entryPoint,exception);
+  }
+}

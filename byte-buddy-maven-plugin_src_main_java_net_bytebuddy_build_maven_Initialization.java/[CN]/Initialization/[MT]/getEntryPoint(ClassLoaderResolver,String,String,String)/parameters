@@ -1,0 +1,4 @@
+ClassLoaderResolver classLoaderResolver
+String groupId
+String artifactId
+String version

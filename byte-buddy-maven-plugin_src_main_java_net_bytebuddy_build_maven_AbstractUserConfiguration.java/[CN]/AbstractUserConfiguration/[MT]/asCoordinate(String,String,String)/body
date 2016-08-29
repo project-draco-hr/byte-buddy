@@ -1,0 +1,3 @@
+{
+  return new MavenCoordinate(getGroupId(groupId),getArtifactId(artifactId),getVersion(version));
+}

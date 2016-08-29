@@ -1,0 +1,4 @@
+{
+  when(repositorySystem.resolveDependencies(eq(repositorySystemSession),any(DependencyRequest.class))).thenThrow(new DependencyResolutionException(new DependencyResult(new DependencyRequest(root,mock(DependencyFilter.class))),new Throwable()));
+  classLoaderResolver.resolve(new MavenCoordinate(FOO,BAR,QUX));
+}
