@@ -1,5 +1,4 @@
 {
-  Logger logger=Logger.getLogger("net.bytebuddy");
   try {
     logger.setUseParentHandlers(useParentHandlers);
     logger.removeHandler(this);

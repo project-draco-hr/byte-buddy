@@ -1,6 +1,6 @@
 {
   Logger logger=Logger.getLogger("net.bytebuddy");
-  ByteBuddyLogHandler handler=new ByteBuddyLogHandler(log,logger.getUseParentHandlers());
+  ByteBuddyLogHandler handler=new ByteBuddyLogHandler(log,logger,logger.getUseParentHandlers());
   try {
     logger.setUseParentHandlers(false);
     logger.addHandler(handler);

@@ -1,5 +1,6 @@
 {
   int result=log.hashCode();
+  result=31 * result + logger.hashCode();
   result=31 * result + (useParentHandlers ? 1 : 0);
   return result;
 }

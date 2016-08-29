@@ -1,5 +1,5 @@
 {
-  ByteBuddyLogHandler byteBuddyLogHandler=new ByteBuddyLogHandler(log,false);
+  ByteBuddyLogHandler byteBuddyLogHandler=new ByteBuddyLogHandler(log,mock(Logger.class),false);
   LogRecord logRecord=new LogRecord(Level.INFO,FOO);
   byteBuddyLogHandler.publish(logRecord);
   verify(log).isDebugEnabled();
