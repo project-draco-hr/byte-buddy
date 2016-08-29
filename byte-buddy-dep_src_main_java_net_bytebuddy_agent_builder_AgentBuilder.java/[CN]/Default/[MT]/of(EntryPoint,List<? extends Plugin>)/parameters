@@ -1,0 +1,2 @@
+EntryPoint entryPoint
+List<? extends Plugin> plugins

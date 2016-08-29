@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.TypeStrategy.ForBuildEntryPoint{" + "entryPoint=" + entryPoint + '}';
+}

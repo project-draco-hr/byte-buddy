@@ -1,0 +1,6 @@
+{
+  when(plugin.apply(builder,typeDescription)).thenReturn((DynamicType.Builder)result);
+  assertThat(new AgentBuilder.Transformer.ForBuildPlugin(plugin).transform(builder,typeDescription,classLoader),is((DynamicType.Builder)result));
+  verify(plugin).apply(builder,typeDescription);
+  verifyNoMoreInteractions(plugin);
+}

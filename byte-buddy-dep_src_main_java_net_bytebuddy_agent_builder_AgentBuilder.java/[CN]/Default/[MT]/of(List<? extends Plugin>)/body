@@ -1,0 +1,3 @@
+{
+  return of(EntryPoint.Default.REBASE,plugins);
+}

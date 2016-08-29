@@ -1,0 +1,4 @@
+{
+  Plugin plugin=mock(Plugin.class);
+  assertThat(AgentBuilder.Default.of(plugin),is((AgentBuilder)new AgentBuilder.Default().with(new AgentBuilder.TypeStrategy.ForBuildEntryPoint(EntryPoint.Default.REBASE)).type(plugin).transform(new AgentBuilder.Transformer.ForBuildPlugin(plugin))));
+}

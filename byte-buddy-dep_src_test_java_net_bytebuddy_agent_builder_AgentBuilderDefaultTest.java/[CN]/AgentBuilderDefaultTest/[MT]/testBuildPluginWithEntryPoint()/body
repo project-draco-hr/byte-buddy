@@ -1,0 +1,7 @@
+{
+  Plugin plugin=mock(Plugin.class);
+  EntryPoint entryPoint=mock(EntryPoint.class);
+  ByteBuddy byteBuddy=mock(ByteBuddy.class);
+  when(entryPoint.getByteBuddy()).thenReturn(byteBuddy);
+  assertThat(AgentBuilder.Default.of(entryPoint,plugin),is((AgentBuilder)new AgentBuilder.Default(byteBuddy).with(new AgentBuilder.TypeStrategy.ForBuildEntryPoint(entryPoint)).type(plugin).transform(new AgentBuilder.Transformer.ForBuildPlugin(plugin))));
+}

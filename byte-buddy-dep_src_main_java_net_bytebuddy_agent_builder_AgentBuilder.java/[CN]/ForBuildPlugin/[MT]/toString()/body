@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Transformer.ForBuildPlugin{" + "plugin=" + plugin + '}';
+}

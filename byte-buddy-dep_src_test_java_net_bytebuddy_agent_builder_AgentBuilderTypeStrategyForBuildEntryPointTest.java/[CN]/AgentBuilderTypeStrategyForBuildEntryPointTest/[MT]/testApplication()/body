@@ -1,0 +1,6 @@
+{
+  when(entryPoint.transform(typeDescription,byteBuddy,classFileLocator,methodNameTransformer)).thenReturn((DynamicType.Builder)builder);
+  assertThat(new AgentBuilder.TypeStrategy.ForBuildEntryPoint(entryPoint).builder(typeDescription,byteBuddy,classFileLocator,methodNameTransformer),is((DynamicType.Builder)builder));
+  verify(entryPoint).transform(typeDescription,byteBuddy,classFileLocator,methodNameTransformer);
+  verifyNoMoreInteractions(entryPoint);
+}

@@ -1,0 +1,7 @@
+{
+  AgentBuilder agentBuilder=new AgentBuilder.Default(entryPoint.getByteBuddy()).with(new TypeStrategy.ForBuildEntryPoint(entryPoint));
+  for (  Plugin plugin : plugins) {
+    agentBuilder=agentBuilder.type(plugin).transform(new Transformer.ForBuildPlugin(plugin));
+  }
+  return agentBuilder;
+}
