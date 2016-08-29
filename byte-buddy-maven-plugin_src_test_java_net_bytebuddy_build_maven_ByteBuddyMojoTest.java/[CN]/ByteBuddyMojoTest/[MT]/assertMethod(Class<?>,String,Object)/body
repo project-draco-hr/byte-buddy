@@ -1,0 +1,3 @@
+{
+  assertThat(type.getDeclaredMethod(name).invoke(type.getDeclaredConstructor().newInstance()),is(expected));
+}

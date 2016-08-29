@@ -1,0 +1,3 @@
+{
+  return builder.method(named("foo")).intercept(MethodDelegation.to(new LiveInitializerPlugin()));
+}

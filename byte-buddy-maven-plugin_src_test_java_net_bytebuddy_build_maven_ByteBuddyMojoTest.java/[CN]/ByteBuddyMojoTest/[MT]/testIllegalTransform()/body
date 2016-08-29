@@ -3,7 +3,7 @@
   files.addAll(addClass("foo.Bar"));
   files.addAll(addClass("foo.Qux"));
   try {
-    execute("transform","simple");
+    execute("transform","entry.illegal.transform");
     ClassLoader classLoader=new URLClassLoader(new URL[]{project.toURI().toURL()});
     assertMethod(classLoader.loadClass("foo.Bar"),FOO,QUX);
     assertMethod(classLoader.loadClass("foo.Bar"),BAR,BAR);

@@ -3,10 +3,11 @@
   files.addAll(addClass("foo.Bar"));
   files.addAll(addClass("foo.Qux"));
   try {
-    execute("transform","simple");
+    execute("transform","suffix");
     ClassLoader classLoader=new URLClassLoader(new URL[]{project.toURI().toURL()});
     assertMethod(classLoader.loadClass("foo.Bar"),FOO,QUX);
     assertMethod(classLoader.loadClass("foo.Bar"),BAR,BAR);
+    assertThat(classLoader.loadClass("foo.Bar").getDeclaredMethod(FOO + "$" + QUX),notNullValue(Method.class));
     assertMethod(classLoader.loadClass("foo.Qux"),FOO,FOO);
     assertMethod(classLoader.loadClass("foo.Qux"),BAR,BAR);
   }

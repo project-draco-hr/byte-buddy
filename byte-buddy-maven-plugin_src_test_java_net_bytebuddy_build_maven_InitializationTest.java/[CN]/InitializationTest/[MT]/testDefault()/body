@@ -1,0 +1,7 @@
+{
+  Initialization initialization=Initialization.makeDefault();
+  assertThat(initialization.entryPoint,is(EntryPoint.Default.REBASE.name()));
+  assertThat(initialization.groupId,nullValue(String.class));
+  assertThat(initialization.artifactId,nullValue(String.class));
+  assertThat(initialization.version,nullValue(String.class));
+}

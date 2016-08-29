@@ -1,0 +1,3 @@
+{
+  assertThat(project.delete(),is(true));
+}

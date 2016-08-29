@@ -1,0 +1,6 @@
+{
+  when(repositorySystem.collectDependencies(any(RepositorySystemSession.class),any(CollectRequest.class))).thenReturn(new CollectResult(new CollectRequest()).setRoot(root));
+  project=File.createTempFile(FOO,TEMP);
+  assertThat(project.delete(),is(true));
+  assertThat(project.mkdir(),is(true));
+}

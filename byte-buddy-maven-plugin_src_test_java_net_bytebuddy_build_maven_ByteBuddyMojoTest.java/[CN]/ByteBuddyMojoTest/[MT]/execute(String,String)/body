@@ -1,5 +1,20 @@
 {
   Mojo mojo=mojoRule.lookupMojo(goal,new File("src/test/resources/" + target + ".pom.xml"));
+  if (goal.equals("transform")) {
+    mojoRule.setVariableValueToObject(mojo,"outputDirectory",project.getAbsolutePath());
+    mojoRule.setVariableValueToObject(mojo,"compileClasspathElements",Collections.emptyList());
+  }
+ else   if (goal.equals("transform-test")) {
+    mojoRule.setVariableValueToObject(mojo,"testOutputDirectory",project.getAbsolutePath());
+    mojoRule.setVariableValueToObject(mojo,"testClasspathElements",Collections.emptyList());
+  }
+ else {
+    throw new AssertionError("Unknown goal: " + goal);
+  }
+  mojoRule.setVariableValueToObject(mojo,"repositorySystem",repositorySystem);
+  mojoRule.setVariableValueToObject(mojo,"groupId",FOO);
+  mojoRule.setVariableValueToObject(mojo,"artifactId",BAR);
+  mojoRule.setVariableValueToObject(mojo,"version",QUX);
   mojo.setLog(new SilentLog());
   mojo.execute();
 }

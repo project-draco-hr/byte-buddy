@@ -1,0 +1,13 @@
+{
+  Set<File> files=new HashSet<File>();
+  files.addAll(addClass("foo.Bar"));
+  try {
+    execute("transform","illegal.apply");
+  }
+  finally {
+    for (    File file : files) {
+      assertThat(file.delete(),is(true));
+    }
+    assertThat(new File(project,FOO).delete(),is(true));
+  }
+}
