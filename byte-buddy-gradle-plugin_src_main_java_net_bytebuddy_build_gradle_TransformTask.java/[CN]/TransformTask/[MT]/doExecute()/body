@@ -1,0 +1,8 @@
+{
+  try {
+    processOutputDirectory(resolve(new File(getProject().getBuildDir(),"classes")),null);
+  }
+ catch (  IOException exception) {
+    throw new GradleException("Error during writing process",exception);
+  }
+}

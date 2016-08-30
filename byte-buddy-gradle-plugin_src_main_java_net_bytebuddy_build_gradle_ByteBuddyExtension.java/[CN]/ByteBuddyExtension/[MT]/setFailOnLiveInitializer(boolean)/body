@@ -1,0 +1,3 @@
+{
+  this.failOnLiveInitializer=failOnLiveInitializer;
+}

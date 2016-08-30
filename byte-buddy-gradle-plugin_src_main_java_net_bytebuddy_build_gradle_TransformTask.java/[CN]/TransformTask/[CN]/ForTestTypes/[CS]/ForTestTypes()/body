@@ -1,0 +1,3 @@
+{
+  super("Applies all registered Byte Buddy plugins to this project's test code");
+}

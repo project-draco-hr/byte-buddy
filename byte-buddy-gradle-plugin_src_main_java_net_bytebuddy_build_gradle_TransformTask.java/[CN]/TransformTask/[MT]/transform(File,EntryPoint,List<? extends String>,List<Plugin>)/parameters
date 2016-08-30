@@ -1,0 +1,4 @@
+File root
+EntryPoint entryPoint
+List<? extends String> classPath
+List<Plugin> plugins
