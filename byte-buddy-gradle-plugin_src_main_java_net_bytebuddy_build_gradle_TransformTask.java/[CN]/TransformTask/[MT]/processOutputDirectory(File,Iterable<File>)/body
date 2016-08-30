@@ -1,0 +1,25 @@
+{
+  if (!root.isDirectory()) {
+    throw new GradleException("Target location does not exist or is no directory: " + root);
+  }
+  ClassLoaderResolver classLoaderResolver=new ClassLoaderResolver(getProject());
+  try {
+    List<Plugin> plugins=new ArrayList<Plugin>(byteBuddyExtension.getTransformations().size());
+    for (    Transformation transformation : byteBuddyExtension.getTransformations()) {
+      try {
+        String plugin=transformation.getPlugin();
+        plugins.add((Plugin)Class.forName(plugin,false,classLoaderResolver.resolve(transformation.asCoordinate(getProject()))).getDeclaredConstructor().newInstance());
+        getLogger().info("Created plugin: {}",plugin);
+      }
+ catch (      Exception exception) {
+        throw new GradleException("Cannot create plugin: " + transformation,exception);
+      }
+    }
+    EntryPoint entryPoint=byteBuddyExtension.getInitialization().toEntryPoint(classLoaderResolver);
+    getLogger().info("Resolved entry point: {}",entryPoint);
+    transform(root,entryPoint,classPath,plugins);
+  }
+  finally {
+    classLoaderResolver.close();
+  }
+}

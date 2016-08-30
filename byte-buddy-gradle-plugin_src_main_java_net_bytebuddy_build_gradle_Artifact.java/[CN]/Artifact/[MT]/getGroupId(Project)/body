@@ -1,0 +1,3 @@
+{
+  return group == null ? project.getGroup().toString() : group;
+}

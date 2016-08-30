@@ -1,5 +1,0 @@
-{
-  Initialization initialization=new Initialization();
-  initialization.setEntryPoint(EntryPoint.Default.REBASE.name());
-  return initialization;
-}
