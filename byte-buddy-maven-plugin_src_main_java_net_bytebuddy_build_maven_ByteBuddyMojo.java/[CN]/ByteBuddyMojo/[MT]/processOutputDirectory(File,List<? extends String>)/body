@@ -12,7 +12,7 @@
         getLog().info("Created plugin: " + plugin);
       }
  catch (      Exception exception) {
-        throw new MojoExecutionException("Cannot create plugin: " + transformation,exception);
+        throw new MojoExecutionException("Cannot create plugin: " + transformation.getRawPlugin(),exception);
       }
     }
     EntryPoint entryPoint=(initialization == null ? Initialization.makeDefault() : initialization).getEntryPoint(classLoaderResolver,groupId,artifactId,version);

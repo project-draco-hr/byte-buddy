@@ -1,0 +1,5 @@
+{
+  this.project=project;
+  transformations=new ArrayList<Transformation>();
+  failOnLiveInitializer=true;
+}
