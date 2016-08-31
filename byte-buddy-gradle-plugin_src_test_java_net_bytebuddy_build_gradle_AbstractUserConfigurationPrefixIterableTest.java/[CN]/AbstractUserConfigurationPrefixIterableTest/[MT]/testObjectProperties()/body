@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(AbstractUserConfiguration.PrefixIterable.class).applyBasic();
+  ObjectPropertyAssertion.of(AbstractUserConfiguration.PrefixIterable.PrefixIterator.class).applyBasic();
+}

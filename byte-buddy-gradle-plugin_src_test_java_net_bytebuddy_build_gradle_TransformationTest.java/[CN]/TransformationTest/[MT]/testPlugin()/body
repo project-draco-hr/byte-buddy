@@ -1,0 +1,5 @@
+{
+  Transformation transformation=new Transformation();
+  transformation.setPlugin(FOO);
+  assertThat(transformation.getPlugin(),is(FOO));
+}

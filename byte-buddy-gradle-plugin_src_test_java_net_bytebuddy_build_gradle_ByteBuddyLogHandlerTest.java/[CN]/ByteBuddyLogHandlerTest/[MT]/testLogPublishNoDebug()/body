@@ -1,0 +1,7 @@
+{
+  ByteBuddyLogHandler byteBuddyLogHandler=new ByteBuddyLogHandler(project,mock(Logger.class),false);
+  LogRecord logRecord=new LogRecord(Level.INFO,FOO);
+  byteBuddyLogHandler.publish(logRecord);
+  verify(logger).isDebugEnabled();
+  verifyNoMoreInteractions(logger);
+}

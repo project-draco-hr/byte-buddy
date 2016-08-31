@@ -3,6 +3,6 @@
     task.doLast(new TransformationAction(project,byteBuddyExtension,task));
   }
  else {
-    project.getLogger().info("Skipping {}",task.getName());
+    project.getLogger().info("Skipping non-specified task {}",task.getName());
   }
 }

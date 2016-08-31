@@ -1,0 +1,5 @@
+{
+  if (project.getLogger().isDebugEnabled()) {
+    project.getLogger().debug(getFormatter().format(record));
+  }
+}

@@ -1,0 +1,3 @@
+{
+  assertThat(new ByteBuddyExtension(project).isFailOnLiveInitializer(),is(true));
+}

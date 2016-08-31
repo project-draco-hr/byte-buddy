@@ -1,0 +1,4 @@
+{
+  when(methodDescription.getName()).thenReturn(BAR);
+  assertThat(new ByteBuddyExtension(project).getMethodNameTransformer().transform(methodDescription),not(BAR));
+}

@@ -1,0 +1,5 @@
+{
+  ClassLoaderResolver classLoaderResolver=new ClassLoaderResolver();
+  classLoaderResolver.resolve(Collections.singleton(file));
+  classLoaderResolver.close();
+}

@@ -1,0 +1,9 @@
+{
+  try {
+    logger.setUseParentHandlers(useParentHandlers);
+    logger.removeHandler(this);
+  }
+ catch (  SecurityException exception) {
+    project.getLogger().warn("Cannot configure Byte Buddy logging",exception);
+  }
+}

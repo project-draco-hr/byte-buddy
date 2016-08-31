@@ -1,0 +1,15 @@
+{
+  Set<File> files=new HashSet<File>();
+  files.addAll(addClass("foo.Bar"));
+  try {
+    when(transformation.getPlugin()).thenReturn(IllegalPlugin.class.getName());
+    when(initialization.getEntryPoint(any(ClassLoaderResolver.class),any(File.class),any(Iterable.class))).thenReturn(EntryPoint.Default.REBASE);
+    transformationAction.execute(task);
+  }
+  finally {
+    for (    File file : files) {
+      assertThat(file.delete(),is(true));
+    }
+    assertThat(new File(target,FOO).delete(),is(true));
+  }
+}

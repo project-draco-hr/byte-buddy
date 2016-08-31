@@ -1,0 +1,6 @@
+{
+  Initialization initalization=new Initialization();
+  initalization.setEntryPoint(EntryPoint.Default.REDEFINE_LOCAL.name());
+  assertThat(initalization.getEntryPoint(classLoaderResolver,explicit,Collections.singleton(other)),is((EntryPoint)EntryPoint.Default.REDEFINE_LOCAL));
+  verifyZeroInteractions(classLoaderResolver);
+}

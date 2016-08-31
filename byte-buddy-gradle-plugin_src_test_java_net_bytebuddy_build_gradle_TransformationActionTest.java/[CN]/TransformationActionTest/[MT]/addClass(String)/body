@@ -1,0 +1,3 @@
+{
+  return new ByteBuddy().subclass(Object.class).name(name).defineMethod(FOO,String.class,Visibility.PUBLIC).intercept(FixedValue.value(FOO)).defineMethod(BAR,String.class,Visibility.PUBLIC).intercept(FixedValue.value(BAR)).make().saveIn(target).values();
+}

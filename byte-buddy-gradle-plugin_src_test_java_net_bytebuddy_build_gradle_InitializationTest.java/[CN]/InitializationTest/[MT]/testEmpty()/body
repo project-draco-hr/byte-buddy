@@ -1,0 +1,5 @@
+{
+  Initialization initalization=new Initialization();
+  initalization.setEntryPoint("");
+  initalization.getEntryPoint(classLoaderResolver,explicit,Collections.singleton(other));
+}

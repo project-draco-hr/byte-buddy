@@ -1,0 +1,4 @@
+{
+  when(parent.getDestinationDir()).thenReturn(mock(File.class));
+  transformationAction.execute(task);
+}

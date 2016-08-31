@@ -1,0 +1,8 @@
+{
+  Iterator<? extends File> iterator=new AbstractUserConfiguration.PrefixIterable(primary,Collections.singleton(other)).iterator();
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is(primary));
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is(other));
+  assertThat(iterator.hasNext(),is(false));
+}

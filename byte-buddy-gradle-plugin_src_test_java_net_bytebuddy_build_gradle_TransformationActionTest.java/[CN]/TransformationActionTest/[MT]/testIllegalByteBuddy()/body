@@ -1,0 +1,21 @@
+{
+  Set<File> files=new HashSet<File>();
+  files.addAll(addClass("foo.Bar"));
+  files.addAll(addClass("foo.Qux"));
+  try {
+    when(transformation.getPlugin()).thenReturn(SimplePlugin.class.getName());
+    when(initialization.getEntryPoint(any(ClassLoaderResolver.class),any(File.class),any(Iterable.class))).thenReturn(new IllegalEntryPoint());
+    transformationAction.execute(task);
+    ClassLoader classLoader=new URLClassLoader(new URL[]{target.toURI().toURL()});
+    assertMethod(classLoader.loadClass("foo.Bar"),FOO,QUX);
+    assertMethod(classLoader.loadClass("foo.Bar"),BAR,BAR);
+    assertMethod(classLoader.loadClass("foo.Qux"),FOO,FOO);
+    assertMethod(classLoader.loadClass("foo.Qux"),BAR,BAR);
+  }
+  finally {
+    for (    File file : files) {
+      assertThat(file.delete(),is(true));
+    }
+    assertThat(new File(target,FOO).delete(),is(true));
+  }
+}

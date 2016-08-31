@@ -1,0 +1,4 @@
+{
+  ClassLoaderResolver classLoaderResolver=new ClassLoaderResolver();
+  assertThat(classLoaderResolver.resolve(Collections.singleton(file)),sameInstance(classLoaderResolver.resolve(Collections.singleton(file))));
+}

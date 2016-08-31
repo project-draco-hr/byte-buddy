@@ -3,5 +3,5 @@
   store("package net.bytebuddy.test;\n" + "public class Sample {\n" + "    public String foo() {\n"+ "        return \"bar\";\n"+ "    }\n"+ "    public static void main(String[] args) {\n"+ "        System.out.println(\"foo=\" + new Sample().foo());\n"+ "    }\n"+ "}\n",new File(temporaryFolder.newFolder("src","main","java","net","bytebuddy","test"),"Sample.java"));
   BuildResult result=GradleRunner.create().withPluginClasspath().withProjectDir(temporaryFolder.getRoot()).withArguments("-s","run").forwardOutput().build();
   assertThat(result.task(":classes").getOutcome(),is(TaskOutcome.SUCCESS));
-  assertThat(result.getOutput(),CoreMatchers.containsString("foo=qux"));
+  assertThat(result.getOutput(),containsString("foo=qux"));
 }

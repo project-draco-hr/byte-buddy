@@ -1,5 +1,5 @@
 {
-  Mojo mojo=mojoRule.lookupMojo(goal,new File("src/test/resources/" + target + ".pom.xml"));
+  Mojo mojo=mojoRule.lookupMojo(goal,new File("src/test/resources/net/bytebuddy/test/" + target + ".pom.xml"));
   if (goal.equals("transform")) {
     mojoRule.setVariableValueToObject(mojo,"outputDirectory",project.getAbsolutePath());
     mojoRule.setVariableValueToObject(mojo,"compileClasspathElements",Collections.emptyList());

@@ -1,0 +1,5 @@
+{
+  when(byteBuddyExtension.implies(task)).thenReturn(true);
+  new PostCompilationAction(project,byteBuddyExtension).execute(task);
+  verify(task).doLast(any(TransformationAction.class));
+}

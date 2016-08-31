@@ -1,0 +1,4 @@
+{
+  assertThat(new ByteBuddyExtension(project).implies(task),is(true));
+  verifyZeroInteractions(task);
+}

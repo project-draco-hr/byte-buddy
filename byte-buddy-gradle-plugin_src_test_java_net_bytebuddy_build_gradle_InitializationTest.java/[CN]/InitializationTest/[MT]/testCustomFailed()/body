@@ -1,0 +1,7 @@
+{
+  Initialization initalization=new Initialization();
+  initalization.setClassPath(Collections.singleton(file));
+  initalization.setEntryPoint(FOO);
+  when(classLoaderResolver.resolve(Collections.singleton(file)));
+  initalization.getEntryPoint(classLoaderResolver,explicit,Collections.singleton(other));
+}

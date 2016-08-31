@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  ByteBuddyLogHandler that=(ByteBuddyLogHandler)object;
+  return useParentHandlers == that.useParentHandlers && logger.equals(that.logger) && project.equals(that.project);
+}

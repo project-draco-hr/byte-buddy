@@ -1,0 +1,3 @@
+{
+  assertThat(new ByteBuddyExtension(project).getInitialization().getEntryPoint(mock(ClassLoaderResolver.class),mock(File.class),Collections.<File>emptySet()),is((EntryPoint)EntryPoint.Default.REBASE));
+}

@@ -1,0 +1,11 @@
+{
+  when(project.configure(any(Initialization.class),eq(closure))).then(new Answer<Initialization>(){
+    @Override public Initialization answer(    InvocationOnMock invocationOnMock) throws Throwable {
+      return invocationOnMock.getArgumentAt(0,Initialization.class);
+    }
+  }
+);
+  ByteBuddyExtension byteBuddyExtension=new ByteBuddyExtension(project);
+  byteBuddyExtension.initialization(closure);
+  assertThat(byteBuddyExtension.getInitialization(),notNullValue(Initialization.class));
+}

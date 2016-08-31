@@ -1,0 +1,8 @@
+{
+  Transformation transformation=new Transformation();
+  transformation.setClassPath(Collections.singleton(file));
+  Iterator<? extends File> iterator=transformation.getClassPath(explicit,Collections.singleton(other)).iterator();
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is(file));
+  assertThat(iterator.hasNext(),is(false));
+}

@@ -1,0 +1,3 @@
+{
+  when(project.getLogger()).thenReturn(logger);
+}

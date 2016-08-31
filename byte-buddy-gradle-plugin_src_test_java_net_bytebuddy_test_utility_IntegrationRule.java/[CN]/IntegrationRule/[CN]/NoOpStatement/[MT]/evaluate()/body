@@ -1,0 +1,3 @@
+{
+  Logger.getLogger("net.bytebuddy").warning("Ignored test case that is only to be run on the CI server due to long runtime");
+}

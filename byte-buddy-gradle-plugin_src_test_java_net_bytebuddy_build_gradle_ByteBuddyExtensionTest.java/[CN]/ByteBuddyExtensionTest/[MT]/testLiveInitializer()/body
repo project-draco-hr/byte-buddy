@@ -1,0 +1,5 @@
+{
+  ByteBuddyExtension byteBuddyExtension=new ByteBuddyExtension(project);
+  byteBuddyExtension.setFailOnLiveInitializer(false);
+  assertThat(byteBuddyExtension.isFailOnLiveInitializer(),is(false));
+}

@@ -1,0 +1,6 @@
+{
+  ByteBuddyExtension byteBuddyExtension=new ByteBuddyExtension(project);
+  byteBuddyExtension.setTasks(Collections.singleton(FOO));
+  when(task.getName()).thenReturn(FOO);
+  assertThat(byteBuddyExtension.implies(task),is(true));
+}

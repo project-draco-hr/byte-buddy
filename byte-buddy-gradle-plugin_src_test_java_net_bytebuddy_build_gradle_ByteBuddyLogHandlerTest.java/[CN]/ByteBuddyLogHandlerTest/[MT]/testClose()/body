@@ -1,0 +1,3 @@
+{
+  new ByteBuddyLogHandler(project,mock(Logger.class),false).close();
+}

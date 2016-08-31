@@ -1,0 +1,9 @@
+{
+  Initialization initalization=new Initialization();
+  initalization.setEntryPoint(Foo.class.getName());
+  initalization.setClassPath(Collections.singleton(file));
+  when(classLoaderResolver.resolve(Collections.singleton(file))).thenReturn(Foo.class.getClassLoader());
+  assertThat(initalization.getEntryPoint(classLoaderResolver,explicit,Collections.singleton(other)),instanceOf(Foo.class));
+  verify(classLoaderResolver).resolve(Collections.singleton(file));
+  verifyNoMoreInteractions(classLoaderResolver);
+}

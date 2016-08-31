@@ -1,0 +1,6 @@
+{
+  when(methodDescription.getName()).thenReturn(BAR);
+  ByteBuddyExtension byteBuddyExtension=new ByteBuddyExtension(project);
+  byteBuddyExtension.setSuffix(FOO);
+  assertThat(byteBuddyExtension.getMethodNameTransformer().transform(methodDescription),endsWith(FOO));
+}

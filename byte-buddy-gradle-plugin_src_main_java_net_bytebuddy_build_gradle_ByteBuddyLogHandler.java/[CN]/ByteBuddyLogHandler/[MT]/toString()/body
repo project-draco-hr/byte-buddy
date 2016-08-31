@@ -1,0 +1,3 @@
+{
+  return "ByteBuddyLogHandler{" + "project=" + project + " ,logger="+ logger+ " ,useParentHandlers="+ useParentHandlers+ '}';
+}

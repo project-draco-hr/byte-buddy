@@ -1,0 +1,11 @@
+{
+  when(project.configure(any(Transformation.class),eq(closure))).then(new Answer<Transformation>(){
+    @Override public Transformation answer(    InvocationOnMock invocationOnMock) throws Throwable {
+      return invocationOnMock.getArgumentAt(0,Transformation.class);
+    }
+  }
+);
+  ByteBuddyExtension byteBuddyExtension=new ByteBuddyExtension(project);
+  byteBuddyExtension.transformation(closure);
+  assertThat(byteBuddyExtension.getTransformations().size(),is(1));
+}

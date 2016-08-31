@@ -1,0 +1,8 @@
+{
+  Initialization initialization=new Initialization();
+  initialization.setClassPath(Collections.singleton(file));
+  Iterator<? extends File> iterator=initialization.getClassPath(explicit,Collections.singleton(other)).iterator();
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is(file));
+  assertThat(iterator.hasNext(),is(false));
+}
