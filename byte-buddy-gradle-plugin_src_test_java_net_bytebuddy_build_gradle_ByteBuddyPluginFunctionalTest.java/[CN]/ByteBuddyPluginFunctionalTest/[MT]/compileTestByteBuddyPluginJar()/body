@@ -1,0 +1,10 @@
+{
+  File testByteBuddyPluginDir=testPluginJarProjectDir.newFolder("test-byte-buddy-plugin");
+  File pluginBuildFile=new File(testByteBuddyPluginDir,"build.gradle");
+  Files.write("plugins { id 'java' }\nrepositories { mavenLocal()\nmavenCentral()\n}\ndependencies {\ncompile 'net.bytebuddy:byte-buddy:" + BYTE_BUDDY_VERSION + "'}\n",pluginBuildFile,Charset.defaultCharset());
+  File testPluginFile=new File(testByteBuddyPluginDir,"src/main/java/net/bytebuddy/test/SimplePlugin.java");
+  testPluginFile.getParentFile().mkdirs();
+  Files.write("package net.bytebuddy.test;\n" + "\n" + "import net.bytebuddy.build.Plugin;\n"+ "import net.bytebuddy.description.type.TypeDescription;\n"+ "import net.bytebuddy.dynamic.DynamicType;\n"+ "import net.bytebuddy.implementation.FixedValue;\n"+ "\n"+ "import static net.bytebuddy.matcher.ElementMatchers.named;\n"+ "\n"+ "public class SimplePlugin implements Plugin {\n"+ "\n"+ "    @Override\n"+ "    public boolean matches(TypeDescription target) {\n"+ "        return target.getName().equals(\"foo.Bar\");\n"+ "    }\n"+ "\n"+ "    @Override\n"+ "    public DynamicType.Builder<?> apply(DynamicType.Builder<?> builder, TypeDescription typeDescription) {\n"+ "        return builder.method(named(\"foo\")).intercept(FixedValue.value(\"qux\"));\n"+ "    }\n"+ "}\n",testPluginFile,Charset.defaultCharset());
+  GradleRunner.create().withProjectDir(testByteBuddyPluginDir).withArguments("jar").build();
+  return new File(testByteBuddyPluginDir,"build/libs/test-byte-buddy-plugin.jar");
+}

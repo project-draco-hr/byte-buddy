@@ -1,3 +1,0 @@
-{
-  return "http".equals(roleHint) || "https".equals(roleHint) ? new HttpWagon() : NO_WAGON;
-}

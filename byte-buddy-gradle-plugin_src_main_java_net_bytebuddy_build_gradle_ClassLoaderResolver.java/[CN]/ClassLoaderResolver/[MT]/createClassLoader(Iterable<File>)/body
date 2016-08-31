@@ -1,0 +1,12 @@
+{
+  List<URL> classpathElements=new ArrayList<URL>();
+  for (  File file : classpathFiles) {
+    try {
+      classpathElements.add(file.toURI().toURL());
+    }
+ catch (    MalformedURLException e) {
+      throw new RuntimeException(e);
+    }
+  }
+  return new URLClassLoader(classpathElements.toArray(new URL[0]),ByteBuddy.class.getClassLoader());
+}

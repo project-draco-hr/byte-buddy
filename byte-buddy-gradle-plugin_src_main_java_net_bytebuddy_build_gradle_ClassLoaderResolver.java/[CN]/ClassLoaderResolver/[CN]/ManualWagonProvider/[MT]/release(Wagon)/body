@@ -1,5 +1,0 @@
-{
-  if (wagon instanceof HttpWagon) {
-    ((HttpWagon)wagon).closeConnection();
-  }
-}

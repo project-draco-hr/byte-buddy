@@ -1,5 +1,21 @@
 {
-  project.getExtensions().create("byteBuddy",ByteBuddyExtension.class,project);
-  project.getTasks().create("transform",TransformTask.ForProductionTypes.class);
-  project.getTasks().create("test-transform",TransformTask.ForTestTypes.class);
+  final ByteBuddyExtension byteBuddyExtension=project.getExtensions().create("byteBuddy",ByteBuddyExtension.class,project);
+  project.getTasks().withType(AbstractCompile.class,new Action<AbstractCompile>(){
+    @Override public void execute(    AbstractCompile compileTask){
+      final Iterable<File> compileClasspathFiles=compileTask.getClasspath();
+      final File classesDir=compileTask.getDestinationDir();
+      compileTask.doLast(new Action<Task>(){
+        @Override public void execute(        Task task){
+          try {
+            new Transformer(project,byteBuddyExtension).processOutputDirectory(classesDir,compileClasspathFiles);
+          }
+ catch (          IOException e) {
+            throw new GradleException("Exception in byte-buddy processing",e);
+          }
+        }
+      }
+);
+    }
+  }
+);
 }

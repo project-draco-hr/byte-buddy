@@ -1,8 +1,0 @@
-{
-  if (artifact != null) {
-    throw new GradleException("Artifact is already set");
-  }
-  Artifact artifact=(Artifact)project.configure(new Artifact(),closure);
-  this.artifact=artifact;
-  return artifact;
-}
