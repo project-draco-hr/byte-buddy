@@ -1,3 +1,0 @@
-{
-  return EntryPoint.Default.valueOf(entryPoint);
-}

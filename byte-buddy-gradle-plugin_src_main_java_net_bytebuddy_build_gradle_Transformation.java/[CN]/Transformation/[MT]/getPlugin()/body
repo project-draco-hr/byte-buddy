@@ -1,3 +1,6 @@
 {
+  if (plugin == null || plugin.isEmpty()) {
+    throw new GradleException("Plugin name was not specified or is empty");
+  }
   return plugin;
 }

@@ -1,0 +1,16 @@
+{
+  if (entryPoint == null || entryPoint.isEmpty()) {
+    throw new GradleException("Entry point name is not defined");
+  }
+  for (  EntryPoint.Default entryPoint : EntryPoint.Default.values()) {
+    if (this.entryPoint.equals(entryPoint.name())) {
+      return entryPoint;
+    }
+  }
+  try {
+    return (EntryPoint)Class.forName(entryPoint,false,classLoaderResolver.resolve(getClassPath(root,classPath))).getDeclaredConstructor().newInstance();
+  }
+ catch (  Exception exception) {
+    throw new GradleException("Cannot create entry point: " + entryPoint,exception);
+  }
+}

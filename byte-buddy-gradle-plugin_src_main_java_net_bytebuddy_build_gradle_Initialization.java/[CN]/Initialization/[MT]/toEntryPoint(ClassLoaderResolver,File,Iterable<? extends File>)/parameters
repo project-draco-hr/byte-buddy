@@ -1,0 +1,3 @@
+ClassLoaderResolver classLoaderResolver
+File root
+Iterable<? extends File> classPath
