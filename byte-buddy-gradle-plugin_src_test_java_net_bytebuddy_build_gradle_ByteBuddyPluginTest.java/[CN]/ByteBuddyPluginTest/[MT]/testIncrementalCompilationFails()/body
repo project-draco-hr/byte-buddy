@@ -1,0 +1,6 @@
+{
+  createSampleBuildFiles();
+  append("compileJava.options.incremental = true",new File(temporaryFolder.getRoot(),"build.gradle"));
+  BuildResult result=GradleRunner.create().withPluginClasspath().withProjectDir(temporaryFolder.getRoot()).withArguments("classes").forwardOutput().buildAndFail();
+  assertThat(result.getOutput(),containsString("Transformations aren't supported when incremental compilation is enabled."));
+}

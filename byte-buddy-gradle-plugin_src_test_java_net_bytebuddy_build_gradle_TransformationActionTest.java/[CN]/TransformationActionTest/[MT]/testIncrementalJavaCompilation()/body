@@ -1,0 +1,7 @@
+{
+  JavaCompile javaCompile=mock(JavaCompile.class);
+  CompileOptions compileOptions=new CompileOptions();
+  compileOptions.setIncremental(true);
+  when(javaCompile.getOptions()).thenReturn(compileOptions);
+  transformationAction.execute(javaCompile);
+}
