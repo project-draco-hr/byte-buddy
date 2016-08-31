@@ -1,0 +1,3 @@
+{
+  return suffix == null || suffix.isEmpty() ? MethodNameTransformer.Suffixing.withRandomSuffix() : new MethodNameTransformer.Suffixing(suffix);
+}

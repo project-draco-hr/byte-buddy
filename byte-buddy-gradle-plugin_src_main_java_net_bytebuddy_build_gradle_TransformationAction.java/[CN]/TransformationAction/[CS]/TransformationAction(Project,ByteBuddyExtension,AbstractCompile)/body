@@ -1,5 +1,5 @@
 {
   this.project=project;
   this.byteBuddyExtension=extension;
-  this.compileTask=compileTask;
+  this.task=task;
 }

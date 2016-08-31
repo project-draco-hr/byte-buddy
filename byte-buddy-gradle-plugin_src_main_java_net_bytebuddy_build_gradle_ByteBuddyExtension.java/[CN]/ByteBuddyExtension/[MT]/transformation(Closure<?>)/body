@@ -1,5 +1,4 @@
 {
   Transformation transformation=(Transformation)project.configure(new Transformation(),closure);
   transformations.add(transformation);
-  return transformation;
 }

@@ -1,0 +1,3 @@
+{
+  return "AbstractUserConfiguration.PrefixIterable{" + "file=" + file + ", files="+ files+ '}';
+}

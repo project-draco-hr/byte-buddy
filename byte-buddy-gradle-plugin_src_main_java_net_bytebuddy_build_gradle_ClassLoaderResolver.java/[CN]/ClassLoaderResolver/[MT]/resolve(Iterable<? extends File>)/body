@@ -1,5 +1,5 @@
 {
-  List<File> classPathList=new ArrayList<File>();
+  Set<File> classPathList=new LinkedHashSet<File>();
   for (  File file : classPath) {
     classPathList.add(file);
   }

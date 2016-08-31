@@ -15,7 +15,7 @@
  catch (    Throwable throwable) {
       throw new GradleException("Cannot create Byte Buddy instance",throwable);
     }
-    processDirectory(root,root,byteBuddy,entryPoint,byteBuddyExtension.getSuffix() == null || byteBuddyExtension.getSuffix().isEmpty() ? MethodNameTransformer.Suffixing.withRandomSuffix() : new MethodNameTransformer.Suffixing(byteBuddyExtension.getSuffix()),classFileLocator,typePool,plugins);
+    processDirectory(root,root,byteBuddy,entryPoint,byteBuddyExtension.getMethodNameTransformer(),classFileLocator,typePool,plugins);
   }
   finally {
     classFileLocator.close();

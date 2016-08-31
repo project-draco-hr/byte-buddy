@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  PrefixIterable files1=(PrefixIterable)object;
+  return file.equals(files1.file) && files.equals(files1.files);
+}
