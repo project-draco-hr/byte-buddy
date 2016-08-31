@@ -1,0 +1,10 @@
+{
+  File pluginFolder=TEMPORARY_FOLDER.newFolder("test-byte-buddy-plugin");
+  store("plugins { id 'java' }\n" + "repositories {\n" + "  mavenLocal()\n"+ "  mavenCentral()\n"+ "}\n"+ "dependencies {\n"+ "  compile 'net.bytebuddy:byte-buddy:" + BYTE_BUDDY_VERSION + "'\n"+ "}\n",new File(pluginFolder,"build.gradle"));
+  File pluginRoot=new File(pluginFolder,"src/main/java/net/bytebuddy/test");
+  assertThat(pluginRoot.mkdirs(),is(true));
+  store("package net.bytebuddy.test;\n" + "\n" + "import net.bytebuddy.build.Plugin;\n"+ "import net.bytebuddy.description.type.TypeDescription;\n"+ "import net.bytebuddy.dynamic.DynamicType;\n"+ "import net.bytebuddy.implementation.FixedValue;\n"+ "\n"+ "import static net.bytebuddy.matcher.ElementMatchers.named;\n"+ "\n"+ "public class SimplePlugin implements Plugin {\n"+ "    @Override\n"+ "    public boolean matches(TypeDescription target) {\n"+ "        return target.getName().equals(\"net.bytebuddy.test.Sample\");\n"+ "    }\n"+ "    @Override\n"+ "    public DynamicType.Builder<?> apply(DynamicType.Builder<?> builder, TypeDescription typeDescription) {\n"+ "        return builder.method(named(\"foo\")).intercept(FixedValue.value(\"qux\"));\n"+ "    }\n"+ "}\n",new File(pluginRoot,"SimplePlugin.java"));
+  BuildResult result=GradleRunner.create().withProjectDir(pluginFolder).withArguments("jar").build();
+  assertThat(result.task(":jar").getOutcome(),is(TaskOutcome.SUCCESS));
+  return new File(pluginFolder,"build/libs/test-byte-buddy-plugin.jar");
+}

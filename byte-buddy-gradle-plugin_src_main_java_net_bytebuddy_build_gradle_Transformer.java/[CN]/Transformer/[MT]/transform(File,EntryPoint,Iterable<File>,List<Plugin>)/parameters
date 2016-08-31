@@ -1,4 +1,0 @@
-File root
-EntryPoint entryPoint
-Iterable<File> classPath
-List<Plugin> plugins

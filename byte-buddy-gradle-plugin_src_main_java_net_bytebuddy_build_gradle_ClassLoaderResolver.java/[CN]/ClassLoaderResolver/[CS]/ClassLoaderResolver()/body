@@ -1,0 +1,3 @@
+{
+  this.classLoaders=new HashMap<List<File>,ClassLoader>();
+}

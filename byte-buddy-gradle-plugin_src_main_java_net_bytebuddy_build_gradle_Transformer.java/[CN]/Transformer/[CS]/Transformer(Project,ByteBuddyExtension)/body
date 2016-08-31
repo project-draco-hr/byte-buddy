@@ -1,5 +1,0 @@
-{
-  this.byteBuddyExtension=extension;
-  this.project=project;
-  this.logger=project.getLogger();
-}

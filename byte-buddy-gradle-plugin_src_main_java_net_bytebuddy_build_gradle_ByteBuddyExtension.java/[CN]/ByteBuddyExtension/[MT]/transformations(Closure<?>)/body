@@ -1,3 +1,0 @@
-{
-  project.configure(new TransformationsConfigurer(),closure);
-}

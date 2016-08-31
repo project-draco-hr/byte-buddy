@@ -1,0 +1,42 @@
+{
+  String typeName=file.replace('/','.').substring(0,file.length() - CLASS_FILE_EXTENSION.length());
+  project.getLogger().debug("Processing class file: {}",typeName);
+  TypeDescription typeDescription=typePool.describe(typeName).resolve();
+  DynamicType.Builder<?> builder;
+  try {
+    builder=entryPoint.transform(typeDescription,byteBuddy,classFileLocator,methodNameTransformer);
+  }
+ catch (  Throwable throwable) {
+    throw new GradleException("Cannot transform type: " + typeName,throwable);
+  }
+  boolean transformed=false;
+  for (  Plugin plugin : plugins) {
+    try {
+      if (plugin.matches(typeDescription)) {
+        builder=plugin.apply(builder,typeDescription);
+        transformed=true;
+      }
+    }
+ catch (    Throwable throwable) {
+      throw new GradleException("Cannot apply " + plugin + " on "+ typeName,throwable);
+    }
+  }
+  if (transformed) {
+    project.getLogger().info("Transformed type: {}",typeName);
+    DynamicType dynamicType=builder.make();
+    for (    Map.Entry<TypeDescription,LoadedTypeInitializer> entry : dynamicType.getLoadedTypeInitializers().entrySet()) {
+      if (byteBuddyExtension.isFailOnLiveInitializer() && entry.getValue().isAlive()) {
+        throw new GradleException("Cannot apply live initializer for " + entry.getKey());
+      }
+    }
+    try {
+      dynamicType.saveIn(root);
+    }
+ catch (    IOException exception) {
+      throw new GradleException("Cannot save " + typeName + " in "+ root,exception);
+    }
+  }
+ else {
+    project.getLogger().debug("Skipping non-transformed type: {}",typeName);
+  }
+}

@@ -1,0 +1,12 @@
+{
+  List<URL> urls=new ArrayList<URL>(classPath.size());
+  for (  File file : classPath) {
+    try {
+      urls.add(file.toURI().toURL());
+    }
+ catch (    MalformedURLException exception) {
+      throw new GradleException("Cannot resolve " + file + " as URL",exception);
+    }
+  }
+  return new URLClassLoader(urls.toArray(new URL[urls.size()]),ByteBuddy.class.getClassLoader());
+}

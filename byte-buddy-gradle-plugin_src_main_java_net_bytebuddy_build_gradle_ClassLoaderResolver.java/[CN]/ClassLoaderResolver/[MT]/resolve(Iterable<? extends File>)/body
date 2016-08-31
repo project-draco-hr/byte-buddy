@@ -1,0 +1,7 @@
+{
+  List<File> classPathList=new ArrayList<File>();
+  for (  File file : classPath) {
+    classPathList.add(file);
+  }
+  return resolve(classPathList);
+}

@@ -1,0 +1,3 @@
+{
+  return this.classPath == null ? new PrefixIterable(root,classPath) : this.classPath;
+}

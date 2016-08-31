@@ -1,0 +1,3 @@
+{
+  return new PrefixIterator(file,files.iterator());
+}

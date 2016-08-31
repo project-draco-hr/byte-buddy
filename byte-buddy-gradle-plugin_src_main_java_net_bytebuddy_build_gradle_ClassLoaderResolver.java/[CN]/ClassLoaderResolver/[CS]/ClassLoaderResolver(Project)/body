@@ -1,4 +1,0 @@
-{
-  this.logger=project.getLogger();
-  this.classLoaders=new HashMap<List<File>,ClassLoader>();
-}
