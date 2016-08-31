@@ -1,0 +1,7 @@
+{
+  ScalaCompile scalaCompile=mock(ScalaCompile.class);
+  CompileOptions compileOptions=new CompileOptions();
+  compileOptions.setIncremental(true);
+  when(scalaCompile.getOptions()).thenReturn(compileOptions);
+  transformationAction.execute(scalaCompile);
+}
