@@ -1,5 +1,6 @@
 {
   try {
+    verifyCompilationNotIncremental(task);
     processOutputDirectory(this.task.getDestinationDir(),this.task.getClasspath());
   }
  catch (  IOException exception) {

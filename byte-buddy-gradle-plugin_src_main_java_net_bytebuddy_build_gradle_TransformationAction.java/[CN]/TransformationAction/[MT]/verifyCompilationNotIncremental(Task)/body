@@ -1,0 +1,14 @@
+{
+  if (task instanceof JavaCompile) {
+    JavaCompile javaCompileTask=(JavaCompile)task;
+    if (javaCompileTask.getOptions().isIncremental()) {
+      throw new GradleException("Transformations aren't supported when incremental compilation is enabled. Set " + javaCompileTask.getName() + ".options.incremental=false in the build file.");
+    }
+  }
+  if (task instanceof ScalaCompile) {
+    ScalaCompile scalaCompileTask=(ScalaCompile)task;
+    if (!scalaCompileTask.getScalaCompileOptions().isForce()) {
+      throw new GradleException("Transformations aren't supported when incremental compilation is enabled. Set " + scalaCompileTask.getName() + ".scalaCompileOptions.force=true in the build file.");
+    }
+  }
+}
