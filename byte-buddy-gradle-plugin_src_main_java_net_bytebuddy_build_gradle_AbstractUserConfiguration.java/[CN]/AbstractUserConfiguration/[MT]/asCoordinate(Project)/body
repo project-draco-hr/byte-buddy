@@ -1,3 +1,0 @@
-{
-  return new MavenCoordinate(artifact.getGroupId(project),artifact.getArtifactId(project),artifact.getVersion(project));
-}

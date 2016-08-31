@@ -1,5 +1,0 @@
-{
-  setGroup("byte-buddy");
-  setDescription(description);
-  byteBuddyExtension=getProject().getExtensions().getByType(ByteBuddyExtension.class);
-}

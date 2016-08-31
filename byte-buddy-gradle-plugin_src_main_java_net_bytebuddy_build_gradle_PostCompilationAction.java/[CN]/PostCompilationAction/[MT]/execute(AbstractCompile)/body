@@ -1,0 +1,3 @@
+{
+  compileTask.doLast(new TransformationAction(project,byteBuddyExtension,compileTask));
+}

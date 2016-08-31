@@ -2,7 +2,7 @@
   if (initialization != null) {
     throw new GradleException("Initialization is already set");
   }
-  Initialization initialization=(Initialization)project.configure(new Initialization(project),closure);
+  Initialization initialization=(Initialization)project.configure(new Initialization(),closure);
   this.initialization=initialization;
   return initialization;
 }

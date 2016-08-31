@@ -1,8 +1,0 @@
-{
-  this.logger=project.getLogger();
-  repositorySystem=MavenRepositorySystemUtils.newServiceLocator().setService(RepositoryConnectorFactory.class,BasicRepositoryConnectorFactory.class).setService(TransporterFactory.class,WagonTransporterFactory.class).setService(WagonProvider.class,ManualWagonProvider.class).getService(RepositorySystem.class);
-  repositorySystemSession=MavenRepositorySystemUtils.newSession();
-  repositorySystem.newLocalRepositoryManager(repositorySystemSession,new LocalRepository(project.getRepositories().mavenLocal().getUrl().toString()));
-  remoteRepositories=Collections.singletonList(new RemoteRepository.Builder("maven-central","default",project.getRepositories().mavenCentral().getUrl().toString()).build());
-  classLoaders=new HashMap<MavenCoordinate,ClassLoader>();
-}

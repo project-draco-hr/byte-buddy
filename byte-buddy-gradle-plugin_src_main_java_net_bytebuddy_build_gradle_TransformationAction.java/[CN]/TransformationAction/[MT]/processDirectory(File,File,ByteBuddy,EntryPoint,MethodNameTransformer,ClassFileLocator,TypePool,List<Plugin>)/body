@@ -1,0 +1,16 @@
+{
+  File[] file=folder.listFiles();
+  if (file != null) {
+    for (    File aFile : file) {
+      if (aFile.isDirectory()) {
+        processDirectory(root,aFile,byteBuddy,entryPoint,methodNameTransformer,classFileLocator,typePool,plugins);
+      }
+ else       if (aFile.isFile() && aFile.getName().endsWith(CLASS_FILE_EXTENSION)) {
+        processClassFile(root,root.toURI().relativize(aFile.toURI()).toString(),byteBuddy,entryPoint,methodNameTransformer,classFileLocator,typePool,plugins);
+      }
+ else {
+        project.getLogger().debug("Skipping ignored file: {}",aFile);
+      }
+    }
+  }
+}

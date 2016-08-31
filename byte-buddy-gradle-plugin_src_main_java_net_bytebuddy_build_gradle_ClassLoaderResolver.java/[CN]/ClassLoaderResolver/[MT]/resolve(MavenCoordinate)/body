@@ -1,8 +1,0 @@
-{
-  ClassLoader classLoader=classLoaders.get(mavenCoordinate);
-  if (classLoader == null) {
-    classLoader=doResolve(mavenCoordinate);
-    classLoaders.put(mavenCoordinate,classLoader);
-  }
-  return classLoader;
-}

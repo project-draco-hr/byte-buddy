@@ -1,5 +1,3 @@
 {
-  project.getExtensions().create("byteBuddy",ByteBuddyExtension.class,project);
-  project.getTasks().create("transform",TransformTask.ForProductionTypes.class);
-  project.getTasks().create("test-transform",TransformTask.ForTestTypes.class);
+  project.getTasks().withType(AbstractCompile.class,PostCompilationAction.of(project));
 }

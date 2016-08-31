@@ -1,0 +1,23 @@
+{
+  List<ClassFileLocator> classFileLocators=new ArrayList<ClassFileLocator>();
+  classFileLocators.add(new ClassFileLocator.ForFolder(root));
+  for (  File artifact : classPath) {
+    classFileLocators.add(artifact.isFile() ? ClassFileLocator.ForJarFile.of(artifact) : new ClassFileLocator.ForFolder(artifact));
+  }
+  ClassFileLocator classFileLocator=new ClassFileLocator.Compound(classFileLocators);
+  try {
+    TypePool typePool=new TypePool.Default.WithLazyResolution(new TypePool.CacheProvider.Simple(),classFileLocator,TypePool.Default.ReaderMode.FAST,TypePool.ClassLoading.ofBootPath());
+    project.getLogger().info("Processing class files located in in: {}",root);
+    ByteBuddy byteBuddy;
+    try {
+      byteBuddy=entryPoint.getByteBuddy();
+    }
+ catch (    Throwable throwable) {
+      throw new GradleException("Cannot create Byte Buddy instance",throwable);
+    }
+    processDirectory(root,root,byteBuddy,entryPoint,byteBuddyExtension.getSuffix() == null || byteBuddyExtension.getSuffix().isEmpty() ? MethodNameTransformer.Suffixing.withRandomSuffix() : new MethodNameTransformer.Suffixing(byteBuddyExtension.getSuffix()),classFileLocator,typePool,plugins);
+  }
+  finally {
+    classFileLocator.close();
+  }
+}

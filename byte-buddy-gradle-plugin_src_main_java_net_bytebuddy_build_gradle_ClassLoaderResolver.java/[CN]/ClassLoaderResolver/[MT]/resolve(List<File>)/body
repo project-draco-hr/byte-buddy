@@ -1,0 +1,8 @@
+{
+  ClassLoader classLoader=classLoaders.get(classPath);
+  if (classLoader == null) {
+    classLoader=doResolve(classPath);
+    classLoaders.put(classPath,classLoader);
+  }
+  return classLoader;
+}
