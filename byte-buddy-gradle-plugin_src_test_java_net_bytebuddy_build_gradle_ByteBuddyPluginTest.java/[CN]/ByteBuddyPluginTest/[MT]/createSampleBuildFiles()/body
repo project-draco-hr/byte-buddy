@@ -1,0 +1,7 @@
+{
+  store("plugins {\n" + "    id 'java'\n" + "    id 'application'\n"+ "    id 'net.bytebuddy.byte-buddy'\n"+ "}\n"+ "configurations {\n"+ "    sample\n"+ "}\n"+ "dependencies {\n"+ "    sample files(\"" + pluginJar.getAbsolutePath() + "\")\n"+ "}\n"+ "byteBuddy {\n"+ "    transformation {\n"+ "        plugin = \"net.bytebuddy.test.SimplePlugin\"\n"+ "        classPath = configurations.sample\n"+ "    }\n"+ "}\n"+ "mainClassName = 'net.bytebuddy.test.Sample'\n",temporaryFolder.newFile("build.gradle"));
+  store("package net.bytebuddy.test;\n" + "public class Sample {\n" + "    public String foo() {\n"+ "        return \"bar\";\n"+ "    }\n"+ "    public static void main(String[] args) {\n"+ "        System.out.println(\"foo=\" + new Sample().foo());\n"+ "    }\n"+ "}\n",new File(temporaryFolder.newFolder("src","main","java","net","bytebuddy","test"),"Sample.java"));
+  BuildResult result=GradleRunner.create().withPluginClasspath().withProjectDir(temporaryFolder.getRoot()).withArguments("-s","run").forwardOutput().build();
+  assertThat(result.task(":classes").getOutcome(),is(TaskOutcome.SUCCESS));
+  assertThat(result.getOutput(),containsString("foo=qux"));
+}

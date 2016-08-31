@@ -1,6 +1,7 @@
 {
   ByteBuddyLogHandler byteBuddyLogHandler=ByteBuddyLogHandler.initialize(project);
   try {
+    verifyCompilationNotIncremental(task);
     processOutputDirectory(this.task.getDestinationDir(),this.task.getClasspath());
   }
  catch (  IOException exception) {
