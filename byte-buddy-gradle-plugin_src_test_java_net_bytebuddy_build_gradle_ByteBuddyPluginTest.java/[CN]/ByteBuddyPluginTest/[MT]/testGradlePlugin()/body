@@ -1,6 +1,0 @@
-{
-  createSampleBuildFiles();
-  BuildResult result=GradleRunner.create().withPluginClasspath().withProjectDir(temporaryFolder.getRoot()).withArguments("-s","run").forwardOutput().build();
-  assertThat(result.task(":classes").getOutcome(),is(TaskOutcome.SUCCESS));
-  assertThat(result.getOutput(),containsString("foo=qux"));
-}
