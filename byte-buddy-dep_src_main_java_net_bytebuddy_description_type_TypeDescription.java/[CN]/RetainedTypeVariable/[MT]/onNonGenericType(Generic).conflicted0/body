@@ -1,3 +1,3 @@
 {
-  return super.onNonGenericType(typeDescription) && !typeDescription.isInterface();
+  return new Dispatcher.ForNonGenericType(typeDescription.asErasure());
 }

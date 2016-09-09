@@ -1,3 +1,3 @@
 {
-  return new Dispatcher.ForParameterizedType(parameterizedType);
+  return parameterizedType.isInterface();
 }
