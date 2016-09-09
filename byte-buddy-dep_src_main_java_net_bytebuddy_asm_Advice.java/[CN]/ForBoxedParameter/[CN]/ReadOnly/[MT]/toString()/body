@@ -1,3 +1,0 @@
-{
-  return "Advice.Dispatcher.OffsetMapping.Target.ForBoxedParameter.ReadOnly{" + "offset=" + offset + ", boxingDispatcher="+ boxingDispatcher+ '}';
-}

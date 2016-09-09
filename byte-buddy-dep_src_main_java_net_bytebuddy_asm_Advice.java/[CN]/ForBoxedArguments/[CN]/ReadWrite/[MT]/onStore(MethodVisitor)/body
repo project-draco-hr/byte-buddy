@@ -1,0 +1,20 @@
+{
+  StackSize stackSize=StackSize.ZERO;
+  for (  ParameterDescription parameter : parameters) {
+    methodVisitor.visitInsn(Opcodes.DUP);
+    loadInteger(methodVisitor,parameter.getIndex());
+    methodVisitor.visitInsn(Opcodes.AALOAD);
+    if (parameter.getType().isPrimitive()) {
+      BoxingDispatcher.of(parameter.getType()).storeUnboxed(methodVisitor,parameter.getOffset());
+    }
+ else {
+      if (!parameter.getType().represents(Object.class)) {
+        methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,parameter.getType().asErasure().getInternalName());
+      }
+      methodVisitor.visitVarInsn(Opcodes.ASTORE,parameter.getOffset());
+    }
+    stackSize=stackSize.maximum(parameter.getType().getStackSize());
+  }
+  methodVisitor.visitInsn(Opcodes.POP);
+  return stackSize.getSize() + (parameters.isEmpty() ? 0 : 2);
+}

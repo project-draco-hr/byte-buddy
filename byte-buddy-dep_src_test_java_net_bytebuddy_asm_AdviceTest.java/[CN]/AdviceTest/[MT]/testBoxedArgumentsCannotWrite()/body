@@ -1,0 +1,3 @@
+{
+  new ByteBuddy().redefine(Sample.class).visit(Advice.to(BoxedArgumentsCannotWrite.class).on(named(FOO))).make();
+}

@@ -1,0 +1,6 @@
+{
+  this.type=type;
+  this.expected=expected;
+  this.provided=provided;
+  this.parameterTypes=parameterTypes;
+}

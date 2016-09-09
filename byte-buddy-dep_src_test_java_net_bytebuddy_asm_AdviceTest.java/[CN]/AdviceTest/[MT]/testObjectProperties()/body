@@ -28,9 +28,10 @@
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForConstantPoolValue.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForDefaultValue.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedDefaultValue.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedArguments.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedParameter.ReadOnly.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedParameter.ReadWrite.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedArguments.ReadOnly.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedArguments.ReadWrite.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedArgument.ReadOnly.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedArgument.ReadWrite.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForSerializedObject.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForNullConstant.class).apply();
   final int[] value=new int[1];
@@ -49,6 +50,7 @@
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForBoxedReturnValue.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForBoxedReturnValue.Factory.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForBoxedArguments.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForBoxedArguments.Factory.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Factory.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForOrigin.Renderer.ForConstantValue.class).apply();

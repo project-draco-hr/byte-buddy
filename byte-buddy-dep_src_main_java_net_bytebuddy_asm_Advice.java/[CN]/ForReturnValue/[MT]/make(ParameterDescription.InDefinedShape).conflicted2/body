@@ -1,11 +1,15 @@
 {
-  if (!parameterDescription.getDeclaredAnnotations().isAnnotationPresent(BoxedArguments.class)) {
+  AnnotationDescription.Loadable<BoxedArguments> annotation=parameterDescription.getDeclaredAnnotations().ofType(BoxedArguments.class);
+  if (annotation == null) {
     return UNDEFINED;
   }
+ else   if (readOnly && !annotation.loadSilent().readOnly()) {
+    throw new IllegalStateException("Cannot write return value from a non-writable context for " + parameterDescription);
+  }
  else   if (parameterDescription.getType().represents(Object[].class)) {
-    return this;
+    return annotation.loadSilent().readOnly() ? ForBoxedArguments.READ_ONLY : ForBoxedArguments.READ_WRITE;
   }
  else {
-    throw new IllegalStateException("Can only assign an array of boxed arguments to an Object[] array");
+    throw new IllegalStateException("Can only assign a boxed return value to an Object[] type for " + parameterDescription);
   }
 }

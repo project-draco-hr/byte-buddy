@@ -3,7 +3,7 @@
     return readOnly ? Target.ForNullConstant.READ_ONLY : Target.ForNullConstant.READ_WRITE;
   }
  else   if (instrumentedMethod.getReturnType().isPrimitive()) {
-    return readOnly ? Target.ForBoxedParameter.ReadOnly.of(instrumentedMethod.getStackSize() + context.getPadding(),instrumentedMethod.getReturnType()) : Target.ForBoxedParameter.ReadWrite.of(instrumentedMethod.getStackSize() + context.getPadding(),instrumentedMethod.getReturnType());
+    return readOnly ? Target.ForBoxedArgument.ReadOnly.of(instrumentedMethod.getStackSize() + context.getPadding(),instrumentedMethod.getReturnType()) : Target.ForBoxedArgument.ReadWrite.of(instrumentedMethod.getStackSize() + context.getPadding(),instrumentedMethod.getReturnType());
   }
  else {
     return readOnly ? new Target.ForParameter.ReadOnly(instrumentedMethod.getStackSize() + context.getPadding()) : new Target.ForParameter.ReadWrite(instrumentedMethod.getStackSize() + context.getPadding()).casted(instrumentedMethod.getReturnType().asErasure());
