@@ -1,6 +1,4 @@
 {
   when(typeDescription.getName()).thenReturn(FOO + "." + BAR);
   when(typeDescription.getSimpleName()).thenReturn(BAR);
-  when(ownerType.asErasure()).thenReturn(erasure);
-  when(erasure.getName()).thenReturn(FOO);
 }
