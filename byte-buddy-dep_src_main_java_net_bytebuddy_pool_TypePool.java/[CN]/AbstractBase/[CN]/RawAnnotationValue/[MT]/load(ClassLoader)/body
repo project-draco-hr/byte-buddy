@@ -1,9 +1,9 @@
 {
-  Class<?> type=classLoader.loadClass(annotationToken.getBinaryName());
+  Class<?> type=Class.forName(annotationToken.getBinaryName(),false,classLoader);
   if (type.isAnnotation()) {
-    return new ForAnnotation.Loaded<Annotation>(AnnotationDescription.AnnotationInvocationHandler.of(classLoader,(Class<? extends Annotation>)type,annotationToken.getValues()));
+    return new ForAnnotationDescription.Loaded<Annotation>(AnnotationDescription.AnnotationInvocationHandler.of(classLoader,(Class<? extends Annotation>)type,annotationToken.getValues()));
   }
  else {
-    return new ForAnnotation.IncompatibleRuntimeType(type);
+    return new ForAnnotationDescription.IncompatibleRuntimeType(type);
   }
 }

@@ -1,0 +1,3 @@
+{
+  return new ForConstant<Character>(value,PropertyDelegate.ForNonArrayType.CHARACTER);
+}

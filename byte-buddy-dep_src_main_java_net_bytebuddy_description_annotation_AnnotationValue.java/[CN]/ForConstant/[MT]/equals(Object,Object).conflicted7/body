@@ -1,0 +1,3 @@
+{
+  return other instanceof double[] && Arrays.equals((double[])self,(double[])other);
+}

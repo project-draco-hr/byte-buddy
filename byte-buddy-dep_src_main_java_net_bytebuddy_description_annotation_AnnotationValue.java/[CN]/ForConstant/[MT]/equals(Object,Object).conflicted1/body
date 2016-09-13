@@ -1,0 +1,3 @@
+{
+  return other instanceof int[] && Arrays.equals((int[])self,(int[])other);
+}

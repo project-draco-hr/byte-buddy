@@ -1,0 +1,3 @@
+{
+  return other instanceof boolean[] && Arrays.equals((boolean[])self,(boolean[])other);
+}

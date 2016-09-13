@@ -1,0 +1,3 @@
+{
+  return propertyDelegate.equals(this.value,value);
+}

@@ -1,4 +1,0 @@
-{
-  ObjectPropertyAssertion.of(PropertyDispatcher.class).apply();
-  ObjectPropertyAssertion.of(PropertyDispatcher.TypeRenderer.class).apply();
-}

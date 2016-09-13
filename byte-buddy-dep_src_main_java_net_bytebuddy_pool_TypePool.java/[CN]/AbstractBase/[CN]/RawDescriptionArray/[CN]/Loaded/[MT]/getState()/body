@@ -1,0 +1,8 @@
+{
+  for (  AnnotationValue.Loaded<?> value : values) {
+    if (!value.getState().isResolved()) {
+      return State.UNRESOLVED;
+    }
+  }
+  return State.RESOLVED;
+}

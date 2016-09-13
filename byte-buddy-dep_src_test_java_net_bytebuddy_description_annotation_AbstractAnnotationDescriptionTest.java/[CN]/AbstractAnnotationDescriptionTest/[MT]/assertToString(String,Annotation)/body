@@ -1,6 +1,5 @@
 {
   assertThat(actual,startsWith("@" + loaded.annotationType().getName()));
   for (  Method method : loaded.annotationType().getDeclaredMethods()) {
-    assertThat(actual,containsString(method.getName() + "=" + PropertyDispatcher.of(method.getReturnType()).toString(method.invoke(loaded))));
   }
 }

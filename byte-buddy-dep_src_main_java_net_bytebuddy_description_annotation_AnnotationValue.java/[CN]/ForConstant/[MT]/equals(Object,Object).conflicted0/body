@@ -1,0 +1,3 @@
+{
+  return other instanceof short[] && Arrays.equals((short[])self,(short[])other);
+}

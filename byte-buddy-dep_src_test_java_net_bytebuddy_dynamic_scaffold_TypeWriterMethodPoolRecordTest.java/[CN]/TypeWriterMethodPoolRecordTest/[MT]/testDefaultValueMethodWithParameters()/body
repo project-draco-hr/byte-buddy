@@ -2,8 +2,8 @@
   when(parameterDescription.hasModifiers()).thenReturn(true);
   when(parameterDescription.isNamed()).thenReturn(true);
   when(methodDescription.getReturnType()).thenReturn(new TypeDescription.Generic.OfNonGenericType.ForLoadedType(String.class));
-  when(methodDescription.isDefaultValue(new AnnotationValue.ForConstant<String>(FOO))).thenReturn(true);
-  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,new AnnotationValue.ForConstant<String>(FOO),methodAttributeAppender);
+  when(methodDescription.isDefaultValue(AnnotationValue.ForConstant.of(FOO))).thenReturn(true);
+  TypeWriter.MethodPool.Record record=new TypeWriter.MethodPool.Record.ForDefinedMethod.WithAnnotationDefaultValue(methodDescription,AnnotationValue.ForConstant.of(FOO),methodAttributeAppender);
   assertThat(record.getSort(),is(TypeWriter.MethodPool.Record.Sort.DEFINED));
   record.apply(classVisitor,implementationContext,annotationValueFilterFactory);
   verify(classVisitor).visitMethod(MODIFIERS,FOO,BAR,QUX,new String[]{BAZ});

@@ -1,0 +1,10 @@
+{
+  List<AnnotationValue<AnnotationDescription,W>> values=new ArrayList<AnnotationValue<AnnotationDescription,W>>(annotationDescription.length);
+  for (  AnnotationDescription value : annotationDescription) {
+    if (!value.getAnnotationType().equals(annotationType)) {
+      throw new IllegalArgumentException(value + " is not of " + annotationType);
+    }
+    values.add(new ForAnnotationDescription<W>(value));
+  }
+  return new ForDescriptionArray<AnnotationDescription,W>(AnnotationDescription.class,annotationType,values);
+}

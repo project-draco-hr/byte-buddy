@@ -1,3 +1,0 @@
-{
-  describe(Carrier.class.getAnnotation(PrivateAnnotation.class),Carrier.class).prepare(PrivateAnnotation.class).load();
-}

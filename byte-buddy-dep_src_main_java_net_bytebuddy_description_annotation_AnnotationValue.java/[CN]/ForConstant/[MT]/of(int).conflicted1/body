@@ -1,0 +1,3 @@
+{
+  return new ForConstant<int[]>(value,PropertyDelegate.ForArrayType.INTEGER);
+}

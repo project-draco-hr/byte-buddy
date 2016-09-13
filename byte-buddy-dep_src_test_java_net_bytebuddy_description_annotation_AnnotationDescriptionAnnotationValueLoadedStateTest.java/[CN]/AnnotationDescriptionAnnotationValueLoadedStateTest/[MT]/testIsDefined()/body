@@ -1,5 +1,5 @@
 {
   assertThat(AnnotationValue.Loaded.State.RESOLVED.isResolved(),is(true));
-  assertThat(AnnotationValue.Loaded.State.NON_RESOLVED.isResolved(),is(false));
-  assertThat(AnnotationValue.Loaded.State.NON_DEFINED.isResolved(),is(false));
+  assertThat(AnnotationValue.Loaded.State.UNRESOLVED.isResolved(),is(false));
+  assertThat(AnnotationValue.Loaded.State.UNDEFINED.isResolved(),is(false));
 }

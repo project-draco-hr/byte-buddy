@@ -1,0 +1,3 @@
+{
+  return new ForConstant<boolean[]>(value,PropertyDelegate.ForArrayType.BOOLEAN);
+}

@@ -1,0 +1,14 @@
+{
+  if (!(value instanceof Object[]))   return false;
+  if (value.getClass().getComponentType() != componentType)   return false;
+  Object[] array=(Object[])value;
+  if (values.size() != array.length)   return false;
+  Iterator<AnnotationValue.Loaded<?>> iterator=values.iterator();
+  for (  Object aValue : array) {
+    AnnotationValue.Loaded<?> self=iterator.next();
+    if (!self.getState().isResolved() || !self.represents(aValue)) {
+      return false;
+    }
+  }
+  return true;
+}

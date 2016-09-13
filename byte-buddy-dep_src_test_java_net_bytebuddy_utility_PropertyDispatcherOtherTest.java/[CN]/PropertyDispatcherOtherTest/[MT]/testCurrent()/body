@@ -1,3 +1,0 @@
-{
-  assertThat(PropertyDispatcher.TypeRenderer.CURRENT,is(ClassFileVersion.ofThisVm().isAtLeast(ClassFileVersion.JAVA_V9) ? PropertyDispatcher.TypeRenderer.FOR_JAVA9_CAPABLE_VM : PropertyDispatcher.TypeRenderer.FOR_LEGACY_VM));
-}

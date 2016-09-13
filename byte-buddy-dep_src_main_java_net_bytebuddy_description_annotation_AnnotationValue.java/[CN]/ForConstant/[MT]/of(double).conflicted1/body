@@ -1,0 +1,3 @@
+{
+  return new ForConstant<double[]>(value,PropertyDelegate.ForArrayType.DOUBLE);
+}

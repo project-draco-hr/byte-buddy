@@ -1,3 +1,3 @@
 {
-  return other == this || (other instanceof AnnotationValue<?,?> && propertyDispatcher.equals(value,((AnnotationValue<?,?>)other).resolve()));
+  return other == this || (other instanceof AnnotationValue<?,?> && propertyDelegate.equals(value,((AnnotationValue<?,?>)other).resolve()));
 }

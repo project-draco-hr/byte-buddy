@@ -1,3 +1,0 @@
-{
-  PropertyDispatcher.TypeRenderer.FOR_LEGACY_VM.render(new Object());
-}

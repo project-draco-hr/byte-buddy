@@ -1,9 +1,0 @@
-{
-  assertThat(PropertyDispatcher.of(value.getClass()).conditionalClone(value),is(value));
-  if (value.getClass().isArray()) {
-    assertThat(PropertyDispatcher.of(value.getClass()).conditionalClone(value),not(sameInstance(value)));
-  }
- else {
-    assertThat(PropertyDispatcher.of(value.getClass()).conditionalClone(value),sameInstance(value));
-  }
-}

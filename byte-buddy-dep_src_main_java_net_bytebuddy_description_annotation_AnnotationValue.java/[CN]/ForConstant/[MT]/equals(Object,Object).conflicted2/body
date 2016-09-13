@@ -1,0 +1,3 @@
+{
+  return other instanceof byte[] && Arrays.equals((byte[])self,(byte[])other);
+}

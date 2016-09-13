@@ -1,0 +1,59 @@
+{
+  if (value instanceof Boolean) {
+    return of(((Boolean)value).booleanValue());
+  }
+ else   if (value instanceof Byte) {
+    return of(((Byte)value).byteValue());
+  }
+ else   if (value instanceof Short) {
+    return of(((Short)value).shortValue());
+  }
+ else   if (value instanceof Character) {
+    return of(((Character)value).charValue());
+  }
+ else   if (value instanceof Integer) {
+    return of(((Integer)value).intValue());
+  }
+ else   if (value instanceof Long) {
+    return of(((Long)value).longValue());
+  }
+ else   if (value instanceof Float) {
+    return of(((Float)value).floatValue());
+  }
+ else   if (value instanceof Double) {
+    return of(((Double)value).doubleValue());
+  }
+ else   if (value instanceof String) {
+    return of((String)value);
+  }
+ else   if (value instanceof boolean[]) {
+    return of((boolean[])value);
+  }
+ else   if (value instanceof byte[]) {
+    return of((byte[])value);
+  }
+ else   if (value instanceof short[]) {
+    return of((short[])value);
+  }
+ else   if (value instanceof char[]) {
+    return of((char[])value);
+  }
+ else   if (value instanceof int[]) {
+    return of((int[])value);
+  }
+ else   if (value instanceof long[]) {
+    return of((long[])value);
+  }
+ else   if (value instanceof float[]) {
+    return of((float[])value);
+  }
+ else   if (value instanceof double[]) {
+    return of((double[])value);
+  }
+ else   if (value instanceof String[]) {
+    return of((String[])value);
+  }
+ else {
+    throw new IllegalArgumentException("Not a constant annotation value: " + value);
+  }
+}

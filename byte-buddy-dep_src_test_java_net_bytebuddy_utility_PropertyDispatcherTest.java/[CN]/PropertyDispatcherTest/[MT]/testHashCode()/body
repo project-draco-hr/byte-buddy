@@ -1,3 +1,0 @@
-{
-  assertThat(PropertyDispatcher.of(value.getClass()).hashCode(value),is(expectedHashCode));
-}

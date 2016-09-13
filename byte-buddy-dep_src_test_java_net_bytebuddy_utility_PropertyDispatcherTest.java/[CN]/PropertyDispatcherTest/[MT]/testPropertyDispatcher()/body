@@ -1,3 +1,0 @@
-{
-  assertThat(PropertyDispatcher.of(value.getClass()),is(expectedPropertyDispatcher));
-}

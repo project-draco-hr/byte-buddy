@@ -1,4 +1,0 @@
-{
-  assertThat(PropertyDispatcher.TypeRenderer.FOR_JAVA9_CAPABLE_VM.getOpen(),is('{'));
-  assertThat(PropertyDispatcher.TypeRenderer.FOR_JAVA9_CAPABLE_VM.getClose(),is('}'));
-}

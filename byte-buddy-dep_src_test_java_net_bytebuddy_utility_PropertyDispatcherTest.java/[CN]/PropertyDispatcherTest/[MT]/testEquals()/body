@@ -1,6 +1,0 @@
-{
-  assertThat(PropertyDispatcher.of(value.getClass()).equals(value,value),is(true));
-  assertThat(PropertyDispatcher.of(value.getClass()).equals(value,null),is(false));
-  assertThat(PropertyDispatcher.of(value.getClass()).equals(value,new Object()),is(false));
-  assertThat(PropertyDispatcher.of(value.getClass()).equals(value,other),is(true));
-}
