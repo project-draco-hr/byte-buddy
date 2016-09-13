@@ -1,3 +1,4 @@
 {
-  stringBuilder.append('$').append(typeDescription.getSimpleName());
+  stringBuilder.append('.');
+  stringBuilder.append(ownerType.getSort().isParameterized() ? typeDescription.getName().substring(ownerType.asErasure().getName().length() + 1) : typeDescription.getName());
 }
