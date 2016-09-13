@@ -16,9 +16,9 @@
  else {
     throw new IllegalStateException("Unexpected complex array component type " + componentTypeDescription);
   }
-  Object[] array=(Object[])Array.newInstance(componentType,value.size());
+  Object[] array=(Object[])Array.newInstance(componentType,values.size());
   int index=0;
-  for (  AnnotationValue<?,?> annotationValue : value) {
+  for (  AnnotationValue<?,?> annotationValue : values) {
     Array.set(array,index++,annotationValue.resolve());
   }
   return array;

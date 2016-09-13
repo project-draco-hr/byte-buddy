@@ -1,5 +1,5 @@
 {
   this.typePool=typePool;
-  this.value=value;
+  this.values=values;
   this.componentTypeReference=componentTypeReference;
 }

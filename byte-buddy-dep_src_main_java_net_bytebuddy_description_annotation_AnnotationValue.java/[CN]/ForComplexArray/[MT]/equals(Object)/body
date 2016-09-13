@@ -1,6 +1,17 @@
 {
   if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  ForComplexArray that=(ForComplexArray)other;
-  return annotationValues.equals(that.annotationValues) && componentType.equals(that.componentType) && unloadedComponentType.equals(that.unloadedComponentType);
+  if (!(other instanceof AnnotationValue<?,?>))   return false;
+  AnnotationValue<?,?> loadedOther=(AnnotationValue<?,?>)other;
+  Object otherValue=loadedOther.resolve();
+  if (!(otherValue instanceof Object[]))   return false;
+  Object[] otherArrayValue=(Object[])otherValue;
+  if (annotationValues.size() != otherArrayValue.length)   return false;
+  Iterator<? extends AnnotationValue<?,?>> iterator=annotationValues.iterator();
+  for (  Object value : otherArrayValue) {
+    AnnotationValue<?,?> self=iterator.next();
+    if (!self.resolve().equals(value)) {
+      return false;
+    }
+  }
+  return true;
 }

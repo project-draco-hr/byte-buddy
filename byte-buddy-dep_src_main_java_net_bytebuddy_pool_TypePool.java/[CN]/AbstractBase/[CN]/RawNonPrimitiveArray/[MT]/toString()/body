@@ -1,3 +1,0 @@
-{
-  return "TypePool.DefaultLazyTypeDescription.AnnotationValue.ForComplexArray{" + "value=" + value + ", componentTypeReference="+ componentTypeReference+ '}';
-}

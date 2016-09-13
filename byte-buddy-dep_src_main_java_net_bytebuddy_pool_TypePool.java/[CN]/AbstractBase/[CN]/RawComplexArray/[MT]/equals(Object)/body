@@ -1,0 +1,6 @@
+{
+  if (this == other)   return true;
+  if (!(other instanceof AnnotationValue<?,?>))   return false;
+  Object value=((AnnotationValue<?,?>)other).resolve();
+  return value instanceof Object[] && Arrays.equals(resolve(),(Object[])value);
+}
