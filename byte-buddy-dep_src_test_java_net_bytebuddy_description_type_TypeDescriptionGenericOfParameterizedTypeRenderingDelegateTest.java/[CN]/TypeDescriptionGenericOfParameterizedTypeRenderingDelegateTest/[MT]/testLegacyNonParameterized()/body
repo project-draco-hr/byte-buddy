@@ -1,0 +1,6 @@
+{
+  when(ownerType.getSort()).thenReturn(TypeDefinition.Sort.NON_GENERIC);
+  StringBuilder stringBuilder=new StringBuilder();
+  TypeDescription.Generic.OfParameterizedType.RenderingDelegate.LEGACY_VM.apply(stringBuilder,typeDescription,ownerType);
+  assertThat(stringBuilder.toString(),is("." + FOO + "."+ BAR));
+}

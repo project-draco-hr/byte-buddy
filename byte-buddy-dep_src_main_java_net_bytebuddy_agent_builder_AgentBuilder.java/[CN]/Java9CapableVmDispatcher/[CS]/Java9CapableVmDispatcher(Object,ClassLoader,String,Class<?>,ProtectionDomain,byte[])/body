@@ -1,0 +1,8 @@
+{
+  this.rawModule=rawModule;
+  this.classLoader=classLoader;
+  this.internalTypeName=internalTypeName;
+  this.classBeingRedefined=classBeingRedefined;
+  this.protectionDomain=protectionDomain;
+  this.binaryRepresentation=binaryRepresentation;
+}

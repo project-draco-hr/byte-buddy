@@ -1,4 +1,3 @@
 {
-  JavaModule module=JavaModule.of(rawModule);
-  return transform(module,module.getClassLoader(),internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation);
+  return transform(JavaModule.of(rawModule),classLoader,internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation);
 }

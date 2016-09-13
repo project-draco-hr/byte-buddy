@@ -1,0 +1,3 @@
+{
+  return AccessController.doPrivileged(new Java9CapableVmDispatcher(rawModule,classLoader,internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation),accessControlContext);
+}

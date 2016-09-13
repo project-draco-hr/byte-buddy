@@ -1,0 +1,24 @@
+{
+  StringBuilder stringBuilder=new StringBuilder();
+  Generic ownerType=getOwnerType();
+  if (ownerType != null) {
+    RenderingDelegate.CURRENT.apply(stringBuilder.append(ownerType.getTypeName()),asErasure(),ownerType);
+  }
+ else {
+    stringBuilder.append(asErasure().getName());
+  }
+  TypeList.Generic actualTypeArguments=getTypeArguments();
+  if (!actualTypeArguments.isEmpty()) {
+    stringBuilder.append('<');
+    boolean multiple=false;
+    for (    Generic typeArgument : actualTypeArguments) {
+      if (multiple) {
+        stringBuilder.append(", ");
+      }
+      stringBuilder.append(typeArgument.getTypeName());
+      multiple=true;
+    }
+    stringBuilder.append('>');
+  }
+  return stringBuilder.toString();
+}

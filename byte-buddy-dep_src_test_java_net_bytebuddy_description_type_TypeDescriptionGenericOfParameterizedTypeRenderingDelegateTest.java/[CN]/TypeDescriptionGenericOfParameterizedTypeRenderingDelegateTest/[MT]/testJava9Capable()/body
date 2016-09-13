@@ -1,0 +1,5 @@
+{
+  StringBuilder stringBuilder=new StringBuilder();
+  TypeDescription.Generic.OfParameterizedType.RenderingDelegate.JAVA_9_CAPABLE_VM.apply(stringBuilder,typeDescription,ownerType);
+  assertThat(stringBuilder.toString(),is("$" + BAR));
+}

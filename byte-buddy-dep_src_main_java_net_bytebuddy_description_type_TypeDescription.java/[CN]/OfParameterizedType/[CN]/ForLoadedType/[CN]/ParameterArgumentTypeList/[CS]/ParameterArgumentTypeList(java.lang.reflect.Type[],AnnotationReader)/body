@@ -1,4 +1,0 @@
-{
-  this.argumentType=argumentType;
-  this.annotationReader=annotationReader;
-}

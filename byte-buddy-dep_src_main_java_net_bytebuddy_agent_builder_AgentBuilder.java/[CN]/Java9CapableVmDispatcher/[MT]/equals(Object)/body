@@ -2,5 +2,5 @@
   if (this == object)   return true;
   if (object == null || getClass() != object.getClass())   return false;
   Java9CapableVmDispatcher that=(Java9CapableVmDispatcher)object;
-  return rawModule.equals(that.rawModule) && (internalTypeName != null ? internalTypeName.equals(that.internalTypeName) : that.internalTypeName == null) && (classBeingRedefined != null ? classBeingRedefined.equals(that.classBeingRedefined) : that.classBeingRedefined == null)&& protectionDomain.equals(that.protectionDomain)&& ExecutingTransformer.this.equals(that.getOuter())&& Arrays.equals(binaryRepresentation,that.binaryRepresentation);
+  return rawModule.equals(that.rawModule) && (classLoader != null ? classLoader.equals(that.classLoader) : that.classLoader == null) && (internalTypeName != null ? internalTypeName.equals(that.internalTypeName) : that.internalTypeName == null)&& (classBeingRedefined != null ? classBeingRedefined.equals(that.classBeingRedefined) : that.classBeingRedefined == null)&& protectionDomain.equals(that.protectionDomain)&& ExecutingTransformer.this.equals(that.getOuter())&& Arrays.equals(binaryRepresentation,that.binaryRepresentation);
 }

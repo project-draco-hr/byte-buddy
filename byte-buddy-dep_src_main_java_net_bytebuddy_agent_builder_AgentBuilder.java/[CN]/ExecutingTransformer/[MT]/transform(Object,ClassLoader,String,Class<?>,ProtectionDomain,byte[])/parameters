@@ -1,0 +1,6 @@
+Object rawModule
+ClassLoader classLoader
+String internalTypeName
+Class<?> classBeingRedefined
+ProtectionDomain protectionDomain
+byte[] binaryRepresentation

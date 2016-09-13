@@ -1,5 +1,6 @@
 {
   int result=rawModule.hashCode();
+  result=31 * result + (classLoader != null ? classLoader.hashCode() : 0);
   result=31 * result + (internalTypeName != null ? internalTypeName.hashCode() : 0);
   result=31 * result + (classBeingRedefined != null ? classBeingRedefined.hashCode() : 0);
   result=31 * result + protectionDomain.hashCode();

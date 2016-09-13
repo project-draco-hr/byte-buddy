@@ -1,3 +1,0 @@
-{
-  return Sort.describe(argumentType[index],annotationReader.ofTypeArgument(index));
-}
