@@ -1,0 +1,3 @@
+{
+  return ForNonArrayType.BOOLEAN.toString(Array.getBoolean(array,index));
+}

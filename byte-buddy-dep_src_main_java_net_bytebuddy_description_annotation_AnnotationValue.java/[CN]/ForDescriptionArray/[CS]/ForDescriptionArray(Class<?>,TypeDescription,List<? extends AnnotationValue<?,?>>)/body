@@ -1,5 +1,5 @@
 {
   this.unloadedComponentType=unloadedComponentType;
   this.componentType=componentType;
-  this.annotationValues=annotationValues;
+  this.values=values;
 }

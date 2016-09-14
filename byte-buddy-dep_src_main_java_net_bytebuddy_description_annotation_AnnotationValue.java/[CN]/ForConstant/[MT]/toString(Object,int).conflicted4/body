@@ -1,0 +1,3 @@
+{
+  return ForNonArrayType.SHORT.toString(Array.getShort(array,index));
+}

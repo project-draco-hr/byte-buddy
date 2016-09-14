@@ -1,0 +1,3 @@
+{
+  return ForNonArrayType.DOUBLE.toString(Array.getDouble(array,index));
+}

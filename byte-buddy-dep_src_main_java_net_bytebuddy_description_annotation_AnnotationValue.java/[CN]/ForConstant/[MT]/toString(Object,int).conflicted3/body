@@ -1,0 +1,3 @@
+{
+  return ForNonArrayType.FLOAT.toString(Array.getFloat(array,index));
+}

@@ -1,0 +1,3 @@
+{
+  return ForNonArrayType.BYTE.toString(Array.getByte(array,index));
+}

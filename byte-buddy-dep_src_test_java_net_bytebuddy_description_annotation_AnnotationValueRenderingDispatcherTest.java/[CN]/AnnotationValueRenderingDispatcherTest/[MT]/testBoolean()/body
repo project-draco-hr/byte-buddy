@@ -1,0 +1,4 @@
+{
+  assertThat(AnnotationValue.RenderingDispatcher.LEGACY_VM.toSourceString(true),is("true"));
+  assertThat(AnnotationValue.RenderingDispatcher.JAVA_9_CAPABLE_VM.toSourceString(true),is("true"));
+}

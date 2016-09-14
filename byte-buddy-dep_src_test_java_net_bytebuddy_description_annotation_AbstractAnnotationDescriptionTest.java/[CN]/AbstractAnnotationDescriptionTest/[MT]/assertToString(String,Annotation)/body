@@ -1,5 +1,12 @@
 {
   assertThat(actual,startsWith("@" + loaded.annotationType().getName()));
+  String loadedString=loaded.toString();
+  if (loadedString.length() - loadedString.replace(",","").length() != loaded.annotationType().getDeclaredMethods().length - 1) {
+    throw new AssertionError("Unexpected amount of commas for " + loaded);
+  }
   for (  Method method : loaded.annotationType().getDeclaredMethods()) {
+    assertThat(loadedString.split(method.getName() + "=",-1).length - 1,is(1));
+    int start=loadedString.indexOf(method.getName() + "="), end=loadedString.indexOf(',',start);
+    assertThat(actual,containsString(loadedString.substring(start,end == -1 ? loadedString.length() - 1 : end)));
   }
 }

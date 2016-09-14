@@ -1,3 +1,7 @@
 {
-  return Arrays.toString((String[])value);
+  List<String> elements=new ArrayList<String>(Array.getLength(value));
+  for (int index=0; index < Array.getLength(value); index++) {
+    elements.add(toString(value,index));
+  }
+  return RenderingDispatcher.CURRENT.toSourceString(elements);
 }

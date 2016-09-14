@@ -1,14 +1,3 @@
 {
-  StringBuilder stringBuilder=new StringBuilder().append('[');
-  boolean first=true;
-  for (  AnnotationValue.Loaded<?> value : values) {
-    if (first) {
-      first=false;
-    }
- else {
-      stringBuilder.append(", ");
-    }
-    stringBuilder.append(value.toString());
-  }
-  return stringBuilder.append(']').toString();
+  return RenderingDispatcher.CURRENT.toSourceString(values);
 }

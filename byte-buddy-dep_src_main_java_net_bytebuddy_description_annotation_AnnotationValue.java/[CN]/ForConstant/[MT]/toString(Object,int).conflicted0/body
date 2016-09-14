@@ -1,0 +1,3 @@
+{
+  return ForNonArrayType.INTEGER.toString(Array.getInt(array,index));
+}

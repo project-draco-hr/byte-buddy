@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(AnnotationValue.ForConstant.PropertyDelegate.ForArrayType.class).apply();
+  ObjectPropertyAssertion.of(AnnotationValue.ForConstant.PropertyDelegate.ForNonArrayType.class).apply();
+}

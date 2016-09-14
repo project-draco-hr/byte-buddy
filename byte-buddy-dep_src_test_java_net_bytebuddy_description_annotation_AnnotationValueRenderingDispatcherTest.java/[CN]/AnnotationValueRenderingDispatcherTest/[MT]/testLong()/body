@@ -1,0 +1,6 @@
+{
+  assertThat(AnnotationValue.RenderingDispatcher.LEGACY_VM.toSourceString(42L),is("42"));
+  assertThat(AnnotationValue.RenderingDispatcher.JAVA_9_CAPABLE_VM.toSourceString(42L),is("42"));
+  assertThat(AnnotationValue.RenderingDispatcher.LEGACY_VM.toSourceString(1L + Integer.MAX_VALUE),is(Long.toString(Integer.MAX_VALUE + 1L)));
+  assertThat(AnnotationValue.RenderingDispatcher.JAVA_9_CAPABLE_VM.toSourceString(1L + Integer.MAX_VALUE),is(Long.toString(Integer.MAX_VALUE + 1L) + "L"));
+}

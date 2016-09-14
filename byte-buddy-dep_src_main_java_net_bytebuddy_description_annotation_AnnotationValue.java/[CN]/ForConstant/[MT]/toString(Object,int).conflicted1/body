@@ -1,0 +1,3 @@
+{
+  return ForNonArrayType.STRING.toString(Array.get(array,index));
+}

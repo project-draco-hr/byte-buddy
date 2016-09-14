@@ -1,3 +1,3 @@
 {
-  return other instanceof char[] && Arrays.equals((char[])self,(char[])other);
+  return other instanceof int[] && Arrays.equals((int[])self,(int[])other);
 }

@@ -1,7 +1,7 @@
 {
-  List<AnnotationValue.Loaded<?>> loadedValues=new ArrayList<AnnotationValue.Loaded<?>>(annotationValues.size());
-  for (  AnnotationValue<?,?> value : annotationValues) {
-    loadedValues.add(value.load(classLoader));
+  List<AnnotationValue.Loaded<?>> values=new ArrayList<AnnotationValue.Loaded<?>>(this.values.size());
+  for (  AnnotationValue<?,?> value : this.values) {
+    values.add(value.load(classLoader));
   }
-  return new Loaded<V>((Class<V>)Class.forName(componentType.getName(),false,classLoader),loadedValues);
+  return new Loaded<V>((Class<V>)Class.forName(componentType.getName(),false,classLoader),values);
 }

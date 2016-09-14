@@ -1,8 +1,8 @@
 {
-  @SuppressWarnings("unchecked") U[] value=(U[])Array.newInstance(unloadedComponentType,annotationValues.size());
+  @SuppressWarnings("unchecked") U[] resolved=(U[])Array.newInstance(unloadedComponentType,values.size());
   int index=0;
-  for (  AnnotationValue<?,?> annotationValue : annotationValues) {
-    Array.set(value,index++,annotationValue.resolve());
+  for (  AnnotationValue<?,?> value : values) {
+    Array.set(resolved,index++,value.resolve());
   }
-  return value;
+  return resolved;
 }

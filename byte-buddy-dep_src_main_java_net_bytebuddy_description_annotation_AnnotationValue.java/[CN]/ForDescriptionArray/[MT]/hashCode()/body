@@ -1,7 +1,7 @@
 {
   int result=1;
-  for (  AnnotationValue<?,?> annotationValue : annotationValues) {
-    result=31 * result + annotationValue.hashCode();
+  for (  AnnotationValue<?,?> value : values) {
+    result=31 * result + value.hashCode();
   }
   return result;
 }

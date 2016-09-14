@@ -5,8 +5,8 @@
   Object otherValue=loadedOther.resolve();
   if (!(otherValue instanceof Object[]))   return false;
   Object[] otherArrayValue=(Object[])otherValue;
-  if (annotationValues.size() != otherArrayValue.length)   return false;
-  Iterator<? extends AnnotationValue<?,?>> iterator=annotationValues.iterator();
+  if (values.size() != otherArrayValue.length)   return false;
+  Iterator<? extends AnnotationValue<?,?>> iterator=values.iterator();
   for (  Object value : otherArrayValue) {
     AnnotationValue<?,?> self=iterator.next();
     if (!self.resolve().equals(value)) {

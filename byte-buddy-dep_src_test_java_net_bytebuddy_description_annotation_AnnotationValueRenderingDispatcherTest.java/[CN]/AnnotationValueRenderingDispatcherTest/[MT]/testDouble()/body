@@ -1,0 +1,7 @@
+{
+  assertThat(AnnotationValue.RenderingDispatcher.LEGACY_VM.toSourceString(42d),is("42.0"));
+  assertThat(AnnotationValue.RenderingDispatcher.JAVA_9_CAPABLE_VM.toSourceString(42d),is("42.0"));
+  assertThat(AnnotationValue.RenderingDispatcher.JAVA_9_CAPABLE_VM.toSourceString(Double.POSITIVE_INFINITY),is("1.0/0.0"));
+  assertThat(AnnotationValue.RenderingDispatcher.JAVA_9_CAPABLE_VM.toSourceString(Double.NEGATIVE_INFINITY),is("-1.0/0.0"));
+  assertThat(AnnotationValue.RenderingDispatcher.JAVA_9_CAPABLE_VM.toSourceString(0d / 0d),is("0.0/0.0"));
+}

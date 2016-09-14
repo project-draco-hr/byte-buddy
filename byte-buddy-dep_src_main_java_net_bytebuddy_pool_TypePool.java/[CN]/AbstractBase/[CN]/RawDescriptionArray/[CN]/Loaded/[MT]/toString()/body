@@ -1,7 +1,3 @@
 {
-  StringBuilder stringBuilder=new StringBuilder("[");
-  for (  AnnotationValue.Loaded<?> value : values) {
-    stringBuilder.append(value.toString());
-  }
-  return stringBuilder.append("]").toString();
+  return RenderingDispatcher.CURRENT.toSourceString(values);
 }

@@ -1,0 +1,6 @@
+{
+  assertThat(AnnotationValue.RenderingDispatcher.LEGACY_VM.toSourceString('*'),is("*"));
+  assertThat(AnnotationValue.RenderingDispatcher.JAVA_9_CAPABLE_VM.toSourceString('*'),is("'*'"));
+  assertThat(AnnotationValue.RenderingDispatcher.LEGACY_VM.toSourceString('\''),is("'"));
+  assertThat(AnnotationValue.RenderingDispatcher.JAVA_9_CAPABLE_VM.toSourceString('\''),is("'\\''"));
+}
