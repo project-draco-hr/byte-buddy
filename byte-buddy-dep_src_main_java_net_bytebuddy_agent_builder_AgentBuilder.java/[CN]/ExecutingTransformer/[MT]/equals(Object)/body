@@ -1,6 +1,0 @@
-{
-  if (this == other)   return true;
-  if (other == null || getClass() != other.getClass())   return false;
-  ExecutingTransformer that=(ExecutingTransformer)other;
-  return byteBuddy.equals(that.byteBuddy) && listener.equals(that.listener) && poolStrategy.equals(that.poolStrategy)&& typeStrategy.equals(that.typeStrategy)&& locationStrategy.equals(that.locationStrategy)&& initializationStrategy.equals(that.initializationStrategy)&& nativeMethodStrategy.equals(that.nativeMethodStrategy)&& bootstrapInjectionStrategy.equals(that.bootstrapInjectionStrategy)&& descriptionStrategy.equals(that.descriptionStrategy)&& ignoredTypeMatcher.equals(that.ignoredTypeMatcher)&& fallbackStrategy.equals(that.fallbackStrategy)&& transformation.equals(that.transformation)&& accessControlContext.equals(that.accessControlContext);
-}

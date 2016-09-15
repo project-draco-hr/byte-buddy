@@ -1,3 +1,0 @@
-{
-  assertThat(AgentBuilder.FallbackStrategy.Default.DISABLED.isFallback(Object.class,new Throwable()),is(false));
-}

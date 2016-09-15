@@ -1,0 +1,4 @@
+{
+  assertThat(ResettableClassFileTransformer.Reset.Simple.WithErrors.ofPotentiallyErroneous(Collections.<Class<?>,Throwable>singletonMap(Object.class,new Throwable())),instanceOf(ResettableClassFileTransformer.Reset.WithErrors.class));
+  assertThat(ResettableClassFileTransformer.Reset.Simple.WithErrors.ofPotentiallyErroneous(Collections.<Class<?>,Throwable>emptyMap()),is((ResettableClassFileTransformer.Reset)ResettableClassFileTransformer.Reset.Simple.ACTIVE));
+}

@@ -1,0 +1,41 @@
+{
+  if (instrumentation.removeTransformer(this)) {
+    if (!redefinitionStrategy.isEnabled()) {
+      return Reset.Simple.ACTIVE;
+    }
+    redefinitionStrategy.isRetransforming(instrumentation);
+    Map<Class<?>,Throwable> errors=new HashMap<Class<?>,Throwable>();
+    RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
+    for (    Class<?> type : instrumentation.getAllLoadedClasses()) {
+      try {
+        doConsider(ignoredTypeMatcher,Listener.NoOp.INSTANCE,descriptionStrategy.apply(TypeDescription.ForLoadedType.getName(type),type,poolStrategy.typePool(locationStrategy.classFileLocator(type.getClassLoader(),JavaModule.ofType(type)),type.getClassLoader())),type,type,JavaModule.ofType(type),collector,!instrumentation.isModifiableClass(type));
+      }
+ catch (      Throwable throwable) {
+        try {
+          if (descriptionStrategy.isLoadedFirst() && fallbackStrategy.isFallback(type,throwable)) {
+            doConsider(ignoredTypeMatcher,Listener.NoOp.INSTANCE,descriptionStrategy.apply(TypeDescription.ForLoadedType.getName(type),NO_LOADED_TYPE,poolStrategy.typePool(locationStrategy.classFileLocator(type.getClassLoader(),JavaModule.ofType(type)),type.getClassLoader())),type,NO_LOADED_TYPE,JavaModule.ofType(type),collector,false);
+          }
+ else {
+            errors.put(type,throwable);
+          }
+        }
+ catch (        Throwable fallback) {
+          errors.put(type,fallback);
+        }
+      }
+    }
+    try {
+      collector.apply(instrumentation,poolStrategy,locationStrategy,Listener.NoOp.INSTANCE);
+    }
+ catch (    UnmodifiableClassException exception) {
+      throw new IllegalStateException("Could not modify classes",exception);
+    }
+catch (    ClassNotFoundException exception) {
+      throw new IllegalStateException("Could not find class",exception);
+    }
+    return Reset.WithErrors.ofPotentiallyErroneous(errors);
+  }
+ else {
+    return Reset.Simple.INACTIVE;
+  }
+}

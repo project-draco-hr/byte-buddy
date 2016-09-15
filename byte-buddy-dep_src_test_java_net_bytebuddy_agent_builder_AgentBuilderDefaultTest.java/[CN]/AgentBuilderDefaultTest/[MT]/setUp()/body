@@ -12,7 +12,7 @@
   when(instrumentation.getAllLoadedClasses()).thenReturn(new Class<?>[]{REDEFINED});
   when(initializationStrategy.dispatcher()).thenReturn(dispatcher);
   when(dispatcher.apply(builder)).thenReturn((DynamicType.Builder)builder);
-  when(installationStrategy.onError(eq(instrumentation),any(ClassFileTransformer.class),any(Throwable.class))).then(new Answer<ClassFileTransformer>(){
+  when(installationStrategy.onError(eq(instrumentation),any(ResettableClassFileTransformer.class),any(Throwable.class))).then(new Answer<ClassFileTransformer>(){
     @Override public ClassFileTransformer answer(    InvocationOnMock invocationOnMock) throws Throwable {
       return (ClassFileTransformer)invocationOnMock.getArguments()[1];
     }

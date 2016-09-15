@@ -1,0 +1,8 @@
+RawMatcher ignoredTypeMatcher
+Listener listener
+TypeDescription typeDescription
+Class<?> type
+Class<?> classBeingRedefined
+JavaModule module
+RedefinitionStrategy.Collector collector
+boolean unmodifiable

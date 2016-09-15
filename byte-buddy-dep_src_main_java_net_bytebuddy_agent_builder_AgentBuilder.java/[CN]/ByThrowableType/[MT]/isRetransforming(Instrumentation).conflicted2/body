@@ -1,6 +1,3 @@
 {
-  if (!instrumentation.isRedefineClassesSupported()) {
-    throw new IllegalArgumentException("Cannot redefine classes: " + instrumentation);
-  }
-  return false;
+  return REDEFINITION.isRetransforming(instrumentation);
 }

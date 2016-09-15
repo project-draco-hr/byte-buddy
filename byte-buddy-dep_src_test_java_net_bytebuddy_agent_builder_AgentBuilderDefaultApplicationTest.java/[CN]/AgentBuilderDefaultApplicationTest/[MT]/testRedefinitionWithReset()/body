@@ -1,0 +1,14 @@
+{
+  assertThat(ByteBuddyAgent.install(),instanceOf(Instrumentation.class));
+  assertThat(classLoader.loadClass(SimpleType.class.getName()).getName(),is(SimpleType.class.getName()));
+  ResettableClassFileTransformer classFileTransformer=new AgentBuilder.Default().with(poolStrategy).ignore(none()).disableClassFormatChanges().with(AgentBuilder.TypeStrategy.Default.REDEFINE).with(AgentBuilder.RedefinitionStrategy.REDEFINITION).type(ElementMatchers.is(SimpleType.class),ElementMatchers.is(classLoader)).transform(new FooTransformer()).installOnByteBuddyAgent();
+  try {
+    Class<?> type=classLoader.loadClass(SimpleType.class.getName());
+    assertThat(type.getDeclaredMethod(FOO).invoke(type.getDeclaredConstructor().newInstance()),is((Object)BAR));
+  }
+  finally {
+    assertThat(classFileTransformer.reset(ByteBuddyAgent.getInstrumentation(),AgentBuilder.RedefinitionStrategy.REDEFINITION).isApplied(),is(true));
+  }
+  Class<?> type=classLoader.loadClass(SimpleType.class.getName());
+  assertThat(type.getDeclaredMethod(FOO).invoke(type.getDeclaredConstructor().newInstance()),is((Object)FOO));
+}

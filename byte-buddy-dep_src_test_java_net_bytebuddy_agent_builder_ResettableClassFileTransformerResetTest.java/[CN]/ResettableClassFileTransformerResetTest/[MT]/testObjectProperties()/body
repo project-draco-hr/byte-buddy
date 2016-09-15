@@ -1,0 +1,4 @@
+{
+  ObjectPropertyAssertion.of(ResettableClassFileTransformer.Reset.Simple.class).apply();
+  ObjectPropertyAssertion.of(ResettableClassFileTransformer.Reset.WithErrors.class).apply();
+}

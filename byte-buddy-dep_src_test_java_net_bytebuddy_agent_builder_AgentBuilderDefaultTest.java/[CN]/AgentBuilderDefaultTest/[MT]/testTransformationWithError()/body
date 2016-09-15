@@ -1,6 +1,6 @@
 {
   when(dynamicType.getBytes()).thenReturn(BAZ);
-  RuntimeException exception=mock(RuntimeException.class);
+  RuntimeException exception=new RuntimeException();
   when(resolution.resolve()).thenThrow(exception);
   when(typeMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),REDEFINED,REDEFINED.getProtectionDomain())).thenReturn(true);
   ClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(poolStrategy).with(typeStrategy).with(installationStrategy).with(listener).disableNativeMethodPrefix().type(typeMatcher).transform(transformer).installOn(instrumentation);

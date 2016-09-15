@@ -1,5 +1,5 @@
 {
-  ClassFileTransformer classFileTransformer=makeRaw();
+  ResettableClassFileTransformer classFileTransformer=makeRaw();
   instrumentation.addTransformer(classFileTransformer,redefinitionStrategy.isRetransforming(instrumentation));
   try {
     if (nativeMethodStrategy.isEnabled(instrumentation)) {

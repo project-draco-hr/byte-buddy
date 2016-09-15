@@ -1,0 +1,11 @@
+{
+  ResettableClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(poolStrategy).with(typeStrategy).with(installationStrategy).with(listener).disableNativeMethodPrefix().ignore(none()).type(typeMatcher).transform(transformer).installOn(instrumentation);
+  when(instrumentation.removeTransformer(classFileTransformer)).thenReturn(false);
+  ResettableClassFileTransformer.Reset reset=classFileTransformer.reset(instrumentation,AgentBuilder.RedefinitionStrategy.DISABLED);
+  assertThat(reset.isApplied(),is(false));
+  assertThat(reset.getErrors().isEmpty(),is(true));
+  verifyZeroInteractions(listener);
+  verify(instrumentation).addTransformer(classFileTransformer,false);
+  verify(instrumentation).removeTransformer(classFileTransformer);
+  verifyNoMoreInteractions(instrumentation);
+}

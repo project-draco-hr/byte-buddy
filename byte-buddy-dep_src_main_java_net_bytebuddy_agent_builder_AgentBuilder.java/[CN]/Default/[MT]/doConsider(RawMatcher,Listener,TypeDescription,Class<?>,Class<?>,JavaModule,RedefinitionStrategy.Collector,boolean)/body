@@ -1,0 +1,14 @@
+{
+  if (unmodifiable || !collector.consider(typeDescription,type,classBeingRedefined,ignoredTypeMatcher)) {
+    try {
+      try {
+        listener.onIgnored(typeDescription,type.getClassLoader(),module);
+      }
+  finally {
+        listener.onComplete(typeDescription.getName(),type.getClassLoader(),module);
+      }
+    }
+ catch (    Throwable ignored) {
+    }
+  }
+}

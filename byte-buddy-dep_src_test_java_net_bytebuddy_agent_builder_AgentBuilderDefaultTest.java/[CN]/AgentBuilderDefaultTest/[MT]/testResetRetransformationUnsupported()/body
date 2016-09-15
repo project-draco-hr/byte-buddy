@@ -1,0 +1,5 @@
+{
+  ResettableClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(poolStrategy).with(typeStrategy).with(installationStrategy).with(listener).disableNativeMethodPrefix().ignore(none()).type(typeMatcher).transform(transformer).installOn(instrumentation);
+  when(instrumentation.removeTransformer(classFileTransformer)).thenReturn(true);
+  classFileTransformer.reset(instrumentation,AgentBuilder.RedefinitionStrategy.RETRANSFORMATION);
+}

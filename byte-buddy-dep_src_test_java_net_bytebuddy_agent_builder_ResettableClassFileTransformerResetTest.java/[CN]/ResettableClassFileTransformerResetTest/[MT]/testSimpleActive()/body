@@ -1,0 +1,4 @@
+{
+  assertThat(ResettableClassFileTransformer.Reset.Simple.ACTIVE.isApplied(),is(true));
+  assertThat(ResettableClassFileTransformer.Reset.Simple.ACTIVE.getErrors().isEmpty(),is(true));
+}

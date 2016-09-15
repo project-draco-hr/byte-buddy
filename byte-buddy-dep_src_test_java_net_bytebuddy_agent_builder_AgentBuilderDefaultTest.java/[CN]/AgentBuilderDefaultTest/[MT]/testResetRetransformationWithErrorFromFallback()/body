@@ -1,0 +1,25 @@
+{
+  ResettableClassFileTransformer classFileTransformer=new AgentBuilder.Default(byteBuddy).with(initializationStrategy).with(poolStrategy).with(typeStrategy).with(installationStrategy).with(AgentBuilder.FallbackStrategy.Simple.ENABLED).with(listener).disableNativeMethodPrefix().ignore(none()).type(typeMatcher).transform(transformer).installOn(instrumentation);
+  when(instrumentation.removeTransformer(classFileTransformer)).thenReturn(true);
+  when(instrumentation.isRetransformClassesSupported()).thenReturn(true);
+  when(instrumentation.isModifiableClass(REDEFINED)).thenReturn(true);
+  when(instrumentation.getAllLoadedClasses()).thenReturn(new Class<?>[]{REDEFINED});
+  when(resolution.resolve()).thenReturn(new TypeDescription.ForLoadedType(REDEFINED));
+  Throwable throwable=new RuntimeException(), suppressed=new RuntimeException();
+  when(typeMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),REDEFINED,REDEFINED.getProtectionDomain())).thenThrow(suppressed);
+  when(typeMatcher.matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),null,REDEFINED.getProtectionDomain())).thenThrow(throwable);
+  ResettableClassFileTransformer.Reset reset=classFileTransformer.reset(instrumentation,AgentBuilder.RedefinitionStrategy.RETRANSFORMATION);
+  assertThat(reset.isApplied(),is(true));
+  assertThat(reset.getErrors().size(),is(1));
+  assertThat(reset.getErrors().get(REDEFINED),sameInstance(throwable));
+  verifyZeroInteractions(listener);
+  verify(instrumentation).addTransformer(classFileTransformer,false);
+  verify(instrumentation).isRetransformClassesSupported();
+  verify(instrumentation).getAllLoadedClasses();
+  verify(instrumentation).isModifiableClass(REDEFINED);
+  verify(instrumentation).removeTransformer(classFileTransformer);
+  verifyNoMoreInteractions(instrumentation);
+  verify(typeMatcher).matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),REDEFINED,REDEFINED.getProtectionDomain());
+  verify(typeMatcher).matches(new TypeDescription.ForLoadedType(REDEFINED),REDEFINED.getClassLoader(),JavaModule.ofType(REDEFINED),null,REDEFINED.getProtectionDomain());
+  verifyNoMoreInteractions(typeMatcher);
+}

@@ -1,0 +1,5 @@
+{
+  Throwable throwable=new Throwable();
+  assertThat(new ResettableClassFileTransformer.Reset.Simple.WithErrors(Collections.<Class<?>,Throwable>singletonMap(Object.class,throwable)).isApplied(),is(true));
+  assertThat(new ResettableClassFileTransformer.Reset.Simple.WithErrors(Collections.<Class<?>,Throwable>singletonMap(Object.class,throwable)).getErrors().get(Object.class),sameInstance(throwable));
+}
