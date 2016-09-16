@@ -1,0 +1,4 @@
+File agentJar
+String processId
+String argument
+AttachmentProvider attachmentProvider

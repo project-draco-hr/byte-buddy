@@ -1,0 +1,3 @@
+{
+  install(attachmentProvider,processId,argument,new AgentProvider.ForExistingAgent(agentJar));
+}

@@ -3,6 +3,6 @@
   if (instrumentation != null) {
     return instrumentation;
   }
-  install(attachmentProvider,processProvider.resolve(),AgentProvider.ForByteBuddyAgent.INSTANCE);
+  install(attachmentProvider,processProvider.resolve(),WITHOUT_ARGUMENT,AgentProvider.ForByteBuddyAgent.INSTANCE);
   return doGetInstrumentation();
 }
