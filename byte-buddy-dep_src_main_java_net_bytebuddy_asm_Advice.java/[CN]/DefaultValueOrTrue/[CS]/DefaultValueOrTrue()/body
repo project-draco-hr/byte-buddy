@@ -1,3 +1,3 @@
 {
-  throw new UnsupportedOperationException("This type is not intended for instantiatiom");
+  throw new UnsupportedOperationException("This marker class is not supposed to be instantiated");
 }
