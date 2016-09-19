@@ -1,4 +1,5 @@
 MethodVisitor methodVisitor
+MethodSizeHandler.ForAdvice methodSizeHandler
 StackMapFrameHandler.ForAdvice stackMapFrameHandler
 MethodDescription.InDefinedShape instrumentedMethod
 Bound.SkipHandler skipHandler
