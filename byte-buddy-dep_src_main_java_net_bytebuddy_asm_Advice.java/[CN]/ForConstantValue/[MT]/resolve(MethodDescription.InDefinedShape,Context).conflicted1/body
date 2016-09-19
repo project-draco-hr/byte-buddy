@@ -1,3 +1,3 @@
 {
-  return instrumentedMethod.getReturnType().isPrimitive() && !instrumentedMethod.getReturnType().represents(void.class) ? Target.ForBoxedDefaultValue.of(instrumentedMethod.getReturnType()) : Target.ForNullConstant.READ_WRITE;
+  return Target.ForDefaultValue.INSTANCE;
 }

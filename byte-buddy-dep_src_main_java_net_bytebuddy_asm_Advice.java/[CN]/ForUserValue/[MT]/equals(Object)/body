@@ -1,6 +1,6 @@
 {
-  if (this == object)   return true;
-  if (object == null || getClass() != object.getClass())   return false;
-  ForUserValue that=(ForUserValue)object;
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForUserValue that=(ForUserValue)other;
   return target.equals(that.target) && annotation.equals(that.annotation) && dynamicValue.equals(that.dynamicValue);
 }
