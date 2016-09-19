@@ -1,6 +1,6 @@
 {
-  if (this == object)   return true;
-  if (object == null || getClass() != object.getClass())   return false;
-  ForConstantPoolValue that=(ForConstantPoolValue)object;
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForConstantPoolValue that=(ForConstantPoolValue)other;
   return value.equals(that.value);
 }

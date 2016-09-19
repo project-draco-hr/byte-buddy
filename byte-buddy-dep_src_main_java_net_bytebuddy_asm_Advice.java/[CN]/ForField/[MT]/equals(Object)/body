@@ -1,6 +1,6 @@
 {
-  if (this == object)   return true;
-  if (object == null || getClass() != object.getClass())   return false;
-  ForField forField=(ForField)object;
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForField forField=(ForField)other;
   return name.equals(forField.name) && targetType.equals(forField.targetType) && readOnly == forField.readOnly;
 }

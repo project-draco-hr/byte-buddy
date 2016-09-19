@@ -1,6 +1,6 @@
 {
-  if (this == object)   return true;
-  if (object == null || getClass() != object.getClass())   return false;
-  ForType forType=(ForType)object;
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForType forType=(ForType)other;
   return typeDescription.equals(forType.typeDescription);
 }

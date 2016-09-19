@@ -1,6 +1,6 @@
 {
-  if (this == object)   return true;
-  if (object == null || getClass() != object.getClass())   return false;
-  ForThisReference that=(ForThisReference)object;
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForThisReference that=(ForThisReference)other;
   return readOnly == that.readOnly && optional == that.optional && targetType.equals(that.targetType);
 }
