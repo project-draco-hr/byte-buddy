@@ -1,6 +1,6 @@
 {
-  if (this == object)   return true;
-  if (object == null || getClass() != object.getClass())   return false;
-  ForSerializedObject that=(ForSerializedObject)object;
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForSerializedObject that=(ForSerializedObject)other;
   return target.equals(that.target) && serialized.equals(that.serialized);
 }

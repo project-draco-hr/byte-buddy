@@ -1,6 +1,6 @@
 {
-  if (this == object)   return true;
-  if (object == null || getClass() != object.getClass())   return false;
-  WithCustomMapping that=(WithCustomMapping)object;
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  WithCustomMapping that=(WithCustomMapping)other;
   return dynamicValues.equals(that.dynamicValues);
 }
