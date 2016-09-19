@@ -1,7 +1,7 @@
 {
-  if (this == object)   return true;
-  if (object == null || getClass() != object.getClass())   return false;
-  if (!super.equals(object))   return false;
-  Inlining.Resolved.ForMethodEnter that=(Inlining.Resolved.ForMethodEnter)object;
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  if (!super.equals(other))   return false;
+  Inlining.Resolved.ForMethodEnter that=(Inlining.Resolved.ForMethodEnter)other;
   return skipDispatcher == that.skipDispatcher && prependLineNumber == that.prependLineNumber;
 }

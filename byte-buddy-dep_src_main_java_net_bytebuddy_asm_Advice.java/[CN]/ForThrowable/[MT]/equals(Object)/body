@@ -1,6 +1,6 @@
 {
-  if (this == object)   return true;
-  if (object == null || getClass() != object.getClass())   return false;
-  ForThrowable forThrowable=(ForThrowable)object;
+  if (this == other)   return true;
+  if (other == null || getClass() != other.getClass())   return false;
+  ForThrowable forThrowable=(ForThrowable)other;
   return readOnly == forThrowable.readOnly && targetType.equals(forThrowable.targetType) && triggeringThrowable.equals(forThrowable.triggeringThrowable);
 }
