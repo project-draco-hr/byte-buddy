@@ -1,5 +1,5 @@
 {
   super(adviceMethod,CompoundList.of(Arrays.asList(OffsetMapping.ForParameter.Factory.READ_WRITE,OffsetMapping.ForBoxedArguments.Factory.READ_WRITE,OffsetMapping.ForThisReference.Factory.READ_WRITE,OffsetMapping.ForField.Factory.READ_WRITE,OffsetMapping.ForOrigin.Factory.INSTANCE,OffsetMapping.ForUnusedValue.INSTANCE,OffsetMapping.ForStubValue.INSTANCE,new OffsetMapping.Illegal(Thrown.class,Enter.class,Return.class,BoxedReturn.class)),userFactories),classReader,adviceMethod.getDeclaredAnnotations().ofType(OnMethodEnter.class).getValue(SUPPRESS_ENTER).resolve(TypeDescription.class));
-  skipDispatcher=SkipDispatcher.of(adviceMethod);
+  skipDispatcher=SkipDispatcher.ForType.of(adviceMethod);
   prependLineNumber=adviceMethod.getDeclaredAnnotations().ofType(OnMethodEnter.class).getValue(PREPEND_LINE_NUMBER).resolve(Boolean.class);
 }

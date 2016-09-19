@@ -1,0 +1,3 @@
+{
+  return "Advice.Dispatcher.Resolved.ForMethodEnter.SkipDispatcher.ForType{" + "typeDescription=" + typeDescription + '}';
+}

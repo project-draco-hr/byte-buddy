@@ -1,3 +1,0 @@
-{
-  Advice.to(SkipIfTrueNonCompatibleReturnType.class);
-}
