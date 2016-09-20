@@ -1,7 +1,7 @@
 {
 switch (opcode) {
 case Opcodes.ALOAD:
-    methodVisitor.visitLdcInsn(Type.getType(methodDescription.getDeclaringType().getDescriptor()));
+    ForType.load(methodVisitor,methodDescription.getDeclaringType());
   loadMethodName(methodVisitor);
 PrimitiveDispatcher.loadInteger(methodVisitor,methodDescription.getParameters().size());
 methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,TypeDescription.CLASS.getInternalName());
@@ -12,7 +12,7 @@ if (parameter.getType().isPrimitive()) {
 PrimitiveDispatcher.of(parameter.getType()).loadType(methodVisitor);
 }
  else {
-methodVisitor.visitLdcInsn(Type.getType(parameter.getType().asErasure().getDescriptor()));
+ForType.load(methodVisitor,parameter.getType().asErasure());
 }
 methodVisitor.visitInsn(Opcodes.AASTORE);
 }
