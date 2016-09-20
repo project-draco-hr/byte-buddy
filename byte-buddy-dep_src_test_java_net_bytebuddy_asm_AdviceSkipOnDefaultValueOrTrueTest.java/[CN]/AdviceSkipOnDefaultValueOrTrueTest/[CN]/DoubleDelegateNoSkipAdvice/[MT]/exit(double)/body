@@ -1,0 +1,5 @@
+{
+  if (value != 42d) {
+    throw new AssertionError();
+  }
+}
