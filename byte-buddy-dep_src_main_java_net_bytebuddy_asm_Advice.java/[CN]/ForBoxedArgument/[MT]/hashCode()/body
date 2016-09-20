@@ -1,5 +1,5 @@
 {
   int result=offset;
-  result=31 * result + boxingDispatcher.hashCode();
+  result=31 * result + primitiveDispatcher.hashCode();
   return result;
 }

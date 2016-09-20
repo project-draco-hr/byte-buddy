@@ -1,3 +1,3 @@
 {
-  return new ReadOnly(offset,BoxingDispatcher.of(type));
+  return new ReadOnly(offset,PrimitiveDispatcher.of(type));
 }

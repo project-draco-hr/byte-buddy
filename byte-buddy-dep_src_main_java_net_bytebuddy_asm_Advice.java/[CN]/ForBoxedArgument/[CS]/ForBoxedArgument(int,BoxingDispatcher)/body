@@ -1,4 +1,0 @@
-{
-  this.offset=offset;
-  this.boxingDispatcher=boxingDispatcher;
-}

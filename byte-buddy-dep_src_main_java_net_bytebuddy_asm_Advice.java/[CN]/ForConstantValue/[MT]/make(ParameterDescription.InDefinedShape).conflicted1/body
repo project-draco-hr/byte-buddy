@@ -6,10 +6,19 @@
  else   if (parameterDescription.getType().asErasure().represents(Class.class)) {
     return OffsetMapping.ForInstrumentedType.INSTANCE;
   }
+ else   if (parameterDescription.getType().asErasure().represents(Method.class)) {
+    return OffsetMapping.ForInstrumentedMethod.METHOD;
+  }
+ else   if (parameterDescription.getType().asErasure().represents(Constructor.class)) {
+    return OffsetMapping.ForInstrumentedMethod.CONSTRUCTOR;
+  }
+ else   if (JavaType.EXECUTABLE.getTypeStub().equals(parameterDescription.getType().asErasure())) {
+    return OffsetMapping.ForInstrumentedMethod.EXECUTABLE;
+  }
  else   if (parameterDescription.getType().asErasure().isAssignableFrom(String.class)) {
     return ForOrigin.parse(origin.loadSilent().value());
   }
  else {
-    throw new IllegalStateException("Non-String type " + parameterDescription + " for origin annotation");
+    throw new IllegalStateException("Non-supported type " + parameterDescription.getType() + " for @Origin annotation");
   }
 }

@@ -1,0 +1,24 @@
+{
+switch (opcode) {
+case Opcodes.ALOAD:
+    methodVisitor.visitLdcInsn(Type.getType(methodDescription.getDeclaringType().getDescriptor()));
+  loadMethodName(methodVisitor);
+PrimitiveDispatcher.loadInteger(methodVisitor,methodDescription.getParameters().size());
+methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,TypeDescription.CLASS.getInternalName());
+for (ParameterDescription parameter : methodDescription.getParameters()) {
+methodVisitor.visitInsn(Opcodes.DUP);
+PrimitiveDispatcher.loadInteger(methodVisitor,parameter.getIndex());
+if (parameter.getType().isPrimitive()) {
+PrimitiveDispatcher.of(parameter.getType()).loadType(methodVisitor);
+}
+ else {
+methodVisitor.visitLdcInsn(Type.getType(parameter.getType().asErasure().getDescriptor()));
+}
+methodVisitor.visitInsn(Opcodes.AASTORE);
+}
+methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,TypeDescription.CLASS.getInternalName(),getInvokedMethod(),getInvokedSignature(),false);
+return getAdditionalOffset() + (methodDescription.getParameters().isEmpty() ? 0 : 2);
+default :
+throw new IllegalStateException("Unexpected opcode: " + opcode);
+}
+}

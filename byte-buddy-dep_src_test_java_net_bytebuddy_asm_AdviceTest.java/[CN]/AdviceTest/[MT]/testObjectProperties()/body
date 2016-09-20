@@ -19,7 +19,7 @@
   ObjectPropertyAssertion.of(Advice.Dispatcher.Inactive.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Context.ForMethodEntry.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Context.ForMethodExit.class).apply();
-  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.BoxingDispatcher.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.PrimitiveDispatcher.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForParameter.ReadOnly.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForParameter.ReadWrite.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForParameter.ReadWrite.WithCasting.class).apply();
@@ -34,6 +34,8 @@
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForBoxedArgument.ReadWrite.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForSerializedObject.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForNullConstant.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForExecutable.ForMethod.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.Target.ForExecutable.ForConstructor.class).apply();
   final int[] value=new int[1];
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForParameter.class).refine(new ObjectPropertyAssertion.Refinement<Advice.Argument>(){
     @Override public void apply(    Advice.Argument mock){
@@ -71,6 +73,7 @@
   }
 ).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForInstrumentedType.class).apply();
+  ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForInstrumentedMethod.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForReturnValue.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForReturnValue.Factory.class).apply();
   ObjectPropertyAssertion.of(Advice.Dispatcher.OffsetMapping.ForThrowable.class).apply();

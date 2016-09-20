@@ -1,8 +1,8 @@
 {
 switch (opcode) {
 case Opcodes.ALOAD:
-    boxingDispatcher.pushBoxedDefault(methodVisitor);
-  return boxingDispatcher.getStackSize().getSize() - 1;
+    primitiveDispatcher.pushBoxedDefault(methodVisitor);
+  return primitiveDispatcher.getStackSize().getSize() - 1;
 case Opcodes.ASTORE:
 methodVisitor.visitInsn(Opcodes.POP);
 return NO_PADDING;

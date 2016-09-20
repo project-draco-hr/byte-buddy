@@ -1,0 +1,6 @@
+{
+  if (!isRepresentable(instrumentedMethod)) {
+    throw new IllegalStateException("Cannot represent " + instrumentedMethod + " as given method constant");
+  }
+  return Target.ForExecutable.of(instrumentedMethod);
+}

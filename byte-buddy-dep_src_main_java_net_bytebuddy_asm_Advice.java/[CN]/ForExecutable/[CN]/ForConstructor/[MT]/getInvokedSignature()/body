@@ -1,0 +1,3 @@
+{
+  return Type.getMethodDescriptor(Type.getType(Constructor.class),Type.getType(Class[].class));
+}

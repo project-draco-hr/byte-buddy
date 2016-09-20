@@ -1,0 +1,25 @@
+{
+switch (opcode) {
+case Opcodes.ALOAD:
+    PrimitiveDispatcher.loadInteger(methodVisitor,parameters.size());
+  methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY,TypeDescription.OBJECT.getInternalName());
+StackSize stackSize=StackSize.ZERO;
+for (ParameterDescription parameter : parameters) {
+methodVisitor.visitInsn(Opcodes.DUP);
+PrimitiveDispatcher.loadInteger(methodVisitor,parameter.getIndex());
+if (parameter.getType().isPrimitive()) {
+  PrimitiveDispatcher.of(parameter.getType()).loadBoxed(methodVisitor,parameter.getOffset());
+}
+ else {
+  methodVisitor.visitVarInsn(Opcodes.ALOAD,parameter.getOffset());
+}
+methodVisitor.visitInsn(Opcodes.AASTORE);
+stackSize=stackSize.maximum(parameter.getType().getStackSize());
+}
+return stackSize.getSize() + (parameters.isEmpty() ? 0 : 2);
+case Opcodes.ASTORE:
+return onStore(methodVisitor);
+default :
+throw new IllegalStateException("Unexpected opcode: " + opcode);
+}
+}

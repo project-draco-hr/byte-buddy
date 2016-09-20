@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   ForBoxedDefaultValue that=(ForBoxedDefaultValue)other;
-  return boxingDispatcher == that.boxingDispatcher;
+  return primitiveDispatcher == that.primitiveDispatcher;
 }

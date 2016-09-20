@@ -1,0 +1,6 @@
+{
+  if (this == object)   return true;
+  if (object == null || getClass() != object.getClass())   return false;
+  ForExecutable that=(ForExecutable)object;
+  return methodDescription.equals(that.methodDescription);
+}

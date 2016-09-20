@@ -2,5 +2,5 @@
   if (this == other)   return true;
   if (other == null || getClass() != other.getClass())   return false;
   ForBoxedArgument that=(ForBoxedArgument)other;
-  return offset == that.offset && boxingDispatcher == that.boxingDispatcher;
+  return offset == that.offset && primitiveDispatcher == that.primitiveDispatcher;
 }

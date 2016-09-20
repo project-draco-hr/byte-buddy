@@ -1,3 +1,18 @@
 {
-  return new Target.ForConstantPoolValue(Type.getType(instrumentedMethod.getDeclaringType().getDescriptor()));
+  if (!readOnly && !instrumentedMethod.getDeclaringType().equals(targetType)) {
+    throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not equal to read-only "+ targetType);
+  }
+ else   if (readOnly && !instrumentedMethod.getDeclaringType().isAssignableTo(targetType)) {
+    throw new IllegalStateException("Declaring type of " + instrumentedMethod + " is not assignable to "+ targetType);
+  }
+ else   if (instrumentedMethod.isStatic() && optional) {
+    return readOnly ? Target.ForNullConstant.READ_ONLY : Target.ForNullConstant.READ_WRITE;
+  }
+ else   if (instrumentedMethod.isStatic() && !optional) {
+    throw new IllegalStateException("Cannot map this reference for static method " + instrumentedMethod);
+  }
+ else   if (!context.isInitialized()) {
+    throw new IllegalStateException("Cannot access this reference before calling constructor: " + instrumentedMethod);
+  }
+  return readOnly ? new Target.ForParameter.ReadOnly(THIS_REFERENCE) : new Target.ForParameter.ReadWrite(THIS_REFERENCE);
 }

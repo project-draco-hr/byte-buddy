@@ -1,0 +1,6 @@
+{
+  if (!origin.equals(Sample.class.getDeclaredConstructor())) {
+    throw new AssertionError();
+  }
+  Sample.exit++;
+}

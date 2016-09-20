@@ -1,0 +1,6 @@
+{
+  if (!origin.equals(Sample.class.getDeclaredMethod(BAR,String.class))) {
+    throw new AssertionError();
+  }
+  Sample.enter++;
+}
