@@ -2,8 +2,11 @@
   if (typeDescription.represents(void.class)) {
     return Disabled.INSTANCE;
   }
- else   if (typeDescription.represents(DefaultValueOrTrue.class)) {
-    return ForValue.of(adviceMethod.getReturnType());
+ else   if (typeDescription.represents(OnDefaultValue.class)) {
+    return ForValue.of(adviceMethod.getReturnType(),false);
+  }
+ else   if (typeDescription.represents(OnNonDefaultValue.class)) {
+    return ForValue.of(adviceMethod.getReturnType(),true);
   }
  else   if (typeDescription.isPrimitive() || adviceMethod.getReturnType().isPrimitive()) {
     throw new IllegalStateException("Cannot skip method by instance type for primitive return value on " + adviceMethod);
