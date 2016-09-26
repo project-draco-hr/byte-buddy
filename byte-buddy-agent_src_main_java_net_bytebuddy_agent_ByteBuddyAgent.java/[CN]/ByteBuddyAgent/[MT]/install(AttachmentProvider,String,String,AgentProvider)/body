@@ -7,7 +7,7 @@
     Class<?> virtualMachineType=attachmentAccessor.getVirtualMachineType();
     Object virtualMachineInstance=virtualMachineType.getDeclaredMethod(ATTACH_METHOD_NAME,String.class).invoke(STATIC_MEMBER,processId);
     try {
-      virtualMachineType.getDeclaredMethod(LOAD_AGENT_METHOD_NAME,String.class,String.class).invoke(virtualMachineInstance,agentProvider.resolve().getAbsolutePath(),argument);
+      virtualMachineType.getDeclaredMethod(LOAD_AGENT_METHOD_NAME,String.class,String.class).invoke(virtualMachineInstance,agentProvider.resolve().getAbsolutePath(),null);
     }
   finally {
       virtualMachineType.getDeclaredMethod(DETACH_METHOD_NAME).invoke(virtualMachineInstance);
