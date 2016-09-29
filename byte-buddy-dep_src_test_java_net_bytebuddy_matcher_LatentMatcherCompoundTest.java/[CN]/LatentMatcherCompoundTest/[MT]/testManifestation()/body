@@ -1,3 +1,0 @@
-{
-  assertThat(new LatentMatcher.Compound(left,right).resolve(typeDescription),is((ElementMatcher)none().or((ElementMatcher)leftMatcher).or((ElementMatcher)rightMatcher)));
-}

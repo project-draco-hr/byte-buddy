@@ -1,0 +1,7 @@
+{
+  ElementMatcher.Junction<S> matcher=any();
+  for (  LatentMatcher<? super S> latentMatcher : matchers) {
+    matcher=matcher.and(latentMatcher.resolve(typeDescription));
+  }
+  return matcher;
+}

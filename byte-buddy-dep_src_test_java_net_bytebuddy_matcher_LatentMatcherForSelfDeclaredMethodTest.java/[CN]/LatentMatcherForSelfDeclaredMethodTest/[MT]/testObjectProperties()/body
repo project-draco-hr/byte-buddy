@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(LatentMatcher.ForSelfDeclaredMethod.class).apply();
+}

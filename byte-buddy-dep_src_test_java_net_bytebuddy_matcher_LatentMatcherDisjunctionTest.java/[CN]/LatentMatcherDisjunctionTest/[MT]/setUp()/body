@@ -1,0 +1,4 @@
+{
+  when(left.resolve(typeDescription)).thenReturn((ElementMatcher)leftMatcher);
+  when(right.resolve(typeDescription)).thenReturn((ElementMatcher)rightMatcher);
+}

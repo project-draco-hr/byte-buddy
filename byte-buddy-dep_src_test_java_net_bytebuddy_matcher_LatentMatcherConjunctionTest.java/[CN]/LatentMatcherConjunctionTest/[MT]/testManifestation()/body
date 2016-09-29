@@ -1,0 +1,3 @@
+{
+  assertThat(new LatentMatcher.Conjunction(left,right).resolve(typeDescription),is((ElementMatcher)any().and((ElementMatcher)leftMatcher).and((ElementMatcher)rightMatcher)));
+}

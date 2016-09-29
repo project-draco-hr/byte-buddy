@@ -1,0 +1,3 @@
+{
+  assertThat(new LatentMatcher.Disjunction(left,right).resolve(typeDescription),is((ElementMatcher)none().or((ElementMatcher)leftMatcher).or((ElementMatcher)rightMatcher)));
+}

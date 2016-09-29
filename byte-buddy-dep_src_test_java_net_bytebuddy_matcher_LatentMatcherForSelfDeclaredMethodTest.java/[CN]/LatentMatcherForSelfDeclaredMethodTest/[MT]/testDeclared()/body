@@ -1,0 +1,3 @@
+{
+  assertThat(LatentMatcher.ForSelfDeclaredMethod.DECLARED.resolve(typeDescription),is((ElementMatcher)isDeclaredBy(typeDescription)));
+}

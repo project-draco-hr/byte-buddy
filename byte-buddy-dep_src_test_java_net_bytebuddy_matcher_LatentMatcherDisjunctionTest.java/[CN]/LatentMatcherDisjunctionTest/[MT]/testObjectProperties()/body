@@ -1,0 +1,3 @@
+{
+  ObjectPropertyAssertion.of(LatentMatcher.Disjunction.class).apply();
+}
