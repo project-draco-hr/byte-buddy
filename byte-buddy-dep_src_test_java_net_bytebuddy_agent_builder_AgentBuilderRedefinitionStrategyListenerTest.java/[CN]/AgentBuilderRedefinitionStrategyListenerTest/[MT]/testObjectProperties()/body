@@ -4,4 +4,5 @@
   ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Listener.Pausing.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Listener.StreamWriting.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Listener.Yielding.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Listener.ErrorEscalating.class).apply();
 }

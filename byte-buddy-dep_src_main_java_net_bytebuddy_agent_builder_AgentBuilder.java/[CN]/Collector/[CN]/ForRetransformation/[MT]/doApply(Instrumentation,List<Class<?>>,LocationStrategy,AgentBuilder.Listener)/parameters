@@ -1,0 +1,4 @@
+Instrumentation instrumentation
+List<Class<?>> types
+LocationStrategy locationStrategy
+AgentBuilder.Listener listener

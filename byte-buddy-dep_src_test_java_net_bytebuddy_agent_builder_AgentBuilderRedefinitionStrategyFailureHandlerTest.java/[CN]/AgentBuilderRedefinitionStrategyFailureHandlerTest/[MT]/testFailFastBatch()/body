@@ -1,3 +1,0 @@
-{
-  AgentBuilder.RedefinitionStrategy.FailureHandler.Default.FAIL_FAST.onBatchFailure(Collections.<Class<?>>singletonList(Object.class),new Throwable());
-}

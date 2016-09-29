@@ -1,0 +1,7 @@
+{
+  Map<Class<?>,Throwable> failures=new HashMap<Class<?>,Throwable>();
+  Throwable throwable=new RuntimeException();
+  new AgentBuilder.Default.ExecutingTransformer.FailureCollectingListener(failures).onError(0,Collections.<Class<?>>singletonList(Foo.class),throwable,Collections.<Class<?>>singletonList(Foo.class));
+  assertThat(failures.size(),is(1));
+  assertThat(failures.get(Foo.class),is(throwable));
+}

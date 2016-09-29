@@ -1,3 +1,0 @@
-{
-  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.FailureHandler.Default.class).apply();
-}

@@ -1,0 +1,3 @@
+{
+  consider(ignoredTypeMatcher,listener,typeDescription,type,NO_LOADED_TYPE,module,false);
+}

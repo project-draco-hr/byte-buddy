@@ -1,0 +1,3 @@
+{
+  AgentBuilder.RedefinitionStrategy.Listener.ErrorEscalating.FAIL_LAST.onComplete(0,Collections.<Class<?>>emptyList(),Collections.singletonMap(Collections.<Class<?>>emptyList(),mock(Throwable.class)));
+}

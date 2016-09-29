@@ -1,3 +1,0 @@
-{
-  AgentBuilder.RedefinitionStrategy.FailureHandler.Default.IGNORING.onFailure(Collections.singletonMap(Collections.<Class<?>>singletonList(Object.class),new Throwable()));
-}

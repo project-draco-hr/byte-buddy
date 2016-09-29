@@ -1,3 +1,0 @@
-{
-  assertThat(AgentBuilder.RedefinitionStrategy.FailureHandler.Default.FAIL_LAST.onBatchFailure(Collections.<Class<?>>singletonList(Object.class),new Throwable()),is(false));
-}

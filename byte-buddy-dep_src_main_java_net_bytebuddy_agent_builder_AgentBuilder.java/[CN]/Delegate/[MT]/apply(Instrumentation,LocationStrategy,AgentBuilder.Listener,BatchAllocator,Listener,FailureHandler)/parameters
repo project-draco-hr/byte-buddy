@@ -1,6 +1,0 @@
-Instrumentation instrumentation
-LocationStrategy locationStrategy
-AgentBuilder.Listener listener
-BatchAllocator redefinitionBatchAllocator
-Listener redefinitionListener
-FailureHandler redefinitionFailureHandler

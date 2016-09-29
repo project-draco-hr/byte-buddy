@@ -1,0 +1,4 @@
+{
+  AgentBuilder.RedefinitionStrategy.Listener.ErrorEscalating.FAIL_FAST.onBatch(0,Collections.<Class<?>>emptyList(),Collections.<Class<?>>emptyList());
+  AgentBuilder.RedefinitionStrategy.Listener.ErrorEscalating.FAIL_FAST.onComplete(0,Collections.<Class<?>>emptyList(),Collections.<List<Class<?>>,Throwable>emptyMap());
+}

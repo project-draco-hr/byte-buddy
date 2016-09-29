@@ -1,0 +1,20 @@
+{
+  List<ClassDefinition> classDefinitions=new ArrayList<ClassDefinition>(types.size());
+  for (  Class<?> type : types) {
+    try {
+      classDefinitions.add(new ClassDefinition(type,locationStrategy.classFileLocator(type.getClassLoader(),JavaModule.ofType(type)).locate(TypeDescription.ForLoadedType.getName(type)).resolve()));
+    }
+ catch (    Throwable throwable) {
+      JavaModule module=JavaModule.ofType(type);
+      try {
+        listener.onError(TypeDescription.ForLoadedType.getName(type),type.getClassLoader(),module,throwable);
+      }
+  finally {
+        listener.onComplete(TypeDescription.ForLoadedType.getName(type),type.getClassLoader(),module);
+      }
+    }
+  }
+  if (!classDefinitions.isEmpty()) {
+    instrumentation.redefineClasses(classDefinitions.toArray(new ClassDefinition[classDefinitions.size()]));
+  }
+}

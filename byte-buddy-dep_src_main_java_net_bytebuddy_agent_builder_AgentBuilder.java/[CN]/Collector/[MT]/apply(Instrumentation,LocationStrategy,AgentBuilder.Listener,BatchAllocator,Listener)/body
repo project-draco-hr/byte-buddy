@@ -1,0 +1,20 @@
+{
+  int index=0;
+  Map<List<Class<?>>,Throwable> failures=new HashMap<List<Class<?>>,Throwable>();
+  for (  List<Class<?>> types : redefinitionBatchAllocator.batch(this.types)) {
+    redefinitionListener.onBatch(index,types,this.types);
+    try {
+      doApply(instrumentation,types,locationStrategy,listener);
+    }
+ catch (    UnmodifiableClassException exception) {
+      redefinitionListener.onError(index,types,exception,this.types);
+      failures.put(types,exception);
+    }
+catch (    ClassNotFoundException exception) {
+      redefinitionListener.onError(index,types,exception,this.types);
+      failures.put(types,exception);
+    }
+    index+=1;
+  }
+  redefinitionListener.onComplete(index,types,failures);
+}

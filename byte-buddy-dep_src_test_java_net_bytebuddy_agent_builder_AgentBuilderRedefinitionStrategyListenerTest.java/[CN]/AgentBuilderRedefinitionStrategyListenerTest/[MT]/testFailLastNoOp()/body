@@ -1,0 +1,5 @@
+{
+  AgentBuilder.RedefinitionStrategy.Listener.ErrorEscalating.FAIL_LAST.onBatch(0,Collections.<Class<?>>emptyList(),Collections.<Class<?>>emptyList());
+  AgentBuilder.RedefinitionStrategy.Listener.ErrorEscalating.FAIL_LAST.onError(0,Collections.<Class<?>>emptyList(),mock(Throwable.class),Collections.<Class<?>>emptyList());
+  AgentBuilder.RedefinitionStrategy.Listener.ErrorEscalating.FAIL_LAST.onComplete(0,Collections.<Class<?>>emptyList(),Collections.<List<Class<?>>,Throwable>emptyMap());
+}

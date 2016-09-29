@@ -1,3 +1,0 @@
-{
-  return new Default(byteBuddy,listener,poolStrategy,typeStrategy,locationStrategy,nativeMethodStrategy,initializationStrategy,redefinitionStrategy,redefinitionBatchAllocator,redefinitionFailureHandler,redefinitionListener,bootstrapInjectionStrategy,lambdaInstrumentationStrategy,descriptionStrategy,installationStrategy,fallbackStrategy,ignoredTypeMatcher,transformation);
-}
