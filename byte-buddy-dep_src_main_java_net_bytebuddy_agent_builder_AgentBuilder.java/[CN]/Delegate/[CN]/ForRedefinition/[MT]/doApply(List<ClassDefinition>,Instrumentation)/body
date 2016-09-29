@@ -1,0 +1,3 @@
+{
+  instrumentation.redefineClasses(transformations.toArray(new ClassDefinition[transformations.size()]));
+}

@@ -1,0 +1,3 @@
+int index
+List<Class<?>> types
+Map<List<Class<?>>,Throwable> failures

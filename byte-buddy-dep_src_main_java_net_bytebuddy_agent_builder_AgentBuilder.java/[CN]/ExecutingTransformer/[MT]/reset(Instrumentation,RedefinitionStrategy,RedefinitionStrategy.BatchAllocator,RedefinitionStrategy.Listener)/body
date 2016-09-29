@@ -1,0 +1,34 @@
+{
+  if (instrumentation.removeTransformer(this)) {
+    if (!redefinitionStrategy.isEnabled()) {
+      return Reset.Simple.ACTIVE;
+    }
+    redefinitionStrategy.isRetransforming(instrumentation);
+    Map<Class<?>,Throwable> failures=new HashMap<Class<?>,Throwable>();
+    RedefinitionStrategy.Delegate<?> delegate=redefinitionStrategy.make(transformation);
+    for (    Class<?> type : instrumentation.getAllLoadedClasses()) {
+      JavaModule module=JavaModule.ofType(type);
+      try {
+        delegate.consider(ignoredTypeMatcher,Listener.NoOp.INSTANCE,descriptionStrategy.apply(TypeDescription.ForLoadedType.getName(type),type,poolStrategy.typePool(locationStrategy.classFileLocator(type.getClassLoader(),module),type.getClassLoader())),type,type,module,!instrumentation.isModifiableClass(type));
+      }
+ catch (      Throwable throwable) {
+        try {
+          if (descriptionStrategy.isLoadedFirst() && fallbackStrategy.isFallback(type,throwable)) {
+            delegate.consider(ignoredTypeMatcher,Listener.NoOp.INSTANCE,descriptionStrategy.apply(TypeDescription.ForLoadedType.getName(type),NO_LOADED_TYPE,poolStrategy.typePool(locationStrategy.classFileLocator(type.getClassLoader(),module),type.getClassLoader())),type,NO_LOADED_TYPE,module);
+          }
+ else {
+            failures.put(type,throwable);
+          }
+        }
+ catch (        Throwable fallback) {
+          failures.put(type,fallback);
+        }
+      }
+    }
+    delegate.apply(instrumentation,locationStrategy,Listener.NoOp.INSTANCE,RedefinitionStrategy.BatchAllocator.ForTotal.INSTANCE,new RedefinitionStrategy.Listener.Compound(new FailureCollectingListener(failures),redefinitionListener),RedefinitionStrategy.FailureHandler.Default.SUPPRESSING);
+    return Reset.WithErrors.ofPotentiallyErroneous(failures);
+  }
+ else {
+    return Reset.Simple.INACTIVE;
+  }
+}

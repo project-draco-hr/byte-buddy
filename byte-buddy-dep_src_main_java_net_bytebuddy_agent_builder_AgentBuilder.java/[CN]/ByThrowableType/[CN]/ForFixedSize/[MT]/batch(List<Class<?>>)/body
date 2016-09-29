@@ -1,0 +1,7 @@
+{
+  List<List<Class<?>>> batches=new ArrayList<List<Class<?>>>();
+  for (int index=0; index < types.size(); index+=size) {
+    batches.add(new ArrayList<Class<?>>(types.subList(index,Math.min(types.size(),index + size))));
+  }
+  return batches;
+}

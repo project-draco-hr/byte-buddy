@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.Default.ExecutingTransformer.FailureCollectingListener{" + "failures=" + failures + '}';
+}

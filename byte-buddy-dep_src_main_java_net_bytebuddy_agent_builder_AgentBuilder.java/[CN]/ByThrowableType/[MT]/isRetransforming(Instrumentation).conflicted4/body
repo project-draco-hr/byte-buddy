@@ -1,3 +1,0 @@
-{
-  return RETRANSFORMATION.isRetransforming(instrumentation);
-}

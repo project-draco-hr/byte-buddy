@@ -1,5 +1,0 @@
-{
-  if (!types.isEmpty()) {
-    instrumentation.retransformClasses(types.toArray(new Class<?>[types.size()]));
-  }
-}

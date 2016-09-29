@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.RedefinitionStrategy.Delegate." + getClass().getSimpleName() + "{"+ "transformation="+ transformation+ ", types="+ types+ '}';
+}

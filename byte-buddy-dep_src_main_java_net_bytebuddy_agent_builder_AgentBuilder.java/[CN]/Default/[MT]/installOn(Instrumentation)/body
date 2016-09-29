@@ -7,17 +7,17 @@
     }
     lambdaInstrumentationStrategy.apply(byteBuddy,instrumentation,classFileTransformer);
     if (redefinitionStrategy.isEnabled()) {
-      RedefinitionStrategy.Collector collector=redefinitionStrategy.makeCollector(transformation);
+      RedefinitionStrategy.Delegate<?> delegate=redefinitionStrategy.make(transformation);
       for (      Class<?> type : instrumentation.getAllLoadedClasses()) {
         JavaModule module=JavaModule.ofType(type);
         try {
           TypePool typePool=poolStrategy.typePool(locationStrategy.classFileLocator(type.getClassLoader(),module),type.getClassLoader());
           try {
-            doConsider(descriptionStrategy.apply(TypeDescription.ForLoadedType.getName(type),type,typePool),type,type,module,collector,!instrumentation.isModifiableClass(type));
+            delegate.consider(ignoredTypeMatcher,listener,descriptionStrategy.apply(TypeDescription.ForLoadedType.getName(type),type,typePool),type,type,module,!instrumentation.isModifiableClass(type));
           }
  catch (          Throwable throwable) {
             if (descriptionStrategy.isLoadedFirst() && fallbackStrategy.isFallback(type,throwable)) {
-              doConsider(typePool.describe(TypeDescription.ForLoadedType.getName(type)).resolve(),type,NO_LOADED_TYPE,module,collector,false);
+              delegate.consider(ignoredTypeMatcher,listener,typePool.describe(TypeDescription.ForLoadedType.getName(type)).resolve(),type,NO_LOADED_TYPE,module);
             }
  else {
               throw throwable;
@@ -37,7 +37,7 @@
           }
         }
       }
-      collector.apply(instrumentation,poolStrategy,locationStrategy,listener);
+      delegate.apply(instrumentation,locationStrategy,listener,redefinitionBatchAllocator,redefinitionListener,redefinitionFailureHandler);
     }
     return classFileTransformer;
   }

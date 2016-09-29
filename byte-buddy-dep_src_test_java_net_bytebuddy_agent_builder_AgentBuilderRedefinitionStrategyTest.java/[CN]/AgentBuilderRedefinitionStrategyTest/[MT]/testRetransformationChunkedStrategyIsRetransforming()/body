@@ -1,5 +1,0 @@
-{
-  Instrumentation instrumentation=mock(Instrumentation.class);
-  when(instrumentation.isRetransformClassesSupported()).thenReturn(true);
-  assertThat(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION_CHUNKED.isRetransforming(instrumentation),is(true));
-}

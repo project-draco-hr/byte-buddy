@@ -1,0 +1,12 @@
+{
+  PrintStream printStream=mock(PrintStream.class);
+  AgentBuilder.RedefinitionStrategy.Listener listener=new AgentBuilder.RedefinitionStrategy.Listener.StreamWriting(printStream);
+  listener.onBatch(0,Collections.<Class<?>>emptyList(),Collections.<Class<?>>emptyList());
+  Throwable throwable=mock(Throwable.class);
+  listener.onError(0,Collections.<Class<?>>emptyList(),throwable,Collections.<Class<?>>emptyList());
+  listener.onComplete(0,Collections.<Class<?>>emptyList(),Collections.<List<Class<?>>,Throwable>emptyMap());
+  verify(printStream,times(3)).println(any(String.class));
+  verifyNoMoreInteractions(printStream);
+  verify(throwable).printStackTrace(printStream);
+  verifyNoMoreInteractions(throwable);
+}

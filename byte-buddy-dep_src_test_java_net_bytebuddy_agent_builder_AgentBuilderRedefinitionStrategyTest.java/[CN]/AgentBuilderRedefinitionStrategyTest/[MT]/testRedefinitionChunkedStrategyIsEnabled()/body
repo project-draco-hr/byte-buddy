@@ -1,3 +1,0 @@
-{
-  assertThat(AgentBuilder.RedefinitionStrategy.REDEFINITION_CHUNKED.isEnabled(),is(true));
-}

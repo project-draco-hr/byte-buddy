@@ -1,0 +1,7 @@
+{
+  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Listener.NoOp.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Listener.Compound.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Listener.Pausing.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Listener.StreamWriting.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.RedefinitionStrategy.Listener.Yielding.class).apply();
+}

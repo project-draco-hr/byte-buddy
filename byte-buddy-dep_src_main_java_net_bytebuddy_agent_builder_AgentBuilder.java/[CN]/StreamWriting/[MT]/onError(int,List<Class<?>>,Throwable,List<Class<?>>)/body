@@ -1,0 +1,6 @@
+{
+synchronized (printStream) {
+    printStream.println(AgentBuilder.Listener.StreamWriting.PREFIX + " RETRANSFORM ERROR #" + index+ " ("+ batch.size()+ " types)");
+    throwable.printStackTrace(printStream);
+  }
+}

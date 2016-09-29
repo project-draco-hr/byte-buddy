@@ -1,0 +1,14 @@
+{
+  if (unmodifiable || !(transformation.isAlive(typeDescription,type.getClassLoader(),JavaModule.ofType(type),classBeingRedefined,type.getProtectionDomain(),ignoredTypeMatcher) && types.add(type))) {
+    try {
+      try {
+        listener.onIgnored(typeDescription,type.getClassLoader(),module);
+      }
+  finally {
+        listener.onComplete(typeDescription.getName(),type.getClassLoader(),module);
+      }
+    }
+ catch (    Throwable ignored) {
+    }
+  }
+}

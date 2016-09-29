@@ -1,0 +1,16 @@
+{
+  AgentBuilder.RedefinitionStrategy.Listener first=mock(AgentBuilder.RedefinitionStrategy.Listener.class), second=mock(AgentBuilder.RedefinitionStrategy.Listener.class);
+  AgentBuilder.RedefinitionStrategy.Listener listener=new AgentBuilder.RedefinitionStrategy.Listener.Compound(first,second);
+  Throwable throwable=new Throwable();
+  listener.onBatch(0,Collections.<Class<?>>emptyList(),Collections.<Class<?>>emptyList());
+  listener.onError(0,Collections.<Class<?>>emptyList(),throwable,Collections.<Class<?>>emptyList());
+  listener.onComplete(0,Collections.<Class<?>>emptyList(),Collections.<List<Class<?>>,Throwable>emptyMap());
+  verify(first).onBatch(0,Collections.<Class<?>>emptyList(),Collections.<Class<?>>emptyList());
+  verify(first).onError(0,Collections.<Class<?>>emptyList(),throwable,Collections.<Class<?>>emptyList());
+  verify(first).onComplete(0,Collections.<Class<?>>emptyList(),Collections.<List<Class<?>>,Throwable>emptyMap());
+  verifyNoMoreInteractions(first);
+  verify(second).onBatch(0,Collections.<Class<?>>emptyList(),Collections.<Class<?>>emptyList());
+  verify(second).onError(0,Collections.<Class<?>>emptyList(),throwable,Collections.<Class<?>>emptyList());
+  verify(second).onComplete(0,Collections.<Class<?>>emptyList(),Collections.<List<Class<?>>,Throwable>emptyMap());
+  verifyNoMoreInteractions(second);
+}

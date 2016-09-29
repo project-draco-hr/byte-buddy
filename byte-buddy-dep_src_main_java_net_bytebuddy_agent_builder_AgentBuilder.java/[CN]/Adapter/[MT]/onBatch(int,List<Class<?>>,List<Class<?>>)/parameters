@@ -1,0 +1,3 @@
+int index
+List<Class<?>> batch
+List<Class<?>> types

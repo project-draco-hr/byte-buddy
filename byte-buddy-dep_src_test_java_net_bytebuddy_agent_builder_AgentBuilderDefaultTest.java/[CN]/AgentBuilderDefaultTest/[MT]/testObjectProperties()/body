@@ -40,4 +40,5 @@
   }
 ).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Default.ExecutingTransformer.Factory.ForLegacyVm.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.ExecutingTransformer.FailureCollectingListener.class).apply();
 }

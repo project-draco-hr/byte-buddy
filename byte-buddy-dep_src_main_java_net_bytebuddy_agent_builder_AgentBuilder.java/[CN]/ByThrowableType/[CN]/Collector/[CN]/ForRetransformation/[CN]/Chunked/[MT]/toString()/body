@@ -1,3 +1,0 @@
-{
-  return "AgentBuilder.RedefinitionStrategy.Collector.ForRetransformation.Chunked{" + "transformation=" + transformation + ", types="+ types+ '}';
-}

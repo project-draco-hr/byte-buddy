@@ -1,0 +1,10 @@
+{
+  if (index > 0) {
+    try {
+      Thread.sleep(value);
+    }
+ catch (    InterruptedException exception) {
+      throw new RuntimeException("Sleep was interrupted",exception);
+    }
+  }
+}

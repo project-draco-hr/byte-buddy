@@ -1,3 +1,0 @@
-{
-  doConsider(ignoredTypeMatcher,listener,typeDescription,type,classBeingRedefined,module,collector,unmodifiable);
-}

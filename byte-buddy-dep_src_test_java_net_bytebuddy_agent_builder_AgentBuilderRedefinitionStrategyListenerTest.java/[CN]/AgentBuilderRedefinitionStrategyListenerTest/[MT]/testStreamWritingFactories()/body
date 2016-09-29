@@ -1,0 +1,4 @@
+{
+  assertThat(AgentBuilder.RedefinitionStrategy.Listener.StreamWriting.toSystemOut(),is((AgentBuilder.RedefinitionStrategy.Listener)new AgentBuilder.RedefinitionStrategy.Listener.StreamWriting(System.out)));
+  assertThat(AgentBuilder.RedefinitionStrategy.Listener.StreamWriting.toSystemError(),is((AgentBuilder.RedefinitionStrategy.Listener)new AgentBuilder.RedefinitionStrategy.Listener.StreamWriting(System.err)));
+}

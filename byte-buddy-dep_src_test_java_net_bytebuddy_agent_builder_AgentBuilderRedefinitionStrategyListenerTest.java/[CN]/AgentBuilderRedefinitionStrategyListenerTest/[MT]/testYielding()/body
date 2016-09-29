@@ -1,0 +1,6 @@
+{
+  AgentBuilder.RedefinitionStrategy.Listener.Yielding.INSTANCE.onBatch(0,Collections.<Class<?>>emptyList(),Collections.<Class<?>>emptyList());
+  AgentBuilder.RedefinitionStrategy.Listener.Yielding.INSTANCE.onBatch(1,Collections.<Class<?>>emptyList(),Collections.<Class<?>>emptyList());
+  AgentBuilder.RedefinitionStrategy.Listener.Yielding.INSTANCE.onError(0,Collections.<Class<?>>emptyList(),new Throwable(),Collections.<Class<?>>emptyList());
+  AgentBuilder.RedefinitionStrategy.Listener.Yielding.INSTANCE.onComplete(0,Collections.<Class<?>>emptyList(),Collections.<List<Class<?>>,Throwable>emptyMap());
+}

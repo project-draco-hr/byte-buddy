@@ -1,0 +1,11 @@
+{
+  if (value > 0L) {
+    return new Pausing(timeUnit.toMillis(value));
+  }
+ else   if (value == 0L) {
+    return NoOp.INSTANCE;
+  }
+ else {
+    throw new IllegalArgumentException("Cannot sleep for a non-positive amount of time: " + value);
+  }
+}

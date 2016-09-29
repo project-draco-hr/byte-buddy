@@ -1,0 +1,4 @@
+{
+  assertThat(AgentBuilder.RedefinitionStrategy.BatchAllocator.ForFixedSize.ofSize(1),is((AgentBuilder.RedefinitionStrategy.BatchAllocator)new AgentBuilder.RedefinitionStrategy.BatchAllocator.ForFixedSize(1)));
+  assertThat(AgentBuilder.RedefinitionStrategy.BatchAllocator.ForFixedSize.ofSize(0),is((AgentBuilder.RedefinitionStrategy.BatchAllocator)AgentBuilder.RedefinitionStrategy.BatchAllocator.ForTotal.INSTANCE));
+}

@@ -1,0 +1,6 @@
+RawMatcher ignoredTypeMatcher
+AgentBuilder.Listener listener
+TypeDescription typeDescription
+Class<?> type
+Class<?> classBeingRedefined
+JavaModule module

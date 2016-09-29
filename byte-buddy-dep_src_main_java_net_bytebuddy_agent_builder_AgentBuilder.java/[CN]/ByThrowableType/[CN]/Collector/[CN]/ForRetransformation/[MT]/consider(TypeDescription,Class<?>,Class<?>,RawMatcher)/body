@@ -1,3 +1,0 @@
-{
-  return transformation.isAlive(typeDescription,type.getClassLoader(),JavaModule.ofType(type),classBeingRedefined,type.getProtectionDomain(),ignoredTypeMatcher) && types.add(type);
-}

@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.RedefinitionStrategy.Listener.StreamWriting{" + "printStream=" + printStream + '}';
+}

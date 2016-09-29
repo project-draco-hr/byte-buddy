@@ -1,0 +1,7 @@
+{
+  AgentBuilder.RedefinitionStrategy.BatchAllocator batchAllocator=AgentBuilder.RedefinitionStrategy.BatchAllocator.ForTotal.INSTANCE;
+  Iterator<? extends List<Class<?>>> iterator=batchAllocator.batch(Arrays.<Class<?>>asList(Object.class,Void.class,String.class)).iterator();
+  assertThat(iterator.hasNext(),is(true));
+  assertThat(iterator.next(),is(Arrays.<Class<?>>asList(Object.class,Void.class,String.class)));
+  assertThat(iterator.hasNext(),is(false));
+}

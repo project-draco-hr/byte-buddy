@@ -1,0 +1,4 @@
+int index
+List<Class<?>> batch
+Throwable throwable
+List<Class<?>> types

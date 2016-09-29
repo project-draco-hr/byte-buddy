@@ -1,3 +1,0 @@
-{
-  AgentBuilder.RedefinitionStrategy.RETRANSFORMATION_CHUNKED.isRetransforming(mock(Instrumentation.class));
-}

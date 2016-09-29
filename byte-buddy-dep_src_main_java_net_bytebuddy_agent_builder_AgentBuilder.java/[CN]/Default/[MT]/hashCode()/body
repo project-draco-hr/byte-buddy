@@ -7,6 +7,9 @@
   result=31 * result + nativeMethodStrategy.hashCode();
   result=31 * result + initializationStrategy.hashCode();
   result=31 * result + redefinitionStrategy.hashCode();
+  result=31 * result + redefinitionBatchAllocator.hashCode();
+  result=31 * result + redefinitionFailureHandler.hashCode();
+  result=31 * result + redefinitionListener.hashCode();
   result=31 * result + bootstrapInjectionStrategy.hashCode();
   result=31 * result + lambdaInstrumentationStrategy.hashCode();
   result=31 * result + descriptionStrategy.hashCode();

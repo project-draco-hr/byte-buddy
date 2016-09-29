@@ -1,0 +1,3 @@
+{
+  return "AgentBuilder.RedefinitionStrategy.BatchAllocator.ForFixedSize{" + "size=" + size + '}';
+}

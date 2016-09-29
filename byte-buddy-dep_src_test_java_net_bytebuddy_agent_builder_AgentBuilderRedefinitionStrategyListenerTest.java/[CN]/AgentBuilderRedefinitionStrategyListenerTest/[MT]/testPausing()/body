@@ -1,0 +1,7 @@
+{
+  AgentBuilder.RedefinitionStrategy.Listener listener=new AgentBuilder.RedefinitionStrategy.Listener.Pausing(1L);
+  listener.onBatch(0,Collections.<Class<?>>emptyList(),Collections.<Class<?>>emptyList());
+  listener.onBatch(1,Collections.<Class<?>>emptyList(),Collections.<Class<?>>emptyList());
+  listener.onError(0,Collections.<Class<?>>emptyList(),new Throwable(),Collections.<Class<?>>emptyList());
+  listener.onComplete(0,Collections.<Class<?>>emptyList(),Collections.<List<Class<?>>,Throwable>emptyMap());
+}

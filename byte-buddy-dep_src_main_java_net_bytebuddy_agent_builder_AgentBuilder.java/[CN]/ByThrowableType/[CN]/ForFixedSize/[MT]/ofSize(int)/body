@@ -1,0 +1,11 @@
+{
+  if (size > 0) {
+    return new ForFixedSize(size);
+  }
+ else   if (size == 0) {
+    return ForTotal.INSTANCE;
+  }
+ else {
+    throw new IllegalArgumentException("Cannot define a batch with a negative size: " + size);
+  }
+}

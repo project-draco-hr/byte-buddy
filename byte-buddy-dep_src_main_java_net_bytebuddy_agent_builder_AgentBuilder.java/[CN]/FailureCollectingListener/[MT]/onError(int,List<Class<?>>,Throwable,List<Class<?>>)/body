@@ -1,0 +1,5 @@
+{
+  for (  Class<?> type : batch) {
+    failures.put(type,throwable);
+  }
+}

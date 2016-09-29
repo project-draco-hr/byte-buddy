@@ -1,0 +1,3 @@
+{
+  consider(ignoredTypeMatcher,listener,typeDescription,type,classBeingRedefined,module,false);
+}
