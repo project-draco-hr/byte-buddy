@@ -1,0 +1,3 @@
+{
+  super(byteBuddy,listener,poolStrategy,typeStrategy,locationStrategy,nativeMethodStrategy,initializationStrategy,redefinitionStrategy,redefinitionBatchAllocator,redefinitionListener,bootstrapInjectionStrategy,lambdaInstrumentationStrategy,descriptionStrategy,installationStrategy,fallbackStrategy,ignoredTypeMatcher,transformation);
+}
