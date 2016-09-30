@@ -1,6 +1,6 @@
 {
   methodVisitor.visitCode();
-  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,"sun/misc/Unsafe","getUnsafe","()Lsun/misc/Unsafe;",false);
+  methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,UNSAFE_CLASS,"getUnsafe","()L" + UNSAFE_CLASS + ";",false);
   methodVisitor.visitVarInsn(Opcodes.ASTORE,6);
   methodVisitor.visitVarInsn(Opcodes.ALOAD,6);
   methodVisitor.visitVarInsn(Opcodes.ALOAD,0);
@@ -91,11 +91,11 @@
   methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/reflect/Method","invoke","(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;",false);
   methodVisitor.visitTypeInsn(Opcodes.CHECKCAST,"[B");
   methodVisitor.visitInsn(Opcodes.ACONST_NULL);
-  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"sun/misc/Unsafe","defineAnonymousClass","(Ljava/lang/Class;[B[Ljava/lang/Object;)Ljava/lang/Class;",false);
+  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,UNSAFE_CLASS,"defineAnonymousClass","(Ljava/lang/Class;[B[Ljava/lang/Object;)Ljava/lang/Class;",false);
   methodVisitor.visitVarInsn(Opcodes.ASTORE,7);
   methodVisitor.visitVarInsn(Opcodes.ALOAD,6);
   methodVisitor.visitVarInsn(Opcodes.ALOAD,7);
-  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"sun/misc/Unsafe","ensureClassInitialized","(Ljava/lang/Class;)V",false);
+  methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,UNSAFE_CLASS,"ensureClassInitialized","(Ljava/lang/Class;)V",false);
   methodVisitor.visitVarInsn(Opcodes.ALOAD,2);
   methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL,"java/lang/invoke/MethodType","parameterCount","()I",false);
   Label conditionalDefault=new Label();
@@ -116,7 +116,7 @@
   Label conditionalAlternative=new Label();
   methodVisitor.visitJumpInsn(Opcodes.GOTO,conditionalAlternative);
   methodVisitor.visitLabel(conditionalDefault);
-  methodVisitor.visitFrame(Opcodes.F_APPEND,2,new Object[]{"sun/misc/Unsafe","java/lang/Class"},0,null);
+  methodVisitor.visitFrame(Opcodes.F_APPEND,2,new Object[]{UNSAFE_CLASS,"java/lang/Class"},0,null);
   methodVisitor.visitTypeInsn(Opcodes.NEW,"java/lang/invoke/ConstantCallSite");
   methodVisitor.visitInsn(Opcodes.DUP);
   methodVisitor.visitFieldInsn(Opcodes.GETSTATIC,"java/lang/invoke/MethodHandles$Lookup","IMPL_LOOKUP","Ljava/lang/invoke/MethodHandles$Lookup;");
