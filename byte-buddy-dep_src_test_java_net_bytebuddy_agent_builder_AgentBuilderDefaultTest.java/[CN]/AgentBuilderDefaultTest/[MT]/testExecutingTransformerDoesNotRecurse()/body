@@ -1,0 +1,14 @@
+{
+  final AgentBuilder.Default.ExecutingTransformer executingTransformer=new AgentBuilder.Default.ExecutingTransformer(byteBuddy,listener,poolStrategy,typeStrategy,locationStrategy,mock(AgentBuilder.Default.NativeMethodStrategy.class),initializationStrategy,mock(AgentBuilder.Default.BootstrapInjectionStrategy.class),AgentBuilder.DescriptionStrategy.Default.HYBRID,mock(AgentBuilder.FallbackStrategy.class),mock(AgentBuilder.RawMatcher.class),mock(AgentBuilder.Default.Transformation.class));
+  final ClassLoader classLoader=mock(ClassLoader.class);
+  final ProtectionDomain protectionDomain=mock(ProtectionDomain.class);
+  doAnswer(new Answer(){
+    @Override public Object answer(    InvocationOnMock invocation) throws Throwable {
+      assertThat(executingTransformer.transform(classLoader,FOO,Object.class,protectionDomain,new byte[0]),nullValue(byte[].class));
+      return null;
+    }
+  }
+).when(listener).onComplete(FOO,classLoader,JavaModule.UNSUPPORTED);
+  assertThat(executingTransformer.transform(classLoader,FOO,Object.class,protectionDomain,new byte[0]),nullValue(byte[].class));
+  verify(listener).onComplete(FOO,classLoader,JavaModule.UNSUPPORTED);
+}

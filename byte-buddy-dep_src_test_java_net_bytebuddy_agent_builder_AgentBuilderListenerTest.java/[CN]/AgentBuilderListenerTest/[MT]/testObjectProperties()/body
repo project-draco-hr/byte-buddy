@@ -1,6 +1,7 @@
 {
   ObjectPropertyAssertion.of(AgentBuilder.Listener.NoOp.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Listener.StreamWriting.class).apply();
+  ObjectPropertyAssertion.of(AgentBuilder.Listener.Filtering.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Listener.Compound.class).apply();
   ObjectPropertyAssertion.of(AgentBuilder.Listener.ModuleReadEdgeCompleting.class).apply();
 }

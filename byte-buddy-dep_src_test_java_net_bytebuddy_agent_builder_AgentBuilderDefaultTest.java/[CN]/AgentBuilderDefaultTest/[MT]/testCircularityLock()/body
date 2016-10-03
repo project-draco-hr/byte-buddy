@@ -1,0 +1,10 @@
+{
+  AgentBuilder.Default.ExecutingTransformer.CircularityLock circularityLock=new AgentBuilder.Default.ExecutingTransformer.CircularityLock();
+  assertThat(circularityLock.acquire(),is(true));
+  assertThat(circularityLock.acquire(),is(false));
+  circularityLock.release();
+  assertThat(circularityLock.acquire(),is(true));
+  assertThat(circularityLock.acquire(),is(false));
+  circularityLock.release();
+  assertThat(circularityLock.get(),nullValue(Boolean.class));
+}

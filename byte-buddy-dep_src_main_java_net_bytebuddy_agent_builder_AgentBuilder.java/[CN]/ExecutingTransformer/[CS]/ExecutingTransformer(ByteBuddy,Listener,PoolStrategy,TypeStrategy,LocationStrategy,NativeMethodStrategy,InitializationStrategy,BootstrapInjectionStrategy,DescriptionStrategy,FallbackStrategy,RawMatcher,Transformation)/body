@@ -11,5 +11,6 @@
   this.fallbackStrategy=fallbackStrategy;
   this.ignoredTypeMatcher=ignoredTypeMatcher;
   this.transformation=transformation;
+  circularityLock=new CircularityLock();
   accessControlContext=AccessController.getContext();
 }

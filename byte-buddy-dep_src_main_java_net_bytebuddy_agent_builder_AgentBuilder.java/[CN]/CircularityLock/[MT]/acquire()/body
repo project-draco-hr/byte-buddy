@@ -1,0 +1,9 @@
+{
+  if (get() == NOT_ACQUIRED) {
+    set(true);
+    return true;
+  }
+ else {
+    return false;
+  }
+}

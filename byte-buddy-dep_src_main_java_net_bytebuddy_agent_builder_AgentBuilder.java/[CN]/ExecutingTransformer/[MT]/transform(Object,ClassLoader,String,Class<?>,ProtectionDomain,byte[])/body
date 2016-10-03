@@ -1,3 +1,13 @@
 {
-  return AccessController.doPrivileged(new Java9CapableVmDispatcher(rawModule,classLoader,internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation),accessControlContext);
+  if (circularityLock.acquire()) {
+    try {
+      return AccessController.doPrivileged(new Java9CapableVmDispatcher(rawModule,classLoader,internalTypeName,classBeingRedefined,protectionDomain,binaryRepresentation),accessControlContext);
+    }
+  finally {
+      circularityLock.release();
+    }
+  }
+ else {
+    return NO_TRANSFORMATION;
+  }
 }

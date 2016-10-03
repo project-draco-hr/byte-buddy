@@ -1,0 +1,9 @@
+{
+  AgentBuilder.Listener delegate=mock(AgentBuilder.Listener.class);
+  AgentBuilder.Listener listener=new AgentBuilder.Listener.Filtering(none(),delegate);
+  listener.onTransformation(typeDescription,classLoader,module,dynamicType);
+  listener.onError(FOO,classLoader,module,throwable);
+  listener.onIgnored(typeDescription,classLoader,module);
+  listener.onComplete(FOO,classLoader,module);
+  verifyZeroInteractions(delegate);
+}

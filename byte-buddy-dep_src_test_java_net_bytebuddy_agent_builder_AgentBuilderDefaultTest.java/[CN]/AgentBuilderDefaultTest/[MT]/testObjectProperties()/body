@@ -16,6 +16,7 @@
     }
   }
 ).applyBasic();
+  ObjectPropertyAssertion.of(AgentBuilder.Default.ExecutingTransformer.CircularityLock.class).applyBasic();
   ObjectPropertyAssertion.of(AgentBuilder.Default.ExecutingTransformer.FactoryCreationOption.class);
   final Iterator<Class<?>> java9Dispatcher=Arrays.<Class<?>>asList(Object.class,String.class,Integer.class,Double.class,Float.class).iterator();
   ObjectPropertyAssertion.of(AgentBuilder.Default.ExecutingTransformer.Java9CapableVmDispatcher.class).create(new ObjectPropertyAssertion.Creator<Class<?>>(){
